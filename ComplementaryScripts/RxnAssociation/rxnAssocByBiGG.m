@@ -272,19 +272,19 @@ numel(find(~cellfun(@isempty,ihuman.HMR2BiGG)))  % ans = 4362
 save('ihuman2BiGG.mat','ihuman');       %2018-1-17
 
 % Link HMR reactions through BiGG association to MNX
-ihuman.BiGG2MNX=cell(num,1);
-ihuman.BiGG2MNX(:,1)={''};
+ihuman.HMR2BiGG2MNX=cell(num,1);
+ihuman.HMR2BiGG2MNX(:,1)={''};
 [a, b]=ismember(ihuman.HMR2BiGG,BiGGRxns.bigg_id);
 I=find(a);
-ihuman.BiGG2MNX(I)=BiGGRxns.MNXrefid(b(I));
-numel(find(~cellfun(@isempty,ihuman.BiGG2MNX)))  % ans = 4360
+ihuman.HMR2BiGG2MNX(I)=BiGGRxns.MNXrefid(b(I));
+numel(find(~cellfun(@isempty,ihuman.HMR2BiGG2MNX)))  % ans = 4360
 
 % Find out the BiGG ids that miss MNX links
 index=find(~cellfun(@isempty,ihuman.HMR2BiGG));
-missingMNX=find(cellfun(@isempty,ihuman.BiGG2MNX(index)));
+missingMNX=find(cellfun(@isempty,ihuman.HMR2BiGG2MNX(index)));
 ihuman.HMR2BiGG(index(missingMNX))
 % ans = 2×1 cell array
-% 'PYK6'
-% 'ASPTA4'
+% 'PYK6'   (EHMN)
+% 'ASPTA4' (BiGG)
 
 save('ihuman2BiGG.mat','ihuman');       %2018-1-18
