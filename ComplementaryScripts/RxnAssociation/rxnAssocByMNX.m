@@ -79,7 +79,7 @@ for i=1:numel(ReactomID.Stable_ID)
 		ReactomID.oldID=[ReactomID.oldID;oldID];
 	end
 end
-save('ReactomID.mat','ReactomID');  %2018-1-19
+save('ReactomID.mat','ReactomID');  %2018-01-19
 % Map to new Stable IDs and add them to model
 ihuman.rxnREACTOMEStableID=cell(num,1);
 ihuman.rxnREACTOMEStableID(:,1)={''};
@@ -102,14 +102,14 @@ ihuman.BiGG2MNX(:,1)={''};
 [a, b]=ismember(ihuman.rxnBiGGID,MNXrefRxns.BiGGxref);
 I=find(a);
 ihuman.BiGG2MNX(I)=MNXrefRxns.BiGGMNXid(b(I));
-numel(find(~cellfun(@isempty,ihuman.BiGG2MNX)))  % ans = 2281/3063
+numel(find(~cellfun(@isempty,ihuman.BiGG2MNX)))  % ans = 2281/3061
 % Compare BiGG2MNX and HMR2BiGG2MNX, should be identical
 sharedIndex=intersect(find(~cellfun(@isempty,ihuman.BiGG2MNX)),find(~cellfun(@isempty,ihuman.HMR2BiGG2MNX)));
 isequal(ihuman.BiGG2MNX(sharedIndex),ihuman.HMR2BiGG2MNX(sharedIndex))  %ans = 1
 % All BiGG2MNX elements are identical to the corresponding ones
 % in HMR2BiGG2MNX, so only HMR2BiGG2MNX will be used for combining
 
-save('ihuman2MNX.mat','ihuman');  %2018-1-19
+save('ihuman2MNX.mat','ihuman');  %2018-01-19
 
 % Some statistics for unmatched MNX associations
 % First conduct a comparison between KEGG2MNX and Reactome2MNX
@@ -131,10 +131,10 @@ numel(find(~cellfun(@isequal,ihuman.Reactome2MNX(sharedIndex),ihuman.HMR2BiGG2MN
 % Unify KEGG, Reactome and BiGG (including EHMN and HepatoNet1) associations toward MNX
 % 1. The only or identical MNX ids will be directly applied
 % 2. If associated MNX ids are different, leave them for manual curation
-% 3. Add 'conflict' field to indicate these conflicting match
+% 3. Add 'conflictMNXAssoc' field to indicate these conflicting match
 ihuman.rxnMNXID=cell(num,1);
 ihuman.rxnMNXID(:,1)={''};
-ihuman.conflict=zeros(num,1);
+ihuman.conflictMNXAssoc=zeros(num,1);
 
 % Define output format
 outThree='%d, %s: (Reactome)%s-(KEGG)%s-(BiGG)%s\n';
@@ -148,28 +148,28 @@ for i=1:num
 		if isequal(ihuman.Reactome2MNX{i},ihuman.HMR2BiGG2MNX{i},ihuman.KEGG2MNX{i})
 			ihuman.rxnMNXID{i}=ihuman.Reactome2MNX{i};
 		else
-			ihuman.conflict(i,1)=1;
+			ihuman.conflictMNXAssoc(i,1)=1;
 			%fprintf(outThree,i,ihuman.rxns{i},ihuman.Reactome2MNX{i},ihuman.KEGG2MNX{i},ihuman.HMR2BiGG2MNX{i});
 		end
 	elseif ~isempty(ihuman.Reactome2MNX{i}) && ~isempty(ihuman.HMR2BiGG2MNX{i}) && isempty(ihuman.KEGG2MNX{i})
 		if isequal(ihuman.Reactome2MNX{i},ihuman.HMR2BiGG2MNX{i})
 			ihuman.rxnMNXID{i}=ihuman.Reactome2MNX{i};
 		else
-			ihuman.conflict(i,1)=1;
+			ihuman.conflictMNXAssoc(i,1)=1;
 			%fprintf(outNoKegg,i,ihuman.rxns{i},ihuman.Reactome2MNX{i},ihuman.HMR2BiGG2MNX{i});
 		end
 	elseif ~isempty(ihuman.Reactome2MNX{i}) && isempty(ihuman.HMR2BiGG2MNX{i}) && ~isempty(ihuman.KEGG2MNX{i})
 		if isequal(ihuman.Reactome2MNX{i},ihuman.KEGG2MNX{i})
 			ihuman.rxnMNXID{i}=ihuman.Reactome2MNX{i};
 		else
-			ihuman.conflict(i,1)=1;
+			ihuman.conflictMNXAssoc(i,1)=1;
 			%fprintf(outNoBigg,i,ihuman.rxns{i},ihuman.Reactome2MNX{i},ihuman.KEGG2MNX{i});
 		end
 	elseif isempty(ihuman.Reactome2MNX{i}) && ~isempty(ihuman.HMR2BiGG2MNX{i}) && ~isempty(ihuman.KEGG2MNX{i})
 		if isequal(ihuman.HMR2BiGG2MNX{i},ihuman.KEGG2MNX{i})
 			ihuman.rxnMNXID{i}=ihuman.HMR2BiGG2MNX{i};
 		else
-			ihuman.conflict(i,1)=1;
+			ihuman.conflictMNXAssoc(i,1)=1;
 			%fprintf(outNoReactome,i,ihuman.rxns{i},ihuman.KEGG2MNX{i},ihuman.HMR2BiGG2MNX{i});
 		end
 	elseif isempty(ihuman.Reactome2MNX{i}) && isempty(ihuman.HMR2BiGG2MNX{i}) && ~isempty(ihuman.KEGG2MNX{i})
@@ -185,5 +185,7 @@ end
 numel(find(~cellfun(@isempty,ihuman.rxnMNXID)))  
 % ans = 5220 with single or identical association
 
-numel(find(ihuman.conflict))  
+numel(find(ihuman.conflictMNXAssoc))  
 % ans = 281 with conflicting MNX associations
+
+save('ihuman2MNX.mat','ihuman');  %2018-01-22
