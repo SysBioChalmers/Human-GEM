@@ -2,7 +2,7 @@
 %   FILE NAME: rxnAssocByBiGG.m
 % 
 %   DATE CREATED: 2017-12-01
-%        
+%        UPDATED: 2018-02-08
 %	
 %   PROGRAMMER:   Hao Wang
 %                 Department of Biology and Biological Engineering
@@ -14,8 +14,8 @@
 %
 
 
-% Load HMR database ver 2.0.1
-load('HMRdatabase2_01.mat');
+% Load HMR database ver 2.0.2
+load('HMRdatabase2_02.mat');
 
 num=numel(ihuman.rxns);
 
@@ -54,27 +54,27 @@ load('BiGGRxns.mat');
 % BiGG id association
 numel(find(ismember(ihuman.rxnBiGGID,BiGGRxns.bigg_id)))
 numel(find(~cellfun(@isempty,ihuman.rxnBiGGID)))
-% ans = 2277 of 3063 were mapped to BiGG database
+% ans = 2375 of 3064 were mapped to BiGG database
 
 % KEGG id association
 numel(find(ismember(ihuman.rxnKEGGID,BiGGRxns.bigg_id)))
 numel(find(~cellfun(@isempty,ihuman.rxnKEGGID)))
-% ans = 0 of 1745 were mapped to BiGG database
+% ans = 0 of 1767 were mapped to BiGG database
 
 % EHMN id association
 numel(find(ismember(ihuman.rxnEHMNID,BiGGRxns.bigg_id)))
 numel(find(~cellfun(@isempty,ihuman.rxnEHMNID)))
-% ans = 720 of 1975 were mapped to BiGG database
+% ans = 719 of 1955 were mapped to BiGG database
 
 % HepaoNET1 id association
 numel(find(ismember(ihuman.rxnHepatoNET1ID,BiGGRxns.bigg_id)))
 numel(find(~cellfun(@isempty,ihuman.rxnHepatoNET1ID)))
-% ans = 1173 of 2402 were mapped to BiGG database
+% ans = 1173 of 2383 were mapped to BiGG database
 
 % Reactome id association
 numel(find(ismember(ihuman.rxnREACTOMEID,BiGGRxns.bigg_id)))
 numel(find(~cellfun(@isempty,ihuman.rxnREACTOMEID)))
-% ans = 0 of 215 were mapped to BiGG database
+% ans = 0 of 217 were mapped to BiGG database
 
 
 %===Comprehensive association based on bigg_id and oldids
@@ -84,7 +84,7 @@ ihuman.BiGG2BiGG(:,1)={''};
 [a, b]=ismember(ihuman.rxnBiGGID,BiGGRxns.bigg_id);
 I=find(a);
 ihuman.BiGG2BiGG(I)=BiGGRxns.bigg_id(b(I));
-numel(find(~cellfun(@isempty,ihuman.BiGG2BiGG)))  % ans = 2277
+numel(find(~cellfun(@isempty,ihuman.BiGG2BiGG)))  % ans = 2375
 % Retrieve missing ids from old_bigg_ids
 count=0;
 for i=1:num
@@ -98,13 +98,8 @@ for i=1:num
 		end
 	end
 end
-numel(find(~cellfun(@isempty,ihuman.BiGG2BiGG)))  % ans = 2385
+numel(find(~cellfun(@isempty,ihuman.BiGG2BiGG)))  % ans = 2484
 %---
-% count=109, however 2385-2277=108
-% Because there is an id 'GHMT' associated to two new BiGG
-% ids 'GHMT2r' and 'GHMT2rm', which are actually identical
-% then only keep it as 'GHMT2r'
-ihuman.BiGG2BiGG{663}='GHMT2r';
 
 % From HepatoNET1 to BiGG
 ihuman.HepatoNet12BiGG=cell(num,1);
@@ -135,7 +130,7 @@ ihuman.EHMN2BiGG(:,1)={''};
 [a, b]=ismember(ihuman.rxnEHMNID,BiGGRxns.bigg_id);
 I=find(a);
 ihuman.EHMN2BiGG(I)=BiGGRxns.bigg_id(b(I));
-numel(find(~cellfun(@isempty,ihuman.EHMN2BiGG)))  % ans = 720
+numel(find(~cellfun(@isempty,ihuman.EHMN2BiGG)))  % ans = 719
 % Retrieve missing ids from old_bigg_ids
 count=0;
 for i=1:num
@@ -149,7 +144,7 @@ for i=1:num
 		end		
 	end
 end
-numel(find(~cellfun(@isempty,ihuman.EHMN2BiGG)))  % ans = 733
+numel(find(~cellfun(@isempty,ihuman.EHMN2BiGG)))  % ans = 732
 %count=13
 
 % From KEGG to BiGG ids
@@ -167,7 +162,7 @@ index=find(~cellfun(@isempty,ihuman.rxnREACTOMEID));
 numel(intersect(ihuman.rxnREACTOMEID(index),BiGGRxns.name))  % ans = 0
 
 index=find(~cellfun(@isempty,ihuman.rxnBiGGID));
-numel(intersect(ihuman.rxnBiGGID(index),BiGGRxns.name))  % ans = 18
+numel(intersect(ihuman.rxnBiGGID(index),BiGGRxns.name))  % ans = 19
 % Check the detail
 [a, b]=ismember(ihuman.rxnBiGGID,BiGGRxns.name);
 I=find(a);
@@ -202,9 +197,9 @@ for i=1:numel(I)
 	end
 end
 %count=10, these rxns were associated accroding to BiGG reaction name
-numel(find(~cellfun(@isempty,ihuman.EHMN2BiGG)))  % ans = 743
+numel(find(~cellfun(@isempty,ihuman.EHMN2BiGG)))  % ans = 742
 
-save('ihuman2BiGG.mat','ihuman');       %2018-1-17
+save('ihuman2BiGG.mat','ihuman');       %2018-2-9
 
 %===Unify results
 index=find(~cellfun(@isempty,ihuman.HepatoNet12BiGG));
@@ -212,11 +207,11 @@ numel(find(~cellfun(@isempty,ihuman.EHMN2BiGG(index))))  % ans = 0
 % There is no overlap between EHMN and HepatoNet1, so direct merge
 ihuman.HMR2BiGG=ihuman.EHMN2BiGG;
 ihuman.HMR2BiGG(index)=ihuman.HepatoNet12BiGG(index);
-numel(find(~cellfun(@isempty,ihuman.HMR2BiGG)))  % ans = 1985
+numel(find(~cellfun(@isempty,ihuman.HMR2BiGG)))  % ans = 1984
 % Combine with BiGG associations
 index=find(~cellfun(@isempty,ihuman.BiGG2BiGG));
-numel(find(~cellfun(@isempty,ihuman.HMR2BiGG(index))))  % ans = 8
-% There are 8 overlaps, check detail
+numel(find(~cellfun(@isempty,ihuman.HMR2BiGG(index))))  % ans = 7
+% There are 7 overlaps, check detail
 for i=1:numel(index)
 	%Loop through BiGG id associations
 	if isempty(ihuman.HMR2BiGG{index(i)})  % Direct merge non-overlap elements
@@ -228,48 +223,42 @@ for i=1:numel(index)
 			B=find(strcmp(ihuman.BiGG2BiGG{index(i)},BiGGRxns.bigg_id));
 			fprintf('%d:\t%s(%s)-%s(%s)\n',index(i),ihuman.HMR2BiGG{index(i)},....
 			BiGGRxns.MNXrefid{A},ihuman.BiGG2BiGG{index(i)},BiGGRxns.MNXrefid{B});
+		else
+			% This is consistent association, leave it and print out
+			fprintf('%d:\t%s-%s\n',index(i),ihuman.HMR2BiGG{index(i)},ihuman.BiGG2BiGG{index(i)});
 		end
 	end
 end
-numel(find(~cellfun(@isempty,HMR2BiGG.HMR2BiGG)))  % ans = 4362
+numel(find(~cellfun(@isempty,ihuman.HMR2BiGG)))  % ans = 4461
 %---Manual curation following 7 associations
-%992:	r0595(MNXR105354)-MCPST(MNXR101422)
+%669:	  SERD_L-SERD_L                            %leave it
+%992:	  r0595(MNXR105354)-MCPST(MNXR101422)      %use MNX assoc to KEGG though
 %1169:	RE3372C(MNXR103887)-FTHFCL(MNXR99668)
-%4084:	r0739(MNXR105375)-P45027A11m(MNXR102264)
+%3032:	RE2410C(MNXR97383)-DHCR71r(MNXR97383)    %use MNX assoc to KEGG though
 %4089:	RE2626C(MNXR103704)-P45027A13m(MNXR102266)
 %4417:	PPNCL2(MNXR103119)-PPNCL(MNXR103118)
-%4753:	RE2439C(MNXR103673)-MELATN23DOX(MNXR101457)
 %7594:	r0845(MNXR105086)-UGLCNACtg(MNXR105086)
 
 % Curation results: an excel sheet was save in 'BiGG' subfolder
 %992:		r0595(MNXR105354)			remove:MCPST(MNXR101422)
 %1169:	RE3372C(MNXR103887)		remove:FTHFCL(MNXR99668)
-%4084:	P45027A11m(MNXR102264)remove:r0739(MNXR105375)
 %4089:	P45027A13m(MNXR102266)remove:RE2626C(MNXR103704)
-%4417:	r0671/PPNCL2(MNXR103119)remove:PPNCL(MNXR103118) add:PPNCL2
-%4753:	MELATN23DOX(MNXR101457)	remove:RE2439C(MNXR103673)
-%7594:	r0845(MNXR105086)-UGLCNACtg(MNXR105086)
+%4417:	r0671/PPNCL2(MNXR103119)replace:PPNCL(MNXR103118) with PPNCL2
 
 % Modify relevant external identifiers
 ihuman.rxnBiGGID{992}='';
+ihuman.rxnKEGGID{992}='R03105';
 ihuman.rxnBiGGID{1169}='';
-ihuman.rxnHepatoNET1ID{4084}='';
 ihuman.rxnEHMNID{4089}='';
 ihuman.rxnBiGGID{4417}='PPNCL2';
-ihuman.rxnEHMNID{4753}='';
 
-% Assign manually curated 6 ones
-ihuman.HMR2BiGG([992 1169 4084 4089 4417 4753 7594])
-ihuman.HMR2BiGG{992}='r0595';
-ihuman.HMR2BiGG{1169}='RE3372C';
-ihuman.HMR2BiGG{4084}='P45027A11m';
+% Assign manually curated 5 ones
+%ihuman.HMR2BiGG([992 1169 3032 4089 4417 7594])  % Have a check
 ihuman.HMR2BiGG{4089}='P45027A13m';
 ihuman.HMR2BiGG{4417}='PPNCL2';
-ihuman.HMR2BiGG{4753}='MELATN23DOX';
-ihuman.HMR2BiGG{7594}='UGLCNACtg';
-numel(find(~cellfun(@isempty,ihuman.HMR2BiGG)))  % ans = 4362
+numel(find(~cellfun(@isempty,ihuman.HMR2BiGG)))  % ans = 4461
 
-save('ihuman2BiGG.mat','ihuman');       %2018-1-17
+save('ihuman2BiGG.mat','ihuman');       %2018-2-9
 
 % Link HMR reactions through BiGG association to MNX
 ihuman.HMR2BiGG2MNX=cell(num,1);
@@ -277,14 +266,12 @@ ihuman.HMR2BiGG2MNX(:,1)={''};
 [a, b]=ismember(ihuman.HMR2BiGG,BiGGRxns.bigg_id);
 I=find(a);
 ihuman.HMR2BiGG2MNX(I)=BiGGRxns.MNXrefid(b(I));
-numel(find(~cellfun(@isempty,ihuman.HMR2BiGG2MNX)))  % ans = 4360
+numel(find(~cellfun(@isempty,ihuman.HMR2BiGG2MNX)))  % ans = 4460
 
 % Find out the BiGG ids that miss MNX links
 index=find(~cellfun(@isempty,ihuman.HMR2BiGG));
 missingMNX=find(cellfun(@isempty,ihuman.HMR2BiGG2MNX(index)));
 ihuman.HMR2BiGG(index(missingMNX))
-% ans = 2×1 cell array
-% 'PYK6'   (EHMN)
-% 'ASPTA4' (BiGG)
+% ans = 'PYK6'   (EHMN)
 
-save('ihuman2BiGG.mat','ihuman');       %2018-1-18
+save('ihuman2BiGG.mat','ihuman');       %2018-2-9
