@@ -12,45 +12,48 @@ if nargin < 2
 end
 
 
-% import data from original model excel sheet
-warning('off','MATLAB:table:ModifiedAndSavedVarnames');  % disable warning
-mdata = readtable('ModelFiles/xls/HMRdatabase2_00.xlsx','Sheet','METS');
-warning('on','MATLAB:table:ModifiedAndSavedVarnames');  % re-enable warning
-
-% remove table rows with "#" in first column
-mdata(ismember(mdata.x_,'#'),:) = [];
-
-
-% add new met fields to model, or merge ID data with existing fields
-model = addAltsToField(model,'metFormulas',mdata.COMPOSITION);
-model = addAltsToField(model,'metLIPIDMAPSID',mdata.LM_ID);
-model = addAltsToField(model,'metBiGGID',mdata.BIGGID);
-model = addAltsToField(model,'metEHMNID',mdata.EHMNID);
-model = addAltsToField(model,'metKEGGID',mdata.KEGG_ID);
-model = addAltsToField(model,'metHMDBID',mdata.HMDB_ID);
-model = addAltsToField(model,'metHepatoNETID',mdata.HepatoNETID);
-
-% merge "systematic name" and "synonyms" in new "metNamesAlt" field
-model = addAltsToField(model,'metNamesAlt',mdata.SYSTEMATIC_NAME);
-if ismember('Sedoheptulose 1-phosphate;',model.metNamesAlt)
-    % there is one metabolite in this field with a trailing semi-colon
-    model.metNamesAlt(ismember(model.metNamesAlt,'Sedoheptulose 1-phosphate;')) = {'Sedoheptulose 1-phosphate'};
+% HMR2-specific section: import data from original model excel sheet
+if isfield(model,'id') && strcmp(model.id,'HMRdatabase')
+    
+    warning('off','MATLAB:table:ModifiedAndSavedVarnames');  % disable warning
+    mdata = readtable('HMRdatabase2_00.xlsx','Sheet','METS');
+    warning('on','MATLAB:table:ModifiedAndSavedVarnames');  % re-enable warning
+    
+    % remove table rows with "#" in first column
+    mdata(ismember(mdata.x_,'#'),:) = [];
+    
+    
+    % add new met fields to model, or merge ID data with existing fields
+%     model = addAltsToField(model,'metFormulas',mdata.COMPOSITION);
+    model = addAltsToField(model,'metLIPIDMAPSID',mdata.LM_ID);
+    model = addAltsToField(model,'metBiGGID',mdata.BIGGID);
+    model = addAltsToField(model,'metEHMNID',mdata.EHMNID);
+    model = addAltsToField(model,'metKEGGID',mdata.KEGG_ID);
+    model = addAltsToField(model,'metHMDBID',mdata.HMDB_ID);
+    model = addAltsToField(model,'metHepatoNETID',mdata.HepatoNETID);
+    
+    % merge "systematic name" and "synonyms" in new "metNamesAlt" field
+    model = addAltsToField(model,'metNamesAlt',mdata.SYSTEMATIC_NAME);
+    if ismember('Sedoheptulose 1-phosphate;',model.metNamesAlt)
+        % there is one metabolite in this field with a trailing semi-colon
+        model.metNamesAlt(ismember(model.metNamesAlt,'Sedoheptulose 1-phosphate;')) = {'Sedoheptulose 1-phosphate'};
+    end
+    % The synonyms field contains multiple entries for some mets, separated by
+    % a semicolon. These need to be split into separate columns before
+    % appending to the metNamesAlt field.
+    metSynon = cellfun(@(x) strsplit(x,'; '),mdata.SYNONYMS,'UniformOutput',false);
+    metSynon = flattenCell(metSynon,true);  % flatten cell array
+    model = addAltsToField(model,'metNamesAlt',metSynon);
+    
+    % note that there are two ChEBI ID columns in the spreadsheet
+    % remove preceing "CHEBI:" string from ChEBI IDs
+    mdata.CHEBI_ID = regexprep(mdata.CHEBI_ID,'CHEBI:','');
+    mdata.CHEBI_ID_1 = regexprep(mdata.CHEBI_ID_1,'CHEBI:','');
+    % add to model
+    model = addAltsToField(model,'metChEBIID',mdata.CHEBI_ID);
+    model = addAltsToField(model,'metChEBIID',mdata.CHEBI_ID_1);
+    
 end
-% The synonyms field contains multiple entries for some mets, separated by
-% a semicolon. These need to be split into separate columns before
-% appending to the metNamesAlt field.
-metSynon = cellfun(@(x) strsplit(x,'; '),mdata.SYNONYMS,'UniformOutput',false);
-metSynon = flattenCell(metSynon,true);  % flatten cell array
-model = addAltsToField(model,'metNamesAlt',metSynon);
-
-% note that there are two ChEBI ID columns in the spreadsheet
-% remove preceing "CHEBI:" string from ChEBI IDs
-mdata.CHEBI_ID = regexprep(mdata.CHEBI_ID,'CHEBI:','');
-mdata.CHEBI_ID_1 = regexprep(mdata.CHEBI_ID_1,'CHEBI:','');
-% add to model
-model = addAltsToField(model,'metChEBIID',mdata.CHEBI_ID);
-model = addAltsToField(model,'metChEBIID',mdata.CHEBI_ID_1);
-
 
 % get list of metID fields
 metIDfields = fields(model);
