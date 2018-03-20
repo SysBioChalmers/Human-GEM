@@ -178,7 +178,7 @@ function newModel = addAltsToField(model,field,newEntries)
     if (size(model.(field),2) == 1) && (size(newEntries,2) == 1)
         % if existing and new entries are both column vectors, simply add the
         % new (mismatching) entries as a second column
-        mismatch_ind = find(~strcmp(model.(field),newEntries));
+        mismatch_ind = ~strcmp(model.(field),newEntries);
         newEntries(~mismatch_ind) = {''};
         model.(field) = [model.(field),newEntries];
     else
