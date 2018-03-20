@@ -100,6 +100,9 @@ for i = 1:length(metIDfields)
         model.metName2MNX = repmat({''},size(model.mets));
         model.metName2MNX(~empty_inds) = cellfun(@(x) mnx_ids(ismember(mnx_names,x)),metNames(~empty_inds),'UniformOutput',false);
         
+        % remove entries that have matched to too many IDs (>100)
+        model.metName2MNX(cellfun(@numel,model.metName2MNX) > 100) = {''};
+        
         % flatten cell array
         model.metName2MNX = flattenCell(model.metName2MNX,true);
         
