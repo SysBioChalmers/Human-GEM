@@ -81,24 +81,44 @@ for i = 1:length(metIDfields)
         
         % combine names and alternative names into single cell array
         if isfield(model,'metNamesAlt')
-            metNames = lower([model.metNames,model.metNamesAlt]);
+            metNames = [model.metNames,model.metNamesAlt];
         else
-            metNames = lower(model.metNames);
+            metNames = model.metNames;
         end
         
-        % extract subset of MNXID-name pairs containing matching names (for faster processing)
-        mnx.mnxID2name(:,2) = lower(mnx.mnxID2name(:,2));  % make names lowercase
-        keep_ind = ismember(mnx.mnxID2name(:,2),metNames);
-        mnx_ids = mnx.mnxID2name(keep_ind,1);
-        mnx_names = mnx.mnxID2name(keep_ind,2);
+        % ignore case
+        metNames = lower(metNames);
+        mnx.mnxID2name(:,2) = lower(mnx.mnxID2name(:,2));
         
-        % convert metNames from cell array to column vector of nested cells (for next processing step)
-        metNames = nestCell(metNames,true);
-        empty_inds = cellfun(@isempty,metNames);
-        
-        % retrieve all matching IDs for each met
-        model.metName2MNX = repmat({''},size(model.mets));
-        model.metName2MNX(~empty_inds) = cellfun(@(x) mnx_ids(ismember(mnx_names,x)),metNames(~empty_inds),'UniformOutput',false);
+        % Perform the name-matching process twice. The first pass will
+        % search for exact name matches (ignoring case), whereas the second
+        % pass will loosen the criteria by removing all special characters
+        % (e.g., hyphens, parentheses, spaces, etc.) from the met names,
+        % and search again for any mets that were not matched during the
+        % first pass.
+        for ii = 1:2
+           
+            if ii == 2
+                % remove special characters from metabolite names
+                metNames = regexprep(metNames,'[^a-zA-Z0-9]','');
+                mnx.mnxID2name(:,2) = regexprep(mnx.mnxID2name(:,2),'[^a-zA-Z0-9]','');
+            else
+                model.metName2MNX = repmat({''},size(model.mets));
+            end
+            
+            % extract subset of MNXID-name pairs containing matching names (for faster processing)
+            keep_ind = ismember(mnx.mnxID2name(:,2),metNames);
+            mnx_ids = mnx.mnxID2name(keep_ind,1);
+            mnx_names = mnx.mnxID2name(keep_ind,2);
+            
+            % convert metNames from cell array to column vector of nested cells (for next processing step)
+            metNamesNest = nestCell(metNames,true);
+            ignore_inds = ~cellfun(@isempty,model.metName2MNX) | cellfun(@isempty,metNamesNest);
+            
+            % retrieve all matching IDs for each met
+            model.metName2MNX(~ignore_inds) = cellfun(@(x) mnx_ids(ismember(mnx_names,x)),metNamesNest(~ignore_inds),'UniformOutput',false);
+            
+        end
         
         % remove entries that have matched to too many IDs (>100)
         model.metName2MNX(cellfun(@numel,model.metName2MNX) > 100) = {''};
