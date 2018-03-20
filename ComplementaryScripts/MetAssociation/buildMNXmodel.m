@@ -331,8 +331,8 @@ if ismember(model_type,{'all','met'})
     model.metHMDBID(ismember(metSourceNames,'hmdb')) = metSourceIDs(ismember(metSourceNames,'hmdb'));
     model.metKEGGID = repmat({''},size(model.mets));
     model.metKEGGID(ismember(metSourceNames,'kegg')) = metSourceIDs(ismember(metSourceNames,'kegg'));
-    model.metLIPIDMAPS = repmat({''},size(model.mets));
-    model.metLIPIDMAPS(ismember(metSourceNames,'lipidmaps')) = metSourceIDs(ismember(metSourceNames,'lipidmaps'));
+    model.metLIPIDMAPSID = repmat({''},size(model.mets));
+    model.metLIPIDMAPSID(ismember(metSourceNames,'lipidmaps')) = metSourceIDs(ismember(metSourceNames,'lipidmaps'));
     model.metMetaCycID = repmat({''},size(model.mets));
     model.metMetaCycID(ismember(metSourceNames,'metacyc')) = metSourceIDs(ismember(metSourceNames,'metacyc'));
     model.metREACTOMEID = repmat({''},size(model.mets));
