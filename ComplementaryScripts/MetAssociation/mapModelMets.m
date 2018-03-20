@@ -1,12 +1,13 @@
 function mappedModel = mapModelMets(model,mnx)
-%MAPMODELMETS  Retrieve and assign standard IDs to model metabolites.
+%mapModelMets  Retrieve and assign standard IDs to model metabolites.
 %
 %
 %
 %
 %
-% Jonathan Robinson, 2018-05-07
+% Jonathan Robinson, 2018-05-19
 
+% handle input arguments
 if nargin < 2
     mnx = [];
 end
@@ -56,8 +57,10 @@ if isfield(model,'id') && strcmp(model.id,'HMRdatabase')
 end
 
 % get list of metID fields
+ignoreFields = {'metFormulas','metMiriams','metComps','mets', ...
+                'metNamesAlt','metCharges','metSMILES','metPdMap'};
 metIDfields = fields(model);
-metIDfields(~startsWith(metIDfields,'met') | ismember(metIDfields,{'metFormulas','metMiriams','metComps','mets','metNamesAlt'})) = [];
+metIDfields(~startsWith(metIDfields,'met') | ismember(lower(metIDfields),lower(ignoreFields))) = [];
 
 % load metabolite information from MNX database file
 if isempty(mnx)
@@ -77,7 +80,11 @@ for i = 1:length(metIDfields)
     if strcmp(metIDfields{i},'metNames')  % the 'metNames' field is handled differently than others
         
         % combine names and alternative names into single cell array
-        metNames = lower([model.metNames,model.metNamesAlt]);
+        if isfield(model,'metNamesAlt')
+            metNames = lower([model.metNames,model.metNamesAlt]);
+        else
+            metNames = lower(model.metNames);
+        end
         
         % extract subset of MNXID-name pairs containing matching names (for faster processing)
         mnx.mnxID2name(:,2) = lower(mnx.mnxID2name(:,2));  % make names lowercase
@@ -139,11 +146,8 @@ met_index = transpose(1:length(model.mets));
 model.metMNXID = arrayfun(@(i) unique(metMNXIDs(i,~empty_inds(i,:))),met_index,'UniformOutput',false);
 model.metMNXID = flattenCell(model.metMNXID,true);
 
-
-
-
+% assign output
 mappedModel = model;
-
 
 end
 
