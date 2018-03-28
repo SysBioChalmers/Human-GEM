@@ -31,7 +31,7 @@ if isfield(model,'id') && strcmp(model.id,'HMRdatabase')
     model = addAltsToField(model,'metEHMNID',mdata.EHMNID);
     model = addAltsToField(model,'metKEGGID',mdata.KEGG_ID);
     model = addAltsToField(model,'metHMDBID',mdata.HMDB_ID);
-    model = addAltsToField(model,'metHepatoNETID',mdata.HepatoNETID);
+    model = addAltsToField(model,'metHepatoNET1ID',mdata.HepatoNETID);
     
     % merge "systematic name" and "synonyms" in new "metNamesAlt" field
     model = addAltsToField(model,'metNamesAlt',mdata.SYSTEMATIC_NAME);
