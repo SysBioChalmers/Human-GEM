@@ -43,20 +43,31 @@ end
 model = refModel;
 
 % strip compartments from mapModel met IDs to obtain compartment-free
-% met-to-metName pairs
+% met-to-name (or met-to-ID) pairs
 if strcmp(mapModel.mets{1}(end),']')
     % compartment information is formatted in brackets at end of ID
-    mets = regexprep(mapModel.mets,'\[.\]$','');
+    map_mets = regexprep(mapModel.mets,'\[.\]$','');
 elseif length(unique(mapModel.mets)) == length(mapModel.mets)
     % If the met IDs are not all unique, assume the compartment has already
     % been removed; otherwise, assume that the last character of the ID is
     % the compartment abbreviation, and remove it.
-    mets = regexprep(mapModel.mets,'.$','');
+    map_mets = regexprep(mapModel.mets,'.$','');
+end
+
+% do the same for refModel mets
+if strcmp(refModel.mets{1}(end),']')
+    % compartment information is formatted in brackets at end of ID
+    ref_mets = regexprep(refModel.mets,'\[.\]$','');
+elseif length(unique(refModel.mets)) == length(refModel.mets)
+    % If the met IDs are not all unique, assume the compartment has already
+    % been removed; otherwise, assume that the last character of the ID is
+    % the compartment abbreviation, and remove it.
+    ref_mets = regexprep(refModel.mets,'.$','');
 end
 
 % obtain unique list of compartment-free met IDs and met names
-[~,uniq_met_ind] = unique(mets);
-mets = mets(uniq_met_ind);
+[~,uniq_met_ind] = unique(map_mets);
+map_mets = map_mets(uniq_met_ind);
 if isfield(mapModel,'metNamesAlt')
     metNames = [mapModel.metNames(uniq_met_ind,:),mapModel.metNamesAlt(uniq_met_ind,:)];
 else
@@ -71,7 +82,7 @@ if size(metNames,2) > 1
     % if metNames contains multiple columns, flatten into a single column
     % of names, and repeat entries of mets to keep alignment
     non_empty = ~cellfun(@isempty,metNames);
-    repMets = arrayfun(@(i) repmat(mets(i),sum(non_empty(i,:),2),1),[1:length(mets)]','UniformOutput',false);
+    repMets = arrayfun(@(i) repmat(map_mets(i),sum(non_empty(i,:),2),1),[1:length(map_mets)]','UniformOutput',false);
     repMets = vertcat(repMets{:});
     metNames = metNames';
     metNames = metNames(non_empty');
@@ -79,7 +90,7 @@ elseif any(contains(mapModel.metNames,'; '))
     % if metNames is a single column, search for semicolons and split names
     % by semicolons, and repeat entries of mets to keep alignment
     metNames = cellfun(@(s) strsplit(s,'; ')',metNames,'UniformOutput',false);
-    repMets = arrayfun(@(i) repmat(mets(i),numel(metNames{i}),1),[1:length(mets)]','UniformOutput',false);
+    repMets = arrayfun(@(i) repmat(map_mets(i),numel(metNames{i}),1),[1:length(map_mets)]','UniformOutput',false);
     repMets = vertcat(repMets{:});
     metNames = vertcat(metNames{:});
 end
@@ -130,16 +141,28 @@ if ~isempty(altFields)
         fprintf('Mapping metabolites via %s... ',altFields{f});
         
         % extract IDs from model field
-        ref_ids = refModel.(altFields{f});
-        map_ids = mapModel.(altFields{f});
+        if strcmp(altFields{f},'mets')
+            % If comparing the "mets" field, use the compartment-free
+            % format that was generated earlier. Also ignore case.
+            ref_ids = lower(ref_mets);
+            map_ids = lower(map_mets);
+        else
+            ref_ids = refModel.(altFields{f});
+            map_ids = mapModel.(altFields{f});
+        end
         
         % if the field contains multiple columns, flatten into a single 
         % column, and repeat entries of mets to maintain alignment
         non_empty = ~cellfun(@isempty,map_ids);
-        repMets = arrayfun(@(i) repmat(mets(i),sum(non_empty(i,:),2),1),[1:length(mets)]','UniformOutput',false);
-        repMets = vertcat(repMets{:});
-        map_ids = map_ids';
-        map_ids = map_ids(non_empty');
+        if size(map_ids,2) > 1
+            repMets = arrayfun(@(i) repmat(map_mets(i),sum(non_empty(i,:),2),1),[1:length(map_mets)]','UniformOutput',false);
+            repMets = vertcat(repMets{:});
+            map_ids = map_ids';
+            map_ids = map_ids(non_empty');
+        else
+            map_ids = map_ids(non_empty);
+            repMets = map_mets(non_empty);
+        end
         
         % assemble mapping array
         met2id = [repMets,map_ids];
