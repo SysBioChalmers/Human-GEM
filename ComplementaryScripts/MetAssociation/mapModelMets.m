@@ -46,6 +46,13 @@ if isfield(model,'id') && strcmp(model.id,'HMRdatabase')
     metSynon = flattenCell(metSynon,true);  % flatten cell array
     model = addAltsToField(model,'metNamesAlt',metSynon);
     
+    % Some of the glycans have problems matching based on their names, so 
+    % add their formulas as an alternative metabolite name
+    glycan_formulas = repmat({''},size(model.mets));
+    glycan_ind = startsWith(model.metFormulas,{'(Gal)','(GalNAc)','(Glc)','(GlcNAc)'});
+    glycan_formulas(glycan_ind) = model.metFormulas(glycan_ind);
+    model = addAltsToField(model,'metNamesAlt',glycan_formulas);
+    
     % note that there are two ChEBI ID columns in the spreadsheet
     % remove preceing "CHEBI:" string from ChEBI IDs
     mdata.CHEBI_ID = regexprep(mdata.CHEBI_ID,'CHEBI:','');
