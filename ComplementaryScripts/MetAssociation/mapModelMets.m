@@ -1,11 +1,32 @@
 function mappedModel = mapModelMets(model,mnx)
 %mapModelMets  Retrieve and assign standard IDs to model metabolites.
 %
+% USAGE:
+%
+%   mappedModel = mapModelMets(model,mnx);
+%
+% INPUTS:
+%
+%   model   A genome scale model structure, containing metabolite related
+%           fields (e.g., mets, metNames, etc.).
+%
+%   mnx     An MNX metabolite database structure generated using the
+%           buildMNXmodel('met') function.
+%
+% OUTPUS:
+%
+%   mappedModel   The model returned with additional metabolite-related
+%                 fields, associating various metabolite IDs to MNX IDs, as
+%                 well as a metMNXID field which combines the MNX IDs
+%                 obtained by mapping metabolites along each of its
+%                 available ID fields.
+%                 *NOTE: Some of the met-related fields in mappedModel may
+%                        contain multiple columns, which contain the
+%                        multiple IDs that matched to one or more of the
+%                        metabolites.
 %
 %
-%
-%
-% Jonathan Robinson, 2018-05-19
+% Jonathan Robinson, 2018-03-29
 
 % handle input arguments
 if nargin < 2
