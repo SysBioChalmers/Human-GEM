@@ -1,9 +1,9 @@
-function model = mapMetsToAltModel(refModel,mapModel,metFields,prioritize)
+function model = mapMetsToAltModel(refModel,mapModel,metFields,mapMethod)
 %mapMetsToAltModel  Map metabolites from one model to another.
 %
 % USAGE:
 %
-%   model = mapMetsToAltModel(refModel,mapModel,metFields,allmatches);
+%   model = mapMetsToAltModel(refModel,mapModel,metFields,mapMethod);
 %
 %
 % INPUTS:
@@ -26,20 +26,32 @@ function model = mapMetsToAltModel(refModel,mapModel,metFields,prioritize)
 %                  differences (unique to situations where Recon3D and HMR
 %                  are the input models)
 %
-%   prioritize (Optional, default FALSE) If TRUE, then the function will
-%              prioritize fields based on the order in which they occur in
-%              metFields, and will not try to map metabolites via a field
-%              that occurs later on in the metFields list if they have
-%              already been mapped via a field earlier in the list.
-%              If FALSE, the function will try to map metabolites via all
-%              listed fields in metFields, regardless of the order in which
-%              they are processed, and will combine all matches in the
-%              resulting metAltModelID field.
-%              NOTE: This prioritization is enforced within the metName
-%                    mapping stages, where mets that have been mapped in
-%                    stage 1 are excluded from mapping in stage 2, and
-%                    those mapped in stage 1 or 2 are excluded from mapping
-%                    during stage 3.
+%   mapMethod  (Optional) Specify the method used to handle metabolites in
+%              refModel that map to multiple IDs in mapModel across 
+%              multiple metFields.
+%                 'all'  (Default) For each metabolite, met IDs will be
+%                        returned for all mets in mapModel that were mapped
+%                        along any of the specified metFields.
+%               'order'  The order in which metFields are listed will
+%                        determine their priority in mapping met IDs (where
+%                        first is most important/confident, and last is the
+%                        least). Once a met is mapped via one of the fields
+%                        listed in metFields, there will be no further
+%                        attempts to map that metabolite via all subsequent
+%                        fields in metFields.
+%               'score'  Each met will be mapped along all fields listed in
+%                        metFields. The mapped met ID(s) with the highest 
+%                        score for each metabolite will be kept, whereas
+%                        all other mapped IDs with lower scores will be
+%                        removed as potential matches. The score is
+%                        calculated based on the number of fields in
+%                        metFields by which the refModel met is mapped to
+%                        the mapModel met. If metFields includes a second
+%                        column of field weights, then the score will be
+%                        weighted by these values, where mets mapped along
+%                        fields with greater weights will receive higher
+%                        scores than those mapped along fields with lower
+%                        weights.
 %
 % OUTPUTS:
 %
@@ -53,15 +65,32 @@ function model = mapMetsToAltModel(refModel,mapModel,metFields,prioritize)
 
 % handle input arguments
 if nargin < 4
-    prioritize = false;
+    mapMethod = 'all';
 end
 
-if any(~isfield(refModel,metFields)) || any(~isfield(mapModel,metFields))
-    error('One or more of the specified altFields is not present in one or both models.');
-elseif ischar(metFields)
+if ischar(metFields)
+    % convert char to cell
     metFields = {metFields};
+    metFieldWeights = 1;  % weight is irrelevant if only one metField is provided
+elseif isvector(metFields)
+    % ensure that metFields is a column vector (probably unnecessary)
+    metFields = metFields(:);
+    metFieldWeights = ones(size(metFields));  % weight all metFields equally
 else
-    metFields = metFields(:);  % force into column vector
+    % if metFields contains a second column, it is treated as the vector of
+    % weights corresponding to the list of met fields, and is extracted
+    metFieldWeights = cell2mat(metFields(:,2));
+    metFields = metFields(:,1);
+end
+
+if strcmpi(mapMethod,'order')
+    % if mapMethod is "order", then weight fields based on their order of appearance in metFields
+    metFieldWeights = (length(metFields):-1:1)';
+end
+
+% verify that all metFields are present in both models
+if any(~isfield(refModel,metFields)) || any(~isfield(mapModel,metFields))
+    error('One or more of the specified metFields is not present in one or both models.');
 end
 
 % remove metNamesAlt if present in metFields - this field is automatically
@@ -109,28 +138,15 @@ for i = 1:length(metFields)
     mapModel.(metFields{i}) = mapModel.(metFields{i})(uniq_met_ind,:);
 end
 
-% if "metNames" is one of the metFields, convert it to three entries
-% for the three stages of metabolite name comparisons
-[~,ind] = ismember('metNames',metFields);
-if ind > 0
-    metFields = [metFields(1:ind-1);{'metNames (stage 1)';'metNames (stage 2)';'metNames (stage 3)'};metFields(ind+1:end)];
-end
+% initialize variables
+matchScores = [];
+name_stage = 1;
+f = 1;
 
 % map metabolites along each field in metFields
-metAltModelID = {};  % initialize
-for f = 1:length(metFields)
+while f <= length(metFields)
     
     fprintf('Mapping metabolites via %s... ',metFields{f});
-    ids = repmat({''},size(refModel.mets));  % initialize
-    
-    if  prioritize && ~isempty(metAltModelID)
-        % only map metabolites that have not yet been mapped
-        unmapped = all(cellfun(@isempty,metAltModelID),2);
-    else
-        % map all metabolites, regardless if they have already been mapped
-        % previously via some other field
-        unmapped = true(length(refModel.mets),1);
-    end
     
     % extract IDs from model field
     switch metFields{f}
@@ -138,7 +154,6 @@ for f = 1:length(metFields)
         case 'mets'
             
             % If comparing the "mets" field, remove the compartment
-            is_name = false;
             if strcmp(refModel.mets{1}(end),']')
                 ref_mets = regexprep(refModel.mets,'\[.\]$','');
             elseif length(unique(refModel.mets)) == length(refModel.mets)
@@ -146,57 +161,54 @@ for f = 1:length(metFields)
             end
             ref_ids = lower(ref_mets);
             map_ids = lower(map_mets);
+            is_name = false;
+            ids = repmat({''},size(refModel.mets));  % initialize matches
             
-        case 'metNames (stage 1)'
+        case 'metNames'
             
-            % METNAMES STAGE 1: Map mets via metNames field
-            is_name = true;
-            ref_ids = refModel.metNames;
-            map_ids = [mapModel.metNames,mapModel.metNamesAlt];
-            
-            % initialize variable to keep track of mapping via met names
-            unmapped_viaNames = true(size(unmapped));
-            
-        case 'metNames (stage 2)'
-            
-            % METNAMES STAGE 2: Map remaining mets via metNamesAlt field
-            is_name = true;
-            ref_ids = [refModel.metNames,refModel.metNamesAlt];
-            map_ids = [mapModel.metNames,mapModel.metNamesAlt];
-            
-            % do not try to map metabolites that have already been mapped
-            % during the first metNames mapping stage
-            unmapped = unmapped & unmapped_viaNames;
-            
-        case 'metNames (stage 3)'
-            
-            % METNAMES STAGE 3: Make manual changes to metNames, and map.
-            % These changes are specific to the mapping between HMR2 and 
-            % Recon3D, and are based on observations in naming differences.
-            is_name = true;
-            ref_ids = [refModel.metNames,refModel.metNamesAlt];
-            map_ids = [mapModel.metNames,mapModel.metNamesAlt];
-            
-            % make name adjustments to Recon3D model if present
-            if isfield(refModel,'modelID') && strcmpi(refModel.modelID,'Recon3D')
-                ref_ids = applyMetNameChanges(ref_ids);
-            elseif isfield(mapModel,'modelID') && strcmpi(mapModel.modelID,'Recon3D')
-                map_ids = applyMetNameChanges(map_ids);
-            else
-                % neither model is recognized as Recon3D
-                fprintf('No Recon3D recognized, skipped.\n');
-                continue
+            if name_stage == 1
+                
+                % METNAMES STAGE 1: Map mets via metNames field
+                fprintf('(stage 1) ');
+                is_name = true;
+                ref_ids = refModel.metNames;
+                map_ids = [mapModel.metNames,mapModel.metNamesAlt];
+                ids = repmat({''},size(refModel.mets));  % initialize matches
+                
+            elseif name_stage == 2
+                
+                % METNAMES STAGE 2: Map remaining mets via metNamesAlt field
+                fprintf('(stage 2) ');
+                is_name = true;
+                ref_ids = [refModel.metNames,refModel.metNamesAlt];
+                map_ids = [mapModel.metNames,mapModel.metNamesAlt];
+                
+            elseif name_stage == 3
+                
+                % METNAMES STAGE 3: Make manual changes to metNames, and map.
+                % These changes are specific to the mapping between HMR2 and
+                % Recon3D, and are based on observations in naming differences.
+                fprintf('(stage 3) ');
+                is_name = true;
+                ref_ids = [refModel.metNames,refModel.metNamesAlt];
+                map_ids = [mapModel.metNames,mapModel.metNamesAlt];
+                
+                % make name adjustments to Recon3D model if present
+                if isfield(refModel,'modelID') && strcmpi(refModel.modelID,'Recon3D')
+                    ref_ids = applyMetNameChanges(ref_ids);
+                elseif isfield(mapModel,'modelID') && strcmpi(mapModel.modelID,'Recon3D')
+                    map_ids = applyMetNameChanges(map_ids);
+                end
+                
             end
-            
-            % do not try to map metabolites that have already been mapped
-            % during the first or second metNames mapping stages
-            unmapped = unmapped & unmapped_viaNames;
             
         otherwise
             
-            is_name = false;
+            % comparing by field other than "mets" or "metNames"
+            is_name = false;  % not a met name
             ref_ids = refModel.(metFields{f});
             map_ids = mapModel.(metFields{f});
+            ids = repmat({''},size(refModel.mets));  % initialize matches
             
     end
     
@@ -204,7 +216,7 @@ for f = 1:length(metFields)
     % column, and repeat entries of mapModel mets to maintain alignment
     non_empty = ~cellfun(@isempty,map_ids);
     if size(map_ids,2) > 1
-        repMets = arrayfun(@(i) repmat(map_mets(i),sum(non_empty(i,:),2),1),[1:length(map_mets)]','UniformOutput',false);
+        repMets = arrayfun(@(i) repmat(map_mets(i),sum(non_empty(i,:),2),1),(1:length(map_mets))','UniformOutput',false);
         repMets = vertcat(repMets{:});
         map_ids = map_ids';
         map_ids = map_ids(non_empty');
@@ -217,27 +229,46 @@ for f = 1:length(metFields)
     met2id = [repMets,map_ids];
     
     % map metabolites
-    ids(unmapped) = matchIDs(ref_ids(unmapped,:),met2id,is_name);
+    ignore_mets = ~cellfun(@isempty,ids);  % for the name-matching process, ignore mets that have been mapped in previous name-matching stages
+    ids(~ignore_mets) = matchIDs(ref_ids(~ignore_mets,:),met2id,is_name);
+    fprintf('Done.\n');
     
-    % to keep track of name matching process
-    if startsWith(metFields{f},'metNames (stage')
-        unmapped_viaNames(~cellfun(@isempty,ids)) = false;
+    if strcmpi(metFields{f},'metNames') && name_stage < 3
+        % if processing metNames, move to next stage
+        name_stage = name_stage + 1;
+    else
+        
+        % get indices of mapped mets in each of the respective models
+        ref_met_inds = arrayfun(@(i) repmat(i,numel(ids{i}),1),(1:length(ids))','UniformOutput',false);
+        ref_met_inds = vertcat(ref_met_inds{:});
+        [~,map_met_inds] = ismember(vertcat(ids{:}),map_mets);
+        
+        % append matches to match score matrix
+        matchScores(:,:,f) = accumarray(unique([ref_met_inds,map_met_inds],'rows'),metFieldWeights(f),[length(refModel.mets),length(map_mets)]);
+        f = f + 1;  % proceed to next metField
+        
     end
     
-    % flatten and append newly mapped IDs
-    ids = flattenCell(ids,true);
-    metAltModelID = [metAltModelID,ids];
-    
-    fprintf('Done.\n');
 end
 
-% remove duplicate mapped IDs
-empty_inds = cellfun(@isempty,metAltModelID);
-metAltModelID = arrayfun(@(i) unique(metAltModelID(i,~empty_inds(i,:))),[1:length(refModel.mets)]','UniformOutput',false);
-metAltModelID = flattenCell(metAltModelID,true);
 
-% add mapped IDs to model structure
-model.metAltModelID = metAltModelID;
+if strcmpi(mapMethod,'order')
+    % only use the match from the top-scoring (earliest-listed) metField
+    matchScores(matchScores < max(matchScores,[],3)) = 0;
+end
+
+% determine the total score for each match by adding scores among all fields
+matchScores = sum(matchScores,3);
+
+if ~strcmpi(mapMethod,'all')
+    % For each metabolite, only keep the mapped IDs with the highest score. 
+    % If there is a tie, keep all IDs that are tied.
+    matchScores(matchScores < max(matchScores,[],2)) = 0;
+end
+
+% retrieve mapModel met IDs and add to output model structure
+metAltModelID = arrayfun(@(i) map_mets(matchScores(i,:) > 0),(1:length(refModel.mets))','UniformOutput',false);
+model.metAltModelID = flattenCell(metAltModelID,true);
 
 end
 
