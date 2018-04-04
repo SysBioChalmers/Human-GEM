@@ -26,62 +26,11 @@ function mappedModel = mapModelMets(model,mnx)
 %                        metabolites.
 %
 %
-% Jonathan Robinson, 2018-03-29
+% Jonathan Robinson, 2018-04-04
 
 % handle input arguments
 if nargin < 2
     mnx = [];
-end
-
-
-% HMR2-specific section: import data from original model excel sheet
-if isfield(model,'id') && strcmp(model.id,'HMRdatabase')
-    
-    warning('off','MATLAB:table:ModifiedAndSavedVarnames');  % disable warning
-    mdata = readtable('HMRdatabase2_00.xlsx','Sheet','METS');
-    warning('on','MATLAB:table:ModifiedAndSavedVarnames');  % re-enable warning
-    
-    % remove table rows with "#" in first column
-    mdata(ismember(mdata.x_,'#'),:) = [];
-    
-    
-    % add new met fields to model, or merge ID data with existing fields
-%     model = addAltsToField(model,'metFormulas',mdata.COMPOSITION);
-    model = addAltsToField(model,'metLIPIDMAPSID',mdata.LM_ID);
-    model = addAltsToField(model,'metBiGGID',mdata.BIGGID);
-    model = addAltsToField(model,'metEHMNID',mdata.EHMNID);
-    model = addAltsToField(model,'metKEGGID',mdata.KEGG_ID);
-    model = addAltsToField(model,'metHMDBID',mdata.HMDB_ID);
-    model = addAltsToField(model,'metHepatoNET1ID',mdata.HepatoNETID);
-    
-    % merge "systematic name" and "synonyms" in new "metNamesAlt" field
-    model = addAltsToField(model,'metNamesAlt',mdata.SYSTEMATIC_NAME);
-    if ismember('Sedoheptulose 1-phosphate;',model.metNamesAlt)
-        % there is one metabolite in this field with a trailing semi-colon
-        model.metNamesAlt(ismember(model.metNamesAlt,'Sedoheptulose 1-phosphate;')) = {'Sedoheptulose 1-phosphate'};
-    end
-    % The synonyms field contains multiple entries for some mets, separated by
-    % a semicolon. These need to be split into separate columns before
-    % appending to the metNamesAlt field.
-    metSynon = cellfun(@(x) strsplit(x,'; '),mdata.SYNONYMS,'UniformOutput',false);
-    metSynon = flattenCell(metSynon,true);  % flatten cell array
-    model = addAltsToField(model,'metNamesAlt',metSynon);
-    
-    % Some of the glycans have problems matching based on their names, so 
-    % add their formulas as an alternative metabolite name
-    glycan_formulas = repmat({''},size(model.mets));
-    glycan_ind = startsWith(model.metFormulas,{'(Gal)','(GalNAc)','(Glc)','(GlcNAc)'});
-    glycan_formulas(glycan_ind) = model.metFormulas(glycan_ind);
-    model = addAltsToField(model,'metNamesAlt',glycan_formulas);
-    
-    % note that there are two ChEBI ID columns in the spreadsheet
-    % remove preceing "CHEBI:" string from ChEBI IDs
-    mdata.CHEBI_ID = regexprep(mdata.CHEBI_ID,'CHEBI:','');
-    mdata.CHEBI_ID_1 = regexprep(mdata.CHEBI_ID_1,'CHEBI:','');
-    % add to model
-    model = addAltsToField(model,'metChEBIID',mdata.CHEBI_ID);
-    model = addAltsToField(model,'metChEBIID',mdata.CHEBI_ID_1);
-    
 end
 
 % get list of metID fields
