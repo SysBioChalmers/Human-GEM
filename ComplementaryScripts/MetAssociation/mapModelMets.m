@@ -155,46 +155,6 @@ end
 
 
 
-function newModel = addAltsToField(model,field,newEntries)
-% Compares and appends a new set of field values to an existing model
-% field. If an existing field entry is empty, it will be overwritten by the
-% new entry. If the existing field entry and new entry conflict, both will
-% be saved by adding new columns to the model field.
-
-    if ~isfield(model,field)
-        % if the field doesn't yet exist in the model, just add the new entries
-        model.(field) = newEntries;
-        newModel = model;
-        return
-    elseif isequal(model.(field),newEntries)
-        % no changes needed if new entries are identical to existing entries
-        newModel = model;
-        return
-    end
-
-    if (size(model.(field),2) == 1) && (size(newEntries,2) == 1)
-        % if existing and new entries are both column vectors, simply add the
-        % new (mismatching) entries as a second column
-        mismatch_ind = ~strcmp(model.(field),newEntries);
-        newEntries(~mismatch_ind) = {''};
-        model.(field) = [model.(field),newEntries];
-    else
-        for i = 1:size(newEntries,1)
-            vals = [model.(field)(i,:),newEntries(i,:)];  % combine rows
-            vals(cellfun(@isempty,vals)) = [];  % remove empty entries
-            vals = unique(vals);  % get all unique entries for row
-            model.(field)(i,1:length(vals)) = vals;  % update row in model
-        end
-    end
-    
-    % replace empty matrices with empty strings
-    model.(field)(cellfun(@isempty,model.(field))) = {''};
-        
-    newModel = model;  % assign output
-
-end
-
-
 
 
 
