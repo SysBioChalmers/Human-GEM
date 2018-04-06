@@ -1,6 +1,8 @@
-# Cofactors of HMR proteins were retrieved from Swissprot database on 2018-04-03.
-# So swissprot.csv file was generated using the data retrieved from Swissprot database and it contains human proteins' Uniprot IDs and their cofactors
-# Therefore as a first step, a dictionary was generated using  uniprot_ids and cofactors taken from swissprot.csv file.
+# Cofactors of HMR proteins were retrieved from Swissprot database on 2018-04-03 in the form of excell file.
+# The excell file was converted to a csv file, which is swissprot.csv file.
+# Columns 1 and 7 of Swissprot.csv file have Uniprot IDs and cofactors for HMR proteins, respectively.
+# Therefore, columns 1 and 7 of Swissprot.csv file were respectively used as keys and values in the process of generating dictionary d .
+#array[0] is column 1 of Swissprot.csv file; array[1] is column 7 of Swissprot.csv file.
 
 d = {}
 f=open(r"C:\Users\kocabas\Desktop\swissprot.csv", "r")
@@ -15,6 +17,7 @@ for line in f:
 
 
 # Uniprot ids of each HMR reaction were exchanged with cofactors using the dictionary.
+# gpruniprotids.csv file is mathematically a matrix; a list of uniprot ids for each HMR reaction
 # STEP 2: Change gpr_uniprotids with cofactors and generate gpr_cofactors
 
 with open(r"C:\Users\kocabas\Desktop\gpruniprotids.csv", "r") as ins:
