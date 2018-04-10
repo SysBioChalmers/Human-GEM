@@ -103,6 +103,7 @@ end
 % Get the reaction equations
 equationStrings=constructEquations(ihuman,ihuman.rxns,1,1,1);
 ihuman.constructedEquations=equationStrings;
+ihuman.constructedEquations=regexprep(equationStrings,'\[\w\]','');  % Clear up the compartment id
 
 % Fetch the corresponding MNX equations
 load('MNXRxns.mat');  % Load MNX reactions
@@ -132,3 +133,31 @@ end
 fclose(fid);
 % count=2144
 
+
+% Treat the cases of unique rxn associate to multiple MNX rxns
+fid=fopen('verifyUnique2MultipleMNXAssociation.txt','w');
+count=0;
+for i=1:3906
+		if isempty(mergedModel.duplicateRxns{i}) % Unique rxns
+				index=find(strcmp(mergedModel.rxns{i},ihuman.rxns));  % Find index in HMR
+				if ihuman.conflictMNXAssoc(index)  % With multiple assoc (196)
+						count=count+1;
+						fprintf(fid,'#%s.\n----------------------------------------\n%s(%s):\t%s\n'....
+						,num2str(count),mergedModel.rxns{i},num2str(index),....
+						ihuman.constructedEquations{index});
+						
+						MNXAssoc=strsplit(ihuman.rxnMNXID{index},';');
+						for j=1:numel(MNXAssoc)
+								MNXID=strsplit(MNXAssoc{j},':');
+								I=find(strcmp(MNXID{2},MNXRxns.MNX_ID));
+								fprintf(fid,'%s:\t%s\n',MNXAssoc{j},MNXRxns.Description{I});
+						end
+						fprintf(fid,'----------------------------------------\n\n');								
+											
+				%elseif isempty(ihuman.rxnMNXID{index})  % No assoc (748)
+						
+				end
+		end
+end
+fclose(fid);
+% count=196
