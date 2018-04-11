@@ -8,7 +8,7 @@ function model = buildMNXmodel(model_type)
 %   model_type      (OPTIONAL) Specify the type of model that will be
 %                   built, which determines what information is included:
 %
-%                   'all'   (DEFAULT) All metabolite, reaction, and 
+%                   'model' (DEFAULT) All metabolite, reaction, and 
 %                           compartment information is included in model
 %                           construction. However, note that some mets and
 %                           rxns will be excluded due to issues with lack
@@ -19,21 +19,27 @@ function model = buildMNXmodel(model_type)
 %                   'met'   Include only metabolite-related fields. This
 %                           will include ALL metabolites in the MNX
 %                           database, and will therefore contain more met
-%                           information than if both rxn and met data is
-%                           used to generate a model. If this type is
-%                           chosen, the resulting model will contain the
-%                           following fields: metNames, metFormulas,
-%                           metMNXID,
+%                           information than if the 'model' option is
+%                           specified.
 %
 %                   'rxn'   Included only reaction-related fields. No
 %                           stoichiometry matrix will be constructed, but
 %                           the model will include ALL reactions from the
-%                           MNX database. The resulting model will contain
-%                           the following fields: 
-% 
+%                           MNX database.
+%
+%                  'both'   Include fields related to either reactions or
+%                           metabolites, but do not associate them with
+%                           each other (i.e., no stoichimetry matrix). This
+%                           will contain all the fields that would be
+%                           obtained by running both the 'met' and 'rxn'
+%                           options. More information will be present in
+%                           this format than if the 'model' option is
+%                           specified, because reactions and/or metabolites
+%                           will not be removed to construct a functioning
+%                           stoichiometry matrix.
 %
 %
-% Jonathan L. Robinson, 2018-03-14
+% Jonathan L. Robinson, 2018-04-11
 
 
 % Specify directory containing MNX database files.
@@ -48,7 +54,7 @@ end
 
 % handle inputs
 if nargin < 1
-    model_type = 'all';
+    model_type = 'model';
 end
 
 
@@ -81,17 +87,21 @@ model.metCharges=[];
 
 
 % remove unnecessary fields for met-only or rxn-only structures
-if strcmpi(model_type,'met')
-    fprintf('*** Building structure for MNX METABOLITES ***\n\n')
+if strcmpi(model_type,'model')
+    fprintf('*** Building MODEL structure from MNX Database (reactions AND metabolites, with stoichiometry matrix) ***\n\n')
+    model.description = 'MetaNetX Database Model';
+elseif strcmpi(model_type,'met')
+    fprintf('*** Building information structure for MNX METABOLITES ***\n\n')
     model.description = 'MetaNetX Metabolite Data';
     model = rmfield(model,{'rxns','S','lb','ub','rev','c','b','comps','compNames','rxnNames','grRules','rxnGeneMat','eccodes','genes','metComps'});
 elseif strcmpi(model_type,'rxn')
-    fprintf('*** Building structure for MNX REACTIONS ***\n\n')
+    fprintf('*** Building information structure for MNX REACTIONS ***\n\n')
     model.description = 'MetaNetX Reaction Data';
     model = rmfield(model,{'mets','S','lb','ub','rev','c','b','comps','compNames','rxnNames','grRules','rxnGeneMat','genes','metNames','metComps','inchis','metFormulas','metCharges'});
-elseif strcmpi(model_type,'all')
-    fprintf('*** Building model structure from MNX Database (reactions AND metabolites) ***\n\n')
-    model.description = 'MetaNetX Database Model';
+elseif strcmpi(model_type,'both')
+    fprintf('*** Building information structure for MNX REACTIONS AND METABOLITES ***\n\n')
+    model.description = 'MetaNetX Reaction and Metabolite Data';
+    model = rmfield(model,{'S','lb','ub','rev','c','b','comps','compNames','grRules','rxnGeneMat','genes','metComps'});
 else
     error('Invalid MODEL_TYPE argument.');
 end
@@ -99,7 +109,7 @@ end
 
 %% Load compartment properties
 
-if strcmpi(model_type,'all')
+if strcmpi(model_type,'model')
     fprintf('Loading model compartment data... ');
     mnx = readtable([MNXdir,'comp_prop.txt'],'Delimiter','\t');
     
@@ -112,13 +122,13 @@ end
 
 %% Load reaction properties
 
-if ismember(model_type,{'all','rxn'})
+if ismember(model_type,{'model','rxn','both'})
     
     fprintf('Loading reaction data... ');
     mnx = readtable([MNXdir,'reac_prop.txt'],'Delimiter','\t');
     fprintf('Done.\n');
     
-    if strcmp(model_type,'all')
+    if strcmp(model_type,'model')
         
         % remove reactions with ambiguous stoich coeff; e.g., (n), (N), (n-1), (2n), etc.
         fprintf('Processing reaction data... ');
@@ -149,6 +159,12 @@ if ismember(model_type,{'all','rxn'})
         reactants(del_rxns) = [];
         products(del_rxns) = [];
         
+    else
+        
+        % add a field that contains a list of mets that participate in each reaction
+        rxnMets = cellfun(@(r) regexp(r,'(\w+)@\w+','tokens'),mnx.Equation,'UniformOutput',false);
+        model.rxnMets = cellfun(@(r) unique([r{:}]),rxnMets,'UniformOutput',false);
+        
     end
     
     % extract reaction MNX IDs and other information
@@ -159,7 +175,7 @@ if ismember(model_type,{'all','rxn'})
     model.rxnEqnMNX = mnx.Equation;
     model.rxnEqnNames = mnx.Description;
     
-    if strcmp(model_type,'all')
+    if strcmp(model_type,'model')
         
         % associate every reaction with each of its constituent metabolites
         reactant_mets = cellfun(@(r) regexp(r,'\w+@\w+','match'),reactants,'UniformOutput',false);
@@ -224,7 +240,7 @@ end
 
 %% Load metabolite properties
 
-if ismember(model_type,{'all','met'})
+if ismember(model_type,{'model','met','both'})
     
     fprintf('Loading metabolite data... ');
     mnx = readtable([MNXdir,'chem_prop.txt'],'Delimiter','\t');  % ~45 sec load time
@@ -232,7 +248,7 @@ if ismember(model_type,{'all','met'})
     fprintf('Done.\n');
     
     fprintf('Processing metabolite data... ');
-    if strcmp(model_type,'all') 
+    if strcmp(model_type,'model') 
         % retrieve row indices corresponding to model met list
         [~,met_ind] = ismember(model.metMNXID,mnx.MNX_ID);
         mnx = mnx(met_ind,:);
@@ -361,7 +377,7 @@ end
 
 %% Final model adjustments
 
-if strcmp(model_type,'all')
+if strcmp(model_type,'model')
     model.c = zeros(size(model.rxns));
     model.b = zeros(size(model.mets));
     model.lb = -1000*ones(size(model.rxns));
@@ -373,10 +389,10 @@ if strcmp(model_type,'all')
     model.rxnGeneMat = zeros(size(model.rxns));
 end
 
-if ismember(model_type,{'all','met'})
+if ismember(model_type,{'model','met','both'})
     % remove NAs from metFormulas
     model.metFormulas(ismember(model.metFormulas,'NA')) = {''};
-    if strcmp(model_type,'all')
+    if strcmp(model_type,'model')
         % change format of mets from "met@comp" to "met[comp]"
         model.mets = strcat(regexprep(model.mets,'@','['),']');
     end
