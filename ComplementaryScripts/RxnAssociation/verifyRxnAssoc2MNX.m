@@ -103,7 +103,7 @@ end
 % Get the reaction equations
 equationStrings=constructEquations(ihuman,ihuman.rxns,1,1,1);
 ihuman.constructedEquations=equationStrings;
-ihuman.constructedEquations=regexprep(equationStrings,'\[\w\]','');  % Clear up the compartment id
+%ihuman.constructedEquations=regexprep(equationStrings,'\[\w\]','');  % Clear up the compartment id
 
 % Fetch the corresponding MNX equations
 load('MNXRxns.mat');  % Load MNX reactions
@@ -161,3 +161,78 @@ for i=1:3906
 end
 fclose(fid);
 % count=196
+
+% Treat the cases of duplicate rxns associate to MNX consistently
+consistentAssoc=0;
+complexAssoc=0;
+noAssoc=0;
+fid=fopen('verifyMultiple2ConsistentMNXAssociation.txt','w');
+for i=1:3906
+		if ~isempty(mergedModel.duplicateRxns{i}) % Non-unique reactions (818)
+				%Get all relevant duplications and loop through them
+				rxns=[mergedModel.rxns{i};transpose(strsplit(mergedModel.duplicateRxns{i},';'))];
+				withAssoc='';  % See if any rxn has MNX association
+				out='';  %checkString='';
+				complex=0;  % Check point for complex situations with non-consistent associations
+				for j=1:numel(rxns)
+						index=find(strcmp(rxns{j},ihuman.rxns));  % Find index in HMR
+						% Generate indiction string
+						if isempty(checkString)
+								% checkString=strcat(rxns{j},'(',ihuman.rxnMNXID{index},')');
+								out=sprintf('%s(%s):\t%s',ihuman.rxns{index},num2str(index),ihuman.constructedEquations{index});
+						else
+								% checkString=strcat(checkString,';',rxns{j},'(',ihuman.rxnMNXID{index},')');
+								out=sprintf('%s\n%s(%s):\t%s',out,ihuman.rxns{index},num2str(index),ihuman.constructedEquations{index});
+						end
+						
+						if isempty(ihuman.rxnMNXID{index})
+								% Do nothing
+						else
+								if isempty(withAssoc)
+										withAssoc=ihuman.rxnMNXID{index};
+										indexes=index;
+								else
+										if isequal(withAssoc,ihuman.rxnMNXID{index})
+												% Do nothing
+										else
+												complex=1;
+												indexes=[indexes;index];  % This can be used for resolving complex cases
+										end
+								end
+						end
+
+				end
+
+				if isempty(withAssoc)
+						noAssoc=noAssoc+1;
+						%disp(checkString);
+				else
+						if complex  % These cases are too complicated to reslove
+								complexAssoc=complexAssoc+1;
+								%disp(checkString);
+						else
+								consistentAssoc=consistentAssoc+1;
+								
+								% Output duplicated HMR rxns with consistent MNX association
+								fprintf(fid,'#%s.\n----------------------------------------%s\n',....
+								num2str(consistentAssoc),out);
+								if ihuman.conflictMNXAssoc(indexes(1))  % With multiple MNX assocition
+										MNXAssoc=strsplit(ihuman.rxnMNXID{indexes(1)},';');
+										for k=1:numel(MNXAssoc)
+												MNXID=strsplit(MNXAssoc{k},':');
+												hit=find(strcmp(MNXID{2},MNXRxns.MNX_ID));
+												fprintf(fid,'%s:\t%s\n',MNXAssoc{k},MNXRxns.Description{hit});
+										end
+								else  % With unique MNX assocition
+										I=find(strcmp(ihuman.rxnMNXID{indexes(1)},MNXRxns.MNX_ID));
+										fprintf(fid,'%s:\t%s\n',ihuman.rxnMNXID{indexes(1)},MNXRxns.Description{I});		
+								end
+								fprintf(fid,'----------------------------------------\n\n');
+						end
+				end
+		end
+end
+fclose(fid);
+%consistentAssoc=464;
+%complexAssoc=140;
+%noAssoc=214;
