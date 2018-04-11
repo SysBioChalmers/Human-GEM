@@ -193,4 +193,8 @@ numel(find(~cellfun(@isempty,ihuman.rxnMNXID)))
 numel(find(ihuman.conflictMNXAssoc))
 % ans = 293 with conflicting MNX associations
 
-save('ihuman2MNX.mat','ihuman');  %2018-02-20
+save('ihuman2MNX.mat','ihuman');      %2018-02-20
+
+% Rename mat file
+load('ihuman2MNX.mat');
+save('ihumanRxns2MNX.mat','ihuman');  %2018-04-11
