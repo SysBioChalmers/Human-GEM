@@ -128,24 +128,33 @@ rxnMNXID = repmat({''},size(model.rxns));
 fprintf('Done.\n');
 
 
-%% STAGE 1: Find exact matches
+%% STAGE 1: Find exact matches to MNX reactions that are balanced
 
-fprintf('Searching for exact matches... ');
+fprintf('Searching for exact, balanced rxn matches... ');
+
+% subset MNX structure to include only the balanced reactions
+mnx_bal = mnx;
+unbal = ~ismember(mnx_bal.rxnBalanced,'true');
+mnx_bal.rxns(unbal) = [];
+mnx_bal.rxnMets(unbal) = [];
 
 % map reactions
-rxnMNXID(mapRxns) = findMNXrxns(model,mnx,mapRxns);
+rxnMNXID(mapRxns) = findMNXrxns(model,mnx_bal,mapRxns);
 
 % find newly mapped rxns
 newMapped = mapRxns & ~cellfun(@isempty,rxnMNXID);
 results.notes(newMapped) = {'MATCH: exact'};
 mapRxns(newMapped) = false;  % update to ignore rxns that are now mapped
 
+% clear MNX structure to free up some memory
+clear mnx_bal
+
 fprintf('Done.\n');
 
 
 %% STAGE 2: Ignore protons (H+) and water (H2O) in reaction equations
 
-fprintf('Searching for matches, ignoring protons (H+) and water (H2O)... ');
+fprintf('Searching for matches, ignoring balance status, protons (H+), and water (H2O)... ');
 
 % remove H+ and H2O from all model reaction equations
 rem_ind = ismember(model.metFormulas,{'H2O','H'});
