@@ -45,7 +45,7 @@ function results = mapRxnsViaMets(model,mnx,mapRxns)
 %                 each model reaction was mapped to any MXN ID(s).
 %
 %
-% Jonathan Robinson, 2018-04-11
+% Jonathan Robinson, 2018-04-12
 
 
 
@@ -58,6 +58,7 @@ end
 
 % initialize results structure
 results.rxnMNXID = {};
+results.rxnMNXeqn = {};
 results.notes = repmat({''},size(model.rxns));
 results.notes(~mapRxns) = {'IGNORED'};
 
@@ -66,7 +67,8 @@ results.notes(~mapRxns) = {'IGNORED'};
 
 fprintf('Pre-processing model and MNX structures... ');
 
-% if metMNXID field contains multiple columns, convert to single column of nested cells
+% if the model.metMNXID field contains multiple columns, convert it to a 
+% single column of nested cells
 if size(model.metMNXID,2) > 1
     model.metMNXID = nestCell(model.metMNXID,true);
 elseif all(cellfun(@ischar,model.metMNXID)) && any(contains(model.metMNXID,';'))
@@ -75,31 +77,32 @@ elseif all(cellfun(@ischar,model.metMNXID)) && any(contains(model.metMNXID,';'))
     model.metMNXID(empty_inds) = {''};  % to deal with cells that should be empty, but are recognized as non-empty
 end
 
-% generate binary version of S-matrix indicating which mets are involved in each rxn
+% generate binary (logical) version of S-matrix indicating which mets are
+% involved in each rxn
 S = (full(model.S) ~= 0);
 
-% do not map model reactions that contain a metabolite without an MNXID
+% do not try to map model rxns that contain a metabolite without an MNXID
 met_noID = cellfun(@isempty,model.metMNXID);
 rxn_noID = any(S(met_noID,:),1)';
 results.notes(mapRxns & rxn_noID) = {'SKIPPED: one or more mets lacking MNXID'};
 mapRxns(rxn_noID) = false;
 
-%Create an additional field in model that lists all possible metMNXIDs
-%associated with each reaction.
+% Create an additional field in model that lists all possible metMNXIDs
+% associated with each reaction.
 for i = 1:length(model.rxns)
     model.rxnMetsMNX{i,1} = unique(horzcat(model.metMNXID{S(:,i)}));
 end
 
 
-%For faster processing later on, remove all rxns in mnx structure that
-%contain at least one metabolite that is not present in the model.
+% For faster processing later on, remove all rxns in the MNX structure that
+% contain at least one metabolite that is not present in the model.
 
 % get list of all metMNXIDs in the model (for reactions to be mapped)
 met_inds = any(S(:,mapRxns),2);
 allMetMNXIDs = unique(horzcat(model.metMNXID{met_inds}))';
 allMetMNXIDs(cellfun(@isempty,allMetMNXIDs)) = [];
 
-% flatten mnx.rxnMets
+% flatten mnx.rxnMets (single column -> multi column cell array)
 mnx.rxnMets = flattenCell(mnx.rxnMets,true);
 
 % find MNX rxns with mets that aren't present in model
@@ -125,7 +128,7 @@ rxnMNXID = repmat({''},size(model.rxns));
 fprintf('Done.\n');
 
 
-%% STAGE 1: FIND EXACT MATCHES
+%% STAGE 1: Find exact matches
 
 fprintf('Searching for exact matches... ');
 
@@ -140,17 +143,16 @@ mapRxns(newMapped) = false;  % update to ignore rxns that are now mapped
 fprintf('Done.\n');
 
 
-%% STAGE 2: IGNORE H+, -OH, AND H2O FROM REACTION EQUATIONS
+%% STAGE 2: Ignore protons (H+) and water (H2O) in reaction equations
 
-fprintf('Searching for matches, ignoring H+, -OH, and H2O... ');
+fprintf('Searching for matches, ignoring protons (H+) and water (H2O)... ');
 
-% remove all H+, -OH, and H2O from model reaction equations
-rem_ind = ismember(model.metFormulas,{'HO','H2O','H'});
-rem_ind(contains(model.metNames,'radical','IgnoreCase',true)) = false;  % exclude hydroxyl radical
+% remove H+ and H2O from all model reaction equations
+rem_ind = ismember(model.metFormulas,{'H2O','H'});
 model.S(rem_ind,:) = 0;
 
 % also remove from MNX reaction equations
-rem_ind = ismember(mnx.metFormulas,{'HO','H2O','H'});
+rem_ind = ismember(mnx.metFormulas,{'H2O','H'});
 rem_ind(contains(mnx.metNames,{'(.)','deuterium','tritium','hydride'},'IgnoreCase',true)) = false;  % exclude other variants
 rem_IDs = mnx.mets(rem_ind);
 mnx.rxnMets = flattenCell(mnx.rxnMets,true);  % flatten cell
@@ -162,7 +164,7 @@ rxnMNXID(mapRxns) = findMNXrxns(model,mnx,mapRxns);
 
 % find newly mapped rxns
 newMapped = mapRxns & ~cellfun(@isempty,rxnMNXID);
-results.notes(newMapped) = {'MATCH: ignored H, OH, H2O'};
+results.notes(newMapped) = {'MATCH: ignored H+ and H2O'};
 
 fprintf('Done.\n');
 
@@ -181,12 +183,11 @@ for i = 1:length(rxnMNXID)
     end
 end
 
-% add fields to results structure
+% add data to results structure
 results.rxnMNXID = rxnMNXID;
 results.rxnMNXeqn = rxnMNXeqn;
 
 fprintf('Done.\n');
-
 
 end
 
@@ -196,9 +197,9 @@ end
 %% Additional functions
 
 function rxnIDs = findMNXrxns(model,mnx,mapRxns)
+%Finds MNX rxns with same set of mets as model rxns.
 
-
-% convert stoich matrix to logicals, where all non-zero entries are TRUE
+% convert stoich matrix to logicals, where all non-zero coeffs are TRUE
 S = (full(model.S) ~= 0);
 
 % exclude reactions that are not to be mapped
@@ -245,16 +246,7 @@ for i = 1:length(model.rxns)
     rxnIDs{i} = mnx.rxns(match);
     
 end
-
 close(h);
 
-
-
-
-
 end
-
-
-
-
 
