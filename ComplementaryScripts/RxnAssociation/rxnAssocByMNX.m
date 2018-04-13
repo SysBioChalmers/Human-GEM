@@ -138,10 +138,10 @@ ihuman.rxnMNXID(:,1)={''};
 ihuman.conflictMNXAssoc=zeros(num,1);
 
 % Define output format
-outThree='%d, %s: (Reactome)%s-(KEGG)%s-(BiGG)%s\n';
-outNoKegg='%d, %s: (Reactome)%s-(BiGG)%s\n';
-outNoBigg='%d, %s: (Reactome)%s-(KEGG)%s\n';
-outNoReactome='%d, %s: (KEGG)%s-(BiGG)%s\n';
+outThree='%d, %s: Reactome:%s;KEGG:%s;BiGG:%s\n';
+outNoKegg='%d, %s: Reactome:%s;BiGG:%s\n';
+outNoBigg='%d, %s: Reactome:%s;KEGG:%s\n';
+outNoReactome='%d, %s: KEGG:%s;BiGG:%s\n';
 % Loop through all reactions
 for i=1:num
 	% check out if they are all non-empty
@@ -150,6 +150,7 @@ for i=1:num
 			ihuman.rxnMNXID{i}=ihuman.Reactome2MNX{i};
 		else
 			ihuman.conflictMNXAssoc(i,1)=1;
+			ihuman.rxnMNXID{i}=strcat('Reactome:',ihuman.Reactome2MNX{i},';KEGG:',ihuman.KEGG2MNX{i},';BiGG:',ihuman.HMR2BiGG2MNX{i});
 			fprintf(outThree,i,ihuman.rxns{i},ihuman.Reactome2MNX{i},ihuman.KEGG2MNX{i},ihuman.HMR2BiGG2MNX{i});
 		end
 	elseif ~isempty(ihuman.Reactome2MNX{i}) && ~isempty(ihuman.HMR2BiGG2MNX{i}) && isempty(ihuman.KEGG2MNX{i})
@@ -157,6 +158,7 @@ for i=1:num
 			ihuman.rxnMNXID{i}=ihuman.Reactome2MNX{i};
 		else
 			ihuman.conflictMNXAssoc(i,1)=1;
+			ihuman.rxnMNXID{i}=strcat('Reactome:',ihuman.Reactome2MNX{i},';BiGG:',ihuman.HMR2BiGG2MNX{i});
 			fprintf(outNoKegg,i,ihuman.rxns{i},ihuman.Reactome2MNX{i},ihuman.HMR2BiGG2MNX{i});
 		end
 	elseif ~isempty(ihuman.Reactome2MNX{i}) && isempty(ihuman.HMR2BiGG2MNX{i}) && ~isempty(ihuman.KEGG2MNX{i})
@@ -164,6 +166,7 @@ for i=1:num
 			ihuman.rxnMNXID{i}=ihuman.Reactome2MNX{i};
 		else
 			ihuman.conflictMNXAssoc(i,1)=1;
+			ihuman.rxnMNXID{i}=strcat('Reactome:',ihuman.Reactome2MNX{i},';KEGG:',ihuman.KEGG2MNX{i});
 			fprintf(outNoBigg,i,ihuman.rxns{i},ihuman.Reactome2MNX{i},ihuman.KEGG2MNX{i});
 		end
 	elseif isempty(ihuman.Reactome2MNX{i}) && ~isempty(ihuman.HMR2BiGG2MNX{i}) && ~isempty(ihuman.KEGG2MNX{i})
@@ -171,6 +174,7 @@ for i=1:num
 			ihuman.rxnMNXID{i}=ihuman.HMR2BiGG2MNX{i};
 		else
 			ihuman.conflictMNXAssoc(i,1)=1;
+			ihuman.rxnMNXID{i}=strcat('KEGG:',ihuman.KEGG2MNX{i},';BiGG:',ihuman.HMR2BiGG2MNX{i});
 			fprintf(outNoReactome,i,ihuman.rxns{i},ihuman.KEGG2MNX{i},ihuman.HMR2BiGG2MNX{i});
 		end
 	elseif isempty(ihuman.Reactome2MNX{i}) && isempty(ihuman.HMR2BiGG2MNX{i}) && ~isempty(ihuman.KEGG2MNX{i})
@@ -189,4 +193,8 @@ numel(find(~cellfun(@isempty,ihuman.rxnMNXID)))
 numel(find(ihuman.conflictMNXAssoc))
 % ans = 293 with conflicting MNX associations
 
-save('ihuman2MNX.mat','ihuman');  %2018-02-20
+save('ihuman2MNX.mat','ihuman');      %2018-02-20
+
+% Rename mat file
+load('ihuman2MNX.mat');
+save('ihumanRxns2MNX.mat','ihuman');  %2018-04-11

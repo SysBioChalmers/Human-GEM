@@ -275,3 +275,7 @@ ihuman.HMR2BiGG(index(missingMNX))
 % ans = 'PYK6'   (EHMN)
 
 save('ihuman2BiGG.mat','ihuman');       %2018-2-9
+
+% Rename mat file
+load('ihuman2BiGG.mat');
+save('ihumanRxns2BiGG.mat','ihuman');   %2018-4-11

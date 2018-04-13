@@ -8,7 +8,7 @@ Thumbs.db
 # Compiled MEX binaries (all platforms)
 *.mex*
 
-# hidden extensions
+# OS hidden extensions
 .DS_Store
 
 # specific extensions
