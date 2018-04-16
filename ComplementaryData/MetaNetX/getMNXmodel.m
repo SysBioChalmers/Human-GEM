@@ -20,6 +20,7 @@ MNXRxns=table2struct(T,'ToScalar',true);
 % Refine the equations by removing compartment suffix
 MNXRxns.equations=regexprep(MNXRxns.Equation,'\@MNXD\d+','');
 MNXRxns.equations=regexprep(MNXRxns.equations,'=','<=>');
+MNXRxns.Description=regexprep(MNXRxns.Description,'1 `','');
 MNXRxns.Description=regexprep(MNXRxns.Description,'`','');
 
 % Construct the S matrix and list of metabolites
