@@ -2,6 +2,7 @@
 %   FILE NAME:    verifyRxnAssoc2MNX.m
 % 
 %   DATE CREATED: 2018-03-08
+%       MODIFIED: 2018-04-16
 %        
 %	
 %   PROGRAMMER:   Hao Wang
@@ -15,7 +16,7 @@
 
 % Detect duplicated reactions that occurred in multiple comparments
 % by using the updated mergeCompartments function in RAVEN.
-[mergedModel, deletedRxns, duplicateRxns]=mergeCompartments(metCheck,0,0,0);
+[mergedModel, deletedRxns, duplicateRxns]=mergeCompartments(ihuman,0,0,0);
 mergedModel.duplicateRxns=duplicateRxns;
 
 % Detecting addtional duplications by checking identical columns
@@ -236,3 +237,35 @@ fclose(fid);
 %consistentAssoc=464;
 %complexAssoc=140;
 %noAssoc=214;
+
+
+% Prepare a nested array of MNX association for comparison
+ihuman.rxnMNXID=regexprep(ihuman.rxnMNXID,'\w+:','');
+mergedModel.rxnAssocMNXID=cell(numel(mergedModel.rxns),1);
+mergedModel.rxnAssocMNXID(:)={''};
+for i=1:numel(mergedModel.rxns)
+		index=find(strcmp(mergedModel.rxns{i},ihuman.rxns));
+		if isempty(mergedModel.duplicateRxns{i})
+				mergedModel.rxnAssocMNXID{i}=ihuman.rxnMNXID{index};
+				%mergedModel.rxnAssocMNXID{i}=strsplit(mergedModel.rxnAssocMNXID{i},';');
+		else
+				rxns=[mergedModel.rxns{i};transpose(strsplit(mergedModel.duplicateRxns{i},';'))];
+				for j=1:numel(rxns)
+						hit=find(strcmp(rxns{j},ihuman.rxns));
+						if ~isempty(ihuman.rxnMNXID{hit})
+								if isempty(mergedModel.rxnAssocMNXID{i})
+										mergedModel.rxnAssocMNXID{i}=ihuman.rxnMNXID{hit};
+								else
+										mergedModel.rxnAssocMNXID{i}=strcat(mergedModel.rxnAssocMNXID{i},';',ihuman.rxnMNXID{hit});
+								end
+						end
+				end
+				
+		end
+		
+		if ~isempty(mergedModel.rxnAssocMNXID{i})
+				mergedModel.rxnAssocMNXID{i}=unique(strsplit(mergedModel.rxnAssocMNXID{i},';'));
+		end
+end
+
+save('mergedModel.mat','mergedModel');   % 2014-04-16
