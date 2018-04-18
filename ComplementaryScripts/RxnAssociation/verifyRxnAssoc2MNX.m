@@ -16,6 +16,7 @@
 
 % Detect duplicated reactions that occurred in multiple comparments
 % by using the updated mergeCompartments function in RAVEN.
+load('ihumanRxns2MNX.mat');   % load MNX association by external ids
 [mergedModel, deletedRxns, duplicateRxns]=mergeCompartments(ihuman,0,0,0);
 mergedModel.duplicateRxns=duplicateRxns;
 
@@ -247,7 +248,6 @@ for i=1:numel(mergedModel.rxns)
 		index=find(strcmp(mergedModel.rxns{i},ihuman.rxns));
 		if isempty(mergedModel.duplicateRxns{i})
 				mergedModel.rxnAssocMNXID{i}=ihuman.rxnMNXID{index};
-				%mergedModel.rxnAssocMNXID{i}=strsplit(mergedModel.rxnAssocMNXID{i},';');
 		else
 				rxns=[mergedModel.rxns{i};transpose(strsplit(mergedModel.duplicateRxns{i},';'))];
 				for j=1:numel(rxns)
