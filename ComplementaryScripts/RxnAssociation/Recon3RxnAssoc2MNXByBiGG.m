@@ -46,7 +46,7 @@ for i=1:numel(Recon3D.rxns)
 				for j=1:numel(BiGGRxns.oldids)
 						if ismember(Recon3D.rxns{i},BiGGRxns.oldids{j})
 								Recon3D.BiGG2BiGG{i}=BiGGRxns.rxns{j};
-								Recon3D.rxnMNXID(i)=BiGGRxns.rxnMNXID(j);
+								Recon3D.rxnMNXID{i}=BiGGRxns.rxnMNXID{j};
 						end
 				end
 		end
