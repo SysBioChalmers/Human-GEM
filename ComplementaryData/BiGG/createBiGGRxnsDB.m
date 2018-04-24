@@ -2,6 +2,7 @@
 %   FILE NAME: createBiGGRxnsDB.m
 % 
 %   DATE CREATED: 2018-01-17
+%       MODIFIED: 2018-04-24
 %        
 %	
 %   PROGRAMMER:   Hao Wang
@@ -16,31 +17,43 @@
 cd('/Users/haowa/Box Sync/HMR3/BiGG');
 
 % Load the text format BiGG reactions
-T=readtable('bigg_models_reactions_20180117.txt','ReadVariableNames',1);
+T=readtable('bigg_models_reactions_20180424.txt','ReadVariableNames',1);
 BiGGRxns=table2struct(T,'ToScalar',true);
 
-% Add oldids field as cell array based on string elements from old_bigg_ids
+% Rename the fields according to RAVEN specification
+BiGGRxns.rxns=BiGGRxns.bigg_id;
+BiGGRxns.rxnNames=BiGGRxns.name;
+BiGGRxns.rxnEquations=BiGGRxns.reaction_string;
+
+% Add oldids field as cell array based on info from old_bigg_ids
 num=numel(BiGGRxns.bigg_id);
 BiGGRxns.oldids=cell(num,1);
-BiGGRxns.oldids(:,1)={''};
+BiGGRxns.oldids(:)={''};
+% Add MNX field
+rxnMNXID=regexp(BiGGRxns.database_links,'MNXR\d+','match');
+BiGGRxns.rxnMNXID=cell(num,1);
+BiGGRxns.rxnMNXID(:)={''};
+count=0;
 for i=1:num
-	% Ignore old_bigg_ids identical to bigg_id
-	if ~isequal(BiGGRxns.bigg_id{i},BiGGRxns.old_bigg_ids{i})
-		BiGGRxns.oldids{i}=transpose(strsplit(BiGGRxns.old_bigg_ids{i},'; '));
-	end
+		% Ignore old_bigg_ids identical to bigg_id
+		if ~isequal(BiGGRxns.rxns{i},BiGGRxns.old_bigg_ids{i})
+				% Remove existing BiGG ids from oldids
+				BiGGRxns.oldids{i}=setdiff(transpose(strsplit(BiGGRxns.old_bigg_ids{i},'; ')),BiGGRxns.rxns{i});
+		end
+		if ~isempty(rxnMNXID{i})
+				if numel(rxnMNXID{i})==1
+						BiGGRxns.rxnMNXID{i}=rxnMNXID{i}{1};
+				else
+						BiGGRxns.rxnMNXID{i}=rxnMNXID{i};
+						count=count+1;
+				end
+		end
 end
+%count=0
+numel(find(~cellfun(@isempty,BiGGRxns.rxnMNXID)))  %ans = 15904
 
-% Extract associated MNXref reaction ids
-MNXrefid=regexp(BiGGRxns.database_links,'MNXR\d+','match');
-% Add MNX reaction field to BiGGRxns structure
-BiGGRxns.MNXrefid=cell(num,1);
-BiGGRxns.MNXrefid(:,1)={''};
-for i=1:num
-	if ~isempty(MNXrefid{i})
-		BiGGRxns.MNXrefid{i}=MNXrefid{i}{1};
-	end
-end
+% Remove some fields
+BiGGRxns=rmfield(BiGGRxns,{'bigg_id','name','reaction_string','old_bigg_ids'});
 
-numel(find(~cellfun(@isempty,BiGGRxns.MNXrefid)))  %ans = 15094
 save('BiGGRxns.mat','BiGGRxns');
 
