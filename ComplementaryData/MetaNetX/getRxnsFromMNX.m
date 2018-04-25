@@ -1,5 +1,5 @@
 %
-%   FILE NAME:    getMNXmodel.m
+%   FILE NAME:    getRxnsFromMNX.m
 % 
 %   DATE CREATED: 2018-04-03
 %        
@@ -9,7 +9,7 @@
 %                 Chalmers University of Technology
 % 
 % 
-%   PURPOSE: Generate the model of MNX reactions
+%   PURPOSE: Generate the data structure for MetaNetX reactions
 %            
 
 % Move to the target MNX folder

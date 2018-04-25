@@ -1,5 +1,5 @@
 %
-%   FILE NAME:    getMNXmets.m
+%   FILE NAME:    getMetsFromMNX.m
 % 
 %   DATE CREATED: 2018-04-19
 %        
@@ -9,7 +9,7 @@
 %                 Chalmers University of Technology
 % 
 % 
-%   PURPOSE: Generate the data structure for MNX metabolites
+%   PURPOSE: Generate the data structure for MetaNetX metabolites
 %            
 
 % Move to the target MNX folder

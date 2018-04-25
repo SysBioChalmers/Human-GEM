@@ -1,5 +1,5 @@
 %
-%   FILE NAME: Recon3RxnAssoc2MNXByBiGG.m
+%   FILE NAME: Recon3MetAssoc2MNXByBiGG.m
 % 
 %   DATE CREATED: 2018-04-24
 %

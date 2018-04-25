@@ -1,5 +1,5 @@
 %
-%   FILE NAME: createBiGGRxnsDB.m
+%   FILE NAME: getRxnsFromBiGG.m
 % 
 %   DATE CREATED: 2018-01-17
 %       MODIFIED: 2018-04-24
@@ -10,7 +10,7 @@
 %                 Chalmers University of Technology
 % 
 % 
-%   PURPOSE: Generate BiGG reaction database to Matlab structure
+%   PURPOSE: Generate Matlab structure for BiGG reactions
 % 
 
 % Move to the target folder
