@@ -269,3 +269,15 @@ for i=1:numel(mergedModel.rxns)
 end
 
 save('mergedModel.mat','mergedModel');   % 2014-04-16
+
+% Manually correct two MNX association
+% This is caused by a potential bug in mergeCompartment
+index=find(strcmp('HMR_8771',mergedModel.rxns));
+mergedModel.confirmedMNXID{index}='MNXR100447';
+mergedModel.confirmedFilteredMNXID{index}='MNXR100447';
+
+index=find(strcmp('HMR_1592',mergedModel.rxns));
+mergedModel.confirmedMNXID{index}='MNXR105428';
+mergedModel.confirmedFilteredMNXID{index}='MNXR105428';
+
+save('mergedModel.mat','mergedModel');   % 2014-04-27
