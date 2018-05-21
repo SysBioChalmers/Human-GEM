@@ -268,7 +268,7 @@ ihuman.HMR2BiGG{4089}='';
 ihuman.HMR2BiGG{4090}='P45027A13m';
 ihuman.HMR2BiGG{4417}='PPNCL2';
 ihuman.HMR2BiGG{7594}='r0845';
-numel(find(~cellfun(@isempty,ihuman.HMR2BiGG)))  % ans = 4672
+numel(find(~cellfun(@isempty,ihuman.HMR2BiGG)))  % ans = 4671
 
 save('ihumanRxns2BiGG.mat','ihuman');   %2018-05-18
 
