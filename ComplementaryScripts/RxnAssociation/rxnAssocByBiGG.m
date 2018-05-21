@@ -240,30 +240,49 @@ for i=1:numel(overlapIdx)
 end
 %---Manual curation following 8 associations
 %992: r0595(MNXR105354)-MCPST(MNXR101422)
-%1076: r0669()-ECOAH2m(MNXR97886)                  %Directly combine
+%1076: r0669()-ECOAH2m(MNXR97886)
 %1169: RE3372C(MNXR103887)-FTHFCL(MNXR99668)
-%2954: STS4(MNXR104608)-STS4r(MNXR104608)          %Directly combine
-%3032: RE2410C(MNXR97383)-DHCR71r(MNXR97383)       %Directly combine
+%2954: STS4(MNXR104608)-STS4r(MNXR104608)
+%3032: RE2410C(MNXR97383)-DHCR71r(MNXR97383)
 %4089: RE2626C(MNXR103704)-P45027A13m(MNXR102266)  
 %4417: PPNCL2(MNXR103119)-PPNCL(MNXR103118)
-%7594: r0845(MNXR105086)-UGLCNACtg(MNXR105086)     %Directly combine
+%7594: r0845(MNXR105086)-UGLCNACtg(MNXR105086)
 
 % Curation results: an excel sheet was save in 'BiGG' subfolder
 %992:		r0595(MNXR105354)			  remove:MCPST(MNXR101422)
+%1076:  r0669()                 remove:ECOAH2m(MNXR97886)
 %1169:	RE3372C(MNXR103887)		  remove:FTHFCL(MNXR99668)
+%3032:	RE2410C(MNXR97383)		  remove:DHCR71r(MNXR97383)
 %4089:	P45027A13m(MNXR102266)  remove:RE2626C(MNXR103704)
 %4417:	PPNCL2(MNXR103119)      remove:PPNCL(MNXR103118)
+%7594:  r0845(MNXR105086)       remove:UGLCNACtg(MNXR105086)
 
-% Manual assign values
-%ihuman.HMR2BiGG([992 1076 1169 2954 3032 4089 4417 7594])  % Have a check
+% Manually assign values
+%ihuman.HMR2BiGG([992 1076 1169 2954 3032 4089 4090 4417 7594])  % Have a check
 ihuman.HMR2BiGG{992}='r0595';
-ihuman.HMR2BiGG{1076}='r0669;ECOAH2m';
+ihuman.HMR2BiGG{1076}='r0669';
 ihuman.HMR2BiGG{1169}='RE3372C';
 ihuman.HMR2BiGG{2954}='STS4r';
 ihuman.HMR2BiGG{3032}='RE2410C';
-ihuman.HMR2BiGG{4089}='P45027A13m';
+ihuman.HMR2BiGG{4089}='';
+ihuman.HMR2BiGG{4090}='P45027A13m';
 ihuman.HMR2BiGG{4417}='PPNCL2';
 ihuman.HMR2BiGG{7594}='r0845';
 numel(find(~cellfun(@isempty,ihuman.HMR2BiGG)))  % ans = 4672
 
 save('ihumanRxns2BiGG.mat','ihuman');   %2018-05-18
+
+% Addtional manual curation
+ihuman.BiGG2BiGG{992}='';
+ihuman.BiGG2BiGG{1076}='';
+ihuman.BiGG2BiGG{1169}='';
+ihuman.EHMN2BiGG{2954}='';
+ihuman.BiGG2BiGG{3032}='';
+ihuman.EHMN2BiGG{4089}='';           %wrong cofactors NADP(H) and compartment
+ihuman.BiGG2BiGG{4089}='';           %wrong cofactors NADP(H)
+ihuman.HepatoNet12BiGG{4090}='';
+ihuman.BiGG2BiGG{4417}='';
+ihuman.BiGG2BiGG{7594}='';           %wrong compartment
+
+% Now rxn associations to BiGG, EHMN and HepatoNet1 are unified to field HMR2BiGG
+save('ihumanRxns2BiGG.mat','ihuman');   %2018-05-21
