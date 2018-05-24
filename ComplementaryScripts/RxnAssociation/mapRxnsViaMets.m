@@ -20,7 +20,8 @@ function results = mapRxnsViaMets(model,mnx,mapRxns)
 %
 %   model    Model structure.
 %
-%   mnx      MNX database structure, generated using the following command:
+%   mnx      (Optional, will be generated if not provided) MNX database
+%            structure, generated using the following command: 
 %            mnx = buildMNXmodel('both');
 %
 %   mapRxns  (Optional, Default = all reactions) A logical vector of the
@@ -45,8 +46,7 @@ function results = mapRxnsViaMets(model,mnx,mapRxns)
 %                 each model reaction was mapped to any MXN ID(s).
 %
 %
-% Jonathan Robinson, 2018-04-12
-
+% Jonathan Robinson, 2018-05-24
 
 
 % handle input arguments
@@ -54,6 +54,9 @@ if nargin < 3
     mapRxns = true(size(model.rxns));
 elseif ~isequal(size(mapRxns),size(model.rxns))
     error('mapRxns input must have same dimensions as model.rxns');
+end
+if nargin < 2
+    mnx = [];
 end
 
 % initialize results structure
@@ -101,6 +104,12 @@ end
 met_inds = any(S(:,mapRxns),2);
 allMetMNXIDs = unique(horzcat(model.metMNXID{met_inds}))';
 allMetMNXIDs(cellfun(@isempty,allMetMNXIDs)) = [];
+
+% load MNX database structure if not provided as input
+if isempty(mnx)
+    fprintf('MNX database structure not provided. It will be loaded.\n\n');
+    mnx = buildMNXmodel('both');
+end
 
 % flatten mnx.rxnMets (single column -> multi column cell array)
 mnx.rxnMets = flattenCell(mnx.rxnMets,true);
