@@ -1,15 +1,15 @@
 function results = compareRxnMNXIDsWithMets(model,mnx)
 %compareRxnMNXIDsWithMets  Check consistency between rxn and met MNXIDs.
 %
-% compareRxnMNXIDsWithMets determines if the reaction MNXID associations
-% have distributed their information to the metabolite MNXID associations.
+% compareRxnMNXIDsWithMets determines if the model rxn MNXID associations
+% have distributed their information to the model met MNXID associations.
 % For each metabolite in the model, the set of reactions in which it
-% participates is collected. The rxnMNXIDs assigned to this set of
+% participates is identified. The rxnMNXIDs assigned to this set of
 % reactions is then obtained, and the corresponding reaction information is
 % retreieved from the MNX database. If there is no overlap between the set
 % of metabolite MNX IDs participating in the reaction, and the set of 
-% MNXIDs assigned to the model metabolite participating in the reaction,
-% the reaction and metabolite will be flagged.
+% MNXIDs assigned to the metabolite in the model, the reaction and 
+% metabolite will be flagged and reported in the results structure.
 %
 % USAGE:
 %
@@ -30,7 +30,11 @@ function results = compareRxnMNXIDsWithMets(model,mnx)
 %
 %   results  A results structure containing information on the flagged
 %            reactions and the associated mets and MNXIDs, organized as a
-%            cell array.
+%            cell array, containing the following column headers:
+%               'model met'
+%               'metMNXIDs assigned to met'
+%               'flagged model rxn'
+%               'flagged rxnMNXIDs mapped to rxn'
 %
 %
 % Jonathan Robinson 2018-05-25
@@ -51,7 +55,7 @@ if size(model.rxnMNXID,2) > 1
 end
 
 % initialize results structure
-results = {'model met','MNXIDs assigned to model met','flagged model rxn','flagged MNXIDs mapped to rxn'};
+results = {'model met','metMNXIDs assigned to met','flagged model rxn','flagged rxnMNXIDs mapped to rxn'};
 
 % iterate through each of the model metabolites
 h = waitbar(0,'Processing metabolites...');
