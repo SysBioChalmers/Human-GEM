@@ -11,7 +11,7 @@ function [fmodel,removed] = filterMetMNXIDsViaRxns(model,mnx,ignoreComp)
 %
 % USAGE:
 %
-%   [fmodel,removed] = filterMetMNXIDsViaRxns(model);
+%   [fmodel,removed] = filterMetMNXIDsViaRxns(model,mnx,ignoreComp);
 %
 % INPUT:
 %
@@ -40,7 +40,7 @@ function [fmodel,removed] = filterMetMNXIDsViaRxns(model,mnx,ignoreComp)
 %            MNXID associations that were removed.
 %
 %
-% Jonathan Robinson 2018-05-26
+% Jonathan Robinson 2018-05-28
 
 
 % handle input arguments
