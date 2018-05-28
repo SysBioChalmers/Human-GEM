@@ -1,4 +1,4 @@
-function [fmodel,removed] = filterMetMNXIDsViaRxns(model,mnx)
+function [fmodel,removed] = filterMetMNXIDsViaRxns(model,mnx,ignoreComp)
 %filterMetMNXIDsViaRxns  Remove met MNXID associations based on their rxns.
 %
 % filterMetMNXIDsViaRxns determines which met MNXIDs (if any) should be 
@@ -24,6 +24,12 @@ function [fmodel,removed] = filterMetMNXIDsViaRxns(model,mnx)
 %            By default, the function will automatically run the above
 %            command to regenerate the MNX database structure (slower).
 %
+%   ignoreComp   (Optional, Default FALSE) If TRUE, metabolite compartments
+%                will be ignored. In this case, identical mets of different
+%                compartments will be lumped together, and when searching
+%                for rxns involving the metabolite, the compartment will be
+%                ignored.
+%
 % OUTPUT:
 %
 %   fmodel   A filtered model, which has removed metabolite MNXIDs that
@@ -38,11 +44,15 @@ function [fmodel,removed] = filterMetMNXIDsViaRxns(model,mnx)
 
 
 % handle input arguments
-if nargin < 2
+if nargin < 2 || isempty(mnx)
     mnx = buildMNXmodel('rxn');
 end
+if nargin < 3
+    ignoreComp = false;
+end
 
-% initialize "removed" structure
+% initialize "removed" structure and "fmodel" outputs
+fmodel = model;
 removed.mets = {};
 removed.metMNXID = {};
 
@@ -55,18 +65,86 @@ if size(model.rxnMNXID,2) > 1
     model.rxnMNXID = nestCell(model.rxnMNXID,true);
 end
 
+if ( ignoreComp )
+    
+    % check if model has already merged met compartments, or if "mets"
+    % contains non-unique elements
+    if length(unique(model.mets)) ~= length(model.mets)
+        error('Input model "mets" field must contain unique (non-repeated) elements.');
+    elseif any(regexp(model.mets{1},'\d$'))
+        % Note: this test is specific to models whose met IDs end in
+        % numbers (e.g., "m00001"), with compartments appended to the end
+        % of the ID (e.g., "m00001c" or "m00001[c]").
+        fprintf('\nIt appears that the model compartments have already been merged.\n');
+        fprintf('The "ignoreComp" flag will be ignored, since it will have no effect.\n');
+        S = model.S;
+        ignoreComp = false;
+    else
+        
+        % strip compartment label from model met ID
+        if endsWith(model.mets{1},']')
+            % compartment name is formatted as "m00001[c]"
+            model.mets = regexprep(model.mets,'\[\w\]$','');
+        else
+            % compartment name is formatted as "m00001c"
+            model.mets = regexprep(model.mets,'.$','');
+        end
+        
+        % check if ignoring compartments will actually do anything
+        if length(unique(model.mets)) == length(model.mets)
+            fprintf('\nIt appears that the model compartments have already been merged.\n');
+            fprintf('The "ignoreComp" flag will be ignored, since it will have no effect.\n');
+            S = model.S;
+            ignoreComp = false;
+        else
+            
+            fprintf('\nMetabolite compartments will be ignored. NOTE: This process will merge metMNXIDs\n');
+            fprintf('of mets that are identical except for their compartment. If any mets are associated\n');
+            fprintf('with compartment-specific metMNXIDs, this is not recommended.\n');
+            
+            % If ignoring compartments, convert the stoich matrix into a 
+            % binary met-rxn association matrix (i.e., set all nonzero 
+            % entries = 1), and combine all associations for metabolites 
+            % that are identical except for their compartment. Also combine
+            % their metMNXIDs.
+            S = (model.S ~= 0);
+            [~,uniq_ind,met_groups] = unique(model.mets);
+            h = waitbar(0,'Merging model metabolites across compartments...');
+            for i = 1:max(met_groups)
+                ind = (met_groups == i);
+                S(ind,:) = repmat(any(S(ind,:),1),sum(ind),1);
+                model.metMNXID(ind) = repmat({unique(horzcat(model.metMNXID{ind}))},sum(ind),1);
+                waitbar(i/max(met_groups),h);
+            end
+            close(h);
+            
+            % now merge mets of different compartments into single met
+            model.mets_nocomp = model.mets;  % first save these for indexing later
+            model.mets = model.mets(uniq_ind);
+            S = S(uniq_ind,:);
+            model.metMNXID = model.metMNXID(uniq_ind);
+            
+        end 
+        
+    end
+
+else
+    S = model.S;
+end
+
 % Identify all mets with two or more MNXID associations. Mets with one or
 % zero MNXIDs will be ignored.
 multi_ind = find(cellfun(@numel,model.metMNXID) > 1);
 
 % Iterate through mets with multiple MNXIDs, and determine which MNXIDs
 % should be removed.
+h = waitbar(0,'Processing metabolites...');
 for i = 1:length(multi_ind)
     
     m = multi_ind(i);
     
     % get indices of all rxns in which the met participates
-    rxn_ind = model.S(m,:) ~= 0;
+    rxn_ind = S(m,:) ~= 0;
     
     % obtain a unique list of all the rxn MNXIDs associated with those
     % rxns, as well as their indices in the MNX database structure
@@ -106,18 +184,31 @@ for i = 1:length(multi_ind)
         removed.metMNXID = [removed.metMNXID; {model.metMNXID{m}(rem_mets)}];
         model.metMNXID{m}(rem_mets) = [];
     end
- 
+    
+    waitbar(i/length(multi_ind),h);
 end
+close(h);
 
 if any(cellfun(@(x) ismember({'ALL SHOULD BE REMOVED!'},x),removed.metMNXID))
-    fprintf('*** NOTE: There was at least one case where ALL the MNXIDs associated\n');
+    fprintf('\n*** NOTE: There was at least one case where ALL the MNXIDs associated\n');
     fprintf('          with a metabolite were not found in any of the involved rxns,\n');
     fprintf('          and therefore NONE were removed. See "removed" structure for\n');
     fprintf('          further information.\n\n');
 end
 
-% assign output
-fmodel = model;
+
+% update filtered model (fmodel) metMNXID field
+if ( ignoreComp )
+    % if compartment was ignored (and thus mets were merged), distribute
+    % the updated metMNXID assignments to all compartment-versions of each
+    % metabolite.
+    for i = 1:length(model.mets)
+        ind = ismember(model.mets_nocomp,model.mets(i));
+        fmodel.metMNXID(ind) = model.metMNXID(i);
+    end
+else
+    fmodel.metMNXID = model.metMNXID;
+end
 
 
 
