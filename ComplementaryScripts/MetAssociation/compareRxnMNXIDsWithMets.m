@@ -73,7 +73,6 @@ if ( ignoreComp )
         fprintf('\nIt appears that the model compartments have already been merged.\n');
         fprintf('The "ignoreComp" flag will be ignored, since it will have no effect.\n');
         S = model.S;
-        ignoreComp = false;
     else
         
         % strip compartment label from model met ID
@@ -90,7 +89,6 @@ if ( ignoreComp )
             fprintf('\nIt appears that the model compartments have already been merged.\n');
             fprintf('The "ignoreComp" flag will be ignored, since it will have no effect.\n');
             S = model.S;
-            ignoreComp = false;
         else
             
             fprintf('\nMetabolite compartments will be ignored.\n');
