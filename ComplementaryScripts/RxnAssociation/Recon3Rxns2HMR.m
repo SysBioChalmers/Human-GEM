@@ -45,12 +45,14 @@ Recon3D.BiGG2HMR{11741}='';
 
 load('Recon3DRaven.mat');    %Load Recon3D in RAVEN format
 Recon3D.rxnCompIdx=addRxnCompIdx(Recon3DRaven);
+Recon3D.comps=Recon3DRaven.comps;
+Recon3D.compNames=Recon3DRaven.compNames;
+Recon3D.mets=Recon3DRaven.mets;
 ihuman.rxnCompIdx=addRxnCompIdx(ihuman);
 
 % Get additional Recon3D-HMR2 association using MNX association and
 % compartment info, and then assign mapping results to rxnHMRID field
 load('mergedModel.mat');
-checkOccur=zeros(numel(Recon3D.rxns),1);
 for i=1:numel(Recon3D.rxns)
 		% Consider the rxns with MNX association and without HMR association
 		if isempty(Recon3D.rxnHMRID{i}) && ~isempty(Recon3D.rxnMNXID{i})
@@ -83,6 +85,7 @@ end
 numel(find(~cellfun(@isempty,Recon3D.rxnHMRID)))  % ans = 4998
 
 save('Recon3Rxns2HMR.mat','Recon3D');    %Save the information for merging
+save('ihumanRxns2MNX.mat','ihuman');
 
 %===============
 %% sub functions
