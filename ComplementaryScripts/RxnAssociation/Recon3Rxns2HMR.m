@@ -102,7 +102,7 @@ for i=1:numel(Recon3D.rxns)
 				end
 		end		
 end
-numel(find(~cellfun(@isempty,Recon3D.withMNXnoHMR)))  % ans = 
+numel(find(~cellfun(@isempty,Recon3D.withMNXnoHMR)))  % ans = 259
 save('Recon3Rxns2HMR.mat','Recon3D');   % 2018-05-30
 
 %===============
