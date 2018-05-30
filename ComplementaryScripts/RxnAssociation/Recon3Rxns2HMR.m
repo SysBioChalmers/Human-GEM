@@ -60,7 +60,8 @@ for i=1:numel(Recon3D.rxns)
 				for j=1:numel(mergedModel.rxns)
 						if ismember(Recon3D.rxnMNXID{i},mergedModel.confirmedMNXID{j})
 								rxns=[{};mergedModel.rxns{j}];
-								if ~isempty(mergedModel.duplicateRxns{j}) && ~ismember(mergedModel.rxns{j},{'HMR_8771','HMR_1592'})
+								if ~isempty(mergedModel.duplicateRxns{j}) && ....
+								~ismember(mergedModel.rxns{j},{'HMR_8771','HMR_1592'})
 										rxns=[rxns;transpose(strsplit(mergedModel.duplicateRxns{j},';'))];
 								end
 								
@@ -85,7 +86,24 @@ end
 numel(find(~cellfun(@isempty,Recon3D.rxnHMRID)))  % ans = 4998
 
 save('Recon3Rxns2HMR.mat','Recon3D');    %Save the information for merging
-save('ihumanRxns2MNX.mat','ihuman');
+save('ihumanRxns2MNX.mat','ihuman');     %2018-05-28
+
+% flag the reactions with MNX association but without HMR association 2018-05-30
+Recon3D.withMNXnoHMR=cell(numel(Recon3D.rxns),1);
+Recon3D.withMNXnoHMR(:)={''};
+for i=1:numel(Recon3D.rxns)
+		if isempty(Recon3D.rxnHMRID{i}) && ~isempty(Recon3D.rxnMNXID{i})
+				for j=1:numel(mergedModel.rxns)
+						% locate these reactions extended to other compartments
+						if ismember(Recon3D.rxnMNXID{i},mergedModel.confirmedMNXID{j}) & ~ismember(mergedModel.rxns{j},{'HMR_8771','HMR_1592'})
+								Recon3D.withMNXnoHMR{i}=Recon3D.rxns{i};
+								Recon3D.BiGG2HMR{i}='';   % clean off these HMR assoc
+						end
+				end
+		end		
+end
+numel(find(~cellfun(@isempty,Recon3D.withMNXnoHMR)))  % ans = 
+save('Recon3Rxns2HMR.mat','Recon3D');   % 2018-05-30
 
 %===============
 %% sub functions
