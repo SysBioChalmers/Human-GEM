@@ -2,7 +2,7 @@
 %   FILE NAME: assocEnsemblGenes.m
 % 
 %   DATE CREATED: 2018-05-03
-%        
+%        UPDATED: 2018-05-31
 %	
 %   PROGRAMMER:   Hao Wang
 %                 Department of Biology and Biological Engineering
@@ -29,3 +29,13 @@ NCBIGeneID(NaNidx)={''};
 Ensembl2NCBI.genes=T.GeneStableID;
 Ensembl2NCBI.NCBIGeneID=NCBIGeneID;
 save('Ensembl2NCBI.mat','Ensembl2NCBI');
+
+T=readtable('stableGeneID2UniprotID.txt','ReadVariableNames',1);
+T=table2struct(T,'ToScalar',true);
+
+% Generate data structure for UniprotID 
+Ensembl2Uniprot.genes=T.GeneStableID;
+Ensembl2Uniprot.ID=;
+Ensembl2Uniprot.ID=;
+save('Ensembl2Uniprot.mat','Ensembl2Uniprot');
+
