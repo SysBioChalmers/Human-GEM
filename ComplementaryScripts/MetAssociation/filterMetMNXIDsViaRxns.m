@@ -189,16 +189,16 @@ for i = 1:length(model.mets)
         % happen. Therefore,  NONE will be removed, but the information 
         % will be reported in the "removed" structure, so these cases can
         % be manually evaluated by the user.
-        removed.mets = [removed.mets; model.mets(m)];
+        removed.mets = [removed.mets; model.mets(i)];
         removed.metMNXID = [removed.metMNXID; {'ALL SHOULD BE REMOVED!'}];
     else
         % remove one or more MNXID associations from the metabolite
-        removed.mets = [removed.mets; model.mets(m)];
-        removed.metMNXID = [removed.metMNXID; {model.metMNXID{m}(rem_mets)}];
-        model.metMNXID{m}(rem_mets) = [];
+        removed.mets = [removed.mets; model.mets(i)];
+        removed.metMNXID = [removed.metMNXID; {model.metMNXID{i}(rem_mets)}];
+        model.metMNXID{i}(rem_mets) = [];
     end
     
-    waitbar(i/length(multi_ind),h);
+    waitbar(i/length(model.mets),h);
 end
 close(h);
 
