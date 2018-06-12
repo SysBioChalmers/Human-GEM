@@ -20,7 +20,7 @@ load('ihumanMets2MNX_v2.mat');
 emptyList=find(cellfun(@isempty, ihuman.metRecon3DID));
 MNXID=reformatElements(ihuman.metMNXID,'cell2str');
 for i=1:length(emptyList)
-		m=list(i);
+		m=emptyList(i);
 		fprintf('%s\t%s\t%s\n',ihuman.mets{m},ihuman.metNames{m},MNXID{m});
 end
 
@@ -56,5 +56,20 @@ ihuman.metMNXID{find(strcmp('m02149c',ihuman.mets))}={'MNXM56888'};
 ihuman.metMNXID{find(strcmp('m02147m',ihuman.mets))}={'MNXM527231'};
 ihuman.metMNXID{find(strcmp('m02147x',ihuman.mets))}={'MNXM527231'};
 ihuman.metMNXID{find(strcmp('m02147s',ihuman.mets))}={'MNXM527231'};
-ihuman.metMNXID{find(strcmp('m02149c',ihuman.mets))}={'MNXM527231'};
+ihuman.metMNXID{find(strcmp('m02147c',ihuman.mets))}={'MNXM527231'};
 
+
+% 2. For the elements with multiple Recon3D/BiGG association
+ihuman.metRecon3DID{find(strcmp('m00490c',ihuman.mets))}={'mag_hs'};
+ihuman.metRecon3DID{find(strcmp('m02733c',ihuman.mets))}={'pa_hs'};
+ihuman.metRecon3DID{find(strcmp('m02733r',ihuman.mets))}={'pa_hs'};
+ihuman.metRecon3DID{find(strcmp('m00240c',ihuman.mets))}={'dag_hs'};
+ihuman.metRecon3DID{find(strcmp('m00240g',ihuman.mets))}={'dag_hs'};
+ihuman.metRecon3DID{find(strcmp('m00240n',ihuman.mets))}={'dag_hs'};
+ihuman.metRecon3DID{find(strcmp('m01818c',ihuman.mets))}={'11_cis_retfa'};
+ihuman.metRecon3DID{find(strcmp('m01818s',ihuman.mets))}={'11_cis_retfa'};
+ihuman.metRecon3DID{find(strcmp('m01818x',ihuman.mets))}={'11_cis_retfa'};
+ihuman.metRecon3DID{find(strcmp('m02959s',ihuman.mets))}={'tag_hs'};
+
+save('ihumanMets2MNX_v2.mat','ihuman');  % 2018-06-12
+% Some MNX IDs also need refinement (to be continued)
