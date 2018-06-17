@@ -3,6 +3,7 @@
 % 
 %   DATE CREATED: 2018-06-05
 %       MODIFIED: 2018-06-11
+%       MODIFIED: 2018-06-17
 %        
 %   PROGRAMMER:   Hao Wang
 %                 Department of Biology and Biological Engineering
@@ -73,3 +74,13 @@ ihuman.metRecon3DID{find(strcmp('m02959s',ihuman.mets))}={'tag_hs'};
 
 save('ihumanMets2MNX_v2.mat','ihuman');  % 2018-06-12
 % Some MNX IDs also need refinement (to be continued)
+
+% 3. Generate the data structure (metAssocHMR2Recon3D) of metabolite
+% association for further curation and model integration, by trimming
+% off duplicate mets in multiple compartments
+HMRmets=regexprep(ihuman.mets,'\w$','');   % HMR met ids without comp id
+[metAssocHMR2Recon3.metHMRID, I, ~]=unique(HMRmets,'stable');
+metAssocHMR2Recon3.metBiGGID=ihuman.metBiGGID(I);
+metAssocHMR2Recon3.metMNXID=ihuman.metMNXID(I);
+metAssocHMR2Recon3.metRecon3DID=ihuman.metRecon3DID(I);
+save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');  % 2018-06-17
