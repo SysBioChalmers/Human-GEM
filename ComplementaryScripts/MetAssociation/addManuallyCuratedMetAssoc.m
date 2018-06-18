@@ -101,3 +101,18 @@ for i=1:numel(list)
 end
 % These Recon3D mets associated to multiple HMR ids were subjected to
 % manual cuartion 2018-06-18
+
+
+% 5. The following updates of HMR-Recon3D assoc are based on the curation results
+% in excel file metaboliteCuration_20180618_HW.xlsx
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m00591',metAssocHMR2Recon3.metHMRID))}='';
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m00352',metAssocHMR2Recon3.metHMRID))}='';
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m00379',metAssocHMR2Recon3.metHMRID))}='';
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m00555',metAssocHMR2Recon3.metHMRID))}='';
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m01123',metAssocHMR2Recon3.metHMRID))}={'CE7097'};
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m01911',metAssocHMR2Recon3.metHMRID))}='';
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m01942',metAssocHMR2Recon3.metHMRID))}='';
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m02410',metAssocHMR2Recon3.metHMRID))}='';
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m02487',metAssocHMR2Recon3.metHMRID))}='';
+metAssocHMR2Recon3.metRecon3DID{find(strcmp('m02578',metAssocHMR2Recon3.metHMRID))}='';
+save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');  % 2018-06-18
