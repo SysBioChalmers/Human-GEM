@@ -38,7 +38,7 @@ for i=1:length(multiMetAssoc.HMRID)
 end
 
 % These ones with missing and multiple Recon3D/BiGG ids were organized into
-% an excel file metaboliteCuration_20180605.xlsx for manula cuartion
+% an excel file metaboliteCuration_20180605.xlsx for manual cuartion
 
 % The following updates are based on the manual curation results
 % 1. For the elements without Recon3D/BiGG assoc
@@ -84,3 +84,20 @@ metAssocHMR2Recon3.metBiGGID=ihuman.metBiGGID(I);
 metAssocHMR2Recon3.metMNXID=ihuman.metMNXID(I);
 metAssocHMR2Recon3.metRecon3DID=ihuman.metRecon3DID(I);
 save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');  % 2018-06-17
+
+
+% 4. Detect mets associated from one Recon3D id to multiple HMR ids
+% get the array of non-empty Recon3D met assocations
+Recon3DID=reformatElements(metAssocHMR2Recon3.metRecon3DID,'cell2str');
+Recon3DID_nonEmpty=Recon3DID(getNonEmptyList(Recon3DID));
+
+% get the array of unique Recon3D met id and the occurrences
+check=countFrequency(Recon3DID_nonEmpty);
+list=find([check.frequency{:}] > 1);   % Recon3D mets with multiple occurrences
+for i=1:numel(list)
+		m=list(i);
+		ind=find(strcmp(check.uniqueList{m},Recon3DID));
+		fprintf('%s\t%s\n',check.uniqueList{m},strjoin(metAssocHMR2Recon3.metHMRID(ind),';'));
+end
+% These Recon3D mets associated to multiple HMR ids were subjected to
+% manual cuartion 2018-06-18
