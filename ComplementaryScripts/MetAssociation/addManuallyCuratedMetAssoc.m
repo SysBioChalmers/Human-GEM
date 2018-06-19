@@ -83,6 +83,7 @@ HMRmets=regexprep(ihuman.mets,'\w$','');   % HMR met ids without comp id
 metAssocHMR2Recon3.metBiGGID=ihuman.metBiGGID(I);
 metAssocHMR2Recon3.metMNXID=ihuman.metMNXID(I);
 metAssocHMR2Recon3.metRecon3DID=ihuman.metRecon3DID(I);
+metAssocHMR2Recon3.metNames=ihuman.metNames(I);
 save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');  % 2018-06-17
 
 
