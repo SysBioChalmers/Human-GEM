@@ -38,8 +38,6 @@ Recon3DRaven=ravenCobraWrapper(Recon3D);
 Recon3DRaven.rxnEquations=constructEquations(Recon3DRaven);
 Recon3DRaven.originalMets=Recon3D.originalMets;
 
-save('Recon3DRaven.mat','Recon3DRaven');
-
 % Create data structure of one-to-one met assocation between HMR2 and Recon3D 
 load('metAssocHMR2Recon3.mat');   %To get the manually curated met association info
 % Directly save the unique associations
@@ -61,6 +59,31 @@ for i=1:length(multi_ind)
 		metAssoc.metNames=[metAssoc.metNames;names];
 end
 save('metAssoc.mat','metAssoc');         % 2018-06-20
-% This file is designed for convinient model integration purpose,
-% and should be updated once metAssocHMR2Recon3.mat is changed!
+% This file is designed for convenient model integration purpose,
+% and should be updated once metAssocHMR2Recon3.mat file is changed!
+
+% Converte met info from Recon3D to HMR
+Recon3DRaven.metsBeforeConv=Recon3DRaven.mets;
+metIDs=regexprep(Recon3DRaven.mets,'_\w$','');
+for i=1:numel(metIDs)
+		ind=find(strcmp(metIDs{i},metAssoc.metRecon3DID));
+		compID=Recon3DRaven.comps{Recon3DRaven.metComps(i)};
+		if length(ind)==1      % This met is unique in association
+				Recon3DRaven.mets{i}=strcat(metAssoc.metHMRID{ind},compID);
+				Recon3DRaven.metNames{i}=metAssoc.metNames{ind};
+		elseif length(ind)>1   % This met has multiple associations
+				metsWithComp=strcat(metAssoc.metHMRID(ind),compID);
+				temp=intersect(ihuman.mets,metsWithComp);   % See the occurrence after adding comp id
+				if numel(temp)==1  % If narrow down to unique association
+						Recon3DRaven.mets{i}=temp;
+						Recon3DRaven.metNames{i}=ihuman.metNames{find(strcmp(temp,ihuman.mets))};
+				else               % If still have multiple association, then take the first match
+						Recon3DRaven.mets{i}=strcat(metAssoc.metHMRID{ind(1)},compID);;
+						Recon3DRaven.metNames{i}=metAssoc.metNames{ind(1)};
+				end
+		end
+end
+Recon3DRaven.mets=cellfun(@char,Recon3DRaven.mets,'un',0);  % uniform met id format
+
+save('Recon3DRaven.mat','Recon3DRaven');  % 2018-06-20
 
