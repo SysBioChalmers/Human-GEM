@@ -2,6 +2,7 @@
 %   FILE NAME:    integrateRxnAssocViaIDsAndMets.m
 % 
 %   DATE CREATED: 2018-04-13
+%       MODIFIED: 2018-05-22
 %        
 %   PROGRAMMER:   Hao Wang
 %                 Department of Biology and Biological Engineering
@@ -43,11 +44,9 @@ for i=1:length(mergedModel.rxns)
 				mergedModel.unResolved(i)=1;
 		end
 end
-%numConfirmed=2499;
+%numConfirmed=2506;
 %numUnresloved=726;
-%numToCheck=746;
-
-%save('mergedModel.mat','mergedModel');
+%numToCheck=739;
 
 % Treat the cases need to be checked
 filledRxnAssocViaMets.rxnHMRID=cell(1000,1);
@@ -94,8 +93,8 @@ for i=1:numel(mergedModel.rxns)
 				end
 		end
 end
-%numToCheck=450;
-%numFilledViaMets=296;
+%numToCheck=444;
+%numFilledViaMets=295;
 
 needToCheck.rxnHMRID=needToCheck.rxnHMRID(1:numToCheck);
 needToCheck.rxnAssocMNXID=needToCheck.rxnAssocMNXID(1:numToCheck);
@@ -107,6 +106,10 @@ filledRxnAssocViaMets.rxnHMRID=filledRxnAssocViaMets.rxnHMRID(1:numFilledViaMets
 filledRxnAssocViaMets.rxnMNXID=filledRxnAssocViaMets.rxnMNXID(1:numFilledViaMets);
 filledRxnAssocViaMets.rxnFilteredMNXID=filledRxnAssocViaMets.rxnFilteredMNXID(1:numFilledViaMets);
 filledRxnAssocViaMets.notes=filledRxnAssocViaMets.notes(1:numFilledViaMets);
+
+%save('mergedModel.mat','mergedModel');
+%save('filledRxnAssocViaMets_20180522.mat','filledRxnAssocViaMets');
+%save('needToCheck_20180522.mat','needToCheck');
 
 %% sub functions
 %Filter MNX rxns according to their balance status
