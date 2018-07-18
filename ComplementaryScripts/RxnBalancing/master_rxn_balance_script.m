@@ -71,6 +71,7 @@ m.metRecon3DID = flattenCell(m.metRecon3DID,true);  % convert to column cell arr
 Recon3D.metsNoComp = regexprep(Recon3D.mets,'\[\w\]$','');  % remove compartment abbrevs from Recon3D met IDs
 [hasMatch,ind] = ismember(m.metRecon3DID,Recon3D.metsNoComp);
 m.metFormulasR3D(hasMatch) = Recon3D.metFormulas(ind(hasMatch));
+m.metFormulasR3D = regexprep(m.metFormulasR3D,'FULLR','R');  % replace FULLR with R in met formulas
 m.metFormulasR3D = alphabetizeMetFormulas(m.metFormulasR3D);  % alphabetize met formulas
 
 % also retrieve Recon3D met charges
@@ -112,6 +113,7 @@ load('ComplementaryScripts/MetAssociation/Recon3Mets2MNX.mat');  % loads as vari
 % the metFormulas have problems in the above model, so restore the original
 x = load('ComplementaryScripts/Recon3D_301.mat');
 Recon3D.metFormulas = x.Recon3D.metFormulas;
+Recon3D.metFormulas = regexprep(Recon3D.metFormulas,'FULLR','R');  % also replace FULLR with R in met formulas
 clear x
 
 % generate compartment-free mets
