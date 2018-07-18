@@ -163,7 +163,9 @@ m.metMNXID = model.metMNXID(ind);
 m.metMNXID = nestCell(flattenCell(m.metMNXID,true),true);  % ugly way to ensure correct format
 
 % load met info retrieved from MNX database (~2 min load time)
-mnx_met = buildMNXmodel('met');
+if ~exist('mnx_met','var')
+    mnx_met = buildMNXmodel('met');
+end
 
 % subset the MNX data structure to greatly reduce computation time
 allMNXID = unique(flattenCell(m.metMNXID,true));  % get all MNXIDs in model
@@ -203,13 +205,74 @@ for i = 1:length(m.mets)
         continue
     end
     if any(ismember(m.MNXmetFormulas{i},m.metFormulas{i}))
-        m.metFormulaCheck{i} = 'confirmed';
+        m.metFormulaCheck{i} = 'match, exact';
+    elseif any(ismember(regexprep(m.MNXmetFormulas{i},'H\d*',''),regexprep(m.metFormulas{i},'H\d*','')))
+        m.metFormulaCheck{i} = 'match, ignoring protons';
     else
-        m.metFormulaCheck{i} = 'no match';
+        m.metFormulaCheck{i} = 'disagreement';
     end
 end
 
 %..........................................................................
+
+
+%% Check reaction mass balances
+
+% generate reaction equations with met names
+model.rxnEqns = constructEquations(model);
+
+% generate reaction equations with met formulas instead of met names
+model_temp = model;
+model_temp.metNames = strcat('[',model_temp.metFormulas,']');
+model.rxnElementEqns = constructEquations(model_temp,model.rxns,false);
+
+% change metCharges to all zeros temporarily
+saveMetCharges = model.metCharges;
+model.metCharges = int64(zeros(size(model.mets)));
+
+% % optional: ignore protons in mass balance analysis
+% modelNoH = model;
+% modelNoH.metFormulas = regexprep(modelNoH.metFormulas,'H\d*','');
+
+% use Cobra function for analyzing mass and charge balance
+[massImbalance,imbalancedMass,imbalancedCharge,imbalancedRxnBool,Elements,missingFormulaeBool,balancedMetBool] = ...
+    checkMassChargeBalance(model,-1);
+
+% group imbalanced reactant and/or product atoms
+[massImbalReact,massImbalProd] = deal(massImbalance);
+massImbalReact(massImbalReact > 0) = 0;
+massImbalReact = abs(massImbalReact);
+massImbalProd(massImbalProd < 0) = 0;
+extraReact = elementalMatrixToFormulae(massImbalReact,Elements);
+extraProd = elementalMatrixToFormulae(massImbalProd,Elements);
+extraReact(ismember(extraReact,'Mass0')) = {''};
+extraProd(ismember(extraProd,'Mass0')) = {''};
+
+% assemble information into easily readable cell array
+i = imbalancedRxnBool;
+onlyH = (massImbalance(:,1) ~= 0) & all(massImbalance(:,2:end) == 0,2) & ~isnan(massImbalance(:,1));
+i = i & ~onlyH;  % OPTIONAL: exclude rxns imbalanced by only protons
+massBalRes = [{'rxn','genes','eqn','atomic eqn','extra react','extra prod'};
+    [model.rxns(i),model.grRules(i),model.rxnEqns(i),model.rxnElementEqns(i),extraReact(i),extraProd(i)]];
+
+
+%% Hard-coded model changes to balance reactions
+% These changes are based on the results from the reaction balance analysis
+
+% changes to reaction equations
+model.S(ismember(model.mets,'m02040r'),ismember(model.rxns,'35DSMVhep')) = 0;  % 35DSMVhep: remove H2O product
+
+
+% changes to metabolite formulas
+model.metFormulas(ismember(model.metNames,"3'-S-hydroxy-pravastatin-CoA")) = {'C44H66N7NaO23P3S'};  % remove "OH" from formula
+
+model.metFormulas(ismember(model.metNames,'acetaminophen-glutathione-conjugate')) = {'C18H23N4O8S'};  % modify met formula
+model.metCharges(ismember(model.metNames,'acetaminophen-glutathione-conjugate')) = -1;  % update met charge
+
+model.metFormulas(ismember(model.metNames,'cysteine-conjugate-acetaminophen')) = {'C11H14N2O3S'};  % modify met formula
+model.metCharges(ismember(model.metNames,'cysteine-conjugate-acetaminophen')) = 0;  % update met charge
+
+
 
 
 
