@@ -48,7 +48,7 @@ function grRules_clean = cleanModelGeneRules(grRules,deepClean)
 
 % handle inputs
 if nargin < 2
-    deepClean = false;
+    deepClean = true;
 end
 
 % check if the grRules use written or symbolic boolean operators
