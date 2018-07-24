@@ -34,12 +34,13 @@ function [genes,grRules,rxnGeneMat] = translateGeneRules(model,noMatch)
 %               have a corresponding match in the new gene IDs to which the
 %               grRules are to be translated. Choose from the following:
 %               
-%               'original'  (Default) keep the original gene ID. Note, this
-%                           will result in mixed gene ID types in grRules
-%                           and the corresponding list of genes, which may
+%               'original'  keep the original gene ID. Note, this will
+%                           result in mixed gene ID types in grRules and 
+%                           the corresponding list of genes, which may
 %                           cause problems in other applications.
 %
-%               'delete'    Delete (exclude) the gene from the new rule.
+%               'delete'    (Default) Delete (exclude) the gene from the 
+%                           new rule.
 %
 %
 % OUTPUTS:
@@ -62,7 +63,7 @@ gene_types = {'ENSG';'ENST';'ENSP';'UniProt';'Name';'Entrez'};
 
 % handle input arguments
 if nargin < 2
-    noMatch = 'orig';
+    noMatch = 'delete';
 end
 
 % notify user how unmatched genes will be handled
