@@ -189,7 +189,7 @@ for i = 1:length(gene_types)
     
     % clean up rules (removes extra parentheses, repeated genes, etc.)
     fprintf('\tCleaning grRules... ');
-    rules_new = cleanModelRules(rules_new);    
+    rules_new = cleanModelGeneRules(rules_new);    
     fprintf('Done.\n');
     
     % generate new rxnGeneMat and gene list based on new grRules
