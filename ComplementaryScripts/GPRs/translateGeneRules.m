@@ -128,6 +128,11 @@ conv_key = table2array(tmp); clear tmp;
 % replace 'NaN' in Entrez ID column of conversion key with empty cells ('')
 conv_key(:,ismember(conv_key_head,'Entrez')) = regexprep(conv_key(:,ismember(conv_key_head,'Entrez')),'NaN','');
 
+% begin by "cleaning" the original grRules
+fprintf('Running an initial clean of the original model grRules... ');
+rules_orig = cleanModelGeneRules(rules_orig);
+fprintf('Done.\n');
+
 % convert rules to all other gene ID types
 for i = 1:length(gene_types)
     
