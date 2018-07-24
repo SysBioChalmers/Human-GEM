@@ -114,7 +114,7 @@ end
 genes_orig = unique(genes_orig,'stable');
 
 % import gene-transcript-protein conversion key
-tmp = readtable('ComplementaryScripts/GPRs/IDconversion/ensembl_ID_mapping.txt');
+tmp = readtable('ComplementaryScripts/GPRs/IDconversion/ensembl_ID_mapping_20171107.txt');
 conv_key_head = tmp.Properties.VariableNames';  % read header
 
 % change header names to match contents of GENE_TYPES
