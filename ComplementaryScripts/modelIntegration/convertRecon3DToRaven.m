@@ -85,5 +85,19 @@ for i=1:numel(metIDs)
 end
 Recon3DRaven.mets=cellfun(@char,Recon3DRaven.mets,'un',0);  % uniform met id format
 
-save('Recon3DRaven.mat','Recon3DRaven');  % 2018-06-20
+% Convert Recon3D grRules by replacing with Ensembl ids and
+% converging multiple suffix versions into one in the field
+[genes,grRules,rxnGeneMat] = translateGeneRules(Recon3DRaven);
+
+% backup genes, grRules and rxnGeneMat
+Recon3DRaven.originalGrRules=Recon3DRaven.grRules;
+Recon3DRaven.originalGenes=Recon3DRaven.genes;
+Recon3DRaven.originalRxnGeneMat=Recon3DRaven.rxnGeneMat;
+
+% update genes, grRules and rxnGeneMat
+Recon3DRaven.grRules=grRules.ENSG;
+Recon3DRaven.genes=genes.ENSG;
+Recon3DRaven.rxnGeneMat=rxnGeneMat.ENSG;
+
+save('Recon3DRaven.mat','Recon3DRaven');  % 2018-07-26
 
