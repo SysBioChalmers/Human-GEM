@@ -137,19 +137,25 @@ for i = 1:length(nonEmpty)
         
         % remove non-unique gene complexes from matrix subset
         cpx_mat_sub = unique(cpx_mat_sub','rows')';
-    end
-    
-    % collect grRule components
-    rule_pieces = rule_genes{rule_ind}(~is_cpx);  % genes not in complexes
-    for j = 1:size(cpx_mat_sub,2)
-        if sum(cpx_mat_sub(:,j)) > 1
-            % join complex subunits with &s, and enclose in parentheses
-            rule_pieces(end+1) = strcat('(',join(cpx_genes_sub(cpx_mat_sub(:,j) > 0),' & '),')');
-        else
-            % only one of the complex subunits was present in the grRule,
-            % so only that subunit will be added by itself
-            rule_pieces(end+1) = cpx_genes_sub(cpx_mat_sub(:,j) > 0);
+        
+        % collect grRule components
+        rule_pieces = rule_genes{rule_ind}(~is_cpx);
+        for j = 1:size(cpx_mat_sub,2)
+            if sum(cpx_mat_sub(:,j)) > 1
+                % join complex subunits with &s, and enclose in parentheses
+                rule_pieces(end+1) = strcat('(',join(cpx_genes_sub(cpx_mat_sub(:,j) > 0),' & '),')');
+            else
+                % only one of the complex subunits was present in the grRule,
+                % so only that subunit will be added by itself
+                rule_pieces(end+1) = cpx_genes_sub(cpx_mat_sub(:,j) > 0);
+            end
         end
+        
+    else
+        
+        % genes not in complexes
+        rule_pieces = rule_genes{rule_ind}(~is_cpx);
+        
     end
     
     % generate grRule by joining complexes and single genes with |s
