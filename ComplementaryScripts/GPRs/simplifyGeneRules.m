@@ -1,4 +1,4 @@
-function simple_rules = simplifyGeneRules(grRules,expanded)
+function [simple_rules,skipped] = simplifyGeneRules(grRules,expanded)
 %simplifyGeneRules  Simplify and condense the logic of model grRules.
 %
 % simplifyGeneRules recasts grRules as mathematical equations, where ORs
@@ -7,11 +7,9 @@ function simple_rules = simplifyGeneRules(grRules,expanded)
 % yielding rules that are as reduced/simplified as possible, while still
 % maintaining functional equivalency to the original grRule logic.
 %
-% *** WARNING: Because this function uses symbolic math functions, it will
-%              not work for grRules that are very long/complex (approx. 
-%              >10,000 characters). Furthermore, the function performs an
-%              extensive simplification process, and can therefore be quite
-%              slow if there are many grRules containing both ANDs and ORs.
+% NOTE: The function performs an extensive simplification process, and can
+%       therefore be quite slow if there are many long grRules containing
+%       both ANDs and ORs.
 %
 % The function will also remove unnecessary parentheses, trailing ANDs/ORs,
 % and duplicate genes in model grRules. The function requires that the gene
@@ -51,10 +49,15 @@ function simple_rules = simplifyGeneRules(grRules,expanded)
 %
 % OUTPUT:
 %
-%   simple_rules    Updated/simplified grRules.
+%   simple_rules   Updated/simplified grRules.
+%
+%   skipped        Logical vector indicating which grRules were skipped
+%                  because they were too long/complex to be converted into
+%                  a symbolic equation. For these cases, the grRule will
+%                  be copied into simple_rules without any simplification.
 %
 %
-% Jonathan Robinson, 2018-07-27
+% Jonathan Robinson, 2018-07-31
 
 if nargin < 2
     expanded = false;
@@ -62,13 +65,6 @@ end
 
 if ( expanded )
     warning('The EXPANDED option is not yet functional');
-end
-
-% check if any grRules are too long
-if any(cellfun(@length,grRules) > 10000)
-    fprintf('\nOne or more grRules are very long/complex, and therefore are likely to cause an error.\n');
-    fprintf('The function will therefore be terminated. Comment-out this code to bypass this check (not recommended).\n');
-    error('grRules are too long/complex.');
 end
 
 % check if the grRules use written or symbolic boolean operators
@@ -119,6 +115,9 @@ grRules = regexprep(grRules, '[^&|\(\) ]+', '${convertGene($0)}');  % find and c
 % identify all rules containing both ANDs and ORs
 AndOrInd = find(contains(grRules,'&') & contains(grRules,'|'));
 
+% initialize output specifying which rules were skipped due to complexity
+skipped = false(size(grRules));
+
 % Simplify gene rules by converting them into mathematical equations:
 % ANDs are functionally equivalent to multiplication (*), whereas ORs
 % are functionally equivalent to addition (+).
@@ -136,8 +135,14 @@ for i = 1:length(AndOrInd)
     r_orig = r;
     for k = 1:10  % perform an arbitrarily high number of iterations
         
-        % convert string to symbolic equation
-        reqn = str2sym(r);
+        try
+            % convert string to symbolic equation
+            reqn = str2sym(r);
+        catch
+            fprintf('grRule #%u was too complex, and therefore skipped.\n',AndOrInd(i));
+            skipped(AndOrInd(i)) = true;
+            break
+        end
         
         % Iterate through a series of equation expansions and simplifications, each
         % time removing constant coefficients and exponents, until the equation is
@@ -209,12 +214,14 @@ for i = 1:length(AndOrInd)
         
     end
 
-    % reformat to gene rule logic ("*" becomes "&", and "+" becomes "|")
-    r = regexprep(r,'\*',' & ');  % need to add spaces around the "*"s
-    r = regexprep(r,'\+','|');
-    
-    % update rule in grRule vector
-    grRules{AndOrInd(i)} = r;
+    if ~skipped(AndOrInd(i))
+        % reformat to gene rule logic ("*" becomes "&", and "+" becomes "|")
+        r = regexprep(r,'\*',' & ');  % need to add spaces around the "*"s
+        r = regexprep(r,'\+','|');
+        
+        % update rule in grRule vector
+        grRules{AndOrInd(i)} = r;
+    end
     
 end
 close(h);
