@@ -46,7 +46,7 @@ function GPRdata = compare_HMR_iHsa_Recon3D_GPRs(HMR,iHsa,Recon3D,rxnHMR2Recon3D
 %               'Recon3D grRule'
 %               'Recon3D Ngenes'
 %
-% Jonathan Robinson, 2018-08-01
+% Jonathan Robinson, 2018-08-02
 
 
 % handle input arguments
@@ -55,10 +55,10 @@ if nargin < 1 || isempty(HMR)
     HMR = ihuman;
 end
 if nargin < 2 || isempty(iHsa)
-    load('ComplementaryScripts/iHsa.mat');  % loads as variable "iHsa"
+    load('ComplementaryData/iHsa/iHsa.mat');  % loads as variable "iHsa"
 end
 if nargin < 3 || isempty(Recon3D)
-    load('ComplementaryScripts/Recon3D_301.mat');  % loads as variable "Recon3D"
+    load('ComplementaryData/Recon3D/Recon3D_301.mat');  % loads as variable "Recon3D"
 end
 if nargin < 5
     writefile = [];
@@ -90,12 +90,7 @@ GPRdata_head = {'HMR rxn'            % 1
             
 % check if iHsa contains HMR rxn associations
 if ~isfield(iHsa,'rxnHMRID')
-    % import associations from supporting information dataset
-    supp_data = readtable('ComplementaryScripts/GPRs/dataFiles/iHsa_supp_data_3.xlsx','Range','A2:T8338');  % specify range to exclude first line
-    ihsa_id = supp_data.rxn_id;
-    hmr_id = supp_data.hmr2_id;
-    [~,ind] = ismember(iHsa.rxns,ihsa_id);
-    iHsa.rxnHMRID = hmr_id(ind);
+    iHsa = addHMRrxnIDsToiHsa(iHsa);
 end
 
 % add iHsa rxn IDs to HMR and GPRdata
@@ -112,7 +107,7 @@ GPRdata(:,ismember(GPRdata_head,'iHsa grRule')) = ihsa_grRule_ensg;
 GPRdata(:,ismember(GPRdata_head,'iHsa Ngenes')) = genesPerRule(ihsa_grRule_ensg);
 
 % retrieve grRule modification information from iHsa Supp Data #1
-supp_data = readtable('ComplementaryScripts/GPRs/dataFiles/iHsa_supp_data_1.xlsx','Sheet','GPR Associations');
+supp_data = readtable('ComplementaryData/iHsa/iHsa_supp_data_1.xlsx','Sheet','GPR Associations');
 rat_ind = ismember(supp_data.variable,'gpr_rno');
 supp_data(rat_ind,:) = [];  % remove rows corresponding to Rat model
 
