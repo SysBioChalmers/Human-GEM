@@ -2,6 +2,7 @@
 % FILE NAME:    removeDuplicateMetsInRecon3D.m
 % 
 % DATE CREATED: 2018-08-02
+%     MODIFIED: 2018-08-03
 %
 % PROGRAMMER:   Hao Wang
 %               Department of Biology and Biological Engineering
@@ -82,4 +83,11 @@ end
 model.oldS=Recon3DRaven.S;
 model.oldMets=Recon3DRaven.mets;
 Recon3DRaven=model;
+
+% To assist model merge, modify the metNames for metabolites
+% 'phacgly_s' and 'phacgly_c' by changing from 'Phenylacetylglycine'
+% to 'Phenylacetylglycine_phacgly'
+[~, index]=ismember({'phacgly_c','phacgly_s'},Recon3DRaven.mets);
+Recon3DRaven.metNames(index)={'Phenylacetylglycine_phacgly'};
+
 save('Recon3DRaven.mat','Recon3DRaven');
