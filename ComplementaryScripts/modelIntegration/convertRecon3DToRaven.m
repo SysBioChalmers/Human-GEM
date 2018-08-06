@@ -3,6 +3,7 @@
 % 
 % DATE CREATED: 2018-04-25
 %     MODIFIED: 2018-06-20
+%     MODIFIED: 2018-08-03
 % 
 % PROGRAMMER:   Hao Wang
 %               Department of Biology and Biological Engineering
@@ -38,31 +39,8 @@ Recon3DRaven=ravenCobraWrapper(Recon3D);
 Recon3DRaven.rxnEquations=constructEquations(Recon3DRaven);
 Recon3DRaven.originalMets=Recon3D.originalMets;
 
-% Create data structure of one-to-one met assocation between HMR2 and Recon3D 
-load('metAssocHMR2Recon3.mat');   %To get the manually curated met association info
-% Directly save the unique associations
-single_ind=find(cellfun(@numel,metAssocHMR2Recon3.metRecon3DID)==1);
-metAssoc.metHMRID=metAssocHMR2Recon3.metHMRID(single_ind);
-metAssoc.metRecon3DID=reformatElements(metAssocHMR2Recon3.metRecon3DID(single_ind),'cell2str');
-metAssoc.metNames=metAssocHMR2Recon3.metNames(single_ind);
-% Keep the associations between one HMR id to multiple Recon3D id
-multi_ind=find(cellfun(@numel,metAssocHMR2Recon3.metRecon3DID)>1);
-for i=1:length(multi_ind)
-		m=multi_ind(i);
-		num=numel(metAssocHMR2Recon3.metRecon3DID{m});
-		temp=cell(num,1);
-		temp(:)={metAssocHMR2Recon3.metHMRID{m}};
-		names=cell(num,1);
-		names(:)={metAssocHMR2Recon3.metNames{m}};
-		metAssoc.metHMRID=[metAssoc.metHMRID;temp];
-		metAssoc.metRecon3DID=[metAssoc.metRecon3DID;transpose(metAssocHMR2Recon3.metRecon3DID{m})];
-		metAssoc.metNames=[metAssoc.metNames;names];
-end
-save('metAssoc.mat','metAssoc');         % 2018-06-20
-% This file is designed for convenient model integration purpose,
-% and should be updated once metAssocHMR2Recon3.mat file is changed!
-
 % Converte met info from Recon3D to HMR
+load('metAssoc.mat');
 Recon3DRaven.metsBeforeConv=Recon3DRaven.mets;
 metIDs=regexprep(Recon3DRaven.mets,'_\w$','');
 for i=1:numel(metIDs)
@@ -85,5 +63,19 @@ for i=1:numel(metIDs)
 end
 Recon3DRaven.mets=cellfun(@char,Recon3DRaven.mets,'un',0);  % uniform met id format
 
-save('Recon3DRaven.mat','Recon3DRaven');  % 2018-06-20
+% Convert Recon3D grRules by replacing with Ensembl ids and
+% converging multiple suffix versions into one in the field
+[genes,grRules,rxnGeneMat] = translateGeneRules(Recon3DRaven);
+
+% backup genes, grRules and rxnGeneMat
+Recon3DRaven.originalGrRules=Recon3DRaven.grRules;
+Recon3DRaven.originalGenes=Recon3DRaven.genes;
+Recon3DRaven.originalRxnGeneMat=Recon3DRaven.rxnGeneMat;
+
+% update genes, grRules and rxnGeneMat
+Recon3DRaven.grRules=grRules.ENSG;
+Recon3DRaven.genes=genes.ENSG;
+Recon3DRaven.rxnGeneMat=rxnGeneMat.ENSG;
+
+save('Recon3DRaven.mat','Recon3DRaven');  % 2018-08-03
 
