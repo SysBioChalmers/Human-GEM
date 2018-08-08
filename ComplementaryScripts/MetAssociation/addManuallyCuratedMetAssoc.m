@@ -116,4 +116,8 @@ metAssocHMR2Recon3.metRecon3DID{find(strcmp('m01942',metAssocHMR2Recon3.metHMRID
 metAssocHMR2Recon3.metRecon3DID{find(strcmp('m02410',metAssocHMR2Recon3.metHMRID))}='';
 metAssocHMR2Recon3.metRecon3DID{find(strcmp('m02487',metAssocHMR2Recon3.metHMRID))}='';
 metAssocHMR2Recon3.metRecon3DID{find(strcmp('m02578',metAssocHMR2Recon3.metHMRID))}='';
-save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');  % 2018-06-18
+
+% 6. Associate Recon3D mets 'M00196' and 'protein' to HMR2 met 'm00196'
+ind=find(strcmp(metAssocHMR2Recon3.metHMRID,'m00196'));
+metAssocHMR2Recon3.metRecon3DID{ind}{2}='protein';
+save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');  % 2018-08-03
