@@ -1,9 +1,13 @@
 function report=countFrequency(queryList)
 % 
-%   count occurrences of string elements in a cell array:
+%   Count occurrences of string elements in a cell array
 %
-%   queryList    the input cell array
+%   queryList     the input cell array
 %
+%   report        the output structure with frequency count
+%     uniqueList  the cell array of unique elements
+%     frequency   occurrence frequency of unique elements in the input cell array
+%                  
 %   Usage: report=countFrequency(queryList)
 %
 %   Hao Wang, 2018-06-02
@@ -17,7 +21,7 @@ if nargin<1
 end
 
 if ~iscell(queryList)
-		EM='Wrong input arguments';
+		EM='Wrong input argument';
 		disp(EM);
 end
 
