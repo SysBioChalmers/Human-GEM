@@ -1,16 +1,20 @@
-function [genes,grRules,rxnGeneMat] = translateGeneRules(model,noMatch)
-%translateGeneRules  Translate model genes, grRules, rxnGeneMat to alt IDs
+function [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetFormat,origFormat,noMatch)
+%translateGeneRules  Translate grRules to other other gene ID types.
 %
-% translateGeneRules converts the genes, grRules, and rxnGeneMat from a 
-% model to six different gene ID types, where the original model gene list
-% must correspond to one of the six ID types. The recognized gene ID types
-% are:
+% translateGeneRules converts grRules to a chosen target gene ID type(s).
+% The original and target gene type(s) must be one of the following:
+%
 %       'ENSG'     Ensembl gene ID
 %       'ENST'     Ensembl transcript ID
 %       'ENSP'     Ensembl protein ID
 %       'UniProt'  UniProt protein ID
 %       'Name'     HUGO gene abbreviation
 %       'Entrez'   Entrez (NCBI) gene ID
+%
+% The function will try to determine the original gene ID format, but this 
+% can be manually specified with the "origFormat" input. Furthermore, the 
+% user can supply a custom conversion key in the "targetFormat" input that 
+% uses gene IDs other than the above built-in ID types (see details below).
 %
 % NOTE: All trailing ".#" after Entrez or Ensembl ID (e.g., ENSG0000123.1)
 %       will be REMOVED. The grRules may therefore change; e.g.:
@@ -23,80 +27,125 @@ function [genes,grRules,rxnGeneMat] = translateGeneRules(model,noMatch)
 %
 % USAGE:
 %
-%   [genes,grRules,rxnGeneMat] = translateGeneRules(model,noMatch);
+%   [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetFormat,origFormat,noMatch);
 %
 %
 % INPUTS:
 %
-%   model       A genome-scale metabolic model structure.
+%   grRules     A cell vector of gene-reaction rules (e.g., model.grRules).
+%
+%   targetFormat    The desired output format of the grRules. This can be
+%                   one or multiple gene ID types, and must be selected
+%                   from the following: 'ENSG', 'ENSP', 'ENST', 'UniProt',
+%                   'Name', 'Entrez'.
+%                   DEFAULT: All 6 formats.
+%
+%               *** NOTE: As a special case, instead of entering a target
+%                   format or list of formats, this input can be replaced
+%                   with a custom conversion key. This conversion key must
+%                   be an Nx2 cell array, where the first column contains
+%                   gene IDs corresponding to the current grRules, and the
+%                   second column contains new gene IDs to which the rules
+%                   will be translated.
+%
+%   origFormat  (Optional) A string specifying the original gene ID type 
+%               (e.g., 'UniProt'). If not provided, the function will try 
+%               to automatically determine the type of IDs present.
 %
 %   noMatch     What to do in case a gene in the original grRules does not
 %               have a corresponding match in the new gene IDs to which the
 %               grRules are to be translated. Choose from the following:
 %               
+%               'delete'    (DEFAULT) Delete (exclude) the gene from the 
+%                           new rule.
+%
 %               'original'  keep the original gene ID. Note, this will
 %                           result in mixed gene ID types in grRules and 
 %                           the corresponding list of genes, which may
 %                           cause problems in other applications.
 %
-%               'delete'    (Default) Delete (exclude) the gene from the 
-%                           new rule.
-%
 %
 % OUTPUTS:
 %
-%   genes       A structure containing gene lists corresponding to each of
-%               the different types of gene IDs.
+%   grRules_new  grRules with the gene IDs converted to the target format.
+%                If targetFormat is more than one ID type, then grRules 
+%                will be returned as a structure, with a different field
+%                for each gene ID type.
 %
-%   grRules     A structure containing grRules corresponding to each of the
-%               different types of gene IDs.
+%   genes        A list of all genes found in the converted grRules.
+%                If targetFormat is more than one ID type, then genes will
+%                be returned as a structure, with a different field for
+%                each gene ID type.
 %
-%   rxnGeneMat  A structure containing a rxnGeneMat correspodning to each 
-%               of the different types of gene IDs
+%   rxnGeneMat   A matrix associating reactions to genes, build from the
+%                converted grRules and genes list. If targetFormat is more
+%                than one ID type, then rxnGeneMat will be returned as a 
+%                structure, with a different field for each gene ID type.
 %
 %
-% Jonathan Robinson, 2018-07-20
+% Jonathan Robinson, 2018-08-02
 
-
-% recognized ID types for genes, transcripts, and proteins
-gene_types = {'ENSG';'ENST';'ENSP';'UniProt';'Name';'Entrez'};
 
 % handle input arguments
-if nargin < 2
+if nargin < 4
     noMatch = 'delete';
+elseif ~ismember(lower(noMatch),{'original','delete'})
+    error('Valid inputs for noMatch are "original" or "delete".');
 end
 
-% notify user how unmatched genes will be handled
-if contains('original',lower(noMatch))
-    fprintf('\nNOTE: in the event a new gene ID cannot be matched to an original gene ID,\n');
-    fprintf('the original gene ID will be retained (in both the generated new gene list and new grRules).\n\n');
-elseif contains('delete',lower(noMatch))
-    fprintf('\nNOTE: in the event a new gene ID cannot be matched to an original gene ID,\n');
-    fprintf('the gene will be excluded from the generated new gene list and new grRules.\n\n');
+if nargin < 3
+    gene_type_orig = {};
 else
-    error('Invalid input for noMatch.');
+    gene_type_orig = origFormat;
 end
 
-% initialize empty structure with gene information
-tmp = [gene_types,cell(size(gene_types))]';
-genes = struct(tmp{:});
+custom_key = false;
+if nargin < 2 || isempty(targetFormat)
+    % recognized ID types for genes, transcripts, and proteins
+    targetFormat = {'ENSG';'ENST';'ENSP';'UniProt';'Name';'Entrez'};
+elseif ischar(targetFormat)
+    % convert target format from string to cell
+    targetFormat = {targetFormat};
+elseif (size(targetFormat,2) == 2) && (size(targetFormat,1) > 10)  % check that it has some arbitrarly long length above 10
+    % use custom conversion key
+    custom_key = true;
+    conv_key = targetFormat;
+    targetFormat = {'NewFormat'};
+    conv_key_head = {'OldFormat','NewFormat'};
+    gene_type_orig = 'OldFormat';
+    fprintf('\n*Using user-supplied gene ID conversion key*\n\n');
+else
+    % ensure it is a column vector
+    targetFormat = targetFormat(:);
+end
 
-% preprocess gene list and gene-reaction rules from model, if necessary
-if any(ismember({'GPI','GAPDH'},model.genes))  % need a more robust method to check if it's gene symbols
+
+% get original list of genes from the grRules
+rules_tmp = regexprep(grRules, ' or ', ' | ');
+rules_tmp = regexprep(rules_tmp, ' and ', ' & ');
+rxnGenes = cellfun(@(r) unique(regexp(r,'[^&|\(\) ]+','match')),rules_tmp,'UniformOutput',false);
+nonEmpty = ~cellfun(@isempty,rxnGenes);
+genes_orig = unique([rxnGenes{nonEmpty}]');
+if ismember('and',genes_orig) || ismember('or',genes_orig)
+    error('Problem reading grRules. Verify that all "and" and "or" elements are lowercase and surrounded by spaces.');
+end
+
+% preprocess gene list and gene-reaction rules, if necessary
+if any(ismember({'GPI','GAPDH'},genes_orig))  % need a more robust method to check if it's gene symbols
     % check if the list is gene names (symbols), if so, do not modify
-    genes_orig = model.genes;
-    rules_orig = model.grRules;
-    gene_type_orig = 'Name';
+    rules_orig = grRules;
+    if ~custom_key && isempty(gene_type_orig)
+        gene_type_orig = 'Name';
+    end
 else
     % remove ".#" from gene IDs (e.g. ENSG00000198888.2 -> ENSG00000198888, or 2597.1 -> 2597)
-    genes_orig = regexprep(model.genes,'\.\d+$','');
-    rules_orig = regexprep(model.grRules,'\.\d+','');
-    gene_type_orig = {};
+    genes_orig = regexprep(genes_orig,'\.\d+$','');
+    rules_orig = regexprep(grRules,'\.\d+','');
 end
 
 % determine the original gene ID type, if not gene names
 if isempty(gene_type_orig)
-    if ismember(genes_orig{1}(1:4),{'ENSG','ENST','ENSP'})
+    if startsWith(genes_orig{1},{'ENSG','ENST','ENSP'})
         % ensembl ID type
         gene_type_orig = genes_orig{1}(1:4);
     elseif all(ismember(cellfun(@length,genes_orig),[6,10])) && all(cellfun(@(x) ~isempty(regexp(x,'^[A-Z]\d\w\w\w\d','once')),genes_orig))
@@ -113,42 +162,46 @@ end
 % remove duplicate genes (if any)
 genes_orig = unique(genes_orig,'stable');
 
-% import gene-transcript-protein conversion key
+if ~custom_key
+    % import gene-transcript-protein conversion key
+    
+    % get the path
+    [ST, I]=dbstack('-completenames');
+    path=fileparts(ST(I).file);
 
-% get the path
-[ST, I]=dbstack('-completenames');
-path=fileparts(ST(I).file);
+    tmpfile=fullfile(path,'IDconversion','ensembl_ID_mapping_20171107.txt');
+    tmp = readtable(tmpfile);
 
-tmpfile=fullfile(path,'IDconversion','ensembl_ID_mapping_20171107.txt');
-tmp = readtable(tmpfile);
-conv_key_head = tmp.Properties.VariableNames';  % read header
-
-% change header names to match contents of GENE_TYPES
-[~,ind] = ismember(conv_key_head,{'Gene_stable_ID','Transcript_stable_ID',...
-    'Protein_stable_ID','UniProtKB_Swiss_Prot_ID','Gene_name','NCBI_gene_ID'});
-conv_key_head = gene_types(ind);
-
-% convert numeric Entrez ID data to strings
-tmp.NCBI_gene_ID = arrayfun(@num2str,tmp.NCBI_gene_ID,'UniformOutput',false);
-conv_key = table2array(tmp); clear tmp;
-
-% replace 'NaN' in Entrez ID column of conversion key with empty cells ('')
-conv_key(:,ismember(conv_key_head,'Entrez')) = regexprep(conv_key(:,ismember(conv_key_head,'Entrez')),'NaN','');
+    conv_key_head = tmp.Properties.VariableNames';  % read header
+    
+    % change header names to match contents of GENE_TYPES
+    [~,ind] = ismember(conv_key_head,{'Gene_stable_ID','Transcript_stable_ID',...
+        'Protein_stable_ID','UniProtKB_Swiss_Prot_ID','Gene_name','NCBI_gene_ID'});
+    type_abbrevs = {'ENSG';'ENST';'ENSP';'UniProt';'Name';'Entrez'};
+    conv_key_head = type_abbrevs(ind);
+    
+    % convert numeric Entrez ID data to strings
+    tmp.NCBI_gene_ID = arrayfun(@num2str,tmp.NCBI_gene_ID,'UniformOutput',false);
+    conv_key = table2array(tmp); clear tmp;
+    
+    % replace 'NaN' in Entrez ID column of conversion key with empty cells ('')
+    conv_key(:,ismember(conv_key_head,'Entrez')) = regexprep(conv_key(:,ismember(conv_key_head,'Entrez')),'NaN','');
+end
 
 % begin by "cleaning" the original grRules
-fprintf('Running an initial clean of the original model grRules... ');
+fprintf('Running an initial clean of the original grRules... ');
 rules_orig = cleanModelGeneRules(rules_orig);
 fprintf('Done.\n');
 
 % convert rules to all other gene ID types
-for i = 1:length(gene_types)
+for i = 1:length(targetFormat)
     
-    fprintf('Translating rules to %s...\n',gene_types{i});
+    fprintf('Translating rules to %s...\n',targetFormat{i});
     
     % extract portion of conversion key required; resulting variable will
     % be two columns of IDs, where column 1 is the original gene ID type,
     % and column 2 is the new gene ID type.
-    [~,ind] = ismember([{gene_type_orig}, gene_types(i)], conv_key_head);
+    [~,ind] = ismember([{gene_type_orig}, targetFormat(i)], conv_key_head);
     conv_key_sub = conv_key(:,ind);
     
     % remove rows with empty key entries or unneeded genes
@@ -178,7 +231,7 @@ for i = 1:length(gene_types)
     rules_new = regexprep(rules_new, ' and ', ' & ');
     
     % check if the target format is the original format
-    if strcmp(gene_types{i},gene_type_orig)
+    if strcmp(targetFormat{i},gene_type_orig)
         % if current model rules are already in the target format, do not
         % convert gene IDs
         fprintf('\tRules already contain gene IDs of this type, skipping conversion.\n\n');
@@ -199,19 +252,19 @@ for i = 1:length(gene_types)
     rules_new = cleanModelGeneRules(rules_new);    
     fprintf('Done.\n');
     
-    % generate new rxnGeneMat and gene list based on new grRules
+    
+    % generate new rxnGeneMat and gene list based on converted grRules
     
     % identify genes associated with each reaction
     rxnGenes = cellfun(@(r) unique(regexp(r,'[^&|\(\) ]+','match')),rules_new,'UniformOutput',false);
     
     % construct new gene list
     nonEmpty = ~cellfun(@isempty,rxnGenes);
-    genes.(gene_types{i}) = unique([rxnGenes{nonEmpty}]');
-    model.(strcat('genes_',gene_types{i})) = genes.(gene_types{i});
+    genes.(targetFormat{i}) = unique([rxnGenes{nonEmpty}]');
     
     % construct new rxnGeneMat
-    rxnGeneCell = cellfun(@(rg) ismember(genes.(gene_types{i}),rg),rxnGenes,'UniformOutput',false);
-    rxnGeneMat.(gene_types{i}) = sparse(double(horzcat(rxnGeneCell{:})'));
+    rxnGeneCell = cellfun(@(rg) ismember(genes.(targetFormat{i}),rg),rxnGenes,'UniformOutput',false);
+    rxnGeneMat.(targetFormat{i}) = sparse(double(horzcat(rxnGeneCell{:})'));
     
     
     % restore "&" as "and" and "|" as "or"
@@ -219,9 +272,20 @@ for i = 1:length(gene_types)
     rules_new = regexprep(rules_new, ' & ', ' and ');
     
     % add new rules to model structure
-    grRules.(gene_types{i}) = rules_new;
+    grRules_new.(targetFormat{i}) = rules_new;
     
 end
+
+
+% if only one target format is specified, structures are not necessary
+if length(targetFormat) == 1
+    grRules_new = grRules_new.(targetFormat{1});
+    if ~isempty(genes)
+        genes = genes.(targetFormat{1});
+        rxnGeneMat = rxnGeneMat.(targetFormat{1});
+    end
+end
+
 
 
 
