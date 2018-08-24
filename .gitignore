@@ -1,3 +1,23 @@
-# OS generated files #
-######################
+# Windows default autosave extension
+*.asv
+Thumbs.db
+
+# OSX / *nix default autosave extension
+*.*~
+
+# Compiled MEX binaries (all platforms)
+*.mex*
+
+# OS hidden extensions
 .DS_Store
+
+# specific extensions
+*.pyc
+*.mps
+
+# Windows executable files
+*.exe
+*.exe.*
+
+# Windows dynamic library files
+*.dll
