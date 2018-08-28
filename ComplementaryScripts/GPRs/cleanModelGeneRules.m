@@ -56,6 +56,7 @@ end
 
 % iterate through the cleaning process until the grRules no longer change
 grRules_orig = grRules;
+ambiguous_ind = [];  % initialize variable
 for i = 1:50  % perform a max of 50 iterations (it shouldn't require nearly that many)
     
     % remove extra parentheses
@@ -146,6 +147,12 @@ for i = 1:50  % perform a max of 50 iterations (it shouldn't require nearly that
         % append the final state of the grRule as the last chunk
         chunks{end+1} = r;
         
+        % Check whether an AND and OR appear in the final state of the 
+        % grRule in an ambiguous manner (i.e., not separated by a parenthesis)
+        if ~isempty(regexp(r,'\|[^\(\)]+&|&[^\(\)]+\|','once'))
+            ambiguous_ind = [ambiguous_ind; AndOrInd(ii)];
+        end
+        
         % remove duplicates from chunks, iterating until no more changes
         chunks_orig = chunks;
         for k = 1:100
@@ -205,6 +212,12 @@ for i = 1:50  % perform a max of 50 iterations (it shouldn't require nearly that
     end
     
 end
+
+% notify user of any ambiguous grRules (AND and OR expressions that are not
+% separated by parentheses)
+fprintf('\n***The following grRules contain ambiguous AND/OR combination(s) due to insufficient parentheses:\n');
+fprintf('\t%u\n',unique(ambiguous_ind));
+fprintf('\n');
 
 % change boolean operators back to original type
 if strcmpi(Btype,'text')
