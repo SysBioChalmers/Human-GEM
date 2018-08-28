@@ -28,7 +28,7 @@ function cleaned_rules = cleanModelGeneRules(grRules)
 %   cleaned_rules   Updated/cleaned grRules.
 %
 %
-% Jonathan Robinson, 2018-07-27
+% Jonathan Robinson, 2018-08-28
 
 
 
@@ -215,9 +215,11 @@ end
 
 % notify user of any ambiguous grRules (AND and OR expressions that are not
 % separated by parentheses)
-fprintf('\n***The following grRules contain ambiguous AND/OR combination(s) due to insufficient parentheses:\n');
-fprintf('\t%u\n',unique(ambiguous_ind));
-fprintf('\n');
+if ~isempty(ambiguous_ind)
+    fprintf('\n***The following grRules contain ambiguous AND/OR combination(s) due to insufficient parentheses:\n');
+    fprintf('\t%u\n',unique(ambiguous_ind));
+    fprintf('\n');
+end
 
 % change boolean operators back to original type
 if strcmpi(Btype,'text')
