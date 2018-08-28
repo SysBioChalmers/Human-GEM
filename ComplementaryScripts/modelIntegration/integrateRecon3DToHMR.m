@@ -48,7 +48,7 @@ check=unique(check);
 output=split(check,';');
 rxnAssoc.rxnRecon3DID=cellstr(output(:,1));
 rxnAssoc.rxnHMRID=cellstr(output(:,2));
-save('../../ComplementaryScripts/modelIntegration/rxnAssoc.mat','rxnAssoc');
+save('rxnAssoc.mat','rxnAssoc');
 
 
 % 2. Get the reduced Recon3D model by removing the duplicate reactions
@@ -79,4 +79,5 @@ model.rxnRecon3DID=reformatElements(model.rxnRecon3DID,'cell2str');
 % 5. Remove unused fields and save model
 model=rmfield(model,{'geneMiriams','annotation'});
 ihuman=model;
+ihuman.version='0.2.0';
 save('../../ModelFiles/mat/humanGEM.mat','ihuman');
