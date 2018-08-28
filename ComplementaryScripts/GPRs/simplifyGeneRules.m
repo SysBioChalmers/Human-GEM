@@ -57,7 +57,7 @@ function [simple_rules,skipped] = simplifyGeneRules(grRules,expanded)
 %                  be copied into simple_rules without any simplification.
 %
 %
-% Jonathan Robinson, 2018-07-31
+% Jonathan Robinson, 2018-08-28
 
 if nargin < 2
     expanded = false;
