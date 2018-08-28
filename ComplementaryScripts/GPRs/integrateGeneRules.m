@@ -1,4 +1,4 @@
-function grRules = integrateGeneRules(HMR,iHsa,Recon3D,rxnHMR2Recon3D)
+function [grRules,new_genes] = integrateGeneRules(HMR,iHsa,Recon3D,rxnHMR2Recon3D)
 %integrateGeneRules  Combine grRules from HMR, iHsa, and Recon3D models.
 %
 %
@@ -22,8 +22,12 @@ function grRules = integrateGeneRules(HMR,iHsa,Recon3D,rxnHMR2Recon3D)
 %   grRules     An updated grRules vector, where grRules from iHsa and
 %               Recon3D have been incorporated into the grRules of HMR.
 %
+%   new_genes   A cell array listing new genes (if any) that were added to
+%               each grRule, and were already present in some other
+%               grRule(s) in the original model.
 %
-% Jonathan Robinson, 2018-08-16
+%
+% Jonathan Robinson, 2018-08-28
 
 
 % Note: Loaded rxnHMR2Recon3D array using following commands:
@@ -33,7 +37,7 @@ function grRules = integrateGeneRules(HMR,iHsa,Recon3D,rxnHMR2Recon3D)
 
 % handle input arguments
 if isempty(HMR)
-    load('ModelFiles/mat/HMRdatabase2_02.mat');  % loads as variable "ihuman"
+    load('ComplementaryData/HMR2/HMRdatabase2_02.mat');  % loads as variable "ihuman"
     HMR = ihuman;
 end
 if isempty(iHsa)
@@ -45,6 +49,7 @@ end
 
 % initialize output
 grRules = HMR.grRules;
+new_genes = repmat({''},size(grRules));
 
 % clean HMR.grRules if not yet done
 fprintf('Cleaning HMR grRules... ');
@@ -84,6 +89,8 @@ hmr_genes = genesInRxn(HMR.grRules);
 ihsa_genes = genesInRxn(ihsa_grRule_ensg);
 r3_genes = genesInRxn(r3_grRule_ensg);
 
+% get list of all genes among all HMR rules
+all_hmr_genes = unique(horzcat(hmr_genes{:}))';
 
 % compare and integrate grRules
 for i = 1:length(grRules)
@@ -91,15 +98,19 @@ for i = 1:length(grRules)
         if isempty(ihsa_genes{i})
             if ~isempty(r3_genes{i})
                 grRules{i} = r3_grRule_ensg{i};
+                new_genes{i} = strjoin(intersect(r3_genes{i},all_hmr_genes),'; ');
             end
         else
             grRules{i} = ihsa_grRule_ensg{i};
+            new_genes{i} = strjoin(ihsa_genes{i},'; ');
         end
     else
         if all(ismember(hmr_genes{i},ihsa_genes{i}))
             grRules{i} = ihsa_grRule_ensg{i};
+            new_genes{i} = strjoin(intersect(ihsa_genes{i}(~ismember(ihsa_genes{i},hmr_genes{i})),all_hmr_genes),'; ');
         elseif all(ismember(hmr_genes{i},r3_genes{i}))
             grRules{i} = r3_grRule_ensg{i};
+            new_genes{i} = strjoin(intersect(r3_genes{i}(~ismember(r3_genes{i},hmr_genes{i})),all_hmr_genes),'; ');
         end
     end
 end
