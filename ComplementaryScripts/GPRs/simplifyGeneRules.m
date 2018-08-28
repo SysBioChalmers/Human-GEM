@@ -180,7 +180,13 @@ for i = 1:length(AndOrInd)
             r = regexprep(r,'\^\d+','');  % remove exponents
             
             % simplify equation
-            reqn = simplify(str2sym(r));
+            try
+                reqn = simplify(str2sym(r));
+            catch
+                fprintf('grRule #%u was too complex, and therefore skipped.\n',AndOrInd(i));
+                skipped(AndOrInd(i)) = true;
+                break
+            end
             
             % check if the equation has changed
             if isequal(char(reqn),char(reqn_orig))  % need to compare eqns in string form, otherwise it compares mathematically
@@ -190,6 +196,11 @@ for i = 1:length(AndOrInd)
                 % go through the process again if something has changed
                 reqn_orig = reqn;
             end
+        end
+        
+        % break outer for-loop if equation was skipped due to complexity
+        if skipped(AndOrInd(i))
+            break
         end
         
         % Add parentheses around groups of genes. This may add some
