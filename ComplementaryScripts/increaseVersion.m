@@ -6,8 +6,8 @@ function increaseVersion(bumpType)
 %   Usage: function increaseVersion(bumpType)
 %
 %   Benjamín J. Sánchez, 2018-07
+%   Hao Wang, 2018-8-29
 %
-
 
 %Check if in master:
 currentBranch = git('rev-parse --abbrev-ref HEAD');
@@ -16,8 +16,8 @@ if ~strcmp(currentBranch,'master')
 end
 
 %Bump version number:
-oldModel   = load('../ModelFiles/mat/yeastGEM.mat');
-oldVersion = oldModel.model.modelID;
+oldModel   = load('../ModelFiles/mat/humanGEM.mat');
+oldVersion = oldModel.model.version
 oldVersion = oldVersion(strfind(oldVersion,'_v')+2:end);
 oldVersion = str2double(strsplit(oldVersion,'.'));
 newVersion = oldVersion;
@@ -40,19 +40,17 @@ newVersion = num2str(newVersion,'%d.%d.%d');
 fid     = fopen('../history.md','r');
 history = fscanf(fid,'%s');
 fclose(fid);
-if ~contains(history,['yeast' newVersion ':'])
+if ~contains(history,['human' newVersion ':'])
     error('ERROR: update history.md first')
 end
 
 %Load model:
-initCobraToolbox
-model = readCbModel('../ModelFiles/xml/yeastGEM.xml');
+ihuman = importModel('../ModelFiles/xml/humanGEM.xml');
 
 %Include tag and save model:
-model.modelID = ['yeastGEM_v' newVersion];
-saveYeastModel(model,false)
+ihuman.version = newVersion;
 
-%Check if any file changed (except for history.md and 1 line in yeastGEM.xml):
+%Check if any file changed (except for history.md and 1 line in humanGEM.xml):
 diff   = git('diff --numstat');
 diff   = strsplit(diff,'\n');
 change = false;
@@ -60,7 +58,7 @@ for i = 1:length(diff)
     diff_i = strsplit(diff{i},'\t');
     if length(diff_i) == 3
         %.xml file: 1 line should be added & 1 line should be deleted
-        if strcmp(diff_i{3},'ModelFiles/xml/yeastGEM.xml')
+        if strcmp(diff_i{3},'ModelFiles/xml/humanGEM.xml')
             if eval([diff_i{1} ' > 1']) || eval([diff_i{2} ' > 1'])
                 disp(['NOTE: File ' diff_i{3} ' is changing more than expected'])
                 change = true;
@@ -94,11 +92,8 @@ fclose('all');
 delete('backup');
 
 %Store model as .mat:
-save('../ModelFiles/mat/yeastGEM.mat','model');
-
-%Convert to RAVEN format and store model as .xlsx:
-model = ravenCobraWrapper(model);
-exportToExcelFormat(model,'../ModelFiles/xlsx/yeastGEM.xlsx');
+save('../ModelFiles/mat/humanGEM.mat','ihuman');
+exportForGit(ihuman,'humanGEM','..',{'mat', 'txt', 'xlsx', 'xml', 'yml'});
 
 %Update version file:
 fid = fopen('../version.txt','wt');
