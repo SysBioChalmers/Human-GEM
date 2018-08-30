@@ -3,7 +3,7 @@ function model_new = addMetCompsField(model)
 %
 % USAGE:
 %
-%   newComps = addMetCompsField(model);
+%   model_new = addMetCompsField(model);
 %
 % INPUTS:
 %
@@ -26,7 +26,7 @@ function model_new = addMetCompsField(model)
 metCompAbbrevs=cell(numel(model.mets),1);
 metCompAbbrevs(:)={''};
 
-% deal with the compartment abbrev case-by-case
+% deal with the compartment abbrev one-by-one
 for i=1:numel(model.mets)
     % determine format of met compartment abbreviations
     if endsWith(model.mets{i},']')
