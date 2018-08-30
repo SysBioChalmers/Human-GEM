@@ -3,7 +3,7 @@ function model_new = addMetCompsField(model)
 %
 % USAGE:
 %
-%   model_new = addMetCompsField(model);
+%   newComps = addMetCompsField(model);
 %
 % INPUTS:
 %
@@ -19,20 +19,29 @@ function model_new = addMetCompsField(model)
 %               field, this field will also be generated and added to the
 %               output model_new.
 %
-%
 % Jonathan L. Robinson, 2018-07-02
+% Hao Wang, 2018-08-30
+%
 
+metCompAbbrevs=cell(numel(model.mets),1);
+metCompAbbrevs(:)={''};
 
-% determine format of met compartment abbreviations
-if endsWith(model.mets{1},']')
-    % compartment abbrev is contained within brackets at end of met ID
-    metCompAbbrevs = regexp(model.mets,'\[(\w)\]$','tokens');
-    metCompAbbrevs = cellfun(@(a) a{1}{1},metCompAbbrevs,'UniformOutput',false);
-else
-    % assume compartment abbrev is last character of met ID
-    metCompAbbrevs = regexp(model.mets,'\w$','match');
-    metCompAbbrevs = cellfun(@(a) a{1},metCompAbbrevs,'UniformOutput',false);
+% deal with the compartment abbrev case-by-case
+for i=1:numel(model.mets)
+    % determine format of met compartment abbreviations
+    if endsWith(model.mets{i},']')
+        % compartment abbrev is contained within brackets at end of met ID
+        tmp = regexp(model.mets{i},'\[(\w+)\]$','tokens');
+        metCompAbbrevs{i} = tmp{1};
+    elseif contains(model.mets{1},'_')
+        % compartment abbrev is at the end of metID and separated by underscore
+        metCompAbbrevs{i} = regexp(model.mets{i},'\_(\w+)$','tokens');
+    else
+        % compartment abbrev is last character(s) of met ID without separator
+        metCompAbbrevs{i} = regexp(model.mets{i},'[a-z]+$','match');
+    end
 end
+metCompAbbrevs=cellfun(@char,metCompAbbrevs,'UniformOutput',false);
 
 % check "comps" field
 if ~isfield(model,'comps')
@@ -48,4 +57,4 @@ end
 % assign output
 model_new = model;
 
-
+end
