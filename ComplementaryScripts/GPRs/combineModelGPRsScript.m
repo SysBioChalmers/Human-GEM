@@ -142,6 +142,10 @@ ihuman.rxnGeneMat = rxnGeneMat;
 % should be removed
 ihuman = rmfield(ihuman,'geneFrom');
 
+% instead of updating the "geneComps" field, it will be removed from the
+% model because it is uninformative/irrelevant.
+ihuman = rmfield(ihuman,'geneComps');
+
 
 %% Generate and add corresponding protein fields to model
 
