@@ -121,11 +121,7 @@ end
 
 
 % get original list of genes from the grRules
-rules_tmp = regexprep(grRules, ' or ', ' | ');
-rules_tmp = regexprep(rules_tmp, ' and ', ' & ');
-rxnGenes = cellfun(@(r) unique(regexp(r,'[^&|\(\) ]+','match')),rules_tmp,'UniformOutput',false);
-nonEmpty = ~cellfun(@isempty,rxnGenes);
-genes_orig = unique([rxnGenes{nonEmpty}]');
+genes_orig = getGenesFromGrRules(grRules);
 if ismember('and',genes_orig) || ismember('or',genes_orig)
     error('Problem reading grRules. Verify that all "and" and "or" elements are lowercase and surrounded by spaces.');
 end
@@ -252,20 +248,8 @@ for i = 1:length(targetFormat)
     rules_new = cleanModelGeneRules(rules_new);    
     fprintf('Done.\n');
     
-    
     % generate new rxnGeneMat and gene list based on converted grRules
-    
-    % identify genes associated with each reaction
-    rxnGenes = cellfun(@(r) unique(regexp(r,'[^&|\(\) ]+','match')),rules_new,'UniformOutput',false);
-    
-    % construct new gene list
-    nonEmpty = ~cellfun(@isempty,rxnGenes);
-    genes.(targetFormat{i}) = unique([rxnGenes{nonEmpty}]');
-    
-    % construct new rxnGeneMat
-    rxnGeneCell = cellfun(@(rg) ismember(genes.(targetFormat{i}),rg),rxnGenes,'UniformOutput',false);
-    rxnGeneMat.(targetFormat{i}) = sparse(double(horzcat(rxnGeneCell{:})'));
-    
+    [genes.(targetFormat{i}),rxnGeneMat.(targetFormat{i})] = getGenesFromGrRules(rules_new);
     
     % restore "&" as "and" and "|" as "or"
     rules_new = regexprep(rules_new, ' \| ', ' or ');
