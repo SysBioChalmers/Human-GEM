@@ -83,7 +83,7 @@ function [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetForma
 %                structure, with a different field for each gene ID type.
 %
 %
-% Jonathan Robinson, 2018-08-02
+% Jonathan Robinson, 2018-09-03
 
 
 % handle input arguments
@@ -165,7 +165,7 @@ if ~custom_key
     [ST, I]=dbstack('-completenames');
     path=fileparts(ST(I).file);
 
-    tmpfile=fullfile(path,'IDconversion','ensembl_ID_mapping_20171107.txt');
+    tmpfile=fullfile(path,'IDconversion','ensembl_ID_mapping_20180903.txt');
     tmp = readtable(tmpfile);
 
     conv_key_head = tmp.Properties.VariableNames';  % read header
