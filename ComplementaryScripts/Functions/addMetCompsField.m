@@ -1,26 +1,21 @@
 function model_new = addMetCompsField(model)
-%addMetCompsField  Add "metComps" field to a model based on "mets" field.
+%addMetCompsField
+%   Add "metComps" field to a model based on "mets" field.
 %
-% USAGE:
+%   model       A genome-scale metabolic model. Must contain a "mets" field,
+%               which should specify metabolite compartment information at
+%               the end of each element (e.g., h2o_c or h2o[c])
 %
-%   model_new = addMetCompsField(model);
-%
-% INPUTS:
-%
-%   model   A genome-scale metabolic model. Must contain a "mets" field,
-%           which should specify metabolite compartment information at the
-%           end of each entry (e.g., h2o_c or h2o[c]).
-%
-% OUTPUTS:
-%
-%   model_new   The input model with a new "metComps" field added, which is
+%   model_new   The output model with a new "metComps" field, which is
 %               numeric vector indicating the compartment index of each
 %               metabolite. If the input model does not contain a "comps"
 %               field, this field will also be generated and added to the
-%               output model_new.
+%               output model_new
 %
-% Jonathan L. Robinson, 2018-07-02
-% Hao Wang, 2018-08-30
+%   Usage: model_new = addMetCompsField(model);
+%   
+%   Jonathan L. Robinson, 2018-07-02
+%   Hao Wang, 2018-08-30
 %
 
 metCompAbbrevs=cell(numel(model.mets),1);
