@@ -25,7 +25,7 @@
 %                        entries in .proteins, NOT entries in .genes.
 %
 %
-% Jonathan Robinson, 2018-09-02
+% Jonathan Robinson, 2018-09-04
 
 
 
@@ -158,13 +158,8 @@ ihuman.prRules = prRules;
 ihuman.rxnProtMat = rxnProtMat;
 
 
-%% Update model version and export to .mat file
+%% Export model to .mat file
 
-if strcmp(ihuman.version,'0.2.0')
-    ihuman.version = '0.2.1';
-else
-    fprintf('\n\nModel version should probably be updated. Please check and do so manually if necessary.\n\n');
-end
 save('ModelFiles/mat/humanGEM.mat','ihuman');
 
 
