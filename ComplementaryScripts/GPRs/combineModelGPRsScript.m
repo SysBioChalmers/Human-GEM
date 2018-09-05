@@ -133,6 +133,9 @@ grRules(ind) = {'ENSG00000184494 or ENSG00000204386 or ENSG00000223957 or ENSG00
 % generate updated gene list and rxnGeneMat field based on merged grRules
 [genes,rxnGeneMat] = getGenesFromGrRules(grRules);
 
+% keep the existing grRule for traceability
+ihuman.priorCombiningGrRules = ihuman.grRules;
+
 % replace existing model fields with new fields
 ihuman.genes = genes;
 ihuman.grRules = grRules;
