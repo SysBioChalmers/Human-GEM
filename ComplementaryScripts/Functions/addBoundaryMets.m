@@ -11,11 +11,10 @@ function new_model = addBoundaryMets(model)
 %   reactions) without an explicit reactant. 
 %   For example: "glc(extracellular) <==> "
 %
-%   To use some RAVEN functions (e.g., INIT), these boundary metabolites
-%   are required. This function therefore identifies all reactions that are
-%   formulated with an exchange of an extracellular metabolite into nothing
-%   as a reaction with a boundary metabolite, and adds any new boundary
-%   metabolites to the model, if they did not yet exist.
+%   This function identifies all reactions that are formulated with an 
+%   exchange of an extracellular metabolite into nothing as a reaction with
+%   a boundary metabolite, and adds any new boundary metabolites to the 
+%   model, if they did not yet exist.
 %
 % USAGE:
 %
@@ -30,7 +29,7 @@ function new_model = addBoundaryMets(model)
 %   new_model   New model structure, with added boundary metabolites.
 %
 %
-% Jonathan Robinson, 2018-09-11
+% Jonathan Robinson, 2018-09-12
 
 
 % add a boundary compartment to the model if it does not yet exist
