@@ -49,12 +49,11 @@ for i = 1:length(dupRxnSets)
     dupRxnData = [dupRxnData; [dupRxnInds{i}, dupRxnNames{i}, dupRxnEqns{i}, dupRxnLBs{i}, dupRxnUBs{i}, dupRxnRules{i}]];
 end
 
-% write data to file
-writecell(dupRxnData,'dupRxnData.txt',true,'\t');
+% write data to file (optional)
+% writecell(dupRxnData,'dupRxnData.txt',true,'\t');
 
 
-
-% this next part depends on all the duplicated reactions simply being the
+% This next part depends on all the duplicated reactions simply being the
 % reverse form of each other
 isrev = [];
 for i = 1:length(dupRxnSets)
@@ -64,15 +63,70 @@ end
 if all(isrev) && all(cellfun(@numel,dupRxnSets) == 2)
     fprintf('All duplicated reaction sets are just the reverse of one another.\n');
     
-    % assess which duplicated reactions have equal bounds or grRules
+    % evaluate some properties about each set of duplicated reactions
     equal_bounds = false(length(dupRxnSets),1);  % initialize variable
     equal_rules = false(length(dupRxnSets),1);  % initialize variable
+    from_diff_model = false(length(dupRxnSets),1);  %initialize variable
     for i = 1:length(dupRxnSets)
+        % check if the rxns have equal bounds
         equal_bounds(i) = (ihuman.lb(dupRxnSets{i}(1)) == -ihuman.ub(dupRxnSets{i}(2))) ...
                        && (ihuman.ub(dupRxnSets{i}(1)) == -ihuman.lb(dupRxnSets{i}(2)));
+                   
+        % check if the rxns have the same grRules
         equal_rules(i) = strcmp(ihuman.grRules(dupRxnSets{i}(1)),ihuman.grRules(dupRxnSets{i}(2)));
+        
+        % check if the rxns come from different sources (i.e., one from HMR, and one from Recon3D)
+        from_diff_model(i) = sum(startsWith(ihuman.rxns(dupRxnSets{i}),'HMR_')) == 1;
     end
+    
+    
+    % update rxnAssoc.mat ONLY with the reaction pairs that came from two
+    % different models (one from HMR, one from Recon3D).
+    load('ComplementaryScripts/modelIntegration/rxnAssoc.mat');  % load rxnAssoc structure
+    addRxnAssocInds = dupRxnSets(from_diff_model);  % select duplicate rxn sets to add
+    
+    % ensure that the HMR rxn is listed first, and the Recon3D rxn second
+    for i = 1:length(addRxnAssocInds)
+        if ~startsWith(ihuman.rxns(addRxnAssocInds{i}(1)),'HMR_')
+            addRxnAssocInds{i} = fliplr(addRxnAssocInds{i});
+        end
+    end
+    
+    % convert index variable to a matrix
+    addRxnAssocInds = vertcat(addRxnAssocInds{:});
+    
+    % retrieve info about rxn names
+    addRxnAssocNames = ihuman.rxns(addRxnAssocInds);
+    
+    % check if any of the associations already exist in rxnAssoc 
+    % (join columns by arbitrary string "***" to enable use of ismember)
+    exclude_ind = ismember(join(addRxnAssocNames,'***'),join([rxnAssoc.rxnHMRID,rxnAssoc.rxnRecon3DID],'***'));
+    addRxnAssocInds(exclude_ind,:) = [];
+    addRxnAssocNames(exclude_ind,:) = [];
+    
+    % retrieve associated bounds ('lb' and 'ub') for each reaction
+    % NOTE: need to switch directions (LB = -UB, and UB = -LB) for the rev rxn
+    addRxnAssocLB = [ihuman.lb(addRxnAssocInds(:,1)), -ihuman.ub(addRxnAssocInds(:,2))];
+    addRxnAssocUB = [ihuman.ub(addRxnAssocInds(:,1)), -ihuman.lb(addRxnAssocInds(:,2))];
+    
+    % add information to rxnAssoc structure
+    rxnAssoc.rxnHMRID = [rxnAssoc.rxnHMRID; addRxnAssocNames(:,1)];
+    rxnAssoc.lbHMR = [rxnAssoc.lbHMR; addRxnAssocLB(:,1)];
+    rxnAssoc.ubHMR = [rxnAssoc.ubHMR; addRxnAssocUB(:,1)];
+    rxnAssoc.rxnRecon3DID = [rxnAssoc.rxnRecon3DID; addRxnAssocNames(:,2)];
+    rxnAssoc.lbRecon3D = [rxnAssoc.lbRecon3D; addRxnAssocLB(:,2)];
+    rxnAssoc.ubRecon3D = [rxnAssoc.ubRecon3D; addRxnAssocUB(:,2)];
+    
+    % save new rxnAssoc.m structure
+    % NOTE: THIS SCRIPT/SAVE WAS LAST RUN ON 2018-09-12
+    save('rxnAssoc','rxnAssoc');
+    
+else
+    fprintf('Some of the duplicated rxn sets are not simply two rxns written in opposite directions.\n');
 end
+
+
+
 
 
 
