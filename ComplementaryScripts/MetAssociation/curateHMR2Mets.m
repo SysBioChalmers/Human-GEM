@@ -8,8 +8,8 @@
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 %
-% PURPOSE: Curate metabolite information in humanGEM for
-%          protonation state at physiological pH
+% PURPOSE: Curate metabolite information in humanGEM for protonation state
+%          at physiological pH and associating with external identifiers
 %
 
 %............ Obtain information for mets originating from HMR ............
@@ -21,16 +21,17 @@ m=metAssocHMR2Recon3;   % assign a new name
 load('ihumanMets2MNX_v2.mat');  % loads as variable "ihuman"
 ihuman.metsNoComp = regexprep(ihuman.mets,'\w$','');
 [~, ind]=ismember(m.metHMRID,ihuman.metsNoComp);
-m.metFormulas = ihuman.metFormulas(ind);          % formulas
+m.metFormulas = ihuman.metFormulas(ind);           % formulas
 
 % Include exteranl metabolite identifiers 
-m.metLIPIDMAPSID = ihuman.metLIPIDMAPSID(ind);    % LipidMap
-m.metEHMNID = ihuman.metEHMNID(ind);              % EHMN
-m.metKEGGID = ihuman.metKEGGID(ind);              % KEGG
-m.metHMDBID = ihuman.metHMDBID(ind);              % HMDB
-m.metHepatoNET1ID = ihuman.metHepatoNET1ID(ind);  % HepatoNet1
-m.metChEBIID = ihuman.metChEBIID(ind);            % ChEBI
-m.metInChI=repmat({''},size(m.metHMRID));         % InChI
+m.metLIPIDMAPSID = ihuman.metLIPIDMAPSID(ind);     % LipidMap
+m.metEHMNID = ihuman.metEHMNID(ind);               % EHMN
+m.metKEGGID = ihuman.metKEGGID(ind);               % KEGG
+m.metHMDBID = ihuman.metHMDBID(ind);               % HMDB
+m.metHepatoNET1ID = ihuman.metHepatoNET1ID(ind);   % HepatoNet1
+m.metChEBIID = ihuman.metChEBIID(ind);             % ChEBI
+m.metInChI=repmat({''},size(m.metHMRID));          % InChI
+m.metMNXID=reformatElements(m.metMNXID,'cell2str');% MetaNetX
 
 
 %.......... Obtain information for mets originating from Recon3D ..........
@@ -149,7 +150,7 @@ for i=1:numel(curatedResults(:,1))
 		m.metR3DMNXID{indHMR}=Recon3D.metMNXID{indR3D};         % MetaNetX
 end
 
-% And manually fix some MetaNetX associations
+% Fix some MetaNetX associations based on above manual curation results
 m.metR3DMNXID{find(strcmp(m.metHMRID,'m00095'))}='MNXM3234; MNXM91778';        % m00095
 m.metR3DMNXID{find(strcmp(m.metHMRID,'m02839'))}='MNXM162627; MNXM690';        % m02839
 
@@ -167,21 +168,46 @@ for i=1:numel(nullInd)
 		fprintf(fid,'%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n',m.metHMRID{indHMR},m.metNames{indHMR},m.metFormulas{indHMR},m.metLIPIDMAPSID{indHMR},m.metEHMNID{indHMR},m.metBiGGID{indHMR},m.metHMDBID{indHMR},m.metKEGGID{indHMR},m.metHepatoNET1ID{indHMR},HMRChEBIID{indHMR},HMRMNXID{indHMR});
 end
 fclose(fid);
-% Get the charges and formula based on MetaNetX association
 
-% Update the manual curation results into the array structure
+% Update above manual curations into the cell arrays
 curatedCharges={-1;-1;-1;-5;-1;0;0;-2;-2;0;0;0;0;-1;0;0;0;0;0};
-curatedMNXIDs={'MNXM165274';'';'MNXM33400';'';'MNXM6760';....
+curatedFormulas={'C19H37O2';'C26H35O8';'C20H29O4';'C11H14O19P3R2';....
+    'C20H31O3';'C18H26N5O6R2S';'';'C6H11O9P';'C66H111N4O38RCO';'HO';....
+    'C25H47NO4';'C6H10N2O2S2R4';'H3N';'C25H45NO11SR';'X';'';'';'';''};
+curatedMNXIDs={'MNXM165274';'';'MNXM33400';'MNXM170';'MNXM6760';....
     'MNXM5655';'MNXM9270';'MNXM336';'MNXM11644';'MNXM56888';....
-    'MNXM65475';'';'';'MNXM1234';'MNXM165176';'';'MNXM7010';'';'';};
+    'MNXM65475';'MNXM96993';'';'MNXM1234';'MNXM165176';'';'MNXM7010';'';'';};
+
+% Update metCharges and metFormulas based on met associations to
+% Recon3D assuming mass/charge balance has been resolved there
+m.metCuratedCharges=m.metR3DCharges;            % add curatedCharges field
+m.metCuratedCharges(nullInd)=curatedCharges;    % update curated charges
+m.metCuratedFormulas=m.metR3DFormulas;          % add curatedFormulas field
+m.metCuratedFormulas(nullInd)=curatedFormulas;  % update curated formulas
+
+% Add field for curating associated MNXIDs
+m.metCuratedMNXID=repmat({''},size(m.metHMRID));% add curatedMNXID field
+m.metCuratedMNXID(nullInd)=curatedMNXIDs;       % update MNX ids for non-associated mets
+% The other MNXIDs will be checked later
 
 % Add two additional met association to Recon3D (duplicate mets in HMR2)
 m.metR3DID{find(strcmp('m00555',m.metHMRID))}{1}='pail35p_hs';
 m.metR3DID{find(strcmp('m02487',m.metHMRID))}{1}='trdrd';
 
-% Update metCharges
-m.metCuratedCharges=m.metR3DCharges;      % add curatedCharges field
-noChargeInd = find(cellfun(@isempty,m.metCuratedCharges));
-m.metCuratedCharges(noChargeInd)=curatedCharges;
-
+% Save back to metAssocHMR2Recon3.mat
+metAssocHMR2Recon3=m;
+save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');
 %..........................................................................
+
+% Also sync the curation info with ihumanMets2MNX_v2.mat
+ihuman.metRecon3DID{find(strcmp('m00555c',ihuman.mets))}{1}='pail35p_hs';
+ihuman.metRecon3DID{find(strcmp('m00555g',ihuman.mets))}{1}='pail35p_hs';
+ihuman.metRecon3DID{find(strcmp('m00555r',ihuman.mets))}{1}='pail35p_hs';
+ihuman.metRecon3DID{find(strcmp('m02487c',ihuman.mets))}{1}='trdrd';
+ihuman.metRecon3DID{find(strcmp('m02487m',ihuman.mets))}{1}='trdrd';
+ihuman.metRecon3DID{find(strcmp('m00077p',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m01422c',ihuman.mets))}='';
+ihuman.metBiGGID{find(strcmp('m00077p',ihuman.mets))}='CE2416';
+ihuman.metBiGGID{find(strcmp('m01422c',ihuman.mets))}='cbtnCCP';
+save('ihumanMets2MNX_v2.mat','ihuman');
+
