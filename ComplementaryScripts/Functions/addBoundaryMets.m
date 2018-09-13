@@ -90,8 +90,17 @@ bound_mets = unique(model.metNames(model.metComps == bound_comp_ind));
 % identify new boundary metabolites that must be added to the model
 add_bound_mets = unbal_mets(~ismember(unbal_mets,bound_mets));
 
+% Need to construct the associated metID for each of these new mets, which
+% will simply be the same as the ID for the non-boundary version of the
+% metabolite, with the compartment replaced.
+if any(endsWith(model.mets,']'))
+    error('This function cannot yet handle metIDs written with the compartment in brackets.');
+end
+[~,ref_met_ind] = ismember(add_bound_mets,model.metNames);
+add_bound_met_IDs = regexprep(model.mets(ref_met_ind),'.$','x');
 
 % add new boundary mets to the model
+metsToAdd.mets = add_bound_met_IDs;
 metsToAdd.metNames = add_bound_mets;
 metsToAdd.compartments = 'x';
 metsToAdd.unconstrained = ones(size(add_bound_mets));
