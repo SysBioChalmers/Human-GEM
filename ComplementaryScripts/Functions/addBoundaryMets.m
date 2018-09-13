@@ -1,15 +1,15 @@
-function new_model = addBoundaryMets(model)
+function new_model = addBoundaryMets(model, exch_only)
 %addBoundaryMets  Add boundary metabolites to a model structure.
 %
 %   Boundary metabolites are pseudometabolites that exist at the system
 %   boundary, and are used for the import/export of mass into/out of the
 %   system. 
-%   For example: "glc(boundary) <==> glc(extracellular)"
+%   For example: "glc[boundary] <==> glc[extracellular]"
 %
 %   Some model formats (e.g., Cobra) do not use boundary metabolites, but
 %   instead formulate these exchange reactions (or "demand/DM" or "sink"
 %   reactions) without an explicit reactant. 
-%   For example: "glc(extracellular) <==> "
+%   For example: "glc[extracellular] <==> "
 %
 %   This function identifies all reactions that are formulated with an 
 %   exchange of an extracellular metabolite into nothing as a reaction with
@@ -18,19 +18,33 @@ function new_model = addBoundaryMets(model)
 %
 % USAGE:
 %
-%   new_model = addBoundaryMets(model);
+%   new_model = addBoundaryMets(model, exch_only);
+%
 %
 % INPUTS:
 %
-%   model    Model structure.
+%   model       Model structure.
+%
+%   exch_only   (Optional, default = TRUE) 
+%               If TRUE, only exchange rxns (i.e., into/out of the
+%               extracellular compartment) will be considered.
+%               If FALSE, reactions involving mets in other compartments
+%               will also be considered. For example:
+%               "met[nucleus] -->" becomes "met[nucleus] --> met[boundary]"
+%
 %
 % OUTPUTS:
 %
 %   new_model   New model structure, with added boundary metabolites.
 %
 %
-% Jonathan Robinson, 2018-09-12
+% Jonathan Robinson, 2018-09-13
 
+
+% handle input arguments
+if nargin < 2
+    exch_only = true;
+end
 
 % add a boundary compartment to the model if it does not yet exist
 if ~ismember('boundary',lower(model.compNames))
@@ -42,8 +56,12 @@ if ~ismember('boundary',lower(model.compNames))
     end
 end
 
-% get index of boundary compartment
+% get index of boundary and extracellular compartments
 [~,bound_comp_ind] = ismember('boundary',lower(model.compNames));
+[~,xcell_comp_ind] = ismember('extracellular',lower(model.compNames));
+if (xcell_comp_ind == 0) && (exch_only)
+    error('No compartments named "Extracellular" were found.');
+end
 
 % add an "unconstrained" field to the model if it does not yet exist
 if ~isfield(model,'unconstrained')
@@ -53,10 +71,17 @@ elseif ~all(model.unconstrained == double(model.metComps == bound_comp_ind))
 end
 
 % find all reactions that involve only a single metabolite
-unbal_rxn = find(sum(model.S ~= 0) == 1)';
+if (exch_only)
+    % if only considering exchange (extracellular) rxns, ensure that the
+    % single metabolite is in the extracellular compartment
+    xcell_met_ind = (model.metComps == xcell_comp_ind);
+    unbal_rxn_inds = find((sum(model.S ~= 0) == 1) & (sum(model.S(xcell_met_ind,:) ~= 0) == 1))';
+else
+    unbal_rxn_inds = find(sum(model.S ~= 0) == 1)';
+end
 
 % obtain the names of the mets participating in these rxns
-[unbal_met_inds,~] = find(model.S(:,unbal_rxn) ~= 0);
+[unbal_met_inds,~] = find(model.S(:,unbal_rxn_inds) ~= 0);
 unbal_mets = unique(model.metNames(unbal_met_inds));
 
 % get list of existing boundary metabolite names
@@ -73,14 +98,16 @@ metsToAdd.unconstrained = ones(size(add_bound_mets));
 new_model = addMets(model,metsToAdd);
 
 % now add the boundary mets to the model S-matrix
-for i = 1:length(unbal_rxn)
+S = new_model.S;
+for i = 1:length(unbal_rxn_inds)
     % find the boundary met corresponding to the current reaction
     met_ind = ismember(new_model.metNames,new_model.metNames(unbal_met_inds(i))) & (new_model.metComps == bound_comp_ind);
     
     % balance the reaction by giving the newly added boundary met a stoich
     % coeff that is the negative of the original sole metabolite
-    new_model.S(met_ind,unbal_rxn(i)) = -new_model.S(unbal_met_inds(i),unbal_rxn(i));
+    new_model.S(met_ind,unbal_rxn_inds(i)) = -S(unbal_met_inds(i),unbal_rxn_inds(i));
 end
+
 
 
 
