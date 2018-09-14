@@ -2,7 +2,7 @@
 % FILE NAME:    curateDuplicatedRxns.m
 % 
 % DATE CREATED: 2018-09-07
-%     MODIFIED: 2018-09-13
+%     MODIFIED: 2018-09-14
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
