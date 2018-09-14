@@ -117,7 +117,9 @@ for i = 1:length(unbal_rxn_inds)
     new_model.S(met_ind,unbal_rxn_inds(i)) = -S(unbal_met_inds(i),unbal_rxn_inds(i));
 end
 
-
+% print some results
+fprintf('\nBoundary metabolites were added to %u reactions.\n',length(unbal_rxn_inds));
+fprintf('New (boundary) versions of %u metabolites were added to the model.\n\n',length(metsToAdd.mets));
 
 
 
