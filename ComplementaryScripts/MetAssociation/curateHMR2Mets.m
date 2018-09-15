@@ -103,22 +103,22 @@ m.metBiGGID{uniqueInd(noHitInd(2))}='cbtnCCP';
 % B. Resolve multiplely mapped ids (a lot of exteranl ids, diffcult)
 multiInd = find(cellfun(@numel,m.metR3DID)>1);
 
-fid = fopen('metCuration_HMR2MultiRecon3D_20180910.tsv','w');
-fprintf(fid,['HMRID\tRecon3DID\tmetName\tFormulas\tCharges\tHMDB\tKEGG\tPubChem\tChEBI\tMNX\tBiGG2MNX\tSmiles\tInChI\n']);
-for i=1:length(multiInd)
-		o=multiInd(i);
-		multiRecon3DID=split(tmp{o},';');
-		[c, d]=ismember(multiRecon3DID,Recon3D.metsNoComp);
-		if all(c)
-				% Output for manual check
-				for j=1:length(c)
-						fprintf(fid,'%s\t%s\t%s\t%s\t%d\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n',m.metHMRID{o},Recon3D.metsNoComp{d(j)},Recon3D.metNames{d(j)},Recon3D.metFormulas{d(j)},Recon3D.metCharges(d(j)),Recon3D.metHMDBID{d(j)},Recon3D.metKEGGID{d(j)},Recon3D.metPubChemID{d(j)},Recon3D.metChEBIID{d(j)},Recon3D.metMNXID{d(j)},Recon3D.metBiGGDB2MNX{d(j)},Recon3D.metSMILES{d(j)},Recon3D.metInChI{d(j)});
-				end
-		else
-				% fprintf('These cases are not found\n');
-		end
-end
-fclose(fid);
+%fid = fopen('metCuration_HMR2MultiRecon3D_20180910.tsv','w');
+%fprintf(fid,['HMRID\tRecon3DID\tmetName\tFormulas\tCharges\tHMDB\tKEGG\tPubChem\tChEBI\tMNX\tBiGG2MNX\tSmiles\tInChI\n']);
+%for i=1:length(multiInd)
+%		o=multiInd(i);
+%		multiRecon3DID=split(tmp{o},';');
+%		[c, d]=ismember(multiRecon3DID,Recon3D.metsNoComp);
+%		if all(c)
+%				% Output for manual check
+%				for j=1:length(c)
+%						fprintf(fid,'%s\t%s\t%s\t%s\t%d\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n',m.metHMRID{o},Recon3D.metsNoComp{d(j)},Recon3D.metNames{d(j)},Recon3D.metFormulas{d(j)},Recon3D.metCharges(d(j)),Recon3D.metHMDBID{d(j)},Recon3D.metKEGGID{d(j)},Recon3D.metPubChemID{d(j)},Recon3D.metChEBIID{d(j)},Recon3D.metMNXID{d(j)},Recon3D.metBiGGDB2MNX{d(j)},Recon3D.metSMILES{d(j)},Recon3D.metInChI{d(j)});
+%				end
+%		else
+%				% fprintf('These cases are not found\n');
+%		end
+%end
+%fclose(fid);
 
 % Update the manual curation results into the array structure
 curatedResults=....
@@ -157,17 +157,18 @@ m.metR3DMNXID{find(strcmp(m.metHMRID,'m02839'))}='MNXM162627; MNXM690';        %
 
 % C. Deal with the mets without Recon3D association
 nullInd = find(cellfun(@numel,m.metR3DID)==0);   %num = 19
-HMRChEBIID=reformatElements(m.metChEBIID,'cell2str','; ');   % parepare the Recon3D IDs
-HMRMNXID=reformatElements(m.metMNXID,'cell2str','; ');   % parepare the Recon3D IDs
+
+%HMRChEBIID=reformatElements(m.metChEBIID,'cell2str','; ');  % parepare ChEBI IDs
+%HMRMNXID=reformatElements(m.metMNXID,'cell2str','; ');      % parepare MetaNetX IDs
 
 % Output HMR mets without Recon3D association for manual curation
-fid = fopen('metCuration_NoRecon3DAssoc_20180911.tsv','w');
-fprintf(fid,['HMRID\tmetName\tFormulas\tLipidMap\tEHMN\tBiGG\tHMDB\tKEGG\tHepatoNet1\tChEBI\tMNX\n']);
-for i=1:numel(nullInd)
-		indHMR=nullInd(i);
-		fprintf(fid,'%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n',m.metHMRID{indHMR},m.metNames{indHMR},m.metFormulas{indHMR},m.metLIPIDMAPSID{indHMR},m.metEHMNID{indHMR},m.metBiGGID{indHMR},m.metHMDBID{indHMR},m.metKEGGID{indHMR},m.metHepatoNET1ID{indHMR},HMRChEBIID{indHMR},HMRMNXID{indHMR});
-end
-fclose(fid);
+%fid = fopen('metCuration_NoRecon3DAssoc_20180911.tsv','w');
+%fprintf(fid,['HMRID\tmetName\tFormulas\tLipidMap\tEHMN\tBiGG\tHMDB\tKEGG\tHepatoNet1\tChEBI\tMNX\n']);
+%for i=1:numel(nullInd)
+%		indHMR=nullInd(i);
+%		fprintf(fid,'%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n',m.metHMRID{indHMR},m.metNames{indHMR},m.metFormulas{indHMR},m.metLIPIDMAPSID{indHMR},m.metEHMNID{indHMR},m.metBiGGID{indHMR},m.metHMDBID{indHMR},m.metKEGGID{indHMR},m.metHepatoNET1ID{indHMR},HMRChEBIID{indHMR},HMRMNXID{indHMR});
+%end
+%fclose(fid);
 
 % Update above manual curations into the cell arrays
 curatedCharges={-1;-1;-1;-5;-1;0;0;-2;-2;0;0;0;0;-1;0;0;0;0;0};
@@ -188,7 +189,30 @@ m.metCuratedFormulas(nullInd)=curatedFormulas;  % update curated formulas
 % Add field for curating associated MNXIDs
 m.metCuratedMNXID=repmat({''},size(m.metHMRID));% add curatedMNXID field
 m.metCuratedMNXID(nullInd)=curatedMNXIDs;       % update MNX ids for non-associated mets
-% The other MNXIDs will be checked later
+indOthers=setdiff(transpose(1:numel(m.metHMRID)), nullInd);   % Index of the rest MNXIDs
+% Get the index of already matched MNXIDs and update as curated MNXIDs
+matchedInd=find(strcmp(m.metMNXID(indOthers),m.metR3DMNXID(indOthers)));
+m.metCuratedMNXID(indOthers(matchedInd))=m.metMNXID(indOthers(matchedInd));
+
+% Deal with the unmatched MNXIDs
+unmatchedInd=indOthers(setdiff(transpose(1:length(indOthers)),matchedInd));   % Unmatched index
+HMRMNXID=reformatElements(m.metMNXID(unmatchedInd),'str2cell');
+R3DMNXID=reformatElements(m.metR3DMNXID(unmatchedInd),'str2cell','; ');
+newMNXID=repmat({''},size(HMRMNXID));
+for k = 1:length(unmatchedInd)
+        p = unmatchedInd(k);
+        overlap=intersect(HMRMNXID{k},R3DMNXID{k});
+        if isempty(m.metMNXID{p}) && ~isempty(m.metR3DMNXID{p})
+                newMNXID{k}=R3DMNXID{k};
+        elseif ~isempty(m.metMNXID{p}) && isempty(m.metR3DMNXID{p})
+                newMNXID{k}=HMRMNXID{k};
+        elseif ~isempty(overlap)
+                newMNXID{k}=overlap;
+        elseif isempty(overlap)
+                newMNXID{k}{1}='toBeChecked';
+        end
+end
+m.metCuratedMNXID(unmatchedInd)=reformatElements(newMNXID,'cell2str');
 
 % Add two additional met association to Recon3D (duplicate mets in HMR2)
 m.metR3DID{find(strcmp('m00555',m.metHMRID))}{1}='pail35p_hs';
