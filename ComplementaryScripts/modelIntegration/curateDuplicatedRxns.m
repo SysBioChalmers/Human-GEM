@@ -2,9 +2,9 @@
 % FILE NAME:    curateDuplicatedRxns.m
 % 
 % DATE CREATED: 2018-09-07
-%     MODIFIED: 2018-09-14
+%     MODIFIED: 2018-09-17
 % 
-% PROGRAMMER:   Jonathan Robinson
+% PROGRAMMER:   Jonathan Robinson, Hao Wang
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 % 
@@ -14,8 +14,8 @@
 %               - Boundary metabolites are added to balance reactions that
 %                 contain only one extracellular metabolite, to be
 %                 consistent with RAVEN model formulations.
-%               - In the "metFrom" field, entries of "reducedRecon3D" are
-%                 changed to "Recon3D".
+%               - In both "metFrom" and "rxnFrom" fields, entries of
+%                  "reducedRecon3D" are changed to "Recon3D".
 %           2) Duplicate reactions (considering direction) are identified
 %               - New duplicated reactions are identified, focusing only on
 %                 those that are written in the same direction, and
@@ -67,9 +67,13 @@ rxnAssoc_orig = rxnAssoc;  % save original so we can compare later if needed
 
 %% Add boundary metabolites to HumanGEM
 
-% add boundary metabolites
 prevMetNum = length(ihuman.mets);  % record number of mets before addition
+
+% add boundary metabolites
 ihuman = addBoundaryMets(ihuman);
+% Boundary metabolites were added to 1639 reactions.
+% New (boundary) versions of 1198 metabolites were added to the model.
+
 newMetNum = length(ihuman.mets);
 
 % update the .metFrom field, since it has blank entries for the new mets
@@ -78,6 +82,9 @@ if prevMetNum ~= newMetNum
 end
 % also go ahead and change any "reducedRecon3D" entries to just "Recon3D"
 ihuman.metFrom(ismember(ihuman.metFrom,'reducedRecon3D')) = {'Recon3D'};
+
+% update the .rxnFrom field by changing any "reducedRecon3D" entries to "Recon3D"
+ihuman.rxnFrom(ismember(ihuman.rxnFrom,'reducedRecon3D')) = {'Recon3D'};
 
 % clear intermediate variables
 clear('prevMetNum','newMetNum')
@@ -146,6 +153,7 @@ end
 % clear intermediate variables
 clear('dupRxnInds','dupRxnLB','dupRxnNames','dupRxnSets','dupRxnUB','flipRow','rem_sets');
 
+% there are 9 pairs of duplicate reactions identified in this section
 
 %% Identify duplicated reactions, IGNORING rxn direction
 
@@ -276,6 +284,7 @@ end
 clear('addRxnAssocInds','addRxnAssocLB','addRxnAssocUB','addRxnAssocNames','i',...
     'dupRxnSets','equal_bounds','equal_rules','exclude_ind','from_diff_model','isrev');
 
+% there are 976 pairs of duplicate reactions identified in this section
 
 %% Remove duplicate reactions from the model
 
@@ -323,8 +332,8 @@ ihuman = combineModelGPRs(ihuman);
 %% Save files
 
 % save new model and rxnAssoc.mat structure
-save('humanGEM_new.mat','ihuman');
-save('rxnAssoc_new.mat','rxnAssoc');
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('rxnAssoc.mat','rxnAssoc');
 
 
 
