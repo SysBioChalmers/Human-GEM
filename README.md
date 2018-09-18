@@ -17,13 +17,15 @@ Human genome-scale metabolic models (GEMs) are an important tool for the study o
 
 - Pubmed ID: n/a
 
-- Last update: 2018-09-05
+- Last update: 2018-09-17
+
 
 - The model contains:
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|-----:|
-|_Homo sapiens_ |	HMR2|	14835|	8884|	4022|
+|_Homo sapiens_ |	HMR2|	13850|	10082|	4069|
+
 
 
 This repository is administered by Jonathan L. Robinson ([@JonathanRob](https://github.com/jonathanrob)) and Hao Wang ([@Hao-Chalmers](https://github.com/hao-chalmers)), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology
