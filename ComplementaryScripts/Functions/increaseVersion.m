@@ -16,8 +16,8 @@ if ~strcmp(currentBranch,'master')
 end
 
 %Bump version number:
-oldModel   = load('../../ModelFiles/mat/humanGEM.mat');
-oldVersion = oldModel.ihuman.version
+load('../../ModelFiles/mat/humanGEM.mat');
+oldVersion = ihuman.version;
 oldVersion = str2double(strsplit(oldVersion,'.'));
 newVersion = oldVersion;
 switch bumpType
