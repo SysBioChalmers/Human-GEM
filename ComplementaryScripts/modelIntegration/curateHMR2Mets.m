@@ -2,7 +2,7 @@
 % FILE NAME:    curateHMR2Mets.m
 %
 % DATE CREATED: 2018-07-02
-%     MODIFIED: 2018-09-13
+%     MODIFIED: 2018-09-19
 %
 % PROGRAMMER:   Hao Wang, Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -24,14 +24,14 @@ ihuman.metsNoComp = regexprep(ihuman.mets,'\w$','');
 m.metFormulas = ihuman.metFormulas(ind);           % formulas
 
 % Include exteranl metabolite identifiers 
-m.metLIPIDMAPSID = ihuman.metLIPIDMAPSID(ind);     % LipidMap
-m.metEHMNID = ihuman.metEHMNID(ind);               % EHMN
-m.metKEGGID = ihuman.metKEGGID(ind);               % KEGG
-m.metHMDBID = ihuman.metHMDBID(ind);               % HMDB
-m.metHepatoNET1ID = ihuman.metHepatoNET1ID(ind);   % HepatoNet1
-m.metChEBIID = ihuman.metChEBIID(ind);             % ChEBI
-m.metInChI=repmat({''},size(m.metHMRID));          % InChI
-m.metMNXID=reformatElements(m.metMNXID,'cell2str');% MetaNetX
+m.metLIPIDMAPSID  = ihuman.metLIPIDMAPSID(ind);             % LipidMap
+m.metEHMNID       = ihuman.metEHMNID(ind);                  % EHMN
+m.metKEGGID       = ihuman.metKEGGID(ind);                  % KEGG
+m.metHMDBID       = ihuman.metHMDBID(ind);                  % HMDB
+m.metHepatoNET1ID = ihuman.metHepatoNET1ID(ind);            % HepatoNet1
+m.metChEBIID      = ihuman.metChEBIID(ind);                 % ChEBI
+m.metInChI        = repmat({''},size(m.metHMRID));          % InChI
+m.metMNXID        = reformatElements(m.metMNXID,'cell2str');% MetaNetX
 
 
 %.......... Obtain information for mets originating from Recon3D ..........
@@ -42,17 +42,17 @@ Recon3D.metsNoComp = regexprep(Recon3D.mets,'\_\w$','');  % remove compartment a
 Recon3D.metFormulas = regexprep(Recon3D.metFormulas,'FULLR','R');  % also replace FULLR with R in met formulas
 
 % retrieve metabolite information from Recon3D
-m.metR3DID=m.metRecon3DID;                        % mets
-m.metR3DNames=repmat({''},size(m.metHMRID));      % metNames
-m.metR3DFormulas=repmat({''},size(m.metHMRID));   % formulas
-m.metR3DCharges=repmat({''},size(m.metHMRID));    % charges
-m.metR3DSmiles=repmat({''},size(m.metHMRID));     % Smiles
-m.metR3DHMDBID=repmat({''},size(m.metHMRID));     % HMDB
-m.metR3DInChI=repmat({''},size(m.metHMRID));      % InChI
-m.metR3DKEGGID=repmat({''},size(m.metHMRID));     % KEGG
-m.metR3DPubChemID=repmat({''},size(m.metHMRID));  % PubChem
-m.metR3DCHEBIID=repmat({''},size(m.metHMRID));    % ChEBI
-m.metR3DMNXID=repmat({''},size(m.metHMRID));      % MetaNetX
+m.metR3DID        = m.metRecon3DID;                 % mets
+m.metR3DNames     = repmat({''},size(m.metHMRID));  % metNames
+m.metR3DFormulas  = repmat({''},size(m.metHMRID));  % formulas
+m.metR3DCharges   = repmat({''},size(m.metHMRID));  % charges
+m.metR3DSmiles    = repmat({''},size(m.metHMRID));  % Smiles
+m.metR3DHMDBID    = repmat({''},size(m.metHMRID));  % HMDB
+m.metR3DInChI     = repmat({''},size(m.metHMRID));  % InChI
+m.metR3DKEGGID    = repmat({''},size(m.metHMRID));  % KEGG
+m.metR3DPubChemID = repmat({''},size(m.metHMRID));  % PubChem
+m.metR3DCHEBIID   = repmat({''},size(m.metHMRID));  % ChEBI
+m.metR3DMNXID     = repmat({''},size(m.metHMRID));  % MetaNetX
 m=rmfield(m, 'metRecon3DID');
 
 
@@ -194,23 +194,35 @@ indOthers=setdiff(transpose(1:numel(m.metHMRID)), nullInd);   % Index of the res
 matchedInd=find(strcmp(m.metMNXID(indOthers),m.metR3DMNXID(indOthers)));
 m.metCuratedMNXID(indOthers(matchedInd))=m.metMNXID(indOthers(matchedInd));
 
-% Deal with the unmatched MNXIDs
+% Deal with the unmatched MNXIDs by checking MetaNetX database
+%load('MNXMets.mat');   % load MNX met infomation
 unmatchedInd=indOthers(setdiff(transpose(1:length(indOthers)),matchedInd));   % Unmatched index
 HMRMNXID=reformatElements(m.metMNXID(unmatchedInd),'str2cell');
 R3DMNXID=reformatElements(m.metR3DMNXID(unmatchedInd),'str2cell','; ');
 newMNXID=repmat({''},size(HMRMNXID));
 for k = 1:length(unmatchedInd)
-        p = unmatchedInd(k);
-        overlap=intersect(HMRMNXID{k},R3DMNXID{k});
-        if isempty(m.metMNXID{p}) && ~isempty(m.metR3DMNXID{p})
-                newMNXID{k}=R3DMNXID{k};
-        elseif ~isempty(m.metMNXID{p}) && isempty(m.metR3DMNXID{p})
-                newMNXID{k}=HMRMNXID{k};
-        elseif ~isempty(overlap)
-                newMNXID{k}=overlap;
-        elseif isempty(overlap)
-                newMNXID{k}{1}='toBeChecked';
-        end
+		p = unmatchedInd(k);
+		overlap=intersect(HMRMNXID{k},R3DMNXID{k});       % intersection of MNX ids
+		aggregate=unique([HMRMNXID{k},R3DMNXID{k}]);      % aggregate of MNX ids
+		indMNX=find(ismember(MNXMets.mets, aggregate));   % index to MNX database
+		chargeValues=num2cell(MNXMets.metCharges(indMNX));% metCharges in cell
+		if isempty(m.metMNXID{p}) && ~isempty(m.metR3DMNXID{p})
+				newMNXID{k}=R3DMNXID{k};
+		elseif ~isempty(m.metMNXID{p}) && isempty(m.metR3DMNXID{p})
+				newMNXID{k}=HMRMNXID{k};
+		elseif ~isempty(overlap)
+        if isequal(MNXMets.metFormulas{indMNX}) && isequal(chargeValues{:})
+        		newMNXID{k}=aggregate;
+        else
+        		newMNXID{k}=overlap;
+    		end
+		elseif isempty(overlap)
+        if isequal(MNXMets.metFormulas{indMNX}) && isequal(chargeValues{:})
+        		newMNXID{k}=aggregate;
+        else
+        		newMNXID{k}{1}='toBeChecked';   % 69 cases
+    		end
+		end
 end
 m.metCuratedMNXID(unmatchedInd)=reformatElements(newMNXID,'cell2str');
 
