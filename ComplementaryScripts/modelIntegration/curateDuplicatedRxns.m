@@ -48,8 +48,6 @@
 %                 to manually overwrite the files when it is determined
 %                 that they are ready.
 %
-%
-% Jonathan Robinson, 2018-09-14
 
 
 
