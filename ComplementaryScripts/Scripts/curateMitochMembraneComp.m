@@ -2,7 +2,7 @@
 % FILE NAME:    curateMitochMembraneComp.m
 % 
 % DATE CREATED: 2018-09-17
-%     MODIFIED: 2018-09-17
+%     MODIFIED: 2018-09-19
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -13,10 +13,28 @@
 %
 
 
-%% Analysis of reactions transporting protons into/out of the mitochondria
+%% Load model
 
 % load HumanGEM model
 load('humanGEM.mat');
+
+
+%% Remove Recon3D ATP synthase reaction
+
+% the HMR ATP synthase reaction will be kept, but we need to document the
+% reaction association in the model and the rxnAssoc.mat file
+[~,hmr_ind] = ismember('HMR_6916',ihuman.rxns);
+[~,r3_ind] = ismember('ATPS4mi',ihuman.rxns);
+
+
+% NEED TO COMPLETE THIS SECTION!
+
+
+
+
+
+
+%% Analysis of reactions transporting protons into/out of the mitochondria
 
 % construct rxn equations
 eqns = constructEquations(ihuman);
@@ -36,7 +54,7 @@ fwd_rxn_inds = find((ihuman.S(Hm,:) < 0) & (ihuman.S(Hc,:) > 0) & (ihuman.ub > 0
 rev_rxn_inds = find((ihuman.S(Hm,:) > 0) & (ihuman.S(Hc,:) < 0) & (ihuman.lb < 0)')';  % written in reverse direction
 rxn_inds = [fwd_rxn_inds; rev_rxn_inds];
 
-% This resulted in 8 fwd rxns, and 21 rev rxns, for a total of 29 rxns
+% This resulted in 9 fwd rxns, and 21 rev rxns, for a total of 30 rxns
 
 
 % determine which of the reactions can carry flux in the M --> C direction
@@ -60,8 +78,9 @@ rxn_inds = [fwd_rxn_inds; rev_rxn_inds];
 %% Update rxn bounds to prevent M --> C proton pumping
 
 % Three reactions are allowed to pump protons from [m] to [c]:
-% Complex IV (HMR_6914), Complex III (HMR_6918), and Complex I (HMR_6921).
-[~,allowed_inds] = ismember({'HMR_6914';'HMR_6918';'HMR_6921'},ihuman.rxns);
+% Complex IV (HMR_6914), Complex III (HMR_6918), Complex I (HMR_6921), and
+% the citrate-malate antiport (HMR_4964).
+[~,allowed_inds] = ismember({'HMR_6914';'HMR_6918';'HMR_6921';'HMR_4964'},ihuman.rxns);
 rxn_inds(ismember(rxn_inds,allowed_inds)) = [];  % don't constrain these reactions
 
 % constrain the remaining reactions such that protons can only be moved
@@ -148,7 +167,7 @@ ihuman.rev = double(ihuman.lb < 0 & ihuman.ub > 0);
 %   RE1573M: cis,cis-3,6-dodecadienoyl-CoA[m] <=> trans,cis-lauro-2,6-dienoyl-CoA[m]
 %  HMR_3288: cis,cis-3,6-dodecadienoyl-CoA[m] + FAD[m] => FADH2[m] + trans,cis-lauro-2,6-dienoyl-CoA[m]
 % Therefore, the Recon3D version of the reaction should be deleted.
-del_rxns = {'RE1573M'};
+del_rxns = [del_rxns; {'RE1573M'}];
 
 
 % Reactions: r1330  'H+[m] => H+[c] + Proton-Gradient[m]'
