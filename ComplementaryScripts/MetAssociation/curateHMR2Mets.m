@@ -158,10 +158,10 @@ m.metR3DMNXID{find(strcmp(m.metHMRID,'m02839'))}='MNXM162627; MNXM690';        %
 % C. Deal with the mets without Recon3D association
 nullInd = find(cellfun(@numel,m.metR3DID)==0);   %num = 19
 
+% Output HMR mets without Recon3D association for manual curation
 %HMRChEBIID=reformatElements(m.metChEBIID,'cell2str','; ');  % parepare ChEBI IDs
 %HMRMNXID=reformatElements(m.metMNXID,'cell2str','; ');      % parepare MetaNetX IDs
 
-% Output HMR mets without Recon3D association for manual curation
 %fid = fopen('metCuration_NoRecon3DAssoc_20180911.tsv','w');
 %fprintf(fid,['HMRID\tmetName\tFormulas\tLipidMap\tEHMN\tBiGG\tHMDB\tKEGG\tHepatoNet1\tChEBI\tMNX\n']);
 %for i=1:numel(nullInd)
@@ -236,14 +236,17 @@ save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');
 %..........................................................................
 
 % Also sync the curation info with ihumanMets2MNX_v2.mat
+% A. Deal with uniquely mapped ids at first
+ihuman.metBiGGID{find(strcmp('m00077p',ihuman.mets))}='CE2416';
+ihuman.metBiGGID{find(strcmp('m01422c',ihuman.mets))}='cbtnCCP';
+ihuman.metRecon3DID{find(strcmp('m00077p',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m01422c',ihuman.mets))}='';
+% C. Deal with the mets without Recon3D association
 ihuman.metRecon3DID{find(strcmp('m00555c',ihuman.mets))}{1}='pail35p_hs';
 ihuman.metRecon3DID{find(strcmp('m00555g',ihuman.mets))}{1}='pail35p_hs';
 ihuman.metRecon3DID{find(strcmp('m00555r',ihuman.mets))}{1}='pail35p_hs';
 ihuman.metRecon3DID{find(strcmp('m02487c',ihuman.mets))}{1}='trdrd';
 ihuman.metRecon3DID{find(strcmp('m02487m',ihuman.mets))}{1}='trdrd';
-ihuman.metRecon3DID{find(strcmp('m00077p',ihuman.mets))}='';
-ihuman.metRecon3DID{find(strcmp('m01422c',ihuman.mets))}='';
-ihuman.metBiGGID{find(strcmp('m00077p',ihuman.mets))}='CE2416';
-ihuman.metBiGGID{find(strcmp('m01422c',ihuman.mets))}='cbtnCCP';
-save('ihumanMets2MNX_v2.mat','ihuman');
+
+save('ihumanMets2MNX_v2.mat','ihuman');  % 2018-09-20
 
