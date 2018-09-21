@@ -44,10 +44,11 @@ metCharges(IR3D)=num2cell(Recon3D.metCharges(indR3DID(IR3D)));
 
 metFormulas=repmat({''},size(ihuman.mets));
 metFormulas(IHMR)=metAssocHMR2Recon3.metCuratedFormulas(indHMRID(IHMR));
-metFormulas(IR3D)=Recon3D.metFormulas(indR3DID(IR3D));
+metFormulas(IR3D)=regexprep(Recon3D.metFormulas(indR3DID(IR3D)),'FULLR','R');
 
 ihuman.metCharges=cellfun(@int64, metCharges);
 ihuman.metFormulas=metFormulas;
 
 %% Save updated model file
 save('humanGEM.mat','ihuman');
+
