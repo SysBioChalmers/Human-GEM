@@ -276,7 +276,7 @@ end
 
 
 %% Save updated model file
-save('humanGEMfff.mat','ihuman');
+save('humanGEM.mat','ihuman');
 
 % remove intermediate variables
 clear('ATPgenes','dim','f','gene_ind','gene_inds','i','mCompInd','met_ind','rxn_ind');
