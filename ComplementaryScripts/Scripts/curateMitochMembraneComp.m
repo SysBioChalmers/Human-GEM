@@ -18,19 +18,83 @@
 % load HumanGEM model
 load('humanGEM.mat');
 
+% update with curations if necessary
+miscModelCurationScript
 
-%% Remove Recon3D ATP synthase reaction
+
+
+%% Remove Recon3D ATP synthase, complex I,  reaction
 
 % the HMR ATP synthase reaction will be kept, but we need to document the
 % reaction association in the model and the rxnAssoc.mat file
-[~,hmr_ind] = ismember('HMR_6916',ihuman.rxns);
-[~,r3_ind] = ismember('ATPS4mi',ihuman.rxns);
+%
+%  *ATP synthase
+%     HMR_6916: ADP[m] + 4 H+[c] + Pi[m] => ATP[m] + 4 H+[m] + H2O[m]
+%      ATPS4mi: ADP[m] + 4 H+[i] + Pi[m] => ATP[m] + 3 H+[m] + H2O[m]
+%
+%  *Complex I
+%     HMR_6921: 5 H+[m] + NADH[m] + ubiquinone[m] => NAD+[m] + ubiquinol[m] + 4 H+[c]
+%  NADH2_u10mi: 5 H+[m] + NADH[m] + ubiquinone[m] => NAD+[m] + ubiquinol[m] + 4 H+[i]
+%
+%  *Complex III
+%     HMR_6918: 2 ferricytochrome C[m] + 2 H+[m] + ubiquinol[m] => 2 ferrocytochrome C[m] + ubiquinone[m] + 4 H+[c]
+%   CYOR_u10mi: 2 ferricytochrome C[m] + 2 H+[m] + ubiquinol[m] => 2 ferrocytochrome C[m] + ubiquinone[m] + 4 H+[i]
+%
+%  *Complex IV
+%     HMR_6914: 4 ferrocytochrome C[m] + 8 H+[m] + O2[m] => 4 ferricytochrome C[m] + 2 H2O[m] + 4 H+[c]
+%      CYOOm2i: 4 ferrocytochrome C[m] + 8 H+[m] + O2[m] => 4 ferricytochrome C[m] + 2 H2O[m] + 4 H+[i]
+%
 
+hmr_rxns = {'HMR_6916';'HMR_6921';'HMR_6918';'HMR_6914'};
+[~,hmr_ind] = ismember(hmr_rxns,ihuman.rxns);
+r3_rxns = {'ATPS4mi';'NADH2_u10mi';'CYOR_u10mi';'CYOOm2i'};
+[~,r3_ind] = ismember(r3_rxns,ihuman.rxns);
 
-% NEED TO COMPLETE THIS SECTION!
+% if some of the Recon3D reactions have already been removed from the
+% model, then exclude those from the process
+remove_ind = (r3_ind == 0);
+hmr_rxns(remove_ind) = [];
+hmr_ind(remove_ind) = [];
+r3_rxns(remove_ind) = [];
+r3_ind(remove_ind) = [];
 
+if ~isempty(r3_ind)
+    
+    % update "rxnRecon3DID" field
+    for i = 1:length(hmr_rxns)
+        if isempty(ihuman.rxnRecon3DID{hmr_ind(i)})
+            ihuman.rxnRecon3DID(hmr_ind(i)) = r3_rxns(i);
+        else
+            ihuman.rxnRecon3DID(hmr_ind(i)) = join(unique([strsplit(ihuman.rxnRecon3DID{hmr_ind(i)},';'), r3_rxns(i)]), ';');
+        end
+    end
+    
+    % load rxnAssoc.mat file
+    load('ComplementaryScripts/modelIntegration/rxnAssoc.mat');
+    
+    % ignore any associations that already exist in rxnAssoc.mat
+    remove_ind = ismember(join([hmr_rxns,r3_rxns],'***'),join([rxnAssoc.rxnHMRID,rxnAssoc.rxnRecon3DID],'***'));
+    add_hmr_rxns = hmr_rxns(~remove_ind);
+    add_hmr_ind = hmr_ind(~remove_ind);
+    add_r3_rxns = r3_rxns(~remove_ind);
+    add_r3_ind = r3_ind(~remove_ind);
+    
+    % add associations to rxnAssoc structure
+    rxnAssoc.rxnHMRID = [rxnAssoc.rxnHMRID; add_hmr_rxns];
+    rxnAssoc.rxnRecon3DID = [rxnAssoc.rxnRecon3DID; add_r3_rxns];
+    rxnAssoc.lbHMR = [rxnAssoc.lbHMR; ihuman.lb(add_hmr_ind)];
+    rxnAssoc.ubHMR = [rxnAssoc.ubHMR; ihuman.ub(add_hmr_ind)];
+    rxnAssoc.lbRecon3D = [rxnAssoc.lbRecon3D; ihuman.lb(add_r3_ind)];
+    rxnAssoc.ubRecon3D = [rxnAssoc.ubRecon3D; ihuman.ub(add_r3_ind)];
 
-
+    % save new rxnAssoc.mat file
+    fprintf('The rxnAssoc.mat file has been updated with rxns related to the electron transport chain.\n.');
+    save('rxnAssoc_new.mat','rxnAssoc');
+    
+    % delete Recon3D reactions from model
+    ihuman = removeReactionsFull(ihuman,r3_rxns);
+    
+end
 
 
 
@@ -104,8 +168,8 @@ fprintf('\t%s\n',ihuman.rxns{flip_ind});
 %   HMR_6455:  5-carboxy-gamma-chromanol[m] + H+[m] => 5-carboxy-gamma-chromanol[c] + H+[c]
 %      r1330:  H+[m] => H+[c] + Proton-Gradient[m]
 %
-% Both of these rxns are dead-end (cannot carry flux), so they should be
-% deleted.
+% Both of these rxns are anyway dead-end (cannot carry flux), so they 
+% should be deleted from the model.
 del_rxns = {'HMR_6455';'r1330'};
 
 
@@ -120,6 +184,19 @@ rxn_inds = find( (ihuman.S(Hm,:) ~= 0) & (sign(ihuman.S(Hm,:)) == -sign(ihuman.S
 % change the compartment of all cytoplasmic protons (C) to inner mitochondrial membrane (I)
 ihuman.S(Hi,rxn_inds) = ihuman.S(Hc,rxn_inds);
 ihuman.S(Hc,rxn_inds) = 0;
+
+
+%% Add a reaction allowing transport of protons from I --> C
+% This reaction does not generate energy, and is primarily to allow mass
+% balancing of protons in the model.
+rxnsToAdd = {};
+rxnsToAdd.rxns = {'Htransport_I_C'};  % this needs to be replaced with a systematic name
+rxnsToAdd.equations = {'H+[i] => H+[c]'};
+rxnsToAdd.rxnNames = rxnsToAdd.rxns;
+rxnsToAdd.lb = 0;
+rxnsToAdd.ub = 1000;
+ihuman = addRxns(ihuman,rxnsToAdd,3,[],false);
+
 
 
 
@@ -162,10 +239,25 @@ ihuman.rev = double(ihuman.lb < 0 & ihuman.ub > 0);
 
 %% Fix other problematic reactions
 
+
+% The following HMR reaction involves proton transport:
+%   HMR_8616: ATP[m] + cob(I)alamin[m] + H+[c] <=> cobamide-coenzyme[m] + triphosphate[m]
+% However, there is no evidence in the literature for such transport, and
+% it is therefore suspected to be a compartment labeling error. The proton
+% compartment should therefore be corrected to mitochondria [m] to be
+% consistent with the other compounds in the reaction.
+[~,comp_inds] = ismember({'cytosol','mitochondria'},lower(ihuman.compNames));
+Hc = find( ismember(ihuman.metNames,'H+') & (ihuman.metComps == comp_inds(1)) );
+Hm = find( ismember(ihuman.metNames,'H+') & (ihuman.metComps == comp_inds(2)) );
+[~,rxn_ind] = ismember('HMR_8616',ihuman.rxns);
+ihuman.S(Hc,rxn_ind) = 0;
+ihuman.S(Hm,rxn_ind) = -1;
+
+
 % This reaction is similar to an existing HMR rxn, but is reversible and
 % missing the FAD(H2) metabolite:
-%   RE1573M: cis,cis-3,6-dodecadienoyl-CoA[m] <=> trans,cis-lauro-2,6-dienoyl-CoA[m]
-%  HMR_3288: cis,cis-3,6-dodecadienoyl-CoA[m] + FAD[m] => FADH2[m] + trans,cis-lauro-2,6-dienoyl-CoA[m]
+%    RE1573M: cis,cis-3,6-dodecadienoyl-CoA[m] <=> trans,cis-lauro-2,6-dienoyl-CoA[m]
+%   HMR_3288: cis,cis-3,6-dodecadienoyl-CoA[m] + FAD[m] => FADH2[m] + trans,cis-lauro-2,6-dienoyl-CoA[m]
 % Therefore, the Recon3D version of the reaction should be deleted.
 del_rxns = [del_rxns; {'RE1573M'}];
 
@@ -228,12 +320,24 @@ model.ub(exch_inds) = 0;
 model.lb(exch_inds) = 0;
 model.c(:) = 0;
 
-[~,ATPhydr_ind] = ismember('HMR_3964',ihuman.rxns);
+[~,ATPhydr_ind] = ismember('HMR_3964',model.rxns);
 model.c(ATPhydr_ind) = 1;
 
 
 
+% add NADH burn rxn for investigation purposes
+rxnsToAdd = {};
+rxnsToAdd.rxns = {'NADH_BURN'};
+rxnsToAdd.equations = {'NADH[m] => NAD+[m] + H+[m]'};
+rxnsToAdd.rxnNames = rxnsToAdd.rxns;
+rxnsToAdd.lb = 0;
+rxnsToAdd.ub = 1000;
+model = addRxns(model,rxnsToAdd,3,[],false);
 
+
+model.c(:) = 0;
+[~,nadh_ind] = ismember('NADH_BURN',model.rxns);
+model.c(nadh_ind) = 1;
 
 
 
