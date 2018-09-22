@@ -6,7 +6,7 @@ function increaseVersion(bumpType)
 %   Usage: function increaseVersion(bumpType)
 %
 %   Benjamín J. Sánchez, 2018-07
-%   Hao Wang, 2018-09-18
+%   Hao Wang, 2018-09-22
 %
 
 %Check if in master:
@@ -16,8 +16,9 @@ if ~strcmp(currentBranch,'master')
 end
 
 %Bump version number:
-load('../../ModelFiles/mat/humanGEM.mat');
-oldVersion = ihuman.version;
+fid = fopen('../../version.txt','r');
+    oldVersion = fscanf(fid, '%s');
+fclose(fid);
 oldVersion = str2double(strsplit(oldVersion,'.'));
 newVersion = oldVersion;
 switch bumpType
@@ -46,6 +47,7 @@ newVersion = num2str(newVersion,'%d.%d.%d');
 
 %Load model:
 %ihuman = importModel('../../ModelFiles/xml/humanGEM.xml');
+load('../../ModelFiles/mat/humanGEM.mat');
 
 %Include tag and save model:
 ihuman.version = newVersion;
