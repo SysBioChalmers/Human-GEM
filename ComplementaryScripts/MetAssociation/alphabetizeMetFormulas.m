@@ -9,7 +9,8 @@ function alphaMets = alphabetizeMetFormulas(metFormulas)
 %
 %   metFormulas     Cell array vector of metabolite atomic formulas.
 %                   NOTE: formulas containing characters other than letters
-%                         or digits (A-Z,a-z,0-9) will NOT be reordered.
+%                         or digits (A-Z,a-z,0-9), or those containing the
+%                         phrase "FULLR", will NOT be reordered.
 %
 % OUTPUTS:
 %
@@ -18,11 +19,13 @@ function alphaMets = alphabetizeMetFormulas(metFormulas)
 %                   Ex: C17H27N5O4SR2 -> C17H27N5O4R2S
 %
 %
-% Jonathan Robinson 2018-03-19
+% Jonathan Robinson 2018-07-02
 
 
-% ignore metabolite formulas containing parentheses
-ignoreMets = ~cellfun(@isempty,regexp(metFormulas,'[^A-Za-z0-9]','match'));
+% Ignore metabolite formulas containing special characters, or "FULLR", 
+% which appears in the Recon3D model.
+ignoreMets = ~cellfun(@isempty,regexp(metFormulas,'[^A-Za-z0-9]','match')) | ...
+             contains(metFormulas,'FULLR');
 
 % initialize alphabetized met formulas with original met formulas
 alphaMets = metFormulas;
