@@ -20,7 +20,7 @@ function reducedModel = removeReactionsFull(model,rxnsToRemove,removeUnusedMets,
 %   Usage: reducedModel=removeReactions(model,rxnsToRemove,removeUnusedMets,...
 %           removeUnusedGenes,removeUnusedComps)
 %
-%   Jonathan Robinson, 2018-09-20
+%   Jonathan Robinson, 2018-09-21
 %
 
 if nargin<3
@@ -82,15 +82,45 @@ if ~isempty(rxnsToRemove) || removeUnusedMets || removeUnusedGenes
     % remove unused comps
     if removeUnusedComps
         
-        if isfield(reducedModel,'rxnComps')
-            usedComps = unique([reducedModel.rxnComps;reducedModel.metComps]);
-        else
-            usedComps = unique(reducedModel.metComps);
+        usedComps = [];  % initialize variable
+        if isfield(reducedModel,'geneComps')
+            usedComps = unique([usedComps; reducedModel.geneComps]);
+            geneComps_char = reducedModel.comps(reducedModel.geneComps);
         end
-        delCompInds = ~ismember(1:length(reducedModel.comps),usedComps);
+        if isfield(reducedModel,'rxnComps')
+            usedComps = unique([usedComps; reducedModel.rxnComps]);
+            rxnComps_char = reducedModel.comps(reducedModel.rxnComps);
+        end
+        if isfield(reducedModel,'metComps')
+            usedComps = unique([usedComps; reducedModel.metComps]);
+            metComps_char = reducedModel.comps(reducedModel.metComps);
+        end
         
-        % delete unused compartments and their corresponding entries in related fields
-        reducedModel = delModelFields(reducedModel,'comps',delCompInds);
+        if isempty(usedComps)
+            error('Could not remove unused compartments without a "geneComps", "rxnComps", or "metComps" field.');
+        end
+        
+        delCompInds = ~ismember(1:length(reducedModel.comps),usedComps);
+        if any(delCompInds)
+            
+            % delete unused compartments and their corresponding entries in related fields
+            reducedModel = delModelFields(reducedModel,'comps',delCompInds);
+            
+            % update the "geneComps", "rxnComps", and/or "metComps" fields,
+            % because they contain indices that will be erroneous if any
+            % compartments were removed.
+            if isfield(reducedModel,'geneComps')
+                [~,reducedModel.geneComps] = ismember(geneComps_char,reducedModel.comps);
+            end
+            if isfield(reducedModel,'rxnComps')
+                [~,reducedModel.rxnComps] = ismember(rxnComps_char,reducedModel.comps);
+            end
+            if isfield(reducedModel,'metComps')
+                [~,reducedModel.metComps] = ismember(metComps_char,reducedModel.comps);
+            end
+            
+        end
+        
     end
     
 end
