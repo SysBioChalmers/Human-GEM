@@ -8,7 +8,9 @@ function [grRules,new_genes] = integrateGeneRules(HMR,iHsa,Recon3D,rxnHMR2Recon3
 %
 % INPUT:
 %
-%   HMR         Human Metabolic Reaction (HMR) model structure.
+%   HMR         Human Metabolic Reaction (HMR) model structure, or some
+%               other model structure with which the grRules will be
+%               integrated.
 %
 %   iHsa        iHsa (EM Blais, JA Papin, et al. 2017) model structure.
 %
@@ -27,7 +29,7 @@ function [grRules,new_genes] = integrateGeneRules(HMR,iHsa,Recon3D,rxnHMR2Recon3
 %               grRule(s) in the original model.
 %
 %
-% Jonathan Robinson, 2018-08-28
+% Jonathan Robinson, 2018-09-02
 
 
 % Note: Loaded rxnHMR2Recon3D array using following commands:
