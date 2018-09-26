@@ -2,8 +2,7 @@
 %   FILE NAME:    addManuallyCuratedMetAssoc.m
 % 
 %   DATE CREATED: 2018-06-05
-%       MODIFIED: 2018-06-11
-%       MODIFIED: 2018-06-17
+%       MODIFIED: 2018-09-03
 %        
 %   PROGRAMMER:   Hao Wang
 %                 Department of Biology and Biological Engineering
@@ -75,7 +74,7 @@ ihuman.metRecon3DID{find(strcmp('m02959s',ihuman.mets))}={'tag_hs'};
 save('ihumanMets2MNX_v2.mat','ihuman');  % 2018-06-12
 % Some MNX IDs also need refinement (to be continued)
 
-% 3. Generate the data structure (metAssocHMR2Recon3D) of metabolite
+% 3. Generate the array structure (metAssocHMR2Recon3D) of metabolite
 % association for further curation and model integration, by trimming
 % off duplicate mets in multiple compartments
 HMRmets=regexprep(ihuman.mets,'\w$','');   % HMR met ids without comp id
@@ -117,7 +116,38 @@ metAssocHMR2Recon3.metRecon3DID{find(strcmp('m02410',metAssocHMR2Recon3.metHMRID
 metAssocHMR2Recon3.metRecon3DID{find(strcmp('m02487',metAssocHMR2Recon3.metHMRID))}='';
 metAssocHMR2Recon3.metRecon3DID{find(strcmp('m02578',metAssocHMR2Recon3.metHMRID))}='';
 
+
 % 6. Associate Recon3D mets 'M00196' and 'protein' to HMR2 met 'm00196'
 ind=find(strcmp(metAssocHMR2Recon3.metHMRID,'m00196'));
 metAssocHMR2Recon3.metRecon3DID{ind}{2}='protein';
 save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');  % 2018-08-03
+
+
+% 7. Synchronize curtated metabolite association previously in % 5 and % 6
+% from 'metAssocHMR2Recon3.mat' to 'ihumanMets2MNX_v2.mat'
+load('ihumanMets2MNX_v2.mat');
+ihuman.metRecon3DID{find(strcmp('m00591c',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m00591s',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m00352r',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m00379c',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m00555c',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m00555g',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m00555r',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m01123c',ihuman.mets))}{1}='CE7097';
+ihuman.metRecon3DID{find(strcmp('m01911c',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m01942g',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02410c',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02410m',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02410r',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02487c',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02487m',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02578c',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02578m',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02578n',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02578p',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02578r',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02578s',ihuman.mets))}='';
+ihuman.metRecon3DID{find(strcmp('m02578x',ihuman.mets))}='';
+% Associate Recon3D mets 'M00196' and 'protein' to HMR2 met 'm00196'
+ihuman.metRecon3DID{find(strcmp('m00196c',ihuman.mets))}{2}='protein';
+save('ihumanMets2MNX_v2.mat','ihuman');  % 2018-09-03
