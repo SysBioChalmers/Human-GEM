@@ -21,7 +21,10 @@ function [newModel, newS, indRxnImbalance]=protonBalance4Rxns(model,protonMetId)
 %   Hao Wang, 2018-09-27
 %
 
-% handel input
+if nargin<2
+    EM='Missing input arguments';
+    disp(EM);
+end
 
 % get imbalanced mass and charge values using checkMassChargeBalance
 [~,imbalancedMass,imbalancedCharge,~,~,~,~] = checkMassChargeBalance(model);
@@ -35,20 +38,26 @@ indImbalanceMass = getNonEmptyList(imbalancedMass);
 fullS = full(model.S);
 for i=1:length(indImbalanceMass)
     m = indImbalanceMass(i);
-    protonCoeff = regexprep(imbalancedMass{m},' H$','');  % imbalanced mass
+    protonDiff = regexprep(imbalancedMass{m},' H$','');
     
     % make sure that the imbalance is only contributed by proton, this is
-    % determined when the mass differences equals the charge differences
-    if isequal(str2double(protonCoeff),imbalancedCharge(m))
+    % determined if the mass differences equals the charge differences
+    if isequal(str2double(protonDiff),imbalancedCharge(m))
+        
+        % here only RAVEN format model structure is allowed
+        if ~isfield(model,'metComps')
+            error('model has to be in RAVEN format with "metComps" field.');
+        else
+            checkComps=num2cell(model.metComps(find(model.S(:,m))));    
+        end
         
         % check if all mets in a reaction are in the same compartment
-        % here only RAVEN format model structure is considered
-        checkComps=num2cell(model.metComps(model.S(:,m)));
         if isequal(checkComps{:})
             
             % compartment id is appended here, this only suits for HMR
-            % met id so far and need to be adjusted later for general usage
+            % met id so far
             proton=strcat(protonMetId,model.comps{checkComps{1}});
+            % this part needs to be adjusted later for general usage
             
             protonMetIndex = find(strcmp(model.mets,proton));
             % when proton is NOT present in this reaction   
