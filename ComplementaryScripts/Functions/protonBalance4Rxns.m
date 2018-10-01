@@ -33,7 +33,8 @@ end
 indRxnImbalance = [];
 
 % focus on the reactions with imbalanced mass
-indImbalanceMass = getNonEmptyList(imbalancedMass);
+indImbalanceMass = find(~cellfun(@isempty, imbalancedMass));
+
 
 fullS = full(model.S);
 for i=1:length(indImbalanceMass)
