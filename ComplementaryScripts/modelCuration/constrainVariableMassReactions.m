@@ -2,7 +2,7 @@
 % FILE NAME:    constrainVariableMassReactions.m
 % 
 % DATE CREATED: 2018-09-28
-%     MODIFIED: 2018-09-28
+%     MODIFIED: 2018-10-01
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
