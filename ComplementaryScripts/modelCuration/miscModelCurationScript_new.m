@@ -30,6 +30,14 @@ if strcmp(ihuman.grRules(rxn_ind),'ENSG00000175592')
 end
 
 
+%% Removal of invalid/unsupported reactions
+
+% This Recon3D reaction does not exist in the literature or any databases:
+%     r1453: proline[m] + ubiquinol[m] <=> 1-pyrroline-5-carboxylate[m] + 5 H+[m] + ubiquinone[m]
+% It is also not present on the BiGG Database. It should thus be removed.
+del_rxns = [del_rxns; {'r1453'}];
+
+
 
 
 %% Treatment of ubiquinone and FAD+
