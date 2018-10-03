@@ -2,26 +2,60 @@
 % FILE NAME:    curateMitochMembraneComp.m
 % 
 % DATE CREATED: 2018-09-17
-%     MODIFIED: 2018-10-01
+%     MODIFIED: 2018-10-03
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 % 
 % PURPOSE: Script for analyzing/curating the inner mitochondrial matrix
-%          compartment "[i]".
+%          compartment "[i]". This is done in a few steps:
+%
+%          1. Remove duplicated electron transport chain reactions
+%             - These reactions are duplicated because one version comes
+%               from Recon3D, whereas the other from HMR. The HMR version
+%               of these rxns will be kept, and the Recon3D version
+%               deleted.
+%             - Due to proton/compartment differences, these reactions were
+%               not identified previously as duplicated, and therefore are
+%               removed here.
+%             - The rxnAssoc.mat file is updated accordingly.
+%
+%          2. Some rxn bounds were updated to prevent energy-generating
+%             proton pumping (M to C)
+%
+%          3. All electrogenic rxns involving proton transport between
+%             mitochondria and cytoplasm were updated to take place between
+%             the mitochondria and inner mitochondrial membrane, "i".
+%
+%          4. A decoupling rxn allowing for proton transport from inner
+%             mitochondrial matrix to cytoplasm was added.
+%             - This reaction is effectively equivalent to that mediated by
+%               the uncoupling protein, which results in a net loss of
+%               energy.
+%             - This rxn is added to allow for proton mass balancing. It
+%               should NOT have any effect on proton energetics.
+%
+%          5. Update the bounds on ATP-driven transport reactions to
+%             prevent generation of ATP.
+%             - These reactions should not be reversible, as they lead to
+%               artificial production.
+%
+%          6. An additional 2 unused/dead-end rxns were deleted.
+%             - Both of these reactions came from Recon3D, and appeared to
+%               be related to the proton gradient:
+%                   r1330  'H+[m] => H+[c] + Proton-Gradient[m]'
+%                   r1331  'H+[c] => H+[s] + Proton-Gradient[c]'
 %
 
 
-%% Initial steps
 
-% load HumanGEM model if not already loaded
+%% Load Model
+
+% load HumanGEM model (if not already loaded)
 if ~exist('ihuman','var')
-    load('humanGEM.mat');
+    load('humanGEM.mat');  % version 0.3.1
 end
-
-% initialize list of reactions that are to be deleted
-del_rxns = {};
 
 
 %% Remove Recon3D ATP synthase, complex I,  reaction
