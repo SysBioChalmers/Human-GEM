@@ -126,7 +126,7 @@ if ~isempty(r3_ind)
 
     % save new rxnAssoc.mat file
     fprintf('The rxnAssoc.mat file has been updated with rxns related to the electron transport chain.\n\n');
-    save('rxnAssoc_new.mat','rxnAssoc');
+%     save('rxnAssoc.mat','rxnAssoc');
     
     % delete Recon3D reactions from model
     ihuman = removeReactionsFull(ihuman,r3_rxns);
