@@ -94,7 +94,7 @@ r3_ind(remove_ind) = [];
 
 if ~isempty(r3_ind)
     
-    fprintf('%u reactions (%s) will be removed from the model\n',length(r3_ind),strjoin(r3_rxns,', '));
+    fprintf('\n%u reactions (%s) will be removed from the model\n',length(r3_ind),strjoin(r3_rxns,', '));
     fprintf('because they are duplicates of existing HMR reactions.\n\n');
     
     % update "rxnRecon3DID" field
@@ -143,14 +143,9 @@ end
 eqns = constructEquations(ihuman);
 
 % get indices of protons in relevant compartments
-[~,comp_inds] = ismember({'cytosol','mitochondria','inner mitochondria'},lower(ihuman.compNames));
-if any(comp_inds == 0)
-    error('one or more compartment names could not be found.');
-end
-Hc = find( ismember(ihuman.metNames,'H+') & (ihuman.metComps == comp_inds(1)) );
-Hm = find( ismember(ihuman.metNames,'H+') & (ihuman.metComps == comp_inds(2)) );
-Hi = find( ismember(ihuman.metNames,'H+') & (ihuman.metComps == comp_inds(3)) );
-
+Hc = getIndexes(ihuman,'H+[c]','metscomps');
+Hm = getIndexes(ihuman,'H+[m]','metscomps');
+Hi = getIndexes(ihuman,'H+[i]','metscomps');
 
 % find all rxns that can transport protons from [m] to [c]
 fwd_rxn_inds = find((ihuman.S(Hm,:) < 0) & (ihuman.S(Hc,:) > 0) & (ihuman.ub > 0)')';  % written in forward direction
@@ -207,15 +202,6 @@ fprintf('\t%s\n',ihuman.rxns{flip_ind});
 fprintf('\n');
 
 
-% This resulted in one rxn with lb and ub equal to zero: 
-%   
-%      r1330:  H+[m] => H+[c] + Proton-Gradient[m]
-%
-% This rxn is anyway dead-end (cannot carry flux), so it should be deleted
-% from the model.
-del_rxns = [del_rxns; {'r1330'}];
-
-
 
 %% Update electrogenic rxns involving C <--> M proton transport to be I <--> M
 % Protons in the mitochondrial compartment [m] will now transport to/from 
@@ -238,20 +224,6 @@ fprintf('%u electrogenic rxns involving proton transport between [m] and [c] (ei
 fprintf('to replace cytoplasmic protons (H+[c]) with inner mitochondrial membrane protons (H+[i]).\n\n');
 fprintf('The remaining %u non-electrogenic rxns involving proton transport between [m] and [c] will not be\n',num_non_elec);
 fprintf('modified, and their cytoplasmic protons (H+[c]) will be left as is.\n\n');
-
-
-
-%% Add a reaction allowing transport of protons from I --> C
-% This reaction does not generate energy, and is primarily to allow mass
-% balancing of protons in the model.
-rxnsToAdd = {};
-rxnsToAdd.rxns = {'Htransport_I_C'};  % this needs to be replaced with a systematic name
-rxnsToAdd.equations = {'H+[i] => H+[c]'};
-rxnsToAdd.rxnNames = rxnsToAdd.rxns;
-rxnsToAdd.lb = 0;
-rxnsToAdd.ub = 1000;
-ihuman = addRxns(ihuman,rxnsToAdd,3,[],false);
-
 
 
 
@@ -298,54 +270,25 @@ ihuman.rev = double(ihuman.lb < 0 & ihuman.ub > 0);
 % These reactions originate from Recon3D. They appear to be an attempt to
 % fix ATP leakage, but will not be necessary/compatible with the updated
 % handling of mitochondrial proton transport.
-del_rxns = [del_rxns; {'r1330'; 'r1331'}];
 
-
-
-%% Delete reactions
+del_rxns = {'r1330'; 'r1331'};
 
 % first check if reactions have already been removed
 del_rxns(~ismember(del_rxns,ihuman.rxns)) = [];
 
 if ~isempty(del_rxns)
-    
     % remove identified reactions from the model
-    delModel = removeReactionsFull(ihuman,del_rxns,true,true,true);
-    
-    % determine which (if any) unused mets, genes, and/or comps were also removed
-    remMets = ihuman.mets(~ismember(ihuman.mets,delModel.mets));
-    remGenes = ihuman.genes(~ismember(ihuman.genes,delModel.genes));
-    remComps = ihuman.comps(~ismember(ihuman.comps,delModel.comps));
+    ihuman = removeReactionsFull(ihuman,del_rxns);
     
     % output stats
-    fprintf('\nDeleted %u reactions from the model:\n',length(del_rxns));
+    fprintf('An additional %u dead-end/unused reactions were deleted from the model:\n',length(del_rxns));
     fprintf('\t%s\n',del_rxns{:});
     fprintf('\n');
-    if ~isempty(remMets)
-        fprintf('\nDeleted %u unused mets from the model:\n',length(remMets));
-        fprintf('\t%s\n',remMets{:});
-        fprintf('\n');
-    end
-    if ~isempty(remGenes)
-        fprintf('\nDeleted %u unused genes from the model:\n',length(remGenes));
-        fprintf('\t%s\n',remGenes{:});
-        fprintf('\n');
-    end
-    if ~isempty(remComps)
-        fprintf('\nDeleted %u unused mets from the model:\n',length(remComps));
-        fprintf('\t%s\n',remComps{:});
-        fprintf('\n');
-    end
-    
-    ihuman = delModel;
-    
-else
-    fprintf('\n\nReactions to be deleted were not present in the model, so they were not removed.\n');
 end
 
 
 
 %% clear intermediate variables
 
-clearvars -except ihuman remMets remGenes remComps
+clearvars -except ihuman rxnAssoc
 
