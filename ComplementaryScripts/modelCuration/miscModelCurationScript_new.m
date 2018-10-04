@@ -38,6 +38,49 @@ end
 del_rxns = [del_rxns; {'r1453'}];
 
 
+% These reactions are strange in that they involve an additional
+% metabolite "Adenosine-5'-Triphosphate-Energy". This metabolite was not
+% found anywhere else in the model, and therefore these reactions are
+% dead-end. They should be removed from the model:
+%   r1319: ATP[c] + H2O[c] => ADP[c] + Pi[c] + Adenosine-5'-Triphosphate-Energy[c]
+%   r1320: ATP[m] + H2O[m] => ADP[m] + Pi[m] + Adenosine-5'-Triphosphate-Energy[m]
+del_rxns = [del_rxns; {'r1319'; 'r1320'}];
+
+
+
+%% Add a reaction allowing transport of protons from I --> C
+% This reaction does not generate energy, and is primarily to allow mass
+% balancing of protons in the model.
+rxnsToAdd = {};
+rxnsToAdd.rxns = {'Htransport_I_C'};  % this needs to be replaced with a systematic name
+rxnsToAdd.equations = {'H+[i] => H+[c]'};
+rxnsToAdd.rxnNames = rxnsToAdd.rxns;
+rxnsToAdd.lb = 0;
+rxnsToAdd.ub = 1000;
+
+% this is an ugly way to get around the automatic "standardization" of
+% grRules which is enforced by the "addRxns" function, which throws a
+% warning which is not relevant for us at the moment.
+grRules_orig = ihuman.grRules;
+ihuman.grRules(:) = {''};
+
+% add the new reactions
+ihuman = addRxns(ihuman,rxnsToAdd,3,[],false);
+ihuman.grRules(1:length(grRules_orig)) = grRules_orig;  % restore original rules
+
+% update other non-standard fields
+ind = length(ihuman.rxns);
+ihuman.rxnKEGGID(ind) = {''};
+ihuman.rxnEHMNID(ind) = {''};
+ihuman.rxnBiGGID(ind) = {''};
+ihuman.rxnHepatoNET1ID(ind) = {''};
+ihuman.rxnREACTOMEID(ind) = {''};
+ihuman.rxnRecon3DID(ind) = {''};
+ihuman.prRules(ind) = {''};
+ihuman.rxnProtMat(ind,:) = 0;
+ihuman.priorCombiningGrRules(ind) = {''};
+
+
 
 
 %% Treatment of ubiquinone and FAD+
