@@ -2,7 +2,7 @@
 % FILE NAME:    balance_RGroup_CoA_rxns.m
 % 
 % DATE CREATED: 2018-09-27
-%     MODIFIED: 2018-09-27
+%     MODIFIED: 2018-10-02
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
