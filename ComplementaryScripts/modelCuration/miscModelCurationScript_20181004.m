@@ -1,5 +1,5 @@
 %
-% FILE NAME:    findAdditionalDupRxns.m
+% FILE NAME:    miscModelCurationScript_20181004.m
 % 
 % DATE CREATED: 2018-10-02
 %     MODIFIED: 2018-10-03
