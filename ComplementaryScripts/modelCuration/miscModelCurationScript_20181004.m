@@ -2,7 +2,7 @@
 % FILE NAME:    miscModelCurationScript_20181004.m
 % 
 % DATE CREATED: 2018-10-02
-%     MODIFIED: 2018-10-03
+%     MODIFIED: 2018-10-04
 % 
 % PROGRAMMER:   Hao Wang
 %               Department of Biology and Biological Engineering
@@ -80,13 +80,25 @@ rxnAssoc.rxnRecon3DID = [rxnAssoc.rxnRecon3DID; dupRxnNames(:,2)];
 rxnAssoc.lbRecon3D = [rxnAssoc.lbRecon3D; dupRxnLB(:,2)];
 rxnAssoc.ubRecon3D = [rxnAssoc.ubRecon3D; dupRxnUB(:,2)];
 
+%% Save rxnAssoc.mat structure
+save('rxnAssoc.mat','rxnAssoc');
 % print out summary
 fprintf('\t* %u duplicate reaction pairs were added to rxnAssoc.mat.\n\n',size(dupRxnInds,1));
 
 
+%% Incoporate curated grRules based on the CORUM enzyme complexes database
 
-%% Save rxnAssoc.mat structure
-save('rxnAssoc.mat','rxnAssoc');
+newModel = addCuratedComplexRulesToModel(ihuman, 'curated_CORUM_grRules_20180924');
+
+% Get the index of reactions with modified grRules
+indModifiedRxn = find(~strcmp(ihuman.grRules, newModel.grRules));
+fprintf('A total of %d grRules are changed with curation from CORUM database.\n',length(indModifiedRxn));
+
+
+
+%% Save model
+ihuman = newModel;
+save('ihuman.mat','ihuman');
 
 
 
