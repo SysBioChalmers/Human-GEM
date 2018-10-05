@@ -33,9 +33,12 @@ load('rxnAssoc.mat');
 
 
 
-%% Identify duplicate reaction pairs by ignoring reaction direction
+%% Identify duplicate reaction pairs
 
-% get the sets of duplicated reactions
+% get the sets by considering reaction direction
+[~,~,~,dupRxnSets_S] = checkDuplicateRxn_mod(ihuman,'S');
+
+% get the sets by ignoring reaction direction
 [~,~,~,dupRxnSets] = checkDuplicateRxn_mod(ihuman,'FR');
 
 % ignore sets that contain more than two duplicates
@@ -46,6 +49,8 @@ end
 fprintf('\t* A total of %u duplicate reaction pairs were found.\n',length(dupRxnSets));
 
 % convert to matrix format, and get associated rxn names
+dupRxnInds_S = vertcat(dupRxnSets_S{:});
+dupRxnNames_S = ihuman.rxns(dupRxnInds_S);
 dupRxnInds = vertcat(dupRxnSets{:});
 dupRxnNames = ihuman.rxns(dupRxnInds);
 
@@ -82,8 +87,17 @@ rxnAssoc.rxnHMRID = [rxnAssoc.rxnHMRID; dupRxnNames(:,1)];
 rxnAssoc.lbHMR = [rxnAssoc.lbHMR; dupRxnLB(:,1)];
 rxnAssoc.ubHMR = [rxnAssoc.ubHMR; dupRxnUB(:,1)];
 rxnAssoc.rxnRecon3DID = [rxnAssoc.rxnRecon3DID; dupRxnNames(:,2)];
-rxnAssoc.lbRecon3D = [rxnAssoc.lbRecon3D; dupRxnLB(:,2)];
-rxnAssoc.ubRecon3D = [rxnAssoc.ubRecon3D; dupRxnUB(:,2)];
+% add Recon3D reaction bounds case-by-case
+for i=1:length(dupRxnInds)
+    % if a Recon3D reaction is the reverse of an HMR reaction or not
+    if ~ismember(dupRxnNames(i,:),dupRxnNames_S)
+        rxnAssoc.lbRecon3D = [rxnAssoc.lbRecon3D; [-1000]];
+        rxnAssoc.ubRecon3D = [rxnAssoc.ubRecon3D; -1 * dupRxnLB(i,2)];
+    else
+        rxnAssoc.lbRecon3D = [rxnAssoc.lbRecon3D; dupRxnLB(i,2)];
+        rxnAssoc.ubRecon3D = [rxnAssoc.ubRecon3D; dupRxnUB(i,2)];
+    end
+end
 
 %% Save rxnAssoc.mat structure
 save('../modelIntegration/rxnAssoc.mat','rxnAssoc');
