@@ -110,7 +110,7 @@ fprintf('A total of %d blank entries were filled in the .metFrom field.\n\n',len
 
 % delete duplicated reactions
 model = removeReactionsFull(ihuman,dupRxnNames(:,2));
-fprintf('A total of %d reactions were deleted from the model.\n\n',length(dupRxnNames));
+fprintf('A total of %d duplicated reactions were deleted from the model.\n\n',length(dupRxnNames));
 
 
 %% Incoporate curated grRules based on the CORUM enzyme complexes database
@@ -118,11 +118,11 @@ fprintf('A total of %d reactions were deleted from the model.\n\n',length(dupRxn
 % add curated grRules from automatic incoporation of enzyme
 % complexes info in CORUM database and manual checking, as
 % well as additional redundant gene removal step
-newModel = addCuratedComplexRulesToModel(model, 'curated_CORUM_grRules_20180924');
+newModel = addCuratedComplexRulesToModel(model, 'curated_CORUM_grRules_20180924.txt');
 
 % Get the index of reactions with modified grRules
 indModifiedRxn = find(~strcmp(model.grRules, newModel.grRules));
-fprintf('A total of %d grRules are changed with curation based on CORUM database.\n',length(indModifiedRxn));
+fprintf('A total of %d grRules were updated with curations based on CORUM database.\n',length(indModifiedRxn));
 
 
 
@@ -130,4 +130,6 @@ fprintf('A total of %d grRules are changed with curation based on CORUM database
 ihuman = newModel;
 save('../../ModelFiles/mat/humanGEM.mat','ihuman');
 clear;
+
+
 
