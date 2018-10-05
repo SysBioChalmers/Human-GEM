@@ -1,18 +1,26 @@
 %
-% FILE NAME:    miscModelCurationScript_20181004.m
+% FILE NAME:    miscModelCurationScript_20181005.m
 % 
 % DATE CREATED: 2018-10-02
-%     MODIFIED: 2018-10-04
+%     MODIFIED: 2018-10-05
 % 
 % PROGRAMMER:   Hao Wang
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 % 
-% PURPOSE: This script detects humanGEM v0.4.0 for addtional duplicate 
-%          pairs by ignoring the reactions direction. These new pairs
-%          are subjected to manual check and then added to the rxnAssoc
-%      
-
+% PURPOSE: This script undertakes two tasks: 
+%          
+%          1. Detect humanGEM v0.4.0 for addtional duplicate reaction pairs
+%          by ignoring the reactions direction. These new pairs are
+%          subjected to manual check, subsequently added to the rxnAssoc.mat
+%          structure and the ones from Recon3D are then removed;
+%          
+%          2. Incoporate enzyme complex information from CORUM database
+%          to humanGEM grRules that include only "OR" relations, followed
+%          by manual verification from UniProt and NCBI databases and a
+%          redundant removal step (deleting subunit encoding genes from
+%          isoenzymes)
+%
 
 %% Load model and rxnAssoc
 
@@ -21,7 +29,7 @@ load('humanGEM.mat');  % v0.4.0
 rxnEqns = constructEquations(ihuman);   % construct reaction equations
 
 % load rxnAssoc.mat
-load('ComplementaryScripts/modelIntegration/rxnAssoc.mat');
+load('rxnAssoc.mat');
 
 
 
@@ -98,7 +106,7 @@ end
 % derived from adding boundary metabolite step
 indEmpty = find(cellfun('isempty', ihuman.metFrom));
 ihuman.metFrom(indEmpty) = {'Recon3D'};
-
+fprintf('A total of %d blank entries were filled in the .metFrom field.\n\n',length(indEmpty));
 
 % delete duplicated reactions
 model = removeReactionsFull(ihuman,dupRxnNames(:,2));
@@ -113,14 +121,13 @@ fprintf('A total of %d reactions were deleted from the model.\n\n',length(dupRxn
 newModel = addCuratedComplexRulesToModel(model, 'curated_CORUM_grRules_20180924');
 
 % Get the index of reactions with modified grRules
-indModifiedRxn = find(~strcmp(ihuman.grRules, newModel.grRules));
-fprintf('A total of %d grRules are changed with curation from CORUM database.\n',length(indModifiedRxn));
+indModifiedRxn = find(~strcmp(model.grRules, newModel.grRules));
+fprintf('A total of %d grRules are changed with curation based on CORUM database.\n',length(indModifiedRxn));
 
 
 
-%% Save model
+%% Save model and clear variables
 ihuman = newModel;
-save('../../ModelFiles/mat/ihuman.mat','ihuman');
-
-
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+clear;
 
