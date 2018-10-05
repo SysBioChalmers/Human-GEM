@@ -60,23 +60,26 @@ end
 
 
 % load curated grRule changes (with added enzyme complexes)
-curation_data = readtable(curationFile,'HeaderLines',0);
-
+fid = fopen(curationFile,'r');
+curation_data = textscan(fid,'%s %s %s','Delimiter','\t','HeaderLines',1);
+fclose(fid);
 
 % check if any reactions are missing from the given model
-missing_rxns = find(~ismember(curation_data.rxn,model.rxns));
+missing_rxns = find(~ismember(curation_data{1},model.rxns));
 if ~isempty(missing_rxns)
     fprintf('WARNING! The following %u rxns are present in the curation file, but not the model:\n',length(missing_rxns));
     fprintf('\t%s\n',curation_data.rxn{missing_rxns});
     fprintf('\n');
 end
-curation_data(missing_rxns,:) = [];  % remove missing reactions
-
+% remove missing reactions
+curation_data{1}(missing_rxns) = [];  
+curation_data{2}(missing_rxns) = [];
+curation_data{3}(missing_rxns) = [];
 
 % extract information from curation_data
-rxns = curation_data.rxn;
-grRule_orig = curation_data.grRule_original;
-grRule_curated = curation_data.grRule_curated;
+rxns = curation_data{1};
+grRule_orig = curation_data{2};
+grRule_curated = curation_data{3};
 
 % pre-clean curation_data grRules
 grRule_orig = cleanModelGeneRules(grRule_orig);
