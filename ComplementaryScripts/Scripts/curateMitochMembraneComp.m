@@ -2,7 +2,7 @@
 % FILE NAME:    curateMitochMembraneComp.m
 % 
 % DATE CREATED: 2018-09-17
-%     MODIFIED: 2018-10-03
+%     MODIFIED: 2018-10-08
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -54,7 +54,7 @@
 
 % load HumanGEM model (if not already loaded)
 if ~exist('ihuman','var')
-    load('humanGEM.mat');  % version 0.3.1
+    load('humanGEM.mat');  % version 0.4.1
 end
 
 
@@ -245,7 +245,7 @@ atp_produce = (any(ihuman.S(atp_inds,:) > 0) & any(ihuman.S(adp_inds,:) < 0))';
 % identify transport rxns that can produce ATP
 atp_trans_inds = find(trans_inds & (atp_consume & (ihuman.lb < 0)) | ...
                       trans_inds & (atp_produce & (ihuman.ub > 0)) );
-% Results in 9 reactions.
+% Results in 8 reactions.
 
 % some reactions are allowed (ATP synthase, and ADP/ADP translocases)
 allowed_rxns = {'HMR_6916';'HMR_6328';'HMR_4908';'HMR_4907';'HMR_4906';'ATPtg'};
