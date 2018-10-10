@@ -72,3 +72,8 @@ ihuman.rxnProtMat = [ihuman.rxnProtMat(1:r_ind(1),:); zeros(1,nProt); ihuman.rxn
 ihuman.priorCombiningGrRules = [ihuman.priorCombiningGrRules(1:r_ind(1)); {''}; ihuman.priorCombiningGrRules((r_ind(1)+1):r_ind(2)); {''}; ihuman.priorCombiningGrRules((r_ind(2)+1):end)];
 
 
+% clear intermediate variables
+clear met_ind nGene nMet nProt r_ind s1 s2
+
+
+
