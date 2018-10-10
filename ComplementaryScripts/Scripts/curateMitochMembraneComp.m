@@ -2,7 +2,7 @@
 % FILE NAME:    curateMitochMembraneComp.m
 % 
 % DATE CREATED: 2018-09-17
-%     MODIFIED: 2018-10-08
+%     MODIFIED: 2018-10-10
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -21,33 +21,25 @@
 %               removed here.
 %             - The rxnAssoc.mat file is updated accordingly.
 %
-%          2. Some rxn bounds were updated to prevent energy-generating
+%          2. Two unused/dead-end rxns were constrained to zero, and
+%             flagged for future deletion.
+%             - Both of these reactions came from Recon3D, and appeared to
+%               be related to the proton gradient:
+%                   r1330  'H+[m] => H+[c] + Proton-Gradient[m]'
+%                   r1331  'H+[c] => H+[s] + Proton-Gradient[c]'
+%
+%          3. Some rxn bounds were updated to prevent energy-generating
 %             proton pumping (M to C)
 %
-%          3. All electrogenic rxns involving proton transport between
+%          4. All electrogenic rxns involving proton transport between
 %             mitochondria and cytoplasm were updated to take place between
 %             the mitochondria and inner mitochondrial membrane, "i".
-%
-%          4. A decoupling rxn allowing for proton transport from inner
-%             mitochondrial matrix to cytoplasm was added.
-%             - This reaction is effectively equivalent to that mediated by
-%               the uncoupling protein, which results in a net loss of
-%               energy.
-%             - This rxn is added to allow for proton mass balancing. It
-%               should NOT have any effect on proton energetics.
 %
 %          5. Update the bounds on ATP-driven transport reactions to
 %             prevent generation of ATP.
 %             - These reactions should not be reversible, as they lead to
 %               artificial production.
 %
-%          6. An additional 2 unused/dead-end rxns were deleted.
-%             - Both of these reactions came from Recon3D, and appeared to
-%               be related to the proton gradient:
-%                   r1330  'H+[m] => H+[c] + Proton-Gradient[m]'
-%                   r1331  'H+[c] => H+[s] + Proton-Gradient[c]'
-%
-
 
 
 %% Load Model
@@ -56,6 +48,7 @@
 if ~exist('ihuman','var')
     load('humanGEM.mat');  % version 0.4.1
 end
+ihuman_orig = ihuman;  % to keep track of changes later
 
 
 %% Remove Recon3D ATP synthase, complex I,  reaction
@@ -131,6 +124,38 @@ if ~isempty(r3_ind)
     % delete Recon3D reactions from model
     ihuman = removeReactionsFull(ihuman,r3_rxns);
     
+    % record changes in rxnNotes array
+    rxnNotes = [r3_rxns, join([repmat({'reaction is a duplicate of'},length(r3_rxns),1) ,hmr_rxns])];
+    
+end
+
+
+%% Fix other reactions
+% Reactions: r1330  'H+[m] => H+[c] + Proton-Gradient[m]'
+%            r1331  'H+[c] => H+[s] + Proton-Gradient[c]'
+% These reactions originate from Recon3D. They appear to be an attempt to
+% fix ATP leakage, but will not be necessary/compatible with the updated
+% handling of mitochondrial proton transport.
+
+del_rxns = {'r1330'; 'r1331'};
+
+% first check if reactions have already been removed
+del_rxns(~ismember(del_rxns,ihuman.rxns)) = [];
+
+if ~isempty(del_rxns)
+    
+    % perform soft deletion of reactions
+    [~,del_ind] = ismember(del_rxns,ihuman.rxns);
+    ihuman.lb(del_ind) = 0;
+    ihuman.ub(del_ind) = 0;
+    
+    % note that these should be scheduled for hard deletion in the future
+    rxnNotes = [rxnNotes; [del_rxns,repmat({'reaction is dead-end and uneccessary, should be DELETED'},length(del_rxns),1)]];
+    
+    % output stats
+    fprintf('An additional %u dead-end/unused reactions were constrained to zero in the model:\n',length(del_rxns));
+    fprintf('\t%s\n',del_rxns{:});
+    fprintf('\n');
 end
 
 
@@ -154,7 +179,7 @@ rxn_inds = [fwd_rxn_inds; rev_rxn_inds];
 
 fprintf('A total of %u reactions are able to transport protons from [m] to [c].\n\n',length(rxn_inds));
 
-% This resulted in 9 fwd rxns, and 21 rev rxns, for a total of 30 rxns
+% This resulted in 8 fwd rxns, and 21 rev rxns, for a total of 29 rxns
 
 
 
@@ -189,6 +214,7 @@ fprintf('to prevent their proton transport from [m] to [c].\n\n');
 ihuman.ub(rxn_inds(ismember(rxn_inds,fwd_rxn_inds))) = 0;
 ihuman.lb(rxn_inds(ismember(rxn_inds,rev_rxn_inds))) = 0;
 ihuman.rev = double(ihuman.lb < 0 & ihuman.ub > 0);  % update ".rev" field
+rxnNotes = [rxnNotes; [ihuman.rxns(rxn_inds), repmat({'constrained to prevent electrogenic proton transport from [m] to [c]'},length(rxn_inds),1)]];
 
 % For reactions that are now irreversible, but only in the direction that
 % is backward from the way it is written, turn those reactions around, so
@@ -200,7 +226,7 @@ ihuman.S(:,flip_ind) = -ihuman.S(:,flip_ind);
 fprintf('The following %u rxns have been re-written in the reverse direction:\n',sum(flip_ind));
 fprintf('\t%s\n',ihuman.rxns{flip_ind});
 fprintf('\n');
-
+rxnNotes = [rxnNotes; [ihuman.rxns(flip_ind), repmat({'turned reaction around to reflect new bounds'},sum(flip_ind),1)]];
 
 
 %% Update electrogenic rxns involving C <--> M proton transport to be I <--> M
@@ -225,6 +251,8 @@ fprintf('to replace cytoplasmic protons (H+[c]) with inner mitochondrial membran
 fprintf('The remaining %u non-electrogenic rxns involving proton transport between [m] and [c] will not be\n',num_non_elec);
 fprintf('modified, and their cytoplasmic protons (H+[c]) will be left as is.\n\n');
 
+% record changes in notes array
+rxnNotes = [rxnNotes; [ihuman.rxns(rxn_inds), repmat({'replaced cytoplasmic protons with inner mitochondrial membrane protons'},length(rxn_inds),1)]];
 
 
 %% Ensure that all rxns involving ATP-driven transport cannot generate ATP
@@ -262,33 +290,18 @@ ihuman.ub(atp_trans_inds(ismember(atp_trans_inds,find(atp_produce)))) = 0;
 % update ".rev" field in the model, if necessary
 ihuman.rev = double(ihuman.lb < 0 & ihuman.ub > 0);
 
+% record changes in notes array
+rxnNotes = [rxnNotes; [ihuman.rxns(atp_trans_inds), repmat({'changed bounds to prevent ATP generation'},length(atp_trans_inds),1)]];
 
 
-%% Fix other reactions
-% Reactions: r1330  'H+[m] => H+[c] + Proton-Gradient[m]'
-%            r1331  'H+[c] => H+[s] + Proton-Gradient[c]'
-% These reactions originate from Recon3D. They appear to be an attempt to
-% fix ATP leakage, but will not be necessary/compatible with the updated
-% handling of mitochondrial proton transport.
+%% write reaction change documentation file
 
-del_rxns = {'r1330'; 'r1331'};
-
-% first check if reactions have already been removed
-del_rxns(~ismember(del_rxns,ihuman.rxns)) = [];
-
-if ~isempty(del_rxns)
-    % remove identified reactions from the model
-    ihuman = removeReactionsFull(ihuman,del_rxns);
-    
-    % output stats
-    fprintf('An additional %u dead-end/unused reactions were deleted from the model:\n',length(del_rxns));
-    fprintf('\t%s\n',del_rxns{:});
-    fprintf('\n');
-end
-
+docRxnChanges(ihuman_orig,ihuman,rxnNotes,'curateMitochMembraneComp_rxnChanges.txt');
 
 
 %% clear intermediate variables
 
 clearvars -except ihuman rxnAssoc
+
+
 
