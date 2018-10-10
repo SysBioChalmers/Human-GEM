@@ -51,6 +51,7 @@ function docArray = docRxnChanges(model1,model2,rxnNotes,fileName)
 if nargin < 4
     fileName = [];
 elseif ~contains(fileName,'.')
+    % append with .txt if no extension provided
     fileName = strcat(fileName,'.txt');
 end
 if nargin < 3
@@ -61,6 +62,18 @@ end
 % get rxns from rxnNotes, and include them in the list of changed rxns
 model1.rxnNotes = repmat({''},length(model1.rxns),1);  % intialize field
 if ~isempty(rxnNotes)
+    % check if any rxn IDs are repeated in the rxnNotes array, and if so,
+    % merge those notes using a semicolon separator (;)
+    [uniq_rxn,uniq_ind] = unique(rxnNotes(:,1));
+    if length(uniq_rxn) < length(rxnNotes(:,1))
+        for i = 1:length(uniq_rxn)
+            ind = ismember(rxnNotes(:,1),uniq_rxn(i));
+            if sum(ind) > 1
+                rxnNotes{uniq_ind(i),2} = strjoin(rxnNotes(ind,2),'; ');
+            end
+        end
+        rxnNotes = rxnNotes(uniq_ind,:);  % remove duplicated entries after merging notes
+    end
     chg_rxn = rxnNotes(:,1);
     [~,ind] = ismember(chg_rxn,model1.rxns);
     model1.rxnNotes(ind) = rxnNotes(:,2);
