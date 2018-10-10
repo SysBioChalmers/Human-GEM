@@ -13,6 +13,31 @@
 %
 
 
+%% Update of GPRs
+
+% The following reaction:
+%   HMR_2116: H+[c] + vitamin D3[c] <=> H+[m] + vitamin D3[m]
+% Is associated with (only) the following gene:
+%   ENSG00000175592 (FOSL1)
+% However, this FOSL1 protein is described as a transcription factor, is
+% not associated with any catalytic activity, and UniProt shows it as
+% localized to the nucleus. It therefore has no apparent relationship with
+% the above reaction, and should be removed from the associated grRule.
+[~,rxn_ind] = ismember('HMR_2116', ihuman.rxns);
+if strcmp(ihuman.grRules(rxn_ind),'ENSG00000175592')
+    ihuman.grRules(rxn_ind) = {''};
+    ihuman.rxnGeneMat(rxn_ind,:) = 0;
+end
+
+
+%% Removal of invalid/unsupported reactions
+
+% This Recon3D reaction does not exist in the literature or any databases:
+%     r1453: proline[m] + ubiquinol[m] <=> 1-pyrroline-5-carboxylate[m] + 5 H+[m] + ubiquinone[m]
+% It is also not present on the BiGG Database. It should thus be removed.
+del_rxns = [del_rxns; {'r1453'}];
+
+
 
 
 %% Treatment of ubiquinone and FAD+
