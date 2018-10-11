@@ -7,7 +7,12 @@
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
-% 
+%
+% PROBLEM!!! ALTHOUGH THIS SCRIPT ATTEMPTED TO REBALANCE THESE REACTIONS BY
+% ADJUSTING THE AMOUNT OF COA PRESENT, IT STILL RESULTS IN AN IMBALANCED
+% FORMULA (E.G., OXYGEN IS NOT BALANCED)! THEREFORE, THIS SCRIPT SHOULD NOT
+% BE USED, AND INSTEAD THE REACTIONS SHOULD BE CONSTRAINED/REMOVED.
+%
 % PURPOSE: Script to balance reactions involving the "R group Coenzyme A"
 %          metabolite.
 %
@@ -35,47 +40,47 @@
 %
 
 
-% load model if not already present
-if ~exist('ihuman','var')
-    load('humanGEM.mat');
-end
-
-% identify all reactions requiring CoA re-balancing
-met_ind = find(startsWith(ihuman.metNames,'R Group '));
-rxn_ind = find(any(ihuman.S(met_ind,:) ~= 0 & abs(ihuman.S(met_ind,:)) ~= 1,1)');
-met_ind(all(ihuman.S(met_ind,rxn_ind) == 0,2)) = [];  % discard mets that were not imbalanced
-
-% get the stoich coeff for the "R Group # Coenzyme" met in each rxn
-R_coeffs = ihuman.S(met_ind,rxn_ind);
-if any(sum(R_coeffs ~= 0,1) ~= 1)
-    % This is a check to make sure that there is only one of these types of
-    % metabolites in each reaction being fixed. If this error occurs, those
-    % reactions need to be corrected manually.
-    error('Some reactions contain multiple R Group Coenzyme mets!');
-end
-R_coeffs = full(sum(R_coeffs,1)');  % sum the coeffs to get the only non-zero coeff for each reaction
-
-% calculate the appropriate amount of CoA needed to balance each reaction
-CoA_coeffs = 1 - R_coeffs;
-
-% use the same compartment as the R Group
-R_comps = unique(ihuman.comps(ihuman.metComps(met_ind)));
-if length(R_comps) > 1
-    % the current way in which the script is written does not allow for
-    % different compartments among the imbalanced R-groups
-    error('Some mets were in different compartments - this script will not work for these cases.');
-end
-
-% get CoA index
-CoA_ind = getIndexes(ihuman,strcat('CoA[',R_comps{1},']'),'metscomps');
-
-% update stoich matrix
-ihuman.S(CoA_ind,rxn_ind) = CoA_coeffs;
-fprintf('\nA total of %u reactions were re-balanced for CoA.\n\n',length(rxn_ind));
-
-
-% clear intermediate variables
-clear('CoA_coeffs','CoA_ind','met_ind','R_coeffs','R_comps','rxn_ind');
+% % load model if not already present
+% if ~exist('ihuman','var')
+%     load('humanGEM.mat');
+% end
+% 
+% % identify all reactions requiring CoA re-balancing
+% met_ind = find(startsWith(ihuman.metNames,'R Group '));
+% rxn_ind = find(any(ihuman.S(met_ind,:) ~= 0 & abs(ihuman.S(met_ind,:)) ~= 1,1)');
+% met_ind(all(ihuman.S(met_ind,rxn_ind) == 0,2)) = [];  % discard mets that were not imbalanced
+% 
+% % get the stoich coeff for the "R Group # Coenzyme" met in each rxn
+% R_coeffs = ihuman.S(met_ind,rxn_ind);
+% if any(sum(R_coeffs ~= 0,1) ~= 1)
+%     % This is a check to make sure that there is only one of these types of
+%     % metabolites in each reaction being fixed. If this error occurs, those
+%     % reactions need to be corrected manually.
+%     error('Some reactions contain multiple R Group Coenzyme mets!');
+% end
+% R_coeffs = full(sum(R_coeffs,1)');  % sum the coeffs to get the only non-zero coeff for each reaction
+% 
+% % calculate the appropriate amount of CoA needed to balance each reaction
+% CoA_coeffs = 1 - R_coeffs;
+% 
+% % use the same compartment as the R Group
+% R_comps = unique(ihuman.comps(ihuman.metComps(met_ind)));
+% if length(R_comps) > 1
+%     % the current way in which the script is written does not allow for
+%     % different compartments among the imbalanced R-groups
+%     error('Some mets were in different compartments - this script will not work for these cases.');
+% end
+% 
+% % get CoA index
+% CoA_ind = getIndexes(ihuman,strcat('CoA[',R_comps{1},']'),'metscomps');
+% 
+% % update stoich matrix
+% ihuman.S(CoA_ind,rxn_ind) = CoA_coeffs;
+% fprintf('\nA total of %u reactions were re-balanced for CoA.\n\n',length(rxn_ind));
+% 
+% 
+% % clear intermediate variables
+% clear('CoA_coeffs','CoA_ind','met_ind','R_coeffs','R_comps','rxn_ind');
 
 
 
