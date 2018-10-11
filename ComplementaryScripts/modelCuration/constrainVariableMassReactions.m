@@ -251,16 +251,73 @@
 % LPS6e         H2O[s] + 1,2-diacylglycerol-LD-TAG pool[s] => H+[s] + R Total[s] + 1-Stearoylglycerol[s]
 % LPS7e         H2O[s] + 1,2-diacylglycerol-LD-TAG pool[s] => H+[s] + R Total[s] + 1-Arachidonoyl Glycerol[s]
 
+% ARTFR13   myristoyl-CoA[c] => 0.875 R Group 1 Coenzyme A[c]
+% ARTFR202  2 FADH2[m] + H+[m] + linolenoyl-CoA[c] + NADPH[m] => 2 FAD[m] + NADP+[m] + 1.125 R Group 2 Coenzyme A[c]
+% ARTFR203  2 FADH2[m] + gamma-linolenoyl-CoA[c] + H+[m] + NADPH[m] => 2 FAD[m] + NADP+[m] + 1.125 R Group 2 Coenzyme A[c]
+% ARTFR204  (6Z,9Z,12Z,15Z)-octadecatetraenoyl-CoA[c] + 2 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 2 FAD[m] + 2 NADP+[m] + 1.125 R Group 2 Coenzyme A[c]
+% ARTFR205  dihomo-gamma-linolenoyl-CoA[c] + 2 FADH2[m] + H+[m] + NADPH[m] => 2 FAD[m] + NADP+[m] + 1.25 R Group 2 Coenzyme A[c]
+% ARTFR206  arachidonyl-CoA[c] + 2 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 2 FAD[m] + 2 NADP+[m] + 1.25 R Group 2 Coenzyme A[c]
+% ARTFR207  eicosanoyl-CoA[c] => 1.25 R Group 2 Coenzyme A[c]
+% ARTFR208  (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoyl-CoA[c] + 3 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 3 FAD[m] + 2 NADP+[m] + 1.25 R Group 2 Coenzyme A[c]
+% ARTFR209  (7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA[c] + 2 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 2 FAD[m] + 2 NADP+[m] + 1.375 R Group 2 Coenzyme A[c]
+% ARTFR210  FADH2[m] + H+[m] + linoleoyl-CoA[c] + NADPH[m] => FAD[m] + NADP+[m] + 1.125 R Group 2 Coenzyme A[c]
+% ARTFR211  (7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA[c] + 3 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 3 FAD[m] + 2 NADP+[m] + 1.375 R Group 2 Coenzyme A[c]
+% ARTFR212  (4Z,7Z,10Z,13Z,16Z)-docosapentaenoyl-CoA[c] + 3 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 3 FAD[m] + 2 NADP+[m] + 1.375 R Group 2 Coenzyme A[c]
+% ARTFR213  (4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA[c] + 3 FADH2[m] + 3 H+[m] + 3 NADPH[m] => 3 FAD[m] + 3 NADP+[m] + 1.375 R Group 2 Coenzyme A[c]
+% ARTFR31   stearoyl-CoA[c] => 1.125 R Group 3 Coenzyme A[c]
+% ARTFR32   FADH2[m] + oleoyl-CoA[c] => FAD[m] + 1.125 R Group 3 Coenzyme A[c]
+% ARTFR33   FADH2[m] + 11-Octadecenoyl Coenzyme A[c] => FAD[m] + 1.125 R Group 3 Coenzyme A[c]
+% ARTFR34   (6Z,9Z)-octadecadienoyl-CoA[c] + 2 FADH2[m] => 2 FAD[m] + 1.125 R Group 3 Coenzyme A[c]
+% ARTFR42   FADH2[m] + oleoyl-CoA[c] => FAD[m] + 1.125 R Group 4 Coenzyme A[c]
+% ARTFR43   FADH2[m] + 11-Octadecenoyl Coenzyme A[c] => FAD[m] + 1.125 R Group 4 Coenzyme A[c]
+% ARTFR44   (6Z,9Z)-octadecadienoyl-CoA[c] + 2 FADH2[m] => 2 FAD[m] + 1.125 R Group 4 Coenzyme A[c]
+% ARTFR45   (15Z)-tetracosenoyl-CoA[c] + FADH2[m] => FAD[m] + 1.5 R Group 4 Coenzyme A[c]
+% ARTFR46   (2E)-octadecenoyl-CoA[c] + FADH2[m] => FAD[m] + 1.125 R Group 4 Coenzyme A[c]
+% ARTFR51   tetracosanoyl-CoA[c] => 1.5 R Group 5 Coenzyme A[c]
+% ARTFR52   hexacosanoyl-CoA[c] => 1.625 R Group 5 Coenzyme A[c]
+% ARTFR53   (8Z,11Z,14Z,17Z)-eicosatetraenoyl-CoA[c] + 2 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 2 FAD[m] + 2 NADP+[m] + 1.25 R Group 5 Coenzyme A[c]
+% ARTFR54   (6Z,9Z,12Z,15Z,18Z)-tetracosapentaenoyl-CoA[c] + 3 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 3 FAD[m] + 2 NADP+[m] + 1.5 R Group 5 Coenzyme A[c]
+% ARTFR55   (9Z,12Z,15Z,18Z,21Z)-tetracosapentaenoyl-CoA[c] + 3 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 3 FAD[m] + 2 NADP+[m] + 1.5 R Group 5 Coenzyme A[c]
+% ARTFR56   (9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA[c] + 2 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 2 FAD[m] + 2 NADP+[m] + 1.5 R Group 5 Coenzyme A[c]
+% ARTFR57   (6Z,9Z,12Z,15Z,18Z,21Z)-tetracosahexaenoyl-CoA[c] + 3 FADH2[m] + 3 H+[m] + 3 NADPH[m] => 3 FAD[m] + 3 NADP+[m] + 1.5 R Group 5 Coenzyme A[c]
+%
+%
+% The following additional reactions which also exhibit mass imbalances
+% were found manually:
+%
+% TAG_HSad      2 H2O[c] + 2 linoleoyl-CoA[c] + 2 oleoyl-CoA[c] + palmitoyl-CoA[c] + 2 sn-glycerol-3-phosphate[c] + stearoyl-CoA[c] => 6 CoA[c] + 2 Pi[c] + 2 TAG-VLDL pool[c]
+% TAG_HSad_NE   2 H2O[c] + myristoyl-CoA[c] + 2 oleoyl-CoA[c] + palmitoleoyl-CoA[c] + palmitoyl-CoA[c] + 2 sn-glycerol-3-phosphate[c] + stearoyl-CoA[c] => 6 CoA[c] + 2 Pi[c] + 2 TAG-VLDL pool[c]
+% TAG_HSad_E    (4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA[c] + (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoyl-CoA[c] + arachidonyl-CoA[c] + 2 H2O[c] + linolenoyl-CoA[c] + linoleoyl-CoA[c] + 2 sn-glycerol-3-phosphate[c] => 5 CoA[c] + 2 Pi[c] + 2 TAG-VLDL pool[c]
+%
+% CHOLESTle     cholesterol-ester pool[s] + H2O[s] => cholesterol[s] + H+[s] + R Total[s]
+%
+
+if ~exist('ihuman','var')
+    load('humanGEM.mat');
+end
+ihuman_orig = ihuman;
+
 % load list of the above reactions to constrain
 constrain_rxns = importdata('ComplementaryScripts/modelCuration/variable_mass_rxns_to_constrain.txt');
 constrain_ind = ismember(ihuman.rxns,constrain_rxns);
+if any(~ismember(constrain_rxns,ihuman.rxns))
+    error('Some reactions were not found in the model.');
+end
+
+% generate rxnNotes array
+rxnNotes = [constrain_rxns, repmat({'reaction treats the mass of one or more of its metabolites in an inconsistent manner, resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED'},length(constrain_rxns),1)];
 
 % set upper and lower bounds to zero
 ihuman.ub(constrain_ind) = 0;
 ihuman.lb(constrain_ind) = 0;
 ihuman.rev(constrain_ind) = 0;  % update reversibility
 
+% document reaction changes
+docArray = docRxnChanges(ihuman_orig,ihuman,rxnNotes,'constrainVariableMassReactions_rxnChanges.txt');
 
+
+% remove intermediate variables
+clearvars -except ihuman
 
 
 
