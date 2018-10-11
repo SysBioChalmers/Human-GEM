@@ -103,7 +103,8 @@ rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'H2O should not be able to 
 %  RE2649C: H2O[c] + propanoyl-CoA[c] <=> CoA[c] + H+[c] + propanoate[c]
 %
 % The lower bound of these reactions will therefore be constrained to zero.
-ihuman.lb(ismember(ihuman.rxns,{'RE3238C';'RE3239C';'RE2649C'})) = 0;
+rxn_ind = ismember(ihuman.rxns,{'RE3238C';'RE3239C';'RE2649C'});
+ihuman.lb(rxn_ind) = 0;
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'reverse rxn requires ATP, therefore rxn was made irreversible'},sum(rxn_ind),1)]];
 
 
