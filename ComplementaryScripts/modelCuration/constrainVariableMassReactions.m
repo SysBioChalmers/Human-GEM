@@ -2,15 +2,17 @@
 % FILE NAME:    constrainVariableMassReactions.m
 % 
 % DATE CREATED: 2018-09-28
-%     MODIFIED: 2018-10-02
+%     MODIFIED: 2018-10-11
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 % 
-% PURPOSE: Script to identify and constrain all reactions that involve the
-%          same reactants producing different compounds, such that the
-%          different compounds vary in mass. For example:
+% PURPOSE: Script to constrain all reactions that involve an identical set
+%          of metabolites except for one, and that one different metabolite
+%          does not have the same mass in each reaction. For example, the
+%          following reactions were identified as a set of "mass variable
+%          reactions":
 %
 %           LCAT39e: cholesterol[s] + PC-LD pool[s] => cholesterol-ester pool[s] + 1-Docosahexenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16, 19), Sn1-Lpc (22:6)[s]
 %            LCAT5e: cholesterol[s] + PC-LD pool[s] => cholesterol-ester pool[s] + 1-Eicosadienoylglycerophosphocholine (Delta 11,14)[s]
@@ -23,94 +25,7 @@
 %          into their components).
 
 
-%% Script for identifying all potential reaction sets
-
-% if ~exist('ihuman','var')
-%     load('humanGEM.mat');
-% end
-% 
-% massVariable_rxn_sets = [];
-% massConsistent_rxn_sets = [];
-% 
-% for n = 4:100
-%     
-%     % find all reactions with X metabolites
-%     rxn_ind = sum(ihuman.S ~= 0,1)' == n;
-%     
-%     % find all mets involved in these reactions
-%     met_ind = any(ihuman.S(:,rxn_ind) ~= 0,2);
-%     
-%     % extract subset of stoich matrix for these reactions and metabolites
-%     s = ihuman.S(met_ind,rxn_ind);
-%     
-%     % keep track of original reaction indices
-%     orig_rxn_ind = (1:length(ihuman.rxns))';
-%     orig_rxn_ind = orig_rxn_ind(rxn_ind);
-%     
-%     % calculated the hamming distance between these reactions
-%     rxn_dist = squareform(pdist(s','hamming'));
-%     
-%     % we are interested in reactions that differ by only one metabolite, which
-%     % would correspond to a hamming distance of 2/Nmets
-%     d = 2/sum(met_ind);
-%     
-%     % find all cases where at least 2 other rxns differ by this distance
-%     check_rxns = find(sum(rxn_dist == d) >= 2);
-%     
-%     % obtain unique list of similar reaction sets (do this by retrieving rxns
-%     % with the specified hamming distance, as well as a distance of zero, so
-%     % that the reaction set includes the checked reaction itself).
-%     rxn_sets = unique(ismember(rxn_dist(check_rxns,:),[0,d]),'rows');
-%     
-%     
-%     % remove any sets that are just a subset of another
-%     i = 0;
-%     while ~isempty(rxn_sets)
-%         i = i+1;
-%         r = rxn_sets - rxn_sets(i,:);
-%         if sum(all(r >= 0,2)) > 1
-%             rxn_sets(i,:) = [];
-%             i = 0;
-%         elseif i == size(rxn_sets,1)
-%             break
-%         end
-%     end
-%         
-%     % convert to logical that corresponds to original rxn indexing
-%     rxn_sets = rxn_sets';  % transpose matrix
-%     rxn_sets_orig = false(length(ihuman.rxns),size(rxn_sets,2));
-%     for i = 1:size(rxn_sets,2)
-%         rxn_sets_orig(orig_rxn_ind(rxn_sets(:,i)),i) = true;
-%     end
-%     
-%     % for each reaction set, determine which differ by metabolites that vary in
-%     % their formula
-%     ignore_sets = [];
-%     for i = 1:size(rxn_sets_orig,2)
-%         diff_mets = sum(ihuman.S(:,rxn_sets_orig(:,i)) ~= 0, 2) == 1;
-%         if length(unique(ihuman.metFormulas(diff_mets))) == 1
-%             ignore_sets = [ignore_sets; i];
-%         end
-%     end
-%     
-%     % append these reaction sets to the existing sets
-%     if ~isempty(ignore_sets)
-%         massConsistent_rxn_sets = [massConsistent_rxn_sets, rxn_sets_orig(:,ignore_sets)];
-%         rxn_sets_orig(:,ignore_sets) = [];
-%     end
-%     massVariable_rxn_sets = [massVariable_rxn_sets, rxn_sets_orig];
-%     
-% end
-% 
-% massVariable_rxn_sets = logical(massVariable_rxn_sets);
-% massConsistent_rxn_sets = logical(massConsistent_rxn_sets);
-
-
-%% Constrain reaction sets after manual curation of results from above
-% After manually curating the reaction sets in "massVariable_rxn_sets" to
-% confirm those that violate mass balances, the following list of reactions
-% will be constrained to zero, to avoid creation or destruction of mass or
-% energy:
+%% Information on the reactions to be constrained:
 %
 % RXN ID    RXN EQUATION
 %
@@ -281,23 +196,24 @@
 % ARTFR56   (9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA[c] + 2 FADH2[m] + 2 H+[m] + 2 NADPH[m] => 2 FAD[m] + 2 NADP+[m] + 1.5 R Group 5 Coenzyme A[c]
 % ARTFR57   (6Z,9Z,12Z,15Z,18Z,21Z)-tetracosahexaenoyl-CoA[c] + 3 FADH2[m] + 3 H+[m] + 3 NADPH[m] => 3 FAD[m] + 3 NADP+[m] + 1.5 R Group 5 Coenzyme A[c]
 %
-%
-% The following additional reactions which also exhibit mass imbalances
-% were found manually:
-%
 % TAG_HSad      2 H2O[c] + 2 linoleoyl-CoA[c] + 2 oleoyl-CoA[c] + palmitoyl-CoA[c] + 2 sn-glycerol-3-phosphate[c] + stearoyl-CoA[c] => 6 CoA[c] + 2 Pi[c] + 2 TAG-VLDL pool[c]
 % TAG_HSad_NE   2 H2O[c] + myristoyl-CoA[c] + 2 oleoyl-CoA[c] + palmitoleoyl-CoA[c] + palmitoyl-CoA[c] + 2 sn-glycerol-3-phosphate[c] + stearoyl-CoA[c] => 6 CoA[c] + 2 Pi[c] + 2 TAG-VLDL pool[c]
 % TAG_HSad_E    (4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA[c] + (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoyl-CoA[c] + arachidonyl-CoA[c] + 2 H2O[c] + linolenoyl-CoA[c] + linoleoyl-CoA[c] + 2 sn-glycerol-3-phosphate[c] => 5 CoA[c] + 2 Pi[c] + 2 TAG-VLDL pool[c]
 %
+% This reaction was found to exhibit variable mass with other reactions
+% involving cholesterol and cholesterol-ester pools in the model:
 % CHOLESTle     cholesterol-ester pool[s] + H2O[s] => cholesterol[s] + H+[s] + R Total[s]
 %
 
+%% Constrain reactions
+
+% load model if it does not yet exist
 if ~exist('ihuman','var')
     load('humanGEM.mat');
 end
 ihuman_orig = ihuman;
 
-% load list of the above reactions to constrain
+% load list of the above reactions to constrain (stored in txt file)
 constrain_rxns = importdata('ComplementaryScripts/modelCuration/variable_mass_rxns_to_constrain.txt');
 constrain_ind = ismember(ihuman.rxns,constrain_rxns);
 if any(~ismember(constrain_rxns,ihuman.rxns))
@@ -313,8 +229,7 @@ ihuman.lb(constrain_ind) = 0;
 ihuman.rev(constrain_ind) = 0;  % update reversibility
 
 % document reaction changes
-docArray = docRxnChanges(ihuman_orig,ihuman,rxnNotes,'constrainVariableMassReactions_rxnChanges.txt');
-
+docRxnChanges(ihuman_orig,ihuman,rxnNotes,'constrainVariableMassReactions_rxnChanges.txt');
 
 % remove intermediate variables
 clearvars -except ihuman
