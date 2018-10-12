@@ -1,9 +1,10 @@
 %
-% FILE NAME:    miscModelCurationScript_20181010.m
+% FILE NAME:    miscModelCurationScript_20181012.m
 % 
 % DATE CREATED: 2018-10-10
+%     MODIFIED: 2018-10-12
 % 
-% PROGRAMMER:   Jonathan Robinson
+% PROGRAMMER:   Jonathan Robinson, Hao Wang
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 % 
