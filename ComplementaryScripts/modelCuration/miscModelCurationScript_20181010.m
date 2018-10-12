@@ -19,6 +19,12 @@
 %          convenience.
 %
 
+%% Load model
+
+% load latest version of humanGEM
+load('humanGEM.mat');  % v0.4.1
+
+
 
 %% Restore transport reactions that were removed earlier
 
@@ -76,4 +82,16 @@ ihuman.priorCombiningGrRules = [ihuman.priorCombiningGrRules(1:r_ind(1)); {''}; 
 clear met_ind nGene nMet nProt r_ind s1 s2
 
 
+
+%% Remove non-standard fields (e.g. rxnKEGGID) to comply with defined RAVEN structure
+% The following five fields are non-standard. To assist convenient model 
+% manipulation, they are removed here given that these information have
+% been intactly stored elsewhere.
+f = {'rxnKEGGID';'rxnEHMNID';'rxnBiGGID';'rxnHepatoNET1ID';'rxnREACTOMEID'};
+ihuman = rmfield(ihuman, f);
+
+
+%% Save model
+ihuman = newModel;
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
 
