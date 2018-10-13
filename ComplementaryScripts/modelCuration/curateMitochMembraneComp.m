@@ -2,7 +2,7 @@
 % FILE NAME:    curateMitochMembraneComp.m
 % 
 % DATE CREATED: 2018-09-17
-%     MODIFIED: 2018-10-10
+%     MODIFIED: 2018-10-13
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -40,13 +40,17 @@
 %             - These reactions should not be reversible, as they lead to
 %               artificial production.
 %
+%          6. All changes to reactions (removal, bounds, stoichiometry,
+%             etc.) are written to a .txt file for documentation purposes.
+%             - Written to "curateMitochMembraneComp_rxnChanges.txt"
+%
 
 
 %% Load Model
 
 % load HumanGEM model (if not already loaded)
 if ~exist('ihuman','var')
-    load('humanGEM.mat');  % version 0.4.1
+    load('humanGEM.mat');  % version 0.4.2
 end
 ihuman_orig = ihuman;  % to keep track of changes later
 
