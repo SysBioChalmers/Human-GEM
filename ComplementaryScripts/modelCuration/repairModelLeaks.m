@@ -684,8 +684,8 @@ ihuman.rev(del_ind) = 0;
 docArray = docRxnChanges(ihuman_orig,ihuman,rxnNotes,'repairModelLeaks_rxnChanges.txt');
 
 
-
-
+%% Clear intermediate vars
+clearvars -except ihuman
 
 
 
