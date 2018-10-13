@@ -25,8 +25,8 @@
 %          into their components).
 
 
-%% Information on the reactions to be constrained:
-%
+%% List of reactions to be constrained
+
 % RXN ID    RXN EQUATION
 %
 % AGPAT1    2 H+[c] + R Total 2 Coenzyme A[c] + Lysophosphatidic Acid[c] => CoA[c] + phosphatidate-LD-TAG pool[c]
