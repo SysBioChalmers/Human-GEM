@@ -2,7 +2,7 @@
 % FILE NAME:    curateMitochMembraneComp.m
 % 
 % DATE CREATED: 2018-09-17
-%     MODIFIED: 2018-10-13
+%     MODIFIED: 2018-10-15
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -300,12 +300,13 @@ rxnNotes = [rxnNotes; [ihuman.rxns(atp_trans_inds), repmat({'changed bounds to p
 
 %% write reaction change documentation file
 
-docRxnChanges(ihuman_orig,ihuman,rxnNotes,'curateMitochMembraneComp_rxnChanges.txt');
+rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
+writeRxnChanges(rxnChanges,'curateMitochMembraneComp_rxnChanges.txt');
 
 
 %% clear intermediate variables
 
-clearvars -except ihuman rxnAssoc
+clearvars -except ihuman rxnAssoc rxnChanges
 
 
 
