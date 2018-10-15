@@ -1,4 +1,4 @@
-function rxnChanges = docRxnChanges(model1,model2,rxnNotes,fileName)
+function rxnChanges = docRxnChanges(model1,model2,rxnNotes)
 %docRxnChanges  Document changes to model reactions.
 %
 %   docRxnChanges looks for differences between two models, which should be
@@ -29,10 +29,6 @@ function rxnChanges = docRxnChanges(model1,model2,rxnNotes,fileName)
 %              function, but were included in the rxnNotes array, will be
 %              included in the documented changes, with the supplied note.
 %
-%   fileName   (Optional) write the documented changes to a .tsv file with
-%              the given name. If no name is provided, a file will not be 
-%              written.
-%
 % OUTPUT:
 %
 %   rxnChanges  A cell structure containing the original and new reaction
@@ -50,12 +46,6 @@ function rxnChanges = docRxnChanges(model1,model2,rxnNotes,fileName)
 
 
 % handle input arguments
-if nargin < 4
-    fileName = [];
-elseif ~contains(fileName,'.')
-    % append with .tsv if no extension provided
-    fileName = strcat(fileName,'.tsv');
-end
 if nargin < 3
     rxnNotes = [];
 end
@@ -122,19 +112,5 @@ rxnChanges.lbNew   = model2.lb(chg_rxn_ind_new);
 rxnChanges.ubOrig  = model1.ub(chg_rxn_ind_orig);
 rxnChanges.ubNew   = model2.ub(chg_rxn_ind_new);
 rxnChanges.notes   = model1.rxnNotes(chg_rxn_ind_orig);
-
-
-% write to file, if specified
-if ~isempty(fileName)
-    % organize information for changed reactions
-    docArray = [fieldnames(rxnChanges)';
-                [rxnChanges.rxns, rxnChanges.eqnOrig, rxnChanges.eqnNew,...
-                 num2cell([rxnChanges.lbOrig, rxnChanges.lbNew, ...
-                 rxnChanges.ubOrig, rxnChanges.ubNew]), rxnChanges.notes]];
-    % write to file
-    writecell(docArray,fileName,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\n');
-end
-
-
 
 
