@@ -1,4 +1,4 @@
-function docArray = docRxnChanges(model1,model2,rxnNotes,fileName)
+function rxnChanges = docRxnChanges(model1,model2,rxnNotes,fileName)
 %docRxnChanges  Document changes to model reactions.
 %
 %   docRxnChanges looks for differences between two models, which should be
@@ -8,7 +8,7 @@ function docArray = docRxnChanges(model1,model2,rxnNotes,fileName)
 %
 % USAGE:
 %
-%   docArray = docRxnChanges(model1,model2,rxnNotes,fileName);
+%   rxnChanges = docRxnChanges(model1,model2,rxnNotes,fileName);
 %
 % INPUT:
 %
@@ -29,30 +29,32 @@ function docArray = docRxnChanges(model1,model2,rxnNotes,fileName)
 %              function, but were included in the rxnNotes array, will be
 %              included in the documented changes, with the supplied note.
 %
-%   fileName   (Optional) write the documented changes to a file with the
-%              given name. The file will contain the following headers:
-%
-%                   rxn, eqn_orig, eqn_new, lb_orig, lb_new, 
-%                   ub_orig, ub_new, notes
-%
-%              If no name is provided, a file will not be written.
+%   fileName   (Optional) write the documented changes to a .tsv file with
+%              the given name. If no name is provided, a file will not be 
+%              written.
 %
 % OUTPUT:
 %
-%   docArray    A cell array containing the original and new reaction
-%               properties, with the same headers listed above for the
-%               'writeFile' output.
+%   rxnChanges  A cell structure containing the original and new reaction
+%               properties, with the following fields:
+%                 rxn       reaction ID
+%                 eqnOrig   original reaction equation
+%                 eqnNew    new reaction equation
+%                 lbOrig    original lower bound
+%                 lbNew     new lower bound
+%                 ubOrig    original upper bound
+%                 ubNew     new upper bound
+%                 notes     notes associated with the change
 %
-%
-% Jonathan Robinson, 2018-10-10
+% Jonathan Robinson, 2018-10-15
 
 
 % handle input arguments
 if nargin < 4
     fileName = [];
 elseif ~contains(fileName,'.')
-    % append with .txt if no extension provided
-    fileName = strcat(fileName,'.txt');
+    % append with .tsv if no extension provided
+    fileName = strcat(fileName,'.tsv');
 end
 if nargin < 3
     rxnNotes = [];
@@ -109,24 +111,29 @@ model2.eqns(end+1) = {'(DELETED)'};
 model2.lb(end+1) = 0;
 model2.ub(end+1) = 0;
 
-% organize information for changed reactions
-docArray = [{'rxn','eqn_orig','eqn_new','lb_orig','lb_new','ub_orig','ub_new','notes'};
-            [model1.rxns(chg_rxn_ind_orig), model1.eqns(chg_rxn_ind_orig), ...
-             model2.eqns(chg_rxn_ind_new), num2cell([model1.lb(chg_rxn_ind_orig), ...
-             model2.lb(chg_rxn_ind_new), model1.ub(chg_rxn_ind_orig), ...
-             model2.ub(chg_rxn_ind_new)]), model1.rxnNotes(chg_rxn_ind_orig)]];
+
+% organize information into output structure
+rxnChanges = {};
+rxnChanges.rxns    = model1.rxns(chg_rxn_ind_orig);
+rxnChanges.eqnOrig = model1.eqns(chg_rxn_ind_orig);
+rxnChanges.eqnNew  = model2.eqns(chg_rxn_ind_new);
+rxnChanges.lbOrig  = model1.lb(chg_rxn_ind_orig);
+rxnChanges.lbNew   = model2.lb(chg_rxn_ind_new);
+rxnChanges.ubOrig  = model1.ub(chg_rxn_ind_orig);
+rxnChanges.ubNew   = model2.ub(chg_rxn_ind_new);
+rxnChanges.notes   = model1.rxnNotes(chg_rxn_ind_orig);
+
 
 % write to file, if specified
 if ~isempty(fileName)
+    % organize information for changed reactions
+    docArray = [fieldnames(rxnChanges)';
+                [rxnChanges.rxns, rxnChanges.eqnOrig, rxnChanges.eqnNew,...
+                 num2cell([rxnChanges.lbOrig, rxnChanges.lbNew, ...
+                 rxnChanges.ubOrig, rxnChanges.ubNew]), rxnChanges.notes]];
+    % write to file
     writecell(docArray,fileName,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\n');
 end
-
-
-
-
-
-
-
 
 
 
