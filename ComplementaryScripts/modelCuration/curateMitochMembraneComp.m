@@ -121,9 +121,8 @@ if ~isempty(r3_ind)
     rxnAssoc.lbRecon3D = [rxnAssoc.lbRecon3D; ihuman.lb(add_r3_ind)];
     rxnAssoc.ubRecon3D = [rxnAssoc.ubRecon3D; ihuman.ub(add_r3_ind)];
 
-    % save new rxnAssoc.mat file
     fprintf('The rxnAssoc.mat file has been updated with rxns related to the electron transport chain.\n\n');
-%     save('rxnAssoc.mat','rxnAssoc');
+    % update rxnAssoc.mat file in the end
     
     % delete Recon3D reactions from model
     ihuman = removeReactionsFull(ihuman,r3_rxns);
@@ -301,12 +300,13 @@ rxnNotes = [rxnNotes; [ihuman.rxns(atp_trans_inds), repmat({'changed bounds to p
 %% write reaction change documentation file
 
 rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
-writeRxnChanges(rxnChanges,'curateMitochMembraneComp_rxnChanges.txt');
+writeRxnChanges(rxnChanges,'curateMitochMembraneComp_rxnChanges');
 
 
-%% clear intermediate variables
+%% clear intermediate variables and save final results
 
 clearvars -except ihuman rxnAssoc rxnChanges
-
-
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../modelIntegration/rxnAssoc.mat','rxnAssoc');
+movefile('curateMitochMembraneComp_rxnChanges.tsv','../../ComplementaryData/modelCuration/');
 
