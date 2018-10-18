@@ -2,7 +2,7 @@
 % FILE NAME:    fixFormulasWithFULLR.m
 %
 % DATE CREATED: 2018-10-16
-%     MODIFIED: 2018-10-17
+%     MODIFIED: 2018-10-18
 %
 % PROGRAMMER:   Hao Wang
 %               Department of Biology and Biological Engineering
@@ -15,16 +15,21 @@
 %       structure metAssocHMR2Recon3.mat and actually originated from
 %       Recon3Mets2MNX.mat. These files will be systematically modified/
 %       corrected by this script.
-
+%
 
 %% Checking the source of these probablematic formulas
 
 load('Recon3Mets2MNX.mat');  % loads as variable "Recon3D"
-Recon3Mets2MNX = Recon3D;
-load('Recon3D_301.mat');  % loads as variable "Recon3D"
+Recon3Mets2MNX = Recon3D;    % change to variable "Recon3Mets2MNX"
+
+load('Recon3D_301.mat');     % loads as variable "Recon3D"
 
 % find out the changed formulas
-ind_diffFormula = find(~strcmp(Recon3D.metFormulas, Recon3Mets2MNX.metFormulas));
+Recon3D.mets = regexprep(Recon3D.mets,'\]$','');
+Recon3D.mets = regexprep(Recon3D.mets,'\[','_');
+if isequal(Recon3D.mets,Recon3Mets2MNX.mets)  % make sure both structures have the same index
+    ind_diffFormula = find(~strcmp(Recon3D.metFormulas, Recon3Mets2MNX.metFormulas));
+end
 fprintf('A total of %u formulas are modifed in array structure Recon3Mets2MNX.\n\n',length(ind_diffFormula));
 
 % create an intermediate cell array for investigation
@@ -41,5 +46,57 @@ changedFormulas(:,3) = Recon3Mets2MNX.metFormulas(ind_diffFormula); %after
 % 4. The other formulas are changed with reordered elements, and they
 % should be just changed back to the original ones
 
+
+%% Correct formulas in Recon3Mets2MNX
+
+% regenerate formulas by only removing "FULL"
+Recon3Mets2MNX.metFormulas = regexprep(Recon3D.metFormulas,'FULL','');
+
+
+%% Correct formulas in metAssocHMR2Recon3
+
+load('metAssocHMR2Recon3.mat');
+m=metAssocHMR2Recon3;   % assign a new name
+
+% remove compartment abbreviations for re-assigning formulas
+Recon3Mets2MNX.metsNoComp = regexprep(Recon3Mets2MNX.mets,'\_\w$','');
+
+% only deal with the formulas whose met ids are uniquely mapped to HMR2
+% because the rest formulas have been manually checked
+uniqueInd = find(cellfun(@numel,m.metR3DID)==1);
+tmp=reformatElements(m.metR3DID,'cell2str');   % parepare the Recon3D IDs
+[a, b]=ismember(tmp(uniqueInd),Recon3Mets2MNX.metsNoComp);
+I=find(a);
+m.metR3DFormulas(uniqueInd(I)) = Recon3Mets2MNX.metFormulas(b(I));
+m.metCuratedFormulas(uniqueInd(I)) = Recon3Mets2MNX.metFormulas(b(I));
+
+% here fix four formulas of duplicate mets in HMR2
+% their curation was done previously in curateHMR2Mets.m
+m.metR3DFormulas{find(strcmp('m00555',m.metHMRID))} = 'C11H14O19P3R2';
+m.metR3DFormulas{find(strcmp('m02735',m.metHMRID))} = 'C11H14O19P3R2';
+m.metR3DFormulas{find(strcmp('m02487',m.metHMRID))} = 'C6H10N2O2S2R4';
+m.metR3DFormulas{find(strcmp('m02990',m.metHMRID))} = 'C6H10N2O2S2R4';
+m.metCuratedFormulas{find(strcmp('m00555',m.metHMRID))} = 'C11H14O19P3R2';
+m.metCuratedFormulas{find(strcmp('m02735',m.metHMRID))} = 'C11H14O19P3R2';
+m.metCuratedFormulas{find(strcmp('m02487',m.metHMRID))} = 'C6H10N2O2S2R4';
+m.metCuratedFormulas{find(strcmp('m02990',m.metHMRID))} = 'C6H10N2O2S2R4';
+
+
+%% Correct formulas in humanGEM
+
+load('humanGEM.mat');  % v0.5.0
+metFormulas = ihuman.metFormulas;
+
+% remove compartment abbrevs
+metsNoComp = regexprep(ihuman.mets,'\_\w$','');
+metsNoComp = regexprep(metsNoComp,'^(m\d+)\w$','$1');
+metsNoComp = regexprep(metsNoComp,'^(temp\d+)\w$','$1');
+
+% update metFormulas 
+[hit2HMR, indHMRID] = ismember(metsNoComp,m.metHMRID);
+IHMR=find(hit2HMR);
+metFormulas(IHMR)=m.metCuratedFormulas(indHMRID(IHMR));
+
+ihuman.metFormulas=metFormulas;
 
 
