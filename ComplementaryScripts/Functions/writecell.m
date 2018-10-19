@@ -3,7 +3,7 @@ function [] = writecell(C,fileName,header,delim,formatSpec,date)
 %
 % USAGE:
 %
-%   writecell(C,fileName,header,delim,formatSpec);
+%   writecell(C,fileName,header,delim,formatSpec, date);
 %
 % INPUT:
 %

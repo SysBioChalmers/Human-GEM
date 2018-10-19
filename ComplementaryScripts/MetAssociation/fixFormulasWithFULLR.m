@@ -118,7 +118,12 @@ metAssocHMR2Recon3 = m;
 save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');
 save('Recon3Mets2MNX.mat','Recon3Mets2MNX');
 ihuman.metFormulas = metFormulas;
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
 writecell(correctedFormulas,'fixFormulasWithFULLR.tsv',0,'','',1);
 movefile('fixFormulasWithFULLR.tsv','../../ComplementaryData/modelCuration/');
 
+
+
+%% initialize elements in rxnConfidenceScores field with 0 and save model
+
+ihuman.rxnConfidenceScores(:) = 0;
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
