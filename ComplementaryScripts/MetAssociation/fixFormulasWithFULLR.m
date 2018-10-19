@@ -2,14 +2,14 @@
 % FILE NAME:    fixFormulasWithFULLR.m
 %
 % DATE CREATED: 2018-10-16
-%     MODIFIED: 2018-10-18
+%     MODIFIED: 2018-10-19
 %
 % PROGRAMMER:   Hao Wang
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 %
 % PURPOSE: This script is to detect and fix the probelmatic formulas found
-%          with "FULLR" and derivated characters  (e.g. "LLLL", "U")
+%          with "FULLR" and derivated characters (e.g. "LLLL", "U")
 %
 % Note: Given that these problmematic formulas were introduced from array
 %       structure metAssocHMR2Recon3.mat and actually originated from
@@ -30,7 +30,7 @@ Recon3D.mets = regexprep(Recon3D.mets,'\[','_');
 if isequal(Recon3D.mets,Recon3Mets2MNX.mets)  % make sure both structures have the same index
     ind_diffFormula = find(~strcmp(Recon3D.metFormulas, Recon3Mets2MNX.metFormulas));
 end
-fprintf('A total of %u formulas are modifed in array structure Recon3Mets2MNX.\n\n',length(ind_diffFormula));
+fprintf('A total of %u formulas were modifed in array structure Recon3Mets2MNX.\n\n',length(ind_diffFormula));
 
 % create an intermediate cell array for investigation
 changedFormulas = cell(length(ind_diffFormula),3);
@@ -45,6 +45,8 @@ changedFormulas(:,3) = Recon3Mets2MNX.metFormulas(ind_diffFormula); %after
 % should be replaced with "R"
 % 4. The other formulas are changed with reordered elements, and they
 % should be just changed back to the original ones
+
+fprintf('These modified formulas are being corrected in this and other associated files.\n\n');
 
 
 %% Correct formulas in Recon3Mets2MNX
@@ -62,7 +64,7 @@ m=metAssocHMR2Recon3;   % assign a new name
 Recon3Mets2MNX.metsNoComp = regexprep(Recon3Mets2MNX.mets,'\_\w$','');
 
 % only deal with the formulas whose met ids are uniquely mapped to HMR2
-% because the rest formulas have been manually checked
+% because the rest formulas had been manually checked
 uniqueInd = find(cellfun(@numel,m.metR3DID)==1);
 tmp=reformatElements(m.metR3DID,'cell2str');   % parepare the Recon3D IDs
 [a, b]=ismember(tmp(uniqueInd),Recon3Mets2MNX.metsNoComp);
@@ -92,11 +94,26 @@ metsNoComp = regexprep(ihuman.mets,'\_\w$','');
 metsNoComp = regexprep(metsNoComp,'^(m\d+)\w$','$1');
 metsNoComp = regexprep(metsNoComp,'^(temp\d+)\w$','$1');
 
-% update metFormulas 
+% update metFormulas
 [hit2HMR, indHMRID] = ismember(metsNoComp,m.metHMRID);
 IHMR=find(hit2HMR);
 metFormulas(IHMR)=m.metCuratedFormulas(indHMRID(IHMR));
 
-ihuman.metFormulas=metFormulas;
+% track the changed formulas by an intermediate cell array
+diffList = find(~strcmp(metFormulas, ihuman.metFormulas));
+correctedFormulas = cell(length(diffList),3);
+correctedFormulas(:,1) = ihuman.mets(diffList);          %met id
+correctedFormulas(:,2) = ihuman.metFormulas(diffList);   %incorrect
+correctedFormulas(:,3) = metFormulas(diffList);          %corrected
+fprintf('A total of %u formulas are corrected in humanGEM.\n\n',length(diffList));
 
+
+%% clear intermediate variables and save final results
+
+clearvars -except ihuman m Recon3Mets2MNX correctedFormulas metFormulas
+metAssocHMR2Recon3 = m;
+save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');
+save('Recon3Mets2MNX.mat','Recon3Mets2MNX');
+ihuman.metFormulas = metFormulas;
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
 
