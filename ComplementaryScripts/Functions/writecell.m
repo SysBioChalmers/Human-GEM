@@ -1,9 +1,9 @@
-function [] = writecell(C,fileName,header,delim,formatSpec)
+function [] = writecell(C,fileName,header,delim,formatSpec,date)
 %writecell  Write cell array to file.
 %
 % USAGE:
 %
-%   writecell(C,fileName,header,delim,formatSpec);
+%   writecell(C,fileName,header,delim,formatSpec, date);
 %
 % INPUT:
 %
@@ -30,11 +30,17 @@ function [] = writecell(C,fileName,header,delim,formatSpec)
 %                columns are to be separated by tabs, the corresponding
 %                FORMATSPEC should be: '%s\t%s\t%u\n'
 %
+%   date         (Optional, default FALSE) If TRUE, print out the date
+%                in the first line of output file 
 %
 % Jonathan Robinson, 2018-10-15
+% Hao Wang, 2018-10-19
 
 
 % handle input arguments
+if nargin < 6
+    date = false;
+end
 if nargin < 5
     formatSpec = [];
 end
@@ -62,6 +68,9 @@ end
 
 % write to file
 f = fopen(fileName,'w');
+if ( date )
+    fprintf(f,'# Date: %s\n',datestr(today,'yyyy-mm-dd'));
+end
 if ( header )
     fprintf(f,formatSpecHead,header_data{:});
 end
