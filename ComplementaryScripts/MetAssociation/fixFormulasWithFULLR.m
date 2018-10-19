@@ -45,14 +45,15 @@ changedFormulas(:,3) = Recon3Mets2MNX.metFormulas(ind_diffFormula); %after
 % should be replaced with "R"
 % 4. The other formulas are changed with reordered elements, and they
 % should be just changed back to the original ones
-
 fprintf('These modified formulas are being corrected in this and other associated files.\n\n');
+
 
 
 %% Correct formulas in Recon3Mets2MNX
 
 % regenerate formulas by only removing "FULL"
 Recon3Mets2MNX.metFormulas = regexprep(Recon3D.metFormulas,'FULL','');
+
 
 
 %% Correct formulas in metAssocHMR2Recon3
@@ -84,6 +85,7 @@ m.metCuratedFormulas{find(strcmp('m02487',m.metHMRID))} = 'C6H10N2O2S2R4';
 m.metCuratedFormulas{find(strcmp('m02990',m.metHMRID))} = 'C6H10N2O2S2R4';
 
 
+
 %% Correct formulas in humanGEM
 
 load('humanGEM.mat');  % v0.5.0
@@ -101,14 +103,15 @@ metFormulas(IHMR)=m.metCuratedFormulas(indHMRID(IHMR));
 
 % track the changed formulas by an intermediate cell array
 diffList = find(~strcmp(metFormulas, ihuman.metFormulas));
-correctedFormulas = cell(length(diffList),3);
-correctedFormulas(:,1) = ihuman.mets(diffList);          %met id
-correctedFormulas(:,2) = ihuman.metFormulas(diffList);   %incorrect
-correctedFormulas(:,3) = metFormulas(diffList);          %corrected
+correctedFormulas = cell(1+length(diffList),3);
+correctedFormulas(:,1) = ['metID';ihuman.mets(diffList)];          
+correctedFormulas(:,2) = ['incorrectFormula';ihuman.metFormulas(diffList)];
+correctedFormulas(:,3) = ['correctedFormula';metFormulas(diffList)];
 fprintf('A total of %u formulas are corrected in humanGEM.\n\n',length(diffList));
 
 
-%% clear intermediate variables and save final results
+
+%% clear intermediate variables and save results
 
 clearvars -except ihuman m Recon3Mets2MNX correctedFormulas metFormulas
 metAssocHMR2Recon3 = m;
@@ -116,4 +119,6 @@ save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');
 save('Recon3Mets2MNX.mat','Recon3Mets2MNX');
 ihuman.metFormulas = metFormulas;
 save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+writecell(correctedFormulas,'fixFormulasWithFULLR.tsv',0,'','',1);
+movefile('fixFormulasWithFULLR.tsv','../../ComplementaryData/modelCuration/');
 
