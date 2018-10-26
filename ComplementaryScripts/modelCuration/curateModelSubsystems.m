@@ -49,7 +49,7 @@ end
 
 % load subsystem conversion data
 fid = fopen('../../ComplementaryData/modelCuration/subsystem_name_curated.tsv');
-subData = textscan(fid,'%s%s%s','Delimiter','\t');
+subData = textscan(fid,'%s%s%s','Delimiter','\t','HeaderLines',2);
 fclose(fid);
 
 % extract columns and remove header
