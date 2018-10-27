@@ -2,9 +2,9 @@
 % FILE NAME:    curateModelSubsystems.m
 % 
 % DATE CREATED: 2018-10-16
-%     MODIFIED: 2018-10-23
+%     MODIFIED: 2018-10-27
 % 
-% PROGRAMMER:   Jonathan Robinson
+% PROGRAMMER:   Jonathan Robinson, Hao Wang
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 % 
@@ -35,7 +35,7 @@
 %               'Transport, Golgi to lysosome'
 %        
 %         These transport subsystems will instead be merged into a single
-%         subsystem named 'Transport'.
+%         subsystem named 'Transport reactions'.
 %
 
 
