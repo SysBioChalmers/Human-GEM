@@ -1,0 +1,186 @@
+# Date: 2018-10-23
+Old subsystem name	New subsystem name	comment
+Acyl-CoA hydrolysis	Acyl-CoA hydrolysis	
+Acylglycerides metabolism	Acylglycerides metabolism	
+Alanine, aspartate and glutamate metabolism	Alanine, aspartate and glutamate metabolism	
+Alkaloid synthesis	Alkaloids Biosynthesis	From recon3D, in HumanCyc
+Amino sugar and nucleotide sugar metabolism	Amino sugar and nucleotide sugar metabolism	
+Aminoacyl-tRNA biosynthesis	Aminoacyl-tRNA biosynthesis	
+Androgen and estrogen synthesis and metabolism	Androgen metabolism	Merged with "Androgen metabolism"
+Androgen metabolism	Androgen metabolism	
+Arachidonic acid metabolism	Arachidonic acid metabolism	
+Arginine and proline metabolism	Arginine and proline metabolism	
+Artificial reactions	Artificial reactions	
+Ascorbate and aldarate metabolism	Ascorbate and aldarate metabolism	
+Beta oxidation of branched-chain fatty acids (mitochondrial)	Beta oxidation of branched-chain fatty acids (mitochondrial)	
+Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)	Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)	
+Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)	Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)	
+Beta oxidation of even-chain fatty acids (mitochondrial)	Beta oxidation of even-chain fatty acids (mitochondrial)	
+Beta oxidation of even-chain fatty acids (peroxisomal)	Beta oxidation of even-chain fatty acids (peroxisomal)	
+Beta oxidation of odd-chain fatty acids (mitochondrial)	Beta oxidation of odd-chain fatty acids (mitochondrial)	
+Beta oxidation of odd-chain fatty acids (peroxisomal)	Beta oxidation of odd-chain fatty acids (peroxisomal)	
+Beta oxidation of phytanic acid (peroxisomal)	Beta oxidation of phytanic acid (peroxisomal)	
+Beta oxidation of poly-unsaturated fatty acids (mitochondrial)	Beta oxidation of poly-unsaturated fatty acids (mitochondrial)	
+Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)	Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)	
+	Beta oxidation of unsaturated fatty acids (n-7) (peroxisomal)	New. Reactions were in Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial) but take place exclusively in the Peroxisome
+Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)	Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)	
+Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)	Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)	
+Beta-Alanine metabolism	Beta-alanine metabolism	merged with "Beta-alanine metabolism"
+beta-Alanine metabolism	Beta-alanine metabolism	fix letters case
+Bile acid biosynthesis	Bile acid biosynthesis	
+Bile acid synthesis	Bile acid biosynthesis	Merged with "Bile acid biosynthesis"
+Biopterin metabolism	Biopterin metabolism	
+Bile acid recycling	Bile acid recycling	
+Biotin metabolism	Biotin metabolism	
+Blood group biosynthesis	Blood group biosynthesis	
+Blood group synthesis	Blood group biosynthesis	biosynthesis instead of synthesis
+Butanoate metabolism	Butanoate metabolism	
+C5-branched dibasic acid metabolism	C5-branched dibasic acid metabolism	
+Carnitine shuttle (cytosolic)	Carnitine shuttle (cytosolic)	
+Carnitine shuttle (endoplasmic reticular)	Carnitine shuttle (endoplasmic reticular)	
+Carnitine shuttle (mitochondrial)	Carnitine shuttle (mitochondrial)	
+Carnitine shuttle (peroxisomal)	Carnitine shuttle (peroxisomal)	
+Cholesterol biosynthesis 1 (Bloch pathway) 	Cholesterol biosynthesis 1 (Bloch pathway) 	
+Cholesterol biosynthesis 2	Cholesterol biosynthesis 2	
+Cholesterol biosynthesis 3  (Kandustch-Russell pathway)	Cholesterol biosynthesis 3 (Kandustch-Russell pathway)	
+Cholesterol metabolism	Cholesterol metabolism	
+Chondroitin / heparan sulfate biosynthesis	Chondroitin / heparan sulfate biosynthesis	
+Chondroitin sulfate degradation	Chondroitin sulfate degradation	
+CoA catabolism	CoA catabolism	from recon3D
+CoA synthesis	CoA synthesis	from recon3D
+Cysteine and methionine metabolism	Cysteine and methionine metabolism	Cysteine and methionine metabolism or Methionine and cysteine metabolism? 
+Methionine and cysteine metabolism	Cysteine and methionine metabolism	Merged into "Cysteine and methionine metabolism". Defined In KEGG
+Dietary fiber binding	Dietary fiber binding	from recon3D
+Drug metabolism	Drug metabolism	from recon3D
+Eicosanoid metabolism	Eicosanoid metabolism	
+Estrogen metabolism	Estrogen metabolism	
+Ether lipid metabolism	Ether lipid metabolism	
+Exchange reactions	Exchange/demand reactions	Merged with "Exchange/demand reactions"
+Exchange/demand reaction	Exchange/demand reactions	from Recon3D
+Fatty acid activation (cytosolic)	Fatty acid activation (cytosolic)	
+Fatty acid activation (endoplasmic reticular)	Fatty acid activation (endoplasmic reticular)	
+Fatty acid biosynthesis (even-chain)	Fatty acid biosynthesis (even-chain)	
+Fatty acid biosynthesis (odd-chain)	Fatty acid biosynthesis (odd-chain)	
+Fatty acid biosynthesis (unsaturated)	Fatty acid biosynthesis (unsaturated)	
+Fatty acid desaturation (even-chain)	Fatty acid desaturation (even-chain)	
+Fatty acid desaturation (odd-chain)	Fatty acid desaturation (odd-chain)	
+Fatty acid elongation (even-chain)	Fatty acid elongation (even-chain)	
+Fatty acid elongation (odd-chain)	Fatty acid elongation (odd-chain)	
+Cytochrome metabolism	Fatty acid oxidation	Merge to "Fatty Acid Oxydation"
+Fatty acid oxidation	Fatty acid oxidation	from Recon3D
+Fatty acid synthesis	Fatty acid biosynthesis	rename Fatty acid biosynthesis, In KEGG
+Fatty acid transfer reactions	Fatty acid biosynthesis	merged into "Fatty acid biosynthesis"
+Folate metabolism	Folate metabolism	
+Formation and hydrolysis of cholesterol esters	Formation and hydrolysis of cholesterol esters	
+Fructose and Mannose metabolism	Fructose and mannose metabolism	Merged with "Fructose and mannose metabolism"
+Fructose and mannose metabolism	Fructose and mannose metabolism	
+Galactose metabolism	Galactose metabolism	
+Glucocorticoid biosynthesis	Glucocorticoid biosynthesis	
+Glutamate metabolism	Glutamate metabolism	from Recon3D
+Glutathione metabolism	Glutathione metabolism	
+Glycerolipid metabolism	Glycerolipid metabolism	
+Glycerophospholipid metabolism	Glycerophospholipid metabolism	
+Glycine, serine and threonine metabolism	Glycine, serine and threonine metabolism	
+Glycine, serine, alanine, and threonine metabolism	Glycine, serine and threonine metabolism	Merged with "Glycine, serine and threonine metabolism" which is in KEGG
+Glycolysis / Gluconeogenesis	Glycolysis / Gluconeogenesis	
+Glycolysis/gluconeogenesis	Glycolysis / Gluconeogenesis	merged with "Glycolysis / Gluconeogenesis"
+Glycosphingolipid biosynthesis-ganglio series	Glycosphingolipid biosynthesis-ganglio series	
+Glycosphingolipid biosynthesis-globo series	Glycosphingolipid biosynthesis-globo series	
+Glycosphingolipid biosynthesis-lacto and neolacto series	Glycosphingolipid biosynthesis-lacto and neolacto series	
+Glycosphingolipid metabolism	Glycosphingolipid metabolism	
+Glycosylphosphatidylinositol (GPI)-anchor biosynthesis	Glycosylphosphatidylinositol (GPI)-anchor biosynthesis	
+Heme degradation	Heme degradation	from Recon3D, exists in Reactome as well
+Heme synthesis	Heme synthesis	from Recon3D, exists in Reactome as well
+Heparan sulfate degradation	Heparan sulfate degradation	
+Hippurate metabolism	Hippurate metabolism	from recon3D
+Histidine metabolism	Histidine metabolism	
+Inositol phosphate metabolism	Inositol phosphate metabolism	
+Isolated	Isolated	
+isolated	Isolated	merged with "Isolated"
+Keratan sulfate biosynthesis	Keratan sulfate biosynthesis	
+Keratan sulfate degradation	Keratan sulfate degradation	
+Leukotriene metabolism	Leukotriene metabolism	
+Linoleate metabolism	Linoleate metabolism	
+Lipoic acid metabolism	Lipoic acid metabolism	
+Lysine metabolism	Lysine metabolism	
+Metabolism of xenobiotics by cytochrome P450	Metabolism of xenobiotics by cytochrome P450	
+Miscellaneous	Miscellaneous	
+N-glycan degradation	N-glycan metabolism	merged with "N-glycan metabolism"
+N-glycan metabolism	N-glycan metabolism	
+N-glycan synthesis	N-glycan metabolism	merged with "N-glycan metabolism"
+NAD metabolism	Nicotinate and nicotinamide metabolism	merged with "Nicotinate and nicotinamide metabolism" which exist in KEGG
+Nicotinate and nicotinamide metabolism	Nicotinate and nicotinamide metabolism	
+Nitrogen metabolism	Nitrogen metabolism	
+Nucleotide interconversion	Nucleotide metabolism	"Nucleotide interconversion" doesn’t exists in KEGG or humanCyc. Merged with "Nucleotide metabolism"
+Nucleotide metabolism	Nucleotide metabolism	
+O-glycan metabolism	O-glycan metabolism	
+Omega-3 fatty acid metabolism	Omega-3 fatty acid metabolism	
+Omega-6 fatty acid metabolism	Omega-6 fatty acid metabolism	
+Other amino acid	Metabolism of other amino acids	Renamed (from KEGG)
+Oxidative phosphorylation	Oxidative phosphorylation	
+Pantothenate and CoA biosynthesis	Pantothenate and CoA biosynthesis	
+Pentose and glucuronate interconversions	Pentose and glucuronate interconversions	
+Pentose phosphate pathway	Pentose phosphate pathway	
+Peptide metabolism	Peptide metabolism	
+Phenylalanine metabolism	Phenylalanine metabolism	from recon3D, in KEGG
+Phenylalanine, tyrosine and tryptophan biosynthesis	Phenylalanine, tyrosine and tryptophan biosynthesis	
+Phosphatidylinositol phosphate metabolism	Phosphatidylinositol phosphate metabolism	
+Pool reactions	Pool reactions	
+Porphyrin metabolism	Porphyrin metabolism	
+Propanoate metabolism	Propanoate metabolism	
+prostaglandin biosynthesis	Prostaglandin biosynthesis	fix letters case
+Protein assembly	Protein assembly	
+Protein formation	Protein assembly	merged with "Protein assembly"
+Protein degradation	Protein degradation	
+Protein modification	Protein modification	
+Purine catabolism	Purine metabolism	merged with "Purine metabolism"
+Purine metabolism	Purine metabolism	
+Purine synthesis	Purine metabolism	merged with "Purine metabolism"
+Pyrimidine catabolism	Pyrimidine metabolism	merged with "Pyrimidine metabolism"
+Pyrimidine metabolism	Pyrimidine metabolism	
+Pyrimidine synthesis	Pyrimidine metabolism	merged with "Pyrimidine metabolism"
+Pyruvate metabolism	Pyruvate metabolism	
+R group synthesis	R group synthesis	from recon3D
+ROS detoxification	ROS detoxification	
+Retinol metabolism	Retinol metabolism	
+Riboflavin metabolism	Riboflavin metabolism	
+Selenoamino acid metabolism	Metabolism of Other Amino Acids	merged with "Metabolism of Other Amino Acids"
+Serotonin and melatonin biosynthesis	Serotonin and melatonin biosynthesis	
+Sphingolipid metabolism	Sphingolipid metabolism	
+Squalene and cholesterol synthesis	Cholesterol metabolism	merged with "Cholesterol metabolism" since Squalene is a precursor for synthesis of cholesterol
+Starch and sucrose metabolism	Starch and sucrose metabolism	
+Steroid metabolism	Steroid metabolism	
+Sulfur metabolism	Sulfur metabolism	
+Terpenoid backbone biosynthesis	Terpenoid backbone biosynthesis	
+Tetrahydrobiopterin metabolism	Biopterin metabolism	merged with "biopterin metabolism"
+Thiamine metabolism	Thiamine metabolism	
+Transport, Golgi apparatus	Transport reactions	merged into "Transport reactions"
+Transport, Golgi to extracellular	Transport reactions	merged into "Transport reactions"
+Transport, Golgi to lysosome	Transport reactions	merged into "Transport reactions"
+Transport, endoplasmic reticular	Transport reactions	merged into "Transport reactions"
+Transport, extracellular	Transport reactions	merged into "Transport reactions"
+Transport, golgi apparatus	Transport reactions	merged into "Transport reactions"
+Transport, lysosomal	Transport reactions	merged into "Transport reactions"
+Transport, lysosome to ER	Transport reactions	merged into "Transport reactions"
+Transport, lysosome to cytosol	Transport reactions	merged into "Transport reactions"
+Transport, mitochondrial	Transport reactions	merged into "Transport reactions"
+Transport, nuclear	Transport reactions	merged into "Transport reactions"
+Transport, peroxisomal	Transport reactions	merged into "Transport reactions"
+Triacylglycerol synthesis	Triacylglycerol synthesis	from Recon3D, defined in HumanCyc
+Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism	Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism	
+Citric acid cycle	Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism	merged with "Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism"
+Glyoxylate and dicarboxylate metabolism	Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism	merged with "Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism"
+Triglycerides formation	Triglycerides formation	from recon3D
+Tryptophan metabolism	Tryptophan metabolism	
+Tyrosine metabolism	Tyrosine metabolism	
+Ubiquinone synthesis	Ubiquinone synthesis	
+Urea cycle	Urea cycle	From recon3D
+Valine, leucine, and isoleucine metabolism	Valine, leucine, and isoleucine metabolism	
+Vitamin A metabolism	Vitamin A metabolism	From recon3D
+Vitamin B12 metabolism	Vitamin B12 metabolism	
+Vitamin B2 metabolism	Vitamin B2 metabolism	From recon3D
+Vitamin B6 metabolism	Vitamin B6 metabolism	
+Vitamin C metabolism	Vitamin C metabolism	From recon3D
+Vitamin D metabolism	Vitamin D metabolism	
+Vitamin E metabolism	Vitamin E metabolism	
+Xenobiotics metabolism	Xenobiotics metabolism	From recon3D
