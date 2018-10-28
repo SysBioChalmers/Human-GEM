@@ -17,7 +17,7 @@ Human genome-scale metabolic models (GEMs) are an important tool for the study o
 
 - Pubmed ID: n/a
 
-- Last update: 2018-10-19
+- Last update: 2018-10-28
 
 
 - The model contains:
