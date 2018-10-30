@@ -6,7 +6,7 @@ This repository contains the latest version of metabolic model human-GEM, which 
 
 - Abstract:
 
-Human genome-scale metabolic models (GEMs) are an important tools for the study of human health and diseases, by providing a scaffold upon which many different types of data can be analyzed in an integrative manner. Despite advancements in the size and complexity of human GEMs, there currently exists the need for a highly accurate, standardized, and manually curated model of human metabolism. Here, we update the previous version of the Human Metabolic Reaction (HMR2) model to human-GEM, in a process that includes the addition of new reactions, metabolites, and genes, followed by extensive curation. The objective of human-GEM is to serve as a community maintained “gold-standard” of generic human GEMs, further enabling integrative and mechanistic studies of human metabolism.
+Human genome-scale metabolic models (GEMs) are important tools for the study of human health and diseases, by providing a scaffold upon which many different types of data can be analyzed in an integrative manner. Despite advancements in the size and complexity of human GEMs, there currently exists the need for a highly accurate, standardized, and manually curated model of human metabolism. Here, we update the previous version of the Human Metabolic Reaction (HMR2) model to human-GEM, in a process that includes the addition of new reactions, metabolites, and genes, followed by extensive curation. The objective of human-GEM is to serve as a community maintained “gold-standard” of generic human GEMs, further enabling integrative and mechanistic studies of human metabolism.
 
 - Model KeyWords:
 
