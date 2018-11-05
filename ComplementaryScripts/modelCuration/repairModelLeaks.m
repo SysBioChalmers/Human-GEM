@@ -2,7 +2,7 @@
 % FILE NAME:    repairModelLeaks.m
 % 
 % DATE CREATED: 2018-10-01
-%     MODIFIED: 2018-10-11
+%     MODIFIED: 2018-11-05
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -70,7 +70,6 @@ ihuman.lb(rxn_ind) = 0;  % constrain lower bound to zero
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'this rxn should not be able to produce superoxide'},sum(rxn_ind),1)]];
 
 
-
 % The following pairs of reactions:
 %
 %   HMR_1357: 5,9-cyclo-6,8,12-trihydroxy-(10E,14Z)-eicosadienoic acid[c] + dehydroascorbic acid[c] + H2O[c] <=> 5,9-cyclo-6,8-cycloperoxy-12-hydroperoxy-(10E,14Z)-eicosadienoate[c] + ascorbate[c] + 2 H+[c]
@@ -92,7 +91,6 @@ h2o_ind = getIndexes(ihuman,'H2O[c]','metscomps');
 ihuman.S(:,rxn_ind) = ihuman.S(:,rxn_ind) .* sign(ihuman.S(h2o_ind,rxn_ind));
 ihuman.lb(rxn_ind) = 0;  % constrain lower bound to zero
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'H2O should not be able to peroxidate compound'},sum(rxn_ind),1)]];
-
 
 
 % These rxns should not be allowed to operate in the reverse direction 
@@ -166,8 +164,6 @@ ihuman.rev(rxn_ind) = 0;
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'reaction should not be reversible'},sum(rxn_ind),1)]];
 
 
-
-
 %% Changes to reaction stoichiometry/metabolites
 
 % The following reaction from HMR:
@@ -229,7 +225,6 @@ rxnNotes = [rxnNotes; {'HMR_8616', 'corrected suspected mistake in proton compar
 %   ARTFR43: FADH2[m] + 11-Octadecenoyl Coenzyme A[c] => FAD[m] + 1.125 R Group 4 Coenzyme A[c]
 %   ARTFR44: (6Z,9Z)-octadecadienoyl-CoA[c] + 2 FADH2[m] => 2 FAD[m] + 1.125 R Group 4 Coenzyme A[c]
 %   ARTFR45: (15Z)-tetracosenoyl-CoA[c] + FADH2[m] => FAD[m] + 1.5 R Group 4 Coenzyme A[c]
-
 fadh2_ind = getIndexes(ihuman,'FADH2[m]','metscomps');
 fad_ind = getIndexes(ihuman,'FAD[m]','metscomps');
 nadp_ind = getIndexes(ihuman,'NADP+[m]','metscomps');
@@ -305,7 +300,6 @@ ihuman.S(met_ind,rxn_ind) = 0;
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'balanced mass by removing cholesterol and cholesterol-ester pool from products'},length(rxn_ind),1)]];
 
 
-
 %% Reaction deletions
 % NOTE: These reactions will be constrained to zero for now, and scheduled
 % for future "hard removal" from the model.
@@ -375,6 +369,54 @@ rxnNotes = [rxnNotes; {'DHCR242r', 'reaction is identical to HMR_1533, but uses 
 % Therefore, this reaction should be removed from the model.
 del_rxns = [del_rxns; {'r1479'}];
 rxnNotes = [rxnNotes; {'r1479', 'reaction is mass-imbalanced and generates carbon, and should therefore be DELETED'}];
+
+
+% The following reactions from Recon3D:
+%
+%   FAOXC2251836m: (4Z,7Z,10Z,13Z,16Z)-docosapentaenoyl-CoA[m] + 2 CoA[m] + 2 H2O[m] + 2 NAD+[m] => 2 acetyl-CoA[m] + gamma-linolenoyl-CoA[m] + 2 H+[m] + 2 NADH[m]
+%   FAOXC2251836x: (4Z,7Z,10Z,13Z,16Z)-docosapentaenoyl-CoA[p] + 2 CoA[p] + 2 H2O[p] + 2 NAD+[p] => 2 acetyl-CoA[p] + gamma-linolenoyl-CoA[p] + 2 H+[p] + 2 NADH[p]
+%
+% enable the biosynthesis of linolenate, which is an essential fatty acid
+% for humans (i.e., humans are unable to synthesize this compound). 
+% Furthermore, there are no references associated with these reactions, and
+% databases (KEGG, METACYC, etc.) do not support the existence of such a 
+% reaction. Therefore, these reactions should be removed.
+del_rxns = [del_rxns; {'FAOXC2251836m';'FAOXC2251836x'}];
+rxnNotes = [rxnNotes; [{'FAOXC2251836m';'FAOXC2251836x'}, repmat({'reaction enables biosynthesis of an essential fatty acid (linoleic acid), which is physiologically incorrect. Reaction should be DELETED, unless sufficient evidence supporting its inclusion can be provided.'},2,1)]];
+
+
+% The following reactions from HMR:
+%
+%   HMR_3451: 3-oxo-dihomo-gamma-linolenoyl-CoA[m] + CoA[m] => acetyl-CoA[m] + gamma-linolenoyl-CoA[m]
+%   HMR_3465: 3-oxo-dihomo-gamma-linolenoyl-CoA[p] + CoA[p] => acetyl-CoA[p] + gamma-linolenoyl-CoA[p]
+%
+% enable the biosynthesis of linolenate, which is an essential fatty acid
+% for humans that cannot be produced; only the reverse of these reactions
+% are supported by literature (though with a slight difference):
+%
+%   HMR_2371: gamma-linolenoyl-CoA[c] + H+[c] + malonyl-CoA[c] => 3-oxo-dihomo-gamma-linolenoyl-CoA[c] + CO2[c] + CoA[c]
+%    RE3103R: gamma-linolenoyl-CoA[r] + H+[r] + malonyl-CoA[r] => 3-oxo-dihomo-gamma-linolenoyl-CoA[r] + CO2[r] + CoA[r]
+%
+% The references associated with the problematic reactions (HMR_3451 and 
+% HMR_3465) do not contain any evidence supporting such a reaction.
+% Therefore, these reactions should be removed from the model.
+del_rxns = [del_rxns; {'HMR_3451';'HMR_3465'}];
+rxnNotes = [rxnNotes; [{'HMR_3451';'HMR_3465'}, repmat({'reaction enables biosynthesis of an essential fatty acid (linoleic acid), which is physiologically incorrect. Reaction should be DELETED, unless sufficient evidence supporting its inclusion can be provided.'},2,1)]];
+
+
+% The following reaction from Recon3D:
+%
+%   r1169: cholesterol[r] + gamma-linolenoyl-CoA[r] => cholesterol-ester-linolen[r] + CoA[r]
+%
+% treats gamma-linolenoyl-CoA as equivalent to linolenoyl-CoA, which is not
+% the case; see for example the following reactions:
+%
+%   HMR_3720: cholesterol-ester-linolen[r] + H2O[r] => cholesterol[r] + H+[r] + linolenate[r]
+%   HMR_3674: cholesterol[r] + gamma-linolenoyl-CoA[r] => cholesterol-ester-gamma-lin[r] + CoA[r]
+%
+% Therefore, the Recon-derived reaction should be removed from the model.
+del_rxns = [del_rxns; {'r1169'}];
+rxnNotes = [rxnNotes; {'r1169', 'reaction incorrectly treats gamma-linolenoyl-CoA and linolenoyl-CoA as equivalent (see e.g. HMR_3720 and HMR_3674), and should therefore be DELETED'}];
 
 
 % The following reaction from Recon3D:
@@ -505,6 +547,22 @@ rxnNotes = [rxnNotes; {'HMR_2128', 'rxn is mass imbalanced, but correction would
 
 % The following reactions from Recon3D:
 %
+%   RE3273C:  H2O[c] + PI pool[c] <=> H+[c] + inositol[c] + phosphatidate-LD-TAG pool[c]
+%   RE3273G:  H2O[g] + PI pool[g] <=> H+[g] + inositol[g] + phosphatidate-LD-TAG pool[g]
+%   RE3273R:  H2O[r] + PI pool[r] <=> H+[r] + inositol[r] + phosphatidate-LD-TAG pool[r]
+%
+% Treat the mass of the PI pool and/or phosphatidate-LD-TAG pool different
+% from other reactions in the model (e.g., HMR_0610), and are also
+% inconsistent with the treatment among many of the reactions from Recon3D.
+% Therefore, these reactions should be constrained to zero until they can
+% be properly re-balanced, or removed entirely.
+rxns = {'RE3273C';'RE3273G';'RE3273R'};
+del_rxns = [del_rxns; rxns];
+rxnNotes = [rxnNotes; [rxns, repmat({'treatment of PI pool and/or phosphatidate-LD-TAG pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED'},length(rxns),1)]];
+
+
+% The following reactions from Recon3D:
+%
 %    DHAPA: DHAP[c] + R Total Coenzyme A[c] => acylglycerone-phosphate[c] + CoA[c]
 %   DHAPAx: DHAP[p] + R Total Coenzyme A[p] => acylglycerone-phosphate[p] + CoA[p]
 %
@@ -596,6 +654,37 @@ rxnNotes = [rxnNotes; [rxns, repmat({'rxn treats TAG-VLDL pool and/or 1,2-diacyl
 
 % The following Recon3D reaction:
 %
+%   r0626: NAD+[c] + 3alpha,7alpha-dihydroxy-5beta-cholest-24-enoyl-CoA[c] => 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-26-al[c] + NADH[c]
+%
+% is mass-imbalanced (for CoA and additional elements), and should
+% therefore be constrained or deleted unless it can be properly
+% re-balanced.
+del_rxns = [del_rxns; {'r0626'}];
+rxnNotes = [rxnNotes; {'r0626', 'reaction is mass-imbalanced and should therefore be constrained until imbalances can be addressed, otherwise DELETED'}];
+
+
+% The following Recon3D reaction:
+%
+%   r1386: lysine[c] => procollagen-L-lysine[c]
+%
+% is mass-imbalanced, as procollagen-L-lysine has more carbons that lysine.
+% The reaction should therefore be deleted, unless it can be corrected.
+del_rxns = [del_rxns; {'r1386'}];
+rxnNotes = [rxnNotes; {'r1386', 'reaction is mass-imbalanced and should therefore be constrained until imbalances can be addressed, otherwise DELETED'}];
+
+
+% The following Recon3D reaction:
+%
+%   HC02191c: H2O[c] + NADP+[c] + 3beta-hydroxy-5-cholestenal[c] => 2 H+[c] + lithocholate[c] + NADPH[c]
+%
+% is carbon-imbalanced, and the associated references (PMIDs) do not
+% provide any evidence for such a reaction. It should therefore be deleted.
+del_rxns = [del_rxns; {'HC02191c'}];
+rxnNotes = [rxnNotes; {'HC02191c', 'reaction is carbon-imbalanced and should therefore be constrained until imbalances can be addressed, otherwise DELETED'}];
+
+
+% The following Recon3D reaction:
+%
 %   r1254: ATP[c] + CoA[c] + 8 H+[c] + stearidonic acid[c] => AMP[c] + PPi[c] + stearoyl-CoA[c]
 %
 % should be producing stearidonoyl-CoA, NOT stearoyl-CoA. There exists a
@@ -632,6 +721,50 @@ del_rxns = [del_rxns; rxns];
 rxnNotes = [rxnNotes; [rxns, repmat({'rxn treats PE-LD pool differently than others in model (e.g., HMR_0614), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED'},length(rxns),1)]];
 
 
+% The following reactions from Recon3D:
+%
+%    ARTFR11: palmitoyl-CoA[c] => R Group 1 Coenzyme A[c]
+%    ARTFR12: H+[m] + NADPH[m] + palmitoleoyl-CoA[c] => NADP+[m] + R Group 1 Coenzyme A[c]
+%    ARTFR41: H+[m] + NADPH[m] + palmitoleoyl-CoA[c] => NADP+[m] + R Group 4 Coenzyme A[c]
+%    ARTFR61: H+[m] + NADPH[m] + (2E)-hexadecenoyl-CoA[c] => NADP+[m] + R Group 6 Coenzyme A[c]
+%    ARTPLM1: R Total Coenzyme A[c] => palmitoyl-CoA[c]
+%   ARTPLM1m: R Total Coenzyme A[m] => palmitoyl-CoA[m]
+%    ARTPLM2: R Total 2 Coenzyme A[c] => palmitoyl-CoA[c]
+%   ARTPLM2m: R Total 2 Coenzyme A[m] => palmitoyl-CoA[m]
+%
+% all involve the direct conversion of a real metabolite (i.e.,
+% plamitoyl-CoA or (2E)-hexadecenoyl-CoA) into an "R Group" generic
+% metabolite, which leads to mass balance inconsistencies in the current
+% model formulation. The reactions will therefore be constrained until they
+% can be properly re-balanced, or eventually deleted.
+rxns = {'ARTFR11';'ARTFR12';'ARTFR41';'ARTFR61';'ARTPLM1';'ARTPLM1m';'ARTPLM2';'ARTPLM2m'};
+del_rxns = [del_rxns; rxns];
+rxnNotes = [rxnNotes; [rxns, repmat({'reaction involves direct conversion of a real metabolite into artificial "R Group" entity, which is not compatible with existing model formulation; it should be constrained until it can be properly balanced/integrated, or otherwise DELETED'},length(rxns),1)]];
+
+
+% The following reactions from Recon3D:
+%
+%   r0001: S-adenosylmethioninamine[c] => 5-methylthioadenosine[c] + Adenosylmethioninamine-Potential[c]
+%   r1319: ATP[c] + H2O[c] => ADP[c] + Pi[c] + Adenosine-5'-Triphosphate-Energy[c]
+%   r1320: ATP[m] + H2O[m] => ADP[m] + Pi[m] + Adenosine-5'-Triphosphate-Energy[m]
+%   r1321: NADH[r] => NAD+[r] + Nadh-Redox-Potential[r]
+%   r1322: NADH[c] => NAD+[c] + Nadh-Redox-Potential[c]
+%   r1323: NADH[m] => NAD+[m] + Nadh-Redox-Potential[m]
+%   r1324: NADH[p] => NAD+[p] + Nadh-Redox-Potential[p]
+%   r1325: NADPH[r] => NADP+[r] + Nadph-Redox-Potential[r]
+%   r1326: NADPH[c] => NADP+[c] + Nadph-Redox-Potential[c]
+%   r1327: NADPH[m] => NADP+[m] + Nadph-Redox-Potential[m]
+%   r1328: NADPH[p] => NADP+[p] + Nadph-Redox-Potential[p]
+%   r1329: FADH2[c] => FAD[c] + Fadh-Redox-Potential[c]
+%
+% all involve the generation of an artificial "Potential" or "Energy"
+% metabolite, which cannot be balanced (i.e., they are all dead-end
+% reactions). They should therefore be removed from the model.
+rxns = {'r0001';'r1319';'r1320';'r1321';'r1322';'r1323';'r1324';'r1325';'r1326';'r1327';'r1328';'r1329'};
+del_rxns = [del_rxns; rxns];
+rxnNotes = [rxnNotes; [rxns, repmat({'reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED'},length(rxns),1)]];
+
+
 % The following reactions from HMR:
 %
 % HMR_0689: fatty acid-LD-PE pool[c] => 0.0005 (10Z)-heptadecenoic acid[c] + 0.0005 (11Z,14Z)-eicosadienoic acid[c] + 0.0005 (11Z,14Z,17Z)-eicosatrienoic acid[c] + 0.0005 (13Z)-eicosenoic acid[c] + 0.0005 (13Z)-octadecenoic acid[c] + 0.0005 (13Z,16Z)-docosadienoic acid[c] + 0.0052 (4Z,7Z,10Z,13Z,16Z)-DPA[c] + 0.0005 (6Z,9Z)-octadecadienoic acid[c] + 0.0005 (6Z,9Z,12Z,15Z,18Z)-TPA[c] + 0.0005 (6Z,9Z,12Z,15Z,18Z,21Z)-THA[c] + 0.0005 (7Z)-octadecenoic acid[c] + 0.0005 (7Z)-tetradecenoic acid[c] + 0.0005 (9E)-tetradecenoic acid[c] + 0.0005 (9Z,12Z,15Z,18Z)-TTA[c] + 0.0005 (9Z,12Z,15Z,18Z,21Z)-TPA[c] + 0.0005 10,13,16,19-docosatetraenoic acid[c] + 0.0005 10,13,16-docosatriynoic acid[c] + 0.0005 12,15,18,21-tetracosatetraenoic acid[c] + 0.0005 13,16,19-docosatrienoic acid[c] + 0.0005 7-palmitoleic acid[c] + 0.0005 8,11-eicosadienoic acid[c] + 0.0005 9-eicosenoic acid[c] + 0.0005 9-heptadecylenic acid[c] + 0.0007 adrenic acid[c] + 0.2125 arachidonate[c] + 0.0005 behenic acid[c] + 0.0005 cerotic acid[c] + 0.0005 cis-cetoleic acid[c] + 0.0005 cis-erucic acid[c] + 0.0005 cis-gondoic acid[c] + 0.0285 cis-vaccenic acid[c] + 0.0459 DHA[c] + 0.0411 dihomo-gamma-linolenate[c] + 0.0067 DPA[c] + 0.0005 eicosanoate[c] + 0.0005 elaidate[c] + 0.0221 EPA[c] + 0.0011 gamma-linolenate[c] + 0.0005 henicosanoic acid[c] + 0.0005 lauric acid[c] + 0.0005 lignocerate[c] + 0.1312 linoleate[c] + 0.0166 linolenate[c] + 0.0005 margaric acid[c] + 0.0005 mead acid[c] + 0.0319 myristic acid[c] + 0.0005 nervonic acid[c] + 0.0005 nonadecylic acid[c] + 0.0619 oleate[c] + 0.0163 omega-3-arachidonic acid[c] + 0.1243 palmitate[c] + 0.0327 palmitolate[c] + 0.0005 pentadecylic acid[c] + 0.0005 physeteric acid[c] + 0.1983 stearate[c] + 0.0025 stearidonic acid[c] + 0.0005 tricosanoic acid[c] + 0.0005 tridecylic acid[c] + 0.0005 ximenic acid[c]
@@ -666,7 +799,6 @@ del_rxns = [del_rxns; rxns];
 rxnNotes = [rxnNotes; [rxns, repmat({'mass balance analyses show that this reaction contributes to a flux solution that can generate mass; the rxn should therefore be constrained until imbalances can be addressed'},length(rxns),1)]];
 
 
-
 %% Constrain reactions
 
 % instead of removing reactions from the model ("hard deletion"), the
@@ -681,7 +813,8 @@ ihuman.rev(del_ind) = 0;
 
 
 %% Generate model change report
-docArray = docRxnChanges(ihuman_orig,ihuman,rxnNotes,'repairModelLeaks_rxnChanges.txt');
+rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
+writeRxnChanges(rxnChanges,'repairModelLeaks_rxnChanges',true);
 
 
 %% Clear intermediate vars
