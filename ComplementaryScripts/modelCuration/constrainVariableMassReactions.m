@@ -229,7 +229,8 @@ ihuman.lb(constrain_ind) = 0;
 ihuman.rev(constrain_ind) = 0;  % update reversibility
 
 % document reaction changes
-docRxnChanges(ihuman_orig,ihuman,rxnNotes,'constrainVariableMassReactions_rxnChanges.txt');
+rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
+writeRxnChanges(rxnChanges,'constrainVariableMassReactions_rxnChanges',true);
 
 % remove intermediate variables
 clearvars -except ihuman
