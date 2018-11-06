@@ -9,8 +9,24 @@
 %               Chalmers University of Technology
 % 
 % PURPOSE: Script to identify and update/constrain/remove reactions that 
-%          allow the creation of mass or energy (which results in a "leaky"
-%          model).
+%          allow the creation of mass and/or energy (which results in a
+%          "leaky" model). The script is divided into three main sections:
+%
+%          1. Changes to reaction bounds/direction/reversibility
+%             - Only the bounds (lb or ub) or reaction direction is
+%               modified in the reaction.
+%
+%          2. Changes to reaction stoichiometry/metabolites
+%             - The metabolite(s) involved in a reaction are
+%               changed/added/removed, and/or the stoichiometric
+%               coefficients in a reaction are modified.
+%
+%          3. Reaction inactivations
+%             - Reactions are constrained such that their lower and upper
+%               bounds are zero (i.e., a "soft deletion"). These reactions
+%               will be assessed in a future major release to determine
+%               which, if any, should be completely removed from the model.
+%
 %
 
 
@@ -18,7 +34,7 @@
 
 % load HumanGEM model (if not already loaded)
 if ~exist('ihuman','var')
-    load('humanGEM.mat');  % version ????
+    load('humanGEM.mat');  % version 0.5.2
 end
 ihuman_orig = ihuman;  % to keep track of changes made
 
@@ -300,9 +316,9 @@ ihuman.S(met_ind,rxn_ind) = 0;
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'balanced mass by removing cholesterol and cholesterol-ester pool from products'},length(rxn_ind),1)]];
 
 
-%% Reaction deletions
-% NOTE: These reactions will be constrained to zero for now, and scheduled
-% for future "hard removal" from the model.
+%% Reaction inactivations
+% NOTE: These reactions will be constrained to zero for now ("inactivated")
+% and scheduled for potential future "hard deletion" from the model.
 
 % This reaction is similar to an existing HMR rxn, but is reversible and
 % missing the FAD(H2) metabolite:
@@ -782,9 +798,9 @@ rxnNotes = [rxnNotes; [rxns, repmat({'mass balance analyses show that this react
 
 % instead of removing reactions from the model ("hard deletion"), the
 % reactions suggested for removal will be subjected to a "soft deletion",
-% i.e., bounds constrained to zero, and marked for deletion in the future.
-% This allows for sufficient time to fully review and assess the reactions
-% before removing them from the model entirely.
+% i.e., bounds constrained to zero, and marked for potential deletion in 
+% the future. This allows for sufficient time to fully review and assess
+% the reactions before removing them from the model entirely.
 del_ind = ismember(ihuman.rxns,del_rxns);
 ihuman.ub(del_ind) = 0;
 ihuman.lb(del_ind) = 0;
@@ -796,8 +812,9 @@ rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
 writeRxnChanges(rxnChanges,'repairModelLeaks_rxnChanges',true);
 
 
-%% Clear intermediate vars
+%% Clear intermediate vars and save model file
 clearvars -except ihuman
 
-
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+movefile('repairModelLeaks_rxnChanges.tsv','../../ComplementaryData/modelCuration/');
 
