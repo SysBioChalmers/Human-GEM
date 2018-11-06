@@ -214,7 +214,7 @@ end
 ihuman_orig = ihuman;
 
 % load list of the above reactions to constrain (stored in txt file)
-constrain_rxns = importdata('../../ComplementaryData/modelCuration/variable_mass_rxns_to_constrain.txt');
+constrain_rxns = importdata('../../ComplementaryData/modelCuration/variable_mass_rxns_to_constrain.tsv');
 constrain_ind = ismember(ihuman.rxns,constrain_rxns);
 if any(~ismember(constrain_rxns,ihuman.rxns))
     error('Some reactions were not found in the model.');
