@@ -2,7 +2,7 @@
 % FILE NAME:    constrainVariableMassReactions.m
 % 
 % DATE CREATED: 2018-09-28
-%     MODIFIED: 2018-10-11
+%     MODIFIED: 2018-11-06
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -209,12 +209,12 @@
 
 % load model if it does not yet exist
 if ~exist('ihuman','var')
-    load('humanGEM.mat');
+    load('humanGEM.mat');  % version 0.5.2
 end
 ihuman_orig = ihuman;
 
 % load list of the above reactions to constrain (stored in txt file)
-constrain_rxns = importdata('ComplementaryScripts/modelCuration/variable_mass_rxns_to_constrain.txt');
+constrain_rxns = importdata('../../ComplementaryData/modelCuration/variable_mass_rxns_to_constrain.txt');
 constrain_ind = ismember(ihuman.rxns,constrain_rxns);
 if any(~ismember(constrain_rxns,ihuman.rxns))
     error('Some reactions were not found in the model.');
@@ -235,5 +235,7 @@ writeRxnChanges(rxnChanges,'constrainVariableMassReactions_rxnChanges',true);
 % remove intermediate variables
 clearvars -except ihuman
 
-
+% save new model file
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+movefile('constrainVariableMassReactions_rxnChanges.tsv','../../ComplementaryData/modelCuration/');
 
