@@ -723,27 +723,6 @@ rxnNotes = [rxnNotes; [rxns, repmat({'rxn treats PE-LD pool differently than oth
 
 % The following reactions from Recon3D:
 %
-%    ARTFR11: palmitoyl-CoA[c] => R Group 1 Coenzyme A[c]
-%    ARTFR12: H+[m] + NADPH[m] + palmitoleoyl-CoA[c] => NADP+[m] + R Group 1 Coenzyme A[c]
-%    ARTFR41: H+[m] + NADPH[m] + palmitoleoyl-CoA[c] => NADP+[m] + R Group 4 Coenzyme A[c]
-%    ARTFR61: H+[m] + NADPH[m] + (2E)-hexadecenoyl-CoA[c] => NADP+[m] + R Group 6 Coenzyme A[c]
-%    ARTPLM1: R Total Coenzyme A[c] => palmitoyl-CoA[c]
-%   ARTPLM1m: R Total Coenzyme A[m] => palmitoyl-CoA[m]
-%    ARTPLM2: R Total 2 Coenzyme A[c] => palmitoyl-CoA[c]
-%   ARTPLM2m: R Total 2 Coenzyme A[m] => palmitoyl-CoA[m]
-%
-% all involve the direct conversion of a real metabolite (i.e.,
-% plamitoyl-CoA or (2E)-hexadecenoyl-CoA) into an "R Group" generic
-% metabolite, which leads to mass balance inconsistencies in the current
-% model formulation. The reactions will therefore be constrained until they
-% can be properly re-balanced, or eventually deleted.
-rxns = {'ARTFR11';'ARTFR12';'ARTFR41';'ARTFR61';'ARTPLM1';'ARTPLM1m';'ARTPLM2';'ARTPLM2m'};
-del_rxns = [del_rxns; rxns];
-rxnNotes = [rxnNotes; [rxns, repmat({'reaction involves direct conversion of a real metabolite into artificial "R Group" entity, which is not compatible with existing model formulation; it should be constrained until it can be properly balanced/integrated, or otherwise DELETED'},length(rxns),1)]];
-
-
-% The following reactions from Recon3D:
-%
 %   r0001: S-adenosylmethioninamine[c] => 5-methylthioadenosine[c] + Adenosylmethioninamine-Potential[c]
 %   r1319: ATP[c] + H2O[c] => ADP[c] + Pi[c] + Adenosine-5'-Triphosphate-Energy[c]
 %   r1320: ATP[m] + H2O[m] => ADP[m] + Pi[m] + Adenosine-5'-Triphosphate-Energy[m]
