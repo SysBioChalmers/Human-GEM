@@ -53,7 +53,7 @@ constrainVariableMassReactions
 repairModelLeaks
 
 
-%% Load model and initialize variables
+%% Load model
 
 % load current version of humanGEM
 if ~exist('ihuman','var')
@@ -168,5 +168,13 @@ ihuman.priorCombiningGrRules(ind) = {''};
 ihuman.c(:) = 0;
 ihuman.c(ismember(ihuman.rxns,'biomass_components')) = 1;
 
+
+%% Save model and clear intermediate variables
+
+% clear intermediate varaibles
+clearvars -except ihuman
+
+% save model file
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
 
 
