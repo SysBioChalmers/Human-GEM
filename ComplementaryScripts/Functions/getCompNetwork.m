@@ -12,13 +12,15 @@ function [compNetwork, I]=getCompNetwork(model,comp,includePartial)
 %   compNetwork     a model structure for the specified compartment
 %   I               index of reactions in the specified compartment
 %
-%   Usage: [compNetwork, I]=getRxnsInComp(model,comp,includePartial)
+%   Usage: [compNetwork, I]=getCompNetwork(model,comp,includePartial)
 %
 %   Hao Wang, 2018-11-07
 %
 
 if ischar(comp)
     comp={comp};
+else
+    error('Incorrect compartment id!');
 end
 if nargin<3
     includePartial=false;
