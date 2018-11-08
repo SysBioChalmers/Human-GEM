@@ -2,7 +2,7 @@
 % FILE NAME:    curateBiomassReactions.m
 % 
 % DATE CREATED: 2018-11-06
-%     MODIFIED: 2018-11-07
+%     MODIFIED: 2018-11-08
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -149,7 +149,7 @@ ihuman = addMets(ihuman,metsToAdd,true);
 rxnsToAdd = {};
 rxnsToAdd.rxns = rxnData{1};
 rxnsToAdd.equations = rxnData{6};
-rxnsToAdd.ub = rxnData{3};
+rxnsToAdd.lb = rxnData{3};
 rxnsToAdd.ub = rxnData{4};
 rxnsToAdd.subSystems = rxnData{5};
 
