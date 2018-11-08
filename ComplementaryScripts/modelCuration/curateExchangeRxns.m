@@ -2,7 +2,7 @@
 % FILE NAME:    curateExchangeRxns.m
 % 
 % DATE CREATED: 2018-11-07
-%     MODIFIED: 2018-11-07
+%     MODIFIED: 2018-11-08
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -53,10 +53,15 @@
 %          advance that none of these reactions are associated with any
 %          genes.
 %
-%          Finally, the script inactivates all sink and demand ("DM")
-%          reactions, by constraining their upper and lower bounds to zero.
+%          The script also inactivates all sink and demand (DM) reactions
+%          by constraining their upper and lower bounds to zero.
 %          These reactions will be considered for full deletion in future
 %          model versions.
+%
+%          Finally, the upper and lower bounds of all exchange reactions
+%          are set to +/-1000, respectively. As a result, the model is by
+%          default completely "open", allowing free exchange of all
+%          metabolites.
 %
 
 
@@ -143,6 +148,23 @@ ihuman.ub(sd_rxns) = 0;
 
 % add notes to rxnNotes
 rxnNotes = [rxnNotes; [ihuman.rxns(sd_rxns), repmat({'sink/demand reactions were inactivated, and are scheduled for future DELETION'},sum(sd_rxns),1)]];
+
+
+%% Set upper and lower bounds of all exchange reactions to +/-1000
+
+% find exchange reactions (but not sink/demand reactions)
+exch_rxns = exch_ind(~ismember(exch_ind,find(sd_rxns)));
+
+% determine which reactions will be affected by the change, and annotate
+% the change in rxnNotes
+affected_ind = (ihuman.lb(exch_rxns) ~= -1000) | (ihuman.ub(exch_rxns) ~= 1000);
+affected_rxns = ihuman.rxns(exch_rxns(affected_ind));
+rxnNotes = [rxnNotes; [affected_rxns, repmat({'bounds of all exchange reactions by default set to +/-1000'},length(affected_rxns),1)]];
+
+% set upper and lower bounds to 1000 and -1000, respectively
+ihuman.lb(exch_rxns) = -1000;
+ihuman.ub(exch_rxns) = 1000;
+
 
 
 %% Save model and export results
