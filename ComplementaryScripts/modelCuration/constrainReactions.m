@@ -1,29 +1,31 @@
 %
-% FILE NAME:    constrainVariableMassReactions.m
+% FILE NAME:    constrainReactions.m
 % 
 % DATE CREATED: 2018-09-28
-%     MODIFIED: 2018-11-06
+%     MODIFIED: 2018-11-09
 % 
-% PROGRAMMER:   Jonathan Robinson
+% PROGRAMMER:   Jonathan Robinson, Hao Wang
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 % 
-% PURPOSE: Script to constrain all reactions that involve an identical set
-%          of metabolites except for one, and that one different metabolite
-%          does not have the same mass in each reaction. For example, the
-%          following reactions were identified as a set of "mass variable
-%          reactions":
+% PURPOSE: Script to prepare a defined list of reactions for constraining:
+%
+%          1. reactions allow the creation of mass and/or energy (which
+%          results in a "leaky" model).
+%
+%          2. reactions involve an identical set of metabolites except for 
+%          one, and that one different metabolite does not have the same 
+%          mass in each reaction. For example, the following reactions were
+%          identified as a set of "mass variable reactions":
 %
 %           LCAT39e: cholesterol[s] + PC-LD pool[s] => cholesterol-ester pool[s] + 1-Docosahexenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16, 19), Sn1-Lpc (22:6)[s]
 %            LCAT5e: cholesterol[s] + PC-LD pool[s] => cholesterol-ester pool[s] + 1-Eicosadienoylglycerophosphocholine (Delta 11,14)[s]
 %           LCAT31e: cholesterol[s] + PC-LD pool[s] => cholesterol-ester pool[s] + 1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 6, 9, 12)[s]
 %
-%          These reactions have the same reactants (cholesterol and PC-LD
-%          pool), but differ in only one product, which results in a PC-LD
-%          pool of variable mass (since some of these reactions are
-%          reversible, and some of the mets involved can be broken down
-%          into their components).
-
+%
+% NOTE: These reactions will be constrained to zero for now ("inactivated")
+% and scheduled for potential future "hard deletion" from the model.
+%
 
 %% Load model and initialize some variables
 
@@ -31,14 +33,13 @@
 if ~exist('ihuman','var')
     load('humanGEM.mat');  % version 0.5.2
 end
+
 % initialize vars
 rxnNotes = {};
 del_rxns = {};
 
 
-%% Reaction inactivations
-% NOTE: These reactions will be constrained to zero for now ("inactivated")
-% and scheduled for potential future "hard deletion" from the model.
+%% Group1: reactions allow the creation of mass and/or energy and results in a "leaky" model
 
 % These reactions concern the glycerol phosphate shuttle:
 %
@@ -528,8 +529,9 @@ del_rxns = [del_rxns; rxns];
 rxnNotes = [rxnNotes; [rxns, repmat({'mass balance analyses show that this reaction contributes to a flux solution that can generate mass; the rxn should therefore be constrained until imbalances can be addressed'},length(rxns),1)]];
 
 
-
-%% List of reactions to be constrained
+%% Group2 reactions:
+% These reactions have the same reactants (or products) but differ in products
+% (or reactants), which results in imbalanced mass
 
 % RXN ID    RXN EQUATION
 %
@@ -709,15 +711,13 @@ rxnNotes = [rxnNotes; [rxns, repmat({'mass balance analyses show that this react
 % CHOLESTle     cholesterol-ester pool[s] + H2O[s] => cholesterol[s] + H+[s] + R Total[s]
 %
 
-%% Constrain reactions
-
-% load list of the above reactions to constrain (stored in txt file)
+% load list of the above reactions to constrain (stored in a tsv file)
 constrain_rxns = importdata('../../ComplementaryData/modelCuration/variable_mass_rxns_to_constrain.tsv');
 
-% generate rxnNotes array
-%rxnNotes = [constrain_rxns, repmat({'reaction treats the mass of one or more of its metabolites in an inconsistent manner, resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED'},length(constrain_rxns),1)];
+% update the rxnNotes array
 rxnNotes = [rxnNotes; [constrain_rxns, repmat({'reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED'},length(constrain_rxns),1)]];
 
-% document reaction changes
+
+%% log inactivation reactions into inactivationRxns.tsv
 writecell(rxnNotes,'../../ComplementaryData/modelCuration/inactivationRxns.tsv',true,'\t','',true);
 
