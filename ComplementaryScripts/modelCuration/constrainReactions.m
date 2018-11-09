@@ -207,35 +207,12 @@
 
 %% Constrain reactions
 
-% load model if it does not yet exist
-if ~exist('ihuman','var')
-    load('humanGEM.mat');  % version 0.5.2
-end
-ihuman_orig = ihuman;
-
 % load list of the above reactions to constrain (stored in txt file)
 constrain_rxns = importdata('../../ComplementaryData/modelCuration/variable_mass_rxns_to_constrain.tsv');
-constrain_ind = ismember(ihuman.rxns,constrain_rxns);
-if any(~ismember(constrain_rxns,ihuman.rxns))
-    error('Some reactions were not found in the model.');
-end
 
 % generate rxnNotes array
 rxnNotes = [constrain_rxns, repmat({'reaction treats the mass of one or more of its metabolites in an inconsistent manner, resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED'},length(constrain_rxns),1)];
 
-% set upper and lower bounds to zero
-ihuman.ub(constrain_ind) = 0;
-ihuman.lb(constrain_ind) = 0;
-ihuman.rev(constrain_ind) = 0;  % update reversibility
-
 % document reaction changes
-rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
-writeRxnChanges(rxnChanges,'constrainVariableMassReactions_rxnChanges',true);
-
-% remove intermediate variables
-clearvars -except ihuman
-
-% save new model file
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
-movefile('constrainVariableMassReactions_rxnChanges.tsv','../../ComplementaryData/modelCuration/');
+writecell(rxnNotes,'../../ComplementaryData/modelCuration/inactivationRxns.tsv',true,'\t','',true);
 
