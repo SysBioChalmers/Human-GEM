@@ -40,6 +40,20 @@ del_rxns = {};
 % NOTE: These reactions will be constrained to zero for now ("inactivated")
 % and scheduled for potential future "hard deletion" from the model.
 
+% These reactions concern the glycerol phosphate shuttle:
+%
+%  HMR_0483: DHAP[c] + ubiquinol[m] => sn-glycerol-3-phosphate[c] + ubiquinone[m]
+%  HMR_0482: DHAP[c] + FADH2[c] => FAD[c] + sn-glycerol-3-phosphate[c]
+%    r0202m: NAD+[m] + sn-glycerol-3-phosphate[m] => DHAP[m] + H+[m] + NADH[m]
+%
+% The HMR reactions are written in the wrong direction, and would be
+% reversed in script repairModelLeaks.m. The Recon3D reaction (r0202m) is 
+% also in the wrong direction, but should not take place in the
+% mitochondria, and therefore be deleted here.
+del_rxns = [del_rxns; {'r0202m'}];
+rxnNotes = [rxnNotes; {'r0202m', 'reaction should not take place in mitochondria, should be DELETED'}];
+
+
 % This reaction is similar to an existing HMR rxn, but is reversible and
 % missing the FAD(H2) metabolite:
 %
