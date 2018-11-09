@@ -310,6 +310,74 @@ ihuman.S(met_ind,rxn_ind) = 0;
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'balanced mass by removing cholesterol and cholesterol-ester pool from products'},length(rxn_ind),1)]];
 
 
+% The following reaction from Recon3D:
+%
+%   DOLGPP_Ler: 0.1 dolichyl-D-glucosyl-phosphate[r] + H2O[r] => 0.1 dolichyl-phosphate[r] + glucose[r] + H+[r]
+%
+% Is not properly formulated, as it is creating 1 equivalent of glucose
+% from 0.1 equivalents. It is nearly the same as the following reaction:
+%
+%   HMR_8692: dolichyl-D-glucosyl-phosphate[r] + H2O[r] => dolichyl-phosphate[r] + glucose[r]
+%
+% except for the coefficients and the additional proton. This appears to be
+% a problem with the difference in formula for dolichyl-phosphate between
+% Recon3D and HMR:
+%
+%   Recon3D formula: C1080H1758O40P10
+%       HMR formula: C20H37O4P(C5H8)n
+%
+% Other pairs of reactions that share this same problem are:
+%
+%   DOLASNT_Ler: 0.1 (Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1[r] + [protein]-L-asparagine[r] => (alpha-D-Glucosyl)3-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein)[r] + 0.1 dolichyl-diphosphate[r] + H+[r]
+%      HMR_7285:     (Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1[r] + [protein]-L-asparagine[r] => (alpha-D-Glucosyl)3-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein)[r] +     dolichyl-diphosphate[r]
+%
+%    DOLDPP_Ler: 0.1 dolichyl-diphosphate[r] + H2O[r] => 0.1 dolichyl-phosphate[r] + H+[r] + Pi[r]
+%      HMR_8691:     dolichyl-diphosphate[r] + H2O[r] =>     dolichyl-phosphate[r] + Pi[r]
+%
+%        DOLK_L: CTP[c] + 0.1 dolichol[c] => CDP[c] + 0.1 dolichyl-phosphate[c] + H+[c]
+%      HMR_7263: CTP[c] +     dolichol[c] => CDP[c] +     dolichyl-phosphate[c]
+% 	
+%  DOLMANP_Lter: 0.1 dolichyl-phosphate-D-mannose[c] => 0.1 dolichyl-phosphate-D-mannose[r]
+%      HMR_7272:     dolichyl-phosphate-D-mannose[c] =>     dolichyl-phosphate-D-mannose[r]
+% 	
+%   DOLPMT3_Ler: 0.1 dolichyl-phosphate[c] + GDP-mannose[c] => 0.1 dolichyl-phosphate-D-mannose[c] + GDP[c]
+%      HMR_7271:     dolichyl-phosphate[c] + GDP-mannose[c] =>    dolichyl-phosphate-D-mannose[c] + GDP[c]
+% 	
+%     GPIMTer_L: 0.1 dolichyl-phosphate-D-mannose[r] + glucosaminyl-acylphosphatidylinositol[r] => 0.1 dolichyl-phosphate[r] + H+[r] + mgacpail heparan sulfate[r]
+%      HMR_8383:     dolichyl-phosphate-D-mannose[r] + glucosaminyl-acylphosphatidylinositol[r] =>     dolichyl-phosphate[r] + mgacpail heparan sulfate[r]
+% 	
+%    GLCNACPT_L: 0.1 dolichyl-phosphate[c] + UDP-N-acetylglucosamine[c] => 0.1 N-acetyl-D-glucosaminyldiphosphodolichol[c] + UMP[c]
+%      HMR_7264:     dolichyl-phosphate[c] + UDP-N-acetylglucosamine[c] =>     N-acetyl-D-glucosaminyldiphosphodolichol[c] + UMP[c]
+%
+%   DOLPGT3_Ler: 0.1 dolichyl-phosphate[r] + H2O[r] => 0.1 dolichol[r] + Pi[r]
+%      HMR_7261:     dolichyl-phosphate[r] + H2O[r] =>     dolichol[r] + Pi[r]
+%
+% DOLICHOL_Lter: 0.1 dolichol[r] <=> 0.1 dolichol[c]
+%      HMR_7262:     dolichol[c] <=>     dolichol[r]
+%
+%      DEDOLR_L: 0.1 dehydrodolichol[c] + H+[c] + NADPH[c] => 0.1 dolichol[c] + NADP+[c]
+%      HMR_7260:     dehydrodolichol[c] + H+[c] + NADPH[c] =>     dolichol[c] + NADP+[c]
+%
+% where again the Recon3D version is using 0.1 equivalents of the dolichyl 
+% component, which creates mass when used together with the HMR reactions.
+% Therefore, these Recon3D reactions should be removed from the model and
+% dealt with in script constrainReactions.m.
+%
+% In addition, there were a few other reactions that did not have an HMR
+% equivalent, but need to have their stoich coeffs adjusted from 0.1 to 1, to
+% be consistent with how other reactions in the model are treating the mass
+% of these dolichol compounds.
+%
+%      H8MTer_L: 0.1 dolichyl-phosphate-D-mannose[r] + gpi heparan sulfate[r] => 0.1 dolichyl-phosphate[r] + H+[r] + Mannosyl-3-(Phosphoethanolaminyl-Mannosyl)-Glucosaminyl-Acylphosphatidylinositol (M4A)[r]
+%      H8MTer_U: 0.1 dolichyl-phosphate-D-mannose[r] + gpi heparan sulfate[r] => 0.1 dolichyl-phosphate[r] + H+[r] + HMA[r]
+%    UDPDOLPT_L: 0.1 dolichyl-phosphate[c] + UDP-glucose[c] => UDP[c] + 0.1 dolichyl-D-glucosyl-phosphate[c]
+%
+rxn_ind = getIndexes(ihuman,{'H8MTer_L';'H8MTer_U';'UDPDOLPT_L'},'rxns');
+ihuman.S(:,rxn_ind) = sign(ihuman.S(:,rxn_ind));  % convert all nonzero values to +/- 1
+rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'corrected dolichol-related mets stoich coeffs to be consistent with its effective mass elsewhere in the model'},length(rxn_ind),1)]];
+
+
+
 %% Generate model change report
 rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
 writeRxnChanges(rxnChanges,'repairModelLeaks_rxnChanges',true);

@@ -27,14 +27,8 @@
 % and scheduled for potential future "hard deletion" from the model.
 %
 
-%% Load model and initialize some variables
+%% Initialize some variables
 
-% load HumanGEM model (if not already loaded)
-if ~exist('ihuman','var')
-    load('humanGEM.mat');  % version 0.5.2
-end
-
-% initialize vars
 rxnNotes = {};
 del_rxns = {};
 
@@ -236,9 +230,9 @@ rxnNotes = [rxnNotes; {'DOPACCL', 'no sources supporting this reaction, and lite
 % Therefore, these Recon3D reactions should be removed from the model.
 %
 % In addition, there were a few other reactions that did not have an HMR
-% equivalent, but should have their stoich coeffs adjusted from 0.1 to 1 to
+% equivalent, but would have their stoich coeffs adjusted from 0.1 to 1, to
 % be consistent with how other reactions in the model are treating the mass
-% of these dolichol compounds.
+% of these dolichol compounds, in script repairModelLeaks.m.
 %
 %      H8MTer_L: 0.1 dolichyl-phosphate-D-mannose[r] + gpi heparan sulfate[r] => 0.1 dolichyl-phosphate[r] + H+[r] + Mannosyl-3-(Phosphoethanolaminyl-Mannosyl)-Glucosaminyl-Acylphosphatidylinositol (M4A)[r]
 %      H8MTer_U: 0.1 dolichyl-phosphate-D-mannose[r] + gpi heparan sulfate[r] => 0.1 dolichyl-phosphate[r] + H+[r] + HMA[r]
@@ -247,11 +241,8 @@ rxnNotes = [rxnNotes; {'DOPACCL', 'no sources supporting this reaction, and lite
 rxns = {'DOLGPP_Ler';'DOLASNT_Ler';'DOLDPP_Ler';'DOLK_L';'DOLMANP_Lter';...
                        'DOLPMT3_Ler';'GPIMTer_L';'GLCNACPT_L';'DOLPGT3_Ler';'DOLICHOL_Lter';'DEDOLR_L'};
 del_rxns = [del_rxns; rxns];
-rxn_ind = getIndexes(ihuman,{'H8MTer_L';'H8MTer_U';'UDPDOLPT_L'},'rxns');
-ihuman.S(:,rxn_ind) = sign(ihuman.S(:,rxn_ind));  % convert all nonzero values to +/- 1
-
 rxnNotes = [rxnNotes; [rxns, repmat({'reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED'},length(rxns),1)]];
-rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'corrected dolichol-related mets stoich coeffs to be consistent with its effective mass elsewhere in the model'},length(rxn_ind),1)]];
+
 
 
 % The following reactions from Recon3D deal with the generation and
