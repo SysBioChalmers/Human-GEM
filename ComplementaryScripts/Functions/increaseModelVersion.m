@@ -1,12 +1,12 @@
-function increaseVersion(bumpType)
-% increaseVersion
+function increaseModelVersion(bumpType)
+% increaseModelVersion
 %
 %   Increase version for GEM respositories
 %
-%   Usage: function increaseVersion(bumpType)
+%   Usage: function increaseModelVersion(bumpType)
 %
 %   Benjamín J. Sánchez, 2018-07
-%   Hao Wang, 2018-09-22
+%   Hao Wang, 2018-11-11
 %
 
 %Check if in master:
