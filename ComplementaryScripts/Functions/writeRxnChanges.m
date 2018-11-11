@@ -1,4 +1,4 @@
-function [] = writeRxnChanges(rxnChanges, fileName)
+function [] = writeRxnChanges(rxnChanges,fileName,date)
 %writeRxnChanges  Write model reaction change structure to file.
 %
 % USAGE:
@@ -22,11 +22,17 @@ function [] = writeRxnChanges(rxnChanges, fileName)
 %   fileName       Name of file to write to. If an extension is not
 %                  provided, ".tsv" will be used.
 %
+%   date           (Opt, default FALSE) If TRUE, print out the date
+%                  in the first line of output file.
 %
-% Jonathan Robinson, 2018-10-15
+%
+% Jonathan Robinson, 2018-11-05
 
 
 % handle input arguments
+if nargin < 3
+    date = false;
+end
 if ~contains(fileName,'.')
     % append with .tsv if no extension provided
     fileName = strcat(fileName,'.tsv');
@@ -39,6 +45,6 @@ chgArray = [fieldnames(rxnChanges)';
             rxnChanges.ubOrig, rxnChanges.ubNew]), rxnChanges.notes]];
 
 % write to file
-writecell(chgArray,fileName,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\n');
+writecell(chgArray,fileName,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\n',date);
 
 
