@@ -23,7 +23,10 @@
 %               'HMR_biomass_Renalcancer'     'biomass_HMR_RenalCancer'
 %
 %             - In addition, each of these biomass reactions was modified
-%               such that they produce the 'biomass[x]' metabolite.
+%               such that they produce the 'biomass[c]' metabolite.
+%
+%             - "biomass_transport" ([c] to [s]) and "biomass_exchange"
+%               ([s] to [x]) reactions were added.
 %
 %          2. A new biomass reaction for HepG2 cells was added
 %
@@ -65,14 +68,17 @@ ihuman_orig = ihuman;  % to keep track of changes made
 %% Modify existing biomass reactions
 
 % modify each biomass reaction to produce the "biomass" metabolite in the
-% boundary compartment (i.e., biomass[x]), and ensure that none are
-% producing the cytoplasmic biomass metabolite.
+% cytoplasm compartment (i.e., biomass[c]), and ensure that none are
+% producing the boundary biomass metabolite ([x]). This is because some
+% RAVEN functions can erroneously classify reactions with boundary mets as 
+% exchange reactions, and can be problematic if the biomass reaction is
+% classified as such.
 biomass_x_ind = getIndexes(ihuman,'biomass[x]','metscomps');
 biomass_c_ind = getIndexes(ihuman,'biomass[c]','metscomps');
 biomass_rxns = {'biomass_components';'biomass_reaction';'biomass_maintenance';'biomass_maintenance_noTrTr';'HMR_biomass_Renalcancer'};
 bm_rxn_ind = getIndexes(ihuman,biomass_rxns,'rxns');
-ihuman.S(biomass_c_ind,bm_rxn_ind) = 0;
-ihuman.S(biomass_x_ind,bm_rxn_ind) = 1;
+ihuman.S(biomass_c_ind,bm_rxn_ind) = 1;
+ihuman.S(biomass_x_ind,bm_rxn_ind) = 0;
 
 % rename biomass reactions
 new_rxn_names = {'biomass_components';'biomass_Recon3D';'biomass_maintenance_Recon3D';'biomass_maintenance_noTrTr_Recon3D';'biomass_HMR_RenalCancer'};
