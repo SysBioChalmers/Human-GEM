@@ -2,19 +2,19 @@ function [compNetwork, I]=getCompNetwork(model,comp,includePartial)
 % getCompNetwork
 %   Gets the metabolic network for a specified compartment
 %
-%   Input:
+% Input:
 %   model           a model structure
 %   comp            string with the compartment id
 %   includePartial  if true, include reactions with metabolites partially
 %                   present in the specified compartment (opt, default false)
 %
-%   Output:
+% Output:
 %   compNetwork     a model structure for the specified compartment
 %   I               index of reactions in the specified compartment
 %
-%   Usage: [compNetwork, I]=getCompNetwork(model,comp,includePartial)
+% Usage: [compNetwork, I]=getCompNetwork(model,comp,includePartial)
 %
-%   Hao Wang, 2018-11-07
+% Hao Wang, 2018-11-07
 %
 
 if ischar(comp)
