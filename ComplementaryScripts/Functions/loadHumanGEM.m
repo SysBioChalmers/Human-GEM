@@ -5,24 +5,33 @@ function model = loadHumanGEM
 %
 % Usage: model = loadHumanGEM
 %
-% Hao Wang, 2018-11-12
+% Hao Wang, 2018-11-14
 %
 
 % get model path
 [ST, I]=dbstack('-completenames');
 modelPath=fileparts(fileparts(fileparts(ST(I).file)));
 
-% load reactions need to be constrained
-inactivateRxnsFile=fullfile(modelPath,'ComplementaryData','modelCuration','inactivationRxns.tsv');
-fid = fopen(inactivateRxnsFile,'r');
-input = textscan(fid,'%s %s','Delimiter','\t','Headerlines',1);
-fclose(fid);
-rxnsToConstrain = input{1};
-
-% load model and conduct constraining
+% load model
 matFile=fullfile(modelPath,'ModelFiles','mat','humanGEM.mat');
 load(matFile);
-model = setParam(ihuman, 'eq', rxnsToConstrain, 0);
+
+% get reactions need to be constrained
+rxnsToConstrain = '';
+inactivateRxnsFile=fullfile(modelPath,'ComplementaryData','modelCuration','inactivationRxns.tsv');
+if exist(inactivateRxnsFile, 'file') == 2
+    fid = fopen(inactivateRxnsFile,'r');
+    input = textscan(fid,'%s %s','Delimiter','\t','Headerlines',1);
+    fclose(fid);
+    rxnsToConstrain = input{1};
+end
+
+% conduct constraining, if any
+if ~isempty(rxnsToConstrain)
+    model = setParam(ihuman, 'eq', rxnsToConstrain, 0);
+else
+    model = ihuman;
+end
 
 end
 
