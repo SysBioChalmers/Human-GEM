@@ -38,7 +38,6 @@ ihuman_orig = ihuman;  % to keep track of changes made
 
 % initialize vars
 rxnNotes = {};
-%del_rxns = {};
 
 
 %% Changes to reaction bounds/direction/reversibility
