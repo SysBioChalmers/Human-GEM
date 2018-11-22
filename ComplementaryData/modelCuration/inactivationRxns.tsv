@@ -235,3 +235,5 @@ TAG_HSad	reaction is artificial and involves dead-end artificial metabolite with
 TAG_HSad_NE	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
 TAG_HSad_E	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
 CHOLESTle	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1330	reaction appears to be an attempt to fix ATP leakage, but not necessary with the updated handling of mitochondrial proton transport and should be DELETED
+r1331	reaction appears to be an attempt to fix ATP leakage, but not necessary with the updated handling of mitochondrial proton transport and should be DELETED
