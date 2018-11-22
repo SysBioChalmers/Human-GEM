@@ -21,11 +21,14 @@
 %               changed/added/removed, and/or the stoichiometric
 %               coefficients in a reaction are modified.
 %
-%          Each change to the model references a specific metabolic task ID
-%          number(s), which corresponds to the task ID numbers listed in
-%          the "metabolicTasks_LeakCheck.xls" task list. The ID number
-%          listed with each change in this script indicates the task(s)
-%          which the change is designed to address.
+% Note: This script is partitioned into sections, each includes changes aim
+% to achieve certain task(s), whose ID numbers are marked and correspond to
+% the task ID numbers listed in the "metabolicTasks_LeakCheck.xls" task list.
+% Since these changes indirectly affect each other and cannot be fully separated.
+% The ID number(s) listed in each section indicate the primary task(s) that
+% the changes are designed to address but may not fully fix them. However, 
+% all targeted tasks can be achived by collective implemention of the changes
+% in this script.
 
 
 %% Load model and initialize some variables
