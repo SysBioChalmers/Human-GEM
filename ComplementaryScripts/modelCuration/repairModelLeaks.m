@@ -395,6 +395,24 @@ ihuman.S(:,rxn_ind) = sign(ihuman.S(:,rxn_ind));  % convert all nonzero values t
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'corrected dolichol-related mets stoich coeffs to be consistent with its effective mass elsewhere in the model'},length(rxn_ind),1)]];
 
 
+%% Apply reaction constraining and update rxnNotes
+
+% Load the inactivation reaction list and constrain them
+fid = fopen('inactivationRxns.tsv','r');
+input = textscan(fid,'%s %s','Delimiter','\t','Headerlines',1);
+fclose(fid);
+constrainRxnNotes = [input{1}(1:end-2), input{2}(1:end-2)];
+ihuman = setParam(ihuman, 'eq', constrainRxnNotes(:,1), 0);
+
+% Update rxnNotes because there are overlap between reaction sets with
+% bound/coefficient adjustment and constraining
+[a, b] = ismember(constrainRxnNotes(:,1), rxnNotes(:,1));
+overlapInd = b(a);
+rxnNotes(overlapInd,2) = strcat(rxnNotes(overlapInd,2), '; ', constrainRxnNotes(a,2));
+% Add non-overlap reaction sets to notes
+[~, nonOverlapInd]= setdiff(constrainRxnNotes(:,1), rxnNotes(:,1));
+rxnNotes = [rxnNotes; constrainRxnNotes(nonOverlapInd,:)];
+
 
 %% Generate model change report
 rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
