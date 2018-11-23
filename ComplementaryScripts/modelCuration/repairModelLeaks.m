@@ -2,7 +2,7 @@
 % FILE NAME:    repairModelLeaks.m
 % 
 % DATE CREATED: 2018-10-01
-%     MODIFIED: 2018-11-09
+%     MODIFIED: 2018-11-23
 % 
 % PROGRAMMER:   Jonathan Robinson, Hao Wang
 %               Department of Biology and Biological Engineering
@@ -10,7 +10,7 @@
 % 
 % PURPOSE: Script to identify and update/constrain/remove reactions that 
 %          allow the creation of mass and/or energy (which results in a
-%          "leaky" model). The script is divided into three main sections:
+%          "leaky" model). The script is divided into two main sections:
 %
 %          1. Changes to reaction bounds/direction/reversibility
 %             - Only the bounds (lb or ub) or reaction direction is
@@ -21,20 +21,35 @@
 %               changed/added/removed, and/or the stoichiometric
 %               coefficients in a reaction are modified.
 %
+%          3. Reaction inactivation
+%             - A total of 236 reactions (12 were also modified in above two
+%               steps) need to be constrained (i.e. ub=lb=0), in order to
+%               achieve all the metabolic tasks listed in
+%               `metabolicTasks_LeakCheck.xls`. These inactivate reactions
+%               are archieved in `inactivationRxns.tsv` and should be further
+%               assessed to determine which, if any, should be completely
+%               removed from the model.
 %
+% Note: This script is partitioned into sections, each includes changes aim
+% to achieve certain task(s), whose ID numbers are marked and correspond to
+% the task ID numbers listed in the "metabolicTasks_LeakCheck.xls" task list.
+% Since these changes indirectly affect each other and cannot be fully separated.
+% The ID number(s) listed in each section indicate the primary task(s) that
+% the changes are designed to address but may not fully fix them. However, 
+% all targeted tasks can be achived by collective implemention of the changes
+% in this script.
 
 
 %% Load model and initialize some variables
 
 % load HumanGEM model (if not already loaded)
 if ~exist('ihuman','var')
-    load('humanGEM.mat');  % version 0.5.2
+    load('humanGEM.mat');  % version 0.6.0
 end
 ihuman_orig = ihuman;  % to keep track of changes made
 
 % initialize vars
 rxnNotes = {};
-%del_rxns = {};
 
 
 %% Changes to reaction bounds/direction/reversibility
@@ -43,7 +58,8 @@ rxnNotes = {};
 %
 %   NMNATr: ATP[c] + H+[c] + nicotinamide D-ribonucleotide[c] <=> NAD+[c] + PPi[c]
 %
-% should not be reversible (HumanCyc, rxn 2.7.7.1)
+% should not be reversible (HumanCyc, rxn 2.7.7.1).
+% Relevant metabolic task IDs: 2-9, 17
 rxn_ind = ismember(ihuman.rxns,'NMNATr');
 ihuman.lb(rxn_ind) = 0;
 rxnNotes = [rxnNotes; {'NMNATr','rxn should not be reversible (HumanCyc rxn 2.7.7.1)'}];
@@ -70,7 +86,7 @@ rxnNotes = [rxnNotes; {'NMNATr','rxn should not be reversible (HumanCyc rxn 2.7.
 % into protons and oxygen, these reactions should be constrained such that
 % they are irreversible, and in the direction of peroxidation (consumption
 % of O2-).
-%
+% Relevant metabolic task IDs: 1
 rxn_ind = ismember(ihuman.rxns,{'HMR_1358';'RE3449C';'HMR_1361';'RE3458C';'HMR_1405';'RE2852C';'HMR_1364';'RE3452C'});
 o2s_ind = getIndexes(ihuman,'O2-[c]','metscomps');
 
@@ -94,6 +110,7 @@ rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'this rxn should not be abl
 % be used to peroxidate those compounds). The HMR versions will therefore
 % be made irreversible such that they produce water, as is the case with
 % the Recon3D versions.
+% Relevant metabolic task IDs: 1
 rxn_ind = ismember(ihuman.rxns,{'HMR_1357';'HMR_1360'});
 h2o_ind = getIndexes(ihuman,'H2O[c]','metscomps');
 
@@ -111,6 +128,7 @@ rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'H2O should not be able to 
 %  RE2649C: H2O[c] + propanoyl-CoA[c] <=> CoA[c] + H+[c] + propanoate[c]
 %
 % The lower bound of these reactions will therefore be constrained to zero.
+% Relevant metabolic task IDs: 2-9, 17
 rxn_ind = ismember(ihuman.rxns,{'RE3238C';'RE3239C';'RE2649C'});
 ihuman.lb(rxn_ind) = 0;
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'reverse rxn requires ATP, therefore rxn was made irreversible'},sum(rxn_ind),1)]];
@@ -126,6 +144,7 @@ rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'reverse rxn requires ATP, 
 % reversed. The Recon3D reaction (r0202m) is also in the wrong direction,
 % but should also not take place in the mitochondria, and should therefore
 % be deleted.
+% Relevant metabolic task IDs: 10-12
 [~,rxn_ind] = ismember({'HMR_0483';'HMR_0482'},ihuman.rxns);
 DHAP_ind = getIndexes(ihuman,'DHAP[c]','metscomps');
 rxn_ind(ihuman.S(DHAP_ind,rxn_ind) > 0) = [];  % exclude rxns that have already been fixed
@@ -133,8 +152,6 @@ if ~isempty(rxn_ind)
     ihuman.S(:,rxn_ind) = -ihuman.S(:,rxn_ind);  % turn rxns around
     rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'directionality changed to reflect proper activity of glycerol phosphate shuttle'},length(rxn_ind),1)]];
 end
-%del_rxns = [del_rxns; {'r0202m'}];
-%rxnNotes = [rxnNotes; {'r0202m', 'reaction should not take place in mitochondria, should be DELETED'}];
 
 
 % The following reactions are part of the melatonin degradation pathway:
@@ -145,6 +162,7 @@ end
 % Although they are written as reversible, the reverse reaction should not
 % be possible (see, e.g., PMID: 19573038). Therefore, these reactions
 % should be constrained to proceed only in the forward direction.
+% Relevant metabolic task IDs: 1
 [~,rxn_ind] = ismember({'HMR_4551';'RE2440C'},ihuman.rxns);
 ihuman.lb(rxn_ind) = 0;
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'the reverse reaction (formate consumption) should not be possible (PMID: 19573038)'},length(rxn_ind),1)]];
@@ -156,6 +174,7 @@ rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'the reverse reaction (form
 %
 % should NOT be reversible. Only the forward direction is possible.
 % Therefore, the lower bound of this reaction will be set to zero.
+% Relevant metabolic task IDs: 10-12
 ihuman.lb(ismember(ihuman.rxns,{'r1466'})) = 0;
 rxnNotes = [rxnNotes; {'r1466', 'reaction should not be reversible'}];
 
@@ -168,6 +187,7 @@ rxnNotes = [rxnNotes; {'r1466', 'reaction should not be reversible'}];
 %   RE3273R: H2O[r] + PI pool[r] <=> H+[r] + inositol[r] + phosphatidate-LD-TAG pool[r]
 %
 % should not be reversible. They should only proceed in the forward direction.
+% Relevant metabolic task IDs: 2-9, 17
 rxn_ind = ismember(ihuman.rxns,{'RE1448N';'RE3273C';'RE3273G';'RE3273R'});
 ihuman.lb(rxn_ind) = 0;
 ihuman.rev(rxn_ind) = 0;
@@ -182,6 +202,7 @@ rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'reaction should not be rev
 %
 % involves a protein-bound amino acid being converted to an unbound
 % metabolite, which should require an additional water as a reactant.
+% Relevant metabolic task IDs: 1
 rxn_ind = ismember(ihuman.rxns,'HMR_7625');
 h2o_ind = getIndexes(ihuman,'H2O[c]','metscomps');
 ihuman.S(h2o_ind,rxn_ind) = -1;
@@ -197,6 +218,7 @@ rxnNotes = [rxnNotes; {'HMR_7625', 'water is required as a reactant'}];
 % it is therefore suspected to be a compartment labeling error. The proton
 % compartment should therefore be corrected to mitochondria [m] to be
 % consistent with the other compounds in the reaction.
+% Relevant metabolic task IDs: 11
 Hc = getIndexes(ihuman,'H+[c]','metscomps');
 Hm = getIndexes(ihuman,'H+[m]','metscomps');
 [~,rxn_ind] = ismember('HMR_8616',ihuman.rxns);
@@ -235,6 +257,8 @@ rxnNotes = [rxnNotes; {'HMR_8616', 'corrected suspected mistake in proton compar
 %   ARTFR43: FADH2[m] + 11-Octadecenoyl Coenzyme A[c] => FAD[m] + 1.125 R Group 4 Coenzyme A[c]
 %   ARTFR44: (6Z,9Z)-octadecadienoyl-CoA[c] + 2 FADH2[m] => 2 FAD[m] + 1.125 R Group 4 Coenzyme A[c]
 %   ARTFR45: (15Z)-tetracosenoyl-CoA[c] + FADH2[m] => FAD[m] + 1.5 R Group 4 Coenzyme A[c]
+%
+% Relevant metabolic task IDs: 2-15, 17
 fadh2_ind = getIndexes(ihuman,'FADH2[m]','metscomps');
 fad_ind = getIndexes(ihuman,'FAD[m]','metscomps');
 nadp_ind = getIndexes(ihuman,'NADP+[m]','metscomps');
@@ -256,7 +280,7 @@ rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'cofactor changed from FADH
 %
 % should consume NADPH, not produce it (see KEGG rxn R02756, where
 % "Lysophosphatidic Acid" is also known as 1-Acyl-sn-glycerol 3-phosphate.
-%
+% Relevant metabolic task IDs: 10-12
 nadp_ind = getIndexes(ihuman,'NADP+[p]','metscomps');
 nadph_ind = getIndexes(ihuman,'NADPH[p]','metscomps');
 [~,rxn_ind] = ismember('ALPA_HSx',ihuman.rxns);
@@ -273,6 +297,7 @@ end
 % is has one extra CoA in the products compared to reactants. The
 % stoichiometric coefficient of the product CoA should therefore be changed
 % to 5 to correct this imbalance.
+% Relevant metabolic task IDs: 16
 met_ind = getIndexes(ihuman,'CoA[c]','metscomps');
 rxn_ind = getIndexes(ihuman,'TAG_HSad_E','rxns');
 if ihuman.S(met_ind,rxn_ind) == 6
@@ -304,6 +329,7 @@ end
 %
 %   HMR_5233: HDL remnant[l] => 90 PC-LD pool[l] + 25 PE-LD pool[l] + 30 PS-LD pool[l] + 75 SM pool[l] + 2 apoA1[l] + 160 cholesterol-ester pool[l] + 20 cholesterol[l]
 %
+% Relevant metabolic task IDs: 16
 met_ind = getIndexes(ihuman,{'cholesterol-ester pool[l]';'cholesterol[l]'},'metscomps');
 rxn_ind = getIndexes(ihuman,{'HMR_5238';'HMR_5233'},'rxns');
 ihuman.S(met_ind,rxn_ind) = 0;
@@ -372,10 +398,29 @@ rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'balanced mass by removing 
 %      H8MTer_U: 0.1 dolichyl-phosphate-D-mannose[r] + gpi heparan sulfate[r] => 0.1 dolichyl-phosphate[r] + H+[r] + HMA[r]
 %    UDPDOLPT_L: 0.1 dolichyl-phosphate[c] + UDP-glucose[c] => UDP[c] + 0.1 dolichyl-D-glucosyl-phosphate[c]
 %
+% Relevant metabolic task IDs: 16
 rxn_ind = getIndexes(ihuman,{'H8MTer_L';'H8MTer_U';'UDPDOLPT_L'},'rxns');
 ihuman.S(:,rxn_ind) = sign(ihuman.S(:,rxn_ind));  % convert all nonzero values to +/- 1
 rxnNotes = [rxnNotes; [ihuman.rxns(rxn_ind), repmat({'corrected dolichol-related mets stoich coeffs to be consistent with its effective mass elsewhere in the model'},length(rxn_ind),1)]];
 
+
+%% Apply reaction constraining and update rxnNotes
+
+% Load the inactivation reaction list and constrain them
+fid = fopen('inactivationRxns.tsv','r');
+input = textscan(fid,'%s %s','Delimiter','\t','Headerlines',1);
+fclose(fid);
+constrainRxnNotes = [input{1}(1:end-2), input{2}(1:end-2)];
+ihuman = setParam(ihuman, 'eq', constrainRxnNotes(:,1), 0);
+
+% Update rxnNotes because there are overlap between reaction sets with
+% bound/coefficient adjustment and constraining
+[a, b] = ismember(constrainRxnNotes(:,1), rxnNotes(:,1));
+overlapInd = b(a);
+rxnNotes(overlapInd,2) = strcat(rxnNotes(overlapInd,2), '; ', constrainRxnNotes(a,2));
+% Add non-overlap reaction sets to notes
+[~, nonOverlapInd]= setdiff(constrainRxnNotes(:,1), rxnNotes(:,1));
+rxnNotes = [rxnNotes; constrainRxnNotes(nonOverlapInd,:)];
 
 
 %% Generate model change report
