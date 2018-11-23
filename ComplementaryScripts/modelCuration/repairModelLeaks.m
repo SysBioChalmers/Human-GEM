@@ -2,7 +2,7 @@
 % FILE NAME:    repairModelLeaks.m
 % 
 % DATE CREATED: 2018-10-01
-%     MODIFIED: 2018-11-21
+%     MODIFIED: 2018-11-23
 % 
 % PROGRAMMER:   Jonathan Robinson, Hao Wang
 %               Department of Biology and Biological Engineering
@@ -21,6 +21,15 @@
 %               changed/added/removed, and/or the stoichiometric
 %               coefficients in a reaction are modified.
 %
+%          3. Reaction inactivation
+%             - A total of 236 reactions (12 were also modified in above two
+%               steps) need to be constrained (i.e. ub=lb=0), in order to
+%               achieve all the metabolic tasks listed in
+%               `metabolicTasks_LeakCheck.xls`. These inactivate reactions
+%               are archieved in `inactivationRxns.tsv` and should be further
+%               assessed to determine which, if any, should be completely
+%               removed from the model.
+%
 % Note: This script is partitioned into sections, each includes changes aim
 % to achieve certain task(s), whose ID numbers are marked and correspond to
 % the task ID numbers listed in the "metabolicTasks_LeakCheck.xls" task list.
@@ -35,7 +44,7 @@
 
 % load HumanGEM model (if not already loaded)
 if ~exist('ihuman','var')
-    load('humanGEM.mat');  % version 0.5.2
+    load('humanGEM.mat');  % version 0.6.0
 end
 ihuman_orig = ihuman;  % to keep track of changes made
 
