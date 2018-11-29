@@ -1,12 +1,12 @@
-function increaseVersion(bumpType)
-% increaseVersion
+function increaseModelVersion(bumpType)
+% increaseModelVersion
 %
 %   Increase version for GEM respositories
 %
-%   Usage: function increaseVersion(bumpType)
+%   Usage: function increaseModelVersion(bumpType)
 %
 %   Benjamín J. Sánchez, 2018-07
-%   Hao Wang, 2018-09-22
+%   Hao Wang, 2018-11-11
 %
 
 %Check if in master:
@@ -15,8 +15,13 @@ if ~strcmp(currentBranch,'master')
     error('ERROR: not in master')
 end
 
+%Get model path
+[ST, I]=dbstack('-completenames');
+modelPath=fileparts(fileparts(fileparts(ST(I).file)));
+
 %Bump version number:
-fid = fopen('../../version.txt','r');
+versionFile=fullfile(modelPath,'version.txt');
+fid = fopen(versionFile,'r');
     oldVersion = fscanf(fid, '%s');
 fclose(fid);
 oldVersion = str2double(strsplit(oldVersion,'.'));
@@ -47,18 +52,19 @@ newVersion = num2str(newVersion,'%d.%d.%d');
 
 %Load model:
 %ihuman = importModel('../../ModelFiles/xml/humanGEM.xml');
-load('../../ModelFiles/mat/humanGEM.mat');
+matFile=fullfile(modelPath,'ModelFiles','mat','humanGEM.mat');
+load(matFile);
 
 %Include tag and save model:
 ihuman.version = newVersion;
 
 %Store model as .mat:
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save(matFile,'ihuman');
 %deal with other formats later
 %exportForGit(ihuman,'humanGEM','..',{'mat', 'txt', 'xlsx', 'xml', 'yml'});
 
 %Update version file:
-fid = fopen('../../version.txt','wt');
+fid = fopen(versionFile,'wt');
 fprintf(fid,newVersion);
 fclose(fid);
 
