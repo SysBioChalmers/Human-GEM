@@ -2,7 +2,7 @@
 % FILE NAME:    curateBiomassReactions.m
 % 
 % DATE CREATED: 2018-11-06
-%     MODIFIED: 2018-11-08
+%     MODIFIED: 2018-11-29
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -48,12 +48,6 @@
 %               transport from the cytoplasm to extracellular, and from
 %               extracellular to boundary, were added to the model.
 %
-
-
-%% Run some initial scripts to get the latest version of the model
-
-constrainVariableMassReactions
-repairModelLeaks
 
 
 %% Load model
