@@ -46,9 +46,11 @@ newCell(:)={''};
 
 if strcmp('str2cell',type)
     % from string to nested cell
-		newCell(index)=cellfun(@(s) strsplit(s,delimiter),inputCell(index),'UniformOutput', false);
+    inputCell = regexprep(inputCell, '\s', '');   % remove space from input
+	newCell(index)=cellfun(@(s) strsplit(s,delimiter),inputCell(index),'UniformOutput', false);
 elseif isequal('cell2str',type)
     % combine elements of each cell to string
+    delimiter = [delimiter ' '];                  % append space to delimiter
     newCell(index)=cellfun(@(s) strjoin(s,delimiter),inputCell(index),'UniformOutput', false);
 end
 
