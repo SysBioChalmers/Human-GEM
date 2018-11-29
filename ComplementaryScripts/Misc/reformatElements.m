@@ -55,7 +55,7 @@ if strcmp('str2cell',type)
 	newCell(index)=cellfun(@(s) strsplit(s,delimiter),inputCell(index),'UniformOutput', false);
 elseif isequal('cell2str',type)
     % combine elements of each cell to string
-    delimiter = [delimiter ' '];                  % append space to delimiter
+    delimiter = [delimiter(~isspace(delimiter)) ' '];  % append one space only
     newCell(index)=cellfun(@(s) strjoin(s,delimiter),inputCell(index),'UniformOutput', false);
 end
 
