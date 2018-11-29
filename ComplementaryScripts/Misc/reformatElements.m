@@ -1,17 +1,22 @@
 function newCell=reformatElements(inputCell,type,delimiter)
 %reformatElements  reformat elements of cell array to desired format
-%
+% reformatElements
 %   convert cell array element format between string and nested cell
 %
+% Input:
 %   inputCell    the input cell array
 %   type         two conversion approaches: cell2str and str2cell
 %                (default: str2cell)
 %   delimiter    specify the delimiter separating values within the
 %                element (default: semicolon)
 %
-%   newCell=reformatElements(inputCell,type,delimiter)
+% Output:
+%   newCell      the output of cell array with refromatted elements   
 %
-%   Hao Wang, 2018-06-03
+% Usage: newCell=reformatElements(inputCell,type,delimiter)
+%
+% Hao Wang, 2018-06-03
+%
 
 newCell={};
 
