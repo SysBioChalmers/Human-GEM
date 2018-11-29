@@ -85,6 +85,12 @@ new_rxn_names = {'biomass_components';'biomass_Recon3D';'biomass_maintenance_Rec
 [~,ind] = ismember(biomass_rxns,ihuman.rxns);
 ihuman.rxns(ind) = new_rxn_names;
 
+% update biomass reaction subsystem to "Artificial reactions"
+ihuman.subSystems(ind) = {'Artificial reactions'}; 
+
+% by default, activate only the biomass_components rxn
+ihuman = setParam(ihuman,'eq',new_rxn_names(2:end),0);
+
 
 %% Add new reactions related to biomass production
 % The HepG2 biomass reaction, and it's associated pool rxns, will be added
