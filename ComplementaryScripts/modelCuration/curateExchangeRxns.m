@@ -111,6 +111,16 @@ addNotes = regexprep(addNotes,'toHMR','to HMR');  % fix loss of spaces
 addNotes = [rxnPairs(:,2), addNotes];
 rxnNotes = [rxnNotes; addNotes];
 
+% save these redundant reaction pairs to a designed array structure
+redundantRxns.rxnToKeep = rxnPairs(:,2);
+redundantRxns.rxnToRemove = rxnPairs(:,1);
+rxnEqns = constructEquations(ihuman);
+redundantRxns.eqnToKeep = rxnEqns(rxnInds(:,2));
+redundantRxns.eqnToRemove = rxnEqns(rxnInds(:,1));
+redundantRxns.grRuleToKeep = ihuman.grRules(rxnInds(:,2));
+redundantRxns.grRuleToRemove = ihuman.grRules(rxnInds(:,1));
+redundantRxns.notes=repmat({'This pair of exchange reactions are the same but in opposite directions, they will be merged into a single reversible reaction'},length(rxnInds),1);
+
 % delete reactions
 ihuman = removeReactionsFull(ihuman,rxnPairs(:,1),false,false,false);
 
