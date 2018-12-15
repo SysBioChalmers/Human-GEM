@@ -112,14 +112,14 @@ addNotes = [rxnPairs(:,2), addNotes];
 rxnNotes = [rxnNotes; addNotes];
 
 % save these redundant reaction pairs to a designed array structure
-redundantRxns.rxnToKeep = rxnPairs(:,2);
-redundantRxns.rxnToRemove = rxnPairs(:,1);
+redundantRxns.rxnKeep = rxnPairs(:,2);
+redundantRxns.rxnRemove = rxnPairs(:,1);
 rxnEqns = constructEquations(ihuman);
-redundantRxns.eqnToKeep = rxnEqns(rxnInds(:,2));
-redundantRxns.eqnToRemove = rxnEqns(rxnInds(:,1));
-redundantRxns.grRuleToKeep = ihuman.grRules(rxnInds(:,2));
-redundantRxns.grRuleToRemove = ihuman.grRules(rxnInds(:,1));
-redundantRxns.notes=repmat({'This pair of exchange reactions are the same but in opposite directions, they will be merged into a single reversible reaction'},length(rxnInds),1);
+redundantRxns.eqnKeep = rxnEqns(rxnInds(:,2));
+redundantRxns.eqnRemove = rxnEqns(rxnInds(:,1));
+redundantRxns.grRuleKeep = ihuman.grRules(rxnInds(:,2));
+redundantRxns.grRuleRemove = ihuman.grRules(rxnInds(:,1));
+redundantRxns.notes=repmat({'This pair of exchange reactions are the same but in opposite directions, they will be merged into a single reversible reaction'},size(rxnInds,1),1);
 
 % delete reactions
 ihuman = removeReactionsFull(ihuman,rxnPairs(:,1),false,false,false);
@@ -177,7 +177,13 @@ ihuman.ub(exch_rxns) = 1000;
 
 
 
-%% Save model and export results
+%% Save and export results
+
+% save the redundantRxns structure to a JSON file
+fid = fopen('redundantRxns.JSON', 'w');
+fwrite(fid, jsonencode(redundantRxns));
+fclose(fid);
+movefile('redundantRxns.JSON','../../ComplementaryData/modelCuration/');
 
 % generate report on modified/deleted reactions
 rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
