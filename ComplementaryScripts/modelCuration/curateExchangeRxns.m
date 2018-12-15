@@ -2,9 +2,9 @@
 % FILE NAME:    curateExchangeRxns.m
 % 
 % DATE CREATED: 2018-11-07
-%     MODIFIED: 2018-11-08
+%     MODIFIED: 2018-12-15
 % 
-% PROGRAMMER:   Jonathan Robinson
+% PROGRAMMER:   Jonathan Robinson, Hao Wang
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 % 
@@ -53,10 +53,21 @@
 %          advance that none of these reactions are associated with any
 %          genes.
 %
+%          To keep a clear and transparent curation process, a new array
+%          structure "redundantRxns" is generated for storing such nearly
+%          identical reaction pairs (#43) and clarifying which to keep or
+%          remove, as well as some explanations. Finally, this structure is
+%          saved as a plaintext JSON file, to improve this reop toward a
+%          binary-free mode (#27).
+%
+%          ----------------------------------------------------------------
+%
 %          The script also inactivates all sink and demand (DM) reactions
 %          by constraining their upper and lower bounds to zero.
 %          These reactions will be considered for full deletion in future
 %          model versions.
+%
+%          ----------------------------------------------------------------
 %
 %          Finally, the upper and lower bounds of all exchange reactions
 %          are set to +/-1000, respectively. As a result, the model is by
