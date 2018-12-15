@@ -57,7 +57,7 @@
 %          structure "redundantRxns" is generated for storing such nearly
 %          identical reaction pairs (#43) and clarifying which to keep or
 %          remove, as well as some explanations. Finally, this structure is
-%          saved as a plaintext JSON file, to improve this reop toward a
+%          saved as a plaintext JSON file, to improve this repo toward a
 %          binary-free mode (#27).
 %
 %          ----------------------------------------------------------------
@@ -80,7 +80,7 @@
 
 % load current version of humanGEM
 if ~exist('ihuman','var')
-    load('humanGEM.mat');  % version X.X.X
+    load('humanGEM.mat');  % version 0.6.1
 end
 ihuman_orig = ihuman;  % to keep track of changes made
 
