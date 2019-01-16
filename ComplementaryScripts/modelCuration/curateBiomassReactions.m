@@ -2,7 +2,7 @@
 % FILE NAME:    curateBiomassReactions.m
 % 
 % DATE CREATED: 2018-11-06
-%     MODIFIED: 2018-11-29
+%     MODIFIED: 2019-01-16
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -54,7 +54,7 @@
 
 % load current version of humanGEM
 if ~exist('ihuman','var')
-    load('humanGEM.mat');  % version X.X.X
+    load('humanGEM.mat');  % version 0.7.0
 end
 ihuman_orig = ihuman;  % to keep track of changes made
 
@@ -75,15 +75,15 @@ ihuman.S(biomass_c_ind,bm_rxn_ind) = 1;
 ihuman.S(biomass_x_ind,bm_rxn_ind) = 0;
 
 % rename biomass reactions
-new_rxn_names = {'biomass_components';'biomass_Recon3D';'biomass_maintenance_Recon3D';'biomass_maintenance_noTrTr_Recon3D';'biomass_HMR_RenalCancer'};
+new_rxn_ids = {'biomass_components';'biomass_Recon3D';'biomass_maintenance_Recon3D';'biomass_maintenance_noTrTr_Recon3D';'biomass_HMR_RenalCancer'};
 [~,ind] = ismember(biomass_rxns,ihuman.rxns);
-ihuman.rxns(ind) = new_rxn_names;
+ihuman.rxns(ind) = new_rxn_ids;
 
 % update biomass reaction subsystem to "Artificial reactions"
 ihuman.subSystems(ind) = {'Artificial reactions'}; 
 
 % by default, activate only the biomass_components rxn
-ihuman = setParam(ihuman,'eq',new_rxn_names(2:end),0);
+ihuman = setParam(ihuman,'eq',new_rxn_ids(2:end),0);
 
 
 %% Add new reactions related to biomass production
@@ -93,7 +93,7 @@ ihuman = setParam(ihuman,'eq',new_rxn_names(2:end),0);
 % flux.
 
 % load new reaction information from file
-fid = fopen('../../ComplementaryData/modelCuration/new_rxns_for_biomass.tsv');
+fid = fopen('../../ComplementaryData/modelCuration/rxns4biomass_20181129.tsv');
 rxnData = textscan(fid,'%s%s%f%f%s%s','Delimiter','\t','Headerlines',1);
 fclose(fid);
 
@@ -110,7 +110,6 @@ mets = parseRxnEqu(rxnData{6});
 tmp = split(mets,{'[',']'});
 metNames = tmp(:,1);
 metComps = tmp(:,2);
-[~,metCompInds] = ismember(metComps,ihuman.comps);
 
 % determine which mets don't yet exist in the model
 modelMetsWithComp = strcat(ihuman.metNames,'[',ihuman.comps(ihuman.metComps),']');
@@ -173,6 +172,12 @@ ihuman.priorCombiningGrRules(ind) = {''};
 % assign the biomass_components reaction as default objective
 ihuman.c(:) = 0;
 ihuman.c(ismember(ihuman.rxns,'biomass_components')) = 1;
+
+
+%% Update model subSystems field to an array of cell arrays
+% this change is necessary for compatibility with RAVEN and COBRA packages
+non_cell = ~cellfun(@iscell, ihuman.subSystems);
+ihuman.subSystems(non_cell) = cellfun(@(x) {{x}}, ihuman.subSystems(non_cell));
 
 
 %% Save model and clear intermediate variables
