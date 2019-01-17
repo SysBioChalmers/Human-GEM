@@ -41,7 +41,7 @@ model.genes = genes;
 model.rxnGeneMat = rxnGeneMat;
 
 % assign output
-model_new = model;
+restoredModel = model;
 
 
 
