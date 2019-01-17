@@ -113,7 +113,6 @@ elseif (size(targetFormat,2) == 2) && (size(targetFormat,1) > 10)  % check that 
     targetFormat = {'NewFormat'};
     conv_key_head = {'OldFormat','NewFormat'};
     gene_type_orig = 'OldFormat';
-    fprintf('\n*Using user-supplied gene ID conversion key*\n\n');
 else
     % ensure it is a column vector
     targetFormat = targetFormat(:);
@@ -185,14 +184,10 @@ if ~custom_key
 end
 
 % begin by "cleaning" the original grRules
-fprintf('Running an initial clean of the original grRules... ');
 rules_orig = cleanModelGeneRules(rules_orig);
-fprintf('Done.\n');
 
 % convert rules to all other gene ID types
 for i = 1:length(targetFormat)
-    
-    fprintf('Translating rules to %s...\n',targetFormat{i});
     
     % extract portion of conversion key required; resulting variable will
     % be two columns of IDs, where column 1 is the original gene ID type,
@@ -230,23 +225,18 @@ for i = 1:length(targetFormat)
     if strcmp(targetFormat{i},gene_type_orig)
         % if current model rules are already in the target format, do not
         % convert gene IDs
-        fprintf('\tRules already contain gene IDs of this type, skipping conversion.\n\n');
     else
         % convert gene IDs
-        fprintf('\tConverting gene IDs... ');
-        
+       
         % This next line identifies gene IDs as collections of characters that
         % are not spaces, parentheses, or the symbols & or |. It then replaces
         % those gene IDs with the new gene ID type, which calls the convertGene
         % inline function to retrieve.
         rules_new = regexprep(rules_new, '[^&|\(\) ]+', '(${convertGene($0)})');
-        fprintf('Done.\n');
     end
     
     % clean up rules (removes extra parentheses, repeated genes, etc.)
-    fprintf('\tCleaning grRules... ');
-    rules_new = cleanModelGeneRules(rules_new);    
-    fprintf('Done.\n');
+    rules_new = cleanModelGeneRules(rules_new);
     
     % generate new rxnGeneMat and gene list based on converted grRules
     [genes.(targetFormat{i}),rxnGeneMat.(targetFormat{i})] = getGenesFromGrRules(rules_new);
