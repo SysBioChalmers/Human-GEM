@@ -1,4 +1,4 @@
-function [taskReport, essentialGenes, taskStructure]=checkTasks(model,inputFile,printOutput,printOnlyFailed,getEssential,taskStructure)
+function [taskReport, essentialGenes, taskStructure]=checkTasksGenes(model,inputFile,printOutput,printOnlyFailed,getEssential,taskStructure)
 % checkTasksGenes
 %   Performs a set of simulations as defined in a task file. This function
 %   is identical to "checkTasks", except it allows for the determination of
