@@ -135,7 +135,7 @@ if any(ismember(nameIDpairs(:,1),ihuman.metNames)) || any(ismember(nameIDpairs(:
     error('One or more met names and/or IDs to be added already exist in the model!');
 end
 [hasmatch,ind] = ismember(new_metNames,nameIDpairs(:,1));
-new_metIDs(hasmatch) = strcat(nameIDpairs(ind(hasmatch),2),'_',new_metComps(hasmatch));
+new_metIDs(hasmatch) = strcat(nameIDpairs(ind(hasmatch),2),new_metComps(hasmatch));
 
 % construct structure of metabolite information to add
 metsToAdd = {};
