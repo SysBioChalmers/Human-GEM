@@ -2,7 +2,7 @@
 % FILE NAME:    curateBiomassReactions.m
 % 
 % DATE CREATED: 2018-11-06
-%     MODIFIED: 2019-01-16
+%     MODIFIED: 2019-01-23
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -47,6 +47,9 @@
 %               LD-PS, and LD-SM). Therefore, reactions enabling their
 %               transport from the cytoplasm to extracellular, and from
 %               extracellular to boundary, were added to the model.
+%
+%          4. Convert the subSystems field to an array of cell arrays, in
+%             order to comply with model spec of both RAVEN and COBRA
 %
 
 
