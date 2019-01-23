@@ -124,13 +124,13 @@ new_metIDs = repmat({''},size(new_metNames));
 new_metIDs(hasmatch) = strcat(regexprep(ihuman.mets(ind(hasmatch)),'[a-z]$',''),new_metComps(hasmatch));
 
 % assign new metIDs to mets that don't yet exist anywhere in the model
-%                 metName                metID
-nameIDpairs = {'fatty acid pool',   'fattyAcidPool'
-               'heparan sulfate',   'heparanSulfate'
-               'metabolite pool',   'metabolitePool'
-               'phosphatidate',     'phosphatidate'
-               'phosphatidyl pool', 'phosphatidylPool'
-               'protein pool',      'proteinPool'};
+%                 metName            metID
+nameIDpairs = {'fatty acid pool',   'm03171'
+               'heparan sulfate',   'm03172'
+               'metabolite pool',   'm03173'
+               'phosphatidate',     'm03174'
+               'phosphatidyl pool', 'm03175'
+               'protein pool',      'm03176'};
 if any(ismember(nameIDpairs(:,1),ihuman.metNames)) || any(ismember(nameIDpairs(:,2),ihuman.mets))
     error('One or more met names and/or IDs to be added already exist in the model!');
 end
