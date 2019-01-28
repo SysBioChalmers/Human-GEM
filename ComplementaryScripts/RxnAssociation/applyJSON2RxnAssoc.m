@@ -2,7 +2,7 @@
 % FILE NAME:    applyJSON2RxnAssoc.m
 %
 % DATE CREATED: 2019-01-16
-%     MODIFIED: 2019-01-21
+%     MODIFIED: 2019-01-28
 %
 % PROGRAMMER:   Hao Wang
 %               Department of Biology and Biological Engineering
@@ -25,7 +25,7 @@
 % includes addtional information. The ihumanRxns2BiGG.mat file is moved to
 % `deprecated` subfolder for reducing repetition.
 
-% load the reaction association file and assign its info to a new variable
+% load the reaction association file and assign its info to a temp variable
 load('ihumanRxns2MNX.mat');
 
 r.rxns                = ihuman.rxns;                    % HMR id
@@ -42,11 +42,11 @@ r.rxnBiGGDB2MNX       = ihuman.rxnBiGGDB2MNX;           % BiGG id to MNX id
 r.rxnKEGG2MNX         = ihuman.rxnKEGG2MNX;             % KEGG id to MNX id
 r.rxnREACTOMEStableID = ihuman.rxnREACTOMEStableID;     % REACTOME Stable ID
 r.rxnReactome2MNX     = ihuman.rxnReactome2MNX;         % Reactome id 2 MNX id
-r.rxnMNXID            = reformatElements(ihuman.rxnMNXID,'cell2str');  % MetaNetX
+r.rxnMNXID            = reformatElements(ihuman.rxnMNXID,'cell2str');  % MetaNetX, non-unique association
 r.rxnCompIdx          = ihuman.rxnCompIdx;              % index of involved compartments
 
 
-% encode to JSON format and pretty the layout for saving as plaintext file
+% encode to JSON format and pretty the layout before saving as plaintext file
 jsonStr = jsonencode(r);
 fid = fopen('ihumanRxns2MNX.JSON', 'w');
 fwrite(fid, prettyJson(jsonStr));
@@ -59,7 +59,6 @@ if isequal(r, check)
 end
 
 
-
 %% sort and clean up reaction association files to Recon3D
 
 % There are two Matlab model structures (Recon3Rxns2MNX.mat and Recon3Rxns2HMR.mat)
@@ -69,8 +68,9 @@ end
 % Recon3Rxns2MNX.mat is thus moved to `deprecated` subfolder for avoidance
 % of repetition.
 
-% load the reaction association file and assign its info to a new variable
+% load the reaction association file and assign its info to a temp variable
 load('Recon3Rxns2HMR.mat');
+clear r;   % clean and reuse the temp variable
 
 r.rxns         = Recon3D.rxns;          % Recon3D id
 r.rxnKEGGID    = Recon3D.rxnKEGGID;     % KEGG
@@ -86,7 +86,7 @@ r.withMNXnoHMR = Recon3D.withMNXnoHMR;  % can be associated to MNX but not HMR
 % Note that BiGG2HMR and rxnHMRID are different, the latter is used for the
 % generation of rxnAssoc.mat
 
-% encode to JSON format and pretty the layout before saving
+% encode to JSON format and pretty the layout before saving as plaintext file
 jsonStr = jsonencode(r);
 fid = fopen('Recon3Rxns2HMR.JSON', 'w');
 fwrite(fid, prettyJson(jsonStr));
@@ -95,6 +95,6 @@ fclose(fid);
 % check the content of JSON file, make sure they are identical to that of .mat file
 check = jsondecode(fileread('Recon3Rxns2HMR.JSON'));
 if isequal(r, check)
-    fprintf('\nThe file Recon3Rxns2HMR.JSON is confirmed with the same content to Recon3Rxns2HMR.mat, which therefore could be removed!\n\n');
+    fprintf('\nThe file Recon3Rxns2HMR.JSON is confirmed with the same content to Recon3Rxns2HMR.mat, which therefore can be removed!\n\n');
 end
 
