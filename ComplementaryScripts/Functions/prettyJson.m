@@ -27,14 +27,14 @@ jsonStr = rawJSON;
 
 
 % process input string to pretty JSON format
-jsonStr = strrep(jsonStr,'{','{\n\t');         % left  curly  bracket
-jsonStr = strrep(jsonStr,'}','\n}\n');         % right curly  bracket
-jsonStr = strrep(jsonStr,':[',':[\n\t\t');     % left  square bracket
-jsonStr = strrep(jsonStr,'",','",\n\t\t');     % internal elements in array
-jsonStr = strrep(jsonStr,'"],','"],\n\t');     % last element in array
-jsonStr = compose(jsonStr);                    % translate escape-characters
+jsonStr = regexprep(jsonStr,'^{','{\n\t','lineanchors');  % left  curly  bracket
+jsonStr = regexprep(jsonStr,'}$','\n}\n','lineanchors');  % right curly  bracket
+jsonStr = strrep(jsonStr,'":[','":[\n\t\t');              % left  square bracket
+jsonStr = strrep(jsonStr,'",','",\n\t\t');                % internal elements in array
+jsonStr = strrep(jsonStr,'"],','"],\n\t');                % last element in array
+jsonStr = compose(jsonStr);                               % translate escape-characters
 
-prettifiedJSON = jsonStr{1};                   % convert from cell to char
+prettifiedJSON = jsonStr{1};                              % convert from cell to char
 
 end
 
