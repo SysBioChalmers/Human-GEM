@@ -10,6 +10,12 @@ function prettifiedJSON = prettyJson(rawJSON)
 % Output:
 %   prettifiedJSON      prettified char array in JSON format
 %
+% NOTE: This function is to optimize displaying effect of JSON string through
+% recognizing general delimited characters, but may change the file content
+% and cause problem in several uncommon cases. Please avoid the use of this
+% function on Matlab structures that contain elements with any of the three
+% character combinations: `":[` and `",` and `"],`.
+%
 % Usage: prettifiedJSON = prettyJson(rawJSON)
 %
 % Hao Wang, 2019-01-07
