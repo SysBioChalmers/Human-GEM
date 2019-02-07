@@ -40,18 +40,18 @@ ihuman.genes = genes;
 ihuman.rxnGeneMat = rxnGeneMat;
 
 
-%% Update of miscellaneous grRules
+%% Miscellaneous grRule updates
 
 % Incorporate the (DLD and DLST and OGDH) complex into two reactions
+% Reference: KEGG (R01933 and R08549)
 % HMR_4239: 2-oxoadipate[m] + CoA[m] + NAD+[m] => CO2[m] + glutaryl-CoA[m] + NADH[m]
 % HMR_5297: AKG[m] + CoA[m] + NAD+[m] => CO2[m] + NADH[m] + succinyl-CoA[m]
-% Ref: KEGG (R01933 and R08549)
 [~,rxn_ind] = ismember({'HMR_4239';'HMR_5297'},ihuman.rxns);
 ihuman.grRules(rxn_ind) = {'ENSG00000091140 and ENSG00000119689 and ENSG00000105953'};
 
 
 % HMGCS1 is soluble form, whereas HMGCS2 is mitochondrial
-% Ref: NCBI (ID: 3158)
+% Reference: NCBI (ID: 3158)
 % HMR_4604: acetoacetyl-CoA[p] + acetyl-CoA[p] + H2O[p] => CoA[p] + H+[p] + HMG-CoA[p]
 % HMR_1437: acetoacetyl-CoA[c] + acetyl-CoA[c] + H2O[c] => CoA[c] + H+[c] + HMG-CoA[c]
 [~,rxn_ind] = ismember({'HMR_4604';'HMR_1437'},ihuman.rxns);
@@ -66,6 +66,7 @@ ihuman.grRules(rxn_ind) = {'ENSG00000134240'};  % mitochondrial form (HMGCS2)
 % the cytoplasmic and mitochondrial version of the gene, despite the
 % reaction only taking place in the cytoplasm. Therefore, the mitochondrial
 % version of the gene will be removed.
+% Reference: NCBI (e.g., IDs 7407 and 57176)
 [~,rxn_ind] = ismember({'HMR_5130';'HMR_5131';'HMR_5132';'HMR_5133';'HMR_5134';...
                     'HMR_5135';'HMR_5137';'HMR_5139';'HMR_5140';'HMR_5141';...
                     'HMR_5143';'HMR_5145';'HMR_5146';'HMR_5147';'HMR_5148';...
@@ -83,19 +84,21 @@ ihuman.grRules(rxn_ind) = {'ENSG00000134684';'ENSG00000090861';'ENSG00000113643'
 % associated with some genes (NQO1, REG3A, RIPOR1) that are unrelated.
 % Therefore, the rule will be updated to incorporate complex information,
 % and to remove erroneously associated genes.
+% Reference: HGNC ("RNA polymerase subunits [POLR])
 [~,rxn_ind] = ismember({'HMR_7161';'HMR_7162'},ihuman.rxns);
 ihuman.grRules(rxn_ind) = {'(ENSG00000113356 or ENSG00000121851) and (ENSG00000090060 or ENSG00000115421 or ENSG00000164329 or ENSG00000218823) and (ENSG00000083223 or ENSG00000134744 or ENSG00000149016) and (ENSG00000181222 or ENSG00000284832) and (ENSG00000058600 or ENSG00000284282) and (ENSG00000066379 or ENSG00000206502 or ENSG00000224859 or ENSG00000233795 or ENSG00000235176 or ENSG00000235443 or ENSG00000236808 or ENSG00000236949) and ENSG00000005075 and ENSG00000013503 and ENSG00000047315 and ENSG00000068654 and ENSG00000099817 and ENSG00000099821 and ENSG00000100142 and ENSG00000100413 and ENSG00000102978 and ENSG00000105258 and ENSG00000107951 and ENSG00000125630 and ENSG00000132664 and ENSG00000137054 and ENSG00000144231 and ENSG00000147669 and ENSG00000148606 and ENSG00000161980 and ENSG00000163882 and ENSG00000168002 and ENSG00000168495 and ENSG00000171453 and ENSG00000177700 and ENSG00000186141 and ENSG00000186184'};
 
 
 % Need to account for enzyme complex and thioredoxin dependency in grRules
 % of reactions involving conversion of ribonucleotides into deoxyribonucleotides
+% Reference: UniProt (Q7LG56 and P23921)
 [~,rxn_ind] = ismember({'HMR_4611';'HMR_4612';'HMR_4614';'HMR_4615';'HMR_4617';...
                         'HMR_4618';'HMR_4619';'HMR_4621';'HMR_5415';'HMR_5416';...
                         'HMR_6621';'HMR_6622';'r1431';'r1432'},ihuman.rxns);
 ihuman.grRules(rxn_ind) = {'(ENSG00000100348 or ENSG00000136810) and ENSG00000048392 and ENSG00000167325 and ENSG00000171848'};
                                
 
-%% Update other gene- and protein-related fields
+%% Update gene- and protein-related fields
 
 % update genes and rxnGeneMat fields
 [genes,rxnGeneMat] = getGenesFromGrRules(ihuman.grRules);
