@@ -165,7 +165,7 @@ if ~custom_key
     [ST, I]=dbstack('-completenames');
     path=fileparts(ST(I).file);
 
-    tmpfile=fullfile(path,'IDconversion','ensembl_ID_mapping_20180903.txt');
+    tmpfile=fullfile(path,'../../ComplementaryData/Ensembl','ensembl_ID_mapping_20180903.txt');
     tmp = readtable(tmpfile);
 
     conv_key_head = tmp.Properties.VariableNames';  % read header
