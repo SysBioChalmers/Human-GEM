@@ -35,7 +35,7 @@ ihuman.metFormulas(metsInd)={'C10H11N5O13P2S'};
 
 % the charge status remains the same
 if isequal(imbalancedCharge_before, imbalancedCharge_after)
-    disp('The formula change has no effect to the status of charge balancing');
+    disp('The formula change has no effect to the status of charge balancing.');
 end
 
 % find out the reactions that have PAPS involved (i.e. with changed mass status)
@@ -52,15 +52,15 @@ balanceStatus_after  = imbalancedMass_after(index_changedMass);
 
 % groupA: 28 reactions are now mass balanced
 tmpInd=find(cellfun(@isempty,imbalancedMass_after(index_changedMass)));
-indGroupA=ind_changedMass(tmpInd);
+ind_GroupA = index_changedMass(tmpInd);
 
 % groupB: 63 reactions are not balanced solely due to mismatch of H+ ion
-tmp=find(~cellfun(@isempty,regexp(imbalancedMass_after(ind_changedMass),'^-\d+\sH$')));
-indGroupB=index_changedMass(tmp);
+tmp=find(~cellfun(@isempty,regexp(imbalancedMass_after(index_changedMass),'^-\d+\sH$')));
+ind_GroupB = index_changedMass(tmp);
 
-% groupC: 9	reactions are not balanced due to other reasons, and should be
+% groupC: 9	reactions are not balanced due to other reasons, and thus
 % documented for future refinement
-indGroupC=setdiff(index_changedMass,[indexA;indexB]);
+ind_GroupC = setdiff(index_changedMass,[ind_GroupA;ind_GroupB]);
 
 
 %% 4. fix the reactions in groupB by using proton balancing function
@@ -74,18 +74,18 @@ length(IndBalancedRxns)
 
 % analyzing results for identifying exceptions
 Eqns_after=constructEquations(new_model);
-outliers = setdiff(IndBalancedRxns, ind_changedMass);
+outliers = setdiff(IndBalancedRxns, index_changedMass);
 ihuman.rxns(outliers)
 
-% By checking these two outlier reactions before and after the conversion, 
-% it seems the rebalancing is a proper fixation
+% By checking these two outlier reactions (HMR_8824 and HMR_8825) before
+% and after the conversion, it seems the rebalancing is a proper fixation
 %
 % Before:
-% 1-phosphatidyl-1D-myo-inositol-5-phosphate[c] + ATP[c] => ADP[c] + phosphatidylinositol-3,5-bisphosphate[c]
-% 1-phosphatidyl-1D-myo-inositol-5-phosphate[r] + ATP[r] => ADP[r] + phosphatidylinositol-3,5-bisphosphate[r]
+% HMR_8824: 1-phosphatidyl-1D-myo-inositol-5-phosphate[c] + ATP[c] => ADP[c] + phosphatidylinositol-3,5-bisphosphate[c]
+% HMR_8825: 1-phosphatidyl-1D-myo-inositol-5-phosphate[r] + ATP[r] => ADP[r] + phosphatidylinositol-3,5-bisphosphate[r]
 % After:
-% 1-phosphatidyl-1D-myo-inositol-5-phosphate[c] + ATP[c] => ADP[c] + H+[c] + phosphatidylinositol-3,5-bisphosphate[c]
-% 1-phosphatidyl-1D-myo-inositol-5-phosphate[r] + ATP[r] => ADP[r] + H+[r] + phosphatidylinositol-3,5-bisphosphate[r]
+% HMR_8824: 1-phosphatidyl-1D-myo-inositol-5-phosphate[c] + ATP[c] => ADP[c] + H+[c] + phosphatidylinositol-3,5-bisphosphate[c]
+% HMR_8825: 1-phosphatidyl-1D-myo-inositol-5-phosphate[r] + ATP[r] => ADP[r] + H+[r] + phosphatidylinositol-3,5-bisphosphate[r]
 %
 
 
