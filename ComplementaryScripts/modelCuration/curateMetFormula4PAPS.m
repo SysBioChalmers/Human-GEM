@@ -88,8 +88,25 @@ ihuman.rxns(outliers)
 % HMR_8825: 1-phosphatidyl-1D-myo-inositol-5-phosphate[r] + ATP[r] => ADP[r] + H+[r] + phosphatidylinositol-3,5-bisphosphate[r]
 %
 
+%% 5. Evaluate balancing results by comparing current status to the initial one
+[~,imbalancedMass_balanced,imbalancedCharge_balanced,~,~,~,~] = checkMassChargeBalance(new_model);
 
-%% 5. Save updated model
+% check charge status
+ind_chargeChange = find(imbalancedCharge_before~=imbalancedCharge_balanced);
+if isequal(ind_chargeChange, IndBalancedRxns) &&...        % charges are only changed by protonBalance4Rxns
+    all(imbalancedCharge_balanced(ind_chargeChange) == 0)  % and they are now balanced
+    fprintf('\nThe charge rebalanced reactions are just the ones fixed by protonBalance4Rxns.\n\n');
+end
+
+% check mass status
+ind_massChange = find(strcmp(imbalancedMass_before, imbalancedMass_balanced) == 0);
+if isequal(ind_massChange, sort([index_changedMass; outliers])) &&...  % mass are changed from changing PAPS formula and 2 outliers
+    isequal(ind_massChange(getNonEmptyList(imbalancedMass_balanced(ind_massChange))), ind_GroupC) % only group C remain imbalanced in mass
+    fprintf('\nThe mass rebalanced reactions are only from group A and B.\n\n');
+end
+
+
+%% 6. Save updated model
 ihuman = new_model;
 save('humanGEM.mat','ihuman');
 
