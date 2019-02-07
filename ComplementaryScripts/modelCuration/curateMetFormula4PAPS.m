@@ -2,7 +2,7 @@
 % FILE NAME:    curateMetFormula4PAPS.m
 %
 % DATE STARTED: 2019-01-16
-%     MODIFIED: 2019-02-06
+%     MODIFIED: 2019-02-07
 %
 % PROGRAMMERS:  Hao Wang, Pinar Kocabas 
 %               Department of Biology and Biological Engineering
@@ -61,6 +61,9 @@ ind_GroupB = index_changedMass(tmp);
 % groupC: 9	reactions are not balanced due to other reasons, and thus
 % documented for future refinement
 ind_GroupC = setdiff(index_changedMass,[ind_GroupA;ind_GroupB]);
+groupC(:,1)=ihuman.rxns(ind_GroupC);
+groupC(:,2)=Eqns_before(ind_GroupC);
+% Output group C reactions for manual curation
 
 
 %% 4. fix the reactions in groupB by using proton balancing function
@@ -106,7 +109,11 @@ if isequal(ind_massChange, sort([index_changedMass; outliers])) &&...  % mass ar
 end
 
 
-%% 6. Save updated model
-ihuman = new_model;
-save('humanGEM.mat','ihuman');
+%% 6. Clear intermediate variables and save the updated model
 
+% clear intermediate vars
+ihuman = new_model;
+clearvars -except ihuman
+
+% save model file
+save('../../ModelFiles/mat/humanGEM.mat','ihuman');
