@@ -2,7 +2,7 @@
 % FILE NAME:    curateMetFormula4PAPS.m
 %
 % DATE STARTED: 2019-01-16
-%     MODIFIED: 2019-02-07
+%     MODIFIED: 2019-02-08
 %
 % PROGRAMMERS:  Hao Wang, Pinar Kocabas 
 %               Department of Biology and Biological Engineering
@@ -18,7 +18,10 @@
 %
 
 %% 1. Load the model
-load('humanGEM.mat'); 
+if ~exist('ihuman','var')
+    load('humanGEM.mat');  % version 0.8.1
+end
+ihuman_orig = ihuman;  % to keep track of changes made by the script
 Eqns_before=constructEquations(ihuman);
 
 
@@ -63,6 +66,7 @@ ind_GroupB = index_changedMass(tmp);
 ind_GroupC = setdiff(index_changedMass,[ind_GroupA;ind_GroupB]);
 groupC(:,1)=ihuman.rxns(ind_GroupC);
 groupC(:,2)=Eqns_before(ind_GroupC);
+groupC(:,3)=imbalancedMass_after(ind_GroupC);
 % Output group C reactions for manual curation
 
 
@@ -91,6 +95,11 @@ ihuman.rxns(outliers)
 % HMR_8825: 1-phosphatidyl-1D-myo-inositol-5-phosphate[r] + ATP[r] => ADP[r] + H+[r] + phosphatidylinositol-3,5-bisphosphate[r]
 %
 
+% log information in rxnNotes array
+rxnNotes = [ihuman.rxns(ind_GroupB), repmat({'proton balancing for the reactions with updated PAPS formulas'},length(ind_GroupB),1)];
+rxnNotes = [rxnNotes; [ihuman.rxns(outliers), repmat({'proton balancing for the reactions with corrected formulas by #52'},length(outliers),1)]];
+
+
 %% 5. Evaluate balancing results by comparing current status to the initial one
 [~,imbalancedMass_balanced,imbalancedCharge_balanced,~,~,~,~] = checkMassChargeBalance(new_model);
 
@@ -109,11 +118,15 @@ if isequal(ind_massChange, sort([index_changedMass; outliers])) &&...  % mass ar
 end
 
 
-%% 6. Clear intermediate variables and save the updated model
+%% 6. Document reaction changes, clear intermediate values and save results
+
+ihuman = new_model;
+rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
+writeRxnChanges(rxnChanges,'curateFormulas4PAPS_rxnChanges',1);
+movefile('curateFormulas4PAPS_rxnChanges.tsv','../../ComplementaryData/modelCuration/');
 
 % clear intermediate vars
-ihuman = new_model;
-clearvars -except ihuman
+clearvars -except ihuman groupC
 
 % save model file
 save('../../ModelFiles/mat/humanGEM.mat','ihuman');
