@@ -347,75 +347,39 @@ else
     addedRxnsForTasks = {};
 end
 
-%The model can now perform all the tasks defined in the task list. The
-%algorithm cannot deal with gene-complexes at the moment. It is therefore
-%ok to remove bad genes from a reaction (as long as at least one gene is
-%kept)
+% The model can now perform all the tasks defined in the task list.
 model = outModel;
 
-[~, I] = ismember(model.genes,cModel.genes); %All should be found
-%This is a little weird way to make sure that only one bad gene is included
-%if there are no good ones (since all -Inf == max(-Inf))
-geneScores(isinf(geneScores)) = -1000+rand(sum(isinf(geneScores)),1);
-
-model.grRules(:) = {''};
-for i = 1:numel(model.rxns)
-    ids = find(model.rxnGeneMat(i,:));
-    if numel(ids)>1
-        scores = geneScores(I(ids));
-        %Only keep the positive ones if possible
-        model.rxnGeneMat(i,ids(~(scores>0 | scores == max(scores)))) = 0;
-    end
-    %Rewrite the grRules to be only OR
-    if isfield(model,'grRules')
-        J = find(model.rxnGeneMat(i,:));
-        for j = 1:numel(J)
-            model.grRules{i} = [model.grRules{i} '(' model.genes{J(j)} ')'];
-            if j<numel(J)
-                model.grRules{i} = [model.grRules{i} ' or '];
-            end
-        end
-    end
+% If requested, attempt to remove negative-score genes from the model, 
+% depending on their role (isozyme or complex subunit) in each grRule.
+% See the "removeLowScoreGenes" function more more details, and to adjust
+% any default parameters therein.
+if ( removeGenes )
+    model = removeLowScoreGenes(model,geneScores);
 end
 
-%Find all genes that are not used and delete them
-I = sum(model.rxnGeneMat) == 0;
-model.genes(I) = [];
-model.rxnGeneMat(:,I) = [];
-if isfield(model,'geneShortNames')
-    model.geneShortNames(I) = [];
-end
-if isfield(model,'geneMiriams')
-    model.geneMiriams(I) = [];
-end
-if isfield(model,'geneFrom')
-    model.geneFrom(I) = [];
-end
-if isfield(model,'geneComps')
-    model.geneComps(I) = [];
-end
 
-%At this stage the model will contain some exchange reactions but probably
-%not all (and maybe zero). This can be inconvenient, so all exchange
-%reactions from the reference model are added, except for those which
-%involve metabolites that are not in the model.
+% At this stage the model will contain some exchange reactions but probably
+% not all (and maybe zero). This can be inconvenient, so all exchange
+% reactions from the reference model are added, except for those which
+% involve metabolites that are not in the model.
 
-%First delete and included exchange reactions in order to prevent the order
-%from changing
+% First delete any included exchange reactions in order to prevent the order
+% from changing
 model = removeReactions(model,getExchangeRxns(model));
 
-%Create a model with only the exchange reactions in refModel
+% Create a model with only the exchange reactions in refModel
 excModel = removeReactions(refModel,setdiff(refModel.rxns,getExchangeRxns(refModel)),true,true);
 
-%Find the metabolites there which are not exchange metabolites and which do
-%not exist in the output model
+% Find the metabolites there which are not exchange metabolites and which do
+% not exist in the output model
 I = ~ismember(excModel.mets,model.mets) & excModel.unconstrained == 0;
 
-%Then find those reactions and delete them
+% Then find those reactions and delete them
 [~, J] = find(excModel.S(I,:));
 excModel = removeReactions(excModel,J,true,true);
 
-%Merge with the output model
+% Merge with the output model
 model = mergeModels({model;excModel});
 model.id = 'INITModel';
 model.description = ['Automatically generated model for ' tissue];
@@ -427,8 +391,8 @@ if printReport == true
     printScores(model,'Final model statistics',hpaData,arrayData,tissue,celltype);
 end
 
-%Add information about essential reactions and reactions included for
-%gap-filling and return a taskReport
+% Add information about essential reactions and reactions included for
+% gap-filling and return a taskReport
 if ~isempty(taskStructure)
     I = find(taskReport.ok); %Ignore failed tasks
     for i = 1:numel(I)
@@ -449,7 +413,7 @@ end
 function [rxnS, geneS] = printScores(model,name,hpaData,arrayData,tissue,celltype)
 [a, b] = scoreComplexModel(model,hpaData,arrayData,tissue,celltype);
 rxnS = mean(a);
-geneS = mean(b(~isinf(b)));
+geneS = mean(b,'omitnan');
 fprintf([name ':\n']);
 fprintf(['\t' num2str(numel(model.rxns)) ' reactions, ' num2str(numel(model.genes)) ' genes\n']);
 fprintf(['\tMean reaction score: ' num2str(rxnS) '\n']);
