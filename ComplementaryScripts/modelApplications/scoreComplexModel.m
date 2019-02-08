@@ -305,7 +305,7 @@ end
 
 
 
-function rScore = scoreSimpleRule(rule,genes,geneScores,isozymeScoring,complexScoring)
+function rScore = scoreSimpleRule(rule,genes,gScores,isozymeScoring,complexScoring)
 %Score reactions with simple gene rules (those with all ANDs or all ORs).
 
 if ~contains(rule,'&')
@@ -319,13 +319,13 @@ ruleGenes = unique(regexp(rule,'[^&|\(\) ]+','match'));
 [~,geneInd] = ismember(ruleGenes,genes);
 switch lower(scoreMethod)
     case 'min'
-        rScore = min(geneScores(geneInd),[],'omitnan');
+        rScore = min(gScores(geneInd),[],'omitnan');
     case 'max'
-        rScore = max(geneScores(geneInd),[],'omitnan');
+        rScore = max(gScores(geneInd),[],'omitnan');
     case 'median'
-        rScore = median(geneScores(geneInd),'omitnan');
+        rScore = median(gScores(geneInd),'omitnan');
     case 'average'
-        rScore = mean(geneScores(geneInd),'omitnan');
+        rScore = mean(gScores(geneInd),'omitnan');
 end
 
 end
