@@ -3,7 +3,7 @@ function [] = writeRxnChanges(rxnChanges,fileName,date)
 %
 % USAGE:
 %
-%   writeRxnChanges(rxnChanges, fileName);
+%   writeRxnChanges(rxnChanges, fileName, date);
 %
 % INPUT:
 %
@@ -22,16 +22,16 @@ function [] = writeRxnChanges(rxnChanges,fileName,date)
 %   fileName       Name of file to write to. If an extension is not
 %                  provided, ".tsv" will be used.
 %
-%   date           (Opt, default FALSE) If TRUE, print out the date
-%                  in the first line of output file.
+%   date           (Opt, default TRUE) print out the date in the first
+%                  line of output file, or not if FALSE.
 %
 %
 % Jonathan Robinson, 2018-11-05
-
+%
 
 % handle input arguments
 if nargin < 3
-    date = false;
+    date = true;
 end
 if ~contains(fileName,'.')
     % append with .tsv if no extension provided
