@@ -2,7 +2,7 @@
 % FILE NAME:    updateGrRulesAndGenes_20190206.m
 % 
 % DATE CREATED: 2019-02-06
-%     MODIFIED: 2019-02-07
+%     MODIFIED: 2019-02-09
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -19,7 +19,7 @@
 
 %% Load humanGEM model
 
-load('humanGEM.mat');  % version ???
+load('humanGEM.mat');  % version 0.8.2
 
 
 %% Remove non-primary assembly Ensembl gene IDs from humanGEM
