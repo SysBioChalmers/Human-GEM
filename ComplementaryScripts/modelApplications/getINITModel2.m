@@ -1,4 +1,4 @@
-function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, deletedDeadEndRxns, deletedRxnsInINIT, taskReport] = getINITModel2(refModel, tissue, celltype, hpaData, arrayData, metabolomicsData, taskFile, useScoresForTasks, printReport, taskStructure, params, paramsFT)
+function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, deletedDeadEndRxns, deletedRxnsInINIT, taskReport] = getINITModel2(refModel, tissue, celltype, hpaData, arrayData, metabolomicsData, removeGenes, taskFile, useScoresForTasks, printReport, taskStructure, params, paramsFT)
 % getINITModel2
 %   Generates a model using the INIT algorithm, based on proteomics and/or
 %   transcriptomics and/or metabolomics and/or metabolic tasks.
@@ -46,7 +46,9 @@ function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, delete
 %   removeGenes         if true, low-abundance genes will be removed from
 %                       grRules, unless they are the only gene associated 
 %                       with a reaction. If false, the grRules will not be
-%                       modified.
+%                       modified. (opt, default true).
+%   taskFile            a task list in Excel format. See parseTaskList for
+%                       details (opt, default [])
 %   useScoresForTasks   true if the calculated reaction scored should be 
 %                       used as weights when fitting to tasks (opt, default
 %                       true)
@@ -106,11 +108,11 @@ function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, delete
 %   Usage: [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks,...
 %               deletedDeadEndRxns, deletedRxnsInINIT, taskReport] = ...
 %               getINITModel2(refModel, tissue, celltype, hpaData, arrayData,...
-%               metabolomicsData, taskFile, useScoresForTasks, printReport,...
-%               taskStructure, params, paramsFT)
+%               metabolomicsData, removeGenes, taskFile, useScoresForTasks, ...
+%               printReport, taskStructure, params, paramsFT);
 %
 %
-%   Jonathan Robinson, 2019-02-07
+%   Jonathan Robinson, 2019-02-09
 %
 
 if nargin < 5
@@ -119,22 +121,25 @@ end
 if nargin < 6
     metabolomicsData = [];
 end
-if nargin < 7
+if nargin < 7 || isempty(removeGenes)
+    removeGenes = true;
+end
+if nargin < 8
     taskFile = [];
 end
-if nargin < 8 || isempty(useScoresForTasks)
+if nargin < 9 || isempty(useScoresForTasks)
     useScoresForTasks = true;
 end
-if nargin < 9 || isempty(printReport)
+if nargin < 10 || isempty(printReport)
     printReport = true;
 end
-if nargin < 10
+if nargin < 11
     taskStructure = [];
 end
-if nargin < 11
+if nargin < 12
     params = [];
 end
-if nargin < 12
+if nargin < 13
     paramsFT = [];
 end
 
@@ -355,7 +360,8 @@ model = outModel;
 % See the "removeLowScoreGenes" function more more details, and to adjust
 % any default parameters therein.
 if ( removeGenes )
-    model = removeLowScoreGenes(model,geneScores);
+    [~, I]=ismember(model.genes,cModel.genes);
+    model = removeLowScoreGenes(model,geneScores(I));
 end
 
 
