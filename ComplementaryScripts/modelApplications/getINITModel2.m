@@ -45,8 +45,12 @@ function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, delete
 %                       should produce (opt, default [])
 %   removeGenes         if true, low-abundance genes will be removed from
 %                       grRules, unless they are the only gene associated 
-%                       with a reaction. If false, the grRules will not be
-%                       modified. (opt, default true).
+%                       with a reaction, or a subunit of an enzyme complex
+%                       (see "removeLowScorGenes" function for details).
+%                       If false, grRules will not be modified; however,
+%                       genes that were associated only with removed 
+%                       reactions will not be present in the final model.
+%                       (opt, default true).
 %   taskFile            a task list in Excel format. See parseTaskList for
 %                       details (opt, default [])
 %   useScoresForTasks   true if the calculated reaction scored should be 
