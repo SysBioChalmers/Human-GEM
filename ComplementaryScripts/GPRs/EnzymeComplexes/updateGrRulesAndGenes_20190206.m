@@ -2,7 +2,7 @@
 % FILE NAME:    updateGrRulesAndGenes_20190206.m
 % 
 % DATE CREATED: 2019-02-06
-%     MODIFIED: 2019-02-09
+%     MODIFIED: 2019-02-18
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -25,8 +25,12 @@ load('humanGEM.mat');  % version 0.8.2
 %% Remove non-primary assembly Ensembl gene IDs from humanGEM
 
 % get list of primary assmbly genes
-tmp = readtable('../../../ComplementaryData/Ensembl/ensembl_ID_mapping_20190207.txt');
-ensg_ids = unique(tmp.Gene_stable_ID);  % get list of primary assembly IDs
+fid = fopen('../../../ComplementaryData/Ensembl/ensembl_ID_mapping_20190207.tsv');
+tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
+fclose(fid);
+
+% get list of primary assembly ENSG IDs
+ensg_ids = unique(tmp{1});
 ensg_ids(cellfun(@isempty,ensg_ids)) = [];  % remove empty ID if it exists
 
 % obtain list of humanGEM genes, with non-primary genes removed
@@ -115,7 +119,7 @@ ihuman.rxnProtMat = rxnProtMat;
 %% Clear intermediate variables and export model
 
 clear ensg_ids genes grRules new_ids proteins prRules rxn_ind rxnGeneMat
-clear rxnProtMat tmp
+clear rxnProtMat tmp fid
 
 save('../../../ModelFiles/mat/humanGEM.mat','ihuman');
 
