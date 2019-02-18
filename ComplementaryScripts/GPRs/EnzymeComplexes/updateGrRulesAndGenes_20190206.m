@@ -22,28 +22,6 @@
 load('humanGEM.mat');  % version 0.8.2
 
 
-%% Remove non-primary assembly Ensembl gene IDs from humanGEM
-
-% get list of primary assmbly genes
-fid = fopen('../../../ComplementaryData/Ensembl/ensembl_ID_mapping_20190207.tsv');
-tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
-fclose(fid);
-
-% get list of primary assembly ENSG IDs
-ensg_ids = unique(tmp{1});
-ensg_ids(cellfun(@isempty,ensg_ids)) = [];  % remove empty ID if it exists
-
-% obtain list of humanGEM genes, with non-primary genes removed
-new_ids = ihuman.genes;
-new_ids(~ismember(new_ids,ensg_ids)) = {''};
-
-% remove non-primary genes from model
-[grRules,genes,rxnGeneMat] = translateGeneRules(ihuman.grRules,[ihuman.genes,new_ids]);
-ihuman.grRules = grRules;
-ihuman.genes = genes;
-ihuman.rxnGeneMat = rxnGeneMat;
-
-
 %% Miscellaneous grRule updates
 
 % Incorporate the (DLD and DLST and OGDH) complex into two reactions
@@ -100,14 +78,37 @@ ihuman.grRules(rxn_ind) = {'(ENSG00000113356 or ENSG00000121851) and (ENSG000000
                         'HMR_4618';'HMR_4619';'HMR_4621';'HMR_5415';'HMR_5416';...
                         'HMR_6621';'HMR_6622';'r1431';'r1432'},ihuman.rxns);
 ihuman.grRules(rxn_ind) = {'(ENSG00000100348 or ENSG00000136810) and ENSG00000048392 and ENSG00000167325 and ENSG00000171848'};
-                               
 
-%% Update gene- and protein-related fields
 
 % update genes and rxnGeneMat fields
 [genes,rxnGeneMat] = getGenesFromGrRules(ihuman.grRules);
 ihuman.genes = genes;
 ihuman.rxnGeneMat = rxnGeneMat;
+
+
+%% Remove non-primary assembly Ensembl gene IDs from humanGEM
+
+% get list of primary assmbly genes
+fid = fopen('../../../ComplementaryData/Ensembl/ensembl_ID_mapping_20190207.tsv');
+tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
+fclose(fid);
+
+% get list of primary assembly ENSG IDs
+ensg_ids = unique(tmp{1});
+ensg_ids(cellfun(@isempty,ensg_ids)) = [];  % remove empty ID if it exists
+
+% obtain list of humanGEM genes, with non-primary genes removed
+new_ids = ihuman.genes;
+new_ids(~ismember(new_ids,ensg_ids)) = {''};
+
+% remove non-primary genes from model
+[grRules,genes,rxnGeneMat] = translateGeneRules(ihuman.grRules,[ihuman.genes,new_ids]);
+ihuman.grRules = grRules;
+ihuman.genes = genes;
+ihuman.rxnGeneMat = rxnGeneMat;
+
+
+%% Update protein-related fields
 
 % update protein fields
 [prRules,proteins,rxnProtMat] = translateGeneRules(ihuman.grRules,'UniProt','ENSG');
