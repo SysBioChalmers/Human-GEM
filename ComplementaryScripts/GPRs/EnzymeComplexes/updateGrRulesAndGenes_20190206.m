@@ -2,7 +2,7 @@
 % FILE NAME:    updateGrRulesAndGenes_20190206.m
 % 
 % DATE CREATED: 2019-02-06
-%     MODIFIED: 2019-02-18
+%     MODIFIED: 2019-02-20
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -89,7 +89,7 @@ ihuman.rxnGeneMat = rxnGeneMat;
 %% Remove non-primary assembly Ensembl gene IDs from humanGEM
 
 % get list of primary assmbly genes
-fid = fopen('../../../ComplementaryData/Ensembl/ensembl_ID_mapping_20190207.tsv');
+fid = fopen('../../../ComplementaryData/Ensembl/ensembl_ID_mapping_20190220.tsv');
 tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
 fclose(fid);
 
