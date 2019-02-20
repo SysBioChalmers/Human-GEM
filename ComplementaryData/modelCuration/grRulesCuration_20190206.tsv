@@ -1,3 +1,8 @@
+# These grRules refinements are collected by Jonathan Robinson and others
+# during the curation process. The information is organized into 5 columns
+# as below. The third column 'grRulesNew' are intended changes to be applied.
+# The forth column 'Reference' contains the evidence source for guiding the
+# changes that are further explained by the fifth column 'Notes'.
 rxnID	grRulesOrig	grRulesNew	Reference	Notes
 HMR_4239	ENSG00000091140 or ENSG00000105953 or ENSG00000110435 or ENSG00000119689 or ENSG00000181192 or ENSG00000197444	ENSG00000091140 and ENSG00000119689 and ENSG00000105953	KEGG (R01933, R08549)	Incorporate the (DLD and DLST and OGDH) complex
 HMR_5297	ENSG00000091140 or ENSG00000105953 or ENSG00000110435 or ENSG00000119689 or ENSG00000181192 or ENSG00000197444	ENSG00000091140 and ENSG00000119689 and ENSG00000105953	KEGG (R01933, R08549)	Incorporate the (DLD and DLST and OGDH) complex
