@@ -61,10 +61,17 @@ load('humanGEM.mat');
 [~,rxn_ind] = ismember(rxnIDs,ihuman.rxns);
 ihuman.grRules(rxn_ind) = newGrRules;
 
-% Update other fields and save the model
+% Update other gene fields
 [genes,rxnGeneMat] = getGenesFromGrRules(ihuman.grRules);
 ihuman.genes = genes;
 ihuman.rxnGeneMat = rxnGeneMat;
+
+% Update protein fields
+[prRules,proteins,rxnProtMat] = translateGeneRules(ihuman.grRules,'UniProt','ENSG');
+ihuman.prRules = prRules;
+ihuman.proteins = proteins;
+ihuman.rxnProtMat = rxnProtMat;
+
 model = ihuman;
 
 % Save changes to .mat model file
