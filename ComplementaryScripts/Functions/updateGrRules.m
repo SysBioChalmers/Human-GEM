@@ -1,7 +1,7 @@
 function [model] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave)
 % updateGrRules
 %   Update specific grRules curation results into humanGEM model. Other
-%   modified fields include genes and rxnGeneMat
+%   modified fields include genes, rxnGeneMat, prRules, proteins and rxnProtMat
 %
 % Input:
 %   fileName       name of the file that has curated grRules information
