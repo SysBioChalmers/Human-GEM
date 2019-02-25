@@ -113,7 +113,6 @@ elseif (size(targetFormat,2) == 2) && (size(targetFormat,1) > 10)  % check that 
     targetFormat = {'NewFormat'};
     conv_key_head = {'OldFormat','NewFormat'};
     gene_type_orig = 'OldFormat';
-    fprintf('\n*Using user-supplied gene ID conversion key*\n\n');
 else
     % ensure it is a column vector
     targetFormat = targetFormat(:);
