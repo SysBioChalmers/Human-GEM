@@ -22,7 +22,7 @@ load('humanGEM.mat');  % version 0.8.3
 %% Remove non-primary assembly Ensembl gene IDs from humanGEM
 
 % get list of primary assmbly genes
-fid = fopen('../../ComplementaryData/Ensembl/ensembl_ID_mapping_20190220.tsv');
+fid = fopen('../../ComplementaryData/Ensembl/ensembl_ID_mapping.tsv');
 tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
 fclose(fid);
 

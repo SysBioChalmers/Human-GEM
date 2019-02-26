@@ -163,7 +163,7 @@ if ~custom_key
     % get the path
     [ST, I] = dbstack('-completenames');
     path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../../ComplementaryData/Ensembl','ensembl_ID_mapping_20190207.tsv');
+    tmpfile = fullfile(path,'../../ComplementaryData/Ensembl','ensembl_ID_mapping.tsv');
     
     fid = fopen(tmpfile);
     tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',0);
