@@ -166,7 +166,7 @@ if ~custom_key
     tmpfile = fullfile(path,'../../ComplementaryData/Ensembl','ensembl_ID_mapping.tsv');
     
     fid = fopen(tmpfile);
-    tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',0);
+    tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
     fclose(fid);
     
     tmp = horzcat(tmp{:});

@@ -23,7 +23,7 @@ load('humanGEM.mat');  % version 0.8.3
 
 % get list of primary assmbly genes
 fid = fopen('../../ComplementaryData/Ensembl/ensembl_ID_mapping.tsv');
-tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
+tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',2);
 fclose(fid);
 
 % get list of primary assembly ENSG IDs
