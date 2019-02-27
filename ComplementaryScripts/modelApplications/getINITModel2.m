@@ -276,7 +276,13 @@ end
 %Remove dead-end reactions to speed up the optimization and to
 %differentiate between reactions removed by INIT and those that are
 %dead-end
-[~,deletedDeadEndRxns] = simplifyModel(refModel,true,false,true,true,true);
+if isfield(arrayData,'deletedDeadEndRxns')                  % temporary shortcut, should be revised.
+    deletedDeadEndRxns = arrayData.deletedDeadEndRxns;      % temporary shortcut, should be revised.
+elseif isfield(hpaData,'deletedDeadEndRxns')                % temporary shortcut, should be revised.
+    deletedDeadEndRxns = hpaData.deletedDeadEndRxns;        % temporary shortcut, should be revised.
+else                                                        % temporary shortcut, should be revised.
+    [~, deletedDeadEndRxns]=simplifyModel(refModel,true,false,true,true,true);
+end                                                         % temporary shortcut, should be revised.
 cModel = removeReactions(refModel,deletedDeadEndRxns,false,true);
 
 %Store the connected model like this to keep track of stuff
@@ -288,7 +294,16 @@ end
 %reactions
 if ~isempty(taskStructure)
 
-    [taskReport, essentialRxnMat] = checkTasks(cModel,[],printReport,true,true,taskStructure);
+    if isfield(arrayData,'taskReport') && isfield(arrayData,'essentialRxnMat')  % temporary shortcut, should be revised.
+        taskReport = arrayData.taskReport;                                      % temporary shortcut, should be revised.
+        essentialRxnMat = arrayData.essentialRxnMat;                            % temporary shortcut, should be revised.
+    elseif isfield(hpaData,'taskReport') && isfield(hpaData,'essentialRxnMat')  % temporary shortcut, should be revised.
+        taskReport = hpaData.taskReport;                                        % temporary shortcut, should be revised.
+        essentialRxnMat = hpaData.essentialRxnMat;                              % temporary shortcut, should be revised.
+    else                                                                        % temporary shortcut, should be revised.
+        [taskReport, essentialRxnMat]=checkTasks(cModel,[],printReport,true,true,taskStructure);
+    end                                                                         % temporary shortcut, should be revised.
+    
     essentialRxnsForTasks = cModel.rxns(any(essentialRxnMat,2));
     
     %Remove tasks that cannot be performed
