@@ -83,7 +83,7 @@ function [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetForma
 %                structure, with a different field for each gene ID type.
 %
 %
-% Jonathan Robinson, 2018-09-03
+% Jonathan Robinson, 2019-02-18
 
 
 % handle input arguments
@@ -161,26 +161,24 @@ if ~custom_key
     % import gene-transcript-protein conversion key
     
     % get the path
-    [ST, I]=dbstack('-completenames');
-    path=fileparts(ST(I).file);
-
-    tmpfile=fullfile(path,'IDconversion','ensembl_ID_mapping_20180903.txt');
-    tmp = readtable(tmpfile);
-
-    conv_key_head = tmp.Properties.VariableNames';  % read header
+    [ST, I] = dbstack('-completenames');
+    path = fileparts(ST(I).file);
+    tmpfile = fullfile(path,'../../ComplementaryData/Ensembl','ensembl_ID_mapping.tsv');
+    
+    fid = fopen(tmpfile);
+    tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
+    fclose(fid);
+    
+    tmp = horzcat(tmp{:});
+    conv_key_head = tmp(1,:);  % header
+    conv_key = tmp(2:end,:);  % gene IDs
+    clear tmp
     
     % change header names to match contents of GENE_TYPES
     [~,ind] = ismember(conv_key_head,{'Gene_stable_ID','Transcript_stable_ID',...
         'Protein_stable_ID','UniProtKB_Swiss_Prot_ID','Gene_name','NCBI_gene_ID'});
     type_abbrevs = {'ENSG';'ENST';'ENSP';'UniProt';'Name';'Entrez'};
     conv_key_head = type_abbrevs(ind);
-    
-    % convert numeric Entrez ID data to strings
-    tmp.NCBI_gene_ID = arrayfun(@num2str,tmp.NCBI_gene_ID,'UniformOutput',false);
-    conv_key = table2array(tmp); clear tmp;
-    
-    % replace 'NaN' in Entrez ID column of conversion key with empty cells ('')
-    conv_key(:,ismember(conv_key_head,'Entrez')) = regexprep(conv_key(:,ismember(conv_key_head,'Entrez')),'NaN','');
 end
 
 % begin by "cleaning" the original grRules
@@ -227,7 +225,6 @@ for i = 1:length(targetFormat)
         % convert gene IDs
     else
         % convert gene IDs
-       
         % This next line identifies gene IDs as collections of characters that
         % are not spaces, parentheses, or the symbols & or |. It then replaces
         % those gene IDs with the new gene ID type, which calls the convertGene
@@ -236,7 +233,7 @@ for i = 1:length(targetFormat)
     end
     
     % clean up rules (removes extra parentheses, repeated genes, etc.)
-    rules_new = cleanModelGeneRules(rules_new);
+    rules_new = cleanModelGeneRules(rules_new);    
     
     % generate new rxnGeneMat and gene list based on converted grRules
     [genes.(targetFormat{i}),rxnGeneMat.(targetFormat{i})] = getGenesFromGrRules(rules_new);
