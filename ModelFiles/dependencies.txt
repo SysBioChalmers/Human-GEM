@@ -1,0 +1,4 @@
+MATLAB	9.3.0.713579 (R2017b)
+libSBML	5.17.0
+RAVEN_toolbox	2.2.0
+COBRA_toolbox	3.0.4
