@@ -1,12 +1,14 @@
 function increaseHumanGEMVersion(bumpType)
 % increaseHumanGEMVersion
+%   Increase version for the humanGEM respositories
 %
-%   Increase version for GEM respositories
+% Input:
+%   bumpType      the value has to be one selected among 'major', 'minor' or 'patch'
 %
-%   Usage: function increaseHumanGEMVersion(bumpType)
+% Usage: increaseHumanGEMVersion(bumpType)
 %
-%   Benjamín J. Sánchez, 2018-07
-%   Hao Wang, 2018-11-11
+% Benjamín J. Sánchez, 2018-07
+% Hao Wang, 2019-03-10
 %
 
 %Check if in master:
@@ -37,7 +39,7 @@ switch bumpType
     case 'patch'
         newVersion(3) = newVersion(3) + 1;
     otherwise
-        error('ERROR: invalid input. Use "major", "minor" or "patch"')
+        error('ERROR: invalid input. Use either "major", "minor" or "patch"')
 end
 newVersion = num2str(newVersion,'%d.%d.%d');
 
