@@ -1,22 +1,35 @@
-function writeYaml(model,name)
-% writeYaml
-%   Writes a yaml file matching (roughly) the cobrapy yaml structure
+function writeHumanYaml(model,name)
+% writeHumanYaml  Write a yaml file for HumanGEM.
+%
+%   Writes a yaml file that is similar to the cobrapy yaml structure, but
+%   contains some minor changes and a header file for compatibility with
+%   the Metabolic Atlas. Adapted from RAVEN's "writeYaml" function.
+%
+% Usage: 
+%
+%   writeYaml(model,name);
+%
+% Input:
 %
 %   model       a model structure
-%   name        name that the file will have
 %
-%   Usage: writeYaml(model,name)
+%   name        name of the yaml file to write
 %
-%   Benjamin Sanchez, 2018-04-11
-%   Simonas Marcisauskas, 2018-04-13
+%
+% Jonathan Robinson, 2019-03-14
 %
 
-%Check that model is in RAVEN format:
+% check for yaml extension
+if ~endsWith(name,{'.yml','.yaml'})
+    name = strcat(name,'.yaml');
+end
+
+%Check that model is in RAVEN format
 if isfield(model,'rules')
     model = ravenCobraWrapper(model);
 end
 
-%Simplify Miriam fields:
+%Simplify Miriam fields
 if isfield(model,'metMiriams')
     [model.newMetMiriams,model.newMetMiriamNames]   = extractMiriam(model.metMiriams);
     model.newMetMiriams                             = regexprep(model.newMetMiriams,'^.+/','');
@@ -34,11 +47,11 @@ if isfield(model,'compMiriams')
     model.newCompMiriams                            = regexprep(model.newCompMiriams,'^.+/','');
 end
 
-%Open file:
+%Open file
 fid = fopen(name,'wt');
 fprintf(fid,'!!omap\n');
 
-%Metabolites:
+%Metabolites
 fprintf(fid,'- metabolites:\n');
 [~,pos] = sort(model.mets);
 for i = 1:length(model.mets)
@@ -48,10 +61,10 @@ for i = 1:length(model.mets)
     writeField(model, fid, 'metComps',    'txt', pos(i), '- compartment')
     writeField(model, fid, 'metFormulas', 'txt', pos(i), '- formula')
     writeField(model, fid, 'metCharges',  'num', pos(i), '- charge')
-    writeField(model, fid, 'metMiriams',  'txt', pos(i), '- annotation')
+%     writeField(model, fid, 'metMiriams',  'txt', pos(i), '- annotation')
 end
 
-%Reactions:
+%Reactions
 fprintf(fid,'- reactions:\n');
 [~,pos] = sort(model.rxns);
 for i = 1:length(model.rxns)
@@ -63,29 +76,27 @@ for i = 1:length(model.rxns)
     writeField(model, fid, 'ub',                  'num', pos(i), '- upper_bound')
     writeField(model, fid, 'grRules',             'txt', pos(i), '- gene_reaction_rule')
     writeField(model, fid, 'subSystems',          'txt', pos(i), '- subsystem')
-    writeField(model, fid, 'rxnMiriams',          'txt', pos(i), '- annotation')
+%     writeField(model, fid, 'rxnMiriams',          'txt', pos(i), '- annotation')
     writeField(model, fid, 'rxnConfidenceScores', 'num', pos(i), '- confidence_score')
 end
 
-%Genes:
+%Genes
 fprintf(fid,'- genes:\n');
 [~,pos] = sort(model.genes);
 for i = 1:length(model.genes)
     fprintf(fid,'  - !!omap\n');
     writeField(model, fid, 'genes',          'txt', pos(i), '- id')
     writeField(model, fid, 'geneShortNames', 'txt', pos(i), '- name')
-    writeField(model, fid, 'geneMiriams',    'txt', pos(i), '- annotation')
+%     writeField(model, fid, 'geneMiriams',    'txt', pos(i), '- annotation')
 end
 
-%Compartments:
+%Compartments
 fprintf(fid,'- compartments: !!omap\n');
 [~,pos] = sort(model.comps);
 for i = 1:length(model.comps)
     writeField(model, fid, 'compNames',   'txt', pos(i), ['- ' model.comps{pos(i)}])
-    writeField(model, fid, 'compMiriams', 'txt', pos(i), '- annotation')
+%     writeField(model, fid, 'compMiriams', 'txt', pos(i), '- annotation')
 end
-
-%TODO: include id, name & version (lost in RAVEN)
 
 %Close file:
 fclose(fid);
@@ -167,8 +178,7 @@ if isfield(model,fieldName)
         end
         
     elseif sum(strcmp({'eccodes','subSystems','newMetMiriams','newRxnMiriams','newGeneMiriams','newCompMiriams'},fieldName)) > 0
-        %eccodes/rxnNotes/subSystems: if 1 write in 1 line, if more create
-        %header and list
+        %eccodes/rxnNotes: if 1 write in 1 line, if more create header and list
         if strcmp(fieldName,'subSystems')
             list = field{pos};  %subSystems already comes in a cell array
         elseif strcmp(fieldName,'newMetMiriams')
@@ -191,9 +201,9 @@ if isfield(model,fieldName)
             list = strrep(field{pos},' ','');     %Exception for eccodes
             list = strsplit(list,';');
         end
-        if length(list) == 1 && ~strcmp(list{1},'')
+        if length(list) == 1 && ~strcmp(list{1},'') && ~strcmp(fieldName,'subSystems')
             fprintf(fid,['    ' name ': ' list{1} '\n']);
-        elseif length(list) > 1
+        elseif length(list) > 1 || strcmp(fieldName,'subSystems')
             fprintf(fid,['    ' name ':\n']);
             for i = 1:length(list)
                 fprintf(fid,['        - ' list{i} '\n']);
@@ -201,9 +211,14 @@ if isfield(model,fieldName)
         end
         
     elseif sum(pos) > 0
-        %All other fields:
+        %All other fields
         if strcmp(type,'txt')
-            value = field{pos};
+            if strcmp(name,'- name')
+                % enclose all "names" in double quotes
+                value = ['"',field{pos},'"'];
+            else
+                value = field{pos};
+            end
         elseif strcmp(type,'num')
             if isnan(field(pos))
                 value = [];
