@@ -51,6 +51,9 @@ end
 fid = fopen(name,'wt');
 fprintf(fid,'!!omap\n');
 
+% insert file header (metadata)
+writeMetadata(model,fid); 
+
 % metabolites
 fprintf(fid,'- metabolites:\n');
 [~,pos] = sort(model.mets);
@@ -232,5 +235,38 @@ if isfield(model,fieldName)
     end
 end
 
+end
+
+
+function writeMetadata(model,fid)
+% Writes model metadata to the yaml file. This information will eventually
+% be extracted entirely from the model, but for now, many of the entries
+% are hard-coded defaults for HumanGEM.
+
+fprintf(fid, '- metadata:\n');
+fprintf(fid,['    id         : "',model.id,'"\n']);
+fprintf(fid, '    short_name : "human"\n');
+fprintf(fid, '    full_name  : "Human metabolic model v1"\n');
+fprintf(fid,['    description: "',model.description,'"\n']);
+fprintf(fid,['    version    : "',model.version,'"\n']);
+fprintf(fid, '    author:\n');
+fprintf(fid, '        - first_name  : "Jonathan"\n');
+fprintf(fid, '          last_name   : "Robinson"\n');
+fprintf(fid, '          email       : "jonrob@chalmers.se"\n');
+fprintf(fid, '          organization: "Chalmers University of Technology"\n');
+fprintf(fid, '        - first_name  : "Pinar"\n');
+fprintf(fid, '          last_name   : "Kocabas"\n');
+fprintf(fid, '          email       : "kocabas@chalmers.se"\n');
+fprintf(fid, '          organization: "Chalmers University of Technology"\n');
+fprintf(fid, '        - first_name  : "Hao"\n');
+fprintf(fid, '          last_name   : "Wang"\n');
+fprintf(fid, '          email       : "hao.wang@chalmers.se"\n');
+fprintf(fid, '          organization: "Chalmers University of Technology"\n');
+fprintf(fid,['    date       : "',datestr(now,29),'"\n']);  % 29=YYYY-MM-DD
+fprintf(fid, '    sample     : "Generic human"\n');
+fprintf(fid, '    condition  : "Generic metabolism"\n');
+% fprintf(fid, '    PMID:\n');
+% fprintf(fid, '        - "########"\n');
+fprintf(fid, '    github     : "https://github.com/SysBioChalmers/human-GEM"\n');
 
 end
