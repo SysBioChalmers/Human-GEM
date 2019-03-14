@@ -24,12 +24,12 @@ if ~endsWith(name,{'.yml','.yaml'})
     name = strcat(name,'.yaml');
 end
 
-%Check that model is in RAVEN format
+% check that model is in RAVEN format
 if isfield(model,'rules')
     model = ravenCobraWrapper(model);
 end
 
-%Simplify Miriam fields
+% simplify Miriam fields
 if isfield(model,'metMiriams')
     [model.newMetMiriams,model.newMetMiriamNames]   = extractMiriam(model.metMiriams);
     model.newMetMiriams                             = regexprep(model.newMetMiriams,'^.+/','');
@@ -47,11 +47,11 @@ if isfield(model,'compMiriams')
     model.newCompMiriams                            = regexprep(model.newCompMiriams,'^.+/','');
 end
 
-%Open file
+% open file
 fid = fopen(name,'wt');
 fprintf(fid,'!!omap\n');
 
-%Metabolites
+% metabolites
 fprintf(fid,'- metabolites:\n');
 [~,pos] = sort(model.mets);
 for i = 1:length(model.mets)
@@ -64,7 +64,7 @@ for i = 1:length(model.mets)
 %     writeField(model, fid, 'metMiriams',  'txt', pos(i), '- annotation')
 end
 
-%Reactions
+% reactions
 fprintf(fid,'- reactions:\n');
 [~,pos] = sort(model.rxns);
 for i = 1:length(model.rxns)
@@ -80,7 +80,7 @@ for i = 1:length(model.rxns)
     writeField(model, fid, 'rxnConfidenceScores', 'num', pos(i), '- confidence_score')
 end
 
-%Genes
+% genes
 fprintf(fid,'- genes:\n');
 [~,pos] = sort(model.genes);
 for i = 1:length(model.genes)
@@ -90,7 +90,7 @@ for i = 1:length(model.genes)
 %     writeField(model, fid, 'geneMiriams',    'txt', pos(i), '- annotation')
 end
 
-%Compartments
+% compartments
 fprintf(fid,'- compartments: !!omap\n');
 [~,pos] = sort(model.comps);
 for i = 1:length(model.comps)
@@ -98,19 +98,19 @@ for i = 1:length(model.comps)
 %     writeField(model, fid, 'compMiriams', 'txt', pos(i), '- annotation')
 end
 
-%Close file:
+% close file:
 fclose(fid);
 
 end
 
 function writeField(model,fid,fieldName,type,pos,name)
-%Writes a new line in the yaml file if the field exists and the field is
-%not empty at the correspoinding position. It's recursive for some fields
-%(metMiriams, rxnMiriams, and S)
+% Writes a new line in the yaml file if the field exists and the field is
+% not empty at the correspoinding position. It's recursive for some fields
+% (metMiriams, rxnMiriams, and S)
 
 if isfield(model,fieldName)
     if strcmp(fieldName,'metComps')
-        %metComps: write full name
+        % metComps: write full name
         fieldName = 'comps';
         pos       = model.metComps(pos);
     end
@@ -121,12 +121,12 @@ if isfield(model,fieldName)
         if ~isempty(model.metMiriams{pos})
             fprintf(fid,['    ' name ': !!omap\n']);
             for i=1:size(model.newMetMiriams,2)
-                %'i' represents the different miriam names, e.g.
-                %kegg.compound or chebi
+                % 'i' represents the different miriam names, e.g.
+                % kegg.compound or chebi
                 if ~isempty(model.newMetMiriams{pos,i})
-                    %As during the following writeField call the value of
-                    %'i' would be lost, it is temporarily concatenated to
-                    %'name' parameter, which will be edited later
+                    % As during the following writeField call the value of
+                    % 'i' would be lost, it is temporarily concatenated to
+                    % 'name' parameter, which will be edited later
                     writeField(model, fid, 'newMetMiriams', 'txt', pos, ['  - ' model.newMetMiriamNames{i} '_' num2str(i)])
                 end
             end
@@ -164,7 +164,7 @@ if isfield(model,fieldName)
         end
         
     elseif strcmp(fieldName,'S')
-        %S: create header & write each metabolite in a new line
+        % S: create header & write each metabolite in a new line
         fprintf(fid,['    ' name ': !!omap\n']);
         if sum(field(:,pos) ~= 0) > 0
             model.mets   = model.mets(field(:,pos) ~= 0);
@@ -178,7 +178,7 @@ if isfield(model,fieldName)
         end
         
     elseif sum(strcmp({'eccodes','subSystems','newMetMiriams','newRxnMiriams','newGeneMiriams','newCompMiriams'},fieldName)) > 0
-        %eccodes/rxnNotes: if 1 write in 1 line, if more create header and list
+        % eccodes/rxnNotes: if 1 write in 1 line, if more create header and list
         if strcmp(fieldName,'subSystems')
             list = field{pos};  %subSystems already comes in a cell array
         elseif strcmp(fieldName,'newMetMiriams')
@@ -198,7 +198,7 @@ if isfield(model,fieldName)
             name  = regexprep(name,'_\d+$','');
             list = strsplit(model.newCompMiriams{pos,index},';');
         else
-            list = strrep(field{pos},' ','');     %Exception for eccodes
+            list = strrep(field{pos},' ','');     % exception for eccodes
             list = strsplit(list,';');
         end
         if length(list) == 1 && ~strcmp(list{1},'') && ~strcmp(fieldName,'subSystems')
@@ -211,7 +211,7 @@ if isfield(model,fieldName)
         end
         
     elseif sum(pos) > 0
-        %All other fields
+        % all other fields
         if strcmp(type,'txt')
             if strcmp(name,'- name')
                 % enclose all "names" in double quotes
