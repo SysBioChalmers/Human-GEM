@@ -71,7 +71,7 @@ for i = 1:length(model.rxns)
     fprintf(fid,'  - !!omap\n');
     writeField(model, fid, 'rxns',                'txt', pos(i), '- id')
     writeField(model, fid, 'rxnNames',            'txt', pos(i), '- name')
-    writeField(model, fid, 'S',                   'txt', pos(i), '- metabolites')
+    writeField(model, fid, 'S',                   'txt', pos(i), '- metabolite')
     writeField(model, fid, 'lb',                  'num', pos(i), '- lower_bound')
     writeField(model, fid, 'ub',                  'num', pos(i), '- upper_bound')
     writeField(model, fid, 'grRules',             'txt', pos(i), '- gene_reaction_rule')
@@ -169,7 +169,7 @@ if isfield(model,fieldName)
         if sum(field(:,pos) ~= 0) > 0
             model.mets   = model.mets(field(:,pos) ~= 0);
             model.coeffs = field(field(:,pos) ~= 0,pos);
-            %Sort metabolites:
+            % sort metabolites
             [model.mets,order] = sort(model.mets);
             model.coeffs       = model.coeffs(order);
             for i = 1:length(model.mets)
