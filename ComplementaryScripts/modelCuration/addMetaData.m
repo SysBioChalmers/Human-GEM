@@ -22,7 +22,7 @@ annotation.defaultUB=1000;
 annotation.taxonomy='9606';
 annotation.note='Human genome-scale metabolic models are important tools for the study of human health and diseases, by providing a scaffold upon which different types of data can be analyzed. This is the latest version of human-GEM, which is a genome-scale model of the generic human cell. The objective of human-GEM is to serve as a community model for enabling integrative and mechanistic studies of human metabolism.';
 annotation.sourceUrl='https://github.com/SysBioChalmers/human-GEM';
-annotation.authors='Jonathan Robinson, Hao Wang, Pierre-Etienne Cholley';
+annotation.authorList='Jonathan Robinson, Hao Wang, Pierre-Etienne Cholley';
 annotation.email='nielsenj@chalmers.se';
 annotation.organization='Chalmers University of Technology';
 
