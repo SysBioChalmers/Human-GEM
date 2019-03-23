@@ -9,12 +9,12 @@
 %
 % PURPOSES:     Add Metadata to the annotation field of Human1
 
-%% 1. Load the model
+%% Load the model
 if ~exist('ihuman','var')
     load('humanGEM.mat');  % version 1.0.0
 end
 
-%% 2. Add Metadata to the annotation field of Human1
+%% Add Metadata to the annotation field of Human1
 
 % Generate the Metadata as a structure
 annotation.defaultLB=-1000;
@@ -29,5 +29,41 @@ annotation.organization='Chalmers University of Technology';
 ihuman.annotation = annotation;
 ihuman.description = 'Genome-scale model of the generic human cell';
 
-%% 3. Save the model file
+
+%% Reformat EC-number
+
+% Multiple EC numbers should be separated by a semicolon and a blank space
+% "; " according to RAVEN issue #184. Some incorrectly formatted eccodes
+% elements, which are separated by " or " as reported in #93, are fixed here.
+eccodes = regexprep(ihuman.eccodes,'\s*or\s*',';');
+
+% Consistengly add a blank space after each semicolon
+eccodes = regexprep(eccodes,';','; ');
+
+% Update to the model
+ihuman.eccodes = eccodes;
+
+
+%% Emtpy version field
+
+% Turn `version` into a blank field to retain a simple and clear work flow
+ihuman.version = '';
+
+
+%% Remove rxnComps field
+
+% Take away the rxnComps field, according to RAVEN #184
+ihuman = rmfield(ihuman, 'rxnComps');
+
+
+%% Initialize rxnConfidenceScores field
+
+% Assign elements in rxnConfidenceScores field with 0, based on #48
+ihuman.rxnConfidenceScores(:) = 0;
+
+
+%% Save the model files
+
+writeHumanYaml(ihuman, 'humanGEM');
+movefile('humanGEM.yaml','../../ModelFiles/yml/');
 save('../../ModelFiles/mat/humanGEM.mat','ihuman');
