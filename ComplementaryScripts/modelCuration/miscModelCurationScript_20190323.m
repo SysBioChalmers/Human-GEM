@@ -34,7 +34,7 @@ annotation.email='nielsenj@chalmers.se';
 annotation.organization='Chalmers University of Technology';
 
 ihuman.annotation = annotation;
-ihuman.description = 'Genome-scale model of the generic human cell';
+ihuman.description = 'Generic genome-scale metabolic model of Homo sapiens';
 
 
 %% Reformat EC-number
