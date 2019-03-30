@@ -1,10 +1,11 @@
-function out=exportForGit(model,prefix,path,formats,masterFlag)
-% exportForGit
+function out=exportHumanGEM(model,prefix,path,formats,masterFlag)
+% exportHumanGEM
 %   Generates a directory structure and populates this with model files, ready
 %   to be commited to a Git(Hub) maintained model repository. Writes the model
 %   as SBML L3V1 FBCv2 (both XML and YAML), COBRA text, Matlab MAT-file
 %   orthologies in KEGG
 %
+% Input:
 %   model               model structure in RAVEN format that should be exported
 %   prefix              prefix for all filenames (opt, default 'model')
 %   path                path where the directory structure should be generated
@@ -17,9 +18,10 @@ function out=exportForGit(model,prefix,path,formats,masterFlag)
 %                       COBRA if detected) is/are not on the master branch.
 %                       (opt, default false)
 %
-%   Usage: exportForGit(model,prefix,path,formats,masterFlag)
+% Usage: exportHumanGEM(model,prefix,path,formats,masterFlag)
 %
-%   Benjamin J. Sanchez, 2018-10-19
+% Benjamin J. Sanchez, 2018-10-19
+% Hao Wang, 2019-03-30
 %
 if nargin<5
     masterFlag=false;
