@@ -60,10 +60,8 @@ load(matFile);
 %Include tag and save model:
 ihuman.version = newVersion;
 
-%Store model as .mat:
-save(matFile,'ihuman');
-%deal with other formats later
-%exportForGit(ihuman,'humanGEM','..',{'mat', 'txt', 'xlsx', 'xml', 'yml'});
+%Export model to multiple formats
+exportHumanGEM(ihuman,'humanGEM',modelPath,{'mat', 'txt', 'xml', 'yml'});
 
 %Update version file:
 fid = fopen(versionFile,'wt');
