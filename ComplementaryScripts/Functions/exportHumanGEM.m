@@ -84,7 +84,7 @@ end
 
 % Write YML format
 if ismember('yml', formats)
-    writeYaml(model,fullfile(path,'ModelFiles','yml',strcat(prefix,'.yml')));
+    writeHumanYaml(model,fullfile(path,'ModelFiles','yml',strcat(prefix,'.yml')));
 end
 
 % Write MAT format
