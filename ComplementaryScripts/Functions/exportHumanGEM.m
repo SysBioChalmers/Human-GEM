@@ -1,4 +1,4 @@
-function out=exportHumanGEM(model,prefix,path,formats,masterFlag)
+function out=exportHumanGEM(ihuman,prefix,path,formats,masterFlag)
 % exportHumanGEM
 %   Generates a directory structure and populates this with model files, ready
 %   to be commited to a Git(Hub) maintained model repository. Writes the model
@@ -6,7 +6,7 @@ function out=exportHumanGEM(model,prefix,path,formats,masterFlag)
 %   orthologies in KEGG
 %
 % Input:
-%   model               model structure in RAVEN format that should be exported
+%   ihuman              humanGEM model structure in RAVEN format
 %   prefix              prefix for all filenames (opt, default 'model')
 %   path                path where the directory structure should be generated
 %                       and populated with all files (opt, default to current
@@ -18,7 +18,7 @@ function out=exportHumanGEM(model,prefix,path,formats,masterFlag)
 %                       COBRA if detected) is/are not on the master branch.
 %                       (opt, default false)
 %
-% Usage: exportHumanGEM(model,prefix,path,formats,masterFlag)
+% Usage: exportHumanGEM(ihuman,prefix,path,formats,masterFlag)
 %
 % Benjamin J. Sanchez, 2018-10-19
 % Hao Wang, 2019-03-30
@@ -68,40 +68,40 @@ end
 % Write TXT format
 if ismember('txt', formats)
     fid=fopen(fullfile(path,'ModelFiles','txt',strcat(prefix,'.txt')),'w');
-    eqns=constructEquations(model,model.rxns,false,false,false,true);
+    eqns=constructEquations(ihuman,ihuman.rxns,false,false,false,true);
     eqns=strrep(eqns,' => ','  -> ');
     eqns=strrep(eqns,' <=> ','  <=> ');
     eqns=regexprep(eqns,'> $','>');
-    grRules=regexprep(model.grRules,'\((?!\()','( ');
+    grRules=regexprep(ihuman.grRules,'\((?!\()','( ');
     grRules=regexprep(grRules,'(?<!\))\)',' )');
     fprintf(fid, 'Rxn name\tFormula\tGene-reaction association\tLB\tUB\tObjective\n');
-    for i = 1:numel(model.rxns)
-        fprintf(fid, '%s\t', model.rxns{i});
+    for i = 1:numel(ihuman.rxns)
+        fprintf(fid, '%s\t', ihuman.rxns{i});
         fprintf(fid, '%s \t', eqns{i});
         fprintf(fid, '%s\t', grRules{i});
-        fprintf(fid, '%6.2f\t%6.2f\t%6.2f\n', model.lb(i), model.ub(i), model.c(i));
+        fprintf(fid, '%6.2f\t%6.2f\t%6.2f\n', ihuman.lb(i), ihuman.ub(i), ihuman.c(i));
     end
     fclose(fid);
 end
 
 % Write YML format
 if ismember('yml', formats)
-    writeHumanYaml(model,fullfile(path,'ModelFiles','yml',strcat(prefix,'.yml')));
+    writeHumanYaml(ihuman,fullfile(path,'ModelFiles','yml',strcat(prefix,'.yml')));
 end
 
 % Write MAT format
 if ismember('mat', formats)
-    save(fullfile(path,'ModelFiles','mat',strcat(prefix,'.mat')),'model');
+    save(fullfile(path,'ModelFiles','mat',strcat(prefix,'.mat')),'ihuman');
 end
 
 % Write XLSX format
 if ismember('xlsx', formats)
-    exportToExcelFormat(model,fullfile(path,'ModelFiles','xlsx',strcat(prefix,'.xlsx')));
+    exportToExcelFormat(ihuman,fullfile(path,'ModelFiles','xlsx',strcat(prefix,'.xlsx')));
 end
 
 % Write XML format
 if ismember('xml', formats)
-    exportModel(model,fullfile(path,'ModelFiles','xml',strcat(prefix,'.xml')));
+    exportModel(ihuman,fullfile(path,'ModelFiles','xml',strcat(prefix,'.xml')));
 end
 
 %Save file with versions:
@@ -112,12 +112,12 @@ fprintf(fid,['RAVEN_toolbox\t' RAVENver '\n']);
 if ~isempty(COBRAver)
     fprintf(fid,['COBRA_toolbox\t' COBRAver '\n']);
 end
-if isfield(model,'modelVersion')
-    fields = fieldnames(model.modelVersion);
-    for i = 1:length(fields)
-        value = model.modelVersion.(fields{i});
-        fprintf(fid,[fields{i} '\t' num2str(value) '\n']);
-    end
-end
+%if isfield(ihuman,'modelVersion')
+%    fields = fieldnames(ihuman.modelVersion);
+%    for i = 1:length(fields)
+%        value = ihuman.modelVersion.(fields{i});
+%        fprintf(fid,[fields{i} '\t' num2str(value) '\n']);
+%    end
+%end
 fclose(fid);
 end
