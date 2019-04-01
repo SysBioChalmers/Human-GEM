@@ -19,12 +19,12 @@ function writeHumanYaml(model,name)
 % Jonathan Robinson, 2019-03-14
 %
 
+%{
 % check for yaml extension
 if ~endsWith(name,{'.yml','.yaml'})
     name = strcat(name,'.yaml');
 end
 
-%{
 % check that model is in RAVEN format
 if isfield(model,'rules')
     model = ravenCobraWrapper(model);
