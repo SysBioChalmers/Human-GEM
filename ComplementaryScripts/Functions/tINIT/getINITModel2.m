@@ -319,7 +319,7 @@ end
 [rxnScores, geneScores] = scoreComplexModel(cModel,hpaData,arrayData,tissue,celltype);
 
 %Run the INIT algorithm. The exchange reactions that are used in the final
-%reactions will be open, which doesn't fit with the last step. Therefore
+%model will be open, which doesn't fit with the last step. Therefore
 %delete reactions from the original model instead of taking the output. The
 %default implementation does not constrain reversible reactions to only
 %carry flux in one direction. Runs without the constraints on reversibility
