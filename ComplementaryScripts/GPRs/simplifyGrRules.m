@@ -1,11 +1,11 @@
-function [simple_rules,skipped] = simplifyModelGeneRules(grRules,expanded)
-%simplifyModelGeneRules  Simplify and condense the logic of model grRules.
+function [simple_rules,skipped] = simplifyGrRules(grRules,expanded)
+%simplifyGrRules  Simplify and condense the logic of model grRules.
 %
-% simplifyModelGeneRules uses Matlab's symbolic toolbox to mathematically
-% simplify gene rules. Each rule is converted into a symbolic boolean
-% expression, and these expressions are simplified yielding rules that are
-% as reduced/simplified as possible, while still maintaining functional
-% equivalency to the original grRule logic.
+% simplifyGrRules uses Matlab's symbolic toolbox to mathematically simplify
+% gene rules. Each rule is converted into a symbolic boolean expression,
+% and these expressions are simplified yielding rules that are as reduced/
+% simplified as possible, while still maintaining functional equivalency to
+% the original grRule logic.
 %
 % The function will also remove unnecessary parentheses, trailing ANDs/ORs,
 % and duplicate genes in model grRules. The function requires that the gene
@@ -17,9 +17,14 @@ function [simple_rules,skipped] = simplifyModelGeneRules(grRules,expanded)
 %   NOT OK: "GENE1andGENE2", or "GENE1&GENE2"
 % 
 %
+% *!WARNING!* Simplifying grRules with this function may eliminate some
+%             gene-reaction associations. 
+%             For example: 'G1 or (G1 and G2)' simplifies to 'G1'
+%
+%
 % USAGE:
 %
-%   [simple_rules,skipped] = simplifyModelGeneRules(grRules,expanded);
+%   [simple_rules,skipped] = simplifyGrRules(grRules,expanded);
 %
 %
 % INPUT:
@@ -41,9 +46,10 @@ function [simple_rules,skipped] = simplifyModelGeneRules(grRules,expanded)
 %
 %       simplify + expand: (G1 and G2 and G3) or (G1 and G2 and G4)
 %
-%            WARNING: Expanding rules can make them very long, and in some
-%                     cases will exceed Matlab's limit on the length of a
-%                     symbolic expression, requiring them to be skipped.
+%                  NOTE: Expanding rules can make them very long, and in
+%                        some cases will exceed Matlab's limit on the
+%                        length of a symbolic expression, requiring them to
+%                        be skipped.
 %
 %
 % OUTPUT:
@@ -56,7 +62,7 @@ function [simple_rules,skipped] = simplifyModelGeneRules(grRules,expanded)
 %                  copied into simple_rules without any simplification.
 %
 %
-% Jonathan Robinson, 2019-04-04
+% Jonathan Robinson, 2019-04-05
 %
 
 if nargin < 2
@@ -64,7 +70,7 @@ if nargin < 2
 end
 
 % perform a preliminary "clean" of the gene rules
-grRules = cleanModelGeneRules(grRules);
+grRules = cleanGrRules(grRules);
 
 
 % check if the grRules use written or symbolic boolean operators
