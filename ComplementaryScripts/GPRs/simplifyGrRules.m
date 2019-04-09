@@ -148,7 +148,6 @@ for i = 1:length(AndOrInd)
     grRules{AndOrInd(i)} = r;
     
 end
-close(h);
 
 % restore original gene IDs
 restoreGene = @(g) allGenes{ismember(tempIDs,g)};  % define conversion function
