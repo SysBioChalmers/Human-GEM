@@ -182,7 +182,7 @@ if ~custom_key
 end
 
 % begin by "cleaning" the original grRules
-rules_orig = cleanModelGeneRules(rules_orig);
+rules_orig = cleanGrRules(rules_orig);
 
 % convert rules to all other gene ID types
 for i = 1:length(targetFormat)
@@ -233,7 +233,7 @@ for i = 1:length(targetFormat)
     end
     
     % clean up rules (removes extra parentheses, repeated genes, etc.)
-    rules_new = cleanModelGeneRules(rules_new);    
+    rules_new = cleanGrRules(rules_new);    
     
     % generate new rxnGeneMat and gene list based on converted grRules
     [genes.(targetFormat{i}),rxnGeneMat.(targetFormat{i})] = getGenesFromGrRules(rules_new);
