@@ -1,7 +1,8 @@
 %
-% FILE NAME:    removeGlutamateSubsystem.m
+% FILE NAME:    mergeGlutamateSubsystem.m
 % 
 % DATE CREATED: 2019-04-05
+%     MODIFIED: 2019-04-11
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
