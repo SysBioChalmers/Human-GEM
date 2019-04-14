@@ -118,13 +118,13 @@ if dependencies
     if ~isempty(COBRAver)
         fprintf(fid,['COBRA_toolbox\t' COBRAver '\n']);
     end
-    if isfield(ihuman,'modelVersion')
-        fields = fieldnames(ihuman.modelVersion);
-        for i = 1:length(fields)
-            value = ihuman.modelVersion.(fields{i});
-            fprintf(fid,[fields{i} '\t' num2str(value) '\n']);
-        end
-    end
+    %if isfield(ihuman,'modelVersion')
+    %    fields = fieldnames(ihuman.modelVersion);
+    %    for i = 1:length(fields)
+    %        value = ihuman.modelVersion.(fields{i});
+    %        fprintf(fid,[fields{i} '\t' num2str(value) '\n']);
+    %    end
+    %end
     fclose(fid);
 end
 
