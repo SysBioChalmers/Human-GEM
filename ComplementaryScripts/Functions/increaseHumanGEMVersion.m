@@ -68,4 +68,15 @@ fid = fopen(versionFile,'wt');
 fprintf(fid,newVersion);
 fclose(fid);
 
+%Update readme file:
+readmeFile=fullfile(modelPath,'README.md');
+content = fileread(readmeFile);
+content = strrep(content,'{{DATE}}',datestr(now,29));
+content = strrep(content,'{{nRXN}}',num2str(length(ihuman.rxns)));
+content = strrep(content,'{{nMET}}',num2str(length(ihuman.mets)));
+content = strrep(content,'{{nGENE}}',num2str(length(ihuman.genes)));
+fid = fopen(readmeFile,'wt');
+fwrite(fid,content);
+fclose(fid);
+
 end
