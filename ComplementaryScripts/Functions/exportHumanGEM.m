@@ -1,4 +1,4 @@
-function out=exportHumanGEM(ihuman,prefix,path,formats,masterFlag)
+function out=exportHumanGEM(ihuman,prefix,path,formats,masterFlag,dependencies)
 % exportHumanGEM
 %   Generates a directory structure and populates this with model files, ready
 %   to be commited to a Git(Hub) maintained model repository. Writes the model
@@ -17,12 +17,17 @@ function out=exportHumanGEM(ihuman,prefix,path,formats,masterFlag)
 %   masterFlag          logical, if true, function will error if RAVEN (and
 %                       COBRA if detected) is/are not on the master branch.
 %                       (opt, default false)
+%   dependencies        logical, if false, will not output the dependency
+%                       information (dependencies.txt). (opt, default true)
 %
-% Usage: exportHumanGEM(ihuman,prefix,path,formats,masterFlag)
+% Usage: exportHumanGEM(ihuman,prefix,path,formats,masterFlag,dependencies)
 %
 % Benjamin J. Sanchez, 2018-10-19
 % Hao Wang, 2019-03-30
 %
+if nargin<6
+    dependencies=true;
+end
 if nargin<5
     masterFlag=false;
 end
@@ -105,19 +110,22 @@ if ismember('xml', formats)
 end
 
 %Save file with versions:
-fid = fopen(fullfile(path,'ModelFiles','dependencies.txt'),'wt');
-fprintf(fid,['MATLAB\t' version '\n']);
-fprintf(fid,['libSBML\t' libSBMLver '\n']);
-fprintf(fid,['RAVEN_toolbox\t' RAVENver '\n']);
-if ~isempty(COBRAver)
-    fprintf(fid,['COBRA_toolbox\t' COBRAver '\n']);
+if dependencies
+    fid = fopen(fullfile(path,'ModelFiles','dependencies.txt'),'wt');
+    fprintf(fid,['MATLAB\t' version '\n']);
+    fprintf(fid,['libSBML\t' libSBMLver '\n']);
+    fprintf(fid,['RAVEN_toolbox\t' RAVENver '\n']);
+    if ~isempty(COBRAver)
+        fprintf(fid,['COBRA_toolbox\t' COBRAver '\n']);
+    end
+    %if isfield(ihuman,'modelVersion')
+    %    fields = fieldnames(ihuman.modelVersion);
+    %    for i = 1:length(fields)
+    %        value = ihuman.modelVersion.(fields{i});
+    %        fprintf(fid,[fields{i} '\t' num2str(value) '\n']);
+    %    end
+    %end
+    fclose(fid);
 end
-%if isfield(ihuman,'modelVersion')
-%    fields = fieldnames(ihuman.modelVersion);
-%    for i = 1:length(fields)
-%        value = ihuman.modelVersion.(fields{i});
-%        fprintf(fid,[fields{i} '\t' num2str(value) '\n']);
-%    end
-%end
-fclose(fid);
+
 end

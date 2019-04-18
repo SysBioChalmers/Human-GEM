@@ -28,6 +28,6 @@ rxnInd = ismember(subSystems,'Glutamate metabolism');
 ihuman.subSystems{rxnInd} = {'Alanine, aspartate and glutamate metabolism'};
 
 % export model
-exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'});
+exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
 
 
