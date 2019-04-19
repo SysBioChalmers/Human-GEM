@@ -16,14 +16,14 @@ Human genome-scale metabolic models (GEMs) are important tools for the study of 
 
 - Pubmed ID: n/a
 
-- Last update: {{DATE}}
+- Last update: 2019-04-19
 
 
 - The model contains:
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|-----:|
-|_Homo sapiens_ |	HMR2|	{{nRXN}}|	{{nMET}}|	{{nGENE}}|
+|_Homo sapiens_ |	HMR2|	13520|	10103|	3627|
 
 
 
