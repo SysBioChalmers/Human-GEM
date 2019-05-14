@@ -53,10 +53,10 @@ ihuman.grRules(rxn_ind) = regexprep(ihuman.grRules(rxn_ind),' and ENSG0000019876
 %% Clean grRules, and regenerate the "genes" and "rxnGeneMat" fields
 
 % update the gene-related fields
-[ihuman.grRules,ihuman.genes,ihuman.rxnGeneMat] = translateGeneRules(ihuman.grRules,'ENSG','ENSG');
+[ihuman.grRules,ihuman.genes,ihuman.rxnGeneMat] = translateGrRules(ihuman.grRules,'ENSG','ENSG');
 
 % also update the protein-related fields
-[ihuman.prRules,ihuman.proteins,ihuman.rxnProtMat] = translateGeneRules(ihuman.grRules,'UniProt','ENSG');
+[ihuman.prRules,ihuman.proteins,ihuman.rxnProtMat] = translateGrRules(ihuman.grRules,'UniProt','ENSG');
 
 
 %% Export model

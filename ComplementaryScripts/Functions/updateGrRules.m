@@ -67,7 +67,7 @@ ihuman.genes = genes;
 ihuman.rxnGeneMat = rxnGeneMat;
 
 % Update protein fields
-[prRules,proteins,rxnProtMat] = translateGeneRules(ihuman.grRules,'UniProt','ENSG');
+[prRules,proteins,rxnProtMat] = translateGrRules(ihuman.grRules,'UniProt','ENSG');
 ihuman.prRules = prRules;
 ihuman.proteins = proteins;
 ihuman.rxnProtMat = rxnProtMat;

@@ -35,7 +35,7 @@ new_ids = ihuman.genes;
 new_ids(~ismember(new_ids,ensg_ids)) = {''};
 
 % remove non-primary genes from model
-[grRules,genes,rxnGeneMat] = translateGeneRules(ihuman.grRules,[ihuman.genes,new_ids]);
+[grRules,genes,rxnGeneMat] = translateGrRules(ihuman.grRules,[ihuman.genes,new_ids]);
 ihuman.grRules = grRules;
 ihuman.genes = genes;
 ihuman.rxnGeneMat = rxnGeneMat;
@@ -44,7 +44,7 @@ ihuman.rxnGeneMat = rxnGeneMat;
 %% Update protein-related fields
 
 % update protein fields
-[prRules,proteins,rxnProtMat] = translateGeneRules(ihuman.grRules,'UniProt','ENSG');
+[prRules,proteins,rxnProtMat] = translateGrRules(ihuman.grRules,'UniProt','ENSG');
 ihuman.prRules = prRules;
 ihuman.proteins = proteins;
 ihuman.rxnProtMat = rxnProtMat;

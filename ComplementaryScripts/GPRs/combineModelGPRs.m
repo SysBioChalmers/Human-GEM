@@ -3,7 +3,7 @@ function humanGEM_new = combineModelGPRs(humanGEM,iHsa,Recon3D)
 % 
 %   This is the master function for combining and integrating genes and
 %   grRules from HMR2, iHsa, and Recon3D into humanGEM. The function makes
-%   use of the "integrateGeneRules.m" and "translateGeneRules.m" functions,
+%   use of the "integrateGeneRules.m" and "translateGrRules.m" functions,
 %   among others.
 %
 %   The function also adds additional protein-specific fields to the model:
@@ -195,7 +195,7 @@ end
 %% Generate and add corresponding protein fields to model
 
 % generate protein list, rules, and rxn association matrix
-[prRules,proteins,rxnProtMat] = translateGeneRules(ihuman.grRules,'UniProt');
+[prRules,proteins,rxnProtMat] = translateGrRules(ihuman.grRules,'UniProt');
 
 % add new protein-related fields to model structure
 ihuman.proteins = proteins;
