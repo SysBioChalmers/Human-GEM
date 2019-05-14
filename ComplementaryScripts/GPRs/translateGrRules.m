@@ -1,7 +1,7 @@
-function [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetFormat,origFormat,noMatch)
-%translateGeneRules  Translate grRules to other other gene ID types.
+function [grRules_new,genes,rxnGeneMat] = translateGrRules(grRules,targetFormat,origFormat,noMatch)
+%translateGrRules  Translate grRules to other other gene ID types.
 %
-% translateGeneRules converts grRules to a chosen target gene ID type(s).
+% translateGrRules converts grRules to a chosen target gene ID type(s).
 % The original and target gene type(s) must be one of the following:
 %
 %       'ENSG'     Ensembl gene ID
@@ -27,7 +27,7 @@ function [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetForma
 %
 % USAGE:
 %
-%   [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetFormat,origFormat,noMatch);
+%   [grRules_new,genes,rxnGeneMat] = translateGrRules(grRules,targetFormat,origFormat,noMatch);
 %
 %
 % INPUTS:
