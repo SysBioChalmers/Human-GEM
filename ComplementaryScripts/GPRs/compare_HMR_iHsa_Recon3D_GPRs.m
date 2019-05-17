@@ -102,7 +102,7 @@ GPRdata(:,ismember(GPRdata_head,'iHsa rxn')) = HMR.rxniHsaID;
 % convert iHsa grRules to Ensembl IDs, and add to GPRdata
 ihsa_grRule = repmat({''},size(HMR.rxns));
 ihsa_grRule(hasmatch) = iHsa.grRules(ind(hasmatch));
-ihsa_grRule_ensg = translateGeneRules(ihsa_grRule,'ENSG');
+ihsa_grRule_ensg = translateGrRules(ihsa_grRule,'ENSG');
 GPRdata(:,ismember(GPRdata_head,'iHsa grRule')) = ihsa_grRule_ensg;
 GPRdata(:,ismember(GPRdata_head,'iHsa Ngenes')) = genesPerRule(ihsa_grRule_ensg);
 
@@ -139,7 +139,7 @@ GPRdata(:,ismember(GPRdata_head,'Recon3D rxn')) = r3_rxn;
 hasmatch(cellfun(@isempty,r3_rxn)) = false;
 r3_rule = repmat({''},size(HMR.rxns));
 r3_rule(hasmatch) = Recon3D.grRules(ind(hasmatch));
-r3_rule_ensg = translateGeneRules(r3_rule,'ENSG');
+r3_rule_ensg = translateGrRules(r3_rule,'ENSG');
 GPRdata(:,ismember(GPRdata_head,'Recon3D grRule')) = r3_rule_ensg;
 GPRdata(:,ismember(GPRdata_head,'Recon3D Ngenes')) = genesPerRule(r3_rule_ensg);
 

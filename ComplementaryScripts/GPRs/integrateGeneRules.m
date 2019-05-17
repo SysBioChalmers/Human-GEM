@@ -71,7 +71,7 @@ HMR.rxniHsaID(hasmatch) = iHsa.rxns(ind(hasmatch));
 % convert iHsa grRules to Ensembl IDs
 ihsa_grRule = repmat({''},size(HMR.rxns));
 ihsa_grRule(hasmatch) = iHsa.grRules(ind(hasmatch));
-ihsa_grRule_ensg = translateGeneRules(ihsa_grRule,'ENSG');
+ihsa_grRule_ensg = translateGrRules(ihsa_grRule,'ENSG');
 
 
 % extract grRules from Recon3D, translate, and align with HMR rules
@@ -83,7 +83,7 @@ r3_rxn(hasmatch) = rxnHMR2Recon3D(ind(hasmatch),2);
 hasmatch(cellfun(@isempty,r3_rxn)) = false;
 r3_grRule = repmat({''},size(HMR.rxns));
 r3_grRule(hasmatch) = Recon3D.grRules(ind(hasmatch));
-r3_grRule_ensg = translateGeneRules(r3_grRule,'ENSG');
+r3_grRule_ensg = translateGrRules(r3_grRule,'ENSG');
 
 
 % get list of genes in each grRule
