@@ -1,8 +1,8 @@
-function cleaned_rules = cleanModelGeneRules(grRules)
-%cleanModelGeneRules  Clean and simplify model grRules.
+function cleaned_rules = cleanGrRules(grRules)
+%cleanGrRules  Clean and simplify model grRules.
 %
-% cleanModelGeneRules removes unnecessary parentheses, trailing ANDs/ORs,
-% and duplicate genes in model grRules. The function requires that gene
+% cleanGrRules removes unnecessary parentheses, trailing ANDs/ORs, and
+% duplicate genes in model grRules. The function requires that gene
 % names/IDs do not contain spaces, parentheses, "&", "|", or "#".
 % Furthermore, grRules must separate gene names/IDs from ANDs and ORs by at
 % least one space. For example,
@@ -16,19 +16,21 @@ function cleaned_rules = cleanModelGeneRules(grRules)
 %
 % USAGE:
 %
-%   cleaned_rules = cleanModelGeneRules(grRules);
+%   cleaned_rules = cleanGrRules(grRules);
 %
 %
 % INPUT:
 %
 %   grRules         The grRules field from a genome-scale metabolic model.
 %
+%
 % OUTPUT:
 %
 %   cleaned_rules   Updated/cleaned grRules.
 %
 %
-% Jonathan Robinson, 2018-08-28
+% Jonathan Robinson, 2019-04-05
+%
 
 
 

@@ -1,6 +1,6 @@
 % Master script for combining and integrating genes and grRules from HMR2
 % iHsa, and Recon3D into the merged model. The script makes use of the
-% "integrateGeneRules.m" and "translateGeneRules.m" functions, among
+% "integrateGeneRules.m" and "translateGrRules.m" functions, among
 % others.
 %
 %
@@ -153,7 +153,7 @@ ihuman = rmfield(ihuman,'geneComps');
 %% Generate and add corresponding protein fields to model
 
 % generate protein list, rules, and rxn association matrix
-[prRules,proteins,rxnProtMat] = translateGeneRules(ihuman.grRules,'UniProt');
+[prRules,proteins,rxnProtMat] = translateGrRules(ihuman.grRules,'UniProt');
 
 % add new protein-related fields to model structure
 ihuman.proteins = proteins;

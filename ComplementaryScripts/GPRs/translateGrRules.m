@@ -1,7 +1,7 @@
-function [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetFormat,origFormat,noMatch)
-%translateGeneRules  Translate grRules to other other gene ID types.
+function [grRules_new,genes,rxnGeneMat] = translateGrRules(grRules,targetFormat,origFormat,noMatch)
+%translateGrRules  Translate grRules to other other gene ID types.
 %
-% translateGeneRules converts grRules to a chosen target gene ID type(s).
+% translateGrRules converts grRules to a chosen target gene ID type(s).
 % The original and target gene type(s) must be one of the following:
 %
 %       'ENSG'     Ensembl gene ID
@@ -27,7 +27,7 @@ function [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetForma
 %
 % USAGE:
 %
-%   [grRules_new,genes,rxnGeneMat] = translateGeneRules(grRules,targetFormat,origFormat,noMatch);
+%   [grRules_new,genes,rxnGeneMat] = translateGrRules(grRules,targetFormat,origFormat,noMatch);
 %
 %
 % INPUTS:
@@ -182,7 +182,7 @@ if ~custom_key
 end
 
 % begin by "cleaning" the original grRules
-rules_orig = cleanModelGeneRules(rules_orig);
+rules_orig = cleanGrRules(rules_orig);
 
 % convert rules to all other gene ID types
 for i = 1:length(targetFormat)
@@ -223,7 +223,6 @@ for i = 1:length(targetFormat)
     if strcmp(targetFormat{i},gene_type_orig)
         % if current model rules are already in the target format, do not
         % convert gene IDs
-        fprintf('\tRules already contain gene IDs of this type, skipping conversion.\n\n');
     else
         % convert gene IDs
         % This next line identifies gene IDs as collections of characters that
@@ -234,7 +233,7 @@ for i = 1:length(targetFormat)
     end
     
     % clean up rules (removes extra parentheses, repeated genes, etc.)
-    rules_new = cleanModelGeneRules(rules_new);    
+    rules_new = cleanGrRules(rules_new);    
     
     % generate new rxnGeneMat and gene list based on converted grRules
     [genes.(targetFormat{i}),rxnGeneMat.(targetFormat{i})] = getGenesFromGrRules(rules_new);

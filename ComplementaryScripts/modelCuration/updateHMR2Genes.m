@@ -30,7 +30,7 @@ geneConversion(:,2)=finalEnsemblID;
 
 % Re-generate the updated fields
 load('HMRdatabase2_02.mat');
-[newGrRules,newGenes,rxnGeneMat] = translateGeneRules(ihuman.grRules,geneConversion);
+[newGrRules,newGenes,rxnGeneMat] = translateGrRules(ihuman.grRules,geneConversion);
 
 % Update and save the model
 ihuman.grRules=newGrRules;
