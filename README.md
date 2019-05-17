@@ -2,17 +2,19 @@
 
 - Brief Model Description
 
-This repository contains the latest version of metabolic model Human-GEM, which is a genome-scale model of the generic human cell.
+This repository contains the latest version of Human-GEM, a human genome-scale metabolic model.
 
 - Abstract:
 
-Human genome-scale metabolic models (GEMs) are important tools for the study of human health and diseases, by providing a scaffold upon which many different types of data can be analyzed in an integrative manner. Despite advancements in the size and complexity of human GEMs, there currently exists the need for a highly accurate, standardized, and manually curated model of human metabolism. Here, we update the previous version of the Human Metabolic Reaction (HMR2) model to Human-GEM, in a process that includes the addition of new reactions, metabolites, and genes, followed by extensive curation. The objective of Human-GEM is to serve as a community maintained “gold-standard” of generic human GEMs, further enabling integrative and mechanistic studies of human metabolism.
+Genome-scale metabolic models (GEMs) are valuable tools to study metabolism, and provide a scaffold for integrative analysis of -omics data. Researchers have developed increasingly comprehensive human GEMs, but the disconnect among different model sources and versions impedes further progress. We therefore integrated and extensively curated the most recent human metabolic models to construct a consensus GEM, Human-GEM. Human-GEM was created using a version-controlled, open-source model development framework to enable community-driven curation and refinement. This framework allows Human-GEM to be an evolving shared resource for future studies of human health and disease.
 
 - Model KeyWords:
 
-**GEM Category:** Species; **Utilisation:** Predictive simulation; **Field:** Metabolic-network reconstruction; **Type of Model:** Reconstruction; **Model Source:** HPA, HMR2, iHepatocytes2322, Recon3D; **Omic Source:** Proteomics; **Taxonomy:** _Homo sapiens_; **Metabolic System:** General Metabolism; **Condition:** Generic metabolism;
+**GEM Category:** Species; **Utilisation:** Predictive simulation; **Field:** Metabolic-network reconstruction; **Type of Model:** Reconstruction; **Model Source:** HPA, HMR2, iHsa, iHepatocytes2322, Recon3D; **Omic Source:** Proteomics; **Taxonomy:** _Homo sapiens_; **Metabolic System:** General Metabolism; **Condition:** Generic metabolism;
 
-- Reference: n/a
+- Reference:
+
+Article under consideration.
 
 - Pubmed ID: n/a
 
@@ -23,11 +25,11 @@ Human genome-scale metabolic models (GEMs) are important tools for the study of 
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|-----:|
-|_Homo sapiens_ |	HMR2|	{{nRXN}}|	{{nMET}}|	{{nGENE}}|
+|_Homo sapiens_ |	HMR2, Recon3D|	{{nRXN}}|	{{nMET}}|	{{nGENE}}|
 
 
 
-This repository is administered by Jonathan L. Robinson ([@JonathanRob](https://github.com/jonathanrob)) and Hao Wang ([@Hao-Chalmers](https://github.com/hao-chalmers)), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology
+This repository is administered by Jonathan L. Robinson ([@JonathanRob](https://github.com/jonathanrob)) and Hao Wang ([@Hao-Chalmers](https://github.com/hao-chalmers)), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology.
 
 
 
