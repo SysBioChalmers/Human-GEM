@@ -68,7 +68,7 @@ rxnsToAdd.rxnNames = {'Proton permeability transition pore'};
 rxnsToAdd.equations = {'H+[c] => H+[m]'};
 rxnsToAdd.lb = 0;
 rxnsToAdd.ub = 1000;
-rxnsToAdd.subSystems = {'Transport reactions'};
+rxnsToAdd.subSystems = {{'Transport reactions'}};
 rxnsToAdd.rxnReferences = {'PMID:27590224'};
 
 % add reactions
