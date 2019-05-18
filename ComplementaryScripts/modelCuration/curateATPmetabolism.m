@@ -163,6 +163,7 @@ writeRxnChanges(rxnChanges,'../../ComplementaryData/modelCuration/curateATPmetab
 
 %% Export updated HumanGEM
 
+exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
 
 
 
