@@ -69,6 +69,7 @@ rxnsToAdd.equations = {'H+[c] => H+[m]'};
 rxnsToAdd.lb = 0;
 rxnsToAdd.ub = 1000;
 rxnsToAdd.subSystems = {'Transport reactions'};
+rxnsToAdd.rxnReferences = {'PMID:27590224'};
 
 % add reactions
 ihuman = addRxns(ihuman,rxnsToAdd,3);
@@ -79,7 +80,7 @@ ihuman.prRules(end+1) = {''};
 ihuman.rxnProtMat(end+1,:) = 0;
 ihuman.priorCombiningGrRules(end+1) = {''};
 
-rxnNotes = [rxnNotes; [{'HMR_10025'} {'Add permeability transition pore (PTP) reaction to move protons from cytosol to mitochondria compartment.'}]];
+rxnNotes = [rxnNotes; [{'HMR_10025'} {'Add permeability transition pore (PTP) reaction to move protons from cytosol to mitochondria compartment (PMID:27590224).'}]];
 
 
 %% Prevent free transport of Pi from [c] to [m]
@@ -156,7 +157,7 @@ rxnNotes = [rxnNotes; [{'HMR_0686'} {'This pool reaction enables infinite ATP an
 
 %% Document reaction changes
 
-rxnChanges = docRxnChanges(ihuman_orig,ihuman);
+rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
 writeRxnChanges(rxnChanges,'../../ComplementaryData/modelCuration/curateATPmetabolism_rxnChanges.tsv');
 
 
