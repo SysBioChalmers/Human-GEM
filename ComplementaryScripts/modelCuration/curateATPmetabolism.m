@@ -2,7 +2,7 @@
 % FILE NAME:    curateATPmetabolism.m
 % 
 % DATE CREATED: 2019-04-10
-%     MODIFIED: 2019-05-17
+%     MODIFIED: 2019-05-20
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -13,6 +13,7 @@
 %
 
 
+%% Load model and initialize variables
 
 % load HumanGEM
 load('humanGEM.mat');
