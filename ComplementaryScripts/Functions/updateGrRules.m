@@ -83,7 +83,7 @@ model = ihuman;
 
 % Save changes to .mat model file
 if autoSave
-    save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+    exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
 end
 
 end
