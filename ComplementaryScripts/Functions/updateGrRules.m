@@ -66,7 +66,7 @@ load('humanGEM.mat');
 [~,rxn_ind] = ismember(rxnIDs,ihuman.rxns);
 ihuman.grRules(rxn_ind)             = newGrRules;
 ihuman.rxnReferences(rxn_ind)       = rxnReferences;
-ihuman.rxnConfidenceScores(rxn_ind) = rxnConfidenceScores;
+ihuman.rxnConfidenceScores(rxn_ind) = str2double(rxnConfidenceScores);
 
 % Update other gene fields
 [genes,rxnGeneMat] = getGenesFromGrRules(ihuman.grRules);
