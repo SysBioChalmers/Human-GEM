@@ -72,4 +72,6 @@ if isequal(r, check)
     fprintf('\nThe reaction association file is sucessfully exported!\n\n');
 end
 
+movefile('Human1RxnAssoc.JSON','../../ComplementaryData/annotation');
+clear;
 
