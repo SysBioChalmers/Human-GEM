@@ -29,22 +29,6 @@
 %          4)  steroids
 %          5)  others
 %
-%          The HMR_9736 reaction exchanges 'cholesterol-ester pool[l]' with
-%          the boundary compartment. Since several other reactions exist in
-%          the model that transport this metabolite to other compartments,
-%          including from the extracellular compartment to the boundary,
-%          this reaction is redundant and should be deleted.
-%
-%          The other reactions are all pool reactions in which several
-%          metabolites combine to form the metabolites 'xenobiotics',
-%          'arachidonate derivatives', 'steroids', or 'others' in the
-%          boundary compartment. To avoid exchange between
-%          non-extracellular compartments and the boundary, these reactions
-%          will be modified such that they form the pool metabolites in the
-%          extracellular compartment, and additional transport reactions
-%          will be added to exchange these metabolites between the
-%          extracellular compartment and the boundary.
-%
 %          Information on new reactions to be added to the model were
 %          organized in the newExchangeRxns.tsv file.
 
@@ -62,54 +46,57 @@ changeNotes = {};
 
 
 %% Update metabolite IDs and add new metabolites
-% the following metabolites have unusual IDs:
-%
+% the following metabolites have unusual/temporary IDs:
 %   temp002x: others[x]
 %   temp003x: steroids[x]
 %   temp004x: xenobiotics[x]
 %   temp005x: arachidonate derivatives[x]
 %
-% In addition, the model does not contain an extracellular form of these
-% metabolites, which will be necessary to add their exchange reactions
-%
 % Therefore, these metabolites will be renamed as follows:
-%
 %   temp002x -> m10000x
 %   temp003x -> m10001x
 %   temp004x -> m10002x
 %   temp005x -> m10003x
-%
-% And the following corresponding new metabolites will be added:
-%
+
+mets_orig = {'temp002x';'temp003x';'temp004x';'temp005x'};
+mets_new  = {'m10000x' ;'m10001x' ;'m10002x' ; 'm10003x'};
+mets_ind = getIndexes(ihuman,mets_orig,'mets');
+ihuman.mets(mets_ind) = mets_new;
+changeNotes = [changeNotes; [[mets;ihuman.mets(mets_ind)], repmat({'Updated "temp" metabolite IDs.'},numel(mets)*2,1)]];
+
+
+% In addition, the model does not contain extracellular forms of these
+% metabolites, which will be necessary to add their exchange reactions to
+% the model. The following new metabolites will therefore be added:
 %   m10000s: others[s]
 %   m10001s: steroids[s]
 %   m10002s: xenobiotics[s]
 %   m10003s: arachidonate derivatives[s]
-%
-% Furthermore, a boundary version of the following metabolites will be
-% added to the model:
-%
+
+metsToAdd = {};
+metsToAdd.mets     = {'m10000s';'m10001s' ;'m10002s'    ;'m10003s'                 };
+metsToAdd.metNames = {'others' ;'steroids';'xenobiotics';'arachidonate derivatives'};
+metsToAdd.compartments = 's';
+
+ihuman = addMets(ihuman,metsToAdd);
+changeNotes = [changeNotes; [metsToAdd.mets, repmat({'Extracellular version of metabolite added to enable the addition of an exchange reaction.'},numel(metsToAdd.mets),1)]];
+
+
+% Furthermore, a boundary version of the following metabolites do not yet
+% exist in HumanGEM, but need to be added in order to allow their exchange:
 %   m00591x:    20-hydroxy-arachidonate[x]
 %   m01435x:    chenodiol[x]
 %   m02328x:    LacCer pool[x]
 %   chylo_hs_x: Chylomicron Lipoprotein[x]
-%
 
-% revise metabolite IDs
-mets = {'temp002x';'temp003x';'temp004x';'temp005x'};
-mets_ind = getIndexes(ihuman,mets,'mets');
-ihuman.mets(mets_ind) = {'m10000x';'m10001x';'m10002x';'m10003x'};
-changeNotes = [changeNotes; [[mets;ihuman.mets(mets_ind)], repmat({'Updated metabolite ID to avoid using "temp" IDs.'},numel(mets)*2,1)]];
-
-
-% add new metabolites
 metsToAdd = {};
-metsToAdd.mets = {'m10000s';'m10001s';'m10002s';'m10003s';'m00591x';'m01435x';'m02328x';'chylo_hs_x'};
-metsToAdd.metNames = {'others';'steroids';'xenobiotics';'arachidonate derivatives';'20-hydroxy-arachidonate';'chenodiol';'LacCer pool';'Chylomicron Lipoprotein'};
-metsToAdd.compartments = {'s';'s';'s';'s';'x';'x';'x';'x'};
+metsToAdd.mets     = {'m00591x'                ;'m01435x'  ;'m02328x'    ;'chylo_hs_x'             };
+metsToAdd.metNames = {'20-hydroxy-arachidonate';'chenodiol';'LacCer pool';'Chylomicron Lipoprotein'};
+metsToAdd.compartments = 'x';
 
 ihuman = addMets(ihuman,metsToAdd);
-changeNotes = [changeNotes; [metsToAdd.mets, repmat({'New compartment version of metabolite added to enable the addition of an exchange reaction.'},numel(metsToAdd.mets),1)]];
+changeNotes = [changeNotes; [metsToAdd.mets, repmat({'Boundary compartment version of metabolite added to enable the addition of an exchange reaction.'},numel(metsToAdd.mets),1)]];
+
 
 
 %% Add new exchange reactions to the model
@@ -195,20 +182,15 @@ end
 changeNotes = [changeNotes; [rxns, repmat({'updated reaction to generate pool metabolite in extracellular, to avoid transport between non-extracellular compartments and the boundary.'},numel(rxns),1)]];
 
 
+%% Document reaction changes
+
+modelChanges = docModelChanges(ihuman_orig,ihuman,changeNotes);
+writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/curateExchangeReactions2_rxnChanges.tsv');
 
 
+%% Export updated HumanGEM
 
-
-
-% %% Document reaction changes
-% 
-% modelChanges = docModelChanges(ihuman_orig,ihuman,changeNotes);
-% writeRxnChanges(rxnChanges,'../../ComplementaryData/modelCuration/curateExchangeReactions2_rxnChanges.tsv');
-% 
-% 
-% %% Export updated HumanGEM
-% 
-% exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
+exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
 
 
 
