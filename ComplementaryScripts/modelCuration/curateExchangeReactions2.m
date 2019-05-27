@@ -57,7 +57,7 @@ load('humanGEM.mat');
 ihuman_orig = ihuman;  % to track changes
 
 % initialize reaction change notes
-rxnNotes = {};
+changeNotes = {};
 
 
 
@@ -99,6 +99,8 @@ rxnNotes = {};
 mets = {'temp002x';'temp003x';'temp004x';'temp005x'};
 mets_ind = getIndexes(ihuman,mets,'mets');
 ihuman.mets(mets_ind) = {'m10000x';'m10001x';'m10002x';'m10003x'};
+changeNotes = [changeNotes; [mets, repmat({'Updated metabolite ID to avoid using "temp" IDs.'},numel(mets),1)]];
+
 
 % add new metabolites
 metsToAdd = {};
@@ -107,6 +109,7 @@ metsToAdd.metNames = {'others';'steroids';'xenobiotics';'arachidonate derivative
 metsToAdd.compartments = {'s';'s';'s';'s';'x';'x';'x';'x'};
 
 ihuman = addMets(ihuman,metsToAdd);
+changeNotes = [changeNotes; [metsToAdd.mets, repmat({'New compartment version of metabolite added to enable the addition of an exchange reaction.'},numel(metsToAdd.mets),1)]];
 
 
 %% Add new exchange reactions to the model
@@ -140,7 +143,7 @@ ihuman.prRules(end+1:end+nRxns) = {''};
 ihuman.rxnProtMat(end+1:end+nRxns,:) = 0;
 ihuman.priorCombiningGrRules(end+1:end+nRxns) = {''};
 
-rxnNotes = [rxnNotes; [rxnData{1}, repmat({'New exchange reaction to facilitate transport of metabolite between boundadry and extracellular compartment.'},nRxns,1)]];
+changeNotes = [changeNotes; [rxnData{1}, repmat({'New exchange reaction to facilitate transport of metabolite between boundadry and extracellular compartment.'},nRxns,1)]];
 
 
 %% Delete the HMR_9736 reaction
@@ -163,7 +166,7 @@ rxnNotes = [rxnNotes; [rxnData{1}, repmat({'New exchange reaction to facilitate 
 %
 % Therefore, the reaction will be removed from the model.
 ihuman = removeReactionsFull(ihuman,'HMR_9736');
-rxnNotes = [rxnNotes; [{'HMR_9736'},{'Reaction is redundant and involves transport between lysosome and boundary, and was therefore DELETED.'}]];
+changeNotes = [changeNotes; [{'HMR_9736'},{'Reaction is redundant and involves transport between lysosome and boundary, and was therefore DELETED.'}]];
 
 
 %% Revise pool metabolite compartment in four reactions
@@ -189,7 +192,7 @@ for i = 1:length(rxns)
     ihuman.S(pool_inds_s(i),rxn_inds(i)) = 1;
 end
 
-rxnNotes = [rxnNotes; [rxns, repmat({'updated reaction to generate pool metabolite in extracellular, to avoid transport between non-extracellular compartments and the boundary.'},numel(rxns),1)]];
+changeNotes = [changeNotes; [rxns, repmat({'updated reaction to generate pool metabolite in extracellular, to avoid transport between non-extracellular compartments and the boundary.'},numel(rxns),1)]];
 
 
 
@@ -199,7 +202,7 @@ rxnNotes = [rxnNotes; [rxns, repmat({'updated reaction to generate pool metaboli
 
 % %% Document reaction changes
 % 
-% rxnChanges = docRxnChanges(ihuman_orig,ihuman,rxnNotes);
+% modelChanges = docModelChanges(ihuman_orig,ihuman,changeNotes);
 % writeRxnChanges(rxnChanges,'../../ComplementaryData/modelCuration/curateExchangeReactions2_rxnChanges.tsv');
 % 
 % 
