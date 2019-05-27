@@ -99,7 +99,7 @@ changeNotes = {};
 mets = {'temp002x';'temp003x';'temp004x';'temp005x'};
 mets_ind = getIndexes(ihuman,mets,'mets');
 ihuman.mets(mets_ind) = {'m10000x';'m10001x';'m10002x';'m10003x'};
-changeNotes = [changeNotes; [mets, repmat({'Updated metabolite ID to avoid using "temp" IDs.'},numel(mets),1)]];
+changeNotes = [changeNotes; [[mets;ihuman.mets(mets_ind)], repmat({'Updated metabolite ID to avoid using "temp" IDs.'},numel(mets)*2,1)]];
 
 
 % add new metabolites
