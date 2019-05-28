@@ -31,22 +31,22 @@ if nargin < 3
     date = true;
 end
 
-if ~contains(fileName,'.')
-    extension = 'tsv';
+% need to identify extension in case filename is to be appended
+extension = char(regexp(fileName,'\.\w{2,4}$','match'));
+if isempty(extension)
+    extension = '.tsv';
 else
-    fileparts = strsplit(fileName,'.');
-    fileName = fileparts{1};
-    extension = fileparts{2};
+    fileName = regexprep(fileName,strcat(extension,'$'),'');
 end
 
 % prepare output filenames
 if isempty(modelChanges.rxns)
-    fileNameMet = strcat(fileName,'.',extension);
+    fileNameMet = strcat(fileName,extension);
 elseif isempty(modelChanges.mets)
-    fileNameRxn = strcat(fileName,'.',extension);
+    fileNameRxn = strcat(fileName,extension);
 else
-    fileNameMet = strcat(fileName,'_mets.',extension);
-    fileNameRxn = strcat(fileName,'_rxns.',extension);
+    fileNameMet = strcat(fileName,'_mets',extension);
+    fileNameRxn = strcat(fileName,'_rxns',extension);
 end
 
 if ~isempty(modelChanges.rxns)
