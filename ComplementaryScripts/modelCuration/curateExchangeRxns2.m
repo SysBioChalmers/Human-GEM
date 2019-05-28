@@ -1,8 +1,8 @@
 %
-% FILE NAME:    curateExchangeReactions2.m
+% FILE NAME:    curateExchangeRxns2.m
 % 
 % DATE CREATED: 2019-05-27
-%     MODIFIED: 2019-05-27
+%     MODIFIED: 2019-05-28
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -62,7 +62,7 @@ mets_orig = {'temp002x';'temp003x';'temp004x';'temp005x'};
 mets_new  = {'m10000x' ;'m10001x' ;'m10002x' ; 'm10003x'};
 mets_ind = getIndexes(ihuman,mets_orig,'mets');
 ihuman.mets(mets_ind) = mets_new;
-changeNotes = [changeNotes; [[mets;ihuman.mets(mets_ind)], repmat({'Updated "temp" metabolite IDs.'},numel(mets)*2,1)]];
+changeNotes = [changeNotes; [[mets_orig;mets_new], repmat({'Updated "temp" metabolite IDs.'},numel([mets_orig;mets_new]),1)]];
 
 
 % In addition, the model does not contain extracellular forms of these
