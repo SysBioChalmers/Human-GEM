@@ -29,6 +29,7 @@ rxnNotes = {};
 %       Htmi:  H+[i] => H+[m]
 rxn_ind = getIndexes(ihuman,{'HMR_7638';'Htmi'},'rxns');
 ihuman = removeReactionsFull(ihuman,{'Htmi'});
+ihuman.rxnRecon3DID(rxn_ind(1)) = {'Htmi'};
 
 % document the association between HMR and Recon3D reaction
 load('../modelIntegration/rxnAssoc.mat');
