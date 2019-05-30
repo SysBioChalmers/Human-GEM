@@ -51,8 +51,6 @@ m.metLIPIDMAPSID{606} ='LMST01010086; LMST01010144';
 
 % get the index PAPs and update it formula, which was fixed in #81
 metsInd = find(strcmp(m.metHMRID, 'm02682'));
-m.metFormulas(metsInd)        = {'C10H11N5O13P2S'};
-m.metR3DFormulas(metsInd)     = {'C10H11N5O13P2S'};
 m.metCuratedFormulas(metsInd) = {'C10H11N5O13P2S'};
 
 
@@ -91,45 +89,50 @@ metAssoc.metMNXID        = repmat({''},size(metAssoc.mets));   % MetaNetX
 
 [a, b] = ismember(metAssoc.metsNoComp, m.metHMRID);
 ind = find(a);   % index in Human1
-index1 = b(ind);  % index in metAssocHMR2Recon3
+index = b(ind);  % index in metAssocHMR2Recon3
 
-metAssoc.metBiGGID(ind)       = m.metBiGGID(index1);           % BiGG
-metAssoc.metKEGGID(ind)       = m.metKEGGID(index1);           % KEGG
-metAssoc.metHMDBID(ind)       = m.metHMDBID(index1);           % HMDB
-metAssoc.metChEBIID(ind)      = m.metChEBIID(index1);          % ChEBI
-metAssoc.metPubChemID(ind)    = m.metR3DPubChemID(index1);     % PubChem
-metAssoc.metLipidMapsID(ind)  = m.metLIPIDMAPSID(index1);      % LIPIDMAPS
-metAssoc.metEHMNID(ind)       = m.metEHMNID(index1);           % EHMN
-metAssoc.metHepatoNET1ID(ind) = m.metHepatoNET1ID(index1);     % HepatoNET1
-metAssoc.metRecon3DID(ind)    = m.metR3DID(index1);            % Recon3D
-metAssoc.metMNXID(ind)        = m.metCuratedMNXID(index1);     % MetaNetX
+% mainly use the information prepared for HMR2 here
+metAssoc.metBiGGID(ind)       = m.metBiGGID(index);           % BiGG
+metAssoc.metKEGGID(ind)       = m.metKEGGID(index);           % KEGG
+metAssoc.metHMDBID(ind)       = m.metHMDBID(index);           % HMDB
+metAssoc.metChEBIID(ind)      = m.metChEBIID(index);          % ChEBI
+metAssoc.metPubChemID(ind)    = m.metR3DPubChemID(index);     % PubChem - Recon3D
+metAssoc.metLipidMapsID(ind)  = m.metLIPIDMAPSID(index);      % LIPIDMAPS
+metAssoc.metEHMNID(ind)       = m.metEHMNID(index);           % EHMN
+metAssoc.metHepatoNET1ID(ind) = m.metHepatoNET1ID(index);     % HepatoNET1
+metAssoc.metRecon3DID(ind)    = m.metR3DID(index);            % Recon3D
+metAssoc.metMNXID(ind)        = m.metCuratedMNXID(index);     % MetaNetX
 
-% combine with KEGG, HMDB, ChEBI and MNX associations from Recon3D
+% combine the KEGG, HMDB, ChEBI and MNX associations provided by Recon3D
 
 % compare associtions between HMR2 and Recon3D
-matchKEGG  = cellfun(@strcmp, m.metKEGGID(index1), m.metR3DKEGGID(index1));
-matchHMDB  = cellfun(@strcmp, m.metHMDBID(index1), m.metR3DHMDBID(index1));
-matchChEBI = cellfun(@strcmp, m.metChEBIID(index1), m.metR3DCHEBIID(index1));
+matchKEGG  = cellfun(@strcmp, m.metKEGGID(index), m.metR3DKEGGID(index));
+matchHMDB  = cellfun(@strcmp, m.metHMDBID(index), m.metR3DHMDBID(index));
+matchChEBI = cellfun(@strcmp, m.metChEBIID(index), m.metR3DCHEBIID(index));
 
 % get the indexes of newly curated associations in Recon3D
-curatedKEGGInd  = intersect(getNonEmptyList(m.metR3DKEGGID(index1)), find(~matchKEGG));   % 163
-curatedHMDBInd  = intersect(getNonEmptyList(m.metR3DHMDBID(index1)), find(~matchHMDB));   % 769
-curatedChEBIInd = intersect(getNonEmptyList(m.metR3DCHEBIID(index1)), find(~matchChEBI)); % 943
+curatedKEGGInd  = intersect(getNonEmptyList(m.metR3DKEGGID(index)), find(~matchKEGG));   % 163
+curatedHMDBInd  = intersect(getNonEmptyList(m.metR3DHMDBID(index)), find(~matchHMDB));   % 769
+curatedChEBIInd = intersect(getNonEmptyList(m.metR3DCHEBIID(index)), find(~matchChEBI)); % 943
+curatedMNXInd   = find(strcmp(m.metCuratedMNXID(index), 'toBeChecked'));       % there are 164 conflict ones
 
 % generate intermediate results for manual inspection
 %compareKEGG  = [m.metKEGGID(index(curatedKEGGInd)), m.metR3DKEGGID(index(curatedKEGGInd))];
 %compareHMDB  = [m.metHMDBID(index(curatedHMDBInd)), m.metR3DHMDBID(index(curatedHMDBInd))];
 %compareChEBI = [m.metChEBIID(index(curatedChEBIInd)), m.metR3DCHEBIID(index(curatedChEBIInd))];
+%compareMNX   = [m.metMNXID(index(curatedMNXInd)), m.metR3DMNXID(index(curatedMNXInd)), m.metCuratedMNXID(index(curatedMNXInd))];
 
 % update with the new associations from Recon3D
-metAssoc.metKEGGID(ind(curatedKEGGInd))   = m.metR3DKEGGID(index1(curatedKEGGInd));
-metAssoc.metHMDBID(ind(curatedHMDBInd))   = m.metR3DHMDBID(index1(curatedHMDBInd));
-metAssoc.metChEBIID(ind(curatedChEBIInd)) = m.metR3DCHEBIID(index1(curatedChEBIInd));
+metAssoc.metKEGGID(ind(curatedKEGGInd))   = m.metR3DKEGGID(index(curatedKEGGInd));
+metAssoc.metHMDBID(ind(curatedHMDBInd))   = m.metR3DHMDBID(index(curatedHMDBInd));
+metAssoc.metChEBIID(ind(curatedChEBIInd)) = m.metR3DCHEBIID(index(curatedChEBIInd));
+metAssoc.metMNXID(ind(curatedMNXInd))     = m.metR3DMNXID(index(curatedMNXInd));
 
 % confirm the changes are correctly made
-%isequal(metAssoc.metKEGGID(ind(curatedKEGGInd)), m.metR3DKEGGID(index(curatedKEGGInd)));
-%isequal(metAssoc.metHMDBID(ind(curatedHMDBInd)), m.metR3DHMDBID(index(curatedHMDBInd)));
-%isequal(metAssoc.metChEBIID(ind(curatedChEBIInd)), m.metR3DCHEBIID(index(curatedChEBIInd)));
+%isequal(metAssoc.metKEGGID(ind(curatedKEGGInd)), m.metR3DKEGGID(index(curatedKEGGInd)))
+%isequal(metAssoc.metHMDBID(ind(curatedHMDBInd)), m.metR3DHMDBID(index(curatedHMDBInd)))
+%isequal(metAssoc.metChEBIID(ind(curatedChEBIInd)), m.metR3DCHEBIID(index(curatedChEBIInd)))
+%isequal(metAssoc.metMNXID(ind(curatedMNXInd)), m.metR3DMNXID(index(curatedMNXInd)))
 
 
 %% retrieve additional associations from Recon3Mets2MNX.mat
@@ -140,18 +143,18 @@ load('Recon3Mets2MNX.mat');
 % get the index of mets that are not from HMR2
 ind_noMatch = find(~ismember(metAssoc.metsNoComp, m.metHMRID));
 [c, d] = ismember(metAssoc.metsNoComp(ind_noMatch), Recon3Mets2MNX.metsNoComp);
-index1 = d(find(c));
+new_ind = d(find(c));
 
 % extract met associations for unique Recon3D mets
-metAssoc.metBiGGID(ind_noMatch(c))       = Recon3Mets2MNX.metBiGGDB2BiGG(index1);   % BiGG
-metAssoc.metKEGGID(ind_noMatch(c))       = Recon3Mets2MNX.metKEGGID(index1);        % KEGG
-metAssoc.metHMDBID(ind_noMatch(c))       = Recon3Mets2MNX.metHMDBID(index1);        % HMDB
-metAssoc.metChEBIID(ind_noMatch(c))      = Recon3Mets2MNX.metChEBIID(index1);       % ChEBI
-metAssoc.metPubChemID(ind_noMatch(c))    = Recon3Mets2MNX.metPubChemID(index1);     % PubChem
-metAssoc.metEHMNID(ind_noMatch(c))       = Recon3Mets2MNX.metEHMNID(index1);        % EHMN
-metAssoc.metHepatoNET1ID(ind_noMatch(c)) = Recon3Mets2MNX.metHepatoNET1ID(index1);  % HepatoNET1
-metAssoc.metRecon3DID(ind_noMatch(c))    = Recon3Mets2MNX.mets(index1);             % Recon3D
-metAssoc.metMNXID(ind_noMatch(c))        = Recon3Mets2MNX.metBiGGDB2MNX(index1);    % MetaNetX
+metAssoc.metBiGGID(ind_noMatch(c))       = Recon3Mets2MNX.metBiGGDB2BiGG(new_ind);   % BiGG
+metAssoc.metKEGGID(ind_noMatch(c))       = Recon3Mets2MNX.metKEGGID(new_ind);        % KEGG
+metAssoc.metHMDBID(ind_noMatch(c))       = Recon3Mets2MNX.metHMDBID(new_ind);        % HMDB
+metAssoc.metChEBIID(ind_noMatch(c))      = Recon3Mets2MNX.metChEBIID(new_ind);       % ChEBI
+metAssoc.metPubChemID(ind_noMatch(c))    = Recon3Mets2MNX.metPubChemID(new_ind);     % PubChem
+metAssoc.metEHMNID(ind_noMatch(c))       = Recon3Mets2MNX.metEHMNID(new_ind);        % EHMN
+metAssoc.metHepatoNET1ID(ind_noMatch(c)) = Recon3Mets2MNX.metHepatoNET1ID(new_ind);  % HepatoNET1
+metAssoc.metRecon3DID(ind_noMatch(c))    = Recon3Mets2MNX.mets(new_ind);             % Recon3D
+metAssoc.metMNXID(ind_noMatch(c))        = Recon3Mets2MNX.metBiGGDB2MNX(new_ind);    % MetaNetX
 
 
 %% Output rxn association in JSON format
