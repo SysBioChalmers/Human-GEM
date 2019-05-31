@@ -1,7 +1,7 @@
 % FILE NAME:    getHuman1MetAssoc.m
 %
 % DATE CREATED: 2019-05-23
-%     MODIFIED: 2019-05-29
+%     MODIFIED: 2019-05-31
 %
 % PROGRAMMERS:  Hao Wang
 %               Department of Biology and Biological Engineering
@@ -135,18 +135,29 @@ metAssoc.metMNXID(ind(curatedMNXInd))     = m.metR3DMNXID(index(curatedMNXInd));
 %isequal(metAssoc.metMNXID(ind(curatedMNXInd)), m.metR3DMNXID(index(curatedMNXInd)))
 
 
-%% retrieve additional associations from Recon3Mets2MNX.mat
+%% retrieve additional associations from Recon3Mets2MNX prepared in #6, #8
 
-% the associations included here were prepared in #6, #8
 load('Recon3Mets2MNX.mat');
 
-% get the index of mets that are not from HMR2
+% resolve the conflicts caused by mismatch of comp ids between HMR and Recon
+
+% first modify Recon compartment ids according to HMR2: e,x -> s,p
+Recon3Mets2MNX.metsNew = Recon3Mets2MNX.mets;
+Recon3Mets2MNX.metsNew = regexprep(Recon3Mets2MNX.metsNew,'\_e$','\_s');
+Recon3Mets2MNX.metsNew = regexprep(Recon3Mets2MNX.metsNew,'\_x$','\_p');
+% then convert boundary mets to their extracellular counterparts: x -> s
+metsNoBoundary = metAssoc.mets;
+metsNoBoundary = regexprep(metsNoBoundary,'\_x$','\_s');
+
+% get the index of unique R3D mets
 ind_noMatch = find(~ismember(metAssoc.metsNoComp, m.metHMRID));
-[c, d] = ismember(metAssoc.metsNoComp(ind_noMatch), Recon3Mets2MNX.metsNoComp);
+
+% find out the complete association
+[c, d] = ismember(metsNoBoundary(ind_noMatch), Recon3Mets2MNX.metsNew);
 new_ind = d(find(c));
 
 % extract met associations for unique Recon3D mets
-metAssoc.metBiGGID(ind_noMatch(c))       = Recon3Mets2MNX.metBiGGDB2BiGG(new_ind);   % BiGG
+metAssoc.metBiGGID(ind_noMatch(c))       = Recon3Mets2MNX.metBiGGDB2BiGG(new_ind);   % BiGG DB ids
 metAssoc.metKEGGID(ind_noMatch(c))       = Recon3Mets2MNX.metKEGGID(new_ind);        % KEGG
 metAssoc.metHMDBID(ind_noMatch(c))       = Recon3Mets2MNX.metHMDBID(new_ind);        % HMDB
 metAssoc.metChEBIID(ind_noMatch(c))      = Recon3Mets2MNX.metChEBIID(new_ind);       % ChEBI
@@ -154,7 +165,7 @@ metAssoc.metPubChemID(ind_noMatch(c))    = Recon3Mets2MNX.metPubChemID(new_ind);
 metAssoc.metEHMNID(ind_noMatch(c))       = Recon3Mets2MNX.metEHMNID(new_ind);        % EHMN
 metAssoc.metHepatoNET1ID(ind_noMatch(c)) = Recon3Mets2MNX.metHepatoNET1ID(new_ind);  % HepatoNET1
 metAssoc.metRecon3DID(ind_noMatch(c))    = Recon3Mets2MNX.mets(new_ind);             % Recon3D
-metAssoc.metMNXID(ind_noMatch(c))        = Recon3Mets2MNX.metBiGGDB2MNX(new_ind);    % MetaNetX
+metAssoc.metMNXID(ind_noMatch(c))        = Recon3Mets2MNX.metBiGGDB2MNX(new_ind);    % MNX id through BiGG DB
 
 
 %% Output rxn association in JSON format
