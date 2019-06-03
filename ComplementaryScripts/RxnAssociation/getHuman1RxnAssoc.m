@@ -2,7 +2,7 @@
 % FILE NAME:    getHuman1RxnAssoc.m
 %
 % DATE CREATED: 2019-05-23
-%     MODIFIED: 
+%     MODIFIED: 2019-06-03
 %
 % PROGRAMMER:   Hao Wang
 %               Department of Biology and Biological Engineering
@@ -62,16 +62,16 @@ r.rxnMNXID(ind_humanGEM)  = Recon3Rxns2HMR.rxnMNXID(ind_R3D);
 %% Output rxn association in JSON format
 
 jsonStr = jsonencode(r);
-fid = fopen('Human1RxnAssoc.JSON', 'w');
+fid = fopen('humanGemRxnAssoc.JSON', 'w');
 fwrite(fid, prettyJson(jsonStr));
 fclose(fid);
 
 % check the content of JSON file
-check = jsondecode(fileread('Human1RxnAssoc.JSON'));
+check = jsondecode(fileread('humanGemRxnAssoc.JSON'));
 if isequal(r, check)
     fprintf('\nThe reaction association file is sucessfully exported!\n\n');
 end
 
-movefile('Human1RxnAssoc.JSON','../../ComplementaryData/annotation');
+movefile('humanGemRxnAssoc.JSON','../../ComplementaryData/annotation');
 clear;
 

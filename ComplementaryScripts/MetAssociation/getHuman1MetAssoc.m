@@ -1,15 +1,15 @@
 % FILE NAME:    getHuman1MetAssoc.m
 %
 % DATE CREATED: 2019-05-23
-%     MODIFIED: 2019-05-31
+%     MODIFIED: 2019-06-03
 %
 % PROGRAMMERS:  Hao Wang
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 %
-% PURPOSE: Sort out and refine the previous .mat files generated during
-%          metabolite association/curation, then extensively extract
-%          out exteranl identifiers and save to JSON format (#75).
+% PURPOSE: To address #107, the previous .mat files generated during mets
+%          association/curation were sorted and refined for extensively
+%          retrieving exteranl identifiers and saving in JSON format (#75).
 %
 
 %% Update metAssocHMR2Recon3 with manual curation results
@@ -140,7 +140,6 @@ metAssoc.metMNXID(ind(curatedMNXInd))     = m.metR3DMNXID(index(curatedMNXInd));
 load('Recon3Mets2MNX.mat');
 
 % resolve the conflicts caused by mismatch of comp ids between HMR and Recon
-
 % first modify Recon compartment ids according to HMR2: e,x -> s,p
 Recon3Mets2MNX.metsNew = Recon3Mets2MNX.mets;
 Recon3Mets2MNX.metsNew = regexprep(Recon3Mets2MNX.metsNew,'\_e$','\_s');
@@ -171,16 +170,16 @@ metAssoc.metMNXID(ind_noMatch(c))        = Recon3Mets2MNX.metBiGGDB2MNX(new_ind)
 %% Output rxn association in JSON format
 
 jsonStr = jsonencode(metAssoc);
-fid = fopen('Human1MetAssoc.JSON', 'w');
+fid = fopen('humanGemMetAssoc.JSON', 'w');
 fwrite(fid, prettyJson(jsonStr));
 fclose(fid);
 
 % check the content of JSON file
-check = jsondecode(fileread('Human1MetAssoc.JSON'));
+check = jsondecode(fileread('humanGemMetAssoc.JSON'));
 if isequal(metAssoc, check)
     fprintf('\nThe metabolite association file is sucessfully exported!\n\n');
 end
 
-movefile('Human1MetAssoc.JSON','../../ComplementaryData/annotation');
+movefile('humanGemMetAssoc.JSON','../../ComplementaryData/annotation');
 clear;
 
