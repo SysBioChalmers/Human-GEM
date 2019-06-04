@@ -98,16 +98,16 @@ r.rxnMNXID(ind_humanGEM)     = Recon3Rxns2HMR.rxnMNXID(ind_R3D);
 %% Output rxn association in JSON format
 
 jsonStr = jsonencode(r);
-fid = fopen('humanGemRxnAssoc.JSON', 'w');
+fid = fopen('humanGEMRxnAssoc.JSON', 'w');
 fwrite(fid, prettyJson(jsonStr));
 fclose(fid);
 
 % check the content of JSON file
-check = jsondecode(fileread('humanGemRxnAssoc.JSON'));
+check = jsondecode(fileread('humanGEMRxnAssoc.JSON'));
 if isequal(r, check)
     fprintf('\nThe reaction association file is sucessfully exported!\n\n');
 end
 
-movefile('humanGemRxnAssoc.JSON','../../ComplementaryData/annotation');
+movefile('humanGEMRxnAssoc.JSON','../../ComplementaryData/annotation');
 clear;
 

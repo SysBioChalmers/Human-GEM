@@ -170,16 +170,16 @@ metAssoc.metMNXID(ind_noMatch(c))        = Recon3Mets2MNX.metBiGGDB2MNX(new_ind)
 %% Output rxn association in JSON format
 
 jsonStr = jsonencode(metAssoc);
-fid = fopen('humanGemMetAssoc.JSON', 'w');
+fid = fopen('humanGEMMetAssoc.JSON', 'w');
 fwrite(fid, prettyJson(jsonStr));
 fclose(fid);
 
 % check the content of JSON file
-check = jsondecode(fileread('humanGemMetAssoc.JSON'));
+check = jsondecode(fileread('humanGEMMetAssoc.JSON'));
 if isequal(metAssoc, check)
     fprintf('\nThe metabolite association file is sucessfully exported!\n\n');
 end
 
-movefile('humanGemMetAssoc.JSON','../../ComplementaryData/annotation');
+movefile('humanGEMMetAssoc.JSON','../../ComplementaryData/annotation');
 clear;
 
