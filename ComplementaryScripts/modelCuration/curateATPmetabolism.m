@@ -2,7 +2,7 @@
 % FILE NAME:    curateATPmetabolism.m
 % 
 % DATE CREATED: 2019-04-10
-%     MODIFIED: 2019-05-20
+%     MODIFIED: 2019-06-04
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -10,6 +10,10 @@
 % 
 % PURPOSE: This script makes a number of improvements to the modeling of 
 %          ATP metabolism (electron transport chain) in HumanGEM.
+%
+%          In addition, this script removes the now-outdated "rxnRecon3DID"
+%          model field. Such annotations are now stored in the separate
+%          humanGEMRxnAssoc.JSON file.
 %
 
 
@@ -23,24 +27,36 @@ ihuman_orig = ihuman;  % to track changes
 rxnNotes = {};
 
 
+%% Remove rxnRecon3DID model field
+% this information is now stored in the humanGEMRxnAssoc.JSON file
+ihuman = rmfield(ihuman,'rxnRecon3DID');
+
+
 %% Remove duplicate reaction
 % A proton transporter is duplicated; one should be removed:
 %   HMR_7638:  H+[i] => H+[m]
 %       Htmi:  H+[i] => H+[m]
 rxn_ind = getIndexes(ihuman,{'HMR_7638';'Htmi'},'rxns');
-ihuman = removeReactionsFull(ihuman,{'Htmi'});
-ihuman.rxnRecon3DID(rxn_ind(1)) = {'Htmi'};
 
 % document the association between HMR and Recon3D reaction
-load('../modelIntegration/rxnAssoc.mat');
-rxnAssoc.rxnHMRID(end+1) = {'HMR_7638'};
-rxnAssoc.rxnRecon3DID(end+1) = {'Htmi'};
-rxnAssoc.lbHMR = ihuman.lb(rxn_ind(1));
-rxnAssoc.ubHMR = ihuman.ub(rxn_ind(1));
-rxnAssoc.lbRecon3D = ihuman.lb(rxn_ind(2));
-rxnAssoc.ubRecon3D = ihuman.ub(rxn_ind(2));
-save('../modelIntegration/rxnAssoc.mat','rxnAssoc');
+rxnAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMRxnAssoc.JSON'));
+if ~isequal(ihuman.rxns,rxnAssoc.rxns)
+    % require that the model reactions are consistent with the annotation file
+    error('Model reactions are inconsistent with humanGEMRxnAssoc.JSON file!');
+end
+rxnAssoc.rxnRecon3DID(rxn_ind(1)) = {'Htmi'};  % update the Recon3D ID association
+rxnAssoc.rxnBiGGID(rxn_ind(1)) = {'Htmi'};  % update the BiGG ID association
 
+% delete reaction from annotation file
+f = fieldnames(rxnAssoc);
+for i = 1:numel(f)
+    rxnAssoc.(f{i})(rxn_ind(2)) = [];
+end
+
+% delete reaction from model structure
+ihuman = removeReactionsFull(ihuman,{'Htmi'});
+
+% update rxnNotes
 rxnNotes = [rxnNotes; [{'Htmi'} {'Reaction is duplicate of HMR_7638, and was thus removed.'}]];
 
 
@@ -75,12 +91,19 @@ rxnsToAdd.rxnReferences = {'PMID:27590224'};
 
 % add reactions
 ihuman = addRxns(ihuman,rxnsToAdd,3);
+[~,newRxnInd] = ismember(rxnsToAdd.rxns,ihuman.rxns);
 
-% update other non-standard fields
-ihuman.rxnRecon3DID(end+1) = {''};
-ihuman.prRules(end+1) = {''};
-ihuman.rxnProtMat(end+1,:) = 0;
-ihuman.priorCombiningGrRules(end+1) = {''};
+% update other non-standard model fields
+ihuman.prRules(newRxnInd) = {''};
+ihuman.rxnProtMat(newRxnInd,:) = 0;
+ihuman.priorCombiningGrRules(newRxnInd) = {''};
+
+% update reaction annotation structure
+rxnAssoc.rxns(newRxnInd) = rxnsToAdd.rxns;
+f = fieldnames(rxnAssoc);
+for i = 2:numel(f)
+    rxnAssoc.(f{i})(newRxnInd) = {''};
+end
 
 rxnNotes = [rxnNotes; [{'HMR_10025'} {'Add permeability transition pore (PTP) reaction to move protons from cytosol to mitochondria compartment (PMID:27590224).'}]];
 
@@ -155,6 +178,13 @@ rxnNotes = [rxnNotes; [rxns, repmat({'Reaction reversibility updated to prevent 
 ihuman = setParam(ihuman,'eq','HMR_0686',0);
 rxnNotes = [rxnNotes; [{'HMR_0686'} {'This pool reaction enables infinite ATP and CO production from Pi and O2, and therefore should be inactivated until it can be properly reformulated or removed entirely.'}]];
 
+
+%% Write updated reaction annotation file
+
+jsonStr = jsonencode(rxnAssoc);
+fid = fopen('../../ComplementaryData/annotation/humanGEMRxnAssoc.JSON', 'w');
+fwrite(fid, prettyJson(jsonStr));
+fclose(fid);
 
 
 %% Document reaction changes
