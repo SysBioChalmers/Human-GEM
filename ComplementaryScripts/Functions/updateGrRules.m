@@ -1,7 +1,8 @@
 function [model] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave)
 % updateGrRules
-%   Update specific grRules curation results into humanGEM model. Other
-%   modified fields include genes, rxnGeneMat, prRules, proteins and rxnProtMat
+%   Update specific grRules curation results into HumanGEM model. Other
+%   modified fields include rxnReferences, rxnConfidenceScores, genes,
+%   rxnGeneMat, prRules, proteins and rxnProtMat.
 %
 % Input:
 %   fileName       name of the file that has curated grRules information
@@ -17,16 +18,18 @@ function [model] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave)
 %   model          an updated model structure
 %
 % NOTE: this input file with curated grRules should follow defined rules:
-% i) it has to a tab delimitted plaintext file placed under subfolder
-% "~/ComplementaryData/modelCuration/"; ii) has five columns for storing
+% i) it has to be a tab delimitted plaintext file placed under subfolder
+% "~/ComplementaryData/modelCuration/"; ii) has SIX columns for storing
 % the curation information; iii) the first column must be a unique list of
 % rxn ids whose grRules are to be changed; iv) the third column includes
 % the newly curated grRules, perferably (otherwise its column number need
-% to be specified in the argument colNewGrRules)
+% to be specified in the argument colNewGrRules) v) the forth and fifth
+% columns (or the next two after colNewGrRules) refer to citations (PMIDs)
+% and Confidence score, respectivel. 
 %
 % Usage: [model] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave)
 %
-% Hao Wang, 2019-02-20
+% Hao Wang, 2019-05-20
 %
 
 % handel input
@@ -46,37 +49,41 @@ if ~exist(inputFile,'file')
     error('The file with curated grRules cannot be located. Please specify the correct filename.\n');
 else
     fid = fopen(inputFile,'r');
-    tmp = textscan(fid,'%s %s %s %s %s','Delimiter','\t','HeaderLines',nHeaderLines);
+    tmp = textscan(fid,'%s %s %s %s %s %s','Delimiter','\t','HeaderLines',nHeaderLines);
     fclose(fid);
 end
 
 % Get the rxn ids and new grRules
-rxnIDs = tmp{1};
-newGrRules = tmp{colNewGrRules};
+rxnIDs              = tmp{1};
+newGrRules          = tmp{colNewGrRules};
+rxnReferences       = tmp{colNewGrRules+1};
+rxnConfidenceScores = tmp{colNewGrRules+2};
 
 % Load humanGEM model
 load('humanGEM.mat');
 
-% Update curated grRules
+% Update curated grRules, rxnReferences, rxnConfidenceScores
 [~,rxn_ind] = ismember(rxnIDs,ihuman.rxns);
-ihuman.grRules(rxn_ind) = newGrRules;
+ihuman.grRules(rxn_ind)             = newGrRules;
+ihuman.rxnReferences(rxn_ind)       = rxnReferences;
+ihuman.rxnConfidenceScores(rxn_ind) = str2double(rxnConfidenceScores);
 
 % Update other gene fields
 [genes,rxnGeneMat] = getGenesFromGrRules(ihuman.grRules);
-ihuman.genes = genes;
-ihuman.rxnGeneMat = rxnGeneMat;
+ihuman.genes       = genes;
+ihuman.rxnGeneMat  = rxnGeneMat;
 
 % Update protein fields
 [prRules,proteins,rxnProtMat] = translateGrRules(ihuman.grRules,'UniProt','ENSG');
-ihuman.prRules = prRules;
-ihuman.proteins = proteins;
+ihuman.prRules    = prRules;
+ihuman.proteins   = proteins;
 ihuman.rxnProtMat = rxnProtMat;
 
 model = ihuman;
 
 % Save changes to .mat model file
 if autoSave
-    save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+    exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
 end
 
 end
