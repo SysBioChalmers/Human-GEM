@@ -2,7 +2,7 @@
 % FILE NAME:    curateATPmetabolism.m
 % 
 % DATE CREATED: 2019-04-10
-%     MODIFIED: 2019-06-04
+%     MODIFIED: 2019-06-05
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -15,6 +15,8 @@
 %          model field. Such annotations are now stored in the separate
 %          humanGEMRxnAssoc.JSON file.
 %
+%          Finally, the "version" model field is cleared, as it is now
+%          assigned/documented in an alternative manner.
 
 
 %% Load model and initialize variables
@@ -27,9 +29,10 @@ ihuman_orig = ihuman;  % to track changes
 rxnNotes = {};
 
 
-%% Remove rxnRecon3DID model field
+%% Remove rxnRecon3DID model field and clear version field
 % this information is now stored in the humanGEMRxnAssoc.JSON file
 ihuman = rmfield(ihuman,'rxnRecon3DID');
+ihuman.version = '';
 
 
 %% Remove duplicate reaction
