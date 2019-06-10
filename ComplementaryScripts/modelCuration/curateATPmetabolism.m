@@ -37,14 +37,15 @@ ihuman.version = '';
 
 
 %% Remove duplicate reaction
-% A proton transporter is currently duplicated in HumanGEM:
+% A proton transporter is currently duplicated in HumanGEM v1.0.3:
 %
 %   HMR_7638:  H+[i] => H+[m]
 %       Htmi:  H+[i] => H+[m]
 %
-% The original form of HMR_7638 involved transport of protons from the
-% cytoplasm to the mitochondria: H+[c] => H+[m]. Since this reaction is
-% needed to restore protons that are lost through the adenine nucleotide
+% The original form of HMR_7638 (from HMR2) involved transport of protons
+% from the cytoplasm to the mitochondria: H+[c] => H+[m], but was modified
+% to the current form in HumanGEM v0.0.5. Since this reaction is necessary
+% to restore protons that are lost through the adenine nucleotide
 % transporter (ATP [m] => ATP[c]), the HMR_7638 reaction equation will be
 % reverted to its original form (H+[c] => H+[m]).
 
