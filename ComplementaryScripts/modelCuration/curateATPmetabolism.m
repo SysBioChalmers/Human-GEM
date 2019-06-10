@@ -44,7 +44,7 @@ ihuman.version = '';
 %
 % The original form of HMR_7638 (from HMR2) involved transport of protons
 % from the cytoplasm to the mitochondria: H+[c] => H+[m], but was modified
-% to the current form in HumanGEM v0.0.5. Since this reaction is necessary
+% to the current form in HumanGEM v0.5.0. Since this reaction is necessary
 % to restore protons that are lost through the adenine nucleotide
 % transporter (ATP [m] => ATP[c]), the HMR_7638 reaction equation will be
 % reverted to its original form (H+[c] => H+[m]).
