@@ -2,7 +2,7 @@
 % FILE NAME:    curateATPmetabolism.m
 % 
 % DATE CREATED: 2019-04-10
-%     MODIFIED: 2019-06-05
+%     MODIFIED: 2019-06-10
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -30,37 +30,43 @@ rxnNotes = {};
 
 
 %% Remove rxnRecon3DID model field and clear version field
-% this information is now stored in the humanGEMRxnAssoc.JSON file
+% this information is identical to the association information stored in
+% the humanGEMRxnAssoc.JSON file, and is therefore unnecessary
 ihuman = rmfield(ihuman,'rxnRecon3DID');
 ihuman.version = '';
 
 
 %% Remove duplicate reaction
-% A proton transporter is duplicated; one should be removed:
+% A proton transporter is currently duplicated in HumanGEM:
+%
 %   HMR_7638:  H+[i] => H+[m]
 %       Htmi:  H+[i] => H+[m]
-rxn_ind = getIndexes(ihuman,{'HMR_7638';'Htmi'},'rxns');
+%
+% The original form of HMR_7638 involved transport of protons from the
+% cytoplasm to the mitochondria: H+[c] => H+[m]. Since this reaction is
+% needed to restore protons that are lost through the adenine nucleotide
+% transporter (ATP [m] => ATP[c]), the HMR_7638 reaction equation will be
+% reverted to its original form (H+[c] => H+[m]).
 
-% document the association between HMR and Recon3D reaction
+% get relevant reaction and metabolite
+rxn_ind = getIndexes(ihuman,{'HMR_7638';'Htmi'},'rxns');
+Hi_ind = getIndexes(ihuman,'H+[i]','metscomps');
+Hc_ind = getIndexes(ihuman,'H+[c]','metscomps');
+
+% update stoichiometry of HMR_7638
+ihuman.S(Hi_ind,rxn_ind(1)) = 0;
+ihuman.S(Hc_ind,rxn_ind(1)) = -1;
+
+% need to update some associations related to these reactions
 rxnAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMRxnAssoc.JSON'));
 if ~isequal(ihuman.rxns,rxnAssoc.rxns)
-    % require that the model reactions are consistent with the annotation file
+    % model reactions must be consistent with the annotation file
     error('Model reactions are inconsistent with humanGEMRxnAssoc.JSON file!');
 end
-rxnAssoc.rxnRecon3DID(rxn_ind(1)) = {'Htmi'};  % update the Recon3D ID association
-rxnAssoc.rxnBiGGID(rxn_ind(1)) = {'Htmi'};  % update the BiGG ID association
+rxnAssoc.rxnRecon3DID(rxn_ind(1)) = {'Htm'};  % update the Recon3D ID association for HMR_7638
+rxnAssoc.rxnMNXID(rxn_ind) = {'MNXR100765'};  % MNXIDs for HMR_7638 and Htmi are the same, because compartments are ignored
 
-% delete reaction from annotation file
-f = fieldnames(rxnAssoc);
-for i = 1:numel(f)
-    rxnAssoc.(f{i})(rxn_ind(2)) = [];
-end
-
-% delete reaction from model structure
-ihuman = removeReactionsFull(ihuman,{'Htmi'});
-
-% update rxnNotes
-rxnNotes = [rxnNotes; [{'Htmi'} {'Reaction is duplicate of HMR_7638, and was thus removed.'}]];
+rxnNotes = [rxnNotes; [{'HMR_7638'} {'Reaction was identical to Htmi, and proton transport is needed from cytosol to mitochondria, so the reaction was reverted to its original form.'}]];
 
 
 %% Update the stoichiometry of ATP synthase
@@ -76,39 +82,6 @@ Hm = getIndexes(ihuman,'H+[m]','metscomps');
 ihuman.S([Hi;Hm],rxn_ind) = [-3;2];
 
 rxnNotes = [rxnNotes; [{'HMR_6916'} {'Balanced reaction mass and charge, and changed to 3 protons pumped per ATP produced (PMID: 15620362)'}]];
-
-
-% With this new formulation, we need to add a permeability transition pore
-% (PTP) reaction to move H+[c] -> H+[m] to account for the proton that is
-% lost through the adenine nucleotide transporter (ATP [m] -> ATP[c]).
-
-% construct structure
-rxnsToAdd = {};
-rxnsToAdd.rxns = {'HMR_10025'};
-rxnsToAdd.rxnNames = {'Proton permeability transition pore'};
-rxnsToAdd.equations = {'H+[c] => H+[m]'};
-rxnsToAdd.lb = 0;
-rxnsToAdd.ub = 1000;
-rxnsToAdd.subSystems = {{'Transport reactions'}};
-rxnsToAdd.rxnReferences = {'PMID:27590224'};
-
-% add reactions
-ihuman = addRxns(ihuman,rxnsToAdd,3);
-[~,newRxnInd] = ismember(rxnsToAdd.rxns,ihuman.rxns);
-
-% update other non-standard model fields
-ihuman.prRules(newRxnInd) = {''};
-ihuman.rxnProtMat(newRxnInd,:) = 0;
-ihuman.priorCombiningGrRules(newRxnInd) = {''};
-
-% update reaction annotation structure
-rxnAssoc.rxns(newRxnInd) = rxnsToAdd.rxns;
-f = fieldnames(rxnAssoc);
-for i = 2:numel(f)
-    rxnAssoc.(f{i})(newRxnInd) = {''};
-end
-
-rxnNotes = [rxnNotes; [{'HMR_10025'} {'Add permeability transition pore (PTP) reaction to move protons from cytosol to mitochondria compartment (PMID:27590224).'}]];
 
 
 %% Prevent free transport of Pi from [c] to [m]
@@ -180,6 +153,19 @@ rxnNotes = [rxnNotes; [rxns, repmat({'Reaction reversibility updated to prevent 
 % HMR_0686  fatty acid-LD-TG2 pool[c] => 0.0001 (10Z)-heptadecenoic acid[c] + 0.0001 (11Z,14Z)-eicosadienoic acid[c] + 0.0001 (11Z,14Z,17Z)-eicosatrienoic acid[c] + 0.0001 (13Z)-eicosenoic acid[c] + 0.0001 (13Z)-octadecenoic acid[c] + 0.0001 (13Z,16Z)-docosadienoic acid[c] + 0.0016 (4Z,7Z,10Z,13Z,16Z)-DPA[c] + 0.0001 (6Z,9Z)-octadecadienoic acid[c] + 0.0001 (6Z,9Z,12Z,15Z,18Z)-TPA[c] + 0.0001 (6Z,9Z,12Z,15Z,18Z,21Z)-THA[c] + 0.0001 (7Z)-octadecenoic acid[c] + 0.0001 (7Z)-tetradecenoic acid[c] + 0.0001 (9E)-tetradecenoic acid[c] + 0.0001 (9Z,12Z,15Z,18Z)-TTA[c] + 0.0001 (9Z,12Z,15Z,18Z,21Z)-TPA[c] + 0.0001 10,13,16,19-docosatetraenoic acid[c] + 0.0001 10,13,16-docosatriynoic acid[c] + 0.0001 12,15,18,21-tetracosatetraenoic acid[c] + 0.0001 13,16,19-docosatrienoic acid[c] + 0.0001 7-palmitoleic acid[c] + 0.0001 8,11-eicosadienoic acid[c] + 0.0001 9-eicosenoic acid[c] + 0.0001 9-heptadecylenic acid[c] + 0.0032 adrenic acid[c] + 0.0521 arachidonate[c] + 0.0001 behenic acid[c] + 0.0001 cerotic acid[c] + 0.0001 cis-cetoleic acid[c] + 0.0001 cis-erucic acid[c] + 0.0001 cis-gondoic acid[c] + 0.0217 cis-vaccenic acid[c] + 0.0081 DHA[c] + 0.0023 dihomo-gamma-linolenate[c] + 0.0018 DPA[c] + 0.0001 eicosanoate[c] + 0.0001 elaidate[c] + 0.0003 EPA[c] + 0.003 gamma-linolenate[c] + 0.0001 henicosanoic acid[c] + 0.0001 lauric acid[c] + 0.0001 lignocerate[c] + 0.281 linoleate[c] + 0.0119 linolenate[c] + 0.0001 margaric acid[c] + 0.0001 mead acid[c] + 0.0024 myristic acid[c] + 0.0001 nervonic acid[c] + 0.0001 nonadecylic acid[c] + 0.4226 oleate[c] + 0.0001 omega-3-arachidonic acid[c] + 0.12 palmitate[c] + 0.0229 palmitolate[c] + 0.0001 pentadecylic acid[c] + 0.0001 physeteric acid[c] + 0.0384 stearate[c] + 0.0025 stearidonic acid[c] + 0.0001 tricosanoic acid[c] + 0.0001 tridecylic acid[c] + 0.0001 ximenic acid[c]
 ihuman = setParam(ihuman,'eq','HMR_0686',0);
 rxnNotes = [rxnNotes; [{'HMR_0686'} {'This pool reaction enables infinite ATP and CO production from Pi and O2, and therefore should be inactivated until it can be properly reformulated or removed entirely.'}]];
+
+
+%% Verify model changes (OPTIONAL)
+
+% load metabolic tasks that assess issues addressed in this and previous
+% model curation processes
+taskStruct = parseTaskList('../../ComplementaryData/metabolicTasks/metabolicTasks_VerifyModel.xls');
+
+% check original HumanGEM task performance
+checkTasks(ihuman_orig,[],true,false,false,taskStruct);
+
+% check curated HumanGEM task performance
+checkTasks(ihuman,[],true,false,false,taskStruct);
 
 
 %% Write updated reaction annotation file
