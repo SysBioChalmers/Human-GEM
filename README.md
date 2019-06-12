@@ -18,14 +18,14 @@ Article under consideration.
 
 - Pubmed ID: n/a
 
-- Last update: {{DATE}}
+- Last update: 2019-06-12
 
 
 - The model contains:
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|-----:|
-|_Homo sapiens_ |	HMR2, Recon3D|	{{nRXN}}|	{{nMET}}|	{{nGENE}}|
+|_Homo sapiens_ |	HMR2, Recon3D|	13520|	10103|	3628|
 
 
 
