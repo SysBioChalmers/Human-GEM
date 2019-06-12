@@ -18,14 +18,14 @@ Article under consideration.
 
 - Pubmed ID: n/a
 
-- Last update: 2019-05-17
+- Last update: {{DATE}}
 
 
 - The model contains:
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|-----:|
-|_Homo sapiens_ |	HMR2, Recon3D|	13520|	10103|	3627|
+|_Homo sapiens_ |	HMR2, Recon3D|	{{nRXN}}|	{{nMET}}|	{{nGENE}}|
 
 
 
@@ -56,4 +56,5 @@ This repository is administered by Jonathan L. Robinson ([@JonathanRob](https://
 - [Jonathan L. Robinson](https://www.chalmers.se/en/Staff/Pages/jonrob.aspx), Chalmers University of Technology, Gothenburg Sweden
 - [Pınar Kocabaş](https://www.chalmers.se/en/staff/Pages/kocabas.aspx), Chalmers University of Technology, Gothenburg Sweden
 - [Pierre-Etienne Cholley](https://www.chalmers.se/en/staff/Pages/cholley.aspx), Chalmers University of Technology, Gothenburg Sweden
+- [Avlant Nilsson](https://www.chalmers.se/en/staff/Pages/avlant-nilsson.aspx), Chalmers University of Technology, Gothenburg Sweden
 - [Hao Wang](https://www.chalmers.se/en/staff/Pages/hao-wang.aspx), Chalmers University of Technology, Gothenburg Sweden
