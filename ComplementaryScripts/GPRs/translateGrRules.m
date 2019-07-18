@@ -118,6 +118,9 @@ else
     targetFormat = targetFormat(:);
 end
 
+% allow for non-exact matches to "Name" option
+targetFormat(ismember(lower(targetFormat),{'name','names'})) = {'Name'};
+
 
 % get original list of genes from the grRules
 genes_orig = getGenesFromGrRules(grRules);
