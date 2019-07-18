@@ -1,9 +1,9 @@
-function [] = writecell(C,fileName,header,delim,formatSpec,date)
-%writecell  Write cell array to file.
+function [] = writecell2file(C,fileName,header,delim,formatSpec,date)
+%writecell2file  Write cell array to file.
 %
 % USAGE:
 %
-%   writecell(C,fileName,header,delim,formatSpec, date);
+%   writecell2file(C,fileName,header,delim,formatSpec, date);
 %
 % INPUT:
 %
@@ -33,7 +33,7 @@ function [] = writecell(C,fileName,header,delim,formatSpec,date)
 %   date         (Optional, default FALSE) If TRUE, print out the date
 %                in the first line of output file 
 %
-% Jonathan Robinson, 2018-10-15
+% Jonathan Robinson, 2019-07-18
 % Hao Wang, 2018-10-19
 
 
