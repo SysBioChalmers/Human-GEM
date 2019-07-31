@@ -59,7 +59,7 @@ if ~isempty(modelChanges.rxns)
                   rxnChg.grRuleNew, rxnChg.notes]];
 
     % write to file
-    writecell(rxnChgArray,fileNameRxn,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\t%s\t%s\n',date);
+    writecell2file(rxnChgArray,fileNameRxn,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\t%s\t%s\n',date);
 end
 
 if ~isempty(modelChanges.mets)
@@ -72,6 +72,6 @@ if ~isempty(modelChanges.mets)
                   metChg.notes]];
 
     % write to file
-    writecell(metChgArray,fileNameMet,true,'\t','%s\t%s\t%s\t%s\t%s\t%d\t%d\t%s\n',date);
+    writecell2file(metChgArray,fileNameMet,true,'\t','%s\t%s\t%s\t%s\t%s\t%d\t%d\t%s\n',date);
 end
 

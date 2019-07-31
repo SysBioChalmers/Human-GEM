@@ -154,7 +154,7 @@ if ~isempty(writefile)
     GPRdata_str = cellfun(@num2str,GPRdata,'UniformOutput',false);
     
     % write to file
-    writecell(GPRdata_str,writefile,true,'\t');
+    writecell2file(GPRdata_str,writefile,true,'\t');
 end
 
 end  % function end
