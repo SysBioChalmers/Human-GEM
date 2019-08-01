@@ -154,7 +154,7 @@ rxnsToAdd.rxns = rxnData{1};
 rxnsToAdd.rxnNames = rxnData{2};
 rxnsToAdd.lb = rxnData{3};
 rxnsToAdd.ub = rxnData{4};
-rxnsToAdd.subSystems = rxnData{5};
+rxnsToAdd.subSystems = cellfun(@(s) {{s}}, rxnData{5});
 rxnsToAdd.equations = rxnData{6};
 
 % add new reactions to model
