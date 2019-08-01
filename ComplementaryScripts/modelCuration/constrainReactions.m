@@ -710,5 +710,5 @@ rxnNotes = [rxnNotes; [constrain_rxns, repmat({'reaction is artificial and invol
 
 
 %% log inactivation reactions into inactivationRxns.tsv
-writecell(rxnNotes,'../../ComplementaryData/modelCuration/inactivationRxns.tsv',true,'\t','',true);
+writecell2file(rxnNotes,'../../ComplementaryData/modelCuration/inactivationRxns.tsv',true,'\t','',true);
 

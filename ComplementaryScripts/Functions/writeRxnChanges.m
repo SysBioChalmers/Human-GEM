@@ -17,6 +17,8 @@ function [] = writeRxnChanges(rxnChanges,fileName,date)
 %                     lbNew   vector of new lower bounds
 %                    ubOrig   vector of original upper bounds
 %                     ubNew   vector of new upper bounds
+%                grRuleOrig   cell array of original reaction grRules
+%                 grRuleNew   cell array of new reaction grRules
 %                     notes   cell array of notes associated with the changes
 %
 %   fileName       Name of file to write to. If an extension is not
@@ -26,7 +28,7 @@ function [] = writeRxnChanges(rxnChanges,fileName,date)
 %                  line of output file, or not if FALSE.
 %
 %
-% Jonathan Robinson, 2018-11-05
+% Jonathan Robinson, 2019-05-17
 %
 
 % handle input arguments
@@ -42,9 +44,10 @@ end
 chgArray = [fieldnames(rxnChanges)';
             [rxnChanges.rxns, rxnChanges.eqnOrig, rxnChanges.eqnNew,...
             num2cell([rxnChanges.lbOrig, rxnChanges.lbNew, ...
-            rxnChanges.ubOrig, rxnChanges.ubNew]), rxnChanges.notes]];
+            rxnChanges.ubOrig, rxnChanges.ubNew]), rxnChanges.grRuleOrig, ...
+            rxnChanges.grRuleNew, rxnChanges.notes]];
 
 % write to file
-writecell(chgArray,fileName,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\n',date);
+writecell2file(chgArray,fileName,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\t%s\t%s\n',date);
 
 
