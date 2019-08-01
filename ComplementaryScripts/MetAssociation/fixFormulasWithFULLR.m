@@ -118,7 +118,7 @@ metAssocHMR2Recon3 = m;
 save('metAssocHMR2Recon3.mat','metAssocHMR2Recon3');
 save('Recon3Mets2MNX.mat','Recon3Mets2MNX');
 ihuman.metFormulas = metFormulas;
-writecell(correctedFormulas,'fixFormulasWithFULLR.tsv',0,'','',1);
+writecell2file(correctedFormulas,'fixFormulasWithFULLR.tsv',0,'','',1);
 movefile('fixFormulasWithFULLR.tsv','../../ComplementaryData/modelCuration/');
 
 
