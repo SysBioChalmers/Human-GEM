@@ -2,13 +2,15 @@
 % FILE NAME:    updateBiGGIDs.m
 % 
 % DATE CREATED: 2019-08-08
-%      UPDATED: 2019-08-08
+%      UPDATED: 2019-08-09
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
 %               Chalmers University of Technology
 % 
-% PURPOSE: Many of the BiGG IDs in the humanGEMMetAssoc.JSON and 
+% PURPOSE: [Addresses Issue #124]
+%
+%          Many of the BiGG IDs in the humanGEMMetAssoc.JSON and 
 %          humanGEMRxnAssoc.JSON annotation files are invalid.
 %          For example, metabolite 'ala_L' was retrieved from Recon3D, but 
 %          the valid BiGG ID is 'ala__L'.
