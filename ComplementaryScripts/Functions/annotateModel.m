@@ -109,6 +109,9 @@ if any(ismember({'met','metabolite'},lower(annType)))
     tmpfile = fullfile(path,'../../ComplementaryData/annotation','humanGEMMetAssoc.JSON');
     metAssoc = jsondecode(fileread(tmpfile));
     
+    % ChEBI IDs should be of the form "CHEBI:#####"
+    metAssoc.metChEBIID = regexprep(metAssoc.metChEBIID,'(^)(\d+)|(;\s*)(\d+)','$1CHEBI:$2');
+    
     metAssocArray = struct2cell(metAssoc);
     metAssocArray = horzcat(metAssocArray{:});
 else
@@ -152,11 +155,30 @@ if ( addMiriams )
         miriamNames = id2miriam(rxnFieldInd(hasRxnField),2);
         miriamValues = rxnAssocArray(:,hasRxnField);
         
+        
+        % assign SBO terms to model reactions
+        rxnSBO = repmat({'SBO:0000176'},size(model.rxns));  % default is "biochemical reaction"
+        
+        biomass_rxn = contains(lower(model.rxns),'biomass');
+        biomass_met = ismember(lower(model.metNames),'biomass') & ismember(model.comps(model.metComps),'c');
+        biomass_rxn = biomass_rxn | (model.S(biomass_met,:) > 0)';
+        rxnSBO(biomass_rxn) = {'SBO:0000629'};  % "biomass production"
+        
+        transport_rxn = getTransportRxns(model);
+        rxnSBO(transport_rxn) = {'SBO:0000185'};  % "translocation reaction"
+        
+        [~,exchange_rxn] = getExchangeRxns(model);
+        rxnSBO(exchange_rxn) = {'SBO:0000627'};  % "exchange reaction"
+        
+        
         % add new data to the rxnMiriams field
         for i = 1:numel(model.rxns)
             if hasRxn(i)
+                % add annotation
                 model.rxnMiriams{i} = appendMiriamData(model.rxnMiriams{i}, miriamNames, miriamValues(rxnInd(i),:)');
             end
+            % add SBO terms
+            model.rxnMiriams{i} = appendMiriamData(model.rxnMiriams{i}, {'sbo'}, rxnSBO(i));
         end
     end
     
@@ -178,8 +200,11 @@ if ( addMiriams )
         % add new data to the metMiriams field
         for i = 1:numel(model.mets)
             if hasMet(i)
+                % add annotation
                 model.metMiriams{i} = appendMiriamData(model.metMiriams{i}, miriamNames, miriamValues(metInd(i),:)');
             end
+            % add SBO term (SBO:0000247, "simple chemical" for all mets)
+            model.metMiriams{i} = appendMiriamData(model.metMiriams{i}, {'sbo'}, {'SBO:0000247'});
         end
     end
     
@@ -201,7 +226,10 @@ if ( addMiriams )
         
         % add new data to the geneMiriams field
         for i = 1:numel(model.genes)
+            % add annotations
             model.geneMiriams{i} = appendMiriamData(model.geneMiriams{i}, miriamNames, miriamValues(i,:)');
+            % add SBO term (SBO:0000243, "gene" for all genes)
+            model.geneMiriams{i} = appendMiriamData(model.geneMiriams{i}, {'sbo'}, {'SBO:0000243'});
         end
     end
     
