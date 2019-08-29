@@ -94,6 +94,18 @@ x = [{'mets','metNames','metFormulas','metCharges','MNXIDs','MNXformulas','MNXch
     num2cell(ihuman.metCharges(met_ind)), mnxIDs, mnxFormulas, num2cell(mnxCharges)]];
 
 
+%% Add new metabolites to the model
+
+metsToAdd = {};
+metsToAdd.mets = {'m10000c';'m10001c';'m10002c'};
+metsToAdd.metNames = {'protein C terminal';'protein N terminal';'S-[(2E,6E)-farnesyl]-L-cysteine methyl ester'};
+metsToAdd.compartments = 'c';
+metsToAdd.metFormulas = {'CO2R';'H3NR';'C19H34NO2S'};
+metsToAdd.metCharges = [-1;1;1];
+ihuman = addMets(ihuman, metsToAdd);
+
+
+
 %% Analyze effect of model changes on reaction balance status
 
 % initialize variables
@@ -131,6 +143,16 @@ unBalCharge = find(imBalCharge1 == 0 & imBalCharge2 ~= 0);
 % check balance status of a selected set of reactions
 bal = getElementalBalance(ihuman, r_ind);
 elDiff = elementalMatrixToFormulae(bal.rightComp - bal.leftComp, bal.elements.abbrevs);
+
+
+
+%% delete some reactions from the model
+
+delRxns = {};
+ihuman = removeReactionsFull(ihuman, delRxns);
+
+
+%% Stoich consistency checks
 
 
 
