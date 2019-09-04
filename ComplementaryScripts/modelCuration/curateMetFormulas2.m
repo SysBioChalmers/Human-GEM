@@ -94,8 +94,23 @@ x = [{'mets','metNames','metFormulas','metCharges','MNXIDs','MNXformulas','MNXch
     num2cell(ihuman.metCharges(met_ind)), mnxIDs, mnxFormulas, num2cell(mnxCharges)]];
 
 
+%% Update some metabolite names to avoid parsing errors
+% Some metabolite names begin with a number or number with commas, followed
+% by a space, which some functions can confuse with stoichiometric
+% coefficients when parsing reaction equations. To fix this, the space is
+% replaced with a dash (-).
+nameArray = {'1 Acyl Phosphoglycerol', '1-Acyl Phosphoglycerol'
+             '15, 31-O-Didesmethyl-tacrolimus', '15,31-O-Didesmethyl-tacrolimus'
+             '2,6 Dimethylheptanoyl Coenzyme A', '2,6-Dimethylheptanoyl Coenzyme A'
+             '4,8 Dimethylnonanoyl Coenzyme A', '4,8-Dimethylnonanoyl Coenzyme A'};
+[hasMatch,nameInd] = ismember(ihuman.metNames, nameArray(:,1));
+ihuman.metNames(hasMatch) = nameArray(nameInd(hasMatch),2);
+
+
+
 %% Add new metabolites to the model
 
+% add new metabolites
 metsToAdd = {};
 metsToAdd.mets = {'m10000c';'m10001c';'m10002c'};
 metsToAdd.metNames = {'protein C terminal';'protein N terminal';'S-[(2E,6E)-farnesyl]-L-cysteine methyl ester'};
@@ -104,6 +119,25 @@ metsToAdd.metFormulas = {'CO2R';'H3NR';'C19H34NO2S'};
 metsToAdd.metCharges = [-1;1;1];
 ihuman = addMets(ihuman, metsToAdd);
 
+% add existing metabolites to new compartments
+metsToAdd = {};
+metsToAdd.mets = {'m02956c';'m02956l';'m02959r'};
+metsToAdd.metNames = {'TAG-chylomicron pool';'TAG-chylomicron pool';'TAG-VLDL pool'};
+metsToAdd.compartments = {'c','l','r'};
+ihuman = addMets(ihuman, metsToAdd);
+
+
+%% Add new reactions to the model
+
+rxnsToAdd = {};
+rxnsToAdd.rxns = {'HMR_10025';'HMR_10026';'HMR_10027'};
+rxnsToAdd.equations = {'TAG-VLDL pool[c] <=> TAG-VLDL pool[r]'
+                       'TAG-chylomicron pool[c] <=> TAG-chylomicron pool[s]'
+                       'TAG-chylomicron pool[c] <=> TAG-chylomicron pool[l]'};
+rxnsToAdd.rxnNames = {'TAG-VLDL pool transport (cytosol to ER)'
+                      'TAG-chylomicron pool transport (cytosol to extracellular)'
+                      'TAG-chylomicron pool transport (cytosol to lysosome)'};
+ihuman = addRxns(ihuman, rxnsToAdd, 3);
 
 
 %% Analyze effect of model changes on reaction balance status
@@ -118,6 +152,9 @@ rxnEqns = {};
 % change metabolite formulas and/or charges
 for i = 1:numel(metNames)
     ind = ismember(ihuman.metNames, metNames(i));
+    if ~any(ind)
+        error('Metabolite "%s" not found in model.',metNames{i});
+    end
     ihuman.metFormulas(ind) = metFormulas(i);
     ihuman.metCharges(ind) = metCharges(i);
 end
