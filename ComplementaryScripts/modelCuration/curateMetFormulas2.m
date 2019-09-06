@@ -119,24 +119,45 @@ metsToAdd.metFormulas = {'CO2R';'H3NR';'C19H34NO2S'};
 metsToAdd.metCharges = [-1;1;1];
 ihuman = addMets(ihuman, metsToAdd);
 
-% add existing metabolites to new compartments
+
+%% Add existing metabolites to new compartments
+
+% load new metabolite information from file
+fid = fopen('../../ComplementaryData/modelCuration/mets4massBal.tsv');
+metData = textscan(fid,'%s%s%s','Delimiter','\t','Headerlines',1);
+fclose(fid);
+
+% verify that none of the metabolites exist in the current model
+if any(ismember(metData{1},ihuman.mets))
+    error('One or more metabolites to be added already exist in the model.');
+end
+
+% add mets to the model
 metsToAdd = {};
-metsToAdd.mets = {'m02956c';'m02956l';'m02959r'};
-metsToAdd.metNames = {'TAG-chylomicron pool';'TAG-chylomicron pool';'TAG-VLDL pool'};
-metsToAdd.compartments = {'c','l','r'};
+metsToAdd.mets = metData{1};
+metsToAdd.metNames = metData{2};
+metsToAdd.compartments = metData{3};
 ihuman = addMets(ihuman, metsToAdd);
 
 
 %% Add new reactions to the model
 
+% load new reaction information from file
+fid = fopen('../../ComplementaryData/modelCuration/rxns4massBal.tsv');
+rxnData = textscan(fid,'%s%s%s%s','Delimiter','\t','Headerlines',1);
+fclose(fid);
+
+% verify that none of the reactions exist in the current model
+if any(ismember(rxnData{1},ihuman.rxns))
+    error('One or more reactions to be added already exist in the model.');
+end
+
+% add reactions to the model
 rxnsToAdd = {};
-rxnsToAdd.rxns = {'HMR_10025';'HMR_10026';'HMR_10027'};
-rxnsToAdd.equations = {'TAG-VLDL pool[c] <=> TAG-VLDL pool[r]'
-                       'TAG-chylomicron pool[c] <=> TAG-chylomicron pool[s]'
-                       'TAG-chylomicron pool[c] <=> TAG-chylomicron pool[l]'};
-rxnsToAdd.rxnNames = {'TAG-VLDL pool transport (cytosol to ER)'
-                      'TAG-chylomicron pool transport (cytosol to extracellular)'
-                      'TAG-chylomicron pool transport (cytosol to lysosome)'};
+rxnsToAdd.rxns = rxnData{1};
+rxnsToAdd.equations = rxnData{2};
+rxnsToAdd.rxnNames = rxnData{3};
+rxnsToAdd.subSystems = cellfun(@(s) {{s}},rxnData{4});
 ihuman = addRxns(ihuman, rxnsToAdd, 3);
 
 
@@ -183,10 +204,14 @@ elDiff = elementalMatrixToFormulae(bal.rightComp - bal.leftComp, bal.elements.ab
 
 
 
-%% delete some reactions from the model
+%% Delete rxns from model or reactivate previously inactivated rxns
 
 delRxns = {};
-ihuman = removeReactionsFull(ihuman, delRxns);
+% ihuman = removeReactionsFull(ihuman, delRxns);  % hard delete
+ihuman = setParam(ihuman,'eq',delRxns,0);  % soft delete
+
+reactivate = {};
+ihuman = setParam(ihuman,'ub',reactivate,1000);
 
 
 %% Stoich consistency checks
