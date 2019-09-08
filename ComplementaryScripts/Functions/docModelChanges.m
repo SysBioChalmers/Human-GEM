@@ -155,8 +155,10 @@ if ~isempty(chg_rxn)
     rxnChanges.grRuleNew  = model2.grRules(chg_rxn_ind_new);
     
     rxnChanges.notes = repmat({''},size(rxnChanges.rxns));
-    [is_rxn,rxn_ind] = ismember(changeNotes(:,1),rxnChanges.rxns);
-    rxnChanges.notes(rxn_ind(is_rxn)) = changeNotes(is_rxn,2);
+    if ~isempty(changeNotes)
+        [is_rxn,rxn_ind] = ismember(changeNotes(:,1),rxnChanges.rxns);
+        rxnChanges.notes(rxn_ind(is_rxn)) = changeNotes(is_rxn,2);
+    end
 end
 
 
@@ -205,8 +207,10 @@ if ~isempty(chg_met)
     metChanges.chargeNew   = model2.metCharges(chg_met_ind_new);
     
     metChanges.notes = repmat({''},size(metChanges.mets));
-    [is_met,met_ind] = ismember(changeNotes(:,1),metChanges.mets);
-    metChanges.notes(met_ind(is_met)) = changeNotes(is_met,2);
+    if ~isempty(changeNotes)
+        [is_met,met_ind] = ismember(changeNotes(:,1),metChanges.mets);
+        metChanges.notes(met_ind(is_met)) = changeNotes(is_met,2);
+    end
 end
 
 
