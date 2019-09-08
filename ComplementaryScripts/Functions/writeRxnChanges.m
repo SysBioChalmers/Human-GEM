@@ -48,6 +48,6 @@ chgArray = [fieldnames(rxnChanges)';
             rxnChanges.grRuleNew, rxnChanges.notes]];
 
 % write to file
-writecell(chgArray,fileName,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\t%s\t%s\n',date);
+writecell2file(chgArray,fileName,true,'\t','%s\t%s\t%s\t%f\t%f\t%f\t%f\t%s\t%s\t%s\n',date);
 
 
