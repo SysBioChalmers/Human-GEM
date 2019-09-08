@@ -112,7 +112,7 @@ ihuman.metNames(hasMatch) = nameArray(nameInd(hasMatch),2);
 
 % add new metabolites
 metsToAdd = {};
-metsToAdd.mets = {'m10000c';'m10001c';'m10002c'};
+metsToAdd.mets = {'m10004c';'m10005c';'m10006c'};
 metsToAdd.metNames = {'protein C terminal';'protein N terminal';'S-[(2E,6E)-farnesyl]-L-cysteine methyl ester'};
 metsToAdd.compartments = 'c';
 metsToAdd.metFormulas = {'CO2R';'H3NR';'C19H34NO2S'};
