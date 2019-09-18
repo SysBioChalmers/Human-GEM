@@ -1,0 +1,34 @@
+rxns	rxnAssoc	notes
+r1293	HMR_5167	reaction is duplicate of HMR_5167
+r1294	HMR_5168	reaction is duplicate of HMR_5168
+GGNG	HMR_5395	reaction is duplicate of HMR_5395
+r1092	HMR_5151	reaction is duplicate of HMR_5151
+r1093	HMR_5152	reaction is duplicate of HMR_5152
+r1094	HMR_5153	reaction is duplicate of HMR_5153
+r1095	HMR_5154	reaction is duplicate of HMR_5154
+r1096	HMR_5155	reaction is duplicate of HMR_5155
+r1097	HMR_5156	reaction is duplicate of HMR_5156
+r1098	HMR_5157	reaction is duplicate of HMR_5157
+r1099	HMR_5158	reaction is duplicate of HMR_5158
+r1100	HMR_5159	reaction is duplicate of HMR_5159
+r1101	HMR_5160	reaction is duplicate of HMR_5160
+r1102	HMR_5161	reaction is duplicate of HMR_5161
+r1103	HMR_5162	reaction is duplicate of HMR_5162
+r1104	HMR_5163	reaction is duplicate of HMR_5163
+r1105	HMR_5164	reaction is duplicate of HMR_5164
+r1112	HMR_5165	reaction is duplicate of HMR_5165
+r1113	HMR_5166	reaction is duplicate of HMR_5166
+r1402	HMR_5172	reaction is duplicate of HMR_5172
+HMR_4782	HMR_4780; HMR_4778	reaction is duplicate of HMR_4780 and HMR_4778
+HMR_4783	HMR_4781; HMR_4779	reaction is duplicate of HMR_4781 and HMR_4779
+HMR_1849	HMR_8658	reaction is duplicate of HMR_8658 after adjusting ATP cost to 1
+HMR_1851	HMR_1868	reaction is duplicate of HMR_1868 after adjusting ATP cost to 1
+HMR_1856	HMR_1870	reaction is duplicate of HMR_1870 after adjusting ATP cost to 1
+HMR_1858	HMR_1874	reaction is duplicate of HMR_1874 after adjusting ATP cost to 1
+HMR_1860	HMR_1872	reaction is duplicate of HMR_1872 after adjusting ATP cost to 1
+FAH3	HMR_8038	reaction is duplicate of HMR_8038 after rebalancing protons
+HMR_8422	HMR_7596	1-alkyldihydroxyacetone-phosphate is the same as alkyl-glycerone-3-phosphate, so it will be replaced with the latter. After this replacement, the reaction is identical to HMR_7596, so it should be DELETED.
+GDA1tn	GD1Atn	transport reaction is imbalanced, when fixed, it is identical to rxn GD1Atn
+PMI1346PH	HMR_8835	after rebalancing, reaction is identical to HMR_8835
+PMI1346PHn	HMR_8836	after rebalancing, reaction is identical to HMR_8836
+HMR_6499	HMR_6500	correct version of reaction is HMR_6500
