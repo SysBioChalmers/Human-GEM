@@ -69,7 +69,7 @@ end
 % write to file
 f = fopen(fileName,'w');
 if ( date )
-    fprintf(f,'# Date: %s\n',datestr(today,'yyyy-mm-dd'));
+    fprintf(f,'# Date: %s\n',datestr(clock,'yyyy-mm-dd'));
 end
 if ( header )
     fprintf(f,formatSpecHead,header_data{:});
