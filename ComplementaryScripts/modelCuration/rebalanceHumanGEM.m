@@ -249,7 +249,7 @@ ihuman = removeReactionsFull(ihuman,rxnIDdup);
 [~,remInd] = ismember(rxnIDdup,rxnAssoc.rxns);
 f = fieldnames(rxnAssoc);
 for i = 1:numel(f)
-    rxnAssoc.(f)(remInd) = [];
+    rxnAssoc.(f{i})(remInd) = [];
 end
 changeNotes = [changeNotes; [rxnIDdup, rxnDupNotes]];
 
@@ -316,7 +316,7 @@ ihuman = removeMets(ihuman,dupMetName,true);
 % remove duplicated metabolites from the metAssoc structure
 f = fieldnames(metAssoc);
 for i = 1:numel(f)
-    metAssoc.(f)(remMetInd) = [];
+    metAssoc.(f{i})(remMetInd) = [];
 end
 changeNotes = [changeNotes; [remMet, repmat({'metabolite is a duplicate and was therefore removed'},numel(remMet),1)]];
 
@@ -373,7 +373,7 @@ if ~isempty(metsRemoved)
     [~,remInd] = ismember(metsRemoved,metAssoc.mets);
     f = fieldnames(metAssoc);
     for i = 1:numel(f)
-        metAssoc.(f)(remInd) = [];
+        metAssoc.(f{i})(remInd) = [];
     end
     changeNotes = [changeNotes; [metsRemoved, repmat({'metabolite no longer used after removing reactions'},numel(metsRemoved),1)]];
 end
