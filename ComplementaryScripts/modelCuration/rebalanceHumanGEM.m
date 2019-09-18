@@ -359,7 +359,29 @@ for i = 1:numel(rxn)
 end
 
 
+%% Update some reaction grRules
+% These new gene associations were found through some of the reaction
+% duplication cases
+
+% load updated reaction grRule data
+fid = fopen('../../ComplementaryData/modelCuration/fullRebalance/rebalance_rxns_updatedGrRules.tsv');
+rxnData = textscan(fid,'%s%s','Delimiter','\t','Headerlines',1);
+fclose(fid);
+
+% update grRules
+[~,rxnInd] = ismember(rxnData{1}, ihuman.rxns);
+ihuman.grRules(rxnInd) = rxnData{2};
+
+% regenerate genes and rxnGeneMat fields
+[genes,rxnGeneMat] = getGenesFromGrRules(ihuman.grRules);
+ihuman.genes = genes;
+ihuman.rxnGeneMat = rxnGeneMat;
+
+
 %% Finalize model changes
+
+% remove some deprecated fields (these are unnecessary and non-standard)
+ihuman = rmfield(ihuman,{'proteins','prRules','rxnProtMat','priorCombiningGrRules'});
 
 % remove unused metabolites and/or genes from the model
 metsOrig = ihuman.mets;
