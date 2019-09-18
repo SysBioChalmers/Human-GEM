@@ -18,6 +18,10 @@
 %             > 15 new pool metabolites (3 unique, ignoring compartment)
 %             > 23 pool metabolites were updated to the new metabolites
 %
+%          Full details on model changes can be found in the generated
+%          model change log files (lipidPool_modelChanges_mets.tsv and 
+%          lipidPool_modelChanges_rxns.tsv)
+%
 
 
 %% Load Human-GEM and annotation files
