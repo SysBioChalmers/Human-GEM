@@ -173,8 +173,8 @@ while ~feof(fid)
         elseif startsWith(tline,'    - gene_reaction_rule: ')
             model = readFieldElement(model, tline, 'grRules','    - gene_reaction_rule: ');
             
-        elseif startsWith(tline,'    - old_grRule: ')
-            model = readFieldElement(model, tline, 'priorCombiningGrRules','    - old_grRule: ');
+        elseif startsWith(tline,'    - HMR2_grRule: ')
+            model = readFieldElement(model, tline, 'priorCombiningGrRules','    - HMR2_grRule: ');
             
         elseif startsWith(tline,'    - rxnFrom: ')
             model = readFieldElement(model, tline, 'rxnFrom','    - rxnFrom: ');
