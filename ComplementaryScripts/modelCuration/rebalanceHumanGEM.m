@@ -385,10 +385,8 @@ ihuman = rmfield(ihuman,{'proteins','prRules','rxnProtMat','priorCombiningGrRule
 
 % remove unused metabolites and/or genes from the model
 metsOrig = ihuman.mets;
-genesOrig = ihuman.genes;
 ihuman = removeReactions(ihuman,[],true,true);
 metsRemoved = setdiff(metsOrig,ihuman.mets);
-genesRemoved = setdiff(genesOrig,ihuman.genes);
 
 % if any metabolites were removed, also remove them from metAssoc
 if ~isempty(metsRemoved)
@@ -433,7 +431,7 @@ writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/fullRebala
 exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
 
 % clear unneeded variables
-clearvars -except ihuman_orig ihuman modelChanges genesRemoved
+clearvars -except ihuman_orig ihuman modelChanges
 
 
 
