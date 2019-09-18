@@ -75,7 +75,7 @@ metAssoc.metKEGGID(newMetInd) = metData{6};
 metAssoc.metBiGGID(newMetInd) = metData{7};
 metAssoc.metChEBIID(newMetInd) = metData{8};
 metAssoc.metMetaNetXID(newMetInd) = metData{9};
-metAssoc.metLIPIDMAPSID(newMetInd) = metData{10};
+metAssoc.metLipidMapsID(newMetInd) = metData{10};
 
 
 
