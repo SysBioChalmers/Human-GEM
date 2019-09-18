@@ -17,3 +17,5 @@ HMR_10046	phosphatidate-LD-PI pool[c] <=> phosphatidate-LD-PI pool[g]	phosphatid
 HMR_10047	phosphatidate-LD-PS pool[c] <=> phosphatidate-LD-PS pool[r]	phosphatidate-LD-PS pool transport (Cytosol to Endoplasmic reticulum)	Transport reactions
 HMR_10048	phosphatidate-LD-PS pool[c] <=> phosphatidate-LD-PS pool[g]	phosphatidate-LD-PS pool transport (Cytosol to Golgi apparatus)	Transport reactions
 HMR_10049	[protein][c] <=> [protein][r]	protein transport (Cytosol to Endoplasmic reticulum)	Transport reactions
+HMR_10050	N-formyl-L-glutamate[c] => N-formyl-L-glutamate[s]	N-formyl-L-glutamate transport (Cytosol to Extracellular)	Transport reactions
+HMR_10051	N-formyl-L-glutamate[s] <=> N-formyl-L-glutamate[x]	N-formyl-L-glutamate exchange	Exchange/demand reactions
