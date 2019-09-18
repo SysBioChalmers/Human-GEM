@@ -1,0 +1,227 @@
+rxns	notes	newAssoc
+r1293	reaction is duplicate of HMR_5167	HMR_5167
+r1294	reaction is duplicate of HMR_5168	HMR_5168
+HMR_7255	reaction is invalid and associated KEGG ID has been deprecated	
+GGNG	reaction is duplicate of HMR_5395	HMR_5395
+r1092	reaction is duplicate of HMR_5151	HMR_5151
+r1093	reaction is duplicate of HMR_5152	HMR_5152
+r1094	reaction is duplicate of HMR_5153	HMR_5153
+r1095	reaction is duplicate of HMR_5154	HMR_5154
+r1096	reaction is duplicate of HMR_5155	HMR_5155
+r1097	reaction is duplicate of HMR_5156	HMR_5156
+r1098	reaction is duplicate of HMR_5157	HMR_5157
+r1099	reaction is duplicate of HMR_5158	HMR_5158
+r1100	reaction is duplicate of HMR_5159	HMR_5159
+r1101	reaction is duplicate of HMR_5160	HMR_5160
+r1102	reaction is duplicate of HMR_5161	HMR_5161
+r1103	reaction is duplicate of HMR_5162	HMR_5162
+r1104	reaction is duplicate of HMR_5163	HMR_5163
+r1105	reaction is duplicate of HMR_5164	HMR_5164
+r1112	reaction is duplicate of HMR_5165	HMR_5165
+r1113	reaction is duplicate of HMR_5166	HMR_5166
+r1402	reaction is duplicate of HMR_5172	HMR_5172
+HMR_4782	reaction is duplicate of HMR_4780 and HMR_4778	HMR_4780; HMR_4778
+HMR_4783	reaction is duplicate of HMR_4781 and HMR_4779	HMR_4781; HMR_4779
+HMR_1849	DUPLICATE of HMR_8658 after adjusting ATP cost to 1	HMR_8658
+HMR_1851	DUPLICATE of HMR_1868 after adjusting ATP cost to 1	HMR_1868
+HMR_1856	DUPLICATE of HMR_1870 after adjusting ATP cost to 1	HMR_1870
+HMR_1858	DUPLICATE of HMR_1874 after adjusting ATP cost to 1	HMR_1874
+HMR_1860	DUPLICATE of HMR_1872 after adjusting ATP cost to 1	HMR_1872
+FAH3	rxn is identical to HMR_8038 after rebalancing protons	HMR_8038
+AGLPT	use of R Total metabolite is inconsistent with existing lipid pools	
+AGPAT1	use of R Total metabolite is inconsistent with existing lipid pools	
+AGPSx	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTCOAL1	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTCOAL2	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTCOAL3	use of R Total metabolite is inconsistent with existing lipid pools	
+R_group_phosphotase_1	use of R Total metabolite is inconsistent with existing lipid pools	
+R_group_phosphotase_2	use of R Total metabolite is inconsistent with existing lipid pools	
+R_group_phosphotase_3	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR11	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR12	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR13	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR202	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR203	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR204	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR205	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR206	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR207	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR208	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR209	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR210	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR211	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR212	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR213	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR31	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR32	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR33	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR34	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR41	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR42	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR43	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR44	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR45	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR46	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR51	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR52	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR53	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR54	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR55	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR56	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR57	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTFR61	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTPLM1	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTPLM1m	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTPLM2	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTPLM2m	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTPLM3	use of R Total metabolite is inconsistent with existing lipid pools	
+ARTPLM3m	use of R Total metabolite is inconsistent with existing lipid pools	
+ASAH1	use of R Total metabolite is inconsistent with existing lipid pools	
+DGAT	use of R Total metabolite is inconsistent with existing lipid pools	
+DHAPA	use of R Total metabolite is inconsistent with existing lipid pools	
+DHAPAx	use of R Total metabolite is inconsistent with existing lipid pools	
+DSAT	use of R Total metabolite is inconsistent with existing lipid pools	
+EX_Rtotal[e]	use of R Total metabolite is inconsistent with existing lipid pools	
+EX_Rtotal2[e]	use of R Total metabolite is inconsistent with existing lipid pools	
+EX_Rtotal3[e]	use of R Total metabolite is inconsistent with existing lipid pools	
+GPAM_hs	use of R Total metabolite is inconsistent with existing lipid pools	
+GPAMm_hs	use of R Total metabolite is inconsistent with existing lipid pools	
+LPASE	use of R Total metabolite is inconsistent with existing lipid pools	
+LPS	use of R Total metabolite is inconsistent with existing lipid pools	
+LPS2	use of R Total metabolite is inconsistent with existing lipid pools	
+LPS2e	use of R Total metabolite is inconsistent with existing lipid pools	
+LPS3	use of R Total metabolite is inconsistent with existing lipid pools	
+LPS3e	use of R Total metabolite is inconsistent with existing lipid pools	
+LPS4e	use of R Total metabolite is inconsistent with existing lipid pools	
+LPSe	use of R Total metabolite is inconsistent with existing lipid pools	
+MOGAT	use of R Total metabolite is inconsistent with existing lipid pools	
+PLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PLA2_2	use of R Total metabolite is inconsistent with existing lipid pools	
+PLA2_2e	use of R Total metabolite is inconsistent with existing lipid pools	
+RETFA	use of R Total metabolite is inconsistent with existing lipid pools	
+RETH	use of R Total metabolite is inconsistent with existing lipid pools	
+RETH1	use of R Total metabolite is inconsistent with existing lipid pools	
+RETH1e	use of R Total metabolite is inconsistent with existing lipid pools	
+RETH2	use of R Total metabolite is inconsistent with existing lipid pools	
+RETH2e	use of R Total metabolite is inconsistent with existing lipid pools	
+RETHe	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOT_2	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOT_3	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOT1	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOT2	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOT3	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOT4	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOT5	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOT6	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL2CRNCPT1	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL2CRNCPT2	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL2CRNt	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL2t	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL3CRNCPT1	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL3CRNCPT2	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL3CRNt	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL3t	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTALCRNCPT1	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTALCRNCPT2	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTALCRNt	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTALt	use of R Total metabolite is inconsistent with existing lipid pools	
+Rtotaltl	use of R Total metabolite is inconsistent with existing lipid pools	
+Rtotaltp	use of R Total metabolite is inconsistent with existing lipid pools	
+SOAT11	use of R Total metabolite is inconsistent with existing lipid pools	
+SOAT11r	use of R Total metabolite is inconsistent with existing lipid pools	
+SOAT12	use of R Total metabolite is inconsistent with existing lipid pools	
+SOAT12r	use of R Total metabolite is inconsistent with existing lipid pools	
+SPHMDAc	use of R Total metabolite is inconsistent with existing lipid pools	
+CHOLESACATc	use of R Total metabolite is inconsistent with existing lipid pools	
+CHOLESTle	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL2FATPc	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTAL3FATPc	use of R Total metabolite is inconsistent with existing lipid pools	
+RTOTALFATPc	use of R Total metabolite is inconsistent with existing lipid pools	
+MAGLINL_HSe	use of R Total metabolite is inconsistent with existing lipid pools	
+MAGOLE_HSe	use of R Total metabolite is inconsistent with existing lipid pools	
+LPS5e	use of R Total metabolite is inconsistent with existing lipid pools	
+LPS6e	use of R Total metabolite is inconsistent with existing lipid pools	
+LPS7e	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLMYR_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLOLE_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEOLE_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLPALME_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLPALM_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEPALM_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PAILPALM_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLSTE_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOL2LINL_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PE2LINL_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOL2OLE_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOL2PALM_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOL2STE_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN15_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLAR_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN183_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN1836_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN19_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN201_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN204_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN205_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN224_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN225_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN2254_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN226_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEAR_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PE203_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PE226_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PE224_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEDH203_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEDH12_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEDH14_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEDH161_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEDH13_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEDH15_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PEDH17_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN203_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PAILAR_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN24_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN261_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN281_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLN28_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLDOC_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLDEIC_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLDET_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLHEP_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PCHOLLINL_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+PELINL_HSPLA2	use of R Total metabolite is inconsistent with existing lipid pools	
+VLDL_HSDEG	use of R Total metabolite is inconsistent with existing lipid pools	
+IDL_HSDEG	use of R Total metabolite is inconsistent with existing lipid pools	
+LDL_HSDEG	use of R Total metabolite is inconsistent with existing lipid pools	
+HDL_HSDEG	use of R Total metabolite is inconsistent with existing lipid pools	
+CHYLO_HSDEG	use of R Total metabolite is inconsistent with existing lipid pools	
+ACER11r	use of R Total metabolite is inconsistent with existing lipid pools	
+ACER12r	use of R Total metabolite is inconsistent with existing lipid pools	
+ACER21g	use of R Total metabolite is inconsistent with existing lipid pools	
+ACER22g	use of R Total metabolite is inconsistent with existing lipid pools	
+ACER23g	use of R Total metabolite is inconsistent with existing lipid pools	
+ACER31r	use of R Total metabolite is inconsistent with existing lipid pools	
+Rtotalter	use of R Total metabolite is inconsistent with existing lipid pools	
+Rtotaltg	use of R Total metabolite is inconsistent with existing lipid pools	
+ARACHETH	use of pools is inconsistent with other reactions in the model	
+TRIDECETH	use of pools is inconsistent with other reactions in the model	
+TETDECAETH	use of pools is inconsistent with other reactions in the model	
+STEETH	use of pools is inconsistent with other reactions in the model	
+PEPALM	use of pools is inconsistent with other reactions in the model	
+PENDECAETH	use of pools is inconsistent with other reactions in the model	
+PELINETH	use of pools is inconsistent with other reactions in the model	
+OLEETH	use of pools is inconsistent with other reactions in the model	
+HEPDECETH	use of pools is inconsistent with other reactions in the model	
+HEXDECEETH	use of pools is inconsistent with other reactions in the model	
+DIDECAETH	use of pools is inconsistent with other reactions in the model	
+DIHOLINETH	use of pools is inconsistent with other reactions in the model	
+DOCOHEXETHc	use of pools is inconsistent with other reactions in the model	
+DOCTETETH	use of pools is inconsistent with other reactions in the model	
+HMR_8422	1-alkyldihydroxyacetone-phosphate is the same as alkyl-glycerone-3-phosphate, so it will be replaced with the latter. After this replacement, the reaction is identical to HMR_7596, so it should be DELETED.	HMR_7596
+HMR_8423	1-alkyldihydroxyacetone-phosphate is the same as alkyl-glycerone-3-phosphate, so it will be replaced with the latter. After replacement, this reaction is imbalanced and does not make sense, so it should be DELETED.	
+GDA1tn	transport reaction is imbalanced, when fixed, it is identical to rxn GD1Atn	GD1Atn
+PMI1346PH	after rebalancing, reaction is identical to HMR_8835	HMR_8835
+PMI1346PHn	after rebalancing, reaction is identical to HMR_8836	HMR_8836
+HMR_8301	reaction is imbalanced and the process is captured in other reactions properly, so this reaction should be DELETED.	
+HMR_8274	reaction treats mass of glycolipid differently than other reactions, and should therefore be DELETED.	
+HMR_6499	correct version of reaction is HMR_6500	HMR_6500
