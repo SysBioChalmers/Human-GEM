@@ -110,19 +110,46 @@ ihuman.metNames(hasMatch) = nameArray(nameInd(hasMatch),2);
 
 %% Add new metabolites to the model
 
+% load new metabolite information from file
+fid = fopen('../../ComplementaryData/modelCuration/newMets4massBal.tsv');
+metData = textscan(fid,'%s%s%s%s%d%s%s%s%s','Delimiter','\t','Headerlines',1);
+fclose(fid);
+
+% verify that none of the metabolite IDs (ignoring compartment) exist in the current model
+if any(startsWith(ihuman.mets, regexprep(metData{1},'.$','')))
+    error('One or more metabolite IDs to be added already exist in the model.');
+end
+
 % add new metabolites
 metsToAdd = {};
-metsToAdd.mets = {'m10004c';'m10005c';'m10006c'};
-metsToAdd.metNames = {'protein C terminal';'protein N terminal';'S-[(2E,6E)-farnesyl]-L-cysteine methyl ester'};
-metsToAdd.compartments = 'c';
-metsToAdd.metFormulas = {'CO2R';'H3NR';'C19H34NO2S'};
-metsToAdd.metCharges = [-1;1;1];
+metsToAdd.mets = metData{1};
+metsToAdd.metNames = metData{2};
+metsToAdd.compartments =  metData{3};
+metsToAdd.metFormulas =  metData{4};
+metsToAdd.metCharges =  metData{5};
 ihuman = addMets(ihuman, metsToAdd);
+
+% add metabolites to the metAssoc structure
+numOrigMets = numel(metAssoc.mets);
+numNewMets = numel(metData{1});
+newMetInd = (numOrigMets+1:numOrigMets+numNewMets)';
+f = fieldnames(metAssoc);
+for i = 1:numel(f)
+    % initialize structure with empty entries
+    metAssoc.(f{i})(newMetInd) = {''};
+end
+metAssoc.mets(newMetInd) = metData{1};
+metAssoc.metsNoComp(newMetInd) = regexprep(metData{1},'.$','');
+metAssoc.metKEGGIDs(newMetInd) = metData{6};
+metAssoc.metBiGGID(newMetInd) = metData{7};
+metAssoc.metChEBIID(newMetInd) = metData{8};
+metAssoc.metMetaNetXID(newMetInd) = metData{9};
+
 
 
 %% Add existing metabolites to new compartments
 
-% load new metabolite information from file
+% load metabolite information from file
 fid = fopen('../../ComplementaryData/modelCuration/mets4massBal.tsv');
 metData = textscan(fid,'%s%s%s','Delimiter','\t','Headerlines',1);
 fclose(fid);
@@ -138,6 +165,26 @@ metsToAdd.mets = metData{1};
 metsToAdd.metNames = metData{2};
 metsToAdd.compartments = metData{3};
 ihuman = addMets(ihuman, metsToAdd);
+
+% add metabolites to the metAssoc structure
+numOrigMets = numel(metAssoc.mets);
+numNewMets = numel(metData{1});
+newMetInd = (numOrigMets+1:numOrigMets+numNewMets)';
+newMetsNoComp = regexprep(metData{1},'.$','');
+
+% copy association data from other compartment versions of metabolites
+f = fieldnames(metAssoc);
+for i = 1:numel(f)
+    for j = 1:numNewMets
+        [~,ind] = ismember(newMetsNoComp(j), metAssoc.metsNoComp);
+        if ind == 0
+            error('Metabolite does not exist in any model compartments!');
+        end
+        metAssoc.(f{i})(newMetInd(j)) = metAssoc.(f{i})(ind);
+    end
+end
+metAssoc.mets(newMetInd) = metData{1};
+metAssoc.metsNoComp(newMetInd) = newMetsNoComp;
 
 
 %% Add new reactions to the model
@@ -189,6 +236,9 @@ ihuman = changeRxns(ihuman, rxns, rxnEqns, 3);
 [massImbal2, imBalMass2, imBalCharge2, imBalRxnBool2, Elements2, missFormulaeBool2, balMetBool2] = ...
     checkMassChargeBalance(ihuman);
 
+% check only charge balances
+imBalCharge = ihuman.S' * double(ihuman.metCharges);
+
 % determine reactions that became balanced
 newBalMass = find(imBalRxnBool1 & ~imBalRxnBool2);
 newBalCharge = find(imBalCharge1 ~= 0 & imBalCharge2 == 0);
@@ -212,6 +262,16 @@ ihuman = setParam(ihuman,'eq',delRxns,0);  % soft delete
 
 reactivate = {};
 ihuman = setParam(ihuman,'ub',reactivate,1000);
+
+
+%% Finalize model changes
+
+% update bounds and reversibility field
+ihuman.lb(ihuman.rev == 1) = -1000;
+ihuman.rev = double(ihuman.lb < 0);
+
+% update unconstrained field
+ihuman.unconstrained = double(ihuman.metComps == 9);
 
 
 %% Stoich consistency checks
