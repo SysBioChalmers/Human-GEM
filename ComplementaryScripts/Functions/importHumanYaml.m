@@ -55,7 +55,7 @@ model.rxnFrom={};
 model.metFrom={};
 model.rxnConfidenceScores={};
 model.metCharges={};
-model.version=[];
+model.version='';
 model.priorCombiningGrRules={};
 model.annotation=[];
 equations={};
@@ -79,34 +79,34 @@ while ~feof(fid)
         fprintf('\tmetaData\n');
         section = 1;
     end
-    
+
     if section == 1 && numel(tline) > 17
         if isequal(tline(1:17),'    short_name  :')
-            model.id = tline(20:end-1);
+            model.id = strip(tline(19:end),'"');
 
         elseif isequal(tline(1:17),'    full_name   :')
-            model.description = tline(20:end-1);
+            model.description = strip(tline(19:end),'"');
 
         elseif isequal(tline(1:17),'    version     :')
-            model.version = tline(20:end-1);
+            model.version = strip(tline(19:end),'"');
 
         elseif isequal(tline(1:17),'    taxonomy    :')
-            model.annotation.taxonomy = tline(20:end-1);
+            model.annotation.taxonomy = strip(tline(19:end),'"');
 
         elseif isequal(tline(1:17),'    description :')
-            model.annotation.note = tline(20:end-1);
+            model.annotation.note = strip(tline(19:end),'"');
 
         elseif isequal(tline(1:17),'    github      :')
-            model.annotation.sourceUrl = tline(20:end-1);
+            model.annotation.sourceUrl = strip(tline(19:end),'"');
 
         elseif isequal(tline(1:17),'    authors     :')
-            model.annotation.authorList = tline(20:end-1);
+            model.annotation.authorList = strip(tline(19:end),'"');
 
         elseif isequal(tline(1:17),'    email       :')
-            model.annotation.email = tline(20:end-1);
+            model.annotation.email = strip(tline(19:end),'"');
 
         elseif isequal(tline(1:17),'    organization:')
-            model.annotation.organization = tline(20:end-1);
+            model.annotation.organization = strip(tline(19:end),'"');
            
         end 
     end
@@ -280,6 +280,8 @@ revInd = find(model.rev);
 irrevInd = setdiff(transpose([1: length(model.rxns)]), revInd);
 equations(revInd)   = strcat(leftEqns(revInd), ' <=>', rightEqns(revInd));
 equations(irrevInd) = strcat(leftEqns(irrevInd), ' =>', rightEqns(irrevInd));
+
+% regenerate S matrix
 [S, newMets, ~, ~] = constructS(equations, model.mets, model.rxns);
 [~, metIdx] = ismember(model.mets, newMets);
 model.S = S(metIdx, :);
