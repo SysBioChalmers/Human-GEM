@@ -192,3 +192,6 @@ HMR_8423	1-alkyldihydroxyacetone-phosphate is the same as alkyl-glycerone-3-phos
 HMR_8301	reaction is imbalanced and the process is captured in other reactions properly, so this reaction should be DELETED.
 HMR_8274	reaction treats mass of glycolipid differently than other reactions, and should therefore be DELETED.
 HMR_7255	reaction is invalid and associated KEGG ID has been deprecated
+GLPASE2	use of Tyr-194 Of Apo-Glycogenin Protein (Primer For Glycogen Synthesis) is inconsistent with other glycogen forms in the model
+GAMYe	use of Tyr-194 Of Apo-Glycogenin Protein (Primer For Glycogen Synthesis) is inconsistent with other glycogen forms in the model
+EX_Tyr_ggn[e]	use of Tyr-194 Of Apo-Glycogenin Protein (Primer For Glycogen Synthesis) is inconsistent with other glycogen forms in the model
