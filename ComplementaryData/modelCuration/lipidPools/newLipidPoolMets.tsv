@@ -14,3 +14,4 @@ m10002x	1-acylglycerol-3P pool	x	C4H6O7PR	-2	C00681		CHEBI:16975	MNXM145527	LMGP
 m10003c	acyl-CoA pool	c	C22H31N7O17P3SR	-4	C00040	acoa	CHEBI:58342	MNXM44	LMFA07050000	this metabolite will replace all existing acyl-CoA pool metabolites EXCEPT those in the old pool formation reactions
 m10003m	acyl-CoA pool	m	C22H31N7O17P3SR	-4	C00040	acoa	CHEBI:58342	MNXM44	LMFA07050000	this metabolite will replace all existing acyl-CoA pool metabolites EXCEPT those in the old pool formation reactions
 m10003g	acyl-CoA pool	g	C22H31N7O17P3SR	-4	C00040	acoa	CHEBI:58342	MNXM44	LMFA07050000	this metabolite will replace all existing acyl-CoA pool metabolites EXCEPT those in the old pool formation reactions
+m10003p	acyl-CoA pool	p	C22H31N7O17P3SR	-4	C00040	acoa	CHEBI:58342	MNXM44	LMFA07050000	this metabolite will replace all existing acyl-CoA pool metabolites EXCEPT those in the old pool formation reactions
