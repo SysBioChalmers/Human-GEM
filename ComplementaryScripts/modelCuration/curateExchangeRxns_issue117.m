@@ -1,8 +1,8 @@
 %
-% FILE NAME:    curateExchangeRxns2.m
+% FILE NAME:    curateExchangeRxns_issue117.m
 % 
 % DATE CREATED: 2019-05-27
-%     MODIFIED: 2019-05-28
+%     MODIFIED: 2019-09-19
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
