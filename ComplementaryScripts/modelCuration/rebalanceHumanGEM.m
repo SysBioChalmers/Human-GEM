@@ -445,6 +445,40 @@ exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
 clearvars -except ihuman_orig ihuman modelChanges
 
 
+%% Test and report model balance stats
+
+% remove inactivated reactions before performing tests
+model_orig = simplifyModel(ihuman_orig,false,false,true);
+model = simplifyModel(ihuman,false,false,true);
+num_rxns_orig = numel(model_orig.rxns);
+num_rxns = numel(model.rxns);
+
+% check reaction mass balances before and after changes
+bal_orig = getElementalBalance(model_orig);
+num_unbal_orig = sum(bal_orig.balanceStatus ~= 1);
+bal = getElementalBalance(model);
+num_unbal = sum(bal.balanceStatus ~= 1);
+
+fprintf('Number of mass-imbalanced reactions before changes: %u (%.2f%%)\n', num_unbal_orig, num_unbal_orig/num_rxns_orig*100);
+fprintf('Number of mass-imbalanced reactions after changes: %u (%.2f%%)\n\n', num_unbal, num_unbal/num_rxns*100);
+
+% check reaction charge balances
+bal_orig = model_orig.S' * double(model_orig.metCharges);
+num_unbal_orig = sum(bal_orig ~= 0);
+bal = model.S' * double(model.metCharges);
+num_unbal = sum(bal ~= 0);
+
+fprintf('Number of charge-imbalanced reactions before changes: %u (%.2f%%)\n', num_unbal_orig, num_unbal_orig/num_rxns_orig*100);
+fprintf('Number of charge-imbalanced reactions after changes: %u (%.2f%%)\n\n', num_unbal, num_unbal/num_rxns*100);
+
+% check stoichiometric consistency (requires Cobra)
+[~,m_orig] = checkStoichiometricConsistency(model_orig);
+[~,m] = checkStoichiometricConsistency(model);
+
+fprintf('Model consistency (conserved metabolites) before changes: %.2f%%\n', sum(m_orig ~= 0)/numel(model_orig.mets)*100);
+fprintf('Model consistency (conserved metabolites) after changes: %.2f%%\n', sum(m ~= 0)/numel(model.mets)*100);
+
+
 
 
 %% Old code for intermediate analyses during model rebalancing
