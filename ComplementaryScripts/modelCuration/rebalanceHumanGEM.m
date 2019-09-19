@@ -32,6 +32,15 @@ if ~isequal(ihuman.mets, metAssoc.mets) || ~isequal(ihuman.rxns, rxnAssoc.rxns)
 end
 
 
+%% Update rev and lb fields to be consistent
+
+% There are 11 reactions with rev=1 but lb=0, these reactions should be
+% updated so that their rev=0. This change to reversibility was made to
+% these 11 reactions in curateATPmetabolism (implemented in PR#113), but
+% their "rev" field was not properly updated at that time.
+ihuman.rev(ihuman.lb == 0 & ihuman.ub ~= 0) = 0;
+
+
 %% Add new field to rxnAssoc structure
 
 % create a new field for HMR reaction IDs in the rxnAssoc structure
@@ -399,7 +408,9 @@ if ~isempty(metsRemoved)
 end
 
 % update bounds and reversibility field to be consistent with each other
+ihuman.rev(ihuman.lb == ihuman.ub) = 0;  % inactivated rxns are not reversible
 ihuman.lb(ihuman.rev == 1) = -1000;
+ihuman.lb(ihuman.rev == 0) = 0;
 ihuman.rev = double(ihuman.lb < 0);
 
 % update unconstrained field
