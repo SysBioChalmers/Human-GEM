@@ -138,7 +138,7 @@ changeNotes = [changeNotes; [metsToAdd.mets, repmat({'Boundary compartment versi
 %% Add new exchange reactions to the model
 
 % retrieve new reaction information from file
-fid = fopen('../../ComplementaryData/modelCuration/newExchangeRxns.tsv');
+fid = fopen('../../ComplementaryData/modelCuration/newExchangeRxns_issue117.tsv');
 rxnData = textscan(fid,'%s%s%f%f%s%s','Delimiter','\t','Headerlines',1);
 fclose(fid);
 nRxns = numel(rxnData{1});
@@ -234,7 +234,7 @@ changeNotes = [changeNotes; [rxns, repmat({'updated reaction to generate pool me
 %% Document reaction changes
 
 modelChanges = docModelChanges(ihuman_orig,ihuman,changeNotes);
-writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/curateExchangeReactions2_rxnChanges.tsv');
+writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/curateExchangeReactions_issue117.tsv');
 
 
 %% Export reaction and metabolite annotation JSON files
