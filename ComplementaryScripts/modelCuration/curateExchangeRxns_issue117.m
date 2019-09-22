@@ -259,7 +259,7 @@ fclose(fid);
 
 %% Export updated HumanGEM
 
-exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
+exportHumanGEM(ihuman,'HumanGEM','../../',{'mat','yml'},false,false);
 
 
 
