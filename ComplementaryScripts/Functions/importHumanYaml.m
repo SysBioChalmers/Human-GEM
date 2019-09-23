@@ -258,15 +258,15 @@ fclose(fid);
 % follow-up data processing
 fprintf('\nimporting completed\nfollow-up processing...');
 [~, model.metComps] = ismember(model.metComps, model.comps);
-model.metCharges = str2double(model.metCharges);
+model.metCharges = int64(str2double(model.metCharges));
 model.lb = str2double(model.lb);
 model.ub = str2double(model.ub);
 model.annotation.defaultLB = min(model.lb);
 model.annotation.defaultUB = max(model.ub);
-model.rev = model.lb<0 & model.ub>0;
+model.rev = double(model.lb<0 & model.ub>0);
 model.rxnConfidenceScores = str2double(model.rxnConfidenceScores);
 model.b = zeros(length(model.mets),1);
-model.c = ismember(model.rxns, objRxns);
+model.c = double(ismember(model.rxns, objRxns));
 
 [genes, rxnGeneMat] = getGenesFromGrRules(model.grRules);
 if isequal(sort(genes), sort(model.genes))
@@ -288,8 +288,7 @@ model.S = S(metIdx, :);
 
 % Although this works with HumanGEM, but it is NOT a generic solution of
 % dealing with the `unconstrained` field for other models!
-model.unconstrained = endsWith(model.mets, 'x');
-%model.c mark the object equation
+model.unconstrained = double(endsWith(model.mets, 'x'));
 
 fprintf(' Done!\n');
 
