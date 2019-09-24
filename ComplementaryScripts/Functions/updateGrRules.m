@@ -59,8 +59,8 @@ newGrRules          = tmp{colNewGrRules};
 rxnReferences       = tmp{colNewGrRules+1};
 rxnConfidenceScores = tmp{colNewGrRules+2};
 
-% Load humanGEM model
-load('humanGEM.mat');
+% Load HumanGEM model
+load('HumanGEM.mat');
 
 % Update curated grRules, rxnReferences, rxnConfidenceScores
 [~,rxn_ind] = ismember(rxnIDs,ihuman.rxns);
@@ -83,7 +83,7 @@ model = ihuman;
 
 % Save changes to .mat model file
 if autoSave
-    exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
+    exportHumanGEM(ihuman,'HumanGEM','../../',{'mat','yml'},false,false);
 end
 
 end
