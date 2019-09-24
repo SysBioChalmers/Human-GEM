@@ -37,7 +37,7 @@
 %% Load model and initialize variables
 
 % load HumanGEM
-load('humanGEM.mat');
+load('HumanGEM.mat');
 ihuman_orig = ihuman;  % to track changes
 
 % load reaction and metabolite annotation structures
