@@ -479,7 +479,7 @@ for i = 1:length(f)
     z = [z,m.(f{i})];
 end
 z = [f;z];
-writecell(z,'metdata.txt',true,'\t');
+writecell2file(z,'metdata.txt',true,'\t');
 %..........................................................
 
 

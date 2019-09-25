@@ -188,7 +188,7 @@ if ( false )
     end
     
     % write data to file
-    writecell(dupRxnData,'dupRxnData.txt',true,'\t');
+    writecell2file(dupRxnData,'dupRxnData.txt',true,'\t');
 end
 
 

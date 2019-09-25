@@ -54,8 +54,8 @@ end
 rxnIDs = tmp{1};
 newGrRules = tmp{colNewGrRules};
 
-% Load humanGEM model
-load('humanGEM.mat');
+% Load HumanGEM model
+load('HumanGEM.mat');
 
 % Update curated grRules
 [~,rxn_ind] = ismember(rxnIDs,ihuman.rxns);
@@ -76,7 +76,7 @@ model = ihuman;
 
 % Save changes to .mat model file
 if autoSave
-    save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+    exportHumanGEM(ihuman,'HumanGEM','../../',{'mat','yml'},false,false);
 end
 
 end
