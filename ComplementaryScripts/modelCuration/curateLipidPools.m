@@ -2,7 +2,7 @@
 % FILE NAME:    curateLipidPools.m
 % 
 % DATE CREATED: 2019-09-07
-%     MODIFIED: 2019-09-18
+%     MODIFIED: 2019-09-27
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -14,8 +14,8 @@
 %          process, the following changes were made:
 %
 %             > 6 new pool reactions
-%             > 1 new transport reaction
-%             > 15 new pool metabolites (3 unique, ignoring compartment)
+%             > 2 new transport reaction
+%             > 16 new pool metabolites (3 unique, ignoring compartment)
 %             > 23 pool metabolites were updated to the new metabolites
 %
 %          Full details on model changes can be found in the generated
