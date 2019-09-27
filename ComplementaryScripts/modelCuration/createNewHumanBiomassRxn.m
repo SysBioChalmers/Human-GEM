@@ -71,8 +71,8 @@ for i = 1:numel(f)
 end
 
 % note changes
-changeNotes = [changeNotes; [remRxns, repMat({'reaction was associated with deprecated HepG2 biomass reaction and should therefore be deleted'},numel(remRxns),1)]];
-changeNotes = [changeNotes; [remMetIDs, repMat({'metabolite was associated with deprecated HepG2 biomass reaction and should therefore be deleted'},numel(remMetIDs),1)]];
+changeNotes = [changeNotes; [remRxns, repmat({'reaction was associated with deprecated HepG2 biomass reaction and should therefore be deleted'},numel(remRxns),1)]];
+changeNotes = [changeNotes; [remMetIDs, repmat({'metabolite was associated with deprecated HepG2 biomass reaction and should therefore be deleted'},numel(remMetIDs),1)]];
 
 
 %% Add new metabolites for new biomass reaction
@@ -86,11 +86,11 @@ ihuman = addMets(ihuman,metsToAdd);
 
 % add metabolites to the annotation structure
 numOrigMets = numel(metAssoc.mets);
-numNewMets = numel(numel(metsToAdd.mets));
+numNewMets = numel(metsToAdd.mets);
 newMetInd = (numOrigMets+1:numOrigMets+numNewMets)';
 f = fieldnames(metAssoc);
 for i = 1:numel(f)
-    metAssoc.(f{i})(newMetInds) = {''};
+    metAssoc.(f{i})(newMetInd) = {''};
 end
 metAssoc.mets(newMetInd) = metsToAdd.mets;
 metAssoc.metsNoComp(newMetInd) = regexprep(metsToAdd.mets,'.$','');
@@ -113,7 +113,7 @@ rxnsToAdd = {};
 rxnsToAdd.rxns = rxnData{1};
 rxnsToAdd.rxnNames = rxnData{2};
 rxnsToAdd.equations = rxnData{3};
-rxnsToAdd.subSystems = {{'Artificial reactions'}};
+rxnsToAdd.subSystems = repmat({{'Artificial reactions'}},numel(rxnsToAdd.rxns),1);
 ihuman = addRxns(ihuman, rxnsToAdd, 3);
 
 % add reactions to the annotation structure
@@ -125,17 +125,6 @@ for i = 1:numel(f)
     rxnAssoc.(f{i})(newRxnInd) = {''};
 end
 rxnAssoc.rxns(newRxnInd) = rxnData{1};
-
-
-%% Finalize model changes
-
-% check if there are any unused mets and/or genes from the model
-metsOrig = ihuman.mets;
-ihuman = removeReactions(ihuman,[],true,true);
-metsRemoved = setdiff(metsOrig,ihuman.mets);
-if ~isempty(metsRemoved)
-    error('Unused metabolites were found!');
-end
 
 
 %% Document changes and export files
@@ -156,7 +145,7 @@ fwrite(fid, prettyJson(jsonStr));
 fclose(fid);
 
 % identify and document model changes
-modelChanges = docModelChanges(ihuman_orig,ihuman);
+modelChanges = docModelChanges(ihuman_orig,ihuman,changeNotes);
 writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/newHumanBiomassRxn_modelChanges.tsv');
 
 % export HumanGEM
