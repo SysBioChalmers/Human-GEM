@@ -2,7 +2,7 @@
 % FILE NAME:    updateBiGGIDs.m
 % 
 % DATE CREATED: 2019-08-08
-%      UPDATED: 2019-08-09
+%      UPDATED: 2019-09-27
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -25,6 +25,13 @@
 %
 %          The script writes the updated IDs to the humanGEMMetAssoc.JSON
 %          and humanGEMRxnAssoc.JSON files.
+%
+%
+%          *** Additionally, this script updates ChEBI IDs in the
+%          humanGEMMetAssoc.JSON file to include "CHEBI" in the ID, which
+%          is consistent with the identifiers.org nomenclature.
+%          For example, a ChEBI ID of "1234" should instead be written as
+%          "CHEBI:1234".
 %
 
 
@@ -77,6 +84,10 @@ if ~all(ismember(metAssoc.metBiGGID, bigg.universal_bigg_id) | cellfun(@isempty,
     fprintf('FAIL: Some metBiGGIDs in metAssoc were NOT found in the BiGG Database!\n');
 else
     fprintf('SUCCESS: All non-empty metBiGGIDs in metAssoc are found in the BiGG Database!\n');
+    
+    % correct met ChEBI ID format
+    metAssoc.metChEBIID = regexprep(metAssoc.metChEBIID, 'chebi', 'CHEBI', 'ignorecase');  % make it all uppercase
+    metAssoc.metChEBIID = regexprep(metAssoc.metChEBIID,'(^|\s)(\d+)','$1CHEBI:$2');  % add "CHEBI:" before numbers that don't already have it
     
     % export updated metAssoc structure to JSON
     jsonStr = jsonencode(metAssoc);
