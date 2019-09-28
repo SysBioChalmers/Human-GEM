@@ -17,15 +17,15 @@
 %% Load model and annotation files
 
 % load Human-GEM model
-% load('humanGEM.mat');
-load('HumanGEM_rebal.mat');
+% load('HumanGEM.mat');
+load('/Users/jonrob/Desktop/HumanGEM_rebal.mat');
 ihuman_orig = ihuman;  % keep copy of original version
 
 % load metabolite and reaction annotation data
 % metAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMMetAssoc.JSON'));
 % rxnAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMRxnAssoc.JSON'));
-metAssoc = jsondecode(fileread('humanGEMMetAssoc_rebal.JSON'));
-rxnAssoc = jsondecode(fileread('humanGEMRxnAssoc_rebal.JSON'));
+metAssoc = jsondecode(fileread('/Users/jonrob/Desktop/humanGEMMetAssoc_rebal.JSON'));
+rxnAssoc = jsondecode(fileread('/Users/jonrob/Desktop/humanGEMRxnAssoc_rebal.JSON'));
 changeNotes = {};
 
 % verify that HumanGEM and annotation structures are aligned
@@ -149,7 +149,7 @@ modelChanges = docModelChanges(ihuman_orig,ihuman,changeNotes);
 writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/newHumanBiomassRxn_modelChanges.tsv');
 
 % export HumanGEM
-exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
+exportHumanGEM(ihuman,'HumanGEM','../../',{'mat','yml'},false,false);
 
 % clear unneeded variables
 clearvars -except ihuman_orig ihuman modelChanges
