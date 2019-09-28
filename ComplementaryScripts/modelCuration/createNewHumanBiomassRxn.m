@@ -127,7 +127,10 @@ end
 rxnAssoc.rxns(newRxnInd) = rxnData{1};
 
 
-%% Document changes and export files
+%% Finalize and document changes, and export files
+
+% make the new biomass reaction the default objective
+ihuman = setParam(ihuman,'obj','biomass_human',1);
 
 % verify that HumanGEM and annotation structures are aligned
 if ~isequal(ihuman.mets, metAssoc.mets) || ~isequal(ihuman.rxns, rxnAssoc.rxns)
