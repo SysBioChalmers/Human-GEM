@@ -27,7 +27,7 @@
 %% Load Human-GEM and annotation files
 
 % load Human-GEM model
-load('humanGEM.mat');
+load('HumanGEM.mat');
 ihuman_orig = ihuman;  % keep copy of original version
 
 % load metabolite and reaction annotation data
@@ -201,7 +201,7 @@ modelChanges = docModelChanges(ihuman_orig,ihuman);
 writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/lipidPools/lipidPool_modelChanges.tsv');
 
 % export HumanGEM
-exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
+exportHumanGEM(ihuman,'HumanGEM','../../',{'mat','yml'},false,false);
 
 % clear unneeded variables
 clearvars -except ihuman_orig ihuman modelChanges
