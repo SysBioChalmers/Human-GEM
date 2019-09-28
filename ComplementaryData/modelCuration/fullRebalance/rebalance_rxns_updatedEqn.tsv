@@ -726,3 +726,5 @@ HMR_6393	hydroxide[c] + monodehydroascorbate[c] => dehydroascorbic acid[c] + H2O
 HMR_6808	dopamine[c] + H2O2[c] => dopamine-O-quinone[c] + 2 H2O[c]
 RE3095L	H2O2[l] + dopamine[l] => 2 H2O[l] + dopamine-O-quinone[l]
 RE3095X	H2O2[p] + dopamine[p] => 2 H2O[p] + dopamine-O-quinone[p]
+r0781	2 H+[r] + 3 NADPH[r] + 3 O2[r] + lanosterol[r] => formate[r] + 4 H2O[r] + 3 NADP+[r] + 4,4-dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol[r]
+HMR_4679	cysteamine[c] + O2[c] => H+[c] + hypotaurine[c]
