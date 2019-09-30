@@ -1,5 +1,5 @@
 %
-% FILE NAME:    updateBiGGIDs.m
+% FILE NAME:    updateBiGGIDs_issue124.m
 % 
 % DATE CREATED: 2019-08-08
 %      UPDATED: 2019-09-27
