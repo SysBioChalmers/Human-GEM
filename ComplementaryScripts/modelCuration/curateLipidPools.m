@@ -12,15 +12,24 @@
 %          and cholesterol-ester pool formation and breakdown in HumanGEM
 %          to achieve a more generic and mass-balanced model. In the
 %          process, the following changes were made:
-%
-%             > 6 new pool reactions
-%             > 2 new transport reaction
-%             > 16 new pool metabolites (3 unique, ignoring compartment)
-%             > 23 pool metabolites were updated to the new metabolites
+%             - 6 new pool reactions
+%             - 2 new transport reaction
+%             - 16 new pool metabolites (3 unique, ignoring compartment)
+%             - 23 pool metabolites were updated to the new metabolites
 %
 %          Full details on model changes can be found in the generated
 %          model change log files (lipidPool_modelChanges_mets.tsv and 
 %          lipidPool_modelChanges_rxns.tsv)
+%
+%          This script also removes 4 model fields that are now deprecated:
+%             1. proteins
+%             2. prRules
+%             3. rxnProtMat
+%             4. priorCombiningGrRules
+%
+%          The protein-related fields can simply be regenerated using the
+%          translateGrRules function, and priorCombiningGrRules can be
+%          retrieved from the repository if needed in the future.
 %
 
 
@@ -38,6 +47,12 @@ rxnAssoc = jsondecode(fileread('humanGEMRxnAssoc.JSON'));
 if ~isequal(ihuman.mets, metAssoc.mets) || ~isequal(ihuman.rxns, rxnAssoc.rxns)
     error('HumanGEM is not synced with the metAssoc and/or rxnAssoc structure!');
 end
+
+
+%% Remove four deprecated model fields
+
+ihuman = rmfield(ihuman, {'proteins';'prRules';'rxnProtMat';'priorCombiningGrRules'});
+
 
 
 %% Add new metabolites
