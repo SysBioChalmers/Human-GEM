@@ -14,6 +14,7 @@
 %               - 67 new reactions
 %               - 60 new metabolites
 %               - 688 new reaction KEGG associations
+%               - 1 new gene
 %
 
 
@@ -30,6 +31,12 @@ rxnAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMRxnAs
 % verify that HumanGEM and annotation structures are aligned
 if ~isequal(ihuman.mets, metAssoc.mets) || ~isequal(ihuman.rxns, rxnAssoc.rxns)
     error('HumanGEM is not synced with the metAssoc and/or rxnAssoc structure!');
+end
+
+% remove some deprecated fields if they still exist
+removeFields = intersect(fieldnames(ihuman),{'proteins';'prRules';'rxnProtMat';'priorCombiningGrRules'});
+if ~isempty(removeFields)
+    ihuman = rmfield(ihuman, removeFields);
 end
 
 
