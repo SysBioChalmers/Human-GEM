@@ -54,6 +54,11 @@ This repository is administered by Jonathan L. Robinson ([@JonathanRob](https://
 * Add the directory to your Matlab path, instructions [here](https://se.mathworks.com/help/matlab/ref/addpath.html?requestedDomain=www.mathworks.com)
 
 
+## Contributing
+
+Contributions are always welcome! Please read the [contributions guideline](https://github.com/SysBioChalmers/Human-GEM/blob/master/.github/CONTRIBUTING.md) to get started.
+
+
 ## Contributors
 - [Jonathan L. Robinson](https://www.chalmers.se/en/Staff/Pages/jonrob.aspx), Chalmers University of Technology, Gothenburg Sweden
 - [Pınar Kocabaş](https://www.chalmers.se/en/staff/Pages/kocabas.aspx), Chalmers University of Technology, Gothenburg Sweden
