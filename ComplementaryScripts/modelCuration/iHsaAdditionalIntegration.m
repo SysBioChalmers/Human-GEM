@@ -69,6 +69,20 @@ metAssoc.metKEGGID(newMetInd) = metData{7};
 metAssoc.metChEBIID(newMetInd) = metData{8};
 
 
+%% Add new genes from iHsa
+
+newGenes = {'ENSG00000183463'};
+if any(ismember(newGenes,ihuman.genes))
+    error('One or more genes to be added already exist in the model.');
+end
+
+% append new genes to list of model genes
+ihuman.genes = [ihuman.genes; newGenes];
+
+% add new columns to rxnGeneMat will be updated after the new reactions are added below.
+ihuman.rxnGeneMat(:, end+1:end+numel(newGenes)) = 0;
+
+
 %% Add new reactions from iHsa
 
 % load new reaction information from file
