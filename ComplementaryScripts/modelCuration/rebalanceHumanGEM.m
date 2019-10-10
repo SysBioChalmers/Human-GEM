@@ -2,7 +2,7 @@
 % FILE NAME:    rebalanceHumanGEM.m
 % 
 % DATE CREATED: 2019-07-22
-%     MODIFIED: 2019-09-18
+%     MODIFIED: 2019-10-10
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -166,6 +166,7 @@ rxnsToAdd.equations = rxnData{2};
 rxnsToAdd.rxnNames = rxnData{3};
 rxnsToAdd.subSystems = cellfun(@(s) {{s}},rxnData{4});
 ihuman = addRxns(ihuman, rxnsToAdd, 3);
+ihuman.priorCombiningGrRules(end+1:end+numel(rxnsToAdd.rxns)) = {''};
 
 % add reactions to the annotation structure
 numOrigRxns = numel(rxnAssoc.rxns);
@@ -389,8 +390,9 @@ ihuman.rxnGeneMat = rxnGeneMat;
 
 %% Finalize model changes
 
-% remove some deprecated fields (these are unnecessary and non-standard)
-ihuman = rmfield(ihuman,{'proteins','prRules','rxnProtMat','priorCombiningGrRules'});
+% remove some deprecated fields if they are still present
+remFields = intersect({'proteins','prRules','rxnProtMat'},fieldnames(ihuman));
+ihuman = rmfield(ihuman,remFields);
 
 % remove unused metabolites and/or genes from the model
 metsOrig = ihuman.mets;
@@ -439,7 +441,7 @@ modelChanges = docModelChanges(ihuman_orig,ihuman);
 writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/fullRebalance/rebalance_modelChanges.tsv');
 
 % export HumanGEM
-exportHumanGEM(ihuman,'humanGEM','../../',{'mat','yml'},false,false);
+exportHumanGEM(ihuman,'HumanGEM','../../',{'mat','yml'},false,false);
 
 % clear unneeded variables
 clearvars -except ihuman_orig ihuman modelChanges
