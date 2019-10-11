@@ -2,7 +2,7 @@
 % FILE NAME:    createNewHumanBiomassRxn.m
 % 
 % DATE CREATED: 2019-09-27
-%     MODIFIED: 2019-09-27
+%     MODIFIED: 2019-10-11
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -17,15 +17,12 @@
 %% Load model and annotation files
 
 % load Human-GEM model
-% load('HumanGEM.mat');
-load('/Users/jonrob/Desktop/HumanGEM_rebal.mat');
+load('HumanGEM.mat');
 ihuman_orig = ihuman;  % keep copy of original version
 
 % load metabolite and reaction annotation data
-% metAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMMetAssoc.JSON'));
-% rxnAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMRxnAssoc.JSON'));
-metAssoc = jsondecode(fileread('/Users/jonrob/Desktop/humanGEMMetAssoc_rebal.JSON'));
-rxnAssoc = jsondecode(fileread('/Users/jonrob/Desktop/humanGEMRxnAssoc_rebal.JSON'));
+metAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMMetAssoc.JSON'));
+rxnAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMRxnAssoc.JSON'));
 changeNotes = {};
 
 % verify that HumanGEM and annotation structures are aligned
@@ -115,6 +112,7 @@ rxnsToAdd.rxnNames = rxnData{2};
 rxnsToAdd.equations = rxnData{3};
 rxnsToAdd.subSystems = repmat({{'Artificial reactions'}},numel(rxnsToAdd.rxns),1);
 ihuman = addRxns(ihuman, rxnsToAdd, 3);
+ihuman.priorCombiningGrRules(end+1:end+numel(rxnsToAdd.rxns)) = {''};
 
 % add reactions to the annotation structure
 numOrigRxns = numel(rxnAssoc.rxns);
