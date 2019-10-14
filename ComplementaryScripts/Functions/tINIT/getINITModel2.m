@@ -405,7 +405,7 @@ I = ~ismember(excModel.mets,model.mets) & excModel.unconstrained == 0;
 excModel = removeReactions(excModel,J,true,true);
 
 % Merge with the output model
-model = mergeModels({model;excModel});
+model = mergeModels({model;excModel},'metNames');
 model.id = 'INITModel';
 model.description = ['Automatically generated model for ' tissue];
 if any(celltype)
