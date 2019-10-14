@@ -116,7 +116,7 @@ function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, delete
 %               printReport, taskStructure, params, paramsFT);
 %
 %
-%   Jonathan Robinson, 2019-02-09
+%   Jonathan Robinson, 2019-10-14
 %
 
 if nargin < 5
@@ -309,7 +309,7 @@ if ~isempty(taskStructure)
     %Find metabolites present in taskStruct. We want to avoid removing
     %these metabolites from the final model (even though they may no longer
     %participate in any reacitons) so that the final model is still able to
-    %complete all of the tasks without an errors.
+    %complete all of the tasks without any errors.
     taskMets = union(vertcat(taskStructure.inputs),vertcat(taskStructure.outputs));
     modelMets = strcat(cModel.metNames,'[',cModel.comps(cModel.metComps),']');
     [inModel,metInd] = ismember(taskMets,modelMets);
@@ -338,7 +338,7 @@ end
 [~, deletedRxnsInINIT, metProduction] = runINIT(simplifyModel(cModel),rxnScores,metabolomicsData,essentialRxnsForTasks,0,true,false,params);
 initModel = removeReactions(cModel,deletedRxnsInINIT,false,true);
 
-% remove metabolites separately, to avoid removing those needed for tasks
+% remove metabolites separately to avoid removing those needed for tasks
 unusedMets = initModel.mets(all(initModel.S == 0,2));
 initModel = removeMets(initModel, setdiff(unusedMets,essentialMetsForTasks));
 
