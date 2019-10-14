@@ -306,6 +306,15 @@ if ~isempty(taskStructure)
     
     essentialRxnsForTasks = cModel.rxns(any(essentialRxnMat,2));
     
+    %Find metabolites present in taskStruct. We want to avoid removing
+    %these metabolites from the final model (even though they may no longer
+    %participate in any reacitons) so that the final model is still able to
+    %complete all of the tasks without an errors.
+    taskMets = union(vertcat(taskStructure.inputs),vertcat(taskStructure.outputs));
+    modelMets = strcat(cModel.metNames,'[',cModel.comps(cModel.metComps),']');
+    [inModel,metInd] = ismember(taskMets,modelMets);
+    essentialMetsForTasks = cModel.mets(metInd(inModel));
+    
     %Remove tasks that cannot be performed
     taskStructure(taskReport.ok == false) = [];
     if printReport == true
@@ -313,6 +322,7 @@ if ~isempty(taskStructure)
     end
 else
     essentialRxnsForTasks = {};
+    essentialMetsForTasks = {};
 end
 
 % Score the connected model
@@ -326,7 +336,12 @@ end
 %and with all output allowed. This is to reduce the complexity of the
 %problem.
 [~, deletedRxnsInINIT, metProduction] = runINIT(simplifyModel(cModel),rxnScores,metabolomicsData,essentialRxnsForTasks,0,true,false,params);
-initModel = removeReactions(cModel,deletedRxnsInINIT,true,true);
+initModel = removeReactions(cModel,deletedRxnsInINIT,false,true);
+
+% remove metabolites separately, to avoid removing those needed for tasks
+unusedMets = initModel.mets(all(initModel.S == 0,2));
+initModel = removeMets(initModel, setdiff(unusedMets,essentialMetsForTasks));
+
 if printReport == true
     printScores(initModel,'INIT model statistics',hpaData,arrayData,tissue,celltype);
     printScores(removeReactions(cModel,setdiff(cModel.rxns,deletedRxnsInINIT),true,true),'Reactions deleted by INIT',hpaData,arrayData,tissue,celltype);
