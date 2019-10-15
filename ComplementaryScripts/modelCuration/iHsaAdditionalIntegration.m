@@ -2,7 +2,7 @@
 % FILE NAME:    iHsaAdditionalIntegration.m
 % 
 % DATE CREATED: 2019-10-04
-%     MODIFIED: 2019-10-04
+%     MODIFIED: 2019-10-15
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -38,6 +38,18 @@ removeFields = intersect(fieldnames(ihuman),{'proteins';'prRules';'rxnProtMat'})
 if ~isempty(removeFields)
     ihuman = rmfield(ihuman, removeFields);
 end
+
+
+%% Add new rxnRatconID field to reaction annotation file
+
+% load iHsa model
+load('../../ComplementaryData/iHsa/iHsa.mat');  % loads "iHsa" structure
+
+% add reaction Ratcon IDs to rxn association structure
+[inModel,rxnInd] = ismember(ihuman.rxns, iHsa.rxnHMRID);
+ids = repmat({''}, numel(ihuman.rxns), 1);
+ids(inModel) = iHsa.rxns(rxnInd(inModel));
+rxnAssoc.rxnRatconID = ids;
 
 
 %% Add new metabolites from iHsa
@@ -94,7 +106,7 @@ ihuman.rxnGeneMat(:, end+1:end+numel(newGenes)) = 0;
 
 % load new reaction information from file
 fid = fopen('../../ComplementaryData/iHsa/iHsaRxnsToAdd.tsv');
-rxnData = textscan(fid,'%s%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
+rxnData = textscan(fid,'%s%s%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
 fclose(fid);
 
 % verify that none of the reactions exist in the current model
@@ -123,6 +135,7 @@ for i = 1:numel(f)
 end
 rxnAssoc.rxns(newRxnInd) = rxnData{1};
 rxnAssoc.rxnKEGGID(newRxnInd) = rxnData{7};
+rxnAssoc.rxnRatconID(newRxnInd) = rxnData{8};
 
 
 %% Add new reaction KEGG IDs from iHsa
