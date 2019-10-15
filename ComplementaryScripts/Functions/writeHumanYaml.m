@@ -17,6 +17,7 @@ function writeHumanYaml(model,name)
 %
 %
 % Jonathan Robinson, 2019-03-14
+% Hao Wang, 2019-09-15
 %
 
 %{
@@ -58,49 +59,58 @@ writeMetadata(model,fid);
 
 % metabolites
 fprintf(fid,'- metabolites:\n');
-[~,pos] = sort(model.mets);
+%[~,pos] = sort(model.mets);
 for i = 1:length(model.mets)
     fprintf(fid,'  - !!omap\n');
-    writeField(model, fid, 'mets',        'txt', pos(i), '- id')
-    writeField(model, fid, 'metNames',    'txt', pos(i), '- name')
-    writeField(model, fid, 'metComps',    'txt', pos(i), '- compartment')
-    writeField(model, fid, 'metFormulas', 'txt', pos(i), '- formula')
-    writeField(model, fid, 'metCharges',  'num', pos(i), '- charge')
-%     writeField(model, fid, 'metMiriams',  'txt', pos(i), '- annotation')
+    writeField(model, fid, 'mets',        'txt', i, '- id')
+    writeField(model, fid, 'metNames',    'txt', i, '- name')
+    writeField(model, fid, 'metComps',    'txt', i, '- compartment')
+    writeField(model, fid, 'metFormulas', 'txt', i, '- formula')
+    writeField(model, fid, 'metCharges',  'num', i, '- charge')
+    writeField(model, fid, 'inchis',      'txt', i, '- inchis')
+    writeField(model, fid, 'metFrom',     'txt', i, '- metFrom')
+%     writeField(model, fid, 'metMiriams',  'txt', i, '- annotation')
 end
 
 % reactions
 fprintf(fid,'- reactions:\n');
-[~,pos] = sort(model.rxns);
+%[~,pos] = sort(model.rxns);
 for i = 1:length(model.rxns)
     fprintf(fid,'  - !!omap\n');
-    writeField(model, fid, 'rxns',                'txt', pos(i), '- id')
-    writeField(model, fid, 'rxnNames',            'txt', pos(i), '- name')
-    writeField(model, fid, 'S',                   'txt', pos(i), '- metabolite')
-    writeField(model, fid, 'lb',                  'num', pos(i), '- lower_bound')
-    writeField(model, fid, 'ub',                  'num', pos(i), '- upper_bound')
-    writeField(model, fid, 'grRules',             'txt', pos(i), '- gene_reaction_rule')
-    writeField(model, fid, 'subSystems',          'txt', pos(i), '- subsystem')
-%     writeField(model, fid, 'rxnMiriams',          'txt', pos(i), '- annotation')
-    writeField(model, fid, 'rxnConfidenceScores', 'num', pos(i), '- confidence_score')
+    writeField(model, fid, 'rxns',                 'txt', i, '- id')
+    writeField(model, fid, 'rxnNames',             'txt', i, '- name')
+    writeField(model, fid, 'S',                    'txt', i, '- metabolites')
+    writeField(model, fid, 'lb',                   'num', i, '- lower_bound')
+    writeField(model, fid, 'ub',                   'num', i, '- upper_bound')
+    writeField(model, fid, 'grRules',              'txt', i, '- gene_reaction_rule')
+    writeField(model, fid, 'priorCombiningGrRules','txt', i, '- HMR2_grRule')    
+    writeField(model, fid, 'rxnFrom',              'txt', i, '- rxnFrom')
+    if model.c(i)
+        writeField(model, fid, 'c',                'num', i, '- objective_coefficient')
+    end
+    writeField(model, fid, 'eccodes',              'txt', i, '- eccodes')
+    writeField(model, fid, 'rxnReferences',        'txt', i, '- references')
+    writeField(model, fid, 'subSystems',           'txt', i, '- subsystem')
+%     writeField(model, fid, 'rxnMiriams',          'txt', i, '- annotation')
+    writeField(model, fid, 'rxnConfidenceScores',  'num', i, '- confidence_score')
 end
 
 % genes
 fprintf(fid,'- genes:\n');
-[~,pos] = sort(model.genes);
+%[~,pos] = sort(model.genes);
 for i = 1:length(model.genes)
     fprintf(fid,'  - !!omap\n');
-    writeField(model, fid, 'genes',          'txt', pos(i), '- id')
-    writeField(model, fid, 'geneShortNames', 'txt', pos(i), '- name')
-%     writeField(model, fid, 'geneMiriams',    'txt', pos(i), '- annotation')
+    writeField(model, fid, 'genes',          'txt', i, '- id')
+    writeField(model, fid, 'geneShortNames', 'txt', i, '- name')
+%     writeField(model, fid, 'geneMiriams',    'txt', i, '- annotation')
 end
 
 % compartments
 fprintf(fid,'- compartments: !!omap\n');
-[~,pos] = sort(model.comps);
+%[~,pos] = sort(model.comps);
 for i = 1:length(model.comps)
-    writeField(model, fid, 'compNames',   'txt', pos(i), ['- ' model.comps{pos(i)}])
-%     writeField(model, fid, 'compMiriams', 'txt', pos(i), '- annotation')
+    writeField(model, fid, 'compNames',   'txt', i, ['- ' model.comps{i}])
+%     writeField(model, fid, 'compMiriams', 'txt', i, '- annotation')
 end
 
 % close file:
@@ -109,9 +119,7 @@ fclose(fid);
 end
 
 function writeField(model,fid,fieldName,type,pos,name)
-% Writes a new line in the yaml file if the field exists and the field is
-% not empty at the correspoinding position. It's recursive for some fields
-% (metMiriams, rxnMiriams, and S)
+% It's recursive for some fields (metMiriams, rxnMiriams, and S)
 
 if isfield(model,fieldName)
     if strcmp(fieldName,'metComps')
@@ -182,7 +190,8 @@ if isfield(model,fieldName)
             end
         end
         
-    elseif sum(strcmp({'eccodes','subSystems','newMetMiriams','newRxnMiriams','newGeneMiriams','newCompMiriams'},fieldName)) > 0
+    %elseif sum(strcmp({'eccodes','rxnReferences','subSystems','newMetMiriams','newRxnMiriams','newGeneMiriams','newCompMiriams'},fieldName)) > 0
+    elseif sum(strcmp({'subSystems','newMetMiriams','newRxnMiriams','newGeneMiriams','newCompMiriams'},fieldName)) > 0
         % eccodes/rxnNotes: if 1 write in 1 line, if more create header and list
         if strcmp(fieldName,'subSystems')
             list = field{pos};  %subSystems already comes in a cell array
@@ -228,12 +237,12 @@ if isfield(model,fieldName)
             if isnan(field(pos))
                 value = [];
             else
-                value = num2str(field(pos));
+                value = num2str(field(pos), 12);
             end
         end
-        if ~isempty(value)
+        %if ~isempty(value)
             fprintf(fid,['    ' name ': ' value '\n']);
-        end
+        %end
     end
 end
 
