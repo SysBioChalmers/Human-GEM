@@ -34,7 +34,7 @@ if ~isequal(ihuman.mets, metAssoc.mets) || ~isequal(ihuman.rxns, rxnAssoc.rxns)
 end
 
 % remove some deprecated fields if they still exist
-removeFields = intersect(fieldnames(ihuman),{'proteins';'prRules';'rxnProtMat';'priorCombiningGrRules'});
+removeFields = intersect(fieldnames(ihuman),{'proteins';'prRules';'rxnProtMat'});
 if ~isempty(removeFields)
     ihuman = rmfield(ihuman, removeFields);
 end
@@ -111,6 +111,7 @@ rxnsToAdd.subSystems = cellfun(@(s) {{s}}, rxnData{4});
 rxnsToAdd.grRules = rxnData{5};
 rxnsToAdd.rxnReferences = rxnData{6};
 ihuman = addRxns(ihuman, rxnsToAdd, 3);
+ihuman.priorCombiningGrRules(end+1:end+numel(rxnsToAdd.rxns)) = {''};
 
 % add reactions to the annotation structure
 numOrigRxns = numel(rxnAssoc.rxns);
