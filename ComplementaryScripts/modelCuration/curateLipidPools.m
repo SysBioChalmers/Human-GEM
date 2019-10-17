@@ -197,6 +197,14 @@ end
 % Remove old pool metabolites that are no longer used
 ihuman = removeReactions(ihuman,[],true);
 
+% Remove 23 unused pool (12 unique) mets from the metAssoc structure
+removedMets = setdiff(metAssoc.mets, ihuman.mets);
+removedMetsIdx = find(ismember(metAssoc.mets, removedMets));
+f = fieldnames(metAssoc);
+for i = 1:numel(f)
+    metAssoc.(f{i})(removedMetsIdx) = [];
+end
+
 
 %% Identify and document changes to the model
 
