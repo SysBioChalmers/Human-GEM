@@ -194,6 +194,9 @@ for i = 1:size(poolMets,1)
     ihuman.metNames(metInd) = regexprep(ihuman.metNames(metInd), 'pool$', 'pool (liver tissue)');
 end
 
+% Remove old pool metabolites that are no longer used
+ihuman = removeReactions(ihuman,[],true);
+
 
 %% Identify and document changes to the model
 
