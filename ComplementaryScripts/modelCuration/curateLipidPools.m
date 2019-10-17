@@ -40,6 +40,7 @@ ihuman_orig = ihuman;  % keep copy of original version
 % load metabolite and reaction annotation data
 metAssoc = jsondecode(fileread('humanGEMMetAssoc.JSON'));
 rxnAssoc = jsondecode(fileread('humanGEMRxnAssoc.JSON'));
+changeNotes = {};
 
 % verify that HumanGEM and annotation structures are aligned
 if ~isequal(ihuman.mets, metAssoc.mets) || ~isequal(ihuman.rxns, rxnAssoc.rxns)
@@ -94,6 +95,7 @@ metAssoc.metChEBIID(newMetInd) = metData{8};
 metAssoc.metMetaNetXID(newMetInd) = metData{9};
 metAssoc.metLipidMapsID(newMetInd) = metData{10};
 
+changeNotes = [changeNotes; [metsToAdd.mets, metData{11}]];
 
 
 %% Add new pool reactions
@@ -211,7 +213,7 @@ fwrite(fid, prettyJson(jsonStr));
 fclose(fid);
 
 % determine and document model changes
-modelChanges = docModelChanges(ihuman_orig,ihuman);
+modelChanges = docModelChanges(ihuman_orig,ihuman,changeNotes);
 writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/lipidPools/lipidPool_modelChanges.tsv');
 
 % export HumanGEM
