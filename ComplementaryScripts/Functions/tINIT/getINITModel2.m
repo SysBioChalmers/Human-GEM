@@ -326,7 +326,7 @@ else
 end
 
 % Score the connected model
-[rxnScores, geneScores] = scoreComplexModel(cModel,hpaData,arrayData,tissue,celltype);
+rxnScores = scoreComplexModel(cModel,hpaData,arrayData,tissue,celltype);
 
 %Run the INIT algorithm. The exchange reactions that are used in the final
 %model will be open, which doesn't fit with the last step. Therefore
@@ -394,8 +394,8 @@ model = outModel;
 % See the "removeLowScoreGenes" function more more details, and to adjust
 % any default parameters therein.
 if ( removeGenes )
-    [~, I]=ismember(model.genes,cModel.genes);
-    model = removeLowScoreGenes(model,geneScores(I));
+    [~, geneScores] = scoreComplexModel(model,hpaData,arrayData,tissue,celltype);
+    model = removeLowScoreGenes(model,geneScores);
 end
 
 
