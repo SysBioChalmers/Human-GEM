@@ -18,7 +18,7 @@
 %% Load Human-GEM and annotation structures
 
 % load Human-GEM model
-load('humanGEM.mat');
+load('HumanGEM.mat');
 ihuman_orig = ihuman;  % keep copy of original version
 
 % load metabolite and reaction annotation data
@@ -53,8 +53,8 @@ if ~isfield(rxnAssoc,'rxnHMRID')
 end
 
 
-%% Update some metabolite names to avoid parsing errors
-% Some metabolite names begin with a number or number with commas, followed
+%% Update four metabolite names to avoid parsing errors
+% Four metabolite names begin with a number or number with commas, followed
 % by a space, which some functions can confuse with stoichiometric
 % coefficients when parsing reaction equations. To fix this, the space is
 % replaced with a dash (-).
@@ -65,7 +65,8 @@ nameArray = {'1 Acyl Phosphoglycerol', '1-Acyl Phosphoglycerol'
 [hasMatch,nameInd] = ismember(ihuman.metNames, nameArray(:,1));
 if any(hasMatch)
     ihuman.metNames(hasMatch) = nameArray(nameInd(hasMatch),2);
-    changeNotes = [changeNotes; [ihuman.mets(hasMatch), repmat({'Added dash to name to avoid confusion with stoich coeffs'},sum(hasMatch),1)]];
+    changeNotes = [changeNotes; [ihuman.mets(hasMatch),...
+    repmat({'Added dash to name to avoid confusion with stoich coeffs'},sum(hasMatch),1)]];
 end
 
 
@@ -264,8 +265,8 @@ end
 changeNotes = [changeNotes; [rxnIDdup, rxnDupNotes]];
 
 
-%% Inactivate invalid reactions
-% Reactions that are imbalanced and/or unsupported by any literature or
+%% Inactivate 196 invalid reactions
+% 196 reactions that are imbalanced and/or unsupported by any literature or
 % databases will be inactivated (lb = ub = 0). These reactions will
 % eventually be fully deleted from the model if they cannot be properly
 % revised or repaired.
@@ -280,8 +281,8 @@ ihuman = setParam(ihuman,'eq',rxnData{1},0);
 changeNotes = [changeNotes; [rxnData{1}, rxnData{2}]];
 
 
-%% Reactivate previously inactivated reactions
-% Some reactions were repaired or are no longer in violation of mass
+%% Reactivate 10 previously inactivated reactions
+% Ten reactions were repaired or are no longer in violation of mass
 % balances or other problems that led to their prior inactivation. These
 % reactions will be reactivated here (UB set to 1000; it was confirmed that
 % none of these reactions were previously reversible, so the LB will remain
@@ -294,7 +295,8 @@ fclose(fid);
 
 % reactivate reactions
 ihuman = setParam(ihuman,'ub',rxnData{1},1000);
-changeNotes = [changeNotes; [rxnData{1}, repmat({'reaction is no longer invalid/inconsistent and was reactivated'},numel(rxnData{1}),1)]];
+changeNotes = [changeNotes; [rxnData{1},...
+repmat({'reaction is no longer invalid/inconsistent and was reactivated'},numel(rxnData{1}),1)]];
 
 
 %% Merge and delete duplicated metabolites
@@ -328,10 +330,11 @@ f = fieldnames(metAssoc);
 for i = 1:numel(f)
     metAssoc.(f{i})(remMetInd) = [];
 end
-changeNotes = [changeNotes; [remMet, repmat({'metabolite is a duplicate and was therefore removed'},numel(remMet),1)]];
+changeNotes = [changeNotes; [remMet,...
+repmat({'metabolite is a duplicate and was therefore removed'},numel(remMet),1)]];
 
 
-%% Update some metabolite annotation information
+%% Update annotation information for 27 unique metabolites
 
 % load updated metabolite annotation information
 fid = fopen('../../ComplementaryData/modelCuration/fullRebalance/rebalance_mets_updatedAnnotation.tsv');
@@ -350,7 +353,7 @@ for i = 1:numel(metName)
 end
 
 
-%% Update some reaction annotation information
+%% Update MetaNetX, BiGG, and KEGG ids for 15 reactions
 
 % load updated reaction annotation information
 fid = fopen('../../ComplementaryData/modelCuration/fullRebalance/rebalance_rxns_updatedAnnotation.tsv');
@@ -369,7 +372,7 @@ for i = 1:numel(rxn)
 end
 
 
-%% Update some reaction grRules
+%% Update 38 reaction grRules
 % These new gene associations were found through some of the reaction
 % duplication cases
 
@@ -390,10 +393,6 @@ ihuman.rxnGeneMat = rxnGeneMat;
 
 %% Finalize model changes
 
-% remove some deprecated fields if they are still present
-remFields = intersect({'proteins','prRules','rxnProtMat'},fieldnames(ihuman));
-ihuman = rmfield(ihuman,remFields);
-
 % remove unused metabolites and/or genes from the model
 metsOrig = ihuman.mets;
 ihuman = removeReactions(ihuman,[],true,true);
@@ -406,7 +405,8 @@ if ~isempty(metsRemoved)
     for i = 1:numel(f)
         metAssoc.(f{i})(remInd) = [];
     end
-    changeNotes = [changeNotes; [metsRemoved, repmat({'metabolite no longer used after removing reactions'},numel(metsRemoved),1)]];
+    changeNotes = [changeNotes; [metsRemoved,...
+    repmat({'metabolite no longer used after removing reactions'},numel(metsRemoved),1)]];
 end
 
 % update bounds and reversibility field to be consistent with each other
