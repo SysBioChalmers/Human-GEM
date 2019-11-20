@@ -376,19 +376,7 @@ end
 % These new gene associations were found through some of the reaction
 % duplication cases
 
-% load updated reaction grRule data
-fid = fopen('../../ComplementaryData/modelCuration/fullRebalance/rebalance_rxns_updatedGrRules.tsv');
-rxnData = textscan(fid,'%s%s','Delimiter','\t','Headerlines',1);
-fclose(fid);
-
-% update grRules
-[~,rxnInd] = ismember(rxnData{1}, ihuman.rxns);
-ihuman.grRules(rxnInd) = rxnData{2};
-
-% regenerate genes and rxnGeneMat fields
-[genes,rxnGeneMat] = getGenesFromGrRules(ihuman.grRules);
-ihuman.genes = genes;
-ihuman.rxnGeneMat = rxnGeneMat;
+ihuman = updateGrRules('fullRebalance/rebalance_rxns_updatedGrRules.tsv',1,2,false,ihuman);
 
 
 %% Finalize model changes
@@ -437,7 +425,7 @@ fwrite(fid, prettyJson(jsonStr));
 fclose(fid);
 
 % determine and document model changes
-modelChanges = docModelChanges(ihuman_orig,ihuman);
+modelChanges = docModelChanges(ihuman_orig,ihuman,changeNotes);
 writeModelChanges(modelChanges,'../../ComplementaryData/modelCuration/fullRebalance/rebalance_modelChanges.tsv');
 
 % export HumanGEM
