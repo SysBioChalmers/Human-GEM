@@ -106,9 +106,9 @@ end
 
 % Write XML format
 if ismember('xml', formats)
-    model = simplifyModel(ihuman,false,false,true);  % remove inactivated rxns
-    model = annotateModel(model);  % add annotation data to structure
-    exportModel(model,fullfile(path,'ModelFiles','xml',strcat(prefix,'.xml')));
+    ihuman = simplifyModel(ihuman,false,false,true);  % remove inactivated rxns
+    ihuman = annotateModel(ihuman);  % add annotation data to structure
+    exportModel(ihuman,fullfile(path,'ModelFiles','xml',strcat(prefix,'.xml')));
 end
 
 %Save file with versions:
