@@ -1,0 +1,22 @@
+rxns	rxnEqns	rxnNames	subSystems
+HMR_10041	TAG-VLDL pool[c] <=> TAG-VLDL pool[r]	TAG-VLDL pool transport (Cytosol to Endoplasmic reticulum)	Transport reactions
+HMR_10042	TAG-chylomicron pool[c] => TAG-chylomicron pool[s]	TAG-chylomicron pool transport (Cytosol to Extracellular)	Transport reactions
+HMR_10043	TAG-chylomicron pool[c] <=> TAG-chylomicron pool[l]	TAG-chylomicron pool transport (Cytosol to Lysosome)	Transport reactions
+HMR_10044	1,2-diacylglycerol-LD-PC pool[c] <=> 1,2-diacylglycerol-LD-PC pool[g]	1,2-diacylglycerol-LD-PC pool transport(Cytosol to Golgi apparatus)	Transport reactions
+HMR_10045	1,2-diacylglycerol-LD-PC pool[c] <=> 1,2-diacylglycerol-LD-PC pool[n]	1,2-diacylglycerol-LD-PC pool transport(Cytosol to Nucleus)	Transport reactions
+HMR_10046	1,2-diacylglycerol-LD-PC pool[c] => 1,2-diacylglycerol-LD-PC pool[s]	1,2-diacylglycerol-LD-PC pool transport(Cytosol to 	Transport reactions
+HMR_10047	1,2-diacylglycerol-LD-PC pool[s] <=> 1,2-diacylglycerol-LD-PC pool[x]	1,2-diacylglycerol-LD-PC pool exchange	Exchange/demand reactions
+HMR_10048	1,2-diacylglycerol-LD-PI pool[c] <=> 1,2-diacylglycerol-LD-PI pool[n]	1,2-diacylglycerol-LD-PI pool transport(Cytosol to Extracellular)	Transport reactions
+HMR_10049	CDP-diacylglycerol-CL pool[c] <=> CDP-diacylglycerol-CL pool[m]	CDP-diacylglycerol-CL pool transport(Cytosol to Mitochondria)	Transport reactions
+HMR_10050	fatty acid-chylomicron pool[c] => fatty acid-chylomicron pool[s]	fatty acid-chylomicron pool transport(Cytosol to Extracellular)	Transport reactions
+HMR_10051	fatty acid-VLDL pool[c] => fatty acid-VLDL pool[s]	fatty acid-VLDL pool transport(Cytosol to Extracellular)	Transport reactions
+HMR_10052	phosphatidate-LD-PC pool[c] <=> phosphatidate-LD-PC pool[m]	phosphatidate-LD-PC pool transport(Cytosol to Mitochondria)	Transport reactions
+HMR_10053	phosphatidate-LD-PI pool[c] <=> phosphatidate-LD-PI pool[m]	phosphatidate-LD-PI pool transport(Cytosol to Mitochondria)	Transport reactions
+HMR_10054	phosphatidate-LD-PI pool[c] <=> phosphatidate-LD-PI pool[r]	phosphatidate-LD-PI pool transport(Cytosol to Endoplasmic reticulum)	Transport reactions
+HMR_10055	phosphatidate-LD-PI pool[c] <=> phosphatidate-LD-PI pool[g]	phosphatidate-LD-PI pool transport (Cytosol to Golgi apparatus)	Transport reactions
+HMR_10056	phosphatidate-LD-PS pool[c] <=> phosphatidate-LD-PS pool[r]	phosphatidate-LD-PS pool transport (Cytosol to Endoplasmic reticulum)	Transport reactions
+HMR_10057	phosphatidate-LD-PS pool[c] <=> phosphatidate-LD-PS pool[g]	phosphatidate-LD-PS pool transport (Cytosol to Golgi apparatus)	Transport reactions
+HMR_10058	[protein][c] <=> [protein][r]	protein transport (Cytosol to Endoplasmic reticulum)	Transport reactions
+HMR_10059	N-formyl-L-glutamate[c] => N-formyl-L-glutamate[s]	N-formyl-L-glutamate transport (Cytosol to Extracellular)	Transport reactions
+HMR_10060	N-formyl-L-glutamate[s] <=> N-formyl-L-glutamate[x]	N-formyl-L-glutamate exchange	Exchange/demand reactions
+HMR_10061	acyl-CoA pool[p] + 2 NADPH[p] + 2 H+[p] => Hydroxy Alkyl Chain[p] + CoA[p] + 2 NADP+[p]	fatty acyl-CoA reduction	Ether lipid metabolism

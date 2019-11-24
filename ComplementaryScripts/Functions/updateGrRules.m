@@ -1,4 +1,4 @@
-function [model] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave)
+function [newModel] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave,model)
 % updateGrRules
 %   Update specific grRules curation results into humanGEM model. Other
 %   modified fields include genes, rxnGeneMat, prRules, proteins and rxnProtMat
@@ -11,10 +11,11 @@ function [model] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave)
 %   colNewGrRules  the column number of curated grRules
 %
 %   autoSave       if TRUE, save changes to .mat model file (opt, default FALSE)
-%                  
+%
+%   model          input model file, will load HumanGEM if not specified                  
 %
 % Output:
-%   model          an updated model structure
+%   newModel       an updated model structure
 %
 % NOTE: this input file with curated grRules should follow defined rules:
 % i) it has to a tab delimitted plaintext file placed under subfolder
@@ -22,14 +23,22 @@ function [model] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave)
 % the curation information; iii) the first column must be a unique list of
 % rxn ids whose grRules are to be changed; iv) the third column includes
 % the newly curated grRules, perferably (otherwise its column number need
-% to be specified in the argument colNewGrRules)
+% to be specified in the argument colNewGrRules) v) the forth and fifth
+% columns (or the next two after colNewGrRules) refer to citations (PMIDs)
+% and Confidence score, respectively. 
 %
-% Usage: [model] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave)
+% Usage: [newModel] = updateGrRules(model,fileName,nHeaderLines,colNewGrRules,autoSave)
 %
 % Hao Wang, 2019-02-20
 %
 
 % handel input
+
+if nargin < 5
+    load('HumanGEM.mat');  %load HumanGEM model if no input specified  
+else
+    ihuman = model;
+end
 if nargin < 4
     autoSave = false;
 end
@@ -54,10 +63,7 @@ end
 rxnIDs = tmp{1};
 newGrRules = tmp{colNewGrRules};
 
-% Load HumanGEM model
-load('HumanGEM.mat');
-
-% Update curated grRules
+% Update curated grRules, rxnReferences, rxnConfidenceScores
 [~,rxn_ind] = ismember(rxnIDs,ihuman.rxns);
 ihuman.grRules(rxn_ind) = newGrRules;
 
@@ -66,13 +72,7 @@ ihuman.grRules(rxn_ind) = newGrRules;
 ihuman.genes = genes;
 ihuman.rxnGeneMat = rxnGeneMat;
 
-% Update protein fields
-[prRules,proteins,rxnProtMat] = translateGrRules(ihuman.grRules,'UniProt','ENSG');
-ihuman.prRules = prRules;
-ihuman.proteins = proteins;
-ihuman.rxnProtMat = rxnProtMat;
-
-model = ihuman;
+newModel = ihuman;
 
 % Save changes to .mat model file
 if autoSave
