@@ -23,8 +23,11 @@ if ~isfield(model,'inchis')
     error('Could not find field named "inchis" in the model (case-sensitive).');
 end
     
-% identify non-empty inchis entries and extract formulas
+% identify non-empty inchis entries
 ind = find(~cellfun(@isempty, model.inchis));
+
+% extract formulas from inchis strings, which are composed of segments
+% separated by delimiter (/) and formula is from the 2nd segment
 inchiSplit = cellfun(@(i) strsplit(i,'/'), model.inchis(ind), 'UniformOutput', false);
 inchiFormulas = cellfun(@(i) i{2}, inchiSplit, 'UniformOutput', false);
 inchiFormulas = regexprep(inchiFormulas,'[^a-zA-Z0-9]','');  % remove special characters
