@@ -1,22 +1,24 @@
-function updated_model = updateModelInchiStrings(model)
+function corrected_model = removeConflictingInchiStrings(model)
 % Removes inchi strings that conflict with their corresponding metFormula
 %
 % Input:
 %
-%   model           model structure
+%   model   model structure
 %
 %
 % Output:
 %
-%   updated_model   model structure with updated "inchis" field
+%   corrected_model   model structure with "inchis" field updated such that
+%                     all entries conflicting with the corresponding entry
+%                     in the "metFormulas" field have been removed.
 %
 %
 % Usage:
 %
-%   updated_model = updateModelInchiStrings(model);
+%   corrected_model = removeConflictingInchiStrings(model);
 %
 %
-% Jonathan Robinson, 2019-10-28
+% Jonathan Robinson, 2019-12-04
 
 
 if ~isfield(model,'inchis')
@@ -49,6 +51,6 @@ else
     fprintf('No InChI conflicts were identified.\n');
 end
 
-updated_model = model;
+corrected_model = model;
 
 
