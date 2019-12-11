@@ -2,7 +2,7 @@
 % FILE NAME:    iHsaAdditionalIntegration.m
 % 
 % DATE CREATED: 2019-10-04
-%     MODIFIED: 2019-10-15
+%     MODIFIED: 2019-12-11
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -34,7 +34,7 @@ if ~isequal(ihuman.mets, metAssoc.mets) || ~isequal(ihuman.rxns, rxnAssoc.rxns)
 end
 
 % remove some deprecated fields if they still exist
-removeFields = intersect(fieldnames(ihuman),{'proteins';'prRules';'rxnProtMat'});
+removeFields = intersect(fieldnames(ihuman),{'proteins';'prRules';'rxnProtMat';'priorCombiningGrRules'});
 if ~isempty(removeFields)
     ihuman = rmfield(ihuman, removeFields);
 end
@@ -123,7 +123,6 @@ rxnsToAdd.subSystems = cellfun(@(s) {{s}}, rxnData{4});
 rxnsToAdd.grRules = rxnData{5};
 rxnsToAdd.rxnReferences = rxnData{6};
 ihuman = addRxns(ihuman, rxnsToAdd, 3);
-ihuman.priorCombiningGrRules(end+1:end+numel(rxnsToAdd.rxns)) = {''};
 
 % add reactions to the annotation structure
 numOrigRxns = numel(rxnAssoc.rxns);
