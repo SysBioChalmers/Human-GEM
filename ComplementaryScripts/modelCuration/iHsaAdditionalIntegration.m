@@ -151,6 +151,10 @@ rxnAssoc.rxnKEGGID(rxnInd) = rxnData{2};
 
 %% Finalize and document changes, and export files
 
+% update unconstrained field
+[~,boundaryComp] = ismember('Boundary',ihuman.compNames);
+ihuman.unconstrained(ihuman.metComps == boundaryComp) = 1;
+
 % verify that HumanGEM and annotation structures are aligned
 if ~isequal(ihuman.mets, metAssoc.mets) || ~isequal(ihuman.rxns, rxnAssoc.rxns)
     error('HumanGEM is not synced with the metAssoc and/or rxnAssoc structure!');
