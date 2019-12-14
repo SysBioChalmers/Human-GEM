@@ -116,7 +116,7 @@ function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, delete
 %               printReport, taskStructure, params, paramsFT);
 %
 %
-%   Jonathan Robinson, 2019-02-09
+%   Jonathan Robinson, 2019-10-14
 %
 
 if nargin < 5
@@ -306,6 +306,15 @@ if ~isempty(taskStructure)
     
     essentialRxnsForTasks = cModel.rxns(any(essentialRxnMat,2));
     
+    %Find metabolites present in taskStruct. We want to avoid removing
+    %these metabolites from the final model (even though they may no longer
+    %participate in any reacitons) so that the final model is still able to
+    %complete all of the tasks without any errors.
+    taskMets = union(vertcat(taskStructure.inputs),vertcat(taskStructure.outputs));
+    modelMets = strcat(cModel.metNames,'[',cModel.comps(cModel.metComps),']');
+    [inModel,metInd] = ismember(taskMets,modelMets);
+    essentialMetsForTasks = cModel.mets(metInd(inModel));
+    
     %Remove tasks that cannot be performed
     taskStructure(taskReport.ok == false) = [];
     if printReport == true
@@ -313,10 +322,11 @@ if ~isempty(taskStructure)
     end
 else
     essentialRxnsForTasks = {};
+    essentialMetsForTasks = {};
 end
 
 % Score the connected model
-[rxnScores, geneScores] = scoreComplexModel(cModel,hpaData,arrayData,tissue,celltype);
+rxnScores = scoreComplexModel(cModel,hpaData,arrayData,tissue,celltype);
 
 %Run the INIT algorithm. The exchange reactions that are used in the final
 %model will be open, which doesn't fit with the last step. Therefore
@@ -326,7 +336,12 @@ end
 %and with all output allowed. This is to reduce the complexity of the
 %problem.
 [~, deletedRxnsInINIT, metProduction] = runINIT(simplifyModel(cModel),rxnScores,metabolomicsData,essentialRxnsForTasks,0,true,false,params);
-initModel = removeReactions(cModel,deletedRxnsInINIT,true,true);
+initModel = removeReactions(cModel,deletedRxnsInINIT,false,true);
+
+% remove metabolites separately to avoid removing those needed for tasks
+unusedMets = initModel.mets(all(initModel.S == 0,2));
+initModel = removeMets(initModel, setdiff(unusedMets,essentialMetsForTasks));
+
 if printReport == true
     printScores(initModel,'INIT model statistics',hpaData,arrayData,tissue,celltype);
     printScores(removeReactions(cModel,setdiff(cModel.rxns,deletedRxnsInINIT),true,true),'Reactions deleted by INIT',hpaData,arrayData,tissue,celltype);
@@ -379,8 +394,8 @@ model = outModel;
 % See the "removeLowScoreGenes" function more more details, and to adjust
 % any default parameters therein.
 if ( removeGenes )
-    [~, I]=ismember(model.genes,cModel.genes);
-    model = removeLowScoreGenes(model,geneScores(I));
+    [~, geneScores] = scoreComplexModel(model,hpaData,arrayData,tissue,celltype);
+    model = removeLowScoreGenes(model,geneScores);
 end
 
 
@@ -405,7 +420,7 @@ I = ~ismember(excModel.mets,model.mets) & excModel.unconstrained == 0;
 excModel = removeReactions(excModel,J,true,true);
 
 % Merge with the output model
-model = mergeModels({model;excModel});
+model = mergeModels({model;excModel},'metNames');
 model.id = 'INITModel';
 model.description = ['Automatically generated model for ' tissue];
 if any(celltype)
