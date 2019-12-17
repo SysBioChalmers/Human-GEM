@@ -106,7 +106,10 @@ end
 
 % Write XML format
 if ismember('xml', formats)
-    exportModel(ihuman,fullfile(path,'ModelFiles','xml',strcat(prefix,'.xml')));
+    model = simplifyModel(ihuman,false,false,true);  % remove inactivated rxns
+    model = annotateModel(model);  % add annotation data to structure
+    model = rmfield(model,'inchis');  % temporarily remove inchis until export function is updated
+    exportModel(model,fullfile(path,'ModelFiles','xml',strcat(prefix,'.xml')));
 end
 
 %Save file with versions:
