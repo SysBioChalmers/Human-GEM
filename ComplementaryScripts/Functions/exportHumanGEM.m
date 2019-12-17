@@ -49,8 +49,8 @@ if nargin<2
 end
 
 %Get versions or commits of toolboxes:
-RAVENver = getVersion('RAVEN','ravenCobraWrapper.m',masterFlag);
-COBRAver = getVersion('COBRA','initCobraToolbox.m',masterFlag);
+RAVENver = getToolboxVersion('RAVEN','ravenCobraWrapper.m',masterFlag);
+COBRAver = getToolboxVersion('COBRA','initCobraToolbox.m',masterFlag);
 
 %Retrieve libSBML version:
 try % 5.17.0 and newer

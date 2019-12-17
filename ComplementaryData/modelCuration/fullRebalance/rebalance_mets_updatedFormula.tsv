@@ -1,0 +1,466 @@
+metNames	newFormula	newCharge
+alpha-D-mannosyl-beta-D-mannosyl-diacetylchitobiosyldiphosphodolichol	C128H210N2O27P2	-2
+beta-D-mannosyldiacetylchitobiosyldiphosphodolichol	C122H200N2O22P2	-2
+dehydrodolichol	C100H162O	0
+dehydrodolichol-diphosphate	C100H161O7P2	-3
+dehydrodolichol-phosphate	C100H161O4P	-2
+dolichol	C100H164O	0
+dolichyl-D-glucosyl-phosphate	C106H174O9P	-1
+dolichyl-diphosphate	C100H163O7P2	-3
+dolichyl-phosphate	C100H163O4P	-2
+dolichyl-phosphate-D-mannose	C106H174O9P	-1
+N,N-chitobiosyldiphosphodolichol	C116H190N2O17P2	-2
+N-acetyl-D-glucosaminyldiphosphodolichol	C108H177NO12P2	-2
+N,N-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C116H190N2O17P2	-2
+Beta-D-Mannosyldiacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C122H200N2O22P2	-2
+Dolichyl Phosphate D-Mannose, Human Uterine Homolog	C106H174O9P	-1
+Dolichyl Phosphate	C100H163O4P	-2
+Dehydrodolichol Diphosphate, Human Uterine Homolog	C100H161O7P2	-3
+Dehydrodolichol Phosphate, Human Uterine Homolog	C100H161O4P	-2
+Dehydrodolichol, Human Uterine Homolog	C100H162O	0
+Dolichol, Human Uterine Homolog	C100H164O	0
+(Alpha-D-Glucosyl)3-(Alpha-D-Mannosyl)8-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C188H310N2O77P2	-2
+Dolichol Diphosphate, Human Uterine Homolog	C100H163O7P2	-3
+Dolichyl Beta-D-Glucosyl Phosphate, Human Uterine Homolog	C106H174O9P	-1
+(Alpha-D-Mannosyl)8-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Liver Homolog	C170H280N2O62P2	-2
+(Alpha-D-Mannosyl)8-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C170H280N2O62P2	-2
+Alpha-D-Glucosyl-(Alpha-D-Mannosyl)8-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C176H290N2O67P2	-2
+(Alpha-D-Glucosyl)2-(Alpha-D-Mannosyl)8-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C182H300N2O72P2	-2
+(Alpha-D-Mannosyl)5-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Liver Homolog	C152H250N2O47P2	-2
+(Alpha-D-Mannosyl)4-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C146H240N2O42P2	-2
+(Alpha-D-Mannosyl)5-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C152H250N2O47P2	-2
+(Alpha-D-Mannosyl)6-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Liver Homolog	C158H260N2O52P2	-2
+(Alpha-D-Mannosyl)6-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C158H260N2O52P2	-2
+(Alpha-D-Mannosyl)7-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Liver Homolog	C164H270N2O57P2	-2
+(Alpha-D-Mannosyl)7-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C164H270N2O57P2	-2
+(Alpha-D-Mannosyl)2-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Liver Homolog	C134H220N2O32P2	-2
+(Alpha-D-Mannosyl)3-Beta-D-Mannosyl-Diacetylchitodiphosphodolichol, Human Liver Homolog	C140H230N2O37P2	-2
+(Alpha-D-Mannosyl)2-Beta-D-Mannosyl-Diacetylchitobiosyldiphosphodolichol, Human Uterine Homolog	C134H220N2O32P2	-2
+(Alpha-D-Mannosyl)3-Beta-D-Mannosyl-Diacetylchitodiphosphodolichol, Human Uterine Homolog	C140H230N2O37P2	-2
+Alpha-D-Mannosyl-Beta-D-Mannosyl-Diacylchitobiosyldiphosphodolichol, Human Uterine Homolog	C128H210N2O27P2	-2
+N-Acetyl-D-Glucosaminyldiphosphodolichol, Human Uterine Homolog	C108H177NO12P2	-2
+G00005	C134H220N2O32P2	-2
+G00007	C170H280N2O62P2	-2
+G10526	C140H230N2O37P2	-2
+G10595	C152H250N2O47P2	-2
+G10596	C158H260N2O52P2	-2
+G10597	C164H270N2O57P2	-2
+G00006	C146H240N2O42P2	-2
+G10598	C176H290N2O67P2	-2
+G10599	C182H300N2O72P2	-2
+(Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1	C188H310N2O77P2	-2
+O-D-mannosylprotein	C6H11O5X	0
+Trans,Trans,Cis-Geranylgeranyl Diphosphate	C20H33O7P2	-3
+(2E)-decenoyl-[ACP]	C21H37N2O8PRS	-1
+(2E)-dodecenoyl-[ACP]	C23H41N2O8PRS	-1
+(2E)-heptadecenoyl-[ACP]	C28H51N2O8PRS	-1
+(2E)-heptenoyl-[ACP]	C18H31N2O8PRS	-1
+(2E)-hexadecenoyl-[ACP]	C27H49N2O8PRS	-1
+(2E)-hexenoyl-[ACP]	C17H29N2O8PRS	-1
+(2E)-nonenoyl-[ACP]	C20H35N2O8PRS	-1
+(2E)-octenoyl-[ACP]	C19H33N2O8PRS	-1
+(2E)-pentadecenoyl-[ACP]	C26H47N2O8PRS	-1
+(2E)-pentenoyl-[ACP]	C16H27N2O8PRS	-1
+(2E)-tetradecenoyl-[ACP]	C25H45N2O8PRS	-1
+(2E)-tridecenoyl-[ACP]	C24H43N2O8PRS	-1
+(2E)-undecenoyl-[ACP]	C22H39N2O8PRS	-1
+(R)-3-hydroxybutanoyl-[ACP]	C15H27N2O9PRS	-1
+(R)-3-hydroxydecanoyl-[ACP]	C21H39N2O9PRS	-1
+(R)-3-hydroxyoctanoyl-[ACP]	C19H35N2O9PRS	-1
+(R)-3-hydroxypalmitoyl-[ACP]	C27H51N2O9PRS	-1
+[ACP]	C11H21N2O7PRS	-1
+3-hydroxyheptadecanoyl-[ACP]	C28H53N2O9PRS	-1
+3-hydroxyheptanoyl-[ACP]	C18H33N2O9PRS	-1
+3-hydroxynonanoyl-[ACP]	C20H37N2O9PRS	-1
+3-hydroxypentadecanoyl-[ACP]	C26H49N2O9PRS	-1
+3-hydroxypentanoyl-[ACP]	C16H29N2O9PRS	-1
+3-hydroxytridecanoyl-[ACP]	C24H45N2O9PRS	-1
+3-hydroxyundecanoyl-[ACP]	C22H41N2O9PRS	-1
+3-oxodecanoyl-[ACP]	C21H37N2O9PRS	-1
+3-oxododecanoyl-[ACP]	C23H41N2O9PRS	-1
+3-oxoheptadecanoyl-[ACP]	C28H51N2O9PRS	-1
+3-oxoheptanoyl-[ACP]	C18H31N2O9PRS	-1
+3-oxohexadecanoyl-[ACP]	C27H49N2O9PRS	-1
+3-oxohexanoyl-[ACP]	C17H29N2O9PRS	-1
+3-oxononanoyl-[ACP]	C20H35N2O9PRS	-1
+3-oxooctanoyl-[ACP]	C19H33N2O9PRS	-1
+3-oxopentadecanoyl-[ACP]	C26H47N2O9PRS	-1
+3-oxopentanoyl-[ACP]	C16H27N2O9PRS	-1
+3-oxotetradecanoyl-[ACP]	C25H45N2O9PRS	-1
+3-oxotridecanoyl-[ACP]	C24H43N2O9PRS	-1
+3-oxoundecanoyl-[ACP]	C22H39N2O9PRS	-1
+acetoacetyl-[ACP]	C15H25N2O9PRS	-1
+acetyl-[ACP]	C13H23N2O8PRS	-1
+apo-[ACP]	HOR	0
+but-2-enoyl-[ACP]	C15H25N2O8PRS	-1
+butyryl-[ACP]	C15H27N2O8PRS	-1
+D-3-hydroxydodecanoyl-[ACP]	C23H43N2O9PRS	-1
+D-3-hydroxyhexanoyl-[ACP]	C17H31N2O9PRS	-1
+decanoyl-[ACP]	C21H39N2O8PRS	-1
+heptadecanoyl-[ACP]	C28H53N2O8PRS	-1
+heptanoyl-[ACP]	C18H33N2O8PRS	-1
+hexanoyl-[ACP]	C17H31N2O8PRS	-1
+lipoyl-[ACP]	C19H33N2O8PRS3	-1
+malonyl-[ACP]	C14H22N2O10PRS	-2
+nonanoyl-[ACP]	C20H37N2O8PRS	-1
+octanoyl-[ACP]	C19H35N2O8PRS	-1
+pentadecanoyl-[ACP]	C26H49N2O8PRS	-1
+pentanoyl-[ACP]	C16H29N2O8PRS	-1
+propanoyl-[ACP]	C14H25N2O8PRS	-1
+tridecanoyl-[ACP]	C24H45N2O8PRS	-1
+undecanoyl-[ACP]	C22H41N2O8PRS	-1
+dodecanoyl-[ACP]	C23H43N2O8PRS	-1
+hexadecanoyl-[ACP]	C27H51N2O8PRS	-1
+tetradecanoyl-[ACP]	C25H47N2O8PRS	-1
+mitoApo-[ACP]	HOR	0
+mitoACP	C11H21N2O7PRS	-1
+HMA	C25H47N2O9PRS	-1
+3-Oxostearoyl-ACP	C29H53N2O9PRS	-1
+Stearoyl-ACP	C29H55N2O8PRS	-1
+(2E)-Octadecenoyl-ACP	C29H53N2O8PSR	-1
+3-Hydroxystearoyl-ACP	C29H55N2O9PSR	-1
+glycyl-tRNA(gly)	C2H5NOR	1
+L-alanyl-tRNA(ala)	C3H7NOR	1
+L-arginyl-tRNA(arg)	C6H15N4OR	2
+L-asparaginyl-tRNA(asn)	C4H8N2O2R	1
+L-aspartyl-tRNA(asp)	C4H6NO3R	0
+L-cysteinyl-tRNA(cys)	C3H7NOSR	1
+L-glutaminyl-tRNA(gln)	C5H10N2O2R	1
+L-glutamyl-tRNA(glu)	C5H8NO3R	0
+L-histidyl-tRNA(his)	C6H9N3OR	1
+L-isoleucyl-tRNA(ile)	C6H13NOR	1
+L-leucyl-tRNA(leu)	C6H13NOR	1
+L-lysyl-tRNA(lys)	C6H15N2OR	2
+L-methionyl-tRNA(met)	C5H11NOSR	1
+L-phenylalanyl-tRNA(phe)	C9H11NOR	1
+L-prolyl-tRNA(pro)	C5H9NOR	1
+L-seryl-tRNA(ser)	C3H7NO2R	1
+L-threonyl-tRNA(thr)	C4H9NO2R	1
+L-tryptophanyl-tRNA(trp)	C11H12N2OR	1
+L-tyrosyl-tRNA(tyr)	C9H11NO2R	1
+L-valyl-tRNA(val)	C5H11NOR	1
+N-formylmethionyl-tRNA	C6H11NO2SR	1
+N-substituted aminoacyl tRNA	C3H2NO2R3	0
+selenomethionyl-tRNA(met)	C5H11NOSeR	1
+tRNA containing 5-aminomethyl-2-thiouridine	C5H6N3OSR	0
+tRNA containing 5-methylaminomethyl-2-thiouridylate	C6H8N3OSR	0
+tRNA containing 6-isopentenyladenosine	C5H9R	0
+tRNA containing N2-methylguanine	C6H6N5OR	0
+tRNA containing N7-methylguanine	C6H7N5OR	1
+tRNA(ala)	RH	0
+tRNA(arg)	RH	0
+tRNA(asn)	RH	0
+tRNA(asp)	RH	0
+tRNA(cys)	RH	0
+tRNA(gln)	RH	0
+tRNA(glu)	RH	0
+tRNA(gly)	RH	0
+tRNA(his)	RH	0
+tRNA(ile)	RH	0
+tRNA(leu)	RH	0
+tRNA(lys)	RH	0
+tRNA(met)	RH	0
+tRNA(phe)	RH	0
+tRNA(pro)	RH	0
+tRNA(ser)	RH	0
+tRNA(thr)	RH	0
+tRNA(trp)	RH	0
+tRNA(tyr)	RH	0
+tRNA(val)	RH	0
+tRNA	RH	0
+tRNA-guanine	C5H4N5OR	0
+tRNA-pseudouridine	C9H10N2O6R2	0
+tRNA-queuine	C12H14N5O3R	0
+tRNA-uridine	C9H10N2O6R2	0
+lactosylceramide sulfate	C31H56NO16SR	0
+G00038	C51H89N2O28R	0
+G00057	C64H112N3O36RCO	0
+G00072	C72H125N4O41RCO	0
+G00073	C78H135N4O46RCO	0
+G00074	C84H145N4O50RCO	0
+G00081	C70H122N3O40RCO	0
+G00084	C78H135N4O46RCO	0
+G00085	C84H145N4O50RCO	0
+acgalfucgalacglcgal14acglcgalgluside heparan sulfate	C72H125N4O41RCO	0
+acngalacglcgalgluside heparan sulfate	C56H95N3O31R	-1
+fucfucgalacglcgal14acglcgalgluside heparan sulfate	C70H122N3O40RCO	0
+fucgalacgalfucgalacglcgal14acglcgalgluside heparan sulfate	C84H145N4O50RCO	0
+fucgalacglc13galacglcgal14acglcgalgluside heparan sulfate	C78H135N4O46RCO	0
+galacgalfuc12gal14acglcgalgluside heparan sulfate	C64H112N3O36RCO	0
+galacgalfucgalacglcgal14acglcgalgluside heparan sulfate	C78H135N4O46RCO	0
+III3,IV2Fuc-nLc4Cer	C57H99N2O31R	0
+III3Fuc-nLc4Cer	C51H89N2O27R	0
+iso-nLc8Cer	C73H125N4O43R	0
+IV2Fuc,III4Fuc-Lc4Cer	C57H99N2O31R	0
+IV2Fuc-nLc4Cer	C51H89N2O27R	0
+type II B antigen	C57H99N2O32R	0
+monofucosyllactoisooctaosylceramide	C79H135N4O47R	0
+G00031	C16H27N2O10X	0
+G00032	C22H37N2O15X	0
+G00079	C85H145N4O51R	0
+nLc5Cer(G00051)	C51H89N2O28R	0
+m3gacpail heparan sulfate	C51H88NO33PR2	0
+m2gacpail heparan sulfate	C45H78NO28PR2	0
+mgacpail heparan sulfate	C39H68NO23PR2	0
+glucosaminyl-acylphosphatidylinositol	C33H58NO18PR2	0
+m2emgacpail heparan sulfate	C53H94N2O36P2R2	0
+em2emgacpail heparan sulfate	C55H100N3O39P3R2	0
+mem2emgacpail heparan sulfate	C61H110N3O44P3R2	0
+Mannosyl-3-(Phosphoethanolaminyl-Mannosyl)-Glucosaminyl-Acylphosphatidylinositol (M4A))	C63H116N4O47P4R2	0
+dem2emgacpail_prot heparan sulfate	C39H70N3O38P3R2X	0
+m3gacpail_prot heparan sulfate	C51H88NO33PR2X	0
+em2emgacpail_prot heparan sulfate	C55H100N3O39P3R2X	0
+mem2emgacpail_prot heparan sulfate	C61H110N3O44P3R2X	0
+dgpi_prot heparan sulfate	C41H76N4O41P4R2X	0
+gpi_prot heparan sulfate	C57H106N4O42P4R2X	0
+gpi heparan sulfate	C57H106N4O42P4R2	0
+emem2gacpail heparan sulfate	C55H100N3O39P3R2	0
+em3gacpail heparan sulfate	C53H94N2O36P2R2	0
+memgacpail heparan sulfate	C47H84N2O31P2R2	0
+m3emgacpail heparan sulfate	C59H104N2O41P2R2	0
+emgacpail heparan sulfate	C41H74N2O26P2R2	0
+Mannosyl-3-(Phosphoethanolaminyl-Mannosyl)-Glucosaminyl-Acylphosphatidylinositol (M4A)	C63H116N4O47P4R2	0
+Mannosyl-3-(Phosphoethanolaminyl-Mannosyl)-Glucosaminyl-Acylphosphatidylinositol-Protein (M4A)	C63H116N4O47P4R2X	0
+heparan sulfate	C56H77N5O81S12	-12
+mitooxidized thioredoxin	C819H1320N226O239S7	0
+mitothioredoxin	C819H1322N226O239S7	0
+oxidized thioredoxin	C525H814N128O160S8	0
+thioredoxin	C525H816N128O160S8	0
+albumin	C3076H4833N821O919S42	0
+antichymotrypsin	C2144H3392N554O636S17	0
+antitrypsin	C2112H3313N539O629S13	0
+apoB100	C23182H36564N6112O6944S104	0
+apoC1	C421H695N109O124S2	0
+apoC2	C509H801N123O159S3	0
+apoC3	C484H760N128O149S3	0
+fibrinogen	C12932H19804N3662O4205S96	0
+haptoglobin	C2019H3126N540O606S17	0
+plasminogen	C3948H6073N1123O1213S59	0
+prothrombin	C3066H4754N874O941S35	0
+[apotransferin]	C3389H5282N934O1021S50	0
+apoE	C1569H2559N477O483S10	0
+apoA1	C1367H2173N381O419S4	0
+STAR	C1393H2267N409O414S17	0
+GM2A	C940H1502N232O275S12	0
+apocytochrome-C	C1578H2483N443O445S20	0
+glycogenin	C1779H2725N455O528S14	0
+PPARA	C2303H3655N619O695S34	0
+apoB48	C23203H36592N6110O6947S103	0
+LPL	C2380H3698N650O700S17	0
+glycogenin G8	C1827H2805N455O568S14	0
+glycogenin G11	C1845H2835N455O583S14	0
+glycogenin G4G4	C1827H2805N455O568S14	0
+glycogenin G4G7	C1845H2835N455O583S14	0
+glycogenin G7	C1821H2795N455O563S14	0
+glycogenin G7G1	C1827H2805N455O568S14	0
+Glycogen, Structure 4 (Glycogenin-1,6-{2[1,4-Glc], [1,4-Glc]})	C1797H2755N455O543S14	0
+Glycogen, Structure 5 (Glycogenin-2[1,4-Glc])	C1791H2745N455O538S14	0
+Tyr-194 Of Apo-Glycogenin Protein (Primer For Glycogen Synthesis)	C1779H2725N455O528S14	0
+[protein]-N6-(dihydrolipoyl)lysine	C1375H2187N381O420S6	0
+[protein]-N6-(lipoyl)lysine	C1375H2185N381O420S6	0
+[protein]-N6-(octanoyl)lysine	C1375H2187N381O420S4	0
+cytochrome-C	C1612H2513FeN447O449S20	-2
+DNA containing 6-O-methylguanine	C21H28N5O17P3R2	-4
+DNA containing guanine	C20H26N5O17P3R2	-4
+[protein]-L-cysteine	C4H6N2O2SR2	0
+S-palmitoylprotein	C20H36N2O3SR2	0
+S-farnesyl-protein	C19H30N2O2SR2	0
+[protein C terminal]-S-farnesyl-L-cysteine	C19H29NO3SR	-1
+[protein C terminal]-S-farnesyl-L-cysteine-methyl ester	C20H32NO3SR	0
+peptidyl-allysyl-peptide	C7H10N2O3R2	0
+peptidyl-L-lysyl-peptide	C7H14N3O2R2	1
+beta-hydroxy-beta-methylbutyrate	C5H9O3	-1
+13(S)-HPODE	C18H31O4	-1
+azelaic acid	C9H14O4	-2
+7,8-epoxy-(4Z,10Z)-hexadecadienoic acid	C16H25O3	-1
+9,10-epoxy-(6Z,12Z)-octadecadienoic acid	C18H29O3	-1
+5,6-epoxy-(8Z)-tetradecenoic acid	C14H23O3	-1
+malonyl-carnitin	C10H16NO6	-1
+tetradecenoylcarnitine(5)	C21H39NO4	0
+4,8-dimethylnonanoylcarnitine	C18H35NO4	0
+2,6-dimethylheptanoyl-carnitine	C16H31NO4	0
+3-demethylubiquinol-10	C58H90O4	0
+cholesterol-ester-palmn	C43H74O2	0
+cis-gondoic acid	C20H37O2	-1
+1-acylglycerol-3P-10,13,16-docosa	C25H43O7P	-2
+12(S)-HHT	C17H27O3	-1
+dehydroascorbic acid	C6H5O6	-1
+A2PE-H2	C47H64NO8PR2	0
+A2PE	C47H62NO8PR2	0
+APE	C27H37NO8PR2	-1
+2-(alpha-hydroxyethyl)thiamine-diphosphate	C14H20N4O8P2S	-2
+glutathione episulfonium ion	C12H18N3O6S	-1
+S-(2-hydroxyethyl)glutathione	C12H20N3O7S	-1
+16-hydroxyhexadecanoic acid	C16H31O3	-1
+O-methylhippurate	C10H10NO3	-1
+arsenite	AsH2O3	-1
+Lysophosphatidic Acid	C3H6O5PRCO2	-2
+6-methoxy-3-methyl-2-all-trans-decaprenyl-1,4-benzoquinol	C58H90O3	0
+lipoic acid	C8H13O2S2	-1
+4,8-Dimethylnonanoyl Coenzyme A	C32H52N7O17P3S	-4
+2-methoxy-6-all trans-decaprenyl-2-methoxy-1,4-benzoquinol	C57H88O3	0
+2,6-Dimethylheptanoyl Coenzyme A	C30H48N7O17P3S	-4
+dextrin(n-1)	C12H22O11	0
+estrone-2,3-semiquinone	C18H21O3	0
+estrone-3,4-semiquinone	C18H21O3	0
+17beta-estradiol-2,3-semiquinone	C18H23O3	0
+histone-N6-methyl-L-lysine	C8H16N3O2R2	1
+histone-L-lysine	C7H14N3O2R2	1
+[protein]	X	0
+phosphoprotein	XO3P	-2
+[protein]-L-lysine	C7H14N3O2R2	1
+[protein]-N6-methyl-L-lysine	C8H16N3O2R2	1
+[protein]-N6,N6-dimethyl-L-lysine	C9H18N3O2R2	1
+[protein]-N6,N6,N6-trimethyl-L-lysine	C10H20N3O2R2	1
+procollagen-5-hydroxy-L-lysine	C7H14N3O3R2	1
+5-(D-galactosyloxy)-L-lysine-procollagen	C13H24N3O8R2	1
+1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen	C19H34N3O13R2	1
+[protein]-N-ubiquityllysine	C8H13N3O3R3	0
+ubiquitin C terminal thiolester	RCOSR	0
+ubiquitin	RCO2	-1
+calcitroic acid	C23H33O4	-1
+(5)ppPur-mRNA	C15H23O22P4R3	-4
+3-phosphopolynucleotide	C15H22O19P3R3	-4
+5-phosphopolynucleotide	C15H22O19P3R3	-4
+polynucleotide	C15H23O16P2R3	-2
+G(5)pppR-RNA	C25H34N5O29P5R3	-5
+m7G(5')pppAm	C32H44N10O29P5R2	-4
+m7G(5')pppR-RNA	C26H37N5O29P5R3	-4
+m7G(5')pppRm-RNA (mRNA containing a 2'-O-methylpurine cap)	C27H39N5O29P5R3	-4
+m7G(5')pppm6Am (mRNA containing an N6,2'-O-dimethyladenosine cap)	C33H46N10O29P5R2	-4
+RNA	C15H22O19P3R3	-4
+RNA-3-terminal-phosphate	C15H22O19P3R3	-4
+RNA-terminal-2,3-cyclic-phosphate	C15H21O18P3R3	-3
+[methionine synthase]-cob(II)alamin	C69H97CoN17O16PR2	0
+[methionine synthase]-methylcob(I)alamin	C70H100CoN17O16PR2	0
+alpha tubulin	C13H15N3O5R2	0
+detyrosinated alpha-tubulin	C4H6N2O3R2	0
+glycylpeptide	C4H7N2O3R	0
+N-tetradecanoylglycylpeptide	C18H33N2O4R	0
+peptidylamidoglycolate	C6H9N3O5R2	0
+peptidylglycine	C6H9N3O4R2	0
+5-oxoprolyl-peptide	C9H11N3O5R2	0
+L-glutaminyl-peptide	C9H14N4O5R2	0
+L-arginyl-protein	C6H13N4OX	1
+PE-LD pool	C7H12NO8PR2	0
+PS-LD pool	C8H11NO10PR2	-1
+1-acyl-PE pool	C6H13NO7PR	0
+PE-NME-LD pool	C8H14NO8PR2	0
+PPE-NME2-LD pool	C9H16NO8PR2	0
+PC-LD pool	C10H18NO8PR2	0
+phospholipids extracellular pool	C5H5O8PR3	-1
+1,2-diacylglycerol-LD-TAG pool	C5H6O5R2	0
+PI pool	C11H16O13PR2	-1
+N-acetyl-D-glucosaminylphosphatidylinositol	C19H29NO18PR2	-1
+1-phosphatidyl-1D-myo-inositol-3-phosphate	C11H15O16P2R2	-3
+1-phosphatidyl-1D-myo-inositol-4-phosphate	C11H15O16P2R2	-3
+phosphatidate-LD-TAG pool	C5H5O8PR2	-2
+cholesterol-ester pool	C28H45O2R	0
+TAG-VLDL pool	C6H5O6R3	0
+HDL remnant	C5849H10226N1057O2508P220S8R365	0
+HDL	C10869H18346N1057O2848P220S8R525	0
+LDL remnant	C33247H54819N7242O13369P860S104R1315	0
+LDL	C94027H154274N7242O17079P860S104R2830	0
+VLDL remnant	C136286H232084N13476O38613P3271S174R7267	0
+VLDL	C198596H284009N13476O100923P3271S174R38422	0
+chylomicron remnant	C25519H39954N6593O8030P6S113R283	0
+chylomicron	C488977H426169N6593O471488P6S113R232012	0
+1-radyl-2-acyl-sn-glycero-3-phosphocholine	C9H18NO7PR2	0
+O-1-alk-1-enyl-2-acyl-sn-glycero-3-phosphoethanolamine	C8H14NO7PR2	0
+bile-PC pool	C10H18NO8PR2	0
+1-acylglycerol-3P-LD-TG1 pool (liver tissue)	C4H6O7PR	-2
+1-acylglycerol-3P-7-tetrade	C17H31O7P	-2
+mead acid	C20H33O2	-1
+fatty acid-LD-TG1 pool (liver tissue)	CO2R	-1
+fatty acid-LD-TG2 pool (liver tissue)	CO2R	-1
+fatty acid-LD-TG3 pool (liver tissue)	CO2R	-1
+fatty acid-LD-PE pool (liver tissue)	CO2R	-1
+fatty acid-LD-PC pool (liver tissue)	CO2R	-1
+fatty acid-LD-PI pool (liver tissue)	CO2R	-1
+fatty acid-LD-PS pool (liver tissue)	CO2R	-1
+fatty acid-LD-SM pool (liver tissue)	CO2R	-1
+CL pool	C13H16O17P2R4	-2
+PG-CL pool	C8H12O10PR2	-1
+PGP-CL pool	C8H11O13P2R2	-3
+CDP-diacylglycerol-CL pool	C14H17N3O15P2R2	-2
+CDP-diacylglycerol-LD-PI pool	C14H17N3O15P2R2	-2
+phosphatidylinositol-4,5-bisphosphate	C11H14O19P3R2	-5
+6-(alpha-D-glucosaminyl)-1-phosphatidyl-1D-myo-inositol	C17H28NO17PR2	0
+2-acyl-1-(1-alkenyl)-sn-glycero-3-phosphate	C6H7O7PR2	-2
+1-lysolecithin pool	C9H19NO7PR	0
+1-phosphatidyl-1D-myo-inositol-3,4-bisphosphate	C11H14O19P3R2	-5
+phosphatidylinositol-3,4,5-trisphosphate	C11H13O22P4R2	-7
+1D-myo-inositol-bisdiphosphate-tetrakisphosphate	C6H6O30P8	-14
+diphospho-myo-inositol-polyphosphate	O3PX	-1
+Fatty Acid 9-Cis-Retinol	C21H29O2R	0
+1-alkyl-2-acylglycerol	C4H6O4R2	0
+1-alkyl-2-acylglycerophosphoethanolamine	C6H12NO7PR2	0
+alkyl-glycerone-3-phosphate	C3H4O6PR	-2
+Hydroxy Alkyl Chain	HOR	0
+2-acyl-1-alkyl-sn-glycero-3-phosphate	C4H5O7PR2	-2
+1-alkyl-2-lysoglycerol-3-phosphocholine	C8H19NO6PR	0
+[protein]-L-tyrosine	C10H10N2O3R2	0
+[protein]-tyrosine-phosphate	C10H9N2O6PR2	-2
+[protein]-tyrosine-O-sulfate	C10H9N2O6R2S	-1
+[protein]-omega-N-(ADP-D-ribosyl)-L-arginine	C22H33N10O15P2R2	-1
+[protein]-L-arginine	C7H14N5O2R2	1
+[protein]-L-citrulline	C7H12N4O3R2	0
+2-acetyl-1-alkyl-sn-glycero-3-phosphocholine	C10H21NO7PR	0
+GM2	C50H85N3O26R	-1
+GM1	C56H95N3O31R	-1
+GM2A-GM2	C990H1587N235O301S12R	-1
+G00020	C58H96N5O40X	0
+G00021	C66H109N6O45X	0
+G00022	C74H122N7O50X	0
+chitin-component	C8H13NO5	0
+chitin(n-1)	C16H28N2O11	0
+Methionyl-Glutaminyl-Tyrosine	C19H28N4O6S	0
+Trans-Delta-2-Heptadecanoyl Coenzyme A	C38H62N7O17P3S	-4
+Dibenzo[A,L]Pyrene-11,12-Diol-13,14-Epoxide	C24H14O3	0
+3-(3-Hydroxy-Phenyl)Propionate Hydroxy Derivative Glucuronide	C15H16O10	-2
+3'-S-hydroxy-pravastatin-CoA	C44H66N7NaO23P3S	-4
+acetaminophen-glutathione-conjugate	C18H27N4O10S	0
+retinyl palmitate	C36H60O2	0
+1-organyl-2-lyso-sn-glycero-3-phosphocholine	C8H19NO6PR	0
+omega-COOH-tetranor-LTE3-CoA	C40H55N8O22P3S2	-5
+3alpha,7alpha-dihydroxy-5beta-cholestan-27-al	C27H46O3	0
+tetraHCA	C27H45O6	-1
+fatty acid-ligands	R	0
+activation-ppara	C2303H3655N619O695S34R	0
+7-HETE	C20H31O3	-1
+13-HETE	C20H31O3	-1
+3-isoLM1	C56H96N3O31R	0
+fuc-3-isoLM1	C62H106N3O35R	0
+V3Fuc,III3Fuc-nLc6Cer	C71H122N3O41R	0
+glycolipid	C56H99N2O30RCO	0
+monosialylgalactosylgloboside	C62H106N3O36R	0
+V3(NeuAc)2-Gb5Cer	C70H119N4O41R	0
+globo-H	C57H99N2O32R	0
+eumelanin	C17H9N2O7	-1
+benzothiazine	C11H12N2O3S	0
+THF-hexaglutamate	C49H57N13O24	-8
+cholesterol-STAR	C1420H2313N409O415S17	0
+hemoglobin	C91H118N4O6Fe	-2
+aflatoxin B1 dialdehyde	C17H13O8	-1
+alpha-(1,2-dihydroxyethyl)-1,2,3,4-tetrahydro-7-hydroxy-9-methoxy-3,4-dioxocyclopenta[c][1]benzopyran-6-acetaldehyde	C17H15O8	-1
+1,2,3,4-tetrahydro-alpha,7-dihydroxy-beta-(hydroxymethyl)-9-methoxy-3,4-dioxocyclopenta[c][1]benzopyran-6-propanal	C17H15O8	-1
+8,9-epoxy-(5Z)-tetradecenoic acid	C14H24O3	-1
+noladin-ether	C23H40O3	0
+(ADP-D-ribosyl)n-acceptor	C15H19N5O13P2X	0
+[phosphorylase A]	O12P4X2	-4
+[myosin light chain]-phosphate	C4H6N2O6PR2	-1
+[protein]-L-glutamine	C6H9N3O3R2	0
+oxytocin 1-8	C41H61N10O12S2	-1
+phosphorhodopsin	C20H28O3PR	-1
+O-phosphoprotamine	XO3P	-1
+alkylamine	H3NR	1
+insulin-(SS)	C256H379N65O77S6	-2
+Insulin-(SH)2	C256H381N65O77S6	-2
+activated sulphur	S	-2
+carboxybiotin-carboxyl-carrier	C17H26N4O5SX	-1
+6-hydroxymelatonin-sulfate	C13H15N2O6S	-1
+cob(II)alamin	C62H88CoN13O14P	0
+aquacob(III)alamin	C62H90CoN13O15P	1
+activated methyl group	CH3	0
+glycogen	C6H10O5	0
+Trans-Delta-2-Heptadecanoic Acid	C17H31O2	-1
