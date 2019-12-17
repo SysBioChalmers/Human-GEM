@@ -4,7 +4,7 @@ function status = testYamlConversion()
 
 
 % load HumanGEM
-load('humanGEM.mat');
+load('HumanGEM.mat');
 
 if exist('testYamlConversion.yml','file')==2
     delete testYamlConversion.yml
