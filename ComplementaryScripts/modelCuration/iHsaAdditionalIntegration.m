@@ -2,7 +2,7 @@
 % FILE NAME:    iHsaAdditionalIntegration.m
 % 
 % DATE CREATED: 2019-10-04
-%     MODIFIED: 2019-12-11
+%     MODIFIED: 2019-12-17
 % 
 % PROGRAMMER:   Jonathan Robinson
 %               Department of Biology and Biological Engineering
@@ -23,6 +23,7 @@
 % load Human-GEM model
 load('HumanGEM.mat');
 ihuman_orig = ihuman;  % keep copy of original version
+ihuman = removeConflictingInchiStrings(ihuman);  % remove conflicting inchis
 
 % load metabolite and reaction annotation data
 metAssoc = jsondecode(fileread('../../ComplementaryData/annotation/humanGEMMetAssoc.JSON'));
