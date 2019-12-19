@@ -56,7 +56,6 @@ model.metFrom={};
 model.rxnConfidenceScores={};
 model.metCharges={};
 model.version='';
-model.priorCombiningGrRules={};
 model.annotation=[];
 equations={};
 leftEqns={};
@@ -172,9 +171,6 @@ while ~feof(fid)
             
         elseif startsWith(tline,'    - gene_reaction_rule: ')
             model = readFieldElement(model, tline, 'grRules','    - gene_reaction_rule: ');
-            
-        elseif startsWith(tline,'    - HMR2_grRule: ')
-            model = readFieldElement(model, tline, 'priorCombiningGrRules','    - HMR2_grRule: ');
             
         elseif startsWith(tline,'    - rxnFrom: ')
             model = readFieldElement(model, tline, 'rxnFrom','    - rxnFrom: ');

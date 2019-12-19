@@ -4,7 +4,7 @@ function status = testYamlConversion()
 
 
 % load HumanGEM
-load('humanGEM.mat');
+load('HumanGEM.mat');
 
 if exist('testYamlConversion.yml','file')==2
     delete testYamlConversion.yml
@@ -17,16 +17,6 @@ importedHumanGEM = importHumanYaml('testYamlConversion.yml');
 % remove intermediate Yaml file
 delete testYamlConversion.yml
 
-%===this section will be removed after resolving the temporary fields
-% extract shared fields
-ihumanFields = fieldnames(ihuman);
-importedModelFields = fieldnames(importedHumanGEM);
-sharedFields = intersect(ihumanFields, importedModelFields);
-
-% trim off unique fields
-HumanGEM = rmfield(ihuman, setdiff(ihumanFields, sharedFields));
-importedHumanGEM = rmfield(importedHumanGEM, setdiff(importedModelFields, sharedFields)); 
-%========
 
 % compare the imported model from yaml with the original one
 if isequal(HumanGEM, importedHumanGEM)
