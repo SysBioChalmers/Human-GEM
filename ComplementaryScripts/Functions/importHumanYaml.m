@@ -267,6 +267,7 @@ model.c = double(ismember(model.rxns, objRxns));
 [genes, rxnGeneMat] = getGenesFromGrRules(model.grRules);
 if isequal(sort(genes), sort(model.genes))
     model.rxnGeneMat = rxnGeneMat;
+    model.genes = genes;
 else
     error('The gene list and grRules are inconsistent.');
 end

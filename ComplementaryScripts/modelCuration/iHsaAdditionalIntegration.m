@@ -125,6 +125,9 @@ rxnsToAdd.grRules = rxnData{5};
 rxnsToAdd.rxnReferences = rxnData{6};
 ihuman = addRxns(ihuman, rxnsToAdd, 3);
 
+% ensure that genes and rxnGeneMat are synced with new grRules
+[ihuman.genes, ihuman.rxnGeneMat] = getGenesFromGrRules(ihuman.grRules);
+
 % add reactions to the annotation structure
 numOrigRxns = numel(rxnAssoc.rxns);
 numNewRxns = numel(rxnData{1});
