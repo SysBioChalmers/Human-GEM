@@ -6,20 +6,22 @@ function status = testYamlConversion()
 % load HumanGEM
 load('HumanGEM.mat');
 
-if exist('testYamlConversion.yml','file')==2
-    delete testYamlConversion.yml
+warning('off', 'MATLAB:DELETE:FileNotFound')
+if exist('testYamlConversion.yml','file')
+    delete testYamlConversion.yml;
 end
+
 
 % export to yml and then import back
 writeHumanYaml(ihuman,'testYamlConversion.yml');
 importedHumanGEM = importHumanYaml('testYamlConversion.yml');
 
 % remove intermediate Yaml file
-delete testYamlConversion.yml
+delete testYamlConversion.yml;
 
 
 % compare the imported model from yaml with the original one
-if isequal(HumanGEM, importedHumanGEM)
+if isequal(ihuman, importedHumanGEM)
     %model conversion between Matlab and Yaml files is successful
     status = 1;
 else
