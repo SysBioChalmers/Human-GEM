@@ -37,7 +37,6 @@ model.c=[];
 model.b=[];
 model.comps={};
 model.compNames={};
-%model.compOutside={};  %abandoned
 model.rxnNames={};
 model.grRules={};
 model.rxnGeneMat=[];
@@ -80,33 +79,33 @@ while ~feof(fid)
     end
 
     if section == 1 && numel(tline) > 17
-        if isequal(tline(1:17),'    short_name  :')
-            model.id = strip(tline(19:end),'"');
+        switch tline(1:17)
+            case '    short_name  :'
+                model.id = strip(tline(19:end),'"');
 
-        elseif isequal(tline(1:17),'    full_name   :')
-            model.description = strip(tline(19:end),'"');
+            case '    full_name   :'
+                model.description = strip(tline(19:end),'"');
 
-        elseif isequal(tline(1:17),'    version     :')
-            model.version = strip(tline(19:end),'"');
+            case '    version     :'
+                model.version = strip(tline(19:end),'"');
 
-        elseif isequal(tline(1:17),'    taxonomy    :')
-            model.annotation.taxonomy = strip(tline(19:end),'"');
+            case '    taxonomy    :'
+                model.annotation.taxonomy = strip(tline(19:end),'"');
 
-        elseif isequal(tline(1:17),'    description :')
-            model.annotation.note = strip(tline(19:end),'"');
+            case '    description :'
+                model.annotation.note = strip(tline(19:end),'"');
 
-        elseif isequal(tline(1:17),'    github      :')
-            model.annotation.sourceUrl = strip(tline(19:end),'"');
+            case '    github      :'
+                model.annotation.sourceUrl = strip(tline(19:end),'"');
 
-        elseif isequal(tline(1:17),'    authors     :')
-            model.annotation.authorList = strip(tline(19:end),'"');
+            case '    authors     :'
+                model.annotation.authorList = strip(tline(19:end),'"');
 
-        elseif isequal(tline(1:17),'    email       :')
-            model.annotation.email = strip(tline(19:end),'"');
+            case '    email       :'
+                model.annotation.email = strip(tline(19:end),'"');
 
-        elseif isequal(tline(1:17),'    organization:')
-            model.annotation.organization = strip(tline(19:end),'"');
-           
+            case '    organization:'
+                model.annotation.organization = strip(tline(19:end),'"');
         end 
     end
 
