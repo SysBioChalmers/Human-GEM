@@ -311,6 +311,7 @@ if ~isempty(taskStructure)
     %participate in any reacitons) so that the final model is still able to
     %complete all of the tasks without any errors.
     taskMets = union(vertcat(taskStructure.inputs),vertcat(taskStructure.outputs));
+    taskMets = union(taskMets, parseRxnEqu(vertcat(taskStructure.equations)));
     modelMets = strcat(cModel.metNames,'[',cModel.comps(cModel.metComps),']');
     [inModel,metInd] = ismember(taskMets,modelMets);
     essentialMetsForTasks = cModel.mets(metInd(inModel));
