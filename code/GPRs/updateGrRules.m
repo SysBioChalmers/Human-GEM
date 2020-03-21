@@ -51,7 +51,7 @@ if nargin < 2
 end
 
 % Load the grRules curation results from input file
-inputFile=fullfile('../../ComplementaryData/modelCuration/',fileName);
+inputFile=fullfile('../../data/modelCuration/',fileName);
 if ~exist(inputFile,'file')
     error('The file with curated grRules cannot be located. Please specify the correct filename.\n');
 else
