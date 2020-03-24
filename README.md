@@ -22,7 +22,7 @@ This repository contains the latest version of Human-GEM, a human genome-scale m
 **Condition:** generic metabolism  
 
 
-- Last update: {{DATE}}
+### Model Overview
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|-----:|
