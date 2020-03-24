@@ -2,19 +2,25 @@
 
 [![Join the chat at https://gitter.im/SysBioChalmers/Human-GEM](https://badges.gitter.im/SysBioChalmers/Human-GEM.svg)](https://gitter.im/SysBioChalmers/Human-GEM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub version](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM.svg)](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM)
 
-- Brief Model Description:
+### Brief Model Description:
 
 This repository contains the latest version of Human-GEM, a human genome-scale metabolic model.
 
-- Model KeyWords:
+### Citation:
 
-**GEM Category:** species; **Utilisation:** predictive simulation, multi-omics integrative analysis; **Field:** metabolic-network reconstruction; **Type of Model:** reconstruction, curated; **Model Source:** HPA, HMR2, iHsa, iHepatocytes2322, Recon3D; **Omic Source:** genomics, proteomics; **Taxonomy:** _Homo sapiens_; **Metabolic System:** general metabolism; **Condition:** generic metabolism;
+ > J. L. Robinson, P. Kocabaş, H. Wang, P.-E. Cholley, et al. An atlas of human metabolism. _Sci. Signal._ 13, eaaz1482 (2020). [doi:10.1126/scisignal.aaz1482](https://doi.org/10.1126/scisignal.aaz1482)
 
-- Reference:
+### Model Keywords:
 
- [J. L. Robinson, P. Kocabaş, H. Wang, P.-E. Cholley, et al. An atlas of human metabolism. _Sci. Signal._ 13, eaaz1482 (2020)](https://stke.sciencemag.org/lookup/doi/10.1126/scisignal.aaz1482)
+**Utilisation:** predictive simulation, multi-omics integrative analysis, model template
+**Field:** metabolic-network reconstruction
+**Type of Model:** reconstruction, curated
+**Model Source:** HPA, HMR2, iHsa, iHepatocytes2322, Recon3D
+**Omic Source:** genomics, proteomics
+**Taxonomy:** _Homo sapiens_
+**Metabolic System:** general metabolism
+**Condition:** generic metabolism
 
-- Pubmed ID: n/a
 
 - Last update: {{DATE}}
 
