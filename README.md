@@ -2,36 +2,34 @@
 
 [![Join the chat at https://gitter.im/SysBioChalmers/Human-GEM](https://badges.gitter.im/SysBioChalmers/Human-GEM.svg)](https://gitter.im/SysBioChalmers/Human-GEM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub version](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM.svg)](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM)
 
-### Brief Model Description:
+### Brief Model Description
 
 This repository contains the latest version of Human-GEM, a human genome-scale metabolic model.
 
-### Citation:
+### Citation
 
  > J. L. Robinson, P. Kocabaş, H. Wang, P.-E. Cholley, et al. An atlas of human metabolism. _Sci. Signal._ 13, eaaz1482 (2020). [doi:10.1126/scisignal.aaz1482](https://doi.org/10.1126/scisignal.aaz1482)
 
-### Model Keywords:
+### Model Keywords
 
-**Utilisation:** predictive simulation, multi-omics integrative analysis, model template
-**Field:** metabolic-network reconstruction
-**Type of Model:** reconstruction, curated
-**Model Source:** HPA, HMR2, iHsa, iHepatocytes2322, Recon3D
-**Omic Source:** genomics, proteomics
-**Taxonomy:** _Homo sapiens_
-**Metabolic System:** general metabolism
-**Condition:** generic metabolism
+**Utilisation:** predictive simulation, multi-omics integrative analysis, model template  
+**Field:** metabolic-network reconstruction  
+**Type of Model:** reconstruction, curated  
+**Model Source:** HPA, HMR2, iHsa, iHepatocytes2322, Recon3D  
+**Omic Source:** genomics, proteomics  
+**Taxonomy:** _Homo sapiens_  
+**Metabolic System:** general metabolism  
+**Condition:** generic metabolism  
 
 
 - Last update: {{DATE}}
-
-
-- The model contains:
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|-----:|
 |_Homo sapiens_ |   HMR2, Recon3D, iHsa|    {{nRXN}}|  {{nMET}}|  {{nGENE}}|
 
 
+### Administration
 
 This repository is administered by Jonathan Robinson ([@JonathanRob](https://github.com/jonathanrob)) and Hao Wang ([@Hao-Chalmers](https://github.com/hao-chalmers)), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology.
 
@@ -55,9 +53,11 @@ This repository is administered by Jonathan Robinson ([@JonathanRob](https://git
 * Add the directory to your MATLAB path (instructions [here](https://se.mathworks.com/help/matlab/ref/addpath.html?requestedDomain=www.mathworks.com)).
 
 
+
 ## Model Files
 
 The model is available as `.xml`, `.txt`, `.yml`, and `.mat` (`.mat` only on the `master` branch) in the `modelFiles/` directory of the repository.
+
 
 
 ## Usage
@@ -76,19 +76,27 @@ The model is available as `.xml`, `.txt`, `.yml`, and `.mat` (`.mat` only on the
 * Save using the `exportModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
 
 
+
 ## Website
+
 [Metabolic Atlas](https://metabolicatlas.org/) enables visualization and exploration of Human-GEM content.
 
 
+
 ## Metabolic Maps
+
 A collection of manually curated 2D metabolic maps associated with Human-GEM are stored in the [Human-maps repository](https://github.com/SysBioChalmers/Human-maps). These maps can be downloaded from the repository or explored interactively using [Metabolic Atlas](https://metabolicatlas.org/explore/map-viewer/human1).
 
 
+
 ## Contributing
+
 Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/master/.github/CONTRIBUTING.md) to get started.
 
 
+
 ## Contributors
+
 - [Jonathan L. Robinson](https://www.chalmers.se/en/Staff/Pages/jonrob.aspx), National Bioinformatics Infrastructure Sweden (NBIS), Science for Life Laboratory (SciLifeLab), Chalmers University of Technology, Gothenburg Sweden
 - [Pınar Kocabaş](https://www.chalmers.se/en/staff/Pages/kocabas.aspx), Chalmers University of Technology, Gothenburg Sweden
 - [Pierre-Etienne Cholley](https://www.chalmers.se/en/staff/Pages/cholley.aspx), Chalmers University of Technology, Gothenburg Sweden
