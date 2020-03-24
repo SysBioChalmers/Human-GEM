@@ -25,7 +25,7 @@ This repository contains the latest version of Human-GEM, a human genome-scale m
 ### Model Overview
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
-| ------------- |:-------------:|:-------------:|:-------------:|-----:|
+| ------------- |:-------------:|:-------------:|:-------------:|:-----:|
 |_Homo sapiens_ |   HMR2, Recon3D, iHsa|    {{nRXN}}|  {{nMET}}|  {{nGENE}}|
 
 
@@ -56,7 +56,7 @@ This repository is administered by Jonathan Robinson ([@JonathanRob](https://git
 
 ## Model Files
 
-The model is available as `.xml`, `.txt`, `.yml`, and `.mat` (`.mat` only on the `master` branch) in the `modelFiles/` directory of the repository.
+The model is available as `.xml`, `.txt`, `.yml`, and `.mat` (`.mat` only on the `master` branch) in the `modelFiles/` directory.
 
 
 
