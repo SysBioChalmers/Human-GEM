@@ -55,6 +55,27 @@ This repository is administered by Jonathan Robinson ([@JonathanRob](https://git
 * Add the directory to your MATLAB path (instructions [here](https://se.mathworks.com/help/matlab/ref/addpath.html?requestedDomain=www.mathworks.com)).
 
 
+## Model Files
+
+The model is available as `.xml`, `.txt`, `.yml`, and `.mat` (`.mat` only on the `master` branch) in the `modelFiles/` directory of the repository.
+
+
+## Usage
+
+#### Loading/saving the model
+
+`HumanGEM.mat` (Recommended if on `master` branch)
+* Load and save using the built-in MATLAB `load()` and `save()` functions.
+
+`HumanGEM.yml` (Recommended if on `devel` or other branches)
+* Load using the `importHumanYaml.m` function (in `code/io/`)
+* Save using the `writeHumanYaml.m` function (in `code/io/`)
+
+`HumanGEM.xml` (SBML format)
+* Load using the `importModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
+* Save using the `exportModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
+
+
 ## Website
 [Metabolic Atlas](https://metabolicatlas.org/) enables visualization and exploration of Human-GEM content.
 
