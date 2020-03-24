@@ -54,7 +54,7 @@ This repository is administered by Jonathan Robinson ([@JonathanRob](https://git
 
 
 ## Metabolic Maps
-A collection of manually curated 2D metabolic maps associated with Human-GEM are stored in the [human-maps repository](https://github.com/SysBioChalmers/human-maps). These maps can be downloaded from the repository or explored interactively using [Metabolic Atlas](https://metabolicatlas.org/explore/map-viewer/human1).
+A collection of manually curated 2D metabolic maps associated with Human-GEM are stored in the [Human-maps repository](https://github.com/SysBioChalmers/Human-maps). These maps can be downloaded from the repository or explored interactively using [Metabolic Atlas](https://metabolicatlas.org/explore/map-viewer/human1).
 
 
 ## Contributing
