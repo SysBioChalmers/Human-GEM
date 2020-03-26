@@ -93,7 +93,7 @@ id2miriam = {%reactions
 if any(ismember({'rxn','reaction'},lower(annType)))
     [ST, I] = dbstack('-completenames');
     path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../../ComplementaryData/annotation','humanGEMRxnAssoc.JSON');
+    tmpfile = fullfile(path,'../data/annotation','humanGEMRxnAssoc.JSON');
     rxnAssoc = jsondecode(fileread(tmpfile));
     
     rxnAssocArray = struct2cell(rxnAssoc);
@@ -106,7 +106,7 @@ end
 if any(ismember({'met','metabolite'},lower(annType)))
     [ST, I] = dbstack('-completenames');
     path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../../ComplementaryData/annotation','humanGEMMetAssoc.JSON');
+    tmpfile = fullfile(path,'../data/annotation','humanGEMMetAssoc.JSON');
     metAssoc = jsondecode(fileread(tmpfile));
     
     % ChEBI IDs should be of the form "CHEBI:#####"
@@ -201,7 +201,7 @@ if ( addMiriams )
         for i = 1:numel(model.mets)
             if hasMet(i)
                 % add annotation
-                model.metMiriams{i} = appendMiriamData(model.metMiriams{i}, miriamNames, miriamValues(metInd(i),:)');
+                %model.metMiriams{i} = appendMiriamData(model.metMiriams{i}, miriamNames, miriamValues(metInd(i),:)');
             end
             % add SBO term (SBO:0000247, "simple chemical" for all mets)
             model.metMiriams{i} = appendMiriamData(model.metMiriams{i}, {'sbo'}, {'SBO:0000247'});

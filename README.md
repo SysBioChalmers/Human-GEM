@@ -56,7 +56,7 @@ This repository is administered by Jonathan Robinson ([@JonathanRob](https://git
 
 ## Model Files
 
-The model is available as `.xml`, `.txt`, `.yml`, and `.mat` (`.mat` only on the `master` branch) in the `modelFiles/` directory.
+The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `modelFiles/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `devel`), to facilitate tracking of model changes.
 
 
 

@@ -53,15 +53,14 @@ newVersion = num2str(newVersion,'%d.%d.%d');
 %To be included
 
 %Load model:
-%ihuman = importModel('../../ModelFiles/xml/humanGEM.xml');
-matFile=fullfile(modelPath,'ModelFiles','mat','HumanGEM.mat');
-load(matFile);
+ymlFile=fullfile(modelPath,'ModelFiles','yml','HumanGEM.yml');
+ihuman = importHumanYaml(ymlFile);
 
 %Include tag and save model:
 ihuman.version = newVersion;
 
 %Export model to multiple formats
-exportHumanGEM(ihuman,'HumanGEM',modelPath,{'mat', 'txt', 'xml', 'yml'});
+exportHumanGEM(ihuman,'HumanGEM',modelPath,{'mat', 'txt', 'xml', 'yml', 'xlsx'});
 
 %Update version file:
 fid = fopen(versionFile,'wt');
