@@ -1,0 +1,239 @@
+# Date: 2018-11-09
+r0202m	reaction should not take place in mitochondria, should be DELETED
+RE1573M	reaction is missing FADH2 and would be identical to HMR_3288, so it should be DELETED
+r1453	reaction is same as HMR_3838 but ubiquinol is on wrong side of equation; should be DELETED
+r0698	no evidence supporting such a reaction, and missing electron source; should be DELETED
+DHCR241r	reaction is identical to r1380, but uses incorrect cofactor (FADH2); should be DELETED
+DHCR242r	reaction is identical to HMR_1533, but uses incorrect cofactor (FADH2); should be DELETED
+r1479	reaction is mass-imbalanced and generates carbon, and should therefore be DELETED
+FAOXC2251836m	reaction enables biosynthesis of an essential fatty acid (linoleic acid), which is physiologically incorrect. Reaction should be DELETED, unless sufficient evidence supporting its inclusion can be provided.
+FAOXC2251836x	reaction enables biosynthesis of an essential fatty acid (linoleic acid), which is physiologically incorrect. Reaction should be DELETED, unless sufficient evidence supporting its inclusion can be provided.
+HMR_3451	reaction enables biosynthesis of an essential fatty acid (linoleic acid), which is physiologically incorrect. Reaction should be DELETED, unless sufficient evidence supporting its inclusion can be provided.
+HMR_3465	reaction enables biosynthesis of an essential fatty acid (linoleic acid), which is physiologically incorrect. Reaction should be DELETED, unless sufficient evidence supporting its inclusion can be provided.
+r1169	reaction incorrectly treats gamma-linolenoyl-CoA and linolenoyl-CoA as equivalent (see e.g. HMR_3720 and HMR_3674), and should therefore be DELETED
+DOPACCL	no sources supporting this reaction, and literature (PMID: 20600874) suggests that it could not occur; reaction should be DELETED
+DOLGPP_Ler	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+DOLASNT_Ler	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+DOLDPP_Ler	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+DOLK_L	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+DOLMANP_Lter	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+DOLPMT3_Ler	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+GPIMTer_L	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+GLCNACPT_L	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+DOLPGT3_Ler	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+DOLICHOL_Lter	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+DEDOLR_L	reaction assumes dolichol-related mets have greater mass than other rxns in model, thus creating mass imbalances; rxn should be DELETED
+VLDL_HSDEG	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+IDL_HSDEG	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+LDL_HSDEG	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+HDL_HSDEG	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+CHYLO_HSDEG	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+VLDL_HSSYN	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+IDL_HSSYN	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+LDL_HSSYN	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+HDL_HSSYN	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+MYELIN_HSSYN	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+CHYLO_HSSYN	treatment of TAG-VLDL pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should be DELETED
+HMR_2128	rxn is mass imbalanced, but correction would result in identical reaction as HMR_2141; should therefore be DELETED
+RE3273C	treatment of PI pool and/or phosphatidate-LD-TAG pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+RE3273G	treatment of PI pool and/or phosphatidate-LD-TAG pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+RE3273R	treatment of PI pool and/or phosphatidate-LD-TAG pool here is different than other (HMR) reactions in the model, resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+DHAPA	R Total Coenzyme A is effectively equal to palmitoyl-CoA, so the reaction is therefore mass-imbalanced; should be DELETED
+DHAPAx	R Total Coenzyme A is effectively equal to palmitoyl-CoA, so the reaction is therefore mass-imbalanced; should be DELETED
+DSAT	rxn treats mass of dihydroceramide pool metabolite differently than others in model (e.g. HMR_0753, HMR_0692), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+RE3301C	rxn treats PS-LD/phosphatidate-LD-TAG pool differently than others in model (e.g., HMR_0660), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+RE3301G	rxn treats PS-LD/phosphatidate-LD-TAG pool differently than others in model (e.g., HMR_0660), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+RE3301R	rxn treats PS-LD/phosphatidate-LD-TAG pool differently than others in model (e.g., HMR_0660), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+CDS	rxn treats phosphatidate-LD-TAG pool and/or CDP-diacylglycerol-LD-PI pool differently than others in the model (e.g., HMR_0607), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+CDSm	rxn treats phosphatidate-LD-TAG pool and/or CDP-diacylglycerol-LD-PI pool differently than others in the model (e.g., HMR_0607), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+CHOLESACATc	rxn treats mass of cholesterol-ester pool metabolite differently than others in model, resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+LPS	rxn treats TAG-VLDL pool and/or 1,2-diacylglycerol-LD-TAG pool differently than others in model (e.g., HMR_0007), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+LPSe	rxn treats TAG-VLDL pool and/or 1,2-diacylglycerol-LD-TAG pool differently than others in model (e.g., HMR_0007), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+DGAT	rxn treats TAG-VLDL pool and/or 1,2-diacylglycerol-LD-TAG pool differently than others in model (e.g., HMR_0007), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+r0626	reaction is mass-imbalanced and should therefore be constrained until imbalances can be addressed, otherwise DELETED
+r1386	reaction is mass-imbalanced and should therefore be constrained until imbalances can be addressed, otherwise DELETED
+HC02191c	reaction is carbon-imbalanced and should therefore be constrained until imbalances can be addressed, otherwise DELETED
+r1254	rxn should produce stearidonoyl-CoA, NOT stearoyl-CoA (see HMR_0353); rxn should therefore be DELETED
+RE3267E	rxn treats PE-LD pool differently than others in model (e.g., HMR_0614), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+RE3267G	rxn treats PE-LD pool differently than others in model (e.g., HMR_0614), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+RE3267M	rxn treats PE-LD pool differently than others in model (e.g., HMR_0614), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+RE3267N	rxn treats PE-LD pool differently than others in model (e.g., HMR_0614), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+RE3267R	rxn treats PE-LD pool differently than others in model (e.g., HMR_0614), resulting in mass imbalances; rxn should therefore be constrained until imbalances can be addressed, otherwise DELETED
+r0001	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1319	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1320	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1321	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1322	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1323	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1324	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1325	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1326	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1327	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1328	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1329	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+HMR_0689	mass balance analyses show that this reaction contributes to a flux solution that can generate mass; the rxn should therefore be constrained until imbalances can be addressed
+HMR_0690	mass balance analyses show that this reaction contributes to a flux solution that can generate mass; the rxn should therefore be constrained until imbalances can be addressed
+AGPAT1	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+AGPAT2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+AGPAT3	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+AGPAT4	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT55e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT17e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT4e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT12e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT54e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT16e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT19e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT3e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT40e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT41e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT42e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT43e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT44e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT45e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT56e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT46e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT47e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT48e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT9e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT10e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT11e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT13e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT14e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT15e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT18e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT20e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT21e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT22e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT23e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT25e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT26e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT27e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT28e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT29e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT2e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT30e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT31e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT32e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT33e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT34e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT35e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT36e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT37e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT38e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT39e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT49e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT50e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT51e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT52e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT53e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT57e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT5e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT6e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT7e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LCAT8e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS1	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS10	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS11	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS12	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS16	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS13	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS14	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS15	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS3	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS4	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS5	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS6	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS7	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS8	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+SMS9	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEOLE_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEPALM_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PE2LINL_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEAR_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PE203_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PE226_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PE224_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEDH203_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEDH12_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEDH14_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEDH161_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEDH13_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEDH15_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PEDH17_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PELINL_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PLA2_2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PLA2_2e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLMYR_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLOLE_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLPALME_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLPALM_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLSTE_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOL2LINL_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOL2OLE_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOL2PALM_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOL2STE_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN15_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLAR_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN183_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN1836_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN19_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN201_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN204_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN205_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN224_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN225_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN2254_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN226_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN203_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN24_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN261_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN281_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLN28_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLDOC_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLDEIC_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLDET_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLHEP_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+PCHOLLINL_HSPLA2	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LPS2e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+MAGLINL_HSe	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+MAGOLE_HSe	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LPS5e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LPS6e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+LPS7e	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR13	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR202	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR203	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR204	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR205	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR206	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR207	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR208	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR209	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR210	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR211	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR212	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR213	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR31	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR32	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR33	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR34	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR42	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR43	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR44	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR45	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR46	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR51	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR52	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR53	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR54	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR55	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR56	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+ARTFR57	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+TAG_HSad	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+TAG_HSad_NE	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+TAG_HSad_E	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+CHOLESTle	reaction is artificial and involves dead-end artificial metabolite with no apparent purpose, and should therefore be DELETED
+r1330	reaction appears to be an attempt to fix ATP leakage, but not necessary with the updated handling of mitochondrial proton transport and should be DELETED
+r1331	reaction appears to be an attempt to fix ATP leakage, but not necessary with the updated handling of mitochondrial proton transport and should be DELETED
