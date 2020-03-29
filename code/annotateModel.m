@@ -201,7 +201,7 @@ if ( addMiriams )
         for i = 1:numel(model.mets)
             if hasMet(i)
                 % add annotation
-                %model.metMiriams{i} = appendMiriamData(model.metMiriams{i}, miriamNames, miriamValues(metInd(i),:)');
+                model.metMiriams{i} = appendMiriamData(model.metMiriams{i}, miriamNames, miriamValues(metInd(i),:)');
             end
             % add SBO term (SBO:0000247, "simple chemical" for all mets)
             model.metMiriams{i} = appendMiriamData(model.metMiriams{i}, {'sbo'}, {'SBO:0000247'});
