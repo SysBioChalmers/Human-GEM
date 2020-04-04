@@ -72,6 +72,7 @@ id2miriam = {%reactions
              'rxnBiGGID'        'bigg.reaction'
              'rxnREACTOMEID'    'reactome'
              'rxnMetaNetXID'    'metanetx.reaction'
+             'rxnTCDBID'        'tcdb'
              % metabolites
              'metBiGGID'        'bigg.metabolite'
              'metKEGGID'        'kegg.compound'
