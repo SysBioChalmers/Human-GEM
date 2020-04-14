@@ -98,6 +98,11 @@ if any(ismember({'rxn','reaction'},lower(annType)))
     rxnAssoc = jsondecode(fileread(tmpfile));
     
     rxnAssocArray = struct2cell(rxnAssoc);
+    numericFields = find(cellfun(@isnumeric, rxnAssocArray));
+    for i = 1:numel(numericFields)
+        % numeric fields must be converted to text for miriams
+        rxnAssocArray{numericFields(i)} = arrayfun(@num2str, rxnAssocArray{numericFields(i)}, 'UniformOutput', false);
+    end
     rxnAssocArray = horzcat(rxnAssocArray{:});
 else
     rxnAssoc = [];
@@ -114,6 +119,11 @@ if any(ismember({'met','metabolite'},lower(annType)))
     metAssoc.metChEBIID = regexprep(metAssoc.metChEBIID,'(^)(\d+)|(;\s*)(\d+)','$1CHEBI:$2');
     
     metAssocArray = struct2cell(metAssoc);
+    numericFields = find(cellfun(@isnumeric, metAssocArray));
+    for i = 1:numel(numericFields)
+        % numeric fields need to be converted to text for miriams
+        metAssocArray{numericFields(i)} = arrayfun(@num2str, metAssocArray{numericFields(i)}, 'UniformOutput', false);
+    end
     metAssocArray = horzcat(metAssocArray{:});
 else
     metAssoc = [];
@@ -248,22 +258,36 @@ if ( addFields )
     remFields = {'rxns','mets','metsNoComp','genes'};
     allAssoc = rmfield(allAssoc, intersect(fieldnames(allAssoc),remFields));
     
-    % add individual ID fields to the model
+    % get fields and their types
     f = fieldnames(allAssoc);
+    fieldType = repmat({'rxn'}, numel(f), 1);
+    fieldType(ismember(f, fieldnames(metAssoc))) = {'met'};
+    fieldType(ismember(f, fieldnames(geneAssoc))) = {'gene'};
+    
+    % add individual ID fields to the model
     for i = 1:numel(f)
         
-        if startsWith(f{i},'rxn')
-            [hasRxn,rxnInd] = ismember(model.rxns,rxnAssoc.rxns);
-            ids = repmat({''},size(model.rxns));
-            ids(hasRxn) = allAssoc.(f{i})(rxnInd(hasRxn));
-        elseif startsWith(f{i},'met')
-            [hasMet,metInd] = ismember(model.mets,metAssoc.mets);
-            ids = repmat({''},size(model.mets));
-            ids(hasMet) = allAssoc.(f{i})(metInd(hasMet));
-        elseif startsWith(f{i},'gene')
-            ids = allAssoc.(f{i});
-        else
-            continue
+        switch fieldType{i}
+            case 'rxn'
+                [hasRxn,rxnInd] = ismember(model.rxns,rxnAssoc.rxns);
+                if isnumeric(allAssoc.(f{i}))
+                    ids = NaN(size(model.rxns));
+                else
+                    ids = repmat({''},size(model.rxns));
+                end
+                ids(hasRxn) = allAssoc.(f{i})(rxnInd(hasRxn));
+            case 'met'
+                [hasMet,metInd] = ismember(model.mets,metAssoc.mets);
+                if isnumeric(allAssoc.(f{i}))
+                    ids = NaN(size(model.mets));
+                else
+                    ids = repmat({''},size(model.mets));
+                end
+                ids(hasMet) = allAssoc.(f{i})(metInd(hasMet));
+            case 'gene'
+                ids = allAssoc.(f{i});
+            otherwise
+                continue
         end
         
         if ~isfield(model,f{i}) || overwrite
