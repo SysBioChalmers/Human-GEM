@@ -34,6 +34,10 @@ This repository contains the latest version of Human-GEM, a human genome-scale m
 This repository is administered by Jonathan Robinson ([@JonathanRob](https://github.com/jonathanrob)) and Hao Wang ([@Hao-Chalmers](https://github.com/hao-chalmers)), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology.
 
 
+## User Guide
+
+Detailed instructions on the installation and use of the Human-GEM model and repository can be found in the [Human-GEM user guide](https://sysbiochalmers.github.io/Human-GEM-guide/).
+
 
 ## Installation
 
@@ -77,9 +81,10 @@ The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `mo
 
 
 
-## Website
+## Websites
 
-[Metabolic Atlas](https://metabolicatlas.org/) enables visualization and exploration of Human-GEM content.
+- [Metabolic Atlas](https://metabolicatlas.org/) enables visualization and exploration of Human-GEM content.
+- The [Human-GEM user guide](https://sysbiochalmers.github.io/Human-GEM-guide/) provides detailed instructions and examples for using the Human-GEM model and repository.
 
 
 
