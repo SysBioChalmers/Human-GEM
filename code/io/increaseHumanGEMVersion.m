@@ -53,7 +53,7 @@ newVersion = num2str(newVersion,'%d.%d.%d');
 %To be included
 
 %Load model:
-ymlFile=fullfile(modelPath,'ModelFiles','yml','HumanGEM.yml');
+ymlFile=fullfile(modelPath,'modelFiles','yml','HumanGEM.yml');
 ihuman = importHumanYaml(ymlFile);
 
 %Include tag and save model:
