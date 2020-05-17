@@ -220,14 +220,14 @@ if isfield(model,fieldName)
         elseif length(list) > 1 || strcmp(fieldName,'subSystems')
             fprintf(fid,['    ' name ':\n']);
             for i = 1:length(list)
-                fprintf(fid,['        - ' list{i} '\n']);
+                fprintf(fid,['        - "' list{i} '"\n']);
             end
         end
         
     elseif sum(pos) > 0
         % all other fields
         if strcmp(type,'txt')
-            % enclose all "names" in double quotes
+            % enclose all string elements with double quotes
             value = ['"',field{pos},'"'];
         elseif strcmp(type,'num')
             if isnan(field(pos))
