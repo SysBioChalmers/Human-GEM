@@ -1,7 +1,19 @@
-function status = testYamlConversion(model)
+function status = testYamlConversion
 % test the functions for yaml import/export see if the conversion process
 % changes the model content
+%
+% Usage: status = testYamlConversion
+%
+% Hao Wang, 2020-05-17
+%
 
+% Get model path
+[ST, I]=dbstack('-completenames');
+modelPath=fileparts(fileparts(fileparts(ST(I).file)));
+
+% Import yaml model
+ymlFile=fullfile(modelPath,'modelFiles','yml','HumanGEM.yml');
+model = importHumanYaml(ymlFile, true);
 
 % make sure there is no intermediate Yaml file under the current folder
 warning('off', 'MATLAB:DELETE:FileNotFound')
@@ -12,7 +24,7 @@ end
 
 % export to yml and then import back
 writeHumanYaml(model,'testYamlConversion.yml');
-importedHumanGEM = importHumanYaml('testYamlConversion.yml');
+importedHumanGEM = importHumanYaml('testYamlConversion.yml', true);
 
 % remove intermediate Yaml file
 delete testYamlConversion.yml;
