@@ -1,4 +1,4 @@
-function model=importHumanYaml(yamlFilename)
+function model=importHumanYaml(yamlFilename, silentMode)
 % importHumanYaml
 %   Imports a yaml file matching (roughly) the cobrapy yaml structure
 %
@@ -6,16 +6,22 @@ function model=importHumanYaml(yamlFilename)
 %   yamlFile    a file in yaml model structure. As defined in HumanGEM, the
 %               yaml file contains 5 sections: metaData, metabolites,
 %               reactions, genes and compartments
+%   silentMode  set as true to turn off notificaiton messages (opt, default
+%               false)
 %
 %   Output:
 %   model       a model structure
 %
-%   Usage: model=importYaml(yamlFilename)
+%   Usage: model=importYaml(yamlFilename, silentMode)
 %
-%   Hao Wang, 2019-07-26
+%   Hao Wang, 2020-05-17
 %
 % This function is to reverse engineer the RAVEN function `writeYaml`
 %
+
+if nargin < 2
+    silentMode = false;
+end
 
 if ~(exist(yamlFilename,'file')==2)
     error('Yaml file %s cannot be found',string(yamlFilename));
@@ -65,7 +71,9 @@ objRxns={};
 % Load Yaml format model
 
 fid = fopen(yamlFilename);
-fprintf('Start importing...\n');
+if ~silentMode
+    fprintf('Start importing...\n');
+end
 
 section = 0;
 while ~feof(fid)
@@ -74,7 +82,9 @@ while ~feof(fid)
     
     % import metaData
     if isequal(tline, '- metaData:')
-        fprintf('\tmetaData\n');
+        if ~silentMode
+            fprintf('\tmetaData\n');
+        end
         section = 1;
     end
 
@@ -112,7 +122,9 @@ while ~feof(fid)
 
     % import metabolites:
     if isequal(tline, '- metabolites:')
-        fprintf('\tmetabolites\n');
+        if ~silentMode
+            fprintf('\tmetabolites\n');
+        end
         section = 2;
     end
 
@@ -144,7 +156,9 @@ while ~feof(fid)
     
     % import reactions:
     if isequal(tline, '- reactions:')
-        fprintf('\treactions\n');
+        if ~silentMode
+            fprintf('\treactions\n');
+        end
         section = 3;
         readSubsystems = false;
         readEquation = false;
@@ -225,7 +239,9 @@ while ~feof(fid)
 
     % import genes:
     if isequal(tline, '- genes:')
-        fprintf('\tgenes\n');
+        if ~silentMode
+            fprintf('\tgenes\n');
+        end
         section = 4;
     end
        
@@ -236,7 +252,9 @@ while ~feof(fid)
 
     % import compartments:
     if isequal(tline, '- compartments: !!omap')
-        fprintf('\tcompartments\n');
+        if ~silentMode
+            fprintf('\tcompartments\n');
+        end
         section = 5;
     end
 
@@ -251,7 +269,9 @@ fclose(fid);
 
 
 % follow-up data processing
-fprintf('\nimporting completed\nfollow-up processing...');
+if ~silentMode
+    fprintf('\nimporting completed\nfollow-up processing...');
+end
 [~, model.metComps] = ismember(model.metComps, model.comps);
 model.metCharges = int64(str2double(model.metCharges));
 model.lb = str2double(model.lb);
@@ -286,7 +306,9 @@ model.S = S(metIdx, :);
 % dealing with the `unconstrained` field for other models!
 model.unconstrained = double(endsWith(model.mets, 'x'));
 
-fprintf(' Done!\n');
+if ~silentMode
+    fprintf(' Done!\n');
+end
 
 end
 
