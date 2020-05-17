@@ -117,14 +117,14 @@ while ~feof(fid)
     end
 
     if section == 2
-        if numel(tline) > 10 && isequal(tline(1:10),'    - id: ')
-            model.mets = [model.mets; tline(11:end)];
+        if startsWith(tline,'    - id: ')
+            model = readFieldElement(model, tline, 'mets', '    - id: ');
 
-        elseif numel(tline) > 12 && isequal(tline(1:12),'    - name: ')
-            model.metNames = [model.metNames; tline(14:end-1)];
+        elseif startsWith(tline,'    - name: ')
+            model = readFieldElement(model, tline, 'metNames', '    - name: ');
 
-        elseif numel(tline) > 19 && isequal(tline(1:19),'    - compartment: ')
-            model.metComps = [model.metComps; tline(20:end)];
+        elseif startsWith(tline,'    - compartment: ')
+            model = readFieldElement(model, tline, 'metComps', '    - compartment: ');
 
         elseif startsWith(tline,'    - formula: ')
             model = readFieldElement(model, tline, 'metFormulas','    - formula: ');
@@ -153,8 +153,8 @@ while ~feof(fid)
 
     if section == 3
         if startsWith(tline,'    - id: ')
-            model.rxns = [model.rxns; tline(11:end)];
-            rxnId = tline(11:end);
+            model = readFieldElement(model, tline, 'rxns','    - id: ');
+            rxnId = tline(12:end-1);
 
         elseif startsWith(tline,'    - name: ')
             model = readFieldElement(model, tline, 'rxnNames','    - name: ');
@@ -198,7 +198,7 @@ while ~feof(fid)
             rightEquation = '';
         else
             if readSubsystems
-                subSystems = [subSystems; tline(11:end)];
+                subSystems = [subSystems; tline(12:end-1)];
                 
             % resolve the equation
             elseif readEquation
@@ -229,8 +229,8 @@ while ~feof(fid)
         section = 4;
     end
        
-    if section == 4 && numel(tline) > 10 && isequal(tline(1:10),'    - id: ')
-        model.genes = [model.genes; tline(11:end)];
+    if section == 4 && startsWith(tline,'    - id: ')
+        model = readFieldElement(model, tline, 'genes','    - id: ');
     end
 
 
@@ -241,7 +241,7 @@ while ~feof(fid)
     end
 
     if section == 5 && numel(tline) > 7 && isequal(tline(1:6),'    - ')
-        str = split(tline(7:end),': ');
+        str = split(tline(7:end-1),': "');
         model.comps = [model.comps; str{1}];
         model.compNames = [model.compNames; str{2}];
     end
