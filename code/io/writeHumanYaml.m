@@ -227,12 +227,8 @@ if isfield(model,fieldName)
     elseif sum(pos) > 0
         % all other fields
         if strcmp(type,'txt')
-            if strcmp(name,'- name')
-                % enclose all "names" in double quotes
-                value = ['"',field{pos},'"'];
-            else
-                value = field{pos};
-            end
+            % enclose all "names" in double quotes
+            value = ['"',field{pos},'"'];
         elseif strcmp(type,'num')
             if isnan(field(pos))
                 value = [];
