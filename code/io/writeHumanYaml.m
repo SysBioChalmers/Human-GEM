@@ -17,7 +17,7 @@ function writeHumanYaml(model,name)
 %
 %
 % Jonathan Robinson, 2019-03-14
-% Hao Wang, 2019-09-15
+% Hao Wang, 2020-05-17
 %
 
 %{
@@ -220,19 +220,15 @@ if isfield(model,fieldName)
         elseif length(list) > 1 || strcmp(fieldName,'subSystems')
             fprintf(fid,['    ' name ':\n']);
             for i = 1:length(list)
-                fprintf(fid,['        - ' list{i} '\n']);
+                fprintf(fid,['        - "' list{i} '"\n']);
             end
         end
         
     elseif sum(pos) > 0
         % all other fields
         if strcmp(type,'txt')
-            if strcmp(name,'- name')
-                % enclose all "names" in double quotes
-                value = ['"',field{pos},'"'];
-            else
-                value = field{pos};
-            end
+            % enclose all string elements with double quotes
+            value = ['"',field{pos},'"'];
         elseif strcmp(type,'num')
             if isnan(field(pos))
                 value = [];

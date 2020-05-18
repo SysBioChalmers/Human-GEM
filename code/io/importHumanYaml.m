@@ -1,4 +1,4 @@
-function model=importHumanYaml(yamlFilename)
+function model=importHumanYaml(yamlFilename, silentMode)
 % importHumanYaml
 %   Imports a yaml file matching (roughly) the cobrapy yaml structure
 %
@@ -6,16 +6,22 @@ function model=importHumanYaml(yamlFilename)
 %   yamlFile    a file in yaml model structure. As defined in HumanGEM, the
 %               yaml file contains 5 sections: metaData, metabolites,
 %               reactions, genes and compartments
+%   silentMode  set as true to turn off notificaiton messages (opt, default
+%               false)
 %
 %   Output:
 %   model       a model structure
 %
-%   Usage: model=importYaml(yamlFilename)
+%   Usage: model=importYaml(yamlFilename, silentMode)
 %
-%   Hao Wang, 2019-07-26
+%   Hao Wang, 2020-05-17
 %
 % This function is to reverse engineer the RAVEN function `writeYaml`
 %
+
+if nargin < 2
+    silentMode = false;
+end
 
 if ~(exist(yamlFilename,'file')==2)
     error('Yaml file %s cannot be found',string(yamlFilename));
@@ -65,7 +71,9 @@ objRxns={};
 % Load Yaml format model
 
 fid = fopen(yamlFilename);
-fprintf('Start importing...\n');
+if ~silentMode
+    fprintf('Start importing...\n');
+end
 
 section = 0;
 while ~feof(fid)
@@ -74,7 +82,9 @@ while ~feof(fid)
     
     % import metaData
     if isequal(tline, '- metaData:')
-        fprintf('\tmetaData\n');
+        if ~silentMode
+            fprintf('\tmetaData\n');
+        end
         section = 1;
     end
 
@@ -112,19 +122,21 @@ while ~feof(fid)
 
     % import metabolites:
     if isequal(tline, '- metabolites:')
-        fprintf('\tmetabolites\n');
+        if ~silentMode
+            fprintf('\tmetabolites\n');
+        end
         section = 2;
     end
 
     if section == 2
-        if numel(tline) > 10 && isequal(tline(1:10),'    - id: ')
-            model.mets = [model.mets; tline(11:end)];
+        if startsWith(tline,'    - id: ')
+            model = readFieldElement(model, tline, 'mets', '    - id: ');
 
-        elseif numel(tline) > 12 && isequal(tline(1:12),'    - name: ')
-            model.metNames = [model.metNames; tline(14:end-1)];
+        elseif startsWith(tline,'    - name: ')
+            model = readFieldElement(model, tline, 'metNames', '    - name: ');
 
-        elseif numel(tline) > 19 && isequal(tline(1:19),'    - compartment: ')
-            model.metComps = [model.metComps; tline(20:end)];
+        elseif startsWith(tline,'    - compartment: ')
+            model = readFieldElement(model, tline, 'metComps', '    - compartment: ');
 
         elseif startsWith(tline,'    - formula: ')
             model = readFieldElement(model, tline, 'metFormulas','    - formula: ');
@@ -144,7 +156,9 @@ while ~feof(fid)
     
     % import reactions:
     if isequal(tline, '- reactions:')
-        fprintf('\treactions\n');
+        if ~silentMode
+            fprintf('\treactions\n');
+        end
         section = 3;
         readSubsystems = false;
         readEquation = false;
@@ -153,8 +167,8 @@ while ~feof(fid)
 
     if section == 3
         if startsWith(tline,'    - id: ')
-            model.rxns = [model.rxns; tline(11:end)];
-            rxnId = tline(11:end);
+            model = readFieldElement(model, tline, 'rxns','    - id: ');
+            rxnId = tline(12:end-1);
 
         elseif startsWith(tline,'    - name: ')
             model = readFieldElement(model, tline, 'rxnNames','    - name: ');
@@ -198,7 +212,7 @@ while ~feof(fid)
             rightEquation = '';
         else
             if readSubsystems
-                subSystems = [subSystems; tline(11:end)];
+                subSystems = [subSystems; tline(12:end-1)];
                 
             % resolve the equation
             elseif readEquation
@@ -225,23 +239,27 @@ while ~feof(fid)
 
     % import genes:
     if isequal(tline, '- genes:')
-        fprintf('\tgenes\n');
+        if ~silentMode
+            fprintf('\tgenes\n');
+        end
         section = 4;
     end
        
-    if section == 4 && numel(tline) > 10 && isequal(tline(1:10),'    - id: ')
-        model.genes = [model.genes; tline(11:end)];
+    if section == 4 && startsWith(tline,'    - id: ')
+        model = readFieldElement(model, tline, 'genes','    - id: ');
     end
 
 
     % import compartments:
     if isequal(tline, '- compartments: !!omap')
-        fprintf('\tcompartments\n');
+        if ~silentMode
+            fprintf('\tcompartments\n');
+        end
         section = 5;
     end
 
     if section == 5 && numel(tline) > 7 && isequal(tline(1:6),'    - ')
-        str = split(tline(7:end),': ');
+        str = split(tline(7:end-1),': "');
         model.comps = [model.comps; str{1}];
         model.compNames = [model.compNames; str{2}];
     end
@@ -251,7 +269,9 @@ fclose(fid);
 
 
 % follow-up data processing
-fprintf('\nimporting completed\nfollow-up processing...');
+if ~silentMode
+    fprintf('\nimporting completed\nfollow-up processing...');
+end
 [~, model.metComps] = ismember(model.metComps, model.comps);
 model.metCharges = int64(str2double(model.metCharges));
 model.lb = str2double(model.lb);
@@ -286,7 +306,9 @@ model.S = S(metIdx, :);
 % dealing with the `unconstrained` field for other models!
 model.unconstrained = double(endsWith(model.mets, 'x'));
 
-fprintf(' Done!\n');
+if ~silentMode
+    fprintf(' Done!\n');
+end
 
 end
 
