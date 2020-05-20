@@ -18,13 +18,13 @@ jobs:
       uses: ibiqlik/action-yamllint@v1.0.0
       with:
         # File(s) or Directory, separate by space if multiple files or folder are specified
-        file_or_dir: modelFiles/yml/HumanGEM.yml
+        file_or_dir: modelFiles/
         
         # Path to custom configuration
         # config_file: # optional
         
         # Custom configuration (as YAML source)
-        config_data: # optional
+        config_data: "{extends: relaxed}"
         
         # Format for parsing output [parsable,standard,colored,auto]
         # format: # optional, default is colored
