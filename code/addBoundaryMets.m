@@ -4,17 +4,18 @@ function new_model = addBoundaryMets(model, exch_only)
 %   Boundary metabolites are pseudometabolites that exist at the system
 %   boundary, and are used for the import/export of mass into/out of the
 %   system. 
-%   For example: "glc[boundary] <==> glc[extracellular]"
+%   For example: "glc[extracellular] <==> glc[boundary]"
 %
-%   Some model formats (e.g., Cobra) do not use boundary metabolites, but
-%   instead formulate these exchange reactions (or "demand/DM" or "sink"
-%   reactions) without an explicit reactant. 
+%   Some models do not use boundary metabolites, but instead formulate
+%   these exchange reactions (or "demand/DM" or "sink" reactions) without
+%   an explicit product (or reactant).
 %   For example: "glc[extracellular] <==> "
 %
-%   This function identifies all reactions that are formulated with an 
-%   exchange of an extracellular metabolite into nothing as a reaction with
-%   a boundary metabolite, and adds any new boundary metabolites to the 
-%   model, if they did not yet exist.
+%   This function identifies all reactions that involve the conversion of 
+%   a single metabolite into nothing (or vice versa), and balances the
+%   reaction with the same metabolite in a different (boundary) comparment.
+%   The function will also add any new boundary metabolites to the model if
+%   they did not yet exist.
 %
 % USAGE:
 %
@@ -25,11 +26,12 @@ function new_model = addBoundaryMets(model, exch_only)
 %
 %   model       Model structure.
 %
-%   exch_only   (Optional, default = TRUE) 
+%   exch_only   (Optional, default = FALSE) 
 %               If TRUE, only exchange rxns (i.e., into/out of the
 %               extracellular compartment) will be considered.
 %               If FALSE, reactions involving mets in other compartments
 %               will also be considered. For example:
+%
 %               "met[nucleus] -->" becomes "met[nucleus] --> met[boundary]"
 %
 %
@@ -38,12 +40,12 @@ function new_model = addBoundaryMets(model, exch_only)
 %   new_model   New model structure, with added boundary metabolites.
 %
 %
-% Jonathan Robinson, 2018-09-14
+% Jonathan Robinson, 2020-05-21
 
 
 % handle input arguments
 if nargin < 2
-    exch_only = true;
+    exch_only = false;
 end
 
 % add a boundary compartment to the model if it does not yet exist
