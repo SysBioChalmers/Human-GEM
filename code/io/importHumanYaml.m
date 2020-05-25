@@ -88,36 +88,37 @@ while ~feof(fid)
         section = 1;
     end
 
-    if section == 1 && numel(tline) > 17
-        tline_data = regexprep(tline(19:end), '"', '');
-        switch tline(1:17)
-            case '    short_name  :'
+    if section == 1 && numel(tline) > 14
+        tline_split = regexp(tline, ': "', 'split');
+        tline_data = tline_split{2}(1:end-1);
+        switch tline_split{1}
+            case '    short_name'
                 model.id = tline_data;
 
-            case '    full_name   :'
+            case '    full_name'
                 model.description = tline_data;
 
-            case '    version     :'
+            case '    version'
                 model.version = tline_data;
 
-            case '    taxonomy    :'
+            case '    taxonomy'
                 model.annotation.taxonomy = tline_data;
 
-            case '    description :'
+            case '    description'
                 model.annotation.note = tline_data;
 
-            case '    github      :'
+            case '    github'
                 model.annotation.sourceUrl = tline_data;
 
-            case '    authors     :'
+            case '    authors'
                 model.annotation.authorList = tline_data;
 
-            case '    email       :'
+            case '    email'
                 model.annotation.email = tline_data;
 
-            case '    organization:'
+            case '    organization'
                 model.annotation.organization = tline_data;
-        end 
+        end
     end
 
 
@@ -217,7 +218,7 @@ while ~feof(fid)
                 
             % resolve the equation
             elseif readEquation
-                metCoeffi = split(tline(9:end), ': ');
+                metCoeffi = regexp(regexprep(tline, ' +- ', ''), ': ', 'split');
                 coeffi = str2num(metCoeffi{2});
                 if coeffi < 0
                     if strcmp(leftEquation, '')

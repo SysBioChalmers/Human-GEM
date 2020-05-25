@@ -61,7 +61,7 @@ writeMetadata(model,fid);
 fprintf(fid,'- metabolites:\n');
 %[~,pos] = sort(model.mets);
 for i = 1:length(model.mets)
-    fprintf(fid,'  - !!omap\n');
+    fprintf(fid,'    - !!omap\n');
     writeField(model, fid, 'mets',        'txt', i, '- id')
     writeField(model, fid, 'metNames',    'txt', i, '- name')
     writeField(model, fid, 'metComps',    'txt', i, '- compartment')
@@ -76,7 +76,7 @@ end
 fprintf(fid,'- reactions:\n');
 %[~,pos] = sort(model.rxns);
 for i = 1:length(model.rxns)
-    fprintf(fid,'  - !!omap\n');
+    fprintf(fid,'    - !!omap\n');
     writeField(model, fid, 'rxns',                 'txt', i, '- id')
     writeField(model, fid, 'rxnNames',             'txt', i, '- name')
     writeField(model, fid, 'S',                    'txt', i, '- metabolites')
@@ -99,7 +99,7 @@ end
 fprintf(fid,'- genes:\n');
 %[~,pos] = sort(model.genes);
 for i = 1:length(model.genes)
-    fprintf(fid,'  - !!omap\n');
+    fprintf(fid,'    - !!omap\n');
     writeField(model, fid, 'genes',          'txt', i, '- id')
     writeField(model, fid, 'geneShortNames', 'txt', i, '- name')
 %     writeField(model, fid, 'geneMiriams',    'txt', i, '- annotation')
@@ -186,7 +186,7 @@ if isfield(model,fieldName)
             [model.mets,order] = sort(model.mets);
             model.coeffs       = model.coeffs(order);
             for i = 1:length(model.mets)
-                writeField(model, fid, 'coeffs',  'num', i, ['  - ' model.mets{i}])
+                writeField(model, fid, 'coeffs',  'num', i, ['    - ' model.mets{i}])
             end
         end
         
@@ -251,15 +251,15 @@ function writeMetadata(model,fid)
 % are hard-coded defaults for HumanGEM.
 
 fprintf(fid, '- metaData:\n');
-fprintf(fid,['    short_name  : "',model.id,'"\n']);
-fprintf(fid,['    full_name   : "',model.description,'"\n']);
-fprintf(fid,['    version     : "',model.version,'"\n']);
-fprintf(fid,['    date        : "',datestr(now,29),'"\n']);  % 29=YYYY-MM-DD
-fprintf(fid,['    authors     : "',model.annotation.authorList,'"\n']);
-fprintf(fid,['    email       : "',model.annotation.email,'"\n']);
-fprintf(fid,['    organization: "',model.annotation.organization,'"\n']);
-fprintf(fid,['    taxonomy    : "',model.annotation.taxonomy,'"\n']);
-fprintf(fid,['    github      : "',model.annotation.sourceUrl,'"\n']);
-fprintf(fid,['    description : "',model.annotation.note,'"\n']);
+fprintf(fid, ['    short_name: "', model.id, '"\n']);
+fprintf(fid, ['    full_name: "', model.description, '"\n']);
+fprintf(fid, ['    version: "', model.version, '"\n']);
+fprintf(fid, ['    date: "', datestr(now,29), '"\n']);  % 29=YYYY-MM-DD
+fprintf(fid, ['    authors: "', model.annotation.authorList, '"\n']);
+fprintf(fid, ['    email: "', model.annotation.email, '"\n']);
+fprintf(fid, ['    organization: "', model.annotation.organization, '"\n']);
+fprintf(fid, ['    taxonomy: "', model.annotation.taxonomy, '"\n']);
+fprintf(fid, ['    github: "', model.annotation.sourceUrl, '"\n']);
+fprintf(fid, ['    description: "', model.annotation.note, '"\n']);
 
 end
