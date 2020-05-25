@@ -89,33 +89,34 @@ while ~feof(fid)
     end
 
     if section == 1 && numel(tline) > 17
+        tline_data = regexprep(tline(19:end), '"', '');
         switch tline(1:17)
             case '    short_name  :'
-                model.id = strip(tline(19:end),'"');
+                model.id = tline_data;
 
             case '    full_name   :'
-                model.description = strip(tline(19:end),'"');
+                model.description = tline_data;
 
             case '    version     :'
-                model.version = strip(tline(19:end),'"');
+                model.version = tline_data;
 
             case '    taxonomy    :'
-                model.annotation.taxonomy = strip(tline(19:end),'"');
+                model.annotation.taxonomy = tline_data;
 
             case '    description :'
-                model.annotation.note = strip(tline(19:end),'"');
+                model.annotation.note = tline_data;
 
             case '    github      :'
-                model.annotation.sourceUrl = strip(tline(19:end),'"');
+                model.annotation.sourceUrl = tline_data;
 
             case '    authors     :'
-                model.annotation.authorList = strip(tline(19:end),'"');
+                model.annotation.authorList = tline_data;
 
             case '    email       :'
-                model.annotation.email = strip(tline(19:end),'"');
+                model.annotation.email = tline_data;
 
             case '    organization:'
-                model.annotation.organization = strip(tline(19:end),'"');
+                model.annotation.organization = tline_data;
         end 
     end
 
@@ -313,12 +314,12 @@ end
 end
 
 function model = readFieldElement(model, lineStr, fieldName, keyStr)
-%disp('reach here');    
+% disp('reach here');    
 keyStrLen = length(keyStr);
 if isequal(lineStr, keyStr)
     model.(fieldName) = [model.(fieldName); {''}];
 elseif length(lineStr) > keyStrLen && isequal(lineStr(1:keyStrLen), keyStr)
-    newElement = strip(lineStr(keyStrLen+1:end),'"');
+    newElement = strip(lineStr(keyStrLen+1:end), '"');
     model.(fieldName) = [model.(fieldName); {newElement}];
 end
 
