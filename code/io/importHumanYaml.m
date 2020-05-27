@@ -14,8 +14,6 @@ function model=importHumanYaml(yamlFilename, silentMode)
 %
 %   Usage: model=importYaml(yamlFilename, silentMode)
 %
-%   Hao Wang, 2020-05-17
-%
 % This function is to reverse engineer the RAVEN function `writeYaml`
 %
 
@@ -24,7 +22,7 @@ if nargin < 2
 end
 
 if ~(exist(yamlFilename,'file')==2)
-    error('Yaml file %s cannot be found',string(yamlFilename));
+    error('Yaml file %s cannot be found', string(yamlFilename));
 end
 
 % Define the required fields of humanGEM
@@ -78,194 +76,169 @@ end
 section = 0;
 while ~feof(fid)
     tline = fgetl(fid);
+    
     % import different sections
+    change_to_section = 0;
+    switch tline
+        case '- metaData:'
+            change_to_section = 1;
+        case '- metabolites:'
+            change_to_section = 2;
+        case '- reactions:'
+            change_to_section = 3;
+            readSubsystems = false;
+            readEquation = false;
+            rxnId = '';
+        case '- genes:'
+            change_to_section = 4;
+        case '- compartments: !!omap'
+            change_to_section = 5;
+    end
+    if logical(change_to_section)
+        section = change_to_section;
+        tline = fgetl(fid);
+        if ~silentMode
+            fprintf('\t%d\n', section);
+        end
+    end
+
+    % skip over lines containing only omap
+    if any(regexp(tline, "- !!omap"))
+        tline = fgetl(fid);
+    end
     
     % import metaData
-    if isequal(tline, '- metaData:')
-        if ~silentMode
-            fprintf('\tmetaData\n');
-        end
-        section = 1;
-    end
-
-    if section == 1 && numel(tline) > 14
-        tline_split = regexp(tline, ': "', 'split');
-        tline_data = tline_split{2}(1:end-1);
-        switch tline_split{1}
-            case '    short_name'
-                model.id = tline_data;
-
-            case '    full_name'
-                model.description = tline_data;
-
-            case '    version'
-                model.version = tline_data;
-
-            case '    taxonomy'
-                model.annotation.taxonomy = tline_data;
-
-            case '    description'
-                model.annotation.note = tline_data;
-
-            case '    github'
-                model.annotation.sourceUrl = tline_data;
-
-            case '    authors'
-                model.annotation.authorList = tline_data;
-
-            case '    email'
-                model.annotation.email = tline_data;
-
-            case '    organization'
-                model.annotation.organization = tline_data;
+    if section == 1
+        [tline_key, tline_value] = tokenizeYamlLine(tline);
+        switch tline_key
+            case 'short_name'
+                model.id = tline_value;
+            case 'full_name'
+                model.description = tline_value;
+            case 'version'
+                model.version = tline_value;
+            case 'taxonomy'
+                model.annotation.taxonomy = tline_value;
+            case 'description'
+                model.annotation.note = tline_value;
+            case 'github'
+                model.annotation.sourceUrl = tline_value;
+            case 'authors'
+                model.annotation.authorList = tline_value;
+            case 'email'
+                model.annotation.email = tline_value;
+            case 'organization'
+                model.annotation.organization = tline_value;
         end
     end
-
 
     % import metabolites:
-    if isequal(tline, '- metabolites:')
-        if ~silentMode
-            fprintf('\tmetabolites\n');
-        end
-        section = 2;
-    end
-
     if section == 2
-        if startsWith(tline,'    - id: ')
-            model = readFieldElement(model, tline, 'mets', '    - id: ');
-
-        elseif startsWith(tline,'    - name: ')
-            model = readFieldElement(model, tline, 'metNames', '    - name: ');
-
-        elseif startsWith(tline,'    - compartment: ')
-            model = readFieldElement(model, tline, 'metComps', '    - compartment: ');
-
-        elseif startsWith(tline,'    - formula: ')
-            model = readFieldElement(model, tline, 'metFormulas','    - formula: ');
-
-        elseif startsWith(tline,'    - charge: ')
-            model = readFieldElement(model, tline, 'metCharges','    - charge: ');
- 
-        elseif startsWith(tline,'    - inchis: ')
-            model = readFieldElement(model, tline, 'inchis','    - inchis: ');
-
-        elseif startsWith(tline,'    - metFrom: ')
-            model = readFieldElement(model, tline, 'metFrom','    - metFrom: ');
-
+        [tline_key, tline_value] = tokenizeYamlLine(tline);
+        switch tline_key
+            case 'id'
+                model = readFieldValue(model, 'mets', tline_value);
+            case 'name'
+                model = readFieldValue(model, 'metNames', tline_value);
+            case 'compartment'
+                model = readFieldValue(model, 'metComps', tline_value);
+            case 'formula'
+                model = readFieldValue(model, 'metFormulas', tline_value);
+            case 'charge'
+                model = readFieldValue(model, 'metCharges', tline_value);
+            case 'inchis'
+                model = readFieldValue(model, 'inchis', tline_value);
+            case 'metFrom'
+                model = readFieldValue(model, 'metFrom', tline_value);
         end
     end
-    
-    
+
     % import reactions:
-    if isequal(tline, '- reactions:')
-        if ~silentMode
-            fprintf('\treactions\n');
-        end
-        section = 3;
-        readSubsystems = false;
-        readEquation = false;
-        rxnId = '';
-    end
-
     if section == 3
-        if startsWith(tline,'    - id: ')
-            model = readFieldElement(model, tline, 'rxns','    - id: ');
-            rxnId = tline(12:end-1);
+        [tline_key, tline_value] = tokenizeYamlLine(tline);
+        switch tline_key
+            case 'id'
+                model = readFieldValue(model, 'rxns', tline_value);
+                rxnId = tline_value;
+            case 'name'
+                model = readFieldValue(model, 'rxnNames', tline_value);
 
-        elseif startsWith(tline,'    - name: ')
-            model = readFieldElement(model, tline, 'rxnNames','    - name: ');
-           
-        elseif startsWith(tline,'    - lower_bound: ')
-            model.lb = [model.lb; tline(20:end)];
-            leftEqns  = [leftEqns; leftEquation];
-            rightEqns = [rightEqns; rightEquation];
-            readEquation = false;
-            
-        elseif startsWith(tline,'    - upper_bound: ')
-            model.ub = [model.ub; tline(20:end)];
-            
-        elseif startsWith(tline,'    - gene_reaction_rule: ')
-            model = readFieldElement(model, tline, 'grRules','    - gene_reaction_rule: ');
-            
-        elseif startsWith(tline,'    - rxnFrom: ')
-            model = readFieldElement(model, tline, 'rxnFrom','    - rxnFrom: ');
-            
-        elseif startsWith(tline,'    - objective_coefficient: ')
-            objRxns = [objRxns; rxnId];
+            case 'lower_bound'
+                model.lb = [model.lb; tline_value];
+                leftEqns  = [leftEqns; leftEquation];
+                rightEqns = [rightEqns; rightEquation];
+                readEquation = false;
 
-        elseif startsWith(tline,'    - eccodes: ')
-            model = readFieldElement(model, tline, 'eccodes','    - eccodes: ');
-            
-        elseif startsWith(tline,'    - references: ')
-            model = readFieldElement(model, tline, 'rxnReferences','    - references: ');
-                        
-        elseif isequal(tline,'    - subsystem:')
-            readSubsystems = true;
-            subSystems = {};
-            
-        elseif startsWith(tline,'    - confidence_score: ')
-            model = readFieldElement(model, tline, 'rxnConfidenceScores','    - confidence_score: ');
-            model.subSystems = [model.subSystems; {subSystems}];
-            readSubsystems = false;
-        
-        elseif isequal(tline,'    - metabolites: !!omap')
-            readEquation = true;
-            leftEquation  = '';
-            rightEquation = '';
-        else
-            if readSubsystems
-                subSystems = [subSystems; tline(12:end-1)];
-                
-            % resolve the equation
-            elseif readEquation
-                metCoeffi = regexp(regexprep(tline, ' +- ', ''), ': ', 'split');
-                coeffi = str2num(metCoeffi{2});
-                if coeffi < 0
-                    if strcmp(leftEquation, '')
-                        leftEquation = strcat(num2str(abs(coeffi), 12),32,metCoeffi{1});
+            case 'upper_bound'
+                model.ub = [model.ub; tline_value];
+
+            case 'gene_reaction_rule'
+                model = readFieldValue(model, 'grRules', tline_value);
+
+            case 'rxnFrom'
+                model = readFieldValue(model, 'rxnFrom', tline_value);
+
+            case 'objective_coefficient'
+                objRxns = [objRxns; rxnId];
+
+            case 'eccodes'
+                model = readFieldValue(model, 'eccodes', tline_value);
+
+            case 'references'
+                model = readFieldValue(model, 'rxnReferences', tline_value);
+
+            case 'subsystem'
+                readSubsystems = true;
+                subSystems = {};
+
+            case 'confidence_score'
+                model = readFieldValue(model, 'rxnConfidenceScores', tline_value);
+                model.subSystems = [model.subSystems; {subSystems}];
+                readSubsystems = false;
+
+            case 'metabolites'
+                readEquation = true;
+                leftEquation  = '';
+                rightEquation = '';
+
+            otherwise
+                if readSubsystems
+                    subSystems = [subSystems; regexprep(tline_key, '"', '')];
+                    
+                % resolve the equation
+                elseif readEquation
+                    metCoeffi = regexp(regexprep(tline, ' +- ', ''), ': ', 'split');
+                    coeffi = str2num(metCoeffi{2});
+                    if coeffi < 0
+                        if strcmp(leftEquation, '')
+                            leftEquation = strcat(num2str(abs(coeffi), 12),32,metCoeffi{1});
+                        else
+                            leftEquation = strcat(leftEquation,' +',32,num2str(abs(coeffi), 12),32,metCoeffi{1});
+                        end
                     else
-                        leftEquation = strcat(leftEquation,' +',32,num2str(abs(coeffi), 12),32,metCoeffi{1});
-                    end
-                else
-                    if strcmp(rightEquation, '')
-                        rightEquation = strcat(32,num2str(coeffi, 12),32,metCoeffi{1});
-                    else
-                        rightEquation = strcat(rightEquation,' +',32,num2str(coeffi, 12),32,metCoeffi{1});
+                        if strcmp(rightEquation, '')
+                            rightEquation = strcat(32,num2str(coeffi, 12),32,metCoeffi{1});
+                        else
+                            rightEquation = strcat(rightEquation,' +',32,num2str(coeffi, 12),32,metCoeffi{1});
+                        end
                     end
                 end
-            end
-            
         end
     end
-    
 
     % import genes:
-    if isequal(tline, '- genes:')
-        if ~silentMode
-            fprintf('\tgenes\n');
-        end
-        section = 4;
+    if section == 4
+        [tline_key, tline_value] = tokenizeYamlLine(tline);
+        model = readFieldValue(model, 'genes', tline_value);
     end
-       
-    if section == 4 && startsWith(tline,'    - id: ')
-        model = readFieldElement(model, tline, 'genes','    - id: ');
-    end
-
 
     % import compartments:
-    if isequal(tline, '- compartments: !!omap')
-        if ~silentMode
-            fprintf('\tcompartments\n');
-        end
-        section = 5;
+    if section == 5
+        [tline_key, tline_value] = tokenizeYamlLine(tline);
+        model.comps = [model.comps; tline_key];
+        model.compNames = [model.compNames; tline_value];
     end
 
-    if section == 5 && numel(tline) > 7 && isequal(tline(1:6),'    - ')
-        str = split(tline(7:end-1),': "');
-        model.comps = [model.comps; str{1}];
-        model.compNames = [model.compNames; str{2}];
-    end
-    
 end
 fclose(fid);
 
@@ -307,21 +280,23 @@ model.S = S(metIdx, :);
 % Although this works with HumanGEM, but it is NOT a generic solution of
 % dealing with the `unconstrained` field for other models!
 model.unconstrained = double(endsWith(model.mets, 'x'));
-
-if ~silentMode
-    fprintf(' Done!\n');
+        if ~silentMode
+            fprintf(' Done!\n');
+end
 end
 
+function model = readFieldValue(model, fieldName, value)
+    model.(fieldName) = [model.(fieldName); {value}];
 end
 
-function model = readFieldElement(model, lineStr, fieldName, keyStr)
-% disp('reach here');    
-keyStrLen = length(keyStr);
-if isequal(lineStr, keyStr)
-    model.(fieldName) = [model.(fieldName); {''}];
-elseif length(lineStr) > keyStrLen && isequal(lineStr(1:keyStrLen), keyStr)
-    newElement = strip(lineStr(keyStrLen+1:end), '"');
-    model.(fieldName) = [model.(fieldName); {newElement}];
-end
-
-end
+function [line_key, line_value]= tokenizeYamlLine(line)
+    line_key = regexp(line, '^ *-? ([^:]+)', 'tokens');
+    line_key = char(line_key{1});
+    line_value = regexp(line, '^ [^:]+: "?(.+)"?$', 'tokens');
+    if isempty(line_value)
+        line_value = '';
+    else
+        line_value = regexprep(line_value{1}, '"', '');
+        line_value = char(line_value{1});
+    end
+end 

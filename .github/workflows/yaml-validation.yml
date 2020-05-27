@@ -27,3 +27,12 @@ jobs:
         # format: # optional, default is colored
         ## Return non-zero exit code on warnings as well as errors
         # strict: # optional, default is false
+
+    - name: Install cobrapy
+      run: |
+        sudo pip install pip --upgrade
+        sudo pip install cobra
+
+    - name: Test cobrapy import
+      run: 
+        python -c "import cobra ; cobra.io.load_yaml_model('modelFiles/yml/HumanGEM.yml')"

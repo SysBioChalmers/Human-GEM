@@ -29,13 +29,11 @@ importedHumanGEM = importHumanYaml('testYamlConversion.yml', true);
 % remove intermediate Yaml file
 delete testYamlConversion.yml;
 
-
 % compare the imported model from yaml with the original one
 if isequal(model, importedHumanGEM)
     % model conversion between Matlab and Yaml files is successful
     status = 1;
 else
-    fprintf(2, '%s', 'there are problems during the conversion between Matlab and Yaml files\n');
-    status = 0;
+    error('There are problems during the conversion between Matlab and Yaml files');
 end
 

@@ -6,18 +6,11 @@ function writeHumanYaml(model,name)
 %   the Metabolic Atlas. Adapted from RAVEN's "writeYaml" function.
 %
 % Usage: 
-%
 %   writeYaml(model,name);
 %
 % Input:
-%
 %   model       a model structure
-%
 %   name        name of the yaml file to write
-%
-%
-% Jonathan Robinson, 2019-03-14
-% Hao Wang, 2020-05-17
 %
 
 %{
@@ -52,7 +45,7 @@ end
 
 % open file
 fid = fopen(name,'wt');
-fprintf(fid,'!!omap\n');
+fprintf(fid,'---\n!!omap\n');
 
 % insert file header (metadata)
 writeMetadata(model,fid); 
@@ -62,14 +55,14 @@ fprintf(fid,'- metabolites:\n');
 %[~,pos] = sort(model.mets);
 for i = 1:length(model.mets)
     fprintf(fid,'    - !!omap\n');
-    writeField(model, fid, 'mets',        'txt', i, '- id')
-    writeField(model, fid, 'metNames',    'txt', i, '- name')
-    writeField(model, fid, 'metComps',    'txt', i, '- compartment')
-    writeField(model, fid, 'metFormulas', 'txt', i, '- formula')
-    writeField(model, fid, 'metCharges',  'num', i, '- charge')
-    writeField(model, fid, 'inchis',      'txt', i, '- inchis')
-    writeField(model, fid, 'metFrom',     'txt', i, '- metFrom')
-%     writeField(model, fid, 'metMiriams',  'txt', i, '- annotation')
+    writeField(model, fid, 'mets',        'txt', i, '  - id')
+    writeField(model, fid, 'metNames',    'txt', i, '  - name')
+    writeField(model, fid, 'metComps',    'txt', i, '  - compartment')
+    writeField(model, fid, 'metFormulas', 'txt', i, '  - formula')
+    writeField(model, fid, 'metCharges',  'num', i, '  - charge')
+    writeField(model, fid, 'inchis',      'txt', i, '  - inchis')
+    writeField(model, fid, 'metFrom',     'txt', i, '  - metFrom')
+%     writeField(model, fid, 'metMiriams',  'txt', i, '  - annotation')
 end
 
 % reactions
@@ -77,22 +70,22 @@ fprintf(fid,'- reactions:\n');
 %[~,pos] = sort(model.rxns);
 for i = 1:length(model.rxns)
     fprintf(fid,'    - !!omap\n');
-    writeField(model, fid, 'rxns',                 'txt', i, '- id')
-    writeField(model, fid, 'rxnNames',             'txt', i, '- name')
-    writeField(model, fid, 'S',                    'txt', i, '- metabolites')
-    writeField(model, fid, 'lb',                   'num', i, '- lower_bound')
-    writeField(model, fid, 'ub',                   'num', i, '- upper_bound')
-    writeField(model, fid, 'grRules',              'txt', i, '- gene_reaction_rule')
-    writeField(model, fid, 'priorCombiningGrRules','txt', i, '- HMR2_grRule')    
-    writeField(model, fid, 'rxnFrom',              'txt', i, '- rxnFrom')
+    writeField(model, fid, 'rxns',                 'txt', i, '  - id')
+    writeField(model, fid, 'rxnNames',             'txt', i, '  - name')
+    writeField(model, fid, 'S',                    'txt', i, '  - metabolites')
+    writeField(model, fid, 'lb',                   'num', i, '  - lower_bound')
+    writeField(model, fid, 'ub',                   'num', i, '  - upper_bound')
+    writeField(model, fid, 'grRules',              'txt', i, '  - gene_reaction_rule')
+    writeField(model, fid, 'priorCombiningGrRules','txt', i, '  - HMR2_grRule')    
+    writeField(model, fid, 'rxnFrom',              'txt', i, '  - rxnFrom')
     if model.c(i)
-        writeField(model, fid, 'c',                'num', i, '- objective_coefficient')
+        writeField(model, fid, 'c',                'num', i, '  - objective_coefficient')
     end
-    writeField(model, fid, 'eccodes',              'txt', i, '- eccodes')
-    writeField(model, fid, 'rxnReferences',        'txt', i, '- references')
-    writeField(model, fid, 'subSystems',           'txt', i, '- subsystem')
-%     writeField(model, fid, 'rxnMiriams',          'txt', i, '- annotation')
-    writeField(model, fid, 'rxnConfidenceScores',  'num', i, '- confidence_score')
+    writeField(model, fid, 'eccodes',              'txt', i, '  - eccodes')
+    writeField(model, fid, 'rxnReferences',        'txt', i, '  - references')
+    writeField(model, fid, 'subSystems',           'txt', i, '  - subsystem')
+%     writeField(model, fid, 'rxnMiriams',          'txt', i, '  - annotation')
+    writeField(model, fid, 'rxnConfidenceScores',  'num', i, '  - confidence_score')
 end
 
 % genes
@@ -100,9 +93,9 @@ fprintf(fid,'- genes:\n');
 %[~,pos] = sort(model.genes);
 for i = 1:length(model.genes)
     fprintf(fid,'    - !!omap\n');
-    writeField(model, fid, 'genes',          'txt', i, '- id')
-    writeField(model, fid, 'geneShortNames', 'txt', i, '- name')
-%     writeField(model, fid, 'geneMiriams',    'txt', i, '- annotation')
+    writeField(model, fid, 'genes',          'txt', i, '  - id')
+    writeField(model, fid, 'geneShortNames', 'txt', i, '  - name')
+%     writeField(model, fid, 'geneMiriams',    'txt', i, '  - annotation')
 end
 
 % compartments
@@ -186,7 +179,7 @@ if isfield(model,fieldName)
             [model.mets,order] = sort(model.mets);
             model.coeffs       = model.coeffs(order);
             for i = 1:length(model.mets)
-                writeField(model, fid, 'coeffs',  'num', i, ['    - ' model.mets{i}])
+                writeField(model, fid, 'coeffs',  'num', i, ['      - ' model.mets{i}])
             end
         end
         
@@ -220,7 +213,7 @@ if isfield(model,fieldName)
         elseif length(list) > 1 || strcmp(fieldName,'subSystems')
             fprintf(fid,['    ' name ':\n']);
             for i = 1:length(list)
-                fprintf(fid,['        - "' list{i} '"\n']);
+                fprintf(fid,['          - "' list{i} '"\n']);
             end
         end
         
