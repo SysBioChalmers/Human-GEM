@@ -7,9 +7,7 @@ function increaseHumanGEMVersion(bumpType)
 %
 % Usage: increaseHumanGEMVersion(bumpType)
 %
-% Benjamín J. Sánchez, 2018-07
-% Hao Wang, 2019-03-10
-%
+
 
 %Check if in master:
 currentBranch = git('rev-parse --abbrev-ref HEAD');

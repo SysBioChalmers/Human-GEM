@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateExchangeRxns.m
 % 
-% DATE CREATED: 2018-11-07
-%     MODIFIED: 2018-12-15
-% 
-% PROGRAMMER:   Jonathan Robinson, Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: Script to curate exchange, sink, and demand reactions.
 %          The current model has a mix of exchange reactions that are
 %          formulated such that negative flux corresponds to export:

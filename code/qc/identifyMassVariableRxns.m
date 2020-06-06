@@ -43,8 +43,6 @@ function [massVariableSets,massConsistentSets] = identifyMassVariableRxns(model,
 %                       reaction set, where the members of that set are
 %                       indicated by a 1 ("true").
 %
-%
-% Jonathan Robinson, 2010-10-11
 
 
 % handle input arguments

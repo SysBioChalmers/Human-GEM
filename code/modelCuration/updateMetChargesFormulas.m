@@ -1,14 +1,9 @@
 %
 % FILE NAME:    updateMetChargesFormulas.m
 %
-% DATE CREATED: 2018-09-21
-%
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSE:Update metabolites with curated charges and formulas for humanGEM
-%          
+%
+
 
 %% Load models and curated metabolite info
 load('humanGEM.mat');

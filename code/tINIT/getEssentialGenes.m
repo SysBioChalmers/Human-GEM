@@ -21,8 +21,7 @@ function [essentialGenes, essentialGenesIndexes] = getEssentialGenes(model,ignor
 %
 %   Usage: [essentialGenes, essentialGenesIndexes] = getEssentialGenes(model,ignoreGenes)
 %
-%   Jonathan Robinson, 2019-01-17
-%
+
 
 if nargin < 2
     ignoreGenes = {};

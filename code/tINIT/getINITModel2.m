@@ -115,9 +115,7 @@ function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, delete
 %               metabolomicsData, removeGenes, taskFile, useScoresForTasks, ...
 %               printReport, taskStructure, params, paramsFT);
 %
-%
-%   Jonathan Robinson, 2019-10-14
-%
+
 
 if nargin < 5
     arrayData = [];

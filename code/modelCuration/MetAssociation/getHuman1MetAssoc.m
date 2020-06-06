@@ -1,12 +1,5 @@
 % FILE NAME:    getHuman1MetAssoc.m
 %
-% DATE CREATED: 2019-05-23
-%     MODIFIED: 2019-06-03
-%
-% PROGRAMMERS:  Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSE: To address #107, the previous .mat files generated during mets
 %          association/curation were sorted and refined for extensively
 %          retrieving exteranl identifiers and saving in JSON format (#75).

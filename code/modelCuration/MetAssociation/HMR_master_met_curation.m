@@ -1,6 +1,5 @@
 % Master script for curating and mapping HMR and Recon metabolites
 %
-% Jonathan Robinson, 2018-06-05
 
 
 %% Load necessary items

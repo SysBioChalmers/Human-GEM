@@ -1,17 +1,10 @@
 %
 %   FILE NAME:    addManuallyCuratedRxnAssoc.m
 % 
-%   DATE CREATED: 2018-05-15
-%       MODIFIED: 2018-05-24
-%        
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Incorporate manual curation results of rxn association 
 %            with MNXref ids to the mergedModel
 %
+
 
 % Move to the target folder of manual curation files
 cd('/Users/haowa/Box Sync/HMR3/Curation Files/manualRxnCuration');

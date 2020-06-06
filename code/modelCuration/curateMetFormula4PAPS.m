@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateMetFormula4PAPS.m
 %
-% DATE STARTED: 2019-01-16
-%     MODIFIED: 2019-02-08
-%
-% PROGRAMMERS:  Hao Wang, Pinar Kocabas 
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSES: 1) Update the molecular formula of the PAPS (m02682) in the 
 %              model based on the curation results in #58
 %           2) Check if the updated molecular formula of PAPs improves the 
@@ -16,6 +9,7 @@
 %              curation through updating the forumulas of PAPS and balancing
 %              the mismatched protons using function protonBalance4Rxns
 %
+
 
 %% 1. Load the model
 if ~exist('ihuman','var')

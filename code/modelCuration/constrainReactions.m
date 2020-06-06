@@ -1,13 +1,6 @@
 %
 % FILE NAME:    constrainReactions.m
 % 
-% DATE CREATED: 2018-09-28
-%     MODIFIED: 2018-11-09
-% 
-% PROGRAMMER:   Jonathan Robinson, Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: Script to prepare a defined list of reactions for constraining:
 %
 %          1. reactions allow the creation of mass and/or energy (which
@@ -26,6 +19,7 @@
 % NOTE: These reactions will be constrained to zero for now ("inactivated")
 % and scheduled for potential future "hard deletion" from the model.
 %
+
 
 %% Initialize some variables
 

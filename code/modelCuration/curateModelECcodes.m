@@ -1,14 +1,6 @@
 %
 % FILE NAME:    curateModelECcodes.m
 % 
-% DATE CREATED: 2020-03-29
-%      UPDATED: 2020-04-14
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               National Bioinformatics Infrastructure Sweden
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script corrects some errors in the eccodes field of
 %          Human-GEM, trims the "EC:" preceding many codes, and removes
 %          non-standard codes (TCDB and "Spontaneous").

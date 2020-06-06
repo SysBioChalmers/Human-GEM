@@ -22,9 +22,8 @@ function out=exportHumanGEM(ihuman,prefix,path,formats,masterFlag,dependencies)
 %
 % Usage: exportHumanGEM(ihuman,prefix,path,formats,masterFlag,dependencies)
 %
-% Benjamin J. Sanchez, 2018-10-19
-% Hao Wang, 2019-03-30
-%
+
+
 if nargin<6
     dependencies=true;
 end

@@ -62,8 +62,6 @@ function [complex_rules,potential_assoc] = addComplexesToGeneRules(grRules,compl
 %                    grRule, but will instead be added as a potential_assoc
 %                    for that reaction.
 %
-%
-% Jonathan Robinson, 2018-07-27
 
 
 % save original grRules

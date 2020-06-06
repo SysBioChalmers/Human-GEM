@@ -1,13 +1,6 @@
 %
 % FILE NAME:    miscModelCurationScript_20181005.m
 % 
-% DATE CREATED: 2018-10-02
-%     MODIFIED: 2018-10-05
-% 
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script undertakes two tasks: 
 %          
 %          1. Detect humanGEM v0.4.0 for addtional duplicate reaction pairs
@@ -21,6 +14,7 @@
 %          redundant removal step (deleting subunit encoding genes from
 %          isoenzymes)
 %
+
 
 %% Load model and rxnAssoc
 

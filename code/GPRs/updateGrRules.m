@@ -30,11 +30,8 @@ function [newModel] = updateGrRules(fileName,nHeaderLines,colNewGrRules,autoSave
 %
 % Usage: [newModel] = updateGrRules(model,fileName,nHeaderLines,colNewGrRules,autoSave)
 %
-% Hao Wang, 2019-05-20
-%
 
-% handel input
-
+% handle input
 if nargin < 5
     load('HumanGEM.mat');  %load HumanGEM model if no input specified  
 else

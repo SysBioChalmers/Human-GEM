@@ -1,13 +1,6 @@
 %
 % FILE NAME:    rebalanceHumanGEM.m
 % 
-% DATE CREATED: 2019-07-22
-%     MODIFIED: 2019-10-10
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script curates the formulas and annotation of many
 %          metabolites and the equations and annotation of many reactions
 %          to achieve full stoichiomietric consistency and nearly complete

@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateModelSubsystems.m
 % 
-% DATE CREATED: 2018-10-16
-%     MODIFIED: 2018-10-27
-% 
-% PROGRAMMER:   Jonathan Robinson, Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: Script to curate the subsystems of humanGEM. The model
 %          subsystems were manually evaluated to identify those that should
 %          be combined/renamed based on similar naming or function. The

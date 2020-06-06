@@ -49,9 +49,6 @@ function model_new = addCuratedComplexRulesToModel(model,curationFile,delRedunda
 %   model_new    New model structure, where grRules have been updated with
 %                the curated grRules containing CORUM complex information.
 %
-%
-% Jonathan Robinson, 2018-09-24
-% Hao Wang, 2018-10-05
 
 
 % handle input args

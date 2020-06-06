@@ -1,17 +1,10 @@
 %
 % FILE NAME:    removeDuplicateMetsInRecon3D.m
 % 
-% DATE CREATED: 2018-08-02
-%     MODIFIED: 2018-08-03
-%
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
-% 
 % PURPOSE: Remove duplicate mets in Recon3D model after incorporating
 %          metaboite association with HMR2
 %
+
 
 load('Recon3DRaven.mat');
 model=Recon3DRaven;
