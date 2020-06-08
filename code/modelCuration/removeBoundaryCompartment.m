@@ -10,7 +10,8 @@ ihuman = importHumanYaml('../../modelFiles/yml/HumanGEM.yml');
 
 % delete unconstrained (boundary) metabolites
 model_del = simplifyModel(ihuman);
-fprintf('\nRemoved %u boundary metabolites from the model.\n\n', numel(ihuman.mets) - numel(model_del.mets));
+del_mets = setdiff(ihuman.mets, model_del.mets);
+fprintf('\nRemoved %u boundary metabolites from the model.\n\n', numel(del_mets));
 
 % remove the boundary compartment itself and update the metComps field
 metCompSymbols = model_del.comps(model_del.metComps);
@@ -24,9 +25,26 @@ model_del.compNames(comp_ind) = [];
 writeHumanYaml(model_del, '../../modelFiles/yml/HumanGEM.yml');
 
 
+% import metabolite annotations
+metAssoc = jsondecode(fileread('../../data/annotation/humanGEMMetAssoc.JSON'));
 
+% remove boundary metabolites
+del_ind = ismember(metAssoc.mets, del_mets);
+f = fieldnames(metAssoc);
+for i = 1:numel(f)
+    metAssoc.(f{i})(del_ind) = [];
+end
 
+% verify that annotation structure is aligned with model
+if ~isequal(model_del.mets, metAssoc.mets)
+    error('Model and metabolite annotation structures not synced!');
+end
 
+% export metabolite annotations
+jsonStr = jsonencode(metAssoc);
+fid = fopen('../../data/annotation/humanGEMMetAssoc.JSON', 'w');
+fwrite(fid, prettyJson(jsonStr));
+fclose(fid);
 
 
 
