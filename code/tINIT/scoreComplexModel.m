@@ -62,8 +62,6 @@ function [rxnScores, geneScores, hpaScores, arrayScores] = scoreComplexModel(mod
 %               model,hpaData,arrayData,tissue,celltype,noGeneScore,isozymeScoring,
 %               complexScoring,multipleCellScoring,hpaLevelScores)
 %
-%   Jonathan Robinson, 2019-02-07
-%
 
 
 if nargin < 5

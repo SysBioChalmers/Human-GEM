@@ -33,8 +33,6 @@ function [] = writecell2file(C,fileName,header,delim,formatSpec,date)
 %   date         (Optional, default FALSE) If TRUE, print out the date
 %                in the first line of output file 
 %
-% Jonathan Robinson, 2019-07-18
-% Hao Wang, 2018-10-19
 
 
 % handle input arguments

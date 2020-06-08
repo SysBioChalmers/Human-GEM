@@ -18,8 +18,7 @@ function prettifiedJSON = prettyJson(rawJSON)
 %
 % Usage: prettifiedJSON = prettyJson(rawJSON)
 %
-% Hao Wang, 2019-01-07
-%
+
 
 % handle input 
 if isstring(rawJSON)

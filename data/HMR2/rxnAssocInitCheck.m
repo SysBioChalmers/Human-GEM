@@ -1,20 +1,13 @@
 %
 %   FILE NAME:    rxnAssocInitCheck.m
 % 
-%   DATE CREATED: 2018-01-25
-%
-%	
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Initial consistence check for associated exteranl reaction
 %            identifiers in HMR2. This task was triggered by the discovery of
 %            mistakenly-associated HepatoNet1 reactions to BiGG. This script
 %            focus on curating the identifiers derived from EHMN and HepatoNet1
 %            using the orgianl publications/files and database investigation.
-%            
+%
+
 
 % 1. Load HMR model ver 2.0.1
 load('HMRdatabase2_01.mat');

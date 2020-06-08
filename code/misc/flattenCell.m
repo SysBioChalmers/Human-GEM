@@ -8,8 +8,6 @@ function Cflat = flattenCell(C,strFlag)
 % CFLAT = FLATTENCELL(C,STRFLAG) if STRFLAG is TRUE, empty entries in the
 % resulting CFLAT will be replaced with empty strings {''}. Default = FALSE
 %
-%
-% Jonathan Robinson, 2018-03-07
 
 
 if nargin < 2

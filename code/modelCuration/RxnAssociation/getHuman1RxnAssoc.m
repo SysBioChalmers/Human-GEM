@@ -1,16 +1,10 @@
 %
 % FILE NAME:    getHuman1RxnAssoc.m
 %
-% DATE CREATED: 2019-05-23
-%     MODIFIED: 2019-06-03
-%
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSE: Provide Human1 with extensively associated exteranl reaction
 %          identifieres in JSON format file (#75), as discussed in #107.
 %
+
 
 %% load data
 

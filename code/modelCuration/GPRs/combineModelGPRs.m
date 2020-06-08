@@ -51,9 +51,6 @@ function humanGEM_new = combineModelGPRs(humanGEM,iHsa,Recon3D)
 %                   rxnGeneMat fields. Also, with new or updated proteins,
 %                   prRules, and rxnProtMat fields.
 %
-%
-% Jonathan Robinson, 2018-09-14
-
 
 
 %% load/prepare each model

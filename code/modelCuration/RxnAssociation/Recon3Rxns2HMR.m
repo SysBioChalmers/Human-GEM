@@ -1,17 +1,11 @@
 %
 % FILE NAME:    Recon3Rxns2HMR.m
 % 
-% DATE CREATED: 2018-05-28
-% 
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
-% 
 % PURPOSE: This script attempts to assign proper HMR id(s) to each
 %          Recon3D rxn, and output the association into a defined
 %          array structure.
 %
+
 
 % Load rxn association from HMR2 and Recon3D to MNX
 load('Recon3Rxns2MNX.mat');    %Recon3D rxn association to MNX

@@ -4,8 +4,7 @@ function status = testYamlConversion
 %
 % Usage: status = testYamlConversion
 %
-% Hao Wang, 2020-05-17
-%
+
 
 % Get model path
 [ST, I]=dbstack('-completenames');

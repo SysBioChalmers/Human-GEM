@@ -42,8 +42,6 @@ function results = compareRxnMNXIDsWithMets(model,mnx,ignoreComp)
 %               'flagged model rxn'
 %               'flagged rxnMNXIDs mapped to rxn'
 %
-%
-% Jonathan Robinson 2018-05-28
 
 
 % handle input arguments

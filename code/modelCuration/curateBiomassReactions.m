@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateBiomassReactions.m
 % 
-% DATE CREATED: 2018-11-06
-%     MODIFIED: 2019-01-23
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: Script to curate biomass-related reactions in the model. The
 %          changes are summarized as follows:
 %

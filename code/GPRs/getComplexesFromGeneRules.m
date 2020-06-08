@@ -22,14 +22,3 @@ function complex_mat = getComplexesFromGeneRules(grRules)
 %                the complex. Although the complexes are unique, they can
 %                be subsets of one another.
 %
-%
-% Jonathan Robinson, 2018-07-27
-
-
-
-
-
-
-
-
-

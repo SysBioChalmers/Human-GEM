@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateATPmetabolism.m
 % 
-% DATE CREATED: 2019-04-10
-%     MODIFIED: 2019-06-10
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script makes a number of improvements to the modeling of 
 %          ATP metabolism (electron transport chain) in HumanGEM.
 %

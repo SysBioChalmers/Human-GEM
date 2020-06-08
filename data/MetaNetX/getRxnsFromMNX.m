@@ -1,16 +1,9 @@
 %
 %   FILE NAME:    getRxnsFromMNX.m
 % 
-%   DATE CREATED: 2018-04-03
-%        
-%	
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Generate the data structure for MetaNetX reactions
-%            
+%
+
 
 % Move to the target MNX folder
 

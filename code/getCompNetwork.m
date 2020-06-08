@@ -14,8 +14,7 @@ function [compNetwork, I]=getCompNetwork(model,comp,includePartial)
 %
 % Usage: [compNetwork, I]=getCompNetwork(model,comp,includePartial)
 %
-% Hao Wang, 2018-11-07
-%
+
 
 if ischar(comp)
     comp={comp};

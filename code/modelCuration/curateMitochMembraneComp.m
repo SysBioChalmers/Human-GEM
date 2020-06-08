@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateMitochMembraneComp.m
 % 
-% DATE CREATED: 2018-09-17
-%     MODIFIED: 2018-10-15
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: Script for analyzing/curating the inner mitochondrial matrix
 %          compartment "[i]". This is done in a few steps:
 %

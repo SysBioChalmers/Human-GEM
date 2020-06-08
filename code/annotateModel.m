@@ -37,9 +37,6 @@ function annModel = annotateModel(model,annType,addMiriams,addFields,overwrite)
 %
 %   annModel = annotateMets(model,annType,addMiriams,addFields);
 %
-%
-% Jonathan Robinson, 2019-07-18
-%
 
 
 %% Inputs and setup
