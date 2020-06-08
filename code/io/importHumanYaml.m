@@ -198,8 +198,8 @@ while ~feof(fid)
 
             case 'metabolites'
                 readEquation = true;
-                leftEquation  = '';
-                rightEquation = '';
+                leftEquation  = {''};
+                rightEquation = {''};
 
             otherwise
                 if readSubsystems
