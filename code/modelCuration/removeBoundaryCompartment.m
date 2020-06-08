@@ -1,14 +1,6 @@
 %
 % FILE NAME:    removeBoundaryCompartment.m
-% 
-% DATE CREATED: 2020-05-21
-%      UPDATED: 2020-05-21
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               National Bioinformatics Infrastructure Sweden
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
+%
 % PURPOSE: This script removes the boundary compartment [x] and all
 %          metabolites within this compartment from the model.
 %
