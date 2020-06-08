@@ -280,8 +280,11 @@ model.S = S(metIdx, :);
 % Although this works with HumanGEM, but it is NOT a generic solution of
 % dealing with the `unconstrained` field for other models!
 model.unconstrained = double(endsWith(model.mets, 'x'));
-        if ~silentMode
-            fprintf(' Done!\n');
+if ~any(model.unconstrained)
+    model = rmfield(model, 'unconstrained');
+end
+if ~silentMode
+    fprintf(' Done!\n');
 end
 end
 
