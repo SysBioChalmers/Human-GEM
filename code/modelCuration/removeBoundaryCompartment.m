@@ -2,8 +2,8 @@
 % FILE NAME:    removeBoundaryCompartment.m
 %
 % PURPOSE: This script removes the boundary compartment [x] and all
-%          metabolites within this compartment from the model.
-%
+%          metabolites within this compartment from the model, as discussed
+%          in #172
 
 % load model
 ihuman = importHumanYaml('../../modelFiles/yml/HumanGEM.yml');
