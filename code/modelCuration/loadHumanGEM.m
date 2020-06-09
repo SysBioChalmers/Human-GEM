@@ -5,8 +5,7 @@ function model = loadHumanGEM
 %
 % Usage: model = loadHumanGEM
 %
-% Hao Wang, 2018-11-14
-%
+
 
 % get model path
 [ST, I]=dbstack('-completenames');

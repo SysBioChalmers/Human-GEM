@@ -20,8 +20,7 @@ function reducedModel = removeReactionsFull(model,rxnsToRemove,removeUnusedMets,
 %   Usage: reducedModel=removeReactions(model,rxnsToRemove,removeUnusedMets,...
 %           removeUnusedGenes,removeUnusedComps)
 %
-%   Jonathan Robinson, 2018-09-21
-%
+
 
 if nargin<3
     removeUnusedMets=false;

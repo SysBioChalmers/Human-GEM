@@ -1,14 +1,6 @@
 %
 %   FILE NAME:    addManuallyCuratedMetAssoc.m
 % 
-%   DATE CREATED: 2018-06-05
-%       MODIFIED: 2018-09-03
-%        
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Incorporate manual curation results of met association 
 %            with Recon/BiGG/MetaNetX ids to ihumanMets2MNX_v2.mat
 %

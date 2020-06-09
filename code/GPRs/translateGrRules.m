@@ -82,8 +82,6 @@ function [grRules_new,genes,rxnGeneMat] = translateGrRules(grRules,targetFormat,
 %                than one ID type, then rxnGeneMat will be returned as a 
 %                structure, with a different field for each gene ID type.
 %
-%
-% Jonathan Robinson, 2019-02-18
 
 
 % handle input arguments

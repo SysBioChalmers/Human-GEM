@@ -61,9 +61,6 @@ function [simple_rules,skipped] = simplifyGrRules(grRules,expanded)
 %                  symbolic equation. For these cases, the grRule will be
 %                  copied into simple_rules without any simplification.
 %
-%
-% Jonathan Robinson, 2019-04-05
-%
 
 if nargin < 2
     expanded = false;

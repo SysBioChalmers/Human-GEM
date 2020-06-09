@@ -45,8 +45,6 @@ function results = mapRxnsViaMets(model,mnx,mapRxns)
 %          notes: A column of strings providing information on if and how
 %                 each model reaction was mapped to any MXN ID(s).
 %
-%
-% Jonathan Robinson, 2018-05-24
 
 
 % handle input arguments

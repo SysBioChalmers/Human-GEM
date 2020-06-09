@@ -20,8 +20,6 @@ function stdFormulas = standardizeMetFormulas(metFormulas)
 %
 %    Usage: stdFormulas = standardizeMetFormulas(metFormulas)
 %
-%
-%   Jonathan Robinson, 2018-09-11
 
 
 % ignore metabolite formulas containing parentheses

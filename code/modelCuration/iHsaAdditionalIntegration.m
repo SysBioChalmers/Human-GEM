@@ -1,13 +1,6 @@
 %
 % FILE NAME:    iHsaAdditionalIntegration.m
 % 
-% DATE CREATED: 2019-10-04
-%     MODIFIED: 2019-12-17
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script integrates additional components from the iHsa model
 %          (EM Blais, et al. 2017 Nat Commun) into HumanGEM that were not
 %          integrated previously. These changes include:

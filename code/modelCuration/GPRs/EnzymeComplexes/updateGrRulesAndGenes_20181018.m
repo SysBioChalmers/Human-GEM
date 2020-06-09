@@ -1,12 +1,6 @@
 %
 % FILE NAME:    updateGrRulesAndGenes_20181018.m
 % 
-% DATE CREATED: 2018-10-18
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script corrects small errors found in two of the humanGEM
 %          grRules, introduced when incorporating CORUM enzyme complex
 %          information into the grRules (miscModelCurationScript_20181005):

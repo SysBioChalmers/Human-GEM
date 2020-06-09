@@ -17,8 +17,6 @@ function corrected_model = removeConflictingInchiStrings(model)
 %
 %   corrected_model = removeConflictingInchiStrings(model);
 %
-%
-% Jonathan Robinson, 2019-12-04
 
 
 if ~isfield(model,'inchis')

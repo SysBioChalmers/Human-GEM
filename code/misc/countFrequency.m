@@ -12,8 +12,7 @@ function report=countFrequency(queryList)
 %                  
 % Usage: report=countFrequency(queryList)
 %
-% Hao Wang, 2018-06-02
-%
+
 
 report={};
 

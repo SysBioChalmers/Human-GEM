@@ -28,9 +28,6 @@ function cleaned_rules = cleanGrRules(grRules)
 %
 %   cleaned_rules   Updated/cleaned grRules.
 %
-%
-% Jonathan Robinson, 2019-04-05
-%
 
 
 

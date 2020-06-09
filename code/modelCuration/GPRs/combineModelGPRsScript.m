@@ -24,9 +24,6 @@
 %                        .rxnGeneMat, because its columns correspond to
 %                        entries in .proteins, NOT entries in .genes.
 %
-%
-% Jonathan Robinson, 2018-09-04
-
 
 
 %% load/prepare each model

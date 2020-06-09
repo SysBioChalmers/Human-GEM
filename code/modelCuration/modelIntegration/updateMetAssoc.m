@@ -1,20 +1,13 @@
 %
 % FILE NAME:    updateMetAssoc.m
 % 
-% DATE CREATED: 2018-08-03
-%     MODIFIED: 2018-09-20
-% 
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
-% 
 % PURPOSE: Create data structure of one-to-one met assocation between
 %          HMR2 and Recon3D 
 % 
 % Note: The generated metAssoc.mat file is for convenient model integration,
 % and this data structure should be updated everytime once metAssocHMR2Recon3.mat
 % is changed!
+
 
 % Get the manually curated met association info
 load('metAssocHMR2Recon3.mat');

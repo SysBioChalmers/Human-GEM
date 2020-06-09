@@ -1,18 +1,12 @@
 %
 % FILE NAME:    createNewHumanBiomassRxn.m
 % 
-% DATE CREATED: 2019-09-27
-%     MODIFIED: 2019-10-11
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script adds a new biomass reaction to Human-GEM, which is
 %          based on literature, databases, and previous models. The biomass
 %          reaction is formulated such that its flux corresponds to 1 gram
 %          per gram dry weight of biomass (1 g/gDW).
 %
+
 
 %% Load model and annotation files
 

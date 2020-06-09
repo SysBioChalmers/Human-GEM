@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateDuplicatedRxns.m
 % 
-% DATE CREATED: 2018-09-07
-%     MODIFIED: 2018-09-17
-% 
-% PROGRAMMER:   Jonathan Robinson, Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script updates the humanGEM model and the rxnAssoc.mat
 %          reaction association structure, with the following steps:
 %           1) Add boundary metabolites to humanGEM
@@ -48,7 +41,6 @@
 %                 to manually overwrite the files when it is determined
 %                 that they are ready.
 %
-
 
 
 %% Load important items

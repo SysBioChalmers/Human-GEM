@@ -12,8 +12,7 @@ function result=metConsistencyCheckViaMNX(queryList)
 %
 %   Usage: result=metConsistencyCheckViaMNX(queryList)
 %
-%   Hao Wang, 2018-05-31
-%
+
 
 if nargin<1
 		EM='Missing input arguments';

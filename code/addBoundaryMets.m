@@ -39,8 +39,6 @@ function new_model = addBoundaryMets(model, exch_only)
 %
 %   new_model   New model structure, with added boundary metabolites.
 %
-%
-
 
 % handle input arguments
 if nargin < 2

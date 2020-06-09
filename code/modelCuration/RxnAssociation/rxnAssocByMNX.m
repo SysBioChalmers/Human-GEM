@@ -1,18 +1,10 @@
 %
 %   FILE NAME:  rxnAssocByMNX.m  
 % 
-%   DATE CREATED: 2018-01-06
-%        UPDATED: 2008-02-09
-%        UPDATED: 2008-05-21
-%	
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: HMR2 reaction association to MNXref based on provided
 %            external databasse identifiers
 %
+
 
 % Load HMR model with BiGG association
 load('ihumanRxns2BiGG.mat');

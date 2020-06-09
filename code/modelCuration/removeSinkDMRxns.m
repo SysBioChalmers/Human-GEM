@@ -1,12 +1,6 @@
 %
 % FILE NAME:    removeSinkDMRxns.m
 % 
-% DATE CREATED: 2019-03-06
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: HumanGEM currently contains many "sink" and "demand" (DM)
 %          reactions that originate from Recon3D. These reactions are
 %          artificial, and involve the transport of a metabolite between

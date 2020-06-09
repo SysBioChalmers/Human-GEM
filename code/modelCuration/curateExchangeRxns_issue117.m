@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateExchangeRxns_issue117.m
 % 
-% DATE CREATED: 2019-05-27
-%     MODIFIED: 2019-09-19
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: Script to add exchange reactions for four metabolites that are
 %          present in the extracellular compartment, but do not currently
 %          have exchange reactions transporting them to/from the boundary.
@@ -31,7 +24,6 @@
 %
 %          Information on new reactions to be added to the model were
 %          organized in the newExchangeRxns.tsv file.
-
 
 
 %% Load model and initialize variables

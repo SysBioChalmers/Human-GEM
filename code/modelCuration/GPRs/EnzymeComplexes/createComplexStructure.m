@@ -1,14 +1,6 @@
 %
 % FILE NAME:    createComplexStructure.m
 % 
-% DATE CREATED: 2018-01-01
-% DATE CREATED: 2018-06-10
-% 
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
-% 
 % PURPOSE: Create enzymeComplex structure for HMR curation
 %	
 

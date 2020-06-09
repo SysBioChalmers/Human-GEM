@@ -18,8 +18,6 @@ function model_new = HMR_update_met_attributes(model)
 %   model_new   HMR2 model structure with added metabolite information and
 %               minor corrections applied.
 %
-%
-% Jonathan Robinson, 2018-05-24
 
 
 % reorder metabolite formulas so elements are in alphabetical order

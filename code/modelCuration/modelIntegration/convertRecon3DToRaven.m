@@ -1,18 +1,10 @@
 %
 % FILE NAME:    convertRecon3DToRaven.m
 % 
-% DATE CREATED: 2018-04-25
-%     MODIFIED: 2018-06-20
-%     MODIFIED: 2018-08-03
-% 
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
-% 
 % PURPOSE: Convert Recon3D model to RAVEN format
 %          replace met with HMR info
 %
+
 
 % Load Recon3D
 load('/Users/haowa/Box Sync/HMR3/Recon3D/Published/ModelFiles/Recon3D_301/Recon3D_301.mat');
