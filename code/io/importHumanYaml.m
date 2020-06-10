@@ -52,7 +52,7 @@ model.metNames={};
 model.metComps={};
 model.inchis={};
 model.metFormulas={};
-model.unconstrained=[];
+%model.unconstrained=[]; %abandoned
 model.rxnReferences={};
 model.rxnFrom={};
 model.metFrom={};
@@ -198,8 +198,8 @@ while ~feof(fid)
 
             case 'metabolites'
                 readEquation = true;
-                leftEquation  = '';
-                rightEquation = '';
+                leftEquation  = {''};
+                rightEquation = {''};
 
             otherwise
                 if readSubsystems
@@ -277,11 +277,11 @@ equations(irrevInd) = strcat(leftEqns(irrevInd), ' =>', rightEqns(irrevInd));
 [~, metIdx] = ismember(model.mets, newMets);
 model.S = S(metIdx, :);
 
-% Although this works with HumanGEM, but it is NOT a generic solution of
-% dealing with the `unconstrained` field for other models!
-model.unconstrained = double(endsWith(model.mets, 'x'));
-        if ~silentMode
-            fprintf(' Done!\n');
+% Now the `unconstrained` field is abandoned in HumanGEM
+%model.unconstrained = double(endsWith(model.mets, 'x'));
+
+if ~silentMode
+    fprintf(' Done!\n');
 end
 end
 
