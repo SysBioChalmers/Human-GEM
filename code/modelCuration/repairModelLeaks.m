@@ -1,13 +1,6 @@
 %
 % FILE NAME:    repairModelLeaks.m
 % 
-% DATE CREATED: 2018-10-01
-%     MODIFIED: 2018-11-23
-% 
-% PROGRAMMER:   Jonathan Robinson, Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: Script to identify and update/constrain/remove reactions that 
 %          allow the creation of mass and/or energy (which results in a
 %          "leaky" model). The script is divided into two main sections:

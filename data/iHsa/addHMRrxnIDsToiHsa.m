@@ -17,9 +17,6 @@ function iHsa_new = addHMRrxnIDsToiHsa(iHsa)
 %              corresponding HMR rxn, and therefore will have a blank entry
 %              in the rxnHMRID field.
 %
-%
-% Jonathan Robinson, 2018-08-02
-
 
 
 % import rxn associations from supporting information dataset

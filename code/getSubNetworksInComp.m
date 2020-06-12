@@ -22,8 +22,7 @@ function [subNetworks]=getSubNetworksInComp(model,comp,metsToRemove,includeParti
 %
 % Usage: [subNetworks]=getSubNetworksInComp(model,comp,metsToRemove,includePartial)
 %
-% Hao Wang, 2018-11-12
-%
+
 
 % handle input arguments
 if nargin < 2

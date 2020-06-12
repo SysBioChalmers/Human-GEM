@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateLipidPools.m
 % 
-% DATE CREATED: 2019-09-07
-%     MODIFIED: 2019-10-10
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script revises the formulation of reactions involving lipid
 %          and cholesterol-ester pool formation and breakdown in HumanGEM
 %          to achieve a more generic and mass-balanced model. In the

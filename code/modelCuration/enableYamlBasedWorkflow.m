@@ -1,13 +1,6 @@
 %
 % FILE NAME:    enableYamlBasedWorkflow.m
 % 
-% DATE CREATED: 2019-12-17
-%     MODIFIED:
-% 
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script is to adjust the Matlab structure of HumanGEM model
 %          so that a Yaml-based workflow could be implemented, as proposed
 %          in #27

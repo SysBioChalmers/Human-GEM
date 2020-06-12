@@ -13,8 +13,7 @@ function list=getNonEmptyList(queryList,type)
 %
 % Usage: list=getNonEmptyList(queryList,type)
 %
-% Hao Wang, 2018-06-02
-%
+
 
 list=[];
 

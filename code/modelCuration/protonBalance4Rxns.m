@@ -18,8 +18,7 @@ function [newModel, newS, indRxnImbalance]=protonBalance4Rxns(model,protonMetId)
 %
 %   Usage: [newModel, newS, indRxnImbalance]=protonBalance4Rxns(model,protonMetId)
 %
-%   Hao Wang, 2018-09-27
-%
+
 
 if nargin<2
     EM='Missing input arguments';

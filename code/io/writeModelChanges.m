@@ -21,9 +21,6 @@ function [] = writeModelChanges(modelChanges,fileName,date)
 %   date           (Opt, default TRUE) print out the date in the first
 %                  line of output file, or not if FALSE.
 %
-%
-% Jonathan Robinson, 2019-05-27
-%
 
 
 % handle input arguments

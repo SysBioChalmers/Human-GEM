@@ -28,8 +28,6 @@ function [grRules,new_genes] = integrateGeneRules(HMR,iHsa,Recon3D,rxnHMR2Recon3
 %               each grRule, and were already present in some other
 %               grRule(s) in the original model.
 %
-%
-% Jonathan Robinson, 2018-09-02
 
 
 % Note: Loaded rxnHMR2Recon3D array using following commands:

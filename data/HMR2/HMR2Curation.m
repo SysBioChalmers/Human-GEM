@@ -1,16 +1,9 @@
 %
 %   FILE NAME:    HMR2Curation.m
 % 
-%   DATE CREATED: 2018-01-16
-%        
-%	
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Curating HMR2 database model toward HMR3
 %
+
 
 % Load the original Matlab file of HMR2 database
 load('HMRdatabase2_00.mat');

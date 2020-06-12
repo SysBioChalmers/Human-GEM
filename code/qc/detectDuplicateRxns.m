@@ -18,8 +18,7 @@ function repetitiveRxns=detectRepetitiveRxns(model,distReverse,metsToIgnore,dist
 %
 %   Usage: repetitiveRxns=detectRepetitiveRxns(model,distReverse,metsToIgnore,distCoefficient)
 %
-%   Hao Wang, 2018-05-14
-% 
+
 
 repetitiveRxns={};
 

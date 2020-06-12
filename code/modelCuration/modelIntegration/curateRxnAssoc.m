@@ -1,12 +1,6 @@
 %
 % FILE NAME:    curateRxnAssoc.m
 % 
-% DATE CREATED: 2018-09-11
-% 
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: Curate rxnAssoc array structure by adding the reaction bounds
 %          information extracted from HMR2 and Recon3D 
 % 

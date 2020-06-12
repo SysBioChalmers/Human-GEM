@@ -1,15 +1,10 @@
 %
 % FILE NAME:    updateHMR2Genes.m
 %
-% DATE CREATED: 2018-08-22
-%
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSE: Update gene curation results into the model. The updated
 %          fields include grRules, genes, rxnGeneMat and geneComps.
 %
+
 
 % Load the curated Ensembl gene ids with removal of confirmed pseudogenes
 % and some updated ids

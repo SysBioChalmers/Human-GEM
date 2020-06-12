@@ -61,8 +61,6 @@ function modelChanges = docModelChanges(model1,model2,changeNotes)
 %                    chargeNew    new metabolite charge
 %                    notes        optional notes associated with the change
 %
-%
-% Jonathan Robinson, 2019-05-27
 
 
 %% Preprocessing

@@ -1,16 +1,10 @@
 %
 % FILE NAME:    addtionalManualCuration.m
 % 
-% DATE CREATED: 2018-05-28
-% 
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
-% 
 % PURPOSE: This script is for manual curation for the reaction
 %          association results that accumulate contineously.
 %
+
 
 % 2018-05-28
 load('ihumanRxns2BiGG.mat');    %HMR rxn association to BiGG

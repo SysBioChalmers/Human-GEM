@@ -1,15 +1,6 @@
 %
 %   FILE NAME: rxnAssocByBiGG.m
 % 
-%   DATE CREATED: 2017-12-01
-%        UPDATED: 2018-02-08
-%        UPDATED: 2018-05-18
-%	
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Assocate HMR2 reactions to BiGG based on provided
 %            external database identifiers
 %

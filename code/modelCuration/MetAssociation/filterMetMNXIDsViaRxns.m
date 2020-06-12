@@ -53,8 +53,6 @@ function [fmodel,removed] = filterMetMNXIDsViaRxns(model,mnx,ignoreComp,keepAtLe
 %   removed  A structure containing more detailed information on the met
 %            MNXID associations that were removed.
 %
-%
-% Jonathan Robinson 2018-05-28
 
 
 % handle input arguments

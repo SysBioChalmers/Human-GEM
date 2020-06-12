@@ -1,13 +1,6 @@
 %
 % FILE NAME:    applyJSON2RxnAssoc.m
 %
-% DATE CREATED: 2019-01-16
-%     MODIFIED: 2019-01-28
-%
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSE: Sort out and clean up the previous .mat files generated during
 %          reaction association/curation of human-GEM:
 %          1. identify redundant rxn-association .mat files and remove them;

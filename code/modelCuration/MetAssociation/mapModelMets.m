@@ -25,8 +25,6 @@ function mappedModel = mapModelMets(model,mnx)
 %                        multiple IDs that matched to one or more of the
 %                        metabolites.
 %
-%
-% Jonathan Robinson, 2018-04-04
 
 % handle input arguments
 if nargin < 2

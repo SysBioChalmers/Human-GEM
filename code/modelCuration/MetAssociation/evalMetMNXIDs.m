@@ -35,8 +35,6 @@ function results = evalMetMNXIDs(model,mnx)
 %                         one or more MNX IDs, but failed to match the
 %                         formula or name associated with any of those IDs.
 %
-%
-% Jonathan Robinson, 2018-03-20
 
 
 % append model metNames field with metNamesAlt field

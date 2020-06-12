@@ -45,8 +45,6 @@ function charge_diff = crossCompChargeDiff(model,rxns,reqFormula)
 %                 .compNames   A list of compartment names corresponding
 %                              to the columns of charge_diff.mat
 %
-%
-% Jonathan Robinson, 2018-09-25
 
 
 % handle input args

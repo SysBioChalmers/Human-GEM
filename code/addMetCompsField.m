@@ -13,10 +13,8 @@ function model_new = addMetCompsField(model)
 %               output model_new
 %
 %   Usage: model_new = addMetCompsField(model);
-%   
-%   Jonathan L. Robinson, 2018-07-02
-%   Hao Wang, 2018-08-30
 %
+
 
 metCompAbbrevs=cell(numel(model.mets),1);
 metCompAbbrevs(:)={''};
