@@ -1,4 +1,4 @@
-MATLAB	9.7.0.1190202 (R2019b)
+MATLAB	9.5.0.944444 (R2018b)
 libSBML	5.17.0
-RAVEN_toolbox	2.3.1
+RAVEN_toolbox	2.4.0
 COBRA_toolbox	3.1
