@@ -1,16 +1,7 @@
 %
 %   FILE NAME: Recon3RxnAssoc2MNXByBiGG.m
 % 
-%   DATE CREATED: 2018-04-23
-%       MODIFIED: 2018-05-18
-%	
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Assocate Recon3 reactions through BiGG to MNX
-%
 %
 
 

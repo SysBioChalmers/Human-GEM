@@ -1,21 +1,13 @@
 %
 %   FILE NAME:    verifyRxnAssoc2MNX.m
 % 
-%   DATE CREATED: 2018-03-08
-%       MODIFIED: 2018-04-16
-%       MODIFIED: 2018-05-22
-%	
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: 1. Generate a reduced model by removing exchange reactions and
 %               cross-compartment transport reactions, as well as merging
 %               duplicate reactions from multiple compartments into single;
 %            2. Use the merged model for rxn association to MetaNetX and
 %               further manual curation;
 %
+
 
 % Detect duplicated reactions that occurred in multiple comparments
 % by using the updated mergeCompartments function in RAVEN.

@@ -22,9 +22,8 @@ function out=exportHumanGEM(ihuman,prefix,path,formats,masterFlag,dependencies)
 %
 % Usage: exportHumanGEM(ihuman,prefix,path,formats,masterFlag,dependencies)
 %
-% Benjamin J. Sanchez, 2018-10-19
-% Hao Wang, 2019-03-30
-%
+
+
 if nargin<6
     dependencies=true;
 end
@@ -64,15 +63,15 @@ catch % before 5.17.0
     delete('tempModelForLibSBMLversion.xml');
 end
 
-% Make ModelFiles folder, no warnings if folder already exists
-[~,~,~]=mkdir(fullfile(path,'ModelFiles'));
+% Make modelFiles folder, no warnings if folder already exists
+[~,~,~]=mkdir(fullfile(path,'modelFiles'));
 for i = 1:length(formats)
-    [~,~,~]=mkdir(fullfile(path,'ModelFiles',formats{i}));
+    [~,~,~]=mkdir(fullfile(path,'modelFiles',formats{i}));
 end
 
 % Write TXT format
 if ismember('txt', formats)
-    fid=fopen(fullfile(path,'ModelFiles','txt',strcat(prefix,'.txt')),'w');
+    fid=fopen(fullfile(path,'modelFiles','txt',strcat(prefix,'.txt')),'w');
     eqns=constructEquations(ihuman,ihuman.rxns,false,false,false,true);
     eqns=strrep(eqns,' => ','  -> ');
     eqns=strrep(eqns,' <=> ','  <=> ');
@@ -91,17 +90,17 @@ end
 
 % Write YML format
 if ismember('yml', formats)
-    writeHumanYaml(ihuman,fullfile(path,'ModelFiles','yml',strcat(prefix,'.yml')));
+    writeHumanYaml(ihuman,fullfile(path,'modelFiles','yml',strcat(prefix,'.yml')));
 end
 
 % Write MAT format
 if ismember('mat', formats)
-    save(fullfile(path,'ModelFiles','mat',strcat(prefix,'.mat')),'ihuman');
+    save(fullfile(path,'modelFiles','mat',strcat(prefix,'.mat')),'ihuman');
 end
 
 % Write XLSX format
 if ismember('xlsx', formats)
-    exportToExcelFormat(ihuman,fullfile(path,'ModelFiles','xlsx',strcat(prefix,'.xlsx')));
+    exportToExcelFormat(ihuman,fullfile(path,'modelFiles','xlsx',strcat(prefix,'.xlsx')));
 end
 
 % Write XML format
@@ -109,12 +108,13 @@ if ismember('xml', formats)
     model = simplifyModel(ihuman,false,false,true);  % remove inactivated rxns
     model = annotateModel(model);  % add annotation data to structure
     model = rmfield(model,'inchis');  % temporarily remove inchis until export function is updated
-    exportModel(model,fullfile(path,'ModelFiles','xml',strcat(prefix,'.xml')));
+    model.id = regexprep(model.id,'-','');  % remove dash from model ID since it causes problems with SBML I/O
+    exportModel(model,fullfile(path,'modelFiles','xml',strcat(prefix,'.xml')));
 end
 
 %Save file with versions:
 if dependencies
-    fid = fopen(fullfile(path,'ModelFiles','dependencies.txt'),'wt');
+    fid = fopen(fullfile(path,'modelFiles','dependencies.txt'),'wt');
     fprintf(fid,['MATLAB\t' version '\n']);
     fprintf(fid,['libSBML\t' libSBMLver '\n']);
     fprintf(fid,['RAVEN_toolbox\t' RAVENver '\n']);

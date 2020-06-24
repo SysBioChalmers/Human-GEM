@@ -15,8 +15,7 @@ function newCell=reformatElements(inputCell,type,delimiter)
 %
 % Usage: newCell=reformatElements(inputCell,type,delimiter)
 %
-% Hao Wang, 2018-06-03
-%
+
 
 newCell={};
 

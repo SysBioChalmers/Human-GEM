@@ -1,13 +1,6 @@
 %
 % FILE NAME:    removeNonPrimaryGeneIDs.m
 % 
-% DATE CREATED: 2019-02-06
-%     MODIFIED: 2019-02-25
-% 
-% PROGRAMMER:   Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: This script updates humanGEM gene-reaction rules (grRules), such
 %          that only primary assembly gene IDs are used. All gene IDs that
 %          are associated with a non-primary assembly (i.e., allele

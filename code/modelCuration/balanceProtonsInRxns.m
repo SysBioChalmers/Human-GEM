@@ -1,16 +1,10 @@
 %
 % FILE NAME:    balanceProtonsInRxns.m
 %
-% DATE CREATED: 2018-09-27
-%     MODIFIED: 2018-09-28
-%
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSE: This script is to balance humanGEM (v0.3.1) targeting for the
 % reactions that are imbalanced solely due to mismatch of proton(s)
-%          
+%
+
 
 %% Load model
 load('humanGEM.mat');  % v0.3.1

@@ -11,8 +11,7 @@ function countNum = countEmpty(queryList,nonEmpty)
 %
 % Usage: countNum = countEmpty(queryList,nonEmpty)
 %
-% Hao Wang, 2018-06-02
-%
+
 
 if nargin<1
 	error('Missing input arguments!');

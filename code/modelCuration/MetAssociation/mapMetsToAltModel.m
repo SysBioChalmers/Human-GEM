@@ -59,8 +59,6 @@ function model = mapMetsToAltModel(refModel,mapModel,metFields,mapMethod)
 %             contains the mapModel metIDs that were matched to the 
 %             refModel metabolites.
 %
-%
-% Jonathan Robinson 2018-04-03
 
 
 % handle input arguments

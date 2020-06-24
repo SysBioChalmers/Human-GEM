@@ -26,12 +26,7 @@ function [modelOut, removedRxnInd, keptRxnInd, duplicateRxnSets] = checkDuplicat
 %     duplicateRxnSets: A cell array, where each entry contains a list of
 %                       reaction numbers determined to be identical.
 %
-% .. Authors:
-%       - Ronan Fleming rewritten 2017
-%       - Thomas Pfau June 2017, added boundsFlag
-%
-%       - Jonathan Robinson added duplicateRxnSets output, and turned off
-%         warning when more than one duplicate is found for a reaction.
+
 
 if ~exist('method', 'var')
     method = 'S';

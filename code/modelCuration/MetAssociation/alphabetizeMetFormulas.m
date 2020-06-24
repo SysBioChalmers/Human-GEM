@@ -18,8 +18,6 @@ function alphaMets = alphabetizeMetFormulas(metFormulas)
 %                   alphabetical order of the element symbols.
 %                   Ex: C17H27N5O4SR2 -> C17H27N5O4R2S
 %
-%
-% Jonathan Robinson 2018-07-02
 
 
 % Ignore metabolite formulas containing special characters, or "FULLR", 

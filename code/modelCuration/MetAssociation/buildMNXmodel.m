@@ -38,8 +38,6 @@ function model = buildMNXmodel(model_type)
 %                           will not be removed to construct a functioning
 %                           stoichiometry matrix.
 %
-%
-% Jonathan L. Robinson, 2018-04-11
 
 
 % Specify directory containing MNX database files.

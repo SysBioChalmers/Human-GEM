@@ -31,8 +31,7 @@ function newModel = addAltsToModelField(model,field,newEntries,singleCol)
 %               field. Note that the updated field may have multiple
 %               columns.
 %
-%
-% Jonathan Robinson 2018-04-04
+
 
 if nargin < 4
     singleCol = false;

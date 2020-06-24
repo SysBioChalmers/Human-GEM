@@ -1,17 +1,9 @@
 %
 %   FILE NAME:    integrateRxnAssocViaIDsAndMets.m
 % 
-%   DATE CREATED: 2018-04-13
-%       MODIFIED: 2018-05-22
-%        
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Integrate rxn associations from mets and external rxn ids
 %
-%
+
 
 load('MNXRxns.mat');          % load MNX reactions
 load('mergedModel.mat');      % load mergedModel

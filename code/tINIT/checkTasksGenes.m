@@ -40,8 +40,7 @@ function [taskReport, essentialGenes, taskStructure]=checkTasksGenes(model,input
 %   Usage: [taskReport, essentialGenes, taskStructure]=checkTasksGenes(model,inputFile,...
 %           printOutput,printOnlyFailed,getEssential,taskStructure)
 %
-% Jonathan Robinson, 2019-01-17
-%
+
 
 if nargin<3 || isempty(printOutput)
     printOutput=true;

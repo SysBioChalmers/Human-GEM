@@ -1,13 +1,6 @@
 %
 % FILE NAME:    miscModelCurationScript_20190323.m
 %
-% DATE STARTED: 2019-03-04
-%     MODIFIED: 2019-03-23
-%
-% PROGRAMMERS:  Hao Wang, Pinar Kocabas
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSES: This script conducts a number of tasks: 
 %           1. Add Metadata to the annotation field of Human1
 %           2. Reformat EC-number in eccodes field
@@ -15,6 +8,7 @@
 %           4. Turn `version` into a blank field
 %           5. Initialize rxnConfidenceScores field with zero
 %
+
 
 %% Load the model
 

@@ -59,9 +59,6 @@ function [newModel,remGenes] = removeLowScoreGenes(model,geneScores,isozymeScori
 %                   from some grRules but not all will not be included in
 %                   this list.
 %
-%
-% Jonathan Robinson, 2019-02-08
-%
 
 
 if nargin < 3 || isempty(isozymeScoring)

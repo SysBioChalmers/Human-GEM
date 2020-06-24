@@ -7,10 +7,9 @@ function overlapRxns=overlapRxnDetection(modelA, modelB)
 %
 %   Usage: overlapRxns=overlapRxnDetection(modelA, modelB)
 %
-%   Hao Wang, 2018-08-27
-%
 
-% Handel the input
+
+% Handle the input
 if nargin<2
     disp('Missing input model');
     return;

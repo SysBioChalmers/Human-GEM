@@ -1,16 +1,10 @@
 %
 % FILE NAME:    integrateRecon3DToHMR.m
 % 
-% DATE CREATED: 2018-04-25
-%     MODIFIED: 2018-08-27
-% 
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: The master scrit for integrate Recon3D into HMR2 based on
 %          reaction/metabolite association to MetaNetX/BiGG databases
 %
+
 
 % 1. Generate the comprehensive reaction associaiton between HMR2 and Recon3D
 

@@ -26,9 +26,6 @@ function restoredModel = restoreModelGrRules(model,refModel)
 %                  refModel, as well as updated genes and geneRxnMat
 %                  fields.
 %
-%
-% Jonathan Robinson, 2019-01-17
-%
 
 
 % restore model grRules with those in refModel
@@ -42,6 +39,3 @@ model.rxnGeneMat = rxnGeneMat;
 
 % assign output
 restoredModel = model;
-
-
-

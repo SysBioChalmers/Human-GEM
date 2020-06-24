@@ -23,8 +23,6 @@ function compModel = compressModelField(model,field,delim)
 %   compModel  Model structure with specified field compressed into a
 %              single column format.
 %
-%
-% Jonathan Robinson 2018-04-04
 
 
 % handle inputs

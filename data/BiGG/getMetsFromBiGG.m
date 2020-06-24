@@ -1,16 +1,9 @@
 %
 %   FILE NAME: getMetsFromBiGG.m
 % 
-%   DATE CREATED: 2018-04-24
-%        
-%	
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Generate data structure for BiGG metabolites
-% 
+%
+
 
 % Move to the target folder
 cd('/Users/haowa/Box Sync/HMR3/BiGG');

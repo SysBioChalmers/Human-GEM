@@ -22,9 +22,6 @@ function [genes,rxnGeneMat] = getGenesFromGrRules(grRules)
 %               reactions (entries in grRules) and columns correspond to
 %               genes.
 %
-%
-% Jonathan Robinson, 2018-09-02
-
 
 
 % check if the grRules use written or symbolic boolean operators

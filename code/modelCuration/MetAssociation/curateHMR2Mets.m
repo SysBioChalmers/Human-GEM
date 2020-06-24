@@ -1,13 +1,6 @@
 %
 % FILE NAME:    curateHMR2Mets.m
 %
-% DATE CREATED: 2018-07-02
-%     MODIFIED: 2018-09-19
-%
-% PROGRAMMER:   Hao Wang, Jonathan Robinson
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSE: Curate metabolite information in humanGEM for protonation state
 %          at physiological pH and associating with external identifiers
 %

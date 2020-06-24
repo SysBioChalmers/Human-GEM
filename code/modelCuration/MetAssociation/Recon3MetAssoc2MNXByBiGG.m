@@ -1,16 +1,7 @@
 %
 %   FILE NAME: Recon3MetAssoc2MNXByBiGG.m
 % 
-%   DATE CREATED: 2018-04-24
-%
-%	
-%   PROGRAMMER:   Hao Wang
-%                 Department of Biology and Biological Engineering
-%                 Chalmers University of Technology
-% 
-% 
 %   PURPOSE: Assocate Recon3 metabolites through BiGG DB to MNX
-%
 %
 
 

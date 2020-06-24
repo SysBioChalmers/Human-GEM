@@ -7,8 +7,6 @@ function Cnest = nestCell(C,remEmpty)
 %   CNEST = NESTCELL(C,REMEMPTY) if TRUE, all empty elements will be
 %   removed when combining cells. Default = FALSE.
 %
-%   
-%   Jonathan Robinson, 2018-03-07
 
 
 if nargin < 2

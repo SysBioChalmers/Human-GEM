@@ -7,9 +7,7 @@ function increaseHumanGEMVersion(bumpType)
 %
 % Usage: increaseHumanGEMVersion(bumpType)
 %
-% Benjamín J. Sánchez, 2018-07
-% Hao Wang, 2019-03-10
-%
+
 
 %Check if in master:
 currentBranch = git('rev-parse --abbrev-ref HEAD');
@@ -53,7 +51,7 @@ newVersion = num2str(newVersion,'%d.%d.%d');
 %To be included
 
 %Load model:
-ymlFile=fullfile(modelPath,'ModelFiles','yml','HumanGEM.yml');
+ymlFile=fullfile(modelPath,'modelFiles','yml','HumanGEM.yml');
 ihuman = importHumanYaml(ymlFile);
 
 %Include tag and save model:

@@ -1,13 +1,6 @@
 %
 % FILE NAME:    miscModelCurationScript_20181012.m
 % 
-% DATE CREATED: 2018-10-10
-%     MODIFIED: 2018-10-12
-% 
-% PROGRAMMER:   Jonathan Robinson, Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-% 
 % PURPOSE: Script to restore two reactions that were previously deleted,
 %          but after further investigation were decided that they should be
 %          returned to the model. These reactions were deleted as part of
@@ -20,11 +13,11 @@
 %          convenience.
 %
 
+
 %% Load model
 
 % load latest version of humanGEM
 load('humanGEM.mat');  % v0.4.1
-
 
 
 %% Restore transport reactions that were removed earlier

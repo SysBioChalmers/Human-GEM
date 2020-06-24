@@ -46,7 +46,6 @@ function GPRdata = compare_HMR_iHsa_Recon3D_GPRs(HMR,iHsa,Recon3D,rxnHMR2Recon3D
 %               'Recon3D grRule'
 %               'Recon3D Ngenes'
 %
-% Jonathan Robinson, 2018-08-02
 
 
 % handle input arguments

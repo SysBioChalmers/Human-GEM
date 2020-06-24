@@ -1,13 +1,6 @@
 %
 % FILE NAME:    fixFormulasWithFULLR.m
 %
-% DATE CREATED: 2018-10-16
-%     MODIFIED: 2018-10-19
-%
-% PROGRAMMER:   Hao Wang
-%               Department of Biology and Biological Engineering
-%               Chalmers University of Technology
-%
 % PURPOSE: This script is to detect and fix the probelmatic formulas found
 %          with "FULLR" and derivated characters (e.g. "LLLL", "U")
 %
