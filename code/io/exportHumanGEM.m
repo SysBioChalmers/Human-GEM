@@ -63,15 +63,15 @@ catch % before 5.17.0
     delete('tempModelForLibSBMLversion.xml');
 end
 
-% Make modelFiles folder, no warnings if folder already exists
-[~,~,~]=mkdir(fullfile(path,'modelFiles'));
+% Make model folder, no warnings if folder already exists
+[~,~,~]=mkdir(fullfile(path,'model'));
 for i = 1:length(formats)
-    [~,~,~]=mkdir(fullfile(path,'modelFiles',formats{i}));
+    [~,~,~]=mkdir(fullfile(path,'model',formats{i}));
 end
 
 % Write TXT format
 if ismember('txt', formats)
-    fid=fopen(fullfile(path,'modelFiles','txt',strcat(prefix,'.txt')),'w');
+    fid=fopen(fullfile(path,'model','txt',strcat(prefix,'.txt')),'w');
     eqns=constructEquations(ihuman,ihuman.rxns,false,false,false,true);
     eqns=strrep(eqns,' => ','  -> ');
     eqns=strrep(eqns,' <=> ','  <=> ');
@@ -90,17 +90,17 @@ end
 
 % Write YML format
 if ismember('yml', formats)
-    writeHumanYaml(ihuman,fullfile(path,'modelFiles','yml',strcat(prefix,'.yml')));
+    writeHumanYaml(ihuman,fullfile(path,'model','yml',strcat(prefix,'.yml')));
 end
 
 % Write MAT format
 if ismember('mat', formats)
-    save(fullfile(path,'modelFiles','mat',strcat(prefix,'.mat')),'ihuman');
+    save(fullfile(path,'model','mat',strcat(prefix,'.mat')),'ihuman');
 end
 
 % Write XLSX format
 if ismember('xlsx', formats)
-    exportToExcelFormat(ihuman,fullfile(path,'modelFiles','xlsx',strcat(prefix,'.xlsx')));
+    exportToExcelFormat(ihuman,fullfile(path,'model','xlsx',strcat(prefix,'.xlsx')));
 end
 
 % Write XML format
@@ -109,12 +109,12 @@ if ismember('xml', formats)
     model = annotateModel(model);  % add annotation data to structure
     model = rmfield(model,'inchis');  % temporarily remove inchis until export function is updated
     model.id = regexprep(model.id,'-','');  % remove dash from model ID since it causes problems with SBML I/O
-    exportModel(model,fullfile(path,'modelFiles','xml',strcat(prefix,'.xml')));
+    exportModel(model,fullfile(path,'model','xml',strcat(prefix,'.xml')));
 end
 
 %Save file with versions:
 if dependencies
-    fid = fopen(fullfile(path,'modelFiles','dependencies.txt'),'wt');
+    fid = fopen(fullfile(path,'model','dependencies.txt'),'wt');
     fprintf(fid,['MATLAB\t' version '\n']);
     fprintf(fid,['libSBML\t' libSBMLver '\n']);
     fprintf(fid,['RAVEN_toolbox\t' RAVENver '\n']);

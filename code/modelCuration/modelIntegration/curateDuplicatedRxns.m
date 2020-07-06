@@ -322,7 +322,7 @@ ihuman = combineModelGPRs(ihuman);
 %% Save files
 
 % save new model and rxnAssoc.mat structure
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 save('rxnAssoc.mat','rxnAssoc');
 
 

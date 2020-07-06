@@ -47,7 +47,7 @@
 
 %% load humanGEM (if not already loaded)
 if ~exist('ihuman','var')
-    load('ModelFiles/mat/humanGEM.mat');
+    load('model/Human-GEM.mat');
 end
 
 

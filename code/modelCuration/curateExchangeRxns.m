@@ -204,7 +204,7 @@ clearvars -except ihuman
 ihuman.rev = double(ihuman.lb < 0 & ihuman.ub > 0);
 
 % save model file
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 
 
 

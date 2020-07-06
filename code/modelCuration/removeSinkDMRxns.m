@@ -45,7 +45,7 @@ writeRxnChanges(rxnChanges,'../../ComplementaryData/modelCuration/removedSinkDMr
 
 % save new version of humanGEM
 ihuman = reducedModel;
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 
 
 
