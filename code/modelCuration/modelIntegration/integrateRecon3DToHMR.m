@@ -74,4 +74,4 @@ model.rxnRecon3DID=reformatElements(model.rxnRecon3DID,'cell2str');
 model=rmfield(model,{'geneMiriams','annotation'});
 ihuman=model;
 ihuman.version='0.2.0';
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');

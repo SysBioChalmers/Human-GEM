@@ -60,7 +60,7 @@ Detailed instructions on the installation and use of the Human-GEM model and rep
 
 ## Model Files
 
-The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `modelFiles/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `devel`), to facilitate tracking of model changes.
+The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `devel`), to facilitate tracking of model changes.
 
 
 

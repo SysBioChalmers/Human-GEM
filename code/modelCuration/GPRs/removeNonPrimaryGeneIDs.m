@@ -48,7 +48,7 @@ ihuman.rxnProtMat = rxnProtMat;
 clear ensg_ids genes grRules new_ids proteins prRules rxn_ind rxnGeneMat
 clear rxnProtMat tmp fid
 
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 
 
 

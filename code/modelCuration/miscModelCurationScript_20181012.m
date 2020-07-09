@@ -86,5 +86,5 @@ ihuman = rmfield(ihuman, f);
 
 
 %% Save model
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 

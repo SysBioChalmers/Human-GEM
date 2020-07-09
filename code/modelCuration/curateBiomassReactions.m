@@ -182,6 +182,6 @@ ihuman.subSystems(non_cell) = cellfun(@(x) {{x}}, ihuman.subSystems(non_cell));
 clearvars -except ihuman
 
 % save model file
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 
 

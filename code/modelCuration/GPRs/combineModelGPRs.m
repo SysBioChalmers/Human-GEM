@@ -59,7 +59,7 @@ fprintf('Loading and preparing GEMs... ');
 
 % Human GEM
 if nargin < 1 || isempty(humanGEM)
-    tmp = load('ModelFiles/mat/humanGEM.mat');  % loads as variable "ihuman"
+    tmp = load('model/Human-GEM.mat');  % loads as variable "ihuman"
     ihuman = tmp.ihuman;
 else
     ihuman = humanGEM;  % just rename it to make things easier

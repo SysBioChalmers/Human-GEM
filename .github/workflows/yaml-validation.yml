@@ -18,7 +18,7 @@ jobs:
       uses: ibiqlik/action-yamllint@v1.0.0
       with:
         ## File(s) or Directory, separate by space if multiple files or folder are specified
-        file_or_dir: modelFiles/
+        file_or_dir: model/
         ## Path to custom configuration
         # config_file: # optional
         ## Custom configuration (as YAML source)
@@ -35,4 +35,4 @@ jobs:
 
     - name: Test cobrapy import
       run: 
-        python -c "import cobra ; cobra.io.load_yaml_model('modelFiles/yml/HumanGEM.yml')"
+        python -c "import cobra ; cobra.io.load_yaml_model('model/Human-GEM.yml')"

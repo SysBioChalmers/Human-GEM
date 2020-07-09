@@ -136,7 +136,7 @@ fprintf('A total of %d grRules were updated with curations based on CORUM databa
 
 %% Save model and clear variables
 ihuman = newModel;
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 clear;
 
 
