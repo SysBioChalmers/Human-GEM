@@ -12,7 +12,7 @@ function model = loadHumanGEM
 modelPath=fileparts(fileparts(fileparts(ST(I).file)));
 
 % load model
-matFile=fullfile(modelPath,'model','mat','Human-GEM.mat');
+matFile=fullfile(modelPath,'model','Human-GEM.mat');
 load(matFile);
 
 % get reactions need to be constrained
