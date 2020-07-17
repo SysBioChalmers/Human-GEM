@@ -90,17 +90,17 @@ end
 
 % Write YML format
 if ismember('yml', formats)
-    writeHumanYaml(ihuman,fullfile(path,'model','yml',strcat(prefix,'.yml')));
+    writeHumanYaml(ihuman,fullfile(path,'model',strcat(prefix,'.yml')));
 end
 
 % Write MAT format
 if ismember('mat', formats)
-    save(fullfile(path,'model','mat',strcat(prefix,'.mat')),'ihuman');
+    save(fullfile(path,'model',strcat(prefix,'.mat')),'ihuman');
 end
 
 % Write XLSX format
 if ismember('xlsx', formats)
-    exportToExcelFormat(ihuman,fullfile(path,'model','xlsx',strcat(prefix,'.xlsx')));
+    exportToExcelFormat(ihuman,fullfile(path,'model',strcat(prefix,'.xlsx')));
 end
 
 % Write XML format
@@ -109,7 +109,7 @@ if ismember('xml', formats)
     model = annotateModel(model);  % add annotation data to structure
     model = rmfield(model,'inchis');  % temporarily remove inchis until export function is updated
     model.id = regexprep(model.id,'-','');  % remove dash from model ID since it causes problems with SBML I/O
-    exportModel(model,fullfile(path,'model','xml',strcat(prefix,'.xml')));
+    exportModel(model,fullfile(path,'model',strcat(prefix,'.xml')));
 end
 
 %Save file with versions:
