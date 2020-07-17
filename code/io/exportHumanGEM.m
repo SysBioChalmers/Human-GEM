@@ -71,7 +71,7 @@ end
 
 % Write TXT format
 if ismember('txt', formats)
-    fid=fopen(fullfile(path,'model','txt',strcat(prefix,'.txt')),'w');
+    fid=fopen(fullfile(path,'model',strcat(prefix,'.txt')),'w');
     eqns=constructEquations(ihuman,ihuman.rxns,false,false,false,true);
     eqns=strrep(eqns,' => ','  -> ');
     eqns=strrep(eqns,' <=> ','  <=> ');
