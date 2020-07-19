@@ -33,7 +33,7 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Import with cobrapy
+    - name: Test import with cobrapy and consistency with annoation files
       run: |
         pip install cobra
-        python -c "import cobra ; cobra.io.load_yaml_model('modelFiles/yml/HumanGEM.yml')"
+        python -c "code/test/basicCheck.py"
