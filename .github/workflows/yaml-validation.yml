@@ -33,7 +33,7 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Test import with cobrapy and consistency with annoation files
+    - name: Test import with cobrapy and consistency with annotation files
       run: |
         pip install cobra
         python code/test/basicCheck.py
