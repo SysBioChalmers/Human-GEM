@@ -67,5 +67,5 @@ ihuman.rxnConfidenceScores(:) = 0;
 %% Save the model files
 
 writeHumanYaml(ihuman, 'humanGEM');
-movefile('humanGEM.yaml','../../ModelFiles/yml/');
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+movefile('Human-GEM.yml','../../model/');
+save('../../model/Human-GEM.mat','ihuman');

@@ -68,7 +68,7 @@ subSystems(rxnInd) = subsys_new(ind);
 ihuman.subSystems = subSystems;
 
 % save model
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 
 
 

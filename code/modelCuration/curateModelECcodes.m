@@ -83,6 +83,6 @@ fclose(fid);
 ihuman.eccodes = ec;
 
 % export to yml
-writeHumanYaml(ihuman, '../../modelFiles/yml/HumanGEM.yml');
+writeHumanYaml(ihuman, '../../model/HumanGEM.yml');
 
 

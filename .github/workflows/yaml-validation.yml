@@ -20,7 +20,9 @@ jobs:
       uses: ibiqlik/action-yamllint@v1.0.0
       with:
         ## File(s) or Directory, separate by space if multiple files or folder are specified
-        file_or_dir: modelFiles/
+        file_or_dir: model/
+        ## Path to custom configuration
+        # config_file: # optional
         ## Custom configuration (as YAML source)
         config_data: "{extends: default, rules: {line-length: disable}}"
         ## Format for parsing output [parsable,standard,colored,auto]
@@ -37,3 +39,7 @@ jobs:
       run: |
         pip install cobra
         python code/test/basicCheck.py
+
+    - name: Test cobrapy import
+      run: 
+        python -c "import cobra ; cobra.io.load_yaml_model('model/Human-GEM.yml')"

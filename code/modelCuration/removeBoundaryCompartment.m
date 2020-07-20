@@ -6,7 +6,7 @@
 %          in #172
 
 % load model
-ihuman = importHumanYaml('../../modelFiles/yml/HumanGEM.yml');
+ihuman = importHumanYaml('../../model/Human-GEM.yml');
 
 % delete unconstrained (boundary) metabolites
 model_del = simplifyModel(ihuman);
@@ -22,7 +22,7 @@ model_del.compNames(comp_ind) = [];
 
 
 % write new model to yml
-writeHumanYaml(model_del, '../../modelFiles/yml/HumanGEM.yml');
+writeHumanYaml(model_del, '../../model/Human-GEM.yml');
 
 
 % import metabolite annotations
