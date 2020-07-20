@@ -31,7 +31,7 @@
 fprintf('Loading and preparing GEMs... ');
 
 % Human GEM
-tmp = load('ModelFiles/mat/humanGEM.mat');  % loads as variable "ihuman"
+tmp = load('model/Human-GEM.mat');  % loads as variable "ihuman"
 ihuman = tmp.ihuman;
 
 % % HMR2
@@ -160,7 +160,7 @@ ihuman.rxnProtMat = rxnProtMat;
 
 %% Export model to .mat file
 
-save('ModelFiles/mat/humanGEM.mat','ihuman');
+save('model/Human-GEM.mat','ihuman');
 
 
 

@@ -123,4 +123,4 @@ movefile('curateFormulas4PAPS_rxnChanges.tsv','../../ComplementaryData/modelCura
 clearvars -except ihuman groupC
 
 % save model file
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');

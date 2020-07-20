@@ -299,7 +299,7 @@ writeRxnChanges(rxnChanges,'curateMitochMembraneComp_rxnChanges');
 %% clear intermediate variables and save final results
 
 clearvars -except ihuman rxnAssoc rxnChanges
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 save('../modelIntegration/rxnAssoc.mat','rxnAssoc');
 movefile('curateMitochMembraneComp_rxnChanges.tsv','../../ComplementaryData/modelCuration/');
 
