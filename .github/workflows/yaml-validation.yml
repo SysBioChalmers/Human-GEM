@@ -36,4 +36,4 @@ jobs:
     - name: Test import with cobrapy and consistency with annoation files
       run: |
         pip install cobra
-        python -c "code/test/basicCheck.py"
+        python code/test/basicCheck.py
