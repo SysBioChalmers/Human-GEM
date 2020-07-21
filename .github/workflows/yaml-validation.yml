@@ -13,6 +13,8 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
 
     - name: YAML Lint
       uses: ibiqlik/action-yamllint@v1.0.0
@@ -28,10 +30,15 @@ jobs:
         ## Return non-zero exit code on warnings as well as errors
         # strict: # optional, default is false
 
-    - name: Install cobrapy
+    - name: Set up Python 3
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Test import with cobrapy and consistency with annotation files
       run: |
-        sudo pip install pip --upgrade
-        sudo pip install cobra
+        pip install cobra
+        python code/test/basicCheck.py
 
     - name: Test cobrapy import
       run: 
