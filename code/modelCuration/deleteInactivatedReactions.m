@@ -19,7 +19,7 @@
 %% Process Human-GEM model
 
 % load model
-ihuman = importHumanYaml('../../modelFiles/yml/HumanGEM.yml');
+ihuman = importHumanYaml('../../model/Human-GEM.yml');
 
 % find all inactivated reactions
 inact_ind = find( (ihuman.ub == 0) & (ihuman.lb == 0) );
@@ -49,7 +49,7 @@ end
 % Note: No genes or compartments end up being removed
 
 % write new model to yml
-writeHumanYaml(model_del, '../../modelFiles/yml/HumanGEM.yml');
+writeHumanYaml(model_del, '../../modelFiles/Human-GEM.yml');
 
 
 %% Process Human-GEM annotation JSONs
