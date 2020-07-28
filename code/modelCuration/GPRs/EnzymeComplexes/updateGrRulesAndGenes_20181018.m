@@ -55,7 +55,7 @@ ihuman.grRules(rxn_ind) = regexprep(ihuman.grRules(rxn_ind),' and ENSG0000019876
 
 %% Export model
 
-save('../../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../../model/Human-GEM.mat','ihuman');
 
 
 

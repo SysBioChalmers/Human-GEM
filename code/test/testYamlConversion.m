@@ -11,7 +11,7 @@ function status = testYamlConversion
 modelPath=fileparts(fileparts(fileparts(ST(I).file)));
 
 % Import yaml model
-ymlFile=fullfile(modelPath,'modelFiles','yml','HumanGEM.yml');
+ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
 model = importHumanYaml(ymlFile, true);
 
 % make sure there is no intermediate Yaml file under the current folder
