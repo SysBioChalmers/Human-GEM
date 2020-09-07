@@ -28,10 +28,9 @@ Functions associated with input/output of files into and out of MATLAB, such as 
 Code used for technical purposes, typically to augment missing or inconvenient functionalities of MATLAB.
 
 ### modelCuration
-*DEPRECATED - WILL BE REMOVED*
-Contains the curation scripts/functions that were used to help keep track of changes made to the Human-GEM `.mat` file because it is binary, and/or were implemented for a one-time curation action. As such, their only remaining purpose is for transparency and re-tracing the steps of the curation process.
+Contains curation-related scripts and functions that were used to make changes to the Human-GEM model. These model curation scripts help to improve clarity of what changes were made to the model when the number of changes is too large to view practically, or when the changes were made directly to the Human-GEM `.mat` file (done before implementing the `.yml` workflow). Their only remaining purpose is for transparency and re-tracing the steps of the curation process.
 
-Since these scripts will forever remain in past versions of this repository but are no longer in use, all code in this directory is considered deprecated and will soon be **removed from future repository versions**.
+Note that all code in this directory is considered deprecated and will not be updated with later versions of Human-GEM.
 
 ### qc
 Functions to help with quality control (QC) of Human-GEM, such as checking for duplicate reactions or mass imbalances.

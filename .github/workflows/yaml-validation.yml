@@ -18,21 +18,18 @@ jobs:
       uses: ibiqlik/action-yamllint@v1.0.0
       with:
         ## File(s) or Directory, separate by space if multiple files or folder are specified
-        file_or_dir: modelFiles/
-        ## Path to custom configuration
-        # config_file: # optional
+        file_or_dir: model/
         ## Custom configuration (as YAML source)
         config_data: "{extends: default, rules: {line-length: disable}}"
-        ## Format for parsing output [parsable,standard,colored,auto]
-        # format: # optional, default is colored
         ## Return non-zero exit code on warnings as well as errors
         # strict: # optional, default is false
 
-    - name: Install cobrapy
-      run: |
-        sudo pip install pip --upgrade
-        sudo pip install cobra
+    - name: Set up Python 3
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
 
-    - name: Test cobrapy import
-      run: 
-        python -c "import cobra ; cobra.io.load_yaml_model('modelFiles/yml/HumanGEM.yml')"
+    - name: Test import with cobrapy and consistency with annotation files
+      run: |
+        pip install cobra
+        python code/test/basicCheck.py

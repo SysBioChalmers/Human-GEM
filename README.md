@@ -60,7 +60,7 @@ Detailed instructions on the installation and use of the Human-GEM model and rep
 
 ## Model Files
 
-The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `modelFiles/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `devel`), to facilitate tracking of model changes.
+The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `devel`), to facilitate tracking of model changes.
 
 
 
@@ -68,14 +68,14 @@ The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `mo
 
 #### Loading/saving the model
 
-`HumanGEM.mat` (Recommended if on `master` branch)
+`Human-GEM.mat` (Recommended if on `master` branch)
 * Load and save using the built-in MATLAB `load()` and `save()` functions.
 
-`HumanGEM.yml` (Recommended if on `devel` or other branches)
+`Human-GEM.yml` (Recommended if on `devel` or other branches)
 * Load using the `importHumanYaml.m` function (in `code/io/`)
 * Save using the `writeHumanYaml.m` function (in `code/io/`)
 
-`HumanGEM.xml` (SBML format)
+`Human-GEM.xml` (SBML format)
 * Load using the `importModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
 * Save using the `exportModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
 

@@ -119,4 +119,4 @@ movefile('fixFormulasWithFULLR.tsv','../../ComplementaryData/modelCuration/');
 %% initialize elements in rxnConfidenceScores field with 0 and save model
 
 ihuman.rxnConfidenceScores(:) = 0;
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');

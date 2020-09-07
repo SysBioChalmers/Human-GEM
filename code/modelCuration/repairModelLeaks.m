@@ -424,6 +424,6 @@ writeRxnChanges(rxnChanges,'repairModelLeaks_rxnChanges',true);
 %% Clear intermediate vars and save model file
 clearvars -except ihuman
 
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
 movefile('repairModelLeaks_rxnChanges.tsv','../../ComplementaryData/modelCuration/');
 

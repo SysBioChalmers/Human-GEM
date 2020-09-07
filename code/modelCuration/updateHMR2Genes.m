@@ -32,4 +32,4 @@ ihuman.grRules=newGrRules;
 ihuman.genes=newGenes;
 ihuman.rxnGeneMat=rxnGeneMat;
 ihuman.geneComps=ihuman.geneComps(1:numel(ihuman.genes));
-save('../../ModelFiles/mat/humanGEM.mat','ihuman');
+save('../../model/Human-GEM.mat','ihuman');
