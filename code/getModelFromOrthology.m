@@ -12,7 +12,7 @@ function [draftModel, removedRxns] = getModelFromOrthology(templateModel,ortholo
 %   templateModel    a model structures to be used as a template
 %
 %
-%   orthologPairs    an Nx2 cell array of the ortholog pairs, , where the
+%   orthologPairs    an Nx2 cell array of the ortholog pairs, where the
 %                    first column contains gene IDs from the reference
 %                    organism, and the second includes gene IDs of the
 %                    query organism
@@ -34,27 +34,23 @@ end
 
 % pre-process the template model
 
-% clean template model - to be refined
-% now it's a list non-standard fields. Later this part could be replace
-% with read in a list core fields, and remove the others not in this list
+% remove non-standard fields, if any
 fieldsToRemove = {'rxnFrom','metFrom'};
 templateModel = rmfield(templateModel, fieldsToRemove);
 
-% clear generic fields
+% clean metadata fields
 templateModel.id = '';
 templateModel.description = '';
 templateModel.version = '';
-templateModel.annotation = '';
+templateModel.annotation = structfun(@(x) '',templateModel.annotation,'UniformOutput',0);
 
 
-% a possible section to remove unnecessary subSystems
-
-% pre-check of grRules
+% find the index of non-empty grRules before replacing genes
 preNonEmptyRuleInd = find(~cellfun(@isempty, templateModel.grRules));
 
 
-% Replace genes according to the mapped orthologs, that should be in
-% designed format
+% Replace genes according to the mapped ortholog pairs, which should be in
+% the defined format (an Nx2 cell array)
 draftModel = templateModel;
 [grRules,genes,rxnGeneMat] = replaceGrRules(draftModel.grRules,orthologPairs);
 
@@ -65,16 +61,16 @@ draftModel.genes      = genes;
 draftModel.rxnGeneMat = rxnGeneMat;
 
 
-% post-check of grRules
+% find the index of non-empty grRules after replacing genes
 postNonEmptyRuleInd = find(~cellfun(@isempty, draftModel.grRules));
 
 
-% find and remove the rxns with empty grRules after ortholog replacement
+% remove the rxns whose grRules become empty after replacement of orthologs 
 if ~isequal(preNonEmptyRuleInd, postNonEmptyRuleInd) &&...
     all(ismember(postNonEmptyRuleInd, preNonEmptyRuleInd))
 
-    removedRxns = setdiff(preNonEmptyRuleInd, postNonEmptyRuleInd);
-    draftModel = removeReactions(draftModel, removedRxns, true, true, true);
+    rxnsToRemove = setdiff(preNonEmptyRuleInd, postNonEmptyRuleInd);
+    draftModel = removeReactions(draftModel, rxnsToRemove, true, true, true);
 end
 
 
