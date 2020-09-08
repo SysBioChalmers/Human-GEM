@@ -31,8 +31,6 @@ function [orthologPairs, orthologStructure] = extractAllianceGenomeOrthologs(hom
 %
 % Usage: [orthologPairs, orthologStructure] = extractAllianceGenomeOrthologs(homologFilename, countBest)
 %
-% Hao Wang, 2020-9-8
-%
 %
 
 if nargin<2
