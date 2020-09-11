@@ -65,12 +65,10 @@ draftModel.rxnGeneMat = rxnGeneMat;
 postNonEmptyRuleInd = find(~cellfun(@isempty, draftModel.grRules));
 
 
-% remove the rxns whose grRules become empty after replacement of orthologs 
-if ~isequal(preNonEmptyRuleInd, postNonEmptyRuleInd) &&...
-    all(ismember(postNonEmptyRuleInd, preNonEmptyRuleInd))
-
-    rxnsToRemove = setdiff(preNonEmptyRuleInd, postNonEmptyRuleInd);
-    draftModel = removeReactions(draftModel, rxnsToRemove, true, true, true);
+% remove the rxns whose grRules become empty after replacement of orthologs
+removedRxns = setdiff(preNonEmptyRuleInd, postNonEmptyRuleInd);
+if any(removedRxns)
+    draftModel = removeReactions(draftModel, removedRxns, true, true, true);
 end
 
 
