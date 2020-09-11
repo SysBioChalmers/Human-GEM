@@ -25,23 +25,14 @@ function [grRules_new,genes,rxnGeneMat] = replaceGrRules(grRules,idMapping)
 %
 % Outputs:
 %
-%   grRules_new  grRules with the gene IDs converted to the target format.
-%                If targetFormat is more than one ID type, then grRules 
-%                will be returned as a structure, with a different field
-%                for each gene ID type.
+%   grRules_new  grRules with the gene IDs converted to the new IDs.
 %
 %   genes        A list of all genes found in the converted grRules.
-%                If targetFormat is more than one ID type, then genes will
-%                be returned as a structure, with a different field for
-%                each gene ID type.
 %
-%   rxnGeneMat   A matrix associating reactions to genes, build from the
-%                converted grRules and genes list. If targetFormat is more
-%                than one ID type, then rxnGeneMat will be returned as a 
-%                structure, with a different field for each gene ID type.
+%   rxnGeneMat   A matrix associating reactions to genes, built from the
+%                converted grRules and genes list.
 %
-%
-%
+
 
 % handle input arguments
 if nargin < 2
@@ -72,7 +63,9 @@ end
 
 % conduct replacement
 
-% begin by "cleaning" the original grRules, is this necessary?
+% begin by "cleaning" the original grRules
+% this is not necessary but can speed up the translation if the original
+% grRules are not in a simplified format.
 rules_orig = cleanGrRules(grRules);
 
 % determine logical operator type and change to "&/|" for easy manipulation
@@ -99,7 +92,7 @@ grRules_new = regexprep(grRules_new, '[^&|\(\) ]+', '(${convertGeneId($0)})');
 % prepare output
 
 % clean up rules (removes extra parentheses, repeated genes, etc.)
-grRules_new = cleanGrRules(grRules_new);    
+grRules_new = cleanGrRules(grRules_new);
 
 % restore "&" as "and" and "|" as "or"
 if textBooleanType
