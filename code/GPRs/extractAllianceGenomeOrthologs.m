@@ -4,16 +4,17 @@ function [orthologPairs, orthologStructure] = extractAllianceGenomeOrthologs(hom
 %   database (alliancegenome.org) into a structure that is futher filtered
 %   according to following criteria:
 %
-% 1. Filter out the pairs that are neigher bestFroward nor bestReverse
-% 2. Keep all single-hit pair
-% 3. For the rest, keep those bestFroward and bestReverse are both 'Yes'
-% 4. If step 3 exclude all hits, only keep the one(s) has the highest 
+% 1. Filter out the pairs that are neither bestForward nor bestReverse
+% 2. Keep all single-hit pairs
+% 3. For the rest, keep those bestForward and bestReverse are both 'Yes'
+% 4. If step 3 excludes all hits, only keep the one(s) has the highest 
 %    `methodCount`
 %
 % Input:
-%   homologFilename    the homolog file downloaded from AllianceGenome through API
+%   homologFilename    the homolog file downloaded from AllianceGenome
+%                      through API
 %
-%   countBest          filter out the ones that are neigher best froward
+%   countBest          filter out the ones that are neither best forward
 %                      nor best reverse orthologs (optional, default TRUE)
 %
 % Output:
@@ -75,7 +76,7 @@ end
 
 % check countBest
 if countBest
-    % get the index of ortholog-pairs that are neigher best froward nor reverse
+    % get the index of ortholog-pairs that are neigher best forward nor reverse
     indToRemove = intersect(find(ismember(orthologStructure.best,'No')),...
                             find(ismember(orthologStructure.bestReverse,'No')));
     for i = 1:length(fieldList)
@@ -104,7 +105,7 @@ indMoreHit = find(countHits.frequency > 1);
 for i=1:length(indMoreHit)
     indMore = find(ismember(orthologStructure.fromGeneId, countHits.uniqueList{indMoreHit(i)}));
     
-    % try to keep only those bestFroward and bestReverse are both 'Yes'
+    % try to keep only those bestForward and bestReverse are both 'Yes'
     noBestForwardReverse = 1;
     for j=1:length(indMore)
         if isequal(orthologStructure.best{indMore(j)}, 'Yes') &&...
