@@ -50,13 +50,12 @@ end
 
 % remove duplicate genes
 genes_orig  = unique(genes_orig,'stable');
-inputIdList = unique(idMapping(:,1),'stable');
 
 % idMapping should be a NX2 cell array
 if ~(size(idMapping,2) == 2)
     error('The idMapping data structure must be a NX2 cell array.');
 % input genes should be consistent with those retrieved from grRules
-elseif ~(ismember(inputIdList, genes_orig))
+elseif all(~ismember(idMapping(:,1), genes_orig))
     error('The input genes are Not consistent with those retrieved from grRules.');
 end
 
