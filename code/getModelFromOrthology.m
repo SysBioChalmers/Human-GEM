@@ -35,7 +35,7 @@ end
 % pre-process the template model
 
 % remove non-standard fields, if any
-fieldsToRemove = setdiff({'rxnFrom','metFrom'}, fieldnames(templateModel));
+fieldsToRemove = intersect({'rxnFrom','metFrom'}, fieldnames(templateModel));
 templateModel = rmfield(templateModel, fieldsToRemove);
 
 % clean metadata fields
