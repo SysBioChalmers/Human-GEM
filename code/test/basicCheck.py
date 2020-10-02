@@ -22,7 +22,12 @@ def load_yml(yml_file):
     for m in model.metabolites:
         modelMets.append(m.id)
 
-    return modelRxns, modelMets
+    # get list of genes
+    modelGenes = []
+    for g in model.genes:
+        modelGenes.append(g.id)
+
+    return modelRxns, modelMets, modelGenes
 
 
 def checkRxnAnnotation(rxns):
@@ -47,9 +52,21 @@ def checkMetAnnotation(mets):
     assert metList == mets, "Metabolite annoation mismatch!"
 
 
+def checkGeneAnnotation(genes):
+    """
+    check consistency of gene lists between model and annoation file
+    """
+    geneJsonFile = "data/annotation/humanGEMGeneAssoc.JSON"
+    with open(geneJsonFile) as geneJson:
+        geneAssoc = json.load(geneJson)
+    geneList = geneAssoc.get('genes', None)
+    assert geneList == genes, "Metabolite annoation mismatch!"
+
+
 if __name__ == "__main__":
-    rxns, mets = load_yml("model/Human-GEM.yml")
+    rxns, mets, genes = load_yml("model/Human-GEM.yml")
     checkRxnAnnotation(rxns)
     checkMetAnnotation(mets)
+    checkGeneAnnotation(genes)
     print("Everything passed")
 
