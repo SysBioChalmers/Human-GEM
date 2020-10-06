@@ -12,20 +12,10 @@ def load_yml(yml_file):
     """
     model = cobra.io.load_yaml_model(yml_file)
 
-    # get list of rxns
-    modelRxns = []
-    for r in model.reactions:
-        modelRxns.append(r.id)
-
-    # get list of mets
-    modelMets = []
-    for m in model.metabolites:
-        modelMets.append(m.id)
-
-    # get list of genes
-    modelGenes = []
-    for g in model.genes:
-        modelGenes.append(g.id)
+    # get lists of rxns, mets and genes
+    modelRxns  = list(map(lambda element : element.id, model.reactions))
+    modelMets  = list(map(lambda element : element.id, model.metabolites))
+    modelGenes = list(map(lambda element : element.id, model.genes))
 
     return modelRxns, modelMets, modelGenes
 
@@ -60,7 +50,7 @@ def checkGeneAnnotation(genes):
     with open(geneJsonFile) as geneJson:
         geneAssoc = json.load(geneJson)
     geneList = geneAssoc.get('genes', None)
-    assert geneList == genes, "Metabolite annoation mismatch!"
+    assert geneList == genes, "Gene annoation mismatch!"
 
 
 if __name__ == "__main__":
