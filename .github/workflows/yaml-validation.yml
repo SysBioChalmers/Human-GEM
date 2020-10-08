@@ -32,4 +32,4 @@ jobs:
     - name: Test import with cobrapy and consistency with annotation files
       run: |
         pip install cobra
-        python code/test/basicCheck.py
+        python code/test/sanityCheck.py
