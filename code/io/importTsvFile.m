@@ -40,7 +40,7 @@ end
 % read the second line of the file to determine the column formats
 fid = fopen(filename);
 fgetl(fid);  % skip first line (column names)
-L = strsplit(fgetl(fid), '\t');
+L = strsplit(fgetl(fid), '\t', 'CollapseDelimiters', false);
 fclose(fid);
 
 % load file import options and modify with expected column formats
