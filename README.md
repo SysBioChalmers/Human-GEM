@@ -26,7 +26,7 @@ This repository contains the latest version of Human-GEM, a human genome-scale m
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|:-----:|
-|_Homo sapiens_ |   HMR2, Recon3D, iHsa|    13416|  8458|  3628|
+|_Homo sapiens_ |   HMR2, Recon3D, iHsa|    13101|  8400|  3626|
 
 
 ### Administration
