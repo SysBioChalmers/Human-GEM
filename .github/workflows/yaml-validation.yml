@@ -31,5 +31,6 @@ jobs:
 
     - name: Test import with cobrapy and consistency with annotation files
       run: |
+        pip install -U pip
         pip install cobra
         python code/test/sanityCheck.py
