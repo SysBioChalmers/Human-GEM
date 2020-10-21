@@ -128,14 +128,15 @@ end
 
 % load and organize gene annotation data
 if ismember('gene',lower(annType))
-    % there is not a .JSON annotation file for genes because it is
-    % unnecessary - we will instead use the grRule translation function,
-    % which uses gene annotations retrieved from the Ensembl database.
-    geneAssoc.genes = model.genes;
-    geneAssoc.geneNames = regexprep(translateGrRules(geneAssoc.genes,'Name'),' or ','; ');  % HGNC Symbols
-    geneAssoc.geneEnsemblID = model.genes;
-    geneAssoc.geneEntrezID = regexprep(translateGrRules(geneAssoc.genes,'Entrez'),' or ','; ');
-    geneAssoc.geneUniProtID = regexprep(translateGrRules(geneAssoc.genes,'UniProt'),' or ','; ');
+    [ST, I] = dbstack('-completenames');
+    path = fileparts(ST(I).file);
+    tmpfile = fullfile(path,'../data/annotation','genes.tsv');
+    geneAssoc = importTsvFile(tmpfile);
+    
+    % add geneEnsemblID field if missing
+    if ~isfield(geneAssoc, 'geneEnsemblID')
+        geneAssoc.geneEnsemblID = geneAssoc.genes;
+    end
     
     geneAssocArray = struct2cell(geneAssoc);
     geneAssocArray = horzcat(geneAssocArray{:});
@@ -222,6 +223,9 @@ if ( addMiriams )
         %       model, we do not need to map model.genes to the geneAssoc
         %       structure - the indexing should be identical.
         
+        % map model genes to those in the association structures
+        [hasGene,geneInd] = ismember(model.genes,geneAssoc.genes);
+        
         % add geneMiriams field if it does not exist or if overwrite is TRUE
         if ~isfield(model,'geneMiriams') || overwrite
             model.geneMiriams = repmat({''},size(model.genes));
@@ -234,8 +238,10 @@ if ( addMiriams )
         
         % add new data to the geneMiriams field
         for i = 1:numel(model.genes)
-            % add annotations
-            model.geneMiriams{i} = appendMiriamData(model.geneMiriams{i}, miriamNames, miriamValues(i,:)');
+            if hasGene(i)
+                % add annotation
+                model.geneMiriams{i} = appendMiriamData(model.geneMiriams{i}, miriamNames, miriamValues(geneInd(i),:)');
+            end
             % add SBO term (SBO:0000243, "gene" for all genes)
             model.geneMiriams{i} = appendMiriamData(model.geneMiriams{i}, {'sbo'}, {'SBO:0000243'});
         end
@@ -282,7 +288,13 @@ if ( addFields )
                 end
                 ids(hasMet) = allAssoc.(f{i})(metInd(hasMet));
             case 'gene'
-                ids = allAssoc.(f{i});
+                [hasGene,geneInd] = ismember(model.genes,geneAssoc.genes);
+                if isnumeric(allAssoc.(f{i}))
+                    ids = NaN(size(model.genes));
+                else
+                    ids = repmat({''},size(model.genes));
+                end
+                ids(hasGene) = allAssoc.(f{i})(geneInd(hasGene));
             otherwise
                 continue
         end
