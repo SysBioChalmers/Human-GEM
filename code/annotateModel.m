@@ -303,8 +303,8 @@ if ( addFields )
             model.(f{i}) = ids;
         else
             % merge new IDs with existing IDs
-            merged_ids = join([model.(f{i}), ids],'; ');
-            merged_ids = arrayfun(@(id) strjoin(unique(split(id,'; ')),'; '), merged_ids, 'UniformOutput', false);
+            merged_ids = join([model.(f{i}), ids],';');
+            merged_ids = arrayfun(@(id) strjoin(unique(split(id,';')),';'), merged_ids, 'UniformOutput', false);
             model.(f{i}) = regexprep(merged_ids,'^;\s*','');  % remove any preceding semicolons
         end
         
