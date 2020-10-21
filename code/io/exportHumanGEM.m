@@ -100,7 +100,8 @@ end
 
 % Write XLSX format
 if ismember('xlsx', formats)
-    exportToExcelFormat(ihuman,fullfile(path,'model',strcat(prefix,'.xlsx')));
+    model = annotateModel(ihuman);  % add annotation data to structure
+    exportToExcelFormat(model,fullfile(path,'model',strcat(prefix,'.xlsx')));
 end
 
 % Write XML format
