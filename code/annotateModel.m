@@ -91,8 +91,8 @@ id2miriam = {%reactions
 if any(ismember({'rxn','reaction'},lower(annType)))
     [ST, I] = dbstack('-completenames');
     path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../data/annotation','humanGEMRxnAssoc.JSON');
-    rxnAssoc = jsondecode(fileread(tmpfile));
+    tmpfile = fullfile(path,'../data/annotation','reactions.tsv');
+    rxnAssoc = importTsvFile(tmpfile);
     
     rxnAssocArray = struct2cell(rxnAssoc);
     numericFields = find(cellfun(@isnumeric, rxnAssocArray));
@@ -109,8 +109,8 @@ end
 if any(ismember({'met','metabolite'},lower(annType)))
     [ST, I] = dbstack('-completenames');
     path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../data/annotation','humanGEMMetAssoc.JSON');
-    metAssoc = jsondecode(fileread(tmpfile));
+    tmpfile = fullfile(path,'../data/annotation','metabolites.tsv');
+    metAssoc = importTsvFile(tmpfile);
     
     % ChEBI IDs should be of the form "CHEBI:#####"
     metAssoc.metChEBIID = regexprep(metAssoc.metChEBIID,'(^)(\d+)|(;\s*)(\d+)','$1CHEBI:$2');
