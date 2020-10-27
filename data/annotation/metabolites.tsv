@@ -940,7 +940,7 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "m00569c"	"m00569"	"23dpg"	"C01159"	""	"CHEBI:17720"	""	""	""	""	"23dpg"	"MNXM146487;MNXM892"	"m00569c"
 "m00570c"	"m00570"	""	"C02355"	""	""	"439715"	""	""	""	"23cump"	"MNXM3150"	"m00570c"
 "m00571c"	"m00571"	""	"C14848"	""	""	""	""	""	""	"M00571"	"MNXM9754"	"m00571c"
-"m00572c"	"m00572"	"dkmpp"	"C15650"	""	"CHEBI:50604"	"561"	""	""	""	"dkmpp"	"MNXM409"	"m00572c"
+"m00572c"	"m00572"	"dkmpp"	"C15650"	""	"CHEBI:50604"	"561"	""	""	""	"dkmpp"	"MNXM162358"	"m00572c"
 "m00573c"	"m00573"	"23doguln"	"C04575"	"HMDB06511"	"CHEBI:15622"	"53477844"	""	""	""	"23doguln"	"MNXM958"	"m00573c"
 "m00574c"	"m00574"	""	"C06148"	""	""	""	""	""	"HC01710"	"HC01710"	"MNXM4269"	"m00574c"
 "m00574n"	"m00574"	""	"C06148"	""	""	""	""	""	"HC01710"	"HC01710"	"MNXM4269"	"m00574n"
