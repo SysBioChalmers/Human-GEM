@@ -10883,7 +10883,7 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "ALAGLYLYSr"	""	"ALAGLYLYSr"	""	""	""	"ALAGLYLYSr"	""	""	""	""	0	""
 "ALAHISALAr"	""	"ALAHISALAr"	""	""	""	"ALAHISALAr"	""	""	""	""	0	""
 "ALALYSTHRr"	""	"ALALYSTHRr"	""	""	""	"ALALYSTHRr"	""	""	""	""	0	""
-"ARGALAALAr"	""	"ARGALAALAr"	""	""	""	"ARGALAALAr"	""	""	""	""	0	""
+"ARGALAALAr"	""	"ARGALAALAr"	""	""	""	"ARGALAALAr"	"MNXR154704"	""	""	""	0	""
 "ARGALAPHEr"	""	"ARGALAPHEr"	""	""	""	"ARGALAPHEr"	""	""	""	""	0	""
 "ARGALATHRr"	""	"ARGALATHRr"	""	""	""	"ARGALATHRr"	""	""	""	""	0	""
 "ARGARGr"	""	"ARGARGr"	""	""	""	"ARGARGr"	""	""	""	""	0	""
