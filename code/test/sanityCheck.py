@@ -2,7 +2,7 @@
 
 """Test functions"""
 
-import json
+import pandas as pd
 import cobra
 
 
@@ -22,35 +22,29 @@ def load_yml(yml_file):
 
 def checkRxnAnnotation(rxns):
     """
-    check consistency of rxn lists between model and annoation file
+    check consistency of rxn lists between model and annotation file
     """
-    rxnJsonFile = "data/annotation/humanGEMRxnAssoc.JSON"
-    with open(rxnJsonFile) as rxnJson:
-        rxnAssoc = json.load(rxnJson)
-    rxnList = rxnAssoc.get('rxns', None)
-    assert rxnList == rxns, "Reaction annoation mismatch!"
+    rxnAssoc = pd.read_table("data/annotation/reactions.tsv")
+    rxnList = rxnAssoc['rxns'].to_list()
+    assert rxnList == rxns, "Reaction annotation mismatch!"
 
 
 def checkMetAnnotation(mets):
     """
-    check consistency of met lists between model and annoation file
+    check consistency of met lists between model and annotation file
     """
-    metJsonFile = "data/annotation/humanGEMMetAssoc.JSON"
-    with open(metJsonFile) as metJson:
-        metAssoc = json.load(metJson)
-    metList = metAssoc.get('mets', None)
-    assert metList == mets, "Metabolite annoation mismatch!"
+    metAssoc = pd.read_table("data/annotation/metabolites.tsv")
+    metList = metAssoc['mets'].to_list()
+    assert metList == mets, "Metabolite annotation mismatch!"
 
 
 def checkGeneAnnotation(genes):
     """
-    check consistency of gene lists between model and annoation file
+    check consistency of gene lists between model and annotation file
     """
-    geneJsonFile = "data/annotation/humanGEMGeneAssoc.JSON"
-    with open(geneJsonFile) as geneJson:
-        geneAssoc = json.load(geneJson)
-    geneList = geneAssoc.get('genes', None)
-    assert geneList == genes, "Gene annoation mismatch!"
+    geneAssoc = pd.read_table("data/annotation/genes.tsv")
+    geneList = geneAssoc['genes'].to_list()
+    assert geneList == genes, "Gene annotation mismatch!"
 
 
 if __name__ == "__main__":
