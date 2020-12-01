@@ -91,7 +91,7 @@ id2miriam = {%reactions
 if any(ismember({'rxn','reaction'},lower(annType)))
     [ST, I] = dbstack('-completenames');
     path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../data/annotation','reactions.tsv');
+    tmpfile = fullfile(path,'../model','reactions.tsv');
     rxnAssoc = importTsvFile(tmpfile);
     
     rxnAssocArray = struct2cell(rxnAssoc);
@@ -109,7 +109,7 @@ end
 if any(ismember({'met','metabolite'},lower(annType)))
     [ST, I] = dbstack('-completenames');
     path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../data/annotation','metabolites.tsv');
+    tmpfile = fullfile(path,'../model','metabolites.tsv');
     metAssoc = importTsvFile(tmpfile);
     
     % ChEBI IDs should be of the form "CHEBI:#####"
@@ -130,7 +130,7 @@ end
 if ismember('gene',lower(annType))
     [ST, I] = dbstack('-completenames');
     path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../data/annotation','genes.tsv');
+    tmpfile = fullfile(path,'../model','genes.tsv');
     geneAssoc = importTsvFile(tmpfile);
     
     % add geneEnsemblID field if missing
