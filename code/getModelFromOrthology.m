@@ -55,7 +55,7 @@ draftModel = templateModel;
 [grRules,genes,rxnGeneMat] = replaceGrRules(draftModel.grRules,orthologPairs);
 
 
-% Update with modified fields
+% Update with modified gene fields
 draftModel.grRules    = grRules;
 draftModel.genes      = genes;
 draftModel.rxnGeneMat = rxnGeneMat;
@@ -71,4 +71,17 @@ if any(removedRxns)
     draftModel = removeReactions(draftModel, removedRxns, true, true, true);
 end
 
+
+%% re-organize biomass
+
+% block all biomass equations
+ind = find(startsWith(draftModel.rxns,'biomass'));
+draftModel.ub(ind) = 0;
+draftModel.lb(ind) = 0;
+draftModel.c(ind)  = 0;
+
+% reset object function to "biomass_components"
+indComponents = getIndexes(draftModel,'biomass_components','rxns');
+draftModel.ub(indComponents) = 1000;
+draftModel.c(indComponents)  = 1;
 
