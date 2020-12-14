@@ -59,6 +59,13 @@ if ~all(taskReport.ok)
     error('Gap-filling process failed in enabling the biomass object function to carry flux.');
 end
 
+% clean/remove fields introducted by above steps (e.g. fitTasks)
+fieldsToRemove = {'rxnFrom', 'metFrom', 'geneFrom'};
+outModel = rmfield(outModel, fieldsToRemove);
+if ismember('id',fieldnames(outModel))
+    outModel.id = '';
+end
+
 
 %% empty newly introduced grRules
 
