@@ -66,7 +66,7 @@ The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `mo
 
 ## Reaction, Metabolite, and Gene Annotations
 
-Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes can be found in the respective `reactions.tsv`, `metabolites.tsv`, and `genes.tsv` files in the `data/annotation/` subdirectory. To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
+Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes can be found in the respective `reactions.tsv`, `metabolites.tsv`, and `genes.tsv` files in the `model/` directory. To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
 
 
 
