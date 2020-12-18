@@ -24,7 +24,7 @@ def checkRxnAnnotation(rxns):
     """
     check consistency of rxn lists between model and annotation file
     """
-    rxnAssoc = pd.read_table("data/annotation/reactions.tsv")
+    rxnAssoc = pd.read_table("model/reactions.tsv")
     rxnList = rxnAssoc['rxns'].to_list()
     assert rxnList == rxns, "Reaction annotation mismatch!"
 
@@ -33,7 +33,7 @@ def checkMetAnnotation(mets):
     """
     check consistency of met lists between model and annotation file
     """
-    metAssoc = pd.read_table("data/annotation/metabolites.tsv")
+    metAssoc = pd.read_table("model/metabolites.tsv")
     metList = metAssoc['mets'].to_list()
     assert metList == mets, "Metabolite annotation mismatch!"
 
@@ -42,7 +42,7 @@ def checkGeneAnnotation(genes):
     """
     check consistency of gene lists between model and annotation file
     """
-    geneAssoc = pd.read_table("data/annotation/genes.tsv")
+    geneAssoc = pd.read_table("model/genes.tsv")
     geneList = geneAssoc['genes'].to_list()
     assert geneList == genes, "Gene annotation mismatch!"
 
