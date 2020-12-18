@@ -47,10 +47,10 @@ refModel = addBoundaryMets(refModel);
 path = fileparts(ST(I).file);
 essentialTasks = fullfile(path,'../data/metabolicTasks','metabolicTasks_Essential.xlsx');
 taskStruct = parseTaskList(essentialTasks);
-taskStruct = taskStruct(end);
+%taskStruct = taskStruct(end);
 
 % gap-filling with fitTask
-fprintf('Start gap-filling...\n');
+fprintf('Start gap-filling for essential tasks...\n');
 [outModel, addedRxns]=fitTasks(model,refModel,[],true,[],taskStruct);
 
 % confirm the growth
@@ -61,7 +61,7 @@ end
 
 % clean/remove fields introducted by above steps (e.g. fitTasks)
 fieldsToRemove = {'rxnFrom', 'metFrom', 'geneFrom'};
-outModel = rmfield(outModel, fieldsToRemove);
+outModel = rmfield(outModel, intersect(fieldsToRemove,fieldnames(outModel)));
 if ismember('id',fieldnames(outModel))
     outModel.id = '';
 end
@@ -70,7 +70,8 @@ end
 %% empty newly introduced grRules
 
 % clean the grRules associated with gap-filling reactions
-[~, ind] = ismember(refModel.rxns(addedRxns), outModel.rxns);
+gapfilledRxns = setdiff(outModel.rxns, model.rxns);
+[~, ind] = ismember(gapfilledRxns, outModel.rxns);
 outModel.grRules(ind) = {''};
 
 % re-generate gene and rxnGeneMat fields
