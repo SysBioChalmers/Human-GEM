@@ -49,6 +49,17 @@ essentialTasks = fullfile(path,'../data/metabolicTasks','metabolicTasks_Essentia
 taskStruct = parseTaskList(essentialTasks);
 %taskStruct = taskStruct(end);
 
+% re-organize biomass in human reference, first block all biomass equations
+ind = find(startsWith(refModel.rxns,'biomass'));
+refModel.ub(ind) = 0;
+refModel.lb(ind) = 0;
+refModel.c(ind)  = 0;
+
+% reset object function to "biomass_components"
+indComponents = getIndexes(refModel,'biomass_components','rxns');
+refModel.ub(indComponents) = 1000;
+refModel.c(indComponents)  = 1;
+
 % gap-filling with fitTask
 fprintf('Start gap-filling for essential tasks...\n');
 [outModel, addedRxns]=fitTasks(model,refModel,[],true,[],taskStruct);
@@ -57,6 +68,8 @@ fprintf('Start gap-filling for essential tasks...\n');
 taskReport = checkTasks(outModel,[],false,false,false,taskStruct);
 if ~all(taskReport.ok)
     error('Gap-filling process failed in enabling the biomass object function to carry flux.');
+else
+    fprintf('Gap-filling is completed sucessfully.\n');
 end
 
 % clean/remove fields introducted by above steps (e.g. fitTasks)
