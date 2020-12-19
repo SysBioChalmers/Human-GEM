@@ -1,4 +1,4 @@
-function [outModel, modelChanges]=gapfill4Biomass(model,refModel)
+function [outModel, modelChanges]=gapfill4EssentialTasks(model,refModel,resetBiomass)
 % gapfill4Biomass
 %   Fill gaps for the input model using "fitTasks" and based on the reference
 %   model so that the resulting model can grow on Ham's media
@@ -6,6 +6,9 @@ function [outModel, modelChanges]=gapfill4Biomass(model,refModel)
 %   Input:
 %   model           model structure
 %   refModel        reference model from which to retrieve reactions
+%   resetBiomass    reset biomass objective function to "biomass_componenets"
+%                   which is constituted by generic componenets that
+%                   suppose to occur in a eukaryotic cell (opt, default TRUE) 
 %
 %
 %   Output:
@@ -18,13 +21,17 @@ function [outModel, modelChanges]=gapfill4Biomass(model,refModel)
 %                   in the modelChanges.mets field
 %                   
 %
-%   Usage: [outModel, modelChanges]=gapfill4Biomass(model,refModel)
+%   Usage: [outModel, modelChanges]=gapfill4EssentialTasks(model,refModel,resetBiomass)
 %
 %
 
 % handle input arguments
 if nargin < 2
     error('No enough input.');
+end
+
+if nargin < 3
+    resetBiomass = true;
 end
 
 % confirm the relations of input model and reference model - share 50% rxns
@@ -39,6 +46,11 @@ model_orig = model;
 model = addBoundaryMets(model);
 refModel = addBoundaryMets(refModel);
 
+% reset biomass function
+if resetBiomass
+    model = changeBiomass2Components(model);
+    refModel = changeBiomass2Components(refModel);
+end
 
 %% gap-filling
 
@@ -49,20 +61,10 @@ essentialTasks = fullfile(path,'../data/metabolicTasks','metabolicTasks_Essentia
 taskStruct = parseTaskList(essentialTasks);
 %taskStruct = taskStruct(end);
 
-% re-organize biomass in human reference, first block all biomass equations
-ind = find(startsWith(refModel.rxns,'biomass'));
-refModel.ub(ind) = 0;
-refModel.lb(ind) = 0;
-refModel.c(ind)  = 0;
-
-% reset object function to "biomass_components"
-indComponents = getIndexes(refModel,'biomass_components','rxns');
-refModel.ub(indComponents) = 1000;
-refModel.c(indComponents)  = 1;
 
 % gap-filling with fitTask
 fprintf('Start gap-filling for essential tasks...\n');
-[outModel, addedRxns]=fitTasks(model,refModel,[],true,[],taskStruct);
+outModel=fitTasks(model,refModel,[],true,[],taskStruct);
 
 % confirm the growth
 taskReport = checkTasks(outModel,[],false,false,false,taskStruct);
@@ -100,3 +102,24 @@ outModel = simplifyModel(outModel);
 modelChanges = docModelChanges(model_orig, outModel);
 
 
+
+%% re-organize biomass
+function outputModel= changeBiomass2Components(inputModel)
+
+outputModel = inputModel;
+
+% block all biomass equations
+ind = find(startsWith(outputModel.rxns,'biomass'));
+outputModel.ub(ind) = 0;
+outputModel.lb(ind) = 0;
+outputModel.c(ind)  = 0;
+
+% reset object function to "biomass_components"
+indComponents = getIndexes(outputModel,'biomass_components','rxns');
+outputModel.ub(indComponents) = 1000;
+outputModel.c(indComponents)  = 1;
+
+end
+
+
+end
