@@ -102,6 +102,8 @@ outModel = simplifyModel(outModel);
 modelChanges = docModelChanges(model_orig, outModel);
 
 
+end
+
 
 %% re-organize biomass
 function outputModel= changeBiomass2Components(inputModel)
@@ -121,5 +123,3 @@ outputModel.c(indComponents)  = 1;
 
 end
 
-
-end
