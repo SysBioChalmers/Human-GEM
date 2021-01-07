@@ -107,7 +107,6 @@ end
 % Write XML format
 if ismember('xml', formats)
     model = annotateModel(ihuman);  % add annotation data to structure
-    model = rmfield(model,'inchis');  % temporarily remove inchis until export function is updated
     model.id = regexprep(model.id,'-','');  % remove dash from model ID since it causes problems with SBML I/O
     exportModel(model,fullfile(path,'model',strcat(prefix,'.xml')));
 end
