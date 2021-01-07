@@ -140,7 +140,7 @@ newGenes = getGenesFromGrRules(rxnsToAdd.grRules);
 
 % remove genes that are already existed in model
 if any(ismember(newGenes, newModel.genes))
-    fprintf('One or more genes to be added already exist in the model and removed\n');
+    fprintf('One or more genes to be added already exist in the model，therefore they will be merged.\n');
     newGenes = setdiff(newGenes, newModel.genes);
 end
 
