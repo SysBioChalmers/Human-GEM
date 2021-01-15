@@ -55,7 +55,7 @@ draftModel = templateModel;
 [grRules,genes,rxnGeneMat] = replaceGrRules(draftModel.grRules,orthologPairs);
 
 
-% Update with modified fields
+% Update with modified gene fields
 draftModel.grRules    = grRules;
 draftModel.genes      = genes;
 draftModel.rxnGeneMat = rxnGeneMat;
