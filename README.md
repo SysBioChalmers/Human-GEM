@@ -1,6 +1,7 @@
 # Human-GEM: The generic genome-scale metabolic model of _Homo sapiens_
 
 [![Join the chat at https://gitter.im/SysBioChalmers/Human-GEM](https://badges.gitter.im/SysBioChalmers/Human-GEM.svg)](https://gitter.im/SysBioChalmers/Human-GEM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub version](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM.svg)](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM)
+[![DOI](https://zenodo.org/badge/105752644.svg)](https://zenodo.org/badge/latestdoi/105752644)
 
 ### Brief Model Description
 
@@ -61,6 +62,11 @@ Detailed instructions on the installation and use of the Human-GEM model and rep
 ## Model Files
 
 The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `devel`), to facilitate tracking of model changes.
+
+
+## Reaction, Metabolite, and Gene Annotations
+
+Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes can be found in the respective `reactions.tsv`, `metabolites.tsv`, and `genes.tsv` files in the `model/` directory. To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
 
 
 

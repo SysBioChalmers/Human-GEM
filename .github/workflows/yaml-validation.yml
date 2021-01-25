@@ -29,7 +29,11 @@ jobs:
       with:
         python-version: '3.x'
 
+    - name: Install GLPK, dependecy for swiglpk
+      run: sudo apt-get install glpk-utils libglpk-dev
+
     - name: Test import with cobrapy and consistency with annotation files
       run: |
+        pip install -U pip
         pip install cobra
         python code/test/sanityCheck.py
