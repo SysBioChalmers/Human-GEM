@@ -100,13 +100,13 @@ end
 
 % Write XLSX format
 if ismember('xlsx', formats)
-    model = annotateModel(ihuman);  % add annotation data to structure
+    model = annotateGEM(ihuman);  % add annotation data to structure
     exportToExcelFormat(model,fullfile(path,'model',strcat(prefix,'.xlsx')));
 end
 
 % Write XML format
 if ismember('xml', formats)
-    model = annotateModel(ihuman);  % add annotation data to structure
+    model = annotateGEM(ihuman);  % add annotation data to structure
     model.id = regexprep(model.id,'-','');  % remove dash from model ID since it causes problems with SBML I/O
     exportModel(model,fullfile(path,'model',strcat(prefix,'.xml')));
 end
