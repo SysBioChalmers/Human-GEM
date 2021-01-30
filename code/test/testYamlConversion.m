@@ -12,7 +12,7 @@ modelPath=fileparts(fileparts(fileparts(ST(I).file)));
 
 % Import yaml model
 ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
-model = importHumanYaml(ymlFile, true);
+model = importYaml(ymlFile, true);
 
 % make sure there is no intermediate Yaml file under the current folder
 warning('off', 'MATLAB:DELETE:FileNotFound')
@@ -22,8 +22,8 @@ end
 
 
 % export to yml and then import back
-writeHumanYaml(model,'testYamlConversion.yml');
-importedHumanGEM = importHumanYaml('testYamlConversion.yml', true);
+exportYaml(model,'testYamlConversion.yml');
+importedHumanGEM = importYaml('testYamlConversion.yml', true);
 
 % remove intermediate Yaml file
 delete testYamlConversion.yml;
