@@ -78,8 +78,8 @@ Additional annotation information and external identifiers for Human-GEM reactio
 * Load and save using the built-in MATLAB `load()` and `save()` functions.
 
 `Human-GEM.yml` (Recommended if on `devel` or other branches)
-* Load using the `importHumanYaml.m` function (in `code/io/`)
-* Save using the `writeHumanYaml.m` function (in `code/io/`)
+* Load using the `importYaml.m` function (in `code/io/`)
+* Save using the `exportYaml.m` function (in `code/io/`)
 
 `Human-GEM.xml` (SBML format)
 * Load using the `importModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
