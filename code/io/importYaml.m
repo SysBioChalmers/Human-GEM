@@ -1,9 +1,9 @@
-function model=importHumanYaml(yamlFilename, silentMode)
-% importHumanYaml
+function model=importYaml(yamlFilename, silentMode)
+% importYaml
 %   Imports a yaml file matching (roughly) the cobrapy yaml structure
 %
 %   Input:
-%   yamlFile    a file in yaml model structure. As defined in HumanGEM, the
+%   yamlFile    a file in yaml model structure. As defined in Human-GEM, the
 %               yaml file contains 5 sections: metaData, metabolites,
 %               reactions, genes and compartments
 %   silentMode  set as true to turn off notificaiton messages (opt, default
@@ -12,7 +12,7 @@ function model=importHumanYaml(yamlFilename, silentMode)
 %   Output:
 %   model       a model structure
 %
-%   Usage: model=importYaml(yamlFilename, silentMode)
+%   Usage: model = importYaml(yamlFilename, silentMode)
 %
 % This function is to reverse engineer the RAVEN function `writeYaml`
 %

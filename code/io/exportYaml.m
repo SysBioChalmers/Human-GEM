@@ -1,12 +1,11 @@
-function writeHumanYaml(model,name)
-% writeHumanYaml  Write a yaml file for HumanGEM.
-%
-%   Writes a yaml file that is similar to the cobrapy yaml structure, but
-%   contains some minor changes and a header file for compatibility with
+function exportYaml(model,name)
+% exportYaml  
+%   Exports a yaml file matching (roughly) the cobrapy yaml structure, but
+%   contains some changes and a 'metadata' section for compatibile with
 %   the Metabolic Atlas. Adapted from RAVEN's "writeYaml" function.
 %
 % Usage: 
-%   writeYaml(model,name);
+%   exportYaml(model,name)
 %
 % Input:
 %   model       a model structure
