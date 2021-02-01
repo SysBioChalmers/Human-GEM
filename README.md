@@ -61,7 +61,7 @@ Detailed instructions on the installation and use of the Human-GEM model and rep
 
 ## Model Files
 
-The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `devel`), to facilitate tracking of model changes.
+The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `develop`), to facilitate tracking of model changes.
 
 
 ## Reaction, Metabolite, and Gene Annotations
@@ -77,9 +77,9 @@ Additional annotation information and external identifiers for Human-GEM reactio
 `Human-GEM.mat` (Recommended if on `master` branch)
 * Load and save using the built-in MATLAB `load()` and `save()` functions.
 
-`Human-GEM.yml` (Recommended if on `devel` or other branches)
-* Load using the `importHumanYaml.m` function (in `code/io/`)
-* Save using the `writeHumanYaml.m` function (in `code/io/`)
+`Human-GEM.yml` (Recommended if on `develop` or other branches)
+* Load using the `importYaml.m` function (in `code/io/`)
+* Save using the `exportYaml.m` function (in `code/io/`)
 
 `Human-GEM.xml` (SBML format)
 * Load using the `importModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))

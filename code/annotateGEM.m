@@ -1,4 +1,4 @@
-function annModel = annotateModel(model,annType,addMiriams,addFields,overwrite)
+function annModel = annotateGEM(model,annType,addMiriams,addFields,overwrite)
 % Add reaction, metabolite, and/or gene annotation to a model.
 %
 % Input:
@@ -35,7 +35,7 @@ function annModel = annotateModel(model,annType,addMiriams,addFields,overwrite)
 %
 % Usage:
 %
-%   annModel = annotateMets(model,annType,addMiriams,addFields);
+%   annModel = annotateGEM(model,annType,addMiriams,addFields,overwrite);
 %
 
 
