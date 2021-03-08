@@ -34,7 +34,7 @@ end
 
 % check orthologPairs and ensure the structure is correct
 if ~iscell(orthologPairs) || size(orthologPairs, 2) ~= 2
-    error('the structure of orthologPairs is incorrect!');
+    error('The data structure of ortholog pairs is incorrect!');
 end
 
 if nargin < 4
@@ -44,8 +44,22 @@ end
 
 %% Load Human-GEM as template
 
+% get model path
+[ST, I]=dbstack('-completenames');
+modelPath=fileparts(fileparts(ST(I).file));
+
 % Human-GEM has to be included into Matlab path
-load('Human-GEM.mat');  % latest version
+matFile=fullfile(modelPath,'model','Human-GEM.mat');
+ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
+if isfile(matFile)
+    fprintf('Load Human-GEM from Matlab file.\n');
+    load(matFile);
+elseif isfile(ymlFile)
+    fprintf('Load Human-GEM from Yaml file.\n');
+    ihuman = importYaml(ymlFile);
+else
+    error('ERROR: No model file is found!');
+end
 
 % convert gene identifiers from Ensembl ids to gene symbols
 [grRules,genes,rxnGeneMat] = translateGrRules(ihuman.grRules,'Name','ENSG');
@@ -54,32 +68,43 @@ ihuman.genes      = genes;
 ihuman.rxnGeneMat = rxnGeneMat;
 
 
-%% Use MA reactions identifiers 
-
-% load reaction annotaiton files
-rxnAssoc = importTsvFile('reactions.tsv');
-
-% check reaction annotation structure
-if isequal(rxnAssoc.rxns, ihuman.rxns)
-    error('There is inconsistency found in the reaction annotaiton file.');
-else
-    ihuman.rxns = rxnAssoc.rxnMAID;
-end
-
-
 %% get animal GEM with updated ortholog pairs and species-specific network
 
 % get ortholog-GEM based on provide ortholog pairs
 orthologGEM = getModelFromOrthology(ihuman, orthologPairs);
 
 % integrate species-specific metabolic network
+if ~iscell(rxnsToAdd.subSystems{1})
+    rxnsToAdd.subSystems = cellfun(@(s) {{s}}, rxnsToAdd.subSystems);
+end
 [animalGEM, speciesSpecNetwork] = addMetabolicNetwork(orthologGEM, rxnsToAdd, metsToAdd);
 
 
 %% Gap-filling
 [animalGEM, gapfillNetwork]=gapfill4EssentialTasks(animalGEM,ihuman);
 
-% post-gapfilling procedures
-animalGEM.id = modelId;
+
+
+%% post-gapfilling procedures
+
+% Use MA reactions identifiers 
+rxnAssoc = importTsvFile('reactions.tsv');
+
+% check reaction annotation structure
+if ~isequal(rxnAssoc.rxns, ihuman.rxns)
+    error('There is inconsistency found in the reaction annotaiton file.');
+else
+    [hits, ind] = ismember(animalGEM.rxns, rxnAssoc.rxns);
+    animalGEM.rxns(hits) = rxnAssoc.rxnMAID(ind(hits));
+end
+% this replacement would be unnecessary after the implementation of MA ids
+% as Human-GEM rxn ids
+
+% add ids
+if ~isempty(modelId)
+    animalGEM.id = modelId;
+end
+
+
 
 
