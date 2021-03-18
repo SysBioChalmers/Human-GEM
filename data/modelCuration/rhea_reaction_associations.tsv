@@ -105,15 +105,21 @@ RE2513N	RHEA:28218	chloride[n] + H+[n] + H2O2[n] <=> H2O[n] + hypochlorite[n]	ch
 4HBZFm	RHEA:11949	4-hydroxybenzoyl-CoA[m] + H2O[m] => 4-hydroxybenzoate[m] + CoA[m] + H+[m]	4-hydroxybenzoyl-CoA + H2O => 4-hydroxybenzoate + CoA + H(+)	Equation
 ACACtx	RHEA:29754	acetoacetate[c] <=> acetoacetate[p]	acetoacetate(in) <=> acetoacetate(out)	Equation
 ACCOAL	RHEA:29844	ATP[c] + CoA[c] + propanoate[c] => ADP[c] + Pi[c] + propanoyl-CoA[c]	ATP + CoA + propanoate => ADP + phosphate + propanoyl-CoA	Equation
+ACNAMt2	RHEA:28988; RHEA:28989	H+[s] + N-acetylneuraminate[s] => H+[c] + N-acetylneuraminate[c]	H(+)(in) + N-acetylneuraminate(in) => H(+)(out) + N-acetylneuraminate(out); H(+)(out) + N-acetylneuraminate(out) => H(+)(in) + N-acetylneuraminate(in)	Equation
+ACNAMtr	RHEA:28993; RHEA:28992	N-acetylneuraminate[c] => N-acetylneuraminate[s]	N-acetylneuraminate(out) => N-acetylneuraminate(in); N-acetylneuraminate(in) => N-acetylneuraminate(out)	Equation
 ADNCNT3tc	RHEA:29990	adenosine[s] + H+[s] <=> adenosine[c] + H+[c]	adenosine(in) + H(+)(in) <=> adenosine(out) + H(+)(out)	Equation
 ADNK3	RHEA:52533	adenosine[c] + GTP[c] => AMP[c] + GDP[c] + H+[c]	adenosine + GTP => AMP + GDP + H(+)	Equation
 ADNK4	RHEA:52537	adenosine[c] + dGTP[c] => AMP[c] + dGDP[c] + H+[c]	adenosine + dGTP => AMP + dGDP + H(+)	Equation
 ARACHFATPc	RHEA:46209	ATP[c] + CoA[c] + eicosanoate[s] => AMP[c] + eicosanoyl-CoA[c] + PPi[c]	ATP + CoA + eicosanoate => AMP + diphosphate + eicosanoyl-CoA	Equation
 ATPasel	RHEA:13066	ATP[c] + H2O[c] => ADP[c] + H+[l] + Pi[c]	ATP + H2O => ADP + H(+) + phosphate	Equation
+ATPtg	RHEA:35000; RHEA:35001	ADP[g] + ATP[c] => ADP[c] + ATP[g]	ADP(in) + ATP(out) => ADP(out) + ATP(in); ADP(out) + ATP(in) => ADP(in) + ATP(out)	Equation
+BALAPAT1tc	RHEA:29460; RHEA:29461	beta-alanine[s] + H+[s] => beta-alanine[c] + H+[c]	beta-alanine(in) + H(+)(in) => beta-alanine(out) + H(+)(out); beta-alanine(out) + H(+)(out) => beta-alanine(in) + H(+)(in)	Equation
+BTNTe	RHEA:28459; RHEA:28460	biotin[c] => biotin[s]	biotin(in) => biotin(out); biotin(out) => biotin(in)	Equation
 BZt	RHEA:32814	benzoate[s] <=> benzoate[c]	benzoate(in) <=> benzoate(out)	Equation
 BZtm	RHEA:32814	benzoate[c] <=> benzoate[m]	benzoate(in) <=> benzoate(out)	Equation
 BZtr	RHEA:32814	benzoate[c] <=> benzoate[r]	benzoate(in) <=> benzoate(out)	Equation
 C05463t1	RHEA:50081	ATP[c] + H2O[c] + taurodeoxycholate[c] => ADP[c] + H+[c] + Pi[c] + taurodeoxycholate[s]	ATP + H2O + taurodeoxycholate(in) => ADP + H(+) + phosphate + taurodeoxycholate(out)	Equation
+CARPEPT1tc	RHEA:64406; RHEA:64405	carnosine[s] + H+[s] => carnosine[c] + H+[c]	carnosine(in) + H(+)(in) => carnosine(out) + H(+)(out); carnosine(out) + H(+)(out) => carnosine(in) + H(+)(in)	Equation
 CATr	RHEA:20310	2 H2O2[r] => 2 H2O[r] + O2[r]	2 H2O2 => 2 H2O + O2	Equation
 CHSTEROLt2	RHEA:39750	cholesterol[r] <=> cholesterol[m]	cholesterol(in) <=> cholesterol(out)	Equation
 CITL	RHEA:10761	citrate[c] => acetate[c] + OAA[c]	citrate => acetate + oxaloacetate	Equation
@@ -124,6 +130,7 @@ DUTPDP	RHEA:10249	dUTP[c] + H2O[c] => dUMP[c] + H+[c] + PPi[c]	dUTP + H2O => dip
 ESTROSABCCte	RHEA:61349; RHEA:65957	ATP[c] + estrone 3-sulfate[c] + H2O[c] => ADP[c] + estrone 3-sulfate[s] + H+[c] + Pi[c]	ATP + estrone 3-sulfate(in) + H2O => ADP + estrone 3-sulfate(out) + H(+) + phosphate; ATP + estrone 3-sulfate(out) + H2O => ADP + estrone 3-sulfate(in) + H(+) + phosphate	Equation
 ESTRSABCtc	RHEA:61349; RHEA:65957	ATP[c] + estrone 3-sulfate[s] + H2O[c] => ADP[c] + estrone 3-sulfate[c] + H+[c] + Pi[c]	ATP + estrone 3-sulfate(in) + H2O => ADP + estrone 3-sulfate(out) + H(+) + phosphate; ATP + estrone 3-sulfate(out) + H2O => ADP + estrone 3-sulfate(in) + H(+) + phosphate	Equation
 FADDPle	RHEA:13890	FAD[s] + H2O[s] => AMP[s] + FMN[s] + 2 H+[s]	FAD + H2O => AMP + FMN + 2 H(+)	Equation
+FE2tm	RHEA:29441; RHEA:29440; RHEA:29581; RHEA:29580	Fe2+[c] + H+[i] => Fe2+[m] + H+[m]	Fe(2+)(out) + H(+)(in) => Fe(2+)(in) + H(+)(out); Fe(2+)(in) + H(+)(out) => Fe(2+)(out) + H(+)(in); Fe(2+)(out) + H(+)(out) => Fe(2+)(in) + H(+)(in); Fe(2+)(in) + H(+)(in) => Fe(2+)(out) + H(+)(out)	Equation
 FMNALKPle	RHEA:35588	FMN[s] + H2O[s] => Pi[s] + riboflavin[s]	FMN + H2O => phosphate + riboflavin	Equation
 GALTt	RHEA:33146	galactitol[c] <=> galactitol[s]	galactitol(in) <=> galactitol(out)	Equation
 GLCRt1	RHEA:28477	D-glucarate[s] <=> D-glucarate[c]	D-glucarate(in) <=> D-glucarate(out)	Equation
@@ -143,6 +150,7 @@ HMR_0446	RHEA:29678	glycerol[c] <=> glycerol[m]	glycerol(in) <=> glycerol(out)	E
 HMR_0636	RHEA:12838	ATP[c] + choline[c] => ADP[c] + H+[c] + phosphocholine[c]	ATP + choline => ADP + H(+) + phosphocholine	Equation
 HMR_0638	RHEA:18998	CTP[c] + H+[c] + phosphocholine[c] => CDP-choline[c] + PPi[c]	CTP + H(+) + phosphocholine => CDP-choline + diphosphate	Equation
 HMR_0641	RHEA:17562	acetylcholine[c] + H2O[c] => acetate[c] + choline[c] + H+[c]	acetylcholine + H2O => acetate + choline + H(+)	Equation
+HMR_0917	RHEA:27927; RHEA:27928	UMP[c] => UMP[g]	UMP(in) => UMP(out); UMP(out) => UMP(in)	Equation
 HMR_10072	RHEA:15858	NADP+[c] + 17alpha,20alpha-Dihydroxypregn-4-en-3-one[c] => 17alpha-hydroxyprogesterone[c] + H+[c] + NADPH[c]	17alpha,20alpha-dihydroxypregn-4-en-3-one + NADP(+) => 17alpha-hydroxyprogesterone + H(+) + NADPH	Equation
 HMR_1080	RHEA:22325	H2O[c] + leukotriene A4[c] => leukotriene B4[c]	H2O + leukotriene A4 => leukotriene B4	Equation
 HMR_1081	RHEA:17619	GSH[c] + leukotriene A4[c] => leukotriene C4[c]	glutathione + leukotriene A4 => leukotriene C4	Equation
@@ -363,25 +371,33 @@ HMR_4854	RHEA:29326	fumarate[c] + succinate[m] <=> fumarate[m] + succinate[c]	fu
 HMR_4882	RHEA:27320	uracil[c] <=> uracil[s]	uracil(in) <=> uracil(out)	Equation
 HMR_4883	RHEA:29670	H2O[c] <=> H2O[r]	H2O(in) <=> H2O(out)	Equation
 HMR_4885	RHEA:29670	H2O[c] <=> H2O[s]	H2O(in) <=> H2O(out)	Equation
+HMR_4887	RHEA:29669; RHEA:29668	H2O[c] => H2O[l]	H2O(out) => H2O(in); H2O(in) => H2O(out)	Equation
 HMR_4888	RHEA:29670	H2O[c] <=> H2O[m]	H2O(in) <=> H2O(out)	Equation
 HMR_4890	RHEA:29670	H2O[c] <=> H2O[p]	H2O(in) <=> H2O(out)	Equation
 HMR_4892	RHEA:29670	H2O[c] <=> H2O[g]	H2O(in) <=> H2O(out)	Equation
 HMR_4893	RHEA:29670	H2O[c] <=> H2O[n]	H2O(in) <=> H2O(out)	Equation
+HMR_4906	RHEA:35000; RHEA:35001	ADP[r] + ATP[c] => ADP[c] + ATP[r]	ADP(in) + ATP(out) => ADP(out) + ATP(in); ADP(out) + ATP(in) => ADP(in) + ATP(out)	Equation
+HMR_4907	RHEA:35000; RHEA:35001	ADP[l] + ATP[c] => ADP[c] + ATP[l]	ADP(in) + ATP(out) => ADP(out) + ATP(in); ADP(out) + ATP(in) => ADP(in) + ATP(out)	Equation
 HMR_4908	RHEA:35002	ADP[c] + ATP[p] <=> ADP[p] + ATP[c]	ADP(in) + ATP(out) <=> ADP(out) + ATP(in)	Equation
+HMR_4926	RHEA:64722; RHEA:64721	H+[c] + pyruvate[c] => H+[m] + pyruvate[m]	H(+)(in) + pyruvate(in) => H(+)(out) + pyruvate(out); H(+)(out) + pyruvate(out) => H(+)(in) + pyruvate(in)	Equation
+HMR_4928	RHEA:64722; RHEA:64721	H+[s] + pyruvate[s] => H+[c] + pyruvate[c]	H(+)(in) + pyruvate(in) => H(+)(out) + pyruvate(out); H(+)(out) + pyruvate(out) => H(+)(in) + pyruvate(in)	Equation
 HMR_4930	RHEA:64723	H+[c] + pyruvate[c] <=> H+[p] + pyruvate[p]	H(+)(out) + pyruvate(out) <=> H(+)(in) + pyruvate(in)	Equation
 HMR_4942	RHEA:29682	formate[c] <=> formate[r]	formate(in) <=> formate(out)	Equation
 HMR_4944	RHEA:29682	formate[c] <=> formate[m]	formate(in) <=> formate(out)	Equation
 HMR_4949	RHEA:32802	urea[c] <=> urea[s]	urea(in) <=> urea(out)	Equation
 HMR_4951	RHEA:32802	urea[c] <=> urea[m]	urea(in) <=> urea(out)	Equation
 HMR_4954	RHEA:32754	choline[c] <=> choline[s]	choline(out) <=> choline(in)	Equation
+HMR_4957	RHEA:33184; RHEA:33185	citrate[m] => citrate[c]	citrate(in) => citrate(out); citrate(out) => citrate(in)	Equation
 HMR_4993	RHEA:28473	pyridoxine[c] <=> pyridoxine[s]	pyridoxine(in) <=> pyridoxine(out)	Equation
 HMR_4994	RHEA:35042	spermidine[c] <=> spermidine[s]	spermidine(in) <=> spermidine(out)	Equation
 HMR_5000	RHEA:35270	ethanol[c] <=> ethanol[s]	ethanol(in) <=> ethanol(out)	Equation
 HMR_5010	RHEA:28469	pyridoxamine[c] <=> pyridoxamine[s]	pyridoxamine(in) <=> pyridoxamine(out)	Equation
 HMR_5022	RHEA:28750	NH4+[c] <=> NH4+[m]	NH4(+)(in) <=> NH4(+)(out)	Equation
 HMR_5023	RHEA:28750	NH4+[c] <=> NH4+[s]	NH4(+)(in) <=> NH4(+)(out)	Equation
+HMR_5043	RHEA:29941; RHEA:29940	H+[i] + Pi[c] => H+[m] + Pi[m]	H(+)(out) + phosphate(out) => H(+)(in) + phosphate(in); H(+)(in) + phosphate(in) => H(+)(out) + phosphate(out)	Equation
 HMR_5045	RHEA:39750	cholesterol[l] <=> cholesterol[r]	cholesterol(in) <=> cholesterol(out)	Equation
 HMR_5046	RHEA:39750	cholesterol[l] <=> cholesterol[m]	cholesterol(in) <=> cholesterol(out)	Equation
+HMR_5047	RHEA:32825; RHEA:32824	Pi[l] => Pi[c]	phosphate(out) => phosphate(in); phosphate(in) => phosphate(out)	Equation
 HMR_5138	RHEA:16014	ATP[c] + glycine[c] + tRNA(gly)[c] => AMP[c] + glycyl-tRNA(gly)[c] + PPi[c]	ATP + glycine + tRNA(Gly) => AMP + diphosphate + glycyl-tRNA(Gly)	Equation
 HMR_5292	RHEA:27817	acetate[c] <=> acetate[m]	acetate(in) <=> acetate(out)	Equation
 HMR_5294	RHEA:10761	citrate[m] => acetate[m] + OAA[m]	citrate => acetate + oxaloacetate	Equation
@@ -391,11 +407,21 @@ HMR_5301	RHEA:27651	GTP[c] + uridine[c] => GDP[c] + H+[c] + UMP[c]	GTP + uridine
 HMR_5342	RHEA:29942	H+[c] + Pi[c] <=> H+[r] + Pi[r]	H(+)(in) + phosphate(in) <=> H(+)(out) + phosphate(out)	Equation
 HMR_5344	RHEA:29942	H+[c] + Pi[c] <=> H+[p] + Pi[p]	H(+)(in) + phosphate(in) <=> H(+)(out) + phosphate(out)	Equation
 HMR_5353	RHEA:12700	ADP[c] + dGDP[c] <=> ATP[c] + dGMP[c]	ATP + dGMP <=> ADP + dGDP	Equation
+HMR_5413	RHEA:29941; RHEA:29940	H+[s] + Pi[s] => H+[c] + Pi[c]	H(+)(out) + phosphate(out) => H(+)(in) + phosphate(in); H(+)(in) + phosphate(in) => H(+)(out) + phosphate(out)	Equation
+HMR_5420	RHEA:28487; RHEA:28488	Fe2+[c] => Fe2+[m]	Fe(2+)(in) => Fe(2+)(out); Fe(2+)(out) => Fe(2+)(in)	Equation
 HMR_5424	RHEA:28994	N-acetylneuraminate[c] <=> N-acetylneuraminate[n]	N-acetylneuraminate(in) <=> N-acetylneuraminate(out)	Equation
 HMR_5442	RHEA:29788; RHEA:29792	ATP[c] + GSH[c] + H2O[c] => ADP[c] + GSH[s] + H+[c] + Pi[c]	ATP + glutathione(in) + H2O => ADP + glutathione(out) + H(+) + phosphate; ATP + glutathione(out) + H2O => ADP + glutathione(in) + H(+) + phosphate	Equation
 HMR_5446	RHEA:16462	ATP[c] + H2O[c] + urate[c] => ADP[c] + H+[c] + Pi[c] + urate[s]	ATP + H2O + urate(in) => ADP + H(+) + phosphate + urate(out)	Equation
+HMR_5987	RHEA:29441; RHEA:29440; RHEA:29581; RHEA:29580	Fe2+[s] + H+[s] => Fe2+[c] + H+[c]	Fe(2+)(out) + H(+)(in) => Fe(2+)(in) + H(+)(out); Fe(2+)(in) + H(+)(out) => Fe(2+)(out) + H(+)(in); Fe(2+)(out) + H(+)(out) => Fe(2+)(in) + H(+)(in); Fe(2+)(in) + H(+)(in) => Fe(2+)(out) + H(+)(out)	Equation
+HMR_5993	RHEA:32124; RHEA:32125	citrate[s] + H+[s] => citrate[c] + H+[c]	citrate(in) + H(+)(in) => citrate(out) + H(+)(out); citrate(out) + H(+)(out) => citrate(in) + H(+)(in)	Equation
+HMR_6058	RHEA:29824; RHEA:29825	chloride[s] => chloride[c]	chloride(in) => chloride(out); chloride(out) => chloride(in)	Equation
+HMR_6246	RHEA:50985; RHEA:50986	prostaglandin E2[s] => prostaglandin E2[c]	prostaglandin E2(out) => prostaglandin E2(in); prostaglandin E2(in) => prostaglandin E2(out)	Equation
+HMR_6247	RHEA:50989; RHEA:50990	prostaglandin F2alpha[s] => prostaglandin F2alpha[c]	prostaglandin F2alpha(out) => prostaglandin F2alpha(in); prostaglandin F2alpha(in) => prostaglandin F2alpha(out)	Equation
 HMR_6253	RHEA:50995	thromboxane B2[c] <=> thromboxane B2[s]	thromboxane B2(out) <=> thromboxane B2(in)	Equation
+HMR_6266	RHEA:50977; RHEA:50978	prostaglandin D2[s] => prostaglandin D2[c]	prostaglandin D2(out) => prostaglandin D2(in); prostaglandin D2(in) => prostaglandin D2(out)	Equation
+HMR_6268	RHEA:50981; RHEA:50982	prostaglandin E1[s] => prostaglandin E1[c]	prostaglandin E1(out) => prostaglandin E1(in); prostaglandin E1(in) => prostaglandin E1(out)	Equation
 HMR_6328	RHEA:35002	ADP[c] + ATP[m] <=> ADP[m] + ATP[c]	ADP(in) + ATP(out) <=> ADP(out) + ATP(in)	Equation
+HMR_6371	RHEA:28900; RHEA:28901	glycine[s] + H+[s] => glycine[c] + H+[c]	glycine(in) + H(+)(in) => glycine(out) + H(+)(out); glycine(out) + H(+)(out) => glycine(in) + H(+)(in)	Equation
 HMR_6464	RHEA:45113	gamma-tocopherol[c] + H+[c] + NADPH[c] + O2[c] => 13-hydroxy-gamma-tocopherol[c] + H2O[c] + NADP+[c]	gamma-tocopherol + H(+) + NADPH + O2 => 13-hydroxy-gamma-tocopherol + H2O + NADP(+)	Equation
 HMR_6465	RHEA:45113	gamma-tocopherol[r] + H+[r] + NADPH[r] + O2[r] => 13-hydroxy-gamma-tocopherol[r] + H2O[r] + NADP+[r]	gamma-tocopherol + H(+) + NADPH + O2 => 13-hydroxy-gamma-tocopherol + H2O + NADP(+)	Equation
 HMR_6505	RHEA:35018	riboflavin[c] <=> riboflavin[s]	riboflavin(in) <=> riboflavin(out)	Equation
@@ -420,8 +446,11 @@ HMR_6955	RHEA:22591	1-pyrroline[m] + H2O[m] <=> 4-aminobutanal[m]	4-aminobutanal
 HMR_6965	RHEA:19908	dehydrospermidine[c] + H+[c] + NADH[c] <=> NAD+[c] + spermidine[c]	NAD(+) + spermidine <=> dehydrospermidine + H(+) + NADH	Equation
 HMR_6991	RHEA:28986	nitrite[c] <=> nitrite[s]	nitrite(in) <=> nitrite(out)	Equation
 HMR_7196	RHEA:28990	H+[c] + N-acetylneuraminate[c] <=> H+[l] + N-acetylneuraminate[l]	H(+)(in) + N-acetylneuraminate(in) <=> H(+)(out) + N-acetylneuraminate(out)	Equation
+HMR_7638	RHEA:34980; RHEA:34981	H+[c] => H+[m]	H(+)(in) => H(+)(out); H(+)(out) => H(+)(in)	Equation
+HMR_7645	RHEA:28904; RHEA:28905	D-alanine[s] + H+[s] => D-alanine[c] + H+[c]	D-alanine(in) + H(+)(in) => D-alanine(out) + H(+)(out); D-alanine(out) + H(+)(out) => D-alanine(in) + H(+)(in)	Equation
 HMR_7665	RHEA:28461	biotin[c] <=> biotin[n]	biotin(in) <=> biotin(out)	Equation
 HMR_7701	RHEA:11261	H+[c] + NADPH[c] + O2[c] => H2O2[c] + NADP+[c]	H(+) + NADPH + O2 => H2O2 + NADP(+)	Equation
+HMR_7705	RHEA:29448; RHEA:29449	glycolate[c] => glycolate[p]	glycolate(in) => glycolate(out); glycolate(out) => glycolate(in)	Equation
 HMR_7713	RHEA:29376	AMP[l] + H2O[l] => adenosine[l] + Pi[l]	AMP + H2O => adenosine + phosphate	Equation
 HMR_7715	RHEA:27929	UMP[c] <=> UMP[l]	UMP(in) <=> UMP(out)	Equation
 HMR_7716	RHEA:29360	H2O[l] + UMP[l] => Pi[l] + uridine[l]	H2O + UMP => phosphate + uridine	Equation
@@ -509,16 +538,22 @@ HMR_8778	RHEA:20002	glycolaldehyde[m] + H2O[m] + NAD+[m] => glycolate[m] + 2 H+[
 HMR_8784	RHEA:31060	H2O[c] + imidazole-4-acetaldehyde[c] + NAD+[c] => 2 H+[c] + imidazole-4-acetate[c] + NADH[c]	H2O + imidazole-4-acetaldehyde + NAD(+) => 2 H(+) + imidazole-4-acetate + NADH	Equation
 HMR_8786	RHEA:31060	H2O[m] + imidazole-4-acetaldehyde[m] + NAD+[m] => 2 H+[m] + imidazole-4-acetate[m] + NADH[m]	H2O + imidazole-4-acetaldehyde + NAD(+) => 2 H(+) + imidazole-4-acetate + NADH	Equation
 HMR_8796	RHEA:27851	glycine[c] + phenylacetyl-CoA[c] => CoA[c] + phenylacetylglycine[c]	glycine + phenylacetyl-CoA => CoA + H(+) + phenylacetylglycine	Equation
+HMR_8834	RHEA:32825; RHEA:32824	Pi[g] => Pi[c]	phosphate(out) => phosphate(in); phosphate(in) => phosphate(out)	Equation
 HMR_8859	RHEA:27929	UMP[c] <=> UMP[r]	UMP(in) <=> UMP(out)	Equation
+HMR_8860	RHEA:60369; RHEA:60370	urate[p] => urate[c]	urate(out) => urate(in); urate(in) => urate(out)	Equation
 HMR_8871	RHEA:29682	formate[c] <=> formate[n]	formate(in) <=> formate(out)	Equation
 HMR_8907	RHEA:33178	4-hydroxyphenylacetate[c] <=> 4-hydroxyphenylacetate[s]	4-hydroxyphenylacetate(in) <=> 4-hydroxyphenylacetate(out)	Equation
 HMR_8921	RHEA:34874	methanol[c] <=> methanol[r]	methanol(out) <=> methanol(in)	Equation
+HMR_9191	RHEA:29457; RHEA:29456	D-serine[s] => D-serine[c]	D-serine(out) => D-serine(in); D-serine(in) => D-serine(out)	Equation
+HMR_9197	RHEA:28487; RHEA:28488	Fe2+[c] => Fe2+[s]	Fe(2+)(in) => Fe(2+)(out); Fe(2+)(out) => Fe(2+)(in)	Equation
+HMR_9198	RHEA:60369; RHEA:60370	urate[s] => urate[c]	urate(out) => urate(in); urate(in) => urate(out)	Equation
 HMR_9558	RHEA:14370	2-phosphoglycolate[c] + H2O[c] => glycolate[c] + Pi[c]	2-phosphoglycolate + H2O => glycolate + phosphate	Equation
 HMR_9626	RHEA:34986	sulfate[r] <=> sulfate[c]	sulfate(in) <=> sulfate(out)	Equation
 HMR_9675	RHEA:29450	glycolate[m] <=> glycolate[c]	glycolate(in) <=> glycolate(out)	Equation
 HMR_9679	RHEA:27817	acetate[p] <=> acetate[c]	acetate(in) <=> acetate(out)	Equation
 HMR_9734	RHEA:33516	O2[c] + 2 5,6-dihydroxyindole[c] => 2 H2O[c] + 2 indole-5,6-quinone[c]	2 5,6-dihydroxyindole + O2 => 2 H2O + 2 indole-5,6-quinone	Equation
 HMR_9798	RHEA:11225	ATP[c] + 2 D-alanine[c] => ADP[c] + H+[c] + Pi[c] + D-alanyl-D-alanine[c]	ATP + 2 D-alanine => ADP + D-alanyl-D-alanine + H(+) + phosphate	Equation
+Htmi	RHEA:34980; RHEA:34981	H+[i] => H+[m]	H(+)(in) => H(+)(out); H(+)(out) => H(+)(in)	Equation
 Htr	RHEA:34982	H+[c] <=> H+[r]	H(+)(in) <=> H(+)(out)	Equation
 Htx	RHEA:34982	H+[c] <=> H+[p]	H(+)(in) <=> H(+)(out)	Equation
 INSK	RHEA:21141	ATP[c] + inosine[c] => ADP[c] + H+[c] + IMP[c]	ATP + inosine => ADP + H(+) + IMP	Equation
@@ -531,6 +566,7 @@ NH4tp	RHEA:28750	NH4+[c] <=> NH4+[p]	NH4(+)(in) <=> NH4(+)(out)	Equation
 NH4tr	RHEA:28750	NH4+[c] <=> NH4+[r]	NH4(+)(in) <=> NH4(+)(out)	Equation
 NO2te	RHEA:28982	H+[s] + nitrite[s] <=> H+[c] + nitrite[c]	H(+)(out) + nitrite(in) <=> H(+)(in) + nitrite(out)	Equation
 OAADC	RHEA:15642	H+[c] + OAA[c] => CO2[c] + pyruvate[c]	H(+) + oxaloacetate => CO2 + pyruvate	Equation
+PIt2mi	RHEA:29941; RHEA:29940	H+[i] + Pi[i] => H+[m] + Pi[m]	H(+)(out) + phosphate(out) => H(+)(in) + phosphate(in); H(+)(in) + phosphate(in) => H(+)(out) + phosphate(out)	Equation
 PIter	RHEA:32826	Pi[r] <=> Pi[c]	phosphate(in) <=> phosphate(out)	Equation
 PItx	RHEA:32826	Pi[c] <=> Pi[p]	phosphate(in) <=> phosphate(out)	Equation
 PMEVKx	RHEA:16342	(R)-5-phosphomevalonate[p] + ATP[p] => (R)-5-diphosphomevalonate[p] + ADP[p]	(R)-5-phosphomevalonate + ATP => (R)-5-diphosphomevalonate + ADP	Equation
@@ -550,6 +586,7 @@ r0941	RHEA:28698	HCO3-[c] <=> HCO3-[m]	hydrogencarbonate(in) <=> hydrogencarbona
 r1017	RHEA:50053; RHEA:65965	ATP[p] + H2O[p] + taurocholate[p] => ADP[p] + H+[p] + Pi[p] + taurocholate[s]	ATP + H2O + taurocholate(in) => ADP + H(+) + phosphate + taurocholate(out); ATP + H2O + taurocholate(out) => ADP + H(+) + phosphate + taurocholate(in)	Equation
 r1029	RHEA:50065	ATP[p] + H2O[p] + taurochenodeoxycholate[p] => ADP[p] + H+[p] + Pi[p] + taurochenodeoxycholate[s]	ATP + H2O + taurochenodeoxycholate(in) => ADP + H(+) + phosphate + taurochenodeoxycholate(out)	Equation
 r1162	RHEA:10193	ATP[c] + H2O[c] + sulfate[c] => ADP[c] + H+[c] + Pi[c] + sulfate[s]	ATP + H2O + sulfate(out) => ADP + H(+) + phosphate + sulfate(in)	Equation
+r1423	RHEA:32825; RHEA:32824	Pi[c] => Pi[s]	phosphate(out) => phosphate(in); phosphate(in) => phosphate(out)	Equation
 RDH2a	RHEA:54917	9-cis-retinol[c] + NADP+[c] => 9-cis-retinal[c] + H+[c] + NADPH[c]	9-cis-retinol + NADP(+) => 9-cis-retinal + H(+) + NADPH	Equation
 RE0569E	RHEA:35328	eicosanoyl-CoA[s] + H+[s] + malonyl-CoA[s] => 3-oxodocosanoyl-CoA[s] + CO2[s] + CoA[s]	eicosanoyl-CoA + H(+) + malonyl-CoA => 3-oxodocosanoyl-CoA + CO2 + CoA	Equation
 RE0572N	RHEA:39194	(2E)-docosenoyl-CoA[n] + H+[n] + NADPH[n] <=> docosanoyl-CoA[n] + NADP+[n]	(2E)-docosenoyl-CoA + H(+) + NADPH <=> docosanoyl-CoA + NADP(+)	Equation
