@@ -82,12 +82,18 @@ if ismember('id',fieldnames(outModel))
 end
 
 
-%% empty newly introduced grRules
+%% replace grRules of newly introduced reactions with "TBD"
 
 % clean the grRules associated with gap-filling reactions
 gapfilledRxns = setdiff(outModel.rxns, model.rxns);
 [~, ind] = ismember(gapfilledRxns, outModel.rxns);
 outModel.grRules(ind) = {''};
+
+% Assign "TBD" gene to the grRules which previously were non-empty in the
+% reference model. This gene name is abbreviated from "to be determined"
+[~, ind2] = ismember(gapfilledRxns, refModel.rxns);
+nonEmptyInd = getNonEmptyList(refModel.grRules(ind2));
+outModel.grRules(ind(nonEmptyInd)) = {'TBD'};
 
 % re-generate gene and rxnGeneMat fields
 [outModel.genes, outModel.rxnGeneMat] = getGenesFromGrRules(outModel.grRules);
