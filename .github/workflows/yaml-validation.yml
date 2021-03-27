@@ -2,9 +2,9 @@ name: YAML validation
 
 on:
   push:
-    branches: [ devel ]
+    branches: [ develop ]
   pull_request:
-    branches: [ master, devel ]
+    branches: [ master, develop ]
 
 jobs:
   yaml-validation:
