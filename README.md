@@ -108,8 +108,8 @@ Contributions are always welcome! Please read the [contribution guidelines](http
 
 ## Contributors
 
-- [Jonathan L. Robinson](https://www.chalmers.se/en/Staff/Pages/jonrob.aspx), National Bioinformatics Infrastructure Sweden (NBIS), Science for Life Laboratory (SciLifeLab), Chalmers University of Technology, Gothenburg Sweden
-- [Pınar Kocabaş](https://www.chalmers.se/en/staff/Pages/kocabas.aspx), Chalmers University of Technology, Gothenburg Sweden
-- [Pierre-Etienne Cholley](https://www.chalmers.se/en/staff/Pages/cholley.aspx), Chalmers University of Technology, Gothenburg Sweden
-- [Avlant Nilsson](https://www.chalmers.se/en/staff/Pages/avlant-nilsson.aspx), Chalmers University of Technology, Gothenburg Sweden
-- [Hao Wang](https://www.chalmers.se/en/staff/Pages/hao-wang.aspx), Chalmers University of Technology, Gothenburg Sweden
+- [Jonathan L. Robinson](https://bii.dk/team/jonathan-robinson/), The BioInnovation Institute (BII), Copenhagen, Denmark
+- Pınar Kocabaş, Chalmers University of Technology, Gothenburg, Sweden
+- [Pierre-Etienne Cholley](https://www.chalmers.se/en/staff/Pages/cholley.aspx), Chalmers University of Technology, Gothenburg, Sweden
+- [Avlant Nilsson](https://www.chalmers.se/en/staff/Pages/avlant-nilsson.aspx), Chalmers University of Technology, Gothenburg, Sweden
+- [Hao Wang](https://www.chalmers.se/en/staff/Pages/hao-wang.aspx), Chalmers University of Technology, Gothenburg, Sweden
