@@ -11,3 +11,5 @@ Contains metabolic task files used for evaluating the functionality of Human-GEM
 - `metabolicTasks_Full.xlsx`: A longer list of metabolic tasks which contains some functions that may not be relevant for all cell or tissue types. However, all of these tasks should pass for the generic Human-GEM.
 - `metabolicTasks_VerifyModel.xlsx`: Metabolic tasks designed to verify that the model is properly mass and energy balanced, and exhibits a biologically meaningful solution space.
 
+### modelCuration
+Contains curation-related data files used for making changes to the Human-GEM model. These model curation data files help to improve transparency of changes made to the model.
