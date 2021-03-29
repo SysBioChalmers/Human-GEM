@@ -104,12 +104,3 @@ A collection of manually curated 2D metabolic maps associated with Human-GEM are
 
 Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/master/.github/CONTRIBUTING.md) to get started.
 
-
-
-## Contributors
-
-- [Jonathan L. Robinson](https://bii.dk/team/jonathan-robinson/), The BioInnovation Institute (BII), Copenhagen, Denmark
-- [Pınar Kocabaş](https://research.chalmers.se/en/person/kocabas), Chalmers University of Technology, Gothenburg, Sweden
-- [Pierre-Etienne Cholley](https://www.chalmers.se/en/staff/Pages/cholley.aspx), Chalmers University of Technology, Gothenburg, Sweden
-- [Avlant Nilsson](https://www.chalmers.se/en/staff/Pages/avlant-nilsson.aspx), Chalmers University of Technology, Gothenburg, Sweden
-- [Hao Wang](https://www.chalmers.se/en/staff/Pages/hao-wang.aspx), Chalmers University of Technology, Gothenburg, Sweden
