@@ -1,107 +1,107 @@
 #Human-GEM RID	Rhea ID	Human-GEM Equation	Rhea Equation	Method
-DTMPKm	RHEA:13518	ATP[m] + dTMP[m] => ADP[m] + dTDP[m]	ATP + dTMP => ADP + dTDP	Uniprot/Equation
-HMR_0640	RHEA:18822	acetyl-CoA[c] + choline[c] => acetylcholine[c] + CoA[c]	acetyl-CoA + choline => acetylcholine + CoA	Uniprot/Equation
-HMR_1434	RHEA:21039	acetoacetyl-CoA[c] + CoA[c] <=> 2 acetyl-CoA[c]	2 acetyl-CoA <=> acetoacetyl-CoA + CoA	Uniprot/Equation
-HMR_1436	RHEA:16118	acetoacetate[c] + ATP[c] + CoA[c] => acetoacetyl-CoA[c] + AMP[c] + PPi[c]	acetoacetate + ATP + CoA => acetoacetyl-CoA + AMP + diphosphate	Uniprot/Equation
-HMR_1576	RHEA:16118	acetoacetate[m] + ATP[m] + CoA[m] => acetoacetyl-CoA[m] + AMP[m] + PPi[m]	acetoacetate + ATP + CoA => acetoacetyl-CoA + AMP + diphosphate	Uniprot/Equation
-HMR_3105	RHEA:21039	acetoacetyl-CoA[p] + CoA[p] <=> 2 acetyl-CoA[p]	2 acetyl-CoA <=> acetoacetyl-CoA + CoA	Uniprot/Equation
-HMR_3215	RHEA:22889	(R)-methylmalonyl-CoA[m] => succinyl-CoA[m]	(R)-methylmalonyl-CoA => succinyl-CoA	Uniprot/Equation
-HMR_3870	RHEA:11742	GSSG[m] + H+[m] + NADPH[m] => 2 GSH[m] + NADP+[m]	glutathione disulfide + H(+) + NADPH => 2 glutathione + NADP(+)	Uniprot/Equation
-HMR_3980	RHEA:20310	2 H2O2[c] => 2 H2O[c] + O2[c]	2 H2O2 => 2 H2O + O2	Uniprot/Equation
-HMR_3982	RHEA:20310	2 H2O2[m] => 2 H2O[m] + O2[m]	2 H2O2 => 2 H2O + O2	Uniprot/Equation
-HMR_4020	RHEA:20783	ADP[c] + GDP[c] <=> ATP[c] + GMP[c]	ATP + GMP <=> ADP + GDP	Uniprot/Equation
-HMR_4054	RHEA:19130	ATP[c] + thymidine[c] => ADP[c] + dTMP[c] + H+[c]	ATP + thymidine => ADP + dTMP + H(+)	Uniprot/Equation
-HMR_4103	RHEA:10389	GTP[m] + OAA[m] => CO2[m] + GDP[m] + PEP[m]	GTP + oxaloacetate => CO2 + GDP + phosphoenolpyruvate	Uniprot/Equation
-HMR_4105	RHEA:18782	H+[c] + malonyl-CoA[c] => acetyl-CoA[c] + CO2[c]	H(+) + malonyl-CoA => acetyl-CoA + CO2	Uniprot/Equation
-HMR_4106	RHEA:18782	H+[m] + malonyl-CoA[m] => acetyl-CoA[m] + CO2[m]	H(+) + malonyl-CoA => acetyl-CoA + CO2	Uniprot/Equation
-HMR_4107	RHEA:18782	H+[p] + malonyl-CoA[p] => acetyl-CoA[p] + CO2[p]	H(+) + malonyl-CoA => acetyl-CoA + CO2	Uniprot/Equation
-HMR_4118	RHEA:11742	GSSG[c] + H+[c] + NADPH[c] => 2 GSH[c] + NADP+[c]	glutathione disulfide + H(+) + NADPH => 2 glutathione + NADP(+)	Uniprot/Equation
-HMR_4135	RHEA:20783	ADP[m] + GDP[m] <=> ATP[m] + GMP[m]	ATP + GMP <=> ADP + GDP	Uniprot/Equation
-HMR_4143	RHEA:20845	ATP[m] + HCO3-[m] + pyruvate[m] => ADP[m] + H+[m] + OAA[m] + Pi[m]	ATP + hydrogencarbonate + pyruvate => ADP + H(+) + oxaloacetate + phosphate	Uniprot/Equation
-HMR_4145	RHEA:16848	citrate[m] + CoA[m] + H+[m] <=> acetyl-CoA[m] + H2O[m] + OAA[m]	acetyl-CoA + H2O + oxaloacetate <=> citrate + CoA + H(+)	Uniprot/Equation
-HMR_4149	RHEA:21162	ATP[c] + citrate[c] + CoA[c] => acetyl-CoA[c] + ADP[c] + OAA[c] + Pi[c]	ATP + citrate + CoA => acetyl-CoA + ADP + oxaloacetate + phosphate	Uniprot/Equation
-HMR_4189	RHEA:24601	H2O[m] + O2[m] + sulfite[m] => H2O2[m] + sulfate[m]	H2O + O2 + sulfite => H2O2 + sulfate	Uniprot/Equation
-HMR_4207	RHEA:11745	H2O[c] + thiamin-PPP[c] => H+[c] + Pi[c] + thiamin-PP[c]	H2O + thiamine triphosphate => H(+) + phosphate + thiamine diphosphate	Uniprot/Equation
-HMR_4295	RHEA:11309	acetyl-CoA[m] + ATP[m] + HCO3-[m] => ADP[m] + H+[m] + malonyl-CoA[m] + Pi[m]	acetyl-CoA + ATP + hydrogencarbonate => ADP + H(+) + malonyl-CoA + phosphate	Uniprot/Equation
-HMR_4345	RHEA:18096	5,6-Dihydrouracil[c] + NADP+[c] <=> H+[c] + NADPH[c] + uracil[c]	5,6-dihydrouracil + NADP(+) <=> H(+) + NADPH + uracil	Uniprot/Equation
-HMR_4424	RHEA:13930	agmatine[m] + H2O[m] => putrescine[m] + urea[m]	agmatine + H2O => putrescine + urea	Uniprot/Equation
-HMR_4483	RHEA:19130	ATP[m] + thymidine[m] => ADP[m] + dTMP[m] + H+[m]	ATP + thymidine => ADP + dTMP + H(+)	Uniprot/Equation
-HMR_4637	RHEA:13520	ADP[c] + dTDP[c] <=> ATP[c] + dTMP[c]	ATP + dTMP <=> ADP + dTDP	Uniprot/Equation
-HMR_4744	RHEA:24065	2 5-aminolevulinate[c] => H+[c] + 2 H2O[c] + porphobilinogen[c]	2 5-aminolevulinate => H(+) + 2 H2O + porphobilinogen	Uniprot/Equation
-HMR_4748	RHEA:18966	hydroxymethylbilane[c] => H2O[c] + uroporphyrinogen III[c]	hydroxymethylbilane => H2O + uroporphyrinogen III	Uniprot/Equation
-HMR_4750	RHEA:19866	4 H+[c] + uroporphyrinogen III[c] => 4 CO2[c] + coproporphyrinogen III[c]	4 H(+) + uroporphyrinogen III => 4 CO2 + coproporphyrinogen III	Uniprot/Equation
-HMR_4752	RHEA:18258	coproporphyrinogen III[c] + 2 H+[c] + O2[c] => 2 CO2[c] + 2 H2O[c] + protoporphyrinogen IX[c]	coproporphyrinogen III + 2 H(+) + O2 => 2 CO2 + 2 H2O + protoporphyrinogen IX	Uniprot/Equation
-HMR_6774	RHEA:15450	homogentisate[c] + O2[c] => 4-maleylacetoacetate[c] + H+[c]	homogentisate + O2 => 4-maleylacetoacetate + H(+)	Uniprot/Equation
-HMR_8352	RHEA:12892	3-dehydro-L-gulonate[c] + H+[c] + NADH[c] <=> L-gulonate[c] + NAD+[c]	L-gulonate + NAD(+) <=> 3-dehydro-L-gulonate + H(+) + NADH	Uniprot/Equation
-FCLTm	RHEA:22584	Fe2+[m] + protoporphyrin[m] => 2 H+[m] + heme[m]	2 H(+) + heme b = Fe(2+) + protoporphyrin IX	Uniprot
-HMR_0457	RHEA:23516	ATP[c] + glycerate[c] => 3-phospho-D-glycerate[c] + ADP[c] + H+[c]	(R)-glycerate + ATP = (2R)-3-phosphoglycerate + ADP + H(+)	Uniprot
-HMR_0460	RHEA:23516	ATP[m] + glycerate[m] => 3-phospho-D-glycerate[m] + ADP[m] + H+[m]	(R)-glycerate + ATP = (2R)-3-phosphoglycerate + ADP + H(+)	Uniprot
-HMR_0478	RHEA:11092	DHAP[c] + H+[c] + NADPH[c] => NADP+[c] + sn-glycerol-3-phosphate[c]	NAD(+) + sn-glycerol 3-phosphate = dihydroxyacetone phosphate + H(+) + NADH	Uniprot
-HMR_0651	RHEA:24592	CTP[c] + ethanolamine-phosphate[c] + H+[c] => CDP-ethanolamine[c] + PPi[c]	CTP + H(+) + phosphoethanolamine = CDP-ethanolamine + diphosphate	Uniprot
-HMR_0741	RHEA:22640	3-dehydrosphinganine[c] + H+[c] + NADPH[c] => NADP+[c] + sphinganine[c]	NADP(+) + sphinganine = 3-oxosphinganine + H(+) + NADPH	Uniprot
-HMR_3213	RHEA:20553	methylmalonyl-CoA[m] => (R)-methylmalonyl-CoA[m]	(R)-methylmalonyl-CoA = (S)-methylmalonyl-CoA	Uniprot
-HMR_3806	RHEA:30235	glutamate[m] + 2 H+[m] + NADH[m] <=> H2O[m] + L-glutamate 5-semialdehyde[m] + NAD+[m]	H2O + L-glutamate 5-semialdehyde + NAD(+) = 2 H(+) + L-glutamate + NADH	Uniprot
-HMR_3809	RHEA:19513	citrulline[m] + H+[m] + Pi[m] <=> carbamoyl-phosphate[m] + ornithine[m]	carbamoyl phosphate + L-ornithine = H(+) + L-citrulline + phosphate	Uniprot
-HMR_3845	RHEA:15481	serine[c] + THF[c] <=> 5,10-methylene-THF[c] + glycine[c] + H2O[c]	(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + glycine + H2O = (6S)-5,6,7,8-tetrahydrofolate + L-serine	Uniprot
-HMR_3847	RHEA:20736	CoA[m] + L-2-amino-3-oxobutanoic acid[m] <=> acetyl-CoA[m] + glycine[m]	acetyl-CoA + glycine = (2S)-2-amino-3-oxobutanoate + CoA	Uniprot
-HMR_3879	RHEA:10112	homocysteine[c] + serine[c] => H2O[c] + L-cystathionine[c]	L-homocysteine + L-serine = H2O + L,L-cystathionine	Uniprot
-HMR_3881	RHEA:14005	H2O[c] + L-cystathionine[c] => 2-oxobutyrate[c] + cysteine[c] + H+[c] + NH3[c]	H2O + L,L-cystathionine = 2-oxobutanoate + L-cysteine + NH4(+)	Uniprot
-HMR_3892	RHEA:15889	glutamine[m] + H2O[m] => glutamate[m] + H+[m] + NH3[m]	H2O + L-glutamine = L-glutamate + NH4(+)	Uniprot
-HMR_3899	RHEA:19453	AKG[c] + alanine[c] <=> glutamate[c] + pyruvate[c]	2-oxoglutarate + L-alanine = L-glutamate + pyruvate	Uniprot
-HMR_3901	RHEA:19937	glycine[c] + SAM[c] => H+[c] + SAH[c] + sarcosine[c]	glycine + S-adenosyl-L-methionine = H(+) + S-adenosyl-L-homocysteine + sarcosine	Uniprot
-HMR_3908	RHEA:20441	cysteine[c] + O2[c] => 3-sulfinoalanine[c] + 2 H+[c]	L-cysteine + O2 = 3-sulfino-L-alanine + H(+)	Uniprot
-HMR_4046	RHEA:11680	ATP[c] + glutamine[c] + H2O[c] + xanthosine-5-phosphate[c] => AMP[c] + glutamate[c] + GMP[c] + 2 H+[c] + PPi[c]	ATP + H2O + L-glutamine + XMP = AMP + diphosphate + GMP + 2 H(+) + L-glutamate	Uniprot
-HMR_4073	RHEA:15981	H+[c] + SAM[c] => CO2[c] + S-adenosylmethioninamine[c]	H(+) + S-adenosyl-L-methionine = CO2 + S-adenosyl 3-(methylsulfanyl)propylamine	Uniprot
-HMR_4075	RHEA:12721	putrescine[c] + S-adenosylmethioninamine[c] => 5-methylthioadenosine[c] + H+[c] + spermidine[c]	putrescine + S-adenosyl 3-(methylsulfanyl)propylamine = H(+) + S-methyl-5'-thioadenosine + spermidine	Uniprot
-HMR_4085	RHEA:16609	AMP[c] + PPi[c] <=> adenine[c] + PRPP[c]	AMP + diphosphate = 5-phospho-alpha-D-ribose 1-diphosphate + adenine	Uniprot
-HMR_4086	RHEA:16609	AMP[s] + PPi[s] <=> adenine[s] + PRPP[s]	AMP + diphosphate = 5-phospho-alpha-D-ribose 1-diphosphate + adenine	Uniprot
-HMR_4109	RHEA:19453	AKG[m] + alanine[m] <=> glutamate[m] + pyruvate[m]	2-oxoglutarate + L-alanine = L-glutamate + pyruvate	Uniprot
-HMR_4141	RHEA:21432	H+[m] + NADH[m] + OAA[m] <=> malate[m] + NAD+[m]	(S)-malate + NAD(+) = H(+) + NADH + oxaloacetate	Uniprot
-HMR_4204	RHEA:11576	ATP[c] + thiamin[c] => AMP[c] + H+[c] + thiamin-PP[c]	ATP + thiamine = AMP + H(+) + thiamine diphosphate	Uniprot
-HMR_4212	RHEA:22964	H+[c] + ornithine[c] => CO2[c] + putrescine[c]	H(+) + L-ornithine = CO2 + putrescine	Uniprot
-HMR_4220	RHEA:20545	3-hydroxy-L-kynurenine[c] + H2O[c] + NADP+[c] <=> H+[c] + kynurenine[c] + NADPH[c] + O2[c]	H(+) + L-kynurenine + NADPH + O2 = 3-hydroxy-L-kynurenine + H2O + NADP(+)	Uniprot
-HMR_4251	RHEA:12733	2 H+[c] + PRPP[c] + quinolinate[c] => CO2[c] + nicotinate ribonucleotide[c] + PPi[c]	CO2 + diphosphate + nicotinate beta-D-ribonucleotide = 5-phospho-alpha-D-ribose 1-diphosphate + 2 H(+) + quinolinate	Uniprot
-HMR_4260	RHEA:24384	ATP[c] + deamido-NAD[c] + glutamine[c] + H2O[c] => AMP[c] + glutamate[c] + H+[c] + NAD+[c] + PPi[c]	ATP + deamido-NAD(+) + H2O + L-glutamine = AMP + diphosphate + H(+) + L-glutamate + NAD(+)	Uniprot
-HMR_4262	RHEA:16149	nicotinamide D-ribonucleotide[c] + PPi[c] <=> H+[c] + nicotinamide[c] + PRPP[c]	beta-nicotinamide D-ribonucleotide + diphosphate = 5-phospho-alpha-D-ribose 1-diphosphate + H(+) + nicotinamide	Uniprot
-HMR_4296	RHEA:17889	ethanolamine-phosphate[c] + H2O[c] => acetaldehyde[c] + H+[c] + NH3[c] + Pi[c]	H2O + phosphoethanolamine = acetaldehyde + NH4(+) + phosphate	Uniprot
-HMR_4326	RHEA:13557	ATP[c] + gamma-glutamyl-cysteine[c] + glycine[c] => ADP[c] + GSH[c] + H+[c] + Pi[c]	ATP + glycine + L-gamma-glutamyl-L-cysteine = ADP + glutathione + H(+) + phosphate	Uniprot
-HMR_4406	RHEA:14905	glutamine[c] + H2O[c] + PRPP[c] => 5-phosphoribosylamine[c] + glutamate[c] + PPi[c]	5-phospho-beta-D-ribosylamine + diphosphate + L-glutamate = 5-phospho-alpha-D-ribose 1-diphosphate + H2O + L-glutamine	Uniprot
-HMR_4422	RHEA:22964	H+[s] + ornithine[s] => CO2[s] + putrescine[s]	H(+) + L-ornithine = CO2 + putrescine	Uniprot
-HMR_4429	RHEA:19301	histamine[c] + SAM[c] => H+[c] + N-methylhistamine[c] + SAH[c]	histamine + S-adenosyl-L-methionine = H(+) + N(tau)-methylhistamine + S-adenosyl-L-homocysteine	Uniprot
-HMR_4437	RHEA:21232	histidine[c] => H+[c] + NH3[c] + urocanate[c]	L-histidine = NH4(+) + trans-urocanate	Uniprot
-HMR_4466	RHEA:11952	hydroxypyruvate[c] => 2-hydroxy-3-oxopropanoate[c]	3-hydroxypyruvate = 2-hydroxy-3-oxopropanoate	Uniprot
-HMR_4473	RHEA:10116	6-phospho-D-gluconate[r] + NADP+[r] => CO2[r] + NADPH[r] + ribulose-5-phosphate[r]	6-phospho-D-gluconate + NADP(+) = CO2 + D-ribulose 5-phosphate + NADPH	Uniprot
-HMR_4474	RHEA:10116	6-phospho-D-gluconate[c] + NADP+[c] => CO2[c] + NADPH[c] + ribulose-5-phosphate[c]	6-phospho-D-gluconate + NADP(+) = CO2 + D-ribulose 5-phosphate + NADPH	Uniprot
-HMR_4507	RHEA:22924	dCMP[c] + H2O[c] => dUMP[c] + NH3[c]	dCMP + H(+) + H2O = dUMP + NH4(+)	Uniprot
-HMR_4628	RHEA:10292	acetyl-CoA[c] + glucosamine-6-phosphate[c] => CoA[c] + H+[c] + N-acetylglucosamine-6-phosphate[c]	acetyl-CoA + D-glucosamine 6-phosphate = CoA + H(+) + N-acetyl-D-glucosamine 6-phosphate	Uniprot
-HMR_4644	RHEA:12104	5,10-methylene-THF[c] + dUMP[c] <=> dihydrofolate[c] + dTMP[c]	(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + dUMP = 7,8-dihydrofolate + dTMP	Uniprot
-HMR_4725	RHEA:16793	(R)-4-phosphopantothenoyl-cysteine[c] + H+[c] => CO2[c] + phosphopantetheine[c]	H(+) + N-[(R)-4-phosphopantothenoyl]-L-cysteine = CO2 + D-pantetheine 4'-phosphate	Uniprot
-HMR_4733	RHEA:16793	(R)-4-phosphopantothenoyl-cysteine[m] + H+[m] => CO2[m] + phosphopantetheine[m]	H(+) + N-[(R)-4-phosphopantothenoyl]-L-cysteine = CO2 + D-pantetheine 4'-phosphate	Uniprot
-HMR_4746	RHEA:13185	H2O[c] + 4 porphobilinogen[c] => 4 H+[c] + hydroxymethylbilane[c] + 4 NH3[c]	H2O + 4 porphobilinogen = hydroxymethylbilane + 4 NH4(+)	Uniprot
-HMR_4758	RHEA:22584	Fe2+[m] + protoporphyrin[m] => 2 H+[c] + heme[m]	2 H(+) + heme b = Fe(2+) + protoporphyrin IX	Uniprot
-HMR_4792	RHEA:15481	5,10-methylene-THF[m] + glycine[m] + H2O[m] <=> serine[m] + THF[m]	(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + glycine + H2O = (6S)-5,6,7,8-tetrahydrofolate + L-serine	Uniprot
-HMR_4861	RHEA:60364	inositol[c] <=> inositol[s]	H(+)(out) + myo-inositol(out) = H(+)(in) + myo-inositol(in)	Uniprot
-HMR_5384	RHEA:11852	5-methylthioadenosine[c] + Pi[c] => adenine[c] + methylthioribose-1p[c]	phosphate + S-methyl-5'-thioadenosine = adenine + S-methyl-5-thio-alpha-D-ribose 1-phosphate	Uniprot
-HMR_5385	RHEA:19989	methylthioribose-1p[c] => S-methyl-5-thio-D-ribulose-1-phosphate[c]	S-methyl-5-thio-alpha-D-ribose 1-phosphate = S-methyl-5-thio-D-ribulose 1-phosphate	Uniprot
-HMR_5389	RHEA:24504	1,2-dihydroxy-5-(methylthio)pent-1-en-3-one[c] + O2[c] => 4-methylthio-2-oxobutanoic acid[c] + formate[c] + 2 H+[c]	1,2-dihydroxy-5-(methylsulfanyl)pent-1-en-3-one + O2 = 4-methylsulfanyl-2-oxobutanoate + formate + 2 H(+)	Uniprot
-HMR_6539	RHEA:23696	inositol[c] + O2[c] => glucuronate[c] + H+[c] + H2O[c]	myo-inositol + O2 = D-glucuronate + H(+) + H2O	Uniprot
-HMR_6601	RHEA:11016	allantoate[c] + H2O[c] => urea[c] + ureidoglycolate[c]	allantoate + H2O = (S)-ureidoglycolate + urea	Uniprot
-HMR_6772	RHEA:16189	4-hydroxyphenylpyruvate[c] + O2[c] => CO2[c] + homogentisate[c]	3-(4-hydroxyphenyl)pyruvate + O2 = CO2 + homogentisate	Uniprot
-HMR_6778	RHEA:10244	fumarylacetoacetate[c] + H2O[c] => acetoacetate[c] + fumarate[c] + H+[c]	4-fumarylacetoacetate + H2O = acetoacetate + fumarate + H(+)	Uniprot
-HMR_7641	RHEA:12512	D-aspartate[p] + H2O[p] + O2[p] => H+[p] + H2O2[p] + NH3[p] + OAA[p]	D-aspartate + H2O + O2 = H2O2 + NH4(+) + oxaloacetate	Uniprot
-HMR_7676	RHEA:23884	nicotinamide[c] + SAM[c] => 1-methylnicotinamide[c] + SAH[c]	nicotinamide + S-adenosyl-L-methionine = 1-methylnicotinamide + S-adenosyl-L-homocysteine	Uniprot
-HMR_8150	RHEA:41996	globoside[g] + UDP-galactose[g] => galactosylgloboside[g] + H+[g] + UDP[g]	globoside Gb4Cer (d18:1(4E)) + UDP-alpha-D-galactose = globoside GalGb4Cer (d18:1(4E)) + H(+) + UDP	Uniprot
-HMR_8409	RHEA:20696	2 H+[s] + 2 O2-[s] => H2O2[s] + O2[s]	2 H(+) + 2 superoxide = H2O2 + O2	Uniprot
-HMR_8413	RHEA:20696	2 H+[n] + 2 O2-[n] => H2O2[n] + O2[n]	2 H(+) + 2 superoxide = H2O2 + O2	Uniprot
-HMR_8415	RHEA:20696	2 H+[p] + 2 O2-[p] => H2O2[p] + O2[p]	2 H(+) + 2 superoxide = H2O2 + O2	Uniprot
-HMR_8416	RHEA:24292	acetyl-CoA[m] + glutamate[m] => CoA[m] + H+[m] + N-acetyl-L-glutamate[m]	acetyl-CoA + L-glutamate = CoA + H(+) + N-acetyl-L-glutamate	Uniprot
-HMR_8585	RHEA:16769	1,3-bisphospho-D-glycerate[c] + glucose-1-phosphate[c] => 3-phospho-D-glycerate[c] + glucose-1,6-bisphosphate[c]	(2R)-3-phospho-glyceroyl phosphate + alpha-D-glucose 1-phosphate = (2R)-3-phosphoglycerate + alpha-D-glucose 1,6-bisphosphate + H(+)	Uniprot
-HMR_9484	RHEA:22484	H2O[c] + P1,P4-bis(5-guanosyl)-tetraphosphate[c] => GMP[c] + GTP[c] + 2 H+[c]	H2O + P(1),P(4)-bis(5'-guanosyl) tetraphosphate = GMP + GTP + 2 H(+)	Uniprot
-HMR_9497	RHEA:13893	apppA[c] + H2O[c] => ADP[c] + AMP[c] + 2 H+[c]	H2O + P(1),P(3)-bis(5'-adenosyl) triphosphate = ADP + AMP + 2 H(+)	Uniprot
-HMR_9530	RHEA:11544	H2O[c] + N4-(acetyl-beta-D-glucosaminyl)asparagine[c] => aspartate[c] + H+[c] + N-acetyl-beta-D-glucosaminylamine[c]	H2O + N(4)-(beta-N-acetyl-D-glucosaminyl)-L-asparagine = H(+) + L-aspartate + N-acetyl-beta-D-glucosaminylamine	Uniprot
-HMR_9802	RHEA:15889	glutamine[c] + H2O[c] => glutamate[c] + H+[c] + NH3[c]	H2O + L-glutamine = L-glutamate + NH4(+)	Uniprot
-PNTKm	RHEA:16373	ATP[m] + pantothenate[m] => ADP[m] + D-4-phosphopantothenate[m] + H+[m]	(R)-pantothenate + ATP = (R)-4'-phosphopantothenate + ADP + H(+)	Uniprot
-RE2513N	RHEA:28218	chloride[n] + H+[n] + H2O2[n] <=> H2O[n] + hypochlorite[n]	chloride + H(+) + H2O2 = H2O + hypochlorous acid	Uniprot
+DTMPKm	RHEA:13518	ATP[m] + dTMP[m] => ADP[m] + dTDP[m]	ATP + dTMP => ADP + dTDP	UniProt/Equation
+HMR_0640	RHEA:18822	acetyl-CoA[c] + choline[c] => acetylcholine[c] + CoA[c]	acetyl-CoA + choline => acetylcholine + CoA	UniProt/Equation
+HMR_1434	RHEA:21039	acetoacetyl-CoA[c] + CoA[c] <=> 2 acetyl-CoA[c]	2 acetyl-CoA <=> acetoacetyl-CoA + CoA	UniProt/Equation
+HMR_1436	RHEA:16118	acetoacetate[c] + ATP[c] + CoA[c] => acetoacetyl-CoA[c] + AMP[c] + PPi[c]	acetoacetate + ATP + CoA => acetoacetyl-CoA + AMP + diphosphate	UniProt/Equation
+HMR_1576	RHEA:16118	acetoacetate[m] + ATP[m] + CoA[m] => acetoacetyl-CoA[m] + AMP[m] + PPi[m]	acetoacetate + ATP + CoA => acetoacetyl-CoA + AMP + diphosphate	UniProt/Equation
+HMR_3105	RHEA:21039	acetoacetyl-CoA[p] + CoA[p] <=> 2 acetyl-CoA[p]	2 acetyl-CoA <=> acetoacetyl-CoA + CoA	UniProt/Equation
+HMR_3215	RHEA:22889	(R)-methylmalonyl-CoA[m] => succinyl-CoA[m]	(R)-methylmalonyl-CoA => succinyl-CoA	UniProt/Equation
+HMR_3870	RHEA:11742	GSSG[m] + H+[m] + NADPH[m] => 2 GSH[m] + NADP+[m]	glutathione disulfide + H(+) + NADPH => 2 glutathione + NADP(+)	UniProt/Equation
+HMR_3980	RHEA:20310	2 H2O2[c] => 2 H2O[c] + O2[c]	2 H2O2 => 2 H2O + O2	UniProt/Equation
+HMR_3982	RHEA:20310	2 H2O2[m] => 2 H2O[m] + O2[m]	2 H2O2 => 2 H2O + O2	UniProt/Equation
+HMR_4020	RHEA:20783	ADP[c] + GDP[c] <=> ATP[c] + GMP[c]	ATP + GMP <=> ADP + GDP	UniProt/Equation
+HMR_4054	RHEA:19130	ATP[c] + thymidine[c] => ADP[c] + dTMP[c] + H+[c]	ATP + thymidine => ADP + dTMP + H(+)	UniProt/Equation
+HMR_4103	RHEA:10389	GTP[m] + OAA[m] => CO2[m] + GDP[m] + PEP[m]	GTP + oxaloacetate => CO2 + GDP + phosphoenolpyruvate	UniProt/Equation
+HMR_4105	RHEA:18782	H+[c] + malonyl-CoA[c] => acetyl-CoA[c] + CO2[c]	H(+) + malonyl-CoA => acetyl-CoA + CO2	UniProt/Equation
+HMR_4106	RHEA:18782	H+[m] + malonyl-CoA[m] => acetyl-CoA[m] + CO2[m]	H(+) + malonyl-CoA => acetyl-CoA + CO2	UniProt/Equation
+HMR_4107	RHEA:18782	H+[p] + malonyl-CoA[p] => acetyl-CoA[p] + CO2[p]	H(+) + malonyl-CoA => acetyl-CoA + CO2	UniProt/Equation
+HMR_4118	RHEA:11742	GSSG[c] + H+[c] + NADPH[c] => 2 GSH[c] + NADP+[c]	glutathione disulfide + H(+) + NADPH => 2 glutathione + NADP(+)	UniProt/Equation
+HMR_4135	RHEA:20783	ADP[m] + GDP[m] <=> ATP[m] + GMP[m]	ATP + GMP <=> ADP + GDP	UniProt/Equation
+HMR_4143	RHEA:20845	ATP[m] + HCO3-[m] + pyruvate[m] => ADP[m] + H+[m] + OAA[m] + Pi[m]	ATP + hydrogencarbonate + pyruvate => ADP + H(+) + oxaloacetate + phosphate	UniProt/Equation
+HMR_4145	RHEA:16848	citrate[m] + CoA[m] + H+[m] <=> acetyl-CoA[m] + H2O[m] + OAA[m]	acetyl-CoA + H2O + oxaloacetate <=> citrate + CoA + H(+)	UniProt/Equation
+HMR_4149	RHEA:21162	ATP[c] + citrate[c] + CoA[c] => acetyl-CoA[c] + ADP[c] + OAA[c] + Pi[c]	ATP + citrate + CoA => acetyl-CoA + ADP + oxaloacetate + phosphate	UniProt/Equation
+HMR_4189	RHEA:24601	H2O[m] + O2[m] + sulfite[m] => H2O2[m] + sulfate[m]	H2O + O2 + sulfite => H2O2 + sulfate	UniProt/Equation
+HMR_4207	RHEA:11745	H2O[c] + thiamin-PPP[c] => H+[c] + Pi[c] + thiamin-PP[c]	H2O + thiamine triphosphate => H(+) + phosphate + thiamine diphosphate	UniProt/Equation
+HMR_4295	RHEA:11309	acetyl-CoA[m] + ATP[m] + HCO3-[m] => ADP[m] + H+[m] + malonyl-CoA[m] + Pi[m]	acetyl-CoA + ATP + hydrogencarbonate => ADP + H(+) + malonyl-CoA + phosphate	UniProt/Equation
+HMR_4345	RHEA:18096	5,6-Dihydrouracil[c] + NADP+[c] <=> H+[c] + NADPH[c] + uracil[c]	5,6-dihydrouracil + NADP(+) <=> H(+) + NADPH + uracil	UniProt/Equation
+HMR_4424	RHEA:13930	agmatine[m] + H2O[m] => putrescine[m] + urea[m]	agmatine + H2O => putrescine + urea	UniProt/Equation
+HMR_4483	RHEA:19130	ATP[m] + thymidine[m] => ADP[m] + dTMP[m] + H+[m]	ATP + thymidine => ADP + dTMP + H(+)	UniProt/Equation
+HMR_4637	RHEA:13520	ADP[c] + dTDP[c] <=> ATP[c] + dTMP[c]	ATP + dTMP <=> ADP + dTDP	UniProt/Equation
+HMR_4744	RHEA:24065	2 5-aminolevulinate[c] => H+[c] + 2 H2O[c] + porphobilinogen[c]	2 5-aminolevulinate => H(+) + 2 H2O + porphobilinogen	UniProt/Equation
+HMR_4748	RHEA:18966	hydroxymethylbilane[c] => H2O[c] + uroporphyrinogen III[c]	hydroxymethylbilane => H2O + uroporphyrinogen III	UniProt/Equation
+HMR_4750	RHEA:19866	4 H+[c] + uroporphyrinogen III[c] => 4 CO2[c] + coproporphyrinogen III[c]	4 H(+) + uroporphyrinogen III => 4 CO2 + coproporphyrinogen III	UniProt/Equation
+HMR_4752	RHEA:18258	coproporphyrinogen III[c] + 2 H+[c] + O2[c] => 2 CO2[c] + 2 H2O[c] + protoporphyrinogen IX[c]	coproporphyrinogen III + 2 H(+) + O2 => 2 CO2 + 2 H2O + protoporphyrinogen IX	UniProt/Equation
+HMR_6774	RHEA:15450	homogentisate[c] + O2[c] => 4-maleylacetoacetate[c] + H+[c]	homogentisate + O2 => 4-maleylacetoacetate + H(+)	UniProt/Equation
+HMR_8352	RHEA:12892	3-dehydro-L-gulonate[c] + H+[c] + NADH[c] <=> L-gulonate[c] + NAD+[c]	L-gulonate + NAD(+) <=> 3-dehydro-L-gulonate + H(+) + NADH	UniProt/Equation
+FCLTm	RHEA:22586	Fe2+[m] + protoporphyrin[m] => 2 H+[m] + heme[m]	Fe(2+) + protoporphyrin IX => 2 H(+) + heme b	UniProt
+HMR_0457	RHEA:23517	ATP[c] + glycerate[c] => 3-phospho-D-glycerate[c] + ADP[c] + H+[c]	(R)-glycerate + ATP => (2R)-3-phosphoglycerate + ADP + H(+)	UniProt
+HMR_0460	RHEA:23517	ATP[m] + glycerate[m] => 3-phospho-D-glycerate[m] + ADP[m] + H+[m]	(R)-glycerate + ATP => (2R)-3-phosphoglycerate + ADP + H(+)	UniProt
+HMR_0478	RHEA:11094	DHAP[c] + H+[c] + NADPH[c] => NADP+[c] + sn-glycerol-3-phosphate[c]	dihydroxyacetone phosphate + H(+) + NADH => NAD(+) + sn-glycerol 3-phosphate	UniProt
+HMR_0651	RHEA:24593	CTP[c] + ethanolamine-phosphate[c] + H+[c] => CDP-ethanolamine[c] + PPi[c]	CTP + H(+) + phosphoethanolamine => CDP-ethanolamine + diphosphate	UniProt
+HMR_0741	RHEA:22642	3-dehydrosphinganine[c] + H+[c] + NADPH[c] => NADP+[c] + sphinganine[c]	3-oxosphinganine + H(+) + NADPH => NADP(+) + sphinganine	UniProt
+HMR_3213	RHEA:20555	methylmalonyl-CoA[m] => (R)-methylmalonyl-CoA[m]	(S)-methylmalonyl-CoA => (R)-methylmalonyl-CoA	UniProt
+HMR_3806	RHEA:30238	glutamate[m] + 2 H+[m] + NADH[m] <=> H2O[m] + L-glutamate 5-semialdehyde[m] + NAD+[m]	H2O + L-glutamate 5-semialdehyde + NAD(+) <=> 2 H(+) + L-glutamate + NADH	UniProt
+HMR_3809	RHEA:19516	citrulline[m] + H+[m] + Pi[m] <=> carbamoyl-phosphate[m] + ornithine[m]	carbamoyl phosphate + L-ornithine <=> H(+) + L-citrulline + phosphate	UniProt
+HMR_3845	RHEA:15484	serine[c] + THF[c] <=> 5,10-methylene-THF[c] + glycine[c] + H2O[c]	(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + glycine + H2O <=> (6S)-5,6,7,8-tetrahydrofolate + L-serine	UniProt
+HMR_3847	RHEA:20739	CoA[m] + L-2-amino-3-oxobutanoic acid[m] <=> acetyl-CoA[m] + glycine[m]	acetyl-CoA + glycine <=> (2S)-2-amino-3-oxobutanoate + CoA	UniProt
+HMR_3879	RHEA:10113	homocysteine[c] + serine[c] => H2O[c] + L-cystathionine[c]	L-homocysteine + L-serine => H2O + L,L-cystathionine	UniProt
+HMR_3881	RHEA:14006	H2O[c] + L-cystathionine[c] => 2-oxobutyrate[c] + cysteine[c] + H+[c] + NH3[c]	H2O + L,L-cystathionine => 2-oxobutanoate + L-cysteine + NH4(+)	UniProt
+HMR_3892	RHEA:15890	glutamine[m] + H2O[m] => glutamate[m] + H+[m] + NH3[m]	H2O + L-glutamine => L-glutamate + NH4(+)	UniProt
+HMR_3899	RHEA:19456	AKG[c] + alanine[c] <=> glutamate[c] + pyruvate[c]	2-oxoglutarate + L-alanine <=> L-glutamate + pyruvate	UniProt
+HMR_3901	RHEA:19938	glycine[c] + SAM[c] => H+[c] + SAH[c] + sarcosine[c]	glycine + S-adenosyl-L-methionine => H(+) + S-adenosyl-L-homocysteine + sarcosine	UniProt
+HMR_3908	RHEA:20442	cysteine[c] + O2[c] => 3-sulfinoalanine[c] + 2 H+[c]	L-cysteine + O2 => 3-sulfino-L-alanine + H(+)	UniProt
+HMR_4046	RHEA:11681	ATP[c] + glutamine[c] + H2O[c] + xanthosine-5-phosphate[c] => AMP[c] + glutamate[c] + GMP[c] + 2 H+[c] + PPi[c]	ATP + H2O + L-glutamine + XMP => AMP + diphosphate + GMP + 2 H(+) + L-glutamate	UniProt
+HMR_4073	RHEA:15982	H+[c] + SAM[c] => CO2[c] + S-adenosylmethioninamine[c]	H(+) + S-adenosyl-L-methionine => CO2 + S-adenosyl 3-(methylsulfanyl)propylamine	UniProt
+HMR_4075	RHEA:12722	putrescine[c] + S-adenosylmethioninamine[c] => 5-methylthioadenosine[c] + H+[c] + spermidine[c]	putrescine + S-adenosyl 3-(methylsulfanyl)propylamine => H(+) + S-methyl-5'-thioadenosine + spermidine	UniProt
+HMR_4085	RHEA:16612	AMP[c] + PPi[c] <=> adenine[c] + PRPP[c]	AMP + diphosphate <=> 5-phospho-alpha-D-ribose 1-diphosphate + adenine	UniProt
+HMR_4086	RHEA:16612	AMP[s] + PPi[s] <=> adenine[s] + PRPP[s]	AMP + diphosphate <=> 5-phospho-alpha-D-ribose 1-diphosphate + adenine	UniProt
+HMR_4109	RHEA:19456	AKG[m] + alanine[m] <=> glutamate[m] + pyruvate[m]	2-oxoglutarate + L-alanine <=> L-glutamate + pyruvate	UniProt
+HMR_4141	RHEA:21435	H+[m] + NADH[m] + OAA[m] <=> malate[m] + NAD+[m]	(S)-malate + NAD(+) <=> H(+) + NADH + oxaloacetate	UniProt
+HMR_4204	RHEA:11577	ATP[c] + thiamin[c] => AMP[c] + H+[c] + thiamin-PP[c]	ATP + thiamine => AMP + H(+) + thiamine diphosphate	UniProt
+HMR_4212	RHEA:22965	H+[c] + ornithine[c] => CO2[c] + putrescine[c]	H(+) + L-ornithine => CO2 + putrescine	UniProt
+HMR_4220	RHEA:20548	3-hydroxy-L-kynurenine[c] + H2O[c] + NADP+[c] <=> H+[c] + kynurenine[c] + NADPH[c] + O2[c]	H(+) + L-kynurenine + NADPH + O2 <=> 3-hydroxy-L-kynurenine + H2O + NADP(+)	UniProt
+HMR_4251	RHEA:12735	2 H+[c] + PRPP[c] + quinolinate[c] => CO2[c] + nicotinate ribonucleotide[c] + PPi[c]	5-phospho-alpha-D-ribose 1-diphosphate + 2 H(+) + quinolinate => CO2 + diphosphate + nicotinate beta-D-ribonucleotide	UniProt
+HMR_4260	RHEA:24385	ATP[c] + deamido-NAD[c] + glutamine[c] + H2O[c] => AMP[c] + glutamate[c] + H+[c] + NAD+[c] + PPi[c]	ATP + deamido-NAD(+) + H2O + L-glutamine => AMP + diphosphate + H(+) + L-glutamate + NAD(+)	UniProt
+HMR_4262	RHEA:16152	nicotinamide D-ribonucleotide[c] + PPi[c] <=> H+[c] + nicotinamide[c] + PRPP[c]	beta-nicotinamide D-ribonucleotide + diphosphate <=> 5-phospho-alpha-D-ribose 1-diphosphate + H(+) + nicotinamide	UniProt
+HMR_4296	RHEA:17890	ethanolamine-phosphate[c] + H2O[c] => acetaldehyde[c] + H+[c] + NH3[c] + Pi[c]	H2O + phosphoethanolamine => acetaldehyde + NH4(+) + phosphate	UniProt
+HMR_4326	RHEA:13558	ATP[c] + gamma-glutamyl-cysteine[c] + glycine[c] => ADP[c] + GSH[c] + H+[c] + Pi[c]	ATP + glycine + L-gamma-glutamyl-L-cysteine => ADP + glutathione + H(+) + phosphate	UniProt
+HMR_4406	RHEA:14907	glutamine[c] + H2O[c] + PRPP[c] => 5-phosphoribosylamine[c] + glutamate[c] + PPi[c]	5-phospho-alpha-D-ribose 1-diphosphate + H2O + L-glutamine => 5-phospho-beta-D-ribosylamine + diphosphate + L-glutamate	UniProt
+HMR_4422	RHEA:22965	H+[s] + ornithine[s] => CO2[s] + putrescine[s]	H(+) + L-ornithine => CO2 + putrescine	UniProt
+HMR_4429	RHEA:19302	histamine[c] + SAM[c] => H+[c] + N-methylhistamine[c] + SAH[c]	histamine + S-adenosyl-L-methionine => H(+) + N(tau)-methylhistamine + S-adenosyl-L-homocysteine	UniProt
+HMR_4437	RHEA:21233	histidine[c] => H+[c] + NH3[c] + urocanate[c]	L-histidine => NH4(+) + trans-urocanate	UniProt
+HMR_4466	RHEA:11953	hydroxypyruvate[c] => 2-hydroxy-3-oxopropanoate[c]	3-hydroxypyruvate => 2-hydroxy-3-oxopropanoate	UniProt
+HMR_4473	RHEA:10117	6-phospho-D-gluconate[r] + NADP+[r] => CO2[r] + NADPH[r] + ribulose-5-phosphate[r]	6-phospho-D-gluconate + NADP(+) => CO2 + D-ribulose 5-phosphate + NADPH	UniProt
+HMR_4474	RHEA:10117	6-phospho-D-gluconate[c] + NADP+[c] => CO2[c] + NADPH[c] + ribulose-5-phosphate[c]	6-phospho-D-gluconate + NADP(+) => CO2 + D-ribulose 5-phosphate + NADPH	UniProt
+HMR_4507	RHEA:22925	dCMP[c] + H2O[c] => dUMP[c] + NH3[c]	dCMP + H(+) + H2O => dUMP + NH4(+)	UniProt
+HMR_4628	RHEA:10293	acetyl-CoA[c] + glucosamine-6-phosphate[c] => CoA[c] + H+[c] + N-acetylglucosamine-6-phosphate[c]	acetyl-CoA + D-glucosamine 6-phosphate => CoA + H(+) + N-acetyl-D-glucosamine 6-phosphate	UniProt
+HMR_4644	RHEA:12107	5,10-methylene-THF[c] + dUMP[c] <=> dihydrofolate[c] + dTMP[c]	(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + dUMP <=> 7,8-dihydrofolate + dTMP	UniProt
+HMR_4725	RHEA:16794	(R)-4-phosphopantothenoyl-cysteine[c] + H+[c] => CO2[c] + phosphopantetheine[c]	H(+) + N-[(R)-4-phosphopantothenoyl]-L-cysteine => CO2 + D-pantetheine 4'-phosphate	UniProt
+HMR_4733	RHEA:16794	(R)-4-phosphopantothenoyl-cysteine[m] + H+[m] => CO2[m] + phosphopantetheine[m]	H(+) + N-[(R)-4-phosphopantothenoyl]-L-cysteine => CO2 + D-pantetheine 4'-phosphate	UniProt
+HMR_4746	RHEA:13186	H2O[c] + 4 porphobilinogen[c] => 4 H+[c] + hydroxymethylbilane[c] + 4 NH3[c]	H2O + 4 porphobilinogen => hydroxymethylbilane + 4 NH4(+)	UniProt
+HMR_4758	RHEA:22586	Fe2+[m] + protoporphyrin[m] => 2 H+[c] + heme[m]	Fe(2+) + protoporphyrin IX => 2 H(+) + heme b	UniProt
+HMR_4792	RHEA:15484	5,10-methylene-THF[m] + glycine[m] + H2O[m] <=> serine[m] + THF[m]	(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + glycine + H2O <=> (6S)-5,6,7,8-tetrahydrofolate + L-serine	UniProt
+HMR_4861	RHEA:60367	inositol[c] <=> inositol[s]	H(+)(out) + myo-inositol(out) <=> H(+)(in) + myo-inositol(in)	UniProt
+HMR_5384	RHEA:11853	5-methylthioadenosine[c] + Pi[c] => adenine[c] + methylthioribose-1p[c]	phosphate + S-methyl-5'-thioadenosine => adenine + S-methyl-5-thio-alpha-D-ribose 1-phosphate	UniProt
+HMR_5385	RHEA:19990	methylthioribose-1p[c] => S-methyl-5-thio-D-ribulose-1-phosphate[c]	S-methyl-5-thio-alpha-D-ribose 1-phosphate => S-methyl-5-thio-D-ribulose 1-phosphate	UniProt
+HMR_5389	RHEA:24505	1,2-dihydroxy-5-(methylthio)pent-1-en-3-one[c] + O2[c] => 4-methylthio-2-oxobutanoic acid[c] + formate[c] + 2 H+[c]	1,2-dihydroxy-5-(methylsulfanyl)pent-1-en-3-one + O2 => 4-methylsulfanyl-2-oxobutanoate + formate + 2 H(+)	UniProt
+HMR_6539	RHEA:23697	inositol[c] + O2[c] => glucuronate[c] + H+[c] + H2O[c]	myo-inositol + O2 => D-glucuronate + H(+) + H2O	UniProt
+HMR_6601	RHEA:11017	allantoate[c] + H2O[c] => urea[c] + ureidoglycolate[c]	allantoate + H2O => (S)-ureidoglycolate + urea	UniProt
+HMR_6772	RHEA:16190	4-hydroxyphenylpyruvate[c] + O2[c] => CO2[c] + homogentisate[c]	3-(4-hydroxyphenyl)pyruvate + O2 => CO2 + homogentisate	UniProt
+HMR_6778	RHEA:10245	fumarylacetoacetate[c] + H2O[c] => acetoacetate[c] + fumarate[c] + H+[c]	4-fumarylacetoacetate + H2O => acetoacetate + fumarate + H(+)	UniProt
+HMR_7641	RHEA:12513	D-aspartate[p] + H2O[p] + O2[p] => H+[p] + H2O2[p] + NH3[p] + OAA[p]	D-aspartate + H2O + O2 => H2O2 + NH4(+) + oxaloacetate	UniProt
+HMR_7676	RHEA:23885	nicotinamide[c] + SAM[c] => 1-methylnicotinamide[c] + SAH[c]	nicotinamide + S-adenosyl-L-methionine => 1-methylnicotinamide + S-adenosyl-L-homocysteine	UniProt
+HMR_8150	RHEA:41997	globoside[g] + UDP-galactose[g] => galactosylgloboside[g] + H+[g] + UDP[g]	globoside Gb4Cer (d18:1(4E)) + UDP-alpha-D-galactose => globoside GalGb4Cer (d18:1(4E)) + H(+) + UDP	UniProt
+HMR_8409	RHEA:20697	2 H+[s] + 2 O2-[s] => H2O2[s] + O2[s]	2 H(+) + 2 superoxide => H2O2 + O2	UniProt
+HMR_8413	RHEA:20697	2 H+[n] + 2 O2-[n] => H2O2[n] + O2[n]	2 H(+) + 2 superoxide => H2O2 + O2	UniProt
+HMR_8415	RHEA:20697	2 H+[p] + 2 O2-[p] => H2O2[p] + O2[p]	2 H(+) + 2 superoxide => H2O2 + O2	UniProt
+HMR_8416	RHEA:24293	acetyl-CoA[m] + glutamate[m] => CoA[m] + H+[m] + N-acetyl-L-glutamate[m]	acetyl-CoA + L-glutamate => CoA + H(+) + N-acetyl-L-glutamate	UniProt
+HMR_8585	RHEA:16770	1,3-bisphospho-D-glycerate[c] + glucose-1-phosphate[c] => 3-phospho-D-glycerate[c] + glucose-1,6-bisphosphate[c]	(2R)-3-phospho-glyceroyl phosphate + alpha-D-glucose 1-phosphate => (2R)-3-phosphoglycerate + alpha-D-glucose 1,6-bisphosphate + H(+)	UniProt
+HMR_9484	RHEA:22485	H2O[c] + P1,P4-bis(5-guanosyl)-tetraphosphate[c] => GMP[c] + GTP[c] + 2 H+[c]	H2O + P(1),P(4)-bis(5'-guanosyl) tetraphosphate => GMP + GTP + 2 H(+)	UniProt
+HMR_9497	RHEA:13894	apppA[c] + H2O[c] => ADP[c] + AMP[c] + 2 H+[c]	H2O + P(1),P(3)-bis(5'-adenosyl) triphosphate => ADP + AMP + 2 H(+)	UniProt
+HMR_9530	RHEA:11545	H2O[c] + N4-(acetyl-beta-D-glucosaminyl)asparagine[c] => aspartate[c] + H+[c] + N-acetyl-beta-D-glucosaminylamine[c]	H2O + N(4)-(beta-N-acetyl-D-glucosaminyl)-L-asparagine => H(+) + L-aspartate + N-acetyl-beta-D-glucosaminylamine	UniProt
+HMR_9802	RHEA:15890	glutamine[c] + H2O[c] => glutamate[c] + H+[c] + NH3[c]	H2O + L-glutamine => L-glutamate + NH4(+)	UniProt
+PNTKm	RHEA:16374	ATP[m] + pantothenate[m] => ADP[m] + D-4-phosphopantothenate[m] + H+[m]	(R)-pantothenate + ATP => (R)-4'-phosphopantothenate + ADP + H(+)	UniProt
+RE2513N	RHEA:28221	chloride[n] + H+[n] + H2O2[n] <=> H2O[n] + hypochlorite[n]	chloride + H(+) + H2O2 <=> H2O + hypochlorous acid	UniProt
 4HBZFm	RHEA:11949	4-hydroxybenzoyl-CoA[m] + H2O[m] => 4-hydroxybenzoate[m] + CoA[m] + H+[m]	4-hydroxybenzoyl-CoA + H2O => 4-hydroxybenzoate + CoA + H(+)	Equation
 ACACtx	RHEA:29754	acetoacetate[c] <=> acetoacetate[p]	acetoacetate(in) <=> acetoacetate(out)	Equation
 ACCOAL	RHEA:29844	ATP[c] + CoA[c] + propanoate[c] => ADP[c] + Pi[c] + propanoyl-CoA[c]	ATP + CoA + propanoate => ADP + phosphate + propanoyl-CoA	Equation
