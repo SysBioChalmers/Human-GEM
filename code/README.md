@@ -25,7 +25,7 @@ Code used for technical purposes, typically to augment missing or inconvenient f
 ### modelCuration
 Contains curation-related scripts and functions used to make changes to the Human-GEM model. These model curation scripts help to improve transparency of changes made to the model when the number of changes is too large to view practically. Their only remaining purpose is for transparency and re-tracing the steps of the curation process.
 
-Note that all code in this directory is considered deprecated and will not be updated with later versions of Human-GEM.
+Note that code in this directory is often one-time use and will not be updated with later versions of Human-GEM. Deprecated code is moved to the `.deprecated` folder in the root directory of this repository.
 
 ### qc
 Functions to help with quality control (QC) of Human-GEM, such as checking for duplicate reactions or mass imbalances.

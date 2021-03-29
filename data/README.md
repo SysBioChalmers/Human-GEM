@@ -13,3 +13,5 @@ Contains metabolic task files used for evaluating the functionality of Human-GEM
 
 ### modelCuration
 Contains curation-related data files used for making changes to the Human-GEM model. These model curation data files help to improve transparency of changes made to the model.
+
+Note that many of the data files associated with model curation were outdated and not maintained, and have been moved to the `.deprecated` folder in the root directory of this repository.
