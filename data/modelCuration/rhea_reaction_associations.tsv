@@ -532,7 +532,7 @@ HMR_8752	RHEA:30692	H2O2[l] + methanol[l] => formaldehyde[l] + 2 H2O[l]	H2O2 + m
 HMR_8753	RHEA:34874	methanol[c] <=> methanol[l]	methanol(out) <=> methanol(in)	Equation
 HMR_8756	RHEA:35270	ethanol[c] <=> ethanol[p]	ethanol(in) <=> ethanol(out)	Equation
 HMR_8758	RHEA:15986	formate[c] + NAD+[c] => CO2[c] + NADH[c]	formate + NAD(+) => CO2 + NADH	Equation
-HMR_8771	RHEA:29788; RHEA:29792	ATP[c] + GSH[c] + H2O[c] => ADP[c] + GSH[m] + H+[c] + Pi[c]	ATP + glutathione(in) + H2O => ADP + glutathione(out) + H(+) + phosphate; ATP + glutathione(out) + H2O => ADP + glutathione(in) + H(+) + phosphate	Equation
+HMR_8771	RHEA:29792	ATP[c] + GSH[c] + H2O[c] => ADP[c] + GSH[m] + H+[c] + Pi[c]	ATP + glutathione(out) + H2O => ADP + glutathione(in) + H(+) + phosphate	Equation
 HMR_8775	RHEA:20002	glycolaldehyde[c] + H2O[c] + NAD+[c] => glycolate[c] + 2 H+[c] + NADH[c]	glycolaldehyde + H2O + NAD(+) => glycolate + 2 H(+) + NADH	Equation
 HMR_8778	RHEA:20002	glycolaldehyde[m] + H2O[m] + NAD+[m] => glycolate[m] + 2 H+[m] + NADH[m]	glycolaldehyde + H2O + NAD(+) => glycolate + 2 H(+) + NADH	Equation
 HMR_8784	RHEA:31060	H2O[c] + imidazole-4-acetaldehyde[c] + NAD+[c] => 2 H+[c] + imidazole-4-acetate[c] + NADH[c]	H2O + imidazole-4-acetaldehyde + NAD(+) => 2 H(+) + imidazole-4-acetate + NADH	Equation
