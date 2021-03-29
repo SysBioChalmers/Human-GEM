@@ -1,0 +1,62 @@
+# Date: 2019-12-19
+mets	nameOrig	nameNew	formulaOrig	formulaNew	chargeOrig	chargeNew	notes
+m10016c	(ADDED)	2,3-epoxy-2,3-dihydro-2-methyl-3-phytyl-1,4-naphthoquinone		C31H46O3	0	0	
+m10017c	(ADDED)	3-hydroxy-2-methyl-3-phytyl-2,3-dihydronaphthoquinone		C31H48O3	0	0	
+m10018c	(ADDED)	5-Hydroxy-2-oxo-4-ureido-2,5-dihydro-1H-imidazole-5-carboxylate		C5H5N4O5	0	-1	
+m10018m	(ADDED)	5-Hydroxy-2-oxo-4-ureido-2,5-dihydro-1H-imidazole-5-carboxylate		C5H5N4O5	0	-1	
+m10018p	(ADDED)	5-Hydroxy-2-oxo-4-ureido-2,5-dihydro-1H-imidazole-5-carboxylate		C5H5N4O5	0	-1	
+m10019c	(ADDED)	5alpha-Pregnan-20alpha-ol-3-one		C21H34O2	0	0	
+m10019n	(ADDED)	5alpha-Pregnan-20alpha-ol-3-one		C21H34O2	0	0	
+m10020c	(ADDED)	17alpha,20alpha-Dihydroxypregn-4-en-3-one		C21H32O3	0	0	
+m10021c	(ADDED)	alpha-muricholic acid		C24H39O5	0	-1	
+m10021s	(ADDED)	alpha-muricholic acid		C24H39O5	0	-1	
+m10021x	(ADDED)	alpha-muricholic acid		C24H39O5	0	-1	
+m10022c	(ADDED)	beta-muricholic acid		C24H39O5	0	-1	
+m10022s	(ADDED)	beta-muricholic acid		C24H39O5	0	-1	
+m10022x	(ADDED)	beta-muricholic acid		C24H39O5	0	-1	
+m10023c	(ADDED)	dehydrocholic acid		C24H33O5	0	-1	
+m10023s	(ADDED)	dehydrocholic acid		C24H33O5	0	-1	
+m10023x	(ADDED)	dehydrocholic acid		C24H33O5	0	-1	
+m10024c	(ADDED)	tauro-alpha-muricholic acid		C26H44NO7S	0	-1	
+m10024s	(ADDED)	tauro-alpha-muricholic acid		C26H44NO7S	0	-1	
+m10024x	(ADDED)	tauro-alpha-muricholic acid		C26H44NO7S	0	-1	
+m10025c	(ADDED)	omega-muricholic acid		C24H39O5	0	-1	
+m10025s	(ADDED)	omega-muricholic acid		C24H39O5	0	-1	
+m10025x	(ADDED)	omega-muricholic acid		C24H39O5	0	-1	
+m10026c	(ADDED)	taurohyocholic acid		C26H44NO7S	0	-1	
+m10026s	(ADDED)	taurohyocholic acid		C26H44NO7S	0	-1	
+m10026x	(ADDED)	taurohyocholic acid		C26H44NO7S	0	-1	
+m10027c	(ADDED)	glycohyocholic acid		C26H42NO6	0	-1	
+m10027s	(ADDED)	glycohyocholic acid		C26H42NO6	0	-1	
+m10027x	(ADDED)	glycohyocholic acid		C26H42NO6	0	-1	
+m10028c	(ADDED)	glycohyodeoxycholic acid		C26H42NO5	0	-1	
+m10028s	(ADDED)	glycohyodeoxycholic acid		C26H42NO5	0	-1	
+m10028x	(ADDED)	glycohyodeoxycholic acid		C26H42NO5	0	-1	
+m10029c	(ADDED)	glycodehydrocholic acid		C26H36NO6	0	-1	
+m10029s	(ADDED)	glycodehydrocholic acid		C26H36NO6	0	-1	
+m10029x	(ADDED)	glycodehydrocholic acid		C26H36NO6	0	-1	
+m10030c	(ADDED)	hyocholic acid		C24H39O5	0	-1	
+m10030s	(ADDED)	hyocholic acid		C24H39O5	0	-1	
+m10030x	(ADDED)	hyocholic acid		C24H39O5	0	-1	
+m10031c	(ADDED)	tauro-omega-muricholic acid		C26H44NO7S	0	-1	
+m10031s	(ADDED)	tauro-omega-muricholic acid		C26H44NO7S	0	-1	
+m10031x	(ADDED)	tauro-omega-muricholic acid		C26H44NO7S	0	-1	
+m10032c	(ADDED)	tauro-beta-muricholic acid		C26H44NO7S	0	-1	
+m10032s	(ADDED)	tauro-beta-muricholic acid		C26H44NO7S	0	-1	
+m10032x	(ADDED)	tauro-beta-muricholic acid		C26H44NO7S	0	-1	
+m10033c	(ADDED)	murideoxycholic acid		C24H39O4	0	-1	
+m10033s	(ADDED)	murideoxycholic acid		C24H39O4	0	-1	
+m10033x	(ADDED)	murideoxycholic acid		C24H39O4	0	-1	
+m10034c	(ADDED)	taurodehydrocholic acid		C26H38NO7S	0	-1	
+m10034s	(ADDED)	taurodehydrocholic acid		C26H38NO7S	0	-1	
+m10034x	(ADDED)	taurodehydrocholic acid		C26H38NO7S	0	-1	
+m10035c	(ADDED)	alpha-muricholoyl-CoA		C45H70N7O20P3S	0	-4	
+m10036c	(ADDED)	beta-muricholoyl-CoA		C45H70N7O20P3S	0	-4	
+m10037c	(ADDED)	omega-muricholoyl-CoA		C45H70N7O20P3S	0	-4	
+m10038c	(ADDED)	hyocholoyl-CoA		C45H70N7O20P3S	0	-4	
+m10039c	(ADDED)	dehydrocholoyl-CoA		C45H64N7O20P3S	0	-4	
+m10040c	(ADDED)	hyodeoxycholoyl-CoA		C45H70N7O19P3S	0	-4	
+m10041c	(ADDED)	tauro-hyodeoxycholic acid		C26H44NO6S	0	-1	
+m10041s	(ADDED)	tauro-hyodeoxycholic acid		C26H44NO6S	0	-1	
+m10041x	(ADDED)	tauro-hyodeoxycholic acid		C26H44NO6S	0	-1	
+m10042c	(ADDED)	ursodeoxycholoyl-CoA		C45H70N7O19P3S	0	-4	

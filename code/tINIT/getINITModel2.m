@@ -46,7 +46,7 @@ function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, delete
 %   removeGenes         if true, low-abundance genes will be removed from
 %                       grRules, unless they are the only gene associated 
 %                       with a reaction, or a subunit of an enzyme complex
-%                       (see "removeLowScorGenes" function for details).
+%                       (see "removeLowScoreGenes" function for details).
 %                       If false, grRules will not be modified; however,
 %                       genes that were associated only with removed 
 %                       reactions will not be present in the final model.
