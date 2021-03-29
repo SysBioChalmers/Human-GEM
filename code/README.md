@@ -8,11 +8,6 @@ code
 ├── io
 ├── misc
 ├── modelCuration
-│   ├── GPRs
-│   │   └── EnzymeComplexes
-│   ├── MetAssociation
-│   ├── RxnAssociation
-│   └── modelIntegration
 ├── qc
 ├── tINIT
 └── test
@@ -28,9 +23,9 @@ Functions associated with input/output of files into and out of MATLAB, such as 
 Code used for technical purposes, typically to augment missing or inconvenient functionalities of MATLAB.
 
 ### modelCuration
-Contains curation-related scripts and functions that were used to make changes to the Human-GEM model. These model curation scripts help to improve clarity of what changes were made to the model when the number of changes is too large to view practically, or when the changes were made directly to the Human-GEM `.mat` file (done before implementing the `.yml` workflow). Their only remaining purpose is for transparency and re-tracing the steps of the curation process.
+Contains curation-related scripts and functions used to make changes to the Human-GEM model. These model curation scripts help to improve transparency of changes made to the model when the number of changes is too large to view practically. Their only remaining purpose is for transparency and re-tracing the steps of the curation process.
 
-Note that all code in this directory is considered deprecated and will not be updated with later versions of Human-GEM.
+Note that code in this directory is often one-time use and will not be updated with later versions of Human-GEM. Deprecated code is moved to the `.deprecated` folder in the root directory of this repository.
 
 ### qc
 Functions to help with quality control (QC) of Human-GEM, such as checking for duplicate reactions or mass imbalances.
