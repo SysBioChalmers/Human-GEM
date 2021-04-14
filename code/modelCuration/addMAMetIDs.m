@@ -1,4 +1,4 @@
-
+% this script is to add metabolite identifiers (#174) that will be used for Met Atlas web-portal.
 
 % load data
 metIDs = importTsvFile('metabolites.tsv');

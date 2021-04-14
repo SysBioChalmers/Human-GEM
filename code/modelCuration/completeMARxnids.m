@@ -1,4 +1,4 @@
-% code for completing MA reaction ids #234
+% this script is to provide complete reaction identifiers (#174) that will be used for Met Atlas web-portal.
 
 % load reaction ids
 rxnIDs = importTsvFile('reactions.tsv');
