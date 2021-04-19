@@ -1,0 +1,204 @@
+rxns	rxnAssoc	notes
+r1293	HMR_5167	reaction is duplicate of HMR_5167
+r1294	HMR_5168	reaction is duplicate of HMR_5168
+GGNG	HMR_5395	reaction is duplicate of HMR_5395
+r1092	HMR_5151	reaction is duplicate of HMR_5151
+r1093	HMR_5152	reaction is duplicate of HMR_5152
+r1094	HMR_5153	reaction is duplicate of HMR_5153
+r1095	HMR_5154	reaction is duplicate of HMR_5154
+r1096	HMR_5155	reaction is duplicate of HMR_5155
+r1097	HMR_5156	reaction is duplicate of HMR_5156
+r1098	HMR_5157	reaction is duplicate of HMR_5157
+r1099	HMR_5158	reaction is duplicate of HMR_5158
+r1100	HMR_5159	reaction is duplicate of HMR_5159
+r1101	HMR_5160	reaction is duplicate of HMR_5160
+r1102	HMR_5161	reaction is duplicate of HMR_5161
+r1103	HMR_5162	reaction is duplicate of HMR_5162
+r1104	HMR_5163	reaction is duplicate of HMR_5163
+r1105	HMR_5164	reaction is duplicate of HMR_5164
+r1112	HMR_5165	reaction is duplicate of HMR_5165
+r1113	HMR_5166	reaction is duplicate of HMR_5166
+r1402	HMR_5172	reaction is duplicate of HMR_5172
+HMR_4782	HMR_4780; HMR_4778	reaction is duplicate of HMR_4780 and HMR_4778
+HMR_4783	HMR_4781; HMR_4779	reaction is duplicate of HMR_4781 and HMR_4779
+HMR_1849	HMR_8658	reaction is duplicate of HMR_8658 after adjusting ATP cost to 1
+HMR_1851	HMR_1868	reaction is duplicate of HMR_1868 after adjusting ATP cost to 1
+HMR_1856	HMR_1870	reaction is duplicate of HMR_1870 after adjusting ATP cost to 1
+HMR_1858	HMR_1874	reaction is duplicate of HMR_1874 after adjusting ATP cost to 1
+HMR_1860	HMR_1872	reaction is duplicate of HMR_1872 after adjusting ATP cost to 1
+FAH3	HMR_8038	reaction is duplicate of HMR_8038 after rebalancing protons
+HMR_8422	HMR_7596	1-alkyldihydroxyacetone-phosphate is the same as alkyl-glycerone-3-phosphate, so it will be replaced with the latter. After this replacement, the reaction is identical to HMR_7596, so it should be DELETED.
+GDA1tn	GD1Atn	transport reaction is imbalanced, when fixed, it is identical to rxn GD1Atn
+PMI1346PH	HMR_8835	after rebalancing, reaction is identical to HMR_8835
+PMI1346PHn	HMR_8836	after rebalancing, reaction is identical to HMR_8836
+HMR_6499	HMR_6500	correct version of reaction is HMR_6500
+RE3238C	HMR_0294	reaction is duplicate of HMR_0294 after rebalancing
+TTDCEAATP	HMR_0202	reaction is duplicate of HMR_0202 after rebalancing
+DOLASNT_Ler	HMR_7285	reaction is duplicate of HMR_7285 after rebalancing
+DOLASNT_Uer	HMR_7285	reaction is duplicate of HMR_7285 after rebalancing
+AGLPET	HMR_7599	reaction is duplicate of HMR_7599 after rebalancing
+1MNCAMti	HMR_7679	reaction is duplicate of HMR_7679 after rebalancing
+GGT_U	HMR_7254	reaction is duplicate of HMR_7254 after rebalancing
+ESTRIOLGLCte	HMR_7986	reaction is duplicate of HMR_7986 after rebalancing
+r0023	HMR_3992	reaction is duplicate of HMR_3992 after rebalancing
+RE2440C	HMR_4551	reaction is duplicate of HMR_4551 after rebalancing
+r2518	HMR_1696	reaction is duplicate of HMR_1696 after rebalancing
+r2517	HMR_1622	reaction is duplicate of HMR_1622 after rebalancing
+4PYRDX	HMR_8103	reaction is duplicate of HMR_8103 after rebalancing
+RE3456C	HMR_1357	reaction is duplicate of HMR_1357 after rebalancing
+5ADTSTSTERONEGLCte	HMR_7990	reaction is duplicate of HMR_7990 after rebalancing
+r1025	HMR_1592	reaction is duplicate of HMR_1592 after rebalancing
+RE3450C	HMR_1360	reaction is duplicate of HMR_1360 after rebalancing
+r0678	HMR_2152	reaction is duplicate of HMR_2152 after rebalancing
+FUT32g	HMR_8319	reaction is duplicate of HMR_8319 after rebalancing
+G16MT_L	HMR_7268	reaction is duplicate of HMR_7268 after rebalancing
+G16MT_U	HMR_7268	reaction is duplicate of HMR_7268 after rebalancing
+ANDRSTRNGLCte	HMR_7967	reaction is duplicate of HMR_7967 after rebalancing
+r1514	HMR_0411	reaction is duplicate of HMR_0411 after rebalancing
+r2503	HMR_3014	reaction is duplicate of HMR_3014 after rebalancing
+BILDGLCURte	HMR_1896	reaction is duplicate of HMR_1896 after rebalancing
+BILGLCURte	HMR_8633	reaction is duplicate of HMR_8633 after rebalancing
+BTNt3ile	HMR_7667	reaction is duplicate of HMR_7667 after rebalancing
+CAMPt	HMR_7691	reaction is duplicate of HMR_7691 after rebalancing
+CGMPt	HMR_7692	reaction is duplicate of HMR_7692 after rebalancing
+CHOLATEt3	HMR_8658	reaction is duplicate of HMR_8658 after rebalancing
+CHSTEROLt	HMR_1911	reaction is duplicate of HMR_1911 after rebalancing
+CHSTEROLtg	HMR_8661	reaction is duplicate of HMR_8661 after rebalancing
+r2501	HMR_1659	reaction is duplicate of HMR_1659 after rebalancing
+CE2510t	HMR_0295	reaction is duplicate of HMR_0295 after rebalancing
+CE0328t	HMR_0379	reaction is duplicate of HMR_0379 after rebalancing
+r1525	HMR_0407	reaction is duplicate of HMR_0407 after rebalancing
+r1519	HMR_0269	reaction is duplicate of HMR_0269 after rebalancing
+ESTRADIOLGLCt2	HMR_7650	reaction is duplicate of HMR_7650 after rebalancing
+ESTRONEGLCt	HMR_7964	reaction is duplicate of HMR_7964 after rebalancing
+AHANDROSTANGLCte	HMR_7982	reaction is duplicate of HMR_7982 after rebalancing
+r1520	HMR_0403	reaction is duplicate of HMR_0403 after rebalancing
+GLUVESSEC	HMR_5332	reaction is duplicate of HMR_5332 after rebalancing
+r1531	HMR_5443	reaction is duplicate of HMR_5443 after rebalancing
+r1026	HMR_1874	reaction is duplicate of HMR_1874 after rebalancing
+GCHOLAt3	HMR_1868	reaction is duplicate of HMR_1868 after rebalancing
+r1530	HMR_5442	reaction is duplicate of HMR_5442 after rebalancing
+PNTOt5le	HMR_8930	reaction is duplicate of HMR_8930 after rebalancing
+NaKt	HMR_5295	reaction is duplicate of HMR_5295 after rebalancing
+DDCAFATP	HMR_0190	reaction is duplicate of HMR_0190 after rebalancing
+r1522	HMR_0335	reaction is duplicate of HMR_0335 after rebalancing
+r1518	HMR_0399	reaction is duplicate of HMR_0399 after rebalancing
+r1521	HMR_0351	reaction is duplicate of HMR_0351 after rebalancing
+r2502	HMR_3013	reaction is duplicate of HMR_3013 after rebalancing
+r1529	HMR_0198	reaction is duplicate of HMR_0198 after rebalancing
+CE2513ATP	HMR_0339	reaction is duplicate of HMR_0339 after rebalancing
+r1516	HMR_0265	reaction is duplicate of HMR_0265 after rebalancing
+r1515	HMR_0224	reaction is duplicate of HMR_0224 after rebalancing
+r1523	HMR_0231	reaction is duplicate of HMR_0231 after rebalancing
+C16txc	HMR_3011	reaction is duplicate of HMR_3011 after rebalancing
+PCt	HMR_0476	reaction is duplicate of HMR_0476 after rebalancing
+PHYQt	HMR_8923	reaction is duplicate of HMR_8923 after rebalancing
+r2499	HMR_3008	reaction is duplicate of HMR_3008 after rebalancing
+PROSTGE1t3	HMR_8934	reaction is duplicate of HMR_8934 after rebalancing
+PROSTGE2t3	HMR_8935	reaction is duplicate of HMR_8935 after rebalancing
+RIBFLVt3	HMR_8730	reaction is duplicate of HMR_8730 after rebalancing
+r1532	HMR_5444	reaction is duplicate of HMR_5444 after rebalancing
+r1533	HMR_5445	reaction is duplicate of HMR_5445 after rebalancing
+r1517	HMR_0355	reaction is duplicate of HMR_0355 after rebalancing
+r2505	HMR_6392	reaction is duplicate of HMR_6392 after rebalancing
+r1028	HMR_1872	reaction is duplicate of HMR_1872 after rebalancing
+TCHOLAt3	HMR_1870	reaction is duplicate of HMR_1870 after rebalancing
+TSTSTERONEGLCte	HMR_8850	reaction is duplicate of HMR_8850 after rebalancing
+r1536	HMR_5446	reaction is duplicate of HMR_5446 after rebalancing
+CBLATm	HMR_8616	reaction is duplicate of HMR_8616 after rebalancing
+r0813	HMR_1895	reaction is duplicate of HMR_1895 after rebalancing
+G13MT_L	HMR_7267	reaction is duplicate of HMR_7267 after rebalancing
+G13MT_U	HMR_7267	reaction is duplicate of HMR_7267 after rebalancing
+r0760	HMR_2156	reaction is duplicate of HMR_2156 after rebalancing
+CHSTEROLSULT	HMR_1919	reaction is duplicate of HMR_1919 after rebalancing
+RE1573M	HMR_3288	reaction is duplicate of HMR_3288 after rebalancing
+RE1573X	HMR_3316	reaction is duplicate of HMR_3316 after rebalancing
+TTDCPT2	HMR_2610	reaction is duplicate of HMR_2610 after rebalancing
+DOLK_L	HMR_7263	reaction is duplicate of HMR_7263 after rebalancing
+DOLK_U	HMR_7263	reaction is duplicate of HMR_7263 after rebalancing
+r0768	HMR_2168	reaction is duplicate of HMR_2168 after rebalancing
+DEDOLP1_L	HMR_7258	reaction is duplicate of HMR_7258 after rebalancing
+DEDOLP1_U	HMR_7258	reaction is duplicate of HMR_7258 after rebalancing
+DEDOLP2_L	HMR_7259	reaction is duplicate of HMR_7259 after rebalancing
+DEDOLP2_U	HMR_7259	reaction is duplicate of HMR_7259 after rebalancing
+DEDOLR_L	HMR_7260	reaction is duplicate of HMR_7260 after rebalancing
+DEDOLR_U	HMR_7260	reaction is duplicate of HMR_7260 after rebalancing
+r0713	HMR_2173	reaction is duplicate of HMR_2173 after rebalancing
+DOLICHOL_Lter	DOLICHOL_Uter	reaction is duplicate of DOLICHOL_Uter after rebalancing
+DOLGLCP_Uter	DOLGLCP_Lter	reaction is duplicate of DOLGLCP_Lter after rebalancing
+DOLP_Lter	HMR_7279	reaction is duplicate of HMR_7279 after rebalancing
+DOLP_Uter	HMR_7279	reaction is duplicate of HMR_7279 after rebalancing
+DOLPGT1_Ler	HMR_7280	reaction is duplicate of HMR_7280 after rebalancing
+DOLPGT1_Uer	HMR_7280	reaction is duplicate of HMR_7280 after rebalancing
+DOLPGT2_Ler	HMR_7281	reaction is duplicate of HMR_7281 after rebalancing
+DOLPGT2_Uer	HMR_7281	reaction is duplicate of HMR_7281 after rebalancing
+DOLGPP_Ler	HMR_8692	reaction is duplicate of HMR_8692 after rebalancing
+DOLGPP_Uer	HMR_8692	reaction is duplicate of HMR_8692 after rebalancing
+DOLDPP_Ler	HMR_8691	reaction is duplicate of HMR_8691 after rebalancing
+DOLDPP_Uer	HMR_8691	reaction is duplicate of HMR_8691 after rebalancing
+DOLMANP_Lter	HMR_7272	reaction is duplicate of HMR_7272 after rebalancing
+DOLMANP_Uter	HMR_7272	reaction is duplicate of HMR_7272 after rebalancing
+H7MTer_U	HMR_8390	reaction is duplicate of HMR_8390 after rebalancing
+H5MTer_U	HMR_8387	reaction is duplicate of HMR_8387 after rebalancing
+DOLPH_Ler	HMR_7274	reaction is duplicate of HMR_7274 after rebalancing
+DOLPH_Uer	HMR_7274	reaction is duplicate of HMR_7274 after rebalancing
+DOLPMT_L	HMR_7275	reaction is duplicate of HMR_7275 after rebalancing
+DOLPMT_U	HMR_7275	reaction is duplicate of HMR_7275 after rebalancing
+DOLPMT1_Ler	HMR_7276	reaction is duplicate of HMR_7276 after rebalancing
+DOLPMT1_Uer	HMR_7276	reaction is duplicate of HMR_7276 after rebalancing
+DOLPMT2_Ler	HMR_7277	reaction is duplicate of HMR_7277 after rebalancing
+DOLPMT2_Uer	HMR_7277	reaction is duplicate of HMR_7277 after rebalancing
+GPIMTer_L	HMR_8383	reaction is duplicate of HMR_8383 after rebalancing
+GPIMTer_U	HMR_8383	reaction is duplicate of HMR_8383 after rebalancing
+H6MTer_U	HMR_8389	reaction is duplicate of HMR_8389 after rebalancing
+H3MTer_U	HMR_8385	reaction is duplicate of HMR_8385 after rebalancing
+BMTer_U	HMR_8388	reaction is duplicate of HMR_8388 after rebalancing
+H2MTer_U	HMR_8384	reaction is duplicate of HMR_8384 after rebalancing
+DOLPMT3_Ler	HMR_7271	reaction is duplicate of HMR_7271 after rebalancing
+DOLPMT3_Uer	HMR_7271	reaction is duplicate of HMR_7271 after rebalancing
+UDPDOLPT_U	UDPDOLPT_L	reaction is duplicate of UDPDOLPT_L after rebalancing
+GLCNACPT_L	HMR_7264	reaction is duplicate of HMR_7264 after rebalancing
+GLCNACPT_U	HMR_7264	reaction is duplicate of HMR_7264 after rebalancing
+DOLPGT3_Ler	HMR_7261	reaction is duplicate of HMR_7261 after rebalancing
+DOLPGT3_Uer	HMR_7261	reaction is duplicate of HMR_7261 after rebalancing
+DOLPMT4_Ler	HMR_7257	reaction is duplicate of HMR_7257 after rebalancing
+DOLPMT4_Uer	HMR_7257	reaction is duplicate of HMR_7257 after rebalancing
+ESTSULT	HMR_2037	reaction is duplicate of HMR_2037 after rebalancing
+HMR_10000	HMR_8720	reaction is duplicate of HMR_8720 after rebalancing
+HMR_10001	HMR_8720	reaction is duplicate of HMR_8720 after rebalancing
+HMR_10002	HMR_8720	reaction is duplicate of HMR_8720 after rebalancing
+HMR_10003	HMR_8720	reaction is duplicate of HMR_8720 after rebalancing
+HMR_10004	HMR_8720	reaction is duplicate of HMR_8720 after rebalancing
+HMR_10005	HMR_8720	reaction is duplicate of HMR_8720 after rebalancing
+HMR_10006	HMR_8720	reaction is duplicate of HMR_8720 after rebalancing
+HMR_10007	HMR_8720	reaction is duplicate of HMR_8720 after rebalancing
+HMR_9723	HMR_9672	reaction is duplicate of HMR_9672 after rebalancing
+G12MT1_L	HMR_7269	reaction is duplicate of HMR_7269 after rebalancing
+G12MT1_U	HMR_7269	reaction is duplicate of HMR_7269 after rebalancing
+HMR_10008	HMR_9209	reaction is duplicate of HMR_9209 after rebalancing
+HMR_10009	HMR_9209	reaction is duplicate of HMR_9209 after rebalancing
+HMR_10010	HMR_9209	reaction is duplicate of HMR_9209 after rebalancing
+HMR_10011	HMR_9209	reaction is duplicate of HMR_9209 after rebalancing
+HMR_10012	HMR_9209	reaction is duplicate of HMR_9209 after rebalancing
+HMR_10013	HMR_9209	reaction is duplicate of HMR_9209 after rebalancing
+HMR_10014	HMR_9209	reaction is duplicate of HMR_9209 after rebalancing
+HMR_10015	HMR_9209	reaction is duplicate of HMR_9209 after rebalancing
+M4MPDOL_Uter	HMR_7273	reaction is duplicate of HMR_7273 after rebalancing
+G12MT2_L	HMR_7270	reaction is duplicate of HMR_7270 after rebalancing
+G12MT2_U	HMR_7270	reaction is duplicate of HMR_7270 after rebalancing
+BDMT_L	HMR_7266	reaction is duplicate of HMR_7266 after rebalancing
+BDMT_U	HMR_7266	reaction is duplicate of HMR_7266 after rebalancing
+NEU25	HMR_0850	reaction is duplicate of HMR_0850 after rebalancing
+EX_gm2_hs[e]	EX_HC02160[e]	reaction is duplicate of EX_HC02160[e] after rebalancing
+GALGT2	HMR_8190	reaction is duplicate of HMR_8190 after rebalancing
+r0764	HMR_2160	reaction is duplicate of HMR_2160 after rebalancing
+r0766	HMR_2164	reaction is duplicate of HMR_2164 after rebalancing
+r0772	HMR_2178	reaction is duplicate of HMR_2178 after rebalancing
+RE3268C	HMR_6558	reaction is duplicate of HMR_6558 after rebalancing
+HMR_8832	HMR_0663	reaction is duplicate of HMR_0663 after rebalancing
+RE3301C	HMR_0660	reaction is duplicate of HMR_0660 after rebalancing
+GLCNACT_L	HMR_7265	reaction is duplicate of HMR_7265 after rebalancing
+GLCNACT_U	HMR_7265	reaction is duplicate of HMR_7265 after rebalancing
+RE3580X	HMR_1296	reaction is duplicate of HMR_1296 after rebalancing
+HC02198c	HMR_1843	reaction is duplicate of HMR_1843 after rebalancing
+HMR_8218	HMR_0750	reaction is duplicate of HMR_0750 after rebalancing

@@ -61,7 +61,7 @@ Detailed instructions on the installation and use of the Human-GEM model and rep
 
 ## Model Files
 
-The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `devel`), to facilitate tracking of model changes.
+The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `develop`), to facilitate tracking of model changes.
 
 
 ## Reaction, Metabolite, and Gene Annotations
@@ -77,9 +77,9 @@ Additional annotation information and external identifiers for Human-GEM reactio
 `Human-GEM.mat` (Recommended if on `master` branch)
 * Load and save using the built-in MATLAB `load()` and `save()` functions.
 
-`Human-GEM.yml` (Recommended if on `devel` or other branches)
-* Load using the `importHumanYaml.m` function (in `code/io/`)
-* Save using the `writeHumanYaml.m` function (in `code/io/`)
+`Human-GEM.yml` (Recommended if on `develop` or other branches)
+* Load using the `importYaml.m` function (in `code/io/`)
+* Save using the `exportYaml.m` function (in `code/io/`)
 
 `Human-GEM.xml` (SBML format)
 * Load using the `importModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
@@ -104,12 +104,3 @@ A collection of manually curated 2D metabolic maps associated with Human-GEM are
 
 Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/master/.github/CONTRIBUTING.md) to get started.
 
-
-
-## Contributors
-
-- [Jonathan L. Robinson](https://www.chalmers.se/en/Staff/Pages/jonrob.aspx), National Bioinformatics Infrastructure Sweden (NBIS), Science for Life Laboratory (SciLifeLab), Chalmers University of Technology, Gothenburg Sweden
-- [Pÿnar Kocabaÿ](https://www.chalmers.se/en/staff/Pages/kocabas.aspx), Chalmers University of Technology, Gothenburg Sweden
-- [Pierre-Etienne Cholley](https://www.chalmers.se/en/staff/Pages/cholley.aspx), Chalmers University of Technology, Gothenburg Sweden
-- [Avlant Nilsson](https://www.chalmers.se/en/staff/Pages/avlant-nilsson.aspx), Chalmers University of Technology, Gothenburg Sweden
-- [Hao Wang](https://www.chalmers.se/en/staff/Pages/hao-wang.aspx), Chalmers University of Technology, Gothenburg Sweden
