@@ -1,4 +1,4 @@
 MATLAB	9.8.0.1323502 (R2020a)
 libSBML	5.17.0
-RAVEN_toolbox	2.4.2
-COBRA_toolbox	commit 800dcfe
+RAVEN_toolbox	commit 33ff253
+COBRA_toolbox	commit 9478adc
