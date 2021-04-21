@@ -9,11 +9,13 @@ from collections import OrderedDict
 """
 Fetch and write in OUTPUT FILE gene annotations of the input YAML file. The file must contains Ensembl IDs as gene IDs.
 Input:
- - the YAML file format of the GEM
- - version of Ensembl, e.g. 103
- - version of Ensembl, e.g. 103
- - version of human assembly, e.g. 38
- - name of the output file
+ - YAML-formated  GEM
+ - Path of the output file
+ 
+The script fetch the latest human Ensembl database available by default.
+Another Human DB can be specify with:
+    --ensembl-version and --genome-version
+or any valid Ensembl database can be provided with --database. Using another database that human was not tested.
 
 Steps:
 - Fetch all the IDs (gene_stable_id, transcript_stable_id, translation_stable_id, uniprot_id, gene_name, ncbi_id)
@@ -23,7 +25,7 @@ Steps:
 - Write the OUTPUT FILE with the list of IDs only existing in YAML FILE and excluding the no-primary assembly IDs
 
 Output:
- - data written in the TSV output file
+ - the data are written in a TSV file
 
 Require mysql-connector-python package.
 """
