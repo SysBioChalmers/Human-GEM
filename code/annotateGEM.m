@@ -68,8 +68,11 @@ id2miriam = {%reactions
              'rxnKEGGID'        'kegg.reaction'
              'rxnBiGGID'        'bigg.reaction'
              'rxnREACTOMEID'    'reactome'
+             'rxnRecon3DID'     'vmhreaction'
              'rxnMetaNetXID'    'metanetx.reaction'
              'rxnTCDBID'        'tcdb'
+             'rxnRheaID'        'rhea'
+             'rxnRheaMasterID'  'rhea'
              % metabolites
              'metBiGGID'        'bigg.metabolite'
              'metKEGGID'        'kegg.compound'
@@ -77,12 +80,16 @@ id2miriam = {%reactions
              'metChEBIID'       'chebi'
              'metPubChemID'     'pubchem.compound'
              'metLipidMapsID'   'lipidmaps'
+             'metRecon3DID'     'vmhmetabolite'
              'metMetaNetXID'    'metanetx.chemical'
              % genes
-             'geneNames'        'hgnc.symbol'
-             'geneEnsemblID'    'ensembl'
+             'genes'            'ensembl'
+             'geneENSTID'       'ensembl'
+             'geneENSPID'       'ensembl'
+             'geneUniProtID'    'uniprot'
+             'geneSymbols'      'hgnc.symbol'
              'geneEntrezID'     'ncbigene'
-             'geneUniProtID'    'uniprot'};
+             };
 
 
 %% Load and organize annotation data
