@@ -101,6 +101,11 @@ if any(ismember({'rxn','reaction'},lower(annType)))
     tmpfile = fullfile(path,'../model','reactions.tsv');
     rxnAssoc = importTsvFile(tmpfile);
     
+    % strip "RHEA:" prefix from Rhea IDs since it should not be included in
+    % the identifiers.org URL
+    rxnAssoc.rxnRheaID = regexprep(rxnAssoc.rxnRheaID, 'RHEA:', '');
+    rxnAssoc.rxnRheaMasterID = regexprep(rxnAssoc.rxnRheaMasterID, 'RHEA:', '');
+    
     rxnAssocArray = struct2cell(rxnAssoc);
     numericFields = find(cellfun(@isnumeric, rxnAssocArray));
     for i = 1:numel(numericFields)
