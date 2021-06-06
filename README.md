@@ -83,7 +83,7 @@ The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `mo
 
 ## Reaction, Metabolite, and Gene Annotations
 
-Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are provided as `tsv` files in the `model/` directory.
+Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are provided as `tsv` files in the `model/` directory. The structure of the `tsv` files are tabulated below.
 
 * `reactions.tsv` content:
 
@@ -112,18 +112,18 @@ filedname      |  annotation             |
 ---------------|-------------------------|
 mets           |identical to `model.mets`|
 metsNoComp     |`model.mets` without compartment suffix|
-metBiGGID      |BiGG metabolite ID
-metKEGGID      |KEGG metabolite ID
-metHMDBID      |HMDB ID
-metChEBIID     |ChEBI ID
-metPubChemID   |PubChem ID
-metLipidMapsID |LipidMaps ID
-metEHMNID      |EHMN metabolite ID
-metHepatoNET1ID|HepatoNET1 metabolite ID
-metRecon3DID   |Recon3D metabolite ID
-metMetaNetXID  |MetaNetX metabolite ID
-metHMR2ID      |HMR2 metabolite ID
-metMAID        |MA metabolite ID
+metBiGGID      |BiGG metabolite ID       |
+metKEGGID      |KEGG metabolite ID       |
+metHMDBID      |HMDB ID                  |
+metChEBIID     |ChEBI ID                 |
+metPubChemID   |PubChem ID               |
+metLipidMapsID |LipidMaps ID             |
+metEHMNID      |EHMN metabolite ID       |
+metHepatoNET1ID|HepatoNET1 metabolite ID |
+metRecon3DID   |Recon3D metabolite ID    |
+metMetaNetXID  |MetaNetX metabolite ID   |
+metHMR2ID      |HMR2 metabolite ID       |
+metMAID        |MA metabolite ID         |
 
 
 * `genes.tsv` content:
@@ -132,7 +132,7 @@ filedname     |  annotation          |
 --------------|----------------------|
 genes         |Ensembl gene ID       | 
 geneENSTID    |Ensembl transcript ID |
-geneENSPID    |Ensembl transcript ID |
+geneENSPID    |Ensembl protein ID |
 geneUniProtID |UniProt ID            |
 geneSymbols   |Gene Symbol           |
 geneEntrezID  |NCBI Entrez ID        |
@@ -159,4 +159,4 @@ A collection of manually curated 2D metabolic maps associated with Human-GEM are
 
 ## Contributing
 
-Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/master/.github/CONTRIBUTING.md) to g
+Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/master/.github/CONTRIBUTING.md) to get started.
