@@ -64,11 +64,6 @@ Detailed instructions on the installation and use of the Human-GEM model and rep
 The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `master` (e.g., `develop`), to facilitate tracking of model changes.
 
 
-## Reaction, Metabolite, and Gene Annotations
-
-Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes can be found in the respective `reactions.tsv`, `metabolites.tsv`, and `genes.tsv` files in the `model/` directory. To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
-
-
 
 ## Usage
 
@@ -84,6 +79,68 @@ Additional annotation information and external identifiers for Human-GEM reactio
 `Human-GEM.xml` (SBML format)
 * Load using the `importModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
 * Save using the `exportModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
+
+
+## Reaction, Metabolite, and Gene Annotations
+
+Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are provided as `tsv` files in the `model/` directory.
+
+* `reactions.tsv` content:
+
+filedname      |  annotation             |
+---------------|------------------------ |
+rxns           |identical to `model.rxns`|
+rxnKEGGID      |KEGG reaction ID        |
+rxnBiGGID      |BiGG reaction ID        |
+rxnEHMNID      |EHMN reaction ID        |
+rxnHepatoNET1ID|HepatoNET1 reaction ID  |
+rxnREACTOMEID  |REACTOME ID             |
+rxnRecon3DID   |Recon3D reaction ID     |
+rxnMetaNetXID  |MetaNetX reaction ID    |
+rxnHMR2ID      |HMR2 reaction ID        |
+rxnRatconID    |Ratcon reaction ID      |
+rxnTCDBID      |TCDB ID                 |
+spontaneous    |Spontaneous status      | 
+rxnMAID        |MA reaction ID          |
+rxnRheaID      |Rhea ID                 |
+rxnRheaMasterID|Master Rhea ID          |
+
+
+* `metes.tsv` content:
+
+filedname      |  annotation             |
+---------------|-------------------------|
+mets           |identical to `model.mets`|
+metsNoComp     |`model.mets` without compartment suffix|
+metBiGGID      |BiGG metabolite ID
+metKEGGID      |KEGG metabolite ID
+metHMDBID      |HMDB ID
+metChEBIID     |ChEBI ID
+metPubChemID   |PubChem ID
+metLipidMapsID |LipidMaps ID
+metEHMNID      |EHMN metabolite ID
+metHepatoNET1ID|HepatoNET1 metabolite ID
+metRecon3DID   |Recon3D metabolite ID
+metMetaNetXID  |MetaNetX metabolite ID
+metHMR2ID      |HMR2 metabolite ID
+metMAID        |MA metabolite ID
+
+
+* `genes.tsv` content:
+
+filedname     |  annotation          |
+--------------|----------------------|
+genes         |Ensembl gene ID       | 
+geneENSTID    |Ensembl transcript ID |
+geneENSPID    |Ensembl transcript ID |
+geneUniProtID |UniProt ID            |
+geneSymbols   |Gene Symbol           |
+geneEntrezID  |NCBI Entrez ID        |
+geneNames     |Gene Name             |
+geneAliases   |Alias Names           |
+
+
+To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
 
 
 
@@ -102,5 +159,4 @@ A collection of manually curated 2D metabolic maps associated with Human-GEM are
 
 ## Contributing
 
-Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/master/.github/CONTRIBUTING.md) to get started.
-
+Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/master/.github/CONTRIBUTING.md) to g
