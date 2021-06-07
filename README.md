@@ -87,7 +87,7 @@ Additional annotation information and external identifiers for Human-GEM reactio
 
 * `reactions.tsv` content:
 
-filedname      |  annotation             |
+fieldname      |  annotation             |
 ---------------|------------------------ |
 rxns           |identical to `model.rxns`|
 rxnKEGGID      |KEGG reaction ID        |
@@ -106,9 +106,9 @@ rxnRheaID      |Rhea ID                 |
 rxnRheaMasterID|Master Rhea ID          |
 
 
-* `metes.tsv` content:
+* `mets.tsv` content:
 
-filedname      |  annotation             |
+fieldname      |  annotation             |
 ---------------|-------------------------|
 mets           |identical to `model.mets`|
 metsNoComp     |`model.mets` without compartment suffix|
@@ -128,7 +128,7 @@ metMAID        |MA metabolite ID         |
 
 * `genes.tsv` content:
 
-filedname     |  annotation          |
+fieldname     |  annotation          |
 --------------|----------------------|
 genes         |Ensembl gene ID       | 
 geneENSTID    |Ensembl transcript ID |
