@@ -106,7 +106,7 @@ rxnRheaID      |Rhea ID                 |
 rxnRheaMasterID|Master Rhea ID          |
 
 
-* `mets.tsv` content:
+* `metabolites.tsv` content:
 
 fieldname      |  annotation             |
 ---------------|-------------------------|
