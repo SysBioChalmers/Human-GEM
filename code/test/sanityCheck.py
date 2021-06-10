@@ -27,6 +27,8 @@ def checkRxnAnnotation(rxns):
     rxnAssoc = pd.read_table("model/reactions.tsv")
     rxnList = rxnAssoc['rxns'].to_list()
     assert rxnList == rxns, "Reaction annotation mismatch!"
+    assert pd.api.types.is_numeric_dtype(
+        rxnAssoc['spontaneous']), "Spontaneous column should be in numeric!"
 
 
 def checkMetAnnotation(mets):
