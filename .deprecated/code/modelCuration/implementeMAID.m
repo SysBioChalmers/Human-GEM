@@ -16,6 +16,9 @@ ihuman_orig = ihuman;  % to track changes
 rxnAssoc = importTsvFile('reactions.tsv');
 metAssoc = importTsvFile('metabolites.tsv');
 
+rxnAssoc_orig = rxnAssoc;
+metAssoc_orig = metAssoc;
+
 
 %% swap id columns
 
@@ -38,13 +41,15 @@ ihuman.mets   = metMAID;
 metAssoc.mets = metMAID;
 
 
-%% check if everything is ok
-% sanity check and remove dash from MA ids
+%% sanity checks
+
 if isequal(rxnAssoc.rxns, ihuman.rxns) && isequal(metAssoc.mets, ihuman.mets)
     fprintf('sanity check passed.\n');
 end
 
 compareArrayStructure(ihuman, ihuman_orig);
+compareArrayStructure(rxnAssoc, rxnAssoc_orig);
+compareArrayStructure(metAssoc, metAssoc_orig);
 % everything looks good
 
 
