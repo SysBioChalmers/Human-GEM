@@ -40,6 +40,11 @@ rxnAssoc.rxns = rxnMAID;
 ihuman.mets   = metMAID;
 metAssoc.mets = metMAID;
 
+% regenerate metsNoComp column by striping off the tailing compartment id
+% from mets column
+metAssoc.metsNoComp = cellfun(@(x) regexprep(x, '^(.+)\w$', '$1'),...
+    metAssoc.mets, 'UniformOutput', false);
+
 
 %% sanity checks
 
