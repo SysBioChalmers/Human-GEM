@@ -84,21 +84,7 @@ end
 [animalGEM, gapfillNetwork]=gapfill4EssentialTasks(animalGEM,ihuman);
 
 
-
 %% post-gapfilling procedures
-
-% Use MA reactions identifiers 
-rxnAssoc = importTsvFile('reactions.tsv');
-
-% check reaction annotation structure
-if ~isequal(rxnAssoc.rxns, ihuman.rxns)
-    error('There is inconsistency found in the reaction annotaiton file.');
-else
-    [hits, ind] = ismember(animalGEM.rxns, rxnAssoc.rxns);
-    animalGEM.rxns(hits) = rxnAssoc.rxnMAID(ind(hits));
-end
-% this replacement would be unnecessary after the implementation of MA ids
-% as Human-GEM rxn ids
 
 % add ids
 if ~isempty(modelId)
