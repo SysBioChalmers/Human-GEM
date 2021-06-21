@@ -8,7 +8,7 @@ function [grRules_new,genes,rxnGeneMat] = translateGrRules(grRules,targetFormat,
 %       'ENST'     Ensembl transcript ID
 %       'ENSP'     Ensembl protein ID
 %       'UniProt'  UniProt protein ID
-%       'Name'     HUGO gene abbreviation
+%       'Symbol'   HUGO gene abbreviation
 %       'Entrez'   Entrez (NCBI) gene ID
 %
 % The function will try to determine the original gene ID format, but this 
@@ -37,8 +37,8 @@ function [grRules_new,genes,rxnGeneMat] = translateGrRules(grRules,targetFormat,
 %   targetFormat    The desired output format of the grRules. This can be
 %                   one or multiple gene ID types, and must be selected
 %                   from the following: 'ENSG', 'ENSP', 'ENST', 'UniProt',
-%                   'Name', 'Entrez'.
-%                   DEFAULT: All 6 formats.
+%                   'Symbol', 'Entrez'.
+%                   DEFAULT: 'Symbol'.
 %
 %               *** NOTE: As a special case, instead of entering a target
 %                   format or list of formats, this input can be replaced
@@ -99,8 +99,7 @@ end
 
 custom_key = false;
 if nargin < 2 || isempty(targetFormat)
-    % recognized ID types for genes, transcripts, and proteins
-    targetFormat = {'ENSG';'ENST';'ENSP';'UniProt';'Name';'Entrez'};
+    targetFormat = 'Symbol';
 elseif ischar(targetFormat)
     % convert target format from string to cell
     targetFormat = {targetFormat};
@@ -116,8 +115,8 @@ else
     targetFormat = targetFormat(:);
 end
 
-% allow for non-exact matches to "Name" option
-targetFormat(ismember(lower(targetFormat),{'name','names'})) = {'Name'};
+% allow for non-exact matches to "Symbol" option
+targetFormat(ismember(lower(targetFormat),{'name','names','symbol','symbols'})) = {'Symbol'};
 
 
 % get original list of genes from the grRules
@@ -128,10 +127,10 @@ end
 
 % preprocess gene list and gene-reaction rules, if necessary
 if any(ismember({'GPI','GAPDH'},genes_orig))  % need a more robust method to check if it's gene symbols
-    % check if the list is gene names (symbols), if so, do not modify
+    % check if the list is gene symbols, if so, do not modify
     rules_orig = grRules;
     if ~custom_key && isempty(gene_type_orig)
-        gene_type_orig = 'Name';
+        gene_type_orig = 'Symbol';
     end
 else
     % remove ".#" from gene IDs (e.g. ENSG00000198888.2 -> ENSG00000198888, or 2597.1 -> 2597)
@@ -139,7 +138,7 @@ else
     rules_orig = regexprep(grRules,'\.\d+','');
 end
 
-% determine the original gene ID type, if not gene names
+% determine the original gene ID type, if not gene symbols
 if isempty(gene_type_orig)
     if startsWith(genes_orig{1},{'ENSG','ENST','ENSP'})
         % ensembl ID type
@@ -159,27 +158,24 @@ end
 genes_orig = unique(genes_orig,'stable');
 
 if ~custom_key
-    % import gene-transcript-protein conversion key
+    % import ID conversion key from the model "genes.tsv" annotation file
     
     % get the path
     [ST, I] = dbstack('-completenames');
     path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../../data/Ensembl','ensembl_ID_mapping.tsv');
+    tmpfile = fullfile(path,'..','..','model','genes.tsv');
     
-    fid = fopen(tmpfile);
-    tmp = textscan(fid,'%s%s%s%s%s%s','Delimiter','\t','Headerlines',1);
-    fclose(fid);
-    
-    tmp = horzcat(tmp{:});
-    conv_key_head = tmp(1,:);  % header
-    conv_key = tmp(2:end,:);  % gene IDs
+    % import as structure, convert to table, and extract header
+    tmp = struct2table(importTsvFile(tmpfile));
+    conv_key = table2array(tmp);
+    conv_key_head = tmp.Properties.VariableNames;  
     clear tmp
     
     % change header names to match contents of GENE_TYPES
-    [~,ind] = ismember(conv_key_head,{'Gene_stable_ID','Transcript_stable_ID',...
-        'Protein_stable_ID','UniProtKB_Swiss_Prot_ID','Gene_name','NCBI_gene_ID'});
-    type_abbrevs = {'ENSG';'ENST';'ENSP';'UniProt';'Name';'Entrez'};
-    conv_key_head = type_abbrevs(ind);
+    [hasMatch,ind] = ismember(conv_key_head,{'genes','geneENSTID',...
+        'geneENSPID','geneUniProtID','geneSymbols','geneEntrezID'});
+    type_abbrevs = {'ENSG';'ENST';'ENSP';'UniProt';'Symbol';'Entrez'};
+    conv_key_head = type_abbrevs(ind(hasMatch));
 end
 
 % begin by "cleaning" the original grRules
@@ -197,6 +193,14 @@ for i = 1:length(targetFormat)
     % remove rows with empty key entries or unneeded genes
     conv_key_sub(any(cellfun(@isempty,conv_key_sub),2),:) = [];
     conv_key_sub(~ismember(conv_key_sub(:,1),genes_orig),:) = [];
+    
+    % expand entries with multiple IDs (separated by semicolons) into
+    % multiple rows with one ID per entry
+    nested_key = cellfun(@(x) strip(strsplit(x, ';'))', conv_key_sub, 'UniformOutput', false);
+    dup_col2 = arrayfun(@(i) repmat(nested_key(i,2), numel(nested_key{i,1}), 1), [1:size(nested_key,1)]', 'UniformOutput', false);
+    semi_nested_key = [vertcat(nested_key{:,1}), vertcat(dup_col2{:})];
+    dup_col1 = arrayfun(@(i) repmat(semi_nested_key(i,1), numel(semi_nested_key{i,2}), 1), [1:size(semi_nested_key,1)]', 'UniformOutput', false);
+    conv_key_sub = [vertcat(dup_col1{:}), vertcat(semi_nested_key{:,2})];
     
     % only keep unique rows of conversion key
     [~,tmp] = ismember(conv_key_sub,unique(conv_key_sub));
