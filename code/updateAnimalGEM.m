@@ -52,10 +52,10 @@ modelPath=fileparts(fileparts(ST(I).file));
 matFile=fullfile(modelPath,'model','Human-GEM.mat');
 ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
 if isfile(matFile)
-    fprintf('Load Human-GEM from Matlab file.\n');
+    % load Human-GEM Matlab file
     load(matFile);
 elseif isfile(ymlFile)
-    fprintf('Load Human-GEM from Yaml file.\n');
+    % Load Human-GEM Yaml file
     ihuman = importYaml(ymlFile);
 else
     error('ERROR: No model file is found!');
