@@ -46,7 +46,7 @@ model.grRules={};
 model.rxnGeneMat=[];
 model.subSystems={};
 model.eccodes={};
-%model.rxnNotes={}; %not sure
+model.rxnNotes={};
 model.genes={};
 model.metNames={};
 model.metComps={};
@@ -174,6 +174,9 @@ while ~feof(fid)
 
             case 'gene_reaction_rule'
                 model = readFieldValue(model, 'grRules', tline_value);
+
+            case 'rxnNotes'
+                model = readFieldValue(model, 'rxnNotes', tline_value);
 
             case 'rxnFrom'
                 model = readFieldValue(model, 'rxnFrom', tline_value);
