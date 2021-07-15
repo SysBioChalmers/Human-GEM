@@ -89,6 +89,16 @@ gapfilledRxns = setdiff(outModel.rxns, model.rxns);
 [~, ind] = ismember(gapfilledRxns, outModel.rxns);
 outModel.grRules(ind) = {''};
 
+% Add gap filling information to rxnNotes field
+for i=1:length(ind) 
+    if isemtpy(outModel.rxnNotes{ind(i)})
+        outModel.rxnNotes{ind(i)} = 'reaction added by gap filling';
+    else
+        tmp = strip(outModel.rxnNotes{ind(i)},'right',';');
+        outModel.rxnNotes{ind(i)} = [tmp,';reaction added by gap filling'];
+    end
+end
+
 % re-generate gene and rxnGeneMat fields
 [outModel.genes, outModel.rxnGeneMat] = getGenesFromGrRules(outModel.grRules);
 
