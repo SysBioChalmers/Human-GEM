@@ -91,7 +91,7 @@ outModel.grRules(ind) = {''};
 
 % Add gap filling information to rxnNotes field
 for i=1:length(ind) 
-    if isemtpy(outModel.rxnNotes{ind(i)})
+    if isempty(outModel.rxnNotes{ind(i)})
         outModel.rxnNotes{ind(i)} = 'reaction added by gap filling';
     else
         tmp = strip(outModel.rxnNotes{ind(i)},'right',';');
