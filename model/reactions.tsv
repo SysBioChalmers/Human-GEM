@@ -8424,7 +8424,7 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR01032"	""	"FAS180COA"	""	""	""	"FAS180COA"	"MNXR99405"	""	""	""	0	""	""	"FAS180COA"
 "MAR01036"	""	"FAS80COA_L"	""	""	""	"FAS80COA_L"	"MNXR99415"	""	""	""	0	""	""	"FAS80COA_L"
 "MAR01038"	""	"FBA5"	""	""	""	"FBA5"	"MNXR99463"	""	""	""	0	""	""	"FBA5"
-"MAR01044"	""	"FCLTm"	""	""	""	"FCLTm"	"MNXR99471"	""	""	""	0	"RHEA:22586"	"RHEA:22584"	"FCLTm"
+"MAR01044"	"R00310"	"FCLTm"	"R00310C"	"r0096"	""	"FCLTm"	"MNXR99471"	"HMR_4758"	"RCR20530"	""	0	"RHEA:22586"	"RHEA:22584"	"FCLTm"
 "MAR01046"	""	"FE2tm"	""	""	""	"FE2tm"	"MNXR99501"	""	""	""	0	""	""	"FE2tm"
 "MAR01047"	""	"FOLt2"	""	""	""	"FOLt2"	"MNXR99613"	""	""	""	0	""	""	"FOLt2"
 "MAR01051"	""	"FRDPtc"	""	""	""	"FRDPtc"	"MNXR99646"	""	""	""	0	""	""	"FRDPtc"
