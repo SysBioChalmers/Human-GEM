@@ -19,7 +19,7 @@ If you are unsure about the issue, consider asking first in our [Gitter chat roo
 When creating the issue, please make sure:
 
 * You tested your code (if any) with all requirements for running the model.
-* You did your analysis in the `master` branch of the repository.
+* You did your analysis in the `main` branch of the repository.
 * You provide any necessary files/links needed for understanding the issue.
 * You checked that a similar issue does not exist already
 
@@ -76,7 +76,7 @@ Thank you very much for contributing to Human-GEM!
 
 * `devel`: Is the branch to which all pull requests should be made.
 
-* `master`: Is only modified by the administrator and is the branch with the tested & reviewed model that is released or ready for the next release.
+* `main`: Is only modified by the administrator and is the branch with the tested & reviewed model that is released or ready for the next release.
 
 * `{chore, doc, feat, fix, refactor, style}/descriptive-name`: Any other branch created in the model. If you work on a fix, start the branch name with `fix/`, if you work on a feature, start the branch name with `feat/`. Examples: `fix/format_reactions` or `feat/new_algorithms`. [See below](#semantic-commits) for more details on the possible actions you can use.
 	
@@ -105,9 +105,9 @@ Some examples:
 |Split a rxn in 2|`refactor: split isomerase in 2 steps`|
 |Update documentation of function|`doc: addDBnewRxn.m update documentation`|
 
-More examples [here](https://github.com/SysBioChalmers/Human-GEM/commits/master). A more detailed explanation or comments is encouraged to be left in the commit description.
+More examples [here](https://github.com/SysBioChalmers/Human-GEM/commits/main). A more detailed explanation or comments is encouraged to be left in the commit description.
 
 
 ## Acknowledgments
 
-These contribution guidelines were adapted from the guidelines of [SysBioChalmers/yeast-GEM](https://github.com/SysBioChalmers/yeast-GEM/blob/master/.github/CONTRIBUTING.md).
+These contribution guidelines were adapted from the guidelines of [SysBioChalmers/yeast-GEM](https://github.com/SysBioChalmers/yeast-GEM/blob/main/.github/CONTRIBUTING.md).
