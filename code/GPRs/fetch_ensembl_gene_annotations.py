@@ -124,7 +124,7 @@ def retrieve_ensembl_gene_annotations(connection):
         -- instead of being linked through the object_xref table
         LEFT JOIN xref ON gene.display_xref_id=xref.xref_id
         JOIN transcript ON gene.gene_id=transcript.gene_id
-        JOIN translation ON transcript.transcript_id=translation.transcript_id
+        LEFT JOIN translation ON transcript.transcript_id=translation.transcript_id
         -- join Uniprot IDs to the translations, as above
         LEFT JOIN (
             SELECT DISTINCT
