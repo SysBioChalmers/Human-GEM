@@ -1,4 +1,4 @@
-name: Test AML conversion
+name: Test YAML conversion
 
 on:
   push:
