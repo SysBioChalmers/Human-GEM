@@ -1,0 +1,21 @@
+name: Test AML conversion
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  yaml-conversion:
+    runs-on: self-hosted
+    timeout-minutes: 60
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: 
+      run: |
+        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "run('/code/test/testYamlConversion.m'); exit;" 
