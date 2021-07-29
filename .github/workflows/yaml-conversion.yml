@@ -16,6 +16,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: 
+    - name: Run conversion script
       run: |
-        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "run('code/test/testYamlConversion.m'); exit;" 
+        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath('code'); run('code/test/testYamlConversion.m'); exit;" 
