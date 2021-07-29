@@ -18,4 +18,4 @@ jobs:
 
     - name: 
       run: |
-        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "run('/code/test/testYamlConversion.m'); exit;" 
+        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "run('code/test/testYamlConversion.m'); exit;" 
