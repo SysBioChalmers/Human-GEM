@@ -12,3 +12,6 @@ Contains metabolic task files used for evaluating the functionality of Human-GEM
 Contains curation-related data files used for making changes to the Human-GEM model. These model curation data files help to improve transparency of changes made to the model.
 
 Note that many of the data files associated with model curation were outdated and not maintained, and have been moved to the `.deprecated` folder in the root directory of this repository.
+
+### deprecatedIdentifiers
+Contains the `tsv` files with reaction and metabolite annotation, identical to that in `/model/` for those identifiers that have been used in Human-GEM and subsequently removed. The identifiers are kept here so as to avoid accidentally reusing them in the future.
