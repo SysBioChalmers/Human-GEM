@@ -18,4 +18,4 @@ jobs:
 
     - name: Run conversion script
       run: |
-        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath('code'); run('code/test/testYamlConversion.m'); exit;" 
+        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testYamlConversion.m'); exit;" 
