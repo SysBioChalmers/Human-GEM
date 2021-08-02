@@ -1,0 +1,3 @@
+rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rxnMetaNetXID	rxnHMR2ID	rxnRatconID	rxnTCDBID	spontaneous	rxnRheaID	rxnRheaMasterID	rxnRetired
+"MAR01459"	""	"HSD17B7r"	""	""	""	"HSD17B7r"	"MNXR100715"	""	""	""	0	""	""	"HSD17B7r"
+"MAR04758"	"R00310"	""	"R00310C"	"r0096"	""	""	"MNXR99471"	"HMR_4758"	"RCR20530"	""	0	"RHEA:22586"	"RHEA:22584"	"HMR_4758"

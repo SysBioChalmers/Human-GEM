@@ -1,4 +1,4 @@
-% Master script for curating and mapping HMR and Recon metabolites
+% Main script for curating and mapping HMR and Recon metabolites
 %
 
 

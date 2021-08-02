@@ -1,7 +1,7 @@
 function humanGEM_new = combineModelGPRs(humanGEM,iHsa,Recon3D)
 %combineModelGPRs  Combine the GPRs of HMR, iHsa, and Recon3D.
 % 
-%   This is the master function for combining and integrating genes and
+%   This is the main function for combining and integrating genes and
 %   grRules from HMR2, iHsa, and Recon3D into humanGEM. The function makes
 %   use of the "integrateGeneRules.m" and "translateGrRules.m" functions,
 %   among others.
