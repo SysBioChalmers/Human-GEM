@@ -1,0 +1,8 @@
+mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMapsID	metEHMNID	metHepatoNET1ID	metRecon3DID	metMetaNetXID	metHMR2ID	metRetired
+"MAM04060m"	"MAM04060"	"undcoa"	""	""	""	"53481608"	""	""	""	"undcoa"	""	""	"undcoa_m"
+"MAM03785m"	"MAM03785"	"noncoa"	""	""	""	"439607"	""	""	""	"noncoa"	""	""	"noncoa_m"
+"MAM04005m"	"MAM04005"	"tridcoa"	""	""	""	"53481606"	""	""	""	"tridcoa"	""	""	"tridcoa_m"
+"MAM03973p"	"MAM03973"	"tetde5coa"	""	""	""	""	""	""	""	"tetde5coa"	""	""	"tetde5coa_p"
+"MAM03651p"	"MAM03651"	"hexde7coa"	""	""	""	""	""	""	""	"hexde7coa"	""	""	"hexde7coa_p"
+"MAM03858m"	"MAM03858"	"pentcoa"	""	""	""	"439337"	""	""	""	"pentcoa"	""	""	"pentcoa_m"
+"MAM03648m"	"MAM03648"	"hepcoa"	""	""	""	"53481563"	""	""	""	"hepcoa"	""	""	"hepcoa_m"
