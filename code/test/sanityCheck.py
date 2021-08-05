@@ -6,6 +6,17 @@ import pandas as pd
 import cobra
 
 
+def get_column_from_tsv(tsv_file, column_id, to_list=True):
+    """
+    read a column from a tsv file and convert the content into a list by default
+    """
+    tsv_content = pd.read_table(tsv_file)
+    if to_list:
+        return tsv_content[column_id].to_list()
+    else:
+        return tsv_content[column_id]
+
+
 def load_yml(yml_file):
     """
     import yml model file, and output rxn and met lists
@@ -24,19 +35,17 @@ def checkRxnAnnotation(rxns):
     """
     check consistency of rxn lists between model and annotation file
     """
-    rxnAssoc = pd.read_table("model/reactions.tsv")
-    rxnList = rxnAssoc['rxns'].to_list()
+    rxnList = get_column_from_tsv("model/reactions.tsv", "rxns")
+    spontaneous = get_column_from_tsv("model/reactions.tsv", "spontaneous", False)
     assert rxnList == rxns, "Reaction annotation mismatch!"
-    assert pd.api.types.is_numeric_dtype(
-        rxnAssoc['spontaneous']), "Spontaneous column should be in numeric!"
+    assert pd.api.types.is_numeric_dtype(spontaneous), "Spontaneous column should be in numeric!"
 
 
 def checkMetAnnotation(mets):
     """
     check consistency of met lists between model and annotation file
     """
-    metAssoc = pd.read_table("model/metabolites.tsv")
-    metList = metAssoc['mets'].to_list()
+    metList = get_column_from_tsv("model/metabolites.tsv", "mets")
     assert metList == mets, "Metabolite annotation mismatch!"
 
 
@@ -44,8 +53,7 @@ def checkGeneAnnotation(genes):
     """
     check consistency of gene lists between model and annotation file
     """
-    geneAssoc = pd.read_table("model/genes.tsv")
-    geneList = geneAssoc['genes'].to_list()
+    geneList = get_column_from_tsv("model/genes.tsv", "genes")
     assert geneList == genes, "Gene annotation mismatch!"
 
 
