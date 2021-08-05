@@ -49,7 +49,7 @@ def checkMetAnnotation(mets):
     """
     metList = get_column_from_tsv("model/metabolites.tsv", "mets")
     metDeprecated = get_column_from_tsv("data/deprecatedIdentifiers/deprecatedMetabolites.tsv", "mets")
-    assert not bool(set(metList) & set(metDeprecated)), "Deprecated metabolite reused!"
+    assert set(metList).isdisjoint(set(metDeprecated)), "Deprecated metabolite reused!"
     assert metList == mets, "Metabolite annotation mismatch!"
 
 
