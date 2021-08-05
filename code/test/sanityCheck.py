@@ -11,10 +11,10 @@ def get_column_from_tsv(tsv_file, column_id, to_list=True):
     read a column from a tsv file and convert the content into a list by default
     """
     tsv_content = pd.read_table(tsv_file)
+    desired_column = tsv_content[column_id]
     if to_list:
-        return tsv_content[column_id].to_list()
-    else:
-        return tsv_content[column_id]
+        return desired_column.to_list()
+    return desired_column
 
 
 def load_yml(yml_file):
@@ -67,4 +67,3 @@ if __name__ == "__main__":
     checkMetAnnotation(mets)
     checkGeneAnnotation(genes)
     print("Everything is passed.")
-
