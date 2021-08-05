@@ -38,7 +38,7 @@ def checkRxnAnnotation(rxns):
     rxnList = get_column_from_tsv("model/reactions.tsv", "rxns")
     spontaneous = get_column_from_tsv("model/reactions.tsv", "spontaneous", False)
     rxnDeprecated = get_column_from_tsv("data/deprecatedIdentifiers/deprecatedReactions.tsv", "rxns")
-    assert not bool(set(rxnList) & set(rxnDeprecated)), "Deprecated reaction reused!"
+    assert set(rxnList).isdisjoint(set(rxnDeprecated)), "Deprecated reaction reused!"
     assert rxnList == rxns, "Reaction annotation mismatch!"
     assert pd.api.types.is_numeric_dtype(spontaneous), "Spontaneous column should be in numeric!"
 
