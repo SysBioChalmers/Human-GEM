@@ -37,6 +37,8 @@ def checkRxnAnnotation(rxns):
     """
     rxnList = get_column_from_tsv("model/reactions.tsv", "rxns")
     spontaneous = get_column_from_tsv("model/reactions.tsv", "spontaneous", False)
+    rxnDeprecated = get_column_from_tsv("data/deprecatedIdentifiers/deprecatedReactions.tsv", "rxns")
+    assert not bool(set(rxnList) & set(rxnDeprecated)), "Deprecated reaction reused!"
     assert rxnList == rxns, "Reaction annotation mismatch!"
     assert pd.api.types.is_numeric_dtype(spontaneous), "Spontaneous column should be in numeric!"
 
@@ -46,6 +48,8 @@ def checkMetAnnotation(mets):
     check consistency of met lists between model and annotation file
     """
     metList = get_column_from_tsv("model/metabolites.tsv", "mets")
+    metDeprecated = get_column_from_tsv("data/deprecatedIdentifiers/deprecatedMetabolites.tsv", "mets")
+    assert not bool(set(metList) & set(metDeprecated)), "Deprecated metabolite reused!"
     assert metList == mets, "Metabolite annotation mismatch!"
 
 
@@ -62,5 +66,5 @@ if __name__ == "__main__":
     checkRxnAnnotation(rxns)
     checkMetAnnotation(mets)
     checkGeneAnnotation(genes)
-    print("Everything passed")
+    print("Everything is passed.")
 
