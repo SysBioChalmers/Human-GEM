@@ -66,4 +66,4 @@ if __name__ == "__main__":
     checkRxnAnnotation(rxns)
     checkMetAnnotation(mets)
     checkGeneAnnotation(genes)
-    print("Everything is passed.")
+    print("All checks have passed.")
