@@ -11,13 +11,13 @@ This repository contains the latest version of Human-GEM, a human genome-scale m
 
 If you use Human1 in your research, please cite:  
 
- > J. L. Robinson, P. KocabasÌ§, H. Wang, P.-E. Cholley, et al. An atlas of human metabolism. _Sci. Signal._ 13, eaaz1482 (2020). [doi:10.1126/scisignal.aaz1482](https://doi.org/10.1126/scisignal.aaz1482)
+ > J. L. Robinson, P. Kocabasÿ, H. Wang, P.-E. Cholley, et al. An atlas of human metabolism. _Sci. Signal._ 13, eaaz1482 (2020). [doi:10.1126/scisignal.aaz1482](https://doi.org/10.1126/scisignal.aaz1482)
  
 Starting from Human-GEM v1.5.0, all the releases are also archived in [Zenodo](https://doi.org/10.5281/zenodo.4099692) from which specific version can be cited if used.
 
 If you use Mouse1, Rat1, Zebrafish1, Fruitfly1 or Worm1 in your research, please cite:   
 
-  > H. Wang, J. L. Robinson, P. KocabasÌ§, J. Gustafsson, M. Anton, P.-E. Cholley, et al. Genome-scale metabolic network reconstruction of model animals as a platform for translational research. _PNAS_ 118, e2102344118 (2021). [doi.org/10.1073/pnas.2102344118](https://doi.org/10.1073/pnas.2102344118)
+  > H. Wang, J. L. Robinson, P. Kocabasÿ, J. Gustafsson, M. Anton, P.-E. Cholley, et al. Genome-scale metabolic network reconstruction of model animals as a platform for translational research. _PNAS_ 118, e2102344118 (2021). [doi.org/10.1073/pnas.2102344118](https://doi.org/10.1073/pnas.2102344118)
 
 
 
@@ -37,7 +37,7 @@ If you use Mouse1, Rat1, Zebrafish1, Fruitfly1 or Worm1 in your research, please
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|:-----:|
-|_Homo sapiens_ |   HMR2, Recon3D, iHsa|    13083|  8378|  3625|
+|_Homo sapiens_ |   HMR2, Recon3D, iHsa|    13081|  8371|  3625|
 
 
 ### Administration
