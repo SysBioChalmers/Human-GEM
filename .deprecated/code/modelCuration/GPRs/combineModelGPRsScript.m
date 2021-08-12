@@ -1,4 +1,4 @@
-% Master script for combining and integrating genes and grRules from HMR2
+% Main script for combining and integrating genes and grRules from HMR2
 % iHsa, and Recon3D into the merged model. The script makes use of the
 % "integrateGeneRules.m" and "translateGrRules.m" functions, among
 % others.

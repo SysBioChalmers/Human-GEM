@@ -1,7 +1,7 @@
 %
 % FILE NAME:    integrateRecon3DToHMR.m
 % 
-% PURPOSE: The master scrit for integrate Recon3D into HMR2 based on
+% PURPOSE: The main script for integrate Recon3D into HMR2 based on
 %          reaction/metabolite association to MetaNetX/BiGG databases
 %
 

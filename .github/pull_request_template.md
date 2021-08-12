@@ -4,7 +4,6 @@
 **I hereby confirm that I have:**
 
 - [ ] Tested my code on my own computer for running the model
-- [ ] Passed `testYamlConversion` check
 - [ ] Selected `develop` as a target branch
 
 *Note: replace [ ] with [X] to check the box. PLEASE DELETE THIS LINE*

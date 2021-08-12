@@ -89,6 +89,16 @@ gapfilledRxns = setdiff(outModel.rxns, model.rxns);
 [~, ind] = ismember(gapfilledRxns, outModel.rxns);
 outModel.grRules(ind) = {''};
 
+% Add gap filling information to rxnNotes field
+for i=1:length(ind) 
+    if isempty(outModel.rxnNotes{ind(i)})
+        outModel.rxnNotes{ind(i)} = 'reaction added by gap filling';
+    else
+        tmp = strip(outModel.rxnNotes{ind(i)},'right',';');
+        outModel.rxnNotes{ind(i)} = [tmp,';reaction added by gap filling'];
+    end
+end
+
 % re-generate gene and rxnGeneMat fields
 [outModel.genes, outModel.rxnGeneMat] = getGenesFromGrRules(outModel.grRules);
 
@@ -111,13 +121,13 @@ function outputModel= changeBiomass2Components(inputModel)
 outputModel = inputModel;
 
 % block all biomass equations
-ind = find(startsWith(outputModel.rxns,'biomass'));
-outputModel.ub(ind) = 0;
-outputModel.lb(ind) = 0;
-outputModel.c(ind)  = 0;
+%ind = find(startsWith(outputModel.rxns,'biomass'));
+%outputModel.ub(ind) = 0;
+%outputModel.lb(ind) = 0;
+outputModel.c(:)  = 0;
 
 % reset object function to "biomass_components"
-indComponents = getIndexes(outputModel,'biomass_components','rxns');
+indComponents = getIndexes(outputModel,'MAR00021','rxns');
 outputModel.ub(indComponents) = 1000;
 outputModel.c(indComponents)  = 1;
 

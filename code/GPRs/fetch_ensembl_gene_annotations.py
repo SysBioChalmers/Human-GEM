@@ -122,9 +122,9 @@ def retrieve_ensembl_gene_annotations(connection):
         gene
         -- gene_name is a special case of xrefs, as it is directly linked
         -- instead of being linked through the object_xref table
-        JOIN xref ON gene.display_xref_id=xref.xref_id
+        LEFT JOIN xref ON gene.display_xref_id=xref.xref_id
         JOIN transcript ON gene.gene_id=transcript.gene_id
-        JOIN translation ON transcript.transcript_id=translation.transcript_id
+        LEFT JOIN translation ON transcript.transcript_id=translation.transcript_id
         -- join Uniprot IDs to the translations, as above
         LEFT JOIN (
             SELECT DISTINCT
@@ -199,7 +199,6 @@ def create_annotation_file(yaml_file, database_name, output_file, gene_ids_list=
         genes_data_dict[row[0]] = row
 
     primary_assembly = get_primary_assembly_ids(connection)
-    connection.close()
     new_list = []
     try:
         with open(output_file, 'w') as fw:
@@ -207,7 +206,19 @@ def create_annotation_file(yaml_file, database_name, output_file, gene_ids_list=
                      "geneEntrezID\tgeneNames\tgeneAliases\n")
             for gid in model_gene_ids_dict:
                 if gid not in genes_data_dict:
-                    print("Error: could not retrieve Ensembl annotations for gene ID '%s'" % gid)
+                    # check if IDs are deprecated and if new IDs are suggested by Ensembl
+                    cur = connection.cursor()
+                    cur.execute(f"""SELECT stable_id_event.old_stable_id, group_concat(new_stable_id SEPARATOR ', ')
+                        FROM stable_id_event
+                        join mapping_session on stable_id_event.mapping_session_id = mapping_session.mapping_session_id
+                        where stable_id_event.old_stable_id = '{gid}' and new_stable_id is not NULL and new_db_name = '{database_name}'
+                        group by 1""")
+
+                    data = cur.fetchone()
+                    if data:
+                        print(f"Error: ID '{gid}' seems deprecated, new IDs suggested: {data[1]}")
+                    else:
+                        print(f"Error: could not retrieve Ensembl annotations for gene ID '{gid}'")
                     continue
                 ensembl_gene_data = genes_data_dict[gid]
                 data = ['' if e is None else e for e in ensembl_gene_data]  # replace None (null) by empty string
@@ -233,6 +244,8 @@ def create_annotation_file(yaml_file, database_name, output_file, gene_ids_list=
     except Exception as e:
         print(e)
         exit(1)
+    finally:
+        connection.close()
 
     return new_list
 
