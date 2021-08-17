@@ -174,10 +174,10 @@ Contributions are always welcome! Please read the [contribution guidelines](http
 <table>
   <tr>
     <td align="center"><a href="https://jonathanrob.github.io"><img src="https://avatars.githubusercontent.com/u/22366558?v=4" width="80px;" alt=""/><br /><sub><b>Jonathan Robinson</b></sub></a></td>
-    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/21077367?v=4" width="80px;" alt=""/><br /><sub><b>Hao Wang</b></sub></a></td>
-    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/23480589?v=4" width="80px;" alt=""/><br /><sub><b>Mihail Anton</b></sub></a></td>
+    <td align="center"><a href="https://orcid.org/0000-0001-7475-0136"><img src="https://avatars.githubusercontent.com/u/21077367?v=4" width="80px;" alt=""/><br /><sub><b>Hao Wang</b></sub></a></td>
+    <td align="center"><a href="https://orcid.org/0000-0002-7753-9042"><img src="https://avatars.githubusercontent.com/u/23480589?v=4" width="80px;" alt=""/><br /><sub><b>Mihail Anton</b></sub></a></td>
     <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/26245751?v=4" width="80px;" alt=""/><br /><sub><b>Pierre-Etienne Cholley</b></sub></a></td>
-    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/32029599?v=4" width="80px;" alt=""/><br /><sub><b>Pınar Koçabas</b></sub></a></td>
+    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/32029599?v=4" width="80px;" alt=""/><br /><sub><b>Pınar Kocabaş</b></sub></a></td>
     <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/8766764?v=4" width="80px;" alt=""/><br /><sub><b></b></sub></a></td>
     <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/10344158?v=4" width="80px;" alt=""/><br /><sub><b>Jorge Ferreira</b></sub></a></td>
     <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/2399043?v=4" width="80px;" alt=""/><br /><sub><b>Pierre-Etienne Cholley</b></sub></a></td>
