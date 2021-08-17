@@ -1,0 +1,120 @@
+{
+  "files": ["README.md"],
+  "imageSize": 80,
+  "contributorsPerLine": 8,
+  "contributorsSortAlphabetically": false,
+  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
+  "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"\"/><br /><sub><b><%= contributor.name %></b></sub></a>",
+  "skipCi": "true",
+  "contributors": [
+    {
+      "login": "JonathanRob",
+      "name": "Jonathan Robinson",
+      "avatar_url": "",
+      "profile": "https://jonathanrob.github.io",
+      "contributions": [
+        "bug",
+        "code",
+        "data",
+        "doc",
+        "ideas",
+        "infra",
+        "platform",
+        "projectManagement",
+        "research",
+        "review",
+        "tutorial",
+        "talk"
+      ]
+    },
+    {
+      "login": "Hao-Chalmers",
+      "name": "Hao Wang",
+      "avatar_url": "",
+      "profile": "",
+      "contributions": [
+        "bug",
+        "code",
+        "data",
+        "doc",
+        "ideas",
+        "infra",
+        "platform",
+        "projectManagement",
+        "research",
+        "review",
+        "test",
+        "talk"
+      ]
+    },
+    {
+      "login": "mihai-sysbio",
+      "name": "Mihail Anton",
+      "avatar_url": "",
+      "profile": "",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas",
+        "infra",
+        "review",
+        "test",
+        "talk"
+      ]
+    },
+    {
+      "login": "pecholleyc",
+      "name": "Pierre-Etienne Cholley",
+      "avatar_url": "",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "pinarkocabas",
+      "name": "Pınar Koçabas",
+      "avatar_url": "",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "PkiwiBird",
+      "name": "",
+      "avatar_url": "",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "jorgemlferreira",
+      "name": "Jorge Ferreira",
+      "avatar_url": "",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "pecholley",
+      "name": "Pierre-Etienne Cholley",
+      "avatar_url": "",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "pranasag",
+      "name": "Pranas Grigaitis",
+      "avatar_url": "",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ]
+}
