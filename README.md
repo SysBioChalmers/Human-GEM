@@ -1,7 +1,9 @@
 # Human-GEM: The generic genome-scale metabolic model of _Homo sapiens_
 
 [![Join the chat at https://gitter.im/SysBioChalmers/Human-GEM](https://badges.gitter.im/SysBioChalmers/Human-GEM.svg)](https://gitter.im/SysBioChalmers/Human-GEM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub version](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM.svg)](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM)
-[![DOI](https://zenodo.org/badge/105752644.svg)](https://zenodo.org/badge/latestdoi/105752644)
+[![DOI](https://zenodo.org/badge/105752644.svg)](https://zenodo.org/badge/latestdoi/105752644)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-success.svg)](#contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:END --> 
 
 ### Brief Model Description
 
@@ -68,11 +70,9 @@ Detailed instructions on the installation and use of the Human-GEM model and rep
 * Add the directory to your MATLAB path (instructions [here](https://se.mathworks.com/help/matlab/ref/addpath.html?requestedDomain=www.mathworks.com)).
 
 
-
 ## Model Files
 
 The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `main` (e.g., `develop`), to facilitate tracking of model changes.
-
 
 
 ## Usage
@@ -153,12 +153,10 @@ geneAliases   |Alias Names           |
 To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
 
 
-
 ## Websites
 
 - [Metabolic Atlas](https://metabolicatlas.org/) enables visualization and exploration of Human-GEM content.
 - The [Human-GEM user guide](https://sysbiochalmers.github.io/Human-GEM-guide/) provides detailed instructions and examples for using the Human-GEM model and repository.
-
 
 
 ## Metabolic Maps
@@ -166,7 +164,32 @@ To import/export this annotation data to/from MATLAB, use the `importTsvFile` an
 A collection of manually curated 2D metabolic maps associated with Human-GEM are stored in the [Human-maps repository](https://github.com/SysBioChalmers/Human-maps). These maps can be downloaded from the repository or explored interactively using [Metabolic Atlas](https://metabolicatlas.org/explore/map-viewer/human1).
 
 
-
 ## Contributing
 
 Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/main/.github/CONTRIBUTING.md) to get started.
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://jonathanrob.github.io"><img src="https://avatars.githubusercontent.com/u/22366558?v=4" width="80px;" alt=""/><br /><sub><b>Jonathan Robinson</b></sub></a></td>
+    <td align="center"><a href="https://orcid.org/0000-0001-7475-0136"><img src="https://avatars.githubusercontent.com/u/21077367?v=4" width="80px;" alt=""/><br /><sub><b>Hao Wang</b></sub></a></td>
+    <td align="center"><a href="https://orcid.org/0000-0002-7753-9042"><img src="https://avatars.githubusercontent.com/u/23480589?v=4" width="80px;" alt=""/><br /><sub><b>Mihail Anton</b></sub></a></td>
+    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/26245751?v=4" width="80px;" alt=""/><br /><sub><b>Pierre-Etienne Cholley</b></sub></a></td>
+    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/32029599?v=4" width="80px;" alt=""/><br /><sub><b>Pınar Kocabaş</b></sub></a></td>
+    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/8766764?v=4" width="80px;" alt=""/><br /><sub><b></b></sub></a></td>
+    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/10344158?v=4" width="80px;" alt=""/><br /><sub><b>Jorge Ferreira</b></sub></a></td>
+    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/2399043?v=4" width="80px;" alt=""/><br /><sub><b>Pierre-Etienne Cholley</b></sub></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href=""><img src="https://avatars.githubusercontent.com/u/38076281?v=4" width="80px;" alt=""/><br /><sub><b>Pranas Grigaitis</b></sub></a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->

@@ -1,0 +1,120 @@
+{
+  "files": ["README.md"],
+  "imageSize": 80,
+  "contributorsPerLine": 8,
+  "contributorsSortAlphabetically": false,
+  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-success.svg)](#contributors)",
+  "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"\"/><br /><sub><b><%= contributor.name %></b></sub></a>",
+  "skipCi": "true",
+  "contributors": [
+    {
+      "login": "JonathanRob",
+      "name": "Jonathan Robinson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22366558?v=4",
+      "profile": "https://jonathanrob.github.io",
+      "contributions": [
+        "bug",
+        "code",
+        "data",
+        "doc",
+        "ideas",
+        "infra",
+        "platform",
+        "projectManagement",
+        "research",
+        "review",
+        "tutorial",
+        "talk"
+      ]
+    },
+    {
+      "login": "Hao-Chalmers",
+      "name": "Hao Wang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21077367?v=4",
+      "profile": "https://orcid.org/0000-0001-7475-0136",
+      "contributions": [
+        "bug",
+        "code",
+        "data",
+        "doc",
+        "ideas",
+        "infra",
+        "platform",
+        "projectManagement",
+        "research",
+        "review",
+        "test",
+        "talk"
+      ]
+    },
+    {
+      "login": "mihai-sysbio",
+      "name": "Mihail Anton",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23480589?v=4",
+      "profile": "https://orcid.org/0000-0002-7753-9042",
+      "contributions": [
+        "bug",
+        "code",
+        "ideas",
+        "infra",
+        "review",
+        "test",
+        "talk"
+      ]
+    },
+    {
+      "login": "pecholleyc",
+      "name": "Pierre-Etienne Cholley",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26245751?v=4",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "pinarkocabas",
+      "name": "Pınar Kocabaş",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32029599?v=4",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "PkiwiBird",
+      "name": "",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8766764?v=4",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "jorgemlferreira",
+      "name": "Jorge Ferreira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10344158?v=4",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "pecholley",
+      "name": "Pierre-Etienne Cholley",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2399043?v=4",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "pranasag",
+      "name": "Pranas Grigaitis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38076281?v=4",
+      "profile": "",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ]
+}
