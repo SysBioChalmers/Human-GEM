@@ -2241,6 +2241,8 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM01385s"	"MAM01385"	"caro"	""	""	""	""	"LMPR01070000"	""	""	"caro"	"MNXM614"	"m01385s"	"m01385s"
 "MAM01386c"	"MAM01386"	""	""	""	""	""	""	"CE4722"	""	"CE4722"	"MNXM152651"	"m01386c"	"m01386c"
 "MAM01387c"	"MAM01387"	""	""	""	""	"4424653"	""	"CE2915"	""	"CE2915"	"MNXM163311"	"m01387c"	"m01387c"
+"MAM01388c"	"MAM01388"	""	"C00221"	""	"CHEBI:15903"	""	""	""	""	"M01388"	"MNXM105"	"m01388c"	"m01388c"
+"MAM01389c"	"MAM01389"	""	"C01172"	""	"CHEBI:17719"	""	""	""	""	"M01389"	"MNXM508"	"m01389c"	"m01389c"
 "MAM01390c"	"MAM01390"	"mpdol__L"	"C05860"	""	"CHEBI:18396"	""	""	""	""	"mpdol_L"	"MNXM148107"	"m01390c"	"m01390c"
 "MAM01391c"	"MAM01391"	"acgbgbside_hs"	""	""	""	""	""	""	""	"acgbgbside_hs"	"MNXM7110"	"m01391c"	"m01391c"
 "MAM01391g"	"MAM01391"	"acgbgbside_hs"	""	""	""	""	""	""	""	"acgbgbside_hs"	"MNXM7110"	"m01391g"	"m01391g"
