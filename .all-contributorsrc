@@ -129,6 +129,62 @@
         "bug",
         "content"
       ]
+    },
+    {
+      "login": "edkerk",
+      "name": "Eduard Kerkhoven",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7326655?v=4",
+      "profile": "https://github.com/edkerk",
+      "contributions": [
+        "question"
+      ]
+    },
+    {
+      "login": "simas232",
+      "name": "Simonas Marcišauskas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11994076?v=4",
+      "profile": "https://github.com/simas232",
+      "contributions": [
+        "question"
+      ]
+    },
+    {
+      "login": "XuhangLi",
+      "name": "Xuhang Li",
+      "avatar_url": "https://avatars.githubusercontent.com/u/41695293?v=4",
+      "profile": "https://github.com/XuhangLi",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "TunahanCakir",
+      "name": "TunahanCakir",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71440332?v=4",
+      "profile": "https://github.com/TunahanCakir",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "BenjaSanchez",
+      "name": "Benjamín Sánchez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9384349?v=4",
+      "profile": "https://github.com/BenjaSanchez",
+      "contributions": [
+        "question"
+      ]
+    },
+    {
+      "login": "cherkaos",
+      "name": "Sarah Cherkaoui",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9384349?v=4",
+      "profile": "https://github.com/cherkaos",
+      "contributions": [
+        "bug",
+        "content",
+        "code"
+      ]
     }
   ]
 }
