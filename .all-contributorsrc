@@ -112,7 +112,19 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/38076281?v=4",
       "profile": "",
       "contributions": [
-        "bug"
+        "bug",
+        "content",
+        "code"
+      ]
+    },
+    {
+      "login": "avlant",
+      "name": "Avlant",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5329888?v=4",
+      "profile": "https://github.com/avlant",
+      "contributions": [
+        "bug",
+        "content"
       ]
     }
   ]
