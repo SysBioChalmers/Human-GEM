@@ -224,6 +224,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "johan-gson",
+      "name": "johan-gson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32481323?v=4",
+      "profile": "https://github.com/johan-gson",
+      "contributions": [
+        "bug",
+        "content"
+      ]
     }
   ]
 }

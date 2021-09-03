@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/SysBioChalmers/Human-GEM](https://badges.gitter.im/SysBioChalmers/Human-GEM.svg)](https://gitter.im/SysBioChalmers/Human-GEM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub version](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM.svg)](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM)
 [![DOI](https://zenodo.org/badge/105752644.svg)](https://zenodo.org/badge/latestdoi/105752644)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-20-success.svg)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-21-success.svg)](#contributors)
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 
 ### Brief Model Description
@@ -198,6 +198,7 @@ Contributions are always welcome! Please read the [contribution guidelines](http
     <td align="center"><a href="https://github.com/simas232"><img src="https://avatars.githubusercontent.com/u/11994076?v=4?s=80" width="80px;" alt=""/><br /><sub><b>Simonas Marcišauskas</b></sub></a><br /><a href="#question-simas232" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://github.com/TunahanCakir"><img src="https://avatars.githubusercontent.com/u/71440332?v=4?s=80" width="80px;" alt=""/><br /><sub><b>TunahanCakir</b></sub></a><br /><a href="https://github.com///issues?q=author%3ATunahanCakir" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/XuhangLi"><img src="https://avatars.githubusercontent.com/u/41695293?v=4?s=80" width="80px;" alt=""/><br /><sub><b>Xuhang Li</b></sub></a><br /><a href="https://github.com///issues?q=author%3AXuhangLi" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/johan-gson"><img src="https://avatars.githubusercontent.com/u/32481323?v=4?s=80" width="80px;" alt=""/><br /><sub><b>johan-gson</b></sub></a><br /><a href="https://github.com///issues?q=author%3Ajohan-gson" title="Bug reports">🐛</a> <a href="#content-johan-gson" title="Content">🖋</a></td>
     <td align="center"><a href="https://orcid.org/0000-0003-3947-488X"><img src="https://avatars.githubusercontent.com/u/3072880?v=4?s=80" width="80px;" alt=""/><br /><sub><b>smoretti</b></sub></a><br /><a href="https://github.com///issues?q=author%3Asmoretti" title="Bug reports">🐛</a></td>
   </tr>
 </table>
