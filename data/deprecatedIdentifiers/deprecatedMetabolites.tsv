@@ -6,3 +6,4 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM03651p"	"MAM03651"	"hexde7coa"	""	""	""	""	""	""	""	"hexde7coa"	""	""	"hexde7coa_p"
 "MAM03858m"	"MAM03858"	"pentcoa"	""	""	""	"439337"	""	""	""	"pentcoa"	""	""	"pentcoa_m"
 "MAM03648m"	"MAM03648"	"hepcoa"	""	""	""	"53481563"	""	""	""	"hepcoa"	""	""	"hepcoa_m"
+"MAM01389c"	"MAM01389"	""	"C01172"	""	"CHEBI:17719"	""	""	""	""	"M01389"	"MNXM508"	"m01389c"	"m01389c"
