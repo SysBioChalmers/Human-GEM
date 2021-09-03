@@ -2,7 +2,7 @@
   "files": ["README.md"],
   "imageSize": 80,
   "contributorsPerLine": 8,
-  "contributorsSortAlphabetically": false,
+  "contributorsSortAlphabetically": true,
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-success.svg)](#contributors)",
   "skipCi": "true",
   "contributors": [
@@ -20,6 +20,7 @@
         "infra",
         "platform",
         "projectManagement",
+        "question",
         "research",
         "review",
         "tutorial",
@@ -40,6 +41,7 @@
         "infra",
         "platform",
         "projectManagement",
+        "question",
         "research",
         "review",
         "test",
@@ -178,7 +180,7 @@
     {
       "login": "cherkaos",
       "name": "Sarah Cherkaoui",
-      "avatar_url": "https://avatars.githubusercontent.com/u/9384349?v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4625396?v=4",
       "profile": "https://github.com/cherkaos",
       "contributions": [
         "bug",
