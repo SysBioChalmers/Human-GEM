@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "avlant",
+      "name": "Avlant",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5329888?v=4",
+      "profile": "https://github.com/avlant",
+      "contributions": [
+        "bug",
+        "content"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Human-GEM",
+  "projectOwner": "SysBioChalmers",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
