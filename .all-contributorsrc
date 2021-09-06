@@ -1,5 +1,7 @@
 {
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 80,
   "contributorsPerLine": 8,
   "contributorsSortAlphabetically": true,
@@ -234,7 +236,7 @@
         "bug",
         "content"
       ]
-    }
+    },
     {
       "login": "dweindl",
       "name": "Daniel Weindl",
@@ -243,7 +245,7 @@
       "contributions": [
         "bug"
       ]
-    }
+    },
     {
       "login": "Rasools",
       "name": "Rasool Saghaleyni",
@@ -253,5 +255,7 @@
         "ideas"
       ]
     }
-  ]
+  ],
+  "repoType": "github",
+  "commitConvention": "none"
 }
