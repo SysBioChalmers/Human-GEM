@@ -235,5 +235,23 @@
         "content"
       ]
     }
+    {
+      "login": "dweindl",
+      "name": "Daniel Weindl",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32481323?v=4",
+      "profile": "https://github.com/johan-gson",
+      "contributions": [
+        "bug"
+      ]
+    }
+    {
+      "login": "Rasools",
+      "name": "Rasool Saghaleyni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32481323?v=4",
+      "profile": "https://github.com/johan-gson",
+      "contributions": [
+        "ideas"
+      ]
+    }
   ]
 }
