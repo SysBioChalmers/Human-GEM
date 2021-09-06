@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dweindl",
+      "name": "Daniel Weindl",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18048784?v=4",
+      "profile": "https://www.helmholtz-muenchen.de/icb/institute/staff/staff/ma/5122/index.html",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Human-GEM",
+  "projectOwner": "SysBioChalmers",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
