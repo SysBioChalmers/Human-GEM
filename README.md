@@ -46,6 +46,10 @@ If you use Mouse1, Rat1, Zebrafish1, Fruitfly1 or Worm1 in your research, please
 
 This repository is administered by Jonathan Robinson ([@JonathanRob](https://github.com/jonathanrob)) and Hao Wang ([@Hao-Chalmers](https://github.com/hao-chalmers)), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology.
 
+## Contributing
+
+Contributions are always welcome! Please read the [Contributing guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/main/.github/CONTRIBUTING.md) before start.
+
 
 ## User Guide
 
@@ -163,10 +167,6 @@ To import/export this annotation data to/from MATLAB, use the `importTsvFile` an
 
 A collection of manually curated 2D metabolic maps associated with Human-GEM are stored in the [Human-maps repository](https://github.com/SysBioChalmers/Human-maps). These maps can be downloaded from the repository or explored interactively using [Metabolic Atlas](https://metabolicatlas.org/explore/map-viewer/human1).
 
-
-## Contributing
-
-Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/main/.github/CONTRIBUTING.md) to get started.
 
 ## Contributors
 
