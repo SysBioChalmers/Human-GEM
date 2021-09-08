@@ -31,11 +31,11 @@ Feel free to also comment on any of the [open issues](https://github.com/SysBioC
 If you want to contribute to the model with some additions or improvements, please always start by raising an issue for asking/describing what you want to achieve. This way, we reduce the risk of duplicated efforts and you may also get suggestions on how to best proceed, e.g. there may be half-finished work in some branch that you could work with. Also, feel free to browse our [open issues](https://github.com/SysBioChalmers/Human-GEM/issues) and our [ongoing projects](https://github.com/SysBioChalmers/Human-GEM/projects): Anything tagged with "help wanted" is open to whoever wants to implement it.
 
 
-- Here's how to set up Human-GEM to contribute small features or changes. This should work for most of the curations.
+Here's how to set up Human-GEM to contribute small features or changes. This should work for most curation work.
 
 1. Fork the [Human-GEM](https://github.com/SysBioChalmers/Human-GEM) repository to your local, by clicking on the upper right corner. And then switch to `develop` branch in the forked repo.
 
-2. Modify model file `Human-GEM.yml` and/or annotation files `reactions.tsv`, `metabolites.tsv`, and `genes.tsv`.
+2. Modify model file `Human-GEM.yml` and/or annotation files `reactions.tsv`, `metabolites.tsv`, and `genes.tsv`, and commit changes as suggested below in "Semantic commits". 
 
 3. Submit a pull request from the `develop` branch of the forked repo on GitHub website to the `develop` branch of the original repo. We recommend ticking the box "Allow edits from maintainers" if you wish for us to be able to contribute directly to your branch (speeding-up the reviewing process).
 
