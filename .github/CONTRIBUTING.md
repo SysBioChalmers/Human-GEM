@@ -37,7 +37,7 @@ Here's how to set up Human-GEM to contribute small features or changes. This sho
 
 2. Modify model file `Human-GEM.yml` and/or annotation files `reactions.tsv`, `metabolites.tsv`, and `genes.tsv`, and commit changes as suggested below in "Semantic commits". 
 
-3. Submit a pull request from the `develop` branch of the forked repo on GitHub website to the `develop` branch of the original repo. We recommend ticking the box "Allow edits from maintainers" if you wish for us to be able to contribute directly to your branch (speeding-up the reviewing process).
+3. Submit a pull request from the `develop` branch of the forked repository to the `develop` branch of the original `SysBioChalmers/Human-GEM` repository. We recommend ticking the box "Allow edits from maintainers" if you wish for us to be able to contribute directly to your branch (speeding-up the reviewing process).
 
 
 Finally, and for larger features that you want to work on collaboratively, you may consider to first request to join our development team to get write access to the repository so that you can create a branch directly in the main repository (or simply ask the administrator to create a branch for you). Once you have a new branch, you can push your changes directly to the main repository and when finished, submit a pull request from that branch to `develop`. [See below](#development-team-guidelines) for more details.
