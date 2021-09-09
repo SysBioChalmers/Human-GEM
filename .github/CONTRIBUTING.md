@@ -1,6 +1,6 @@
 ## Contributing guidelines
 
-Contributions to **Human-GEM** are very welcome and greatly appreciated! Credit will always be given to anyone who contribute.
+Contributions to **Human-GEM** are very welcome and greatly appreciated! Credit is given to everyone who contributes. This is done by either manually modifying the `.all-contributorsrc` or automatically with the `all-contributors` bot, and updating the `Contributors` sections of the `README` accordingly.
 
 You can contribute in **2** major ways: by creating issues, and by sending pull requests (PRs) with additions, deletions, corrections, etc. to the `yml` model and/or `tsv` annotation files. Please follow the following guidelines:
 
