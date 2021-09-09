@@ -7,7 +7,7 @@
 
 ### Brief Model Description
 
-This repository contains the latest version of Human-GEM, a human genome-scale metabolic model.
+This repository contains the latest version of Human-GEM, a human genome-scale metabolic model. We encourage [contributions](#contributing).
 
 ### Cite us:
 
