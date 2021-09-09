@@ -33,7 +33,7 @@ If you want to contribute to the model with some additions or improvements, plea
 
 Here's how to set up Human-GEM to contribute small features or changes. This should work for most curation work.
 
-1. Fork the [Human-GEM](https://github.com/SysBioChalmers/Human-GEM) repository to your local, by clicking on the upper right corner. And then switch to `develop` branch in the forked repo.
+1. Fork the [Human-GEM](https://github.com/SysBioChalmers/Human-GEM) repository to your local, by clicking on the upper right corner. Then, switch to the `develop` branch before starting to work in the forked repository.
 
 2. Modify model file `Human-GEM.yml` and/or annotation files `reactions.tsv`, `metabolites.tsv`, and `genes.tsv`, and commit changes as suggested below in "Semantic commits". 
 
