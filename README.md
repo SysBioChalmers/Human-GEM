@@ -7,7 +7,7 @@
 
 ### Brief Model Description
 
-This repository contains the latest version of Human-GEM, a human genome-scale metabolic model.
+This repository contains the latest version of Human-GEM, a human genome-scale metabolic model. We encourage [contributions](#contributing).
 
 ### Cite us:
 
@@ -17,7 +17,7 @@ If you use Human1 in your research, please cite:
  
 Starting from Human-GEM v1.5.0, all the releases are also archived in [Zenodo](https://doi.org/10.5281/zenodo.4099692) from which specific version can be cited if used.
 
-If you use Mouse1, Rat1, Zebrafish1, Fruitfly1 or Worm1 in your research, please cite:   
+If you use Mouse1, Rat1, Zebrafish1, Fruitfly1, or Worm1 in your research, please cite:   
 
   > H. Wang, J. L. Robinson, P. Kocabaş, J. Gustafsson, M. Anton, P.-E. Cholley, et al. Genome-scale metabolic network reconstruction of model animals as a platform for translational research. _PNAS_ 118, e2102344118 (2021). [doi.org/10.1073/pnas.2102344118](https://doi.org/10.1073/pnas.2102344118)
 
@@ -45,6 +45,10 @@ If you use Mouse1, Rat1, Zebrafish1, Fruitfly1 or Worm1 in your research, please
 ### Administration
 
 This repository is administered by Jonathan Robinson ([@JonathanRob](https://github.com/jonathanrob)) and Hao Wang ([@Hao-Chalmers](https://github.com/hao-chalmers)), Division of Systems and Synthetic Biology, Department of Biology and Biological Engineering, Chalmers University of Technology.
+
+## Contributing
+
+Contributions are always welcome! Please read the [Contributing guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/main/.github/CONTRIBUTING.md) before start.
 
 
 ## User Guide
@@ -93,62 +97,7 @@ The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `mo
 
 ## Reaction, Metabolite, and Gene Annotations
 
-Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are provided as `tsv` files in the `model/` directory. The structure of the `tsv` files are tabulated below.
-
-* `reactions.tsv` content:
-
-fieldname      |  annotation             |
----------------|------------------------ |
-rxns           |identical to `model.rxns`|
-rxnKEGGID      |KEGG reaction ID        |
-rxnBiGGID      |BiGG reaction ID        |
-rxnEHMNID      |EHMN reaction ID        |
-rxnHepatoNET1ID|HepatoNET1 reaction ID  |
-rxnREACTOMEID  |REACTOME ID             |
-rxnRecon3DID   |Recon3D reaction ID     |
-rxnMetaNetXID  |MetaNetX reaction ID    |
-rxnHMR2ID      |HMR2 reaction ID        |
-rxnRatconID    |Ratcon reaction ID      |
-rxnTCDBID      |TCDB ID                 |
-spontaneous    |Spontaneous status      |
-rxnMAID        |MA reaction ID          |
-rxnRheaID      |Rhea ID                 |
-rxnRheaMasterID|Master Rhea ID          |
-
-
-* `metabolites.tsv` content:
-
-fieldname      |  annotation             |
----------------|-------------------------|
-mets           |identical to `model.mets`|
-metsNoComp     |`model.mets` without compartment suffix|
-metBiGGID      |BiGG metabolite ID       |
-metKEGGID      |KEGG metabolite ID       |
-metHMDBID      |HMDB ID                  |
-metChEBIID     |ChEBI ID                 |
-metPubChemID   |PubChem ID               |
-metLipidMapsID |LipidMaps ID             |
-metEHMNID      |EHMN metabolite ID       |
-metHepatoNET1ID|HepatoNET1 metabolite ID |
-metRecon3DID   |Recon3D metabolite ID    |
-metMetaNetXID  |MetaNetX metabolite ID   |
-metHMR2ID      |HMR2 metabolite ID       |
-metMAID        |MA metabolite ID         |
-
-
-* `genes.tsv` content:
-
-fieldname     |  annotation          |
---------------|----------------------|
-genes         |Ensembl gene ID       |
-geneENSTID    |Ensembl transcript ID |
-geneENSPID    |Ensembl protein ID |
-geneUniProtID |UniProt ID            |
-geneSymbols   |Gene Symbol           |
-geneEntrezID  |NCBI Entrez ID        |
-geneNames     |Gene Name             |
-geneAliases   |Alias Names           |
-
+Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are provided as `tsv` files in the `model/` directory (`reactions.tsv`, `metabolites.tsv`, and `genes.tsv`, respectively).  
 
 To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
 
@@ -163,10 +112,6 @@ To import/export this annotation data to/from MATLAB, use the `importTsvFile` an
 
 A collection of manually curated 2D metabolic maps associated with Human-GEM are stored in the [Human-maps repository](https://github.com/SysBioChalmers/Human-maps). These maps can be downloaded from the repository or explored interactively using [Metabolic Atlas](https://metabolicatlas.org/explore/map-viewer/human1).
 
-
-## Contributing
-
-Contributions are always welcome! Please read the [contribution guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/main/.github/CONTRIBUTING.md) to get started.
 
 ## Contributors
 
