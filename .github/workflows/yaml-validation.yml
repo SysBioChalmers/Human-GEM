@@ -14,6 +14,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Cache model folder
+      id: cache-model-files
+      uses: actions/cache@v2
+      with:
+        path: model
+        key: ${{ github.sha }}
+
     - name: YAML Lint
       uses: ibiqlik/action-yamllint@v1.0.0
       with:
