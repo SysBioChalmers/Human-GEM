@@ -1,10 +1,6 @@
 name: Test YAML conversion
 
-on:
-  push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ main, develop ]
+on: [push, pull_request]
 
 jobs:
   yaml-conversion:
