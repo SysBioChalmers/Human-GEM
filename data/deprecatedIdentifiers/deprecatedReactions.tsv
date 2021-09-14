@@ -1,3 +1,6 @@
 rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rxnMetaNetXID	rxnHMR2ID	rxnRatconID	rxnTCDBID	spontaneous	rxnRheaID	rxnRheaMasterID	rxnRetired
 "MAR01459"	""	"HSD17B7r"	""	""	""	"HSD17B7r"	"MNXR100715"	""	""	""	0	""	""	"HSD17B7r"
 "MAR04758"	"R00310"	""	"R00310C"	"r0096"	""	""	"MNXR99471"	"HMR_4758"	"RCR20530"	""	0	"RHEA:22586"	"RHEA:22584"	"HMR_4758"
+"MAR07746"	"R01600"	""	""	""	""	"HMR_7746"	"MNXR107081"	"HMR_7746"	"RCR10448"	""	0	""	""	"HMR_7746"
+"MAR07748"	"R02739"	""	""	""	""	"HMR_7748"	"MNXR99911"	"HMR_7748"	"RCR10277"	""	0	""	""	"HMR_7748"
+"MAR07749"	"R03321"	""	""	""	""	"HMR_7749"	"MNXR99910"	"HMR_7749"	"RCR14188"	""	0	""	""	"HMR_7749"
