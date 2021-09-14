@@ -39,7 +39,7 @@ If you use Mouse1, Rat1, Zebrafish1, Fruitfly1, or Worm1 in your research, pleas
 
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|:-----:|
-|_Homo sapiens_ |   HMR2, Recon3D, iHsa|    13081|  8371|  3625|
+|_Homo sapiens_ |   HMR2, Recon3D, iHsa|    13078|  8370|  3625|
 
 
 ### Administration
