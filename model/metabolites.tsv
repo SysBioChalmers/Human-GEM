@@ -325,7 +325,7 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM00152g"	"MAM00152"	"m7masnC"	""	""	""	""	""	""	""	"m7masnC"	"MNXM9454"	"m00152g"	"m00152g"
 "MAM00153g"	"MAM00153"	"m8masn"	""	""	""	""	""	""	""	"m8masn"	"MNXM6015"	"m00153g"	"m00153g"
 "MAM00153r"	"MAM00153"	"m8masn"	""	""	""	""	""	""	""	"m8masn"	"MNXM6015"	"m00153r"	"m00153r"
-"MAM00154r"	"MAM00154"	"g3m8mpdol__L"	"G00008"	""	""	""	""	""	""	"g3m8mpdol_L"	"MNXM147644"	"m00154r"	"m00154r"
+"MAM00154r"	"MAM00154"	""	"G00008"	""	"CHEBI:53019"	""	""	""	""	""	"MNXM147644"	"m00154r"	"m00154r"
 "MAM00155c"	"MAM00155"	""	"C02693"	""	""	""	""	""	""	"M00155"	"MNXM2239"	"m00155c"	"m00155c"
 "MAM00156c"	"MAM00156"	""	""	""	""	"53481438"	""	"CE2196"	""	"CE2196"	"MNXM31535"	"m00156c"	"m00156c"
 "MAM00157c"	"MAM00157"	"bhb"	"C01089"	"HMDB00011"	"CHEBI:17066"	"92135"	"LMFA01050005"	""	"HC00661"	"bhb"	"MNXM663"	"m00157c"	"m00157c"
