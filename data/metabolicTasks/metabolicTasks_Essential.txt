@@ -91,7 +91,7 @@
 				O2[s]															
 	SU	Beta oxidation of unsaturated fatty acid (n-6) 		linoleate[s]	1	1	H2O[s];CO2[s]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]									
 				O2[s]															
-	SU	Uptake and beta oxidation of all NEFAs		NEFA blood pool in[x]	1	1	H2O[s];CO2[s]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]									
+	SU	Uptake and beta oxidation of all NEFAs		NEFA blood pool in[s]	1	1	H2O[s];CO2[s]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]									
 				O2[s]															
 																			
 #	De novo synthesis of phospholipids																	Lipids are synthesised by all cells in order to maintain the constant turnover of cell membranes. All cells are bounded by an external lipid membrane, called the plasma membrane or plasmalemma PM, which serves as a dynamic interface with the external environment [ISSN:9780443068508]. 	
