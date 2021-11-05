@@ -5,17 +5,11 @@ on: [push, pull_request]
 jobs:
   yaml-validation:
     runs-on: ubuntu-latest
+
     steps:
 
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Cache model folder
-      id: cache-model-files
-      uses: actions/cache@v2
-      with:
-        path: model
-        key: ${{ github.sha }}
 
     - name: YAML Lint
       uses: ibiqlik/action-yamllint@v1.0.0
@@ -27,16 +21,12 @@ jobs:
         ## Return non-zero exit code on warnings as well as errors
         # strict: # optional, default is false
 
-    - name: Set up Python 3
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install GLPK, dependency for swiglpk
-      run: sudo apt-get install glpk-utils libglpk-dev
-
     - name: Test import with cobrapy and consistency with annotation files
-      run: |
-        pip install -U pip
-        pip install cobra
-        python code/test/sanityCheck.py
+      uses: addnab/docker-run-action@v3
+      with:
+        image: opencobra/memote:latest
+        options: -v ${{ github.workspace }}:/opt
+        shell: bash
+        run: |
+          cd /opt
+          python code/test/sanityCheck.py
