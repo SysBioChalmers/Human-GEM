@@ -117,6 +117,9 @@ end
 
 % allow for non-exact matches to "Symbol" option
 targetFormat(ismember(lower(targetFormat),{'name','names','symbol','symbols'})) = {'Symbol'};
+if ismember(lower(gene_type_orig), {'name','names','symbol','symbols'})
+    gene_type_orig = 'Symbol';
+end
 
 
 % get original list of genes from the grRules
