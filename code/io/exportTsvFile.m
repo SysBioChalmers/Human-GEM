@@ -26,7 +26,7 @@ end
 if ~istable(data)
     error('Invalid DATA format. Must be a STRUCT or a TABLE.');
 end
-if ~endsWith(lower(filename), '.tsv')
+if ~endsWith(lower(filename), '.tsv') && ~endsWith(lower(filename), '.txt')
     filename = strcat(filename, '.tsv');
 end
 
