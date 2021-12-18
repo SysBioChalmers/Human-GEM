@@ -23,8 +23,8 @@
 				ADP[c]	2	2	ATP[c]	2	2								
 				Pi[c]	2	2	NADH[c]	2	2								
 							H2O[c]	2	2								
-	7	Reactive oxygen species detoxification (H2O2 to H2O)		H2O2[s]	2	2	H2O[s]	2	2								
-							O2[s]	1	1								
+	7	Reactive oxygen species detoxification (H2O2 to H2O)		H2O2[e]	2	2	H2O[e]	2	2								
+							O2[e]	1	1								
 	8	Presence of the thioredoxin system through the thioredoxin reductase activity		H+[c]	1	1	NADP+[c]	1	1								
 				NADPH[c]	1	1	thioredoxin[c]	1	1								
 				oxidized thioredoxin[c]	1	1											
@@ -135,16 +135,16 @@
 	21	3'-Phospho-5'-adenylyl sulfate synthesis		sulfate[c]	1	1	PAPS[c]	1	1								
 				ATP[c]	2	2	ADP[c]	1	1								
 				H+[c]	1	1	PPi[c]	1	1								
-	22	Degradation of adenine to urate		adenine[c]	1	1	urate[s]	1	1								
+	22	Degradation of adenine to urate		adenine[c]	1	1	urate[e]	1	1								
 				H2O[c]	2	2	NH4+[c]	1	1								
-				H+[c]	1	1	H2O2[s]	2	2								
-				O2[s]	2	2	ribose-1-phosphate[c]	1	1								
+				H+[c]	1	1	H2O2[e]	2	2								
+				O2[e]	2	2	ribose-1-phosphate[c]	1	1								
 				PRPP[c]	1	1	PPi[c]	1	1								
-				H2O[s]	2	2											
-	23	Degradation of guanine to urate		guanine[c]	1	1	urate[s]	1	1								
-				H2O[s]	1	1	NH4+[c]	1	1								
-				H2O[c]	1	1	NADH[s]	1	1								
-				NAD+[s]	1	1	H+[s]	0	1								
+				H2O[e]	2	2											
+	23	Degradation of guanine to urate		guanine[c]	1	1	urate[e]	1	1								
+				H2O[e]	1	1	NH4+[c]	1	1								
+				H2O[c]	1	1	NADH[e]	1	1								
+				NAD+[e]	1	1	H+[e]	0	1								
 	24	Degradation of cytosine		cytosine[c]	1	1	beta-alanine[c]	1	1								
 				H2O[c]	3	3	CO2[c]	1	1								
 				H+[c]	3	3	NH4+[c]	2	2								
@@ -456,7 +456,7 @@
 							H+[c]	2	2								
 							2-oxobutyrate[c]	1	1								
 							NH4+[c]	1	1								
-	82	Cysteine degradation		cysteine[s]	1	1	H2O[c]										
+	82	Cysteine degradation		cysteine[e]	1	1	H2O[c]										
 				O2[c]			ATP[c]										
 				Pi[c]			CO2[c]										
 				ADP[c]			NH4+[c]										
@@ -583,12 +583,12 @@
 				AKG[m]	1	1	H2O[m]	1	1								
 				H+[m]	1	1	NADP+[m]	1	1								
 				NADPH[m]	1	1											
-	107	Conversion of lysine to L-2-Aminoadipate		lysine[s]	1	1	L-2-aminoadipate[c]	1	1								
-				H2O[s]	2	2	H2O2[s]	2	2								
-				O2[s]	2	2	NH4+[s]	1	1								
-				NADH[s]	1	1	H+[c]	1	1								
-				NAD+[c]	1	1	NAD+[s]	1	1								
-				H+[s]	0	1	NADH[c]	1	1								
+	107	Conversion of lysine to L-2-Aminoadipate		lysine[e]	1	1	L-2-aminoadipate[c]	1	1								
+				H2O[e]	2	2	H2O2[e]	2	2								
+				O2[e]	2	2	NH4+[e]	1	1								
+				NADH[e]	1	1	H+[c]	1	1								
+				NAD+[c]	1	1	NAD+[e]	1	1								
+				H+[e]	0	1	NADH[c]	1	1								
 	108	Methionine degradation		methionine[c]	1	1	cysteine[c]	1	1								
 				serine[c]	1	2	propanoyl-CoA[c]	1	1								
 				ATP[c]	2	2	ATP[m]	1	1								
@@ -996,70 +996,70 @@
 				CoA[c]	1	1	PPi[c]	4	4								
 				HCO3-[c]	7	7	H+[m]	8									
 				H+[c]	8												
-	167	Taurochenodeoxycholate synthesis		cholesterol[r]	1	1	taurochenodeoxycholate[s]	1	1								
-				taurine[s]	1	1	propanoyl-CoA[s]	1	1								
-				CoA[s]	1	1	AMP[s]	1	1								
-				ATP[s]	1	1	PPi[s]	1	1								
+	167	Taurochenodeoxycholate synthesis		cholesterol[r]	1	1	taurochenodeoxycholate[e]	1	1								
+				taurine[e]	1	1	propanoyl-CoA[e]	1	1								
+				CoA[e]	1	1	AMP[e]	1	1								
+				ATP[e]	1	1	PPi[e]	1	1								
 				O2[r]	1	1	NADP+[m]	3	3								
-				O2[s]	1	1	NADP+[r]	1	1								
+				O2[e]	1	1	NADP+[r]	1	1								
 				O2[m]	3	3	NADH[r]	1	1								
 				NAD+[r]	1	1	NADP+[c]	1	1								
 				H+[c]	2	2	NAD+[c]	1	1								
 				H+[m]	2	2	H2O[m]	3	3								
 				NADH[c]	1	1	H2O[r]	1	1								
-				NADPH[c]	1	1	H2O[s]	1	1								
+				NADPH[c]	1	1	H2O[e]	1	1								
 				NADPH[m]	3	3											
 				NADPH[r]	1	1											
-	168	Glycochenodeoxycholate synthesis		cholesterol[r]	1	1	glycochenodeoxycholate[s]	1	1								
-				glycine[s]	1	1	propanoyl-CoA[s]	1	1								
-				ATP[s]	1	1	AMP[s]	1	1								
-				FADH2[s]	1	1	PPi[s]	1	1								
-				CoA[s]	1	1	FAD[s]	1	1								
+	168	Glycochenodeoxycholate synthesis		cholesterol[r]	1	1	glycochenodeoxycholate[e]	1	1								
+				glycine[e]	1	1	propanoyl-CoA[e]	1	1								
+				ATP[e]	1	1	AMP[e]	1	1								
+				FADH2[e]	1	1	PPi[e]	1	1								
+				CoA[e]	1	1	FAD[e]	1	1								
 				NADPH[r]	1	1	H2O[r]	1	1								
-				NADPH[c]	1	1	H2O[s]	3	3								
+				NADPH[c]	1	1	H2O[e]	3	3								
 				NADPH[m]	3	3	H2O[m]	5	5								
-				NADPH[s]	1	1	NADP+[r]	1	1								
-				NAD+[r]	1	1	NADP+[s]	1	1								
+				NADPH[e]	1	1	NADP+[r]	1	1								
+				NAD+[r]	1	1	NADP+[e]	1	1								
 				NADH[c]	1	1	NADP+[c]	1	1								
 				H+[m]	2	2	NADP+[m]	3	3								
-				H+[s]	1	1	NADH[r]	1	1								
+				H+[e]	1	1	NADH[r]	1	1								
 				H+[c]	2	2	NAD+[c]	1	1								
 				O2[m]	3	3											
 				O2[r]	1	1											
-				O2[s]	2	2											
-	169	tauro-cholate synthesis		cholesterol[r]	1	1	taurocholate[s]	1	1								
-				taurine[s]	1	1	propanoyl-CoA[s]	1	1								
-				CoA[s]	1	1	AMP[s]	1	1								
-				ATP[s]	1	1	PPi[s]	1	1								
-				FADH2[s]	1	1	FAD[s]	1	1								
+				O2[e]	2	2											
+	169	tauro-cholate synthesis		cholesterol[r]	1	1	taurocholate[e]	1	1								
+				taurine[e]	1	1	propanoyl-CoA[e]	1	1								
+				CoA[e]	1	1	AMP[e]	1	1								
+				ATP[e]	1	1	PPi[e]	1	1								
+				FADH2[e]	1	1	FAD[e]	1	1								
 				NADPH[r]	1	4	NADPH[m]	1	2								
-				NADPH[s]	1	1	NADP+[r]	1	1								
+				NADPH[e]	1	1	NADP+[r]	1	1								
 				NADPH[m]	0	2	NADP+[c]	1	2								
 				NADPH[c]	0	1	NADP+[m]	2	2								
-				NADH[c]	1	1	NADP+[s]	1	1								
+				NADH[c]	1	1	NADP+[e]	1	1								
 				NADP+[m]	0	1	NAD+[c]	1	1								
 				O2[r]	2	2	H2O[m]	2	2								
 				O2[m]	2	2	H2O[r]	2	2								
-				O2[s]	2	2	H2O[s]	3	3								
+				O2[e]	2	2	H2O[e]	3	3								
 				H+[r]	1	1											
 				H+[c]	2	2											
-				H+[s]	1	1											
-	170	glyco-cholate synthesis		cholesterol[r]	1	1	glycocholate[s]	1	1								
-				glycine[s]	1	1	propanoyl-CoA[s]	1	1								
-				ATP[s]	1	1	AMP[s]	1	1								
-				FADH2[s]	1	1	PPi[s]	1	1								
-				CoA[s]	1	1	FAD[s]	1	1								
+				H+[e]	1	1											
+	170	glyco-cholate synthesis		cholesterol[r]	1	1	glycocholate[e]	1	1								
+				glycine[e]	1	1	propanoyl-CoA[e]	1	1								
+				ATP[e]	1	1	AMP[e]	1	1								
+				FADH2[e]	1	1	PPi[e]	1	1								
+				CoA[e]	1	1	FAD[e]	1	1								
 				NADPH[r]	1	1	NADP+[m]	1	1								
-				NADPH[s]	1	1	NADP+[r]	1	1								
+				NADPH[e]	1	1	NADP+[r]	1	1								
 				NADPH[m]	1	1	NADP+[c]	1	1								
-				NADPH[c]	1	1	NADP+[s]	1	1								
+				NADPH[c]	1	1	NADP+[e]	1	1								
 				NADH[c]	1	1	NAD+[c]	1	1								
 				H+[r]	1	1	H2O[m]	2	2								
-				H+[s]	1	1	H2O[s]	3	3								
+				H+[e]	1	1	H2O[e]	3	3								
 				H+[c]	2	2	H2O[r]	2	2								
 				O2[r]	2	2											
 				O2[m]	2	2											
-				O2[s]	2	2											
+				O2[e]	2	2											
 	171	Synthesis of thromboxane from arachidonate		arachidonate[r]	1	1	thromboxane A2[r]	1	1								
 				O2[r]	2	2	H2O[r]	1	1								
 				NADPH[r]	1	1	NADP+[r]	1	1								
