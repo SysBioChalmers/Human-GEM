@@ -7,7 +7,7 @@
 modelname = 'Human-GEM';
 
 % load model and other data files
-model = importYaml(fullfile('..', '..', 'model', modelname, '.yml'));
+model = importYaml(fullfile('..', '..', 'model', [modelname '.yml']));
 metAssoc = importTsvFile(fullfile('..', '..', 'model', 'metabolites.tsv'));
 metAssoc_table = struct2table(metAssoc);
 metsDep = importTsvFile(fullfile('..', '..', 'data', 'deprecatedIdentifiers', 'deprecatedMetabolites.tsv'));
