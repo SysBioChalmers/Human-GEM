@@ -48,10 +48,10 @@ end
 % add a boundary compartment to the model if it does not yet exist
 if ~ismember('boundary',lower(model.compNames))
     model.compNames(end+1) = {'Boundary'};
-    if ismember('x',model.comps)
-        error('Consider renaming the "x" compartment, or modify this function to use another letter.');
+    if ismember('b',model.comps)
+        error('Consider renaming the "b" compartment, or modify this function to use another letter.');
     else
-        model.comps(end+1) = {'x'};
+        model.comps(end+1) = {'b'};
     end
 end
 
@@ -94,17 +94,17 @@ add_bound_mets = unbal_mets(~ismember(unbal_mets,bound_mets));
 % metabolite, with the compartment replaced.
 [~,ref_met_ind] = ismember(add_bound_mets,model.metNames);
 if all(endsWith(model.mets,']'))
-    add_bound_met_IDs = regexprep(model.mets(ref_met_ind),'\[.\]$','[x]');
+    add_bound_met_IDs = regexprep(model.mets(ref_met_ind),'\[.\]$','[b]');
 elseif any(endsWith(model.mets,']'))
     error('All metabolite IDs must use the same format for describing the compartment.');
 else
-    add_bound_met_IDs = regexprep(model.mets(ref_met_ind),'.$','x');
+    add_bound_met_IDs = regexprep(model.mets(ref_met_ind),'.$','b');
 end
 
 % add new boundary mets to the model
 metsToAdd.mets = add_bound_met_IDs;
 metsToAdd.metNames = add_bound_mets;
-metsToAdd.compartments = 'x';
+metsToAdd.compartments = 'b';
 metsToAdd.unconstrained = ones(size(add_bound_mets));
 new_model = addMets(model,metsToAdd);
 
