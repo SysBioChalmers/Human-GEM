@@ -30,7 +30,7 @@ metAssoc.mets = regexprep(metAssoc.mets, 's$', 'e');
 metAssoc.mets = regexprep(metAssoc.mets, 'p$', 'x');
 
 % export the new model and files
-writeYaml(model, fullfile('..', '..', 'model', modelname, '.yml'));
+exportYaml(model, fullfile('..', '..', 'model', [modelname '.yml']));
 exportTsvFile(metAssoc, fullfile('..', '..', 'model', 'metabolites.tsv'));
 exportTsvFile(metsDep_table, fullfile('..', '..', 'data', 'deprecatedIdentifiers', 'deprecatedMetabolites.tsv'));
 
