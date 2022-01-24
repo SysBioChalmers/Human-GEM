@@ -280,9 +280,6 @@ equations(irrevInd) = strcat(leftEqns(irrevInd), ' =>', rightEqns(irrevInd));
 [~, metIdx] = ismember(model.mets, newMets);
 model.S = S(metIdx, :);
 
-% Now the `unconstrained` field is abandoned in HumanGEM
-%model.unconstrained = double(endsWith(model.mets, 'x'));
-
 if ~silentMode
     fprintf(' Done!\n');
 end
