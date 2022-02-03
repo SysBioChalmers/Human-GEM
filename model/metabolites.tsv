@@ -2771,7 +2771,7 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM01654c"	"MAM01654"	"2amac"	"C02218"	""	"CHEBI:17123"	""	""	""	"HC00906"	"2amac"	"MNXM3414"	"m01654c"	"m01654c"
 "MAM01655c"	"MAM01655"	"dhdascb"	"C00425"	"HMDB01264"	"CHEBI:17242"	"210328"	""	""	""	"dhdascb"	"MNXM250"	"m01655c"	"m01655c"
 "MAM01655s"	"MAM01655"	"dhdascb"	"C00425"	"HMDB01264"	"CHEBI:17242"	"210328"	""	""	""	"dhdascb"	"MNXM250"	"m01655s"	"m01655s"
-"MAM01656c"	"MAM01656"	"dedol__L"	""	""	""	""	""	""	""	"dedol_L"	"MNXM148199"	"m01656c"	"m01656c"
+"MAM01656c"	"MAM01656"	"dedol__L"	""	""	"CHEBI:136960"	""	""	""	""	"dedol_L"	"MNXM148199"	"m01656c"	"m01656c"
 "MAM01657c"	"MAM01657"	"dedoldp__L"	"C05859"	""	""	""	""	""	""	"dedoldp_L"	"MNXM148197"	"m01657c"	"m01657c"
 "MAM01658c"	"MAM01658"	"dedolp__L"	""	""	""	""	""	""	""	"dedolp_L"	"MNXM148198"	"m01658c"	"m01658c"
 "MAM01659c"	"MAM01659"	"dheas"	"C04555"	"HMDB01032"	"CHEBI:16814"	"12594"	""	""	"HC01314"	"dheas"	"MNXM991"	"m01659c"	"m01659c"
