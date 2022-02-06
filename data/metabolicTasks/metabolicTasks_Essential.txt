@@ -1,0 +1,162 @@
+	ID	DESCRIPTION	SHOULD FAIL	IN	IN LB	IN UB	OUT	OUT LB	OUT UB	EQU	EQU LB	EQU UB	CHANGED RXN	CHANGED LB	CHANGED UB	PRINT FLUX	COMMENTS	REFERENCES	EXPLANATIONS
+#	ER: Energy and redox; IC: Internal conversions; SU: Substrate utilization; BS: Biosynthesis of products; GR: Growth																		
+#	Rephosphorylation of nucleoside triphosphates																	All cellular functions are dependent on a continuous supply of energy, which is derived from the sequential breakdown of organic molecules during the process of cellular respiration. The energy released during this process is ultimately stored in the form of nucleoside triphosphates (primarily ATP). In all cells, ATP forms a pool of readily available energy for all the metabolic functions of the cell [ISSN:9780443068508]. ATP is the chemical energy carrier in all living cells. Aerobic ATP generation is active in almost all cell types, but there are some cells where mitochondial activity is absent (red blood cells) or very low (some cells in the lens of the eye). Since they are so rare these tasks are still considered common to all cells	
+	ER	Aerobic rephosphorylation of ATP from glucose		O2[e];glucose[e]			H2O[e];CO2[e]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]	1								
+	ER	Aerobic rephosphorylation of GTP		O2[e];glucose[e]			H2O[e];CO2[e]			GTP[c] + H2O[c] => GDP[c] + Pi[c] + H+[c]	1								
+	ER	Aerobic rephosphorylation of CTP		O2[e];glucose[e]			H2O[e];CO2[e]			CTP[c] + H2O[c] => CDP[c] + Pi[c] + H+[c]	1								
+	ER	Aerobic rephosphorylation of UTP		O2[e];glucose[e]			H2O[e];CO2[e]			UTP[c] + H2O[c] => UDP[c] + Pi[c] + H+[c]	1								
+																			
+#	De novo synthesis of nucleotides																	All cells can synthesize nucleotides from simple building blocks (de novo synthesis) or by the recycling of pre-formed bases (Salvage pathway) [ISBN: 1133106293 ].	
+	BS	ATP de novo synthesis		O2[e];glucose[e];NH3[e];Pi[e]			H2O[e];CO2[e]			ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							ATP[c]	1											
+	BS	CTP de novo synthesis		O2[e];glucose[e];NH3[e];Pi[e]			H2O[e];CO2[e]			ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							CTP[c]	1											
+	BS	GTP de novo synthesis		O2[e];glucose[e];NH3[e];Pi[e]			H2O[e];CO2[e]			ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							GTP[c]	1											
+	BS	UTP de novo synthesis		O2[e];glucose[e];NH3[e];Pi[e]			H2O[e];CO2[e]			ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							UTP[c]	1											
+	BS	dATP de novo synthesis		O2[e];glucose[e];NH3[e];Pi[e]			H2O[e];CO2[e]			ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							dATP[c]	1											
+	BS	dCTP de novo synthesis		O2[e];glucose[e];NH3[e];Pi[e]			H2O[e];CO2[e]			ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							dCTP[c]	1											
+	BS	dGTP de novo synthesis		O2[e];glucose[e];NH3[e];Pi[e]			H2O[e];CO2[e]			ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							dGTP[c]	1											
+	BS	dTTP de novo synthesis		O2[e];glucose[e];NH3[e];Pi[e]			H2O[e];CO2[e]			ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							dTTP[c]	1											
+#	Uptake of essential amino acids																	Protein synthesis is an essential and continuous activity of all cells and the major function of some cells [ISSN:9780443068508]. It is necessary to have essential amino acids for the protein synthesis.	
+	SU	Histidine uptake		histidine[e]	1	1	histidine[c]	1											
+	SU	Isoleucine uptake		isoleucine[e]	1	1	isoleucine[c]	1											
+	SU	Leucine uptake		leucine[e]	1	1	leucine[c]	1											
+	SU	Lysine uptake		lysine[e]	1	1	lysine[c]	1											
+	SU	Methionine uptake		methionine[e]	1	1	methionine[c]	1											
+	SU	Phenylalanine uptake		phenylalanine[e]	1	1	phenylalanine[c]	1											
+	SU	Threonine uptake		threonine[e]	1	1	threonine[c]	1											
+	SU	Tryptophan uptake		tryptophan[e]	1	1	tryptophan[c]	1											
+	SU	Valine uptake		valine[e]	1	1	valine[c]	1											
+																			
+#	De novo synthesis of key intermediates																	Respiration is the process through which energy stored in organic molecules is released to do metabolic work. A stepwise process conducted in all living cells, it is controlled by enzymes, and releases carbon dioxide and water. Glycolysis is the breakdown of a 6_carbon glucose molecule into two molecules of 3_carbon pyruvate; it takes place in the cytoplasm of all living cells. [Taylor et al., Marine Ecology Progress Series, 184: 73-81. 1999]	
+	IC	Glycerate 3-phosphate  de novo synthesis		O2[e];glucose[e];Pi[e]			3-phospho-D-glycerate[c]	1										All living cells have three fundamental requirements: energy (ATP), reducing power (NADPH), and starting materials for biosynthesis. Four sugar phosphates: triose phosphates (dihydroxyacetone phosphate and 3-phosphoglyceraldehyde), tetrose phosphate, pentose phosphate, and hexose phosphate; three a-keto acids: pyruvate, oxaloacetate, and a-ketoglutarate; two activated carboxylic acids: acetyl CoA and succinyl CoA; and phosphoenolpyruvate [ISBN:0120661500].	
+							CO2[e];H2O[e]											The glycolytic reaction sequence is thought to have been among the earliest of all biochemical processes to evolve. It uses no molecular oxygen and occurs readily in an anaerobic environment. All of its reactions occur free in the cytoplasm; none is associated with any organelle or membrane structure. Every living creature is capable of carrying out glycolysis [ ISBN-10: 0073383074].	
+	IC	Mitochondrial acetyl-CoA de novo synthesis		O2[e];glucose[e]			CO2[e];H2O[e]			acetyl-CoA[m] => CoA[m]	1							Acetyl CoA is synthesized in the mitochondria of all cells as a by-product of the pyruvate dehydrogenase complex.	
+	IC	Mitochondrial AKG de novo synthesis		O2[e];glucose[e]			AKG[m]	1											
+							CO2[e];H2O[e]												
+	IC	Erythrose 4-phosphate de novo synthesis		O2[e];glucose[e];Pi[e]			erythrose-4-phosphate[c]	1										Pentose phosphate pathway is essentially a scenic bypass route around the first stage of glycolisis that generates NADPH and ribose 5-phosphate. All cells require NADPH for reductive detoxification and most cells require ribose 5-P for nucleotide synthesis. Pentose phosphate pathway is present in all cells [ISBN-10: 078177022X].	
+							CO2[e];H2O[e]												
+	IC	Fructose 6-phosphate de novo synthesis		O2[e];glucose[e];Pi[e]			fructose-6-phosphate[c]	1											
+							CO2[e];H2O[e]												
+	IC	Glyceraldehyde 3-phosphate de novo synthesis		O2[e];glucose[e];Pi[e]			GAP[c]	1											
+							CO2[e];H2O[e]												
+	IC	Glucose 6-phosphate de novo synthesis		O2[e];glucose[e];Pi[e]			glucose-6-phosphate[c]	1											
+							CO2[e];H2O[e]												
+	IC	Mitochondrial oxaloacetate de novo synthesis		O2[e];glucose[e];Pi[e]			OAA[m]	1											
+							CO2[e];H2O[e]												
+	IC	Phosphoenolpyruvate de novo synthesis		O2[e];glucose[e];Pi[e]			PEP[c]	1											
+							CO2[e];H2O[e]												
+	IC	Pyruvate de novo synthesis		O2[e];glucose[e];Pi[e]			pyruvate[c]	1											
+							CO2[e];H2O[e]												
+	IC	Ribose 5-phosphate de novo synthesis		O2[e];glucose[e];Pi[e]			ribose-5-phosphate[c]	1										All cells require certain levels of NADPH and riboseÐ5Ðphosphate, and the biochemical reaction mediated by transketolase is crucial for maintaining the appropriate levels of both molecules [http://pubs.niaaa.nih.gov/publications/arh27-2/134-142.htm]	
+							CO2[e];H2O[e]												
+	IC	Mitochondrial succinyl-CoA de novo synthesis		O2[e];glucose[e];Pi[e]			CO2[e];H2O[e]			succinyl-CoA[m] => CoA[m]	1								
+																			
+#	De novo synthesis of other compounds																		
+	BS	Cholesterol de novo synthesis		O2[e];glucose[e]			cholesterol[c]	1										Cholesterol is widely distributed in the animal kingdom and occurs in all cell membranes. Even though the majority of body cholesterol is synthesized by the liver and secreted as circulating lipoproteins, all cells in the body have genomic information for cholesterol biosynthesis. Cholesterol biosynthesis is under feedback regulation, and the cellular and circulating cholesterol levels are tightly regulated at several points, such as the rate limiting enzyme 3-hydroxy-3-methyl-glutaryl coenzyme A (HMG-CoA) reductase and farnesyl pyrophosphate synthetase and at the low density lipoprotein (LDL) receptor [PMID: 7762999].  Sterol repression of cholesterol synthesis mediated by 25-OH-CH occurred in all cells. [PMID:8614298]	
+							CO2[e];H2O[e]												
+																			
+#	Protein turnover																		
+	BS	Protein synthesis from AAs		O2[e];glucose[e];NH3[e];H2O[e]			albumin[c]	0.0001										Protein synthesis is an essential and continuous activity of all cells and the major function of some cells [ISSN:9780443068508]. Here we exemplified for the synthesis of albumin.	
+				arginine[e];histidine[e];lysine[e];methionine[e];phenylalanine[e];tryptophan[e];tyrosine[e];alanine[e];glycine[e];serine[e];threonine[e];aspartate[e];glutamate[e];asparagine[e];glutamine[e];isoleucine[e];leucine[e];proline[e];valine[e];cysteine[e]			CO2[e];H2O[e];H2S[e];urea[e]												
+																			
+#	Electron transport chain and TCA																	The tricarboxylic acid (TCA) cycle, also called the citric acid cycle or Krebs cycle, includes eight enzyme-catalysed chemical reactions, which are of central importance in all living cells. The purpose of the TCA is the complete oxidation of acetyl carbons from acetyl coenzyme A (Acetyl-CoA) with the subsequent formation of NADH and FADH2 [Brain Energy Metabolism in Health and Disease, DOI: 10.5772/36092].	
+	ER	Oxidative phosphorylation		succinate[m];NADH[m];H+[m]	1	1	fumarate[m];NAD+[m]	1	1	ATP[m] + H2O[m] => ADP[m] + Pi[m] + H+[m]	1								
+				O2[e]			H2O[e]												
+	ER	Oxidative decarboxylation		pyruvate[m];NAD+[m];CoA[m]	1	1	acetyl-CoA[m];NADH[m];CO2[e]	1	1										
+							H+[m]												
+	ER	Krebs cycle NADH		acetyl-CoA[m];GDP[m];ubiquinone[m]	1	1	CoA[m];ubiquinol[m];GTP[m]	1	1										
+				NAD+[m]	3	3	NADH[m]	3	3										
+				Pi[m];H2O[e]			CO2[e];H+[c];H+[m]												
+	ER	Ubiquinol-to-proton		ubiquinol[m]	1	1	ubiquinone[m]	1	1									Aerobic power is derived from oxidation of substrates through aerobic biochemical pathways in the cytoplasm and mitochondria (glycolysis, tricarboxylic acid cycle, electron transport chain) in all cells that have sufficient O2 available [PMID: 23861968]. Reactive oxygen species (ROS) are formed via leakage from the mitochondrial electron transport chain in all cells during normal aerobic metabolism [PMID: 8299205;PMID: 21526095].	
+				O2[e];H+[m]			H2O[e]												
+							H+[c]	6											
+	ER	Ubiquinol-to-ATP		ubiquinol[m]	1	1	ubiquinone[m]	1	1	ATP[m] + H2O[m] => ADP[m] + Pi[m] + H+[m]	1								
+				O2[e]			H2O[e];H+[m];H+[c]												
+																			
+#	Beta oxidation of fatty acids																	The process of _-oxidation is common to all eukaryotic and prokaryotic organisms [PMID: 10521521]. Mitochondria are cell organellae known to be distributed in all types of animal cells and tissues [PMID: 19875848].	
+	SU	Beta oxidation of saturated FA		stearate[e]	1	1	H2O[e];CO2[e]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]									
+				O2[e]															
+	SU	Beta oxidation of long-chain FA		12,15,18,21-tetracosatetraenoic acid[e]	1	1	H2O[e];CO2[e]												
+				O2[e]															
+	SU	Beta oxidation of odd-chain FA		margaric acid[e]	1	1	H2O[e];CO2[e]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]									
+				O2[e]															
+	SU	Beta oxidation of unsaturated fatty acid (n-9) 		ximenic acid[e]	1	1	H2O[e];CO2[e]												
+				O2[e]															
+	SU	Beta oxidation of unsaturated fatty acid (n-6) 		linoleate[e]	1	1	H2O[e];CO2[e]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]									
+				O2[e]															
+	SU	Uptake and beta oxidation of all NEFAs		NEFA blood pool in[e]	1	1	H2O[e];CO2[e]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]									
+				O2[e]															
+																			
+#	De novo synthesis of phospholipids																	Lipids are synthesised by all cells in order to maintain the constant turnover of cell membranes. All cells are bounded by an external lipid membrane, called the plasma membrane or plasmalemma PM, which serves as a dynamic interface with the external environment [ISSN:9780443068508]. 	
+	SU	Choline uptake		choline[e]	1	1	choline[c]	1	1									Phospholipids are the major components of all cellular membranes. The most common phospholipid head group in eukaryotes is choline [PMID: 19706413]. Choline can be acquired through other mechanisms, such as the transporters that maintain choline phospholipid synthesis in all cells [PMID: 23141292].	
+	SU	Inositol uptake		inositol[e]	1	1	inositol[c]	1	1										
+	BS	Phosphatidylcholine de novo synthesis		choline[e];glucose[e];O2[e];NEFA blood pool in[e];Pi[e]			PC-LD pool[c]	1		ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]								All living cells and many of the tiny organelles internal to cells are bounded by thin membranes [PMID: 19706413]. These membranes are composed primarily of phospholipids and proteins and are typically described as phospholipid bi-layers [http://hyperphysics.phy-astr.gsu.edu].  As choline uptake is essential for phosphatidylcholine synthesis in all cells, it makes sense that the body may have developed biological mechanisms to increase the number or efficiency of choline transport carriers [PMID: 3978171;PMID: 3537824].	
+							H2O[e];CO2[e]												
+	BS	Phosphatidylethanolamine de novo synthesis		ethanolamine[e];glucose[e];O2[e];NEFA blood pool in[e];Pi[e]			PE-LD pool[c]	1		ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							H2O[e];CO2[e]												
+	BS	Phosphatidylserine de novo synthesis		serine[e];glucose[e];O2[e];NEFA blood pool in[e];Pi[e]			PS-LD pool[c]	1		ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							H2O[e];CO2[e]												
+	BS	Phosphatidylinositol de novo synthesis		inositol[e];glucose[e];O2[e];NEFA blood pool in[e];Pi[e]			PI pool[c]	1		ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+							H2O[e];CO2[e]												
+																			
+#	Vitamins and co-factors																		
+	BS	Thiamin phosphorylation to TPP		thiamin[e];Pi[e];O2[e];H2O[e];H+[c]			thiamin-PP[c]	1		ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]								Thiamine or vitamin B-1, is an essential constituent of all cells since it is a cofactor for two enzyme complexes involved in the citric acid cycle, pyruvate dehydrogenase and _-ketoglutarate dehydrogenase. Thiamine is synthesized by plants, but it is a dietary requirement for humans and other animals [PMID: 8541506].  Thiamine and the thiamineÐ using enzymes are present in all cells of the body [http://pubs.niaaa.nih.gov/publications/arh27-2/134-142.htm]. Once inside the cell, thiamine quickly becomes phosphorylated to thiamine PPi, a key cofactor in several critical cellular pathways, including the key respiratory reactions involving the oxidation of pyruvate to acetyl CoA and a-ketoglutarate to succinyl CoA, both of which reduce NAD to NADH2, along with the synthesis of glyceraldehyde-3-phosphate in the pentose phosphate pathway and generation of NADPH [PMID: 12861052].	
+							H2O[e]												
+	BS	Coenzyme A synthesis from pantothenate		pantothenate[e];cysteine[e];glucose[e];O2[e];H2O[e];Pi[e];NH3[e]			CoA[c]	1		ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]								Coenzyme A (CoA) and its derivatives are essential cofactors for _4% of all cellular enzymes and participate in numerous biochemical pathways in all living organisms [PMID: 12906818;PMID: 21551303].	
+							H2O[e];CO2[e]												
+	BS	FAD synthesis from riboflavin		O2[e];glucose[e];NH3[e];Pi[e];riboflavin[e]			FAD[c]	1										Riboflavin is a water-soluble B vitamin that helps produce energy in all cells. All animal cells are capable of riboflavin uptake, whereas many microorganisms have distinct systems for riboflavin excretion to the medium [doi: 10.1128/MMBR.00030-10]. 	
+							H2O[e];CO2[e]												
+	BS	Heme biosynthesis		O2[e];NH3[e];glucose[e];Fe2+[e]			heme[c]	1		ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]								Hemoproteins are involved in a broad spectrum of crucial biologic functions including oxygen binding (hemoglobins), oxygen metabolism (oxidases, peroxidases, catalases, and hydroxylases), and electron transfer (cytochromes). Therefore, heme is formed in almost all living systems, except for a few obligatory anaerobes and certain unicellular organisms auxotrophic for porphyrins and/or heme. All animal cells can synthesize heme, with the exception of mature erythrocytes and perhaps some other cells at the very end of their differentiation pathways [PMID: 8978272].	
+							H2O[e];CO2[e]												
+#	Growth																		
+	GR	Growth on Ham's media (biomass production)		arginine[e]			ALLMETSIN[e]												
+				histidine[e]			biomass[e]	1											
+				lysine[e]															
+				methionine[e]															
+				phenylalanine[e]															
+				tryptophan[e]															
+				tyrosine[e]															
+				alanine[e]															
+				glycine[e]															
+				serine[e]															
+				threonine[e]															
+				aspartate[e]															
+				glutamate[e]															
+				asparagine[e]															
+				glutamine[e]															
+				isoleucine[e]															
+				leucine[e]															
+				proline[e]															
+				valine[e]															
+				cysteine[e]															
+				thiamin[e]															
+				hypoxanthine[e]															
+				folate[e]															
+				biotin[e]															
+				pantothenate[e]															
+				choline[e]															
+				inositol[e]															
+				nicotinamide[e]															
+				pyridoxine[e]															
+				riboflavin[e]															
+				thymidine[e]															
+				aquacob(III)alamin[e]															
+				lipoic acid[e]															
+				glucose[e]															
+				sulfate[e]															
+				linoleate[e]															
+				linolenate[e]															
+				O2[e]															
+				H2O[e]															
+				retinoate[e]															
+				Fe2+[e]															
+				Pi[e]															
+				alpha-tocopherol[e]															
+				gamma-tocopherol[e]															

@@ -1,0 +1,35 @@
+	ID	DESCRIPTION	SHOULD FAIL	IN	IN LB	IN UB	OUT	OUT LB	OUT UB	EQU	EQU LB	EQU UB	CHANGED RXN	CHANGED LB	CHANGED UB	PRINT FLUX	COMMENTS	REFERENCES	EXPLANATIONS
+	1	Oxygen from water	TRUE	H2O[e]			O2[e]	1		H+[c] <=> H+[e]									Human cells cannot produce oxygen from water
+							H+[e]			H+[m] <=> H+[c]									
+										H+[x] <=> H+[c]									
+										H+[g] <=> H+[c]									
+										H+[r] <=> H+[c]									
+										H+[l] <=> H+[c]									
+										H+[n] <=> H+[c]									
+										H+[i] <=> H+[c]									
+	2	Rephosphorylation of ATP in cytoplasm	TRUE	H2O[c];O2[c]			H2O[c];O2[c]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]	1								Model should not be able to rephosphorylate ATP without any nutrients
+	3	Rephosphorylation of ATP in mitochondria	TRUE	H2O[m];O2[m]			H2O[m];O2[m]			ATP[m] + H2O[m] => ADP[m] + Pi[m] + H+[m]	1								Model should not be able to rephosphorylate ATP without any nutrients
+	4	Rephosphorylation of ATP in peroxisome	TRUE	H2O[x];O2[x]			H2O[x];O2[x]			ATP[x] + H2O[x] => ADP[x] + Pi[x] + H+[x]	1								Model should not be able to rephosphorylate ATP without any nutrients
+	5	Rephosphorylation of ATP in Golgi	TRUE	H2O[g];O2[g]			H2O[g];O2[g]			ATP[g] + H2O[g] => ADP[g] + Pi[g] + H+[g]	1								Model should not be able to rephosphorylate ATP without any nutrients
+	6	Rephosphorylation of ATP in endoplasmatic reticulum	TRUE	H2O[r];O2[r]			H2O[r];O2[r]			ATP[r] + H2O[r] => ADP[r] + Pi[r] + H+[r]	1								Model should not be able to rephosphorylate ATP without any nutrients
+	7	Rephosphorylation of ATP in nucleus	TRUE	H2O[n];O2[n]			H2O[n];O2[n]			ATP[n] + H2O[n] => ADP[n] + Pi[n] + H+[n]	1								Model should not be able to rephosphorylate ATP without any nutrients
+	8	Rephosphorylation of ATP in lysosome	TRUE	H2O[l];O2[l]			H2O[l];O2[l]			ATP[l] + H2O[l] => ADP[l] + Pi[l] + H+[l]	1								Model should not be able to rephosphorylate ATP without any nutrients
+	9	Rephosphorylation of ATP from protons	TRUE	H2O[c];O2[c];H+[c]			H2O[c];O2[c]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]	1								Model should not be able to rephosphorylate ATP without any nutrients
+	10	Generation of reduction potential in cytoplasm	TRUE	H+[c];O2[e]			H2O[e]			2 NADH[c] + O2[c] + 2 H+[c] => 2 NAD+[c] + 2 H2O[c]	1								Model should not be able to generate reduction potential without any nutrients
+										ATP[c] + H2O[c] <=> ADP[c] + Pi[c] + H+[c]									
+										NADPH[c] + NAD+[c] <=> NADP+[c] + NADH[c]									
+	11	Generation of reduction potential in mitochondria	TRUE	H+[m];O2[e]			H2O[e]			2 NADH[m] + O2[m] + 2 H+[m] => 2 NAD+[m] + 2 H2O[m]	1								Model should not be able to generate reduction potential without any nutrients
+										ATP[m] + H2O[m] <=> ADP[m] + Pi[m] + H+[m]									
+										NADPH[m] + NAD+[m] <=> NADP+[m] + NADH[m]									
+	12	Generation of reduction potential in peroxisome	TRUE	H+[x];O2[e]			H2O[e]			2 NADH[x] + O2[x] + 2 H+[x] => 2 NAD+[x] + 2 H2O[x]	1								Model should not be able to generate reduction potential without any nutrients
+	13	Generation of reduction potential in cytoplasm (FADH2)	TRUE	H+[c];O2[e]			H2O[e]			FADH2[c] + O2[c] => FAD[c] + H2O[c]	1								Model should not be able to generate reduction potential without any nutrients
+	14	Generation of reduction potential in mitochondria (FADH2)	TRUE	H+[m];O2[e]			H2O[e]			FADH2[m] + O2[m] => FAD[m] + H2O[m]	1								Model should not be able to generate reduction potential without any nutrients
+	15	Generation of reduction potential in peroxisome (FADH2)	TRUE	H+[x];O2[e]			H2O[e]			FADH2[x] + O2[x] => FAD[x] + H2O[x]	1								Model should not be able to generate reduction potential without any nutrients
+	16	Generation of CO2 from nothing	TRUE				CO2[e]	0.001											Model should not be able to generate carbon from nothing.
+	17	mol ATP phosphorylated per mol glucose consumed exceeds 40	TRUE	glucose[e]		1	ALLMETSIN[e]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]	40								Theoretical maximum of moles ATP produced per moles glucose consumed is 38; allow a bit of error here, and check that it is below 40.
+				O2[e]															
+	18	Free transport of phosphate from cytoplasm to mitochondria [#99]	TRUE							Pi[m] => Pi[c]	1								Transport of phosphate (Pi) from cytoplasm to mitochondria should require expenditure of proton motive force.
+	19	Anaerobic production of propanoate from glucose [#100]	TRUE	glucose[e]		1	ALLMETSIN[e]												
+							propanoate[e]	1											In the presence of glucose and absence of oxygen, the model should produce lactate, not propanoate.
+	20	Anaerobic ATP phosphorylation per glucose consumed exceeds 2 [#101]	TRUE	glucose[e]		1	ALLMETSIN[e]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]	2.5								Model should yield 2 ATP phosphorylated per glucose consumed in the absence of oxygen. Check for model exceeding yield of 2.5, to allow for some error.
+	21	ATP production from Pi and O2 [#102]	TRUE	Pi[e];O2[e]			ALLMETSIN[e]			ATP[c] + H2O[c] => ADP[c] + Pi[c] + H+[c]	1								Model should not be able to phosphorylate ATP when consuming only Pi and O2.

@@ -1,0 +1,1208 @@
+	ID	DESCRIPTION	SHOULD FAIL	IN	IN LB	IN UB	OUT	OUT LB	OUT UB	EQU	EQU LB	EQU UB	CHANGED RXN	CHANGED LB	CHANGED UB	PRINT FLUX	COMMENTS
+	1	Oxidative phosphorylation via NADH-coenzyme Q oxidoreductase (COMPLEX I)		ubiquinone[m]	1	1	ubiquinol[m]	1	1								
+				NADH[m]	1	1	NAD+[m]	1	1								
+				H+[m]	5	5	H+[i]	4	4								
+	2	Oxidative phosphorylation via succinate-coenzyme Q oxidoreductase (COMPLEX II)		succinate[m]	1	1	fumarate[m]	1	1								
+				FAD[m]	1	1	FADH2[m]	1	1								
+	3	Krebs cycle - oxidative decarboxylation of pyruvate		pyruvate[m]	1	1	acetyl-CoA[m]	1	1								
+				NAD+[m]	1	1	NADH[m]	1	1								
+				CoA[m]	1	1	CO2[m]	1	1								
+	4	Krebs cycle - NADH generation		acetyl-CoA[m]	1	1	CoA[m]	1	1								
+				GDP[m]	1	1	FADH2[m]	1	1								
+				FAD[m]	1	1	GTP[m]	1	1								
+				NAD+[m]	3	3	NADH[m]	3	3								
+				Pi[m]			CO2[m]	2	2								
+				H2O[m]	2	2	H+[m]	2	3								
+	5	ATP regeneration from glucose (normoxic conditions) - glycolysis + krebs cycle		glucose[c]	1	1	ATP[c]	30	32								
+				O2[c]	6	6	H2O[c]	36	38								
+				Pi[c]	30	32	CO2[c]	6	6								
+				ADP[c]	30	32											
+				H+[c]	30	32											
+	6	ATP generation from glucose (hypoxic conditions) - glycolysis		glucose[c]	1	1	pyruvate[c]	2	2								
+				NAD+[c]	2	2	H+[c]	2	2								
+				ADP[c]	2	2	ATP[c]	2	2								
+				Pi[c]	2	2	NADH[c]	2	2								
+							H2O[c]	2	2								
+	7	Reactive oxygen species detoxification (H2O2 to H2O)		H2O2[e]	2	2	H2O[e]	2	2								
+							O2[e]	1	1								
+	8	Presence of the thioredoxin system through the thioredoxin reductase activity		H+[c]	1	1	NADP+[c]	1	1								
+				NADPH[c]	1	1	thioredoxin[c]	1	1								
+				oxidized thioredoxin[c]	1	1											
+	9	Inosine monophosphate synthesis (IMP)		glucose[c]	1	1	IMP[c]	1	1								
+				glutamine[c]	2	2	glutamate[c]	2	2								
+				aspartate[c]	1	1	THF[c]	2	2								
+				glycine[c]	1	1	fumarate[c]	1	1								
+				10-formyl-THF[c]	2	2	PPi[c]	1	1								
+				ATP[c]	6	6	ADP[c]	5	5								
+				H2O[c]	2	2	H+[c]	11	11								
+				NADP+[c]	2	2	Pi[c]	4	4								
+							NADPH[c]	2	2								
+							AMP[c]	1	1								
+	10	Cytidine triphosphate synthesis (CTP)		glutamine[c]	1	2	glutamate[c]	1	2								
+				HCO3-[c]	1	1	CTP[c]	1	1								
+				aspartate[c]	1	1	ubiquinol[m]	1	1								
+				ubiquinone[m]	1	1	H+[c]	7	7								
+				glucose[c]	1	1	Pi[c]	3	3								
+				ATP[c]	7	7	ADP[c]	6	6								
+				H2O[c]	1	2	PPi[c]	1	1								
+				NADP+[c]	2	2	CO2[c]	2	2								
+				NH4+[c]	0	1	NADPH[c]	2	2								
+							AMP[c]	1	1								
+	11	Guanosine triphosphate synthesis (GTP)		glucose[c]	1	1	GTP[c]	1	1								
+				glutamine[c]	3	3	glutamate[c]	3	3								
+				aspartate[c]	1	1	THF[c]	2	2								
+				glycine[c]	1	1	fumarate[c]	1	1								
+				10-formyl-THF[c]	2	2	PPi[c]	2	2								
+				NADP+[c]	2	2	ADP[c]	7	7								
+				ATP[c]	9	9	H+[c]	14	14								
+				H2O[c]	4	4	Pi[c]	4	4								
+				NAD+[c]	1	1	NADH[c]	1	1								
+							NADPH[c]	2	2								
+							AMP[c]	2	2								
+	12	Uridine triphosphate synthesis (UTP)		glutamine[c]	1	1	glutamate[c]	1	1								
+				HCO3-[c]	1	1	UTP[c]	1	1								
+				aspartate[c]	1	1	ubiquinol[m]	1	1								
+				ubiquinone[m]	1	1	H+[c]	5	5								
+				glucose[c]	1	1	Pi[c]	2	2								
+				H2O[c]	1	1	ADP[c]	5	5								
+				ATP[c]	6	6	PPi[c]	1	1								
+				NADP+[c]	2	2	CO2[c]	2	2								
+							NADPH[c]	2	2								
+							AMP[c]	1	1								
+	13	Deoxyadenosine triphosphate synthesis (dATP)		glucose[c]	1	1	dATP[c]	1	1								
+				glutamine[c]	2	2	glutamate[c]	2	2								
+				aspartate[c]	2	2	THF[c]	2	2								
+				glycine[c]	1	1	fumarate[c]	2	2								
+				10-formyl-THF[c]	2	3	PPi[c]	1	1								
+				ATP[c]	8	8	ADP[c]	6	6								
+				H2O[c]	1	1	H+[c]	13	13								
+				thioredoxin[c]	1	1	Pi[c]	5	5								
+				NADP+[c]	2	2	AMP[c]	2	2								
+							NADPH[c]	2	2								
+							oxidized thioredoxin[c]	1	1								
+	14	Deoxycytidine triphosphate synthesis (dCTP)		glutamine[c]	1	2	glutamate[c]	1	2								
+				HCO3-[c]	1	1	dCTP[c]	1	1								
+				aspartate[c]	1	1	ubiquinol[m]	1	1								
+				ubiquinone[m]	1	1	H+[c]	7	7								
+				glucose[c]	1	1	Pi[c]	3	3								
+				ATP[c]	7	7	ADP[c]	6	6								
+				H2O[c]	1	2	PPi[c]	1	1								
+				NADP+[c]	2	2	CO2[c]	2	2								
+				NH4+[c]	0	1	NADPH[c]	2	2								
+				thioredoxin[c]	1	1	AMP[c]	1	1								
+							oxidized thioredoxin[c]	1	1								
+	15	Deoxyguanosine triphosphate synthesis (dGTP)		glucose[c]	1	1	dGTP[c]	1	1								
+				glutamine[c]	3	3	glutamate[c]	3	3								
+				aspartate[c]	1	1	THF[c]	2	2								
+				glycine[c]	1	1	fumarate[c]	1	1								
+				10-formyl-THF[c]	2	2	PPi[c]	2	2								
+				NADP+[c]	2	2	ADP[c]	7	7								
+				ATP[c]	9	9	H+[c]	14	14								
+				H2O[c]	4	4	Pi[c]	4	4								
+				NAD+[c]	1	1	NADH[c]	1	1								
+				thioredoxin[c]	1	1	NADPH[c]	2	2								
+							AMP[c]	2	2								
+							oxidized thioredoxin[c]	1	1								
+	16	Deoxyuridine triphosphate synthesis (dUTP)		glutamine[c]	1	1	glutamate[c]	1	1								
+				HCO3-[c]	1	1	dUTP[c]	1	1								
+				aspartate[c]	1	1	ubiquinol[m]	1	1								
+				ubiquinone[m]	1	1	H+[c]	5	5								
+				glucose[c]	1	1	Pi[c]	2	2								
+				H2O[c]	1	1	ADP[c]	5	5								
+				ATP[c]	6	6	PPi[c]	1	1								
+				NADP+[c]	2	2	CO2[c]	2	2								
+				thioredoxin[c]	1	1	NADPH[c]	2	2								
+							AMP[c]	1	1								
+							oxidized thioredoxin[c]	1	1								
+	17	Deoxythymidine triphosphate synthesis (dTTP)		glutamine[c]	1	1	glutamate[c]	1	1								
+				HCO3-[c]	1	1	dTTP[c]	1	1								
+				aspartate[c]	1	1	ubiquinol[m]	1	1								
+				ubiquinone[m]	1	1	H+[c]	6	6								
+				glucose[c]	1	1	Pi[c]	3	3								
+				H2O[c]	2	2	ADP[c]	6	6								
+				ATP[c]	7	7	PPi[c]	1	1								
+				NADP+[c]	2	2	CO2[c]	2	2								
+				thioredoxin[c]	1	1	NADPH[c]	2	2								
+				5,10-methylene-THF[c]	1	1	AMP[c]	1	1								
+							oxidized thioredoxin[c]	1	1								
+							dihydrofolate[c]	1	1								
+	18	AMP salvage from adenine		PRPP[c]	1	1	PPi[c]	1	1								
+				adenine[c]	1	1	AMP[c]	1	1								
+	19	IMP salvage from hypoxanthine		hypoxanthine[c]	1	1	IMP[c]	1	1								
+				PRPP[c]	1	1	PPi[c]	1	1								
+	20	GMP salvage from guanine		guanine[c]	1	1	GMP[c]	1	1								
+				PRPP[c]	1	1	PPi[c]	1	1								
+	21	3'-Phospho-5'-adenylyl sulfate synthesis		sulfate[c]	1	1	PAPS[c]	1	1								
+				ATP[c]	2	2	ADP[c]	1	1								
+				H+[c]	1	1	PPi[c]	1	1								
+	22	Degradation of adenine to urate		adenine[c]	1	1	urate[e]	1	1								
+				H2O[c]	2	2	NH4+[c]	1	1								
+				H+[c]	1	1	H2O2[e]	2	2								
+				O2[e]	2	2	ribose-1-phosphate[c]	1	1								
+				PRPP[c]	1	1	PPi[c]	1	1								
+				H2O[e]	2	2											
+	23	Degradation of guanine to urate		guanine[c]	1	1	urate[e]	1	1								
+				H2O[e]	1	1	NH4+[c]	1	1								
+				H2O[c]	1	1	NADH[e]	1	1								
+				NAD+[e]	1	1	H+[e]	0	1								
+	24	Degradation of cytosine		cytosine[c]	1	1	beta-alanine[c]	1	1								
+				H2O[c]	3	3	CO2[c]	1	1								
+				H+[c]	3	3	NH4+[c]	2	2								
+				NADPH[c]	1	1	NADP+[c]	1	1								
+	25	Degradation of uracil		uracil[c]	1	1	beta-alanine[c]	1	1								
+				H2O[c]	2	2	CO2[c]	1	1								
+				H+[c]	2	2	NH4+[c]	1	1								
+				NADPH[c]	1	1	NADP+[c]	1	1								
+	26	Gluconeogenesis from pyruvate		pyruvate[c]	2	2	glucose[c]	1	1								
+				citrate[c]	2	2	citrate[m]	2	2								
+				NADH[c]	2	2	NAD+[c]	2	2								
+				GTP[m]	2	2	GDP[m]	2	2								
+				HCO3-[m]	2	2	CO2[m]	2	2								
+				ATP[m]	2	2	ADP[m]	2	2								
+				ATP[c]	2	2	ADP[c]	2	2								
+				H2O[c]	3	3	H+[m]	2									
+				H2O[r]	1		Pi[m]	2									
+				H+[c]	2		Pi[c]	3									
+							Pi[r]	1									
+	27	Gluconeogenesis from Lactate		L-lactate[m]	2	2	glucose[c]	1	1								
+				NAD+[m]	2	2	citrate[m]	2	2								
+				ATP[m]	2	2	H+[m]	4									
+				HCO3-[m]	2	2	NADH[m]	2	2								
+				GTP[m]	2	2	ADP[m]	2	2								
+				citrate[c]	2	2	Pi[m]	2									
+				H2O[c]	3		CO2[m]	2									
+				ATP[c]	2		GDP[m]	2	2								
+				H+[c]	2		ADP[c]	2	2								
+				NADH[c]	2	2	NAD+[c]	2	2								
+				H2O[r]	1		Pi[c]	3									
+							Pi[r]	1									
+	28	Gluconeogenesis from Glycerol		glycerol[c]	2	2	glucose[c]	1	1								
+				ATP[c]	2	2	ADP[c]	2	2								
+				NAD+[c]	2	2	NADH[c]	2	2								
+				H2O[c]	1		H+[c]	4									
+				H2O[r]	1		Pi[c]	1									
+							Pi[r]	1									
+	29	Gluconeogenesis from Alanine		alanine[c]	2	2	glucose[c]	1	1								
+				AKG[c]	2	2	glutamate[c]	2	2								
+				citrate[c]	2	2	citrate[m]	2	2								
+				NADH[c]	2	2	NAD+[c]	2	2								
+				GTP[m]	2	2	GDP[m]	2	2								
+				HCO3-[m]	2	2	CO2[m]	2	2								
+				ATP[m]	2	2	ADP[m]	2	2								
+				ATP[c]	2	2	ADP[c]	2	2								
+				H2O[c]	3	3	H+[m]	2									
+				H2O[r]	1		Pi[m]	2									
+				H+[c]	2		Pi[c]	3									
+							Pi[r]	1									
+	30	Gluconeogenesis from Glutamine		glutamine[m]	1	1	pyruvate[m]	1	1								
+				H2O[m]	3	3	NADH[m]	3	3								
+				NAD+[m]	3	3	NH4+[m]	2	2								
+				ADP[m]	1	1	H+[m]	1	1								
+				Pi[m]	1	1	CO2[m]	2	2								
+				FAD[m]	1	1	ATP[m]	1	1								
+							FADH2[m]	1	1								
+	31	Ethanol to acetaldehyde		ethanol[c]	1	1	acetaldehyde[c]	1	1								
+				NAD+[c]	1	1	NADH[c]	1	1								
+							H+[c]	1	1								
+	32	Glucose to lactate conversion		glucose[c]	1	1	L-lactate[c]	2	2								
+				ADP[c]	2	2	ATP[c]	2	2								
+				Pi[c]	2	2	H2O[c]	2	2								
+	33	Malate to pyruvate conversion		malate[m]	1	1	pyruvate[m]	1	1								
+				NAD+[m]	1	1	CO2[m]	1	1								
+							NADH[m]	1	1								
+	34	Synthesis of fructose-6-phosphate from erythrose-4-phosphate (HMP shunt)		fructose-6-phosphate[c]	1	1	erythrose-4-phosphate[c]	1	1								
+				GAP[c]	1	1	D-xylulose-5-phosphate[c]	1	1								
+	35	Synthesis of ribose-5-phosphate		glucose[c]	1	1	ribose-5-phosphate[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				NADP+[c]	2	2	H+[c]	3	3								
+				H2O[c]	1	1	NADPH[c]	2	2								
+							CO2[c]	1	1								
+	36	Synthesis of lactose		glucose[g]	1	1	lactose[g]	1	1								
+				UDP-galactose[g]	1	1	UDP[g]	1	1								
+							H+[g]	1	1								
+	37	Glycogen biosynthesis		NA[c]	1	1	glycogenin G4G7[c]	1	1								
+				UDP-glucose[c]	11		H+[c]	11									
+							UDP[c]	11									
+	38	Glycogen degradation		glycogenin G4G7[c]	1	1	glucose[c]	8									
+				Pi[c]	3		NA[c]	1	1								
+				H2O[c]	8		glucose-1-phosphate[c]	3									
+	39	Fructose degradation (to glucose-3-phosphate)		fructose[c]	1	1	GAP[c]	2	2								
+				ATP[c]	2	2	ADP[c]	2	2								
+							H+[c]	2	2								
+	40	Fructose to glucose conversion (via fructose-6-phosphate)		fructose[c]	1	1	glucose[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				H2O[c]	1	1	H+[c]	1	1								
+							Pi[c]	1	1								
+	41	UDP-glucose synthesis		glucose[c]	1	1	UDP-glucose[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				UTP[c]	1	1	PPi[c]	1	1								
+	42	UDP-galactose synthesis		galactose[c]	1	1	UDP-galactose[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				UTP[c]	1	1	PPi[c]	1	1								
+	43	UDP-glucuronate synthesis		glucose[c]	1	1	UDP-glucuronate[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				UTP[c]	1	1	PPi[c]	1	1								
+				H2O[c]	1	1	H+[c]	3	3								
+				NAD+[c]	2	2	NADH[c]	2	2								
+	44	GDP-L-fucose synthesis		6-deoxy-L-galactose[c]	1	1	GDP-L-fucose[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				GTP[c]	1	1	PPi[c]	1	1								
+	45	Mannose degradation (to fructose-6-phosphate)		mannose[c]	1	1	fructose-6-phosphate[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+							H+[c]	1	1								
+	46	GDP-mannose synthesis		mannose[c]	1	1	GDP-mannose[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				GDP[c]	1	1	Pi[c]	1	1								
+	47	UDP-N-acetyl D-galactosamine synthesis		glucose[c]	1	1	UDP-N-acetyl-D-galactosamine[c]	1	1								
+				glutamine[c]	1	1	glutamate[c]	1	1								
+				acetyl-CoA[c]	1	1	CoA[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				UTP[c]	1	1	PPi[c]	1	1								
+							H+[c]	1	1								
+	48	CMP-N-acetylneuraminate synthesis		glucose[c]	1	1	CMP-N-acetylneuraminate[c]	1	1								
+				glutamine[c]	1	1	glutamate[c]	1	1								
+				acetyl-CoA[c]	1	1	CoA[c]	1	1								
+				PEP[c]	1	1	ADP[c]	2	2								
+				UTP[c]	1	1	PPi[c]	2	2								
+				ATP[c]	2	2	H+[c]	3	3								
+				H2O[c]	3	3	Pi[c]	2	2								
+				CTP[c]	1	1	UDP[c]	1	1								
+	49	N-Acetylglucosamine synthesis		glucose[c]	1	1	N-acetylglucosamine[c]	1	1								
+				glutamine[c]	1	1	glutamate[c]	1	1								
+				acetyl-CoA[c]	1	1	CoA[c]	1	1								
+				UTP[c]	1	1	ADP[c]	1	1								
+				ATP[c]	1	1	PPi[c]	1	1								
+				H2O[c]	1	1	H+[c]	2	2								
+							UDP[c]	1	1								
+	50	Glucuronate synthesis (via inositol)		glucose[c]	1	1	glucuronate[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				O2[c]	1	1	H+[c]	2	2								
+							Pi[c]	1	1								
+	51	Glucuronate synthesis (via udp-glucose)		glucose[c]	1	1	glucuronate[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				UTP[c]	1	1	PPi[c]	1	1								
+				H2O[c]	2	2	H+[c]	4	4								
+				NAD+[c]	2	2	NADH[c]	2	2								
+							UDP[c]	1	1								
+	52	Synthesis of acetone		glucose[c]	1	1	acetone[m]	1	1								
+				NAD+[c]	2	2	NADH[m]	2	2								
+				ADP[c]	2	2	NADH[c]	2	2								
+				Pi[c]	2	2	CO2[m]	3	3								
+				NAD+[m]	2	2	ATP[c]	2	2								
+				H2O[m]	1	1	H2O[c]	2	2								
+							H+[m]	2	2								
+	53	(R)-3-Hydroxybutanoate synthesis		glucose[c]	1	1	(R)-3-hydroxybutanoate[m]	1	1								
+				ADP[c]	2	2	ATP[c]	2	2								
+				NAD+[c]	2	2	NADH[m]	1	1								
+				NAD+[m]	1	1	NADH[c]	2	2								
+				Pi[c]	2	2	H2O[c]	2	2								
+				H2O[m]	1	1	CO2[m]	2	2								
+							H+[m]	2	2								
+	54	Synthesis of inositol		glucose[c]	1	1	inositol[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				H2O[c]	1	1	H+[c]	1	1								
+							Pi[c]	1	1								
+	55	Inositol as input for glucuronate-xylulose pathway		inositol[c]	1	1	D-xylulose-5-phosphate[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				O2[c]	1	1	CO2[c]	1	1								
+				NAD+[c]	2	2	NADH[c]	2	2								
+				NADPH[c]	2	2	NADP+[c]	2	2								
+							H+[c]	1	1								
+							H2O[c]	1	1								
+	56	Synthesis of phosphatidylinositol from inositol		inositol[c]	1	1	PI pool[c]	1	1								
+				CDP-diacylglycerol-LD-PI pool[c]	1	1	H+[c]	1	1								
+							CMP[c]	1	1								
+	57	Conversion of 1-phosphatidyl-1D-myo-inositol 4,5-bisphosphate to 1D-myo-inositol 1,4,5-trisphosphate		phosphatidylinositol-4,5-bisphosphate[c]	1	1	D-myo-inositol-1,4,5-trisphosphate[c]	1	1								
+				H2O[c]	1	1	1,2-diacylglycerol-LD-TAG pool[c]	1	1								
+							H+[c]	6	6								
+	58	Starch degradation		starch structure 1[e]	1	1	glucose[e]	11	11								
+				H2O[e]	10	10											
+	59	Link between glyoxylate metabolism and pentose phosphate pathway (Xylulose to glycolate)		D-xylulose[c]	1	1	glycolate[c]	1	1								
+				ATP[c]	1	1	H+[c]	3	3								
+				H2O[c]	1	1	DHAP[c]	1	1								
+				NAD+[c]	1	1	NADH[c]	1	1								
+							ADP[c]	1	1								
+	60	Synthesis of methylglyoxal		glucose[c]	1	1	methylglyoxal[c]	2	2								
+				ATP[c]	2	2	ADP[c]	2	2								
+							Pi[c]	2	2								
+							H+[c]	2	2								
+	61	Alanine synthesis		glucose[c]	3	3	alanine[c]	2	2								
+				ATP[m]	2	2	AKG[c]	2	2								
+				ADP[c]	6	6	ATP[c]	6	6								
+				NAD+[m]	2	2	ADP[m]	2	2								
+				NAD+[c]	6	6	NADH[c]	6	6								
+				NH4+[m]	2	2	NADH[m]	2	2								
+				HCO3-[m]	2		H2O[c]	6									
+				H+[m]	2		CO2[m]	4									
+				Pi[c]	6		Pi[m]	2									
+							H+[c]	4									
+	62	Alanine degradation		alanine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	63	Synthesis of alanine from glutamine		glutamine[c]	1	1	alanine[c]	1	1								
+				pyruvate[c]	1	1	AKG[c]	1	1								
+				H2O[c]	1	1	NH4+[c]	1	1								
+	64	Arginine synthesis		glucose[c]	2	2	arginine[c]	1	1								
+				aspartate[c]	1	1	fumarate[c]	1	1								
+				NADPH[m]	1	1	AKG[m]	1	1								
+				NAD+[c]	4	4	NADH[m]	2	2								
+				NAD+[m]	2	2	NADH[c]	4	4								
+				ATP[m]	5	5	NADP+[m]	1	1								
+				ADP[c]	4	4	ATP[c]	1	1								
+				Pi[c]	4	4	ADP[m]	5	5								
+				HCO3-[m]	3	3	AMP[c]	1	3								
+				NH4+[m]	3	3	Pi[m]	5	5								
+							PPi[c]	1	1								
+							CO2[m]	4	4								
+							H2O[c]	4	4								
+							H+[m]	10	10								
+							H+[c]	1	1								
+	65	Arginine degradation		arginine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			urea[c]										
+				H+[c]													
+	66	Synthesis of arginine from glutamine		glutamine[m]	2	2	arginine[c]	1	1								
+				aspartate[c]	1	1	fumarate[c]	1	1								
+				ATP[c]	1	1	ADP[m]	3	3								
+				ATP[m]	3	3	H+[c]	1	1								
+				HCO3-[m]	1	1	H+[m]	2	2								
+				NADPH[m]	1	1	Pi[m]	3	3								
+				H2O[m]	2	2	NH4+[m]	1	1								
+							AKG[m]	1	1								
+							NADP+[m]	1	1								
+							AMP[c]	1	1								
+							PPi[c]	1	1								
+	67	Synthesis of nitric oxide from arginine		arginine[c]	2	2	NO[c]	2	2								
+				H+[c]	1	1	H2O[c]	4	4								
+				O2[c]	4	4	citrulline[c]	2	2								
+				NADPH[c]	3	3	NADP+[c]	3	3								
+	68	Synthesis of aspartate from glutamine		glutamine[c]	1	1	aspartate[c]	1	1								
+				OAA[c]	1	1	AKG[c]	1	1								
+				H2O[c]	1	1	NH4+[c]	1	1								
+	69	Synthesis of creatine from arginine		arginine[c]	1	1	creatine[c]	1	1								
+				SAM[c]	1	1	SAH[c]	1	1								
+				glycine[c]	1	1	ornithine[c]	1	1								
+							H+[c]	1	1								
+	70	Asparagine synthesis		glucose[c]	1	1	asparagine[c]	1	1								
+				FAD[m]	1	1	FADH2[m]	1	1								
+				HCO3-[m]	1	4	CO2[m]	3	6								
+				NH4+[m]	1	1	NADH[m]	2	2								
+				NH4+[c]	1	1	NADH[c]	3	3								
+				NAD+[c]	3	3	AMP[c]	1	1								
+				NAD+[m]	2	2	PPi[c]	1	3								
+				ADP[c]	1	1	H+[m]	2	2								
+				Pi[c]	1	1	H+[c]	4	4								
+	71	Asparagine degradation		asparagine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	72	Aspartate synthesis		glucose[c]	3	3	aspartate[m]	2	2								
+				NAD+[c]	6	6	AKG[m]	2	2								
+				ADP[c]	6	6	NADH[c]	6	6								
+				Pi[c]	6	6	ATP[c]	6	6								
+				H2O[m]	2	2	H2O[c]	6	6								
+				NAD+[m]	2	2	CO2[m]	4	4								
+				ATP[m]	4	4	NADH[m]	2	2								
+				HCO3-[m]	4	4	ADP[m]	4	4								
+				NH4+[m]	2	2	Pi[m]	4	4								
+							H+[m]	10	10								
+							H+[c]	2	2								
+	73	Aspartate degradation		aspartate[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	74	Conversion of aspartate to arginine		aspartate[c]	1	1	arginine[c]	1	1								
+				citrulline[c]	1	1	fumarate[c]	1	1								
+				ATP[c]	1	1	AMP[c]	1	1								
+							PPi[c]	1	1								
+							H+[c]	1	1								
+	75	Conversion of aspartate to beta-alanine		aspartate[c]	1	1	beta-alanine[c]	1	1								
+				H+[c]	1	1	CO2[c]	1	1								
+	76	Conversion of asparate to asparagine		aspartate[c]	1	1	asparagine[c]	1	1								
+				ATP[c]	1	1	AMP[c]	1	1								
+				glutamine[c]	1	1	glutamate[c]	1	1								
+				H2O[c]	1	1	H+[c]	1	1								
+							PPi[c]	1	1								
+	77	beta-Alanine synthesis		glucose[c]	1	1	beta-alanine[c]	1	1								
+				FAD[m]	1	1	FADH2[m]	1	1								
+				NAD+[m]	2	2	CO2[c]	1	1								
+				NAD+[c]	3	3	CO2[m]	3	4								
+				ADP[c]	2	2	NADH[m]	2	2								
+				Pi[c]	2	2	NADH[c]	3	3								
+				HCO3-[m]	1	2	ATP[c]	2	3								
+				NH4+[m]	1	1	H2O[c]	1	1								
+							H+[m]	2	2								
+							H+[c]	1	1								
+	78	beta-Alanine degradation		beta-alanine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	79	Conversion of carnosine to beta-alanine		carnosine[c]	1	1	beta-alanine[c]	1	1								
+				H2O[c]	1	1	histidine[c]	1	1								
+	80	Beta-alanine to 3-oxopropanoate		beta-alanine[m]	1	1	3-oxopropanoate[m]	1	1								
+				AKG[m]	1	1	glutamate[m]	1	1								
+	81	Cysteine synthesis (need serine and methionine)		methionine[c]	1	1	cysteine[c]	1	1								
+				glycine[c]	1	1	sarcosine[c]	1	1								
+				ATP[c]	2	2	ADP[c]	1	1								
+				H2O[c]	2	2	AMP[c]	1	1								
+				serine[c]	1	1	Pi[c]	1	1								
+							PPi[c]	1	1								
+							H+[c]	2	2								
+							2-oxobutyrate[c]	1	1								
+							NH4+[c]	1	1								
+	82	Cysteine degradation		cysteine[e]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]			sulfate[c]										
+	83	Synthesis of cysteine from cystine		cystine[c]	1	1	cysteine[c]	2	2								
+				GSH[c]	2	2	GSSG[c]	1	1								
+	84	Synthesis of taurine from cysteine		cysteine[c]	2	2	taurine[c]	2	2								
+				O2[c]	3	3	CO2[c]	2	2								
+				H+[c]	4	4											
+	85	Glutamate synthesis		glucose[c]	1	1	glutamate[c]	1	1								
+				NAD+[c]	2	2	NADH[c]	2	2								
+				ADP[c]	2	2	ATP[c]	2	2								
+				Pi[c]	2	2	H2O[c]	2	2								
+				H2O[m]	1	1	CO2[m]	2	3								
+				NAD+[m]	1	1	NADH[m]	1	1								
+				ATP[m]	1	1	ADP[m]	1	1								
+				HCO3-[m]	1	2	Pi[m]	1	1								
+				NH4+[m]	1	1	H+[c]	1	1								
+				H+[m]	1	1											
+	86	Glutamate degradation		glutamate[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	87	Conversion of glutamate to glutamine		glutamate[c]	1	1	glutamine[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+				NH4+[c]	1	1	H+[c]	1	1								
+							Pi[c]	1	1								
+	88	Conversion of glutamate to proline		glutamate[m]	1	1	proline[m]	1	1								
+				ATP[m]	1	1	ADP[m]	1	1								
+				NADPH[m]	2	2	NADP+[m]	2	2								
+				H+[m]	2	2	Pi[m]	1	1								
+							H2O[m]	1	1								
+	89	Conversion of GABA into succinate		4-aminobutyrate[m]	1	1	succinate[m]	1	1								
+				AKG[m]	1	1	glutamate[m]	1	1								
+				H2O[m]	1	1	H+[m]	2	2								
+				NAD+[m]	1	1	NADH[m]										
+	90	Glutamine synthesis		glucose[c]	1	1	glutamine[c]	1	1								
+				NAD+[c]	2	2	NADH[c]	2	2								
+				ADP[c]	1	1	ATP[c]	1	1								
+				Pi[c]	1	1	H2O[c]	2	2								
+				H2O[m]	1	1	CO2[m]	2	3								
+				NAD+[m]	1	1	NADH[m]	1	1								
+				ATP[m]	1	1	ADP[m]	1	1								
+				HCO3-[m]	1	2	Pi[m]	1	1								
+				NH4+[m]	1	1	H+[c]	2	2								
+				NH4+[c]													
+				H+[m]													
+	91	Glutamine degradation		glutamine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	92	Glutaminolysis (glutamine to lactate)		glutamine[m]	1	1	L-lactate[m]	1	1								
+				ADP[m]	1	1	ATP[m]	1	1								
+				NAD+[m]	2	2	NADH[m]	2	2								
+				FAD[m]	1	1	FADH2[m]	1	1								
+				Pi[m]	1	1	NH4+[m]	2	2								
+				H2O[m]	3	3	CO2[m]	2	2								
+	93	Glutathionate synthesis		glutamate[c]	1	1	GSH[c]	1	1								
+				cysteine[c]	1	1	ADP[c]	2	2								
+				glycine[c]	1	1	H+[c]	2	2								
+				ATP[c]	2	2	Pi[c]	2	2								
+	94	Glycine synthesis		glucose[c]	1	1	glycine[c]	2	2								
+				glutamate[c]	2	2	5,10-methylene-THF[c]	2	2								
+				NAD+[c]	4	4	AKG[c]	2	2								
+				H2O[c]	2	2	NADH[c]	4	4								
+				THF[c]	2	2	H+[c]	6	6								
+	95	Glycine degradation		glycine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	96	Conversion of glycine to pyruvate		glycine[c]	1	1	pyruvate[c]	1	1								
+				H2O[c]	1	1	THF[c]	1	1								
+				5,10-methylene-THF[c]	1	1	NH4+[c]	1	1								
+	97	Histidine degradation		histidine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	98	Conversion of histidine to glutamate		histidine[c]	1	1	glutamate[c]	1	1								
+				H2O[c]	2	2	NH4+[c]	1	1								
+				THF[c]	1	1	5-formiminotetrahydrofolate[c]	1	1								
+	99	Conversion of histidine to histamine		histidine[c]	1	1	histamine[c]	1	1								
+				H+[c]	1	1	CO2[c]	1	1								
+	100	Homocysteine synthesis (need methionine)		methionine[c]	1	1	homocysteine[c]	1	1								
+				glycine[c]	1	1	sarcosine[c]	1	1								
+				ATP[c]	2	2	ADP[c]	1	1								
+				H2O[c]	2	2	AMP[c]	1	1								
+							Pi[c]	1	1								
+							PPi[c]	1	1								
+							H+[c]	2	2								
+	101	Homocysteine degradation		homocysteine[c]	1	1	cysteine[c]	1	1								
+				serine[c]	1	1	propanoyl-CoA[c]	1	1								
+				CoA[c]	1	1	NH4+[c]	1	1								
+				NAD+[c]	1	1	CO2[c]	1	1								
+							NADH[c]	1	1								
+	102	Isoleucine degradation		isoleucine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	103	Leucine degradation		leucine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	104	Conversion of leucine to acetyl-coA		leucine[m]	1	1	acetyl-CoA[m]	1	1								
+				AKG[m]	1	1	acetoacetate[m]	1	1								
+				CoA[m]	1	1	glutamate[m]	1	1								
+				NAD+[m]	1	1	ADP[m]	1	1								
+				FAD[m]	1	1	H+[m]	1	1								
+				ATP[m]	1	1	Pi[m]	1	1								
+				H2O[m]	1	1	CO2[m]	1	1								
+				HCO3-[m]	1	1	NADH[m]	1	1								
+					1	1	FADH2[m]	1	1								
+	105	Lysine degradation		lysine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	106	Conversion of lysine to L-Saccharopine		lysine[m]	1	1	saccharopine[m]	1	1								
+				AKG[m]	1	1	H2O[m]	1	1								
+				H+[m]	1	1	NADP+[m]	1	1								
+				NADPH[m]	1	1											
+	107	Conversion of lysine to L-2-Aminoadipate		lysine[e]	1	1	L-2-aminoadipate[c]	1	1								
+				H2O[e]	2	2	H2O2[e]	2	2								
+				O2[e]	2	2	NH4+[e]	1	1								
+				NADH[e]	1	1	H+[c]	1	1								
+				NAD+[c]	1	1	NAD+[e]	1	1								
+				H+[e]	0	1	NADH[c]	1	1								
+	108	Methionine degradation		methionine[c]	1	1	cysteine[c]	1	1								
+				serine[c]	1	2	propanoyl-CoA[c]	1	1								
+				ATP[c]	2	2	ATP[m]	1	1								
+				ADP[m]	1	1	ADP[c]	1	1								
+				Pi[m]	1	1	AMP[c]	1	1								
+				FAD[m]	1	6	Pi[c]	1	1								
+				CoA[c]	1	1	PPi[c]	1	1								
+				NAD+[c]	2	2	FADH2[m]	1	6								
+				NAD+[m]	1	1	H2O[c]	1	1								
+				H2O[m]	1	1	NH4+[c]	1	2								
+							CO2[c]	3	5								
+							NADH[c]	2	2								
+							NADH[m]	1	1								
+							H+[m]	1	1								
+							H+[c]	2	2								
+	109	S-adenosyl-L-methionine synthesis		methionine[c]	1	1	SAM[c]	1	1								
+				ATP[c]	1	1	Pi[c]	1	1								
+				H2O[c]	1	1	PPi[c]	1	1								
+	110	Ornithine degradation		ornithine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	111	Synthesis of ornithine from glutamine		glutamine[m]	2	2	ornithine[m]	1	1								
+				ATP[m]	1	1	ADP[m]	1	1								
+				H2O[m]	2	2	NADP+[m]	1	1								
+				NADPH[m]	1	1	AKG[m]	1	1								
+				H+[m]	1	1	NH4+[m]	2	2								
+							Pi[m]	1	1								
+	112	Synthesis of spermidine from ornithine		ornithine[c]	1	1	spermidine[c]	1	1								
+				methionine[c]	1	1	5-methylthioadenosine[c]	1	1								
+				H+[c]	1	1	CO2[c]	2	2								
+				ATP[c]	1	1	Pi[c]	1	1								
+				H2O[c]	1	1	PPi[c]	1	1								
+	113	Serine synthesis		glucose[c]	1	1	serine[c]	2	2								
+				glutamate[c]	2	2	AKG[c]	2	2								
+				NAD+[c]	4	4	NADH[c]	4	4								
+				H2O[c]	2	2	H+[c]	6	6								
+	114	Serine degradation		serine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	115	Phenylalanine degradation		phenylalanine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	116	Phenylalanine to phenylacetaldehyde		phenylalanine[c]	1	1	phenylacetaldehyde[c]	1	1								
+				H+[c]	1	1	CO2[c]	1	1								
+				H2O[c]	1	1	H2O2[c]	1	1								
+				O2[c]	1	1	NH4+[c]	1	1								
+	117	Phenylalanine to phenylacetyl-L-glutaminate		phenylalanine[c]	1	1	phenylacetylglutamine[c]	1	1								
+				H2O[c]	2	2	H2O2[c]	1	1								
+				O2[c]	1	1	NH4+[c]	1	1								
+				NAD+[c]	1	1	H+[c]	1	1								
+				ATP[c]	1	1	NADH[c]	1	1								
+				glutamine[c]	1	1	AMP[c]	1	1								
+							CO2[c]	1	1								
+							PPi[c]	1	1								
+	118	Phenylalanine to tyrosine		phenylalanine[c]	1	1	tyrosine[c]	1	1								
+				O2[c]	1	1	4alpha-hydroxytetrahydrobiopterin[c]	1	1								
+				tetrahydrobiopterin[c]	1	1											
+	119	Proline synthesis		glucose[c]	1	1	proline[m]	1	1								
+				ATP[m]	1	2	NADH[c]	2	2								
+				NAD+[c]	2	2	ATP[c]	2	2								
+				ADP[c]	2	2	CO2[m]	2	2								
+				Pi[c]	2	2	ADP[m]	1	2								
+				HCO3-[m]	1	1	Pi[m]	1	2								
+				NH4+[m]	1	1	H2O[m]	2	2								
+				NADPH[m]	1	1	H2O[c]	2	2								
+							NADP+[m]	1	1								
+	120	Proline degradation		proline[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	121	Synthesis of proline from glutamine		glutamine[m]	1	1	proline[m]	1	1								
+				ATP[m]	1	1	ADP[m]	1	1								
+				H+[m]	2	2	NAD+[m]	1	1								
+				NADH[m]	1	1	NADP+[m]	1	1								
+				NADPH[m]	1	1	NH4+[m]	1	1								
+							Pi[m]	1	1								
+	122	Threonine degradation		threonine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	123	Tryptophan degradation		tryptophan[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	124	Synthesis of anthranilate from tryptophan		tryptophan[c]	1	1	anthranilate[c]	1	1								
+				O2[c]	1	1	formate[c]	1	1								
+				H2O[c]	2	2	H+[c]	2	2								
+							alanine[c]	1	1								
+	125	Synthesis of kynate from tryptophan		tryptophan[c]	1	1	4-hydroxy-2-quinolinecarboxylic acid[c]	1	1								
+				O2[c]	1	1	formate[c]	1	1								
+				AKG[c]	1	1	glutamate[c]	1	1								
+							H+[c]	1	1								
+	126	Synthesis of L-kynurenine from tryptophan		tryptophan[c]	1	1	kynurenine[c]	1	1								
+				O2[c]	1	1	H+[c]	1	1								
+				H2O[c]	1	1	formate[c]	1	1								
+	127	Synthesis of N-formylanthranilate from tryptophan		tryptophan[c]	1	1	formylanthranilate[c]	1	1								
+				O2[c]	1	1	H+[c]	1	1								
+				H2O[c]	1	1	alanine[c]	1	1								
+	128	Synthesis of quinolinate from tryptophan		tryptophan[c]	1	1	quinolinate[c]	1	1								
+				NADPH[c]	1	1	alanine[c]	1	1								
+				O2[c]	3	3	formate[c]	1	1								
+							NADP+[c]	1	1								
+							H+[c]	2	2								
+	129	Synthesis of serotonin from tryptophan		tryptophan[c]	1	1	serotonin[c]	1	1								
+				tetrahydrobiopterin[c]	1	1	4alpha-hydroxytetrahydrobiopterin[c]	1	1								
+				O2[c]	1	1	CO2[c]	1	1								
+				H+[c]	1	1											
+	130	Tyrosine synthesis (need phenylalanine)		phenylalanine[c]	1	1	tyrosine[c]	1	1								
+				O2[c]	1	1	H2O[c]	1	1								
+				NADH[c]	1	1	NAD+[c]	1	1								
+							H+[c]	1	1								
+	131	Tyrosine degradation		tyrosine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	132	Tyrosine to adrenaline		tyrosine[c]	2	2	adrenaline[c]	2	2								
+				O2[c]	3	3	CO2[c]	2	2								
+				ascorbate[c]	2	2	H2O[c]	2	2								
+				SAM[c]	2	2	SAH[c]	2	2								
+							dehydroascorbic acid[c]	2	2								
+	133	Tyrosine to dopamine		tyrosine[c]	2	2	dopamine[c]	2	2								
+				O2[c]	1	1	CO2[c]	2	2								
+				H+[c]	2	2											
+	134	Tyrosine to acetoacetate and fumarate		tyrosine[c]	1	1	fumarate[c]	1	1								
+				AKG[c]	1	1	acetoacetate[c]	1	1								
+				O2[c]	2	2	CO2[c]	1	1								
+				H2O[c]	1	1	H+[c]	2	2								
+							glutamate[c]	1	1								
+	135	Valine degradation		valine[c]	1	1	H2O[c]										
+				O2[c]			ATP[c]										
+				Pi[c]			CO2[c]										
+				ADP[c]			NH4+[c]										
+				H+[c]													
+	136	Valine to succinyl-coA		valine[m]	1	1	succinyl-CoA[m]	1	1								
+				AKG[m]	1	1	glutamate[m]	1	1								
+				CoA[m]	1	1	FADH2[m]	1	1								
+				FAD[m]	1	1	CO2[m]	1	1								
+				H2O[m]	2	2	H+[m]	3	3								
+				NAD+[m]	3	3	NADH[m]	3	3								
+	137	Hydroxymethylglutaryl-CoA synthesis		glucose[c]	3	3	HMG-CoA[m]	2	2								
+				CoA[m]	2	2	ATP[c]	6	6								
+				ADP[c]	6	6	NADH[c]	6	6								
+				Pi[c]	6	6	NADH[m]	6	6								
+				NAD+[m]	6	6	H2O[c]	6	6								
+				NAD+[c]	6	6	CO2[m]	6	6								
+				H2O[m]	2	2	H+[m]	8	8								
+	138	Cholesterol synthesis		farnesyl-PP[c]	2	2	cholesterol[c]	1	1								
+				H+[c]	9	9	PPi[c]	2	2								
+				NADPH[c]	10	15	formate[c]	1	1								
+				O2[c]	9	13	NADP+[c]	10	15								
+				NAD+[c]	0	2	H2O[c]	7	11								
+				FADH2[c]	1	1	NADH[c]	0	2								
+							CO2[c]	2	2								
+							FAD[c]	1	1								
+	139	Acetoacetate synthesis		glucose[c]	1	1	acetoacetate[m]	1	1								
+				NAD+[c]	2	2	NADH[c]	2	2								
+				NAD+[m]	2	2	NADH[m]	2	2								
+				ADP[c]	2	2	ATP[c]	2	2								
+				Pi[c]	2	2	CO2[m]	2	2								
+				H2O[m]	1	1	H+[m]	3	3								
+							H2O[c]	2	2								
+	140	Mevalonate synthesis		HMG-CoA[c]	1	1	(R)-mevalonate[c]	1	1								
+				H+[c]	2	2	CoA[c]	1	1								
+				NADPH[c]	2	2	NADP+[c]	2	2								
+	141	Farnesyl-pyrophosphate synthesis		(R)-mevalonate[c]	3	3	farnesyl-PP[c]	1	1								
+				ATP[c]	9	9	CO2[c]	3	3								
+							ADP[c]	9	9								
+							Pi[c]	3	3								
+							PPi[c]	2	2								
+							H+[c]	3	3								
+	142	Glycerol-3-phosphate synthesis		DHAP[c]	1	1	sn-glycerol-3-phosphate[c]	1	1								
+				H+[c]	1	1	NAD+[c]	1	1								
+				NADH[c]	1	1											
+	143	Phosphatidyl-choline synthesis		glucose[c]	1	17	PC-LD pool[c]	1	2								
+				choline[c]	0	2	NADH[m]	0	32								
+				NADPH[c]	0	56	NADH[c]	0	30								
+				ATP[c]	0	14	NADP+[c]	0	56								
+				HCO3-[c]	0	28	AMP[c]	0	16								
+				H+[c]	0	26	PPi[c]	0	16								
+				linolenate[c]	0		CO2[c]	0	28								
+				linoleate[c]	0		H2O[c]	0	62								
+				O2[c]	0		CO2[m]	0	32								
+				NAD+[m]	0	32	H+[m]	0	32								
+				NAD+[c]	0	30											
+				ADP[c]	0	2											
+				Pi[c]	0	4											
+	144	Phosphatidyl-ethanolamine synthesis		glucose[c]	1	17	PE-LD pool[c]	1	2								
+				ethanolamine[c]	0	2	NADH[c]	0	30								
+				ADP[c]	0	12	NADH[m]	0	32								
+				NAD+[c]	0	30	NADP+[c]	0	56								
+				NAD+[m]	0	32	AMP[c]	0	16								
+				Pi[c]	0	4	CO2[c]	0	28								
+				NADPH[c]	0	56	H2O[c]	0	60								
+				ATP[c]	0	4	PPi[c]	0	18								
+				HCO3-[c]	0	28	CMP[c]	0	2								
+				H+[c]	0	24	CO2[m]	0	32								
+				CTP[c]	0	2	H+[m]	0	32								
+				linolenate[c]	0												
+				linoleate[c]	0												
+				O2[c]	0												
+	145	Phosphatidyl-serine synthesis		glucose[c]	1	17	PS-LD pool[c]	1	2								
+				serine[c]	0	2	NADH[c]	0	30								
+				ADP[c]	0	2	NADH[m]	0	32								
+				Pi[c]	0	4	NADP+[c]	0	56								
+				NAD+[c]	0	30	AMP[c]	0	16								
+				NAD+[m]	0	32	PPi[c]	0	16								
+				NADPH[c]	0	56	CO2[c]	0	28								
+				ATP[c]	0	14	H2O[c]	0	62								
+				HCO3-[c]	0	28	CO2[m]	0	32								
+				H+[c]	0	26	H+[m]	0	32								
+				linolenate[c]	0												
+				linoleate[c]	0												
+				O2[c]	0												
+	146	Phosphatidyl-inositol synthesis		glucose[c]	1	17	PI pool[c]	1	2								
+				NADPH[c]	0	56	CO2[c]	0	28								
+				NAD+[c]	0	30	H2O[c]	0	60								
+				NAD+[m]	0	32	NADP+[c]	0	56								
+				ATP[c]	0	14	PPi[c]	0	18								
+				HCO3-[c]	0	28	NADH[c]	0	30								
+				inositol[c]	0	2	NADH[m]	0	32								
+				H+[c]	0	24	AMP[c]	0	16								
+				ADP[c]	0	2	CMP[c]	0	2								
+				Pi[c]	0	4	CoA[c]	0	2								
+				linolenate[c]	0		CO2[m]	0	32								
+				linoleate[c]	0		H+[m]	0	32								
+				O2[c]	0												
+	147	Cardiolipin synthesis		glucose[c]	1	17.5	CL pool[c]	1	1								
+				NADPH[c]	0	56	CO2[c]	0	28								
+				ATP[c]	0	15	H2O[c]	0	59								
+				HCO3-[c]	0	28	NADP+[c]	0	56								
+				NAD+[c]	0	29	CMP[c]	0	2								
+				NAD+[m]	0	32	PPi[c]	0	19								
+				ADP[c]	0	1	NADH[c]	0	29								
+				Pi[c]	0	3	NADH[m]	0	32								
+				H+[c]	0	28	AMP[c]	0	16								
+				linolenate[c]	0		CO2[m]	0	32								
+				linoleate[c]	0		H+[m]	0	32								
+				O2[c]	0												
+	148	Triacylglycerol synthesis		glucose[c]	0	12.5	TAG-VLDL pool[c]	1	1								
+				NADPH[c]	0	42	CO2[c]	0	21								
+				NAD+[c]	0	23	H2O[c]	0	32								
+				NAD+[m]	0	24	NADP+[c]	0	42								
+				H+[c]	0	18	NADH[c]	0	23								
+				ATP[c]	0	10	NADH[m]	0	24								
+				HCO3-[c]	0	21	ADP[c]	0	9								
+				linolenate[c]	0		Pi[c]	0	9								
+				linoleate[c]	0		AMP[c]	0	12								
+				O2[c]	0		PPi[c]	0	12								
+							H+[m]	0	24								
+							CO2[m]	0	24								
+	149	Sphingomyelin synthesis		glucose[c]	1	8	SM pool[c]	1	1								
+				NADPH[c]	0	28	CO2[c]	0	15								
+				ATP[c]	0	6	H2O[c]	0	22								
+				HCO3-[c]	0	15	NADP+[c]	0	28								
+				serine[c]	0	1	NADH[c]	0	16								
+				H+[c]	0	12	NADH[m]	0	16								
+				ADP[c]	0	1	AMP[c]	0	8								
+				Pi[c]	0	2	CMP[c]	0	1								
+				NAD+[c]	0	16	PPi[c]	0	9								
+				NAD+[m]	0	16	CO2[m]	0	16								
+				choline[c]	0		H+[m]	0	16								
+				CTP[c]	0												
+				linolenate[c]	0												
+				linoleate[c]	0												
+				O2[c]	0												
+	150	Ceramide synthesis		glucose[c]	1	8	ceramide pool[c]	1	1								
+				serine[c]	0	1	NADH[c]	0	16								
+				NADPH[c]	0	29	NADH[m]	0	16								
+				ATP[c]	0	6	CO2[c]	0	15								
+				HCO3-[c]	0	14	H2O[c]	0	22								
+				FAD[c]	0	1	NADP+[c]	0	29								
+				H+[c]	0	13	CO2[m]	0	16								
+				Pi[c]	0	2	FADH2[c]	0	1								
+				NAD+[c]	0	16	AMP[c]	0	8								
+				NAD+[m]	0	16	PPi[c]	0	8								
+				ADP[c]	0	2	H+[m]	0	16								
+				linolenate[c]	0												
+				linoleate[c]	0												
+				O2[c]	0												
+	151	Palmitate synthesis		glucose[c]	4	4	palmitate[c]	1	1								
+				NADPH[c]	14	14	NADP+[c]	14	14								
+				NAD+[c]	16	16	NADH[c]	16	16								
+				ATP[c]	7	7	ADP[c]	7	7								
+				HCO3-[c]	7	7	CO2[c]	15	15								
+							H+[c]	3	3								
+							Pi[c]	7	7								
+							H2O[c]	6	6								
+	152	Palmitate degradation		palmitate[c]	1	1	acetyl-CoA[c]	8	8								
+				ATP[c]			AMP[c]										
+				NAD+[c]			NADH[c]										
+				CoA[c]			PPi[c]										
+				FAD[c]			FADH2[c]										
+				H2O[c]			H+[c]										
+				O2[c]													
+	153	Palmitolate synthesis		glucose[c]	4	4	palmitolate[c]	1	1								
+				NADPH[c]	14	14	NADP+[c]	14	14								
+				NAD+[c]	15	15	NADH[c]	15	15								
+				ATP[c]	7	7	ADP[c]	7	7								
+				HCO3-[c]	7	7	CO2[c]	15	15								
+				O2[c]	1	1	H+[c]	2	2								
+							Pi[c]	7	7								
+							H2O[c]	8	8								
+	154	Palmitolate degradation		palmitolate[c]	1	1	acetyl-CoA[c]	8	8								
+				ATP[c]			AMP[c]										
+				NAD+[c]			NADH[c]										
+				CoA[c]			PPi[c]										
+				FAD[c]			FADH2[c]										
+				H2O[c]			H+[c]										
+				O2[c]													
+	155	cis-vaccenic acid synthesis		glucose[c]	9	9	cis-vaccenic acid[c]	2	2								
+				NADPH[c]	32	32	CO2[c]	34	34								
+				ATP[c]	16	16	H2O[c]	18	18								
+				NAD+[c]	34	34	NADP+[c]	32	32								
+				HCO3-[c]	16	16	NADH[c]	34	34								
+				O2[c]	2	2	ADP[c]	16	16								
+							Pi[c]	16	16								
+							H+[c]	4	4								
+	156	cis-vaccenic acid degradation		cis-vaccenic acid[c]	1	1	acetyl-CoA[c]	9	9								
+				ATP[c]			AMP[c]										
+				NAD+[c]			NADH[c]										
+				CoA[c]			PPi[c]										
+				FAD[c]			FADH2[c]										
+				H2O[c]			H+[c]										
+				O2[c]													
+	157	Elaidate synthesis		glucose[c]	9	9	elaidate[c]	2	2								
+				NADPH[c]	32	32	CO2[c]	34	34								
+				ATP[c]	16	16	H2O[c]	18	18								
+				NAD+[c]	34	34	NADP+[c]	32	32								
+				HCO3-[c]	16	16	NADH[c]	34	34								
+				O2[c]	2	2	ADP[c]	16	16								
+							Pi[c]	16	16								
+							H+[c]	4	4								
+	158	Elaidate degradation		elaidate[c]	1	1	acetyl-CoA[c]	9	9								
+				ATP[c]			AMP[c]										
+				NAD+[c]			NADH[c]										
+				CoA[c]			PPi[c]										
+				FAD[c]			FADH2[c]										
+				H2O[c]			H+[c]										
+				O2[c]													
+	159	Linolenate degradation		linolenate[c]	1	1	acetyl-CoA[c]	9	9								
+				ATP[c]			AMP[c]										
+				NAD+[c]			NADH[c]										
+				CoA[c]			PPi[c]										
+				FAD[c]			FADH2[c]										
+				H2O[c]			H+[c]										
+				O2[c]													
+	160	Linoleate degradation		linoleate[c]	1	1	acetyl-CoA[c]	9	9								
+				ATP[c]			AMP[c]										
+				NAD+[c]			NADH[c]										
+				CoA[c]			PPi[c]										
+				FAD[c]			FADH2[c]										
+				H2O[c]			H+[c]										
+				O2[c]													
+	161	gamma-Linolenate synthesis		linoleate[c]	1	1	gamma-linolenate[c]	1	1								
+				NADH[c]	1	1	NAD+[c]	1	1								
+				H+[c]	1	1	H2O[c]	2	2								
+				O2[c]	1	1											
+	162	gamma-Linolenate degradation		gamma-linolenate[c]	1	1	acetyl-CoA[c]	9	9								
+				ATP[c]			AMP[c]										
+				NAD+[c]			NADH[c]										
+				CoA[c]			PPi[c]										
+				FAD[c]			FADH2[c]										
+				H2O[c]			H+[c]										
+				O2[c]													
+	163	Arachidonate synthesis		glucose[c]	1	1	arachidonate[c]	2	2								
+				linoleate[c]	2	2	CO2[c]	4	4								
+				ATP[c]	2	4	ADP[c]	2	4								
+				HCO3-[c]	2	2	Pi[c]	2	4								
+				NADPH[c]	8	8	NADP+[c]	8	8								
+				H+[c]	8	8	H2O[c]	14	14								
+				O2[c]	6	6											
+	164	Arachidonate degradation		arachidonate[c]	1	1	acetyl-CoA[c]	10	10								
+				ATP[c]			AMP[c]										
+				NAD+[c]			NADH[c]										
+				CoA[c]			PPi[c]										
+				FAD[c]			FADH2[c]										
+				H2O[c]			H+[c]										
+				O2[c]													
+	165	Synthesis of malonyl-coa		glucose[c]	1	1	malonyl-CoA[c]	2	2								
+				NAD+[c]	2	2	CO2[m]	2	2								
+				NAD+[m]	2	2	NADH[c]	2	2								
+				CoA[c]	2	2	NADH[m]	2	2								
+				ATP[c]	1	1	AMP[c]	1	1								
+				HCO3-[c]	2	2	PPi[c]	1	1								
+							H2O[c]	1	1								
+							H+[m]	2	2								
+							H+[c]	3	3								
+	166	Synthesis of palmitoyl-CoA		glucose[c]	4	4	palmitoyl-CoA[c]	1	1								
+				NADPH[c]	14	14	CO2[m]	15	15								
+				ATP[c]	3	3	H2O[c]	12	12								
+				ADP[c]	1	1	NADP+[c]	14	14								
+				Pi[c]	1	1	NADH[c]	8	8								
+				NAD+[c]	8	8	NADH[m]	8	8								
+				NAD+[m]	8	8	AMP[c]	4	4								
+				CoA[c]	1	1	PPi[c]	4	4								
+				HCO3-[c]	7	7	H+[m]	8									
+				H+[c]	8												
+	167	Taurochenodeoxycholate synthesis		cholesterol[r]	1	1	taurochenodeoxycholate[e]	1	1								
+				taurine[e]	1	1	propanoyl-CoA[e]	1	1								
+				CoA[e]	1	1	AMP[e]	1	1								
+				ATP[e]	1	1	PPi[e]	1	1								
+				O2[r]	1	1	NADP+[m]	3	3								
+				O2[e]	1	1	NADP+[r]	1	1								
+				O2[m]	3	3	NADH[r]	1	1								
+				NAD+[r]	1	1	NADP+[c]	1	1								
+				H+[c]	2	2	NAD+[c]	1	1								
+				H+[m]	2	2	H2O[m]	3	3								
+				NADH[c]	1	1	H2O[r]	1	1								
+				NADPH[c]	1	1	H2O[e]	1	1								
+				NADPH[m]	3	3											
+				NADPH[r]	1	1											
+	168	Glycochenodeoxycholate synthesis		cholesterol[r]	1	1	glycochenodeoxycholate[e]	1	1								
+				glycine[e]	1	1	propanoyl-CoA[e]	1	1								
+				ATP[e]	1	1	AMP[e]	1	1								
+				FADH2[e]	1	1	PPi[e]	1	1								
+				CoA[e]	1	1	FAD[e]	1	1								
+				NADPH[r]	1	1	H2O[r]	1	1								
+				NADPH[c]	1	1	H2O[e]	3	3								
+				NADPH[m]	3	3	H2O[m]	5	5								
+				NADPH[e]	1	1	NADP+[r]	1	1								
+				NAD+[r]	1	1	NADP+[e]	1	1								
+				NADH[c]	1	1	NADP+[c]	1	1								
+				H+[m]	2	2	NADP+[m]	3	3								
+				H+[e]	1	1	NADH[r]	1	1								
+				H+[c]	2	2	NAD+[c]	1	1								
+				O2[m]	3	3											
+				O2[r]	1	1											
+				O2[e]	2	2											
+	169	tauro-cholate synthesis		cholesterol[r]	1	1	taurocholate[e]	1	1								
+				taurine[e]	1	1	propanoyl-CoA[e]	1	1								
+				CoA[e]	1	1	AMP[e]	1	1								
+				ATP[e]	1	1	PPi[e]	1	1								
+				FADH2[e]	1	1	FAD[e]	1	1								
+				NADPH[r]	1	4	NADPH[m]	1	2								
+				NADPH[e]	1	1	NADP+[r]	1	1								
+				NADPH[m]	0	2	NADP+[c]	1	2								
+				NADPH[c]	0	1	NADP+[m]	2	2								
+				NADH[c]	1	1	NADP+[e]	1	1								
+				NADP+[m]	0	1	NAD+[c]	1	1								
+				O2[r]	2	2	H2O[m]	2	2								
+				O2[m]	2	2	H2O[r]	2	2								
+				O2[e]	2	2	H2O[e]	3	3								
+				H+[r]	1	1											
+				H+[c]	2	2											
+				H+[e]	1	1											
+	170	glyco-cholate synthesis		cholesterol[r]	1	1	glycocholate[e]	1	1								
+				glycine[e]	1	1	propanoyl-CoA[e]	1	1								
+				ATP[e]	1	1	AMP[e]	1	1								
+				FADH2[e]	1	1	PPi[e]	1	1								
+				CoA[e]	1	1	FAD[e]	1	1								
+				NADPH[r]	1	1	NADP+[m]	1	1								
+				NADPH[e]	1	1	NADP+[r]	1	1								
+				NADPH[m]	1	1	NADP+[c]	1	1								
+				NADPH[c]	1	1	NADP+[e]	1	1								
+				NADH[c]	1	1	NAD+[c]	1	1								
+				H+[r]	1	1	H2O[m]	2	2								
+				H+[e]	1	1	H2O[e]	3	3								
+				H+[c]	2	2	H2O[r]	2	2								
+				O2[r]	2	2											
+				O2[m]	2	2											
+				O2[e]	2	2											
+	171	Synthesis of thromboxane from arachidonate		arachidonate[r]	1	1	thromboxane A2[r]	1	1								
+				O2[r]	2	2	H2O[r]	1	1								
+				NADPH[r]	1	1	NADP+[r]	1	1								
+				H+[r]	1	1											
+	172	Synthesis of galactosyl glucosyl ceramide (link with ganglioside metabolism)		glucose[c]			LacCer pool[g]	1	1								
+				serine[c]	0	1	CoA[c]	0	16								
+				NADPH[c]	0	29	CO2[c]	0	15								
+				ATP[c]	0	14	H2O[c]	0	14								
+				HCO3-[c]	0	14	NADP+[c]	0	29								
+				FAD[c]	0	1	ADP[c]	0	14								
+				H+[c]	0	21	Pi[c]	0	14								
+				linolenate[c]	0		FADH2[c]	0	1								
+				linoleate[c]	0		UDP[g]	0	1								
+				O2[c]	0		H+[g]	0	1								
+				UDP-galactose[g]	0	1	H+[r]	0	1								
+				UDP-glucose[r]	0	1	UDP[r]	0	1								
+	173	Synthesis of glucocerebroside		acetyl-CoA[c]	0	16	glucosylceramide pool[r]	1	1								
+				serine[c]	0	1	CoA[c]	0	16								
+				NADPH[c]	0	29	CO2[c]	0	15								
+				ATP[c]	0	14	H2O[c]	0	14								
+				HCO3-[c]	0	14	NADP+[c]	0	29								
+				FAD[c]	0	1	ADP[c]	0	14								
+				H+[c]	0	21	Pi[c]	0	14								
+				linolenate[c]	0		FADH2[c]	0	1								
+				linoleate[c]	0		H+[r]	0	1								
+				O2[c]	0		UDP[r]	0	1								
+				UDP-glucose[r]	0	1											
+	174	Synthesis of globoside (link with globoside metabolism)		acetyl-CoA[c]	0	16	globoside[g]	1	1								
+				serine[c]	0	1	CoA[c]	0	16								
+				NADPH[c]	0	29	CO2[c]	0	15								
+				ATP[c]	0	14	H2O[c]	0	14								
+				HCO3-[c]	0	14	NADP+[c]	0	29								
+				FAD[c]	0	1	ADP[c]	0	14								
+				H+[c]	0	21	Pi[c]	0	14								
+				linolenate[c]	0		FADH2[c]	0	1								
+				linoleate[c]	0		UDP[g]	0	3								
+				O2[c]	0		H+[g]	0	3								
+				UDP-N-acetyl-D-galactosamine[g]	0	1	H+[r]	0	1								
+				UDP-galactose[g]	0	2	UDP[r]	0	1								
+				UDP-glucose[r]	0	1											
+	175	NAD synthesis from nicotinamide		nicotinamide[c]	1	1	NAD+[c]	1	1								
+				PRPP[c]	1	1	PPi[c]	2	2								
+				ATP[c]	1	1											
+				H+[c]	2	2											
+	176	FAD synthesis		riboflavin[c]	1	1	FAD[c]	1	1								
+				ATP[c]	2	2	ADP[c]	1	1								
+							PPi[c]	1	1								
+	177	Synthesis of coenzyme A		pantothenate[c]	1	1	CoA[c]	1	1								
+				cysteine[c]	1	1	AMP[c]	1	1								
+				ATP[c]	4	4	ADP[c]	2	2								
+							CO2[c]	1	1								
+							PPi[c]	2	2								
+							H+[c]	1	1								
+	178	Synthesis of ubiquinone from tyrosine		tyrosine[m]	1	1	ubiquinone[m]	1	1								
+				AKG[m]	1	1	glutamate[m]	1	1								
+				all-trans-decaprenyl-diphosphate[m]	1	1	SAH[m]	3	3								
+				SAM[m]	3	3	acetyl-CoA[m]	1	1								
+				ATP[m]	1	1	AMP[m]	1	1								
+				CoA[m]	1	1	PPi[m]	2	2								
+				NADPH[m]	1	1	NAD+[m]	1	1								
+				NADH[m]	1	1	CO2[m]	1	1								
+				O2[m]	3	3	H2O[m]	2	2								
+							NADP+[m]	1	1								
+							H+[m]	1	1								
+	179	Tetrahydrofolate synthesis		folate[c]	1	1	THF[c]	1	1								
+				NADPH[c]	2	2	NADP+[c]	2	2								
+				H+[c]	1	1											
+	180	Pyridoxal-phosphate synthesis		pyridoxal[c]	1	1	pyridoxal-phosphate[c]	1	1								
+				ATP[c]	1	1	ADP[c]	1	1								
+							H+[c]	1	1								
+	181	Synthesis of bilirubin		heme[c]	1	1	bilirubin[c]	1	1								
+				NADPH[c]	0	4	H2O[c]	0	3								
+				H+[c]	0	6	Fe2+[c]	0	1								
+				O2[c]	0	3	Fe3+[c]	0	1								
+				FADH2[c]	0	1	NADP+[c]	0	4								
+							FAD[c]	0	1								
+							CO[c]	1	1								
+							NA[c]	0	1								
+	182	Heme synthesis		glycine[m]	16	16	heme[m]	2	2								
+				succinyl-CoA[m]	16	18	H2O[m]	26	26								
+				Fe2+[m]	2	2	CoA[m]	16	18								
+				H+[m]	16	18	NH4+[m]	8	8								
+				O2[m]	5	10	CO2[m]	28	34								
+	183	Phosphatidyl-inositol to glucosaminyl-acylphosphatidylinositol		PI pool[c]	1	1	glucosaminyl-acylphosphatidylinositol[c]	1	1								
+				UDP-N-acetylglucosamine[c]	1	1	UDP[c]	1	1								
+				H2O[c]	1	1	acetate[c]	1	1								
+				palmitoyl-CoA[c]	1	1	CoA[c]	1	1								
+							H+[c]	1	1								
+	184	Glucosaminyl-acylphosphatidylinositoll to deacylated-glycophosphatidylinositol (GPI)-anchored protein		glucosaminyl-acylphosphatidylinositol[r]	1	10	gpi_prot heparan sulfate[r]	1	10								
+				dolichyl-phosphate-D-mannose[r]	3	3	NA[r]	3	3								
+				PE-LD pool[r]	3	30	H+[r]	6	30								
+				glycophosphatidylinositol-(GPI)-anchored-protein-precursor[r]	1	10	1,2-diacylglycerol-LD-TAG pool[r]	3	30								
+							gpi_sig[r]	1	10								
+	185	Degradation of n2m2nmasn		n2m2nmasn[l]	1	1	mannose[l]	3	3								
+				H2O[l]	8	8	N-acetylglucosamine[l]	5	5								
+							[protein]-L-asparagine[l]	1	1								
+	186	Biosynthesis of m4mpdol_U		dolichol[c]	0.1	1	G00006[c]	0.1	1								
+				CTP[c]	1	2	CDP[c]	1	1								
+				UDP-N-acetylglucosamine[c]	2	2	UMP[c]	1	1								
+				GDP-mannose[c]	2	5	UDP[c]	1	1								
+							GDP[c]	2	5								
+							H+[c]	0	7								
+	187	Biosynthesis of g3m8masn		G00006[r]	0.1	1	(alpha-D-Glucosyl)3-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein)[r]	0.1	1								
+				dolichyl-phosphate-D-mannose[r]	0.4	4	NA[r]	0.7	7								
+				dolichyl-D-glucosyl-phosphate[r]	0.3	3	H+[r]	8	14								
+				[protein]-L-asparagine[r]	1	1	NA[r]	0.1	1								
+				GDP-mannose[c]	0	3	GDP[c]	0	3								
+	188	Degradation of s2l2fn2m2masn		PA6[l]	1	1	mannose[l]	3	3								
+				H2O[l]	12	12	N-acetylneuraminate[l]	2	2								
+							[protein]-L-asparagine[l]	1	1								
+							galactose[l]	2	2								
+							6-deoxy-L-galactose[l]	1	1								
+							N-acetylglucosamine[l]	4	4								
+	189	Biosynthesis of core2 (beta-D-Galactosyl-1,3-(N-acetyl-beta-D-glucosaminyl-1,6)-N-acetyl-D-galactosaminyl-R)		Protein-Linked Serine Or Threonine Residue (O-Glycosylation Site)[g]	10	10	core 2[g]	2	10								
+				UDP-N-acetyl-D-galactosamine[g]	10	10	UDP[g]	14	30								
+				UDP-galactose[g]	2	10	H+[g]	14	30								
+				UDP-N-acetylglucosamine[g]	2	10											
+	190	Biosynthesis of core4 (N-Acetyl-beta-D-glucosaminyl-1,6-(N-acetyl-beta-D-glucosaminyl-1,3)-N-acetyl-D-galactosaminyl-R)		Protein-Linked Serine Or Threonine Residue (O-Glycosylation Site)[g]	10	10	core 4[g]	2	10								
+				UDP-N-acetyl-D-galactosamine[g]	10	10	UDP[g]	14	30								
+				UDP-N-acetylglucosamine[g]	4	20	H+[g]	14	30								
+	191	Biosynthesis of Tn_antigen (Glycoprotein N-acetyl-D-galactosamine)		Protein-Linked Serine Or Threonine Residue (O-Glycosylation Site)[g]	1	1	Tn-antigen[g]	0.2	1								
+				UDP-N-acetyl-D-galactosamine[g]	1	1	H+[g]	1	1								
+							UDP[g]	1	1								
+	192	Keratan sulfate biosynthesis from O-glycan (core 2-linked)		core 2[g]	1	1	keratan sulfate II (core 2-linked)[g]	1	1								
+				CMP-N-acetylneuraminate[g]			CMP[g]										
+				UDP-galactose[g]			H+[g]										
+				UDP-N-acetylglucosamine[g]			UDP[g]										
+				PAPS[g]			PAP[g]										
+	193	Keratan sulfate biosynthesis from O-glycan (core 4-linked)		core 4[g]	1	1	keratan sulfate II (core 4-linked)[g]	1	1								
+				UDP-galactose[g]			H+[g]										
+				CMP-N-acetylneuraminate[g]			UDP[g]										
+				UDP-N-acetylglucosamine[g]			CMP[g]										
+				PAPS[g]			PAP[g]										
+	194	Keratan sulfate degradation		keratan sulfate I[l]	1	1	(alpha-D-mannosyl)2-beta-D-mannosyl-N-acetylglucosamine[l]	1	1								
+				H2O[l]			6-deoxy-L-galactose[l]										
+							[protein]-L-asparagine[l]										
+							N-acetylglucosamine[l]										
+							N-acetylneuraminate[l]										
+							H+[l]										
+							sulfate[l]										
+							galactose[l]										
+	195	Keratan sulfate biosynthesis from N-glycan		l2fn2m2masn[g]	1	1	keratan sulfate I[g]	1	1								
+				CMP-N-acetylneuraminate[g]			CMP[g]										
+				UDP-N-acetylglucosamine[g]			H+[g]										
+				UDP-galactose[g]			UDP[g]										
+				PAPS[g]			PAP[g]										
