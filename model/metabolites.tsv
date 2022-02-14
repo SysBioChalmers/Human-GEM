@@ -2838,7 +2838,7 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM01686c"	"MAM01686"	"dgmp"	"C00362"	""	"CHEBI:16192"	"65059"	""	""	"HC00306"	"dgmp"	"MNXM546"	"m01686c"	"m01686c"
 "MAM01686l"	"MAM01686"	"dgmp"	"C00362"	""	"CHEBI:16192"	"65059"	""	""	"HC00306"	"dgmp"	"MNXM546"	"m01686l"	"m01686l"
 "MAM01686m"	"MAM01686"	"dgmp"	"C00362"	""	"CHEBI:16192"	"65059"	""	""	"HC00306"	"dgmp"	"MNXM546"	"m01686m"	"m01686m"
-"MAM01686n"	"MAM01686"	"dgmp"	"C00362"	""	"CHEBI:16192"	"65059"	""	""	"HC00306"	"dgmp"	"MNXM546"	"m01686n"	"m01686n"
+"MAM01686n"	"MAM01686"	"dgmp"	"C00362"	""	"CHEBI:16192"	"65059"	""	""	"HC00306"	"dgmp"	"MNXM546"	""	""
 "MAM01687r"	"MAM01687"	"dgpi_prot_hs"	""	""	""	""	""	""	""	"dgpi_prot_hs"	"MNXM17162"	"m01687r"	"m01687r"
 "MAM01687c"	"MAM01687"	"dgpi_prot_hs"	""	""	""	""	""	""	""	"dgpi_prot_hs"	"MNXM17162"	"m01687c"	"m01687c"
 "MAM01687e"	"MAM01687"	"dgpi_prot_hs"	""	""	""	""	""	""	""	"dgpi_prot_hs"	"MNXM17162"	"m01687s"	"m01687s"
