@@ -13,3 +13,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR11269"	""	""	""	""	""	"ELAIDCRNtr"	""	""	""	""	0	""	""	"ELAIDCRNtr"
 "MAR11275"	""	""	""	""	""	"PCRNtr"	""	""	""	""	0	""	""	"PCRNtr"
 "MAR11273"	""	""	""	""	""	"LNLCCRNtr"	""	""	""	""	0	""	""	"LNLCCRNtr"
+"MAR08639"	""	""	""	""	""	"HMR_8639"	""	"HMR_8639"	"RCR21087"	""	0	""	""	"HMR_8639"
