@@ -7191,7 +7191,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR08412"	""	"O2Stn"	""	""	""	"O2Stn"	"MNXR102089"	"HMR_8412"	"RCR20749"	""	0	""	""	"HMR_8412"
 "MAR08447"	""	"CYTK1"	""	""	""	"CYTDtn"	"MNXR97047"	"HMR_8447"	"RCR20750"	""	0	""	""	"HMR_8447"
 "MAR08476"	""	""	""	""	""	"HMR_8476"	""	"HMR_8476"	"RCR21086"	"2.A.57.1.4"	0	""	""	"HMR_8476"
-"MAR08639"	""	""	""	""	""	"HMR_8639"	""	"HMR_8639"	"RCR21087"	""	0	""	""	"HMR_8639"
 "MAR08789"	""	"NMNtn"	""	""	""	"NMNtn"	"MNXR101972"	"HMR_8789"	"RCR20751"	""	0	""	""	"HMR_8789"
 "MAR08828"	""	"PAIL_HStn"	""	""	""	"PAIL_HStn"	"MNXR102336"	"HMR_8828"	"RCR20319"	""	0	""	""	"HMR_8828"
 "MAR08837"	""	"PAIL45P_HStn"	""	""	""	"PAIL45P_HStn"	"MNXR102332"	"HMR_8837"	"RCR21088"	""	0	""	""	"HMR_8837"
@@ -13070,3 +13069,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR13083"	""	""	""	""	""	""	""	""	""	""	0	""	""	"HMR_10133"
 "MAR13084"	""	""	""	""	""	""	""	""	""	""	0	""	""	""
 "MAR13085"	""	""	""	""	""	""	""	""	""	""	0	""	""	""
+"MAR13086"	""	""	""	""	""	""	""	""	""	""	0	""	""	""
