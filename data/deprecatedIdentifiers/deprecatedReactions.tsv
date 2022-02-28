@@ -9,3 +9,8 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR09577"	"R00162"	""	""	""	""	"HMR_9577"	"MNXR106414"	"HMR_9577"	"RCR14832"	""	0	""	""	"HMR_9577"
 "MAR09578"	"R00164"	""	""	""	""	"HMR_9578"	"MNXR106415"	"HMR_9578"	"RCR14833"	""	0	""	""	"HMR_9578"
 "MAR09579"	"R03632"	""	""	""	""	"HMR_9579"	"MNXR108312"	"HMR_9579"	"RCR11010"	""	0	""	""	"HMR_9579"
+"MAR07262"	""	"DOLICHOL_Lter"	""	""	""	""	"MNXR97703"	"HMR_7262"	"RCR20987"	""	0	""	""	"HMR_7262"
+"MAR11269"	""	""	""	""	""	"ELAIDCRNtr"	""	""	""	""	0	""	""	"ELAIDCRNtr"
+"MAR11275"	""	""	""	""	""	"PCRNtr"	""	""	""	""	0	""	""	"PCRNtr"
+"MAR11273"	""	""	""	""	""	"LNLCCRNtr"	""	""	""	""	0	""	""	"LNLCCRNtr"
+"MAR08639"	""	""	""	""	""	"HMR_8639"	""	"HMR_8639"	"RCR21087"	""	0	""	""	"HMR_8639"
