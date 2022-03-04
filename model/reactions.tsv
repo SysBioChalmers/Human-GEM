@@ -9740,7 +9740,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR08970"	""	"FRDPtcr"	""	""	""	"FRDPtcr"	"MNXR99646"	""	""	""	0	""	""	"FRDPtcr"
 "MAR08971"	""	"G6PDH2c"	""	""	""	"G6PDH2c"	""	""	""	""	0	""	""	"G6PDH2c"
 "MAR08972"	""	"GLUPROASCT1"	""	""	""	"GLUPROASCT1"	"MNXR100286"	""	""	""	0	""	""	"GLUPROASCT1"
-"MAR08973"	""	"GNDc"	""	""	""	"GNDc"	""	""	""	""	0	""	""	"GNDc"
 "MAR08974"	""	"HYPTROXe"	""	""	""	"HYPTROXe"	"MNXR100764"	""	""	""	0	""	""	"HYPTROXe"
 "MAR08975"	""	"INSK"	""	""	""	"INSK"	"MNXR100845"	""	""	""	0	"RHEA:21141"	"RHEA:21140"	"INSK"
 "MAR08976"	""	"Kt3r"	""	""	""	"KHte"	"MNXR100939"	""	""	""	0	""	""	"KHte"
