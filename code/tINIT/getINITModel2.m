@@ -103,11 +103,11 @@ function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, delete
 %   settings are possible using this function, and you may want to call the
 %   functions scoreComplexModel, runINIT and fitTasks individually instead.
 %
-%   NOTE: Exchange metabolites should normally not be removed from the model
+%   NOTE: Boundary metabolites should normally not be removed from the model
 %   when using this approach, since checkTasks/fitTasks rely on putting specific
-%   constraints for each task. The INIT algorithm will remove exchange metabolites
-%   if any are present. Use importModel(file,false) to import a model with
-%   exchange metabolites remaining.
+%   constraints for each task. The INIT algorithm will remove boundary metabolites
+%   if any are present. Use the addBoundaryMets function to add boundary
+%   metabolites to a model.
 %
 %   Usage: [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks,...
 %               deletedDeadEndRxns, deletedRxnsInINIT, taskReport] = ...
@@ -147,7 +147,7 @@ end
 
 %Check that the model is in the closed form
 if ~isfield(refModel,'unconstrained')
-    EM = 'Exchange metabolites should normally not be removed from the model when using getINITModel. Use importModel(file,false) to import a model with exchange metabolites remaining (see the documentation for details)';
+    EM = 'Boundary metabolites should normally be present in the model when using getINITModel2. Use addBoundaryMets(model) to add boundary metabolites to a model';
     dispEM(EM);
 end
 
@@ -347,9 +347,9 @@ if printReport == true
 end
 
 %The full model has exchange reactions in it. fitTasks calls on fillGaps,
-%which automatically removes exchange metabolites (because it assumes that
-%the reactions are constrained when appropriate). In this case the
-%uptakes/outputs are retrieved from the task sheet instead. To prevent
+%which automatically removes exchange (boundary) metabolites (because it
+%assumes that the reactions are constrained when appropriate). In this case
+%the uptakes/outputs are retrieved from the task sheet instead. To prevent
 %exchange reactions being used to fill gaps, they are delete from the
 %reference model here.
 initModel.id = 'INITModel';
@@ -410,7 +410,7 @@ model = removeReactions(model,getExchangeRxns(model));
 % Create a model with only the exchange reactions in refModel
 excModel = removeReactions(refModel,setdiff(refModel.rxns,getExchangeRxns(refModel)),true,true);
 
-% Find the metabolites there which are not exchange metabolites and which do
+% Find the metabolites there which are not boundary metabolites and which do
 % not exist in the output model
 I = ~ismember(excModel.mets,model.mets) & excModel.unconstrained == 0;
 
