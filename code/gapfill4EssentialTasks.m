@@ -57,7 +57,7 @@ end
 % load metabolic task for growth under Ham's media
 [ST, I] = dbstack('-completenames');
 path = fileparts(ST(I).file);
-essentialTasks = fullfile(path,'../data/metabolicTasks','metabolicTasks_Essential.xlsx');
+essentialTasks = fullfile(path,'../data/metabolicTasks','metabolicTasks_Essential.txt');
 taskStruct = parseTaskList(essentialTasks);
 %taskStruct = taskStruct(end);
 
