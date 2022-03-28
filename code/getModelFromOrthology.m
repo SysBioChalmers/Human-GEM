@@ -43,7 +43,8 @@ templateModel.id = '';
 templateModel.description = '';
 templateModel.version = '';
 templateModel.annotation = structfun(@(x) '',templateModel.annotation,'UniformOutput',0);
-
+templateModel.annotation.defaultLB = -1000;
+templateModel.annotation.defaultUB = 1000;
 
 % find the index of non-empty grRules before replacing genes
 preNonEmptyRuleInd = find(~cellfun(@isempty, templateModel.grRules));
