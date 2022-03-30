@@ -49,7 +49,7 @@ if nargin < 2
     annPath = strcat(fileparts(ST(I).file),'/../model');
 end
 
-if nargin < 3 || isempty(annType) || strcmpi(annType,'all')
+if nargin < 3 || isempty(annType) || isequal(annType,'all')
     annType = {'rxn','met','gene'};
 elseif ~all(ismember(annType,{'rxn','met','gene','reaction','metabolite'}))
     error('annType input(s) not recognized. Valid options are "rxn", "met", and/or "gene", or "all"');
@@ -277,9 +277,18 @@ if ( addFields )
     
     % get fields and their types
     f = fieldnames(allAssoc);
-    fieldType = repmat({'rxn'}, numel(f), 1);
-    fieldType(ismember(f, fieldnames(metAssoc))) = {'met'};
-    fieldType(ismember(f, fieldnames(geneAssoc))) = {'gene'};
+    
+    if ~isempty(rxnAssoc)
+        fieldType = repmat({'rxn'}, numel(f), 1);
+    end
+    
+    if ~isempty(metAssoc)
+        fieldType(ismember(f, fieldnames(metAssoc))) = {'met'};
+    end
+    
+    if ~isempty(geneAssoc)
+        fieldType(ismember(f, fieldnames(geneAssoc))) = {'gene'};
+    end
     
     % add individual ID fields to the model
     for i = 1:numel(f)
