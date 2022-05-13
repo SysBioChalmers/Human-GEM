@@ -336,7 +336,7 @@ rxnScores = scoreComplexModel(cModel,hpaData,arrayData,tissue,celltype);
 %carry flux in one direction. Runs without the constraints on reversibility
 %and with all output allowed. This is to reduce the complexity of the
 %problem.
-[~, deletedRxnsInINIT, metProduction] = runINIT_legacy(simplifyModel(cModel),rxnScores,metabolomicsData,essentialRxnsForTasks,0,true,false,params);
+[~, deletedRxnsInINIT, metProduction] = runINIT(simplifyModel(cModel),rxnScores,metabolomicsData,essentialRxnsForTasks,0,true,false,params);
 initModel = removeReactions(cModel,deletedRxnsInINIT,false,true);
 
 % remove metabolites separately to avoid removing those needed for tasks
