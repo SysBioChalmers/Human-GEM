@@ -1,7 +1,8 @@
 function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, deletedDeadEndRxns, deletedRxnsInINIT, taskReport] = getINITModel2(refModel, tissue, celltype, hpaData, arrayData, metabolomicsData, removeGenes, taskFile, useScoresForTasks, printReport, taskStructure, params, paramsFT)
 % getINITModel2
-%   This function is deprecated - we suggest that you instead use ftINIT in
-%   RAVEN Toolbox together with the helpers in this repo.
+%   Note: There is a newer improved version of this function in RAVEN Toolbox 
+%   called ftINIT that can be used together with the helper functions in this repo.
+%
 %   Generates a model using the INIT algorithm, based on proteomics and/or
 %   transcriptomics and/or metabolomics and/or metabolic tasks.
 %   This is the newer version, which has updated handling of gene rules to
