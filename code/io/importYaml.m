@@ -86,7 +86,6 @@ while ~feof(fid)
             change_to_section = 2;
         case '- reactions:'
             change_to_section = 3;
-            readEquation = false;
             rxnId = '';
         case '- genes:'
             change_to_section = 4;
@@ -206,7 +205,6 @@ while ~feof(fid)
 
             case 'confidence_score'
                 model = readFieldValue(model, 'rxnConfidenceScores', tline_value);
-                model.subSystems = [model.subSystems; {subSystems}];
 
             case 'metabolites'
                 readEquation = true;
