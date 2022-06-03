@@ -86,7 +86,6 @@ while ~feof(fid)
             change_to_section = 2;
         case '- reactions:'
             change_to_section = 3;
-            readSubsystems = false;
             readEquation = false;
             rxnId = '';
         case '- genes:'
@@ -100,10 +99,21 @@ while ~feof(fid)
         if ~silentMode
             fprintf('\t%d\n', section);
         end
+        
+        if section == 4
+            readSubsystems = true;
+        else
+            readSubsystems = false;
+        end
+        
     end
 
     % skip over lines containing only omap
     if any(regexp(tline, "- !!omap"))
+        if readSubsystems
+            model.subSystems = [model.subSystems; {subSystems}];
+            readSubsystems = false;
+        end
         tline = fgetl(fid);
     end
     
@@ -197,7 +207,6 @@ while ~feof(fid)
             case 'confidence_score'
                 model = readFieldValue(model, 'rxnConfidenceScores', tline_value);
                 model.subSystems = [model.subSystems; {subSystems}];
-                readSubsystems = false;
 
             case 'metabolites'
                 readEquation = true;
