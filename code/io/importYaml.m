@@ -268,7 +268,7 @@ model.rxnConfidenceScores = str2double(model.rxnConfidenceScores);
 model.b = zeros(length(model.mets),1);
 model.c = double(ismember(model.rxns, objRxns));
 
-[genes, rxnGeneMat] = getGenesFromGrRules(model.grRules);
+[genes, rxnGeneMat] = getGenesFromGrRules(model.grRules, model.genes);
 if isequal(sort(genes), sort(model.genes))
     model.rxnGeneMat = rxnGeneMat;
     model.genes = genes;
