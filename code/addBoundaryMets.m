@@ -104,9 +104,15 @@ end
 % add new boundary mets to the model
 metsToAdd.mets = add_bound_met_IDs;
 metsToAdd.metNames = add_bound_mets;
-metsToAdd.compartments = 'b';
+metsToAdd.compartments = repmat({'b'}, size(add_bound_mets));
 metsToAdd.unconstrained = ones(size(add_bound_mets));
-new_model = addMets(model,metsToAdd);
+if ~isempty(add_bound_met_IDs)
+    new_model = addMets(model,metsToAdd);
+else
+    fprintf('No Boundary metabolites were added to the model!\n');
+    new_model = model;
+    return
+end
 
 % now add the boundary mets to the model S-matrix
 S = new_model.S;
