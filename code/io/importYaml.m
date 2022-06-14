@@ -164,13 +164,13 @@ while ~feof(fid)
                 model = readFieldValue(model, 'rxnNames', tline_value);
 
             case 'lower_bound'
-                model.lb = [model.lb; tline_value];
-                leftEqns  = [leftEqns; leftEquation];
-                rightEqns = [rightEqns; rightEquation];
+                model.lb(end+1,1)  = {tline_value};
+                leftEqns(end+1,1)  = {leftEquation};
+                rightEqns(end+1,1) = {rightEquation};
                 readEquation = false;
 
             case 'upper_bound'
-                model.ub = [model.ub; tline_value];
+                model.ub(end+1,1)  = {tline_value};
 
             case 'gene_reaction_rule'
                 model = readFieldValue(model, 'grRules', tline_value);
@@ -182,7 +182,7 @@ while ~feof(fid)
                 model = readFieldValue(model, 'rxnFrom', tline_value);
 
             case 'objective_coefficient'
-                objRxns = [objRxns; rxnId];
+                objRxns(end+1,1) = {rxnId};
 
             case 'eccodes'
                 model = readFieldValue(model, 'eccodes', tline_value);
@@ -196,17 +196,17 @@ while ~feof(fid)
 
             case 'confidence_score'
                 model = readFieldValue(model, 'rxnConfidenceScores', tline_value);
-                model.subSystems = [model.subSystems; {subSystems}];
+                model.subSystems(end+1,1) = {subSystems};
                 readSubsystems = false;
 
             case 'metabolites'
                 readEquation = true;
-                leftEquation  = {''};
-                rightEquation = {''};
+                leftEquation  = '';
+                rightEquation = '';
 
             otherwise
                 if readSubsystems
-                    subSystems = [subSystems; regexprep(tline_key, '"', '')];
+                    subSystems(end+1,1) = {regexprep(tline_key, '"', '')};
                     
                 % resolve the equation
                 elseif readEquation
@@ -238,8 +238,8 @@ while ~feof(fid)
     % import compartments:
     if section == 5
         [tline_key, tline_value] = tokenizeYamlLine(tline);
-        model.comps = [model.comps; tline_key];
-        model.compNames = [model.compNames; tline_value];
+        model.comps(end+1,1) = {tline_key};
+        model.compNames(end+1,1) = {tline_value};
     end
 
 end
