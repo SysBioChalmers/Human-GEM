@@ -286,7 +286,7 @@ end
 end
 
 function model = readFieldValue(model, fieldName, value)
-    model.(fieldName) = [model.(fieldName); {value}];
+    model.(fieldName)(end+1,1) = {value};
 end
 
 function [line_key, line_value]= tokenizeYamlLine(line)
