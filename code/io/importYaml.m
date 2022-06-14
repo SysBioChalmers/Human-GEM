@@ -214,15 +214,15 @@ while ~feof(fid)
                     coeffi = str2num(metCoeffi{2});
                     if coeffi < 0
                         if strcmp(leftEquation, '')
-                            leftEquation = strcat(num2str(abs(coeffi), 12),32,metCoeffi{1});
+                            leftEquation = [num2str(abs(coeffi), 12),' ',metCoeffi{1}];
                         else
-                            leftEquation = strcat(leftEquation,' +',32,num2str(abs(coeffi), 12),32,metCoeffi{1});
+                            leftEquation = [leftEquation,' + ',num2str(abs(coeffi), 12),' ',metCoeffi{1}];
                         end
                     else
                         if strcmp(rightEquation, '')
-                            rightEquation = strcat(32,num2str(coeffi, 12),32,metCoeffi{1});
+                            rightEquation = [' ',num2str(coeffi, 12),' ',metCoeffi{1}];
                         else
-                            rightEquation = strcat(rightEquation,' +',32,num2str(coeffi, 12),32,metCoeffi{1});
+                            rightEquation = [rightEquation,' + ',num2str(coeffi, 12),' ',metCoeffi{1}];
                         end
                     end
                 end
