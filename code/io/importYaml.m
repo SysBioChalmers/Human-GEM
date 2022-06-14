@@ -211,18 +211,18 @@ while ~feof(fid)
                 % resolve the equation
                 elseif readEquation
                     metCoeffi = regexp(regexprep(tline, ' +- ', ''), ': ', 'split');
-                    coeffi = str2num(metCoeffi{2});
-                    if coeffi < 0
+                    coeffi = metCoeffi{2};
+                    if str2double(coeffi) < 0
                         if strcmp(leftEquation, '')
-                            leftEquation = [num2str(abs(coeffi), 12),' ',metCoeffi{1}];
+                            leftEquation = [coeffi(2:end),' ',metCoeffi{1}]; %Remove minus sign from coefficient
                         else
-                            leftEquation = [leftEquation,' + ',num2str(abs(coeffi), 12),' ',metCoeffi{1}];
+                            leftEquation = [leftEquation,' + ',coeffi(2:end),' ',metCoeffi{1}];
                         end
                     else
                         if strcmp(rightEquation, '')
-                            rightEquation = [' ',num2str(coeffi, 12),' ',metCoeffi{1}];
+                            rightEquation = [' ',coeffi,' ',metCoeffi{1}];
                         else
-                            rightEquation = [rightEquation,' + ',num2str(coeffi, 12),' ',metCoeffi{1}];
+                            rightEquation = [rightEquation,' + ',coeffi,' ',metCoeffi{1}];
                         end
                     end
                 end
