@@ -117,6 +117,10 @@ for i=1:numel(line_key)
             if ~silentMode
                 fprintf('\t%d\n', section);
             end
+            if readSubsystems
+                model.subSystems(end+1,1) = {subSystems}; %last entry from section 3
+                readSubsystems = false;
+            end
             continue
         case '- compartments: !!omap'
             section = 5;
@@ -217,14 +221,16 @@ for i=1:numel(line_key)
 
             case 'confidence_score'
                 model = readFieldValue(model, 'rxnConfidenceScores', tline_value);
-                model.subSystems(end+1,1) = {subSystems};
-                readSubsystems = false;
 
             case 'metabolites'
                 readEquation = true;
                 leftEquation  = '';
                 rightEquation = '';
-
+                if readSubsystems
+                    model.subSystems(end+1,1) = {subSystems};
+                    readSubsystems = false;
+                end
+                
             otherwise
                 if readSubsystems
                     subSystems(end+1,1) = {regexprep(tline_value, '^ *- (.+)$','$1')};
@@ -278,7 +284,7 @@ model.rxnConfidenceScores = str2double(model.rxnConfidenceScores);
 model.b = zeros(length(model.mets),1);
 model.c = double(ismember(model.rxns, objRxns));
 
-[genes, rxnGeneMat] = getGenesFromGrRules(model.grRules);
+[genes, rxnGeneMat] = getGenesFromGrRules(model.grRules, model.genes);
 if isequal(sort(genes), sort(model.genes))
     model.rxnGeneMat = rxnGeneMat;
     model.genes = genes;
