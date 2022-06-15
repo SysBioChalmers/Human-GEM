@@ -35,7 +35,7 @@ if verLessThan('matlab','9.9') %readlines introduced 2020b
     line_raw(i:end)=[];
     line_raw=string(line_raw);
 else
-    line_raw=readlines(yamlFile');
+    line_raw=readlines(yamlFilename');
 end
 
 line_key=regexprep(line_raw,'^ *-? ([^:]+)(:).*','$1');
