@@ -25,6 +25,25 @@ if ~(exist(yamlFilename,'file')==2)
     error('Yaml file %s cannot be found', string(yamlFilename));
 end
 
+if verLessThan('matlab','9.9') %readlines introduced 2020b
+    fid=fopen(yamlFilename);
+    line_raw=cell(1000000,1);
+    while ~feof(fid)
+        line_raw{i}=fgetl(fid);
+        i=i+1;
+    end
+    line_raw(i:end)=[];
+    line_raw=string(line_raw);
+else
+    line_raw=readlines(yamlFilename');
+end
+
+line_key=regexprep(line_raw,'^ *-? ([^:]+)(:).*','$1');
+line_key=regexprep(line_key,'(.*!!omap)|(---)','');
+
+line_value = regexprep(line_raw, '[^":]+: "?(.+)"?$','$1');
+line_value = regexprep(line_value, '"','');
+
 % Define the required fields of humanGEM
 % There are a total of 37 fields in the model so far, the non-generic ones
 % are excluded here
@@ -65,51 +84,59 @@ leftEqns={};
 rightEqns={};
 objRxns={};
 
-
-% Load Yaml format model
-
-fid = fopen(yamlFilename);
-if ~silentMode
-    fprintf('Start importing...\n');
-end
-
 section = 0;
-while ~feof(fid)
-    tline = fgetl(fid);
-    
+for i=1:numel(line_key)
+    tline_raw = line_raw{i};
+    tline_key = line_key{i};
+    tline_value = line_value{i};
     % import different sections
-    change_to_section = 0;
-    switch tline
+    switch tline_raw
         case '- metaData:'
-            change_to_section = 1;
+            section = 1;
+            if ~silentMode
+                fprintf('\t%d\n', section);
+            end
+            continue % Go to next line
         case '- metabolites:'
-            change_to_section = 2;
+            section = 2;
+            if ~silentMode
+                fprintf('\t%d\n', section);
+            end
+            continue
         case '- reactions:'
-            change_to_section = 3;
+            section = 3;
             readSubsystems = false;
             readEquation = false;
             rxnId = '';
+            if ~silentMode
+                fprintf('\t%d\n', section);
+            end
+            continue
         case '- genes:'
-            change_to_section = 4;
+            section = 4;
+            if ~silentMode
+                fprintf('\t%d\n', section);
+            end
+            if readSubsystems
+                model.subSystems(end+1,1) = {subSystems}; %last entry from section 3
+                readSubsystems = false;
+            end
+            continue
         case '- compartments: !!omap'
-            change_to_section = 5;
-    end
-    if logical(change_to_section)
-        section = change_to_section;
-        tline = fgetl(fid);
-        if ~silentMode
-            fprintf('\t%d\n', section);
-        end
+            section = 5;
+            if ~silentMode
+                fprintf('\t%d\n', section);
+            end
+            continue
     end
 
-    % skip over lines containing only omap
-    if any(regexp(tline, "- !!omap"))
-        tline = fgetl(fid);
+    % skip over empty keys
+    if isempty(tline_key)
+        continue;
     end
     
     % import metaData
     if section == 1
-        [tline_key, tline_value] = tokenizeYamlLine(tline);
         switch tline_key
             case 'short_name'
                 model.id = tline_value;
@@ -134,7 +161,6 @@ while ~feof(fid)
 
     % import metabolites:
     if section == 2
-        [tline_key, tline_value] = tokenizeYamlLine(tline);
         switch tline_key
             case 'id'
                 model = readFieldValue(model, 'mets', tline_value);
@@ -155,7 +181,6 @@ while ~feof(fid)
 
     % import reactions:
     if section == 3
-        [tline_key, tline_value] = tokenizeYamlLine(tline);
         switch tline_key
             case 'id'
                 model = readFieldValue(model, 'rxns', tline_value);
@@ -164,13 +189,13 @@ while ~feof(fid)
                 model = readFieldValue(model, 'rxnNames', tline_value);
 
             case 'lower_bound'
-                model.lb = [model.lb; tline_value];
-                leftEqns  = [leftEqns; leftEquation];
-                rightEqns = [rightEqns; rightEquation];
+                model.lb(end+1,1)  = {tline_value};
+                leftEqns(end+1,1)  = {leftEquation};
+                rightEqns(end+1,1) = {rightEquation};
                 readEquation = false;
 
             case 'upper_bound'
-                model.ub = [model.ub; tline_value];
+                model.ub(end+1,1)  = {tline_value};
 
             case 'gene_reaction_rule'
                 model = readFieldValue(model, 'grRules', tline_value);
@@ -182,7 +207,7 @@ while ~feof(fid)
                 model = readFieldValue(model, 'rxnFrom', tline_value);
 
             case 'objective_coefficient'
-                objRxns = [objRxns; rxnId];
+                objRxns(end+1,1) = {rxnId};
 
             case 'eccodes'
                 model = readFieldValue(model, 'eccodes', tline_value);
@@ -196,33 +221,35 @@ while ~feof(fid)
 
             case 'confidence_score'
                 model = readFieldValue(model, 'rxnConfidenceScores', tline_value);
-                model.subSystems = [model.subSystems; {subSystems}];
-                readSubsystems = false;
 
             case 'metabolites'
                 readEquation = true;
-                leftEquation  = {''};
-                rightEquation = {''};
-
+                leftEquation  = '';
+                rightEquation = '';
+                if readSubsystems
+                    model.subSystems(end+1,1) = {subSystems};
+                    readSubsystems = false;
+                end
+                
             otherwise
                 if readSubsystems
-                    subSystems = [subSystems; regexprep(tline_key, '"', '')];
-                    
+                    subSystems(end+1,1) = {regexprep(tline_value, '^ *- (.+)$','$1')};
+
                 % resolve the equation
                 elseif readEquation
-                    metCoeffi = regexp(regexprep(tline, ' +- ', ''), ': ', 'split');
-                    coeffi = str2num(metCoeffi{2});
-                    if coeffi < 0
+                    metCoeffi = regexp(regexprep(tline_raw, ' +- ', ''), ': ', 'split');
+                    coeffi = metCoeffi{2};
+                    if str2double(coeffi) < 0
                         if strcmp(leftEquation, '')
-                            leftEquation = strcat(num2str(abs(coeffi), 12),32,metCoeffi{1});
+                            leftEquation = [coeffi(2:end),' ',metCoeffi{1}]; %Remove minus sign from coefficient
                         else
-                            leftEquation = strcat(leftEquation,' +',32,num2str(abs(coeffi), 12),32,metCoeffi{1});
+                            leftEquation = [leftEquation,' + ',coeffi(2:end),' ',metCoeffi{1}];
                         end
                     else
                         if strcmp(rightEquation, '')
-                            rightEquation = strcat(32,num2str(coeffi, 12),32,metCoeffi{1});
+                            rightEquation = [' ',coeffi,' ',metCoeffi{1}];
                         else
-                            rightEquation = strcat(rightEquation,' +',32,num2str(coeffi, 12),32,metCoeffi{1});
+                            rightEquation = [rightEquation,' + ',coeffi,' ',metCoeffi{1}];
                         end
                     end
                 end
@@ -231,20 +258,16 @@ while ~feof(fid)
 
     % import genes:
     if section == 4
-        [tline_key, tline_value] = tokenizeYamlLine(tline);
         model = readFieldValue(model, 'genes', tline_value);
     end
 
     % import compartments:
     if section == 5
-        [tline_key, tline_value] = tokenizeYamlLine(tline);
-        model.comps = [model.comps; tline_key];
-        model.compNames = [model.compNames; tline_value];
+        model.comps(end+1,1) = {tline_key};
+        model.compNames(end+1,1) = {tline_value};
     end
 
 end
-fclose(fid);
-
 
 % follow-up data processing
 if ~silentMode
@@ -261,7 +284,7 @@ model.rxnConfidenceScores = str2double(model.rxnConfidenceScores);
 model.b = zeros(length(model.mets),1);
 model.c = double(ismember(model.rxns, objRxns));
 
-[genes, rxnGeneMat] = getGenesFromGrRules(model.grRules);
+[genes, rxnGeneMat] = getGenesFromGrRules(model.grRules, model.genes);
 if isequal(sort(genes), sort(model.genes))
     model.rxnGeneMat = rxnGeneMat;
     model.genes = genes;
@@ -286,17 +309,5 @@ end
 end
 
 function model = readFieldValue(model, fieldName, value)
-    model.(fieldName) = [model.(fieldName); {value}];
+    model.(fieldName)(end+1,1) = {value};
 end
-
-function [line_key, line_value]= tokenizeYamlLine(line)
-    line_key = regexp(line, '^ *-? ([^:]+)', 'tokens');
-    line_key = char(line_key{1});
-    line_value = regexp(line, '^ [^:]+: "?(.+)"?$', 'tokens');
-    if isempty(line_value)
-        line_value = '';
-    else
-        line_value = regexprep(line_value{1}, '"', '');
-        line_value = char(line_value{1});
-    end
-end 

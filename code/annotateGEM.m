@@ -1,9 +1,12 @@
-function annModel = annotateGEM(model,annType,addMiriams,addFields,overwrite)
+function annModel = annotateGEM(model,annPath,annType,addMiriams,addFields,overwrite)
 % Add reaction, metabolite, and/or gene annotation to a model.
 %
 % Input:
 %
 %   model        Model structure.
+%
+%   annPath      Path to the annotation files, which suppose to be named as
+%                'reactions.tsv', 'metabolites.tsv', and 'genes.tsv'。
 %
 %   annType      String or cell array of strings specifying the type(s) of 
 %                annotation data to add: 'rxn', 'met', and/or 'gene'. To
@@ -35,27 +38,32 @@ function annModel = annotateGEM(model,annType,addMiriams,addFields,overwrite)
 %
 % Usage:
 %
-%   annModel = annotateGEM(model,annType,addMiriams,addFields,overwrite);
+%   annModel = annotateGEM(model,annPath,annType,addMiriams,addFields,overwrite);
 %
 
 
 %% Inputs and setup
 
-if nargin < 2 || isempty(annType) || strcmpi(annType,'all')
+if nargin < 2
+    [ST, I] = dbstack('-completenames');
+    annPath = strcat(fileparts(ST(I).file),'/../model');
+end
+
+if nargin < 3 || isempty(annType) || isequal(annType,'all')
     annType = {'rxn','met','gene'};
 elseif ~all(ismember(annType,{'rxn','met','gene','reaction','metabolite'}))
     error('annType input(s) not recognized. Valid options are "rxn", "met", and/or "gene", or "all"');
 end
 
-if nargin < 3 || isempty(addMiriams)
+if nargin < 4 || isempty(addMiriams)
     addMiriams = true;
 end
 
-if nargin < 4 || isempty(addFields)
+if nargin < 5 || isempty(addFields)
     addFields = true;
 end
 
-if nargin < 5
+if nargin < 6
     overwrite = true;
 end
 
@@ -96,9 +104,7 @@ id2miriam = {%reactions
 
 % load reaction annotation data
 if any(ismember({'rxn','reaction'},lower(annType)))
-    [ST, I] = dbstack('-completenames');
-    path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../model','reactions.tsv');
+    tmpfile = fullfile(annPath,'reactions.tsv');
     rxnAssoc = importTsvFile(tmpfile);
     
     % strip "RHEA:" prefix from Rhea IDs since it should not be included in
@@ -119,9 +125,7 @@ end
 
 % load metabolite annotation data
 if any(ismember({'met','metabolite'},lower(annType)))
-    [ST, I] = dbstack('-completenames');
-    path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../model','metabolites.tsv');
+    tmpfile = fullfile(annPath,'metabolites.tsv');
     metAssoc = importTsvFile(tmpfile);
     
     % ChEBI IDs should be of the form "CHEBI:#####"
@@ -140,9 +144,7 @@ end
 
 % load and organize gene annotation data
 if ismember('gene',lower(annType))
-    [ST, I] = dbstack('-completenames');
-    path = fileparts(ST(I).file);
-    tmpfile = fullfile(path,'../model','genes.tsv');
+    tmpfile = fullfile(annPath,'genes.tsv');
     geneAssoc = importTsvFile(tmpfile);
     
     % add geneEnsemblID field if missing
@@ -275,9 +277,18 @@ if ( addFields )
     
     % get fields and their types
     f = fieldnames(allAssoc);
-    fieldType = repmat({'rxn'}, numel(f), 1);
-    fieldType(ismember(f, fieldnames(metAssoc))) = {'met'};
-    fieldType(ismember(f, fieldnames(geneAssoc))) = {'gene'};
+    
+    if ~isempty(rxnAssoc)
+        fieldType = repmat({'rxn'}, numel(f), 1);
+    end
+    
+    if ~isempty(metAssoc)
+        fieldType(ismember(f, fieldnames(metAssoc))) = {'met'};
+    end
+    
+    if ~isempty(geneAssoc)
+        fieldType(ismember(f, fieldnames(geneAssoc))) = {'gene'};
+    end
     
     % add individual ID fields to the model
     for i = 1:numel(f)

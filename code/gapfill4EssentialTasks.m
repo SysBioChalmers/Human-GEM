@@ -57,7 +57,7 @@ end
 % load metabolic task for growth under Ham's media
 [ST, I] = dbstack('-completenames');
 path = fileparts(ST(I).file);
-essentialTasks = fullfile(path,'../data/metabolicTasks','metabolicTasks_Essential.xlsx');
+essentialTasks = fullfile(path,'../data/metabolicTasks','metabolicTasks_Essential.txt');
 taskStruct = parseTaskList(essentialTasks);
 %taskStruct = taskStruct(end);
 
@@ -120,10 +120,10 @@ function outputModel= changeBiomass2Components(inputModel)
 
 outputModel = inputModel;
 
-% block all biomass equations
-%ind = find(startsWith(outputModel.rxns,'biomass'));
-%outputModel.ub(ind) = 0;
-%outputModel.lb(ind) = 0;
+% block human biomass equations
+ind = find(strcmp(outputModel.rxns,'MAR13082'));
+outputModel.ub(ind) = 0;
+outputModel.lb(ind) = 0;
 outputModel.c(:)  = 0;
 
 % reset object function to "biomass_components"

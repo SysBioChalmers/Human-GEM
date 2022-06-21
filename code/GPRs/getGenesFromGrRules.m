@@ -1,9 +1,9 @@
-function [genes,rxnGeneMat] = getGenesFromGrRules(grRules)
+function [genes,rxnGeneMat] = getGenesFromGrRules(grRules, originalGenes)
 %getGenesFromGrRules  Extract gene list and rxnGeneMat from grRules array.
 %
 % USAGE:
 %
-%   [genes,rxnGeneMat] = getGenesFromGrRules(grRules);
+%   [genes,rxnGeneMat] = getGenesFromGrRules(grRules, originalGenes);
 %
 % INPUTS:
 %
@@ -12,6 +12,7 @@ function [genes,rxnGeneMat] = getGenesFromGrRules(grRules)
 %               NOTE: Boolean operators can be text ("and", "or") or
 %                     symbolic ("&", "|"), but there must be a space
 %                     between operators and gene names/IDs.
+%   originalGenes     The original gene list from the model as reference
 %
 % OUTPUTS:
 %
@@ -23,6 +24,11 @@ function [genes,rxnGeneMat] = getGenesFromGrRules(grRules)
 %               genes.
 %
 
+
+% handle input arguments
+if nargin < 2
+    originalGenes = [];
+end
 
 % check if the grRules use written or symbolic boolean operators
 if any(contains(grRules,{'&','|'}))
@@ -49,6 +55,14 @@ rxnGenes = cellfun(@(r) unique(regexp(r,'[^&|\(\) ]+','match')),grRules,'Uniform
 % construct new gene list
 nonEmpty = ~cellfun(@isempty,rxnGenes);
 genes = unique([rxnGenes{nonEmpty}]');
+
+if ~isempty(originalGenes)
+    if ~isequal(sort(originalGenes), sort(genes))
+        error('The grRules and original gene list are inconsistent!');
+    else
+        genes = originalGenes;
+    end
+end
 
 % construct new rxnGeneMat (if requested)
 if nargout > 1
