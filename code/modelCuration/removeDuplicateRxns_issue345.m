@@ -92,6 +92,19 @@ deprecRxnsTable = struct2table(deprecRxns);
 rxnAssocTable = struct2table(rxnAssoc);
 exportTsvFile([deprecRxnsTable; rxnAssocTable(rxn_indx(:,2), :)], depRxnFile);
 
+% merge additional model fields from duplicate rxns with the kept rxns
+mergeFields = {'eccodes'; 'rxnReferences'};
+for i = 1:size(rxns, 1)
+    for f = 1:numel(mergeFields)
+        entry1 = strsplit(model.(mergeFields{f}){rxn_indx(i,1)}, ';');
+        entry2 = strsplit(model.(mergeFields{f}){rxn_indx(i,2)}, ';');
+        merged_entry = setdiff(union(entry1, entry2), {''});
+        if ~isempty(merged_entry)
+            model.(mergeFields{f}){rxn_indx(i,1)} = strjoin(merged_entry, ';');
+        end
+    end
+end
+
 % delete reactions from model and annotation file
 model = removeReactions(model, rxns(:,2));
 exportYaml(model, '../../model/Human-GEM.yml');
