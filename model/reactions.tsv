@@ -6718,7 +6718,7 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR08071"	""	"SLDt"	""	""	""	"SLDt"	"MNXR104441"	"HMR_8071"	"RCR40927"	""	0	""	""	"HMR_8071"
 "MAR04312"	""	""	"RT0321"	""	""	"SBT_Dtde;SBTle"	""	"HMR_4312"	"RCR41640"	""	0	""	""	"HMR_4312"
 "MAR08428"	""	"CRMPte"	""	""	""	"CREATtmdiffir"	"MNXR96892"	"HMR_8428"	"RCR20534"	""	0	""	""	"HMR_8428"
-"MAR08430"	""	"PCREATtmdiffir"	""	""	""	"PCREATtmdiffir"	"MNXR102417"	"HMR_8430"	"RCR20535"	""	0	""	""	"HMR_8430"
+"MAR08430"	""	"PCREATtmdiffir"	""	""	""	"PCREATtmdiffir"	"MNXR102417"	"HMR_8430"	"RCR20535"	""	1	""	""	"HMR_8430"
 "MAR08022"	""	"2AMADPTm"	""	""	""	"2AMADPTm"	"MNXR94780"	"HMR_8022"	"RCR20241"	""	0	""	""	"HMR_8022"
 "MAR08070"	""	""	""	""	""	"SLDtm"	""	"HMR_8070"	"RCR20536"	""	0	""	""	"HMR_8070"
 "MAR09015"	""	""	""	""	""	"AMETtd"	""	"HMR_9015"	"RCR20135"	""	0	""	""	"HMR_9015"
