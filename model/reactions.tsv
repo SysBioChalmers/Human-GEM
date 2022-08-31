@@ -9868,7 +9868,7 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR09924"	""	"EX_stcrn_e"	""	""	""	"EX_stcrn[e]"	""	""	""	""	0	""	""	"EX_stcrn[e]"
 "MAR09925"	""	"EX_pmtcrn_e"	""	""	""	"EX_pmtcrn[e]"	""	""	""	""	0	""	""	"EX_pmtcrn[e]"
 "MAR09926"	""	"EX_hdcecrn_e"	""	""	""	"EX_hdcecrn[e]"	""	""	""	""	0	""	""	"EX_hdcecrn[e]"
-"MAR09927"	""	"PCREATte"	""	""	""	"PCREATte"	""	""	""	""	1	""	""	"PCREATte"
+"MAR09927"	""	"PCREATte"	""	""	""	"PCREATte"	""	""	""	""	0	""	""	"PCREATte"
 "MAR09928"	""	"HC00342te"	""	""	""	"HC00342te"	""	""	""	""	0	""	""	"HC00342te"
 "MAR09929"	""	""	""	""	""	"C08261te"	""	""	""	""	0	""	""	"C08261te"
 "MAR09930"	""	"BGLYte"	""	""	""	"BGLYte"	""	""	""	""	0	""	""	"BGLYte"
