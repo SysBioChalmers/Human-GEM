@@ -254,8 +254,19 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "stairs",
+      "name": "stairs",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6586371?v=4",
+      "profile": "https://github.com/stairs",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "repoType": "github",
-  "commitConvention": "none"
+  "commitConvention": "none",
+  "projectName": "Human-GEM",
+  "projectOwner": "SysBioChalmers"
 }
