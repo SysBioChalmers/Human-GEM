@@ -1,22 +1,37 @@
-function prepDataHumanGEM = prepHumanModelForftINIT(model, convertGenes)
+function prepDataHumanGEM = prepHumanModelForftINIT(model, convertGenes, essentialTasksFilePath, rxnsFilePath)
 % prepHumanModelForftINIT
 %   Generates a "standard" prepData structure from Human-GEM to be used in ftINIT.
 %   This function typically takes a couple of hours to run, so we recommend to only 
 %   run this once and save the results to a .mat file.
 %
+%   model                   Either Human-GEM or a GEM derived from Human-GEM,
+%                           such as Mouse-GEM.
 %   convertGenes            True if the genes should be converted to symbols 
 %                           ('CD8A' etc., and not ENSEMBL)
+%   essentialTasksFilePath  [optional] Path to the metabolicTasks_Essential.txt
+%                           file. Default will use the file from Human-GEM, so
+%                           if using for example Mouse-GEM, supply another path.
+%   rxnsFilePath            [optional] Path to the rxns.tsv
+%                           file. Default will use the file from Human-GEM, so
+%                           if using for example Mouse-GEM, supply another path.
 %
-%   Usage: prepDataHumanGEM = prepHumanModelForftINIT(convertGenes)
+%   Usage: prepDataHumanGEM = prepHumanModelForftINIT(model, convertGenes, essentialTasksFilePath, rxnsFilePath)
 %
 
-
+if nargin < 4
+    [ST, I] = dbstack('-completenames');
+    path = fileparts(ST(I).file);
+    rxnsFilePath = fullfile(path,'..','..','model','reactions.tsv');
+    if nargin < 3
+        essentialTasksFilePath = fullfile(path,'..','..','data','metabolicTasks','metabolicTasks_Essential.txt');
+    end
+end
 
 
 %load tasks
-taskStruct = parseTaskList(which('metabolicTasks_Essential.txt'));
+taskStruct = parseTaskList(essentialTasksFilePath);
 %Spontaneous reactions:
-rxns_tsv = importTsvFile(which('reactions.tsv'));
+rxns_tsv = importTsvFile(rxnsFilePath);
 spont = rxns_tsv.spontaneous;
 spontRxnNames = rxns_tsv.rxns(spont == 1);%very few
 
