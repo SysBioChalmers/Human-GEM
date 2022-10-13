@@ -45,6 +45,6 @@ classdef HumanGEMInstaller
     end
     
     properties (Constant)
-      FILE_FILTER = '.*\.git.*'; %should we add ".deprecated" here?
+      FILE_FILTER = '(.*\.git.*)|(.*\.deprecated.*)';
    end
 end
