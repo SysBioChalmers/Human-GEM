@@ -33,14 +33,9 @@ classdef HumanGEMInstaller
 			if contains(path_, pathSep)
 				error('The path in which Human-GEM resides may not contain path separator chars such as semicolon for this installation to work!');
 			end
-            paths = genpath(path_);
-            splitPaths = strsplit(paths, pathSep);
-            %remove the last, it is empty
-            splitPaths = splitPaths(1,1:end-1);
-            matches = regexp(splitPaths, filter_, 'match');
-            okPaths = cellfun(@isempty, matches);
-            pathsLeft = splitPaths(1,okPaths);
-            newPaths = strcat(char(join(pathsLeft, pathSep)), pathSep);
+            subpaths = arrayfun(@(subf) sprintf('%s', [path_ filesep subf{:}]), HumanGEMInstaller.SUBFOLDERS, 'UniformOutput', false);
+            subpaths = [strjoin(subpaths, pathsep) pathsep];
+            newPaths = subpaths;
         end
     end
     
