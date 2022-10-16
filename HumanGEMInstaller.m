@@ -8,7 +8,7 @@ classdef HumanGEMInstaller
     methods (Static)
         function install
             sourceDir = fileparts(which(mfilename));
-            paths = HumanGEMInstaller.GetFilteredSubPaths(sourceDir, HumanGEMInstaller.FILE_FILTER);
+            paths = HumanGEMInstaller.GetFilteredSubPaths(sourceDir);
             addpath(paths);
             savepath;
         end
