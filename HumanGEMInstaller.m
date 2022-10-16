@@ -14,7 +14,7 @@ classdef HumanGEMInstaller
         end
         function uninstall
             sourceDir = fileparts(which(mfilename));
-            paths = HumanGEMInstaller.GetFilteredSubPaths(sourceDir, HumanGEMInstaller.FILE_FILTER);
+            paths = HumanGEMInstaller.GetFilteredSubPaths(sourceDir);
             rmpath(paths);
             savepath;
         end
