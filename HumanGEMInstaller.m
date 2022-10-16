@@ -26,7 +26,7 @@ classdef HumanGEMInstaller
 			end
 		end
 
-        function newPaths = GetFilteredSubPaths(path_, filter_)
+        function newPaths = GetFilteredSubPaths(path_)
             pathSep = pathsep();
 			%Check that there are no separators in the path - that will cause 
             %problems since the separator is used to separate paths in a string
