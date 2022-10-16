@@ -40,6 +40,6 @@ classdef HumanGEMInstaller
     end
     
     properties (Constant)
-      FILE_FILTER = '(.*\.git.*)|(.*\.deprecated.*)';
+      SUBFOLDERS = {'code', 'data', 'model'};
    end
 end
