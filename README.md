@@ -68,11 +68,14 @@ Detailed instructions on the installation and use of the Human-GEM model and rep
 ### Installation Instructions
 * Clone the [main branch](https://github.com/SysBioChalmers/Human-GEM/tree/main) of this repository, or [download the latest release](https://github.com/SysBioChalmers/Human-GEM/releases/latest).
 * Add the directory to your MATLAB path either by using the lines below or manually (instructions [here](https://se.mathworks.com/help/matlab/ref/addpath.html?requestedDomain=www.mathworks.com)).
-cd /my/path/Human-GEM/code % replace "/my/path/" with the actual path to the Human-GEM folder
-HumanGEMInstaller.install %This will add the relevant paths to the path variable in MATLAB
-%It is also possible to remove Human-GEM from the MATLAB path using
+```matlab
+% Replace "/my/path/" with the actual path to the Human-GEM folder
+cd /my/path/Human-GEM/code
+% This will add the relevant paths to the path variable in MATLAB
+HumanGEMInstaller.install
+% It is also possible to remove Human-GEM from the MATLAB path using
 HumanGEMInstaller.uninstall
-
+```
 
 ## Model Files
 
