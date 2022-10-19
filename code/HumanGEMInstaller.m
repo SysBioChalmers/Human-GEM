@@ -39,6 +39,6 @@ classdef HumanGEMInstaller
     end
     
     properties (Constant)
-      SUBFOLDERS = {'code', 'data', 'model'};
+      SUBFOLDERS = {'../code', '../data', '../model'};
    end
 end
