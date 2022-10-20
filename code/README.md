@@ -1,6 +1,10 @@
 # Human-GEM code
 
-This directory contains functions and scripts that facilitate work with the Human-GEM model and other content in the repository. This directory is organized as follows:
+A handy installer script is provided via _HumanGEMInstaller.m_, which can add and remove, via _HumanGEMInstaller.install_ and 
+_HumanGEMInstaller.uninstall_, all necessary subfolders of Human-GEM to the Matlab path.
+
+This directory contains functions and scripts that facilitate work with the Human-GEM model and other content in the repository. 
+This directory is organized as follows:
 
 ```
 code
