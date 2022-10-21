@@ -18,14 +18,6 @@ function prepDataHumanGEM = prepHumanModelForftINIT(model, convertGenes, essenti
 %   Usage: prepDataHumanGEM = prepHumanModelForftINIT(model, convertGenes, essentialTasksFilePath, rxnsFilePath)
 %
 
-if nargin < 4
-    [ST, I] = dbstack('-completenames');
-    path = fileparts(ST(I).file);
-    rxnsFilePath = fullfile(path,'..','..','model','reactions.tsv');
-    if nargin < 3
-        essentialTasksFilePath = fullfile(path,'..','..','data','metabolicTasks','metabolicTasks_Essential.txt');
-    end
-end
 
 
 %load tasks
