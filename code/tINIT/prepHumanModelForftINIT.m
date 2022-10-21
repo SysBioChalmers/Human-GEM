@@ -11,7 +11,7 @@ function prepDataHumanGEM = prepHumanModelForftINIT(model, convertGenes, essenti
 %   essentialTasksFilePath  [optional] Path to the metabolicTasks_Essential.txt
 %                           file. Default will use the file from Human-GEM, so
 %                           if using for example Mouse-GEM, supply another path.
-%   rxnsFilePath            [optional] Path to the rxns.tsv
+%   rxnsFilePath            Path to the reactions.tsv
 %                           file. Default will use the file from Human-GEM, so
 %                           if using for example Mouse-GEM, supply another path.
 %
