@@ -9,11 +9,13 @@ function prepDataHumanGEM = prepHumanModelForftINIT(model, convertGenes, essenti
 %   convertGenes            True if the genes should be converted to symbols 
 %                           ('CD8A' etc., and not ENSEMBL)
 %   essentialTasksFilePath  Path to the metabolicTasks_Essential.txt
-%                           file. Default will use the file from Human-GEM, so
-%                           if using for example Mouse-GEM, supply another path.
+%                           file. This file can normally be found under
+%                           HumanGEM/data/metabolicTasks/metabolicTasks_Essential.txt
+%                           If using for example Mouse-GEM, supply another path.
 %   rxnsFilePath            Path to the reactions.tsv
-%                           file. Default will use the file from Human-GEM, so
-%                           if using for example Mouse-GEM, supply another path.
+%                           file. This file can normally be found under
+%                           HumanGEM/model/reactions.tsv
+%                           If using for example Mouse-GEM, supply another path.
 %
 %   Usage: prepDataHumanGEM = prepHumanModelForftINIT(model, convertGenes, essentialTasksFilePath, rxnsFilePath)
 %
