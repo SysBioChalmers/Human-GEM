@@ -1,0 +1,2 @@
+rxns	equations	ub	lb	eccodes	subSystems	grRules	rxnReferences	rxnConfidenceScores	rxnKEGGID	rxnMetaCycID	rxnMetaNetXID	rxnRheaID	rxnRheaMasterID
+"MAR13087"	"cis-aconitate[m] + H+[m] => CO2[m] + itaconate[m]"	1000	0	"4.1.1.6"	"C5-branched dibasic acid metabolism"	"ENSG00000102794"	"PMID:23610393;PMID:31548418"	4	"R02243"	"ACONITATE-DECARBOXYLASE-RXN"	"MNXR107402"	"RHEA:15254"	"RHEA:15253"
