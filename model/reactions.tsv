@@ -13025,3 +13025,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR13084"	""	""	""	""	""	""	""	""	""	""	0	""	""	""
 "MAR13085"	""	""	""	""	""	""	""	""	""	""	0	""	""	""
 "MAR13086"	""	""	""	""	""	""	""	""	""	""	0	""	""	""
+"MAR13087"	"R02243"	""	""	""	""	""	"MNXR107402"	""	""	""	0	"RHEA:15254"	"RHEA:15253"	""
