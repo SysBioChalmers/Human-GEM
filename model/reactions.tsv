@@ -8803,7 +8803,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR02506"	""	"RE0578X"	""	""	""	"RE0578X"	"MNXR103463"	""	""	""	0	""	""	"RE0578X"
 "MAR02507"	""	"RE0579M"	""	""	""	"RE0579M"	"MNXR103464"	""	""	""	0	""	""	"RE0579M"
 "MAR02508"	""	"RE0579X"	""	""	""	"RE0579X"	"MNXR103464"	""	""	""	0	""	""	"RE0579X"
-"MAR02517"	""	"RE0580L"	""	""	""	"RE0580L"	"MNXR94939"	""	""	""	0	""	""	"RE0580L"
 "MAR02519"	""	"RE0580R"	""	""	""	"RE0580R"	"MNXR94939"	""	""	""	0	""	""	"RE0580R"
 "MAR02521"	""	"RE0581R"	""	""	""	"RE0581R"	"MNXR103465"	""	""	""	0	"RHEA:35302"	"RHEA:35299"	"RE0581R"
 "MAR02523"	""	"RE0582N"	""	""	""	"RE0582N"	"MNXR103466"	""	""	""	0	"RHEA:35350"	"RHEA:35347"	"RE0582N"
