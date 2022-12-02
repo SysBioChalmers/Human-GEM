@@ -125,6 +125,9 @@ for i, gene in enumerate(Human_genes):
         union = set(geneComps_from_swissprot[i].split(';')+ geneComps_from_cell_atlas[gene])
         out_list = list(union)
         source[i] = 'SwissProt&CellAtlas'
+        if 'Mitochondria' not in geneComps_from_swissprot[i].split(';') and 'Inner mitochondria' in geneComps_from_swissprot[i].split(';'):
+            if 'Mitochondria' in geneComps_from_cell_atlas[gene]:
+                out_list.remove('Mitochondria')
         # manual inspection of integration
         print(gene+': '+geneComps_from_swissprot[i]+'\t'+';'.join(geneComps_from_cell_atlas[gene])+'\t'+';'.join(out_list))
     geneComps_combined.append(';'.join(out_list))
