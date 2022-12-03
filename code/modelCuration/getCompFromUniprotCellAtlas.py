@@ -38,7 +38,7 @@ for i, text in enumerate(SwissProt_subCellularlocation):
 
 
 # load Human-GEM gene annotation file
-HumanGenes_tsv = pd.read_table("~/Documents/GitHub/Human-GEM/model/genes.tsv")
+HumanGenes_tsv = pd.read_table("../../model/genes.tsv")
 Human_genes = HumanGenes_tsv['genes'].to_list()
 Human_proteins = HumanGenes_tsv['geneUniProtID'].to_list()
 
@@ -124,7 +124,7 @@ for i, gene in enumerate(Human_genes):
     elif not pd.isna(geneComps_from_swissprot[i]) and geneComps_from_cell_atlas[gene] != []:
         union = set(geneComps_from_swissprot[i].split(';')+ geneComps_from_cell_atlas[gene])
         out_list = list(union)
-        source[i] = 'SwissProt&CellAtlas'
+        source[i] = 'SwissProt;CellAtlas'
         if 'Mitochondria' not in geneComps_from_swissprot[i].split(';') and 'Inner mitochondria' in geneComps_from_swissprot[i].split(';'):
             if 'Mitochondria' in geneComps_from_cell_atlas[gene]:
                 out_list.remove('Mitochondria')
