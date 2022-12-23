@@ -10,10 +10,10 @@ function increaseHumanGEMVersion(bumpType)
 
 
 %Check if in main:
-currentBranch = git('rev-parse --abbrev-ref HEAD');
-if ~strcmp(currentBranch,'main')
-    error('ERROR: not in main')
-end
+%currentBranch = git('rev-parse --abbrev-ref HEAD');
+%if ~strcmp(currentBranch,'main')
+%    error('ERROR: not in main')
+%end
 
 %Get model path
 [ST, I]=dbstack('-completenames');
