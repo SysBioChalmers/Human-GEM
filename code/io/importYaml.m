@@ -303,6 +303,17 @@ equations(irrevInd) = strcat(leftEqns(irrevInd), ' =>', rightEqns(irrevInd));
 [~, metIdx] = ismember(model.mets, newMets);
 model.S = S(metIdx, :);
 
+% remove empty fields
+modelFields = fieldnames(model);
+emptyFields = modelFields(structfun(@isempty, model));
+keepFields = {'description', 'version'};  % some fields can be empty
+removeFields = setdiff(emptyFields, keepFields);
+model = rmfield(model, removeFields);
+if ~silentMode && (numel(removeFields) > 0)
+    fprintf('\nThe following empty fields were removed from the model:\n');
+    fprintf('\t%s\n', removeFields{:});
+end
+
 if ~silentMode
     fprintf(' Done!\n');
 end
