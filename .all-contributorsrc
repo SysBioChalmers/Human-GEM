@@ -263,6 +263,19 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "feiranl",
+      "name": "feiranl",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32157802?v=4",
+      "profile": "https://github.com/feiranl",
+      "contributions": [
+        "bug",
+        "code",
+        "data",
+        "projectManagement",
+        "research"
+      ]
     }
   ],
   "repoType": "github",
