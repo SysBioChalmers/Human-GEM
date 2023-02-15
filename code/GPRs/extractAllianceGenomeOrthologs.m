@@ -92,7 +92,7 @@ for i=1:length(indMoreHit)
     % if the pairs are neither bestForward nor bestReverse, then only
     % reserve the one with highest number of methodCount
     if noBestForwardReverse
-        [~, topMethodCount]=maxk(cell2mat(orthologStructure.methodCount(indMore)), 1);
+        [~, topMethodCount]=maxk(str2double(orthologStructure.methodCount(indMore)), 1);
         output.from = [output.from; orthologStructure.fromSymbol{indMore(topMethodCount)}];
         output.to   = [output.to;   orthologStructure.toSymbol{indMore(topMethodCount)}];
     end
