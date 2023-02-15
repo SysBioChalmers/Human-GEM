@@ -42,8 +42,6 @@ if ~(exist(homologFilename,'file')==2)
     error('Input file %s cannot be found',string(homologFilename));
 end
 
-% load input file
-inputPairs = jsondecode(fileread(homologFilename));
 
 % define output structure
 fieldList = {'fromGeneId',
@@ -56,22 +54,8 @@ fieldList = {'fromGeneId',
              'totalMethodCount'};
 
 
-% initialize output structure
-for i = 1:length(fieldList)
-    orthologStructure.(fieldList{i}) = {};
-end
-
-
-% loop through the content to extract corresponding values
-for i=1:length(inputPairs.results)
-    orthologStructure.fromGeneId = [orthologStructure.fromGeneId; inputPairs.results(i).gene.id];
-    orthologStructure.fromSymbol = [orthologStructure.fromSymbol; inputPairs.results(i).gene.symbol];
-    orthologStructure.toGeneId   = [orthologStructure.toGeneId; inputPairs.results(i).homologGene.id];
-    orthologStructure.toSymbol   = [orthologStructure.toSymbol; inputPairs.results(i).homologGene.symbol];
-    for j = 5:length(fieldList)
-        orthologStructure.(fieldList{j}) = [orthologStructure.(fieldList{j}); inputPairs.results(i).(fieldList{j})];
-    end
-end
+% load orthologStructure directly from tsv file
+orthologStructure = importTsvFile(homologFilename);
 
 
 % check countBest
