@@ -43,20 +43,9 @@ if ~(exist(homologFilename,'file')==2)
 end
 
 
-% define output structure
-fieldList = {'fromGeneId',
-             'fromSymbol'
-             'toGeneId',
-             'toSymbol',
-             'best',
-             'bestReverse',
-             'methodCount',
-             'totalMethodCount'};
-
-
 % load orthologStructure directly from tsv file
 orthologStructure = importTsvFile(homologFilename);
-
+fieldList = fieldnames(orthologStructure);
 
 % check countBest
 if countBest
