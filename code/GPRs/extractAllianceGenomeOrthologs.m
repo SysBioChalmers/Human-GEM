@@ -1,6 +1,6 @@
 function [orthologPairs, orthologStructure] = extractAllianceGenomeOrthologs(homologFilename, countBest)
 % extractAllianceGenomeOrthologs
-%   Read the JSON format ortholog pairs downloaded from Alliance Genome
+%   Read the TSV format ortholog pairs downloaded from Alliance Genome
 %   database (alliancegenome.org) into a structure that is futher filtered
 %   according to following criteria:
 %
