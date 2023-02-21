@@ -1,6 +1,6 @@
 function [orthologPairs, orthologStructure] = extractAllianceGenomeOrthologs(homologFilename, countBest)
 % extractAllianceGenomeOrthologs
-%   Read the JSON format ortholog pairs downloaded from Alliance Genome
+%   Read the TSV format ortholog pairs downloaded from Alliance Genome
 %   database (alliancegenome.org) into a structure that is futher filtered
 %   according to following criteria:
 %
@@ -42,37 +42,10 @@ if ~(exist(homologFilename,'file')==2)
     error('Input file %s cannot be found',string(homologFilename));
 end
 
-% load input file
-inputPairs = jsondecode(fileread(homologFilename));
 
-% define output structure
-fieldList = {'fromGeneId',
-             'fromSymbol'
-             'toGeneId',
-             'toSymbol',
-             'best',
-             'bestReverse',
-             'methodCount',
-             'totalMethodCount'};
-
-
-% initialize output structure
-for i = 1:length(fieldList)
-    orthologStructure.(fieldList{i}) = {};
-end
-
-
-% loop through the content to extract corresponding values
-for i=1:length(inputPairs.results)
-    orthologStructure.fromGeneId = [orthologStructure.fromGeneId; inputPairs.results(i).gene.id];
-    orthologStructure.fromSymbol = [orthologStructure.fromSymbol; inputPairs.results(i).gene.symbol];
-    orthologStructure.toGeneId   = [orthologStructure.toGeneId; inputPairs.results(i).homologGene.id];
-    orthologStructure.toSymbol   = [orthologStructure.toSymbol; inputPairs.results(i).homologGene.symbol];
-    for j = 5:length(fieldList)
-        orthologStructure.(fieldList{j}) = [orthologStructure.(fieldList{j}); inputPairs.results(i).(fieldList{j})];
-    end
-end
-
+% load orthologStructure directly from tsv file
+orthologStructure = importTsvFile(homologFilename);
+fieldList = fieldnames(orthologStructure);
 
 % check countBest
 if countBest
@@ -119,7 +92,7 @@ for i=1:length(indMoreHit)
     % if the pairs are neither bestForward nor bestReverse, then only
     % reserve the one with highest number of methodCount
     if noBestForwardReverse
-        [~, topMethodCount]=maxk(cell2mat(orthologStructure.methodCount(indMore)), 1);
+        [~, topMethodCount]=maxk(str2double(orthologStructure.methodCount(indMore)), 1);
         output.from = [output.from; orthologStructure.fromSymbol{indMore(topMethodCount)}];
         output.to   = [output.to;   orthologStructure.toSymbol{indMore(topMethodCount)}];
     end
