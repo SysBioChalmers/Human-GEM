@@ -28,6 +28,9 @@ jobs:
         - ${{ github.workspace }}:/opt
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Test import with cobrapy and consistency with annotation files
         run: |
           cd /opt
