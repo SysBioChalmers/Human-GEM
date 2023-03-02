@@ -7,26 +7,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: YAML Lint
+        uses: ibiqlik/action-yamllint@v1.0.0
+        with:
+          ## File(s) or Directory, separate by space if multiple files or folder are specified
+          file_or_dir: model/
+          ## Custom configuration (as YAML source)
+          config_data: "{extends: default, rules: {line-length: disable}}"
+          ## Return non-zero exit code on warnings as well as errors
+          # strict: # optional, default is false
 
-    - name: YAML Lint
-      uses: ibiqlik/action-yamllint@v1.0.0
-      with:
-        ## File(s) or Directory, separate by space if multiple files or folder are specified
-        file_or_dir: model/
-        ## Custom configuration (as YAML source)
-        config_data: "{extends: default, rules: {line-length: disable}}"
-        ## Return non-zero exit code on warnings as well as errors
-        # strict: # optional, default is false
+  test-consistency:
+    runs-on: ubuntu-latest
+    container:
+      image: opencobra/memote:latest
+      volumes: ${{ github.workspace }}:/opt
 
-    - name: Test import with cobrapy and consistency with annotation files
-      uses: addnab/docker-run-action@v3
-      with:
-        image: opencobra/memote:latest
-        options: -v ${{ github.workspace }}:/opt
-        shell: bash
+    steps:
+      - name: Test import with cobrapy and consistency with annotation files
         run: |
           cd /opt
           python code/test/sanityCheck.py
