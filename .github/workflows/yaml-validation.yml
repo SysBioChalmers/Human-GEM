@@ -24,7 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: opencobra/memote:latest
-      volumes: ${{ github.workspace }}:/opt
+      volumes:
+        - ${{ github.workspace }}:/opt
 
     steps:
       - name: Test import with cobrapy and consistency with annotation files
