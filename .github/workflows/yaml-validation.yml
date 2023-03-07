@@ -24,7 +24,7 @@ jobs:
     - name: Test import with cobrapy and consistency with annotation files
       uses: addnab/docker-run-action@v3
       with:
-        image: opencobra/memote:latest
+        image: ghcr.io/metabolicatlas/memote-docker:0.13
         options: -v ${{ github.workspace }}:/opt
         shell: bash
         run: |
