@@ -5,6 +5,11 @@ on: [push, pull_request]
 jobs:
   yaml-validation:
     runs-on: ubuntu-latest
+    container:
+      image: opencobra/memote:latest
+      volumes:
+        - ${{ github.workspace }}:/project:rw
+      options: --user root --workdir /project
 
     steps:
       - name: Checkout
@@ -20,18 +25,7 @@ jobs:
           ## Return non-zero exit code on warnings as well as errors
           # strict: # optional, default is false
 
-  test-consistency:
-    runs-on: ubuntu-latest
-    container:
-      image: opencobra/memote:latest
-      volumes:
-        - ${{ github.workspace }}:/opt
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Test import with cobrapy and consistency with annotation files
         run: |
-          cd /opt
+          cd /project
           python code/test/sanityCheck.py
