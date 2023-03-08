@@ -6,7 +6,7 @@ jobs:
   yaml-validation:
     runs-on: ubuntu-latest
     container:
-      image: opencobra/memote:latest
+      image: ghcr.io/metabolicatlas/memote-docker:13
       volumes:
         - ${{ github.workspace }}:/project:rw
       options: --user root --workdir /project
@@ -26,6 +26,4 @@ jobs:
           # strict: # optional, default is false
 
       - name: Test import with cobrapy and consistency with annotation files
-        run: |
-          cd /project
-          python code/test/sanityCheck.py
+        run: python code/test/sanityCheck.py
