@@ -13,7 +13,7 @@ idx = find(cell2mat(rxnStruct.Reversibility) == 1);
 rxnsToAdd.lb(idx) = -1000;
 rxnsToAdd.grRules = rxnStruct.grRules;
 rxnsToAdd.subSystems = cell(length(rxnStruct.rxnID),1);
-
+rxnsToAdd.rxnConfidenceScores = zeros(length(rxnStruct.rxnID),1);
 [~,idx] = ismember(MetStruct.MetID,model.mets);
 metsToAdd.mets = MetStruct.MetID(~idx,1);
 metsToAdd.metNames = MetStruct.Name(~idx,1);
@@ -52,7 +52,22 @@ structure.metRecon3DID = [structure.metRecon3DID;MetStruct.BiGGID(idx,1)];
 structure.metMetaNetXID = [structure.metMetaNetXID;MetStruct.MetaNetx(idx,1)];
 structure.metHMR2ID = [structure.metHMR2ID;MetStruct.BiGGID(idx,1)];
 structure.metRetired = [structure.metRetired;MetStruct.BiGGID(idx,1)];
-
+% sort the order based on the model.mets
+[~,idx] = ismember(model.mets,structure.mets);
+structure.mets = structure.mets(idx);
+structure.metsNoComp = structure.metsNoComp(idx);
+structure.metBiGGID = structure.metBiGGID(idx,1);
+structure.metKEGGID = structure.metKEGGID(idx,1);
+structure.metHMDBID = structure.metHMDBID(idx,1);
+structure.metChEBIID = structure.metChEBIID(idx,1);
+structure.metPubChemID = structure.metPubChemID(idx,1);
+structure.metLipidMapsID = structure.metLipidMapsID(idx,1);
+structure.metEHMNID = structure.metEHMNID(idx,1);
+structure.metHepatoNET1ID = structure.metHepatoNET1ID(idx,1);
+structure.metRecon3DID = structure.metRecon3DID(idx,1);
+structure.metMetaNetXID = structure.metMetaNetXID(idx,1);
+structure.metHMR2ID = structure.metHMR2ID(idx,1);
+structure.metRetired = structure.metRetired(idx,1);
 exportTsvFile(structure, '../../model/metabolites.tsv')
 
 structure = importTsvFile('../../model/reactions.tsv');
