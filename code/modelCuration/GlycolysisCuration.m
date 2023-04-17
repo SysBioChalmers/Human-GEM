@@ -36,23 +36,23 @@ metsToAdd.metCharges = tmp;
 % export the new mets, new reactions to the table
 structure = importTsvFile('../../model/metabolites.tsv');
 [~,idx] = ismember(modelChanges.mets.mets,MetStruct.MetID);
-MetStruct.BiGGID(1:length(MetStruct.MetID),1) = {''};
+MetStruct.emptyID(1:length(MetStruct.MetID),1) = {''};
 % metID metNames	metFormulas	metCharges	compartments	metKEGGID	metPubChemID	metChEBIID	metMetaCycID	metMetaNetXID
 metNocomp = cellfun(@(s) s(1:8), MetStruct.MetID(idx,1), 'UniformOutput', false);
 structure.mets = [structure.mets;MetStruct.MetID(idx,1)];
-structure.metBiGGID = [structure.metBiGGID;MetStruct.BiGGID(idx,1)];
+structure.metBiGGID = [structure.metBiGGID;MetStruct.emptyID(idx,1)];
 structure.metKEGGID = [structure.metKEGGID;MetStruct.KEGG(idx,1)];
 structure.metsNoComp = [structure.metsNoComp;metNocomp];
-structure.metHMDBID = [structure.metHMDBID;MetStruct.BiGGID(idx,1)];
+structure.metHMDBID = [structure.metHMDBID;MetStruct.emptyID(idx,1)];
 structure.metChEBIID = [structure.metChEBIID;MetStruct.CHEBI(idx,1)];
-structure.metPubChemID = [structure.metPubChemID;MetStruct.BiGGID(idx,1)];
-structure.metLipidMapsID = [structure.metLipidMapsID;MetStruct.CHEBI(idx,1)];
-structure.metEHMNID = [structure.metEHMNID;MetStruct.BiGGID(idx,1)];
-structure.metHepatoNET1ID = [structure.metHepatoNET1ID;MetStruct.BiGGID(idx,1)];
-structure.metRecon3DID = [structure.metRecon3DID;MetStruct.BiGGID(idx,1)];
+structure.metPubChemID = [structure.metPubChemID;MetStruct.emptyID(idx,1)];
+structure.metLipidMapsID = [structure.metLipidMapsID;MetStruct.emptyID(idx,1)];
+structure.metEHMNID = [structure.metEHMNID;MetStruct.emptyID(idx,1)];
+structure.metHepatoNET1ID = [structure.metHepatoNET1ID;MetStruct.emptyID(idx,1)];
+structure.metRecon3DID = [structure.metRecon3DID;MetStruct.emptyID(idx,1)];
 structure.metMetaNetXID = [structure.metMetaNetXID;MetStruct.MetaNetx(idx,1)];
-structure.metHMR2ID = [structure.metHMR2ID;MetStruct.BiGGID(idx,1)];
-structure.metRetired = [structure.metRetired;MetStruct.BiGGID(idx,1)];
+structure.metHMR2ID = [structure.metHMR2ID;MetStruct.emptyID(idx,1)];
+structure.metRetired = [structure.metRetired;MetStruct.emptyID(idx,1)];
 % sort the order based on the model.mets
 [~,idx] = ismember(model.mets,structure.mets);
 structure.mets = structure.mets(idx);
@@ -73,22 +73,22 @@ exportTsvFile(structure, '../../model/metabolites.tsv')
 
 structure = importTsvFile('../../model/reactions.tsv');
 [~,idx] = ismember(modelChanges.rxns.rxns,rxnStruct.rxnID);
-rxnStruct.EHMN(1:length(rxnStruct.rxnID),1) = {''};
+rxnStruct.emptyID(1:length(rxnStruct.rxnID),1) = {''};
 structure.rxns = [structure.rxns;rxnStruct.rxnID(idx,1) ];
 structure.rxnKEGGID = [structure.rxnKEGGID;rxnStruct.KEGG(idx,1) ];
 structure.rxnBiGGID= [structure.rxnBiGGID;rxnStruct.BiGG(idx,1) ];
-structure.rxnEHMNID = [structure.rxnEHMNID;rxnStruct.EHMN(idx,1) ];
-structure.rxnHepatoNET1ID = [structure.rxnHepatoNET1ID;rxnStruct.EHMN(idx,1) ];
+structure.rxnEHMNID = [structure.rxnEHMNID;rxnStruct.emptyID(idx,1) ];
+structure.rxnHepatoNET1ID = [structure.rxnHepatoNET1ID;rxnStruct.emptyID(idx,1) ];
 structure.rxnREACTOMEID = [structure.rxnREACTOMEID;rxnStruct.Reactome(idx,1) ];
-structure.rxnRecon3DID = [structure.rxnRecon3DID;rxnStruct.EHMN(idx,1) ];
+structure.rxnRecon3DID = [structure.rxnRecon3DID;rxnStruct.emptyID(idx,1) ];
 structure.rxnMetaNetXID = [structure.rxnMetaNetXID;rxnStruct.MetaNetx(idx,1) ];
-structure.rxnHMR2ID = [structure.rxnHMR2ID;rxnStruct.EHMN(idx,1) ];
-structure.rxnRatconID = [structure.rxnRatconID;rxnStruct.EHMN(idx,1) ];
-structure.rxnTCDBID = [structure.rxnTCDBID;rxnStruct.EHMN(idx,1) ];
+structure.rxnHMR2ID = [structure.rxnHMR2ID;rxnStruct.emptyID(idx,1) ];
+structure.rxnRatconID = [structure.rxnRatconID;rxnStruct.emptyID(idx,1) ];
+structure.rxnTCDBID = [structure.rxnTCDBID;rxnStruct.emptyID(idx,1) ];
 structure.spontaneous = [structure.spontaneous;zeros(length(rxnStruct.rxnID(idx,1)),1) ];
 structure.rxnRheaID = [structure.rxnRheaID;rxnStruct.RHEA(idx,1) ];
-structure.rxnRheaMasterID = [structure.rxnRheaMasterID;rxnStruct.EHMN(idx,1) ];
-structure.rxnRetired = [structure.rxnRetired;rxnStruct.EHMN(idx,1) ];
+structure.rxnRheaMasterID = [structure.rxnRheaMasterID;rxnStruct.emptyID(idx,1) ];
+structure.rxnRetired = [structure.rxnRetired;rxnStruct.emptyID(idx,1) ];
 
 exportTsvFile(structure, '../../model/reactions.tsv')
 
