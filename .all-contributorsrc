@@ -20,6 +20,7 @@
         "doc",
         "ideas",
         "infra",
+        "maintenance",
         "platform",
         "projectManagement",
         "question",
@@ -41,6 +42,7 @@
         "doc",
         "ideas",
         "infra",
+        "maintenance",
         "platform",
         "projectManagement",
         "question",
@@ -74,6 +76,7 @@
         "bug",
         "code",
         "content",
+        "research",
         "review"
       ]
     },
@@ -83,7 +86,9 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32029599?v=4",
       "profile": "",
       "contributions": [
-        "bug"
+        "bug",
+        "research",
+        "review"
       ]
     },
     {
@@ -92,7 +97,9 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/8766764?v=4",
       "profile": "",
       "contributions": [
-        "bug"
+        "bug",
+        "research",
+        "code"
       ]
     },
     {
@@ -121,7 +128,8 @@
       "contributions": [
         "bug",
         "content",
-        "code"
+        "code",
+        "research"
       ]
     },
     {
@@ -187,7 +195,8 @@
       "contributions": [
         "bug",
         "content",
-        "code"
+        "code",
+        "research"
       ]
     },
     {
@@ -196,7 +205,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/3072880?v=4",
       "profile": "https://orcid.org/0000-0003-3947-488X",
       "contributions": [
-        "bug"
+        "bug",
+        "research"
       ]
     },
     {
@@ -205,7 +215,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/45748199?v=4",
       "profile": "https://github.com/mpagni12",
       "contributions": [
-        "bug"
+        "bug",
+        "research"
       ]
     },
     {
@@ -215,7 +226,8 @@
       "profile": "https://github.com/ANiknejad",
       "contributions": [
         "bug",
-        "content"
+        "content",
+        "research"
       ]
     },
     {
@@ -224,7 +236,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/62765618?v=4",
       "profile": "https://github.com/CadavidJoseL",
       "contributions": [
-        "bug"
+        "bug",
+        "research"
       ]
     },
     {
@@ -234,7 +247,8 @@
       "profile": "https://github.com/johan-gson",
       "contributions": [
         "bug",
-        "content"
+        "content",
+        "research"
       ]
     },
     {
@@ -252,7 +266,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/22166601?v=4",
       "profile": "https://github.com/Rasools",
       "contributions": [
-        "ideas"
+        "ideas",
+        "research"
       ]
     },
     {
@@ -261,7 +276,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/6586371?v=4",
       "profile": "https://github.com/stairs",
       "contributions": [
-        "bug"
+        "bug",
+        "content"
       ]
     },
     {
@@ -273,8 +289,25 @@
         "bug",
         "code",
         "data",
+        "doc",
+        "ideas",
+        "infra",
+        "maintenance",
+        "platform",
         "projectManagement",
-        "research"
+        "research",
+        "review"
+      ]
+    },
+    {
+      "login": "Devlin-Moyer",
+      "name": "Devlin Moyer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33460176?v=4",
+      "profile": "https://orcid.org/0000-0002-6997-9531",
+      "contributions": [
+        "bug",
+        "research",
+        "review"
       ]
     }
   ],
