@@ -276,6 +276,16 @@
         "projectManagement",
         "research"
       ]
+    },
+    {
+      "login": "Devlin-Moyer",
+      "name": "Devlin Moyer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33460176?v=4",
+      "profile": "https://orcid.org/0000-0002-6997-9531",
+      "contributions": [
+        "bug",
+        "review"
+      ]
     }
   ],
   "repoType": "github",
