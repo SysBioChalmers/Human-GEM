@@ -248,9 +248,6 @@ fprintf(fid, ['    short_name: "', model.id, '"\n']);
 fprintf(fid, ['    full_name: "', model.description, '"\n']);
 fprintf(fid, ['    version: "', model.version, '"\n']);
 fprintf(fid, ['    date: "', datestr(now,29), '"\n']);  % 29=YYYY-MM-DD
-%fprintf(fid, ['    authors: "', model.annotation.authorList, '"\n']);
-%fprintf(fid, ['    email: "', model.annotation.email, '"\n']);
-%fprintf(fid, ['    organization: "', model.annotation.organization, '"\n']);
 fprintf(fid, ['    taxonomy: "', model.annotation.taxonomy, '"\n']);
 fprintf(fid, ['    github: "', model.annotation.sourceUrl, '"\n']);
 fprintf(fid, ['    description: "', model.annotation.note, '"\n']);
