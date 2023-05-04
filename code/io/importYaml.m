@@ -67,6 +67,7 @@ model.subSystems={};
 model.eccodes={};
 model.rxnNotes={};
 model.genes={};
+model.geneShortNames={};
 model.metNames={};
 model.metComps={};
 model.inchis={};
@@ -252,7 +253,12 @@ for i=1:numel(line_key)
 
     % import genes:
     if section == 4
-        model = readFieldValue(model, 'genes', tline_value);
+        switch tline_key
+            case 'id'
+                model = readFieldValue(model, 'genes', tline_value);
+            case 'name'
+                model = readFieldValue(model, 'geneShortNames', tline_value);
+        end
     end
 
     % import compartments:
