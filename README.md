@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/SysBioChalmers/Human-GEM](https://badges.gitter.im/SysBioChalmers/Human-GEM.svg)](https://gitter.im/SysBioChalmers/Human-GEM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub version](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM.svg)](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM)
 [![DOI](https://zenodo.org/badge/105752644.svg)](https://zenodo.org/badge/latestdoi/105752644)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-26-success.svg)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-27-success.svg)](#contributors)
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 
 ### Brief Model Description
@@ -154,6 +154,7 @@ A collection of manually curated 2D metabolic maps associated with Human-GEM are
       <td align="center" valign="top" width="12.5%"><a href="https://github.com/johan-gson"><img src="https://avatars.githubusercontent.com/u/32481323?v=4?s=80" width="80px;" alt="johan-gson"/><br /><sub><b>johan-gson</b></sub></a><br /><a href="https://github.com/SysBioChalmers/Human-GEM/issues?q=author%3Ajohan-gson" title="Bug reports">🐛</a> <a href="#content-johan-gson" title="Content">🖋</a> <a href="#research-johan-gson" title="Research">🔬</a></td>
     </tr>
     <tr>
+      <td align="center" valign="top" width="12.5%"><a href="https://github.com/manas-kohli"><img src="https://avatars.githubusercontent.com/u/5028979?v=4?s=80" width="80px;" alt="manas-kohli"/><br /><sub><b>manas-kohli</b></sub></a><br /><a href="https://github.com/SysBioChalmers/Human-GEM/issues?q=author%3Amanas-kohli" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="12.5%"><a href="https://orcid.org/0000-0003-3947-488X"><img src="https://avatars.githubusercontent.com/u/3072880?v=4?s=80" width="80px;" alt="smoretti"/><br /><sub><b>smoretti</b></sub></a><br /><a href="https://github.com/SysBioChalmers/Human-GEM/issues?q=author%3Asmoretti" title="Bug reports">🐛</a> <a href="#research-smoretti" title="Research">🔬</a></td>
       <td align="center" valign="top" width="12.5%"><a href="https://github.com/stairs"><img src="https://avatars.githubusercontent.com/u/6586371?v=4?s=80" width="80px;" alt="stairs"/><br /><sub><b>stairs</b></sub></a><br /><a href="https://github.com/SysBioChalmers/Human-GEM/issues?q=author%3Astairs" title="Bug reports">🐛</a> <a href="#content-stairs" title="Content">🖋</a></td>
     </tr>
