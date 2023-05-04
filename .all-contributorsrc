@@ -309,6 +309,15 @@
         "research",
         "review"
       ]
+    },
+    {
+      "login": "manas-kohli",
+      "name": "manas-kohli",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5028979?v=4",
+      "profile": "https://github.com/manas-kohli",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "repoType": "github",
