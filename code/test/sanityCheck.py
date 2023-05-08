@@ -61,9 +61,33 @@ def checkGeneAnnotation(genes):
     assert geneList == genes, "Gene annotation mismatch!"
 
 
+def checkUnusedMets(rxns, mets):
+    """
+    check if unused mets exist in the model
+    """
+    
+    # collect all metabolites actually used by reactions
+    metabolites_used = []
+    for reaction in rxns:
+        metabolites = reaction.metabolites
+        # Loop through each metabolite and add if not already there
+        for metabolite in metabolites:
+            if metabolite not in metabolites_used:
+                metabolites_used.append(metabolite)
+
+    # go through metabolites in the model and collect unused ones
+    unused_metabolites = []
+    for metabolite in mets:
+        if metabolite not in metabolites_used:
+            unused_metabolites.append(metabolite)
+
+    assert len(unused_metabolites) == 0, "Found unused metabolites!"
+
+
 if __name__ == "__main__":
     rxns, mets, genes = load_yml("model/Human-GEM.yml")
     checkRxnAnnotation(rxns)
     checkMetAnnotation(mets)
     checkGeneAnnotation(genes)
+    checkUnusedMets(rxns, mets)
     print("All checks have passed.")
