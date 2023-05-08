@@ -28,7 +28,11 @@ def load_yml(yml_file):
     modelMets  = list(map(lambda element : element.id, model.metabolites))
     modelGenes = list(map(lambda element : element.id, model.genes))
 
-    return modelRxns, modelMets, modelGenes
+    # get reactions and metabolites
+    reactions = model.reactions
+    metabolites = model.metabolites
+
+    return modelRxns, modelMets, modelGenes, reactions, metabolites
 
 
 def checkRxnAnnotation(rxns):
@@ -61,23 +65,22 @@ def checkGeneAnnotation(genes):
     assert geneList == genes, "Gene annotation mismatch!"
 
 
-def checkUnusedMets(rxns, mets):
+def checkUnusedMets(reactions, metabolites):
     """
     check if unused mets exist in the model
     """
-    
+
     # collect all metabolites actually used by reactions
     metabolites_used = []
-    for reaction in rxns:
-        metabolites = reaction.metabolites
+    for reaction in reactions:
         # Loop through each metabolite and add if not already there
-        for metabolite in metabolites:
+        for metabolite in reaction.metabolites:
             if metabolite not in metabolites_used:
                 metabolites_used.append(metabolite)
 
     # go through metabolites in the model and collect unused ones
     unused_metabolites = []
-    for metabolite in mets:
+    for metabolite in metabolites:
         if metabolite not in metabolites_used:
             unused_metabolites.append(metabolite)
 
@@ -85,9 +88,9 @@ def checkUnusedMets(rxns, mets):
 
 
 if __name__ == "__main__":
-    rxns, mets, genes = load_yml("model/Human-GEM.yml")
+    rxns, mets, genes, reactions, metabolites = load_yml("model/Human-GEM.yml")
     checkRxnAnnotation(rxns)
     checkMetAnnotation(mets)
     checkGeneAnnotation(genes)
-    checkUnusedMets(rxns, mets)
+    checkUnusedMets(reactions, metabolites)
     print("All checks have passed.")
