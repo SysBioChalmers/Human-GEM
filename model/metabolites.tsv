@@ -8444,4 +8444,4 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM20060c"	"MAM20060"	""	""	""	"CHEBI:139347"	""	""	""	""	""	"MNXM745787"	""	""
 "MAM20061c"	"MAM20061"	""	"C21730"	""	"CHEBI:133752"	""	""	""	""	""	"MNXM52422"	""	""
 "MAM20061n"	"MAM20061"	""	"C21730"	""	"CHEBI:133752"	""	""	""	""	""	"MNXM52422"	""	""
-"MAM01127n"	"MAM01127"	""	"C01879"	""	"CHEBI:18183"	""	""	""	""	""	"MNXM964"	""	""
+"MAM01127n"	"MAM01127"	"5oxpro"	"C01879"	"HMDB0000267"	"CHEBI:18183"	"7405"	""	""	"HC00856"	"5oxpro"	"MNXM964"	"m01127c"	"m01127c"
