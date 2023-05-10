@@ -21,3 +21,7 @@ Thumbs.db
 
 # Windows dynamic library files
 *.dll
+
+yarn.lock
+package.json
+node_modules/

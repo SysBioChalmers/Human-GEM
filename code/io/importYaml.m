@@ -67,6 +67,7 @@ model.subSystems={};
 model.eccodes={};
 model.rxnNotes={};
 model.genes={};
+model.geneShortNames={};
 model.metNames={};
 model.metComps={};
 model.inchis={};
@@ -150,12 +151,6 @@ for i=1:numel(line_key)
                 model.annotation.note = tline_value;
             case 'github'
                 model.annotation.sourceUrl = tline_value;
-            case 'authors'
-                model.annotation.authorList = tline_value;
-            case 'email'
-                model.annotation.email = tline_value;
-            case 'organization'
-                model.annotation.organization = tline_value;
         end
     end
 
@@ -258,7 +253,12 @@ for i=1:numel(line_key)
 
     % import genes:
     if section == 4
-        model = readFieldValue(model, 'genes', tline_value);
+        switch tline_key
+            case 'id'
+                model = readFieldValue(model, 'genes', tline_value);
+            case 'name'
+                model = readFieldValue(model, 'geneShortNames', tline_value);
+        end
     end
 
     % import compartments:
