@@ -1,4 +1,4 @@
-function results = evaluateEssentialityHart2015(eGenes)
+function results = evaluateHart2015Essentiality(eGenes)
 % Evaluate and compare experimental fitness genes with essentiality results
 % predicted from 5 cell-line specific GEMs from Hart 2015 datasets
 %
@@ -30,7 +30,7 @@ function results = evaluateEssentialityHart2015(eGenes)
 
 % Table S2 from the Hart2015 datasets:
 % In this study, essential genes are, by definition, a subset of fitness genes
-x = readtable('Hart2015_BayesFactors.xlsx');
+x = readtable('Hart2015_TableS2.xlsx');
     
 % remove duplicated rows (MARCH1 and MARCH2 genes)
 ind1 = find(ismember(x.Gene,'MARCH1'),1,'last');
