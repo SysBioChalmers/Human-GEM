@@ -84,7 +84,7 @@ end
     
 
 % get essential genes for each model and task
-eGenes = getTaskEssentialGenes(INIT_output, refModel, taskStruct);
+eGenes = getTaskEssentialGenes(INIT_output, model, taskStruct);
 eGenes.refModel = model;
     
 end
