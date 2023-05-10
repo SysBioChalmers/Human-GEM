@@ -28,11 +28,7 @@ def load_yml(yml_file):
     modelMets  = list(map(lambda element : element.id, model.metabolites))
     modelGenes = list(map(lambda element : element.id, model.genes))
 
-    # get reactions and metabolites
-    reactions = model.reactions
-    metabolites = model.metabolites
-
-    return modelRxns, modelMets, modelGenes, reactions, metabolites
+    return modelRxns, modelMets, modelGenes, model
 
 
 def checkRxnAnnotation(rxns):
@@ -65,32 +61,46 @@ def checkGeneAnnotation(genes):
     assert geneList == genes, "Gene annotation mismatch!"
 
 
-def checkUnusedMets(reactions, metabolites):
+def find_unused_entities(model, entity_type):
     """
-    check if unused mets exist in the model
+    collect unused metabolites or genes if exist in the model
     """
 
     # collect all metabolites actually used by reactions
-    metabolites_used = []
-    for reaction in reactions:
-        # Loop through each metabolite and add if not already there
-        for metabolite in reaction.metabolites:
-            if metabolite not in metabolites_used:
-                metabolites_used.append(metabolite)
+    entities_used = []
 
-    # go through metabolites in the model and collect unused ones
-    unused_metabolites = []
-    for metabolite in metabolites:
-        if metabolite not in metabolites_used:
-            unused_metabolites.append(metabolite)
+    for reaction in model.reactions:
+        entities = reaction.genes if entity_type == "genes" else reaction.metabolites
+        # Loop through each entity and add if not already there
+        for entity in entities:
+            if entity not in entities_used:
+                entities_used.append(entity)
 
-    assert len(unused_metabolites) == 0, "Found unused metabolites!"
+    # go through entities in the model and collect unused ones
+    unused_entities = []
+    all_entities = model.genes if entity_type == "genes" else model.metabolites
+    for entity in all_entities:
+        if entity not in entities_used:
+            unused_entities.append(entity)
+
+    return unused_entities
+
+
+def checkUnusedEntities(model, entity_type):
+    """
+    check if unused genes or metabolites exist in the model
+    """
+
+    # collect unused entites
+    unused_entities = find_unused_entities(model, entity_type)
+    assert len(unused_entities) == 0, f"Found unused {{entity_type}}!"
 
 
 if __name__ == "__main__":
-    rxns, mets, genes, reactions, metabolites = load_yml("model/Human-GEM.yml")
+    rxns, mets, genes, model = load_yml("model/Human-GEM.yml")
     checkRxnAnnotation(rxns)
     checkMetAnnotation(mets)
     checkGeneAnnotation(genes)
-    checkUnusedMets(reactions, metabolites)
+    checkUnusedEntities(model, "metabolites")
+    checkUnusedEntities(model, "genes")
     print("All checks have passed.")
