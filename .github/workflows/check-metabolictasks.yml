@@ -14,7 +14,7 @@ jobs:
 
     - name: Check essential tasks
       run: |
-        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('pcode/test/testMetabolicTasks.m', '${{ matrix.param }}'); exit;"
+        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ matrix.param }}'); exit;"
       env:
         matrix:
           param: 'essential'
