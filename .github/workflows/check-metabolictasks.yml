@@ -17,11 +17,4 @@ jobs:
         /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ matrix.param }}'); exit;"
       env:
         matrix:
-          param: 'essential'
-
-    - name: Check verification tasks
-      run: |
-        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ matrix.param }}'); exit;"
-      env:
-        matrix:
-          param: 'verification'
+          param: [essential, verification]
