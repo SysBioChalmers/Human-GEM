@@ -9,7 +9,6 @@ jobs:
     env:
       matrix:
         param: [essential, verification]
-
     steps:
 
     - name: Checkout
