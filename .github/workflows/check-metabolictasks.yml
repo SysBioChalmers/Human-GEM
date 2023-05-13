@@ -2,10 +2,6 @@ name: Test metabolic tasks
 
 on: [push, pull_request]
 
-env:
-  matrix:
-    param: [essential, verification]
-
 jobs:
   check-metabolictasks:
     runs-on: self-hosted
@@ -19,3 +15,8 @@ jobs:
     - name: Check essential tasks
       run: |
         /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ env.matrix.param }}'); exit;"
+
+      env:
+        matrix:
+          param: [essential, verification]
+          
