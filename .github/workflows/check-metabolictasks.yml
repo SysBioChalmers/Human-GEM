@@ -6,6 +6,9 @@ jobs:
   check-metabolictasks:
     runs-on: self-hosted
     timeout-minutes: 60
+    env:
+      matrix:
+        param: [essential, verification]
 
     steps:
 
