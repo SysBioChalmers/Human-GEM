@@ -16,4 +16,6 @@ jobs:
         /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ env.matrix.param }}'); exit;"
       env:
         matrix:
-          param: ["essential", "verification"]
+          param:
+            - essential
+            - verification
