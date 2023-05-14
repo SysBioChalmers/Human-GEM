@@ -11,8 +11,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Check metabolic tasks
+    - name: Check basic metabolic tasks
       run: |
         /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ env.param }}'); exit;"
       env:
         param: verification
+
+    - name: Check essential metabolic tasks
+      run: |
+        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ env.param }}'); exit;"
+      env:
+        param: essential
