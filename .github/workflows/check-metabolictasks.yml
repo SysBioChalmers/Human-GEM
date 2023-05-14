@@ -12,8 +12,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Check metabolic tasks
-      env:
-        matrix:
-          param: [essential, verification]
       run: |
         /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ env.matrix.param }}'); exit;"
+      env:
+        matrix:
+          param: ["essential", "verification"]
