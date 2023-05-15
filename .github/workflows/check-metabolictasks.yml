@@ -6,19 +6,14 @@ jobs:
   check-metabolictasks:
     runs-on: self-hosted
     timeout-minutes: 60
+    strategy:
+      matrix:
+        task-type: [essential, verification]
     steps:
 
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Check basic metabolic tasks
+    - name: Check metabolic tasks
       run: |
-        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); testMetabolicTasks('${{ env.param }}'); exit;"
-      env:
-        param: verification
-
-    - name: Check essential metabolic tasks
-      run: |
-        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ env.param }}'); exit;"
-      env:
-        param: essential
+        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); testMetabolicTasks('${{ matrix.task-type }}'); exit;"
