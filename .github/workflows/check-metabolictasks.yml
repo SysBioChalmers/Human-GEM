@@ -13,7 +13,7 @@ jobs:
 
     - name: Check basic metabolic tasks
       run: |
-        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); run('code/test/testMetabolicTasks.m', '${{ env.param }}'); exit;"
+        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); testMetabolicTasks('${{ env.param }}'); exit;"
       env:
         param: verification
 
