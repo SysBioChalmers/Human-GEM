@@ -28,6 +28,7 @@ end
 if verLessThan('matlab','9.9') %readlines introduced 2020b
     fid=fopen(yamlFilename);
     line_raw=cell(1000000,1);
+    i=1;
     while ~feof(fid)
         line_raw{i}=fgetl(fid);
         i=i+1;
