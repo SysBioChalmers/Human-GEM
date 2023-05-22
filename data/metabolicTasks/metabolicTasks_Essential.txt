@@ -44,7 +44,7 @@
 							CO2[e];H2O[e]												
 	IC	Fructose 6-phosphate de novo synthesis		O2[e];glucose[e];Pi[e]			fructose-6-phosphate[c]	1											
 							CO2[e];H2O[e]												
-	IC	Glyceraldehyde 3-phosphate de novo synthesis		O2[e];glucose[e];Pi[e]			GAP[c]	1											
+	IC	Glyceraldehyde 3-phosphate de novo synthesis		O2[e];glucose[e];Pi[e]			D-glyceraldehyde 3-phosphate[c]	1											
 							CO2[e];H2O[e]												
 	IC	Glucose 6-phosphate de novo synthesis		O2[e];glucose[e];Pi[e]			glucose-6-phosphate[c]	1											
 							CO2[e];H2O[e]												
