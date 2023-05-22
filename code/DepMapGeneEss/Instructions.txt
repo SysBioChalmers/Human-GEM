@@ -21,7 +21,3 @@ It may be needed to init cobra and init RAVEN (SetRavenSolver etc.). TODO: Descr
 the file that need to be modified to match what you want to do. The file currently only gets stats for one model version, but can easily be expanded
 to take in data from more model versions, although these also need to be processed as above as well.
 10. Run PlotGeneEss.R in R to make a violin plot of MCC for each model. The code needs some modification to fix paths and number of models.
-
-
-
-
