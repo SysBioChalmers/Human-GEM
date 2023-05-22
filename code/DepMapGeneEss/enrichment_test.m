@@ -44,9 +44,3 @@ n = numel(sample);
 
 penr = hygecdf(x-1,m,k,n,'upper');
 pdep = hygecdf(x,m,k,n);
-
-
-
-
-
-
