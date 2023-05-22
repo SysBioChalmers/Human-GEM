@@ -41,11 +41,3 @@ model = importYaml('../../model/Human-GEM.yml');
 [model.grRules, skipped] = simplifyGrRules(model.grRules, true);%takes a few minutes to run
 prepData = prepHumanModelForftINIT(model, true, '../../data/metabolicTasks/metabolicTasks_Essential.txt', '../../model/reactions.tsv');
 save('data/prepDataGeneSymbols.mat', 'prepData')
-
-
-
-
-
-
-
-
