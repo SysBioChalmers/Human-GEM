@@ -1,7 +1,7 @@
 library(ggplot2)
 library(tidyverse)
 
-setwd("C:/Work/MatlabCode/components/human-GEM/Human-GEMDepMapEval/Human-GEM/code/DepMapGeneEss") #Modify to match your file system
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 
 figPath = "figures/"
