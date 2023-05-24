@@ -1,9 +1,8 @@
 library(tidyverse)
 
-dataFolder = "C:/Work/MatlabCode/components/human-GEM/Human-GEMDepMapEval/Human-GEM/code/DepMapGeneEss/data/"
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-
-d = read_csv(paste0(dataFolder, "CCLE_expression_full.csv"))
+d = read_csv(paste0(rstudioapi::getActiveDocumentContext(), "/data/CCLE_expression_full.csv"))
 dim(d)#1377 52055
 
 #transpose
