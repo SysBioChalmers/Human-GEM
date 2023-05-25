@@ -108,7 +108,8 @@ def checkDupRxn(model):
     if duplicate_reactions:
         output = "The following reactions are duplicates, please check: " + ';'.join(duplicate_reactions)
         print(output)
-        assert False, output
+        
+    assert len(duplicate_reactions) == 0, "Found duplicated reactions!"
 
 
 if __name__ == "__main__":
