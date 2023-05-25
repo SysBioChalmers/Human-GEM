@@ -92,3 +92,5 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR08992"	""	"RPEc"	""	""	""	"RPEc"	""	""	""	""	0	""	""	"RPEc"
 "MAR20045"	"R06983"	"FALDH2;R_FALDH2;R_r1378;r1378"	""	""	""	""	"MNXR146812"	""	""	""	0	"RHEA:19985"	""	""
 "MAR20004"	"R08382"	"RDH2;R_RDH2"	""	""	""	""	"MNXR103441"	""	""	""	0	"RHEA:42052"	""	""
+"MAR05295"	""	""	""	"r1110"	""	"NaKt"	""	"HMR_5295"	"RCR41002"	""	0	""	""	"HMR_5295"
+"MAR06895"	""	"GLCSGLT1le"	""	""	""	"GLCSGLT1le"	"MNXR100225"	""	""	""	0	""	""	"GLCSGLT1le"
