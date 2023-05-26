@@ -104,9 +104,10 @@ def checkDupRxn(model):
 
     reaction_equations = [rxn.build_reaction_string(use_metabolite_names=False) for rxn in model.reactions]
     duplicate_reactions = [reaction for reaction, count in Counter(reaction_equations).items() if count > 1]
+    dup_list = [model.reactions[idx].id for idx, val in enumerate(reaction_equations) if val in duplicate_reactions]
 
     if duplicate_reactions:
-        output = "The following reactions are duplicates, please check: " + ';'.join(duplicate_reactions)
+        output = f"The following {len(dup_list)} reactions are duplicates, please check: " + ';'.join(dup_list)
         print(output)
         
     assert len(duplicate_reactions) == 0, "Found duplicated reactions!"
