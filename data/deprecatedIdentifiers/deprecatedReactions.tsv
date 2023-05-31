@@ -99,3 +99,5 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR05409"	""	""	""	"r1420"	""	"HMR_5409"	""	"HMR_5409"	"RCR30285"	""	0	""	""	"HMR_5409"
 "MAR08751"	"R00132"	"H2CO3Dm"	""	""	""	"H2CO3Dm"	"MNXR100482"	"HMR_8751"	"RCR14130"	""	0	""	"RHEA:10748"	"HMR_8751"
 "MAR13066"	""	"EX_h2co3_e"	""	""	""	"EX_h2co3[e]"	"MNXR98639"	""	""	""	0	""	""	"EX_h2co3[e]"
+"MAR05413"	""	"PIt2r"	""	""	""	"PIt6b"	"MNXR102872"	"HMR_5413"	"RCR41023"	""	0	"RHEA:29941"	"RHEA:29939"	"HMR_5413"
+"MAR04411"	""	"PIt8"	""	""	""	"PIt8"	"MNXR102875"	"HMR_4911"	"RCR40976"	""	0	""	""	"PIt8"
