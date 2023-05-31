@@ -12857,7 +12857,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR13063"	""	"EX_M03153_e"	""	""	""	"EX_M03153[e]"	""	""	""	""	0	""	""	"EX_M03153[e]"
 "MAR13064"	""	""	""	""	""	"EX_M01268[e]"	""	""	""	""	0	""	""	"EX_M01268[e]"
 "MAR13065"	""	""	""	""	""	"EX_HC02080[e]"	""	""	""	""	0	""	""	"EX_HC02080[e]"
-"MAR13066"	""	"EX_h2co3_e"	""	""	""	"EX_h2co3[e]"	"MNXR98639"	""	""	""	0	""	""	"EX_h2co3[e]"
 "MAR13067"	""	"EX_M02837_e"	""	""	""	"EX_M02837[e]"	""	""	""	""	0	""	""	"EX_M02837[e]"
 "MAR13068"	""	""	""	""	""	"EX_M02382[e]"	""	""	""	""	0	""	""	"EX_M02382[e]"
 "MAR13069"	""	""	""	""	""	"EX_M02035[e]"	""	""	""	""	0	""	""	"EX_M02035[e]"
