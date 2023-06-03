@@ -13090,3 +13090,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR20108"	""	"HBZOPT10m;R_HBZOPT10m"	""	""	""	""	"MNXR100567"	""	""	""	0	"RHEA:44564"	""	""
 "MAR20109"	""	"HBZOPT10m;R_HBZOPT10m"	""	""	""	""	"MNXR100567"	""	""	""	0	"RHEA:44564"	""	""
 "MAR20110"	""	""	""	""	""	""	"MNXR102097"	""	""	""	0	"RHEA:15642"	"RHEA:15641"	""
+"MAR20111"	"R00472"	""	""	""	""	""	"MNXR188337"	""	""	""	0	"RHEA:18182"	"RHEA:18181"	""
