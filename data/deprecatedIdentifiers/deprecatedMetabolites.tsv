@@ -2200,3 +2200,5 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM01421c"	"MAM01421"	"h2co3"	"C01353"	""	"CHEBI:28976"	""	""	""	"HC02169"	"h2co3"	"MNXM60"	"m01421c"	"m01421c"
 "MAM01421m"	"MAM01421"	"h2co3"	"C01353"	""	"CHEBI:28976"	""	""	""	"HC02169"	"h2co3"	"MNXM60"	"m01421m"	"m01421m"
 "MAM01421e"	"MAM01421"	"h2co3"	"C01353"	""	"CHEBI:28976"	""	""	""	"HC02169"	"h2co3"	"MNXM60"	"m01421s"	"m01421s"
+"MAM03494c"	"MAM03494"	"c3dc"	""	""	""	"22833583"	""	""	""	"c3dc"	""	""	"c3dc_c"
+"MAM03494e"	"MAM03494"	"c3dc"	""	""	""	"22833583"	""	""	""	"c3dc"	""	""	"c3dc_s"
