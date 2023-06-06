@@ -103,3 +103,5 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR04411"	""	"PIt8"	""	""	""	"PIt8"	"MNXR102875"	"HMR_4911"	"RCR40976"	""	0	""	""	"PIt8"
 "MAR08749"	""	"H2CO3D2"	""	""	""	"HMR_8749"	"MNXR100483"	"HMR_8749"	"RCR14128"	""	1	""	""	"HMR_8749"
 "MAR08750"	""	"H2CO3D2m"	""	""	""	"HMR_8750"	"MNXR100483"	"HMR_8750"	"RCR14129"	""	1	""	""	"HMR_8750"
+"MAR00562"	""	"ETF"	""	""	""	"ETF"	"MNXR97965"	""	""	""	0	""	""	"ETF"
+"MAR00563"	""	"ETFQO"	""	""	""	"ETFQO"	"MNXR97966"	""	""	""	0	""	""	"ETFQO"
