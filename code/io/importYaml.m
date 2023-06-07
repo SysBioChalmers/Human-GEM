@@ -276,7 +276,7 @@ if ~silentMode
     fprintf('\nimporting completed\nfollow-up processing...');
 end
 [~, model.metComps] = ismember(model.metComps, model.comps);
-model.metCharges = int64(str2double(model.metCharges));
+model.metCharges = str2double(model.metCharges);
 model.lb = str2double(model.lb);
 model.ub = str2double(model.ub);
 model.annotation.defaultLB = min(model.lb);
