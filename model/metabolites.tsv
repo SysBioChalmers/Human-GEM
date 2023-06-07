@@ -5621,8 +5621,6 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM03591g"	"MAM03591"	"glc1man"	""	""	""	"440240"	""	""	""	"glc1man"	"MNXM7382"	""	"glc1man_g"
 "MAM03592g"	"MAM03592"	"glc2man"	""	""	""	""	""	""	""	"glc2man"	"MNXM13501"	""	"glc2man_g"
 "MAM03593g"	"MAM03593"	"glc3man"	""	""	""	""	""	""	""	"glc3man"	"MNXM18136"	""	"glc3man_g"
-"MAM03573m"	"MAM03573"	"etfox"	""	""	""	""	""	""	""	"etfox"	"MNXM11479"	""	"etfox_m"
-"MAM03574m"	"MAM03574"	"etfrd"	""	""	""	""	""	""	""	"etfrd"	"MNXM11480"	""	"etfrd_m"
 "MAM01893e"	"MAM01893"	"1glyc_hs"	""	""	""	""	""	""	""	"1glyc_hs"	"MNXM13807"	""	"1glyc_hs_s"
 "MAM03315e"	"MAM03315"	"9_cis_retfa"	""	""	""	""	""	""	""	"9_cis_retfa"	"MNXM146565"	""	"9_cis_retfa_s"
 "MAM03577e"	"MAM03577"	"fucfuc12gal14acglcgalgluside_hs"	""	""	""	""	""	""	""	"fucfuc12gal14acglcgalgluside_hs"	"MNXM8840"	""	"fucfuc12gal14acglcgalgluside_hs_s"
