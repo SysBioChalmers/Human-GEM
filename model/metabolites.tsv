@@ -2302,6 +2302,7 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM01420m"	"MAM01420"	"cbp"	"C00169"	""	"CHEBI:17672"	"278"	""	""	"HC00164"	"cbp"	"MNXM138"	"m01420m"	"m01420m"
 "MAM01420r"	"MAM01420"	"cbp"	"C00169"	""	"CHEBI:17672"	"278"	""	""	"HC00164"	"cbp"	"MNXM138"	"m01420r"	"m01420r"
 "MAM01422c"	"MAM01422"	"cbtnCCP"	"C04419"	""	""	""	""	""	""	""	"MNXM5655"	"m01422c"	"m01422c"
+"MAM01422m"	"MAM01422"	""	"C04419"	""	""	""	""	""	""	""	"MNXM5655"	""	""
 "MAM01423c"	"MAM01423"	"carn"	"C00386"	"HMDB0000033"	"CHEBI:15727"	"439224"	""	""	"HC00321"	"carn"	"MNXM114412;MNXM1419"	"m01423c"	"m01423c"
 "MAM01424c"	"MAM01424"	"cdp"	"C00112"	""	"CHEBI:17239"	"6132"	""	""	"HC00110"	"cdp"	"MNXM220"	"m01424c"	"m01424c"
 "MAM01424m"	"MAM01424"	"cdp"	"C00112"	""	"CHEBI:17239"	"6132"	""	""	"HC00110"	"cdp"	"MNXM220"	"m01424m"	"m01424m"
