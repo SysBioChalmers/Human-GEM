@@ -8255,8 +8255,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR00480"	""	"ENMAN4g"	""	""	""	"ENMAN4g"	"MNXR97929"	""	""	""	0	""	""	"ENMAN4g"
 "MAR00485"	""	"ENMAN5g"	""	""	""	"ENMAN5g"	"MNXR97930"	""	""	""	0	""	""	"ENMAN5g"
 "MAR00554"	""	"ENMAN6g"	""	""	""	"ENMAN6g"	"MNXR97931"	""	""	""	0	""	""	"ENMAN6g"
-"MAR00562"	""	"ETF"	""	""	""	"ETF"	"MNXR97965"	""	""	""	0	""	""	"ETF"
-"MAR00563"	""	"ETFQO"	""	""	""	"ETFQO"	"MNXR97966"	""	""	""	0	""	""	"ETFQO"
 "MAR00564"	""	"EX_1glyc_hs_e"	""	""	""	"EX_1glyc_hs[e]"	"MNXR97997"	""	""	""	0	""	""	"EX_1glyc_hs[e]"
 "MAR00565"	""	"EX_9_cis_retfa_e"	""	""	""	"EX_9_cis_retfa[e]"	"MNXR98098"	""	""	""	0	""	""	"EX_9_cis_retfa[e]"
 "MAR00566"	""	"EX_adrn_e"	""	""	""	"EX_adrn[e]"	"MNXR98235"	""	""	""	0	""	""	"EX_adrn[e]"
