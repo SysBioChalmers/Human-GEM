@@ -226,7 +226,7 @@ for i=1:numel(line_key)
                 
             otherwise
                 if readSubsystems
-                    subSystems(end+1,1) = {regexprep(tline_value, '^ *- (.+)$','$1')};
+                    subSystems = {regexprep(tline_value, '^ *- (.+)$','$1')};
 
                 % resolve the equation
                 elseif readEquation
