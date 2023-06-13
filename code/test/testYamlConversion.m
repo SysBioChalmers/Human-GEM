@@ -24,7 +24,7 @@ end
 % export to yml and then import back
 try
     exportYaml(model,'testYamlConversion.yml');
-    importedHumanGEM = importYaml('testYamlConversionERROR.yml', true);
+    importedHumanGEM = importYaml('testYamlConversion.yml', true);
 catch
     error('There are problems during the conversion import and export');
 end
