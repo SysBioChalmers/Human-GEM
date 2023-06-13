@@ -52,10 +52,11 @@ for i = 1:numel(models)
     end
 end
 
-% translate gene IDs to abbreviations
+% replace Ensembl IDs with gene symbols
 for i = 1:length(models)
     if any(startsWith(models{i}.genes,'ENSG000'))
-        [grRules,genes,rxnGeneMat] = translateGrRules(models{i}.grRules,'Name','ENSG');
+        idMapping = [models{i}.genes, models{i}.geneShortNames];
+        [grRules,genes,rxnGeneMat] = replaceGrRules(models{i}.grRules,idMapping);
         models{i}.grRules = grRules;
         models{i}.genes = genes;
         models{i}.rxnGeneMat = rxnGeneMat;
