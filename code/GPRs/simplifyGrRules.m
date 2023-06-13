@@ -176,7 +176,7 @@ function eqn_str_new = add_parentheses(eqn_str)
 eqn = str2sym(eqn_str);
 
 % separate equation into terms/pieces ("children")
-eqn_pieces = arrayfun(@char,children(eqn),'UniformOutput',false);
+eqn_pieces = cellfun(@char,children(eqn),'UniformOutput',false);
 
 % find pieces that are further separable, and recursively separate until
 % all pieces are single genes
@@ -202,14 +202,12 @@ end
 %% Functions to test whether an equation is a collection of ORs or ANDs
 function res = is_or(eqn)
 % check if outermost operations contain ORs
-res = length(regexp(char(eqn),'\|')) > length(regexp(char(children(eqn)),'\|'));
+res = length(regexp(char(eqn),'\|')) > ...
+    sum(cell2mat(cellfun(@(x) length(regexp(char(x), '\|')), children(eqn), 'UniformOutput', false)));
 end
 
 function res = is_and(eqn)
 % check if outermost operations contain ANDs
-res = length(regexp(char(eqn),'&')) > length(regexp(char(children(eqn)),'&'));
+res = length(regexp(char(eqn),'&')) > ...
+    sum(cell2mat(cellfun(@(x) length(regexp(char(x), '\&')), children(eqn), 'UniformOutput', false)));
 end
-
-
-
-
