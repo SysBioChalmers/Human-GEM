@@ -26,11 +26,15 @@ try
     delete testYamlConversion.yml;
 
     % compare the imported model from yaml with the original one
-    assert(isequal(model, importedHumanGEM), 'There are problems during the conversion between Matlab and Yaml files');
-
-    % model conversion between Matlab and Yaml files is successful
-    disp('The conversion was successful.')
+    if ~isequal(model, importedHumanGEM)
+        disp('::error::Re-imported model is diffrent from export');
+        exit(1);
+    end
 catch
-    error('There are problems during the conversion import and export');
+    disp('::error::There are problems during the conversion import and export');
+    exit(1)
 end
 
+% model conversion between Matlab and Yaml files is successful
+disp('The conversion was successful.')
+exit(0)

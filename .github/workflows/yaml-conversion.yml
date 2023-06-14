@@ -13,4 +13,4 @@ jobs:
 
       - name: Run conversion script
         run: |
-          /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); testYamlConversion; exit"
+          /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); testYamlConversion"
