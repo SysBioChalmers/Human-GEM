@@ -2,9 +2,6 @@ function status = testYamlConversion
 % test the functions for yaml import/export see if the conversion process
 % changes the model content
 %
-% Usage: status = testYamlConversion
-%
-
 
 % Get model path
 [ST, I]=dbstack('-completenames');
@@ -20,24 +17,20 @@ if exist('testYamlConversion.yml','file')
     delete testYamlConversion.yml;
 end
 
-
 % export to yml and then import back
 try
     exportYaml(model,'testYamlConversion.yml');
-    importedHumanGEM = importYaml('testYamlConversion.yml', true);
-catch
-    error('There are problems during the conversion import and export');
-end
+    importedHumanGEM = importYaml('testYamlConversionFAIL.yml', true);
 
-% remove intermediate Yaml file
-delete testYamlConversion.yml;
+    % remove intermediate Yaml file
+    delete testYamlConversion.yml;
 
-% compare the imported model from yaml with the original one
-if isequal(model, importedHumanGEM)
+    % compare the imported model from yaml with the original one
+    assert(isequal(model, importedHumanGEM), 'There are problems during the conversion between Matlab and Yaml files');
+
     % model conversion between Matlab and Yaml files is successful
     disp('The conversion was successful.')
-    status = 1;
-else
-    error('There are problems during the conversion between Matlab and Yaml files');
+catch
+    error('There are problems during the conversion import and export');
 end
 
