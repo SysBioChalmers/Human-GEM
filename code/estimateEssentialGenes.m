@@ -41,7 +41,7 @@ if nargin < 3
 end
 
 if nargin < 4
-    useGeneSymbol = ture;
+    useGeneSymbol = true;
 end
 
 % replace gene IDs with gene symbols
