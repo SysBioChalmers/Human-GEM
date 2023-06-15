@@ -1,13 +1,15 @@
-function [eGenes, INIT_output] = estimateEssentialGenes(model, dataFile, taskStruct)
+function [eGenes, INIT_output] = estimateEssentialGenes(model, dataFile, taskStruct, useGeneSymbol)
 % generate tINIT models and estimate essential genes
 %
 % Input:
 %
-%   modelfiles   Human-GEM model to be analyzed.
+%   model          reference human or animal model
 %
-%   dataFile     (opt, default Hart2015_RNAseq.txt)
+%   dataFile       (opt, default Hart2015_RNAseq.txt)
 %
-%   taskStruct   metabolic task structure (opt, default is Essential tasks)
+%   taskStruct     metabolic task structure (opt, default is Essential tasks)
+%
+%   useGeneSymbol  use gene symbols as ids and in grRules (opt, default TRUE)
 %
 % Output:
 %
@@ -38,6 +40,18 @@ if nargin < 3
     taskStruct = parseTaskList('metabolicTasks_Essential.txt');
 end
 
+if nargin < 4
+    useGeneSymbol = ture;
+end
+
+% replace gene IDs with gene symbols
+if useGeneSymbol
+    idMapping = [model.genes, model.geneShortNames];
+    [grRules,genes,rxnGeneMat] = replaceGrRules(model.grRules,idMapping);
+    model.grRules = grRules;
+    model.genes = genes;
+    model.rxnGeneMat = rxnGeneMat;
+end
 
 % pre-process RNA-Seq data
 tmp = readtable(dataFile);
