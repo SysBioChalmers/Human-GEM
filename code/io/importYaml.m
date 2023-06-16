@@ -120,10 +120,6 @@ for i=1:numel(line_key)
             if ~silentMode
                 fprintf('\t%d\n', section);
             end
-            if readSubsystems
-                model.subSystems(end+1,1) = {subSystems}; %last entry from section 3
-                readSubsystems = false;
-            end
             continue
         case '- compartments: !!omap'
             section = 5;
@@ -218,15 +214,15 @@ for i=1:numel(line_key)
 
             case 'confidence_score'
                 model = readFieldValue(model, 'rxnConfidenceScores', tline_value);
+                if readSubsystems
+                    model.subSystems(end+1,1) = {subSystems};
+                    readSubsystems = false;
+                end
 
             case 'metabolites'
                 readEquation = true;
                 leftEquation  = '';
                 rightEquation = '';
-                if readSubsystems
-                    model.subSystems(end+1,1) = {subSystems};
-                    readSubsystems = false;
-                end
                 
             otherwise
                 if readSubsystems
