@@ -108,3 +108,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR00562"	""	"ETF"	""	""	""	"ETF"	"MNXR97965"	""	""	""	0	""	""	"ETF"
 "MAR00563"	""	"ETFQO"	""	""	""	"ETFQO"	"MNXR97966"	""	""	""	0	""	""	"ETFQO"
 "MAR05434"	""	"FAOXC3DC"	""	""	""	"FAOXC3DC"	""	""	""	""	0	""	""	"FAOXC3DC"
+"MAR20015"	"R02549"	"ABUTD;ABUTDm;R_ABUTD;R_ABUTDm"	""	""	""	""	"MNXR95191"	""	""	""	0	"RHEA:19105"	""	""
+"MAR20014"	"R03283"	"R_TMABADH;TMABADH"	""	""	""	""	"MNXR104876"	""	""	""	0	"RHEA:17985"	""	""
+"MAR20052"	""	"ALDD21;RE3076X;R_ALDD21;R_RE3076X"	""	""	""	""	"MNXR95747"	""	""	""	0	"RHEA:44016"	""	""
