@@ -2204,3 +2204,5 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM03574m"	"MAM03574"	"etfrd"	""	""	""	""	""	""	""	"etfrd"	"MNXM11480"	""	"etfrd_m"
 "MAM03494c"	"MAM03494"	"c3dc"	""	""	""	"22833583"	""	""	""	"c3dc"	""	""	"c3dc_c"
 "MAM03494e"	"MAM03494"	"c3dc"	""	""	""	"22833583"	""	""	""	"c3dc"	""	""	"c3dc_s"
+"MAM03967m"	"MAM03967"	"tddedicoa"	""	""	""	"5280771"	""	""	""	"tddedicoa"	""	""	"tddedicoa_m"
+"MAM03346c"	"MAM03346"	""	""	""	""	"536537"	""	"CE2953"	""	"CE2953"	""	""	"CE2953_c"
