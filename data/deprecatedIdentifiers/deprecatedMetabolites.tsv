@@ -2208,3 +2208,4 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM03884c"	"MAM03884"	"phyt"	"C01607"	"HMDB0000801"	"CHEBI:16285"	"26840"	""	""	""	"phyt"	"MNXM91275"	""	"phyt_c"
 "MAM03884e"	"MAM03884"	"phyt"	"C01607"	"HMDB0000801"	"CHEBI:16285"	"26840"	""	""	""	"phyt"	"MNXM91275"	""	"phyt_s"
 "MAM03554c"	"MAM03554"	"dmnoncoa"	""	""	""	""	""	""	""	"dmnoncoa"	"MNXM6100"	""	"dmnoncoa_c"
+"MAM03884x"	"MAM03884"	"phyt"	"C01607"	"HMDB0000801"	"CHEBI:16285"	"26840"	""	""	""	"phyt"	"MNXM91275"	""	"phyt_p"
