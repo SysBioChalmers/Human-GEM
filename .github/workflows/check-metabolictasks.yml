@@ -8,12 +8,11 @@ jobs:
     timeout-minutes: 60
     strategy:
       matrix:
-        task-type: [essential, verification]
+        task-type: [essential, verification, failure]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - name: Check ${{ matrix.task-type }} metabolic tasks
-      run: |
-        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); testMetabolicTasks('${{ matrix.task-type }}'); exit;"
+      - name: Check ${{ matrix.task-type }} metabolic tasks
+        run: |
+          /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); testMetabolicTasks('${{ matrix.task-type }}');"
