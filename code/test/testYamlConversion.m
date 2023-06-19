@@ -20,7 +20,7 @@ end
 % export to yml and then import back
 try
     exportYaml(model,'testYamlConversion.yml');
-    importedHumanGEM = importYaml('testYamlConversionFAIL.yml', true);
+    importedHumanGEM = importYaml('testYamlConversion.yml', true);
 
     % remove intermediate Yaml file
     delete testYamlConversion.yml;
