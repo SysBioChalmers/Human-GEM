@@ -139,3 +139,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR11721"	""	""	""	""	""	"SPHMYLN181221_hs_t1"	""	""	""	""	0	""	""	"SPHMYLN181221_hs_t1"
 "MAR11723"	""	""	""	""	""	"SPHMYLN18123_hs_t1"	""	""	""	""	0	""	""	"SPHMYLN18123_hs_t1"
 "MAR11651"	""	""	""	""	""	"PAILPALM_HSt1e"	""	""	""	""	0	""	""	"PAILPALM_HSt1e"
+"MAR20015"	"R02549"	"ABUTD;ABUTDm;R_ABUTD;R_ABUTDm"	""	""	""	""	"MNXR95191"	""	""	""	0	"RHEA:19105"	""	""
+"MAR20014"	"R03283"	"R_TMABADH;TMABADH"	""	""	""	""	"MNXR104876"	""	""	""	0	"RHEA:17985"	""	""
+"MAR20052"	""	"ALDD21;RE3076X;R_ALDD21;R_RE3076X"	""	""	""	""	"MNXR95747"	""	""	""	0	"RHEA:44016"	""	""
