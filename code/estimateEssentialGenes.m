@@ -54,6 +54,7 @@ if useGeneSymbol
 end
 
 % pre-process RNA-Seq data
+disp('Step 1: preprocess and preliminary step')
 tmp = readtable(dataFile);
 arrayData.genes = tmp.gene;
 arrayData.tissues = tmp.Properties.VariableNames(2:end)';
@@ -74,11 +75,13 @@ arrayData.threshold = 1;
         
 
 % run tINIT 
+disp('Step 2: get tissue models')
 model = addBoundaryMets(model);
 params = {};
 INIT_output = {};
     
 for i = 1:length(arrayData.tissues)
+    disp(['Tissue ', num2str(i), ' out of ',  num2str(length(arrayData.tissues)),': ', arrayData.tissues{i}])
         
     % First try to run tINIT with shorter time limit. If it fails, then
     % try again with a longer time limit.
@@ -96,7 +99,7 @@ for i = 1:length(arrayData.tissues)
             
 end
     
-
+disp('Step 3: get essential genes')
 % get essential genes for each model and task
 eGenes = getTaskEssentialGenes(INIT_output, model, taskStruct);
 eGenes.refModel = model;
