@@ -1,0 +1,19 @@
+name: Test metabolic tasks
+
+on: [push, pull_request]
+
+jobs:
+  check-metabolictasks:
+    runs-on: self-hosted
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        task-type: [essential, verification]
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Check ${{ matrix.task-type }} metabolic tasks
+      run: |
+        /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); testMetabolicTasks('${{ matrix.task-type }}'); exit;"
