@@ -28,14 +28,16 @@ end
 if verLessThan('matlab','9.9') %readlines introduced 2020b
     fid=fopen(yamlFilename);
     line_raw=cell(1000000,1);
+    i=1;
     while ~feof(fid)
         line_raw{i}=fgetl(fid);
         i=i+1;
     end
     line_raw(i:end)=[];
     line_raw=string(line_raw);
+    fclose(fid);
 else
-    line_raw=readlines(yamlFilename');
+    line_raw=readlines(yamlFilename);
 end
 
 line_key=regexprep(line_raw,'^ *-? ([^:]+)(:).*','$1');
@@ -117,10 +119,6 @@ for i=1:numel(line_key)
             section = 4;
             if ~silentMode
                 fprintf('\t%d\n', section);
-            end
-            if readSubsystems
-                model.subSystems(end+1,1) = {subSystems}; %last entry from section 3
-                readSubsystems = false;
             end
             continue
         case '- compartments: !!omap'
@@ -216,15 +214,15 @@ for i=1:numel(line_key)
 
             case 'confidence_score'
                 model = readFieldValue(model, 'rxnConfidenceScores', tline_value);
+                if readSubsystems
+                    model.subSystems(end+1,1) = {subSystems};
+                    readSubsystems = false;
+                end
 
             case 'metabolites'
                 readEquation = true;
                 leftEquation  = '';
                 rightEquation = '';
-                if readSubsystems
-                    model.subSystems(end+1,1) = {subSystems};
-                    readSubsystems = false;
-                end
                 
             otherwise
                 if readSubsystems
@@ -274,7 +272,7 @@ if ~silentMode
     fprintf('\nimporting completed\nfollow-up processing...');
 end
 [~, model.metComps] = ismember(model.metComps, model.comps);
-model.metCharges = int64(str2double(model.metCharges));
+model.metCharges = str2double(model.metCharges);
 model.lb = str2double(model.lb);
 model.ub = str2double(model.ub);
 model.annotation.defaultLB = min(model.lb);

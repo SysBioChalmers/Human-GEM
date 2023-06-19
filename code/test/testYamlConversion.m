@@ -22,8 +22,12 @@ end
 
 
 % export to yml and then import back
-exportYaml(model,'testYamlConversion.yml');
-importedHumanGEM = importYaml('testYamlConversion.yml', true);
+try
+    exportYaml(model,'testYamlConversion.yml');
+    importedHumanGEM = importYaml('testYamlConversion.yml', true);
+catch
+    error('There are problems during the conversion import and export');
+end
 
 % remove intermediate Yaml file
 delete testYamlConversion.yml;
