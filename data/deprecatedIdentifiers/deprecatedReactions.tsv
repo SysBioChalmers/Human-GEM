@@ -143,3 +143,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR20014"	"R03283"	"R_TMABADH;TMABADH"	""	""	""	""	"MNXR104876"	""	""	""	0	"RHEA:17985"	""	""
 "MAR20052"	""	"ALDD21;RE3076X;R_ALDD21;R_RE3076X"	""	""	""	""	"MNXR95747"	""	""	""	0	"RHEA:44016"	""	""
 "MAR02358"	""	""	""	""	""	"r1433"	""	""	""	""	0	""	""	"r1433"
+"MAR20066"	"R00009"	"CAT;CATm;CATp;CATpp;CATr;R_CAT;R_CATm;R_CATp;R_CATpp;R_CATr"	""	""	""	""	"MNXR96455"	""	""	""	0	"RHEA:20309"	""	""
