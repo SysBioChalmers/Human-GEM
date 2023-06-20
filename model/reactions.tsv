@@ -8095,7 +8095,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR09730"	""	""	""	""	""	"EX_HC00001[e]"	""	"HMR_9730"	"RCR30245"	""	0	""	""	"HMR_9730"
 "MAR09725"	""	""	""	""	""	"HMR_9725"	""	"HMR_9725"	"RCR21039"	""	0	""	""	"HMR_9725"
 "MAR00031"	""	""	""	""	""	"HMR_0031"	""	"HMR_0031"	"RCR14835"	""	0	""	""	"HMR_0031"
-"MAR00032"	""	""	""	""	""	"HMR_0032"	""	"HMR_0032"	"RCR14836"	""	0	""	""	"HMR_0032"
 "MAR00021"	""	""	""	""	""	"biomass_components"	""	""	"RCR21132"	""	0	""	""	"biomass_components"
 "MAR00022"	""	""	""	""	""	"cofactors_vitamins"	""	""	"RCR21040"	""	0	""	""	"cofactors_vitamins"
 "MAR00023"	""	""	""	""	""	"vitaminA"	""	""	"RCR21133"	""	0	""	""	"vitaminA"
