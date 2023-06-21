@@ -8493,3 +8493,4 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM00995n"	"MAM00995"	""	""	""	"CHEBI:17879"	""	""	""	""	""	"MNXM164"	""	""
 "MAM01316n"	"MAM01316"	""	""	""	"CHEBI:60721"	""	""	""	""	""	"MNXM731626"	""	""
 "MAM00767n"	"MAM00767"	""	""	""	"CHEBI:84503"	""	""	""	""	""	"MNXM733937"	""	""
+"MAM01435m"	"MAM01435"	""	"C02528"	"HMDB0000518"	"CHEBI:16755"	"10133"	"LMST04010032"	""	"HC00958"	"HC00958"	"MNXM1183"	""	""
