@@ -336,10 +336,20 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "JHL-452b",
+      "name": "Jiahao Luo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67491919?v=4",
+      "profile": "https://github.com/JHL-452b",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "repoType": "github",
   "commitConvention": "none",
   "projectName": "Human-GEM",
-  "projectOwner": "SysBioChalmers"
+  "projectOwner": "SysBioChalmers",
+  "commitType": "docs"
 }
