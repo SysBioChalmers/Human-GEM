@@ -148,6 +148,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/7326655?v=4",
       "profile": "https://github.com/edkerk",
       "contributions": [
+        "bug",
+        "code",
         "question"
       ]
     },
@@ -306,6 +308,7 @@
       "profile": "https://orcid.org/0000-0002-6997-9531",
       "contributions": [
         "bug",
+        "content",
         "research",
         "review"
       ]
@@ -325,7 +328,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/90753730?v=4",
       "profile": "https://github.com/juliette-cooke",
       "contributions": [
-        "bug"
+        "bug",
+        "content"
       ]
     },
     {
@@ -334,7 +338,9 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/119626411?v=4",
       "profile": "https://github.com/jreimertz",
       "contributions": [
-        "bug"
+        "bug",
+        "content",
+        "review"
       ]
     },
     {
@@ -343,7 +349,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/67491919?v=4",
       "profile": "https://github.com/JHL-452b",
       "contributions": [
-        "bug"
+        "bug",
+        "content"
       ]
     }
   ],
