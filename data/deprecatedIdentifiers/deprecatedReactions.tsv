@@ -181,3 +181,7 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR01617"	""	"PHYTt"	""	""	""	"PHYTt"	"MNXR102660"	""	""	""	0	""	""	"PHYTt"
 "MAR01709"	""	"SCP22x"	""	""	""	"SCP22x"	"MNXR104294"	""	""	""	0	""	""	"SCP22x"
 "MAR05323"	""	"FAOXC16Brx"	""	""	""	"FAOXC16BRx"	"MNXR99186"	""	""	""	0	""	""	"FAOXC16BRx"
+"MAR02588"	""	""	"RE3503C"	""	""	"RE3503C"	"MNXR103936"	"HMR_2588"	"RCR12020"	""	0	""	""	"HMR_2588"
+"MAR03441"	""	"RE3150C"	""	""	""	"RE3150C"	"MNXR103806"	""	""	""	0	""	""	"RE3150C"
+"MAR10164"	""	""	""	""	""	"CE2516t"	""	""	""	""	0	""	""	"CE2516t"
+"MAR10433"	""	""	""	""	""	"EX_CE2516[e]"	""	""	""	""	0	""	""	"EX_CE2516[e]"
