@@ -93,7 +93,7 @@ def checkUnusedEntities(model, entity_type):
 
     # collect unused entites
     unused_entities = find_unused_entities(model, entity_type)
-    assert len(unused_entities) == 0, f"Found unused {{entity_type}}!"
+    assert len(unused_entities) == 0, f"Found unused {entity_type}: {unused_entities}"
 
 
 if __name__ == "__main__":
