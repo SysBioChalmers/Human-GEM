@@ -2215,3 +2215,8 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM03231c"	"MAM03231"	""	""	""	"CHEBI:57277"	""	""	""	""	"3hppa"	""	""	"3hppa_c"
 "MAM03540c"	"MAM03540"	"ddeccrn"	""	""	""	"168381"	""	""	""	"ddeccrn"	""	""	"ddeccrn_c"
 "MAM03540e"	"MAM03540"	"ddeccrn"	""	""	""	"168381"	""	""	""	"ddeccrn"	""	""	"ddeccrn_s"
+"MAM03226m"	"MAM03226"	"3hibutcoa"	"C04047"	""	"CHEBI:15481"	""	""	""	""	"3hibutcoa"	"MNXM446"	""	"3hibutcoa_m"
+"MAM03884c"	"MAM03884"	"phyt"	"C01607"	"HMDB0000801"	"CHEBI:16285"	"26840"	""	""	""	"phyt"	"MNXM91275"	""	"phyt_c"
+"MAM03884e"	"MAM03884"	"phyt"	"C01607"	"HMDB0000801"	"CHEBI:16285"	"26840"	""	""	""	"phyt"	"MNXM91275"	""	"phyt_s"
+"MAM03554c"	"MAM03554"	"dmnoncoa"	""	""	""	""	""	""	""	"dmnoncoa"	"MNXM6100"	""	"dmnoncoa_c"
+"MAM03884x"	"MAM03884"	"phyt"	"C01607"	"HMDB0000801"	"CHEBI:16285"	"26840"	""	""	""	"phyt"	"MNXM91275"	""	"phyt_p"
