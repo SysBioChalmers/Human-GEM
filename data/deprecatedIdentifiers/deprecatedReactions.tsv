@@ -187,3 +187,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR10164"	""	""	""	""	""	"CE2516t"	""	""	""	""	0	""	""	"CE2516t"
 "MAR10433"	""	""	""	""	""	"EX_CE2516[e]"	""	""	""	""	0	""	""	"EX_CE2516[e]"
 "MAR01630"	""	""	""	""	"R-HSA-192325"	"HMR_1630"	"MNXR125295"	"HMR_1630"	"RCR20511"	""	0	""	""	"HMR_1630"
+"MAR01635"	"R08734"	""	"RE2624M"	""	"R-HSA-192056"	"HMR_1635;RE2624M"	"MNXR112240"	"HMR_1635"	"RCR13606"	""	0	"RHEA:40456"	"RHEA:40455"	"HMR_1635"
