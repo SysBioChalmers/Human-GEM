@@ -190,3 +190,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR01639"	""	""	"RE3247X"	"r0706"	"R-HSA-192335"	"RE3247X;r0706"	"MNXR105369;MNXR124225"	"HMR_1639"	"RCR10917"	""	0	""	""	"HMR_1639"
 "MAR03301"	""	""	"RE1516X"	""	""	""	""	"HMR_3301"	"RCR12606"	""	0	""	""	"HMR_3301"
 "MAR03306"	""	""	"RE1517X"	""	""	""	""	"HMR_3306"	"RCR12610"	""	0	""	""	"HMR_3306"
+"MAR03311"	""	""	"RE1518X"	""	""	""	""	"HMR_3311"	"RCR14519"	""	0	""	""	"HMR_3311"
