@@ -192,3 +192,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR01644"	"R04813"	""	"RE3248M"	""	""	"HMR_1644"	""	"HMR_1644"	"RCR12830"	""	0	""	"RHEA:18933"	"HMR_1644"
 "MAR01653"	"R03719"	"SCPx"	"R03719X"	"r0628"	""	"HMR_1653"	"MNXR104297;MNXR108369"	"HMR_1653"	"RCR13610"	""	0	""	"RHEA:16865"	"HMR_1653"
 "MAR03754"	""	""	""	""	""	"RE3248M"	""	""	""	""	0	""	""	"RE3248M"
+"MAR03760"	""	""	""	""	""	"RE3250M"	""	""	""	""	0	""	""	"RE3250M"
