@@ -7,18 +7,19 @@ function status = testYamlConversion
 [ST, I]=dbstack('-completenames');
 modelPath=fileparts(fileparts(fileparts(ST(I).file)));
 
-% Import yaml model
-ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
-model = importYaml(ymlFile, true);
-
-% make sure there is no intermediate Yaml file under the current folder
-warning('off', 'MATLAB:DELETE:FileNotFound')
-if exist('testYamlConversion.yml','file')
-    delete testYamlConversion.yml;
-end
-
 % export to yml and then import back
 try
+
+    % Import yaml model
+    ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
+    model = importYaml(ymlFile, true);
+
+    % make sure there is no intermediate Yaml file under the current folder
+    warning('off', 'MATLAB:DELETE:FileNotFound')
+    if exist('testYamlConversion.yml','file')
+        delete testYamlConversion.yml;
+    end
+
     exportYaml(model,'testYamlConversion.yml');
     importedHumanGEM = importYaml('testYamlConversion.yml', true);
 
