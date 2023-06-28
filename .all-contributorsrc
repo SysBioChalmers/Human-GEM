@@ -95,7 +95,7 @@
       "login": "PkiwiBird",
       "name": "PkiwiBird",
       "avatar_url": "https://avatars.githubusercontent.com/u/8766764?v=4",
-      "profile": "",
+      "profile": "https://orcid.org/0000-0002-5120-9459",
       "contributions": [
         "bug",
         "research",
@@ -124,7 +124,7 @@
       "login": "pranasag",
       "name": "Pranas Grigaitis",
       "avatar_url": "https://avatars.githubusercontent.com/u/38076281?v=4",
-      "profile": "",
+      "profile": "https://orcid.org/0000-0002-6379-7024",
       "contributions": [
         "bug",
         "content",
@@ -150,7 +150,8 @@
       "contributions": [
         "bug",
         "code",
-        "question"
+        "question",
+        "review"
       ]
     },
     {
@@ -166,7 +167,7 @@
       "login": "XuhangLi",
       "name": "Xuhang Li",
       "avatar_url": "https://avatars.githubusercontent.com/u/41695293?v=4",
-      "profile": "https://github.com/XuhangLi",
+      "profile": "https://orcid.org/0000-0001-6071-9605",
       "contributions": [
         "bug"
       ]
@@ -193,7 +194,7 @@
       "login": "cherkaos",
       "name": "Sarah Cherkaoui",
       "avatar_url": "https://avatars.githubusercontent.com/u/4625396?v=4",
-      "profile": "https://github.com/cherkaos",
+      "profile": "https://orcid.org/0000-0002-0636-4177",
       "contributions": [
         "bug",
         "content",
@@ -266,7 +267,7 @@
       "login": "Rasools",
       "name": "Rasool Saghaleyni",
       "avatar_url": "https://avatars.githubusercontent.com/u/22166601?v=4",
-      "profile": "https://github.com/Rasools",
+      "profile": "https://orcid.org/0000-0003-0956-039X",
       "contributions": [
         "ideas",
         "research"
@@ -276,7 +277,7 @@
       "login": "stairs",
       "name": "stairs",
       "avatar_url": "https://avatars.githubusercontent.com/u/6586371?v=4",
-      "profile": "https://github.com/stairs",
+      "profile": "https://orcid.org/0000-0003-2428-7061",
       "contributions": [
         "bug",
         "content"
@@ -336,7 +337,7 @@
       "login": "jreimertz",
       "name": "Justin Reimertz",
       "avatar_url": "https://avatars.githubusercontent.com/u/119626411?v=4",
-      "profile": "https://github.com/jreimertz",
+      "profile": "https://orcid.org/0009-0001-2847-5425",
       "contributions": [
         "bug",
         "content",
@@ -347,7 +348,7 @@
       "login": "JHL-452b",
       "name": "Jiahao Luo",
       "avatar_url": "https://avatars.githubusercontent.com/u/67491919?v=4",
-      "profile": "https://github.com/JHL-452b",
+      "profile": "https://orcid.org/0000-0002-7111-1360",
       "contributions": [
         "bug",
         "content"
