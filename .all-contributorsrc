@@ -12,7 +12,7 @@
       "login": "JonathanRob",
       "name": "Jonathan Robinson",
       "avatar_url": "https://avatars.githubusercontent.com/u/22366558?v=4",
-      "profile": "https://jonathanrob.github.io",
+      "profile": "https://orcid.org/0000-0001-8567-5960",
       "contributions": [
         "bug",
         "code",
@@ -84,7 +84,7 @@
       "login": "pinarkocabas",
       "name": "Pınar Kocabaş",
       "avatar_url": "https://avatars.githubusercontent.com/u/32029599?v=4",
-      "profile": "",
+      "profile": "https://orcid.org/0000-0001-9788-2019",
       "contributions": [
         "bug",
         "research",
@@ -95,7 +95,7 @@
       "login": "PkiwiBird",
       "name": "PkiwiBird",
       "avatar_url": "https://avatars.githubusercontent.com/u/8766764?v=4",
-      "profile": "",
+      "profile": "https://orcid.org/0000-0002-5120-9459",
       "contributions": [
         "bug",
         "research",
@@ -124,7 +124,7 @@
       "login": "pranasag",
       "name": "Pranas Grigaitis",
       "avatar_url": "https://avatars.githubusercontent.com/u/38076281?v=4",
-      "profile": "",
+      "profile": "https://orcid.org/0000-0002-6379-7024",
       "contributions": [
         "bug",
         "content",
@@ -136,7 +136,7 @@
       "login": "avlant",
       "name": "Avlant",
       "avatar_url": "https://avatars.githubusercontent.com/u/5329888?v=4",
-      "profile": "https://github.com/avlant",
+      "profile": "https://orcid.org/0000-0002-9476-4516",
       "contributions": [
         "bug",
         "content"
@@ -146,9 +146,12 @@
       "login": "edkerk",
       "name": "Eduard Kerkhoven",
       "avatar_url": "https://avatars.githubusercontent.com/u/7326655?v=4",
-      "profile": "https://github.com/edkerk",
+      "profile": "https://orcid.org/0000-0002-3593-5792",
       "contributions": [
-        "question"
+        "bug",
+        "code",
+        "question",
+        "review"
       ]
     },
     {
@@ -164,7 +167,7 @@
       "login": "XuhangLi",
       "name": "Xuhang Li",
       "avatar_url": "https://avatars.githubusercontent.com/u/41695293?v=4",
-      "profile": "https://github.com/XuhangLi",
+      "profile": "https://orcid.org/0000-0001-6071-9605",
       "contributions": [
         "bug"
       ]
@@ -182,7 +185,7 @@
       "login": "BenjaSanchez",
       "name": "Benjamín Sánchez",
       "avatar_url": "https://avatars.githubusercontent.com/u/9384349?v=4",
-      "profile": "https://github.com/BenjaSanchez",
+      "profile": "https://orcid.org/0000-0001-6093-4110",
       "contributions": [
         "question"
       ]
@@ -191,7 +194,7 @@
       "login": "cherkaos",
       "name": "Sarah Cherkaoui",
       "avatar_url": "https://avatars.githubusercontent.com/u/4625396?v=4",
-      "profile": "https://github.com/cherkaos",
+      "profile": "https://orcid.org/0000-0002-0636-4177",
       "contributions": [
         "bug",
         "content",
@@ -213,7 +216,7 @@
       "login": "mpagni12",
       "name": "Marco Pagni",
       "avatar_url": "https://avatars.githubusercontent.com/u/45748199?v=4",
-      "profile": "https://github.com/mpagni12",
+      "profile": "https://orcid.org/0000-0001-9292-9463",
       "contributions": [
         "bug",
         "research"
@@ -234,7 +237,7 @@
       "login": "CadavidJoseL",
       "name": "Jose L. Cadavid",
       "avatar_url": "https://avatars.githubusercontent.com/u/62765618?v=4",
-      "profile": "https://github.com/CadavidJoseL",
+      "profile": "https://orcid.org/0000-0002-9966-7352",
       "contributions": [
         "bug",
         "research"
@@ -244,7 +247,7 @@
       "login": "johan-gson",
       "name": "johan-gson",
       "avatar_url": "https://avatars.githubusercontent.com/u/32481323?v=4",
-      "profile": "https://github.com/johan-gson",
+      "profile": "https://orcid.org/0000-0001-5072-2659",
       "contributions": [
         "bug",
         "content",
@@ -255,7 +258,7 @@
       "login": "dweindl",
       "name": "Daniel Weindl",
       "avatar_url": "https://avatars.githubusercontent.com/u/18048784?v=4",
-      "profile": "https://github.com/dweindl",
+      "profile": "https://orcid.org/0000-0001-9963-6057",
       "contributions": [
         "bug"
       ]
@@ -264,7 +267,7 @@
       "login": "Rasools",
       "name": "Rasool Saghaleyni",
       "avatar_url": "https://avatars.githubusercontent.com/u/22166601?v=4",
-      "profile": "https://github.com/Rasools",
+      "profile": "https://orcid.org/0000-0003-0956-039X",
       "contributions": [
         "ideas",
         "research"
@@ -274,7 +277,7 @@
       "login": "stairs",
       "name": "stairs",
       "avatar_url": "https://avatars.githubusercontent.com/u/6586371?v=4",
-      "profile": "https://github.com/stairs",
+      "profile": "https://orcid.org/0000-0003-2428-7061",
       "contributions": [
         "bug",
         "content"
@@ -284,7 +287,7 @@
       "login": "feiranl",
       "name": "feiranl",
       "avatar_url": "https://avatars.githubusercontent.com/u/32157802?v=4",
-      "profile": "https://github.com/feiranl",
+      "profile": "https://orcid.org/0000-0001-9155-5260",
       "contributions": [
         "bug",
         "code",
@@ -306,6 +309,7 @@
       "profile": "https://orcid.org/0000-0002-6997-9531",
       "contributions": [
         "bug",
+        "content",
         "research",
         "review"
       ]
@@ -325,21 +329,35 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/90753730?v=4",
       "profile": "https://github.com/juliette-cooke",
       "contributions": [
-        "bug"
+        "bug",
+        "content"
       ]
     },
     {
       "login": "jreimertz",
       "name": "Justin Reimertz",
       "avatar_url": "https://avatars.githubusercontent.com/u/119626411?v=4",
-      "profile": "https://github.com/jreimertz",
+      "profile": "https://orcid.org/0009-0001-2847-5425",
       "contributions": [
-        "bug"
+        "bug",
+        "content",
+        "review"
+      ]
+    },
+    {
+      "login": "JHL-452b",
+      "name": "Jiahao Luo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67491919?v=4",
+      "profile": "https://orcid.org/0000-0002-7111-1360",
+      "contributions": [
+        "bug",
+        "content"
       ]
     }
   ],
   "repoType": "github",
   "commitConvention": "none",
   "projectName": "Human-GEM",
-  "projectOwner": "SysBioChalmers"
+  "projectOwner": "SysBioChalmers",
+  "commitType": "docs"
 }
