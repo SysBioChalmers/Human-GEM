@@ -163,6 +163,7 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR20020"	"R00303"	"G6PP;G6PPer;R_G6PP;R_G6PPer"	""	""	""	""	"MNXR195425"	""	""	""	0	"RHEA:16689"	""	""
 "MAR20002"	"R02124"	"HMR_6633;RDH1;R_HMR_6633;R_RDH1;R_TRETINOLOR1;TRETINOLOR1"	""	""	""	""	"MNXR189842"	""	""	""	0	"RHEA:21284"	""	""
 "MAR00030"	""	""	""	""	""	"HMR_0030"	""	"HMR_0030"	"RCR20227"	""	0	""	""	"HMR_0030"
+"MAR00032"	""	""	""	""	""	"HMR_0032"	""	"HMR_0032"	"RCR14836"	""	0	""	""	"HMR_0032"
 "MAR02276"	""	"r0993"	""	""	""	"r0993"	"MNXR105414"	""	""	""	0	""	""	"r0993"
 "MAR02277"	""	"r0994"	""	""	""	"r0994"	"MNXR105415"	""	""	""	0	""	""	"r0994"
 "MAR02384"	""	"r1495"	""	""	""	"r1495"	"MNXR105478"	""	""	""	0	""	""	"r1495"
