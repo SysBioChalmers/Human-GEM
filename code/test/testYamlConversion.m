@@ -28,11 +28,11 @@ try
 
     % compare the imported model from yaml with the original one
     if ~isequal(model, importedHumanGEM)
-        disp('::error::Re-imported model is diffrent from export');
+        warning('::error::Re-imported model is diffrent from export');
         exit(1);
     end
 catch
-    disp('::error::There are problems during the conversion import and export');
+    warning('::error::There are problems during the conversion import and export');
     exit(1)
 end
 

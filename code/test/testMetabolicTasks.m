@@ -29,7 +29,7 @@ if taskType == "essential"
 elseif taskType == "verification"
     taskFile=fullfile(modelPath,'data','metabolicTasks','metabolicTasks_VerifyModel.txt');
 else
-    disp('::error::Unknown task type is provided.');
+    warning('::error::Unknown task type is provided.');
     exit(1)
 end
 verificationTasks = parseTaskList(taskFile);
@@ -40,6 +40,6 @@ if all(verificationTaskReport.ok)
     fprintf('Suceeded with %s tasks.\n', taskType)
     status = 1;
 else
-    disp('::error::Failed in %s tasks.', taskType);
+    warning('::error::Failed in %s tasks.', taskType);
     exit(1)
 end
