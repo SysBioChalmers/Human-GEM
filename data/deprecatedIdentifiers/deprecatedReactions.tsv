@@ -158,6 +158,7 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR20015"	"R02549"	"ABUTD;ABUTDm;R_ABUTD;R_ABUTDm"	""	""	""	""	"MNXR95191"	""	""	""	0	"RHEA:19105"	""	""
 "MAR20014"	"R03283"	"R_TMABADH;TMABADH"	""	""	""	""	"MNXR104876"	""	""	""	0	"RHEA:17985"	""	""
 "MAR20052"	""	"ALDD21;RE3076X;R_ALDD21;R_RE3076X"	""	""	""	""	"MNXR95747"	""	""	""	0	"RHEA:44016"	""	""
+"MAR05310"	""	"GLNtN1"	""	""	""	"GLNtN1"	"MNXR100263"	"HMR_5310"	"RCR41006"	""	0	""	""	"HMR_5310"
 "MAR00032"	""	""	""	""	""	"HMR_0032"	""	"HMR_0032"	"RCR14836"	""	0	""	""	"HMR_0032"
 "MAR02276"	""	"r0993"	""	""	""	"r0993"	"MNXR105414"	""	""	""	0	""	""	"r0993"
 "MAR02277"	""	"r0994"	""	""	""	"r0994"	"MNXR105415"	""	""	""	0	""	""	"r0994"
@@ -188,3 +189,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR03441"	""	"RE3150C"	""	""	""	"RE3150C"	"MNXR103806"	""	""	""	0	""	""	"RE3150C"
 "MAR10164"	""	""	""	""	""	"CE2516t"	""	""	""	""	0	""	""	"CE2516t"
 "MAR10433"	""	""	""	""	""	"EX_CE2516[e]"	""	""	""	""	0	""	""	"EX_CE2516[e]"
+"MAR09887"	""	"GLNB0AT3tc"	""	""	""	"GLNB0AT3tc"	""	""	""	""	0	""	""	"GLNB0AT3tc"
