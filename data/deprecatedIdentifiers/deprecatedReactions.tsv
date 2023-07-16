@@ -196,3 +196,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR10433"	""	""	""	""	""	"EX_CE2516[e]"	""	""	""	""	0	""	""	"EX_CE2516[e]"
 "MAR09887"	""	"GLNB0AT3tc"	""	""	""	"GLNB0AT3tc"	""	""	""	""	0	""	""	"GLNB0AT3tc"
 "MAR01515"	""	"MAOX"	""	""	""	"MAOX"	"MNXR101406"	""	""	""	0	"RHEA:59421"	"RHEA:59420"	"MAOX"
+"MAR00039"	""	"13DAMPPOX"	""	""	""	"13DAMPPOX"	"MNXR94687"	""	""	""	0	""	""	"13DAMPPOX"
