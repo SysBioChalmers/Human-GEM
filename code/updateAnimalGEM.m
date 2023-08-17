@@ -11,7 +11,7 @@ function [animalGEM, speciesSpecNetwork, gapfillNetwork]=updateAnimalGEM(ortholo
 %   rxnsToAdd            the structure of species-specific reactions
 %   metsToAdd            the structure of species-specific metabolites
 %   modelId              model id
-%   resetBiomass         reset biomass objective function to "biomass_componenets"
+%   resetBiomass         reset biomass objective function to "biomass_components"
 %                        which is constituted by generic componenets that
 %                        suppose to occur in a eukaryotic cell (opt, default TRUE)
 %
