@@ -84,6 +84,7 @@ end
 
 %% Gap-filling
 [animalGEM, gapfillNetwork]=gapfill4EssentialTasks(animalGEM,ihuman,resetBiomass);
+animalGEM.b = animalGEM.b(:,1);   % ensure b field in single column
 
 
 %% post-gapfilling procedures
