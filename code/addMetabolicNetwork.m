@@ -144,8 +144,11 @@ if any(ismember(newGenes, newModel.genes))
     newGenes = setdiff(newGenes, newModel.genes);
 end
 
-% append new genes to list of model genes
+% append new genes and their names to model
 newModel.genes = [newModel.genes; newGenes];
+emptyGeneNames = newGenes;
+emptyGeneNames(:) = {''};
+newModel.geneShortNames = [newModel.geneShortNames; emptyGeneNames];
 
 % add new columns to rxnGeneMat will be updated after the new reactions are added below.
 newModel.rxnGeneMat(:, end+1:end+numel(newGenes)) = 0;
