@@ -202,3 +202,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR03364"	""	""	"RE2913X"	""	""	""	""	"HMR_3364"	"RCR12576"	""	0	""	""	"HMR_3364"
 "MAR03369"	""	""	"RE2914X"	""	""	""	""	"HMR_3369"	"RCR12580"	""	0	""	""	"HMR_3369"
 "MAR09887"	""	"GLNB0AT3tc"	""	""	""	"GLNB0AT3tc"	""	""	""	""	0	""	""	"GLNB0AT3tc"
+"MAR00059"	""	"ACOX22x"	""	""	""	"ACOX22x"	"MNXR95389"	""	""	""	0	""	""	"ACOX22x"

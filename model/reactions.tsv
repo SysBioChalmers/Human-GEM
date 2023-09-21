@@ -8096,7 +8096,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR00056"	""	"ACACtx"	""	""	""	"ACACtx"	"MNXR95208"	""	""	""	0	"RHEA:29754"	"RHEA:29751"	"ACACtx"
 "MAR00057"	""	"ACCOAtr"	""	""	""	"ACCOAtr"	"MNXR95223"	""	""	""	0	""	""	"ACCOAtr"
 "MAR00058"	""	"ACHVESSEC"	""	""	""	"ACHVESSEC"	"MNXR95266"	""	""	""	0	""	""	"ACHVESSEC"
-"MAR00059"	""	"ACOX22x"	""	""	""	"ACOX22x"	"MNXR95389"	""	""	""	0	""	""	"ACOX22x"
 "MAR00060"	""	"ACRNtm"	""	""	""	"ACRNtm"	"MNXR95412"	""	""	""	0	""	""	"ACRNtm"
 "MAR00061"	""	"ACt2m"	""	""	""	"ACt2m"	"MNXR95429"	""	""	""	0	""	""	"ACt2m"
 "MAR00062"	""	"ADPRDPm"	""	""	""	"ADPRDPm"	"MNXR95480"	""	""	""	0	""	""	"ADPRDPm"
