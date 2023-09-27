@@ -230,3 +230,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR00096"	""	"BUP2"	""	""	""	"BUP2"	"MNXR96346"	""	""	""	0	""	""	"BUP2"
 "MAR02027"	""	"r0193"	""	""	""	"r0193"	"MNXR105313"	""	""	""	0	""	""	"r0193"
 "MAR02006"	""	"CPS_m"	""	""	""	"r0034"	""	""	""	""	0	""	""	"r0034"
+"MAR03940"	"R01795"	"PHETHPTOX"	"R01795C"	"r0399"	""	"r0399"	"MNXR102632;MNXR107174"	"HMR_3940"	"RCR11388"	""	0	""	"RHEA:30787"	"HMR_3940"
