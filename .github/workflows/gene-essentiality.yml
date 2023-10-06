@@ -17,7 +17,7 @@ jobs:
       - name: Run gene essentiality
         id: essentiality
         run: |
-          TEST_RESULTS=$(/usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "ihuman = importYaml('Human-GEM.yml'); taskStruct = parseTaskList('data/metabolicTasks/metabolicTasks_Essential.txt'); eGenes = estimateEssentialGenes(ihuman, 'Hart2015_RNAseq.txt', taskStruct); disp(evaluateHart2015Essentiality(eGenes));" | awk 'NR>9 && !/^\.+/')
+          TEST_RESULTS=$(/usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); ihuman = importYaml('Human-GEM.yml'); taskStruct = parseTaskList('data/metabolicTasks/metabolicTasks_Essential.txt'); eGenes = estimateEssentialGenes(ihuman, 'Hart2015_RNAseq.txt', taskStruct); disp(evaluateHart2015Essentiality(eGenes));" | awk 'NR>9 && !/^\.+/')
           PARSED_RESULTS="${TEST_RESULTS//'%'/'%25'}"
           PARSED_RESULTS="${PARSED_RESULTS//$'\n'/'<br>'}"
           PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}"
