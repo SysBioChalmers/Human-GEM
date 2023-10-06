@@ -211,7 +211,7 @@
 				NAD+[m]	1	1	CO2[m]	1	1								
 							NADH[m]	1	1								
 	34	Synthesis of fructose-6-phosphate from erythrose-4-phosphate (HMP shunt)		fructose-6-phosphate[c]	1	1	erythrose-4-phosphate[c]	1	1								
-				GAP[c]	1	1	D-xylulose-5-phosphate[c]	1	1								
+				D-glyceraldehyde 3-phosphate[c]	1	1	D-xylulose-5-phosphate[c]	1	1								
 	35	Synthesis of ribose-5-phosphate		glucose[c]	1	1	ribose-5-phosphate[c]	1	1								
 				ATP[c]	1	1	ADP[c]	1	1								
 				NADP+[c]	2	2	H+[c]	3	3								
@@ -226,7 +226,7 @@
 	38	Glycogen degradation		glycogenin G4G7[c]	1	1	glucose[c]	8									
 				Pi[c]	3		NA[c]	1	1								
 				H2O[c]	8		glucose-1-phosphate[c]	3									
-	39	Fructose degradation (to glucose-3-phosphate)		fructose[c]	1	1	GAP[c]	2	2								
+	39	Fructose degradation (to glucose-3-phosphate)		fructose[c]	1	1	D-glyceraldehyde 3-phosphate[c]	2	2								
 				ATP[c]	2	2	ADP[c]	2	2								
 							H+[c]	2	2								
 	40	Fructose to glucose conversion (via fructose-6-phosphate)		fructose[c]	1	1	glucose[c]	1	1								

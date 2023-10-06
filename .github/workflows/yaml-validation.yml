@@ -25,5 +25,8 @@ jobs:
           ## Return non-zero exit code on warnings as well as errors
           # strict: # optional, default is false
 
+      - name: Basic MEMOTE tests
+        run: python code/test/memoteTest.py
+
       - name: Test import with cobrapy and consistency with annotation files
         run: python code/test/sanityCheck.py
