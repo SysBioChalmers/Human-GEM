@@ -220,12 +220,12 @@
 	36	Synthesis of lactose		glucose[g]	1	1	lactose[g]	1	1								
 				UDP-galactose[g]	1	1	UDP[g]	1	1								
 							H+[g]	1	1								
-	37	Glycogen biosynthesis		glycogenin[c]	1	1	glycogenin G4G7[c]	1	1								
-				UDP-glucose[c]	11		H+[c]	11									
-							UDP[c]	11									
-	38	Glycogen degradation		glycogenin G4G7[c]	1	1	glucose[c]	8									
-				Pi[c]	3		glycogenin[c]	1	1								
-				H2O[c]	8		glucose-1-phosphate[c]	3									
+#	37	Glycogen biosynthesis		NA[c]	1	1	glycogenin G4G7[c]	1	1								
+#				UDP-glucose[c]	11		H+[c]	11									
+#							UDP[c]	11									
+#	38	Glycogen degradation		glycogenin G4G7[c]	1	1	glucose[c]	8									
+#				Pi[c]	3		NA[c]	1	1								
+#				H2O[c]	8		glucose-1-phosphate[c]	3									
 	39	Fructose degradation (to glucose-3-phosphate)		fructose[c]	1	1	D-glyceraldehyde 3-phosphate[c]	2	2								
 				ATP[c]	2	2	ADP[c]	2	2								
 							H+[c]	2	2								
@@ -1130,14 +1130,14 @@
 	180	Pyridoxal-phosphate synthesis		pyridoxal[c]	1	1	pyridoxal-phosphate[c]	1	1								
 				ATP[c]	1	1	ADP[c]	1	1								
 							H+[c]	1	1								
-	181	Synthesis of bilirubin		heme[c]	1	1	bilirubin[c]	1	1								
-				NADPH[c]	0	4	H2O[c]	0	3								
-				H+[c]	0	6	Fe2+[c]	0	1								
-				O2[c]	0	3	Fe3+[c]	0	1								
-				FADH2[c]	0	1	NADP+[c]	0	4								
-							FAD[c]	0	1								
-							CO[c]	1	1								
-							globin[c]	0	1								
+#	181	Synthesis of bilirubin		heme[c]	1	1	bilirubin[c]	1	1								
+#				NADPH[c]	0	4	H2O[c]	0	3								
+#				H+[c]	0	6	Fe2+[c]	0	1								
+#				O2[c]	0	3	Fe3+[c]	0	1								
+#				FADH2[c]	0	1	NADP+[c]	0	4								
+#							FAD[c]	0	1								
+#							CO[c]	1	1								
+#							NA[c]	0	1								
 	182	Heme synthesis		glycine[m]	16	16	heme[m]	2	2								
 				succinyl-CoA[m]	16	18	H2O[m]	26	26								
 				Fe2+[m]	2	2	CoA[m]	16	18								
