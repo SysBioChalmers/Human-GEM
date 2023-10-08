@@ -220,10 +220,10 @@
 	36	Synthesis of lactose		glucose[g]	1	1	lactose[g]	1	1								
 				UDP-galactose[g]	1	1	UDP[g]	1	1								
 							H+[g]	1	1								
-#	37	Glycogen biosynthesis		NA[c]	1	1	glycogenin G4G7[c]	1	1								
+#	37	Glycogen biosynthesis		NA[c]	1	1	glycogenin G4G7[c]	1	1								The metabolite NA[c] in this task is conflicting with HumanGEM
 #				UDP-glucose[c]	11		H+[c]	11									
 #							UDP[c]	11									
-#	38	Glycogen degradation		glycogenin G4G7[c]	1	1	glucose[c]	8									
+#	38	Glycogen degradation		glycogenin G4G7[c]	1	1	glucose[c]	8									The metabolite NA[c] in this task is conflicting with HumanGEM
 #				Pi[c]	3		NA[c]	1	1								
 #				H2O[c]	8		glucose-1-phosphate[c]	3									
 	39	Fructose degradation (to glucose-3-phosphate)		fructose[c]	1	1	D-glyceraldehyde 3-phosphate[c]	2	2								
@@ -1130,7 +1130,7 @@
 	180	Pyridoxal-phosphate synthesis		pyridoxal[c]	1	1	pyridoxal-phosphate[c]	1	1								
 				ATP[c]	1	1	ADP[c]	1	1								
 							H+[c]	1	1								
-#	181	Synthesis of bilirubin		heme[c]	1	1	bilirubin[c]	1	1								
+#	181	Synthesis of bilirubin		heme[c]	1	1	bilirubin[c]	1	1								The metabolite NA[c] in this task is conflicting with HumanGEM
 #				NADPH[c]	0	4	H2O[c]	0	3								
 #				H+[c]	0	6	Fe2+[c]	0	1								
 #				O2[c]	0	3	Fe3+[c]	0	1								
