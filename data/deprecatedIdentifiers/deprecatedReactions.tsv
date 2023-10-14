@@ -239,3 +239,5 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR07782"	""	"ADPtx"	""	""	""	"ADPtx"	"MNXR95484"	"HMR_7782"	"RCR20201"	""	0	""	""	"HMR_7782"
 "MAR07783"	""	"AMPtp"	""	""	""	"AMPtp"	"MNXR95830"	"HMR_7783"	"RCR20046"	""	0	""	""	"HMR_7783"
 "MAR07790"	""	"FADtx"	""	""	""	"FADtx"	"MNXR99217"	"HMR_7790"	"RCR20203"	""	0	""	""	"HMR_7790"
+"MAR01483"	""	"LIPOti"	""	""	""	"LIPOti"	"MNXR101093"	""	""	""	0	""	""	"LIPOti"
+"MAR06406"	""	"LIPOti"	"RT1089"	""	""	""	"MNXR101093"	"HMR_6406"	"RCR41534"	""	0	""	""	"HMR_6406"
