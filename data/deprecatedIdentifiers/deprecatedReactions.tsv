@@ -245,3 +245,5 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR09019"	""	""	""	""	""	"HMR_9019"	""	"HMR_9019"	"RCR20242"	""	0	""	""	"HMR_9019"
 "MAR07823"	""	"DNDPt51m"	""	""	""	"DCTPtm"	"MNXR97204"	""	""	""	0	""	""	"DCTPtm"
 "MAR07926"	""	"DGTPtm"	""	""	""	"DGTPtm"	"MNXR97327"	""	""	""	0	""	""	"DGTPtm"
+"MAR01483"	""	"LIPOti"	""	""	""	"LIPOti"	"MNXR101093"	""	""	""	0	""	""	"LIPOti"
+"MAR06406"	""	"LIPOti"	"RT1089"	""	""	""	"MNXR101093"	"HMR_6406"	"RCR41534"	""	0	""	""	"HMR_6406"
