@@ -10,7 +10,8 @@ function status = testMetabolicTasks(taskType)
 %
 
 if nargin < 1
-    error('Task type is missing!');
+    disp('::error::Task type is missing!');
+    exit(1)
 end
 
 % Get model path
@@ -28,7 +29,8 @@ if taskType == "essential"
 elseif taskType == "verification"
     taskFile=fullfile(modelPath,'data','metabolicTasks','metabolicTasks_VerifyModel.txt');
 else
-    error('Unknown task type is provided.');
+    warning('::error::Unknown task type is provided.');
+    exit(1)
 end
 verificationTasks = parseTaskList(taskFile);
 
@@ -38,6 +40,6 @@ if all(verificationTaskReport.ok)
     fprintf('Suceeded with %s tasks.\n', taskType)
     status = 1;
 else
-    error('Failed in %s tasks.', taskType);
+    warning('::error::Failed in %s tasks.', taskType);
+    exit(1)
 end
-

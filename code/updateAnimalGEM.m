@@ -1,4 +1,4 @@
-function [animalGEM, speciesSpecNetwork, gapfillNetwork]=updateAnimalGEM(orthologPairs,rxnsToAdd,metsToAdd,modelId)
+function [animalGEM, speciesSpecNetwork, gapfillNetwork]=updateAnimalGEM(orthologPairs,rxnsToAdd,metsToAdd,modelId,resetBiomass)
 % updateAnimalGEM
 %   Generate a model by using the Human-GEM as a template and taking into
 %   account species-specific pathways/reactions
@@ -11,7 +11,9 @@ function [animalGEM, speciesSpecNetwork, gapfillNetwork]=updateAnimalGEM(ortholo
 %   rxnsToAdd            the structure of species-specific reactions
 %   metsToAdd            the structure of species-specific metabolites
 %   modelId              model id
-%
+%   resetBiomass         reset biomass objective function to "biomass_components"
+%                        which is constituted by generic componenets that
+%                        suppose to occur in a eukaryotic cell (opt, default TRUE)
 %
 %   Output:
 %   animalGEM            an updated animal GEM
@@ -81,7 +83,8 @@ end
 
 
 %% Gap-filling
-[animalGEM, gapfillNetwork]=gapfill4EssentialTasks(animalGEM,ihuman);
+[animalGEM, gapfillNetwork]=gapfill4EssentialTasks(animalGEM,ihuman,resetBiomass);
+animalGEM.b = animalGEM.b(:,1);   % ensure b field in single column
 
 
 %% post-gapfilling procedures

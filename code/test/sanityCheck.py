@@ -39,8 +39,12 @@ def checkRxnAnnotation(rxns):
     rxnList = get_column_from_tsv("model/reactions.tsv", "rxns")
     spontaneous = get_column_from_tsv("model/reactions.tsv", "spontaneous", False)
     rxnDeprecated = get_column_from_tsv("data/deprecatedIdentifiers/deprecatedReactions.tsv", "rxns")
-    assert set(rxnList).isdisjoint(set(rxnDeprecated)), "Deprecated reaction reused!"
-    assert rxnList == rxns, "Reaction annotation mismatch!"
+    rxnMisused = set(rxns).intersection(set(rxnDeprecated))
+    assert len(rxnMisused) == 0, "Deprecated reaction(s) used: {}".format(rxnMisused)
+    rxnMisused = set(rxns).difference(set(rxnList))
+    assert len(rxnMisused) == 0, "Reaction(s) not annotated in reactions.tsv: {}".format(rxnMisused)
+    rxnMisused = set(rxnList).difference(set(rxns))
+    assert len(rxnMisused) == 0, "Annotated reactions are missing from the model: {}".format(rxnMisused)  
     assert pd.api.types.is_numeric_dtype(spontaneous), "Spontaneous column should be in numeric!"
 
 
@@ -50,16 +54,22 @@ def checkMetAnnotation(mets):
     """
     metList = get_column_from_tsv("model/metabolites.tsv", "mets")
     metDeprecated = get_column_from_tsv("data/deprecatedIdentifiers/deprecatedMetabolites.tsv", "mets")
-    assert set(metList).isdisjoint(set(metDeprecated)), "Deprecated metabolite reused!"
-    assert metList == mets, "Metabolite annotation mismatch!"
-
+    metMisused = set(mets).intersection(set(metDeprecated))
+    assert len(metMisused) == 0, "Deprecated metabolite(s) used: {}".format(metMisused)
+    metMisused = set(mets).difference(set(metList))
+    assert len(metMisused) == 0, "Metabolite(s) not annotated in metabolites.tsv: {}".format(metMisused)
+    metMisused = set(metList).difference(set(mets))
+    assert len(metMisused) == 0, "Annotated metabolite(s) are missing from the model: {}".format(metMisused)  
 
 def checkGeneAnnotation(genes):
     """
     check consistency of gene lists between model and annotation file
     """
     geneList = get_column_from_tsv("model/genes.tsv", "genes")
-    assert geneList == genes, "Gene annotation mismatch!"
+    geneMisused = set(genes).difference(set(geneList))
+    assert len(geneMisused) == 0, "Gene(s) not annotated in genes.tsv: {}".format(geneMisused)
+    geneMisused = set(geneList).difference(set(genes))
+    assert len(geneMisused) == 0, "Annotated gene(s) are missing from the model: {}".format(geneMisused)  
 
 
 def find_unused_entities(model, entity_type):
@@ -94,7 +104,7 @@ def checkUnusedEntities(model, entity_type):
 
     # collect unused entites
     unused_entities = find_unused_entities(model, entity_type)
-    assert len(unused_entities) == 0, f"Found unused {{entity_type}}!"
+    assert len(unused_entities) == 0, f"Found unused {entity_type}: {unused_entities}"
 
 
 def checkDupRxn(model):
