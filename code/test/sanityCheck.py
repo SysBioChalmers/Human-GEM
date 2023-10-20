@@ -4,6 +4,7 @@
 
 import pandas as pd
 import cobra
+from collections import Counter
 
 
 def get_column_from_tsv(tsv_file, column_id, to_list=True):
@@ -106,6 +107,22 @@ def checkUnusedEntities(model, entity_type):
     assert len(unused_entities) == 0, f"Found unused {entity_type}: {unused_entities}"
 
 
+def checkDupRxn(model):
+    """
+    Check for duplicate reactions in the model
+    """
+
+    reaction_equations = [rxn.build_reaction_string(use_metabolite_names=False) for rxn in model.reactions]
+    duplicate_reactions = [reaction for reaction, count in Counter(reaction_equations).items() if count > 1]
+    dup_list = [model.reactions[idx].id for idx, val in enumerate(reaction_equations) if val in duplicate_reactions]
+
+    if duplicate_reactions:
+        output = f"The following {len(dup_list)} reactions are duplicates, please check: " + ';'.join(dup_list)
+        print(output)
+        
+    assert len(duplicate_reactions) == 0, "Found duplicated reactions!"
+
+
 if __name__ == "__main__":
     rxns, mets, genes, model = load_yml("model/Human-GEM.yml")
     checkRxnAnnotation(rxns)
@@ -113,4 +130,5 @@ if __name__ == "__main__":
     checkGeneAnnotation(genes)
     checkUnusedEntities(model, "metabolites")
     checkUnusedEntities(model, "genes")
+    checkDupRxn(model)
     print("All checks have passed.")
