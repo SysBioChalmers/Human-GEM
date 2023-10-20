@@ -2249,3 +2249,6 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM02757n"	"MAM02757"	""	""	""	""	""	""	""	""	"M02757"	""	"m02757n"	"m02757n"
 "MAM01816n"	"MAM01816"	""	""	""	""	""	"PROTEIN"	""	""	"M01816"	""	"m01816n"	"m01816n"
 "MAM00926c"	"MAM00926"	"4aphdob"	"C01252"	"HMDB0000978"	"CHEBI:17442"	"472"	""	""	""	"4aphdob"	"MNXM163204"	"m00926c"	"m00926c"
+"MAM20020r"	"MAM20020"	"C00061"	""	""	"CHEBI:58210"	""	""	""	""	""	"MNXM1105928"	""	""
+"MAM20022i"	"MAM20022"	"C01847"	""	""	"CHEBI:57618"	""	""	""	""	""	"MNXM1107623"	""	""
+"MAM20023i"	"MAM20023"	"C00061"	""	""	"CHEBI:58210"	""	""	""	""	""	"MNXM1105928"	""	""
