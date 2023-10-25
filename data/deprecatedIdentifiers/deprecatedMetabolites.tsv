@@ -2252,3 +2252,4 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM20020r"	"MAM20020"	"C00061"	""	""	"CHEBI:58210"	""	""	""	""	""	"MNXM1105928"	""	""
 "MAM20022i"	"MAM20022"	"C01847"	""	""	"CHEBI:57618"	""	""	""	""	""	"MNXM1107623"	""	""
 "MAM20023i"	"MAM20023"	"C00061"	""	""	"CHEBI:58210"	""	""	""	""	""	"MNXM1105928"	""	""
+"MAM02398c"	"MAM02398"	""	"C16238"	""	""	"23724672"	""	"CE5656"	""	"CE5656"	"MNXM2392"	"m02398c"	"m02398c"
