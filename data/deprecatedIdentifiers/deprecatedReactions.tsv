@@ -255,3 +255,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR20089"	"R02701"	""	""	""	""	""	"MNXR151808"	""	""	""	0	"RHEA:18533"	""	""
 "MAR11292"	""	"HXAt3"	""	""	""	"HXAt3"	""	""	""	""	0	""	""	"HXAt3"
 "MAR11293"	""	"EX_hxa_e"	""	""	""	"EX_hxa[e]"	"MNXR98664"	""	""	""	0	""	""	"EX_hxa[e]"
+"MAR09949"	""	"FACOAE60"	""	""	""	"HXCOAc"	"MNXR99139"	""	""	""	0	""	""	"HXCOAc"
