@@ -253,3 +253,5 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR00482"	"R00848;R00849"	"G3PD2m"	"R00848C"	"r0205"	""	"HMR_0482;r0205"	"MNXR99875;MNXR106713"	"HMR_0482;HMR_0483"	"RCR14578;RCR21050"	""	0	""	"RHEA:31283;RHEA:18977"	"HMR_0482;HMR_0483;MAR00483"
 "MAR20012"	"R02123"	"HMR_6647;RADH;R_HMR_6647;R_RADH"	""	""	""	""	"MNXR146215"	""	""	""	0	"RHEA:42080"	""	""
 "MAR20089"	"R02701"	""	""	""	""	""	"MNXR151808"	""	""	""	0	"RHEA:18533"	""	""
+"MAR11292"	""	"HXAt3"	""	""	""	"HXAt3"	""	""	""	""	0	""	""	"HXAt3"
+"MAR11293"	""	"EX_hxa_e"	""	""	""	"EX_hxa[e]"	"MNXR98664"	""	""	""	0	""	""	"EX_hxa[e]"
