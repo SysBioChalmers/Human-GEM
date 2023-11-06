@@ -353,6 +353,15 @@
         "bug",
         "content"
       ]
+    },
+    {
+      "login": "Christoff1993",
+      "name": "Christoff1993",
+      "avatar_url": "https://avatars.githubusercontent.com/u/95428150?v=4",
+      "profile": "https://github.com/Christoff1993",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "repoType": "github",
