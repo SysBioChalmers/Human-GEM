@@ -6835,7 +6835,6 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR06342"	""	"DNDPt58m"	""	"r2431"	""	"DNDPt58m"	"MNXR97671"	"HMR_6342"	"RCR20140"	"2.A.29.16.1"	0	""	""	"HMR_6342"
 "MAR06343"	""	"DNDPt42m"	""	"r2432"	""	"DNDPt42m"	"MNXR97655"	"HMR_6343"	"RCR20276"	"2.A.29.16.1"	0	""	""	"HMR_6343"
 "MAR06389"	""	"r2472"	""	"r2472"	""	"r2472"	"MNXR100321"	"HMR_6389"	"RCR20616"	"2.A.1.4.7"	0	""	""	"HMR_6389"
-"MAR06391"	""	""	""	"r2520"	""	"r2520"	"MNXR106328"	"HMR_6391"	"RCR20063"	""	0	""	""	"HMR_6391"
 "MAR06431"	""	""	""	""	""	"HMR_6431"	""	"HMR_6431"	"RCR20617"	""	0	""	""	"HMR_6431"
 "MAR06438"	""	""	""	""	""	"HMR_6438"	""	"HMR_6438"	"RCR20618"	""	0	""	""	"HMR_6438"
 "MAR06446"	""	""	""	""	""	"HMR_6446"	""	"HMR_6446"	"RCR20619"	""	0	""	""	"HMR_6446"
