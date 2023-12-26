@@ -278,3 +278,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR03426"	""	"HMR_3426"	""	""	""	"HMR_3426"	""	"HMR_3426"	"RCR12671"	""	0	""	""	"HMR_3426"
 "MAR05019"	""	"FAOXC10C10OHm"	""	""	""	"FAOXC10C10OHm"	""	""	""	""	0	""	""	"FAOXC10C10OHm"
 "MAR04967"	""	"FAOXC101C8m"	""	""	""	"FAOXC101C8m"	""	""	""	""	0	""	""	"FAOXC101C8m"
+"MAR05024"	""	"FAOXC10080m"	""	""	""	"FAOXC10C8m"	"MNXR99262"	""	""	""	0	""	""	"FAOXC10C8m"
