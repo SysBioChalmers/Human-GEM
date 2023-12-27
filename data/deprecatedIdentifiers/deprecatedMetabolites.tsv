@@ -2261,3 +2261,5 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM02986n"	"MAM02986"	"tcynt"	"C01755"	"HMDB0001453"	"CHEBI:18022"	"9322"	""	""	""	"tcynt"	"MNXM762"	""	"m02986n"
 "MAM02158m"	"MAM02158"	""	""	""	""	"124985"	""	"CE2011"	""	"CE2011"	"MNXM57006"	""	"m02158m"
 "MAM02158n"	"MAM02158"	""	""	""	""	"124985"	""	"CE2011"	""	"CE2011"	"MNXM57006"	""	"m02158n"
+"MAM00678c"	"MAM00678"	""	""	""	""	"22833562"	""	"CE2435"	""	"dec24dicoa"	"MNXM1601"	""	"m00678c"
+"MAM03035c"	"MAM03035"	""	""	""	""	"16019966"	""	"CE5121"	""	"dece3coa"	"MNXM90096"	""	"m03035c"
