@@ -283,3 +283,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR03296"	""	""	"RE3627M"	""	"R-HSA-109343"	"HMR_3296"	"MNXR124610"	"HMR_3296"	"RCR12779"	""	0	""	""	"HMR_3296"
 "MAR04005"	""	""	""	""	""	"RE3627C"	""	""	""	""	0	""	""	"RE3627C"
 "MAR05187"	""	"FAOXC15NADx"	""	""	""	"FAOXC15NADx"	"MNXR99293"	""	""	""	0	""	""	"FAOXC15NADx"
+"MAR05186"	""	"FAOXC15NADPx"	""	""	""	"FAOXC15NADPx"	"MNXR99292"	""	""	""	0	""	""	"FAOXC15NADPx"
