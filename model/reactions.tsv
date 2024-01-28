@@ -8882,6 +8882,7 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR03483"	""	"RE3158X"	""	""	""	"RE3158X"	""	""	""	""	0	""	""	"RE3158X"
 "MAR03485"	""	""	""	""	""	"RE3161R"	""	""	""	""	0	""	""	"RE3161R"
 "MAR03487"	""	""	""	""	""	"RE3162R"	""	""	""	""	0	""	""	"RE3162R"
+"MAR03488"	""	""	"RE3073X"	""	""	""	"MNXR95747"	"HMR_3488"	"RCR12589"	""	0	""	""	"HMR_3488"
 "MAR03490"	""	""	""	""	""	"RE3163R"	""	""	""	""	0	""	""	"RE3163R"
 "MAR03492"	""	""	""	""	""	"RE3164R"	""	""	""	""	0	""	""	"RE3164R"
 "MAR03494"	""	""	""	""	""	"RE3165R"	""	""	""	""	0	""	""	"RE3165R"
