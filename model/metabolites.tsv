@@ -8456,3 +8456,6 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM20080m"	"MAM20080"	""	"C15974"	""	"CHEBI:29143"	"5460643"	""	""	""	""	"MNXM36616"	""	""
 "MAM20081m"	"MAM20081"	""	"C21017"	""	"CHEBI:190398"	"92042789"	""	""	""	""	"MNXM164098"	""	""
 "MAM20082m"	"MAM20082"	""	"C21018"	""	""	""	""	""	""	""	"MNXM164758"	""	""
+"MAM03884c"	"MAM03884"	"phyt"	"C01607"	"HMDB0000801"	"CHEBI:16285"	"26840"	""	""	""	"phyt"	"MNXM91275"	""	"phyt_c"
+"MAM03884e"	"MAM03884"	"phyt"	"C01607"	"HMDB0000801"	"CHEBI:16285"	"26840"	""	""	""	"phyt"	"MNXM91275"	""	"phyt_s"
+"MAM03884x"	"MAM03884"	"phyt"	"C01607"	"HMDB0000801"	"CHEBI:16285"	"26840"	""	""	""	"phyt"	"MNXM91275"	""	"phyt_p"
