@@ -2271,3 +2271,4 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM03203m"	"MAM03203"	"3ddecdicoa"	""	""	""	"5280771"	""	""	""	"3ddecdicoa"	""	""	"3ddecdicoa_m"
 "MAM02698m"	"MAM02698"	"2ddecdicoa"	""	""	""	"5280770"	""	""	""	"2ddecdicoa"	""	""	"2ddecdicoa_m"
 "MAM03650m"	"MAM03650"	"hexddcoa"	""	""	""	""	""	""	""	"hexddcoa"	""	""	"hexddcoa_m"
+"MAM02955c"	"MAM02955"	""	"C03785"	""	"CHEBI:4250"	"440117"	""	""	"HC01180"	"HC01180"	"MNXM1324;MNXM164715"	"m02955c"	"m02955c"
