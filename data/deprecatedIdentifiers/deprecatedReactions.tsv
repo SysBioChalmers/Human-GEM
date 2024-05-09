@@ -299,3 +299,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR04205"	""	""	"RT0084"	""	""	"HMR_4205"	""	"HMR_4205"	"RCR20258"	""	0	""	""	"HMR_4205"
 "MAR08745"	""	"THMMPtm"	""	""	""	""	"MNXR104822"	"HMR_8745"	"RCR20669"	""	0	""	""	"HMR_8745"
 "MAR08747"	""	"THMPPtm"	""	""	""	""	"MNXR104824"	"HMR_8747"	"RCR20670"	""	0	""	""	"HMR_8747"
+"MAR00776"	""	"FAOXC180"	""	""	""	"FAOXC180"	"MNXR99313"	""	""	""	0	""	""	"FAOXC180"
