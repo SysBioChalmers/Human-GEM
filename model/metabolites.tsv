@@ -1715,6 +1715,7 @@ mets	metsNoComp	metBiGGID	metKEGGID	metHMDBID	metChEBIID	metPubChemID	metLipidMa
 "MAM01097m"	"MAM01097"	""	""	""	""	""	""	"CE5723"	""	"CE5723"	"MNXM37804"	"m01097m"	"m01097m"
 "MAM01098c"	"MAM01098"	"dad_5"	"C05198"	""	""	""	""	""	""	"dad_5"	"MNXM316"	"m01098c"	"m01098c"
 "MAM01098e"	"MAM01098"	"dad_5"	"C05198"	""	""	""	""	""	""	"dad_5"	"MNXM316"	"m01098s"	"m01098s"
+"MAM01098m"	"MAM01098"	"dad_5"	"C05198"	""	""	""	""	""	""	""	"MNXM316"	""	""
 "MAM01099c"	"MAM01099"	"5forthf"	"C00664"	""	"CHEBI:15639"	"530"	""	""	"HC00483"	"5forthf"	"MNXM915"	"m01099c"	"m01099c"
 "MAM01100c"	"MAM01100"	"5fthf"	"C03479"	"HMDB0001562"	"CHEBI:209153"	"143"	""	""	"HC01125"	"5fthf"	"MNXM1392"	"m01100c"	"m01100c"
 "MAM01100m"	"MAM01100"	"5fthf"	"C03479"	"HMDB0001562"	"CHEBI:209153"	"143"	""	""	"HC01125"	"5fthf"	"MNXM1392"	"m01100m"	"m01100m"
