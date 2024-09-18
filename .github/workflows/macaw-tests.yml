@@ -31,18 +31,19 @@ jobs:
           PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}"
           echo $PARSED_RESULTS
           echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
+          mv macaw_results.csv data/macawResults/
 
-      - name: Rename output file
+      - name: Mention PR# in README.md
         env:
-          PR_NUMBER: 123
-        run: cp macaw_dead_end_and_duplicate_test_results.csv data/macawResults/PR$PR_NUMBER.csv
-
+          PR_NUMBER: ${{ github.event.number }}
+        run: sed -i -e "s/[[:digit:]]\{3,4\}/$PR_NUMBER/g" data/macawResults/README.md
+        
       - name: Auto-commit results
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_user_name: memote-bot
           commit_message: "chore: add macaw test result"
-          file_pattern: macaw_dead_end_and_duplicate_test_results.csv
+          file_pattern: data/macawResults/README.md macaw_results.csv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.number }}
