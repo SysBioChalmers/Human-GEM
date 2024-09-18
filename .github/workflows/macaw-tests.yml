@@ -31,7 +31,6 @@ jobs:
           PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}"
           echo $PARSED_RESULTS
           echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
-          mv macaw_results.csv data/macawResults/
 
       - name: Mention PR# in README.md
         env:
@@ -43,7 +42,7 @@ jobs:
         with:
           commit_user_name: memote-bot
           commit_message: "chore: add macaw test result"
-          file_pattern: data/macawResults/README.md macaw_results.csv
+          file_pattern: data/macawResults/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.number }}
