@@ -12,8 +12,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Test checkout
-        run: ls -la
-        
+        run: ls -la && cd code && ls -la
+
       - name: Set up Python 3
         uses: actions/setup-python@v4
         with:
@@ -23,7 +23,7 @@ jobs:
         run: pip install git+https://github.com/Devlin-Moyer/macaw.git@main numpy==1.26.4
 
       - name: Run macaw
-        run: python code/modelTests/macawTests.py
+        run: python code/test/macawTests.py
 
       - name: Rename output file
         env:
