@@ -1,6 +1,6 @@
 name: Test metabolic tasks
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   check-metabolictasks:
