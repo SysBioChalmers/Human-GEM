@@ -1,6 +1,6 @@
 name: Run macaw tests
 
-on: [pull_request]
+on: [push]
 
 jobs:
   macaw-tests:
