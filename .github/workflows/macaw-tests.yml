@@ -26,7 +26,11 @@ jobs:
         id: macaw-run
         run: |
           TEST_RESULTS=$(python code/test/macawTests.py)
-          echo "results=$TEST_RESULTS" >> $GITHUB_OUTPUT
+          echo $TEST_RESULTS
+          PARSED_RESULTS="${TEST_RESULTS//$'\n'/'<br>'}"
+          PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}"
+          echo $PARSED_RESULTS
+          echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
 
       - name: Rename output file
         env:
