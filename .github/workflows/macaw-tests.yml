@@ -35,7 +35,7 @@ jobs:
       - name: Mention PR# in README.md
         env:
           PR_NUMBER: ${{ github.event.number }}
-        run: sed -i -e "s/[[:digit:]]\{3,4\}/$PR_NUMBER/g" data/macawResults/README.md
+        run: sed -i -e "s/#[[:digit:]]\{3,4\}/#$PR_NUMBER/g" data/macawResults/README.md
         
       - name: Auto-commit results
         uses: stefanzweifel/git-auto-commit-action@v4
