@@ -4,6 +4,6 @@ This PR has been [automatically tested with GH Actions](https://github.com/SysBi
 {TEST_RESULTS}
 </pre>
 
-A more detailed output from this test run is also committed to [`data/macawResults/macaw_results.csv`](https://github.com/SysBioChalmers/Human-GEM/blob/data/macaw_results.csv).
+A more detailed output from this test run is also committed to `data/macawResults/macaw_results.csv`.
 
 > _Note: In the case of multiple test runs, this post will be edited._
