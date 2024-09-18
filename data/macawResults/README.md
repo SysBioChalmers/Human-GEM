@@ -1,0 +1,1 @@
+Results from macaw tests as run by GitHub Actions are stored here.
