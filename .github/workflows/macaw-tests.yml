@@ -11,6 +11,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Test checkout
+        run: ls -la
+        
       - name: Set up Python 3
         uses: actions/setup-python@v4
         with:
