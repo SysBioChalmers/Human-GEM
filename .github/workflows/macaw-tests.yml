@@ -34,17 +34,18 @@ jobs:
 
       - name: Rename output file
         env:
-          PR_NUMBER: ${{ github.event.number }}
-        run: mv macaw_dead_end_and_duplicate_test_results.csv data/macawResults/PR$PR_NUMBER.csv
+          PR_NUMBER: 123
+        run: cp macaw_dead_end_and_duplicate_test_results.csv data/macawResults/PR$PR_NUMBER.csv
 
       - name: Auto-commit results
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_user_name: memote-bot
           commit_message: "chore: add macaw test result"
-          file_pattern: PR$PR_NUMBER.csv
+          file_pattern: macaw_dead_end_and_duplicate_test_results.csv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
 
       - name: Post comment
         uses: NejcZdovc/comment-pr@v2
