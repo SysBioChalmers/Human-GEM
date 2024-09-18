@@ -254,8 +254,8 @@
 							8,11-eicosadienoic acid[c]	1									
 	148	Mead acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e]			CO2[e];H2O[e]										
 							mead acid[c]	1									
-	149	Henicosanoic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e];isoleucine[c]			CO2[e];H2O[e];urate[e]										
-							henicosanoic acid[c]	1									
+	149	heneicosanoic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e];isoleucine[c]			CO2[e];H2O[e];urate[e]										
+							heneicosanoic acid[c]	1									
 	150	Behenic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e]			CO2[e];H2O[e]										
 							behenic acid[c]	1									
 	151	cis-erucic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e]			CO2[e];H2O[e]										
@@ -372,7 +372,7 @@
 				O2[e]													
 	207	Mead acid (complete oxidation)		mead acid[e]	1	1	CO2[e];H2O[e]										
 				O2[e]													
-	208	Henicosanoic acid (complete oxidation)		henicosanoic acid[e]	1	1	CO2[e];H2O[e]										
+	208	heneicosanoic acid (complete oxidation)		heneicosanoic acid[e]	1	1	CO2[e];H2O[e]										
 				O2[e]													
 	209	Behenic acid (complete oxidation)		behenic acid[e]	1	1	CO2[e];H2O[e]										
 				O2[e]													
