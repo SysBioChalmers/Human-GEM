@@ -2,7 +2,7 @@
 
 The file here contains results from the [MACAW](https://github.com/Devlin-Moyer/macaw) `dead_end_test` and `duplicate_test` tests.
 
-The test results shown here were obtained by the GitHub Actions run in [PR#123](https://github.com/SysBioChalmers/Human-GEM/pull/123). Summary results are shown as a comment in that PR.
+The test results shown here were obtained by the GitHub Actions run in [PR#](https://github.com/SysBioChalmers/Human-GEM/pull/). Summary results are shown as a comment in that PR.
 
 `dead_end_test`
 Looks for metabolites in Human-GEM that can only be produced by all reactions they participate in or only consumed, then identifies all reactions that are prevented from sustaining steady-state fluxes because of each of these dead-end metabolites. The simplest case of a dead-end metabolite is one that only participates in a single reaction. Also flags all reversible reactions that can only carry fluxes in a single direction because one of their metabolites can either only be consumed or only be produced by all other reactions it participates in.
