@@ -5,9 +5,9 @@ Is it an additional test/function/dataset?
 e.g. This PR improves/fixes # by ...
 -->
 
-
 **I hereby confirm that I have:**
 <!-- *Note: replace [ ] with [X] to check the box. -->
-- [ ] Tested my code on my own computer for running the model
-- [ ] Selected `develop` as a target branch
-- [ ] Any removed reactions and metabolites have been moved to the corresponding deprecated identifier lists
+- [ ] Any removed reactions and metabolites have been moved to the corresponding deprecated identifier lists in `data/deprecatedIdentifiers/`.
+<!-- Chose ONE of the following two options. -->
+- [ ] This PR has `develop` as target branch, and will be resolved with a **squash-merge**.
+- [ ] This PR has `main` as target branch, and will be resolved with a **merge commit**.
