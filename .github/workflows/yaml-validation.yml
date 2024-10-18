@@ -1,6 +1,6 @@
 name: YAML validation
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   yaml-validation:
@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: YAML Lint
-        uses: ibiqlik/action-yamllint@v1.0.0
+        uses: metabolicatlas/action-yamllint@v3
         with:
           ## File(s) or Directory, separate by space if multiple files or folder are specified
           file_or_dir: model/

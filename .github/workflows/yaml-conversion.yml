@@ -1,6 +1,6 @@
 name: Test YAML conversion
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   yaml-conversion:
@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run conversion script
         run: |

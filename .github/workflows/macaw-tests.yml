@@ -1,0 +1,59 @@
+name: Run macaw tests
+
+on: [pull_request]
+
+jobs:
+  macaw-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Test checkout
+        run: ls -la && cd code && ls -la
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install macaw
+        run: pip install git+https://github.com/Devlin-Moyer/macaw.git@main numpy==1.26.4
+
+      - name: Run macaw
+        id: macaw-run
+        run: |
+          TEST_RESULTS=$(python code/test/macawTests.py)
+          echo $TEST_RESULTS
+          PARSED_RESULTS="${TEST_RESULTS//$'\n'/'<br>'}"
+          PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}"
+          echo $PARSED_RESULTS
+          echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
+          printf "$TEST_RESULTS" > data/testResults/macaw_summary.md
+
+      - name: Mention PR# in README.md
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: sed -i -e "s/#[[:digit:]]\{3,4\}/#$PR_NUMBER/g" data/testResults/README.md
+        
+      - name: Auto-commit results
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_user_name: memote-bot
+          commit_message: "chore: add macaw test result"
+          file_pattern: data/testResults/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+
+      - name: Post comment
+        uses: NejcZdovc/comment-pr@v2
+        with:
+          file: "commentMacaw.md"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          TEST_RESULTS: ${{steps.macaw-run.outputs.results}}
+          GH_ACTION_RUN: ${{github.run_id}}
+          

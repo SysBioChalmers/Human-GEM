@@ -1,6 +1,6 @@
 name: Test metabolic tasks
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   check-metabolictasks:
@@ -11,7 +11,7 @@ jobs:
         task-type: [essential, verification]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check ${{ matrix.task-type }} metabolic tasks
         run: |
