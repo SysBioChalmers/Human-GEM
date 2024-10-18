@@ -31,18 +31,19 @@ jobs:
           PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}"
           echo $PARSED_RESULTS
           echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
+          printf "$TEST_RESULTS" > data/testResults/macaw_summary.md
 
       - name: Mention PR# in README.md
         env:
           PR_NUMBER: ${{ github.event.number }}
-        run: sed -i -e "s/#[[:digit:]]\{3,4\}/#$PR_NUMBER/g" data/macawResults/README.md
+        run: sed -i -e "s/#[[:digit:]]\{3,4\}/#$PR_NUMBER/g" data/testResults/README.md
         
       - name: Auto-commit results
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_user_name: memote-bot
           commit_message: "chore: add macaw test result"
-          file_pattern: data/macawResults/*
+          file_pattern: data/testResults/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.number }}
@@ -50,7 +51,7 @@ jobs:
       - name: Post comment
         uses: NejcZdovc/comment-pr@v2
         with:
-          file: "commentsFromTests.md"
+          file: "commentMacaw.md"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           TEST_RESULTS: ${{steps.macaw-run.outputs.results}}
