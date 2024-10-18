@@ -12,7 +12,7 @@ try
 
     % Import yaml model
     ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
-    model = importYaml(ymlFile, true);
+    model = readYAMLmodel(ymlFile, true);
 
     % make sure there is no intermediate Yaml file under the current folder
     warning('off', 'MATLAB:DELETE:FileNotFound')
@@ -20,8 +20,8 @@ try
         delete testYamlConversion.yml;
     end
 
-    exportYaml(model,'testYamlConversion.yml');
-    importedHumanGEM = importYaml('testYamlConversion.yml', true);
+    writeYAMLmodel(model,'testYamlConversion.yml');
+    importedHumanGEM = readYAMLmodel('testYamlConversion.yml', true);
 
     % remove intermediate Yaml file
     delete testYamlConversion.yml;
