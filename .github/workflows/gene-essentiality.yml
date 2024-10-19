@@ -35,7 +35,7 @@ jobs:
           output = evaluateHart2015Essentiality(eGenes);
           fid = fopen('data/testResults/gene-essential.csv','w');
           fprintf(fid,[repmat('%s,',1,13) '%s\n'],transpose(output{1,:}));
-          fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,9) '\n'],transpose(output{2:end,:});
+          fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,9) '\n'],transpose(output{2:end,:}));
           fclose(fid);
           disp(output);" | awk 'NR>9 && !/^\.+/') &&
           PARSED_RESULTS="${TEST_RESULTS//'%'/'%25'}" &&
