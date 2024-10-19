@@ -17,16 +17,31 @@ jobs:
       - name: Run gene essentiality
         id: essentiality
         run: |
-          TEST_RESULTS=$(/usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); ihuman = importYaml('Human-GEM.yml'); taskStruct = parseTaskList('data/metabolicTasks/metabolicTasks_Essential.txt'); eGenes = estimateEssentialGenes(ihuman, 'Hart2015_RNAseq.txt', taskStruct); disp(evaluateHart2015Essentiality(eGenes));" | awk 'NR>9 && !/^\.+/')
+          TEST_RESULTS=$(/usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); ihuman = readYAMLmodel('Human-GEM.yml'); taskStruct = parseTaskList('data/metabolicTasks/metabolicTasks_Essential.txt'); eGenes = estimateEssentialGenes(ihuman, 'Hart2015_RNAseq.txt', taskStruct);output = transpose(evaluateHart2015Essentiality(eGenes)); fid = fopen('data/testResults/gene-essential.csv','w'); fprintf(fid,[repmat('%s,',1,13) '%s\n'],output{:,1}); fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,9) '\n'],output{:,2:end}); fclose(fid); disp(evaluateHart2015Essentiality(eGenes));" | awk 'NR>9 && !/^\.+/')
           PARSED_RESULTS="${TEST_RESULTS//'%'/'%25'}"
           PARSED_RESULTS="${PARSED_RESULTS//$'\n'/'<br>'}"
           PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}"
           echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
 
+      - name: Mention PR# in README.md
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (gene /$PR_NUMBER\*\* (gene /" README.md
+
+      - name: Auto-commit results
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_user_name: memote-bot
+          commit_message: "chore: add gene essentiality test result"
+          file_pattern: data/testResults/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+          
       - name: Post comment
         uses: NejcZdovc/comment-pr@v2
         with:
-          file: "commentsFromTests.md"
+          file: "commentGeneEssential.md"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           TEST_RESULTS: ${{steps.essentiality.outputs.results}}
