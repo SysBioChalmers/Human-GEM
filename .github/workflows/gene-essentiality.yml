@@ -12,15 +12,35 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Fetch RAVEN
+        uses: actions/checkout@v4
+        with:
+          repository: "SysBioChalmers/RAVEN"
+          path: "RAVEN"
 
       - name: Run gene essentiality
         id: essentiality
-        run: |
-          TEST_RESULTS=$(/usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); ihuman = readYAMLmodel('model/Human-GEM.yml'); taskStruct = parseTaskList('data/metabolicTasks/metabolicTasks_Essential.txt'); eGenes = estimateEssentialGenes(ihuman, 'Hart2015_RNAseq.txt', taskStruct);output = transpose(evaluateHart2015Essentiality(eGenes)); fid = fopen('data/testResults/gene-essential.csv','w'); fprintf(fid,[repmat('%s,',1,13) '%s\n'],output{:,1}); fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,9) '\n'],output{:,2:end}); fclose(fid); disp(evaluateHart2015Essentiality(eGenes));" | awk 'NR>9 && !/^\.+/')
-          PARSED_RESULTS="${TEST_RESULTS//'%'/'%25'}"
-          PARSED_RESULTS="${PARSED_RESULTS//$'\n'/'<br>'}"
-          PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}"
+        run: >
+          TEST_RESULTS=$(/usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r
+          "warning('off', 'MATLAB:rmpath:DirNotFound');
+          rmpath(genpath('/home/m/ecModels-dependencies/RAVEN'));
+          rmpath(genpath('/home/m/actions-runner'));
+          addpath(genpath('.'));
+          setRavenSolver('gurobi');
+          ihuman = readYAMLmodel('model/Human-GEM.yml');
+          taskStruct = parseTaskList('data/metabolicTasks/metabolicTasks_Essential.txt');
+          [~, eGenes] = evalc('estimateEssentialGenes(ihuman, ''Hart2015_RNAseq.txt'', taskStruct);');
+          output = transpose(evaluateHart2015Essentiality(eGenes));
+          fid = fopen('data/testResults/gene-essential.csv','w');
+          fprintf(fid,[repmat('%s,',1,13) '%s\n'],output{:,1});
+          fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,9) '\n'],output{:,2:end});
+          fclose(fid);
+          disp(evaluateHart2015Essentiality(eGenes));" | awk 'NR>9 && !/^\.+/') &&
+          PARSED_RESULTS="${TEST_RESULTS//'%'/'%25'}" &&
+          PARSED_RESULTS="${PARSED_RESULTS//$'\n'/'<br>'}" &&
+          PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}" &&
           echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
 
       - name: Mention PR# in README.md
