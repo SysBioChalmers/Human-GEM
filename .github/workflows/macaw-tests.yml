@@ -52,6 +52,7 @@ jobs:
         uses: NejcZdovc/comment-pr@v2
         with:
           file: "commentMacaw.md"
+          identifier: "GITHUB_COMMENT_MACAW"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           TEST_RESULTS: ${{steps.macaw-run.outputs.results}}
