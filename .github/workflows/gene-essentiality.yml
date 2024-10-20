@@ -32,12 +32,12 @@ jobs:
           ihuman = readYAMLmodel('model/Human-GEM.yml');
           taskStruct = parseTaskList('data/metabolicTasks/metabolicTasks_Essential.txt');
           [~, eGenes] = evalc('estimateEssentialGenes(ihuman, ''Hart2015_RNAseq.txt'', taskStruct);');
-          output = evaluateHart2015Essentiality(eGenes);
+          output = transpose(evaluateHart2015Essentiality(eGenes));
           fid = fopen('data/testResults/gene-essential.csv','w');
-          fprintf(fid,[repmat('%s,',1,13) '%s\n'],transpose(output{1,:}));
-          fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,9) '\n'],transpose(output{2:end,:}));
+          fprintf(fid,[repmat('%s,',1,9) '%s\n'],output{:,1});
+          fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,5) '\n'],output{:,2:end});
           fclose(fid);
-          disp(output);" | awk 'NR>9 && !/^\.+/') &&
+          disp(cell2table(transpose(output(:,2:end)),"VariableNames",output(:,1)));" | awk 'NR>9 && !/^\.+/') &&
           PARSED_RESULTS="${TEST_RESULTS//'%'/'%25'}" &&
           PARSED_RESULTS="${PARSED_RESULTS//$'\n'/'<br>'}" &&
           PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}" &&
