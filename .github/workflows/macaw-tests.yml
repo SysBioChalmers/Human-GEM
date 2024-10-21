@@ -45,7 +45,9 @@ jobs:
           git stash
           git fetch
           git checkout $BRANCH_NAME
-          git stash pop
+          if git stash list | grep -q 'stash@{'; then
+            git stash pop
+          fi
 
       - name: Auto-commit results
         uses: stefanzweifel/git-auto-commit-action@v4

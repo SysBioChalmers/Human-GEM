@@ -23,7 +23,7 @@ jobs:
       - name: Run gene essentiality
         id: essentiality
         run: >
-          TEST_RESULTS=$(/usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r
+          TEST_RESULTS=$(/usr/local/bin/matlab -batch
           "warning('off', 'MATLAB:rmpath:DirNotFound');
           rmpath(genpath('/home/m/ecModels-dependencies/RAVEN'));
           rmpath(genpath('/home/m/actions-runner'));
@@ -38,8 +38,8 @@ jobs:
           fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,5) '\n'],output{:,2:end});
           fclose(fid);
           disp(cell2table(transpose(output(:,2:end)),"VariableNames",output(:,1)));") &&
-          PARSED_RESULTS="${TEST_RESULTS//'%'/'%25'}" &&
-          PARSED_RESULTS="${PARSED_RESULTS//$'\n'/'<br>'}" &&
+          echo "$TEST_RESULTS" &&
+          PARSED_RESULTS="${TEST_RESULTS//$'\n'/'<br>'}" &&
           PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}" &&
           echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
 
@@ -55,7 +55,9 @@ jobs:
           git stash
           git fetch
           git checkout $BRANCH_NAME
-          git stash pop
+          if git stash list | grep -q 'stash@{'; then
+            git stash pop
+          fi
         
       - name: Auto-commit results
         uses: stefanzweifel/git-auto-commit-action@v5
