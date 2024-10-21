@@ -37,7 +37,7 @@ jobs:
           fprintf(fid,[repmat('%s,',1,9) '%s\n'],output{:,1});
           fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,5) '\n'],output{:,2:end});
           fclose(fid);
-          disp(cell2table(transpose(output(:,2:end)),"VariableNames",output(:,1)));" &&
+          disp(cell2table(transpose(output(:,2:end)),"VariableNames",output(:,1)));") &&
           PARSED_RESULTS="${TEST_RESULTS//'%'/'%25'}" &&
           PARSED_RESULTS="${PARSED_RESULTS//$'\n'/'<br>'}" &&
           PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}" &&
