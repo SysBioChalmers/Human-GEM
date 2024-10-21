@@ -48,8 +48,17 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
         run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (gene /$PR_NUMBER\*\* (gene /" data/testResults/README.md
 
+      - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+        run: |
+          git stash
+          git fetch
+          git checkout $BRANCH_NAME
+          git stash pop
+        
       - name: Auto-commit results
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_user_name: memote-bot
           commit_message: "chore: add gene essentiality test result"

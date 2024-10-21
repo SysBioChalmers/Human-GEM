@@ -80,7 +80,7 @@ model = addBoundaryMets(model);
 params = {};
 INIT_output = {};
     
-for i = 1:length(arrayData.tissues)
+for i = 1%:length(arrayData.tissues)
     disp(['Tissue ', num2str(i), ' out of ',  num2str(length(arrayData.tissues)),': ', arrayData.tissues{i}])
         
     % First try to run tINIT with shorter time limit. If it fails, then
