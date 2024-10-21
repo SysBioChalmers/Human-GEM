@@ -58,7 +58,7 @@ jobs:
           git stash pop
         
       - name: Auto-commit results
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_user_name: memote-bot
           commit_message: "chore: add gene essentiality test result"
