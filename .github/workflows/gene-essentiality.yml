@@ -1,0 +1,80 @@
+name: Check gene essentiality with Hart 2015
+
+on:
+  pull_request:
+    branches:
+      - "main"
+      - "develop"
+
+jobs:
+  check-metabolictasks:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch RAVEN
+        uses: actions/checkout@v4
+        with:
+          repository: "SysBioChalmers/RAVEN"
+          path: "RAVEN"
+
+      - name: Run gene essentiality
+        id: essentiality
+        run: >
+          TEST_RESULTS=$(/usr/local/bin/matlab -batch
+          "warning('off', 'MATLAB:rmpath:DirNotFound');
+          rmpath(genpath('/home/m/ecModels-dependencies/RAVEN'));
+          rmpath(genpath('/home/m/actions-runner'));
+          addpath(genpath('.'));
+          setRavenSolver('gurobi');
+          ihuman = readYAMLmodel('model/Human-GEM.yml');
+          taskStruct = parseTaskList('data/metabolicTasks/metabolicTasks_Essential.txt');
+          [~, eGenes] = evalc('estimateEssentialGenes(ihuman, ''Hart2015_RNAseq.txt'', taskStruct);');
+          output = transpose(evaluateHart2015Essentiality(eGenes));
+          fid = fopen('data/testResults/gene-essential.csv','w');
+          fprintf(fid,[repmat('%s,',1,9) '%s\n'],output{:,1});
+          fprintf(fid,['%s,%d,%d,%d,%d' repmat(',%.4g',1,5) '\n'],output{:,2:end});
+          fclose(fid);
+          disp(cell2table(transpose(output(:,2:end)),'VariableNames',output(:,1)));") &&
+          echo "$TEST_RESULTS" &&
+          PARSED_RESULTS="${TEST_RESULTS//$'\n'/'<br>'}" &&
+          PARSED_RESULTS="${PARSED_RESULTS//$'\r'/'<br>'}" &&
+          echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
+
+      - name: Mention PR# in README.md
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (gene /$PR_NUMBER\*\* (gene /" data/testResults/README.md
+
+      - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+        run: |
+          git stash
+          git fetch
+          git checkout $BRANCH_NAME
+          if git stash list | grep -q 'stash@{'; then
+            git stash pop
+          fi
+        
+      - name: Auto-commit results
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_user_name: memote-bot
+          commit_message: "chore: add gene essentiality test result"
+          file_pattern: data/testResults/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+          
+      - name: Post comment
+        uses: NejcZdovc/comment-pr@v2
+        with:
+          file: "commentGeneEssential.md"
+          identifier: "GITHUB_COMMENT_GENE"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          TEST_RESULTS: ${{steps.essentiality.outputs.results}}
+          GH_ACTION_RUN: ${{github.run_id}}
