@@ -1,6 +1,6 @@
 name: YAML validation
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   yaml-validation:
