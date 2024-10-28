@@ -68983,7 +68983,7 @@
           - MAM02945e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000090402 or ENSG00000171298 or ENSG00000214013 or ENSG00000257335"
+      - gene_reaction_rule: "ENSG00000090402 or ENSG00000214013 or ENSG00000257335"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.10;3.2.1.20;3.2.1.48"
@@ -69038,7 +69038,7 @@
           - MAM02040e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000102393 or ENSG00000170266 or ENSG00000241343"
+      - gene_reaction_rule: "ENSG00000102393 or ENSG00000170266"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.22;3.2.1.23"
@@ -69117,7 +69117,7 @@
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.3"
-      - references: "PMID:33715524"
+      - references: "PMID:33715524;PMID:246961;PMID:19158351"
       - subsystem:
           - "Galactose metabolism"
       - confidence_score: 0
@@ -69167,7 +69167,7 @@
           - MAM02555c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000085662 or ENSG00000198074"
+      - gene_reaction_rule: "ENSG00000085662"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.21"
@@ -69281,7 +69281,7 @@
           - MAM02555c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000085662 or ENSG00000198074"
+      - gene_reaction_rule: "ENSG00000085662"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.21"
@@ -69300,7 +69300,7 @@
           - MAM02917c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116199 or ENSG00000141560 or ENSG00000162408 or ENSG00000167363 or ENSG00000172456"
+      - gene_reaction_rule: "ENSG00000116199"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.-"
@@ -69319,7 +69319,7 @@
           - MAM02039c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116199 or ENSG00000141560 or ENSG00000162408 or ENSG00000167363 or ENSG00000172456"
+      - gene_reaction_rule: "ENSG00000167363 or ENSG00000172456"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.-"
@@ -69357,7 +69357,7 @@
           - MAM02454c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116199 or ENSG00000141560 or ENSG00000162408 or ENSG00000167363 or ENSG00000172456"
+      - gene_reaction_rule: "ENSG00000116199"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.-"
@@ -69406,7 +69406,7 @@
           - MAM02455c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000100413 or ENSG00000100417 or ENSG00000140650"
+      - gene_reaction_rule: "ENSG00000100417 or ENSG00000140650"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "5.4.2.8"
@@ -69425,7 +69425,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000164068 or ENSG00000173540"
+      - gene_reaction_rule: "ENSG00000173540"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.7.22;2.7.7.13"
@@ -69499,7 +69499,7 @@
           - MAM02759c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116783 or ENSG00000254685"
+      - gene_reaction_rule: "ENSG00000254685"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.7.30"
@@ -223353,7 +223353,7 @@
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "2.7.1.3"
-      - references: "PMID:33715524"
+      - references: "PMID:33715524;PMID:2469615;PMID:19158351"
       - subsystem:
           - "Galactose metabolism"
       - confidence_score: 0
@@ -307347,9 +307347,6 @@
       - id: "ENSG00000116771"
       - name: "AGMAT"
     - !!omap
-      - id: "ENSG00000116783"
-      - name: "TNNI3K"
-    - !!omap
       - id: "ENSG00000116791"
       - name: "CRYZ"
     - !!omap
@@ -313091,9 +313088,6 @@
     - !!omap
       - id: "ENSG00000241119"
       - name: "UGT1A9"
-    - !!omap
-      - id: "ENSG00000241343"
-      - name: "RPL36A"
     - !!omap
       - id: "ENSG00000241360"
       - name: "PDXP"
