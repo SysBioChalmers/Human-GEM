@@ -1,5 +1,5 @@
 Starting dead-end test...
- - Found 1516 dead-end metabolites.
+ - Found 1515 dead-end metabolites.
  - Found 1320 reactions incapable of sustaining steady-state fluxes in either direction due to these dead-ends.
  - Found 1980 reversible reactions that can only carry steady-state fluxes in a single direction due to dead-ends.
 Starting duplicate test...
