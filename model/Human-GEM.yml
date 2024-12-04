@@ -131779,7 +131779,7 @@
           - MAM02555c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000085662 or ENSG00000117448 or ENSG00000172955 or ENSG00000187758 or ENSG00000196344 or ENSG00000196616 or ENSG00000197894 or ENSG00000198074 or ENSG00000198099 or ENSG00000248144"
+      - gene_reaction_rule: "ENSG00000085662 or ENSG00000117448 or ENSG00000172955 or ENSG00000187758 or ENSG00000196616 or ENSG00000197894 or ENSG00000198074 or ENSG00000198099 or ENSG00000248144"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.1;1.1.1.2;1.1.1.21;1.1.1.72"
@@ -131818,7 +131818,7 @@
           - MAM02555m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000085662 or ENSG00000117448 or ENSG00000172955 or ENSG00000187758 or ENSG00000196344 or ENSG00000196616 or ENSG00000197894 or ENSG00000198074 or ENSG00000198099 or ENSG00000248144"
+      - gene_reaction_rule: "ENSG00000085662 or ENSG00000117448 or ENSG00000172955 or ENSG00000187758 or ENSG00000197894 or ENSG00000198074 or ENSG00000198099 or ENSG00000248144"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.1;1.1.1.2;1.1.1.21;1.1.1.72"
@@ -134237,7 +134237,7 @@
           - MAM02877c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.1.1.103"
@@ -134255,7 +134255,7 @@
           - MAM02877c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.1.1.103"
@@ -223519,7 +223519,7 @@
           - MAM03727c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
+      - gene_reaction_rule: "ENSG00000110090 or ENSG00000205560"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "2.3.1.21"
@@ -231853,7 +231853,7 @@
           - MAM03333m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115361 or ENSG00000117054 or ENSG00000161533 or ENSG00000196177"
+      - gene_reaction_rule: "ENSG00000115361 or ENSG00000117054 or ENSG00000196177"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "1.3.99.3"
@@ -232327,7 +232327,7 @@
           - MAM02766x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000068366 or ENSG00000103740 or ENSG00000119673 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000177465 or ENSG00000197142"
+      - gene_reaction_rule: "ENSG00000140284"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "6.2.1.3"
@@ -237386,7 +237386,7 @@
           - MAM03488c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
+      - gene_reaction_rule: "ENSG00000110090 or ENSG00000205560"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: ""
@@ -237965,7 +237965,7 @@
           - MAM03496c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
+      - gene_reaction_rule: "ENSG00000110090 or ENSG00000205560"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: ""
@@ -241109,7 +241109,7 @@
           - MAM03243c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
+      - gene_reaction_rule: "ENSG00000110090 or ENSG00000205560"
       - rxnNotes: "http://www.perkinelmergenetics.com/3Hydroxy3MethylglutarylCoALyaseDeficiency.html"
       - rxnFrom: "Recon3D"
       - eccodes: ""
@@ -241211,7 +241211,7 @@
           - MAM03409x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533"
+      - gene_reaction_rule: "(ENSG00000161533 or ENSG00000087008) and (ENSG00000113790 or ENSG00000133835) and (ENSG00000060971 or ENSG00000116171)"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: ""
@@ -272576,7 +272576,7 @@
           - MAM03922x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "(ENSG00000113790 and ENSG00000161533) or (ENSG00000104823 and ENSG00000161533)"
+      - gene_reaction_rule: "(ENSG00000161533 or ENSG00000087008) and (ENSG00000113790 or ENSG00000133835)"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "1.3.3.6;4.2.1.17"
