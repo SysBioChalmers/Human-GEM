@@ -123722,7 +123722,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000148795 or ENSG00000197580"
+      - gene_reaction_rule: "ENSG00000148795"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.99.-"
@@ -123743,7 +123743,7 @@
           - MAM02630r: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000148795 or ENSG00000197580"
+      - gene_reaction_rule: "ENSG00000148795"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.99.-"
@@ -123895,7 +123895,7 @@
           - MAM02969c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000025423 or ENSG00000086696 or ENSG00000108786 or ENSG00000130948 or ENSG00000132196 or ENSG00000149084 or ENSG00000196139 or ENSG00000198189 or ENSG00000204228"
+      - gene_reaction_rule: "ENSG00000025423 or ENSG00000086696 or ENSG00000108786 or ENSG00000130948 or ENSG00000132196 or ENSG00000196139 or ENSG00000198189 or ENSG00000204228"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.62;1.1.1.64"
@@ -123914,7 +123914,7 @@
           - MAM02969r: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000025423 or ENSG00000086696 or ENSG00000108786 or ENSG00000130948 or ENSG00000132196 or ENSG00000149084 or ENSG00000196139 or ENSG00000198189 or ENSG00000204228"
+      - gene_reaction_rule: "ENSG00000025423 or ENSG00000108786 or ENSG00000130948 or ENSG00000132196 or ENSG00000149084 or ENSG00000196139 or ENSG00000198189"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.62;1.1.1.64"
@@ -137858,7 +137858,7 @@
           - MAM02786c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000163684 or ENSG00000244486"
+      - gene_reaction_rule: "ENSG00000244486"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.2.1.-"
@@ -137926,7 +137926,7 @@
           - MAM02794c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000196139"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.188"
@@ -138855,7 +138855,7 @@
           - MAM02785c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000163684 or ENSG00000244486"
+      - gene_reaction_rule: "ENSG00000244486"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.2.1.-"
