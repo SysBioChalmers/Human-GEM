@@ -67693,8 +67693,8 @@
       - id: "MAM20086m"
       - name: "GSSH"
       - compartment: "m"
-      - formula: "C10H17N3O6S2"
-      - charge: 0
+      - formula: "C10H16N3O6S2"
+      - charge: -1
       - inchis: "InChI=1S/C10H17N3O6S2/c11-5(10(18)19)1-2-7(14)13-6(4-21-20)9(17)12-3-8(15)16/h5-6,20H,1-4,11H2,(H,12,17)(H,13,14)(H,15,16)(H,18,19)/t5-,6-/m0/s1"
       - metFrom: ""
 - reactions:
