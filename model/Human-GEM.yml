@@ -67653,7 +67653,7 @@
           - MAM02553c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000147576 or ENSG00000172955 or ENSG00000180011 or ENSG00000187758 or ENSG00000196344 or ENSG00000196616 or ENSG00000197894 or ENSG00000198099 or ENSG00000248144"
+      - gene_reaction_rule: "ENSG00000172955 or ENSG00000187758 or ENSG00000196344 or ENSG00000196616 or ENSG00000197894 or ENSG00000198099 or ENSG00000248144"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.1;1.1.1.71"
@@ -67808,7 +67808,7 @@
           - MAM02555c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.5"
@@ -67922,7 +67922,7 @@
           - MAM02819c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000180011"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.49"
@@ -68257,7 +68257,7 @@
           - MAM02578r: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000131482 or ENSG00000141349 or ENSG00000152254"
+      - gene_reaction_rule: "ENSG00000152254"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.9"
@@ -69620,7 +69620,7 @@
           - MAM03155c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115425 or ENSG00000116353"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.15"
@@ -69639,7 +69639,7 @@
           - MAM03155c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000085662 or ENSG00000198074"
+      - gene_reaction_rule: "ENSG00000085662"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.21"
@@ -69865,7 +69865,7 @@
           - MAM03109c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115652"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.1.1.35"
