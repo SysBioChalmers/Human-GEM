@@ -23,6 +23,13 @@ try
     writeYAMLmodel(model,'testYamlConversion.yml');
     importedHumanGEM = readYAMLmodel('testYamlConversion.yml', true);
 
+    if isfield(model,'date')
+        model = rmfield(model,'date');
+    end
+    if isfield(importedHumanGEM,'date')
+        importedHumanGEM = rmfield(importedHumanGEM,'date');
+    end
+
     % remove intermediate Yaml file
     delete testYamlConversion.yml;
 
