@@ -68303,7 +68303,7 @@
           - MAM02450e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000092529 or ENSG00000171298 or ENSG00000214013 or ENSG00000257335"
+      - gene_reaction_rule: "ENSG00000171298 or ENSG00000214013 or ENSG00000257335"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.20"
@@ -68340,7 +68340,7 @@
           - MAM03039e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000118094 or ENSG00000142102"
+      - gene_reaction_rule: "ENSG00000118094"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.28"
@@ -68500,7 +68500,7 @@
           - MAM02448c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000120563 or ENSG00000174876 or ENSG00000187733 or ENSG00000237763 or ENSG00000240038 or ENSG00000243480"
+      - gene_reaction_rule: "ENSG00000120563 or ENSG00000240038 or ENSG00000243480"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.1"
@@ -68572,7 +68572,7 @@
           - MAM02447c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000120563 or ENSG00000174876 or ENSG00000187733 or ENSG00000237763 or ENSG00000240038 or ENSG00000243480"
+      - gene_reaction_rule: "ENSG00000120563 or ENSG00000240038 or ENSG00000243480"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.1"
@@ -68608,7 +68608,7 @@
           - MAM02449c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000120563 or ENSG00000174876 or ENSG00000187733 or ENSG00000237763 or ENSG00000240038 or ENSG00000243480"
+      - gene_reaction_rule: "ENSG00000120563 or ENSG00000240038 or ENSG00000243480"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.1"
@@ -68644,7 +68644,7 @@
           - MAM02451c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000120563 or ENSG00000174876 or ENSG00000187733 or ENSG00000237763 or ENSG00000240038 or ENSG00000243480"
+      - gene_reaction_rule: "ENSG00000120563 or ENSG00000240038 or ENSG00000243480"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.1"
@@ -68680,7 +68680,7 @@
           - MAM02452c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000120563 or ENSG00000174876 or ENSG00000187733 or ENSG00000237763 or ENSG00000240038 or ENSG00000243480"
+      - gene_reaction_rule: "ENSG00000120563 or ENSG00000240038 or ENSG00000243480"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.1"
@@ -68770,7 +68770,7 @@
           - MAM02452c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000120563 or ENSG00000174876 or ENSG00000187733 or ENSG00000237763 or ENSG00000240038 or ENSG00000243480"
+      - gene_reaction_rule: "ENSG00000120563 or ENSG00000240038 or ENSG00000243480"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.1"
@@ -68787,7 +68787,7 @@
           - MAM02450c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000120563 or ENSG00000174876 or ENSG00000187733 or ENSG00000237763 or ENSG00000240038 or ENSG00000243480"
+      - gene_reaction_rule: "ENSG00000120563 or ENSG00000240038 or ENSG00000243480"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.1"
@@ -68983,7 +68983,7 @@
           - MAM02945e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000090402 or ENSG00000171298 or ENSG00000214013 or ENSG00000257335"
+      - gene_reaction_rule: "ENSG00000090402 or ENSG00000214013 or ENSG00000257335"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.10;3.2.1.20;3.2.1.48"
@@ -69038,7 +69038,7 @@
           - MAM02040e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000102393 or ENSG00000170266 or ENSG00000241343"
+      - gene_reaction_rule: "ENSG00000102393 or ENSG00000170266"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.22;3.2.1.23"
@@ -69117,7 +69117,7 @@
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.3"
-      - references: "PMID:33715524"
+      - references: "PMID:33715524;PMID:246961;PMID:19158351"
       - subsystem:
           - "Galactose metabolism"
       - confidence_score: 0
@@ -69167,7 +69167,7 @@
           - MAM02555c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000085662 or ENSG00000198074"
+      - gene_reaction_rule: "ENSG00000085662"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.21"
@@ -69281,7 +69281,7 @@
           - MAM02555c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000085662 or ENSG00000198074"
+      - gene_reaction_rule: "ENSG00000085662"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.21"
@@ -69300,7 +69300,7 @@
           - MAM02917c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116199 or ENSG00000141560 or ENSG00000162408 or ENSG00000167363 or ENSG00000172456"
+      - gene_reaction_rule: "ENSG00000116199"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.-"
@@ -69319,7 +69319,7 @@
           - MAM02039c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116199 or ENSG00000141560 or ENSG00000162408 or ENSG00000167363 or ENSG00000172456"
+      - gene_reaction_rule: "ENSG00000167363 or ENSG00000172456"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.-"
@@ -69357,7 +69357,7 @@
           - MAM02454c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116199 or ENSG00000141560 or ENSG00000162408 or ENSG00000167363 or ENSG00000172456"
+      - gene_reaction_rule: "ENSG00000116199"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.-"
@@ -69406,7 +69406,7 @@
           - MAM02455c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000100413 or ENSG00000100417 or ENSG00000140650"
+      - gene_reaction_rule: "ENSG00000100417 or ENSG00000140650"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "5.4.2.8"
@@ -69425,7 +69425,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000164068 or ENSG00000173540"
+      - gene_reaction_rule: "ENSG00000173540"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.7.22;2.7.7.13"
@@ -69499,7 +69499,7 @@
           - MAM02759c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116783 or ENSG00000254685"
+      - gene_reaction_rule: "ENSG00000254685"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.7.30"
@@ -70769,7 +70769,7 @@
           - MAM02553m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116133"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.59"
@@ -70847,7 +70847,7 @@
           - MAM03168m: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000087076 or ENSG00000099377 or ENSG00000100867 or ENSG00000109854 or ENSG00000121039 or ENSG00000138400 or ENSG00000139988 or ENSG00000145439 or ENSG00000159692 or ENSG00000160439 or ENSG00000164039 or ENSG00000167733 or ENSG00000170426 or ENSG00000170786 or ENSG00000176387 or ENSG00000183921 or ENSG00000184860 or ENSG00000186153 or ENSG00000187134 or ENSG00000197894 or ENSG00000198074 or ENSG00000198189 or ENSG00000198610 or ENSG00000204228 or ENSG00000227471 or ENSG00000240857"
+      - gene_reaction_rule: "ENSG00000100867 or ENSG00000109854 or ENSG00000138400 or ENSG00000139988 or ENSG00000145439 or ENSG00000159692 or ENSG00000164039 or ENSG00000167733 or ENSG00000170426 or ENSG00000183921 or ENSG00000184860 or ENSG00000186153 or ENSG00000197894 or ENSG00000198074 or ENSG00000198189 or ENSG00000198610 or ENSG00000204228 or ENSG00000227471 or ENSG00000240857"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.-"
@@ -71448,7 +71448,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000054179 or ENSG00000138185 or ENSG00000168032 or ENSG00000171302 or ENSG00000187097 or ENSG00000188833 or ENSG00000197217 or ENSG00000197586"
+      - gene_reaction_rule: "ENSG00000054179 or ENSG00000138185 or ENSG00000168032 or ENSG00000171302 or ENSG00000187097 or ENSG00000188833 or ENSG00000197586"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.6.1.5;3.6.1.6"
@@ -71465,7 +71465,7 @@
           - MAM02759c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "(ENSG00000061918 and ENSG00000164116) or ENSG00000070019 or ENSG00000078295 or ENSG00000101890 or ENSG00000121281 or ENSG00000129467 or ENSG00000132518 or ENSG00000138031 or ENSG00000143199 or ENSG00000152402 or ENSG00000155897 or ENSG00000159899 or ENSG00000162104 or ENSG00000164742 or ENSG00000169418 or ENSG00000173175 or ENSG00000174233"
+      - gene_reaction_rule: "(ENSG00000061918 and ENSG00000164116) or ENSG00000078295 or ENSG00000121281 or ENSG00000129467 or ENSG00000138031 or ENSG00000143199 or ENSG00000155897 or ENSG00000159899 or ENSG00000162104 or ENSG00000164742 or ENSG00000173175 or ENSG00000174233"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.6.1.1;4.6.1.2"
@@ -71517,7 +71517,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000146587 or ENSG00000185013"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -71535,7 +71535,7 @@
           - MAM02751e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -71553,7 +71553,7 @@
           - MAM02751m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -71590,7 +71590,7 @@
           - MAM02040c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000065989 or ENSG00000073417 or ENSG00000095464 or ENSG00000105650 or ENSG00000112541 or ENSG00000113231 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000132915 or ENSG00000133256 or ENSG00000138735 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000160191 or ENSG00000171408 or ENSG00000172572 or ENSG00000184588 or ENSG00000185527 or ENSG00000186642 or ENSG00000205268"
+      - gene_reaction_rule: "ENSG00000065989 or ENSG00000073417 or ENSG00000095464 or ENSG00000105650 or ENSG00000112541 or ENSG00000113231 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000171408 or ENSG00000172572 or ENSG00000184588 or ENSG00000185527 or ENSG00000186642 or ENSG00000205268"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.4.17"
@@ -71625,7 +71625,7 @@
           - MAM02759c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "(ENSG00000061918 and ENSG00000164116) or ENSG00000070019 or ENSG00000078295 or ENSG00000101890 or ENSG00000121281 or ENSG00000129467 or ENSG00000132518 or ENSG00000138031 or ENSG00000143199 or ENSG00000152402 or ENSG00000155897 or ENSG00000159899 or ENSG00000162104 or ENSG00000164742 or ENSG00000169418 or ENSG00000173175 or ENSG00000174233"
+      - gene_reaction_rule: "(ENSG00000061918 and ENSG00000164116) or ENSG00000070019 or ENSG00000078295 or ENSG00000101890 or ENSG00000121281 or ENSG00000132518 or ENSG00000138031 or ENSG00000143199 or ENSG00000152402 or ENSG00000155897 or ENSG00000159899 or ENSG00000169418"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.6.1.1;4.6.1.2"
@@ -71724,7 +71724,7 @@
           - MAM02040c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000065989 or ENSG00000073417 or ENSG00000095464 or ENSG00000105650 or ENSG00000112541 or ENSG00000113231 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000132915 or ENSG00000133256 or ENSG00000138735 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000160191 or ENSG00000171408 or ENSG00000172572 or ENSG00000184588 or ENSG00000185527 or ENSG00000186642 or ENSG00000205268"
+      - gene_reaction_rule: "ENSG00000073417 or ENSG00000095464 or ENSG00000112541 or ENSG00000113231 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000132915 or ENSG00000133256 or ENSG00000138735 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000160191 or ENSG00000171408 or ENSG00000172572 or ENSG00000185527 or ENSG00000186642"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.4.17;3.1.4.35"
@@ -71834,7 +71834,7 @@
           - MAM02759c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000125877"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.6.1.19;3.6.1.8"
@@ -71927,7 +71927,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000146587 or ENSG00000185013"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -72002,7 +72002,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -72020,7 +72020,7 @@
           - MAM02751e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -72096,7 +72096,7 @@
           - MAM01639c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000004455 or ENSG00000072778 or ENSG00000085231 or ENSG00000087008 or ENSG00000106992 or ENSG00000117054 or ENSG00000140057 or ENSG00000147853 or ENSG00000151498 or ENSG00000154027 or ENSG00000155085 or ENSG00000162433 or ENSG00000165695 or ENSG00000177646"
+      - gene_reaction_rule: "ENSG00000004455 or ENSG00000085231 or ENSG00000106992 or ENSG00000140057 or ENSG00000147853 or ENSG00000154027 or ENSG00000155085 or ENSG00000162433 or ENSG00000165695 or ENSG00000177646"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.4.11;2.7.4.3"
@@ -72265,7 +72265,7 @@
           - MAM02193c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156510 or ENSG00000156515 or ENSG00000159399 or ENSG00000160883"
+      - gene_reaction_rule: "ENSG00000156515 or ENSG00000159399"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.1"
@@ -72284,7 +72284,7 @@
           - MAM02039c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156510 or ENSG00000156515 or ENSG00000159399 or ENSG00000160883"
+      - gene_reaction_rule: "ENSG00000156510 or ENSG00000156515 or ENSG00000159399"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.1"
@@ -72415,7 +72415,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -72603,7 +72603,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -72789,7 +72789,7 @@
           - MAM03150c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -72927,7 +72927,7 @@
           - MAM02872c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000100354 or ENSG00000239900"
+      - gene_reaction_rule: "ENSG00000239900"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.3.2.2"
@@ -73038,7 +73038,7 @@
           - MAM03121e: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000117592 or ENSG00000121053 or ENSG00000130508 or ENSG00000167419"
+      - gene_reaction_rule: "ENSG00000121053 or ENSG00000130508 or ENSG00000167419"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.7"
@@ -73257,7 +73257,7 @@
           - MAM01642c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000143156 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
+      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.4.6"
@@ -73275,7 +73275,7 @@
           - MAM02193c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000143156 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
+      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.4.6"
@@ -74688,7 +74688,7 @@
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000125877"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.6.1.19"
@@ -74724,7 +74724,7 @@
           - MAM01755c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000168393"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.4.9"
@@ -75044,7 +75044,7 @@
           - MAM02039c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000196839"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.76;2.7.1.76"
@@ -75062,7 +75062,7 @@
           - MAM01755m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000168393"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.4.4;2.7.4.9"
@@ -75293,7 +75293,7 @@
           - MAM02751l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000076685 or ENSG00000116981 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -75311,7 +75311,7 @@
           - MAM03123l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -75347,7 +75347,7 @@
           - MAM02751l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -75365,7 +75365,7 @@
           - MAM02996l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000185013 or ENSG00000205309"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.-"
@@ -75383,7 +75383,7 @@
           - MAM02751l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309"
+      - gene_reaction_rule: "ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.5"
@@ -75795,7 +75795,7 @@
           - MAM03130m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000143156 or ENSG00000155085 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
+      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000155085 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.4.6"
@@ -75921,7 +75921,7 @@
           - MAM01645m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000143156 or ENSG00000155085 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
+      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000155085 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.4.6"
@@ -76011,7 +76011,7 @@
           - MAM02193m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000143156 or ENSG00000155085 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
+      - gene_reaction_rule: "ENSG00000103024 or ENSG00000103202 or ENSG00000155085 or ENSG00000172113 or ENSG00000239672 or ENSG00000243678"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.4.6"
@@ -76029,7 +76029,7 @@
           - MAM02040n: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000065989 or ENSG00000073417 or ENSG00000095464 or ENSG00000105650 or ENSG00000112541 or ENSG00000113231 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000132915 or ENSG00000133256 or ENSG00000138735 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000160191 or ENSG00000171408 or ENSG00000172572 or ENSG00000184588 or ENSG00000185527 or ENSG00000186642 or ENSG00000205268"
+      - gene_reaction_rule: "ENSG00000095464 or ENSG00000105650 or ENSG00000112541 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000132915 or ENSG00000133256 or ENSG00000138735 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000160191 or ENSG00000171408 or ENSG00000172572 or ENSG00000184588 or ENSG00000185527 or ENSG00000186642"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.4.35"
@@ -76047,7 +76047,7 @@
           - MAM02040g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000065989 or ENSG00000073417 or ENSG00000095464 or ENSG00000105650 or ENSG00000112541 or ENSG00000113231 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000132915 or ENSG00000133256 or ENSG00000138735 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000160191 or ENSG00000171408 or ENSG00000172572 or ENSG00000184588 or ENSG00000185527 or ENSG00000186642 or ENSG00000205268"
+      - gene_reaction_rule: "ENSG00000073417 or ENSG00000095464 or ENSG00000105650 or ENSG00000112541 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000132915 or ENSG00000133256 or ENSG00000138735 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000160191 or ENSG00000172572 or ENSG00000185527 or ENSG00000186642"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.4.17"
@@ -76065,7 +76065,7 @@
           - MAM02040g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000065989 or ENSG00000073417 or ENSG00000095464 or ENSG00000105650 or ENSG00000112541 or ENSG00000113231 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000132915 or ENSG00000133256 or ENSG00000138735 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000160191 or ENSG00000171408 or ENSG00000172572 or ENSG00000184588 or ENSG00000185527 or ENSG00000186642 or ENSG00000205268"
+      - gene_reaction_rule: "ENSG00000065989 or ENSG00000073417 or ENSG00000105650 or ENSG00000112541 or ENSG00000113231 or ENSG00000113448 or ENSG00000115252 or ENSG00000123360 or ENSG00000128655 or ENSG00000139053 or ENSG00000152270 or ENSG00000154678 or ENSG00000171408 or ENSG00000172572 or ENSG00000184588 or ENSG00000185527 or ENSG00000186642 or ENSG00000205268"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.4.17"
@@ -76084,7 +76084,7 @@
           - MAM02040c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000165609 or ENSG00000170222 or ENSG00000170502"
+      - gene_reaction_rule: "ENSG00000165609 or ENSG00000170222"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.6.1.13"
@@ -76103,7 +76103,7 @@
           - MAM02454c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000165609 or ENSG00000170222 or ENSG00000170502"
+      - gene_reaction_rule: "ENSG00000165609 or ENSG00000170222"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.6.1.13"
@@ -76194,7 +76194,7 @@
           - MAM01688c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000162368"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.4.14"
@@ -76623,7 +76623,7 @@
           - MAM02751e: 2
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000054179 or ENSG00000138185 or ENSG00000168032 or ENSG00000171302 or ENSG00000187097 or ENSG00000188833 or ENSG00000197217 or ENSG00000197586"
+      - gene_reaction_rule: "ENSG00000054179 or ENSG00000138185 or ENSG00000168032 or ENSG00000187097 or ENSG00000188833 or ENSG00000197217 or ENSG00000197586"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.6.1.5;3.6.1.6;3.6.1.42"
@@ -77405,7 +77405,7 @@
           - MAM02943m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000134333"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.16"
@@ -79545,7 +79545,7 @@
           - MAM02181m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000149124 or ENSG00000156689 or ENSG00000166840"
+      - gene_reaction_rule: "ENSG00000149124 or ENSG00000156689"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.13"
@@ -79619,7 +79619,7 @@
           - MAM02039m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000149124 or ENSG00000156689 or ENSG00000166840"
+      - gene_reaction_rule: "ENSG00000149124"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.13"
@@ -79675,7 +79675,7 @@
           - MAM02530m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000161653"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.1"
@@ -79730,7 +79730,7 @@
           - MAM02896c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111237 or ENSG00000146733"
+      - gene_reaction_rule: "ENSG00000146733"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.3"
@@ -79827,7 +79827,7 @@
           - MAM02553c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000137106"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.79;1.1.1.81"
@@ -79900,7 +79900,7 @@
           - MAM02944m: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000023330 or ENSG00000158578 or ENSG00000178773"
+      - gene_reaction_rule: "ENSG00000023330 or ENSG00000178773"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.37"
@@ -80385,7 +80385,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000101323 or ENSG00000116882"
+      - gene_reaction_rule: "ENSG00000101323"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.3.15"
@@ -80558,7 +80558,7 @@
           - MAM02039c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000102030 or ENSG00000122390 or ENSG00000139977 or ENSG00000156269 or ENSG00000164134 or ENSG00000173418"
+      - gene_reaction_rule: "ENSG00000102030 or ENSG00000122390 or ENSG00000164134"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.88"
@@ -80576,7 +80576,7 @@
           - MAM02125c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000132437 or ENSG00000140287"
+      - gene_reaction_rule: "ENSG00000140287"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.1.1.22;4.1.1.28"
@@ -80727,7 +80727,7 @@
           - MAM02867c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000068903 or ENSG00000077463 or ENSG00000078124 or ENSG00000096717 or ENSG00000124523 or ENSG00000124596 or ENSG00000132744 or ENSG00000133315 or ENSG00000138744 or ENSG00000142082 or ENSG00000156795 or ENSG00000157045 or ENSG00000172264 or ENSG00000187531"
+      - gene_reaction_rule: "ENSG00000077463 or ENSG00000096717 or ENSG00000124523 or ENSG00000124596 or ENSG00000132744 or ENSG00000133315 or ENSG00000142082 or ENSG00000156795 or ENSG00000157045 or ENSG00000187531"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.5.1.-"
@@ -80744,7 +80744,7 @@
           - MAM03124c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006695 or ENSG00000054267 or ENSG00000117682 or ENSG00000120942 or ENSG00000183665"
+      - gene_reaction_rule: "ENSG00000054267 or ENSG00000120942"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.5.1.-"
@@ -80763,7 +80763,7 @@
           - MAM02867c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000012660 or ENSG00000066322 or ENSG00000118402 or ENSG00000119915 or ENSG00000164181 or ENSG00000170522 or ENSG00000197977"
+      - gene_reaction_rule: "ENSG00000066322 or ENSG00000119915 or ENSG00000164181 or ENSG00000197977"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.199"
@@ -80781,7 +80781,7 @@
           - MAM02867c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000068903 or ENSG00000077463 or ENSG00000078124 or ENSG00000096717 or ENSG00000124523 or ENSG00000124596 or ENSG00000132744 or ENSG00000133315 or ENSG00000138744 or ENSG00000142082 or ENSG00000156795 or ENSG00000157045 or ENSG00000172264 or ENSG00000187531"
+      - gene_reaction_rule: "ENSG00000068903 or ENSG00000077463 or ENSG00000096717 or ENSG00000124523 or ENSG00000124596 or ENSG00000132744 or ENSG00000133315 or ENSG00000138744 or ENSG00000142082 or ENSG00000157045 or ENSG00000172264 or ENSG00000187531"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.5.1.-"
@@ -80799,7 +80799,7 @@
           - MAM02867c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000068903 or ENSG00000077463 or ENSG00000078124 or ENSG00000096717 or ENSG00000124523 or ENSG00000124596 or ENSG00000132744 or ENSG00000133315 or ENSG00000138744 or ENSG00000142082 or ENSG00000156795 or ENSG00000157045 or ENSG00000172264 or ENSG00000187531"
+      - gene_reaction_rule: "ENSG00000068903 or ENSG00000077463 or ENSG00000096717 or ENSG00000124523 or ENSG00000124596 or ENSG00000132744 or ENSG00000156795 or ENSG00000157045 or ENSG00000187531"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.5.1.-"
@@ -82228,7 +82228,7 @@
           - MAM02553m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000072506 or ENSG00000106049 or ENSG00000138796"
+      - gene_reaction_rule: "ENSG00000072506 or ENSG00000106049"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.31;1.1.1.35"
@@ -82468,7 +82468,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000179148 or ENSG00000179477 or ENSG00000188676"
+      - gene_reaction_rule: "ENSG00000179148 or ENSG00000179477"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.13.11.-"
@@ -82487,7 +82487,7 @@
           - MAM02553c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000087076 or ENSG00000099377 or ENSG00000100867 or ENSG00000109854 or ENSG00000121039 or ENSG00000138400 or ENSG00000139988 or ENSG00000145439 or ENSG00000159692 or ENSG00000160439 or ENSG00000164039 or ENSG00000167733 or ENSG00000170426 or ENSG00000170786 or ENSG00000176387 or ENSG00000183921 or ENSG00000184860 or ENSG00000186153 or ENSG00000187134 or ENSG00000197894 or ENSG00000198074 or ENSG00000198189 or ENSG00000198610 or ENSG00000204228 or ENSG00000227471 or ENSG00000240857"
+      - gene_reaction_rule: "ENSG00000100867 or ENSG00000109854 or ENSG00000138400 or ENSG00000145439 or ENSG00000159692 or ENSG00000164039 or ENSG00000167733 or ENSG00000170426 or ENSG00000170786 or ENSG00000183921 or ENSG00000184860 or ENSG00000186153 or ENSG00000187134 or ENSG00000197894 or ENSG00000198074 or ENSG00000198189 or ENSG00000204228 or ENSG00000227471"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.-"
@@ -83612,7 +83612,7 @@
           - MAM03136c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.5"
@@ -83632,7 +83632,7 @@
           - MAM03136c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.5"
@@ -83733,7 +83733,7 @@
           - MAM02555c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.5"
@@ -83771,7 +83771,7 @@
           - MAM02553c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000147576 or ENSG00000172955 or ENSG00000187758 or ENSG00000196344 or ENSG00000196616 or ENSG00000197894 or ENSG00000198099 or ENSG00000248144"
+      - gene_reaction_rule: "ENSG00000147576 or ENSG00000172955 or ENSG00000187758 or ENSG00000196344 or ENSG00000197894 or ENSG00000198099 or ENSG00000248144"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.1"
@@ -83849,7 +83849,7 @@
           - MAM02553c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.5"
@@ -83869,7 +83869,7 @@
           - MAM02555c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.5"
@@ -83986,7 +83986,7 @@
           - MAM02555c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.5"
@@ -84307,7 +84307,7 @@
           - MAM02555c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.5"
@@ -84491,7 +84491,7 @@
           - MAM02041c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000117592 or ENSG00000121053 or ENSG00000130508 or ENSG00000167419"
+      - gene_reaction_rule: "ENSG00000121053 or ENSG00000167419"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.7"
@@ -84527,7 +84527,7 @@
           - MAM02041c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000005381 or ENSG00000115705 or ENSG00000117592 or ENSG00000121053 or ENSG00000167419"
+      - gene_reaction_rule: "ENSG00000005381 or ENSG00000115705 or ENSG00000121053 or ENSG00000167419"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.7;1.11.1.8;1.11.2.2"
@@ -84765,7 +84765,7 @@
           - MAM02682c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000070614 or ENSG00000111962 or ENSG00000115526 or ENSG00000124302 or ENSG00000130540 or ENSG00000135702 or ENSG00000136720 or ENSG00000138653 or ENSG00000140835 or ENSG00000147119 or ENSG00000153936 or ENSG00000154080 or ENSG00000154252 or ENSG00000164100 or ENSG00000166507 or ENSG00000171004 or ENSG00000173597 or ENSG00000175040 or ENSG00000175229 or ENSG00000183196 or ENSG00000185352 or ENSG00000197093 or ENSG00000198075 or ENSG00000198203"
+      - gene_reaction_rule: "ENSG00000070614 or ENSG00000111962 or ENSG00000115526 or ENSG00000130540 or ENSG00000147119 or ENSG00000153936 or ENSG00000154080 or ENSG00000154252 or ENSG00000164100 or ENSG00000173597 or ENSG00000185352 or ENSG00000197093 or ENSG00000198075 or ENSG00000198203"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -85410,7 +85410,7 @@
           - MAM02724c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000117592 or ENSG00000121053 or ENSG00000130508 or ENSG00000167419"
+      - gene_reaction_rule: "ENSG00000121053"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.7"
@@ -85711,7 +85711,7 @@
           - MAM02555c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000181652 or ENSG00000184470 or ENSG00000197763 or ENSG00000198431"
+      - gene_reaction_rule: "ENSG00000184470 or ENSG00000197763 or ENSG00000198431"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.8.1.9"
@@ -86410,7 +86410,7 @@
           - MAM02041e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116157 or ENSG00000117450 or ENSG00000117592 or ENSG00000126432 or ENSG00000164294 or ENSG00000165672 or ENSG00000167468 or ENSG00000167815 or ENSG00000176153 or ENSG00000198704 or ENSG00000211445 or ENSG00000224586 or ENSG00000233276"
+      - gene_reaction_rule: "ENSG00000116157 or ENSG00000117450 or ENSG00000117592 or ENSG00000126432 or ENSG00000164294 or ENSG00000167468 or ENSG00000167815 or ENSG00000176153 or ENSG00000198704 or ENSG00000211445 or ENSG00000224586 or ENSG00000233276"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.9;1.11.1.15"
@@ -86668,7 +86668,7 @@
           - MAM02039c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000128683 or ENSG00000136750"
+      - gene_reaction_rule: "ENSG00000136750"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.1.1.11;4.1.1.15"
@@ -86882,7 +86882,7 @@
           - MAM02885c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138801 or ENSG00000198682"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.7.4"
@@ -88067,7 +88067,7 @@
           - MAM02527c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111261 or ENSG00000133048 or ENSG00000133063 or ENSG00000134216"
+      - gene_reaction_rule: "ENSG00000111261 or ENSG00000133063 or ENSG00000134216"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.14"
@@ -93247,7 +93247,7 @@
           - MAM03135c: 28
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000165996 or ENSG00000206527"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.2.1.134"
@@ -93535,7 +93535,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000104331 or ENSG00000162813"
+      - gene_reaction_rule: "ENSG00000162813"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.7"
@@ -93611,7 +93611,7 @@
           - MAM02877c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000006534 or ENSG00000132746 or ENSG00000184254"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.2.1.5"
@@ -118350,7 +118350,7 @@
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.3.8.7;1.3.8.8;1.3.8.9;1.3.99.-"
-      - references: ""
+      - references: "PMID:20490924"
       - subsystem:
           - "Beta oxidation of even-chain fatty acids (mitochondrial)"
       - confidence_score: 0
@@ -118367,7 +118367,7 @@
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.2.1.17"
-      - references: ""
+      - references: "PMID:20490924"
       - subsystem:
           - "Beta oxidation of even-chain fatty acids (mitochondrial)"
       - confidence_score: 0
@@ -118386,7 +118386,7 @@
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.35;1.1.1.211"
-      - references: ""
+      - references: "PMID:20490924"
       - subsystem:
           - "Beta oxidation of even-chain fatty acids (mitochondrial)"
       - confidence_score: 0
@@ -118404,7 +118404,7 @@
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.16;1.1.1.211"
-      - references: ""
+      - references: "PMID:20490924"
       - subsystem:
           - "Beta oxidation of even-chain fatty acids (mitochondrial)"
       - confidence_score: 0
@@ -131779,7 +131779,7 @@
           - MAM02555c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000085662 or ENSG00000117448 or ENSG00000172955 or ENSG00000187758 or ENSG00000196344 or ENSG00000196616 or ENSG00000197894 or ENSG00000198074 or ENSG00000198099 or ENSG00000248144"
+      - gene_reaction_rule: "ENSG00000085662 or ENSG00000117448 or ENSG00000172955 or ENSG00000187758 or ENSG00000196616 or ENSG00000197894 or ENSG00000198074 or ENSG00000198099 or ENSG00000248144"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.1;1.1.1.2;1.1.1.21;1.1.1.72"
@@ -131818,7 +131818,7 @@
           - MAM02555m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000085662 or ENSG00000117448 or ENSG00000172955 or ENSG00000187758 or ENSG00000196344 or ENSG00000196616 or ENSG00000197894 or ENSG00000198074 or ENSG00000198099 or ENSG00000248144"
+      - gene_reaction_rule: "ENSG00000085662 or ENSG00000117448 or ENSG00000172955 or ENSG00000187758 or ENSG00000197894 or ENSG00000198074 or ENSG00000198099 or ENSG00000248144"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.1;1.1.1.2;1.1.1.21;1.1.1.72"
@@ -134237,7 +134237,7 @@
           - MAM02877c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.1.1.103"
@@ -134255,7 +134255,7 @@
           - MAM02877c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.1.1.103"
@@ -140094,7 +140094,7 @@
           - MAM02946l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000049860 or ENSG00000068001 or ENSG00000106302 or ENSG00000106304 or ENSG00000114378 or ENSG00000169660 or ENSG00000186792 or ENSG00000213614"
+      - gene_reaction_rule: "ENSG00000049860 or ENSG00000068001 or ENSG00000106302 or ENSG00000114378 or ENSG00000169660 or ENSG00000186792 or ENSG00000213614"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.35;3.2.1.52"
@@ -140337,7 +140337,7 @@
           - MAM02946l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266 and ENSG00000204386"
+      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.6.4;3.2.1.18;3.2.1.23;3.4.16.5"
@@ -140412,7 +140412,7 @@
           - MAM02946l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266 and ENSG00000204386"
+      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.6.4;3.2.1.18;3.2.1.23;3.4.16.5"
@@ -140508,7 +140508,7 @@
           - MAM02946l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266 and ENSG00000204386"
+      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.6.4;3.2.1.18;3.2.1.23;3.4.16.5"
@@ -140602,7 +140602,7 @@
           - MAM02946l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266 and ENSG00000204386"
+      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.6.4;3.2.1.18;3.2.1.23;3.4.16.5"
@@ -140735,7 +140735,7 @@
           - MAM02946l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266 and ENSG00000204386"
+      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.6.4;3.2.1.18;3.2.1.23;3.4.16.5"
@@ -141463,7 +141463,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141501,7 +141501,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141520,7 +141520,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -141558,7 +141558,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141577,7 +141577,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -141615,7 +141615,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141634,7 +141634,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -141672,7 +141672,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141691,7 +141691,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -141729,7 +141729,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141748,7 +141748,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -141786,7 +141786,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141805,7 +141805,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -141843,7 +141843,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141862,7 +141862,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -141900,7 +141900,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141919,7 +141919,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -141957,7 +141957,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -141976,7 +141976,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -142014,7 +142014,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -142033,7 +142033,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -142071,7 +142071,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -142090,7 +142090,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -142185,7 +142185,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -142223,7 +142223,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -142242,7 +142242,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -142280,7 +142280,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -142394,7 +142394,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -142432,7 +142432,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -142451,7 +142451,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -142489,7 +142489,7 @@
           - MAM03111g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000175711 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -142508,7 +142508,7 @@
           - MAM02682g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135702 or ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
+      - gene_reaction_rule: "ENSG00000140835 or ENSG00000175040 or ENSG00000183196"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -150543,7 +150543,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000104331 or ENSG00000133731 or ENSG00000141401"
+      - gene_reaction_rule: "ENSG00000133731 or ENSG00000141401"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.25"
@@ -150617,7 +150617,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003987 or ENSG00000054148 or ENSG00000063601 or ENSG00000087053 or ENSG00000102043 or ENSG00000111077 or ENSG00000111696 or ENSG00000112367 or ENSG00000125458 or ENSG00000126821 or ENSG00000137770 or ENSG00000139304 or ENSG00000139505 or ENSG00000144048 or ENSG00000163082 or ENSG00000163719 or ENSG00000165458 or ENSG00000165688 or ENSG00000198825 or ENSG00000198881 or ENSG00000205309 or ENSG00000205808 or ENSG00000211456 or ENSG00000213920"
+      - gene_reaction_rule: "ENSG00000003987 or ENSG00000063601 or ENSG00000087053 or ENSG00000102043 or ENSG00000111077 or ENSG00000111696 or ENSG00000112367 or ENSG00000126821 or ENSG00000137770 or ENSG00000139304 or ENSG00000139505 or ENSG00000144048 or ENSG00000163719 or ENSG00000165458 or ENSG00000165688 or ENSG00000198825 or ENSG00000198881 or ENSG00000205808 or ENSG00000211456 or ENSG00000213920"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.-"
@@ -150654,7 +150654,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003987 or ENSG00000054148 or ENSG00000063601 or ENSG00000087053 or ENSG00000102043 or ENSG00000111077 or ENSG00000111696 or ENSG00000112367 or ENSG00000125458 or ENSG00000126821 or ENSG00000137770 or ENSG00000139304 or ENSG00000139505 or ENSG00000144048 or ENSG00000163082 or ENSG00000163719 or ENSG00000165458 or ENSG00000165688 or ENSG00000198825 or ENSG00000205309 or ENSG00000205808 or ENSG00000211456 or ENSG00000213920"
+      - gene_reaction_rule: "ENSG00000063601 or ENSG00000087053 or ENSG00000102043 or ENSG00000111077 or ENSG00000111696 or ENSG00000112367 or ENSG00000137770 or ENSG00000139304 or ENSG00000139505 or ENSG00000165458 or ENSG00000165688 or ENSG00000198825 or ENSG00000211456"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.-"
@@ -150838,7 +150838,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003987 or ENSG00000054148 or ENSG00000063601 or ENSG00000087053 or ENSG00000102043 or ENSG00000111077 or ENSG00000111696 or ENSG00000112367 or ENSG00000125458 or ENSG00000126821 or ENSG00000137770 or ENSG00000139304 or ENSG00000139505 or ENSG00000144048 or ENSG00000163082 or ENSG00000163719 or ENSG00000165458 or ENSG00000165688 or ENSG00000198825 or ENSG00000198881 or ENSG00000205309 or ENSG00000205808 or ENSG00000211456 or ENSG00000213920"
+      - gene_reaction_rule: "ENSG00000003987 or ENSG00000087053 or ENSG00000102043 or ENSG00000111077 or ENSG00000111696 or ENSG00000112367 or ENSG00000137770 or ENSG00000139304 or ENSG00000139505 or ENSG00000165458 or ENSG00000198825 or ENSG00000198881 or ENSG00000205808 or ENSG00000211456 or ENSG00000213920"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.-"
@@ -150929,7 +150929,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000104331 or ENSG00000133731 or ENSG00000141401"
+      - gene_reaction_rule: "ENSG00000133731 or ENSG00000141401"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.25"
@@ -151095,7 +151095,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000104331 or ENSG00000133731 or ENSG00000141401"
+      - gene_reaction_rule: "ENSG00000133731 or ENSG00000141401"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.25"
@@ -151373,7 +151373,7 @@
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003987 or ENSG00000054148 or ENSG00000063601 or ENSG00000087053 or ENSG00000102043 or ENSG00000111077 or ENSG00000111696 or ENSG00000112367 or ENSG00000125458 or ENSG00000126821 or ENSG00000137770 or ENSG00000139304 or ENSG00000139505 or ENSG00000144048 or ENSG00000163082 or ENSG00000163719 or ENSG00000165458 or ENSG00000165688 or ENSG00000198825 or ENSG00000205309 or ENSG00000205808 or ENSG00000211456 or ENSG00000213920"
+      - gene_reaction_rule: "ENSG00000003987 or ENSG00000054148 or ENSG00000063601 or ENSG00000087053 or ENSG00000102043 or ENSG00000111077 or ENSG00000111696 or ENSG00000112367 or ENSG00000125458 or ENSG00000137770 or ENSG00000139304 or ENSG00000139505 or ENSG00000163719 or ENSG00000165458 or ENSG00000165688 or ENSG00000198825 or ENSG00000205309 or ENSG00000205808 or ENSG00000211456 or ENSG00000213920"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.-"
@@ -151411,7 +151411,7 @@
           - MAM02735c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000107242 or ENSG00000143398 or ENSG00000167103 or ENSG00000186111"
+      - gene_reaction_rule: "ENSG00000143398 or ENSG00000167103 or ENSG00000186111"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.68"
@@ -151725,7 +151725,7 @@
           - MAM02734n: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000107242 or ENSG00000143398 or ENSG00000167103 or ENSG00000186111"
+      - gene_reaction_rule: "ENSG00000107242 or ENSG00000143398 or ENSG00000167103"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: ""
@@ -156497,7 +156497,7 @@
           - MAM02949c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000070614 or ENSG00000111962 or ENSG00000115526 or ENSG00000124302 or ENSG00000130540 or ENSG00000135702 or ENSG00000136720 or ENSG00000138653 or ENSG00000140835 or ENSG00000147119 or ENSG00000153936 or ENSG00000154080 or ENSG00000154252 or ENSG00000164100 or ENSG00000166507 or ENSG00000171004 or ENSG00000173597 or ENSG00000175040 or ENSG00000175229 or ENSG00000183196 or ENSG00000185352 or ENSG00000197093 or ENSG00000198075 or ENSG00000198203 or ENSG00000261052"
+      - gene_reaction_rule: "ENSG00000070614 or ENSG00000115526 or ENSG00000130540 or ENSG00000135702 or ENSG00000138653 or ENSG00000147119 or ENSG00000153936 or ENSG00000154080 or ENSG00000173597 or ENSG00000197093 or ENSG00000198203 or ENSG00000261052"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.8.2.-"
@@ -159340,7 +159340,7 @@
           - MAM02630c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000106258 or ENSG00000108242 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000106258 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.1"
@@ -159382,7 +159382,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000106258 or ENSG00000108242 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000106258 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.1"
@@ -159695,7 +159695,7 @@
           - MAM03043c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000147576 or ENSG00000172955 or ENSG00000187758 or ENSG00000196344 or ENSG00000196616 or ENSG00000197894 or ENSG00000198099 or ENSG00000248144"
+      - gene_reaction_rule: "ENSG00000172955 or ENSG00000187758 or ENSG00000196344 or ENSG00000197894 or ENSG00000198099 or ENSG00000248144"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.1"
@@ -159971,7 +159971,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000106258 or ENSG00000108242 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000106258 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.1"
@@ -160084,7 +160084,7 @@
           - MAM02555c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000104808 or ENSG00000117594 or ENSG00000151632 or ENSG00000159228 or ENSG00000159231 or ENSG00000187134 or ENSG00000196139 or ENSG00000198610"
+      - gene_reaction_rule: "ENSG00000104808 or ENSG00000151632 or ENSG00000159228 or ENSG00000159231 or ENSG00000187134 or ENSG00000196139 or ENSG00000198610"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.146;1.1.1.184;1.3.1.20"
@@ -160786,7 +160786,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000106258 or ENSG00000108242 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000106258 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.1"
@@ -161269,7 +161269,7 @@
           - MAM02156c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000117592 or ENSG00000121053 or ENSG00000130508 or ENSG00000167419"
+      - gene_reaction_rule: "ENSG00000117592 or ENSG00000121053 or ENSG00000167419"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.7"
@@ -161288,7 +161288,7 @@
           - MAM02591c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000117592 or ENSG00000121053 or ENSG00000130508 or ENSG00000167419"
+      - gene_reaction_rule: "ENSG00000121053 or ENSG00000130508 or ENSG00000167419"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.7"
@@ -161306,7 +161306,7 @@
           - MAM02754e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006534 or ENSG00000014257 or ENSG00000102575 or ENSG00000134575 or ENSG00000142513 or ENSG00000155893 or ENSG00000162551 or ENSG00000162836 or ENSG00000163283 or ENSG00000163286 or ENSG00000163295 or ENSG00000184254"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000102575 or ENSG00000134575 or ENSG00000142513 or ENSG00000155893 or ENSG00000162551 or ENSG00000162836 or ENSG00000163283 or ENSG00000163286 or ENSG00000163295"
       - rxnNotes: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.3.1;3.1.3.2;3.1.3.41"
@@ -217612,7 +217612,7 @@
           - MAM03200l: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000014257 or ENSG00000102575 or ENSG00000134575 or ENSG00000162836"
+      - gene_reaction_rule: "ENSG00000014257 or ENSG00000102575 or ENSG00000134575"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "3.1.3.2"
@@ -218065,7 +218065,7 @@
           - MAM03622e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "(ENSG00000021488 and ENSG00000138079) or ENSG00000168003 or ENSG00000174876 or ENSG00000187733 or ENSG00000237763 or ENSG00000240038 or ENSG00000243480"
+      - gene_reaction_rule: "ENSG00000168003 or ENSG00000174876 or ENSG00000187733 or ENSG00000237763 or ENSG00000240038 or ENSG00000243480"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "3.2.1.1"
@@ -218356,7 +218356,7 @@
           - MAM02553m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111275 or ENSG00000137124 or ENSG00000159423"
+      - gene_reaction_rule: "ENSG00000111275 or ENSG00000137124"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "1.5.1.12"
@@ -221483,30 +221483,6 @@
           - "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00776"
-      - name: "Beta Oxidation of Long Chain Fatty Acid"
-      - metabolites: !!omap
-          - MAM01261m: 1
-          - MAM01597m: -1
-          - MAM01802m: -1
-          - MAM01803m: 1
-          - MAM02039m: 1
-          - MAM02040m: -1
-          - MAM02552m: -1
-          - MAM02553m: 1
-          - MAM02678m: 1
-          - MAM02941m: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000117054 or ENSG00000122971"
-      - rxnNotes: ""
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.3"
-      - references: "PMID:2565344;PMID:3035565"
-      - subsystem:
-          - "Fatty acid oxidation"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR00777"
       - name: "Beta Oxidation of Long Chain Fatty Acid"
       - metabolites: !!omap
@@ -221526,30 +221502,6 @@
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "2.3.1.16"
-      - references: ""
-      - subsystem:
-          - "Fatty acid oxidation"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR00778"
-      - name: "Beta Oxidation Fatty Acid"
-      - metabolites: !!omap
-          - MAM00057m: -1
-          - MAM01261m: 5
-          - MAM01597m: -5
-          - MAM01802m: -4
-          - MAM01803m: 4
-          - MAM02039m: 5
-          - MAM02040m: -5
-          - MAM02552m: -5
-          - MAM02553m: 5
-          - MAM02644m: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000117054 or ENSG00000122971"
-      - rxnNotes: ""
-      - rxnFrom: "Recon3D"
-      - eccodes: "4.2.1.74"
       - references: ""
       - subsystem:
           - "Fatty acid oxidation"
@@ -223353,7 +223305,7 @@
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "2.7.1.3"
-      - references: "PMID:33715524"
+      - references: "PMID:33715524;PMID:2469615;PMID:19158351"
       - subsystem:
           - "Galactose metabolism"
       - confidence_score: 0
@@ -223519,7 +223471,7 @@
           - MAM03727c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
+      - gene_reaction_rule: "ENSG00000110090 or ENSG00000205560"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "2.3.1.21"
@@ -229715,7 +229667,7 @@
           - MAM02751m: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000151093"
+      - gene_reaction_rule: ""
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "3.1.3.66"
@@ -231853,7 +231805,7 @@
           - MAM03333m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115361 or ENSG00000117054 or ENSG00000161533 or ENSG00000196177"
+      - gene_reaction_rule: "ENSG00000115361 or ENSG00000117054 or ENSG00000196177"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "1.3.99.3"
@@ -232327,7 +232279,7 @@
           - MAM02766x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000068366 or ENSG00000103740 or ENSG00000119673 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000177465 or ENSG00000197142"
+      - gene_reaction_rule: "ENSG00000140284"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "6.2.1.3"
@@ -235503,7 +235455,7 @@
           - MAM03381r: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000137869 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000160868 or ENSG00000160870 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186377 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000160868 or ENSG00000160870 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "1.14.14.1"
@@ -235704,7 +235656,7 @@
           - MAM03386r: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000137869 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000160868 or ENSG00000160870 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186377 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000137869 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000160868 or ENSG00000160870 or ENSG00000167600 or ENSG00000171903 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "1.14.14.1"
@@ -235797,7 +235749,7 @@
           - MAM03388r: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000137869 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000160868 or ENSG00000160870 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186377 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000137869 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000160868 or ENSG00000160870 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186377 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "1.14.14.1"
@@ -237386,7 +237338,7 @@
           - MAM03488c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
+      - gene_reaction_rule: "ENSG00000110090 or ENSG00000205560"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: ""
@@ -237965,7 +237917,7 @@
           - MAM03496c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
+      - gene_reaction_rule: "ENSG00000110090 or ENSG00000205560"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: ""
@@ -241109,7 +241061,7 @@
           - MAM03243c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
+      - gene_reaction_rule: "ENSG00000110090 or ENSG00000205560"
       - rxnNotes: "http://www.perkinelmergenetics.com/3Hydroxy3MethylglutarylCoALyaseDeficiency.html"
       - rxnFrom: "Recon3D"
       - eccodes: ""
@@ -241211,7 +241163,7 @@
           - MAM03409x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533"
+      - gene_reaction_rule: "(ENSG00000161533 or ENSG00000087008) and (ENSG00000113790 or ENSG00000133835) and (ENSG00000060971 or ENSG00000116171)"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: ""
@@ -271522,7 +271474,7 @@
           - MAM03176c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166800 or ENSG00000166816 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166816 or ENSG00000171989"
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.27"
@@ -272576,7 +272528,7 @@
           - MAM03922x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "(ENSG00000113790 and ENSG00000161533) or (ENSG00000104823 and ENSG00000161533)"
+      - gene_reaction_rule: "(ENSG00000161533 or ENSG00000087008) and (ENSG00000113790 or ENSG00000133835)"
       - rxnNotes: ""
       - rxnFrom: "Recon3D"
       - eccodes: "1.3.3.6;4.2.1.17"
@@ -305847,9 +305799,6 @@
       - id: "ENSG00000092295"
       - name: "TGM1"
     - !!omap
-      - id: "ENSG00000092529"
-      - name: "CAPN3"
-    - !!omap
       - id: "ENSG00000092621"
       - name: "PHGDH"
     - !!omap
@@ -306888,9 +306837,6 @@
       - id: "ENSG00000111224"
       - name: "PARP11"
     - !!omap
-      - id: "ENSG00000111237"
-      - name: "VPS29"
-    - !!omap
       - id: "ENSG00000111261"
       - name: "MANSC1"
     - !!omap
@@ -307346,9 +307292,6 @@
     - !!omap
       - id: "ENSG00000116771"
       - name: "AGMAT"
-    - !!omap
-      - id: "ENSG00000116783"
-      - name: "TNNI3K"
     - !!omap
       - id: "ENSG00000116791"
       - name: "CRYZ"
@@ -308925,9 +308868,6 @@
       - id: "ENSG00000139914"
       - name: "FITM1"
     - !!omap
-      - id: "ENSG00000139977"
-      - name: "NAA30"
-    - !!omap
       - id: "ENSG00000139988"
       - name: "RDH12"
     - !!omap
@@ -309920,9 +309860,6 @@
     - !!omap
       - id: "ENSG00000156256"
       - name: "USP16"
-    - !!omap
-      - id: "ENSG00000156269"
-      - name: "NAA11"
     - !!omap
       - id: "ENSG00000156411"
       - name: "ATP5MJ"
@@ -311949,9 +311886,6 @@
       - id: "ENSG00000181555"
       - name: "SETD2"
     - !!omap
-      - id: "ENSG00000181652"
-      - name: "ATG9B"
-    - !!omap
       - id: "ENSG00000181788"
       - name: "SIAH2"
     - !!omap
@@ -312074,9 +312008,6 @@
     - !!omap
       - id: "ENSG00000183654"
       - name: "MARCHF11"
-    - !!omap
-      - id: "ENSG00000183665"
-      - name: "TRMT12"
     - !!omap
       - id: "ENSG00000183696"
       - name: "UPP1"
@@ -313091,9 +313022,6 @@
     - !!omap
       - id: "ENSG00000241119"
       - name: "UGT1A9"
-    - !!omap
-      - id: "ENSG00000241343"
-      - name: "RPL36A"
     - !!omap
       - id: "ENSG00000241360"
       - name: "PDXP"
