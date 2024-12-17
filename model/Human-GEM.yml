@@ -3,7 +3,7 @@
 - metaData:
     id: "HumanGEM"
     name: "Generic genome-scale metabolic model of Homo sapiens"
-    version: ""
+    version: 
     date: "2024-10-18"
     defaultLB: "-1000"
     defaultUB: "1000"
@@ -61806,7 +61806,6 @@
           - MAM03155c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.15"
       - references: "PMID:13373783"
@@ -62017,7 +62016,6 @@
           - MAM03109c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.1.1.35"
       - subsystem:
@@ -62855,7 +62853,6 @@
           - MAM02553m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.59"
       - references: "PMID:13672942"
@@ -63861,7 +63858,6 @@
           - MAM02759c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: ""
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "3.6.1.19"
@@ -65724,7 +65720,6 @@
           - MAM02039c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.-"
       - subsystem:
@@ -65817,7 +65812,6 @@
           - MAM03130e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.6.1.19"
       - references: "PMID:15652174;PMID:16752921;PMID:17095758"
