@@ -55,7 +55,7 @@ ihuman = readYAMLmodel(fullfile(modelPath,'model','Human-GEM.yml'));
 ihuman.version = newVersion;
 
 %Check if it matches reactions.tsv, metabolites.tsv and genes.tsv
-fields = {'rxns','reactions';'mets','metabolites';'genes','genes.tsv'};
+fields = {'rxns','reactions';'mets','metabolites';'genes','genes'};
 for i=1:size(fields,1)
     tsvList = importTsvFile(fullfile(modelPath,'model',[fields{i,2} '.tsv']));
     Lia     = ismember(ihuman.(fields{i,1}), tsvList.(fields{i,1}));
@@ -68,10 +68,10 @@ end
 
 %Export model to multiple formats, without annotation
 writeYAMLmodel(ihuman,fullfile(modelPath,'model','Human-GEM.yml'),false,false);
-save(ihuman,fullfile(modelPath,'model','Human-GEM.mat'));
+save(fullfile(modelPath,'model','Human-GEM.mat'),'ihuman');
 
 ihuman = annotateGEM(ihuman);  % Add annotation data to structure
-exportForGit(ihuman,'Human-GEM',modelPath,{'xml', 'xlsx', 'txt'});
+exportForGit(ihuman,'Human-GEM',modelPath,{'xml', 'xlsx', 'txt'},'',false);
 
 %Update version file:
 fid = fopen(versionFile,'wt');
