@@ -59,7 +59,7 @@ end
 %Load model:
 currDir = pwd;
 cd(fullfile(modelPath,'code','io'))
-ihuman = readYAMLmodel(fullfile(modelPath,'model','Human-GEM.yml'));
+ihuman = readYAMLmodel_HumanGEM(fullfile(modelPath,'model','Human-GEM.yml'));
 cd(currDir)
 
 %Include tag and save model:
@@ -81,7 +81,7 @@ end
 
 %Export model to multiple formats, without annotation
 cd(fullfile(modelPath,'code','io'))
-writeYAMLmodel(ihuman,fullfile(modelPath,'model','Human-GEM.yml'),true,false);
+writeYAMLmodel_HumanGEM(ihuman,fullfile(modelPath,'model','Human-GEM.yml'),true,false);
 cd(currDir)
 save(fullfile(modelPath,'model','Human-GEM.mat'),'ihuman');
 ihuman = annotateGEM(ihuman);  % Add annotation data to structure
