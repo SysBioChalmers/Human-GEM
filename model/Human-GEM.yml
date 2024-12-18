@@ -3,7 +3,7 @@
 - metaData:
     id: "HumanGEM"
     name: "Generic genome-scale metabolic model of Homo sapiens"
-    version: 
+    version: ""
     date: "2024-10-18"
     defaultLB: "-1000"
     defaultUB: "1000"
@@ -258650,7 +258650,6 @@
           - MAM02884c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - rxnNotes: "https://doi.org/10.1007/BF02702726"
       - eccodes: "3.1.3.11"
       - references: "PMID:6998788"
       - subsystem:

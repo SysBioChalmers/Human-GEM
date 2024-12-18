@@ -276,9 +276,6 @@ if isfield(model,fieldName)
             if preserveQuotes
                 list = ['"' list{1} '"'];
             end
-            if iscell(list)
-                list=list{1};
-            end
             fprintf(fid,'    %s: %s\n',name,list);
         elseif ischar(list) && strcmp(fieldName,'subSystems')
             if preserveQuotes
