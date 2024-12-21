@@ -18,6 +18,28 @@ end
 [ST, I]=dbstack('-completenames');
 modelPath=fileparts(fileparts(fileparts(ST(I).file)));
 
+%Check RAVEN version
+currVer = checkInstallation('versionOnly');
+if strcmp(currVer,'develop')
+    printOrange('WARNING: Cannot determine your RAVEN version as it is in a development branch.\n');
+else
+    currVerNum = str2double(strsplit(currVer,'.'));
+    minmVer = '2.10.3';
+    minmVerNum = str2double(strsplit(minmVer,'.'));
+    if currVerNum(1) < minmVerNum(1)
+        wrongVersion = true;
+    elseif currVerNum(2) < minmVerNum(2)
+        wrongVersion = true;
+    elseif currVerNum(3) < minmVerNum(3)
+        wrongVersion = true;
+    else
+        wrongVersion = false;
+    end
+end
+if wrongVersion
+    error('Minimum required RAVEN version is %s.',minmVer);
+end
+
 %Check if in main:
 if ~test
     currentBranch = git('rev-parse --abbrev-ref HEAD');
@@ -46,21 +68,10 @@ if ~test
             error('ERROR: invalid input. Use either "major", "minor" or "patch"')
     end
     newVersion = num2str(newVersion,'%d.%d.%d');
-
-    %Check if history has been updated:
-    fid     = fopen(fullfile(modelPath,'history.md'),'r');
-    history = fscanf(fid,'%s');
-    fclose(fid);
-    if ~contains(history,['human' newVersion ':'])
-        error('ERROR: update history.md first')
-    end
 end
 
 %Load model:
-currDir = pwd;
-cd(fullfile(modelPath,'code','io'))
-ihuman = readYAMLmodel_HumanGEM(fullfile(modelPath,'model','Human-GEM.yml'));
-cd(currDir)
+ihuman = readYAMLmodel(fullfile(modelPath,'model','Human-GEM.yml'));
 
 %Include tag and save model:
 if ~test
@@ -80,9 +91,7 @@ for i=1:size(fields,1)
 end
 
 %Export model to multiple formats, without annotation
-cd(fullfile(modelPath,'code','io'))
-writeYAMLmodel_HumanGEM(ihuman,fullfile(modelPath,'model','Human-GEM.yml'),true,false);
-cd(currDir)
+writeYAMLmodel(ihuman,fullfile(modelPath,'model','Human-GEM.yml'),true,false);
 save(fullfile(modelPath,'model','Human-GEM.mat'),'ihuman');
 ihuman = annotateGEM(ihuman);  % Add annotation data to structure
 exportForGit(ihuman,'Human-GEM',modelPath,{'xml', 'xlsx', 'txt'},'',false);
