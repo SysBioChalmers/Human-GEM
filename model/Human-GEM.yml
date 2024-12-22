@@ -12158,7 +12158,6 @@
       - compartment: "m"
       - formula: "C10H13N5O3"
       - charge: 0
-      - inchis: ""
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01099c"
@@ -24896,7 +24895,6 @@
       - compartment: "m"
       - formula: "HS"
       - charge: -1
-      - inchis: ""
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02042e"
@@ -260391,9 +260389,6 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000100209 and ENSG00000109519 and ENSG00000113013 and ENSG00000135070 and ENSG00000161513 and ENSG00000165898 and ENSG00000181873 and ENSG00000182512 and ENSG00000267673"
-      - rxnNotes: ""
-      - rxnFrom: ""
-      - eccodes: ""
       - references: "PMID:31918395;PMID:31935115"
       - subsystem:
           - "Sulfur metabolism"
@@ -260412,9 +260407,6 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000004779 and ENSG00000136003 and ENSG00000161513 and ENSG00000165060 and ENSG00000214113 and ENSG00000244005 and ENSG00000267673"
-      - rxnNotes: ""
-      - rxnFrom: ""
-      - eccodes: ""
       - references: "PMID:31918395;PMID:31935115"
       - subsystem:
           - "Sulfur metabolism"
@@ -260432,8 +260424,6 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000137767"
-      - rxnNotes: ""
-      - rxnFrom: ""
       - eccodes: "1.8.5.8"
       - references: "PMID:25225291"
       - subsystem:
@@ -260452,8 +260442,6 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000105755"
-      - rxnNotes: ""
-      - rxnFrom: ""
       - eccodes: "1.13.11.18"
       - references: "PMID:25225291"
       - subsystem:
@@ -260467,10 +260455,6 @@
           - MAM01098m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: ""
-      - rxnNotes: ""
-      - rxnFrom: ""
-      - eccodes: ""
       - references: "PMID:34126623"
       - subsystem:
           - "Transport reactions"
