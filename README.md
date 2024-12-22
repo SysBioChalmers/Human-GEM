@@ -1,30 +1,22 @@
 # Human-GEM: The generic genome-scale metabolic model of _Homo sapiens_
-
 [![Join the chat at https://gitter.im/SysBioChalmers/Human-GEM](https://badges.gitter.im/SysBioChalmers/Human-GEM.svg)](https://gitter.im/SysBioChalmers/Human-GEM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![GitHub version](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM.svg)](https://badge.fury.io/gh/sysbiochalmers%2FHuman-GEM)
 [![DOI](https://zenodo.org/badge/105752644.svg)](https://zenodo.org/badge/latestdoi/105752644)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-31-success.svg)](#contributors)
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 
-### Brief Model Description
-
+### Brief model description
 This repository contains the latest version of Human-GEM, a human genome-scale metabolic model. We encourage [contributions](#contributing).
 
 ### Cite us:
-
 If you use Human1 in your research, please cite:  
-
  > J. L. Robinson, P. Kocabasÿ, H. Wang, P.-E. Cholley, et al. An atlas of human metabolism. _Sci. Signal._ 13, eaaz1482 (2020). [doi:10.1126/scisignal.aaz1482](https://doi.org/10.1126/scisignal.aaz1482)
  
 Starting from Human-GEM v1.5.0, all the releases are also archived in [Zenodo](https://doi.org/10.5281/zenodo.4099692) from which specific version can be cited if used.
 
 If you use Mouse1, Rat1, Zebrafish1, Fruitfly1, or Worm1 in your research, please cite:   
-
   > H. Wang, J. L. Robinson, P. Kocabasÿ, J. Gustafsson, M. Anton, P.-E. Cholley, et al. Genome-scale metabolic network reconstruction of model animals as a platform for translational research. _PNAS_ 118, e2102344118 (2021). [doi.org/10.1073/pnas.2102344118](https://doi.org/10.1073/pnas.2102344118)
 
-
-
-### Model Keywords
-
+### Model keywords
 **Utilisation:** predictive simulation, multi-omics integrative analysis, model template  
 **Field:** metabolic-network reconstruction  
 **Type of Model:** reconstruction, curated  
@@ -34,38 +26,43 @@ If you use Mouse1, Rat1, Zebrafish1, Fruitfly1, or Worm1 in your research, pleas
 **Metabolic System:** general metabolism  
 **Condition:** generic metabolism  
 
-
-### Model Overview
-
+### Model overview
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|:-----:|
 |_Homo sapiens_ |   HMR2, Recon3D, iHsa|    {{nRXN}}|  {{nMET}}|  {{nGENE}}|
 
-
 ## Contributing
-
 Contributions are always welcome! Read more about the project's philosophy in our [wiki](https://github.com/SysBioChalmers/Human-GEM/wiki) or have a look at the [Contributing guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/main/.github/CONTRIBUTING.md) before starting.
 
-
-## User Guide
-
+## User guide
 Detailed instructions on the installation and use of the Human-GEM model and repository can be found in the [Human-GEM user guide](https://sysbiochalmers.github.io/Human-GEM-guide/).
 
+# Installation
+## Required software
+### Basic user
+If you want to use the model for your own model simulations, you can use any software that accepts **SBML L3V1 FBCv3** formatted model files. This includes any of the following:
 
-## Installation
+#### MATLAB-based
+* [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN) v2.10.3 or later (recommended, see [Installation instructions](https://github.com/SysBioChalmers/RAVEN/wiki/Installation#installation-instructions))
+* [COBRA Toolbox](https://github.com/opencobra/cobratoolbox)
 
-### Required Software
-* A functional MATLAB installation (MATLAB 7.3 and higher).
-* The [RAVEN toolbox](https://github.com/SysBioChalmers/RAVEN).
-* The [COBRA toolbox](https://github.com/opencobra/cobratoolbox) (not necessary for most functionality).
+#### Python-based
+* [cobrapy](https://github.com/opencobra/cobrapy)  
 
+Please see the installation instructions for each software package.
 
-### Dependencies - Recommended Software
-* The libSBML MATLAB API (version [5.13.0](https://sourceforge.net/projects/sbml/files/libsbml/5.13.0/stable/MATLAB%20interface/) is recommended).
-* [Gurobi Optimizer](http://www.gurobi.com/registration/download-reg) for any simulations.
+### Developer
+#### MATLAB-based  
+If you want to contribute to the development of Human-GEM, or otherwise want to run any of the [provided](https://github.com/SysBioChalmers/Human-GEM/tree/main/code) MATLAB functions, then the following software is required:
+* [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN) v2.10.3 or later (recommended, see [Installation instructions](https://github.com/SysBioChalmers/RAVEN/wiki/Installation#installation-instructions))
 
+#### Python-based  
+You can also contribution to the development of Human-GEM via python (e.g. cobrapy), even if you would not be able to run any of the model-specific MATLAB functions. To curate the model, you can still edit `Human-GEM.yml`, `genes.tsv`, `metabolites.tsv` and `reactions.tsv`, all located in the `model/` folder.
 
-### Installation Instructions
+### Recommended solver
+* When performing simulations with Human-GEM, you are encouraged to use [Gurobi Optimizer](https://www.gurobi.com/academia/academic-program-and-licenses/).
+
+## Installation instructions
 * Clone the [main branch](https://github.com/SysBioChalmers/Human-GEM/tree/main) of this repository, or [download the latest release](https://github.com/SysBioChalmers/Human-GEM/releases/latest).
 * Add the directory to your MATLAB path either by using the lines below or manually (instructions [here](https://se.mathworks.com/help/matlab/ref/addpath.html?requestedDomain=www.mathworks.com)).
 ```matlab
@@ -77,47 +74,35 @@ HumanGEMInstaller.install
 HumanGEMInstaller.uninstall
 ```
 
-## Model Files
+## Model files
+The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory.
 
-The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat` in the `model/` directory. Note that only the `.yml` version is available on branches other than `main` (e.g., `develop`), to facilitate tracking of model changes.
-
+The model development is based on the `yml` file (to facilitate tracking of model changes), so that this is the only model format available on non-`main` branches (such as `develop`). See also the [location of annotation information](#reaction-metabolite-and-gene-annotations).
 
 ## Usage
-
-#### Loading/saving the model
-
-`Human-GEM.mat` (Recommended if on `main` branch)
+#### Loading/saving the model in MATLAB
+`Human-GEM.mat` (Recommended if on `main` branch):
 * Load and save using the built-in MATLAB `load()` and `save()` functions.
 
-`Human-GEM.yml` (Recommended if on `develop` or other branches)
-* Load using the `importYaml.m` function (in `code/io/`)
-* Save using the `exportYaml.m` function (in `code/io/`)
+`Human-GEM.yml` (Recommended if on `develop` or other branches):
+* Load using the `readYAMLmodel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN)).
+* Save using the `writeYAMLmodel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN)).
 
-`Human-GEM.xml` (SBML format)
-* Load using the `importModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
-* Save using the `exportModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN))
+`Human-GEM.xml` (SBML format):
+* Load using the `importModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN)).
+* Save using the `exportModel.m` function (from [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN)).
 
-
-## Reaction, Metabolite, and Gene Annotations
-
-Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are provided as `tsv` files in the `model/` directory (`reactions.tsv`, `metabolites.tsv`, and `genes.tsv`, respectively).  
-
-To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
-
+## Reaction, metabolite, and gene annotations
+By default, additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are **not** kept in the `yml` file, but rather provided as `tsv` files in the `model/` directory (`reactions.tsv`, `metabolites.tsv`, and `genes.tsv`, respectively). The `annotateGEM` function can add those annotations in MATLAB, while direct import/export of this annotation data is done through the `importTsvFile` and `exportTsvFile` functions, respectively.
 
 ## Websites
-
 - [Metabolic Atlas](https://metabolicatlas.org/) enables visualization and exploration of Human-GEM content.
 - The [Human-GEM user guide](https://sysbiochalmers.github.io/Human-GEM-guide/) provides detailed instructions and examples for using the Human-GEM model and repository.
 
-
-## Metabolic Maps
-
+## Metabolic maps
 A collection of manually curated 2D metabolic maps associated with Human-GEM are stored in the [Human-maps repository](https://github.com/SysBioChalmers/Human-maps). These maps can be downloaded from the repository or explored interactively using [Metabolic Atlas](https://metabolicatlas.org/explore/map-viewer/human1).
 
-
 ## Contributors
-
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -164,8 +149,6 @@ A collection of manually curated 2D metabolic maps associated with Human-GEM are
     </tr>
   </tbody>
 </table>
-
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->

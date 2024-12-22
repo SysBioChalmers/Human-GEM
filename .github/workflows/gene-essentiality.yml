@@ -7,7 +7,7 @@ on:
       - "develop"
 
 jobs:
-  check-metabolictasks:
+  gene-essentiality:
     runs-on: self-hosted
 
     steps:
