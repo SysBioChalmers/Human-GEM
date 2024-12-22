@@ -263003,9 +263003,6 @@
       - id: "ENSG00000116791"
       - name: "CRYZ"
     - !!omap
-      - id: "ENSG00000116882"
-      - name: "HAO2"
-    - !!omap
       - id: "ENSG00000116906"
       - name: "GNPAT"
     - !!omap
@@ -263416,9 +263413,6 @@
     - !!omap
       - id: "ENSG00000124299"
       - name: "PEPD"
-    - !!omap
-      - id: "ENSG00000124302"
-      - name: "CHST8"
     - !!omap
       - id: "ENSG00000124356"
       - name: "STAMBP"
@@ -263947,9 +263941,6 @@
     - !!omap
       - id: "ENSG00000133027"
       - name: "PEMT"
-    - !!omap
-      - id: "ENSG00000133048"
-      - name: "CHI3L1"
     - !!omap
       - id: "ENSG00000133056"
       - name: "PIK3C2B"
@@ -266096,9 +266087,6 @@
       - id: "ENSG00000163659"
       - name: "TIPARP"
     - !!omap
-      - id: "ENSG00000163684"
-      - name: "RPP14"
-    - !!omap
       - id: "ENSG00000163686"
       - name: "ABHD6"
     - !!omap
@@ -267271,9 +267259,6 @@
     - !!omap
       - id: "ENSG00000175198"
       - name: "PCCA"
-    - !!omap
-      - id: "ENSG00000175229"
-      - name: "GAL3ST3"
     - !!omap
       - id: "ENSG00000175264"
       - name: "CHST1"
