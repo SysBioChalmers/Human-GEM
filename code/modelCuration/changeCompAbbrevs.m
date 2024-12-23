@@ -7,7 +7,7 @@
 modelname = 'Human-GEM';
 
 % load model and other data files
-model = importYaml(fullfile('..', '..', 'model', [modelname '.yml']));
+model = readYAMLmodel(fullfile('..', '..', 'model', [modelname '.yml']));
 metAssoc = importTsvFile(fullfile('..', '..', 'model', 'metabolites.tsv'));
 metAssoc_table = struct2table(metAssoc);
 metsDep = importTsvFile(fullfile('..', '..', 'data', 'deprecatedIdentifiers', 'deprecatedMetabolites.tsv'));
@@ -30,7 +30,7 @@ metAssoc.mets = regexprep(metAssoc.mets, 's$', 'e');
 metAssoc.mets = regexprep(metAssoc.mets, 'p$', 'x');
 
 % export the new model and files
-exportYaml(model, fullfile('..', '..', 'model', [modelname '.yml']));
+writeYAMLmodel(model, fullfile('..', '..', 'model', [modelname '.yml']));
 exportTsvFile(metAssoc, fullfile('..', '..', 'model', 'metabolites.tsv'));
 exportTsvFile(metsDep_table, fullfile('..', '..', 'data', 'deprecatedIdentifiers', 'deprecatedMetabolites.tsv'));
 

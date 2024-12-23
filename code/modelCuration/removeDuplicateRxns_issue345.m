@@ -1,7 +1,7 @@
 
 
 % load Human-GEM
-model = importYaml('../../model/Human-GEM.yml');
+model = readYAMLmodel('../../model/Human-GEM.yml');
 
 
 % specify pairs of duplicate reactions, where reactions in first column are
@@ -107,7 +107,7 @@ end
 
 % delete reactions from model and annotation file
 model = removeReactions(model, rxns(:,2));
-exportYaml(model, '../../model/Human-GEM.yml');
+writeYAMLmodel(model, '../../model/Human-GEM.yml');
 rxnAssocTable(rxn_indx(:,2), :) = [];
 exportTsvFile(rxnAssocTable, rxnAssocFile);
 
