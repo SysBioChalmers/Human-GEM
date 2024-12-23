@@ -302,3 +302,4 @@ rxns	rxnKEGGID	rxnBiGGID	rxnEHMNID	rxnHepatoNET1ID	rxnREACTOMEID	rxnRecon3DID	rx
 "MAR07799"	""	"ATPasel"	""	""	""	""	"MNXR96136"	"HMR_7799"	"RCR20334"	""	0	""	""	"HMR_7799"
 "MAR00776"	""	"FAOXC180"	""	""	""	"FAOXC180"	"MNXR99313"	""	""	""	0	""	""	"FAOXC180"
 "MAR00778"	""	"FAOXC1811601m"	""	""	""	"FAOXC1811601m"	"MNXR99315"	""	""	""	0	""	""	"FAOXC1811601m"
+"MAR04933"	""	""	""	"r0879"	""	"r0879"	"MNXR95660"	"HMR_4933"	"RCR40980"	"2.A.29.2.4;2.A.29.16.1"	0	""	""	"HMR_4933"
