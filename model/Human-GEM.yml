@@ -105180,13 +105180,14 @@
           - MAM01803m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000072778 or ENSG00000115361 or ENSG00000117054 or ENSG00000177646"
+      - gene_reaction_rule: "ENSG00000072778 or ENSG00000115361 or ENSG00000117054 or ENSG00000177646 or ENSG00000240303"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.3.8.7"
           - "1.3.8.8"
           - "1.3.8.9"
           - "1.3.99.-"
+      - references: "PMID:21237683"
       - subsystem:
           - "Beta oxidation of even-chain fatty acids (mitochondrial)"
       - confidence_score: 0
@@ -105248,13 +105249,14 @@
           - MAM01803m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000072778 or ENSG00000115361 or ENSG00000117054 or ENSG00000177646"
+      - gene_reaction_rule: "ENSG00000072778 or ENSG00000115361 or ENSG00000117054 or ENSG00000177646 or ENSG00000240303"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.3.8.7"
           - "1.3.8.8"
           - "1.3.8.9"
           - "1.3.99.-"
+      - references: "PMID:21237683"
       - subsystem:
           - "Beta oxidation of even-chain fatty acids (mitochondrial)"
       - confidence_score: 0
