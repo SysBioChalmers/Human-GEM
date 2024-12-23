@@ -1,5 +1,5 @@
 % load model and new reaction info
-ihuman = importYaml('../../model/Human-GEM.yml');
+ihuman = readYAMLmodel('../../model/Human-GEM.yml');
 rxnsToAdd = importTsvFile('../../data/modelCuration/addRxnACOD1_20221102.tsv');
 
 % add new genes to Human-GEM
@@ -28,6 +28,6 @@ for i=1:length(annoNames)
 end
 
 % update yaml model and reaction association file
-exportYaml(newGEM, '../../model/Human-GEM.yml');
+writeYAMLmodel(newGEM, '../../model/Human-GEM.yml');
 exportTsvFile(rxnAssoc,'../../model/reactions.tsv');
 
