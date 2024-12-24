@@ -260481,6 +260481,22 @@
       - subsystem:
           - "Miscellaneous"
       - confidence_score: 0
+    - !!omap
+      - id: "MAR20190"
+      - name: "Reduction of alpha-tocopheryl quinone by NADH in cytosol"
+      - metabolites: !!omap
+          - MAM01328c: 1
+          - MAM01329c: -1
+          - MAM02039c: -1
+          - MAM02552c: 1
+          - MAM02553c: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000181019 or ENSG00000159348 or ENSG00000166394 or ENSG00000100243 or ENSG00000065615 or ENSG00000215883"
+      - references: "PMID:16569397;PMID:9271353"
+      - subsystem:
+          - "Miscellaneous"
+      - confidence_score: 0
 - genes:
     - !!omap
       - id: "ENSG00000000419"
