@@ -199358,15 +199358,17 @@
     - !!omap
       - id: "MAR03047"
       - metabolites: !!omap
-          - MAM01328c: -1
-          - MAM01329c: 1
-          - MAM03102c: 1
-          - MAM03103c: -1
-      - lower_bound: -1000
+          - MAM01328c: 1
+          - MAM01329c: -1
+          - MAM02039c: -1
+          - MAM02554c: 1
+          - MAM02555c: -1
+      - lower_bound: 0
       - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.14.99.10"
-      - references: "PMID:9223282"
+      - gene_reaction_rule: "ENSG00000159228 or ENSG00000181019"
+      - rxnFrom: ""
+      - eccodes: ""
+      - references: "PMID:9223282;PMID:7005231;PMID:16569397"
       - subsystem:
           - "Vitamin E metabolism"
       - confidence_score: 0
