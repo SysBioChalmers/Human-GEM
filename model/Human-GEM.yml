@@ -260464,6 +260464,23 @@
       - subsystem:
           - "Transport reactions"
       - confidence_score: 0
+    - !!omap
+      - id: "MAR20189"
+      - name: "Reduction of alpha-tocopheryl quinone by Complex III"
+      - metabolites: !!omap
+          - MAM01328c: 1
+          - MAM01329c: -1
+          - MAM01824m: -2
+          - MAM01826m: 2
+          - MAM02039i: 4
+          - MAM02039m: -5
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000010256 and ENSG00000127540 and ENSG00000140740 and ENSG00000156467 and ENSG00000164405 and ENSG00000169021 and ENSG00000173660 and ENSG00000179091 and ENSG00000184076 and ENSG00000198727"
+      - references: "PMID:16569397"
+      - subsystem:
+          - "Miscellaneous"
+      - confidence_score: 0
 - genes:
     - !!omap
       - id: "ENSG00000000419"
