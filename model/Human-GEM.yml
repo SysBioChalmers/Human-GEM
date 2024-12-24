@@ -194906,10 +194906,10 @@
           - MAM03103c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000198431"
+      - gene_reaction_rule: "ENSG00000159228 or ENSG00000181019"
       - rxnFrom: "Recon3D"
       - eccodes: "1.8.1.9"
-      - references: "PMID:12435734;PMID:8577704;PMID:8999974"
+      - references: "PMID:12435734;PMID:7005231;PMID:8577704;PMID:8999974;PMID:16569397"
       - subsystem:
           - "Miscellaneous"
       - confidence_score: 0
@@ -194924,10 +194924,10 @@
           - MAM03103c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000198431"
+      - gene_reaction_rule: "ENSG00000181019 or ENSG00000159348 or ENSG00000166394 or ENSG00000100243 or ENSG00000065615 or ENSG00000215883"
       - rxnFrom: "Recon3D"
       - eccodes: "1.8.1.9"
-      - references: "PMID:12435734;PMID:8577704;PMID:8999974"
+      - references: "PMID:12435734;PMID:8577704;PMID:8999974;PMID:16569397;PMID:9271353"
       - subsystem:
           - "Miscellaneous"
       - confidence_score: 0
