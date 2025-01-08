@@ -98083,7 +98083,7 @@
           - MAM02774x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000159445 or ENSG00000172497"
+      - gene_reaction_rule: "ENSG00000101473"
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.2.2"
       - references: "PMID:11013297;PMID:11013297"
