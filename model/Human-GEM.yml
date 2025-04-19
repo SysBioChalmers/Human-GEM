@@ -259568,6 +259568,25 @@
       - subsystem:
           - "Transport reactions"
       - confidence_score: 0
+    - !!omap
+      - id: "MAR20189"
+      - name: "L-Glutamate:ammonia ligase (ADP-forming)"
+      - metabolites: !!omap
+          - MAM01285m: 1
+          - MAM01371m: -1
+          - MAM01974m: -1
+          - MAM01975m: 1
+          - MAM02578m: -1
+          - MAM02751m: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000135821"
+      - rxnFrom: "HMRdatabase"
+      - eccodes: "6.3.1.2"
+      - references: "PMID:11080211;PMID:1356223;PMID:14583610;PMID:16213501;PMID:7595668;PMID:8838581;PMID:9053810"
+      - subsystem:
+          - "Alanine, aspartate and glutamate metabolism"
+      - confidence_score: 0
 - genes:
     - !!omap
       - id: "ENSG00000000419"
