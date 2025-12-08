@@ -4,11 +4,12 @@
     id: "HumanGEM"
     name: "Generic genome-scale metabolic model of Homo sapiens"
     version: ""
-    date: "2025-12-04"
+    date: "2025-12-08"
     defaultLB: "-1000"
     defaultUB: "1000"
     taxonomy: "9606"
     note: "Genome-scale metabolic models are valuable tools to study metabolism and provide a scaffold for the integrative analysis of omics data. This is the latest version of Human-GEM, which is a genome-scale metabolic model of a generic human cell. The objective of Human-GEM is to serve as a community model for enabling integrative and mechanistic studies of human metabolism."
+    sourceUrl: "https://github.com/SysBioChalmers/Human-GEM"
 - metabolites:
     - !!omap
       - id: "MAM00001c"
