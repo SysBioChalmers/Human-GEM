@@ -4,7 +4,7 @@
     id: "Human-GEM"
     name: ""
     version: "1.19.0"
-    date: "2025-12-10"
+    date: "2025-12-11"
     defaultLB: "-1000"
     defaultUB: "1000"
     taxonomy: "9606"
