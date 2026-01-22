@@ -238722,7 +238722,7 @@
           - "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR03802_c"
+      - id: "MAR020189"
       - name: "L-glutamate:NAD+ oxidoreductase (deaminating)"
       - metabolites: !!omap
           - MAM01306c: -1
@@ -238741,7 +238741,7 @@
           - "Alanine, aspartate and glutamate metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR03804_c"
+      - id: "MAR020190"
       - name: "L-glutamate:NADP+ oxidoreductase (deaminating)"
       - metabolites: !!omap
           - MAM01306c: -1
@@ -238760,7 +238760,7 @@
           - "Alanine, aspartate and glutamate metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08512_m"
+      - id: "MAR020191"
       - name: "(R)-Lactate:NAD+ oxidoreductase"
       - metabolites: !!omap
           - MAM01716m: -1
@@ -238776,7 +238776,7 @@
           - "Pyruvate metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR06518_m"
+      - id: "MAR020192"
       - metabolites: !!omap
           - MAM02039m: 1
           - MAM02145m: -1
@@ -238791,7 +238791,7 @@
           - "Cysteine and methionine metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR04149_m"
+      - id: "MAR020193"
       - name: "acetyl-CoA:oxaloacetate C-acetyltransferase [(pro-S)-carboxymethyl-forming, ADP-phosphorylating]"
       - metabolites: !!omap
           - MAM01261m: 1
@@ -238810,7 +238810,7 @@
           - "Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR04336_m"
+      - id: "MAR020194"
       - name: "10-formyltetrahydrofolate:NADP+ oxidoreductase"
       - metabolites: !!omap
           - MAM00266m: -1
