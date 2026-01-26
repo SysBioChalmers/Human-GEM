@@ -4,7 +4,7 @@
     id: "HumanGEM"
     name: "Generic genome-scale metabolic model of Homo sapiens"
     version: ""
-    date: "2026-01-22"
+    date: "2026-01-26"
     defaultLB: "-1000"
     defaultUB: "1000"
     taxonomy: "9606"
@@ -64410,7 +64410,7 @@
       - metabolites: !!omap
           - MAM00166m: 1
           - MAM02480m: -1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000124370"
       - eccodes: "5.1.99.1"
