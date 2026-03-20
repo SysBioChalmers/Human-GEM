@@ -2,7 +2,7 @@
 rxnStruct = importTsvFile('../../data/modelCuration/addRxnGly_20230414.tsv');
 MetStruct = importTsvFile('../../data/modelCuration/addMetGly_20230414.tsv');
 
-model = importYaml('Human-GEM.yml');
+model = readYAMLmodel('Human-GEM.yml');
 
 rxnsToAdd.rxns = rxnStruct.rxnID;
 rxnsToAdd.eccodes = rxnStruct.ECNumber;

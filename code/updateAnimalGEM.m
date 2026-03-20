@@ -58,7 +58,7 @@ if isfile(matFile)
     load(matFile);
 elseif isfile(ymlFile)
     % Load Human-GEM Yaml file
-    ihuman = importYaml(ymlFile);
+    ihuman = readYAMLmodel(ymlFile);
 else
     error('ERROR: No model file is found!');
 end

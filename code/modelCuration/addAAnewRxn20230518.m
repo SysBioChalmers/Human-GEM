@@ -2,7 +2,7 @@
 rxnStruct = importTsvFile('../../data/modelCuration/addRxnAA_20230518.tsv');
 MetStruct = importTsvFile('../../data/modelCuration/addMetAA_20230518.tsv');
 
-model = importYaml('Human-GEM.yml');
+model = readYAMLmodel('Human-GEM.yml');
 
 rxnsToAdd.rxns = rxnStruct.rxnID;
 rxnsToAdd.eccodes = rxnStruct.ECNumber;
@@ -91,4 +91,4 @@ structure.rxnRheaMasterID = [structure.rxnRheaMasterID;rxnStruct.emptyID(idx,1) 
 structure.rxnRetired = [structure.rxnRetired;rxnStruct.emptyID(idx,1) ];
 
 exportTsvFile(structure, '../../model/reactions.tsv')
-exportYaml(newModel, 'Human-GEM.yml');
+writeYAMLmodel(newModel, 'Human-GEM.yml');

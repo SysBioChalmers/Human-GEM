@@ -20,7 +20,7 @@ modelPath=fileparts(fileparts(fileparts(ST(I).file)));
 
 % Import yaml model
 ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
-ihuman = importYaml(ymlFile, true);
+ihuman = readYAMLmodel(ymlFile);
 
 % parse metabolic tasks
 model = addBoundaryMets(ihuman);

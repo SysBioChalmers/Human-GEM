@@ -37,7 +37,7 @@ arrayDataDepMap.threshold = 1;
 save('data/arrayDataDepMap.mat','arrayDataDepMap');
 
 %Generate ftINIT prepData - only needs to be done once. Can take up to an hour to run
-model = importYaml('../../model/Human-GEM.yml');
+model = readYAMLmodel('../../model/Human-GEM.yml');
 [model.grRules, skipped] = simplifyGrRules(model.grRules, true);%takes a few minutes to run
 prepData = prepHumanModelForftINIT(model, true, '../../data/metabolicTasks/metabolicTasks_Essential.txt', '../../model/reactions.tsv');
 save('data/prepDataGeneSymbols.mat', 'prepData')
