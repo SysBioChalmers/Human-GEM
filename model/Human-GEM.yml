@@ -18916,13 +18916,6 @@
       - charge: -4
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM01622x"
-      - name: "crotonyl-CoA"
-      - compartment: "x"
-      - formula: "C25H36N7O17P3S"
-      - charge: -4
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM01623c"
       - name: "CTP"
       - compartment: "c"
@@ -84912,7 +84905,7 @@
           - MAM02941c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000068366 or ENSG00000103740 or ENSG00000119673 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000177465 or ENSG00000197142"
+      - gene_reaction_rule: "ENSG00000068366 or ENSG00000103740 or ENSG00000123983 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000197142"
       - rxnFrom: "HMRdatabase"
       - eccodes: "6.2.1.3"
       - references: "PMID:8584017"
@@ -88724,7 +88717,7 @@
           - MAM02040c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527"
+      - gene_reaction_rule: "ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527"
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.2.1.134"
       - references: "PMID:10479480"
@@ -89437,7 +89430,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.1"
       - subsystem:
@@ -89455,7 +89448,7 @@
           - MAM02630r: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.1"
       - subsystem:
@@ -89473,7 +89466,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.1"
       - subsystem:
@@ -89491,7 +89484,7 @@
           - MAM02630r: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
+      - gene_reaction_rule: "ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.1"
       - subsystem:
@@ -103186,7 +103179,7 @@
           - MAM02040x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721"
+      - gene_reaction_rule: "ENSG00000084754 and ENSG00000113790 and ENSG00000167969"
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.2.1.17"
       - references: "PMID:16385454;PMID:8902629;PMID:9089413"
@@ -103313,7 +103306,7 @@
           - MAM02040x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721"
+      - gene_reaction_rule: "ENSG00000113790 or ENSG00000133835"
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.2.1.17"
       - subsystem:
@@ -103708,7 +103701,7 @@
           - MAM02040x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721"
+      - gene_reaction_rule: "ENSG00000113790 or ENSG00000133835"
       - rxnFrom: "HMRdatabase"
       - eccodes: "4.2.1.17"
       - references: "PMID:8012501;PMID:8188243"
@@ -103745,7 +103738,7 @@
           - MAM02644x: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 and ENSG00000167306"
+      - gene_reaction_rule: "ENSG00000060971 or ENSG00000116171"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.16"
       - references: "PMID:1121274;PMID:1679347;PMID:3194209;PMID:6378901;PMID:8241273"
@@ -103887,38 +103880,6 @@
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.16"
       - references: "PMID:10806397;PMID:1121274;PMID:1679347;PMID:1735445;PMID:1979337;PMID:2048733;PMID:3194209;PMID:6378901;PMID:8241273;PMID:1550553"
-      - subsystem:
-          - "Beta oxidation of even-chain fatty acids (peroxisomal)"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR03102"
-      - metabolites: !!omap
-          - MAM01412x: -1
-          - MAM01622x: 1
-          - MAM01802x: -1
-          - MAM01803x: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000087008 or ENSG00000161533"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.3.3.6"
-      - references: "PMID:13295225;PMID:3597357"
-      - subsystem:
-          - "Beta oxidation of even-chain fatty acids (peroxisomal)"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR03103"
-      - name: "(S)-3-hydroxybutanoyl-CoA hydro-lyase"
-      - metabolites: !!omap
-          - MAM00173x: 1
-          - MAM01622x: -1
-          - MAM02040x: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "4.2.1.17"
-      - references: "PMID:1735445;PMID:8012501;PMID:8188243;PMID:13295248"
       - subsystem:
           - "Beta oxidation of even-chain fatty acids (peroxisomal)"
       - confidence_score: 0
@@ -104773,7 +104734,7 @@
           - MAM01803x: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000087008 or ENSG00000161533"
+      - gene_reaction_rule: "ENSG00000087008 or ENSG00000168306"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.3.3.6"
       - references: "PMID:11356164;PMID:9271077;PMID:11356164;PMID:9271077;PMID:9469587"
@@ -105067,7 +105028,7 @@
           - MAM01597x: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 and ENSG00000167306"
+      - gene_reaction_rule: "ENSG00000060971 or ENSG00000116171"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.16"
       - references: "PMID:10407780;PMID:9920399;PMID:7923814;PMID:9568246"
@@ -124099,7 +124060,7 @@
           - MAM02040c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000164303"
+      - gene_reaction_rule: ""
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.1.4.38"
       - subsystem:
