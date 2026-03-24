@@ -141111,14 +141111,17 @@
     - !!omap
       - id: "MAR06500"
       - metabolites: !!omap
-          - MAM01328c: -1
-          - MAM01329c: 1
-          - MAM03102m: 1
-          - MAM03103m: -1
-      - lower_bound: -1000
+          - MAM01328c: 1
+          - MAM01329c: -1
+          - MAM02039i: 4
+          - MAM02039m: -5
+          - MAM02552m: 1
+          - MAM02553m: -1
+      - lower_bound: 0
       - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - references: "PMID:9223282;PMID:9223282"
+      - gene_reaction_rule: "ENSG00000004779 and ENSG00000023228 and ENSG00000065518 and ENSG00000090266 and ENSG00000099795 and ENSG00000109390 and ENSG00000110717 and ENSG00000115286 and ENSG00000119013 and ENSG00000119421 and ENSG00000125356 and ENSG00000128609 and ENSG00000130414 and ENSG00000131495 and ENSG00000136521 and ENSG00000139180 and ENSG00000140990 and ENSG00000145494 and ENSG00000147123 and ENSG00000147684 and ENSG00000151366 and ENSG00000158864 and ENSG00000160194 and ENSG00000164258 and ENSG00000165264 and ENSG00000166136 and ENSG00000167792 and ENSG00000168653 and ENSG00000170906 and ENSG00000174886 and ENSG00000178127 and ENSG00000183648 and ENSG00000184752 and ENSG00000184983 and ENSG00000186010 and ENSG00000189043 and ENSG00000198695 and ENSG00000198763 and ENSG00000198786 and ENSG00000198840 and ENSG00000198886 and ENSG00000198888 and ENSG00000212907 and ENSG00000213619 and ENSG00000267855"
+      - rxnFrom: ""
+      - references: "PMID:16569397"
       - subsystem:
           - "Vitamin E metabolism"
       - confidence_score: 0
@@ -193249,7 +193252,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01801"
-      - name: "Thioredoxin (Ubiquinone 10) Reductase (NADPH)"
+      - name: ""
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02554c: 1
@@ -193258,16 +193261,16 @@
           - MAM03103c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000198431"
+      - gene_reaction_rule: "ENSG00000159228 or ENSG00000181019"
       - rxnFrom: "Recon3D"
       - eccodes: "1.8.1.9"
-      - references: "PMID:12435734;PMID:8577704;PMID:8999974"
+      - references: "PMID:12435734;PMID:7005231;PMID:8577704;PMID:8999974;PMID:16569397"
       - subsystem:
           - "Miscellaneous"
       - confidence_score: 0
     - !!omap
       - id: "MAR01808"
-      - name: "Thioredoxin (Ubiquinone 10) Reductase (NADH)"
+      - name: ""
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02552c: 1
@@ -193276,10 +193279,10 @@
           - MAM03103c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000198431"
+      - gene_reaction_rule: "ENSG00000181019"
       - rxnFrom: "Recon3D"
       - eccodes: "1.8.1.9"
-      - references: "PMID:12435734;PMID:8577704;PMID:8999974"
+      - references: "PMID:12435734;PMID:8577704;PMID:8999974;PMID:9271353"
       - subsystem:
           - "Miscellaneous"
       - confidence_score: 0
@@ -197709,15 +197712,17 @@
     - !!omap
       - id: "MAR03047"
       - metabolites: !!omap
-          - MAM01328c: -1
-          - MAM01329c: 1
-          - MAM03102c: 1
-          - MAM03103c: -1
-      - lower_bound: -1000
+          - MAM01328c: 1
+          - MAM01329c: -1
+          - MAM02039c: -1
+          - MAM02554c: 1
+          - MAM02555c: -1
+      - lower_bound: 0
       - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.14.99.10"
-      - references: "PMID:9223282"
+      - gene_reaction_rule: "ENSG00000159228 or ENSG00000181019"
+      - rxnFrom: ""
+      - eccodes: ""
+      - references: "PMID:9223282;PMID:7005231;PMID:16569397"
       - subsystem:
           - "Vitamin E metabolism"
       - confidence_score: 0
@@ -258795,6 +258800,39 @@
       - references: "PMID:34126623"
       - subsystem:
           - "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20189"
+      - name: "Reduction of alpha-tocopheryl quinone by Complex III"
+      - metabolites: !!omap
+          - MAM01328c: 1
+          - MAM01329c: -1
+          - MAM01824m: -2
+          - MAM01826m: 2
+          - MAM02039i: 4
+          - MAM02039m: -5
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000010256 and ENSG00000127540 and ENSG00000140740 and ENSG00000156467 and ENSG00000164405 and ENSG00000169021 and ENSG00000173660 and ENSG00000179091 and ENSG00000184076 and ENSG00000198727"
+      - references: "PMID:16569397"
+      - subsystem:
+          - "Miscellaneous"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20190"
+      - name: "Reduction of alpha-tocopheryl quinone by NADH in cytosol"
+      - metabolites: !!omap
+          - MAM01328c: 1
+          - MAM01329c: -1
+          - MAM02039c: -1
+          - MAM02552c: 1
+          - MAM02553c: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000181019"
+      - references: "PMID:9271353"
+      - subsystem:
+          - "Miscellaneous"
       - confidence_score: 0
 - genes:
     - !!omap
