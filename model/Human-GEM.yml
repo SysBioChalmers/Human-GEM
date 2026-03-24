@@ -61598,7 +61598,7 @@
           - MAM01690c: -1
           - MAM01842c: 1
           - MAM01981c: -1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000109107 or ENSG00000136872 or ENSG00000149925"
       - rxnFrom: "HMRdatabase"
