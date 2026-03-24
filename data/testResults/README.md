@@ -2,7 +2,7 @@
 
 The file here contains results from the [MACAW](https://github.com/Devlin-Moyer/macaw) `dead_end_test` and `duplicate_test` tests, and from cell-line specific gene essentiality prediction based on the [Hart _et al._ (2015)](https://doi.org/10.1016/j.cell.2015.11.015) dataset.
 
-The test results shown here were obtained by the GitHub Actions run in:
+The test results shown in this folder were last modified by the GitHub Actions run in:
 
 - **PR #944** (MACAW)
 - **PR #883** (gene essentiality)
