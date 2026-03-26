@@ -26,14 +26,12 @@ else
     currVerNum = str2double(strsplit(currVer,'.'));
     minmVer = '2.10.3';
     minmVerNum = str2double(strsplit(minmVer,'.'));
-    if currVerNum(1) < minmVerNum(1)
-        wrongVersion = true;
-    elseif currVerNum(2) < minmVerNum(2)
-        wrongVersion = true;
-    elseif currVerNum(3) < minmVerNum(3)
-        wrongVersion = true;
+    if currVerNum(1) ~= minmVerNum(1)
+        wrongVersion = currVerNum(1) < minmVerNum(1);
+    elseif currVerNum(2) ~= minmVerNum(2)
+        wrongVersion = currVerNum(2) < minmVerNum(2);
     else
-        wrongVersion = false;
+        wrongVersion = currVerNum(3) < minmVerNum(3);
     end
 end
 if wrongVersion
@@ -71,30 +69,30 @@ if ~test
 end
 
 %Load model:
-ihuman = readYAMLmodel(fullfile(modelPath,'model','Human-GEM.yml'));
+humanGEM = readYAMLmodel(fullfile(modelPath,'model','Human-GEM.yml'));
 
 %Include tag and save model:
 if ~test
-    ihuman.version = newVersion;
+    humanGEM.version = newVersion;
 end
 
 %Check if it matches reactions.tsv, metabolites.tsv and genes.tsv
 fields = {'rxns','reactions';'mets','metabolites';'genes','genes'};
 for i=1:size(fields,1)
     tsvList = importTsvFile(fullfile(modelPath,'model',[fields{i,2} '.tsv']));
-    Lia     = ismember(ihuman.(fields{i,1}), tsvList.(fields{i,1}));
+    Lia     = ismember(humanGEM.(fields{i,1}), tsvList.(fields{i,1}));
     dispEM(['The following ' fields{i,2} ' are in model.' fields{i,1} ...
-        ' but not in model/' fields{i,2} '.tsv:'],true,ihuman.(fields{i,1})(~Lia),false);
-    Lia     = ismember(tsvList.(fields{i,1}), ihuman.(fields{i,1}));
+        ' but not in model/' fields{i,2} '.tsv:'],true,humanGEM.(fields{i,1})(~Lia),false);
+    Lia     = ismember(tsvList.(fields{i,1}), humanGEM.(fields{i,1}));
     dispEM(['The following ' fields{i,2} ' are in model/' fields{i,2} ...
         '.tsv but not in model.' fields{i,1} ':'],true,tsvList.(fields{i,1})(~Lia),false);
 end
 
 %Export model to multiple formats, without annotation
-writeYAMLmodel(ihuman,fullfile(modelPath,'model','Human-GEM.yml'),true,false);
-save(fullfile(modelPath,'model','Human-GEM.mat'),'ihuman');
-ihuman = annotateGEM(ihuman);  % Add annotation data to structure
-exportForGit(ihuman,'Human-GEM',modelPath,{'xml', 'xlsx', 'txt'},'',false);
+writeYAMLmodel(humanGEM,fullfile(modelPath,'model','Human-GEM.yml'),true,false);
+save(fullfile(modelPath,'model','Human-GEM.mat'),'humanGEM');
+humanGEM = annotateGEM(humanGEM);  % Add annotation data to structure
+exportForGit(humanGEM,'Human-GEM',fullfile(modelPath,'model'),{'xml', 'xlsx', 'txt'},'',false);
 
 if ~test
     %Update version file:
@@ -106,9 +104,9 @@ if ~test
     readmeFile=fullfile(modelPath,'README.md');
     content = fileread(readmeFile);
     content = strrep(content,'{{DATE}}',datestr(now,29));
-    content = strrep(content,'{{nRXN}}',num2str(length(ihuman.rxns)));
-    content = strrep(content,'{{nMET}}',num2str(length(ihuman.mets)));
-    content = strrep(content,'{{nGENE}}',num2str(length(ihuman.genes)));
+    content = strrep(content,'{{nRXN}}',num2str(length(humanGEM.rxns)));
+    content = strrep(content,'{{nMET}}',num2str(length(humanGEM.mets)));
+    content = strrep(content,'{{nGENE}}',num2str(length(humanGEM.genes)));
     fid = fopen(readmeFile,'wt');
     fwrite(fid,content);
     fclose(fid);
