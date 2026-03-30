@@ -71809,7 +71809,7 @@
           - MAM02039c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000182199"
+      - gene_reaction_rule: "ENSG00000176974"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.1.2.1"
       - subsystem: "Lysine metabolism"
