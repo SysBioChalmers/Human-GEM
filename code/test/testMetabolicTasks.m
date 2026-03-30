@@ -20,10 +20,10 @@ modelPath=fileparts(fileparts(fileparts(ST(I).file)));
 
 % Import yaml model
 ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
-ihuman = readYAMLmodel(ymlFile);
+humanGEM = readYAMLmodel(ymlFile);
 
 % parse metabolic tasks
-model = addBoundaryMets(ihuman);
+model = addBoundaryMets(humanGEM);
 if taskType == "essential"
     taskFile=fullfile(modelPath,'data','metabolicTasks','metabolicTasks_Essential.txt');
 elseif taskType == "verification"

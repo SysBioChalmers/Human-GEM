@@ -29,9 +29,9 @@ jobs:
           rmpath(genpath('/home/m/actions-runner'));
           addpath(genpath('.'));
           setRavenSolver('gurobi');
-          ihuman = readYAMLmodel('model/Human-GEM.yml');
+          humanGEM = readYAMLmodel('model/Human-GEM.yml');
           taskStruct = parseTaskList('data/metabolicTasks/metabolicTasks_Essential.txt');
-          [~, eGenes] = evalc('estimateEssentialGenes(ihuman, ''Hart2015_RNAseq.txt'', taskStruct);');
+          [~, eGenes] = evalc('estimateEssentialGenes(humanGEM, ''Hart2015_RNAseq.txt'', taskStruct);');
           output = transpose(evaluateHart2015Essentiality(eGenes));
           fid = fopen('data/testResults/gene-essential.csv','w');
           fprintf(fid,[repmat('%s,',1,9) '%s\n'],output{:,1});

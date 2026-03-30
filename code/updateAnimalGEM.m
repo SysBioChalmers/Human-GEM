@@ -58,22 +58,22 @@ if isfile(matFile)
     load(matFile);
 elseif isfile(ymlFile)
     % Load Human-GEM Yaml file
-    ihuman = readYAMLmodel(ymlFile);
+    humanGEM = readYAMLmodel(ymlFile);
 else
     error('ERROR: No model file is found!');
 end
 
 % convert gene identifiers from Ensembl ids to gene symbols
-[grRules,genes,rxnGeneMat] = translateGrRules(ihuman.grRules,'Name','ENSG');
-ihuman.grRules    = grRules;
-ihuman.genes      = genes;
-ihuman.rxnGeneMat = rxnGeneMat;
+[grRules,genes,rxnGeneMat] = translateGrRules(humanGEM.grRules,'Name','ENSG');
+humanGEM.grRules    = grRules;
+humanGEM.genes      = genes;
+humanGEM.rxnGeneMat = rxnGeneMat;
 
 
 %% get animal GEM with updated ortholog pairs and species-specific network
 
 % get ortholog-GEM based on provide ortholog pairs
-orthologGEM = getModelFromOrthology(ihuman, orthologPairs);
+orthologGEM = getModelFromOrthology(humanGEM, orthologPairs);
 
 % integrate species-specific metabolic network
 if ~iscell(rxnsToAdd.subSystems{1})
@@ -83,7 +83,7 @@ end
 
 
 %% Gap-filling
-[animalGEM, gapfillNetwork]=gapfill4EssentialTasks(animalGEM,ihuman,resetBiomass);
+[animalGEM, gapfillNetwork]=gapfill4EssentialTasks(animalGEM,humanGEM,resetBiomass);
 animalGEM.b = animalGEM.b(:,1);   % ensure b field in single column
 
 
