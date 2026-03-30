@@ -245936,8 +245936,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000010256 and ENSG00000127540 and ENSG00000140740 and ENSG00000156467 and ENSG00000164405 and ENSG00000169021 and ENSG00000173660 and ENSG00000179091 and ENSG00000184076 and ENSG00000198727"
       - references: "PMID:16569397"
-      - subsystem:
-          - "Miscellaneous"
+      - subsystem: "Miscellaneous"
       - confidence_score: 0
     - !!omap
       - id: "MAR20190"
@@ -245952,8 +245951,25 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000181019"
       - references: "PMID:9271353"
-      - subsystem:
-          - "Miscellaneous"
+      - subsystem: "Miscellaneous"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20191"
+      - name: "L-Glutamate:ammonia ligase (ADP-forming)"
+      - metabolites: !!omap
+          - MAM01285m: 1
+          - MAM01371m: -1
+          - MAM01974m: -1
+          - MAM01975m: 1
+          - MAM02578m: -1
+          - MAM02751m: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000135821"
+      - rxnFrom: "HMRdatabase"
+      - eccodes: "6.3.1.2"
+      - references: "PMID:11080211;PMID:1356223;PMID:14583610;PMID:16213501;PMID:7595668;PMID:8838581;PMID:9053810"
+      - subsystem: "Alanine, aspartate and glutamate metabolism"
       - confidence_score: 0
 - genes:
     - !!omap
