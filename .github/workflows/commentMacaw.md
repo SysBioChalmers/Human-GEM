@@ -1,4 +1,4 @@
-This PR has been [automatically tested with GH Actions](/../../actions/runs/{GH_ACTION_RUN}). Here is the output of the [MACAW](https://github.com/Devlin-Moyer/macaw) test:
+This PR has been [automatically tested with GH Actions](/actions/runs/{GH_ACTION_RUN}). Here is the output of the [MACAW](https://github.com/Devlin-Moyer/macaw) test:
 
 <pre>
 {TEST_RESULTS}
