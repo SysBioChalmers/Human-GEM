@@ -86,14 +86,14 @@ MAR08766,MAM01910c + MAM02039c + MAM02555c <=> MAM01909c + MAM02554c,ok,ok,ok,ok
 MAR08767,MAM01322c + MAM02039c + MAM03130c --> MAM02759c + MAM03107c,ok,ok,ok,ok,N/A
 MAR00454,MAM01371c + MAM01981c --> MAM01285c + MAM01939c + MAM02039c,ok,ok,ok,ok,N/A
 MAR04297,MAM01371c + MAM01845c --> MAM01285c + MAM01843c + MAM02039c,ok,ok,ok,ok,N/A
-MAR04310,MAM01371c + MAM01840c --> MAM01285c + MAM01842c + MAM02039c,MAM01842c,ok,ok,ok,N/A
+MAR04310,MAM01371c + MAM01840c --> MAM01285c + MAM01842c + MAM02039c,ok,ok,ok,ok,N/A
 MAR04315,MAM01682c + MAM02552c <=> MAM01840c + MAM02039c + MAM02553c,ok,ok,ok,ok,N/A
 MAR04316,MAM01682c + MAM02554c <=> MAM01965c + MAM02039c + MAM02555c,ok,ok,ok,ok,N/A
 MAR04317,MAM01371c + MAM01682c --> MAM01285c + MAM02039c + MAM02917c,MAM02917c,ok,ok,ok,N/A
 MAR04318,MAM01371c + MAM01840c --> MAM01285c + MAM01844c + MAM02039c,MAM01844c,ok,ok,ok,N/A
 MAR04319,MAM01371c + MAM01840c --> MAM01285c + MAM01845c + MAM02039c,ok,ok,ok,ok,N/A
 MAR04320,MAM01371c + MAM02454c --> MAM01285c + MAM01717c + MAM02039c,MAM01717c,ok,ok,ok,N/A
-MAR04356,MAM01690c + MAM01981c --> MAM01842c,MAM01842c,ok,ok,ok,N/A
+MAR04356,MAM01690c + MAM01981c <=> MAM01842c,only when going forwards,ok,ok,ok,N/A
 MAR04383,MAM01845c <=> MAM02455c,ok,ok,ok,ok,N/A
 MAR04385,MAM02455c --> MAM02454c,ok,ok,ok,ok,N/A
 MAR04386,MAM01948c + MAM02039c + MAM02454c --> MAM01951c + MAM02751c,ok,ok,ok,ok,N/A
@@ -1659,7 +1659,7 @@ MAR02468,MAM00314r + MAM03109r --> MAM00323r + MAM02039r + MAM03106r,ok,ok,ok,ok
 MAR02469,MAM00314c + MAM03109c <=> MAM00327c + MAM02039c + MAM03106c,only when going backwards,ok,ok,ok,N/A
 MAR02470,MAM00314r + MAM03109r --> MAM00327r + MAM02039r + MAM03106r,ok,ok,ok,ok,N/A
 MAR06397,MAM02039c + MAM02394c + MAM02553c <=> MAM01702c + MAM02552c,ok,ok,ok,ok,N/A
-MAR06402,MAM02643m --> MAM00210m + MAM02484m,MAM02484m;MAM00210m;MAM02643m,ok,ok,ok,N/A
+MAR06402,MAM02643m --> MAM00210m + MAM02484m,MAM00210m;MAM02484m;MAM02643m,ok,ok,ok,N/A
 MAR06403,MAM00210m + 3 MAM02039m + MAM02555m + 2 MAM02877m + MAM20084m --> MAM00208m + 2 MAM01098m + 4 MAM01821m + 2 MAM02042m + 2 MAM02471m + MAM02554m,MAM00210m;MAM01098m;MAM02042m;MAM20084m,ok,ok,ok,N/A
 MAR06404,MAM00209m + MAM02039m + MAM02553m <=> MAM00208m + MAM02552m,only when going forwards,ok,ok,ok,N/A
 MAR02472,MAM02039c + MAM02390c + MAM02555c + MAM02630c --> MAM00108c + 2 MAM02040c + MAM02554c,ok,ok,ok,ok,N/A
@@ -2538,9 +2538,7 @@ MAR03098,MAM01802x + MAM02122x --> MAM00053x + MAM01803x,ok,ok,ok,ok,N/A
 MAR03099,MAM00053x + MAM02040x --> MAM00182x,ok,ok,ok,ok,N/A
 MAR03100,MAM00182x + MAM02552x --> MAM00882x + MAM02039x + MAM02553x,ok,ok,ok,ok,N/A
 MAR03101,MAM00882x + MAM01597x --> MAM01261x + MAM01412x,ok,ok,ok,ok,N/A
-MAR03102,MAM01412x + MAM01802x --> MAM01622x + MAM01803x,ok,ok,ok,ok,N/A
-MAR03103,MAM01622x + MAM02040x --> MAM00173x,ok,ok,ok,ok,N/A
-MAR03104,MAM00173x + MAM02552x --> MAM01255x + MAM02039x + MAM02553x,ok,ok,ok,ok,N/A
+MAR03104,MAM00173x + MAM02552x --> MAM01255x + MAM02039x + MAM02553x,MAM00173x,ok,ok,ok,N/A
 MAR03106,MAM01261c <=> MAM01261x,ok,ok,ok,ok,N/A
 MAR03056,10 MAM01597x + 10 MAM01802x + 10 MAM02040x + 10 MAM02552x + MAM03047x --> 10 MAM01261x + 10 MAM01803x + 10 MAM02039x + 10 MAM02553x + MAM02774x,ok,ok,ok,ok,N/A
 MAR03326,MAM01802x + MAM02112x --> MAM01803x + MAM03016x,ok,ok,ok,ok,N/A
@@ -2989,7 +2987,7 @@ MAR01531,MAM02039c + MAM02553c + MAM02630c + MAM02805c --> MAM00624c + MAM02040c
 MAR01570,MAM02039c + MAM02555c + MAM03158c --> MAM01449c + MAM02554c,ok,ok,ok,ok,N/A
 MAR01576,MAM01253m + MAM01371m + MAM01597m --> MAM01255m + MAM01334m + MAM02759m,ok,ok,ok,ok,N/A
 MAR01577,MAM02131m --> MAM01253m + MAM01261m,ok,ok,ok,ok,N/A
-MAR03105,MAM01255x + MAM01597x <=> 2 MAM01261x,ok,ok,ok,ok,N/A
+MAR03105,MAM01255x + MAM01597x <=> 2 MAM01261x,only when going forwards,ok,ok,ok,N/A
 MAR04630,2 MAM02039x + MAM02131x + 2 MAM02555x --> MAM00167x + MAM01597x + 2 MAM02554x,ok,ok,ok,ok,N/A
 MAR02029,2 MAM02039c + MAM02630c + MAM02969c --> MAM00432c + MAM02040c,ok,ok,ok,ok,N/A
 MAR02030,MAM00432c + 2 MAM02039c + MAM02630c --> MAM00434c + 2 MAM02040c,ok,ok,ok,ok,N/A
@@ -4750,7 +4748,7 @@ MAR06471,MAM00288m + MAM01371m + MAM01597m + 2 MAM02040m + MAM02552m + MAM02630m
 MAR06472,MAM01227m + MAM01371m + MAM01597m + 2 MAM02040m + MAM02552m + MAM02630m --> MAM01187m + MAM01334m + 2 MAM02039m + MAM02041m + MAM02553m + MAM02759m + MAM02774m,ok,ok,ok,ok,N/A
 MAR06473,MAM01187m + MAM01371m + MAM01597m + 2 MAM02040m + MAM02552m + MAM02630m --> MAM01097m + MAM01261m + MAM01334m + 2 MAM02039m + MAM02041m + MAM02553m + MAM02759m,ok,ok,ok,ok,N/A
 MAR06476,MAM01327c + MAM02039c + MAM02555c + MAM02630c --> MAM00356c + MAM02040c + MAM02554c,ok,ok,ok,ok,N/A
-MAR06500,MAM01328c + MAM03103m <=> MAM01329c + MAM03102m,ok,ok,ok,ok,N/A
+MAR06500,MAM01329c + 5 MAM02039m + MAM02553m --> MAM01328c + 4 MAM02039i + MAM02552m,MAM01328c;MAM01329c,ok,ok,ok,N/A
 MAR06477,MAM01327r + MAM02039r + MAM02555r + MAM02630r --> MAM00356r + MAM02040r + MAM02554r,ok,ok,ok,ok,N/A
 MAR06478,MAM00356c + MAM02039c + 2 MAM02555c + 2 MAM02630c --> MAM00344c + 3 MAM02040c + 2 MAM02554c,ok,ok,ok,ok,N/A
 MAR06479,MAM00356r + MAM02039r + 2 MAM02555r + 2 MAM02630r --> MAM00344r + 3 MAM02040r + 2 MAM02554r,ok,ok,ok,ok,N/A
@@ -4762,7 +4760,7 @@ MAR06490,MAM01923c + MAM03109c --> MAM01924c + MAM03106c,ok,ok,ok,ok,N/A
 MAR06492,MAM01924c + MAM02040c <=> MAM01923c + MAM01973c + MAM02039c,ok,ok,ok,ok,N/A
 MAR06495,MAM00766c + MAM03109c --> MAM01321c + MAM03106c,ok,ok,ok,ok,N/A
 MAR06496,MAM01321c + MAM02040c --> MAM00766c + MAM01973c + MAM02039c,ok,ok,ok,ok,N/A
-MAR06501,MAM01212c <=> MAM01329c,MAM01212c,ok,ok,ok,N/A
+MAR06501,MAM01212c <=> MAM01329c,MAM01212c;MAM01329c,ok,ok,ok,N/A
 MAR06992,MAM01374c + MAM02039c + MAM02555c + MAM02630c --> MAM01379c + MAM02040c + MAM02554c,ok,ok,ok,ok,N/A
 MAR06993,MAM01374c + MAM02039c + MAM02555c + MAM02630c --> MAM01378c + MAM02040c + MAM02554c,ok,ok,ok,ok,N/A
 MAR06994,MAM01374c + MAM02039c + MAM02555c + MAM02630c --> MAM01375c + MAM02040c + MAM02554c,ok,ok,ok,ok,N/A
@@ -5264,7 +5262,6 @@ MAR04919,MAM01596c <=> MAM01596e,ok,ok,ok,ok,N/A
 MAR04928,MAM02039e + MAM02819e --> MAM02039c + MAM02819c,ok,ok,ok,ok,N/A
 MAR04931,MAM01629e + MAM01974c --> MAM01629c + MAM01974e,ok,ok,ok,ok,N/A
 MAR04932,MAM01974e + MAM02039e + MAM02200c + 3 MAM02519e --> MAM01974c + MAM02039c + MAM02200e + 3 MAM02519c,ok,ok,ok,ok,N/A
-MAR04933,MAM01306e + MAM02519e --> MAM01306c + MAM02519c,ok,ok,ok,MAR05992,N/A
 MAR04934,MAM01252e + MAM02519e --> MAM01252c + MAM02519c,ok,ok,ok,ok,N/A
 MAR04935,MAM01252e + MAM02039e --> MAM01252c + MAM02039c,ok,ok,ok,ok,N/A
 MAR04938,3 MAM02519e + MAM02943e --> 3 MAM02519c + MAM02943c,ok,ok,ok,MAR04939;MAR09610,N/A
@@ -5890,7 +5887,7 @@ MAR05986,MAM01588e + MAM02184c --> MAM01588c + MAM02184e,ok,ok,ok,ok,N/A
 MAR05987,MAM01821e + MAM02039e --> MAM01821c + MAM02039c,ok,ok,ok,ok,N/A
 MAR05989,MAM02039e + MAM03157e --> MAM02039c + MAM03157c,ok,ok,ok,ok,N/A
 MAR05990,MAM01442c + MAM02200c --> MAM01442e + MAM02200e,ok,ok,ok,ok,N/A
-MAR05992,MAM01306e + 3 MAM02519e --> MAM01306c + 3 MAM02519c,ok,ok,ok,MAR04933,N/A
+MAR05992,MAM01306e + 3 MAM02519e --> MAM01306c + 3 MAM02519c,ok,ok,ok,ok,N/A
 MAR05993,MAM01587e + MAM02039e --> MAM01587c + MAM02039c,ok,ok,ok,ok,N/A
 MAR05994,MAM01587e + MAM02519e --> MAM01587c + MAM02519c,ok,ok,ok,MAR05995;MAR05996;MAR05997,N/A
 MAR05995,MAM01587e + 2 MAM02519e --> MAM01587c + 2 MAM02519c,ok,ok,ok,MAR05994;MAR05996;MAR05997,N/A
@@ -6773,18 +6770,6 @@ MAR06327,MAM01588m + MAM02039i --> MAM01588c + MAM02039m,ok,ok,ok,ok,N/A
 MAR06328,MAM01285c + MAM01371m <=> MAM01285m + MAM01371c,ok,ok,ok,ok,N/A
 MAR06330,MAM01306c + MAM02751m --> MAM01306m + MAM02751c,ok,ok,ok,ok,N/A
 MAR06331,MAM02661c + MAM02751m --> MAM02661m + MAM02751c,ok,ok,ok,ok,N/A
-MAR06332,MAM01371m + MAM01637c --> MAM01371c + MAM01637m,ok,ok,ok,ok,N/A
-MAR06333,MAM01371m + MAM01680c --> MAM01371c + MAM01680m,ok,ok,ok,ok,N/A
-MAR06334,MAM01371m + MAM01754c --> MAM01371c + MAM01754m,ok,ok,ok,ok,N/A
-MAR06335,MAM01285m + MAM01637c --> MAM01285c + MAM01637m,ok,ok,ok,ok,N/A
-MAR06336,MAM01285m + MAM01680c --> MAM01285c + MAM01680m,ok,ok,ok,ok,N/A
-MAR06337,MAM01285m + MAM01754c --> MAM01285c + MAM01754m,ok,ok,ok,ok,N/A
-MAR06338,MAM01371m + MAM01642c --> MAM01371c + MAM01642m,ok,ok,ok,ok,N/A
-MAR06339,MAM01371m + MAM01688c --> MAM01371c + MAM01688m,ok,ok,ok,ok,N/A
-MAR06340,MAM01371m + MAM01756c --> MAM01371c + MAM01756m,ok,ok,ok,ok,N/A
-MAR06341,MAM01285m + MAM01642c --> MAM01285c + MAM01642m,ok,ok,ok,ok,N/A
-MAR06342,MAM01285m + MAM01688c --> MAM01285c + MAM01688m,ok,ok,ok,ok,N/A
-MAR06343,MAM01285m + MAM01756c --> MAM01285c + MAM01756m,ok,ok,ok,ok,N/A
 MAR06389,MAM02751m + MAM02914c --> MAM02751c + MAM02914m,ok,ok,ok,ok,N/A
 MAR06431,MAM00345c --> MAM00345m,ok,ok,ok,ok,N/A
 MAR06438,MAM00766c <=> MAM00766m,only when going forwards,ok,ok,ok,N/A
@@ -6809,48 +6794,6 @@ MAR07723,MAM01630c <=> MAM01630m,only when going backwards,ok,ok,ok,N/A
 MAR07757,MAM02039i + MAM02944c --> MAM02039m + MAM02944m,ok,ok,ok,ok,N/A
 MAR07760,MAM01736c + MAM02039i --> MAM01736m + MAM02039m,MAM01736m,ok,ok,ok,N/A
 MAR07769,MAM02871c + MAM02877m <=> MAM02871m + MAM02877c,ok,ok,ok,ok,N/A
-MAR07804,MAM01637m + MAM01643c <=> MAM01637c + MAM01643m,ok,ok,ok,ok,N/A
-MAR07806,MAM01637m + MAM01680c <=> MAM01637c + MAM01680m,ok,ok,ok,ok,N/A
-MAR07808,MAM01747c + MAM01754m <=> MAM01747m + MAM01754c,ok,ok,ok,ok,N/A
-MAR07810,MAM01680c + MAM01754m <=> MAM01680m + MAM01754c,ok,ok,ok,ok,N/A
-MAR07812,MAM01637c + MAM01754m <=> MAM01637m + MAM01754c,ok,ok,ok,ok,N/A
-MAR07814,MAM01643c + MAM01754m <=> MAM01643m + MAM01754c,ok,ok,ok,ok,N/A
-MAR07815,MAM01371m + MAM01747c --> MAM01371c + MAM01747m,ok,ok,ok,ok,N/A
-MAR07816,MAM01285m + MAM01747c --> MAM01285c + MAM01747m,ok,ok,ok,ok,N/A
-MAR07818,MAM01680c + MAM01747m <=> MAM01680m + MAM01747c,ok,ok,ok,ok,N/A
-MAR07820,MAM01637c + MAM01747m <=> MAM01637m + MAM01747c,ok,ok,ok,ok,N/A
-MAR07822,MAM01643c + MAM01747m <=> MAM01643m + MAM01747c,ok,ok,ok,ok,N/A
-MAR07824,MAM01643m + MAM01680c <=> MAM01643c + MAM01680m,ok,ok,ok,ok,N/A
-MAR07825,MAM01285m + MAM01643c --> MAM01285c + MAM01643m,ok,ok,ok,ok,N/A
-MAR07826,MAM01371m + MAM01643c --> MAM01371c + MAM01643m,ok,ok,ok,ok,N/A
-MAR07827,MAM01747m + MAM01756c --> MAM01747c + MAM01756m,ok,ok,ok,ok,N/A
-MAR07828,MAM01754m + MAM01756c --> MAM01754c + MAM01756m,ok,ok,ok,ok,N/A
-MAR07829,MAM01680m + MAM01756c --> MAM01680c + MAM01756m,ok,ok,ok,ok,N/A
-MAR07830,MAM01642c + MAM01643m --> MAM01642m + MAM01643c,ok,ok,ok,ok,N/A
-MAR07831,MAM01637m + MAM01756c --> MAM01637c + MAM01756m,ok,ok,ok,ok,N/A
-MAR07832,MAM01643m + MAM01756c --> MAM01643c + MAM01756m,ok,ok,ok,ok,N/A
-MAR07833,MAM01371m + MAM01753c --> MAM01371c + MAM01753m,ok,ok,ok,ok,N/A
-MAR07834,MAM01285m + MAM01753c --> MAM01285c + MAM01753m,ok,ok,ok,ok,N/A
-MAR07835,MAM01753c + MAM01754m --> MAM01753m + MAM01754c,ok,ok,ok,ok,N/A
-MAR07836,MAM01747m + MAM01753c --> MAM01747c + MAM01753m,ok,ok,ok,ok,N/A
-MAR07837,MAM01680m + MAM01753c --> MAM01680c + MAM01753m,ok,ok,ok,ok,N/A
-MAR07838,MAM01637m + MAM01753c --> MAM01637c + MAM01753m,ok,ok,ok,ok,N/A
-MAR07839,MAM01642c + MAM01754m --> MAM01642m + MAM01754c,ok,ok,ok,ok,N/A
-MAR07840,MAM01643m + MAM01753c --> MAM01643c + MAM01753m,ok,ok,ok,ok,N/A
-MAR07841,MAM01643m + MAM01645c --> MAM01643c + MAM01645m,ok,ok,ok,ok,N/A
-MAR07842,MAM01645c + MAM01754m --> MAM01645m + MAM01754c,ok,ok,ok,ok,N/A
-MAR07843,MAM01645c + MAM01680m --> MAM01645m + MAM01680c,ok,ok,ok,ok,N/A
-MAR07844,MAM01637m + MAM01645c --> MAM01637c + MAM01645m,ok,ok,ok,ok,N/A
-MAR07845,MAM01285m + MAM01645c --> MAM01285c + MAM01645m,ok,ok,ok,ok,N/A
-MAR07846,MAM01371m + MAM01645c --> MAM01371c + MAM01645m,ok,ok,ok,ok,N/A
-MAR07847,MAM01637m + MAM01688c --> MAM01637c + MAM01688m,ok,ok,ok,ok,N/A
-MAR07848,MAM01642c + MAM01747m --> MAM01642m + MAM01747c,ok,ok,ok,ok,N/A
-MAR07849,MAM01688c + MAM01754m --> MAM01688m + MAM01754c,ok,ok,ok,ok,N/A
-MAR07850,MAM01688c + MAM01747m --> MAM01688m + MAM01747c,ok,ok,ok,ok,N/A
-MAR07851,MAM01680m + MAM01688c --> MAM01680c + MAM01688m,ok,ok,ok,ok,N/A
-MAR07852,MAM01643m + MAM01688c --> MAM01643c + MAM01688m,ok,ok,ok,ok,N/A
-MAR07853,MAM01642c + MAM01680m --> MAM01642m + MAM01680c,ok,ok,ok,ok,N/A
-MAR07854,MAM01637m + MAM01642c --> MAM01637c + MAM01642m,ok,ok,ok,ok,N/A
 MAR07897,MAM02193c <=> MAM02193m,ok,ok,ok,ok,N/A
 MAR07899,MAM01714c <=> MAM01714m,MAM01714m,ok,ok,ok,N/A
 MAR07914,MAM00267m --> MAM00267c,ok,ok,ok,ok,N/A
@@ -7519,19 +7462,19 @@ MAR09634,MAM01798r <=> MAM01798c,only when going backwards,ok,ok,ok,N/A
 MAR09716,MAM01667r <=> MAM01667c,only when going backwards,ok,ok,ok,N/A
 MAR09724,MAM02728r --> MAM02728c,ok,ok,ok,ok,N/A
 MAR09732,MAM02001r <=> MAM02001c,only when going forwards,ok,ok,ok,N/A
-MAR07108,MAM01374e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR07110,MAM02556e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR07112,MAM01296e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR07114,MAM03044e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR07116,MAM01403e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR07118,MAM01174e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR07120,MAM00932e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR07122,MAM00545e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR07124,MAM00228e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR07126,MAM00242e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09023,MAM02957e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09024,MAM01570e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09032,MAM02909e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR07108,MAM01374e <=> ,ok,ok,ok,ok,N/A
+MAR07110,MAM02556e <=> ,ok,ok,ok,ok,N/A
+MAR07112,MAM01296e <=> ,ok,ok,ok,ok,N/A
+MAR07114,MAM03044e <=> ,ok,ok,ok,ok,N/A
+MAR07116,MAM01403e <=> ,ok,ok,ok,ok,N/A
+MAR07118,MAM01174e <=> ,ok,ok,ok,ok,N/A
+MAR07120,MAM00932e <=> ,ok,ok,ok,ok,N/A
+MAR07122,MAM00545e <=> ,ok,ok,ok,ok,N/A
+MAR07124,MAM00228e <=> ,ok,ok,ok,ok,N/A
+MAR07126,MAM00242e <=> ,ok,ok,ok,ok,N/A
+MAR09023,MAM02957e <=> ,ok,ok,ok,ok,N/A
+MAR09024,MAM01570e <=> ,ok,ok,ok,ok,N/A
+MAR09032,MAM02909e <=> ,ok,ok,ok,ok,N/A
 MAR09808,MAM02772e <=> ,ok,ok,ok,ok,N/A
 MAR09809,MAM01410e <=> ,ok,ok,ok,ok,N/A
 MAR09810,MAM03134e <=> ,ok,ok,ok,ok,N/A
@@ -7541,11 +7484,11 @@ MAR09813,MAM02642e <=> ,ok,ok,ok,ok,N/A
 MAR09814,MAM02614e <=> ,ok,ok,ok,ok,N/A
 MAR09815,MAM01648e <=> ,ok,ok,ok,ok,N/A
 MAR09816,MAM03117e <=> ,ok,ok,ok,ok,N/A
-MAR09033,MAM02560e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09033,MAM02560e <=> ,ok,ok,ok,ok,N/A
 MAR09034,MAM01965e <=> ,ok,ok,ok,ok,N/A
 MAR09035,MAM02387e <=> ,ok,ok,ok,ok,N/A
 MAR09036,MAM02389e <=> ,ok,ok,ok,ok,N/A
-MAR09037,MAM02746e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09037,MAM02746e <=> ,ok,ok,ok,ok,N/A
 MAR09038,MAM02125e <=> ,ok,ok,ok,ok,N/A
 MAR09039,MAM02184e <=> ,ok,ok,ok,ok,N/A
 MAR09040,MAM02360e <=> ,ok,ok,ok,ok,N/A
@@ -7564,7 +7507,7 @@ MAR09052,MAM01569e <=> ,ok,ok,ok,ok,N/A
 MAR09053,MAM03146e <=> ,ok,ok,ok,ok,N/A
 MAR09054,MAM02047e <=> ,ok,ok,ok,ok,N/A
 MAR09055,MAM02352e <=> ,ok,ok,ok,ok,N/A
-MAR09056,MAM02561e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09056,MAM02561e <=> ,ok,ok,ok,ok,N/A
 MAR09058,MAM01596e <=> ,ok,ok,ok,ok,N/A
 MAR09061,MAM01307e <=> ,ok,ok,ok,ok,N/A
 MAR09062,MAM01369e <=> ,ok,ok,ok,ok,N/A
@@ -7594,31 +7537,31 @@ MAR09085,MAM01983e <=> ,ok,ok,ok,ok,N/A
 MAR09086,MAM01252e <=> ,ok,ok,ok,ok,N/A
 MAR09087,MAM02658e <=> ,ok,ok,ok,ok,N/A
 MAR09088,MAM02949e <=> ,ok,ok,ok,ok,N/A
-MAR09089,MAM02740e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09090,MAM02477e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09089,MAM02740e <=> ,ok,ok,ok,ok,N/A
+MAR09090,MAM02477e <=> ,ok,ok,ok,ok,N/A
 MAR09091,MAM00970e <=> ,ok,ok,ok,ok,N/A
 MAR09092,MAM01736e <=> ,ok,ok,ok,ok,N/A
 MAR09093,MAM02617e <=> ,ok,ok,ok,ok,N/A
-MAR09094,MAM01107e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09094,MAM01107e <=> ,ok,ok,ok,ok,N/A
 MAR09095,MAM01290e <=> ,ok,ok,ok,ok,N/A
 MAR09096,MAM01822e <=> ,ok,ok,ok,ok,N/A
 MAR09097,MAM01641e <=> ,ok,ok,ok,ok,N/A
 MAR09098,MAM01638e <=> ,ok,ok,ok,ok,N/A
-MAR09099,MAM01796e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09099,MAM01796e <=> ,ok,ok,ok,ok,N/A
 MAR09100,MAM01100e <=> ,ok,ok,ok,ok,N/A
 MAR09101,MAM02754e <=> ,ok,ok,ok,ok,N/A
 MAR09102,MAM02332e <=> ,ok,ok,ok,ok,N/A
 MAR09103,MAM02042e <=> ,ok,ok,ok,ok,N/A
 MAR09104,MAM00536e <=> ,ok,ok,ok,ok,N/A
 MAR09105,MAM02983e <=> ,ok,ok,ok,ok,N/A
-MAR09106,MAM02985e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09106,MAM02985e <=> ,ok,ok,ok,ok,N/A
 MAR09107,MAM02049e <=> ,ok,ok,ok,ok,N/A
 MAR09108,MAM01704e <=> ,ok,ok,ok,ok,N/A
 MAR09109,MAM01401e <=> ,ok,ok,ok,ok,N/A
-MAR09110,MAM01400e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09110,MAM01400e <=> ,ok,ok,ok,ok,N/A
 MAR09111,MAM02054e <=> ,ok,ok,ok,ok,N/A
 MAR09113,MAM02278e <=> ,ok,ok,ok,ok,N/A
-MAR09114,MAM02237e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09114,MAM02237e <=> ,ok,ok,ok,ok,N/A
 MAR09115,MAM02288e <=> ,ok,ok,ok,ok,N/A
 MAR09116,MAM02303e <=> ,ok,ok,ok,ok,N/A
 MAR09117,MAM01517e <=> ,ok,ok,ok,ok,N/A
@@ -7631,8 +7574,8 @@ MAR09123,MAM02139e <=> ,ok,ok,ok,ok,N/A
 MAR09124,MAM01652e <=> ,ok,ok,ok,ok,N/A
 MAR09125,MAM02672e <=> ,ok,ok,ok,ok,N/A
 MAR09126,MAM02510e <=> ,ok,ok,ok,ok,N/A
-MAR09127,MAM02907e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09128,MAM01712e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09127,MAM02907e <=> ,ok,ok,ok,ok,N/A
+MAR09128,MAM01712e <=> ,ok,ok,ok,ok,N/A
 MAR09129,MAM01786e <=> ,ok,ok,ok,ok,N/A
 MAR09130,MAM02414e <=> ,ok,ok,ok,ok,N/A
 MAR09131,MAM02880e <=> ,ok,ok,ok,ok,N/A
@@ -7640,7 +7583,7 @@ MAR09132,MAM01253e <=> ,ok,ok,ok,ok,N/A
 MAR09133,MAM02819e <=> ,ok,ok,ok,ok,N/A
 MAR09134,MAM00157e <=> ,ok,ok,ok,ok,N/A
 MAR09135,MAM02403e <=> ,ok,ok,ok,ok,N/A
-MAR09136,MAM01716e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09136,MAM01716e <=> ,ok,ok,ok,ok,N/A
 MAR09137,MAM02453e <=> ,ok,ok,ok,ok,N/A
 MAR09138,MAM03155e <=> ,ok,ok,ok,ok,N/A
 MAR09139,MAM01840e <=> ,ok,ok,ok,ok,N/A
@@ -7656,102 +7599,102 @@ MAR09148,MAM02174e <=> ,ok,ok,ok,ok,N/A
 MAR09149,MAM02588e <=> ,ok,ok,ok,ok,N/A
 MAR09150,MAM01442e <=> ,ok,ok,ok,ok,N/A
 MAR09151,MAM01327e <=> ,ok,ok,ok,ok,N/A
-MAR09152,MAM01330e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09152,MAM01330e <=> ,ok,ok,ok,ok,N/A
 MAR09153,MAM01935e <=> ,ok,ok,ok,ok,N/A
-MAR09154,MAM01938e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09154,MAM01938e <=> ,ok,ok,ok,ok,N/A
 MAR09155,MAM02193e <=> ,ok,ok,ok,ok,N/A
 MAR09156,MAM01714e <=> ,ok,ok,ok,ok,N/A
 MAR09157,MAM02050e <=> ,MAM02050e,ok,ok,ok,N/A
 MAR09158,MAM01368e <=> ,ok,ok,ok,ok,N/A
 MAR09159,MAM02982e <=> ,ok,ok,ok,ok,N/A
-MAR09160,MAM02145e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09160,MAM02145e <=> ,ok,ok,ok,ok,N/A
 MAR09161,MAM02136e <=> ,ok,ok,ok,ok,N/A
 MAR09162,MAM02357e <=> ,ok,ok,ok,ok,N/A
 MAR09163,MAM02370e <=> ,ok,ok,ok,ok,N/A
 MAR09164,MAM02440e <=> ,ok,ok,ok,ok,N/A
 MAR09165,MAM02661e <=> ,ok,ok,ok,ok,N/A
-MAR09166,MAM01438e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09167,MAM02394e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09168,MAM01962e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09169,MAM02885e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09166,MAM01438e <=> ,ok,ok,ok,ok,N/A
+MAR09167,MAM02394e <=> ,ok,ok,ok,ok,N/A
+MAR09168,MAM01962e <=> ,ok,ok,ok,ok,N/A
+MAR09169,MAM02885e <=> ,ok,ok,ok,ok,N/A
 MAR09171,MAM00626e <=> ,ok,ok,ok,ok,N/A
 MAR09172,MAM00549e <=> ,ok,ok,ok,ok,N/A
 MAR09201,MAM01588e <=> ,ok,ok,ok,ok,N/A
 MAR09202,MAM01356e <=> ,ok,ok,ok,ok,N/A
 MAR09203,MAM01758e <=> ,ok,ok,ok,ok,N/A
-MAR09204,MAM02001e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09205,MAM00266e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09204,MAM02001e <=> ,ok,ok,ok,ok,N/A
+MAR09205,MAM00266e <=> ,ok,ok,ok,ok,N/A
 MAR09206,MAM00267e <=> ,ok,ok,ok,ok,N/A
 MAR09207,MAM00268e <=> ,ok,ok,ok,ok,N/A
-MAR09208,MAM00269e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09209,MAM10005e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09210,MAM00353e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09211,MAM00613e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09212,MAM00035e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09213,MAM01019e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09208,MAM00269e <=> ,ok,ok,ok,ok,N/A
+MAR09209,MAM10005e <=> ,ok,ok,ok,ok,N/A
+MAR09210,MAM00353e <=> ,ok,ok,ok,ok,N/A
+MAR09211,MAM00613e <=> ,ok,ok,ok,ok,N/A
+MAR09212,MAM00035e <=> ,ok,ok,ok,ok,N/A
+MAR09213,MAM01019e <=> ,ok,ok,ok,ok,N/A
 MAR09214,MAM00620e <=> ,ok,ok,ok,ok,N/A
 MAR09215,MAM01415e <=> ,ok,ok,ok,ok,N/A
 MAR09216,MAM00648e <=> ,ok,ok,ok,ok,N/A
-MAR09217,MAM00665e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09217,MAM00665e <=> ,ok,ok,ok,ok,N/A
 MAR09218,MAM00730e <=> ,ok,ok,ok,ok,N/A
 MAR09219,MAM02354e <=> ,ok,ok,ok,ok,N/A
-MAR09220,MAM01433e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09220,MAM01433e <=> ,ok,ok,ok,ok,N/A
 MAR09221,MAM02325e <=> ,ok,ok,ok,ok,N/A
-MAR09222,MAM01633e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09223,MAM00998e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09224,MAM01003e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09225,MAM02182e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09226,MAM01007e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09227,MAM01021e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09228,MAM01033e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09222,MAM01633e <=> ,ok,ok,ok,ok,N/A
+MAR09223,MAM00998e <=> ,ok,ok,ok,ok,N/A
+MAR09224,MAM01003e <=> ,ok,ok,ok,ok,N/A
+MAR09225,MAM02182e <=> ,ok,ok,ok,ok,N/A
+MAR09226,MAM01007e <=> ,ok,ok,ok,ok,N/A
+MAR09227,MAM01021e <=> ,ok,ok,ok,ok,N/A
+MAR09228,MAM01033e <=> ,ok,ok,ok,ok,N/A
 MAR09229,MAM01069e <=> ,ok,ok,ok,ok,N/A
-MAR09230,MAM01070e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09230,MAM01070e <=> ,ok,ok,ok,ok,N/A
 MAR09231,MAM01071e <=> ,ok,ok,ok,ok,N/A
 MAR09232,MAM02691e <=> ,ok,ok,ok,ok,N/A
-MAR09233,MAM01109e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09233,MAM01109e <=> ,ok,ok,ok,ok,N/A
 MAR09234,MAM01115e <=> ,ok,ok,ok,ok,N/A
 MAR09235,MAM02692e <=> ,ok,ok,ok,ok,N/A
 MAR09236,MAM02118e <=> ,ok,ok,ok,ok,N/A
-MAR09237,MAM01158e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09237,MAM01158e <=> ,ok,ok,ok,ok,N/A
 MAR09238,MAM02119e <=> ,ok,ok,ok,ok,N/A
-MAR09239,MAM02104e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09240,MAM02105e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09241,MAM02338e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09239,MAM02104e <=> ,ok,ok,ok,ok,N/A
+MAR09240,MAM02105e <=> ,ok,ok,ok,ok,N/A
+MAR09241,MAM02338e <=> ,ok,ok,ok,ok,N/A
 MAR09242,MAM01249e <=> ,ok,ok,ok,ok,N/A
 MAR09243,MAM01256e <=> ,ok,ok,ok,ok,N/A
-MAR09244,MAM03096e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09245,MAM03098e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09246,MAM02527e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09244,MAM03096e <=> ,ok,ok,ok,ok,N/A
+MAR09245,MAM03098e <=> ,ok,ok,ok,ok,N/A
+MAR09246,MAM02527e <=> ,ok,ok,ok,ok,N/A
 MAR09247,MAM01260e <=> ,ok,ok,ok,ok,N/A
-MAR09248,MAM02902e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09249,MAM02903e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09250,MAM00744e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09251,MAM01711e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09252,MAM03138e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09248,MAM02902e <=> ,ok,ok,ok,ok,N/A
+MAR09249,MAM02903e <=> ,ok,ok,ok,ok,N/A
+MAR09250,MAM00744e <=> ,ok,ok,ok,ok,N/A
+MAR09251,MAM01711e <=> ,ok,ok,ok,ok,N/A
+MAR09252,MAM03138e <=> ,ok,ok,ok,ok,N/A
 MAR09253,MAM01279e <=> ,ok,ok,ok,ok,N/A
 MAR09254,MAM01280e <=> ,ok,ok,ok,ok,N/A
 MAR09255,MAM01285e <=> ,ok,ok,ok,ok,N/A
-MAR09256,MAM01289e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09257,MAM01799e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09256,MAM01289e <=> ,ok,ok,ok,ok,N/A
+MAR09257,MAM01799e <=> ,ok,ok,ok,ok,N/A
 MAR09258,MAM00516e <=> ,ok,ok,ok,ok,N/A
 MAR09259,MAM01306e <=> ,ok,ok,ok,ok,N/A
 MAR09260,MAM01383e <=> ,ok,ok,ok,ok,N/A
-MAR09261,MAM01309e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09261,MAM01309e <=> ,ok,ok,ok,ok,N/A
 MAR09262,MAM01334e <=> ,ok,ok,ok,ok,N/A
 MAR09263,MAM01338e <=> ,ok,ok,ok,ok,N/A
-MAR09264,MAM01339e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09265,MAM01344e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09266,MAM01326e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09267,MAM00002e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09264,MAM01339e <=> ,ok,ok,ok,ok,N/A
+MAR09265,MAM01344e <=> ,ok,ok,ok,ok,N/A
+MAR09266,MAM01326e <=> ,ok,ok,ok,ok,N/A
+MAR09267,MAM00002e <=> ,ok,ok,ok,ok,N/A
 MAR09268,MAM00580e <=> ,ok,ok,ok,ok,N/A
-MAR09269,MAM01361e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09270,MAM02337e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09269,MAM01361e <=> ,ok,ok,ok,ok,N/A
+MAR09270,MAM02337e <=> ,ok,ok,ok,ok,N/A
 MAR09271,MAM01397e <=> ,ok,ok,ok,ok,N/A
 MAR09272,MAM01398e <=> ,ok,ok,ok,ok,N/A
 MAR09273,MAM01396e <=> ,ok,ok,ok,ok,N/A
-MAR09275,MAM01419e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09276,MAM01385e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09277,MAM00001e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09275,MAM01419e <=> ,ok,ok,ok,ok,N/A
+MAR09276,MAM01385e <=> ,ok,ok,ok,ok,N/A
+MAR09277,MAM00001e <=> ,ok,ok,ok,ok,N/A
 MAR09278,MAM01418e <=> ,MAM01418e,ok,ok,ok,N/A
 MAR09279,MAM01626e <=> ,ok,ok,ok,ok,N/A
 MAR09280,MAM01445e <=> ,ok,ok,ok,ok,N/A
@@ -7760,12 +7703,12 @@ MAR09282,MAM02963e <=> ,ok,ok,ok,ok,N/A
 MAR09283,MAM01987e <=> ,ok,ok,ok,ok,N/A
 MAR09284,MAM02962e <=> ,ok,ok,ok,ok,N/A
 MAR09285,MAM01450e <=> ,ok,ok,ok,ok,N/A
-MAR09286,MAM01587e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09286,MAM01587e <=> ,ok,ok,ok,ok,N/A
 MAR09287,MAM01590e <=> ,ok,ok,ok,ok,N/A
-MAR09288,MAM01595e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09289,MAM01617e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09288,MAM01595e <=> ,ok,ok,ok,ok,N/A
+MAR09289,MAM01617e <=> ,ok,ok,ok,ok,N/A
 MAR09290,MAM01619e <=> ,ok,ok,ok,ok,N/A
-MAR09291,MAM01632e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09291,MAM01632e <=> ,ok,ok,ok,ok,N/A
 MAR09292,MAM02348e <=> ,ok,ok,ok,ok,N/A
 MAR09293,MAM01615e <=> ,ok,ok,ok,ok,N/A
 MAR09294,MAM01614e <=> ,ok,ok,ok,ok,N/A
@@ -7773,99 +7716,99 @@ MAR09295,MAM01630e <=> ,ok,ok,ok,ok,N/A
 MAR09296,MAM01668e <=> ,ok,ok,ok,ok,N/A
 MAR09297,MAM01666e <=> ,ok,ok,ok,ok,N/A
 MAR09298,MAM01098e <=> ,MAM01098e,ok,ok,ok,N/A
-MAR09299,MAM01647e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09299,MAM01647e <=> ,ok,ok,ok,ok,N/A
 MAR09300,MAM01669e <=> ,ok,ok,ok,ok,N/A
 MAR09301,MAM01655e <=> ,ok,ok,ok,ok,N/A
 MAR09302,MAM01659e <=> ,ok,ok,ok,ok,N/A
-MAR09303,MAM01700e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09303,MAM01700e <=> ,ok,ok,ok,ok,N/A
 MAR09304,MAM01695e <=> ,ok,ok,ok,ok,N/A
 MAR09305,MAM01671e <=> ,ok,ok,ok,ok,N/A
-MAR09306,MAM01768e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09306,MAM01768e <=> ,ok,ok,ok,ok,N/A
 MAR09307,MAM00577e <=> ,ok,ok,ok,ok,N/A
-MAR09308,MAM01737e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09308,MAM01737e <=> ,ok,ok,ok,ok,N/A
 MAR09309,MAM01672e <=> ,ok,ok,ok,ok,N/A
 MAR09310,MAM01673e <=> ,ok,ok,ok,ok,N/A
 MAR09311,MAM01298e <=> ,ok,ok,ok,ok,N/A
-MAR09312,MAM01765e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09313,MAM02150e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09312,MAM01765e <=> ,ok,ok,ok,ok,N/A
+MAR09313,MAM02150e <=> ,ok,ok,ok,ok,N/A
 MAR09314,MAM01787e <=> ,ok,ok,ok,ok,N/A
-MAR09315,MAM00402e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09316,MAM01795e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09315,MAM00402e <=> ,ok,ok,ok,ok,N/A
+MAR09316,MAM01795e <=> ,ok,ok,ok,ok,N/A
 MAR09317,MAM01789e <=> ,ok,ok,ok,ok,N/A
 MAR09318,MAM01833e <=> ,ok,ok,ok,ok,N/A
-MAR09319,MAM02164e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09320,MAM01999e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09321,MAM01850e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09322,MAM02199e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09323,MAM02198e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09324,MAM01851e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09325,MAM01852e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09326,MAM01853e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09327,MAM02331e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09328,MAM01859e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09329,MAM01861e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09330,MAM01159e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09331,MAM01919e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09332,MAM01914e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09319,MAM02164e <=> ,ok,ok,ok,ok,N/A
+MAR09320,MAM01999e <=> ,ok,ok,ok,ok,N/A
+MAR09321,MAM01850e <=> ,ok,ok,ok,ok,N/A
+MAR09322,MAM02199e <=> ,ok,ok,ok,ok,N/A
+MAR09323,MAM02198e <=> ,ok,ok,ok,ok,N/A
+MAR09324,MAM01851e <=> ,ok,ok,ok,ok,N/A
+MAR09325,MAM01852e <=> ,ok,ok,ok,ok,N/A
+MAR09326,MAM01853e <=> ,ok,ok,ok,ok,N/A
+MAR09327,MAM02331e <=> ,ok,ok,ok,ok,N/A
+MAR09328,MAM01859e <=> ,ok,ok,ok,ok,N/A
+MAR09329,MAM01861e <=> ,ok,ok,ok,ok,N/A
+MAR09330,MAM01159e <=> ,ok,ok,ok,ok,N/A
+MAR09331,MAM01919e <=> ,ok,ok,ok,ok,N/A
+MAR09332,MAM01914e <=> ,ok,ok,ok,ok,N/A
 MAR09333,MAM01915e <=> ,ok,ok,ok,ok,N/A
-MAR09334,MAM01916e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09335,MAM01917e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09334,MAM01916e <=> ,ok,ok,ok,ok,N/A
+MAR09335,MAM01917e <=> ,ok,ok,ok,ok,N/A
 MAR09336,MAM01959e <=> ,ok,ok,ok,ok,N/A
-MAR09337,MAM01944e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09337,MAM01944e <=> ,ok,ok,ok,ok,N/A
 MAR09338,MAM00097e <=> ,ok,ok,ok,ok,N/A
 MAR09339,MAM01945e <=> ,ok,ok,ok,ok,N/A
 MAR09340,MAM01948e <=> ,ok,ok,ok,ok,N/A
 MAR09341,MAM01393e <=> ,ok,ok,ok,ok,N/A
-MAR09342,MAM01982e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09342,MAM01982e <=> ,ok,ok,ok,ok,N/A
 MAR09343,MAM02016e <=> ,ok,ok,ok,ok,N/A
-MAR09344,MAM02018e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09345,MAM02019e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09344,MAM02018e <=> ,ok,ok,ok,ok,N/A
+MAR09345,MAM02019e <=> ,ok,ok,ok,ok,N/A
 MAR09346,MAM02023e <=> ,ok,ok,ok,ok,N/A
-MAR09347,MAM02024e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09347,MAM02024e <=> ,ok,ok,ok,ok,N/A
 MAR09348,MAM02038e <=> ,ok,ok,ok,ok,N/A
 MAR09349,MAM02028e <=> ,ok,ok,ok,ok,N/A
-MAR09350,MAM02027e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09350,MAM02027e <=> ,ok,ok,ok,ok,N/A
 MAR09351,MAM02026e <=> ,ok,ok,ok,ok,N/A
-MAR09352,MAM02034e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09352,MAM02034e <=> ,ok,ok,ok,ok,N/A
 MAR09353,MAM02037e <=> ,ok,ok,ok,ok,N/A
 MAR09354,MAM02041e <=> ,ok,ok,ok,ok,N/A
 MAR09355,MAM00986e <=> ,ok,ok,ok,ok,N/A
-MAR09356,MAM03113e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09357,MAM01163e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09356,MAM03113e <=> ,ok,ok,ok,ok,N/A
+MAR09357,MAM01163e <=> ,ok,ok,ok,ok,N/A
 MAR09358,MAM02159e <=> ,ok,ok,ok,ok,N/A
 MAR09359,MAM02161e <=> ,ok,ok,ok,ok,N/A
 MAR09360,MAM02167e <=> ,ok,ok,ok,ok,N/A
 MAR09361,MAM02171e <=> ,ok,ok,ok,ok,N/A
 MAR09362,MAM02170e <=> ,ok,ok,ok,ok,N/A
-MAR09363,MAM01629e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09363,MAM01629e <=> ,ok,ok,ok,ok,N/A
 MAR09364,MAM02362e <=> ,ok,ok,ok,ok,N/A
 MAR09365,MAM02364e <=> ,ok,ok,ok,ok,N/A
 MAR09366,MAM02366e <=> ,ok,ok,ok,ok,N/A
 MAR09367,MAM02418e <=> ,ok,ok,ok,ok,N/A
 MAR09368,MAM02369e <=> ,ok,ok,ok,ok,N/A
-MAR09369,MAM02386e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09369,MAM02386e <=> ,ok,ok,ok,ok,N/A
 MAR09370,MAM02450e <=> ,ok,ok,ok,ok,N/A
 MAR09371,MAM02452e <=> ,ok,ok,ok,ok,N/A
 MAR09372,MAM02470e <=> ,ok,ok,ok,ok,N/A
 MAR09373,MAM02407e <=> ,ok,ok,ok,ok,N/A
-MAR09374,MAM00816e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09374,MAM00816e <=> ,ok,ok,ok,ok,N/A
 MAR09375,MAM02475e <=> ,ok,ok,ok,ok,N/A
 MAR09376,MAM02552e <=> ,ok,ok,ok,ok,N/A
-MAR09377,MAM02554e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09377,MAM02554e <=> ,ok,ok,ok,ok,N/A
 MAR09378,MAM02583e <=> ,ok,ok,ok,ok,N/A
-MAR09379,MAM02587e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09380,MAM02153e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09381,MAM02609e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09382,MAM02620e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09379,MAM02587e <=> ,ok,ok,ok,ok,N/A
+MAR09380,MAM02153e <=> ,ok,ok,ok,ok,N/A
+MAR09381,MAM02609e <=> ,ok,ok,ok,ok,N/A
+MAR09382,MAM02620e <=> ,ok,ok,ok,ok,N/A
 MAR09383,MAM02631e <=> ,ok,ok,ok,ok,N/A
-MAR09384,MAM01244e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09385,MAM01245e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09384,MAM01244e <=> ,ok,ok,ok,ok,N/A
+MAR09385,MAM01245e <=> ,ok,ok,ok,ok,N/A
 MAR09386,MAM02147e <=> ,ok,ok,ok,ok,N/A
-MAR09387,MAM02653e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09387,MAM02653e <=> ,ok,ok,ok,ok,N/A
 MAR09388,MAM00032e <=> ,ok,ok,ok,ok,N/A
 MAR09389,MAM00204e <=> ,ok,ok,ok,ok,N/A
-MAR09390,MAM02712e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09391,MAM02722e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09390,MAM02712e <=> ,ok,ok,ok,ok,N/A
+MAR09391,MAM02722e <=> ,ok,ok,ok,ok,N/A
 MAR09392,MAM02744e <=> ,ok,ok,ok,ok,N/A
 MAR09393,MAM02769e <=> ,ok,ok,ok,ok,N/A
 MAR09394,MAM01742e <=> ,ok,ok,ok,ok,N/A
@@ -7877,100 +7820,100 @@ MAR09399,MAM02815e <=> ,ok,ok,ok,ok,N/A
 MAR09400,MAM02813e <=> ,ok,ok,ok,ok,N/A
 MAR09401,MAM02841e <=> ,ok,ok,ok,ok,N/A
 MAR09404,MAM02833e <=> ,ok,ok,ok,ok,N/A
-MAR09405,MAM02836e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09405,MAM02836e <=> ,ok,ok,ok,ok,N/A
 MAR09406,MAM02843e <=> ,ok,ok,ok,ok,N/A
 MAR09407,MAM01744e <=> ,ok,ok,ok,ok,N/A
-MAR09408,MAM00179e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09408,MAM00179e <=> ,ok,ok,ok,ok,N/A
 MAR09409,MAM02931e <=> ,ok,ok,ok,ok,N/A
 MAR09410,MAM02928e <=> ,ok,ok,ok,ok,N/A
 MAR09411,MAM02930e <=> ,ok,ok,ok,ok,N/A
 MAR09412,MAM02897e <=> ,ok,ok,ok,ok,N/A
-MAR09413,MAM02936e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09413,MAM02936e <=> ,ok,ok,ok,ok,N/A
 MAR09414,MAM02937e <=> ,ok,ok,ok,ok,N/A
-MAR09415,MAM02943e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09416,MAM02945e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09417,MAM01745e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09415,MAM02943e <=> ,ok,ok,ok,ok,N/A
+MAR09416,MAM02945e <=> ,ok,ok,ok,ok,N/A
+MAR09417,MAM01745e <=> ,ok,ok,ok,ok,N/A
 MAR09418,MAM02961e <=> ,ok,ok,ok,ok,N/A
-MAR09419,MAM02673e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09419,MAM02673e <=> ,ok,ok,ok,ok,N/A
 MAR09420,MAM02986e <=> ,ok,ok,ok,ok,N/A
 MAR09421,MAM02980e <=> ,ok,ok,ok,ok,N/A
 MAR09422,MAM02997e <=> ,ok,ok,ok,ok,N/A
 MAR09423,MAM02996e <=> ,ok,ok,ok,ok,N/A
 MAR09424,MAM02998e <=> ,ok,ok,ok,ok,N/A
-MAR09425,MAM03001e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09426,MAM03039e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09425,MAM03001e <=> ,ok,ok,ok,ok,N/A
+MAR09426,MAM03039e <=> ,ok,ok,ok,ok,N/A
 MAR09427,MAM03052e <=> ,ok,ok,ok,ok,N/A
-MAR09428,MAM00734e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09428,MAM00734e <=> ,ok,ok,ok,ok,N/A
 MAR09429,MAM02969e <=> ,ok,ok,ok,ok,N/A
-MAR09430,MAM02967e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09431,MAM02968e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09430,MAM02967e <=> ,ok,ok,ok,ok,N/A
+MAR09431,MAM02968e <=> ,ok,ok,ok,ok,N/A
 MAR09432,MAM02991e <=> ,ok,ok,ok,ok,N/A
 MAR09433,MAM02994e <=> ,ok,ok,ok,ok,N/A
-MAR09434,MAM03100e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09434,MAM03100e <=> ,ok,ok,ok,ok,N/A
 MAR09435,MAM03106e <=> ,ok,ok,ok,ok,N/A
 MAR09436,MAM03114e <=> ,ok,ok,ok,ok,N/A
 MAR09437,MAM03118e <=> ,ok,ok,ok,ok,N/A
 MAR09438,MAM03121e <=> ,ok,ok,ok,ok,N/A
 MAR09439,MAM03123e <=> ,ok,ok,ok,ok,N/A
 MAR09440,MAM03130e <=> ,ok,ok,ok,ok,N/A
-MAR09441,MAM03141e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09442,MAM03142e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09443,MAM00325e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09444,MAM00371e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09441,MAM03141e <=> ,ok,ok,ok,ok,N/A
+MAR09442,MAM03142e <=> ,ok,ok,ok,ok,N/A
+MAR09443,MAM00325e <=> ,ok,ok,ok,ok,N/A
+MAR09444,MAM00371e <=> ,ok,ok,ok,ok,N/A
 MAR09445,MAM00403e <=> ,ok,ok,ok,ok,N/A
 MAR09446,MAM00432e <=> ,ok,ok,ok,ok,N/A
-MAR09447,MAM01913e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09448,MAM02445e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09449,MAM02723e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09450,MAM03154e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09447,MAM01913e <=> ,ok,ok,ok,ok,N/A
+MAR09448,MAM02445e <=> ,ok,ok,ok,ok,N/A
+MAR09449,MAM02723e <=> ,ok,ok,ok,ok,N/A
+MAR09450,MAM03154e <=> ,ok,ok,ok,ok,N/A
 MAR09451,MAM02191e <=> ,ok,ok,ok,ok,N/A
 MAR09452,MAM01788e <=> ,ok,ok,ok,ok,N/A
 MAR09453,MAM01800e <=> ,ok,ok,ok,ok,N/A
 MAR09454,MAM01740e <=> ,ok,ok,ok,ok,N/A
-MAR09455,MAM01640e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09456,MAM01286e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09457,MAM01287e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09458,MAM01743e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR09455,MAM01640e <=> ,ok,ok,ok,ok,N/A
+MAR09456,MAM01286e <=> ,ok,ok,ok,ok,N/A
+MAR09457,MAM01287e <=> ,ok,ok,ok,ok,N/A
+MAR09458,MAM01743e <=> ,ok,ok,ok,ok,N/A
 MAR09460,MAM01621e <=> ,ok,ok,ok,ok,N/A
-MAR09461,MAM01966e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09461,MAM01966e <=> ,ok,ok,ok,ok,N/A
 MAR09462,MAM02155e <=> ,ok,ok,ok,ok,N/A
 MAR09463,MAM01989e <=> ,ok,ok,ok,ok,N/A
-MAR09681,MAM02384e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09682,MAM01020e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR09683,MAM01111e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09681,MAM02384e <=> ,ok,ok,ok,ok,N/A
+MAR09682,MAM01020e <=> ,ok,ok,ok,ok,N/A
+MAR09683,MAM01111e <=> ,ok,ok,ok,ok,N/A
 MAR09684,MAM01303e <=> ,ok,ok,ok,ok,N/A
 MAR09685,MAM01682e <=> ,ok,ok,ok,ok,N/A
-MAR09686,MAM01870e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09687,MAM01872e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09688,MAM01887e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09689,MAM02524e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09686,MAM01870e <=> ,ok,ok,ok,ok,N/A
+MAR09687,MAM01872e <=> ,ok,ok,ok,ok,N/A
+MAR09688,MAM01887e <=> ,ok,ok,ok,ok,N/A
+MAR09689,MAM02524e <=> ,ok,ok,ok,ok,N/A
 MAR09690,MAM02659e <=> ,ok,ok,ok,ok,N/A
 MAR09691,MAM02814e <=> ,ok,ok,ok,ok,N/A
-MAR09692,MAM02924e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09692,MAM02924e <=> ,ok,ok,ok,ok,N/A
 MAR09693,MAM03151e <=> ,ok,ok,ok,ok,N/A
 MAR09694,MAM02137e <=> ,ok,ok,ok,ok,N/A
-MAR09695,MAM01874e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09696,MAM01881e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09697,MAM01883e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09695,MAM01874e <=> ,ok,ok,ok,ok,N/A
+MAR09696,MAM01881e <=> ,ok,ok,ok,ok,N/A
+MAR09697,MAM01883e <=> ,ok,ok,ok,ok,N/A
 MAR09698,MAM01884e <=> ,ok,ok,ok,ok,N/A
-MAR09699,MAM03131e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09700,MAM02516e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09699,MAM03131e <=> ,ok,ok,ok,ok,N/A
+MAR09700,MAM02516e <=> ,ok,ok,ok,ok,N/A
 MAR09701,MAM01603e <=> ,ok,ok,ok,ok,N/A
 MAR09702,MAM01604e <=> ,ok,ok,ok,ok,N/A
-MAR09703,MAM02022e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09704,MAM01687e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09705,MAM01665e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09706,MAM01955e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09707,MAM00771e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09708,MAM02458e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09703,MAM02022e <=> ,ok,ok,ok,ok,N/A
+MAR09704,MAM01687e <=> ,ok,ok,ok,ok,N/A
+MAR09705,MAM01665e <=> ,ok,ok,ok,ok,N/A
+MAR09706,MAM01955e <=> ,ok,ok,ok,ok,N/A
+MAR09707,MAM00771e <=> ,ok,ok,ok,ok,N/A
+MAR09708,MAM02458e <=> ,ok,ok,ok,ok,N/A
 MAR09709,MAM01610e <=> ,ok,ok,ok,ok,N/A
 MAR09710,MAM01612e <=> ,ok,ok,ok,ok,N/A
 MAR09711,MAM01613e <=> ,ok,ok,ok,ok,N/A
-MAR09712,MAM02462e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09713,MAM01006e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR09714,MAM02434e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09712,MAM02462e <=> ,ok,ok,ok,ok,N/A
+MAR09713,MAM01006e <=> ,ok,ok,ok,ok,N/A
+MAR09714,MAM02434e <=> ,ok,ok,ok,ok,N/A
 MAR09715,MAM02926e <=> ,ok,ok,ok,ok,N/A
-MAR09721,MAM01730e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09721,MAM01730e <=> ,ok,ok,ok,ok,N/A
 MAR09729,MAM03161e <=> ,ok,ok,ok,ok,N/A
 MAR09730,MAM01308e <=> ,ok,ok,ok,ok,N/A
 MAR09725,MAM02554c + MAM02555n <=> MAM02554n + MAM02555c,only when going forwards,ok,ok,ok,N/A
@@ -8130,7 +8073,7 @@ MAR00480,MAM01971g + MAM02040g --> MAM00149g + MAM03591g,MAM03591g,ok,ok,ok,N/A
 MAR00485,MAM01970g + MAM02040g --> MAM00148g + MAM03591g,MAM03591g,ok,ok,ok,N/A
 MAR00554,MAM01969g + MAM02040g --> MAM00143g + MAM03591g,MAM03591g,ok,ok,ok,N/A
 MAR00564,MAM01893e <=> ,MAM01893e,ok,ok,ok,N/A
-MAR00565,MAM03315e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR00565,MAM03315e <=> ,ok,ok,ok,ok,N/A
 MAR00566,MAM01291e <=> ,ok,ok,ok,ok,N/A
 MAR00567,MAM01771e <=> ,ok,ok,ok,ok,N/A
 MAR00568,MAM01362e <=> ,ok,ok,ok,ok,N/A
@@ -8144,12 +8087,12 @@ MAR00575,MAM00094e <=> ,ok,ok,ok,ok,N/A
 MAR00576,MAM01696e <=> ,ok,ok,ok,ok,N/A
 MAR00577,MAM02648e <=> ,ok,ok,ok,ok,N/A
 MAR00583,MAM01778e <=> ,ok,ok,ok,ok,N/A
-MAR00585,MAM03577e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR00595,MAM03578e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR00603,MAM03620e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR00606,MAM01992e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR00585,MAM03577e <=> ,ok,ok,ok,ok,N/A
+MAR00595,MAM03578e <=> ,ok,ok,ok,ok,N/A
+MAR00603,MAM03620e <=> ,ok,ok,ok,ok,N/A
+MAR00606,MAM01992e <=> ,ok,ok,ok,ok,N/A
 MAR00608,MAM03622e <=> ,ok,ok,ok,ok,N/A
-MAR00609,MAM03623e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR00609,MAM03623e <=> ,ok,ok,ok,ok,N/A
 MAR00611,MAM02674e <=> ,ok,ok,ok,ok,N/A
 MAR00617,MAM02675e <=> ,ok,ok,ok,ok,N/A
 MAR00618,MAM01432e <=> ,ok,ok,ok,ok,N/A
@@ -8168,7 +8111,7 @@ MAR00656,MAM02685e <=> ,ok,ok,ok,ok,N/A
 MAR00658,MAM02715e <=> ,ok,ok,ok,ok,N/A
 MAR00661,MAM02808e <=> ,ok,ok,ok,ok,N/A
 MAR00662,MAM02690e <=> ,ok,ok,ok,ok,N/A
-MAR00666,MAM02838e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR00666,MAM02838e <=> ,ok,ok,ok,ok,N/A
 MAR00693,MAM01232e <=> ,MAM01232e,ok,ok,ok,N/A
 MAR00694,MAM00291e <=> ,MAM00291e,ok,ok,ok,N/A
 MAR00695,MAM02939e <=> ,ok,ok,ok,ok,N/A
@@ -8183,7 +8126,7 @@ MAR00704,MAM01585e <=> ,ok,ok,ok,ok,N/A
 MAR00711,MAM04081e <=> ,MAM04081e,ok,ok,ok,N/A
 MAR00714,MAM01451e <=> ,ok,ok,ok,ok,N/A
 MAR00720,MAM01446e <=> ,ok,ok,ok,ok,N/A
-MAR00721,MAM01447e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR00721,MAM01447e <=> ,ok,ok,ok,ok,N/A
 MAR00722,MAM01448e <=> ,ok,ok,ok,ok,N/A
 MAR00723,MAM02040c + MAM03968c <=> MAM00128c + MAM00184c + MAM02039c,MAM03968c,ok,ok,ok,N/A
 MAR00724,MAM02040c + MAM03646c <=> MAM00184c + MAM02039c + MAM02675c,MAM03646c,ok,ok,ok,N/A
@@ -8457,27 +8400,27 @@ MAR01860,MAM01448c <=> MAM01448e,ok,ok,ok,ok,N/A
 MAR01869,MAM00969e <=> ,ok,ok,ok,ok,N/A
 MAR01871,MAM01155e <=> ,ok,ok,ok,ok,N/A
 MAR01873,MAM01623e <=> ,ok,ok,ok,ok,N/A
-MAR01912,MAM01686e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR01918,MAM01688e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR01912,MAM01686e <=> ,ok,ok,ok,ok,N/A
+MAR01918,MAM01688e <=> ,ok,ok,ok,ok,N/A
 MAR01921,MAM01984e <=> ,ok,ok,ok,ok,N/A
 MAR01922,MAM01690e <=> ,ok,ok,ok,ok,N/A
 MAR01923,MAM01752e <=> ,ok,ok,ok,ok,N/A
 MAR01938,MAM01753e <=> ,ok,ok,ok,ok,N/A
 MAR01939,MAM01802e <=> ,ok,ok,ok,ok,N/A
 MAR01946,MAM01831e <=> ,ok,ok,ok,ok,N/A
-MAR01947,MAM01967e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR01954,MAM02185e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR01947,MAM01967e <=> ,ok,ok,ok,ok,N/A
+MAR01954,MAM02185e <=> ,ok,ok,ok,ok,N/A
 MAR01955,MAM00810e <=> ,ok,ok,ok,ok,N/A
-MAR01956,MAM02333e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR01956,MAM02333e <=> ,ok,ok,ok,ok,N/A
 MAR01957,MAM00812e <=> ,ok,ok,ok,ok,N/A
-MAR01961,MAM01926e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR01961,MAM01926e <=> ,ok,ok,ok,ok,N/A
 MAR01964,MAM03127e <=> ,ok,ok,ok,ok,N/A
 MAR01965,MAM01605e <=> ,ok,ok,ok,ok,N/A
-MAR01966,MAM01925e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR01966,MAM01925e <=> ,ok,ok,ok,ok,N/A
 MAR01972,MAM02011e <=> ,ok,ok,ok,ok,N/A
-MAR01975,MAM02008e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR01984,MAM02806e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR01986,MAM03108e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR01975,MAM02008e <=> ,ok,ok,ok,ok,N/A
+MAR01984,MAM02806e <=> ,ok,ok,ok,ok,N/A
+MAR01986,MAM03108e <=> ,ok,ok,ok,ok,N/A
 MAR02021,MAM02040e + MAM03108e --> MAM01967e + 2 MAM02039e + MAM03114e,ok,ok,ok,ok,N/A
 MAR02023,MAM01365c + 2 MAM02555c + 2 MAM02630c --> MAM01588c + 2 MAM02040c + 2 MAM02554c + MAM02609c,ok,ok,ok,ok,N/A
 MAR02026,2 MAM01806r --> MAM02759r + MAM02764r,ok,ok,ok,ok,N/A
@@ -8708,7 +8651,7 @@ MAR03043,MAM02040e + MAM02318e <=> MAM02316e + MAM02360e,ok,ok,ok,ok,N/A
 MAR03044,MAM02040l + MAM02568l <=> MAM02566l + MAM02567l,MAM02566l;MAM02567l;MAM02568l,ok,ok,ok,N/A
 MAR03045,MAM02040e + MAM02570e <=> MAM02360e + MAM02569e,ok,ok,ok,ok,N/A
 MAR03046,MAM01738x + MAM02026x <=> MAM01138x,MAM01138x;MAM01738x,ok,ok,ok,N/A
-MAR03047,MAM01328c + MAM03103c <=> MAM01329c + MAM03102c,ok,ok,ok,ok,N/A
+MAR03047,MAM01329c + MAM02039c + MAM02555c --> MAM01328c + MAM02554c,MAM01328c;MAM01329c,ok,ok,ok,N/A
 MAR03048,MAM00788m + MAM01306m <=> MAM01974m + MAM02040m + MAM03151m,MAM00788m;MAM03151m,ok,ok,ok,N/A
 MAR03049,MAM02040c + MAM03370c <=> MAM02041c + MAM03371c,MAM03370c;MAM03371c,ok,ok,ok,N/A
 MAR03050,MAM02040c + MAM03372c <=> MAM02041c + MAM03373c,MAM03372c;MAM03373c,ok,ok,ok,N/A
@@ -9026,13 +8969,13 @@ MAR04230,MAM02787e <=> ,ok,ok,ok,ok,N/A
 MAR04234,MAM02788e <=> ,ok,ok,ok,ok,N/A
 MAR04236,MAM02790e <=> ,ok,ok,ok,ok,N/A
 MAR04238,MAM02792e <=> ,ok,ok,ok,ok,N/A
-MAR04240,MAM02444e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR04247,MAM01773e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR04240,MAM02444e <=> ,ok,ok,ok,ok,N/A
+MAR04247,MAM01773e <=> ,ok,ok,ok,ok,N/A
 MAR04256,MAM01597e <=> ,ok,ok,ok,ok,N/A
-MAR04258,MAM00866e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR04258,MAM00866e <=> ,ok,ok,ok,ok,N/A
 MAR04272,MAM02925e <=> ,ok,ok,ok,ok,N/A
 MAR04273,MAM02922e <=> ,ok,ok,ok,ok,N/A
-MAR04286,MAM02920e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR04286,MAM02920e <=> ,ok,ok,ok,ok,N/A
 MAR04289,MAM02158e <=> ,ok,ok,ok,ok,N/A
 MAR04292,MAM02921e <=> ,ok,ok,ok,ok,N/A
 MAR04293,MAM02449e <=> ,ok,ok,ok,ok,N/A
@@ -9044,8 +8987,8 @@ MAR04309,MAM01348e <=> ,ok,ok,ok,ok,N/A
 MAR04311,MAM01347e <=> ,ok,ok,ok,ok,N/A
 MAR04322,MAM02446e <=> ,ok,ok,ok,ok,N/A
 MAR04325,MAM02448e <=> ,ok,ok,ok,ok,N/A
-MAR04327,MAM03330e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR04334,MAM03525e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR04327,MAM03330e <=> ,ok,ok,ok,ok,N/A
+MAR04334,MAM03525e <=> ,ok,ok,ok,ok,N/A
 MAR04337,MAM00570e <=> ,ok,ok,ok,ok,N/A
 MAR04339,MAM00921e <=> ,ok,ok,ok,ok,N/A
 MAR04341,MAM02318e <=> ,ok,ok,ok,ok,N/A
@@ -9053,8 +8996,8 @@ MAR04349,MAM02315e <=> ,ok,ok,ok,ok,N/A
 MAR04353,MAM02316e <=> ,ok,ok,ok,ok,N/A
 MAR04357,MAM02570e <=> ,ok,ok,ok,ok,N/A
 MAR04359,MAM02569e <=> ,ok,ok,ok,ok,N/A
-MAR04361,MAM02314e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR04362,MAM02317e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR04361,MAM02314e <=> ,ok,ok,ok,ok,N/A
+MAR04362,MAM02317e <=> ,ok,ok,ok,ok,N/A
 MAR04364,MAM02551e <=> ,ok,ok,ok,ok,N/A
 MAR04366,MAM02550e <=> ,ok,ok,ok,ok,N/A
 MAR04369,MAM02429e <=> ,ok,ok,ok,ok,N/A
@@ -9062,9 +9005,9 @@ MAR04374,MAM02156e <=> ,ok,ok,ok,ok,N/A
 MAR04376,MAM02591e <=> ,ok,ok,ok,ok,N/A
 MAR04378,MAM01924e <=> ,ok,ok,ok,ok,N/A
 MAR04380,MAM01923e <=> ,ok,ok,ok,ok,N/A
-MAR04382,MAM03107e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR04382,MAM03107e <=> ,ok,ok,ok,ok,N/A
 MAR04384,MAM01430e <=> ,ok,ok,ok,ok,N/A
-MAR04389,MAM01679e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR04389,MAM01679e <=> ,ok,ok,ok,ok,N/A
 MAR04392,MAM01315e <=> ,ok,ok,ok,ok,N/A
 MAR04395,MAM01428e <=> ,MAM01428e,ok,ok,ok,N/A
 MAR04397,MAM00475e <=> ,MAM00475e,ok,ok,ok,N/A
@@ -9107,9 +9050,9 @@ MAR04639,MAM02348c + MAM03230c <=> MAM01597c + MAM03251c,only when going backwar
 MAR04645,MAM02634x <=> MAM02634c,ok,ok,ok,ok,N/A
 MAR04661,MAM03495x <=> MAM03495c,ok,ok,ok,ok,N/A
 MAR04671,MAM00159c + MAM02348c <=> MAM01597c + MAM03201c,ok,ok,ok,ok,N/A
-MAR04674,MAM02635x <=> MAM02635c,ok,ok,ok,ok,N/A
+MAR04674,MAM02635x <=> MAM02635c,only when going backwards,ok,ok,ok,N/A
 MAR04677,MAM02635c <=> MAM02635m,ok,ok,ok,ok,N/A
-MAR04678,MAM01412x + MAM02348x <=> MAM01597x + MAM02635x,ok,ok,ok,ok,N/A
+MAR04678,MAM01412x + MAM02348x <=> MAM01597x + MAM02635x,only when going backwards,ok,ok,ok,N/A
 MAR04707,MAM02189c + MAM02348c <=> MAM01597c + MAM03706c,only when going backwards,ok,ok,ok,N/A
 MAR04711,MAM02348c + MAM02999c <=> MAM01597c + MAM03496c,ok,ok,ok,ok,N/A
 MAR04719,MAM02122c + MAM02348c <=> MAM01597c + MAM03498c,ok,ok,ok,ok,N/A
@@ -9131,16 +9074,16 @@ MAR04813,MAM03560c <=> MAM03560e,only when going backwards,ok,ok,ok,N/A
 MAR04815,MAM03201e <=> ,ok,ok,ok,ok,N/A
 MAR04820,MAM03202e <=> ,ok,ok,ok,ok,N/A
 MAR04821,MAM03204e <=> ,ok,ok,ok,ok,N/A
-MAR04822,MAM03217e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR04823,MAM03219e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR04822,MAM03217e <=> ,ok,ok,ok,ok,N/A
+MAR04823,MAM03219e <=> ,ok,ok,ok,ok,N/A
 MAR04824,MAM03243e <=> ,ok,ok,ok,ok,N/A
-MAR04825,MAM03250e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR04826,MAM03251e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR04825,MAM03250e <=> ,ok,ok,ok,ok,N/A
+MAR04826,MAM03251e <=> ,ok,ok,ok,ok,N/A
 MAR04827,MAM03253e <=> ,MAM03253e,ok,ok,ok,N/A
 MAR04828,MAM03262e <=> ,ok,ok,ok,ok,N/A
-MAR04829,MAM03264e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR04830,MAM03266e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR04853,MAM03268e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR04829,MAM03264e <=> ,ok,ok,ok,ok,N/A
+MAR04830,MAM03266e <=> ,ok,ok,ok,ok,N/A
+MAR04853,MAM03268e <=> ,ok,ok,ok,ok,N/A
 MAR04857,MAM03487e <=> ,MAM03487e,ok,ok,ok,N/A
 MAR04859,MAM03488e <=> ,ok,ok,ok,ok,N/A
 MAR04866,MAM03489e <=> ,ok,ok,ok,ok,N/A
@@ -9161,9 +9104,9 @@ MAR04923,MAM01729e <=> ,ok,ok,ok,ok,N/A
 MAR04925,MAM03544e <=> ,MAM03544e,ok,ok,ok,N/A
 MAR04927,MAM01583e <=> ,ok,ok,ok,ok,N/A
 MAR04929,MAM01373e <=> ,ok,ok,ok,ok,N/A
-MAR04936,MAM03560e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR04943,MAM03706e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR04950,MAM03975e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR04936,MAM03560e <=> ,ok,ok,ok,ok,N/A
+MAR04943,MAM03706e <=> ,ok,ok,ok,ok,N/A
+MAR04950,MAM03975e <=> ,ok,ok,ok,ok,N/A
 MAR04965,MAM03980e <=> ,MAM03980e,ok,ok,ok,N/A
 MAR04968,MAM00039x + MAM01597x + MAM02040x + MAM02552x --> MAM01261x + MAM02039x + MAM02553x + MAM02644x,ok,ok,ok,ok,N/A
 MAR04970,MAM00678m + MAM02039m + MAM02555m --> MAM02554m + MAM03035m,ok,ok,ok,ok,N/A
@@ -9429,29 +9372,29 @@ MAR08274,MAM01371m + MAM01752m --> MAM01285m + MAM01747m,ok,ok,ok,ok,N/A
 MAR08301,MAM01753c <=> MAM01753m,ok,ok,ok,ok,N/A
 MAR08386,MAM03037e <=> ,ok,ok,ok,ok,N/A
 MAR08400,MAM01600e <=> ,ok,ok,ok,ok,N/A
-MAR08422,MAM03164e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR08423,MAM03483e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR08422,MAM03164e <=> ,ok,ok,ok,ok,N/A
+MAR08423,MAM03483e <=> ,ok,ok,ok,ok,N/A
 MAR08644,MAM01423e <=> ,ok,ok,ok,ok,N/A
 MAR08646,MAM00745e <=> ,ok,ok,ok,ok,N/A
-MAR08647,MAM03595e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08649,MAM03604e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08650,MAM03605e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08701,MAM03621e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR08705,MAM03631e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR08707,MAM03638e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR08708,MAM03639e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08832,MAM03640e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08916,MAM03641e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08948,MAM03714e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR08647,MAM03595e <=> ,ok,ok,ok,ok,N/A
+MAR08649,MAM03604e <=> ,ok,ok,ok,ok,N/A
+MAR08650,MAM03605e <=> ,ok,ok,ok,ok,N/A
+MAR08701,MAM03621e <=> ,ok,ok,ok,ok,N/A
+MAR08705,MAM03631e <=> ,ok,ok,ok,ok,N/A
+MAR08707,MAM03638e <=> ,ok,ok,ok,ok,N/A
+MAR08708,MAM03639e <=> ,ok,ok,ok,ok,N/A
+MAR08832,MAM03640e <=> ,ok,ok,ok,ok,N/A
+MAR08916,MAM03641e <=> ,ok,ok,ok,ok,N/A
+MAR08948,MAM03714e <=> ,ok,ok,ok,ok,N/A
 MAR08949,MAM03715e <=> ,ok,ok,ok,ok,N/A
-MAR08950,MAM03851e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR08951,MAM03852e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08952,MAM03853e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08953,MAM03854e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08954,MAM03907e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR08955,MAM03908e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08956,MAM03909e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR08957,MAM03910e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR08950,MAM03851e <=> ,ok,ok,ok,ok,N/A
+MAR08951,MAM03852e <=> ,ok,ok,ok,ok,N/A
+MAR08952,MAM03853e <=> ,ok,ok,ok,ok,N/A
+MAR08953,MAM03854e <=> ,ok,ok,ok,ok,N/A
+MAR08954,MAM03907e <=> ,ok,ok,ok,ok,N/A
+MAR08955,MAM03908e <=> ,ok,ok,ok,ok,N/A
+MAR08956,MAM03909e <=> ,ok,ok,ok,ok,N/A
+MAR08957,MAM03910e <=> ,ok,ok,ok,ok,N/A
 MAR08958,MAM03933e <=> ,ok,ok,ok,ok,N/A
 MAR08959,MAM02964e <=> ,ok,ok,ok,ok,N/A
 MAR08960,MAM01627e <=> ,ok,ok,ok,ok,N/A
@@ -9508,7 +9451,7 @@ MAR09021,MAM01116e <=> ,ok,ok,ok,ok,N/A
 MAR09025,MAM01127e <=> ,ok,ok,ok,ok,N/A
 MAR09026,MAM02871e <=> ,ok,ok,ok,ok,N/A
 MAR09027,MAM01304e <=> ,ok,ok,ok,ok,N/A
-MAR09028,MAM01342e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09028,MAM01342e <=> ,ok,ok,ok,ok,N/A
 MAR09029,MAM02559e <=> ,ok,ok,ok,ok,N/A
 MAR09030,MAM02439e <=> MAM02439c,ok,ok,ok,ok,N/A
 MAR09031,MAM01974c + MAM02659e <=> MAM01974e + MAM02659c,ok,ok,ok,ok,N/A
@@ -9552,7 +9495,7 @@ MAR09839,MAM02914e <=> MAM02914c,ok,ok,ok,ok,N/A
 MAR09840,MAM02585e <=> MAM02585c,ok,ok,ok,ok,N/A
 MAR09841,MAM02660e <=> MAM02660c,ok,ok,ok,ok,N/A
 MAR09842,MAM00674e <=> ,ok,ok,ok,ok,N/A
-MAR09843,MAM01103e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09843,MAM01103e <=> ,ok,ok,ok,ok,N/A
 MAR09844,MAM00923e <=> ,ok,ok,ok,ok,N/A
 MAR09845,MAM02738e <=> ,ok,ok,ok,ok,N/A
 MAR09846,MAM02349e <=> ,ok,ok,ok,ok,N/A
@@ -9627,7 +9570,7 @@ MAR09915,MAM02519c + MAM02639c --> MAM02519e + MAM02639e,ok,ok,ok,ok,N/A
 MAR09916,MAM02519c + MAM02940c --> MAM02519e + MAM02940e,ok,ok,ok,ok,N/A
 MAR09917,MAM02411c + MAM02519c --> MAM02411e + MAM02519e,ok,ok,ok,ok,N/A
 MAR09918,MAM02519c + MAM02676c --> MAM02519e + MAM02676e,ok,ok,ok,ok,N/A
-MAR09919,MAM01366e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09919,MAM01366e <=> ,ok,ok,ok,ok,N/A
 MAR09920,MAM02634e <=> ,ok,ok,ok,ok,N/A
 MAR09921,MAM02657e <=> ,ok,ok,ok,ok,N/A
 MAR09922,MAM00105e <=> ,ok,ok,ok,ok,N/A
@@ -9663,7 +9606,7 @@ MAR09952,MAM02040c + MAM03401c <=> MAM01252c + MAM02426c,ok,ok,ok,ok,N/A
 MAR09953,MAM02471c + MAM02819c <=> MAM01307c + MAM03276c,only when going backwards,ok,ok,ok,N/A
 MAR09954,MAM02039c + MAM03276c --> MAM01596c + MAM03248c,ok,ok,ok,ok,N/A
 MAR09955,MAM03248c --> MAM03248e,ok,ok,ok,ok,N/A
-MAR09956,MAM03248e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR09956,MAM03248e <=> ,ok,ok,ok,ok,N/A
 MAR09957,MAM00126c + MAM02519c <=> MAM00126e + MAM02519e,ok,ok,ok,ok,N/A
 MAR09958,MAM03619c <=> MAM02914c,ok,ok,ok,ok,N/A
 MAR09959,MAM02388c + MAM02519c <=> MAM02388e + MAM02519e,ok,ok,ok,ok,N/A
@@ -9782,25 +9725,25 @@ MAR10181,MAM01892e <=> ,ok,ok,ok,ok,N/A
 MAR10182,MAM00605e <=> ,ok,ok,ok,ok,N/A
 MAR10183,MAM00670e <=> ,ok,ok,ok,ok,N/A
 MAR10184,MAM01004e <=> ,ok,ok,ok,ok,N/A
-MAR10185,MAM00784e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10185,MAM00784e <=> ,ok,ok,ok,ok,N/A
 MAR10186,MAM02142e <=> ,ok,ok,ok,ok,N/A
-MAR10187,MAM03234e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10187,MAM03234e <=> ,ok,ok,ok,ok,N/A
 MAR10188,MAM03247e <=> ,ok,ok,ok,ok,N/A
 MAR10189,MAM00922e <=> ,ok,ok,ok,ok,N/A
-MAR10190,MAM00952e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10190,MAM00952e <=> ,ok,ok,ok,ok,N/A
 MAR10191,MAM01922e <=> ,ok,ok,ok,ok,N/A
 MAR10192,MAM01705e <=> ,ok,ok,ok,ok,N/A
 MAR10193,MAM01052e <=> ,ok,ok,ok,ok,N/A
 MAR10194,MAM01042e <=> ,ok,ok,ok,ok,N/A
 MAR10195,MAM02805e <=> ,ok,ok,ok,ok,N/A
-MAR10196,MAM03397e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10196,MAM03397e <=> ,ok,ok,ok,ok,N/A
 MAR10197,MAM03401e <=> ,ok,ok,ok,ok,N/A
 MAR10198,MAM02546e <=> ,ok,ok,ok,ok,N/A
-MAR10199,MAM03406e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10199,MAM03406e <=> ,ok,ok,ok,ok,N/A
 MAR10200,MAM03408e <=> ,ok,ok,ok,ok,N/A
 MAR10201,MAM03410e <=> ,ok,ok,ok,ok,N/A
 MAR10202,MAM02877e <=> ,ok,ok,ok,ok,N/A
-MAR10203,MAM03433e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10203,MAM03433e <=> ,ok,ok,ok,ok,N/A
 MAR10204,MAM03434e <=> ,MAM03434e,ok,ok,ok,N/A
 MAR10205,MAM01399e <=> ,ok,ok,ok,ok,N/A
 MAR10206,MAM00169e <=> ,ok,ok,ok,ok,N/A
@@ -9810,7 +9753,7 @@ MAR10209,MAM01040e <=> ,ok,ok,ok,ok,N/A
 MAR10210,MAM02796e <=> ,ok,ok,ok,ok,N/A
 MAR10211,MAM02395e <=> ,ok,ok,ok,ok,N/A
 MAR10212,MAM02396e <=> ,ok,ok,ok,ok,N/A
-MAR10213,MAM01335e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10213,MAM01335e <=> ,ok,ok,ok,ok,N/A
 MAR10214,MAM01054e <=> ,ok,ok,ok,ok,N/A
 MAR10215,MAM00279e <=> ,ok,ok,ok,ok,N/A
 MAR10216,MAM00366e <=> ,ok,ok,ok,ok,N/A
@@ -9821,16 +9764,16 @@ MAR10220,MAM01087e <=> ,ok,ok,ok,ok,N/A
 MAR10221,MAM03329e <=> ,ok,ok,ok,ok,N/A
 MAR10222,MAM02530e <=> ,ok,ok,ok,ok,N/A
 MAR10223,MAM02531e <=> ,ok,ok,ok,ok,N/A
-MAR10224,MAM01392e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10224,MAM01392e <=> ,ok,ok,ok,ok,N/A
 MAR10225,MAM00830e <=> ,ok,ok,ok,ok,N/A
-MAR10226,MAM01172e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10226,MAM01172e <=> ,ok,ok,ok,ok,N/A
 MAR10227,MAM00378e <=> ,ok,ok,ok,ok,N/A
 MAR10228,MAM03569e <=> ,ok,ok,ok,ok,N/A
 MAR10229,MAM00384e <=> ,ok,ok,ok,ok,N/A
 MAR10230,MAM01337e <=> ,ok,ok,ok,ok,N/A
-MAR10231,MAM01047e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10231,MAM01047e <=> ,ok,ok,ok,ok,N/A
 MAR10232,MAM00376e <=> ,ok,ok,ok,ok,N/A
-MAR10233,MAM02365e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10233,MAM02365e <=> ,ok,ok,ok,ok,N/A
 MAR10234,MAM00365e <=> ,ok,ok,ok,ok,N/A
 MAR10235,MAM01616e <=> ,ok,ok,ok,ok,N/A
 MAR10236,MAM03550e <=> ,MAM03550e,ok,ok,ok,N/A
@@ -9848,8 +9791,8 @@ MAR10247,MAM02135e <=> ,ok,ok,ok,ok,N/A
 MAR10248,MAM02132e <=> ,ok,ok,ok,ok,N/A
 MAR10249,MAM03681e <=> ,ok,ok,ok,ok,N/A
 MAR10250,MAM02122e <=> ,ok,ok,ok,ok,N/A
-MAR10251,MAM00585e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10252,MAM00599e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10251,MAM00585e <=> ,ok,ok,ok,ok,N/A
+MAR10252,MAM00599e <=> ,ok,ok,ok,ok,N/A
 MAR10253,MAM03724e <=> ,MAM03724e,ok,ok,ok,N/A
 MAR10254,MAM02388e <=> ,ok,ok,ok,ok,N/A
 MAR10255,MAM02413e <=> ,ok,ok,ok,ok,N/A
@@ -9898,7 +9841,7 @@ MAR10297,MAM03832e <=> ,ok,ok,ok,ok,N/A
 MAR10298,MAM03833e <=> ,ok,ok,ok,ok,N/A
 MAR10299,MAM03834e <=> ,ok,ok,ok,ok,N/A
 MAR10300,MAM03835e <=> ,ok,ok,ok,ok,N/A
-MAR10301,MAM02381e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR10301,MAM02381e <=> ,ok,ok,ok,ok,N/A
 MAR10302,MAM03838e <=> ,ok,ok,ok,ok,N/A
 MAR10303,MAM03839e <=> ,ok,ok,ok,ok,N/A
 MAR10304,MAM03840e <=> ,ok,ok,ok,ok,N/A
@@ -9939,19 +9882,19 @@ MAR10338,MAM03953e <=> ,MAM03953e,ok,ok,ok,N/A
 MAR10339,MAM03954e <=> ,ok,ok,ok,ok,N/A
 MAR10340,MAM03976e <=> ,ok,ok,ok,ok,N/A
 MAR10341,MAM03977e <=> ,MAM03977e,ok,ok,ok,N/A
-MAR10342,MAM02992e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10342,MAM02992e <=> ,ok,ok,ok,ok,N/A
 MAR10343,MAM02517e <=> ,ok,ok,ok,ok,N/A
 MAR10344,MAM04006e <=> ,MAM04006e,ok,ok,ok,N/A
 MAR10345,MAM02974e <=> ,ok,ok,ok,ok,N/A
 MAR10346,MAM02995e <=> ,ok,ok,ok,ok,N/A
 MAR10347,MAM03124e <=> ,ok,ok,ok,ok,N/A
 MAR10348,MAM00270e <=> ,ok,ok,ok,ok,N/A
-MAR10349,MAM04075e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10350,MAM04076e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10351,MAM04077e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10352,MAM04078e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10353,MAM04079e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10354,MAM04080e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR10349,MAM04075e <=> ,ok,ok,ok,ok,N/A
+MAR10350,MAM04076e <=> ,ok,ok,ok,ok,N/A
+MAR10351,MAM04077e <=> ,ok,ok,ok,ok,N/A
+MAR10352,MAM04078e <=> ,ok,ok,ok,ok,N/A
+MAR10353,MAM04079e <=> ,ok,ok,ok,ok,N/A
+MAR10354,MAM04080e <=> ,ok,ok,ok,ok,N/A
 MAR10355,MAM02574c <=> MAM02574e,ok,ok,ok,ok,N/A
 MAR10356,MAM01909c <=> MAM01909e,ok,ok,ok,ok,N/A
 MAR10357,MAM01261m + MAM01986m --> MAM01597m + MAM02039m + MAM03397m,ok,ok,ok,ok,N/A
@@ -10011,23 +9954,23 @@ MAR10411,MAM00270r + MAM01371r + MAM02040r --> MAM00270c + MAM01285r + MAM02039r
 MAR10412,MAM01261m + MAM02184m --> MAM01597m + MAM02039m + MAM03399m,ok,ok,ok,ok,N/A
 MAR10413,MAM03399m <=> MAM03399c,only when going backwards,ok,ok,ok,N/A
 MAR10414,MAM03399c <=> MAM03399e,only when going backwards,ok,ok,ok,N/A
-MAR10415,MAM03399e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10415,MAM03399e <=> ,ok,ok,ok,ok,N/A
 MAR10416,MAM01261m + MAM02360m --> MAM01597m + MAM02039m + MAM03400m,ok,ok,ok,ok,N/A
 MAR10417,MAM03400m <=> MAM03400c,only when going backwards,ok,ok,ok,N/A
 MAR10418,MAM03400c <=> MAM03400e,only when going backwards,ok,ok,ok,N/A
-MAR10419,MAM03400e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10419,MAM03400e <=> ,ok,ok,ok,ok,N/A
 MAR10420,MAM03398m <=> MAM03398c,only when going backwards,ok,ok,ok,N/A
 MAR10421,MAM03398c <=> MAM03398e,only when going backwards,ok,ok,ok,N/A
-MAR10422,MAM03398e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10422,MAM03398e <=> ,ok,ok,ok,ok,N/A
 MAR10423,MAM03862c <=> MAM03862e,only when going backwards,ok,ok,ok,N/A
-MAR10424,MAM03862e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10424,MAM03862e <=> ,ok,ok,ok,ok,N/A
 MAR10425,MAM01371c + MAM01788c + MAM02040c --> MAM01285c + MAM01788e + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
 MAR10426,MAM03232e <=> ,ok,ok,ok,ok,N/A
 MAR10427,MAM00821e <=> ,ok,ok,ok,ok,N/A
 MAR10428,MAM01074e <=> ,ok,ok,ok,ok,N/A
 MAR10429,MAM03396e <=> ,ok,ok,ok,ok,N/A
-MAR10430,MAM02536e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10431,MAM01313e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10430,MAM02536e <=> ,ok,ok,ok,ok,N/A
+MAR10431,MAM01313e <=> ,ok,ok,ok,ok,N/A
 MAR10432,MAM01584e <=> ,ok,ok,ok,ok,N/A
 MAR10434,MAM02344e <=> ,ok,ok,ok,ok,N/A
 MAR10435,MAM03619e <=> ,ok,ok,ok,ok,N/A
@@ -10067,8 +10010,8 @@ MAR10472,MAM03215e <=> ,MAM03215e,ok,ok,ok,N/A
 MAR10473,MAM03231e <=> ,ok,ok,ok,ok,N/A
 MAR10474,MAM02123e <=> ,ok,ok,ok,ok,N/A
 MAR10475,MAM01380e <=> ,ok,ok,ok,ok,N/A
-MAR10476,MAM03836e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10477,MAM03837e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10476,MAM03836e <=> ,ok,ok,ok,ok,N/A
+MAR10477,MAM03837e <=> ,ok,ok,ok,ok,N/A
 MAR10478,MAM03703e <=> ,MAM03703e,ok,ok,ok,N/A
 MAR10479,MAM02622e <=> MAM02622c,ok,ok,ok,ok,N/A
 MAR10480,MAM02407e <=> MAM02407c,ok,ok,ok,ok,N/A
@@ -10088,248 +10031,248 @@ MAR10493,MAM02451e <=> ,ok,ok,ok,ok,N/A
 MAR10494,MAM03896e <=> ,ok,ok,ok,ok,N/A
 MAR10495,MAM01698e <=> ,ok,ok,ok,ok,N/A
 MAR10496,MAM02978e <=> ,ok,ok,ok,ok,N/A
-MAR10497,MAM03411e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10498,MAM03412e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10499,MAM03413e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10500,MAM03414e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10501,MAM03415e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10502,MAM03416e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10503,MAM03435e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10504,MAM03436e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10505,MAM03437e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10506,MAM03438e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10507,MAM03439e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10508,MAM03440e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10509,MAM03441e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10510,MAM03442e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10511,MAM03443e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10512,MAM03444e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10513,MAM03445e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10514,MAM03446e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10515,MAM03447e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10516,MAM03448e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10517,MAM03449e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10518,MAM03450e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10519,MAM03451e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10520,MAM03452e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10521,MAM03453e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10522,MAM03454e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10523,MAM03455e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10524,MAM03456e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10525,MAM03457e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10526,MAM03458e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10527,MAM03459e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10528,MAM03460e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10529,MAM03461e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10530,MAM03462e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10531,MAM03463e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10532,MAM03464e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10533,MAM03465e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10534,MAM03466e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10535,MAM03467e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10536,MAM03468e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10537,MAM03469e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10538,MAM03470e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10539,MAM03471e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10540,MAM03472e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10541,MAM03473e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10542,MAM03474e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10543,MAM03475e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10544,MAM03527e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10545,MAM03528e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10546,MAM03529e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10547,MAM03530e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10548,MAM03531e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10549,MAM03532e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10550,MAM03533e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10551,MAM03534e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10552,MAM03535e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10553,MAM03596e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10554,MAM03597e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10555,MAM03598e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10556,MAM03599e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10557,MAM03600e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10558,MAM03601e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10559,MAM03602e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10560,MAM03603e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10561,MAM03606e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10562,MAM03607e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10563,MAM03608e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10564,MAM03609e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10565,MAM03610e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10566,MAM03611e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10567,MAM03612e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10568,MAM03616e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10569,MAM03617e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10570,MAM03618e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10571,MAM03624e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10572,MAM03625e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10573,MAM03627e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10574,MAM03628e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10575,MAM03632e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10576,MAM03633e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10577,MAM03662e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10578,MAM03663e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10579,MAM03664e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10580,MAM03665e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10581,MAM03666e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10582,MAM03667e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10583,MAM03668e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10584,MAM03669e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10585,MAM03670e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10586,MAM03671e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10587,MAM03672e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10588,MAM03673e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10589,MAM03674e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10590,MAM03675e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10591,MAM03676e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10592,MAM03677e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10593,MAM03678e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10594,MAM03679e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10595,MAM03680e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10596,MAM03693e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10597,MAM03694e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10598,MAM03695e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10599,MAM03696e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10600,MAM03697e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10601,MAM03698e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10602,MAM03699e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10603,MAM03700e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10604,MAM03711e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10605,MAM03712e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10606,MAM03713e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10607,MAM03716e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10608,MAM03717e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10609,MAM03718e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10610,MAM03719e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10611,MAM03720e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10612,MAM03721e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10613,MAM03722e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10614,MAM03723e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10615,MAM03738e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10616,MAM03739e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10617,MAM03740e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10618,MAM03741e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10619,MAM03742e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10620,MAM03743e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10621,MAM03744e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10622,MAM03745e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10623,MAM03746e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10624,MAM03747e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10625,MAM03760e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10626,MAM03761e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10627,MAM03762e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10628,MAM03763e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10629,MAM03764e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10630,MAM03767e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10631,MAM03768e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10632,MAM03769e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10633,MAM03864e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10634,MAM03865e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10635,MAM03866e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10636,MAM03867e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10637,MAM03868e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10638,MAM03869e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10639,MAM03870e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10640,MAM03871e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10641,MAM03872e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10642,MAM03873e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10643,MAM03874e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10644,MAM03875e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10645,MAM03876e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10646,MAM03877e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10647,MAM03878e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10648,MAM03879e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10649,MAM03880e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10650,MAM03881e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10651,MAM03888e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10652,MAM03889e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10653,MAM03890e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10654,MAM03891e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10655,MAM03894e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10656,MAM03895e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10657,MAM03897e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10658,MAM03898e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10659,MAM03899e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10660,MAM03900e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10661,MAM03901e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10662,MAM03902e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10663,MAM03903e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10664,MAM03904e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10665,MAM03905e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10666,MAM03906e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10667,MAM03925e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10668,MAM03926e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10669,MAM03927e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10670,MAM03928e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10671,MAM03929e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10672,MAM03930e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10673,MAM03931e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10674,MAM03983e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10675,MAM03984e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10676,MAM03986e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10677,MAM03987e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10678,MAM03988e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10679,MAM03989e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10680,MAM03990e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10681,MAM03991e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10682,MAM03992e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10683,MAM03993e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10684,MAM03994e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10685,MAM04008e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10686,MAM04009e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10687,MAM04010e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10688,MAM04011e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10689,MAM04012e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10690,MAM04013e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10691,MAM04014e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10692,MAM04015e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10693,MAM04017e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10694,MAM04018e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10695,MAM04019e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10696,MAM04020e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10697,MAM04021e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10698,MAM04022e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10699,MAM04023e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10700,MAM04024e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10701,MAM04025e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10702,MAM04026e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10703,MAM04027e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10704,MAM04028e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10705,MAM04029e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10706,MAM04030e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10707,MAM04031e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10708,MAM04032e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10709,MAM04033e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10710,MAM04034e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10711,MAM04035e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10712,MAM04036e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10713,MAM04037e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10714,MAM04043e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10715,MAM04044e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10716,MAM04045e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10717,MAM04046e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10718,MAM04047e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10719,MAM04048e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10720,MAM04049e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10721,MAM04050e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10722,MAM04051e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10723,MAM04052e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10724,MAM04053e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10725,MAM04054e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10726,MAM04055e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10727,MAM04056e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10728,MAM04062e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10729,MAM04063e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10730,MAM04064e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10731,MAM04065e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10732,MAM04066e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10733,MAM04067e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10734,MAM04068e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10735,MAM04069e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10736,MAM04070e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10737,MAM04071e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR10738,MAM04016e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR10497,MAM03411e <=> ,ok,ok,ok,ok,N/A
+MAR10498,MAM03412e <=> ,ok,ok,ok,ok,N/A
+MAR10499,MAM03413e <=> ,ok,ok,ok,ok,N/A
+MAR10500,MAM03414e <=> ,ok,ok,ok,ok,N/A
+MAR10501,MAM03415e <=> ,ok,ok,ok,ok,N/A
+MAR10502,MAM03416e <=> ,ok,ok,ok,ok,N/A
+MAR10503,MAM03435e <=> ,ok,ok,ok,ok,N/A
+MAR10504,MAM03436e <=> ,ok,ok,ok,ok,N/A
+MAR10505,MAM03437e <=> ,ok,ok,ok,ok,N/A
+MAR10506,MAM03438e <=> ,ok,ok,ok,ok,N/A
+MAR10507,MAM03439e <=> ,ok,ok,ok,ok,N/A
+MAR10508,MAM03440e <=> ,ok,ok,ok,ok,N/A
+MAR10509,MAM03441e <=> ,ok,ok,ok,ok,N/A
+MAR10510,MAM03442e <=> ,ok,ok,ok,ok,N/A
+MAR10511,MAM03443e <=> ,ok,ok,ok,ok,N/A
+MAR10512,MAM03444e <=> ,ok,ok,ok,ok,N/A
+MAR10513,MAM03445e <=> ,ok,ok,ok,ok,N/A
+MAR10514,MAM03446e <=> ,ok,ok,ok,ok,N/A
+MAR10515,MAM03447e <=> ,ok,ok,ok,ok,N/A
+MAR10516,MAM03448e <=> ,ok,ok,ok,ok,N/A
+MAR10517,MAM03449e <=> ,ok,ok,ok,ok,N/A
+MAR10518,MAM03450e <=> ,ok,ok,ok,ok,N/A
+MAR10519,MAM03451e <=> ,ok,ok,ok,ok,N/A
+MAR10520,MAM03452e <=> ,ok,ok,ok,ok,N/A
+MAR10521,MAM03453e <=> ,ok,ok,ok,ok,N/A
+MAR10522,MAM03454e <=> ,ok,ok,ok,ok,N/A
+MAR10523,MAM03455e <=> ,ok,ok,ok,ok,N/A
+MAR10524,MAM03456e <=> ,ok,ok,ok,ok,N/A
+MAR10525,MAM03457e <=> ,ok,ok,ok,ok,N/A
+MAR10526,MAM03458e <=> ,ok,ok,ok,ok,N/A
+MAR10527,MAM03459e <=> ,ok,ok,ok,ok,N/A
+MAR10528,MAM03460e <=> ,ok,ok,ok,ok,N/A
+MAR10529,MAM03461e <=> ,ok,ok,ok,ok,N/A
+MAR10530,MAM03462e <=> ,ok,ok,ok,ok,N/A
+MAR10531,MAM03463e <=> ,ok,ok,ok,ok,N/A
+MAR10532,MAM03464e <=> ,ok,ok,ok,ok,N/A
+MAR10533,MAM03465e <=> ,ok,ok,ok,ok,N/A
+MAR10534,MAM03466e <=> ,ok,ok,ok,ok,N/A
+MAR10535,MAM03467e <=> ,ok,ok,ok,ok,N/A
+MAR10536,MAM03468e <=> ,ok,ok,ok,ok,N/A
+MAR10537,MAM03469e <=> ,ok,ok,ok,ok,N/A
+MAR10538,MAM03470e <=> ,ok,ok,ok,ok,N/A
+MAR10539,MAM03471e <=> ,ok,ok,ok,ok,N/A
+MAR10540,MAM03472e <=> ,ok,ok,ok,ok,N/A
+MAR10541,MAM03473e <=> ,ok,ok,ok,ok,N/A
+MAR10542,MAM03474e <=> ,ok,ok,ok,ok,N/A
+MAR10543,MAM03475e <=> ,ok,ok,ok,ok,N/A
+MAR10544,MAM03527e <=> ,ok,ok,ok,ok,N/A
+MAR10545,MAM03528e <=> ,ok,ok,ok,ok,N/A
+MAR10546,MAM03529e <=> ,ok,ok,ok,ok,N/A
+MAR10547,MAM03530e <=> ,ok,ok,ok,ok,N/A
+MAR10548,MAM03531e <=> ,ok,ok,ok,ok,N/A
+MAR10549,MAM03532e <=> ,ok,ok,ok,ok,N/A
+MAR10550,MAM03533e <=> ,ok,ok,ok,ok,N/A
+MAR10551,MAM03534e <=> ,ok,ok,ok,ok,N/A
+MAR10552,MAM03535e <=> ,ok,ok,ok,ok,N/A
+MAR10553,MAM03596e <=> ,ok,ok,ok,ok,N/A
+MAR10554,MAM03597e <=> ,ok,ok,ok,ok,N/A
+MAR10555,MAM03598e <=> ,ok,ok,ok,ok,N/A
+MAR10556,MAM03599e <=> ,ok,ok,ok,ok,N/A
+MAR10557,MAM03600e <=> ,ok,ok,ok,ok,N/A
+MAR10558,MAM03601e <=> ,ok,ok,ok,ok,N/A
+MAR10559,MAM03602e <=> ,ok,ok,ok,ok,N/A
+MAR10560,MAM03603e <=> ,ok,ok,ok,ok,N/A
+MAR10561,MAM03606e <=> ,ok,ok,ok,ok,N/A
+MAR10562,MAM03607e <=> ,ok,ok,ok,ok,N/A
+MAR10563,MAM03608e <=> ,ok,ok,ok,ok,N/A
+MAR10564,MAM03609e <=> ,ok,ok,ok,ok,N/A
+MAR10565,MAM03610e <=> ,ok,ok,ok,ok,N/A
+MAR10566,MAM03611e <=> ,ok,ok,ok,ok,N/A
+MAR10567,MAM03612e <=> ,ok,ok,ok,ok,N/A
+MAR10568,MAM03616e <=> ,ok,ok,ok,ok,N/A
+MAR10569,MAM03617e <=> ,ok,ok,ok,ok,N/A
+MAR10570,MAM03618e <=> ,ok,ok,ok,ok,N/A
+MAR10571,MAM03624e <=> ,ok,ok,ok,ok,N/A
+MAR10572,MAM03625e <=> ,ok,ok,ok,ok,N/A
+MAR10573,MAM03627e <=> ,ok,ok,ok,ok,N/A
+MAR10574,MAM03628e <=> ,ok,ok,ok,ok,N/A
+MAR10575,MAM03632e <=> ,ok,ok,ok,ok,N/A
+MAR10576,MAM03633e <=> ,ok,ok,ok,ok,N/A
+MAR10577,MAM03662e <=> ,ok,ok,ok,ok,N/A
+MAR10578,MAM03663e <=> ,ok,ok,ok,ok,N/A
+MAR10579,MAM03664e <=> ,ok,ok,ok,ok,N/A
+MAR10580,MAM03665e <=> ,ok,ok,ok,ok,N/A
+MAR10581,MAM03666e <=> ,ok,ok,ok,ok,N/A
+MAR10582,MAM03667e <=> ,ok,ok,ok,ok,N/A
+MAR10583,MAM03668e <=> ,ok,ok,ok,ok,N/A
+MAR10584,MAM03669e <=> ,ok,ok,ok,ok,N/A
+MAR10585,MAM03670e <=> ,ok,ok,ok,ok,N/A
+MAR10586,MAM03671e <=> ,ok,ok,ok,ok,N/A
+MAR10587,MAM03672e <=> ,ok,ok,ok,ok,N/A
+MAR10588,MAM03673e <=> ,ok,ok,ok,ok,N/A
+MAR10589,MAM03674e <=> ,ok,ok,ok,ok,N/A
+MAR10590,MAM03675e <=> ,ok,ok,ok,ok,N/A
+MAR10591,MAM03676e <=> ,ok,ok,ok,ok,N/A
+MAR10592,MAM03677e <=> ,ok,ok,ok,ok,N/A
+MAR10593,MAM03678e <=> ,ok,ok,ok,ok,N/A
+MAR10594,MAM03679e <=> ,ok,ok,ok,ok,N/A
+MAR10595,MAM03680e <=> ,ok,ok,ok,ok,N/A
+MAR10596,MAM03693e <=> ,ok,ok,ok,ok,N/A
+MAR10597,MAM03694e <=> ,ok,ok,ok,ok,N/A
+MAR10598,MAM03695e <=> ,ok,ok,ok,ok,N/A
+MAR10599,MAM03696e <=> ,ok,ok,ok,ok,N/A
+MAR10600,MAM03697e <=> ,ok,ok,ok,ok,N/A
+MAR10601,MAM03698e <=> ,ok,ok,ok,ok,N/A
+MAR10602,MAM03699e <=> ,ok,ok,ok,ok,N/A
+MAR10603,MAM03700e <=> ,ok,ok,ok,ok,N/A
+MAR10604,MAM03711e <=> ,ok,ok,ok,ok,N/A
+MAR10605,MAM03712e <=> ,ok,ok,ok,ok,N/A
+MAR10606,MAM03713e <=> ,ok,ok,ok,ok,N/A
+MAR10607,MAM03716e <=> ,ok,ok,ok,ok,N/A
+MAR10608,MAM03717e <=> ,ok,ok,ok,ok,N/A
+MAR10609,MAM03718e <=> ,ok,ok,ok,ok,N/A
+MAR10610,MAM03719e <=> ,ok,ok,ok,ok,N/A
+MAR10611,MAM03720e <=> ,ok,ok,ok,ok,N/A
+MAR10612,MAM03721e <=> ,ok,ok,ok,ok,N/A
+MAR10613,MAM03722e <=> ,ok,ok,ok,ok,N/A
+MAR10614,MAM03723e <=> ,ok,ok,ok,ok,N/A
+MAR10615,MAM03738e <=> ,ok,ok,ok,ok,N/A
+MAR10616,MAM03739e <=> ,ok,ok,ok,ok,N/A
+MAR10617,MAM03740e <=> ,ok,ok,ok,ok,N/A
+MAR10618,MAM03741e <=> ,ok,ok,ok,ok,N/A
+MAR10619,MAM03742e <=> ,ok,ok,ok,ok,N/A
+MAR10620,MAM03743e <=> ,ok,ok,ok,ok,N/A
+MAR10621,MAM03744e <=> ,ok,ok,ok,ok,N/A
+MAR10622,MAM03745e <=> ,ok,ok,ok,ok,N/A
+MAR10623,MAM03746e <=> ,ok,ok,ok,ok,N/A
+MAR10624,MAM03747e <=> ,ok,ok,ok,ok,N/A
+MAR10625,MAM03760e <=> ,ok,ok,ok,ok,N/A
+MAR10626,MAM03761e <=> ,ok,ok,ok,ok,N/A
+MAR10627,MAM03762e <=> ,ok,ok,ok,ok,N/A
+MAR10628,MAM03763e <=> ,ok,ok,ok,ok,N/A
+MAR10629,MAM03764e <=> ,ok,ok,ok,ok,N/A
+MAR10630,MAM03767e <=> ,ok,ok,ok,ok,N/A
+MAR10631,MAM03768e <=> ,ok,ok,ok,ok,N/A
+MAR10632,MAM03769e <=> ,ok,ok,ok,ok,N/A
+MAR10633,MAM03864e <=> ,ok,ok,ok,ok,N/A
+MAR10634,MAM03865e <=> ,ok,ok,ok,ok,N/A
+MAR10635,MAM03866e <=> ,ok,ok,ok,ok,N/A
+MAR10636,MAM03867e <=> ,ok,ok,ok,ok,N/A
+MAR10637,MAM03868e <=> ,ok,ok,ok,ok,N/A
+MAR10638,MAM03869e <=> ,ok,ok,ok,ok,N/A
+MAR10639,MAM03870e <=> ,ok,ok,ok,ok,N/A
+MAR10640,MAM03871e <=> ,ok,ok,ok,ok,N/A
+MAR10641,MAM03872e <=> ,ok,ok,ok,ok,N/A
+MAR10642,MAM03873e <=> ,ok,ok,ok,ok,N/A
+MAR10643,MAM03874e <=> ,ok,ok,ok,ok,N/A
+MAR10644,MAM03875e <=> ,ok,ok,ok,ok,N/A
+MAR10645,MAM03876e <=> ,ok,ok,ok,ok,N/A
+MAR10646,MAM03877e <=> ,ok,ok,ok,ok,N/A
+MAR10647,MAM03878e <=> ,ok,ok,ok,ok,N/A
+MAR10648,MAM03879e <=> ,ok,ok,ok,ok,N/A
+MAR10649,MAM03880e <=> ,ok,ok,ok,ok,N/A
+MAR10650,MAM03881e <=> ,ok,ok,ok,ok,N/A
+MAR10651,MAM03888e <=> ,ok,ok,ok,ok,N/A
+MAR10652,MAM03889e <=> ,ok,ok,ok,ok,N/A
+MAR10653,MAM03890e <=> ,ok,ok,ok,ok,N/A
+MAR10654,MAM03891e <=> ,ok,ok,ok,ok,N/A
+MAR10655,MAM03894e <=> ,ok,ok,ok,ok,N/A
+MAR10656,MAM03895e <=> ,ok,ok,ok,ok,N/A
+MAR10657,MAM03897e <=> ,ok,ok,ok,ok,N/A
+MAR10658,MAM03898e <=> ,ok,ok,ok,ok,N/A
+MAR10659,MAM03899e <=> ,ok,ok,ok,ok,N/A
+MAR10660,MAM03900e <=> ,ok,ok,ok,ok,N/A
+MAR10661,MAM03901e <=> ,ok,ok,ok,ok,N/A
+MAR10662,MAM03902e <=> ,ok,ok,ok,ok,N/A
+MAR10663,MAM03903e <=> ,ok,ok,ok,ok,N/A
+MAR10664,MAM03904e <=> ,ok,ok,ok,ok,N/A
+MAR10665,MAM03905e <=> ,ok,ok,ok,ok,N/A
+MAR10666,MAM03906e <=> ,ok,ok,ok,ok,N/A
+MAR10667,MAM03925e <=> ,ok,ok,ok,ok,N/A
+MAR10668,MAM03926e <=> ,ok,ok,ok,ok,N/A
+MAR10669,MAM03927e <=> ,ok,ok,ok,ok,N/A
+MAR10670,MAM03928e <=> ,ok,ok,ok,ok,N/A
+MAR10671,MAM03929e <=> ,ok,ok,ok,ok,N/A
+MAR10672,MAM03930e <=> ,ok,ok,ok,ok,N/A
+MAR10673,MAM03931e <=> ,ok,ok,ok,ok,N/A
+MAR10674,MAM03983e <=> ,ok,ok,ok,ok,N/A
+MAR10675,MAM03984e <=> ,ok,ok,ok,ok,N/A
+MAR10676,MAM03986e <=> ,ok,ok,ok,ok,N/A
+MAR10677,MAM03987e <=> ,ok,ok,ok,ok,N/A
+MAR10678,MAM03988e <=> ,ok,ok,ok,ok,N/A
+MAR10679,MAM03989e <=> ,ok,ok,ok,ok,N/A
+MAR10680,MAM03990e <=> ,ok,ok,ok,ok,N/A
+MAR10681,MAM03991e <=> ,ok,ok,ok,ok,N/A
+MAR10682,MAM03992e <=> ,ok,ok,ok,ok,N/A
+MAR10683,MAM03993e <=> ,ok,ok,ok,ok,N/A
+MAR10684,MAM03994e <=> ,ok,ok,ok,ok,N/A
+MAR10685,MAM04008e <=> ,ok,ok,ok,ok,N/A
+MAR10686,MAM04009e <=> ,ok,ok,ok,ok,N/A
+MAR10687,MAM04010e <=> ,ok,ok,ok,ok,N/A
+MAR10688,MAM04011e <=> ,ok,ok,ok,ok,N/A
+MAR10689,MAM04012e <=> ,ok,ok,ok,ok,N/A
+MAR10690,MAM04013e <=> ,ok,ok,ok,ok,N/A
+MAR10691,MAM04014e <=> ,ok,ok,ok,ok,N/A
+MAR10692,MAM04015e <=> ,ok,ok,ok,ok,N/A
+MAR10693,MAM04017e <=> ,ok,ok,ok,ok,N/A
+MAR10694,MAM04018e <=> ,ok,ok,ok,ok,N/A
+MAR10695,MAM04019e <=> ,ok,ok,ok,ok,N/A
+MAR10696,MAM04020e <=> ,ok,ok,ok,ok,N/A
+MAR10697,MAM04021e <=> ,ok,ok,ok,ok,N/A
+MAR10698,MAM04022e <=> ,ok,ok,ok,ok,N/A
+MAR10699,MAM04023e <=> ,ok,ok,ok,ok,N/A
+MAR10700,MAM04024e <=> ,ok,ok,ok,ok,N/A
+MAR10701,MAM04025e <=> ,ok,ok,ok,ok,N/A
+MAR10702,MAM04026e <=> ,ok,ok,ok,ok,N/A
+MAR10703,MAM04027e <=> ,ok,ok,ok,ok,N/A
+MAR10704,MAM04028e <=> ,ok,ok,ok,ok,N/A
+MAR10705,MAM04029e <=> ,ok,ok,ok,ok,N/A
+MAR10706,MAM04030e <=> ,ok,ok,ok,ok,N/A
+MAR10707,MAM04031e <=> ,ok,ok,ok,ok,N/A
+MAR10708,MAM04032e <=> ,ok,ok,ok,ok,N/A
+MAR10709,MAM04033e <=> ,ok,ok,ok,ok,N/A
+MAR10710,MAM04034e <=> ,ok,ok,ok,ok,N/A
+MAR10711,MAM04035e <=> ,ok,ok,ok,ok,N/A
+MAR10712,MAM04036e <=> ,ok,ok,ok,ok,N/A
+MAR10713,MAM04037e <=> ,ok,ok,ok,ok,N/A
+MAR10714,MAM04043e <=> ,ok,ok,ok,ok,N/A
+MAR10715,MAM04044e <=> ,ok,ok,ok,ok,N/A
+MAR10716,MAM04045e <=> ,ok,ok,ok,ok,N/A
+MAR10717,MAM04046e <=> ,ok,ok,ok,ok,N/A
+MAR10718,MAM04047e <=> ,ok,ok,ok,ok,N/A
+MAR10719,MAM04048e <=> ,ok,ok,ok,ok,N/A
+MAR10720,MAM04049e <=> ,ok,ok,ok,ok,N/A
+MAR10721,MAM04050e <=> ,ok,ok,ok,ok,N/A
+MAR10722,MAM04051e <=> ,ok,ok,ok,ok,N/A
+MAR10723,MAM04052e <=> ,ok,ok,ok,ok,N/A
+MAR10724,MAM04053e <=> ,ok,ok,ok,ok,N/A
+MAR10725,MAM04054e <=> ,ok,ok,ok,ok,N/A
+MAR10726,MAM04055e <=> ,ok,ok,ok,ok,N/A
+MAR10727,MAM04056e <=> ,ok,ok,ok,ok,N/A
+MAR10728,MAM04062e <=> ,ok,ok,ok,ok,N/A
+MAR10729,MAM04063e <=> ,ok,ok,ok,ok,N/A
+MAR10730,MAM04064e <=> ,ok,ok,ok,ok,N/A
+MAR10731,MAM04065e <=> ,ok,ok,ok,ok,N/A
+MAR10732,MAM04066e <=> ,ok,ok,ok,ok,N/A
+MAR10733,MAM04067e <=> ,ok,ok,ok,ok,N/A
+MAR10734,MAM04068e <=> ,ok,ok,ok,ok,N/A
+MAR10735,MAM04069e <=> ,ok,ok,ok,ok,N/A
+MAR10736,MAM04070e <=> ,ok,ok,ok,ok,N/A
+MAR10737,MAM04071e <=> ,ok,ok,ok,ok,N/A
+MAR10738,MAM04016e <=> ,ok,ok,ok,ok,N/A
 MAR10739,MAM02039e + MAM03411e <=> MAM02039c + MAM03411c,only when going backwards,ok,ok,ok,N/A
 MAR10740,MAM02039e + MAM03412e <=> MAM02039c + MAM03412c,only when going backwards,ok,ok,ok,N/A
 MAR10741,MAM02039e + MAM03413e <=> MAM02039c + MAM03413c,only when going backwards,ok,ok,ok,N/A
@@ -10921,10 +10864,10 @@ MAR11332,MAM03774c <=> MAM03774e,MAM03774c;MAM03774e,ok,ok,ok,N/A
 MAR11333,MAM03776c <=> MAM03776e,MAM03776c;MAM03776e,ok,ok,ok,N/A
 MAR11334,MAM01651e <=> MAM01651c,ok,ok,ok,ok,N/A
 MAR11335,MAM02907g --> MAM02907e,ok,ok,ok,ok,N/A
-MAR11336,MAM01609e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11336,MAM01609e <=> ,ok,ok,ok,ok,N/A
 MAR11337,MAM01801e <=> ,ok,ok,ok,ok,N/A
 MAR11338,MAM03585e <=> ,MAM03585e,ok,ok,ok,N/A
-MAR11339,MAM01954e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11339,MAM01954e <=> ,ok,ok,ok,ok,N/A
 MAR11340,MAM03772e <=> ,MAM03772e,ok,ok,ok,N/A
 MAR11341,MAM03773e <=> ,MAM03773e,ok,ok,ok,N/A
 MAR11342,MAM03774e <=> ,MAM03774e,ok,ok,ok,N/A
@@ -10932,13 +10875,13 @@ MAR11343,MAM03776e <=> ,MAM03776e,ok,ok,ok,N/A
 MAR11344,MAM01651e <=> ,ok,ok,ok,ok,N/A
 MAR11345,MAM02393e <=> ,ok,ok,ok,ok,N/A
 MAR11346,MAM02393e <=> MAM02393c,ok,ok,ok,ok,N/A
-MAR11347,MAM02525e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11347,MAM02525e <=> ,ok,ok,ok,ok,N/A
 MAR11348,MAM02543e <=> ,ok,ok,ok,ok,N/A
 MAR11349,MAM01620e <=> ,ok,ok,ok,ok,N/A
 MAR11350,MAM01580e <=> ,ok,ok,ok,ok,N/A
 MAR11351,MAM01372e <=> ,ok,ok,ok,ok,N/A
 MAR11352,MAM02733e <=> ,MAM02733e,ok,ok,ok,N/A
-MAR11353,MAM02654e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11353,MAM02654e <=> ,ok,ok,ok,ok,N/A
 MAR11354,MAM01801e <=> MAM01801l,ok,ok,ok,ok,N/A
 MAR11355,MAM01801e <=> MAM01801g,ok,ok,ok,ok,N/A
 MAR11356,MAM01954g <=> MAM01954c,only when going backwards,ok,ok,ok,N/A
@@ -10972,7 +10915,7 @@ MAR11383,MAM01182c + MAM01371c + MAM02040c --> MAM01182e + MAM01285c + MAM02039c
 MAR11384,MAM01182c + MAM02519c <=> MAM01182e + MAM02519e,ok,ok,ok,ok,N/A
 MAR11385,MAM01182e <=> ,ok,ok,ok,ok,N/A
 MAR11386,MAM01178c + MAM01371c + MAM02040c --> MAM01178e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11387,MAM01178e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11387,MAM01178e <=> ,ok,ok,ok,ok,N/A
 MAR11388,MAM01371c + MAM02040c + MAM03313c --> MAM01285c + MAM02039c + MAM02751c + MAM03313e,ok,ok,ok,ok,N/A
 MAR11389,MAM02519c + MAM03313c <=> MAM02519e + MAM03313e,ok,ok,ok,ok,N/A
 MAR11390,MAM03313e <=> ,ok,ok,ok,ok,N/A
@@ -10986,11 +10929,11 @@ MAR11397,MAM01630e + MAM02039e <=> MAM01630c + MAM02039c,ok,ok,ok,ok,N/A
 MAR11398,MAM01756c + MAM02040c --> MAM01755c + MAM02039c + MAM02759c,ok,ok,ok,ok,N/A
 MAR11399,MAM01306c + MAM02358c --> MAM00989c + MAM01974c,MAM00989c;MAM02358c,ok,ok,ok,N/A
 MAR11400,MAM01862e <=> ,ok,ok,ok,ok,N/A
-MAR11401,MAM03626e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR11402,MAM03629e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR11401,MAM03626e <=> ,ok,ok,ok,ok,N/A
+MAR11402,MAM03629e <=> ,ok,ok,ok,ok,N/A
 MAR11403,MAM03630e <=> ,ok,ok,ok,ok,N/A
 MAR11404,MAM02439e <=> ,ok,ok,ok,ok,N/A
-MAR11405,MAM02759e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11405,MAM02759e <=> ,ok,ok,ok,ok,N/A
 MAR11406,MAM01821c + MAM02803c --> 2 MAM02039c + MAM02049c,ok,ok,ok,ok,N/A
 MAR11407,4 MAM01821c + 4 MAM02039c + MAM02630c --> 4 MAM01822c + 2 MAM02040c,MAM01822c,ok,ok,ok,N/A
 MAR11408,MAM01806c + MAM02187c --> MAM02759c + MAM03590c,MAM03590c,ok,ok,ok,N/A
@@ -11004,10 +10947,10 @@ MAR11415,MAM02039e + MAM02170e <=> MAM02039c + MAM02170c,ok,ok,ok,ok,N/A
 MAR11416,MAM01371c + MAM01628c + MAM01636c --> MAM00163c + MAM01334c + MAM02039c + MAM02759c,ok,ok,ok,ok,N/A
 MAR11417,MAM02039e + MAM02996e <=> MAM02039c + MAM02996c,ok,ok,ok,ok,N/A
 MAR11418,MAM02039e + MAM03123e <=> MAM02039c + MAM03123c,ok,ok,ok,ok,N/A
-MAR11419,MAM02169e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11419,MAM02169e <=> ,ok,ok,ok,ok,N/A
 MAR11420,MAM02579e <=> ,ok,ok,ok,ok,N/A
 MAR11422,MAM01909e <=> ,ok,ok,ok,ok,N/A
-MAR11423,MAM01681e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11423,MAM01681e <=> ,ok,ok,ok,ok,N/A
 MAR11424,MAM01973e <=> ,ok,ok,ok,ok,N/A
 MAR11425,MAM02447e <=> ,ok,ok,ok,ok,N/A
 MAR11426,MAM02812e <=> ,ok,ok,ok,ok,N/A
@@ -11015,7 +10958,7 @@ MAR11427,MAM02923e <=> ,ok,ok,ok,ok,N/A
 MAR11428,MAM03148e <=> ,ok,ok,ok,ok,N/A
 MAR11429,MAM02040c + MAM03193c <=> MAM03771c,MAM03193c;MAM03771c,ok,ok,ok,N/A
 MAR11430,MAM02039c + MAM02633c --> MAM01596c + MAM02819c,ok,ok,ok,ok,N/A
-MAR11431,MAM00995e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11431,MAM00995e <=> ,ok,ok,ok,ok,N/A
 MAR11432,MAM00729e <=> ,ok,ok,ok,ok,N/A
 MAR11433,MAM02039c + MAM02982e <=> MAM02039e + MAM02982c,ok,ok,MAR06059,MAR06059,N/A
 MAR11434,MAM03775e <=> ,MAM03775e,ok,ok,ok,N/A
@@ -11024,33 +10967,33 @@ MAR11436,MAM03701e <=> ,MAM03701e,ok,ok,ok,N/A
 MAR11437,MAM03510e <=> ,MAM03510e,ok,ok,ok,N/A
 MAR11438,MAM02725e <=> ,ok,ok,ok,ok,N/A
 MAR11439,MAM03099e <=> ,ok,ok,ok,ok,N/A
-MAR11440,MAM00654e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11441,MAM02336e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11440,MAM00654e <=> ,ok,ok,ok,ok,N/A
+MAR11441,MAM02336e <=> ,ok,ok,ok,ok,N/A
 MAR11442,MAM02039e + MAM02725e <=> MAM02039c + MAM02725c,ok,ok,ok,ok,N/A
 MAR11443,MAM02039m + MAM02725m <=> MAM02039c + MAM02725c,ok,ok,ok,ok,N/A
 MAR11444,MAM03136m --> MAM03136c,ok,ok,ok,ok,N/A
 MAR11445,MAM03136c --> MAM03136e,ok,ok,ok,ok,N/A
-MAR11446,MAM03136e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11446,MAM03136e <=> ,ok,ok,ok,ok,N/A
 MAR11447,MAM02007c --> MAM02007e,ok,ok,ok,ok,N/A
-MAR11448,MAM02007e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11448,MAM02007e <=> ,ok,ok,ok,ok,N/A
 MAR11449,MAM00664m --> MAM00664c,ok,ok,ok,ok,N/A
 MAR11450,MAM00664c + MAM01442c + 3 MAM02519c <=> MAM00664e + MAM01442e + 3 MAM02519e,only when going backwards,ok,ok,ok,N/A
-MAR11451,MAM00664e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11451,MAM00664e <=> ,ok,ok,ok,ok,N/A
 MAR11452,MAM00825m --> MAM00825c,ok,ok,ok,ok,N/A
 MAR11453,MAM00825c + MAM01442c + 3 MAM02519c <=> MAM00825e + MAM01442e + 3 MAM02519e,only when going backwards,ok,ok,ok,N/A
-MAR11454,MAM00825e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11454,MAM00825e <=> ,ok,ok,ok,ok,N/A
 MAR11455,MAM02190m --> MAM02190c,ok,ok,ok,ok,N/A
 MAR11456,MAM01442c + MAM02190c + 3 MAM02519c <=> MAM01442e + MAM02190e + 3 MAM02519e,only when going backwards,ok,ok,ok,N/A
-MAR11457,MAM02190e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11457,MAM02190e <=> ,ok,ok,ok,ok,N/A
 MAR11458,MAM01261m + MAM03101m --> MAM01597m + MAM02039m + MAM03407m,ok,ok,ok,ok,N/A
 MAR11459,MAM03407m --> MAM03407c,ok,ok,ok,ok,N/A
 MAR11460,MAM03407c --> MAM03407e,ok,ok,ok,ok,N/A
-MAR11461,MAM03407e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11461,MAM03407e <=> ,ok,ok,ok,ok,N/A
 MAR11462,MAM01863c + MAM02039c + MAM02553c --> MAM02552c + MAM03956c,ok,ok,ok,ok,N/A
 MAR11463,MAM01010c + MAM02039c + MAM02553c --> MAM02552c + MAM03956c,ok,ok,ok,ok,N/A
 MAR11464,MAM02039c + MAM03956c --> MAM01596c + MAM03957c,ok,ok,ok,ok,N/A
 MAR11465,MAM03957c --> MAM03957e,ok,ok,ok,ok,N/A
-MAR11466,MAM03957e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11466,MAM03957e <=> ,ok,ok,ok,ok,N/A
 MAR11467,MAM00830c + MAM01306c <=> MAM01974c + MAM04073c,only when going backwards,ok,ok,ok,N/A
 MAR11468,MAM02039c + MAM02553c + MAM04073c <=> MAM02552c + MAM04072c,only when going backwards,ok,ok,ok,N/A
 MAR11469,MAM00830c --> MAM00830m,ok,ok,ok,ok,N/A
@@ -11058,8 +11001,8 @@ MAR11470,MAM00830m + MAM01261m --> MAM01597m + MAM02039m + MAM03778m,ok,ok,ok,ok
 MAR11471,MAM03778m --> MAM03778c,ok,ok,ok,ok,N/A
 MAR11472,MAM03778c --> MAM03778e,ok,ok,ok,ok,N/A
 MAR11473,MAM04072c --> MAM04072e,ok,ok,ok,ok,N/A
-MAR11474,MAM04072e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11475,MAM03778e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11474,MAM04072e <=> ,ok,ok,ok,ok,N/A
+MAR11475,MAM03778e <=> ,ok,ok,ok,ok,N/A
 MAR11476,MAM00669c + MAM02039c + MAM02553c <=> MAM02552c + MAM03176c,ok,ok,ok,ok,N/A
 MAR11477,MAM03176c <=> MAM03176e,ok,ok,ok,ok,N/A
 MAR11478,MAM03176e <=> ,ok,ok,ok,ok,N/A
@@ -11069,34 +11012,34 @@ MAR11481,MAM03186e <=> ,ok,ok,ok,ok,N/A
 MAR11482,MAM00171m + MAM02040m --> MAM01597m + MAM02039m + MAM03189m,ok,ok,ok,ok,N/A
 MAR11483,MAM03189m --> MAM03189c,ok,ok,ok,ok,N/A
 MAR11484,MAM03189c --> MAM03189e,ok,ok,ok,ok,N/A
-MAR11485,MAM03189e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11485,MAM03189e <=> ,ok,ok,ok,ok,N/A
 MAR11486,2 MAM02774m <=> MAM01597m + MAM03192m,only when going backwards,ok,ok,ok,N/A
 MAR11487,MAM02040m + MAM03192m --> MAM01597m + MAM02039m + MAM03191m,ok,ok,ok,ok,N/A
 MAR11488,MAM03191m --> MAM03191c,ok,ok,ok,ok,N/A
 MAR11489,MAM02039c + MAM02553c + MAM03191c <=> MAM02552c + MAM03190c,only when going backwards,ok,ok,ok,N/A
 MAR11490,MAM03190c --> MAM03190e,ok,ok,ok,ok,N/A
-MAR11491,MAM03190e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11491,MAM03190e <=> ,ok,ok,ok,ok,N/A
 MAR11492,MAM02040c + MAM02131c --> MAM01597c + MAM02039c + MAM03212c,ok,ok,ok,ok,N/A
 MAR11493,MAM03212c --> MAM03212e,ok,ok,ok,ok,N/A
-MAR11494,MAM03212e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11494,MAM03212e <=> ,ok,ok,ok,ok,N/A
 MAR11495,MAM00827m + MAM02040m --> MAM01597m + MAM02039m + MAM03245m,ok,ok,ok,ok,N/A
 MAR11496,MAM03245m --> MAM03245c,ok,ok,ok,ok,N/A
 MAR11497,MAM03245c --> MAM03245e,ok,ok,ok,ok,N/A
-MAR11498,MAM03245e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11498,MAM03245e <=> ,ok,ok,ok,ok,N/A
 MAR11499,MAM02039c + MAM02555c + MAM03245c --> MAM02554c + MAM03246c,ok,ok,ok,ok,N/A
 MAR11500,MAM03246c --> MAM03246e,ok,ok,ok,ok,N/A
-MAR11501,MAM03246e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11501,MAM03246e <=> ,ok,ok,ok,ok,N/A
 MAR11502,MAM01986m + MAM02774m <=> MAM01597m + MAM02039m + MAM03886m,only when going backwards,ok,ok,ok,N/A
 MAR11503,MAM03886m --> MAM03886c,ok,ok,ok,ok,N/A
 MAR11504,MAM03886c --> MAM03886e,ok,ok,ok,ok,N/A
-MAR11505,MAM03886e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11505,MAM03886e <=> ,ok,ok,ok,ok,N/A
 MAR11506,MAM00167c + MAM02039c --> MAM02040c + MAM03777c,ok,ok,ok,ok,N/A
 MAR11507,MAM03777c --> MAM03777e,ok,ok,ok,ok,N/A
-MAR11508,MAM03777e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11508,MAM03777e <=> ,ok,ok,ok,ok,N/A
 MAR11509,MAM01986m + MAM02999m <=> MAM01597m + MAM02039m + MAM03997m,only when going backwards,ok,ok,ok,N/A
 MAR11510,MAM03997m --> MAM03997c,ok,ok,ok,ok,N/A
 MAR11511,MAM03997c --> MAM03997e,ok,ok,ok,ok,N/A
-MAR11512,MAM03997e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11512,MAM03997e <=> ,ok,ok,ok,ok,N/A
 MAR11513,MAM01802m + MAM01977m --> MAM01803m + MAM03964m,ok,ok,ok,ok,N/A
 MAR11514,MAM02040m + MAM03964m --> MAM03222m,ok,ok,ok,ok,N/A
 MAR11515,MAM02040m + MAM03222m --> MAM01597m + MAM02039m + MAM03257m,ok,ok,ok,ok,N/A
@@ -11108,51 +11051,51 @@ MAR11520,MAM01802m + MAM01977m --> MAM01803m + MAM03613m,ok,ok,ok,ok,N/A
 MAR11521,MAM02040m + MAM03613m --> MAM01597m + MAM02039m + MAM03615m,ok,ok,ok,ok,N/A
 MAR11522,MAM03615m --> MAM03615c,ok,ok,ok,ok,N/A
 MAR11523,MAM03615c --> MAM03615e,ok,ok,ok,ok,N/A
-MAR11524,MAM03615e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11524,MAM03615e <=> ,ok,ok,ok,ok,N/A
 MAR11525,MAM02040m + MAM03242m --> MAM01597m + MAM02039m + MAM03227m,ok,ok,ok,ok,N/A
 MAR11526,MAM03227m --> MAM03227c,ok,ok,ok,ok,N/A
 MAR11527,MAM03227c --> MAM03227e,ok,ok,ok,ok,N/A
-MAR11528,MAM03227e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11528,MAM03227e <=> ,ok,ok,ok,ok,N/A
 MAR11529,MAM01802x + MAM02040x + MAM03409x --> MAM01803x + MAM03213x,ok,ok,ok,ok,N/A
 MAR11530,MAM02040x + MAM03213x --> MAM01597x + MAM02039x + MAM03214x,ok,ok,ok,ok,N/A
 MAR11531,MAM03214x --> MAM03214c,ok,ok,ok,ok,N/A
 MAR11532,MAM03214c --> MAM03214e,ok,ok,ok,ok,N/A
-MAR11533,MAM03214e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11533,MAM03214e <=> ,ok,ok,ok,ok,N/A
 MAR11534,MAM01802x + MAM02040x + MAM03924x --> MAM01803x + MAM03259x,ok,ok,ok,ok,N/A
 MAR11535,MAM02040x + MAM03259x --> MAM01597x + MAM02039x + MAM03258x,ok,ok,ok,ok,N/A
 MAR11536,MAM03258x --> MAM03258c,ok,ok,ok,ok,N/A
 MAR11537,MAM03258c --> MAM03258e,ok,ok,ok,ok,N/A
-MAR11538,MAM03258e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11538,MAM03258e <=> ,ok,ok,ok,ok,N/A
 MAR11539,MAM01802x + MAM02040x + MAM03922x --> MAM01803x + MAM03261x,ok,ok,ok,ok,N/A
 MAR11540,MAM02040x + MAM03261x --> MAM01597x + MAM02039x + MAM03260x,ok,ok,ok,ok,N/A
 MAR11541,MAM03260x --> MAM03260c,ok,ok,ok,ok,N/A
 MAR11542,MAM03260c --> MAM03260e,ok,ok,ok,ok,N/A
-MAR11543,MAM03260e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11543,MAM03260e <=> ,ok,ok,ok,ok,N/A
 MAR11544,MAM02040c + MAM02122c --> MAM01597c + MAM02039c + MAM02120c,ok,ok,ok,ok,N/A
 MAR11545,MAM02039c + MAM02120c + MAM02555c + MAM02630c --> MAM02040c + MAM02554c + MAM03287c,ok,ok,ok,ok,N/A
 MAR11546,MAM03287c --> MAM03287e,ok,ok,ok,ok,N/A
-MAR11547,MAM03287e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11547,MAM03287e <=> ,ok,ok,ok,ok,N/A
 MAR11548,MAM02039c + MAM02555c + MAM02630c + MAM02642c --> MAM02040c + MAM02554c + MAM03314c,ok,ok,ok,ok,N/A
 MAR11549,MAM03314c --> MAM03314e,ok,ok,ok,ok,N/A
-MAR11550,MAM03314e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11550,MAM03314e <=> ,ok,ok,ok,ok,N/A
 MAR11551,MAM01412c + MAM01596c --> MAM02039c + MAM03576c,ok,ok,ok,ok,N/A
 MAR11552,MAM02040c + MAM03576c --> MAM01597c + MAM02039c + MAM03575c,ok,ok,ok,ok,N/A
 MAR11553,MAM03575c --> MAM03575e,ok,ok,ok,ok,N/A
-MAR11554,MAM03575e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11554,MAM03575e <=> ,ok,ok,ok,ok,N/A
 MAR11555,MAM01986c + MAM02122c --> MAM01597c + MAM02039c + MAM03660c,ok,ok,ok,ok,N/A
 MAR11556,MAM03660c --> MAM03660e,ok,ok,ok,ok,N/A
-MAR11557,MAM03660e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11557,MAM03660e <=> ,ok,ok,ok,ok,N/A
 MAR11558,MAM03576c --> MAM03766c,ok,ok,ok,ok,N/A
 MAR11559,MAM02040c + MAM03766c --> MAM01597c + MAM02039c + MAM03765c,ok,ok,ok,ok,N/A
 MAR11560,MAM03765c --> MAM03765e,ok,ok,ok,ok,N/A
-MAR11561,MAM03765e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11561,MAM03765e <=> ,ok,ok,ok,ok,N/A
 MAR11562,MAM01986c + MAM03922c --> MAM01597c + MAM02039c + MAM03955c,ok,ok,ok,ok,N/A
 MAR11563,MAM03955c --> MAM03955e,ok,ok,ok,ok,N/A
-MAR11564,MAM03955e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11564,MAM03955e <=> ,ok,ok,ok,ok,N/A
 MAR11565,MAM02039m + MAM02553m + MAM02942m --> MAM02552m + MAM03277m,ok,ok,ok,ok,N/A
 MAR11566,MAM03277m --> MAM03277c,ok,ok,ok,ok,N/A
 MAR11567,MAM03277c --> MAM03277e,ok,ok,ok,ok,N/A
-MAR11568,MAM03277e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11568,MAM03277e <=> ,ok,ok,ok,ok,N/A
 MAR11569,MAM00309e --> MAM00309c,ok,ok,ok,ok,N/A
 MAR11570,MAM00380e --> MAM00380c,ok,ok,ok,ok,N/A
 MAR11571,MAM02325e + 2 MAM02519e <=> MAM02325c + 2 MAM02519c,ok,ok,ok,ok,N/A
@@ -11302,23 +11245,23 @@ MAR11735,MAM03614c --> MAM03614e,ok,ok,ok,ok,N/A
 MAR11736,MAM02040m + MAM03982m --> MAM01597m + MAM02039m + MAM03981m,ok,ok,ok,ok,N/A
 MAR11737,MAM02039i + MAM03981m --> MAM02039m + MAM03981c,ok,ok,ok,ok,N/A
 MAR11738,MAM01371c + MAM02040c + MAM03981c --> MAM01285c + MAM02039c + MAM02751c + MAM03981e,ok,ok,ok,ok,N/A
-MAR11739,MAM03981e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11739,MAM03981e <=> ,ok,ok,ok,ok,N/A
 MAR11740,MAM02040m + MAM03658m --> MAM01597m + MAM02039m + MAM03657m,ok,ok,ok,ok,N/A
 MAR11741,MAM02039i + MAM03657m --> MAM02039m + MAM03657c,ok,ok,ok,ok,N/A
 MAR11742,MAM01371c + MAM02040c + MAM03657c --> MAM01285c + MAM02039c + MAM02751c + MAM03657e,ok,ok,ok,ok,N/A
-MAR11743,MAM03657e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11743,MAM03657e <=> ,ok,ok,ok,ok,N/A
 MAR11744,MAM01802m + MAM02101m --> MAM01803m + MAM03683m,ok,ok,ok,ok,N/A
 MAR11745,MAM02040m + MAM03683m --> MAM01597m + MAM02039m + MAM03682m,ok,ok,ok,ok,N/A
 MAR11746,MAM02039i + MAM03682m --> MAM02039m + MAM03682c,ok,ok,ok,ok,N/A
 MAR11747,MAM01371c + MAM02040c + MAM03682c --> MAM01285c + MAM02039c + MAM02751c + MAM03682e,ok,ok,ok,ok,N/A
-MAR11748,MAM03682e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11748,MAM03682e <=> ,ok,ok,ok,ok,N/A
 MAR11749,MAM02040c + MAM03007c --> MAM01597c + MAM02039c + MAM03568c,ok,ok,ok,ok,N/A
 MAR11750,MAM01371c + MAM02040c + MAM03568c --> MAM01285c + MAM02039c + MAM02751c + MAM03568e,ok,ok,ok,ok,N/A
-MAR11751,MAM03568e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11751,MAM03568e <=> ,ok,ok,ok,ok,N/A
 MAR11752,MAM02040m + MAM03284m --> MAM01597m + MAM02039m + MAM03283m,ok,ok,ok,ok,N/A
 MAR11753,MAM02039i + MAM03283m --> MAM02039m + MAM03283c,ok,ok,ok,ok,N/A
 MAR11754,MAM01371c + MAM02040c + MAM03283c --> MAM01285c + MAM02039c + MAM02751c + MAM03283e,ok,ok,ok,ok,N/A
-MAR11755,MAM03283e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11755,MAM03283e <=> ,ok,ok,ok,ok,N/A
 MAR11756,MAM00981c + MAM02147e <=> MAM00981e + MAM02147c,ok,ok,ok,ok,N/A
 MAR11757,MAM00971c + MAM01371c + MAM02040c --> MAM00971e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
 MAR11758,MAM00399c + MAM01371c + MAM02040c --> MAM00399e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
@@ -11381,10 +11324,10 @@ MAR11814,MAM01113c <=> MAM01113e,only when going backwards,ok,ok,ok,N/A
 MAR11815,MAM01417e --> MAM01417c,ok,ok,MAR11964,MAR11964,N/A
 MAR11816,MAM02181m --> MAM02181c,ok,ok,ok,ok,N/A
 MAR11817,MAM02181c --> MAM02181e,ok,ok,ok,ok,N/A
-MAR11818,MAM02181e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11818,MAM02181e <=> ,ok,ok,ok,ok,N/A
 MAR11819,MAM02534m <=> MAM02534c,only when going backwards,ok,ok,ok,N/A
 MAR11820,MAM02534c <=> MAM02534e,only when going backwards,ok,ok,ok,N/A
-MAR11821,MAM02534e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11821,MAM02534e <=> ,ok,ok,ok,ok,N/A
 MAR11822,MAM00981m <=> MAM00981c,ok,ok,ok,ok,N/A
 MAR11823,MAM00981e <=> ,ok,ok,ok,ok,N/A
 MAR11824,MAM00995c --> MAM00995e,ok,ok,ok,ok,N/A
@@ -11393,66 +11336,66 @@ MAR11826,MAM02942c <=> MAM02942e,ok,ok,ok,ok,N/A
 MAR11827,MAM02942e <=> ,ok,ok,ok,ok,N/A
 MAR11828,MAM00373r + MAM01371r + MAM02040r --> MAM00373c + MAM01285r + MAM02039r + MAM02751r,ok,ok,ok,ok,N/A
 MAR11829,MAM00373c + MAM01371c + MAM02040c --> MAM00373e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11830,MAM00373e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11830,MAM00373e <=> ,ok,ok,ok,ok,N/A
 MAR11831,MAM01767r <=> MAM01767c,only when going backwards,ok,ok,ok,N/A
 MAR11832,MAM01767c <=> MAM01767e,only when going backwards,ok,ok,ok,N/A
-MAR11833,MAM01767e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11833,MAM01767e <=> ,ok,ok,ok,ok,N/A
 MAR11834,MAM00324r + MAM01371r + MAM02040r --> MAM00324c + MAM01285r + MAM02039r + MAM02751r,ok,ok,ok,ok,N/A
 MAR11835,MAM00324c + MAM01371c + MAM02040c --> MAM00324e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11836,MAM00324e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11836,MAM00324e <=> ,ok,ok,ok,ok,N/A
 MAR11837,MAM00428r + MAM01371r + MAM02040r --> MAM00428c + MAM01285r + MAM02039r + MAM02751r,ok,ok,ok,ok,N/A
 MAR11838,MAM00428c + MAM01371c + MAM02040c --> MAM00428e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11839,MAM00428e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11839,MAM00428e <=> ,ok,ok,ok,ok,N/A
 MAR11840,MAM02933r --> MAM02933c,ok,ok,ok,ok,N/A
 MAR11841,MAM02933c --> MAM02933e,ok,ok,ok,ok,N/A
-MAR11842,MAM02933e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11842,MAM02933e <=> ,ok,ok,ok,ok,N/A
 MAR11843,MAM01740x + MAM02039c <=> MAM01740c + MAM02039x,ok,ok,ok,ok,N/A
 MAR11844,MAM01740c + MAM02039e <=> MAM01740e + MAM02039c,ok,ok,ok,ok,N/A
 MAR11845,MAM01101x <=> MAM01101c,only when going backwards,ok,ok,ok,N/A
 MAR11846,MAM01101c <=> MAM01101e,only when going backwards,ok,ok,ok,N/A
-MAR11847,MAM01101e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11848,MAM00971e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11847,MAM01101e <=> ,ok,ok,ok,ok,N/A
+MAR11848,MAM00971e <=> ,ok,ok,ok,ok,N/A
 MAR11849,MAM01371c + MAM01660c + MAM02040c --> MAM01285c + MAM01660e + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11850,MAM01660e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11850,MAM01660e <=> ,ok,ok,ok,ok,N/A
 MAR11851,MAM00399r + MAM01371c + MAM02040c --> MAM00399c + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11852,MAM00399e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11852,MAM00399e <=> ,ok,ok,ok,ok,N/A
 MAR11853,MAM01371c + MAM01800r + MAM02040c --> MAM01285c + MAM01800c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
 MAR11854,MAM01064r + MAM01371c + MAM02040c --> MAM01064c + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11855,MAM01064e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11856,MAM01065e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11855,MAM01064e <=> ,ok,ok,ok,ok,N/A
+MAR11856,MAM01065e <=> ,ok,ok,ok,ok,N/A
 MAR11857,MAM01371c + MAM01790c + MAM02040c --> MAM01285c + MAM01790e + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11858,MAM01790e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11858,MAM01790e <=> ,ok,ok,ok,ok,N/A
 MAR11859,MAM00650c + MAM01371c + MAM02040c --> MAM00650e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11860,MAM00650e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11861,MAM00649e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11862,MAM00660e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11863,MAM00659e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11864,MAM00604e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11865,MAM00295e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11866,MAM00294e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11867,MAM02763e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11868,MAM01314e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11869,MAM00409e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11870,MAM00408e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11871,MAM01072e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11860,MAM00650e <=> ,ok,ok,ok,ok,N/A
+MAR11861,MAM00649e <=> ,ok,ok,ok,ok,N/A
+MAR11862,MAM00660e <=> ,ok,ok,ok,ok,N/A
+MAR11863,MAM00659e <=> ,ok,ok,ok,ok,N/A
+MAR11864,MAM00604e <=> ,ok,ok,ok,ok,N/A
+MAR11865,MAM00295e <=> ,ok,ok,ok,ok,N/A
+MAR11866,MAM00294e <=> ,ok,ok,ok,ok,N/A
+MAR11867,MAM02763e <=> ,ok,ok,ok,ok,N/A
+MAR11868,MAM01314e <=> ,ok,ok,ok,ok,N/A
+MAR11869,MAM00409e <=> ,ok,ok,ok,ok,N/A
+MAR11870,MAM00408e <=> ,ok,ok,ok,ok,N/A
+MAR11871,MAM01072e <=> ,ok,ok,ok,ok,N/A
 MAR11872,MAM01504r --> MAM01504c,ok,ok,ok,ok,N/A
 MAR11873,MAM01504c --> MAM01504e,ok,ok,ok,ok,N/A
-MAR11874,MAM01504e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11875,MAM02762e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11876,MAM00407e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11874,MAM01504e <=> ,ok,ok,ok,ok,N/A
+MAR11875,MAM02762e <=> ,ok,ok,ok,ok,N/A
+MAR11876,MAM00407e <=> ,ok,ok,ok,ok,N/A
 MAR11877,MAM00610r --> MAM00610c,ok,ok,ok,ok,N/A
 MAR11878,MAM00610c --> MAM00610e,ok,ok,ok,ok,N/A
-MAR11879,MAM00610e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11879,MAM00610e <=> ,ok,ok,ok,ok,N/A
 MAR11880,MAM00623c --> MAM00623e,ok,ok,ok,ok,N/A
-MAR11881,MAM00623e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11881,MAM00623e <=> ,ok,ok,ok,ok,N/A
 MAR11882,MAM00619r --> MAM00619c,ok,ok,ok,ok,N/A
 MAR11883,MAM00619c --> MAM00619e,ok,ok,ok,ok,N/A
-MAR11884,MAM00619e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11884,MAM00619e <=> ,ok,ok,ok,ok,N/A
 MAR11885,MAM01675r --> MAM01675c,ok,ok,ok,ok,N/A
 MAR11886,MAM01675c --> MAM01675e,ok,ok,ok,ok,N/A
-MAR11887,MAM01675e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11887,MAM01675e <=> ,ok,ok,ok,ok,N/A
 MAR11888,MAM01512c --> MAM01512e,ok,ok,ok,ok,N/A
-MAR11889,MAM01512e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11889,MAM01512e <=> ,ok,ok,ok,ok,N/A
 MAR11890,MAM00807c + MAM02519e <=> MAM00807e + MAM02519c,ok,ok,ok,ok,N/A
 MAR11891,MAM00807e <=> ,ok,ok,ok,ok,N/A
 MAR11892,MAM00739c + MAM02519e <=> MAM00739e + MAM02519c,ok,ok,ok,ok,N/A
@@ -11464,28 +11407,28 @@ MAR11897,MAM01231e <=> ,ok,ok,ok,ok,N/A
 MAR11898,MAM04074c --> MAM04074e,MAM04074c;MAM04074e,ok,ok,ok,N/A
 MAR11899,MAM03511c --> MAM03511e,MAM03511c;MAM03511e,ok,ok,ok,N/A
 MAR11900,MAM00576c <=> MAM00576e,only when going backwards,ok,ok,ok,N/A
-MAR11901,MAM00576e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11901,MAM00576e <=> ,ok,ok,ok,ok,N/A
 MAR11902,MAM00727e <=> ,ok,ok,ok,ok,N/A
 MAR11903,MAM01839c <=> MAM01839e,only when going backwards,ok,ok,ok,N/A
-MAR11904,MAM01839e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11904,MAM01839e <=> ,ok,ok,ok,ok,N/A
 MAR11905,MAM02714c <=> MAM02714e,ok,ok,ok,ok,N/A
 MAR11906,MAM02714e <=> ,ok,ok,ok,ok,N/A
-MAR11907,MAM00028e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11908,MAM01039e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11909,MAM01050e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11910,MAM00385e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11911,MAM00293e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR11912,MAM00988e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11907,MAM00028e <=> ,ok,ok,ok,ok,N/A
+MAR11908,MAM01039e <=> ,ok,ok,ok,ok,N/A
+MAR11909,MAM01050e <=> ,ok,ok,ok,ok,N/A
+MAR11910,MAM00385e <=> ,ok,ok,ok,ok,N/A
+MAR11911,MAM00293e <=> ,ok,ok,ok,ok,N/A
+MAR11912,MAM00988e <=> ,ok,ok,ok,ok,N/A
 MAR11913,MAM02134c <=> MAM02134e,ok,ok,ok,ok,N/A
 MAR11914,MAM02134e <=> ,ok,ok,ok,ok,N/A
 MAR11915,MAM01371c + MAM01927c + MAM02040c --> MAM01285c + MAM01927e + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11916,MAM01927e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11916,MAM01927e <=> ,ok,ok,ok,ok,N/A
 MAR11917,MAM02518e <=> ,ok,ok,ok,ok,N/A
-MAR11918,MAM01113e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11918,MAM01113e <=> ,ok,ok,ok,ok,N/A
 MAR11919,MAM02460c --> MAM02460e,ok,ok,ok,ok,N/A
-MAR11920,MAM02460e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11920,MAM02460e <=> ,ok,ok,ok,ok,N/A
 MAR11921,MAM01161c --> MAM01161e,ok,ok,ok,ok,N/A
-MAR11922,MAM01161e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11922,MAM01161e <=> ,ok,ok,ok,ok,N/A
 MAR11923,MAM03088e <=> ,ok,ok,ok,ok,N/A
 MAR11924,MAM02752c <=> MAM02752e,ok,ok,ok,ok,N/A
 MAR11925,MAM02752e <=> ,ok,ok,ok,ok,N/A
@@ -11514,10 +11457,10 @@ MAR11947,MAM02929e <=> ,ok,ok,ok,ok,N/A
 MAR11948,MAM02117c <=> MAM02117e,ok,ok,ok,ok,N/A
 MAR11949,MAM02117e <=> ,ok,ok,ok,ok,N/A
 MAR11950,MAM02166e <=> MAM02166c,only when going forwards,ok,ok,ok,N/A
-MAR11951,MAM02166e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11951,MAM02166e <=> ,ok,ok,ok,ok,N/A
 MAR11952,MAM01110e <=> ,ok,ok,ok,ok,N/A
 MAR11953,MAM01045e <=> ,ok,ok,ok,ok,N/A
-MAR11954,MAM02803e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11954,MAM02803e <=> ,ok,ok,ok,ok,N/A
 MAR11955,MAM01332e <=> MAM01332c,ok,ok,ok,ok,N/A
 MAR11956,MAM01332e <=> ,ok,ok,ok,ok,N/A
 MAR11957,MAM02823e <=> ,ok,ok,ok,ok,N/A
@@ -11525,23 +11468,23 @@ MAR11958,MAM02927e <=> MAM02927c,ok,ok,ok,ok,N/A
 MAR11959,MAM02927e <=> ,ok,ok,ok,ok,N/A
 MAR11960,MAM02891e <=> MAM02891c,ok,ok,ok,ok,N/A
 MAR11961,MAM02891e <=> ,ok,ok,ok,ok,N/A
-MAR11962,MAM02503e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11962,MAM02503e <=> ,ok,ok,ok,ok,N/A
 MAR11963,MAM00635c <=> MAM00635e,ok,ok,ok,ok,N/A
 MAR11964,MAM01417c --> MAM01417e,ok,ok,MAR11815,MAR11815,N/A
 MAR11965,MAM01417e <=> ,ok,ok,ok,ok,N/A
 MAR11966,MAM01371c + MAM02040c + MAM02766c --> MAM01285c + MAM02039c + MAM02751c + MAM02766e,ok,ok,ok,ok,N/A
-MAR11967,MAM02766e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11967,MAM02766e <=> ,ok,ok,ok,ok,N/A
 MAR11968,MAM00314c + MAM01371c + MAM02040c --> MAM00314e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11969,MAM00314e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11969,MAM00314e <=> ,ok,ok,ok,ok,N/A
 MAR11970,MAM01220c + MAM01371c + MAM02040c --> MAM01220e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR11971,MAM01220e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11971,MAM01220e <=> ,ok,ok,ok,ok,N/A
 MAR11972,MAM02336c --> MAM02336e,ok,ok,ok,ok,N/A
 MAR11973,MAM01841c <=> MAM01841e,ok,ok,ok,ok,N/A
 MAR11974,MAM01841e <=> ,ok,ok,ok,ok,N/A
-MAR11975,MAM01601e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR11975,MAM01601e <=> ,ok,ok,ok,ok,N/A
 MAR11976,MAM01601e <=> MAM01601c,only when going backwards,ok,ok,ok,N/A
 MAR11977,MAM01601c <=> MAM01601r,only when going backwards,ok,ok,ok,N/A
-MAR11978,MAM01073e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR11978,MAM01073e <=> ,ok,ok,ok,ok,N/A
 MAR11979,MAM01073c <=> MAM01073e,only when going backwards,ok,ok,ok,N/A
 MAR11980,MAM01073x <=> MAM01073c,only when going backwards,ok,ok,ok,N/A
 MAR11981,MAM02336r --> MAM02336c,ok,ok,ok,ok,N/A
@@ -11565,11 +11508,11 @@ MAR12003,MAM01736c + MAM03109c --> MAM02039c + MAM03106c + MAM03563c,ok,ok,ok,ok
 MAR12004,2 MAM01736c + MAM02630c --> 2 MAM01738c + 2 MAM02040c,ok,ok,ok,ok,N/A
 MAR12005,MAM00728c + MAM02039c + MAM02555c --> MAM02554c + MAM03197c,ok,ok,ok,ok,N/A
 MAR12006,MAM03565c --> MAM03565e,ok,ok,ok,ok,N/A
-MAR12007,MAM03565e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12007,MAM03565e <=> ,ok,ok,ok,ok,N/A
 MAR12008,MAM01371c + MAM02040c + MAM03564c --> MAM01285c + MAM02039c + MAM02751c + MAM03564e,ok,ok,ok,ok,N/A
-MAR12009,MAM03564e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12009,MAM03564e <=> ,ok,ok,ok,ok,N/A
 MAR12010,MAM01371c + MAM02040c + MAM03563c --> MAM01285c + MAM02039c + MAM02751c + MAM03563e,ok,ok,ok,ok,N/A
-MAR12011,MAM03563e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12011,MAM03563e <=> ,ok,ok,ok,ok,N/A
 MAR12012,MAM02039c + MAM02355c --> MAM01596c + MAM01739c,ok,ok,ok,ok,N/A
 MAR12013,MAM01139c + MAM01371c + MAM02040c --> MAM01139e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
 MAR12014,MAM01139e + MAM02040e <=> MAM01974e + MAM03282e,ok,ok,ok,ok,N/A
@@ -11584,15 +11527,15 @@ MAR12022,MAM02160c <=> MAM01739c,ok,ok,ok,ok,N/A
 MAR12023,MAM02026c + MAM02160c <=> MAM03270c,only when going backwards,ok,ok,ok,N/A
 MAR12024,2 MAM01739c + MAM02630c --> 2 MAM02040c + 2 MAM03163c,ok,ok,ok,ok,N/A
 MAR12025,MAM01371c + MAM02040c + MAM03270c --> MAM01285c + MAM02039c + MAM02751c + MAM03270e,ok,ok,ok,ok,N/A
-MAR12026,MAM03270e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12026,MAM03270e <=> ,ok,ok,ok,ok,N/A
 MAR12027,MAM03281c <=> MAM03281e,only when going backwards,ok,ok,ok,N/A
-MAR12028,MAM03281e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12028,MAM03281e <=> ,ok,ok,ok,ok,N/A
 MAR12029,MAM01138c + MAM01371c + MAM02040c --> MAM01138e + MAM01285c + MAM02039c + MAM02751c,ok,ok,ok,ok,N/A
-MAR12030,MAM01138e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12030,MAM01138e <=> ,ok,ok,ok,ok,N/A
 MAR12031,MAM01154c <=> MAM01154e,ok,ok,ok,ok,N/A
 MAR12032,MAM01154e <=> ,ok,ok,ok,ok,N/A
 MAR12033,MAM00231c <=> MAM00231e,only when going backwards,ok,ok,ok,N/A
-MAR12034,MAM00231e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12034,MAM00231e <=> ,ok,ok,ok,ok,N/A
 MAR12035,MAM02040e + MAM03586e --> MAM01910e + MAM01972e,ok,ok,ok,ok,N/A
 MAR12036,MAM02040l + MAM03635l --> MAM01910l + MAM02011l,ok,ok,ok,ok,N/A
 MAR12037,MAM01904l + MAM02040l --> MAM01905l + MAM01910l,ok,ok,ok,ok,N/A
@@ -11662,9 +11605,9 @@ MAR12100,MAM02927c <=> MAM02927n,MAM02927n,ok,ok,ok,N/A
 MAR12101,MAM02927c <=> MAM02927g,MAM02927g,ok,ok,ok,N/A
 MAR12102,MAM02929c <=> MAM02929n,MAM02929n,ok,ok,ok,N/A
 MAR12103,MAM02929c <=> MAM02929g,MAM02929g,ok,ok,ok,N/A
-MAR12104,MAM01592e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR12105,MAM01946e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR12106,MAM01941e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR12104,MAM01592e <=> ,ok,ok,ok,ok,N/A
+MAR12105,MAM01946e <=> ,ok,ok,ok,ok,N/A
+MAR12106,MAM01941e <=> ,ok,ok,ok,ok,N/A
 MAR12107,MAM01699c --> MAM01699g,MAM01699g,ok,ok,ok,N/A
 MAR12108,MAM01699c --> MAM01699r,MAM01699r,ok,ok,ok,N/A
 MAR12109,MAM02749g --> MAM02749c,MAM02749c;MAM02749g,ok,ok,ok,N/A
@@ -11672,7 +11615,7 @@ MAR12110,MAM02749r --> MAM02749c,MAM02749c;MAM02749r,ok,ok,ok,N/A
 MAR12111,MAM03883c --> MAM01798c + MAM03661c,MAM03661c;MAM03883c,ok,ok,ok,N/A
 MAR12112,MAM02350c --> MAM02350m,ok,ok,ok,ok,N/A
 MAR12113,MAM03197e <=> MAM03197c,only when going forwards,ok,ok,ok,N/A
-MAR12114,MAM03197e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12114,MAM03197e <=> ,ok,ok,ok,ok,N/A
 MAR12115,MAM01679c <=> MAM01679r,only when going forwards,ok,ok,ok,N/A
 MAR12116,MAM01679c <=> MAM01679n,only when going forwards,ok,ok,ok,N/A
 MAR12117,MAM01430c <=> MAM01430n,ok,ok,ok,ok,N/A
@@ -11763,27 +11706,27 @@ MAR12201,MAM03208e <=> ,ok,ok,ok,ok,N/A
 MAR12202,MAM03209e <=> ,ok,ok,ok,ok,N/A
 MAR12203,MAM03310e <=> ,ok,ok,ok,ok,N/A
 MAR12204,MAM03311e <=> ,ok,ok,ok,ok,N/A
-MAR12205,MAM03503e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12205,MAM03503e <=> ,ok,ok,ok,ok,N/A
 MAR12206,MAM03504e <=> ,ok,ok,ok,ok,N/A
-MAR12207,MAM03508e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12208,MAM03509e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12207,MAM03508e <=> ,ok,ok,ok,ok,N/A
+MAR12208,MAM03509e <=> ,ok,ok,ok,ok,N/A
 MAR12209,MAM03512e <=> ,ok,ok,ok,ok,N/A
-MAR12210,MAM03536e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12211,MAM03537e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12210,MAM03536e <=> ,ok,ok,ok,ok,N/A
+MAR12211,MAM03537e <=> ,ok,ok,ok,ok,N/A
 MAR12212,MAM03538e <=> ,ok,ok,ok,ok,N/A
 MAR12213,MAM03587e <=> ,ok,ok,ok,ok,N/A
 MAR12214,MAM03588e <=> ,ok,ok,ok,ok,N/A
 MAR12215,MAM03589e <=> ,ok,ok,ok,ok,N/A
 MAR12216,MAM03637e <=> ,ok,ok,ok,ok,N/A
-MAR12217,MAM03642e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12218,MAM03643e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12219,MAM03644e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12220,MAM03645e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12217,MAM03642e <=> ,ok,ok,ok,ok,N/A
+MAR12218,MAM03643e <=> ,ok,ok,ok,ok,N/A
+MAR12219,MAM03644e <=> ,ok,ok,ok,ok,N/A
+MAR12220,MAM03645e <=> ,ok,ok,ok,ok,N/A
 MAR12221,MAM03685e <=> ,ok,ok,ok,ok,N/A
 MAR12222,MAM03691e <=> ,ok,ok,ok,ok,N/A
 MAR12223,MAM03704e <=> ,ok,ok,ok,ok,N/A
-MAR12224,MAM03707e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12225,MAM03708e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12224,MAM03707e <=> ,ok,ok,ok,ok,N/A
+MAR12225,MAM03708e <=> ,ok,ok,ok,ok,N/A
 MAR12226,MAM03709e <=> ,ok,ok,ok,ok,N/A
 MAR12227,MAM03962e <=> ,ok,ok,ok,ok,N/A
 MAR12228,MAM03963e <=> ,ok,ok,ok,ok,N/A
@@ -12134,56 +12077,56 @@ MAR12572,3 MAM02039r + MAM02630r + 3 MAM02871r + MAM03959r --> 3 MAM02877r + MAM
 MAR12573,MAM01371c + MAM02040c + MAM03572c --> MAM01285c + MAM02039c + MAM02751c + MAM03572e,ok,ok,ok,ok,N/A
 MAR12574,MAM03572c --> MAM03572e,ok,ok,ok,ok,N/A
 MAR12575,MAM01817e <=> ,ok,ok,ok,ok,N/A
-MAR12576,MAM01818e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12576,MAM01818e <=> ,ok,ok,ok,ok,N/A
 MAR12577,MAM01875e <=> ,ok,ok,ok,ok,N/A
-MAR12578,MAM01888e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12578,MAM01888e <=> ,ok,ok,ok,ok,N/A
 MAR12579,MAM01889e <=> ,ok,ok,ok,ok,N/A
-MAR12580,MAM01890e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12580,MAM01890e <=> ,ok,ok,ok,ok,N/A
 MAR12581,MAM01891e <=> ,ok,ok,ok,ok,N/A
 MAR12582,MAM01894e <=> ,ok,ok,ok,ok,N/A
-MAR12583,MAM01901e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12584,MAM01902e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12583,MAM01901e <=> ,ok,ok,ok,ok,N/A
+MAR12584,MAM01902e <=> ,ok,ok,ok,ok,N/A
 MAR12585,MAM01903e <=> ,ok,ok,ok,ok,N/A
 MAR12586,MAM03177e <=> ,ok,ok,ok,ok,N/A
-MAR12587,MAM03178e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12587,MAM03178e <=> ,ok,ok,ok,ok,N/A
 MAR12588,MAM03179e <=> ,ok,ok,ok,ok,N/A
-MAR12589,MAM03180e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12590,MAM03183e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12589,MAM03180e <=> ,ok,ok,ok,ok,N/A
+MAR12590,MAM03183e <=> ,ok,ok,ok,ok,N/A
 MAR12591,MAM03184e <=> ,ok,ok,ok,ok,N/A
-MAR12592,MAM03185e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12592,MAM03185e <=> ,ok,ok,ok,ok,N/A
 MAR12593,MAM03196e <=> ,ok,ok,ok,ok,N/A
 MAR12594,MAM03198e <=> ,ok,ok,ok,ok,N/A
-MAR12595,MAM03199e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12595,MAM03199e <=> ,ok,ok,ok,ok,N/A
 MAR12596,MAM03223e <=> ,ok,ok,ok,ok,N/A
 MAR12597,MAM03224e <=> ,ok,ok,ok,ok,N/A
-MAR12598,MAM03225e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12599,MAM03229e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12598,MAM03225e <=> ,ok,ok,ok,ok,N/A
+MAR12599,MAM03229e <=> ,ok,ok,ok,ok,N/A
 MAR12600,MAM03235e <=> ,ok,ok,ok,ok,N/A
 MAR12601,MAM03237e <=> ,ok,ok,ok,ok,N/A
-MAR12602,MAM03240e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12602,MAM03240e <=> ,ok,ok,ok,ok,N/A
 MAR12603,MAM03241e <=> ,ok,ok,ok,ok,N/A
-MAR12604,MAM03256e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12604,MAM03256e <=> ,ok,ok,ok,ok,N/A
 MAR12605,MAM03269e <=> ,ok,ok,ok,ok,N/A
 MAR12606,MAM03271e <=> ,ok,ok,ok,ok,N/A
 MAR12607,MAM03272e <=> ,ok,ok,ok,ok,N/A
-MAR12608,MAM03275e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12608,MAM03275e <=> ,ok,ok,ok,ok,N/A
 MAR12609,MAM03278e <=> ,ok,ok,ok,ok,N/A
 MAR12610,MAM03279e <=> ,ok,ok,ok,ok,N/A
 MAR12611,MAM03280e <=> ,ok,ok,ok,ok,N/A
-MAR12612,MAM03285e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12613,MAM03286e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12612,MAM03285e <=> ,ok,ok,ok,ok,N/A
+MAR12613,MAM03286e <=> ,ok,ok,ok,ok,N/A
 MAR12614,MAM03289e <=> ,ok,ok,ok,ok,N/A
 MAR12615,MAM03290e <=> ,ok,ok,ok,ok,N/A
 MAR12616,MAM03291e <=> ,ok,ok,ok,ok,N/A
-MAR12617,MAM03293e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12617,MAM03293e <=> ,ok,ok,ok,ok,N/A
 MAR12618,MAM03294e <=> ,ok,ok,ok,ok,N/A
 MAR12619,MAM03296e <=> ,ok,ok,ok,ok,N/A
-MAR12620,MAM03299e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12621,MAM03301e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12622,MAM03302e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12620,MAM03299e <=> ,ok,ok,ok,ok,N/A
+MAR12621,MAM03301e <=> ,ok,ok,ok,ok,N/A
+MAR12622,MAM03302e <=> ,ok,ok,ok,ok,N/A
 MAR12623,MAM03303e <=> ,ok,ok,ok,ok,N/A
-MAR12624,MAM03305e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12625,MAM03306e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12624,MAM03305e <=> ,ok,ok,ok,ok,N/A
+MAR12625,MAM03306e <=> ,ok,ok,ok,ok,N/A
 MAR12626,MAM03307e <=> ,ok,ok,ok,ok,N/A
 MAR12627,MAM03308e <=> ,ok,ok,ok,ok,N/A
 MAR12628,MAM03309e <=> ,ok,ok,ok,ok,N/A
@@ -12193,23 +12136,23 @@ MAR12631,MAM03403e <=> ,ok,ok,ok,ok,N/A
 MAR12632,MAM03404e <=> ,ok,ok,ok,ok,N/A
 MAR12633,MAM03418e <=> ,ok,ok,ok,ok,N/A
 MAR12634,MAM03420e <=> ,ok,ok,ok,ok,N/A
-MAR12635,MAM03421e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12636,MAM03422e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12635,MAM03421e <=> ,ok,ok,ok,ok,N/A
+MAR12636,MAM03422e <=> ,ok,ok,ok,ok,N/A
 MAR12637,MAM03423e <=> ,ok,ok,ok,ok,N/A
 MAR12638,MAM03424e <=> ,ok,ok,ok,ok,N/A
-MAR12639,MAM03425e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12639,MAM03425e <=> ,ok,ok,ok,ok,N/A
 MAR12640,MAM03426e <=> ,ok,ok,ok,ok,N/A
 MAR12641,MAM03427e <=> ,ok,ok,ok,ok,N/A
-MAR12642,MAM03428e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12642,MAM03428e <=> ,ok,ok,ok,ok,N/A
 MAR12643,MAM03429e <=> ,ok,ok,ok,ok,N/A
 MAR12644,MAM03430e <=> ,ok,ok,ok,ok,N/A
 MAR12645,MAM03431e <=> ,ok,ok,ok,ok,N/A
 MAR12646,MAM03432e <=> ,ok,ok,ok,ok,N/A
 MAR12647,MAM03476e <=> ,ok,ok,ok,ok,N/A
 MAR12648,MAM03479e <=> ,ok,ok,ok,ok,N/A
-MAR12649,MAM03505e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12649,MAM03505e <=> ,ok,ok,ok,ok,N/A
 MAR12650,MAM03506e <=> ,ok,ok,ok,ok,N/A
-MAR12651,MAM03507e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12651,MAM03507e <=> ,ok,ok,ok,ok,N/A
 MAR12652,MAM03513e <=> ,ok,ok,ok,ok,N/A
 MAR12653,MAM03514e <=> ,ok,ok,ok,ok,N/A
 MAR12654,MAM03515e <=> ,ok,ok,ok,ok,N/A
@@ -12217,67 +12160,67 @@ MAR12655,MAM03517e <=> ,ok,ok,ok,ok,N/A
 MAR12656,MAM03518e <=> ,ok,ok,ok,ok,N/A
 MAR12657,MAM03520e <=> ,ok,ok,ok,ok,N/A
 MAR12658,MAM03521e <=> ,ok,ok,ok,ok,N/A
-MAR12659,MAM03526e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12660,MAM03546e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12661,MAM03547e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12659,MAM03526e <=> ,ok,ok,ok,ok,N/A
+MAR12660,MAM03546e <=> ,ok,ok,ok,ok,N/A
+MAR12661,MAM03547e <=> ,ok,ok,ok,ok,N/A
 MAR12662,MAM03549e <=> ,ok,ok,ok,ok,N/A
 MAR12663,MAM03566e <=> ,ok,ok,ok,ok,N/A
-MAR12664,MAM03572e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12664,MAM03572e <=> ,ok,ok,ok,ok,N/A
 MAR12665,MAM03579e <=> ,ok,ok,ok,ok,N/A
-MAR12666,MAM03582e <=> ,only when going forwards,ok,ok,ok,N/A
-MAR12667,MAM03583e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12668,MAM03594e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12666,MAM03582e <=> ,ok,ok,ok,ok,N/A
+MAR12667,MAM03583e <=> ,ok,ok,ok,ok,N/A
+MAR12668,MAM03594e <=> ,ok,ok,ok,ok,N/A
 MAR12669,MAM03634e <=> ,ok,ok,ok,ok,N/A
-MAR12670,MAM03636e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12670,MAM03636e <=> ,ok,ok,ok,ok,N/A
 MAR12671,MAM03686e <=> ,ok,ok,ok,ok,N/A
 MAR12672,MAM03687e <=> ,ok,ok,ok,ok,N/A
 MAR12673,MAM03690e <=> ,ok,ok,ok,ok,N/A
-MAR12674,MAM03705e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12674,MAM03705e <=> ,ok,ok,ok,ok,N/A
 MAR12675,MAM03728e <=> ,ok,ok,ok,ok,N/A
 MAR12676,MAM03729e <=> ,ok,ok,ok,ok,N/A
-MAR12677,MAM03730e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12678,MAM03731e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12679,MAM03732e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12680,MAM03733e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12681,MAM03734e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12677,MAM03730e <=> ,ok,ok,ok,ok,N/A
+MAR12678,MAM03731e <=> ,ok,ok,ok,ok,N/A
+MAR12679,MAM03732e <=> ,ok,ok,ok,ok,N/A
+MAR12680,MAM03733e <=> ,ok,ok,ok,ok,N/A
+MAR12681,MAM03734e <=> ,ok,ok,ok,ok,N/A
 MAR12682,MAM03735e <=> ,ok,ok,ok,ok,N/A
 MAR12683,MAM03736e <=> ,ok,ok,ok,ok,N/A
 MAR12684,MAM03756e <=> ,ok,ok,ok,ok,N/A
-MAR12685,MAM03757e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12685,MAM03757e <=> ,ok,ok,ok,ok,N/A
 MAR12686,MAM03759e <=> ,ok,ok,ok,ok,N/A
 MAR12687,MAM03770e <=> ,ok,ok,ok,ok,N/A
-MAR12688,MAM03780e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12688,MAM03780e <=> ,ok,ok,ok,ok,N/A
 MAR12689,MAM03781e <=> ,ok,ok,ok,ok,N/A
 MAR12690,MAM03782e <=> ,ok,ok,ok,ok,N/A
 MAR12691,MAM03783e <=> ,ok,ok,ok,ok,N/A
 MAR12692,MAM03784e <=> ,ok,ok,ok,ok,N/A
 MAR12693,MAM03801e <=> ,ok,ok,ok,ok,N/A
-MAR12694,MAM03799e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12695,MAM03800e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12696,MAM03892e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12694,MAM03799e <=> ,ok,ok,ok,ok,N/A
+MAR12695,MAM03800e <=> ,ok,ok,ok,ok,N/A
+MAR12696,MAM03892e <=> ,ok,ok,ok,ok,N/A
 MAR12697,MAM03911e <=> ,ok,ok,ok,ok,N/A
 MAR12698,MAM03913e <=> ,ok,ok,ok,ok,N/A
-MAR12699,MAM03915e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12699,MAM03915e <=> ,ok,ok,ok,ok,N/A
 MAR12700,MAM03916e <=> ,ok,ok,ok,ok,N/A
 MAR12701,MAM03917e <=> ,ok,ok,ok,ok,N/A
 MAR12702,MAM03918e <=> ,ok,ok,ok,ok,N/A
-MAR12703,MAM03920e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12704,MAM03921e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12703,MAM03920e <=> ,ok,ok,ok,ok,N/A
+MAR12704,MAM03921e <=> ,ok,ok,ok,ok,N/A
 MAR12705,MAM03934e <=> ,ok,ok,ok,ok,N/A
 MAR12706,MAM03935e <=> ,ok,ok,ok,ok,N/A
-MAR12707,MAM03952e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12708,MAM03958e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12707,MAM03952e <=> ,ok,ok,ok,ok,N/A
+MAR12708,MAM03958e <=> ,ok,ok,ok,ok,N/A
 MAR12709,MAM03959e <=> ,ok,ok,ok,ok,N/A
-MAR12710,MAM03961e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12711,MAM03985e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12710,MAM03961e <=> ,ok,ok,ok,ok,N/A
+MAR12711,MAM03985e <=> ,ok,ok,ok,ok,N/A
 MAR12712,MAM03998e <=> ,ok,ok,ok,ok,N/A
 MAR12713,MAM04000e <=> ,ok,ok,ok,ok,N/A
 MAR12714,MAM04001e <=> ,ok,ok,ok,ok,N/A
-MAR12715,MAM04002e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12716,MAM04003e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12715,MAM04002e <=> ,ok,ok,ok,ok,N/A
+MAR12716,MAM04003e <=> ,ok,ok,ok,ok,N/A
 MAR12717,MAM04007e <=> ,ok,ok,ok,ok,N/A
-MAR12718,MAM04038e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR12719,MAM04039e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12718,MAM04038e <=> ,ok,ok,ok,ok,N/A
+MAR12719,MAM04039e <=> ,ok,ok,ok,ok,N/A
 MAR12720,MAM03109r + MAM03579r --> MAM02039r + MAM03106r + MAM03581r,ok,ok,ok,ok,N/A
 MAR12721,MAM03109r + MAM03582r --> MAM02039r + MAM03106r + MAM03583r,ok,ok,ok,ok,N/A
 MAR12722,MAM03583c <=> MAM03583e,only when going backwards,ok,ok,ok,N/A
@@ -12524,7 +12467,7 @@ MAR12962,MAM03733c <=> MAM03733r,only when going forwards,ok,ok,ok,N/A
 MAR12963,MAM03734c <=> MAM03734r,only when going forwards,ok,ok,ok,N/A
 MAR12964,MAM03735r <=> MAM03735c,only when going backwards,ok,ok,ok,N/A
 MAR12965,MAM03736c <=> MAM03736r,only when going backwards,ok,ok,ok,N/A
-MAR12966,MAM03737e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12966,MAM03737e <=> ,ok,ok,ok,ok,N/A
 MAR12967,MAM03737c <=> MAM03737r,only when going backwards,ok,ok,ok,N/A
 MAR12968,MAM03756c <=> MAM03756r,only when going backwards,ok,ok,ok,N/A
 MAR12969,MAM03757r <=> MAM03757c,only when going backwards,ok,ok,ok,N/A
@@ -12535,7 +12478,7 @@ MAR12973,MAM03893x <=> MAM03893c,only when going backwards,ok,ok,ok,N/A
 MAR12974,MAM03913r <=> MAM03913c,ok,ok,ok,ok,N/A
 MAR12975,MAM03914r <=> MAM03914c,only when going backwards,ok,ok,ok,N/A
 MAR12976,MAM03914c <=> MAM03914e,only when going backwards,ok,ok,ok,N/A
-MAR12977,MAM03914e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR12977,MAM03914e <=> ,ok,ok,ok,ok,N/A
 MAR12978,MAM03915c <=> MAM03915r,only when going forwards,ok,ok,ok,N/A
 MAR12979,MAM03916c <=> MAM03916r,only when going backwards,ok,ok,ok,N/A
 MAR12980,MAM03917r <=> MAM03917c,only when going backwards,ok,ok,ok,N/A
@@ -12588,7 +12531,7 @@ MAR13026,MAM03177r <=> MAM03177c,ok,ok,ok,ok,N/A
 MAR13027,MAM01442m + MAM02147c <=> MAM01442c + MAM02147m,MAM01442m;MAM02147m,ok,ok,ok,N/A
 MAR13028,MAM00519c <=> MAM00519e,only when going backwards,ok,ok,ok,N/A
 MAR13029,MAM00519m <=> MAM00519c,only when going backwards,ok,ok,ok,N/A
-MAR13030,MAM00519e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR13030,MAM00519e <=> ,ok,ok,ok,ok,N/A
 MAR13031,MAM00635e <=> ,ok,ok,ok,ok,N/A
 MAR13032,MAM02956e <=> ,ok,ok,ok,ok,N/A
 MAR13033,MAM00234e <=> ,ok,ok,ok,ok,N/A
@@ -12623,7 +12566,7 @@ MAR13061,MAM03045e <=> ,ok,ok,ok,ok,N/A
 MAR13062,MAM03051e <=> ,ok,ok,ok,ok,N/A
 MAR13063,MAM03153e <=> ,ok,ok,ok,ok,N/A
 MAR13065,MAM01395e <=> ,ok,ok,ok,ok,N/A
-MAR13067,MAM02837e <=> ,only when going forwards,ok,ok,ok,N/A
+MAR13067,MAM02837e <=> ,ok,ok,ok,ok,N/A
 MAR13068,MAM02382e <=> ,MAM02382e,ok,ok,ok,N/A
 MAR13069,MAM02035e <=> ,ok,ok,ok,ok,N/A
 MAR13070,MAM02467e <=> ,ok,ok,ok,ok,N/A
@@ -12639,13 +12582,13 @@ MAR13079,MAM02039i + MAM02751i --> MAM02039m + MAM02751m,MAM02751i,ok,ok,ok,N/A
 MAR13080,MAM02039i --> MAM02039m,ok,ok,ok,ok,N/A
 MAR13081,4 MAM01826m + 7.92 MAM02039m + MAM02630m --> 4 MAM01824m + 4 MAM02039i + 1.96 MAM02040m + 0.02 MAM02631m,ok,ok,ok,ok,N/A
 MAR10023,MAM03970c --> MAM03971e,ok,ok,ok,ok,N/A
-MAR10024,MAM03971e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10024,MAM03971e <=> ,ok,ok,ok,ok,N/A
 MAR10026,MAM01435e <=> ,ok,ok,ok,ok,N/A
 MAR10027,MAM02328e <=> ,ok,ok,ok,ok,N/A
 MAR10028,MAM03511e <=> ,MAM03511e,ok,ok,ok,N/A
-MAR10029,MAM10001e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10030,MAM10002e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10031,MAM10003e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10029,MAM10001e <=> ,ok,ok,ok,ok,N/A
+MAR10030,MAM10002e <=> ,ok,ok,ok,ok,N/A
+MAR10031,MAM10003e <=> ,ok,ok,ok,ok,N/A
 MAR10033,MAM10005c <=> 0.0004 MAM00003c + 0.0004 MAM00008c + 0.0004 MAM00010c + 0.0004 MAM00017c + 0.0004 MAM00019c + 0.0004 MAM00021c + 0.0038 MAM00094c + 0.0004 MAM00104c + 0.0004 MAM00111c + 0.0004 MAM00114c + 0.0004 MAM00115c + 0.0004 MAM00117c + 0.0004 MAM00128c + 0.0004 MAM00132c + 0.0004 MAM00135c + 0.0004 MAM00260c + 0.0004 MAM00265c + 0.0004 MAM00315c + 0.0004 MAM00341c + 0.0004 MAM01197c + 0.0004 MAM01207c + 0.0004 MAM01235c + 0.0004 MAM01238c + 0.0014 MAM01291c + 0.1083 MAM01362c + 0.0004 MAM01373c + 0.0004 MAM01432c + 0.0004 MAM01582c + 0.0004 MAM01583c + 0.0004 MAM01584c + 0.025 MAM01585c + 0.0278 MAM01689c + 0.0215 MAM01696c + 0.0059 MAM01741c + 0.0004 MAM01771c + 0.0004 MAM01778c + 0.0116 MAM01784c + 0.0029 MAM01932c + 0.0004 MAM02053c + 0.0004 MAM02344c + 0.0004 MAM02385c + 0.1915 MAM02387c + 0.0084 MAM02389c + 0.0004 MAM02456c + 0.0004 MAM02457c + 0.0133 MAM02494c + 0.0004 MAM02564c + 0.0004 MAM02613c + 0.1545 MAM02646c + 0.0115 MAM02648c + 0.222 MAM02674c + 0.0219 MAM02675c + 0.0004 MAM02690c + 0.0004 MAM02745c + 0.1498 MAM02938c + 0.0025 MAM02939c + 0.0004 MAM03045c + 0.0004 MAM03051c + 0.0004 MAM03153c,ok,ok,ok,ok,N/A
 MAR10034,MAM10005r <=> 0.0004 MAM00003r + 0.0004 MAM00008r + 0.0004 MAM00010r + 0.0004 MAM00017r + 0.0004 MAM00019r + 0.0004 MAM00021r + 0.0038 MAM00094r + 0.0004 MAM00104r + 0.0004 MAM00111r + 0.0004 MAM00114r + 0.0004 MAM00115r + 0.0004 MAM00117r + 0.0004 MAM00128r + 0.0004 MAM00132r + 0.0004 MAM00135r + 0.0004 MAM00260r + 0.0004 MAM00265r + 0.0004 MAM00315r + 0.0004 MAM00341r + 0.0004 MAM01197r + 0.0004 MAM01207r + 0.0004 MAM01235r + 0.0004 MAM01238r + 0.0014 MAM01291r + 0.1083 MAM01362r + 0.0004 MAM01373r + 0.0004 MAM01432r + 0.0004 MAM01582r + 0.0004 MAM01583r + 0.0004 MAM01584r + 0.025 MAM01585r + 0.0278 MAM01689r + 0.0215 MAM01696r + 0.0059 MAM01741r + 0.0004 MAM01771r + 0.0004 MAM01778r + 0.0116 MAM01784r + 0.0029 MAM01932r + 0.0004 MAM02053r + 0.0004 MAM02344r + 0.0004 MAM02385r + 0.1915 MAM02387r + 0.0084 MAM02389r + 0.0004 MAM02456r + 0.0004 MAM02457r + 0.0133 MAM02494r + 0.0004 MAM02564r + 0.0004 MAM02613r + 0.1545 MAM02646r + 0.0115 MAM02648r + 0.222 MAM02674r + 0.0219 MAM02675r + 0.0004 MAM02690r + 0.0004 MAM02745r + 0.1498 MAM02938r + 0.0025 MAM02939r + 0.0004 MAM03045r + 0.0004 MAM03051r + 0.0004 MAM03153r,MAM00115r;MAM00260r;MAM00265r;MAM00315r;MAM10005r,ok,ok,ok,N/A
 MAR10035,MAM10006c <=> 0.0004 MAM00436c + 0.0004 MAM00437c + 0.0004 MAM00438c + 0.0004 MAM00439c + 0.0004 MAM00440c + 0.0004 MAM00441c + 0.0004 MAM00442c + 0.0004 MAM00443c + 0.0004 MAM00444c + 0.0004 MAM00445c + 0.0004 MAM00446c + 0.0004 MAM00447c + 0.0004 MAM00448c + 0.0004 MAM00449c + 0.0278 MAM00450c + 0.0038 MAM00451c + 0.0116 MAM00452c + 0.0004 MAM00453c + 0.0004 MAM00454c + 0.0004 MAM00455c + 0.0004 MAM00456c + 0.0025 MAM00457c + 0.0004 MAM00458c + 0.0059 MAM00459c + 0.0014 MAM00460c + 0.0004 MAM00461c + 0.0004 MAM00462c + 0.0004 MAM00463c + 0.0115 MAM00464c + 0.0004 MAM00465c + 0.0004 MAM00466c + 0.0004 MAM00467c + 0.0004 MAM00468c + 0.0004 MAM00469c + 0.0004 MAM00470c + 0.0004 MAM00471c + 0.1083 MAM00472c + 0.025 MAM00474c + 0.0215 MAM00476c + 0.0004 MAM00477c + 0.0004 MAM00478c + 0.0029 MAM00479c + 0.0004 MAM00480c + 0.0004 MAM00481c + 0.0004 MAM00482c + 0.0004 MAM00483c + 0.0004 MAM00484c + 0.1915 MAM00491c + 0.0084 MAM00492c + 0.0133 MAM00493c + 0.0004 MAM00494c + 0.1545 MAM00495c + 0.222 MAM00496c + 0.0219 MAM00497c + 0.0004 MAM00498c + 0.1498 MAM00499c + 0.0004 MAM00500c + 0.0004 MAM00501c + 0.0004 MAM00502c,ok,ok,ok,ok,N/A
@@ -12660,7 +12603,7 @@ MAR10043,MAM02956c <=> MAM02956l,only when going forwards,ok,ok,ok,N/A
 MAR10044,MAM00235c <=> MAM00235g,only when going forwards,ok,ok,ok,N/A
 MAR10045,MAM00235c <=> MAM00235n,only when going forwards,ok,ok,ok,N/A
 MAR10046,MAM00235c --> MAM00235e,ok,ok,ok,ok,N/A
-MAR10047,MAM00235e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10047,MAM00235e <=> ,ok,ok,ok,ok,N/A
 MAR10048,MAM00237c <=> MAM00237n,only when going forwards,ok,ok,ok,N/A
 MAR10049,MAM01426c <=> MAM01426m,only when going forwards,ok,ok,ok,N/A
 MAR10050,MAM01807c --> MAM01807e,ok,ok,ok,ok,N/A
@@ -12673,7 +12616,7 @@ MAR10056,MAM02731c <=> MAM02731r,MAM02731r,ok,ok,ok,N/A
 MAR10057,MAM02731c <=> MAM02731g,MAM02731g,ok,ok,ok,N/A
 MAR10058,MAM00196c <=> MAM00196r,only when going forwards,ok,ok,ok,N/A
 MAR10059,MAM10011c --> MAM10011e,ok,ok,ok,ok,N/A
-MAR10060,MAM10011e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10060,MAM10011e <=> ,ok,ok,ok,ok,N/A
 MAR10061,2 MAM02039x + 2 MAM02555x + MAM10007x --> MAM01597x + 2 MAM02554x + MAM03417x,ok,ok,ok,ok,N/A
 MAR10062,0.0721 MAM02006c + 0.0801 MAM02335c + 0.0512 MAM02340c + 0.0375 MAM02341c + 0.0556 MAM02342c + 0.0183 MAM02351c + 0.0428 MAM02376c + 0.0783 MAM02377c + 0.0228 MAM02380c + 0.0442 MAM02401c + 0.0911 MAM02404c + 0.0719 MAM02405c + 0.0222 MAM02408c + 0.0368 MAM02412c + 0.051 MAM02415c + 0.0661 MAM02416c + 0.0535 MAM02419c + 0.0098 MAM02420c + 0.0281 MAM02421c + 0.0667 MAM02423c --> 0.0801 MAM03063c + 0.0512 MAM03064c + 0.0375 MAM03065c + 0.0556 MAM03066c + 0.0183 MAM03067c + 0.0428 MAM03068c + 0.0783 MAM03069c + 0.0721 MAM03070c + 0.0228 MAM03071c + 0.0442 MAM03072c + 0.0911 MAM03073c + 0.0719 MAM03074c + 0.0222 MAM03075c + 0.0368 MAM03076c + 0.051 MAM03077c + 0.0661 MAM03078c + 0.0535 MAM03079c + 0.0098 MAM03080c + 0.0281 MAM03081c + 0.0667 MAM03082c + MAM10013c,ok,ok,ok,ok,N/A
 MAR10063,0.1155 MAM01450c + 0.0115 MAM01451c + 0.0205 MAM01589c + 0.5029 MAM02684c + 0.1905 MAM02685c + 0.0096 MAM02715c + 0.0692 MAM02750c + 0.019 MAM02808c + 0.0613 MAM02908c --> MAM10014c,ok,ok,ok,ok,N/A
@@ -12688,24 +12631,24 @@ MAR10070,MAM02664c + MAM10017c --> MAM01713c + MAM10016c,MAM01713c;MAM02664c;MAM
 MAR10071,MAM02554c + MAM10019c --> MAM01072c + MAM02039c + MAM02555c,MAM10019c,ok,ok,ok,N/A
 MAR10072,MAM02554c + MAM10020c --> MAM00409c + MAM02039c + MAM02555c,MAM10020c,ok,ok,ok,N/A
 MAR10073,MAM01371c + MAM02040c + MAM10021c --> MAM01285c + MAM02039c + MAM02751c + MAM10021e,ok,ok,ok,ok,N/A
-MAR10074,MAM10021e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10074,MAM10021e <=> ,ok,ok,ok,ok,N/A
 MAR10075,MAM01371c + MAM02040c + MAM10022c --> MAM01285c + MAM02039c + MAM02751c + MAM10022e,ok,ok,ok,ok,N/A
-MAR10076,MAM10022e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10076,MAM10022e <=> ,ok,ok,ok,ok,N/A
 MAR10077,MAM10023e <=> ,ok,ok,ok,ok,N/A
-MAR10078,MAM10024e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10078,MAM10024e <=> ,ok,ok,ok,ok,N/A
 MAR10079,MAM01371c + MAM02040c + MAM10024c --> MAM01285c + MAM02039c + MAM02751c + MAM10024e,ok,ok,ok,ok,N/A
 MAR10080,MAM01371c + MAM01597c + MAM10021c --> MAM01334c + MAM02759c + MAM10035c,ok,ok,ok,ok,N/A
 MAR10081,MAM10025e <=> ,ok,ok,ok,ok,N/A
 MAR10082,MAM01371c + MAM02040c + MAM10025c --> MAM01285c + MAM02039c + MAM02751c + MAM10025e,ok,ok,ok,ok,N/A
-MAR10083,MAM10026e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10084,MAM10027e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10085,MAM10028e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10086,MAM10029e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10083,MAM10026e <=> ,ok,ok,ok,ok,N/A
+MAR10084,MAM10027e <=> ,ok,ok,ok,ok,N/A
+MAR10085,MAM10028e <=> ,ok,ok,ok,ok,N/A
+MAR10086,MAM10029e <=> ,ok,ok,ok,ok,N/A
 MAR10087,MAM10030e <=> ,ok,ok,ok,ok,N/A
-MAR10088,MAM10031e <=> ,only when going backwards,ok,ok,ok,N/A
-MAR10089,MAM10032e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10088,MAM10031e <=> ,ok,ok,ok,ok,N/A
+MAR10089,MAM10032e <=> ,ok,ok,ok,ok,N/A
 MAR10090,MAM10033e <=> ,MAM10033e,ok,ok,ok,N/A
-MAR10091,MAM10034e <=> ,only when going backwards,ok,ok,ok,N/A
+MAR10091,MAM10034e <=> ,ok,ok,ok,ok,N/A
 MAR10092,MAM02040c + MAM10035c --> MAM01597c + MAM02039c + MAM10021c,ok,ok,ok,ok,N/A
 MAR10093,MAM02961c + MAM10035c --> MAM01597c + MAM02039c + MAM10024c,ok,ok,ok,ok,N/A
 MAR10094,MAM01371c + MAM01597c + MAM10022c --> MAM01334c + MAM02759c + MAM10036c,ok,ok,ok,ok,N/A
@@ -12930,4 +12873,6 @@ MAR20185,2 MAM01628m + 2 MAM01821m + MAM02555m --> 2 MAM01307m + MAM02039m + MAM
 MAR20186,MAM01802m + MAM02026m + MAM02039m + MAM02042m --> MAM01803m + MAM20086m,MAM02042m;MAM20086m,ok,ok,ok,N/A
 MAR20187,MAM02040m + MAM02630m + MAM20086m --> MAM02026m + 2 MAM02039m + MAM02949m,MAM20086m,ok,ok,ok,N/A
 MAR20188,MAM01098m <=> MAM01098c,MAM01098c;MAM01098m,ok,ok,ok,N/A
-MAR20189,MAM01371m + MAM01974m + MAM02578m --> MAM01285m + MAM01975m + MAM02751m,ok,ok,ok,ok,N/A
+MAR20189,MAM01329c + 2 MAM01824m + 5 MAM02039m --> MAM01328c + 2 MAM01826m + 4 MAM02039i,MAM01328c;MAM01329c,ok,ok,ok,N/A
+MAR20190,MAM01329c + MAM02039c + MAM02553c --> MAM01328c + MAM02552c,MAM01328c;MAM01329c,ok,ok,ok,N/A
+MAR20191,MAM01371m + MAM01974m + MAM02578m --> MAM01285m + MAM01975m + MAM02751m,ok,ok,ok,ok,N/A

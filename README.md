@@ -9,7 +9,7 @@ This repository contains the latest version of Human-GEM, a human genome-scale m
 
 ### Cite us:
 If you use Human2 in your research, please cite:  
- > Luo J, Wang H, Moyer D, Guo Z, Robinson JL, Gustafsson J, Anton M, Chen Y, Kerkhoven EJ, Nielsen J, Li F. Reconstruction of human metabolic models with large language models. _In press_ (2026). []()
+ > Luo J, Wang H, Moyer D, Guo Z, Robinson JL, Gustafsson J, Anton M, Chen Y, Kerkhoven EJ, Nielsen J, Li F. Reconstruction of human metabolic models with large language models. _PNAS_ 123.15:e2516511123 (2026). [doi:10.1073/pnas.2516511123](https://doi.org/10.1073/pnas.2516511123)
 
 If you use Human1 in your research, please cite:  
  > Robinson JL, et al. An atlas of human metabolism. _Sci. Signal._ 13, eaaz1482 (2020). [doi:10.1126/scisignal.aaz1482](https://doi.org/10.1126/scisignal.aaz1482)
