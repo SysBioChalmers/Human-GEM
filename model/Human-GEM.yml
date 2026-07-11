@@ -220025,7 +220025,7 @@
           - MAM03186c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166800 or ENSG00000166816 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166816 or ENSG00000171989"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.27"
       - references: "PMID:1429566"
