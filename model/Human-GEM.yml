@@ -244277,7 +244277,7 @@
       - upper_bound: 1000
       - eccodes: "3.1.3.11"
       - references: "PMID:6998788"
-      - subsystem: "Pentose Phosphate Pathway"
+      - subsystem: "Pentose phosphate pathway"
       - confidence_score: 0
       - rxnNotes: "https://doi.org/10.1007/BF02702726"
     - !!omap
