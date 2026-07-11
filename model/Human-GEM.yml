@@ -60031,6 +60031,13 @@
       - formula: "C10H16N3O6S2"
       - charge: -1
       - inchis: "InChI=1S/C10H17N3O6S2/c11-5(10(18)19)1-2-7(14)13-6(4-21-20)9(17)12-3-8(15)16/h5-6,20H,1-4,11H2,(H,12,17)(H,13,14)(H,15,16)(H,18,19)/t5-,6-/m0/s1"
+    - !!omap
+      - id: "MAM00180e"
+      - name: "(S)-dihydroorotate"
+      - compartment: "e"
+      - formula: "C5H5N2O4"
+      - charge: -1
+      - metFrom: "HMRdatabase"
 - reactions:
     - !!omap
       - id: "MAR03905"
@@ -245970,6 +245977,26 @@
       - eccodes: "6.3.1.2"
       - references: "PMID:11080211;PMID:1356223;PMID:14583610;PMID:16213501;PMID:7595668;PMID:8838581;PMID:9053810"
       - subsystem: "Alanine, aspartate and glutamate metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20193"
+      - name: "(S)-dihydroorotate transport, cytosol to extracellular"
+      - metabolites: !!omap
+          - MAM00180c: -1
+          - MAM00180e: 1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - references: "PMID:30643150"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20194"
+      - name: "Exchange of (S)-dihydroorotate"
+      - metabolites: !!omap
+          - MAM00180e: -1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - subsystem: "Exchange/demand reactions"
       - confidence_score: 0
 - genes:
     - !!omap
