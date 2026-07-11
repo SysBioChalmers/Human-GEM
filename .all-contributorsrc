@@ -127,8 +127,11 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/7326655?v=4",
       "profile": "https://github.com/edkerk",
       "contributions": [
+        "bug",
+        "research",
         "code",
         "review",
+        "doc",
         "ideas"
       ]
     },
