@@ -4536,13 +4536,6 @@
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM00348c"
-      - name: "13-cis-oxo-retinoate"
-      - compartment: "c"
-      - formula: "C20H27O3"
-      - charge: -1
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM00349c"
       - name: "13-cis-retinal"
       - compartment: "c"
@@ -11333,14 +11326,14 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01026c"
-      - name: "4-oxo-13-cis-retinoate"
+      - name: "4-hydroxy-13-cis-retinoate"
       - compartment: "c"
       - formula: "C20H27O3"
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01026r"
-      - name: "4-oxo-13-cis-retinoate"
+      - name: "4-hydroxy-13-cis-retinoate"
       - compartment: "r"
       - formula: "C20H27O3"
       - charge: -1
@@ -39429,13 +39422,6 @@
       - inchis: "InChI=1S/C27H42O/c1-18(2)7-6-8-19(3)23-11-12-24-22-10-9-20-17-21(28)13-15-26(20,4)25(22)14-16-27(23,24)5/h7,9-10,19,21,23-25,28H,6,8,11-17H2,1-5H3/t19-,21+,23-,24+,25+,26+,27-/m1/s1"
       - metFrom: "Recon3D"
     - !!omap
-      - id: "MAM00348n"
-      - name: "13-cis-oxo-retinoate"
-      - compartment: "n"
-      - formula: "C20H27O3"
-      - charge: -1
-      - metFrom: "Recon3D"
-    - !!omap
       - id: "MAM00350n"
       - name: "13-cis-retinoate"
       - compartment: "n"
@@ -39458,7 +39444,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM01026n"
-      - name: "4-oxo-13-cis-retinoate"
+      - name: "4-hydroxy-13-cis-retinoate"
       - compartment: "n"
       - formula: "C20H27O3"
       - charge: -1
@@ -134283,7 +134269,7 @@
     - !!omap
       - id: "MAR08703"
       - metabolites: !!omap
-          - MAM01026c: 2
+          - MAM00993c: 2
           - MAM02630c: -1
           - MAM02833c: -2
       - lower_bound: 0
@@ -134292,20 +134278,10 @@
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08704"
-      - metabolites: !!omap
-          - MAM00348c: -1
-          - MAM01026c: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Retinol metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR08706"
       - metabolites: !!omap
-          - MAM00348c: 2
           - MAM00350c: -2
+          - MAM01026c: 2
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
@@ -183600,18 +183576,6 @@
       - metabolites: !!omap
           - MAM01026c: -1
           - MAM01026n: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - references: "PMID:1503811"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01564"
-      - name: "13-Cis-4-Oxo-Retinoic Acid Transport, Nuclear"
-      - metabolites: !!omap
-          - MAM00348c: -1
-          - MAM00348n: 1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
