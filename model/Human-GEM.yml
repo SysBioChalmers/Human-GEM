@@ -3065,6 +3065,13 @@
       - charge: 1
       - metFrom: "HMRdatabase"
     - !!omap
+      - id: "MAM00232e"
+      - name: "1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen"
+      - compartment: "e"
+      - formula: "C19H34N3O13R2"
+      - charge: 1
+      - metFrom: "HMRdatabase"
+    - !!omap
       - id: "MAM00233c"
       - name: "1,2-diacylglycerol-bile-PC pool"
       - compartment: "c"
@@ -33610,13 +33617,6 @@
       - name: "procollagen-5-hydroxy-L-lysine"
       - compartment: "c"
       - formula: "C7H14N3O3R2"
-      - charge: 1
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM02768c"
-      - name: "procollagen-L-lysine"
-      - compartment: "c"
-      - formula: "C7H14N3O2R2"
       - charge: 1
       - metFrom: "HMRdatabase"
     - !!omap
@@ -140068,22 +140068,6 @@
       - subsystem: "Isolated"
       - confidence_score: 0
     - !!omap
-      - id: "MAR09553"
-      - metabolites: !!omap
-          - MAM01306c: -1
-          - MAM01596c: 1
-          - MAM02630c: -1
-          - MAM02767c: 1
-          - MAM02768c: -1
-          - MAM02943c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000083444 or ENSG00000106397 or ENSG00000152952"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.11.4"
-      - subsystem: "Isolated"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR09801"
       - name: "GTP:5-hydroxy-L-lysine O-phosphotransferase"
       - metabolites: !!omap
@@ -245970,6 +245954,25 @@
       - eccodes: "6.3.1.2"
       - references: "PMID:11080211;PMID:1356223;PMID:14583610;PMID:16213501;PMID:7595668;PMID:8838581;PMID:9053810"
       - subsystem: "Alanine, aspartate and glutamate metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20192"
+      - name: "Transport of 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen (Cytosol to Extracellular)"
+      - metabolites: !!omap
+          - MAM00232c: -1
+          - MAM00232e: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20193"
+      - name: "Exchange of 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen"
+      - metabolites: !!omap
+          - MAM00232e: -1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - subsystem: "Exchange/demand reactions"
       - confidence_score: 0
 - genes:
     - !!omap
