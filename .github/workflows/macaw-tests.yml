@@ -33,6 +33,10 @@ jobs:
           echo "results=$PARSED_RESULTS" >> $GITHUB_OUTPUT
           printf "$TEST_RESULTS" > data/testResults/macaw_summary.md
 
+      - name: Mass and charge balance report
+        continue-on-error: true
+        run: python code/test/balanceTest.py
+
       - name: Mention PR# in README.md
         env:
           PR_NUMBER: ${{ github.event.number }}
