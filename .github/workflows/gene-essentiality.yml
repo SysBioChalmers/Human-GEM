@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Fetch RAVEN
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: "SysBioChalmers/RAVEN"
           path: "RAVEN"
@@ -60,7 +60,7 @@ jobs:
           fi
         
       - name: Auto-commit results
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_user_name: memote-bot
           commit_message: "chore: add gene essentiality test result"
