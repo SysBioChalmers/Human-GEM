@@ -60378,6 +60378,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000119640 or ENSG00000170634"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "3.6.1.7"
       - subsystem: "Glycolysis / Gluconeogenesis"
       - confidence_score: 0
     - !!omap
@@ -61892,6 +61893,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171174"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.7.1.15"
       - subsystem: "Pentose and glucuronate interconversions"
       - confidence_score: 0
     - !!omap
@@ -75685,6 +75687,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000261052"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.8.2.-"
       - subsystem: "Cysteine and methionine metabolism"
       - confidence_score: 0
     - !!omap
@@ -77603,6 +77606,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000095380"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.5.1.-"
       - subsystem: "Amino sugar and nucleotide sugar metabolism"
       - confidence_score: 0
     - !!omap
@@ -98399,6 +98403,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000095321"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.3.1.-"
       - references: "PMID:14598172;PMID:1735445;PMID:18406340;PMID:1988962;PMID:2351134;PMID:2355017;PMID:6361812;PMID:7892212;PMID:8132483"
       - subsystem: "Carnitine shuttle (peroxisomal)"
       - confidence_score: 0
@@ -120888,6 +120893,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000136213 or ENSG00000169105 or ENSG00000171310 or ENSG00000180767"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.8.2.-"
       - subsystem: "Chondroitin / heparan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -121081,6 +121087,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000136213 or ENSG00000169105 or ENSG00000171310 or ENSG00000180767"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.8.2.-"
       - subsystem: "Chondroitin / heparan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122252,6 +122259,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122266,6 +122274,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122280,6 +122289,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122309,6 +122319,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122323,6 +122334,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122352,6 +122364,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122366,6 +122379,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122395,6 +122409,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122409,6 +122424,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122438,6 +122454,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122452,6 +122469,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122481,6 +122499,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122495,6 +122514,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122524,6 +122544,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122538,6 +122559,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122567,6 +122589,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122581,6 +122604,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122610,6 +122634,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122624,6 +122649,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122653,6 +122679,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122667,6 +122694,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122696,6 +122724,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122710,6 +122739,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122739,6 +122769,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122785,6 +122816,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122799,6 +122831,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122813,6 +122846,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122827,6 +122861,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122856,6 +122891,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122870,6 +122906,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122899,6 +122936,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122930,6 +122968,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122959,6 +122998,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122973,6 +123013,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122987,6 +123028,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -123016,6 +123058,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -123030,6 +123073,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000156966 or ENSG00000170340 or ENSG00000174684 or ENSG00000176383 or ENSG00000177191 or ENSG00000179913"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -123059,6 +123103,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158470 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -128606,6 +128651,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171124"
       - rxnFrom: "HMRdatabase"
+      - eccodes: "2.4.1.-"
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -178814,6 +178860,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000179913"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.4.1.-"
       - references: "PMID:10072769"
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
@@ -178830,6 +178877,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000179913"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.4.1.-"
       - references: "PMID:10072769"
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
@@ -179544,6 +179592,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000132423"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.1.1.-"
       - references: "PMID:10777520;PMID:11051212;PMID:1965190;PMID:7380842"
       - subsystem: "Ubiquinone synthesis"
       - confidence_score: 0
@@ -182605,6 +182654,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000119227"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.4.1.-"
       - references: "PMID:15208306"
       - subsystem: "Phosphatidylinositol phosphate metabolism"
       - confidence_score: 0
@@ -182621,6 +182671,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000119227"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.4.1.-"
       - references: "PMID:15208306"
       - subsystem: "Phosphatidylinositol phosphate metabolism"
       - confidence_score: 0
@@ -183758,6 +183809,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000172817"
       - rxnFrom: "Recon3D"
+      - eccodes: "1.14.14.29"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -194565,6 +194617,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:7551818"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194580,6 +194633,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:19578400"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194608,6 +194662,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:20173117"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194624,6 +194679,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:10657396;PMID:15794660"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194639,6 +194695,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:18678604"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194698,6 +194755,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:10657396;PMID:15794660"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194726,6 +194784,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:19327992 ;PMID:18670371;PMID:15466478;PMID:11433098"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194741,6 +194800,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:21281499"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194769,6 +194829,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:11433098"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194784,6 +194845,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:21281499"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194799,6 +194861,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:15896654"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194814,6 +194877,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:15794660"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194842,6 +194906,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:21281499"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194857,6 +194922,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:20173117"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194873,6 +194939,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:15794660"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194888,6 +194955,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:15794660"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194903,6 +194971,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:15794660"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194918,6 +194987,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:7977144"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -194959,6 +195029,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:17442642"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -195015,6 +195086,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:20807522;PMID:20591710"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -195046,6 +195118,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:8214594;PMID:8496747;PMID:8491807"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -195102,6 +195175,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
       - rxnNotes: "DOI:10.1016/j.physletb.2003.10.071"
@@ -195117,6 +195191,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:16046200"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -195132,6 +195207,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
       - rxnNotes: "DOI:10.1016/j.physletb.2003.10.071"
@@ -196127,6 +196203,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:16146704"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -196846,6 +196923,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000197142"
       - rxnFrom: "Recon3D"
+      - eccodes: "6.2.1.3"
       - references: "PMID:15060085;PMID:4062873"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -197563,6 +197641,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:15060085"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -197600,6 +197679,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.21"
       - references: "PMID:16602100"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -197615,6 +197695,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148090"
       - rxnFrom: "Recon3D"
+      - eccodes: "4.2.1.-"
       - references: "PMID:8582058"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -199045,6 +199126,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000133313 or ENSG00000150656"
       - rxnFrom: "Recon3D"
+      - eccodes: "3.4.13.-"
       - references: "PMID:6993048;PMID:4652039;PMID:4919261;PMID:20178671;PMID:12473676"
       - subsystem: "Peptide metabolism"
       - confidence_score: 0
@@ -199253,6 +199335,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000002549"
       - rxnFrom: "Recon3D"
+      - eccodes: "3.4.11.-"
       - references: "PMID:1908238;PMID:1931152"
       - subsystem: "Peptide metabolism"
       - confidence_score: 0
@@ -200332,6 +200415,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000197594"
       - rxnFrom: "Recon3D"
+      - eccodes: "3.6.1.-"
       - subsystem: "Vitamin B2 metabolism"
       - confidence_score: 0
     - !!omap
@@ -207614,6 +207698,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000149124"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.3.1.13"
       - references: "PMID:18854818;PMID:21591676"
       - subsystem: "Phenylalanine metabolism"
       - confidence_score: 0
@@ -219384,6 +219469,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000015413 or ENSG00000133313"
       - rxnFrom: "Recon3D"
+      - eccodes: "3.4.13.-"
       - references: "PMID:4074331;PMID:964683"
       - subsystem: "Peptide metabolism"
       - confidence_score: 0
@@ -220632,6 +220718,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148090"
       - rxnFrom: "Recon3D"
+      - eccodes: "4.2.1.-"
       - references: "PMID:16573641;PMID:18348873;PMID:16111821"
       - subsystem: "Lysine metabolism"
       - confidence_score: 0
@@ -227662,6 +227749,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000070610"
       - rxnFrom: "Recon3D"
+      - eccodes: "3.2.1.45"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -228067,6 +228155,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000164023"
       - rxnFrom: "Recon3D"
+      - eccodes: "2.7.8.27"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -242625,6 +242714,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000151151"
+      - eccodes: "2.7.1.-"
       - subsystem: "Inositol phosphate metabolism"
       - confidence_score: 0
     - !!omap
@@ -243487,6 +243577,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000010932"
+      - eccodes: "1.14.13.8"
       - references: "PMID:32156684"
       - subsystem: "Metabolism of other amino acids"
       - confidence_score: 4
@@ -244075,6 +244166,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000006534"
+      - eccodes: "1.2.1.-"
       - subsystem: "Glycolysis / Gluconeogenesis"
       - confidence_score: 0
     - !!omap
@@ -244106,6 +244198,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000006534"
+      - eccodes: "1.2.1.-"
       - subsystem: "Glycolysis / Gluconeogenesis"
       - confidence_score: 0
     - !!omap
@@ -244474,6 +244567,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000196616"
+      - eccodes: "1.1.1.-"
       - subsystem: "Fatty acid degradation"
       - confidence_score: 0
     - !!omap
