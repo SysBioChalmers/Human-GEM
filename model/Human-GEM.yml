@@ -79034,7 +79034,7 @@
       - confidence_score: 2
     - !!omap
       - id: "MAR07285"
-      - name: "dolichyl-diphosphooligosaccharide-protein glycotransferase ((Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1)"
+      - name: "dolichyl-diphosphooligosaccharide-protein glycotransferase (G00008)"
       - metabolites: !!omap
           - MAM00140r: 1
           - MAM00154r: -1
@@ -119448,7 +119448,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00814"
-      - name: "ST8 alpha-N-acetyl-neuraminide alpha-2,8-sialyltransferase (monosialylgalactosylgloboside)"
+      - name: "ST8 alpha-N-acetyl-neuraminide alpha-2,8-sialyltransferase (G00098)"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02491c: -1
@@ -165289,7 +165289,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08266"
-      - name: "transport of fucacgalfucgalacglcgalgluside heparan sulfate (cytosol to extracellular)"
+      - name: "transport of G00043 (cytosol to extracellular)"
       - metabolites: !!omap
           - MAM01850c: -1
           - MAM01850e: 1
@@ -176248,7 +176248,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08265"
-      - name: "transport of fucacgalfucgalacglcgalgluside heparan sulfate (cytosol to Golgi apparatus)"
+      - name: "transport of G00043 (cytosol to Golgi apparatus)"
       - metabolites: !!omap
           - MAM01850c: -1
           - MAM01850g: 1
@@ -181405,7 +181405,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09321"
-      - name: "Exchange of fucacgalfucgalacglcgalgluside heparan sulfate"
+      - name: "Exchange of G00043"
       - metabolites: !!omap
           - MAM01850e: -1
       - lower_bound: -1000
