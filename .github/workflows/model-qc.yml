@@ -1,0 +1,195 @@
+name: Model QC checks
+
+on: [pull_request]
+
+jobs:
+  # Fast checks (seconds to a couple of minutes). Posts the shared model-quality
+  # comment straight away so the pull request gets feedback without waiting for
+  # MEMOTE, and is a quick status check that can be required by branch protection.
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install cobra
+
+      - name: Metabolite completeness, GPR/bounds and growth checks
+        run: python code/test/qcModelChecks.py
+
+      - name: Annotation and cross-reference validation
+        run: python code/test/annotationTest.py
+
+      - name: Fetch target-branch results for comparison
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          git fetch --depth=1 origin "$BASE_REF" || true
+          mkdir -p "$RUNNER_TEMP/base"
+          for f in qc_metabolite_completeness.csv qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md; do
+            git show "origin/$BASE_REF:data/testResults/$f" > "$RUNNER_TEMP/base/$f" 2>/dev/null || rm -f "$RUNNER_TEMP/base/$f"
+          done
+
+      - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        run: |
+          git stash
+          git fetch
+          git checkout $BRANCH_NAME
+          if git stash list | grep -q 'stash@{'; then
+            git stash pop
+          fi
+
+      - name: Auto-commit results
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_user_name: memote-bot
+          # [skip ci] so this results commit does not re-trigger the workflows.
+          commit_message: "chore: add model QC results [skip ci]"
+          file_pattern: data/testResults/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build report comment
+        id: report
+        env:
+          BASE_RESULTS_DIR: ${{ runner.temp }}/base
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python code/test/buildReport.py
+          {
+            echo "results<<QC_EOF"
+            cat data/testResults/model_qc_summary.md
+            echo "QC_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Post comment
+        uses: NejcZdovc/comment-pr@v2
+        with:
+          file: "commentReport.md"
+          identifier: "GITHUB_COMMENT_QC"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TEST_RESULTS: ${{ steps.report.outputs.results }}
+          GH_ACTION_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+  # MEMOTE snapshot. A fast core subset runs on every pull request; the full
+  # suite (which does FVA / a loopless MILP over every reaction and is far
+  # slower) runs only on pull requests to main. It reuses the fast checks'
+  # committed results and updates the same comment when it finishes.
+  memote:
+    runs-on: ubuntu-latest
+    # Ceiling only: the subset finishes in minutes; the per-run limit below caps
+    # the full suite. Kept under GitHub's 6 h hosted-runner maximum.
+    timeout-minutes: 350
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        # gurobipy so MEMOTE's genome-scale MILP/FVA tests use Gurobi; with GLPK
+        # even the core subset struggles to finish on a genome-scale model.
+        run: pip install cobra memote gurobipy
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+            echo "Gurobi license configured."
+          else
+            echo "::warning::Gurobi license secret not set; MEMOTE may not finish in time."
+          fi
+
+      - name: MEMOTE snapshot (subset on normal PRs, full suite on PRs to main)
+        continue-on-error: true
+        env:
+          PYTHONUNBUFFERED: "1"
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          # Empty for PRs to main (run the full suite); "1" otherwise (subset).
+          MEMOTE_SUBSET: ${{ github.event.pull_request.base.ref != 'main' && '1' || '' }}
+        run: |
+          if [ "$BASE_REF" = "main" ]; then LIMIT=19800; else LIMIT=2400; fi
+          echo "Running MEMOTE with a ${LIMIT}s wall-clock limit (base: $BASE_REF)."
+          timeout "$LIMIT" python code/test/memoteSnapshot.py \
+            || echo "::warning::MEMOTE did not finish within ${LIMIT}s; score unavailable this run."
+
+      - name: Fetch target-branch results for comparison
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          git fetch --depth=1 origin "$BASE_REF" || true
+          mkdir -p "$RUNNER_TEMP/base"
+          for f in qc_metabolite_completeness.csv qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md; do
+            git show "origin/$BASE_REF:data/testResults/$f" > "$RUNNER_TEMP/base/$f" 2>/dev/null || rm -f "$RUNNER_TEMP/base/$f"
+          done
+
+      - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        run: |
+          git stash
+          git fetch
+          git checkout $BRANCH_NAME
+          if git stash list | grep -q 'stash@{'; then
+            git stash pop
+          fi
+
+      - name: Auto-commit results
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_user_name: memote-bot
+          # [skip ci] so this results commit does not re-trigger the workflows.
+          commit_message: "chore: add MEMOTE result [skip ci]"
+          file_pattern: data/testResults/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload full MEMOTE result
+        uses: actions/upload-artifact@v7
+        with:
+          name: memote-result
+          path: memote_result.json
+          if-no-files-found: ignore
+
+      - name: Build report comment
+        id: report
+        env:
+          BASE_RESULTS_DIR: ${{ runner.temp }}/base
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python code/test/buildReport.py
+          {
+            echo "results<<QC_EOF"
+            cat data/testResults/model_qc_summary.md
+            echo "QC_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Post comment
+        uses: NejcZdovc/comment-pr@v2
+        with:
+          file: "commentReport.md"
+          identifier: "GITHUB_COMMENT_QC"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TEST_RESULTS: ${{ steps.report.outputs.results }}
+          GH_ACTION_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

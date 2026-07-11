@@ -1,0 +1,119 @@
+id,column,issue
+MAM00131,metMetaNetXID,inconsistent across compartments: MNXM1512;MNXM165171;MNXM5945 | MNXM1512;MNXM5945
+MAM00186c,metLipidMapsID,malformed: PROTEIN
+MAM00186e,metLipidMapsID,malformed: PROTEIN
+MAM00186l,metLipidMapsID,malformed: PROTEIN
+MAM00270,metChEBIID,inconsistent across compartments: CHEBI:34306 | CHEBI:76624
+MAM00270,metMetaNetXID,inconsistent across compartments: MNXM22451 | MNXM22451;MNXM6760 | MNXM732711
+MAM00767,metMetaNetXID,inconsistent across compartments: MNXM3838;MNXM91406 | MNXM733937
+MAM00933,metMetaNetXID,inconsistent across compartments: MNXM37161 | MNXM37161;MNXM6100
+MAM00995,metChEBIID,inconsistent across compartments: CHEBI:17879 | CHEBI:30763
+MAM01019,metChEBIID,inconsistent across compartments: CHEBI:16318 | CHEBI:57730
+MAM01019,metMetaNetXID,inconsistent across compartments: MNXM1982 | MNXM9757
+MAM01230,metMetaNetXID,inconsistent across compartments: MNXM1105991 | MNXM162775;MNXM2209
+MAM01230,metPubChemID,inconsistent across compartments: 638015 | 6436082
+MAM01232,metMetaNetXID,inconsistent across compartments: MNXM1102095 | MNXM162711;MNXM2626
+MAM01252,metChEBIID,inconsistent across compartments: CHEBI:15366 | CHEBI:30089
+MAM01288,metChEBIID,inconsistent across compartments: CHEBI:16960 | CHEBI:57967
+MAM01288,metMetaNetXID,inconsistent across compartments: MNXM1104545 | MNXM48596
+MAM01308c,metLipidMapsID,malformed: PROTEIN
+MAM01308e,metLipidMapsID,malformed: PROTEIN
+MAM01308l,metLipidMapsID,malformed: PROTEIN
+MAM01316,metMetaNetXID,inconsistent across compartments: MNXM1721 | MNXM731626
+MAM01343c,metLipidMapsID,malformed: PROTEIN
+MAM01343e,metLipidMapsID,malformed: PROTEIN
+MAM01343l,metLipidMapsID,malformed: PROTEIN
+MAM01345c,metLipidMapsID,malformed: PROTEIN
+MAM01345e,metLipidMapsID,malformed: PROTEIN
+MAM01345l,metLipidMapsID,malformed: PROTEIN
+MAM01349c,metLipidMapsID,malformed: PROTEIN
+MAM01350c,metLipidMapsID,malformed: PROTEIN
+MAM01350e,metLipidMapsID,malformed: PROTEIN
+MAM01350l,metLipidMapsID,malformed: PROTEIN
+MAM01350r,metLipidMapsID,malformed: PROTEIN
+MAM01351c,metLipidMapsID,malformed: PROTEIN
+MAM01351e,metLipidMapsID,malformed: PROTEIN
+MAM01351l,metLipidMapsID,malformed: PROTEIN
+MAM01351r,metLipidMapsID,malformed: PROTEIN
+MAM01352l,metLipidMapsID,malformed: PROTEIN
+MAM01353c,metLipidMapsID,malformed: PROTEIN
+MAM01353e,metLipidMapsID,malformed: PROTEIN
+MAM01353r,metLipidMapsID,malformed: PROTEIN
+MAM01354c,metLipidMapsID,malformed: PROTEIN
+MAM01354e,metLipidMapsID,malformed: PROTEIN
+MAM01354r,metLipidMapsID,malformed: PROTEIN
+MAM01355c,metLipidMapsID,malformed: PROTEIN
+MAM01355e,metLipidMapsID,malformed: PROTEIN
+MAM01355r,metLipidMapsID,malformed: PROTEIN
+MAM01359c,metLipidMapsID,malformed: PROTEIN
+MAM01359e,metLipidMapsID,malformed: PROTEIN
+MAM01359l,metLipidMapsID,malformed: PROTEIN
+MAM01359r,metLipidMapsID,malformed: PROTEIN
+MAM01362,metChEBIID,inconsistent across compartments: CHEBI:15843 | CHEBI:32395
+MAM01362,metMetaNetXID,inconsistent across compartments: MNXM1107770 | MNXM162250
+MAM01388,metMetaNetXID,inconsistent across compartments: MNXM105 | MNXM1105026
+MAM01584,metChEBIID,inconsistent across compartments: CHEBI:32425 | CHEBI:32426
+MAM01584,metMetaNetXID,inconsistent across compartments: MNXM1107952 | MNXM165514;MNXM7404
+MAM01657,metMetaNetXID,inconsistent across compartments: MNXM1137698 | MNXM148197
+MAM01689,metChEBIID,inconsistent across compartments: CHEBI:28125 | CHEBI:77016
+MAM01689,metMetaNetXID,inconsistent across compartments: MNXM7161 | MNXM7161;MNXM90206
+MAM01739,metMetaNetXID,inconsistent across compartments: MNXM163363 | MNXM163363;MNXM2336
+MAM01778,metChEBIID,inconsistent across compartments: CHEBI:30823 | CHEBI:30825
+MAM01778,metMetaNetXID,inconsistent across compartments: MNXM1107708 | MNXM11476;MNXM306;MNXM727012;MNXM92305
+MAM01784,metChEBIID,inconsistent across compartments: CHEBI:28364 | CHEBI:58562
+MAM01784,metMetaNetXID,inconsistent across compartments: MNXM13045;MNXM2801 | MNXM727959
+MAM01806,metChEBIID,inconsistent across compartments: CHEBI:17407 | CHEBI:175763
+MAM01806,metMetaNetXID,inconsistent across compartments: MNXM1103344 | MNXM34
+MAM01827c,metLipidMapsID,malformed: PROTEIN
+MAM01827e,metLipidMapsID,malformed: PROTEIN
+MAM01827l,metLipidMapsID,malformed: PROTEIN
+MAM01910,metMetaNetXID,inconsistent across compartments: MNXM1108175 | MNXM112;MNXM390
+MAM02012c,metLipidMapsID,malformed: PROTEIN
+MAM02012l,metLipidMapsID,malformed: PROTEIN
+MAM02044c,metLipidMapsID,malformed: PROTEIN
+MAM02044e,metLipidMapsID,malformed: PROTEIN
+MAM02044l,metLipidMapsID,malformed: PROTEIN
+MAM02049,metChEBIID,inconsistent across compartments: CHEBI:17627 | CHEBI:60344
+MAM02108,metChEBIID,inconsistent across compartments: CHEBI:32362 | CHEBI:45571
+MAM02116,metMetaNetXID,inconsistent across compartments: MNXM1389;MNXM149061 | MNXM728262
+MAM02344,metChEBIID,inconsistent across compartments: CHEBI:18262 | CHEBI:30805
+MAM02344,metMetaNetXID,inconsistent across compartments: MNXM162258;MNXM402 | MNXM402
+MAM02414c,metLipidMapsID,malformed: PROTEIN
+MAM02414e,metLipidMapsID,malformed: PROTEIN
+MAM02414l,metLipidMapsID,malformed: PROTEIN
+MAM02457,metChEBIID,inconsistent across compartments: CHEBI:1306412 | CHEBI:78043
+MAM02457,metMetaNetXID,inconsistent across compartments: MNXM37925;MNXM511706 | MNXM735122
+MAM02484m,metLipidMapsID,malformed: PROTEIN
+MAM02485c,metLipidMapsID,malformed: PROTEIN
+MAM02485m,metLipidMapsID,malformed: PROTEIN
+MAM02494,metChEBIID,inconsistent across compartments: CHEBI:28875 | CHEBI:30807
+MAM02494,metMetaNetXID,inconsistent across compartments: MNXM162239;MNXM314 | MNXM314
+MAM02553,metChEBIID,inconsistent across compartments: CHEBI:16908 | CHEBI:57945
+MAM02554,metChEBIID,inconsistent across compartments: CHEBI:18009 | CHEBI:58349
+MAM02555,metChEBIID,inconsistent across compartments: CHEBI:16474 | CHEBI:57783
+MAM02555,metMetaNetXID,inconsistent across compartments: MNXM6 | MNXM738702
+MAM02630,metMetaNetXID,inconsistent across compartments: MNXM4 | MNXM735438
+MAM02642,metChEBIID,inconsistent across compartments: CHEBI:25646 | CHEBI:28837
+MAM02647,metPubChemID,inconsistent across compartments: 5280355 | 5497111
+MAM02679,metKEGGID,inconsistent across compartments: C00154 | C00831
+MAM02679,metMetaNetXID,inconsistent across compartments: MNXM1154 | MNXM727034
+MAM02746,metMetaNetXID,inconsistent across compartments: MNXM165293;MNXM1774 | MNXM165293;MNXM1774;MNXM91275
+MAM02753c,metLipidMapsID,malformed: PROTEIN
+MAM02753e,metLipidMapsID,malformed: PROTEIN
+MAM02753l,metLipidMapsID,malformed: PROTEIN
+MAM02754,metChEBIID,inconsistent across compartments: CHEBI:16836 | CHEBI:57917
+MAM02754,metMetaNetXID,inconsistent across compartments: MNXM162908 | MNXM526
+MAM02759,metChEBIID,inconsistent across compartments: CHEBI:18361 | CHEBI:33019
+MAM02766,metChEBIID,inconsistent across compartments: CHEBI:51340 | CHEBI:77268
+MAM02802c,metLipidMapsID,malformed: PROTEIN
+MAM02802e,metLipidMapsID,malformed: PROTEIN
+MAM02802l,metLipidMapsID,malformed: PROTEIN
+MAM02837e,metLipidMapsID,malformed: PROTEIN
+MAM02935c,metLipidMapsID,malformed: PROTEIN
+MAM02935l,metLipidMapsID,malformed: PROTEIN
+MAM02935m,metLipidMapsID,malformed: PROTEIN
+MAM03590,metMetaNetXID,inconsistent across compartments: MNXM139 | MNXM728266
+MAM03652,metChEBIID,inconsistent across compartments: CHEBI:71464 | CHEBI:71465
+MAM03887,metChEBIID,inconsistent across compartments: CHEBI:64039 | CHEBI:77250
+MAM20077,metChEBIID,inconsistent across compartments: CHEBI:29144 | CHEBI:83767
+MAM20077,metMetaNetXID,inconsistent across compartments: MNXM37367 | MNXM732228

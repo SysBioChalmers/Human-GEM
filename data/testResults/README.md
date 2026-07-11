@@ -4,7 +4,7 @@ The file here contains results from the [MACAW](https://github.com/Devlin-Moyer/
 
 The test results shown here were obtained by the GitHub Actions run in:
 
-- **PR #1052** (QC)
+- **PR #1046** (QC)
 - **PR #973** (gene essentiality)
 
 The results will be updated by any subsequent pull request. Summary results are shown as a comment in the corresponding pull request.
@@ -28,4 +28,16 @@ Reports the reactions whose elemental (mass) or charge sums do not balance, usin
 ### Cell-line specific gene essentiality
 Evaluate gene essentiality predictions in 5 cell-line specific GEMs with experimental fitness data gathered from the [Hart _et al._ (2015)](https://doi.org/10.1016/j.cell.2015.11.015).
 
-Cell-line specific GEMs are constructed with tINIT2 for DLD1, GBM, HCT116, HeLa and RPE1 cell lines. Then, the `metabolicTasks_Essential.txt` list of tasks is used to identify essential genes in each of these models. The predicted gene essentiality is compared to results from a high-throughput CRISPR-Cas9 screen for identifying genes that affect fitness. Only the summary statistics of this comparison are kept. 
+Cell-line specific GEMs are constructed with tINIT2 for DLD1, GBM, HCT116, HeLa and RPE1 cell lines. Then, the `metabolicTasks_Essential.txt` list of tasks is used to identify essential genes in each of these models. The predicted gene essentiality is compared to results from a high-throughput CRISPR-Cas9 screen for identifying genes that affect fitness. Only the summary statistics of this comparison are kept.
+
+### Model QC checks
+A set of lightweight model quality-control checks, run by the `Model QC checks` workflow:
+
+- `qc_metabolite_completeness.csv`: metabolites without a chemical formula or without a charge. Such metabolites are silently skipped by the mass and charge balance test, so tracking them keeps that test meaningful.
+- `qc_reaction_sanity.csv`: reactions with invalid flux bounds (`lb > ub` or outside the standard +/-1000 range) or GPR issues (genes not annotated in `genes.tsv`, or a boundary reaction with a gene rule).
+- `qc_annotation_issues.csv`: cross-reference problems in the annotation tables. Identifiers whose format does not match their namespace (KEGG, ChEBI, HMDB, PubChem, MetaNetX, Rhea, LipidMaps, EHMN, HepatoNET1, Reactome, TCDB), and metabolites whose cross-references are inconsistent across compartments (the same metabolite should carry the same identifiers in every compartment).
+- `memote_score.md`: the total score from the [MEMOTE](https://memote.readthedocs.io) test suite, tracked so a pull request that changes it is visible in the diff. MEMOTE is split by cost: every pull request runs a fast core subset (it skips the flux-variability, stoichiometric-consistency-MILP and matrix-rank tests that dominate runtime on a genome-scale model), and pull requests to `main` run the complete suite. The scored MEMOTE result is uploaded as a build artifact.
+
+The workflow also verifies the model can produce biomass under its default constraints (a growth sanity check), which is the one check that fails the build if it does not hold. The fast checks and MEMOTE run as two separate jobs, so the quick checks report without waiting for the (much slower) MEMOTE snapshot.
+
+All of the results here are combined into a single pull-request comment (`model_qc_summary.md`): a compact status table for the model QC checks (current value, change compared to the target branch, and an icon for a quick visual check), followed by the MACAW and mass/charge balance summary and the gene-essentiality metrics. Each workflow rebuilds and posts that comment from the committed result files, so a result set that has not finished yet shows as pending. The per-finding detail stays in the CSVs above, which is where you look to find out what changed or why something failed.
