@@ -39,12 +39,29 @@ MODEL_FILE = "model/Human-GEM.yml"
 RESULT_JSON = "memote_result.json"  # repo root -> uploaded as artifact, not committed
 SCORE_MD = "data/testResults/memote_score.md"
 
-# The three tests that dominate MEMOTE runtime on a genome-scale model: each runs
-# flux-variability or a loopless (MILP) analysis over every reaction.
+# The tests that dominate MEMOTE runtime on a genome-scale model. Two groups:
+#  * consistency: MILP / flux-variability / per-metabolite optimisation over the
+#    whole model (stoichiometric consistency, energy cycles, blocked reactions,
+#    open-bound producibility, ...). This module alone took ~32 min in CI.
+#  * matrix: rank / null-space of the stoichiometric matrix, which is O(n^3) and
+#    intractable on a genome-scale matrix.
+# The core subset skips these so it finishes within a per-pull-request budget; the
+# full suite (pull requests to main) runs them.
 SLOW_TESTS = [
+    # consistency (test_consistency.py)
+    "test_stoichiometric_consistency",
+    "test_unconserved_metabolites",
+    "test_inconsistent_min_stoichiometry",
+    "test_detect_energy_generating_cycles",
     "test_find_stoichiometrically_balanced_cycles",
     "test_blocked_reactions",
     "test_find_reactions_unbounded_flux_default_condition",
+    "test_find_metabolites_not_produced_with_open_bounds",
+    "test_find_metabolites_not_consumed_with_open_bounds",
+    # matrix (test_matrix.py)
+    "test_number_independent_conservation_relations",
+    "test_matrix_rank",
+    "test_degrees_of_freedom",
 ]
 
 
