@@ -11,3 +11,6 @@ e.g. This PR improves/fixes # by ...
 <!-- Chose ONE of the following two options. -->
 - [ ] This PR has `develop` as target branch, and will be resolved with a **squash-merge**.
 - [ ] This PR has `main` as target branch, and will be resolved with a **merge commit**.
+
+---
+<sub>_Maintainers: after merge, credit new contributors by commenting `@all-contributors please add @username for <type>` on this PR or the linked issue (see [CONTRIBUTING](CONTRIBUTING.md#crediting-contributors))._</sub>

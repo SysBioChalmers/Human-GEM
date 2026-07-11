@@ -1,6 +1,6 @@
 ## Contributing guidelines
 
-Contributions to **Human-GEM** are very welcome and greatly appreciated! Credit is given to everyone who contributes, tracked with [all-contributors](https://allcontributors.org). A maintainer credits a contributor by commenting `@all-contributors please add @username for <contribution types>` (see the [emoji key](https://allcontributors.org/docs/en/emoji-key)) on any issue or pull request. A GitHub Action then opens a pull request against `develop` that updates `.all-contributorsrc` and the `Contributors` section of the `README`, so the credit is kept when `main` is rebuilt from `develop` at release.
+Contributions to **Human-GEM** are very welcome and greatly appreciated! Credit is given to everyone who contributes, tracked with [all-contributors](https://allcontributors.org); see [Crediting contributors](#crediting-contributors) below.
 
 You can contribute in **2** major ways: by creating issues, and by sending pull requests (PRs) with additions, deletions, corrections, etc. to the `yml` model and/or `tsv` annotation files. Please follow the following guidelines:
 
@@ -13,8 +13,6 @@ Report an issue at [here](https://github.com/SysBioChalmers/Human-GEM/issues), i
 * Bug/weird simulation results.
 * Lacking documentation.
 * Any type of feedback.
-
-If you are unsure about the issue, consider asking first in our [Gitter chat room](https://gitter.im/SysBioChalmers/Human-GEM).
 
 When creating the issue, please make sure:
 
@@ -79,6 +77,14 @@ Some examples:
 
 More examples [here](https://github.com/SysBioChalmers/Human-GEM/commits/main). A more detailed explanation or comments is encouraged to be left in the commit description.
 
+
+### Crediting contributors
+
+Everyone who contributes is credited in the `Contributors` section of the `README`, using [all-contributors](https://allcontributors.org).
+
+To credit someone, a maintainer comments `@all-contributors please add @username for bug, code` on any issue or pull request. The contribution types (`bug`, `code`, `doc`, `research`, and so on) come from the [emoji key](https://allcontributors.org/docs/en/emoji-key); list as many as apply, separated by commas.
+
+A GitHub Action (`.github/workflows/add-contributor.yml`) picks up the comment, updates `.all-contributorsrc` and the `README` with the [all-contributors CLI](https://github.com/all-contributors/all-contributors-cli), and opens a pull request against `develop`, which is merged after review. Crediting on `develop`, rather than the default `main` where the retired all-contributors bot added them, keeps the credit when `main` is rebuilt from `develop` at release.
 
 ## Acknowledgments
 
