@@ -1,6 +1,6 @@
 ## Contributing guidelines
 
-Contributions to **Human-GEM** are very welcome and greatly appreciated! Credit is given to everyone who contributes. This is done by either manually modifying the `.all-contributorsrc` or automatically with the `all-contributors` bot, and updating the `Contributors` sections of the `README` accordingly.
+Contributions to **Human-GEM** are very welcome and greatly appreciated! Credit is given to everyone who contributes, tracked with [all-contributors](https://allcontributors.org). A maintainer credits a contributor by commenting `@all-contributors please add @username for <contribution types>` (see the [emoji key](https://allcontributors.org/docs/en/emoji-key)) on any issue or pull request. A GitHub Action then opens a pull request against `develop` that updates `.all-contributorsrc` and the `Contributors` section of the `README`, so the credit is kept when `main` is rebuilt from `develop` at release.
 
 You can contribute in **2** major ways: by creating issues, and by sending pull requests (PRs) with additions, deletions, corrections, etc. to the `yml` model and/or `tsv` annotation files. Please follow the following guidelines:
 
