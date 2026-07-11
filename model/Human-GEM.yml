@@ -61482,6 +61482,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04318"
+      - name: "fructose phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -61943,6 +61944,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08728"
+      - name: "D-glucuronate 1-phosphate hydrolysis"
       - metabolites: !!omap
           - MAM01684c: -1
           - MAM01973c: 1
@@ -62404,6 +62406,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08507"
+      - name: "propane-1,2-diol oxidation"
       - metabolites: !!omap
           - MAM01715c: 1
           - MAM02039c: 1
@@ -62418,6 +62421,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08508"
+      - name: "propane-1,2-diol oxidation"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02329c: 1
@@ -64802,6 +64806,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06605"
+      - name: "urate radical hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM02147c: 1
@@ -64815,6 +64820,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06606"
+      - name: "ascorbate to monodehydroascorbate conversion"
       - metabolites: !!omap
           - MAM01368c: -1
           - MAM02489c: 1
@@ -64828,6 +64834,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06607"
+      - name: "urate radical hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM02149c: 1
@@ -64855,6 +64862,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06610"
+      - name: "5-hydroxyisourate decarboxylation"
       - metabolites: !!omap
           - MAM01104c: -1
           - MAM01313c: 1
@@ -66198,6 +66206,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08072"
+      - name: "2-deoxy-D-ribose-1-phosphate hydrolysis"
       - metabolites: !!omap
           - MAM00639c: -1
           - MAM01672c: 1
@@ -67967,6 +67976,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08481"
+      - name: "dADP to dATP conversion"
       - metabolites: !!omap
           - MAM01637m: -1
           - MAM01642m: 1
@@ -69620,6 +69630,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06940"
+      - name: "N8-acetylspermidine to spermidine conversion"
       - metabolites: !!omap
           - MAM01261c: 1
           - MAM01597c: -1
@@ -69915,6 +69926,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06954"
+      - name: "spermidine monoaldehyde 2 oxidation"
       - metabolites: !!omap
           - MAM02039c: 2
           - MAM02040c: -1
@@ -69946,6 +69958,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06956"
+      - name: "N1,N12-diacetylspermine to N1-acetylspermine conversion"
       - metabolites: !!omap
           - MAM01261c: 1
           - MAM01597c: -1
@@ -69959,6 +69972,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06957"
+      - name: "N1,N12-diacetylspermine to N1-acetylspermine conversion"
       - metabolites: !!omap
           - MAM01261x: 1
           - MAM01597x: -1
@@ -70012,6 +70026,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06960"
+      - name: "N1,N8-diacetylspermidine to N1-acetylspermidine conversion"
       - metabolites: !!omap
           - MAM01261c: 1
           - MAM01597c: -1
@@ -70153,6 +70168,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06973"
+      - name: "spermic acid 1 reduction"
       - metabolites: !!omap
           - MAM02039c: -2
           - MAM02040c: 1
@@ -70278,6 +70294,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08431"
+      - name: "creatine-phosphate to creatinine conversion"
       - metabolites: !!omap
           - MAM01620c: -1
           - MAM01621c: 1
@@ -70375,6 +70392,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08607"
+      - name: "4-methylthio-2-oxobutanoic acid to glutamate conversion"
       - metabolites: !!omap
           - MAM01016c: -1
           - MAM01974c: 1
@@ -70782,6 +70800,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03860"
+      - name: "L-2-amino-3-oxobutanoic acid decarboxylation"
       - metabolites: !!omap
           - MAM01332m: 1
           - MAM01596m: 1
@@ -71359,6 +71378,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08442"
+      - name: "2-oxobutyrate oxidation"
       - metabolites: !!omap
           - MAM00671c: -1
           - MAM01596c: 1
@@ -71554,6 +71574,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05336"
+      - name: "S-[2-carboxy-1-(1H-imidazol-4-yl)ethyl]glutathione hydrolysis"
       - metabolites: !!omap
           - MAM01974c: 1
           - MAM01986c: 1
@@ -71569,6 +71590,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05337"
+      - name: "GSH to S-[2-carboxy-1-(1H-imidazol-4-yl)ethyl]glutathione conversion"
       - metabolites: !!omap
           - MAM02026c: -1
           - MAM02866c: 1
@@ -71600,6 +71622,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05339"
+      - name: "N-acetyl-S-[2-carboxy-1-(1H-imidazol-4-yl)ethyl]-L-cysteine hydrolysis"
       - metabolites: !!omap
           - MAM01252c: 1
           - MAM02040c: -1
@@ -71615,6 +71638,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05340"
+      - name: "S-[2-carboxy-1-(1H-imidazol-4-yl)ethyl]-L-cysteine hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM02579c: 1
@@ -71873,6 +71897,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06974"
+      - name: "[protein] to [protein]-L-lysine conversion"
       - metabolites: !!omap
           - MAM00196c: -1
           - MAM00204c: 1
@@ -72082,6 +72107,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08018"
+      - name: "6-amino-2-oxohexanoate to delta1-piperideine-2-carboxylate conversion"
       - metabolites: !!omap
           - MAM01157x: -1
           - MAM01663x: 1
@@ -72240,6 +72266,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04250"
+      - name: "2-amino-3-carboxymuconate semialdehyde to quinolinate conversion"
       - metabolites: !!omap
           - MAM00629c: -1
           - MAM02039c: 1
@@ -72445,6 +72472,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04702"
+      - name: "homogentisate hydroxylation"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01952c: 1
@@ -72738,6 +72766,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08540"
+      - name: "5,6-dihydroxyindole-2-carboxylate to eumelanin conversion"
       - metabolites: !!omap
           - MAM01053c: -1
           - MAM02040c: 1
@@ -73064,6 +73093,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06924"
+      - name: "4-methyl-2-oxopentanoate decarboxylation"
       - metabolites: !!omap
           - MAM01013c: -1
           - MAM01392c: 1
@@ -73079,6 +73109,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06925"
+      - name: "4-methyl-2-oxopentanoate reduction"
       - metabolites: !!omap
           - MAM01013c: -1
           - MAM01325c: 1
@@ -73347,6 +73378,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04232"
+      - name: "2-aminomuconate semialdehyde to picolinic acid conversion"
       - metabolites: !!omap
           - MAM00633c: -1
           - MAM02039c: 1
@@ -73376,6 +73408,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04235"
+      - name: "2-aminomuconate reduction"
       - metabolites: !!omap
           - MAM00634c: -1
           - MAM00670c: 1
@@ -73425,6 +73458,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04245"
+      - name: "4-(2-amino-3-hydroxyphenyl)-2,4-dioxobutanoate to xanthurenate conversion"
       - metabolites: !!omap
           - MAM00924c: -1
           - MAM02040c: 1
@@ -73454,6 +73488,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04248"
+      - name: "oxo-xanthurenate to xanthurenate conversion"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02667c: -1
@@ -73481,6 +73516,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06708"
+      - name: "1-(1,2,3,4,5-pentahydroxypent-1-yl)-1,2,3,4-tetrahydro-beta-carboline-3-carboxylate hydrolysis"
       - metabolites: !!omap
           - MAM00221c: -1
           - MAM02040c: -1
@@ -73494,6 +73530,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06709"
+      - name: "beta-carboline hydrolysis"
       - metabolites: !!omap
           - MAM01384c: -1
           - MAM02040c: -2
@@ -73521,6 +73558,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06712"
+      - name: "1,2,3,4-tetrahydro-beta-carboline hydrolysis"
       - metabolites: !!omap
           - MAM00230c: -1
           - MAM01831c: 1
@@ -73649,6 +73687,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06720"
+      - name: "kynurenine glucuronidation"
       - metabolites: !!omap
           - MAM00787c: 1
           - MAM02039c: -2
@@ -73662,6 +73701,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06721"
+      - name: "3-hydroxykynurenine-O-beta-D-glucoside reduction"
       - metabolites: !!omap
           - MAM00787c: -1
           - MAM00925c: 1
@@ -73821,6 +73861,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06734"
+      - name: "salsolinol hydrolysis"
       - metabolites: !!omap
           - MAM01249c: 1
           - MAM01736c: 1
@@ -73868,6 +73909,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06738"
+      - name: "salsolinol-1-carboxylate hydrolysis"
       - metabolites: !!omap
           - MAM01736c: 1
           - MAM02040c: -1
@@ -73931,6 +73973,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06742"
+      - name: "4,6,7-trihydroxy-1,2,3,4-tetrahydroisoquinoline hydrolysis"
       - metabolites: !!omap
           - MAM00945c: -1
           - MAM01831c: 1
@@ -73960,6 +74003,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06744"
+      - name: "N-methyl-4,6,7-trihydroxy-1,2,3,4-tetrahydroisoquinoline hydrolysis"
       - metabolites: !!omap
           - MAM01290c: 1
           - MAM01831c: 1
@@ -74317,6 +74361,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06765"
+      - name: "3-methoxytyramine to N-methylsalsolinol conversion"
       - metabolites: !!omap
           - MAM00821c: -1
           - MAM01249c: -1
@@ -74524,6 +74569,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06785"
+      - name: "4-coumaroyl-CoA oxidation"
       - metabolites: !!omap
           - MAM00982c: -1
           - MAM00996c: 1
@@ -74643,6 +74689,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06792"
+      - name: "4-hydroxy-3-nitrophenylacetate to 4-hydroxyphenylacetate conversion"
       - metabolites: !!omap
           - MAM00991c: -1
           - MAM01003c: 1
@@ -74724,6 +74771,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06802"
+      - name: "N-methyltyramine to hordenine conversion"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02138c: 1
@@ -74754,6 +74802,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06806"
+      - name: "N,N-dimethylindoliumolate to N,N-dimethyldopaminequinone conversion"
       - metabolites: !!omap
           - MAM02039c: -2
           - MAM02499c: 1
@@ -74766,6 +74815,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06807"
+      - name: "6,7-dihydroxy-1,2,3,4-tetrahydroisoquinoline hydrolysis"
       - metabolites: !!omap
           - MAM01154c: -1
           - MAM01736c: 1
@@ -74876,6 +74926,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06818"
+      - name: "adrenaline to adrenochrome conversion"
       - metabolites: !!omap
           - MAM01290c: -1
           - MAM01292c: 1
@@ -74921,6 +74972,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06822"
+      - name: "noradrenaline to noradrenochrome conversion"
       - metabolites: !!omap
           - MAM02039c: 5
           - MAM02617c: -1
@@ -75017,6 +75069,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06829"
+      - name: "3,3-diiodo-L-thyronine sulfation"
       - metabolites: !!omap
           - MAM00720c: -1
           - MAM00721c: 1
@@ -75380,6 +75433,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06875"
+      - name: "2-carboxy-2,3-dihydro-5,6-dihydroxyindole to L-dopaquinone conversion"
       - metabolites: !!omap
           - MAM00638c: -1
           - MAM02039c: -1
@@ -75392,6 +75446,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06876"
+      - name: "2-carboxy-2,3-dihydro-5,6-dihydroxyindole to L-dopa conversion"
       - metabolites: !!omap
           - MAM00638c: -1
           - MAM02354c: 1
@@ -75405,6 +75460,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06877"
+      - name: "5-S-cysteinyldopa to cysteine conversion"
       - metabolites: !!omap
           - MAM01134c: -1
           - MAM01628c: 1
@@ -75417,6 +75473,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06878"
+      - name: "5-(S-L-cysteinyl)-dopaquinone to 5-S-cysteinyldopa conversion"
       - metabolites: !!omap
           - MAM01043c: -1
           - MAM01134c: 1
@@ -75430,6 +75487,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06879"
+      - name: "1,4-benzothiazine-O-quinonimine hydrolysis"
       - metabolites: !!omap
           - MAM00249c: -1
           - MAM01043c: 1
@@ -75443,6 +75501,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06880"
+      - name: "1,4-benzothiazine-O-quinonimine to 3,4-dihydro-1,4-benzothiazine-3-carboxylate conversion"
       - metabolites: !!omap
           - MAM00249c: -1
           - MAM00723c: 1
@@ -75456,6 +75515,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06881"
+      - name: "3,4-dihydro-1,4-benzothiazine-3-carboxylate decarboxylation"
       - metabolites: !!omap
           - MAM00723c: -1
           - MAM01381c: 1
@@ -75469,6 +75529,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06882"
+      - name: "3,5-dihydroxy-3,4-dihydro-1,4-benzothiazine to benzothiazine conversion"
       - metabolites: !!omap
           - MAM00735c: -1
           - MAM01381c: 1
@@ -76264,6 +76325,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08682"
+      - name: "cystine to cysteine conversion"
       - metabolites: !!omap
           - MAM01628c: 2
           - MAM01629c: -1
@@ -76307,6 +76369,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08685"
+      - name: "3-mercaptolactate oxidation"
       - metabolites: !!omap
           - MAM00815c: -1
           - MAM00816c: 1
@@ -76891,6 +76954,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07130"
+      - name: "3-phosphoadenylylselenate reduction"
       - metabolites: !!omap
           - MAM00912c: -1
           - MAM02039c: 1
@@ -77385,6 +77449,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03986"
+      - name: "chitin-component hydrolysis"
       - metabolites: !!omap
           - MAM01438e: -2
           - MAM01439e: 1
@@ -77800,6 +77865,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08366"
+      - name: "N-acetylgalactosamine phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -77813,6 +77879,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08367"
+      - name: "ITP to IDP conversion"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02161c: 1
@@ -77855,6 +77922,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08372"
+      - name: "3-deoxy-D-glycero-D-galacto-2-nonulosonic acid-9-phosphate hydrolysis"
       - metabolites: !!omap
           - MAM00771c: 1
           - MAM00772c: -1
@@ -78430,6 +78498,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07197"
+      - name: "[protein] to [protein]-L-serine conversion"
       - metabolites: !!omap
           - MAM00196c: -1
           - MAM00205c: 1
@@ -78522,6 +78591,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08256"
+      - name: "Tn-antigen to core 5 conversion"
       - metabolites: !!omap
           - MAM01610g: 1
           - MAM02039g: 1
@@ -78550,6 +78620,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08258"
+      - name: "core 6 to F1alpha conversion"
       - metabolites: !!omap
           - MAM01611g: -1
           - MAM01801g: 1
@@ -78563,6 +78634,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08260"
+      - name: "Tn-antigen to core 7 conversion"
       - metabolites: !!omap
           - MAM01612g: 1
           - MAM02039g: 1
@@ -78576,6 +78648,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08261"
+      - name: "Tn-antigen to core 8 conversion"
       - metabolites: !!omap
           - MAM01613g: 1
           - MAM02039g: 1
@@ -78636,6 +78709,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07258"
+      - name: "dehydrodolichol-diphosphate hydrolysis"
       - metabolites: !!omap
           - MAM01657c: -1
           - MAM01658c: 1
@@ -78649,6 +78723,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07259"
+      - name: "dehydrodolichol-phosphate hydrolysis"
       - metabolites: !!omap
           - MAM01656c: 1
           - MAM01658c: -1
@@ -78661,6 +78736,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07260"
+      - name: "dehydrodolichol reduction"
       - metabolites: !!omap
           - MAM01656c: -1
           - MAM01730c: 1
@@ -79004,6 +79080,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07288"
+      - name: "(alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis"
       - metabolites: !!omap
           - MAM00138r: -1
           - MAM01971r: 1
@@ -79031,6 +79108,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07290"
+      - name: "(alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis"
       - metabolites: !!omap
           - MAM00138r: -1
           - MAM00153r: 1
@@ -79058,6 +79136,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07292"
+      - name: "glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) hydrolysis"
       - metabolites: !!omap
           - MAM01969r: 1
           - MAM01970r: -1
@@ -79162,6 +79241,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07301"
+      - name: "(alpha-D-Glucosyl)3-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis"
       - metabolites: !!omap
           - MAM00140g: -1
           - MAM00150g: 1
@@ -79175,6 +79255,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07302"
+      - name: "(alpha-D-Glucosyl)2-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis"
       - metabolites: !!omap
           - MAM00139g: -1
           - MAM00150g: 1
@@ -79188,6 +79269,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07303"
+      - name: "(alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis"
       - metabolites: !!omap
           - MAM00138g: -1
           - MAM00150g: 1
@@ -79201,6 +79283,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07304"
+      - name: "glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform C (protein) hydrolysis"
       - metabolites: !!omap
           - MAM00149g: 1
           - MAM01965g: 1
@@ -79214,6 +79297,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07305"
+      - name: "glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) hydrolysis"
       - metabolites: !!omap
           - MAM00148g: 1
           - MAM01965g: 1
@@ -79227,6 +79311,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07306"
+      - name: "glucosyl-(alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis"
       - metabolites: !!omap
           - MAM00143g: 1
           - MAM01965g: 1
@@ -79826,6 +79911,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08692"
+      - name: "dolichyl-D-glucosyl-phosphate hydrolysis"
       - metabolites: !!omap
           - MAM01731r: -1
           - MAM01733r: 1
@@ -79871,6 +79957,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08695"
+      - name: "n4m2masn to n5m2masn conversion"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02515g: -1
@@ -80108,6 +80195,7 @@
       - confidence_score: 2
     - !!omap
       - id: "MAR05155"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 372
           - MAM01349c: 1
@@ -80160,6 +80248,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05156"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 261
           - MAM01371c: -261
@@ -80420,6 +80509,7 @@
       - confidence_score: 2
     - !!omap
       - id: "MAR05161"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1218
           - MAM01371c: -1218
@@ -80751,6 +80841,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05167"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 315
           - MAM01371c: -315
@@ -80804,6 +80895,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05168"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 498
           - MAM01371c: -498
@@ -80859,6 +80951,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05169"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 855
           - MAM01371c: -855
@@ -80913,6 +81006,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05170"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 579
           - MAM01371c: -579
@@ -80967,6 +81061,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05171"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 975
           - MAM01358c: 1
@@ -81021,6 +81116,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05172"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1050
           - MAM01371c: -1050
@@ -81076,6 +81172,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05174"
+      - name: "glycyl-tRNA(gly) phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1425
           - MAM01371c: -1425
@@ -81130,6 +81227,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07282"
+      - name: "[protein] to [protein]-L-asparagine conversion"
       - metabolites: !!omap
           - MAM00196c: -1
           - MAM00198c: 1
@@ -81142,6 +81240,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07616"
+      - name: "[protein] to [protein]-L-tyrosine conversion"
       - metabolites: !!omap
           - MAM00196c: -1
           - MAM00206c: 1
@@ -81170,6 +81269,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09735"
+      - name: "[protein]-L-citrulline hydrolysis"
       - metabolites: !!omap
           - MAM00196c: 1
           - MAM00199c: -1
@@ -81182,6 +81282,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07621"
+      - name: "[protein] to [protein]-L-arginine conversion"
       - metabolites: !!omap
           - MAM00196c: -1
           - MAM00197c: 1
@@ -81275,6 +81376,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05259"
+      - name: "albumin phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 608
           - MAM01307l: 63
@@ -81310,6 +81412,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05260"
+      - name: "antichymotrypsin phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 422
           - MAM01307c: 34
@@ -81344,6 +81447,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05261"
+      - name: "antichymotrypsin phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 422
           - MAM01307l: 34
@@ -81379,6 +81483,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05262"
+      - name: "antitrypsin phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 417
           - MAM01307c: 26
@@ -81413,6 +81518,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05263"
+      - name: "antitrypsin phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 417
           - MAM01307l: 26
@@ -81448,6 +81554,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05264"
+      - name: "apoB100 phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 4560
           - MAM01307c: 275
@@ -81482,6 +81589,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05265"
+      - name: "apoB100 phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 4560
           - MAM01307l: 275
@@ -81517,6 +81625,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05266"
+      - name: "apo-[ACP] phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 123
           - MAM01307c: 11
@@ -81550,6 +81659,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05267"
+      - name: "mitoApo-[ACP] phosphorylation"
       - metabolites: !!omap
           - MAM01285m: 86
           - MAM01307m: 3
@@ -81583,6 +81693,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05268"
+      - name: "apoC1 phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 82
           - MAM01307c: 5
@@ -81614,6 +81725,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05269"
+      - name: "apoC2 phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 100
           - MAM01307c: 7
@@ -81646,6 +81758,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05270"
+      - name: "apoC3 phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 98
           - MAM01307c: 15
@@ -81677,6 +81790,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05271"
+      - name: "fibrinogen phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 2673
           - MAM01307c: 134
@@ -81711,6 +81825,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05272"
+      - name: "fibrinogen phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 2673
           - MAM01307l: 134
@@ -81746,6 +81861,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05273"
+      - name: "haptoglobin phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 405
           - MAM01307c: 30
@@ -81780,6 +81896,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05274"
+      - name: "haptoglobin phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 405
           - MAM01307l: 30
@@ -81815,6 +81932,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05275"
+      - name: "plasminogen phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 809
           - MAM01307c: 37
@@ -81849,6 +81967,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05276"
+      - name: "plasminogen phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 809
           - MAM01307l: 37
@@ -81884,6 +82003,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05277"
+      - name: "prothrombin phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 621
           - MAM01307c: 42
@@ -81918,6 +82038,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05278"
+      - name: "prothrombin phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 621
           - MAM01307l: 42
@@ -81953,6 +82074,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05279"
+      - name: "[apotransferin] phosphorylation"
       - metabolites: !!omap
           - MAM00186c: -1
           - MAM01285c: 697
@@ -81987,6 +82109,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05280"
+      - name: "[apotransferin] phosphorylation"
       - metabolites: !!omap
           - MAM00186l: -1
           - MAM01285l: 697
@@ -82022,6 +82145,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05281"
+      - name: "apoE phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 316
           - MAM01307c: 39
@@ -82056,6 +82180,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05282"
+      - name: "apoE phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 316
           - MAM01307l: 39
@@ -82091,6 +82216,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05283"
+      - name: "apoA1 phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 266
           - MAM01307c: 23
@@ -82123,6 +82249,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05284"
+      - name: "apoA1 phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 266
           - MAM01307l: 23
@@ -82156,6 +82283,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05285"
+      - name: "STAR phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 284
           - MAM01307l: 21
@@ -82191,6 +82319,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05286"
+      - name: "GM2A phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 192
           - MAM01307l: 10
@@ -82226,6 +82355,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05287"
+      - name: "apocytochrome-C phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 324
           - MAM01307l: 38
@@ -82298,6 +82428,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05290"
+      - name: "apoB48 phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 4562
           - MAM01307l: 276
@@ -82333,6 +82464,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05291"
+      - name: "LPL phosphorylation"
       - metabolites: !!omap
           - MAM01285l: 474
           - MAM01307l: 34
@@ -82367,6 +82499,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09817"
+      - name: "thioredoxin phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 104
           - MAM01307c: 8
@@ -82400,6 +82533,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09818"
+      - name: "mitothioredoxin phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 165
           - MAM01307c: 11
@@ -82450,6 +82584,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03851"
+      - name: "3-sulfinylpyruvic acid hydrolysis"
       - metabolites: !!omap
           - MAM00919c: -1
           - MAM02039c: 1
@@ -82479,6 +82614,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03866"
+      - name: "3-sulfinylpyruvic acid hydrolysis"
       - metabolites: !!omap
           - MAM00919m: -1
           - MAM02039m: 1
@@ -82539,6 +82675,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04188"
+      - name: "H+ reduction"
       - metabolites: !!omap
           - MAM01267c: 1
           - MAM02039c: -2
@@ -82710,6 +82847,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08669"
+      - name: "mesaconyl-CoA hydrolysis"
       - metabolites: !!omap
           - MAM01261m: 1
           - MAM02040m: -1
@@ -83466,6 +83604,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06608"
+      - name: "hydroxide to hydroxyl radical conversion"
       - metabolites: !!omap
           - MAM02147c: -1
           - MAM02149c: 1
@@ -88198,6 +88337,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02442"
+      - name: "13(S)-HPODE hydrolysis"
       - metabolites: !!omap
           - MAM00337c: -1
           - MAM00983c: 1
@@ -88211,6 +88351,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02443"
+      - name: "13(S)-HPODE to 13-oxy-radical-octadecadienoate conversion"
       - metabolites: !!omap
           - MAM00337c: -1
           - MAM00363c: 1
@@ -88225,6 +88366,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02444"
+      - name: "13-oxo-(9Z,11E)-tridecadienoate to 13-oxy-radical-octadecadienoate conversion"
       - metabolites: !!omap
           - MAM00362c: -1
           - MAM00363c: 1
@@ -88237,6 +88379,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02445"
+      - name: "12,13-epoxylinoleic acid-radical to 13-oxy-radical-octadecadienoate conversion"
       - metabolites: !!omap
           - MAM00313c: -1
           - MAM00363c: 1
@@ -88248,6 +88391,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02446"
+      - name: "12,13-epoxy-9-hydroperoxy-(10E)-octadecenoate to 12,13-epoxylinoleic acid-radical conversion"
       - metabolites: !!omap
           - MAM00312c: -1
           - MAM00313c: 1
@@ -88262,6 +88406,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02447"
+      - name: "12,13-epoxy-9-alkoxy-(10E)-octadecenoate to 12,13-epoxy-9-hydroperoxy-(10E)-octadecenoate conversion"
       - metabolites: !!omap
           - MAM00311c: -1
           - MAM00312c: 1
@@ -88276,6 +88421,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02448"
+      - name: "12,13-epoxy-9-alkoxy-(10E)-octadecenoate to octanoate radical conversion"
       - metabolites: !!omap
           - MAM00311c: -1
           - MAM02039c: -1
@@ -88289,6 +88435,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02449"
+      - name: "12,13-epoxy-9-alkoxy-(10E)-octadecenoate hydrolysis"
       - metabolites: !!omap
           - MAM00311c: -1
           - MAM01218c: 1
@@ -88302,6 +88449,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02450"
+      - name: "9,10-12,13-diepoxy-octadecanoate to 1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether conversion"
       - metabolites: !!omap
           - MAM00533c: 1
           - MAM01218c: -1
@@ -88314,6 +88462,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02451"
+      - name: "1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether to 4-oxo-2-nonenal conversion"
       - metabolites: !!omap
           - MAM00533c: -1
           - MAM01027c: 1
@@ -88327,6 +88476,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02452"
+      - name: "1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether to 3,4-epoxynonanal conversion"
       - metabolites: !!omap
           - MAM00533c: -1
           - MAM00731c: 1
@@ -88340,6 +88490,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02453"
+      - name: "4-hydroperoxy-2-nonenal to 4-oxo-2-nonenal conversion"
       - metabolites: !!omap
           - MAM00983c: -1
           - MAM01027c: 1
@@ -88352,6 +88503,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02454"
+      - name: "3,4-epoxynonanal to 4-hydroxy-2-nonenal conversion"
       - metabolites: !!omap
           - MAM00731c: -1
           - MAM00988c: 1
@@ -88879,6 +89031,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02495"
+      - name: "(7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA hydroxylation"
       - metabolites: !!omap
           - MAM00095c: 1
           - MAM00121c: -1
@@ -89339,6 +89492,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02545"
+      - name: "5(S)-HEPE hydrolysis"
       - metabolites: !!omap
           - MAM01039c: -1
           - MAM01041c: 1
@@ -89386,6 +89540,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02549"
+      - name: "5(S)-HpEPE to leukotriene A5 conversion"
       - metabolites: !!omap
           - MAM01041c: -1
           - MAM02040c: 1
@@ -89398,6 +89553,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02550"
+      - name: "leukotriene A5 hydrolysis"
       - metabolites: !!omap
           - MAM01049c: 1
           - MAM02040c: -1
@@ -89509,6 +89665,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02558"
+      - name: "15(R)-HpEPE to 15(S)-HpEPE conversion"
       - metabolites: !!omap
           - MAM00375c: -1
           - MAM00379c: 1
@@ -89519,6 +89676,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02559"
+      - name: "15(S)-HEPE hydrolysis"
       - metabolites: !!omap
           - MAM00376c: -1
           - MAM00379c: 1
@@ -89532,6 +89690,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02560"
+      - name: "15(R)-HEPE hydrolysis"
       - metabolites: !!omap
           - MAM00373c: -1
           - MAM00375c: 1
@@ -89623,6 +89782,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02567"
+      - name: "15(R)-HEPE hydrolysis"
       - metabolites: !!omap
           - MAM00373n: -1
           - MAM00375n: 1
@@ -89666,6 +89826,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02571"
+      - name: "15(R)-HEPE hydrolysis"
       - metabolites: !!omap
           - MAM00373r: -1
           - MAM00375r: 1
@@ -89743,6 +89904,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02577"
+      - name: "15(R)-HEPE hydrolysis"
       - metabolites: !!omap
           - MAM00373x: -1
           - MAM00375x: 1
@@ -89884,6 +90046,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02587"
+      - name: "5,12,18R-TriHEPE to 5,6-epoxy,(18R)-HEPE conversion"
       - metabolites: !!omap
           - MAM01046c: -1
           - MAM01056c: 1
@@ -89932,6 +90095,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02374"
+      - name: "3-oxo-dihomo-gamma-linolenoyl-CoA reduction"
       - metabolites: !!omap
           - MAM00710c: 1
           - MAM00859c: -1
@@ -89945,6 +90109,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02376"
+      - name: "3(S)-hydroxy-dihomo-gamma-linolenoyl-CoA to trans-2-cis,cis,cis-8,11,14-eicosatetraenoyl-CoA conversion"
       - metabolites: !!omap
           - MAM00710c: -1
           - MAM02040c: 1
@@ -90041,6 +90206,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02391"
+      - name: "(2E,7Z,10Z,13Z,16Z)-docosapentaenoyl-CoA reduction"
       - metabolites: !!omap
           - MAM00074c: -1
           - MAM00119c: 1
@@ -90054,6 +90220,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02393"
+      - name: "(7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA hydroxylation"
       - metabolites: !!omap
           - MAM00093c: 1
           - MAM00119c: -1
@@ -90135,6 +90302,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02403"
+      - name: "(9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA hydroxylation"
       - metabolites: !!omap
           - MAM00110c: 1
           - MAM00131c: -1
@@ -91506,6 +91674,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00979"
+      - name: "5-oxo-12-HETE to 5-oxo-6-trans-LTB4 conversion"
       - metabolites: !!omap
           - MAM01123c: -1
           - MAM01124c: 1
@@ -92263,6 +92432,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01040"
+      - name: "12(S)-HETE oxidation"
       - metabolites: !!omap
           - MAM00307c: -1
           - MAM00334c: 1
@@ -92777,6 +92947,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01074"
+      - name: "12(S)-HETE reduction"
       - metabolites: !!omap
           - MAM00307c: -1
           - MAM00321c: 1
@@ -92925,6 +93096,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01087"
+      - name: "leukotriene E4 to 11-trans-LTE4 conversion"
       - metabolites: !!omap
           - MAM00304c: 1
           - MAM02039c: -1
@@ -92936,6 +93108,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01088"
+      - name: "N-acetyl-LTE4 to leukotriene E4 conversion"
       - metabolites: !!omap
           - MAM01261c: 1
           - MAM01597c: -1
@@ -92952,6 +93125,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01091"
+      - name: "N-acetyl-LTE4 to leukotriene E4 conversion"
       - metabolites: !!omap
           - MAM01261n: 1
           - MAM01597n: -1
@@ -92968,6 +93142,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01092"
+      - name: "leukotriene A4 hydrolysis"
       - metabolites: !!omap
           - MAM00320c: 1
           - MAM02040c: -1
@@ -93037,6 +93212,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01098"
+      - name: "13,14-dihydro-15-oxo-lipoxin A4 oxidation"
       - metabolites: !!omap
           - MAM00339c: -1
           - MAM00394c: 1
@@ -93285,6 +93461,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01113"
+      - name: "12,20-dioxo-LTB4 hydrolysis"
       - metabolites: !!omap
           - MAM00319c: -1
           - MAM00330c: 1
@@ -93297,6 +93474,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01114"
+      - name: "12-oxo-20-carboxy-LTB4 hydrolysis"
       - metabolites: !!omap
           - MAM00329c: -1
           - MAM00332c: 1
@@ -93310,6 +93488,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01115"
+      - name: "12-oxo-20-carboxy-LTB4 hydrolysis"
       - metabolites: !!omap
           - MAM00329r: -1
           - MAM00332r: 1
@@ -93627,6 +93806,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01136"
+      - name: "20-dihydroxy-LTB4 to 20-oxo-LTB4 conversion"
       - metabolites: !!omap
           - MAM00588r: -1
           - MAM00600r: 1
@@ -93715,6 +93895,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01142"
+      - name: "20-COOH-LTB4 hydrolysis"
       - metabolites: !!omap
           - MAM00585r: -1
           - MAM00602r: 1
@@ -94147,6 +94328,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01186"
+      - name: "5-oxo-(6E)-12-epi-LTB4 to 5-oxo-12-HETE conversion"
       - metabolites: !!omap
           - MAM01118c: -1
           - MAM01123c: 1
@@ -94277,6 +94459,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01197"
+      - name: "6,7-dihydro-12-epi-LTB4 oxidation"
       - metabolites: !!omap
           - MAM01150c: -1
           - MAM01151c: 1
@@ -94290,6 +94473,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01198"
+      - name: "6,7-dihydro-12-epi-LTB4 oxidation"
       - metabolites: !!omap
           - MAM01150m: -1
           - MAM01151m: 1
@@ -94303,6 +94487,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01199"
+      - name: "6,7-dihydro-12-epi-LTB4 oxidation"
       - metabolites: !!omap
           - MAM01150x: -1
           - MAM01151x: 1
@@ -94556,6 +94741,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01228"
+      - name: "12-keto-LTB4 reduction"
       - metabolites: !!omap
           - MAM00253c: 1
           - MAM00326c: -1
@@ -94572,6 +94758,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01229"
+      - name: "12-keto-LTB4 reduction"
       - metabolites: !!omap
           - MAM00253m: 1
           - MAM00326m: -1
@@ -94588,6 +94775,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01230"
+      - name: "12-keto-LTB4 reduction"
       - metabolites: !!omap
           - MAM00253x: 1
           - MAM00326x: -1
@@ -94769,6 +94957,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01241"
+      - name: "10,11-dihydro-20-trihydroxy-LTB4 to 20-COOH-10,11-dihydro-LTB4 conversion"
       - metabolites: !!omap
           - MAM00256c: -1
           - MAM00583c: 1
@@ -94832,6 +95021,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01247"
+      - name: "20-COOH-LTB4 oxidation"
       - metabolites: !!omap
           - MAM00424m: 1
           - MAM00585m: -1
@@ -95378,6 +95568,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01285"
+      - name: "10,11-dihydro-12-epi-LTB4 to 10,11-dihydro-LTB4 conversion"
       - metabolites: !!omap
           - MAM00252c: -1
           - MAM00257c: 1
@@ -95737,6 +95928,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08547"
+      - name: "leukotriene C4 hydrolysis"
       - metabolites: !!omap
           - MAM01986c: 1
           - MAM02040c: -1
@@ -95764,6 +95956,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08549"
+      - name: "leukotriene F4 hydrolysis"
       - metabolites: !!omap
           - MAM01974c: 1
           - MAM02040c: -1
@@ -95790,6 +95983,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08552"
+      - name: "LTD4 hydrolysis"
       - metabolites: !!omap
           - MAM01986c: 1
           - MAM02040c: -1
@@ -95918,6 +96112,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08561"
+      - name: "20-OH-LTB4 to 20-COOH-LTB4 conversion"
       - metabolites: !!omap
           - MAM00585r: 1
           - MAM00599r: -1
@@ -97797,6 +97992,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03521"
+      - name: "4(R),8-dimethyl-nonanoyl-CoA to 4,8-dimethylnonanoylcarnitine conversion"
       - metabolites: !!omap
           - MAM00933c: -1
           - MAM00950c: 1
@@ -97809,6 +98005,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08419"
+      - name: "2(S),6-dimethyl-heptanoyl-CoA to 2,6-dimethylheptanoyl-carnitine conversion"
       - metabolites: !!omap
           - MAM00563c: -1
           - MAM00577c: 1
@@ -99406,6 +99603,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03519"
+      - name: "4(R),8-dimethyl-nonanoyl-CoA to 4,8-dimethylnonanoylcarnitine conversion"
       - metabolites: !!omap
           - MAM00933m: -1
           - MAM00950m: 1
@@ -99418,6 +99616,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03520"
+      - name: "4,8-dimethylnonanoylcarnitine to 4,8-dimethylnonanoylcarnitine conversion"
       - metabolites: !!omap
           - MAM00950c: -1
           - MAM00950m: 1
@@ -99430,6 +99629,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08417"
+      - name: "2(S),6-dimethyl-heptanoyl-CoA to 2,6-dimethylheptanoyl-carnitine conversion"
       - metabolites: !!omap
           - MAM00563m: -1
           - MAM00577m: 1
@@ -99442,6 +99642,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08418"
+      - name: "2,6-dimethylheptanoyl-carnitine to 2,6-dimethylheptanoyl-carnitine conversion"
       - metabolites: !!omap
           - MAM00577c: -1
           - MAM00577m: 1
@@ -99454,6 +99655,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03027"
+      - name: "L-carnitine to L-carnitine conversion"
       - metabolites: !!omap
           - MAM02348c: -1
           - MAM02348x: 1
@@ -101840,6 +102042,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03053"
+      - name: "12,15,18,21-tetracosatetraenoyl-CoA oxidation"
       - metabolites: !!omap
           - MAM00317x: -1
           - MAM01261x: 12
@@ -101857,6 +102060,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03054"
+      - name: "(9Z,12Z,15Z,18Z,21Z)-tetracosapentaenoyl-CoA oxidation"
       - metabolites: !!omap
           - MAM00134x: -1
           - MAM01261x: 12
@@ -101874,6 +102078,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03055"
+      - name: "(9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA oxidation"
       - metabolites: !!omap
           - MAM00131x: -1
           - MAM01261x: 12
@@ -102631,6 +102836,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03056"
+      - name: "tricosanoyl-CoA oxidation"
       - metabolites: !!omap
           - MAM01261x: 10
           - MAM01597x: -10
@@ -105649,6 +105855,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03396"
+      - name: "(10Z)-heptadecenoyl-CoA oxidation"
       - metabolites: !!omap
           - MAM00004m: -1
           - MAM01261m: 7
@@ -105667,6 +105874,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03397"
+      - name: "9-heptadecenoyl-CoA oxidation"
       - metabolites: !!omap
           - MAM01237m: -1
           - MAM01261m: 7
@@ -107469,6 +107677,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06906"
+      - name: "3-methoxy-4-hydroxy-5-all-trans-decaprenylbenzoate decarboxylation"
       - metabolites: !!omap
           - MAM00657m: 1
           - MAM00817m: -1
@@ -107550,6 +107759,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07165"
+      - name: "[protein] to [protein]-L-cysteine conversion"
       - metabolites: !!omap
           - MAM00196c: -1
           - MAM00200c: 1
@@ -107607,6 +107817,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07169"
+      - name: "[protein C terminal]-S-farnesyl-L-cysteine-methyl ester hydrolysis"
       - metabolites: !!omap
           - MAM00195c: -1
           - MAM02040c: -1
@@ -107685,6 +107896,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01926"
+      - name: "cholesterol-STAR to cholesterol conversion"
       - metabolites: !!omap
           - MAM01450m: 1
           - MAM01511m: -1
@@ -111031,6 +111243,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02064"
+      - name: "estrone-2,3-semiquinone to estrone-2,3-quinone conversion"
       - metabolites: !!omap
           - MAM01791c: 1
           - MAM01792c: -1
@@ -111222,6 +111435,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02079"
+      - name: "estrone-3,4-semiquinone to estrone-3,4-quinone conversion"
       - metabolites: !!omap
           - MAM01793c: 1
           - MAM01794c: -1
@@ -111332,6 +111546,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02091"
+      - name: "17beta-estradiol-3,4-semiquinone to 17beta-estradiol-3,4-quinone conversion"
       - metabolites: !!omap
           - MAM00412c: 1
           - MAM00413c: -1
@@ -111443,6 +111658,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02102"
+      - name: "17beta-estradiol-2,3-semiquinone to 17beta-estradiol-2,3-quinone conversion"
       - metabolites: !!omap
           - MAM00410c: 1
           - MAM00411c: -1
@@ -111577,6 +111793,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03537"
+      - name: "cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion"
       - metabolites: !!omap
           - MAM01452l: 0.0001
           - MAM01453l: 0.0001
@@ -112594,6 +112811,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03622"
+      - name: "cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion"
       - metabolites: !!omap
           - MAM01452r: 0.0001
           - MAM01453r: 0.0001
@@ -115034,6 +115252,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08152"
+      - name: "glcnac-gal-globoside to gal-glcnac-gal-globoside conversion"
       - metabolites: !!omap
           - MAM01919g: 1
           - MAM01956g: -1
@@ -115243,6 +115462,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08173"
+      - name: "GM2alpha to GM1alpha conversion"
       - metabolites: !!omap
           - MAM02009g: 1
           - MAM02014g: -1
@@ -115579,6 +115799,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08197"
+      - name: "beta-GalNAc-globoside to globoside conversion"
       - metabolites: !!omap
           - MAM01391l: -1
           - MAM01959l: 1
@@ -115907,6 +116128,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08245"
+      - name: "SM pool hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM02908c: -1
@@ -115951,6 +116173,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08249"
+      - name: "globotriaosylceramide to galthcrm heparan sulfate conversion"
       - metabolites: !!omap
           - MAM01920g: 1
           - MAM01960g: -1
@@ -118233,6 +118456,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07597"
+      - name: "alkyl-glycerone-3-phosphate reduction"
       - metabolites: !!omap
           - MAM00628c: 1
           - MAM01311c: -1
@@ -118422,6 +118646,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08522"
+      - name: "1-radyl-2-acyl-sn-glycero-3-phosphocholine hydrolysis"
       - metabolites: !!omap
           - MAM00516c: 1
           - MAM00560c: -1
@@ -119610,6 +119835,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00885"
+      - name: "type II A antigen to G00057 conversion"
       - metabolites: !!omap
           - MAM01876c: 1
           - MAM02039c: 1
@@ -119924,6 +120150,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00903"
+      - name: "G00072 to G00073 conversion"
       - metabolites: !!omap
           - MAM01877c: -1
           - MAM01878c: 1
@@ -119986,6 +120213,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00907"
+      - name: "G00077 to iso-nLc8Cer conversion"
       - metabolites: !!omap
           - MAM01880c: -1
           - MAM02039c: 1
@@ -120365,6 +120593,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00924"
+      - name: "D-galactosyl-N-acylsphingosine to digalactosylceramide conversion"
       - metabolites: !!omap
           - MAM01679c: -1
           - MAM01694c: 1
@@ -120381,6 +120610,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00925"
+      - name: "D-galactosyl-N-acylsphingosine to digalactosylceramide conversion"
       - metabolites: !!omap
           - MAM01679g: -1
           - MAM01694g: 1
@@ -120538,6 +120768,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08383"
+      - name: "dolichyl-phosphate-D-mannose to dolichyl-phosphate conversion"
       - metabolites: !!omap
           - MAM01733r: 1
           - MAM01734r: -1
@@ -120679,6 +120910,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08393"
+      - name: "m3gacpail heparan sulfate to 1,2-diacylglycerol-LD-PE pool conversion"
       - metabolites: !!omap
           - MAM00236r: 1
           - MAM01781r: 1
@@ -120707,6 +120939,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08395"
+      - name: "em3gacpail heparan sulfate to 1,2-diacylglycerol-LD-PE pool conversion"
       - metabolites: !!omap
           - MAM00236r: 1
           - MAM01781r: -1
@@ -120720,6 +120953,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08396"
+      - name: "m2emgacpail heparan sulfate to 1,2-diacylglycerol-LD-PE pool conversion"
       - metabolites: !!omap
           - MAM00236r: 1
           - MAM01779r: 1
@@ -120748,6 +120982,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08398"
+      - name: "em2emgacpail heparan sulfate to 1,2-diacylglycerol-LD-PE pool conversion"
       - metabolites: !!omap
           - MAM00236r: 1
           - MAM01779r: -1
@@ -120776,6 +121011,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08401"
+      - name: "m3emgacpail heparan sulfate to 1,2-diacylglycerol-LD-PE pool conversion"
       - metabolites: !!omap
           - MAM00236r: 1
           - MAM02432r: -1
@@ -120789,6 +121025,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08402"
+      - name: "em2emgacpail heparan sulfate to em2emgacpail_prot heparan sulfate conversion"
       - metabolites: !!omap
           - MAM01779r: -1
           - MAM01780r: 1
@@ -120818,6 +121055,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08404"
+      - name: "glycophosphatidylinositol-(GPI)-anchored-protein-precursor to gpi_prot heparan sulfate conversion"
       - metabolites: !!omap
           - MAM02001r: -1
           - MAM02020r: -1
@@ -120847,6 +121085,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08406"
+      - name: "glycophosphatidylinositol-(GPI)-anchored-protein-precursor to gpi_sig conversion"
       - metabolites: !!omap
           - MAM02001r: -1
           - MAM02022r: 1
@@ -120860,6 +121099,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08407"
+      - name: "glycophosphatidylinositol-(GPI)-anchored-protein-precursor to gpi_sig conversion"
       - metabolites: !!omap
           - MAM02001r: -1
           - MAM02022r: 1
@@ -121127,6 +121367,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01310"
+      - name: "6-oxo-prostaglandin F1alpha to prostaglandin I2 conversion"
       - metabolites: !!omap
           - MAM01168r: -1
           - MAM02040r: 1
@@ -121167,6 +121408,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01315"
+      - name: "thromboxane A2 hydrolysis"
       - metabolites: !!omap
           - MAM02040r: -1
           - MAM02994r: -1
@@ -121192,6 +121434,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01318"
+      - name: "6-oxo-prostaglandin F1alpha to prostaglandin I2 conversion"
       - metabolites: !!omap
           - MAM01168c: -1
           - MAM02040c: 1
@@ -121203,6 +121446,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01319"
+      - name: "6-oxo-prostaglandin E1 reduction"
       - metabolites: !!omap
           - MAM01167c: -1
           - MAM01168c: 1
@@ -121216,6 +121460,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01320"
+      - name: "6-oxo-prostaglandin F1alpha reduction"
       - metabolites: !!omap
           - MAM01168c: -1
           - MAM02039c: -2
@@ -121245,6 +121490,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01322"
+      - name: "prostaglandin A2 to prostaglandin C2 conversion"
       - metabolites: !!omap
           - MAM02777c: -1
           - MAM02781c: 1
@@ -121270,6 +121516,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01324"
+      - name: "prostaglandin B2 hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM02779c: -1
@@ -121375,6 +121622,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01332"
+      - name: "prostaglandin J2 hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM02783c: 1
@@ -121387,6 +121635,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01333"
+      - name: "prostaglandin J2 hydrolysis"
       - metabolites: !!omap
           - MAM02040r: -1
           - MAM02783r: 1
@@ -121399,6 +121648,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01334"
+      - name: "15-deoxy-PGD2 hydrolysis"
       - metabolites: !!omap
           - MAM00384c: -1
           - MAM02040c: -1
@@ -121411,6 +121661,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01335"
+      - name: "delta-12-prostaglandin J2 hydrolysis"
       - metabolites: !!omap
           - MAM01662r: -1
           - MAM02040r: -1
@@ -121437,6 +121688,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01337"
+      - name: "13,14-dihydro-15-keto-PGD2 to 15-dehydro-prostaglandin D2 conversion"
       - metabolites: !!omap
           - MAM00338c: -1
           - MAM00381c: 1
@@ -121448,6 +121700,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01338"
+      - name: "15-deoxy-delta-12,14-PGD2 hydrolysis"
       - metabolites: !!omap
           - MAM00382c: -1
           - MAM02040c: -1
@@ -121475,6 +121728,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01341"
+      - name: "prostaglandin-PGE2-glyceryl ester hydrolysis"
       - metabolites: !!omap
           - MAM01983c: 1
           - MAM02039c: 1
@@ -121490,6 +121744,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01342"
+      - name: "prostaglandin-PGE2-1-glyceryl ester hydrolysis"
       - metabolites: !!omap
           - MAM01983c: 1
           - MAM02039c: 1
@@ -121505,6 +121760,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01343"
+      - name: "prostaglandin-PGE2-3-glyceryl ester hydrolysis"
       - metabolites: !!omap
           - MAM01983c: 1
           - MAM02039c: 1
@@ -121536,6 +121792,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01345"
+      - name: "prostaglandin-PGB2-glyceryl ester hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM02797c: -1
@@ -121612,6 +121869,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01355"
+      - name: "arachidonate to 8-peroxy-(5Z,9E,11Z,14Z)-eicosatetraenoate conversion"
       - metabolites: !!omap
           - MAM01214c: 1
           - MAM01362c: -1
@@ -121625,6 +121883,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01356"
+      - name: "8-peroxy-(5Z,9E,11Z,14Z)-eicosatetraenoate to 5,9-cyclo-6,8-cycloperoxy-12-hydroperoxy-(10E,14Z)-eicosadienoate conversion"
       - metabolites: !!omap
           - MAM01063c: 1
           - MAM01214c: -1
@@ -121639,6 +121898,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01357"
+      - name: "5,9-cyclo-6,8-cycloperoxy-12-hydroperoxy-(10E,14Z)-eicosadienoate to 5,9-cyclo-6,8,12-trihydroxy-(10E,14Z)-eicosadienoic acid conversion"
       - metabolites: !!omap
           - MAM01062c: 1
           - MAM01063c: -1
@@ -121653,6 +121913,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01358"
+      - name: "arachidonate to 9-peroxy-(5Z,7E,11Z,14Z)-eicosatetraenoate conversion"
       - metabolites: !!omap
           - MAM01246c: 1
           - MAM01362c: -1
@@ -121666,6 +121927,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01359"
+      - name: "9-peroxy-(5Z,7E,11Z,14Z)-eicosatetraenoate to 9,11-cycloperoxy-5-hydroperoxy-(6E,14Z)-eicosadienoate conversion"
       - metabolites: !!omap
           - MAM01223c: 1
           - MAM01246c: -1
@@ -121680,6 +121942,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01360"
+      - name: "9,11-cycloperoxy-5-hydroperoxy-(6E,14Z)-eicosadienoate to 5,9,11-trihydroxyprosta-(6E,14Z)-dien-1-oate conversion"
       - metabolites: !!omap
           - MAM01061c: 1
           - MAM01223c: -1
@@ -121694,6 +121957,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01361"
+      - name: "arachidonate to 11-peroxy-(5Z,8Z,12E,14Z)-eicosatetraenoate conversion"
       - metabolites: !!omap
           - MAM00302c: 1
           - MAM01362c: -1
@@ -121707,6 +121971,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01362"
+      - name: "11-peroxy-(5Z,8Z,12E,14Z)-eicosatetraenoate to 9,11-cycloperoxy-15-hydroperoxy-(5Z,13E)-eicosadienoate conversion"
       - metabolites: !!omap
           - MAM00302c: -1
           - MAM01222c: 1
@@ -121721,6 +121986,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01363"
+      - name: "9,11,15-trihydroxyprosta-(5Z,13E)-dien-1-oate hydrolysis"
       - metabolites: !!omap
           - MAM01221c: -1
           - MAM01222c: 1
@@ -121734,6 +122000,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01364"
+      - name: "arachidonate to 12-peroxy-(5Z,8Z,10E,14Z)-eicosatetraenoate conversion"
       - metabolites: !!omap
           - MAM00335c: 1
           - MAM01362c: -1
@@ -121747,6 +122014,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01365"
+      - name: "12-peroxy-(5Z,8Z,10E,14Z)-eicosatetraenoate to 11,15-cyclo-12,14-cycloperoxy-8-hydroperoxy-(5Z,9E)-eicosadienoate conversion"
       - metabolites: !!omap
           - MAM00281c: 1
           - MAM00335c: -1
@@ -121761,6 +122029,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01366"
+      - name: "11,15-cyclo-12,14-cycloperoxy-8-hydroperoxy-(5Z,9E)-eicosadienoate to 11,15-cyclo-8,12,14-trihydroxy-(5Z,9E)-eicosadienoic acid conversion"
       - metabolites: !!omap
           - MAM00281c: -1
           - MAM00282c: 1
@@ -121806,6 +122075,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01373"
+      - name: "delta-12-prostaglandin J2 to prostaglandin J2 conversion"
       - metabolites: !!omap
           - MAM01662c: -1
           - MAM02796c: 1
@@ -121816,6 +122086,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01374"
+      - name: "15-deoxy-delta-12,14-PGJ2 hydrolysis"
       - metabolites: !!omap
           - MAM00383c: -1
           - MAM01662c: 1
@@ -121827,6 +122098,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01375"
+      - name: "15-deoxy-prostaglandin J2 hydrolysis"
       - metabolites: !!omap
           - MAM00385c: -1
           - MAM02040c: -1
@@ -121839,6 +122111,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01376"
+      - name: "15-deoxy-prostaglandin J2 hydrolysis"
       - metabolites: !!omap
           - MAM00385c: -1
           - MAM01662c: 1
@@ -121883,6 +122156,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01383"
+      - name: "9-deoxy-delta12-PGD2 hydrolysis"
       - metabolites: !!omap
           - MAM01234c: -1
           - MAM02039c: 2
@@ -121942,6 +122216,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01389"
+      - name: "15(S)-HETrE hydrolysis"
       - metabolites: !!omap
           - MAM00378c: -1
           - MAM00391c: 1
@@ -122670,6 +122945,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07490"
+      - name: "chondroitin sulfate C (GalNAc6S-GlcA) and D (GlcNAc6S-GlcA2S), precursor 1 sulfation"
       - metabolites: !!omap
           - MAM01532g: -1
           - MAM01563g: 1
@@ -122785,6 +123061,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07497"
+      - name: "chondroitin sulfate A (GalNAc4S-GlcA) and B (IdoA2S-GalNAc4S), precursor 3 to chondroitin sulfate B (IdoA2S-GalNAc4S), precursor 4 conversion"
       - metabolites: !!omap
           - MAM01516g: -1
           - MAM01530g: 1
@@ -123049,6 +123326,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07554"
+      - name: "chondroitin sulfate E (GalNAc4,6diS-GlcA), precursor 5b sulfation"
       - metabolites: !!omap
           - MAM01554g: 1
           - MAM01567g: -1
@@ -123063,6 +123341,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07501"
+      - name: "chondroitin sulfate A (GalNAc4S-GlcA) proteoglycan hydrolysis"
       - metabolites: !!omap
           - MAM00205l: 1
           - MAM01517l: -1
@@ -123173,6 +123452,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07508"
+      - name: "chondroitin sulfate A (GalNAc4S-GlcA), degradation product 5 hydrolysis"
       - metabolites: !!omap
           - MAM01523l: -1
           - MAM01758l: 1
@@ -123188,6 +123468,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07513"
+      - name: "chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan hydrolysis"
       - metabolites: !!omap
           - MAM00205l: 1
           - MAM01525l: -1
@@ -123281,6 +123562,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07525"
+      - name: "chondroitin sulfate C (GalNAc6S-GlcA) proteoglycan hydrolysis"
       - metabolites: !!omap
           - MAM00205l: 1
           - MAM01533l: -1
@@ -123412,6 +123694,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07533"
+      - name: "chondroitin sulfate C (GalNAc6S-GlcA), degradation product 5 hydrolysis"
       - metabolites: !!omap
           - MAM01538l: -1
           - MAM01758l: 1
@@ -123427,6 +123710,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07541"
+      - name: "chondroitin sulfate D (GlcNAc6S-GlcA2S) proteoglycan hydrolysis"
       - metabolites: !!omap
           - MAM00205l: 1
           - MAM01543l: -1
@@ -123491,6 +123775,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07545"
+      - name: "chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 2 hydrolysis"
       - metabolites: !!omap
           - MAM01545l: -1
           - MAM01546l: 1
@@ -123571,6 +123856,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07550"
+      - name: "chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 6 hydrolysis"
       - metabolites: !!omap
           - MAM01538l: 1
           - MAM01549l: -1
@@ -123584,6 +123870,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07557"
+      - name: "chondroitin sulfate E (GalNAc4,6diS-GlcA) proteoglycan hydrolysis"
       - metabolites: !!omap
           - MAM00205l: 1
           - MAM01554l: -1
@@ -123749,6 +124036,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07567"
+      - name: "chondroitin sulfate E (GalNAc4,6diS-GlcA), degradation product 7 hydrolysis"
       - metabolites: !!omap
           - MAM01561l: -1
           - MAM01758l: 1
@@ -123935,6 +124223,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07236"
+      - name: "heparan sulfate, degradation product 10 hydrolysis"
       - metabolites: !!omap
           - MAM02039l: 1
           - MAM02040l: -1
@@ -124042,6 +124331,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07243"
+      - name: "heparan sulfate, degradation product 17 hydrolysis"
       - metabolites: !!omap
           - MAM02039l: 1
           - MAM02040l: -1
@@ -124133,6 +124423,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07249"
+      - name: "heparan sulfate, degradation product 23 hydrolysis"
       - metabolites: !!omap
           - MAM02039l: 1
           - MAM02040l: -1
@@ -124161,6 +124452,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07251"
+      - name: "heparan sulfate, degradation product 25 hydrolysis"
       - metabolites: !!omap
           - MAM01758l: 1
           - MAM01910l: 2
@@ -126260,6 +126552,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07468"
+      - name: "core 6 hydrolysis"
       - metabolites: !!omap
           - MAM01611l: -1
           - MAM02040l: -1
@@ -126995,6 +127288,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01659"
+      - name: "choloyl-CoA phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -128443,6 +128737,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01787"
+      - name: "26-hydroxycholesterol oxidation"
       - metabolites: !!omap
           - MAM00623r: -1
           - MAM01182r: 1
@@ -128728,6 +129023,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01813"
+      - name: "3alpha,7alpha,12alpha,25-tetrahydroxy-5beta-cholestane-24-one reduction"
       - metabolites: !!omap
           - MAM00747r: -1
           - MAM01087r: 1
@@ -129191,6 +129487,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08063"
+      - name: "3-sulfinoalanine to L-cysteate conversion"
       - metabolites: !!omap
           - MAM00918c: -2
           - MAM02039c: -2
@@ -129203,6 +129500,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08064"
+      - name: "3-sulfinoalanine to L-cysteate conversion"
       - metabolites: !!omap
           - MAM00918m: -2
           - MAM02039m: -2
@@ -129232,6 +129530,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08759"
+      - name: "hypotaurine to taurine conversion"
       - metabolites: !!omap
           - MAM02157c: -2
           - MAM02630c: -1
@@ -129487,6 +129786,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01868"
+      - name: "glycocholate phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -129504,6 +129804,7 @@
       - confidence_score: 2
     - !!omap
       - id: "MAR01870"
+      - name: "taurocholate phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -129521,6 +129822,7 @@
       - confidence_score: 2
     - !!omap
       - id: "MAR01872"
+      - name: "taurochenodeoxycholate phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -129538,6 +129840,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01874"
+      - name: "glycochenodeoxycholate phosphorylation"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -129946,6 +130249,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01403"
+      - name: "7-peroxy-docosahexaenoate to DHA conversion"
       - metabolites: !!omap
           - MAM01198c: -1
           - MAM01689c: 1
@@ -129959,6 +130263,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01404"
+      - name: "8-peroxy-docosahexaenoate to DHA conversion"
       - metabolites: !!omap
           - MAM01215c: -1
           - MAM01689c: 1
@@ -129972,6 +130277,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01405"
+      - name: "DHA to 10-peroxy-docosahexaenoate conversion"
       - metabolites: !!omap
           - MAM00275c: 1
           - MAM01689c: -1
@@ -129985,6 +130291,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01406"
+      - name: "11-peroxy-docosahexaenoate to DHA conversion"
       - metabolites: !!omap
           - MAM00303c: -1
           - MAM01689c: 1
@@ -129998,6 +130305,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01407"
+      - name: "14-peroxy-docosahexaenoate to DHA conversion"
       - metabolites: !!omap
           - MAM00372c: -1
           - MAM01689c: 1
@@ -130011,6 +130319,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01408"
+      - name: "16-peroxy-docosahexaenoate to DHA conversion"
       - metabolites: !!omap
           - MAM00404c: -1
           - MAM01689c: 1
@@ -130024,6 +130333,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01409"
+      - name: "17-peroxy-docosahexaenoate to DHA conversion"
       - metabolites: !!omap
           - MAM00418c: -1
           - MAM01689c: 1
@@ -130037,6 +130347,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01410"
+      - name: "DHA to 11-peroxy-docosahexaenoate conversion"
       - metabolites: !!omap
           - MAM00303c: 1
           - MAM00984c: 1
@@ -130051,6 +130362,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01411"
+      - name: "DHA to 11-peroxy-docosahexaenoate conversion"
       - metabolites: !!omap
           - MAM00303c: 1
           - MAM01192c: 1
@@ -130065,6 +130377,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01412"
+      - name: "DHA to 10-hydroperoxy-H4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00271c: 1
           - MAM00372c: 1
@@ -130079,6 +130392,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01413"
+      - name: "DHA to 11-hydroperoxy-H4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00299c: 1
           - MAM01198c: 1
@@ -130093,6 +130407,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01414"
+      - name: "DHA to 13-hydroperoxy-H4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00355c: 1
           - MAM00418c: 1
@@ -130107,6 +130422,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01415"
+      - name: "10-peroxy-docosahexaenoate to 14-hydroperoxy-H4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00275c: -1
           - MAM00368c: 1
@@ -130121,6 +130437,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01416"
+      - name: "DHA to 14-peroxy-docosahexaenoate conversion"
       - metabolites: !!omap
           - MAM00372c: 1
           - MAM00415c: 1
@@ -130135,6 +130452,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01417"
+      - name: "DHA to 16-peroxy-docosahexaenoate conversion"
       - metabolites: !!omap
           - MAM00404c: 1
           - MAM00589c: 1
@@ -130149,6 +130467,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01418"
+      - name: "4-hydroperoxy-H4-neuroprostane to 4-hydroxy-D4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00984c: -1
           - MAM00997c: 1
@@ -130162,6 +130481,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01419"
+      - name: "4-hydroperoxy-H4-neuroprostane to 4-hydroxy-E4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00984c: -1
           - MAM00999c: 1
@@ -130175,6 +130495,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01420"
+      - name: "7-hydroperoxy-H4-neuroprostane to 7-hydroxy-E4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM01192c: -1
           - MAM01194c: 1
@@ -130189,6 +130510,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01421"
+      - name: "7-hydroperoxy-H4-neuroprostane to 7-hydroxy-D4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM01192c: -1
           - MAM01193c: 1
@@ -130203,6 +130525,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01422"
+      - name: "10-hydroperoxy-H4-neuroprostane to 10-hydroxy-E4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00271c: -1
           - MAM00273c: 1
@@ -130217,6 +130540,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01423"
+      - name: "10-hydroperoxy-H4-neuroprostane to 10-hydroxy-D4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00271c: -1
           - MAM00272c: 1
@@ -130231,6 +130555,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01424"
+      - name: "11-hydroperoxy-H4-neuroprostane to 11-hydroxy-E4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00299c: -1
           - MAM00301c: 1
@@ -130245,6 +130570,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01425"
+      - name: "11-hydroperoxy-H4-neuroprostane to 11-hydroxy-D4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00299c: -1
           - MAM00300c: 1
@@ -130259,6 +130585,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01426"
+      - name: "13-hydroperoxy-H4-neuroprostane to 13-hydroxy-E4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00355c: -1
           - MAM00359c: 1
@@ -130273,6 +130600,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01427"
+      - name: "13-hydroperoxy-H4-neuroprostane to 13-hydroxy-D4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00355c: -1
           - MAM00358c: 1
@@ -130286,6 +130614,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01428"
+      - name: "14-hydroperoxy-H4-neuroprostane to 14-hydroxy-E4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00368c: -1
           - MAM00370c: 1
@@ -130300,6 +130629,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01429"
+      - name: "14-hydroperoxy-H4-neuroprostane to 14-hydroxy-D4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00368c: -1
           - MAM00369c: 1
@@ -130314,6 +130644,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01430"
+      - name: "17-hydroperoxy-H4-neuroprostane to 17-hydroxy-E4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00415c: -1
           - MAM00417c: 1
@@ -130327,6 +130658,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01431"
+      - name: "17-hydroperoxy-H4-neuroprostane to 17-hydroxy-D4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00415c: -1
           - MAM00416c: 1
@@ -130340,6 +130672,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01432"
+      - name: "20-hydroperoxy-H4-neuroprostane to 20-hydroxy-D4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00589c: -1
           - MAM00593c: 1
@@ -130354,6 +130687,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01433"
+      - name: "20-hydroperoxy-H4-neuroprostane to 20-hydroxy-E4-neuroprostane conversion"
       - metabolites: !!omap
           - MAM00589c: -1
           - MAM00594c: 1
@@ -132099,6 +132433,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06545"
+      - name: "1-phosphatidyl-myo-inositol-3,5-bisphosphate hydrolysis"
       - metabolites: !!omap
           - MAM00552c: 1
           - MAM00555c: -1
@@ -132747,6 +133082,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06591"
+      - name: "phosphatidylinositol-3,5-bisphosphate hydrolysis"
       - metabolites: !!omap
           - MAM00554c: 1
           - MAM02040c: -1
@@ -132890,6 +133226,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08801"
+      - name: "1D-myo-inositol-1,3,4-trisphosphate hydrolysis"
       - metabolites: !!omap
           - MAM00524c: -1
           - MAM02040c: -1
@@ -132964,6 +133301,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08806"
+      - name: "1D-myo-inositol-1,4-bisphosphate hydrolysis"
       - metabolites: !!omap
           - MAM00526c: -1
           - MAM02040c: -1
@@ -133033,6 +133371,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08811"
+      - name: "1-phosphatidyl-1D-myo-inositol-3,4-bisphosphate phosphorylation"
       - metabolites: !!omap
           - MAM00551n: -1
           - MAM01285n: 1
@@ -133077,6 +133416,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08814"
+      - name: "1-phosphatidyl-1D-myo-inositol-3-phosphate phosphorylation"
       - metabolites: !!omap
           - MAM00551n: 1
           - MAM00552n: -1
@@ -133320,6 +133660,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08831"
+      - name: "PI pool phosphorylation"
       - metabolites: !!omap
           - MAM00554n: 1
           - MAM01285n: 1
@@ -133417,6 +133758,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03972"
+      - name: "formaldehyde to 5,10-methylene-THF conversion"
       - metabolites: !!omap
           - MAM01045c: 1
           - MAM01831c: -1
@@ -134504,6 +134846,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07669"
+      - name: "[apocarboxylase] to apoC-lys conversion"
       - metabolites: !!omap
           - MAM00185c: -1
           - MAM01356c: 1
@@ -134537,6 +134880,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07671"
+      - name: "apoC-lys_btn hydrolysis"
       - metabolites: !!omap
           - MAM00185c: 1
           - MAM01357c: -1
@@ -134970,6 +135314,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08740"
+      - name: "5-methyl-THF to 5,10-methylene-THF conversion"
       - metabolites: !!omap
           - MAM01045c: 1
           - MAM01115c: -1
@@ -134983,6 +135328,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06393"
+      - name: "hydroxide to dehydroascorbic acid conversion"
       - metabolites: !!omap
           - MAM01655c: 1
           - MAM02040c: 1
@@ -134996,6 +135342,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06394"
+      - name: "ascorbate to dehydroascorbic acid conversion"
       - metabolites: !!omap
           - MAM01368c: -1
           - MAM01655c: 1
@@ -135041,6 +135388,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08345"
+      - name: "D-glucurono-6,3-lactone hydrolysis"
       - metabolites: !!omap
           - MAM01685r: -1
           - MAM01973r: 1
@@ -135067,6 +135415,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08348"
+      - name: "D-glucurono-6,3-lactone reduction"
       - metabolites: !!omap
           - MAM01685c: -1
           - MAM02039c: -1
@@ -135097,6 +135446,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08619"
+      - name: "ascorbate to dehydroascorbic acid conversion"
       - metabolites: !!omap
           - MAM01368c: -1
           - MAM01655c: 1
@@ -135135,6 +135485,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08622"
+      - name: "2,3-diketo-L-gulonate decarboxylation"
       - metabolites: !!omap
           - MAM00573c: -1
           - MAM01596c: 1
@@ -135147,6 +135498,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08623"
+      - name: "2,3-diketo-L-gulonate decarboxylation"
       - metabolites: !!omap
           - MAM00573c: -1
           - MAM01596c: 1
@@ -135159,6 +135511,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08624"
+      - name: "2,3-diketo-L-gulonate to oxalate conversion"
       - metabolites: !!omap
           - MAM00573c: -1
           - MAM02039c: 2
@@ -135172,6 +135525,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08625"
+      - name: "2,3-diketo-L-gulonate hydrolysis"
       - metabolites: !!omap
           - MAM00573c: -1
           - MAM02039c: 1
@@ -135381,6 +135735,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04768"
+      - name: "uroporphyrin III to uroporphyrinogen III conversion"
       - metabolites: !!omap
           - MAM02039c: -6
           - MAM03126c: -1
@@ -135393,6 +135748,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04769"
+      - name: "uroporphyrin I to uroporphyrinogen III conversion"
       - metabolites: !!omap
           - MAM02039c: -6
           - MAM03125c: -1
@@ -135405,6 +135761,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04770"
+      - name: "coproporphyrin III to coproporphyrinogen III conversion"
       - metabolites: !!omap
           - MAM01604c: -1
           - MAM01606c: 1
@@ -135417,6 +135774,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04771"
+      - name: "uroporphyrinogen I hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM02151c: 1
@@ -135444,6 +135802,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04773"
+      - name: "coproporphyrin I to coproporphyrinogen I conversion"
       - metabolites: !!omap
           - MAM01603c: -1
           - MAM01605c: 1
@@ -135490,6 +135849,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09717"
+      - name: "globin to hemoglobin conversion"
       - metabolites: !!omap
           - MAM01957c: -1
           - MAM02049c: -1
@@ -135991,6 +136351,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06659"
+      - name: "9-cis-retinoate to retinoate conversion"
       - metabolites: !!omap
           - MAM01231c: -1
           - MAM02833c: 1
@@ -136002,6 +136363,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06660"
+      - name: "9-cis-retinoate to retinoate conversion"
       - metabolites: !!omap
           - MAM01231r: -1
           - MAM02833r: 1
@@ -136013,6 +136375,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06661"
+      - name: "13-cis-retinoate to retinoate conversion"
       - metabolites: !!omap
           - MAM00350c: -1
           - MAM02833c: 1
@@ -136024,6 +136387,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06662"
+      - name: "13-cis-retinoate to retinoate conversion"
       - metabolites: !!omap
           - MAM00350r: -1
           - MAM02833r: 1
@@ -136035,6 +136399,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06663"
+      - name: "9,13-cis-retinoate to 9-cis-retinoate conversion"
       - metabolites: !!omap
           - MAM01224c: -1
           - MAM01231c: 1
@@ -136149,6 +136514,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06670"
+      - name: "4-oxo-9-cis-retinoate reduction"
       - metabolites: !!omap
           - MAM01029c: -1
           - MAM01229c: 1
@@ -136183,6 +136549,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06672"
+      - name: "13-cis-retinal to retinal conversion"
       - metabolites: !!omap
           - MAM00349c: -1
           - MAM02832c: 1
@@ -136194,6 +136561,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06673"
+      - name: "13-cis-retinal to retinal conversion"
       - metabolites: !!omap
           - MAM00349r: -1
           - MAM02832r: 1
@@ -136456,6 +136824,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06690"
+      - name: "APE hydrolysis"
       - metabolites: !!omap
           - MAM01346c: -1
           - MAM02039c: -1
@@ -136469,6 +136838,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06691"
+      - name: "A2PE-H2 hydrolysis"
       - metabolites: !!omap
           - MAM01248c: -1
           - MAM01346c: 1
@@ -136482,6 +136852,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06692"
+      - name: "A2PE-H2 to A2PE conversion"
       - metabolites: !!omap
           - MAM01247c: 1
           - MAM01248c: -1
@@ -136494,6 +136865,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06693"
+      - name: "A2PE hydrolysis"
       - metabolites: !!omap
           - MAM01247c: -1
           - MAM02039c: 1
@@ -136507,6 +136879,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06694"
+      - name: "N-retinylidene-N-retinylethanolamine to iso-A2E(13-cis) conversion"
       - metabolites: !!omap
           - MAM02177c: 1
           - MAM02624c: -1
@@ -136518,6 +136891,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06695"
+      - name: "N-retinylidene-N-retinylethanolamine to iso-A2E(11-cis) conversion"
       - metabolites: !!omap
           - MAM02176c: 1
           - MAM02624c: -1
@@ -136529,6 +136903,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06697"
+      - name: "N-retinylidene-N-retinylethanolamine to iso-A2E(9-cis) conversion"
       - metabolites: !!omap
           - MAM02179c: 1
           - MAM02624c: -1
@@ -136540,6 +136915,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06699"
+      - name: "N-retinylidene-N-retinylethanolamine to iso-A2E(9,13-di-cis) conversion"
       - metabolites: !!omap
           - MAM02178c: 1
           - MAM02624c: -1
@@ -136669,6 +137045,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08698"
+      - name: "retinoate reduction"
       - metabolites: !!omap
           - MAM02039c: -2
           - MAM02040c: 1
@@ -136683,6 +137060,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08699"
+      - name: "13-cis-retinal oxidation"
       - metabolites: !!omap
           - MAM00349c: -1
           - MAM00350c: 1
@@ -136714,6 +137092,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08702"
+      - name: "9-cis-retinal to retinal conversion"
       - metabolites: !!omap
           - MAM01230c: -1
           - MAM02832c: 1
@@ -136724,6 +137103,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08703"
+      - name: "retinoate to 4-oxo-13-cis-retinoate conversion"
       - metabolites: !!omap
           - MAM01026c: 2
           - MAM02630c: -1
@@ -136735,6 +137115,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08704"
+      - name: "13-cis-oxo-retinoate to 4-oxo-13-cis-retinoate conversion"
       - metabolites: !!omap
           - MAM00348c: -1
           - MAM01026c: 1
@@ -136745,6 +137126,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08706"
+      - name: "13-cis-retinoate to 13-cis-oxo-retinoate conversion"
       - metabolites: !!omap
           - MAM00348c: 2
           - MAM00350c: -2
@@ -136799,6 +137181,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08712"
+      - name: "retinoate activation"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -137025,6 +137408,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04549"
+      - name: "6-hydroxymelatonin-sulfate to 6-hydroxymelatonin conversion"
       - metabolites: !!omap
           - MAM01161c: 1
           - MAM01162c: -1
@@ -137054,6 +137438,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04551"
+      - name: "formyl-N-acetyl-5-methoxykynurenamine decarboxylation"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01833c: 1
@@ -137069,6 +137454,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04552"
+      - name: "hydroxide to melatonin radical conversion"
       - metabolites: !!omap
           - MAM02147c: -1
           - MAM02459c: 1
@@ -137081,6 +137467,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04553"
+      - name: "cyclic-3-hydroxymelatonin hydrolysis"
       - metabolites: !!omap
           - MAM01625c: -1
           - MAM02040c: -1
@@ -137094,6 +137481,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04554"
+      - name: "6-hydroxy-1,2,3,4-tetrahydro-beta-carboline hydrolysis"
       - metabolites: !!omap
           - MAM01160c: -1
           - MAM01831c: 1
@@ -137364,6 +137752,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08613"
+      - name: "aquacob(III)alamin reduction"
       - metabolites: !!omap
           - MAM01361c: -2
           - MAM01599c: 2
@@ -137595,6 +137984,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02114"
+      - name: "provitamin D3 to vitamin D3 conversion"
       - metabolites: !!omap
           - MAM02805c: -1
           - MAM03142c: 1
@@ -137986,6 +138376,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08003"
+      - name: "24R,25-dihyoxyvitamin D2 hydroxylation"
       - metabolites: !!omap
           - MAM00518m: 1
           - MAM00613m: -1
@@ -138001,6 +138392,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08004"
+      - name: "25-hydroxyvitamin D2 hydroxylation"
       - metabolites: !!omap
           - MAM00519m: 1
           - MAM00620m: -1
@@ -138017,6 +138409,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08005"
+      - name: "1-alpha,25-dihydroxyvitamin D2 hydroxylation"
       - metabolites: !!omap
           - MAM00518m: 1
           - MAM00519m: -1
@@ -138032,6 +138425,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08006"
+      - name: "(24R)-24,25-dihydroxycalciol hydroxylation"
       - metabolites: !!omap
           - MAM00035m: -1
           - MAM01416m: 1
@@ -138064,6 +138458,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08011"
+      - name: "previtamin D3 to provitamin D3 conversion"
       - metabolites: !!omap
           - MAM02765c: -1
           - MAM02805c: 1
@@ -138074,6 +138469,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08012"
+      - name: "lumisterol 3 to previtamin D3 conversion"
       - metabolites: !!omap
           - MAM02422c: -1
           - MAM02765c: 1
@@ -138084,6 +138480,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08013"
+      - name: "previtamin D3 to tachysterol 3 conversion"
       - metabolites: !!omap
           - MAM02765c: -1
           - MAM02953c: 1
@@ -138094,6 +138491,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08014"
+      - name: "previtamin D3 to vitamin D3 conversion"
       - metabolites: !!omap
           - MAM02765c: -1
           - MAM03142c: 1
@@ -138104,6 +138502,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06423"
+      - name: "alpha-tocotrienol to alpha-tocotrienoxyl radical conversion"
       - metabolites: !!omap
           - MAM01330c: -1
           - MAM01331c: 1
@@ -138257,6 +138656,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06434"
+      - name: "9-carboxy-alpha-tocotrienol oxidation"
       - metabolites: !!omap
           - MAM01186m: 1
           - MAM01226m: -1
@@ -138416,6 +138816,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06447"
+      - name: "13-carboxy-gamma-tocotrienol oxidation"
       - metabolites: !!omap
           - MAM00289m: 1
           - MAM00347m: -1
@@ -138563,6 +138964,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06456"
+      - name: "gamma-tocopheroxyl-radical to gamma-tocopherol conversion"
       - metabolites: !!omap
           - MAM01935c: 1
           - MAM01936c: -1
@@ -138575,6 +138977,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06457"
+      - name: "8alpha-hydroxy-gamma-tocopherone to gamma-tocopheroxyl-radical conversion"
       - metabolites: !!omap
           - MAM01211c: -1
           - MAM01936c: 1
@@ -138587,6 +138990,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06458"
+      - name: "8alpha-hydroxy-gamma-tocopherone to gamma-tocopheryl-quinone conversion"
       - metabolites: !!omap
           - MAM01211c: -1
           - MAM01937c: 1
@@ -138598,6 +139002,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06459"
+      - name: "5-nitro-gamma-tocopherol to gamma-tocopheroxyl-radical conversion"
       - metabolites: !!omap
           - MAM01117c: -1
           - MAM01936c: 1
@@ -138610,6 +139015,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06460"
+      - name: "5-nitro-gamma-tocopherol hydrolysis"
       - metabolites: !!omap
           - MAM01117c: -1
           - MAM01935c: 1
@@ -138624,6 +139030,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06461"
+      - name: "nitrosoperoxycarbonate decarboxylation"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM02590c: -1
@@ -138712,6 +139119,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06470"
+      - name: "13-carboxy-gamma-tocopherol oxidation"
       - metabolites: !!omap
           - MAM00288m: 1
           - MAM00346m: -1
@@ -138921,6 +139329,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06482"
+      - name: "13-carboxy-alpha-tocopherol oxidation"
       - metabolites: !!omap
           - MAM00286m: 1
           - MAM00344m: -1
@@ -139006,6 +139415,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06488"
+      - name: "7-carboxy-alpha-chromanol oxidation"
       - metabolites: !!omap
           - MAM01096m: 1
           - MAM01185m: -1
@@ -139093,6 +139503,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06501"
+      - name: "8alpha-hydroxytocopherone to alpha-tocopheryl quinone conversion"
       - metabolites: !!omap
           - MAM01212c: -1
           - MAM01329c: 1
@@ -139187,6 +139598,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06997"
+      - name: "benzo[a]pyrene-9,10-oxide to 9-hydroxybenzo[a]pyrene conversion"
       - metabolites: !!omap
           - MAM01241c: 1
           - MAM01379c: -1
@@ -139330,6 +139742,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07006"
+      - name: "naphthalene-1,2-diol to 1,2-naphthoquinone conversion"
       - metabolites: !!omap
           - MAM00246c: 1
           - MAM02039c: 2
@@ -139357,6 +139770,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07008"
+      - name: "(1R,2S)-naphthalene 1,2-oxide to 1-naphthol conversion"
       - metabolites: !!omap
           - MAM00032c: -1
           - MAM00538c: 1
@@ -139367,6 +139781,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07009"
+      - name: "1-naphthol hydroxylation"
       - metabolites: !!omap
           - MAM00250c: 1
           - MAM00538c: -1
@@ -139382,6 +139797,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07010"
+      - name: "1,4-dihydroxynaphthalene to 1,4-naphthoquinone conversion"
       - metabolites: !!omap
           - MAM00250c: -1
           - MAM00251c: 1
@@ -139393,6 +139809,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07011"
+      - name: "(1R,2S)-naphthalene 1,2-oxide to 2-naphthol conversion"
       - metabolites: !!omap
           - MAM00032c: -1
           - MAM00668c: 1
@@ -139448,6 +139865,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07015"
+      - name: "(1S,2R)-naphthalene 1,2-oxide to 1-naphthol conversion"
       - metabolites: !!omap
           - MAM00034c: -1
           - MAM00538c: 1
@@ -139458,6 +139876,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07016"
+      - name: "(1S,2R)-naphthalene 1,2-oxide to 2-naphthol conversion"
       - metabolites: !!omap
           - MAM00034c: -1
           - MAM00668c: 1
@@ -139587,6 +140006,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07024"
+      - name: "aflatoxin B1 diol to aflatoxin B1 dialdehyde conversion"
       - metabolites: !!omap
           - MAM01294c: 1
           - MAM01295c: -1
@@ -139687,6 +140107,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07031"
+      - name: "TAG epoxide to dichloroacetyl chloride conversion"
       - metabolites: !!omap
           - MAM01692c: 1
           - MAM02954c: -1
@@ -139697,6 +140118,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07032"
+      - name: "dichloroacetyl chloride hydroxylation"
       - metabolites: !!omap
           - MAM01442c: 1
           - MAM01691c: 1
@@ -139730,6 +140152,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07034"
+      - name: "chloral hydrolysis"
       - metabolites: !!omap
           - MAM01440c: 1
           - MAM01441c: -1
@@ -139775,6 +140198,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07037"
+      - name: "trichloroacetate reduction"
       - metabolites: !!omap
           - MAM01442c: 1
           - MAM01691c: 1
@@ -139868,6 +140292,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07043"
+      - name: "bromobenzene-3,4-oxide to 4-bromophenol conversion"
       - metabolites: !!omap
           - MAM00974c: 1
           - MAM01407c: -1
@@ -139896,6 +140321,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07045"
+      - name: "4-bromophenol-2,3-epoxide to 4-bromocatechol conversion"
       - metabolites: !!omap
           - MAM00973c: 1
           - MAM00975c: -1
@@ -139906,6 +140332,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07046"
+      - name: "4-bromocatechol to 4-bromo-3,5-cyclohexadiene-1,2-dione conversion"
       - metabolites: !!omap
           - MAM00972c: 1
           - MAM00973c: -1
@@ -139917,6 +140344,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07047"
+      - name: "bromobenzene-3,4-dihydrodiol to 4-bromocatechol conversion"
       - metabolites: !!omap
           - MAM00973c: 1
           - MAM01406c: -1
@@ -139946,6 +140374,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07049"
+      - name: "2-bromophenol to bromobenzene-2,3-oxide conversion"
       - metabolites: !!omap
           - MAM00637c: -1
           - MAM01405c: 1
@@ -140155,6 +140584,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07062"
+      - name: "4-(n-nitrosomethylamino)-1-(3-pyridyl)-1-butanone hydroxylation"
       - metabolites: !!omap
           - MAM00927c: 1
           - MAM00932c: -1
@@ -140234,6 +140664,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07067"
+      - name: "4-(methylnitrosamino)-1-(3-pyridyl)-1-butanol hydroxylation"
       - metabolites: !!omap
           - MAM00929c: -1
           - MAM00930c: 1
@@ -140249,6 +140680,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07068"
+      - name: "4-[(hydroxymethyl)nitrosoamino]-1-(3-pyridinyl)-1-butanone to 4-(nitrosoamino)-1-(3-pyridinyl)-1-butanone conversion"
       - metabolites: !!omap
           - MAM00931c: 1
           - MAM00951c: -1
@@ -140260,6 +140692,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07069"
+      - name: "4-(nitrosoamino)-1-(3-pyridinyl)-1-butanone to 4-hydroxy-1-(3-pyridinyl)-1-butanone conversion"
       - metabolites: !!omap
           - MAM00931c: -1
           - MAM00985c: 1
@@ -140271,6 +140704,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07070"
+      - name: "4-hydroxy-1-(3-pyridinyl)-1-butanone hydroxylation"
       - metabolites: !!omap
           - MAM00917c: 1
           - MAM00985c: -1
@@ -140286,6 +140720,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07071"
+      - name: "4-hydroxy-4-(methylnitrosoamino)-1-(3-pyridinyl)-1-butanone to 4-oxo-1-(3-pyridyl)-1-butanone conversion"
       - metabolites: !!omap
           - MAM00992c: -1
           - MAM01025c: 1
@@ -140297,6 +140732,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07072"
+      - name: "4-oxo-1-(3-pyridyl)-1-butanone hydroxylation"
       - metabolites: !!omap
           - MAM00917c: 1
           - MAM01025c: -1
@@ -140312,6 +140748,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07073"
+      - name: "1-(methylnitrosoamino)-4-(3-pyridinyl)-1,4-butanediol to 5-(3-pyridyl)-2-hydroxytetrahydrofuran conversion"
       - metabolites: !!omap
           - MAM00226c: -1
           - MAM01035c: 1
@@ -140323,6 +140760,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07074"
+      - name: "5-(3-pyridyl)-2-hydroxytetrahydrofuran hydroxylation"
       - metabolites: !!omap
           - MAM01035c: -1
           - MAM01929c: 1
@@ -140337,6 +140775,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07075"
+      - name: "alpha-[3-(nitrosoamino)propyl]-3-pyridinemethanol to 1-(3-pyridinyl)-1,4-butanediol conversion"
       - metabolites: !!omap
           - MAM00225c: 1
           - MAM01319c: -1
@@ -140348,6 +140787,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07076"
+      - name: "1-(3-pyridinyl)-1,4-butanediol hydroxylation"
       - metabolites: !!omap
           - MAM00225c: -1
           - MAM01929c: 1
@@ -140363,6 +140803,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07077"
+      - name: "alpha-[3-[(hydroxymethyl)nitrosoamino]propyl]-3-pyridinemethanol to alpha-[3-(nitrosoamino)propyl]-3-pyridinemethanol conversion"
       - metabolites: !!omap
           - MAM01319c: 1
           - MAM01320c: -1
@@ -140484,6 +140925,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07085"
+      - name: "1-nitronaphthalene to 1-nitrosonaphthalene conversion"
       - metabolites: !!omap
           - MAM00545c: -1
           - MAM00548c: 1
@@ -140496,6 +140938,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07086"
+      - name: "1-nitrosonaphthalene to N-hydroxy-1-aminonaphthalene conversion"
       - metabolites: !!omap
           - MAM00548c: -1
           - MAM02039c: -2
@@ -140507,6 +140950,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07087"
+      - name: "N-hydroxy-1-aminonaphthalene to 1-naphthylamine conversion"
       - metabolites: !!omap
           - MAM00539c: 1
           - MAM02039c: -2
@@ -140552,6 +140996,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07090"
+      - name: "2,2-dichloroacetaldehyde hydrolysis"
       - metabolites: !!omap
           - MAM00567c: 1
           - MAM00568c: -1
@@ -140611,6 +141056,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07094"
+      - name: "2-(S-glutathionyl)acetyl chloride hydrolysis"
       - metabolites: !!omap
           - MAM00565c: -1
           - MAM00676c: 1
@@ -140624,6 +141070,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07095"
+      - name: "2-(S-glutathionyl)acetyl glutathione hydrolysis"
       - metabolites: !!omap
           - MAM00566c: -1
           - MAM00676c: 1
@@ -140669,6 +141116,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07098"
+      - name: "chloroacetyl chloride hydrolysis"
       - metabolites: !!omap
           - MAM01442c: 1
           - MAM01443c: 1
@@ -140731,6 +141179,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07104"
+      - name: "glutathione episulfonium ion hydrolysis"
       - metabolites: !!omap
           - MAM01978c: -1
           - MAM02040c: -1
@@ -140742,6 +141191,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07106"
+      - name: "S-(formylmethyl)glutathione to S-(2-hydroxyethyl)glutathione conversion"
       - metabolites: !!omap
           - MAM02039c: -3
           - MAM02855c: 1
@@ -141154,6 +141604,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05127"
+      - name: "NH4+ to H+ conversion"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02578c: 1
@@ -141165,6 +141616,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05128"
+      - name: "NH4+ to H+ conversion"
       - metabolites: !!omap
           - MAM02039e: 1
           - MAM02578e: 1
@@ -141303,6 +141755,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09467"
+      - name: "fructoseglycine-ketone-3-phosphate to fructoseglycine conversion"
       - metabolites: !!omap
           - MAM01285c: -1
           - MAM01371c: 1
@@ -143177,6 +143630,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00011"
+      - name: "fatty acid-uptake pool formation"
       - metabolites: !!omap
           - MAM01807e: -0.5
           - MAM01819e: 1
@@ -143188,6 +143642,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00012"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003e: 0.0001
           - MAM00008e: 0.0001
@@ -143286,6 +143741,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00477"
+      - name: "phospholipids extracellular pool formation"
       - metabolites: !!omap
           - MAM01395e: -2
           - MAM02684e: -1
@@ -143298,6 +143754,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00545"
+      - name: "acyl-CoA-CL pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00004c: -0.0001
           - MAM00006c: -0.0001
@@ -143367,6 +143824,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00546"
+      - name: "acyl-CoA-LD-TG2 pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00004c: -0.0001
           - MAM00006c: -0.0001
@@ -143436,6 +143894,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00547"
+      - name: "acyl-CoA-LD-TG3 pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00004c: -0.0001
           - MAM00006c: -0.0001
@@ -143505,6 +143964,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00548"
+      - name: "acyl-CoA-LD-PC pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00004c: -0.0005
           - MAM00006c: -0.0005
@@ -143574,6 +144034,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00549"
+      - name: "acyl-CoA-LD-PE pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00004c: -0.0005
           - MAM00006c: -0.0005
@@ -143643,6 +144104,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00550"
+      - name: "acyl-CoA-LD-PS pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00004c: -0.0005
           - MAM00006c: -0.0005
@@ -143712,6 +144174,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00551"
+      - name: "acyl-CoA-LD-PI pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00004c: -0.0005
           - MAM00006c: -0.0005
@@ -143781,6 +144244,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00552"
+      - name: "acyl-CoA-LD-SM pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00004c: -0.002
           - MAM00006c: -0.002
@@ -143850,6 +144314,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00553"
+      - name: "acyl-CoA-bile-PC pool formation"
       - metabolites: !!omap
           - MAM00004c: -0.0001
           - MAM00006c: -0.0001
@@ -143919,6 +144384,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00555"
+      - name: "1-acylglycerol-3P-LD-TG1 pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00436c: -0.0001
           - MAM00437c: -0.0001
@@ -143988,6 +144454,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00556"
+      - name: "1-acylglycerol-3P-LD-PC pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00436c: -0.0005
           - MAM00437c: -0.0005
@@ -144057,6 +144524,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00557"
+      - name: "1-acylglycerol-3P-LD-PE pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00436c: -0.0005
           - MAM00437c: -0.0005
@@ -144126,6 +144594,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00558"
+      - name: "1-acylglycerol-3P-LD-PS pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00436c: -0.0005
           - MAM00437c: -0.0005
@@ -144195,6 +144664,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00559"
+      - name: "1-acylglycerol-3P-LD-PI pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00436c: -0.0005
           - MAM00437c: -0.0005
@@ -144264,6 +144734,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00560"
+      - name: "1-acylglycerol-3P-LD-SM pool (liver tissue) formation"
       - metabolites: !!omap
           - MAM00436c: -0.002
           - MAM00437c: -0.002
@@ -144333,6 +144804,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00561"
+      - name: "1-acylglycerol-3P-bile-PC pool formation"
       - metabolites: !!omap
           - MAM00436c: -0.0001
           - MAM00437c: -0.0001
@@ -144402,6 +144874,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00685"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003c: 0.0001
           - MAM00008c: 0.0001
@@ -144471,6 +144944,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00686"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003c: 0.0001
           - MAM00008c: 0.0001
@@ -144540,6 +145014,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00687"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003c: 0.0001
           - MAM00008c: 0.0001
@@ -144609,6 +145084,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00688"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003c: 0.0005
           - MAM00008c: 0.0005
@@ -144678,6 +145154,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00689"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003c: 0.0005
           - MAM00008c: 0.0005
@@ -144747,6 +145224,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00690"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003c: 0.0005
           - MAM00008c: 0.0005
@@ -144816,6 +145294,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00691"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003c: 0.0005
           - MAM00008c: 0.0005
@@ -144885,6 +145364,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00692"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003c: 0.002
           - MAM00008c: 0.002
@@ -144954,6 +145434,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01185"
+      - name: "(2E)-dodecenoyl-CoA formation"
       - metabolites: !!omap
           - MAM00042m: 1
           - MAM00935m: -1
@@ -144967,6 +145448,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01227"
+      - name: "(2E)-dodecenoyl-CoA formation"
       - metabolites: !!omap
           - MAM00042m: 1
           - MAM00936m: -1
@@ -144980,6 +145462,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05233"
+      - name: "apoA1 formation"
       - metabolites: !!omap
           - MAM01350l: 2
           - MAM02039l: 30
@@ -144995,6 +145478,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05234"
+      - name: "HDL formation"
       - metabolites: !!omap
           - MAM01350r: -2
           - MAM01450r: -20
@@ -145012,6 +145496,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05238"
+      - name: "2-lysolecithin pool formation"
       - metabolites: !!omap
           - MAM00656l: 25
           - MAM01351l: 1
@@ -145028,6 +145513,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05239"
+      - name: "LDL formation"
       - metabolites: !!omap
           - MAM00656r: -25
           - MAM01351r: -1
@@ -145046,6 +145532,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05243"
+      - name: "2-lysolecithin pool formation"
       - metabolites: !!omap
           - MAM00656l: 165
           - MAM01351l: 1
@@ -145065,6 +145552,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05244"
+      - name: "VLDL formation"
       - metabolites: !!omap
           - MAM00656r: -165
           - MAM01351r: -1
@@ -145085,6 +145573,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05247"
+      - name: "2-lysolecithin pool formation"
       - metabolites: !!omap
           - MAM00656l: 1
           - MAM01352l: 1
@@ -145106,6 +145595,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR05257"
+      - name: "(10Z)-heptadecenoic acid formation"
       - metabolites: !!omap
           - MAM00003r: 0.0005
           - MAM00008r: 0.0005
@@ -145175,6 +145665,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09022"
+      - name: "TAG-chylomicron pool formation"
       - metabolites: !!omap
           - MAM02956e: 0.5
           - MAM02957e: -1
@@ -145254,6 +145745,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00015"
+      - name: "NEFA blood pool in to (10Z)-heptadecenoic acid conversion"
       - metabolites: !!omap
           - MAM00003e: 0.0048
           - MAM00008e: 0.0016
@@ -145322,6 +145814,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00016"
+      - name: "(10Z)-heptadecenoic acid to NEFA blood pool out conversion"
       - metabolites: !!omap
           - MAM00003e: -0.0001
           - MAM00008e: -0.0023
@@ -145390,6 +145883,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00017"
+      - name: "SMCFA-blood-pool to butyrate conversion"
       - metabolites: !!omap
           - MAM01410e: 0.125
           - MAM01648e: 0.125
@@ -182692,6 +183186,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09725"
+      - name: "NADP+ reduction"
       - metabolites: !!omap
           - MAM02554c: -1
           - MAM02554n: 1
@@ -182704,6 +183199,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00031"
+      - name: "lipid droplet formation"
       - metabolites: !!omap
           - MAM00240c: -0.19
           - MAM00511c: -0.0014
@@ -182728,6 +183224,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00021"
+      - name: "alanine to biomass conversion"
       - metabolites: !!omap
           - MAM01307c: -1
           - MAM01365c: -1
@@ -182769,6 +183266,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00022"
+      - name: "[protein]-N6-(lipoyl)lysine reduction"
       - metabolites: !!omap
           - MAM00209m: -1
           - MAM01401c: -1
@@ -182794,6 +183292,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00023"
+      - name: "11-cis-retinol to vitamin A derivatives conversion"
       - metabolites: !!omap
           - MAM00291c: -1
           - MAM00427c: -1
@@ -182823,6 +183322,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00033"
+      - name: "24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion"
       - metabolites: !!omap
           - MAM00611c: -1
           - MAM00611m: -1
@@ -182836,6 +183336,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00034"
+      - name: "3-carboxy-alpha-chromanol to vitamin E derivatives conversion"
       - metabolites: !!omap
           - MAM00766c: -1
           - MAM01924c: -1
@@ -182847,6 +183348,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00035"
+      - name: "(1aalpha,2beta,3alpha,11calpha)-1a,2,3,11c-tetrahydro-6,11-dimethylbenzo[6,7]phenanthro[3,4-b]oxirene-2,3-diol to xenobiotics conversion"
       - metabolites: !!omap
           - MAM00030c: -1
           - MAM00031c: -1
@@ -182899,6 +183401,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00036"
+      - name: "(11R)-HPETE to arachidonate derivatives conversion"
       - metabolites: !!omap
           - MAM00005c: -1
           - MAM00013c: -1
@@ -183055,6 +183558,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00037"
+      - name: "16alpha-hydroxyestrone to steroids conversion"
       - metabolites: !!omap
           - MAM00400c: -1
           - MAM00400r: -1
@@ -192282,6 +192786,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02496"
+      - name: "(2E)-docosenoyl-CoA reduction"
       - metabolites: !!omap
           - MAM00040n: -1
           - MAM01725n: 1
@@ -192482,6 +192987,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02527"
+      - name: "4-aminobutanal to 1-pyrroline conversion"
       - metabolites: !!omap
           - MAM00557c: 1
           - MAM00969c: -1
@@ -193564,6 +194070,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02937"
+      - name: "3beta-hydroxy-5-cholestene-27-oate hydroxylation"
       - metabolites: !!omap
           - MAM00761c: 1
           - MAM00764c: -1
@@ -193580,6 +194087,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02938"
+      - name: "3beta,7alpha-dihydroxy-5-cholestenoate oxidation"
       - metabolites: !!omap
           - MAM00761c: -1
           - MAM01180c: 1
@@ -193845,6 +194353,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03016"
+      - name: "prostaglandin E2 to prostaglandin A2 conversion"
       - metabolites: !!omap
           - MAM02040m: 1
           - MAM02777m: 1
@@ -193909,6 +194418,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03039"
+      - name: "8-Dehydrocholesterol hydroxylation"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02040c: 1
@@ -194036,6 +194546,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03047"
+      - name: "alpha-tocopheryl quinone reduction"
       - metabolites: !!omap
           - MAM01328c: 1
           - MAM01329c: -1
@@ -194082,6 +194593,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03050"
+      - name: "4Alpha,5-Epoxy-8Alpha-Hydroperoxytocopherone hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM02041c: 1
@@ -194222,6 +194734,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03131"
+      - name: "13,14-Epoxy-Retinol hydrolysis"
       - metabolites: !!omap
           - MAM02040c: -1
           - MAM03356c: 1
@@ -194564,6 +195077,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03210"
+      - name: "3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al oxidation"
       - metabolites: !!omap
           - MAM00751c: -1
           - MAM00752c: 1
@@ -194630,6 +195144,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03238"
+      - name: "dihydroceramide pool hydroxylation"
       - metabolites: !!omap
           - MAM01430c: 1
           - MAM01699c: -1
@@ -194711,6 +195226,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03255"
+      - name: "melatonin radical to cyclic-3-hydroxymelatonin conversion"
       - metabolites: !!omap
           - MAM01625c: 1
           - MAM02039c: 1
@@ -194757,6 +195273,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03261"
+      - name: "DHA to 10-peroxy-docosahexaenoate conversion"
       - metabolites: !!omap
           - MAM00275c: 3
           - MAM01689c: -3
@@ -195309,6 +195826,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03382"
+      - name: "1-Alkyl-Sn-Glycerol 3-Phosphate acetylation"
       - metabolites: !!omap
           - MAM01261c: -1
           - MAM01597c: 1
@@ -195822,6 +196340,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03437"
+      - name: "(4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA reduction"
       - metabolites: !!omap
           - MAM00095c: -1
           - MAM00119c: 1
@@ -196256,6 +196775,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03536"
+      - name: "24,25-dihydrolanosterol to 4,4-Dimethylcholesta-8(9),14-Dien-3Beta-Ol conversion"
       - metabolites: !!omap
           - MAM00609c: -3
           - MAM01596c: -1
@@ -196270,6 +196790,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03598"
+      - name: "lanosterol to 4,4-dimethyl-5alpha-cholesta-8,14,24-trien-3beta-ol conversion"
       - metabolites: !!omap
           - MAM00941c: 3
           - MAM01596c: -1
@@ -196284,6 +196805,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03599"
+      - name: "L-dopachrome reduction"
       - metabolites: !!omap
           - MAM00638c: 1
           - MAM02039c: -1
@@ -196767,6 +197289,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03766"
+      - name: "5beta-cholestane-3alpha,7alpha,12alpha,26-tetrol hydroxylation"
       - metabolites: !!omap
           - MAM01090c: -1
           - MAM01091c: 1
@@ -196801,6 +197324,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03774"
+      - name: "5beta-cholestane-3alpha,7alpha,12alpha,27,27-pentaol to 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al conversion"
       - metabolites: !!omap
           - MAM00751c: 1
           - MAM01091c: -1
@@ -197184,6 +197708,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03836"
+      - name: "prostaglandin J2 to delta-12-prostaglandin J2 conversion"
       - metabolites: !!omap
           - MAM01662r: 1
           - MAM02796r: -1
@@ -197320,6 +197845,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03878"
+      - name: "arachidonate to 9-peroxy-(5Z,7E,11Z,14Z)-eicosatetraenoate conversion"
       - metabolites: !!omap
           - MAM01246c: 3
           - MAM01362c: -3
@@ -197334,6 +197860,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03880"
+      - name: "arachidonate to 12-peroxy-(5Z,8Z,10E,14Z)-eicosatetraenoate conversion"
       - metabolites: !!omap
           - MAM00335c: 3
           - MAM01362c: -3
@@ -197348,6 +197875,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03882"
+      - name: "arachidonate to 8-peroxy-(5Z,9E,11Z,14Z)-eicosatetraenoate conversion"
       - metabolites: !!omap
           - MAM01214c: 4
           - MAM01362c: -4
@@ -197361,6 +197889,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03884"
+      - name: "arachidonate to 11-peroxy-(5Z,8Z,12E,14Z)-eicosatetraenoate conversion"
       - metabolites: !!omap
           - MAM00302c: 3
           - MAM01362c: -3
@@ -247487,6 +248016,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10068"
+      - name: "1D-myo-inositol-1,4,5,6-tetrakisphosphate hydrolysis"
       - metabolites: !!omap
           - MAM00525c: -1
           - MAM01718c: 1
@@ -247498,6 +248028,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10069"
+      - name: "deoxycholoyl-CoA to glycodeoxycholate conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM01667c: -1
@@ -247509,6 +248040,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10070"
+      - name: "oxidized dithiothreitol to dithiothreitol conversion"
       - metabolites: !!omap
           - MAM01713c: 1
           - MAM02664c: -1
@@ -247641,6 +248173,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10080"
+      - name: "alpha-muricholic acid activation"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -247772,6 +248305,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10092"
+      - name: "alpha-muricholoyl-CoA hydrolysis"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -247785,6 +248319,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10093"
+      - name: "taurine to tauro-alpha-muricholic acid conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -247814,6 +248349,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10095"
+      - name: "beta-muricholoyl-CoA hydrolysis"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -247827,6 +248363,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10096"
+      - name: "taurine to tauro-beta-muricholic acid conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -247856,6 +248393,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10098"
+      - name: "omega-muricholoyl-CoA hydrolysis"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -247869,6 +248407,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10099"
+      - name: "taurine to tauro-omega-muricholic acid conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -247983,6 +248522,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10106"
+      - name: "hyocholoyl-CoA hydrolysis"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -247996,6 +248536,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10107"
+      - name: "taurine to taurohyocholic acid conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -248009,6 +248550,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10108"
+      - name: "glycine to glycohyocholic acid conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM01986c: -1
@@ -248072,6 +248614,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10112"
+      - name: "dehydrocholoyl-CoA hydrolysis"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -248085,6 +248628,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10113"
+      - name: "taurine to taurodehydrocholic acid conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -248098,6 +248642,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10114"
+      - name: "glycine to glycodehydrocholic acid conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM01986c: -1
@@ -248218,6 +248763,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10122"
+      - name: "hyodeoxycholoyl-CoA hydrolysis"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02040c: -1
@@ -248229,6 +248775,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10123"
+      - name: "taurine to tauro-hyodeoxycholic acid conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -248241,6 +248788,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10124"
+      - name: "glycine to glycohyodeoxycholic acid conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM01986c: -1
@@ -248301,6 +248849,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10128"
+      - name: "ursodeoxycholate activation"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -248314,6 +248863,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10129"
+      - name: "ursodeoxycholoyl-CoA hydrolysis"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -248326,6 +248876,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10130"
+      - name: "taurine to tauroursodeoxycholate conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02961c: -1
@@ -248337,6 +248888,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10131"
+      - name: "glycine to glycoursodeoxycholate conversion"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM01986c: -1
@@ -250789,6 +251341,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR20173"
+      - name: "2-oxoadipate decarboxylation"
       - metabolites: !!omap
           - MAM00670m: -1
           - MAM01596m: 1
