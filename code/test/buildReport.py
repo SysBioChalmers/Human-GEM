@@ -1,19 +1,27 @@
-"""Build a compact, visual Model QC summary for the pull-request comment.
+"""Build one consolidated model-quality report for the pull-request comment.
 
-Reads the current QC result files in data/testResults/ and, when available, the
-target-branch copies in the directory named by the BASE_RESULTS_DIR environment
-variable, then writes a Markdown summary to data/testResults/model_qc_summary.md.
-The summary is a per-check status table: current value, change versus the target
-branch, and an icon for a quick visual check. The detailed per-finding output
-stays in the committed CSVs, which is where you look to find out why something
-changed or failed.
+Combines the three result sets so the model's quality shows up in a single
+comment instead of several:
+
+  * Model QC checks (the Model QC workflow): growth, metabolite completeness,
+    reaction bound/GPR sanity, annotation cross-references and the MEMOTE score,
+    as a compact status table with the change versus the target branch.
+  * MACAW and mass/charge balance (the QC-tests workflow): its committed summary.
+  * Gene essentiality, Hart 2015 (the gene-essentiality workflow): the per-cell-
+    line metrics table.
+
+Each of those workflows calls this script and posts the result to the same
+comment identifier, rebuilding the whole comment from the committed result files,
+so the last one to finish shows the complete picture. A result set a workflow has
+not committed yet for this pull request shows as pending.
 
 Icons: white_check_mark = fine / no regression, warning = changed vs the target
-branch (review it), x = failed, new = no baseline to compare against.
+branch (review it), x = failed, new = no baseline to compare against,
+hourglass = not committed yet for this pull request.
 
 Usage:
     BASE_RESULTS_DIR=<dir> BASE_REF=<branch> COMMIT_SHA=<sha> \
-        python code/test/buildQcComment.py
+        python code/test/buildReport.py
 """
 
 import csv
@@ -51,9 +59,8 @@ def _count_csv(path: Path, predicate=None) -> int | None:
 
 
 def _growth(directory: Path) -> float | None:
-    path = directory / "qc_growth.txt"
     try:
-        return float(path.read_text(encoding="utf-8").strip())
+        return float((directory / "qc_growth.txt").read_text(encoding="utf-8").strip())
     except (FileNotFoundError, ValueError):
         return None
 
@@ -81,8 +88,6 @@ def _metrics(directory: Path) -> dict:
 
 
 def _format_value(value, kind: str) -> str:
-    if value is None:
-        return "n/a"
     if kind == "growth":
         return f"{value:.3g}"
     if kind == "score":
@@ -91,8 +96,6 @@ def _format_value(value, kind: str) -> str:
 
 
 def _delta_and_icon(current, base, kind: str) -> tuple[str, str]:
-    if current is None:
-        return "n/a", ":question:"
     if kind == "growth":
         # A pass/fail gate: show the verdict even without a baseline to compare against.
         icon = ":white_check_mark:" if current > 1e-6 else ":x:"
@@ -111,50 +114,85 @@ def _delta_and_icon(current, base, kind: str) -> tuple[str, str]:
     return (f"{change:+d}" if change != 0 else "0"), icon
 
 
-def main() -> int:
+def _qc_section() -> tuple[list[str], str]:
+    """Return (table lines, overall header) for the Model QC checks."""
     current = _metrics(RESULTS)
     have_base = bool(BASE_DIR) and Path(BASE_DIR).exists()
     base = _metrics(Path(BASE_DIR)) if have_base else dict.fromkeys(current)
 
-    memote_pending = bool(os.environ.get("MEMOTE_PENDING"))
     table, changed, failed = [], 0, False
     for label, key, kind in ROWS:
-        if key == "memote" and memote_pending:
-            # MEMOTE runs in its own (slow) job; show it as running for now.
-            table.append(f"| {label} | running | | :hourglass_flowing_sand: |")
+        value = current[key]
+        if value is None:  # not committed yet for this pull request
+            table.append(f"| {label} | pending | | :hourglass_flowing_sand: |")
             continue
-        delta, icon = _delta_and_icon(current[key], base.get(key), kind)
+        delta, icon = _delta_and_icon(value, base.get(key), kind)
         changed += icon == ":warning:"
         failed = failed or icon == ":x:"
-        table.append(f"| {label} | {_format_value(current[key], kind)} | {delta} | {icon} |")
+        table.append(f"| {label} | {_format_value(value, kind)} | {delta} | {icon} |")
 
     if failed:
         header = ":x: **A check failed.** See the detailed reports below."
     elif not have_base:
         header = ":information_source: First run for this comparison; no target-branch baseline yet."
     elif changed:
-        header = f":warning: **{changed} check(s) changed** compared to `{BASE_REF}`."
+        header = f":warning: **{changed} Model QC check(s) changed** compared to `{BASE_REF}`."
     else:
-        header = f":white_check_mark: **All checks fine**, no changes compared to `{BASE_REF}`."
+        header = f":white_check_mark: **Model QC checks fine**, no changes compared to `{BASE_REF}`."
+    return table, header
+
+
+def _macaw_balance_section() -> str:
+    """The MACAW / mass-and-charge-balance summary written by the QC-tests workflow."""
+    path = RESULTS / "qc_summary.md"
+    if path.exists() and path.read_text(encoding="utf-8").strip():
+        return path.read_text(encoding="utf-8").strip()
+    return "_Not yet run for this pull request._"
+
+
+def _gene_essentiality_section() -> str:
+    """Render the Hart 2015 per-cell-line metrics table."""
+    path = RESULTS / "gene-essential.csv"
+    if not path.exists():
+        return "_Not yet run for this pull request._"
+    with open(path, newline="", encoding="utf-8") as fh:
+        rows = [r for r in csv.reader(fh) if r]
+    if len(rows) < 2:
+        return "_No gene-essentiality results._"
+    header, *body = rows
+    lines = ["| " + " | ".join(header) + " |",
+             "| " + " | ".join("---" for _ in header) + " |"]
+    lines += ["| " + " | ".join(cell for cell in row) + " |" for row in body]
+    return "\n".join(lines)
+
+
+def main() -> int:
+    table, header = _qc_section()
 
     lines = [
-        "## Model QC checks",
+        "## Model quality report",
         "",
         header,
+        "",
+        "### Model QC checks",
         "",
         f"| Check | Result | &Delta; vs `{BASE_REF}` | |",
         "| --- | ---: | ---: | :---: |",
         *table,
         "",
-        "Detailed findings are committed to `data/testResults/`: "
-        "`qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_annotation_issues.csv`. "
-        "The full MEMOTE result is uploaded as a build artifact. Look there to see which "
-        "reactions, metabolites or identifiers changed.",
+        "### MACAW and mass/charge balance",
+        "",
+        _macaw_balance_section(),
+        "",
+        "### Gene essentiality (Hart 2015)",
+        "",
+        _gene_essentiality_section(),
+        "",
+        "Per-finding detail is committed to `data/testResults/` "
+        "(`qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, "
+        "`qc_annotation_issues.csv`, `macaw_results.csv`, `balance_results.csv`, "
+        "`gene-essential.csv`); the full MEMOTE result is uploaded as a build artifact.",
     ]
-    if memote_pending:
-        lines += ["", "_MEMOTE runs in a separate, slower job and will fill in its "
-                  "row of this comment when it finishes (a fast core subset on every "
-                  "pull request, the full suite on pull requests to `main`)._"]
     if COMMIT_SHA:
         lines += ["", f"Results for commit {COMMIT_SHA[:7]}."]
 
