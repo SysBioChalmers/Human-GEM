@@ -68682,7 +68682,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06970"
-      - name: "glutamic--pyruvic transaminase ((S)-2-aminobutanoate)"
+      - name: "glutamic-pyruvic transaminase ((S)-2-aminobutanoate)"
       - metabolites: !!omap
           - MAM00169c: -1
           - MAM00671c: 1
@@ -69944,7 +69944,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06955"
-      - name: "putrescine--2-oxoglutarate transaminase (1-pyrroline)"
+      - name: "putrescine-2-oxoglutarate transaminase (1-pyrroline)"
       - metabolites: !!omap
           - MAM00557m: -1
           - MAM00969m: 1
@@ -73296,7 +73296,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04222"
-      - name: "kynurenine--oxoglutarate transaminase (AKG)"
+      - name: "kynurenine-oxoglutarate transaminase (AKG)"
       - metabolites: !!omap
           - MAM00990c: 1
           - MAM01306c: -1
@@ -73471,7 +73471,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04246"
-      - name: "kynurenine--oxoglutarate transaminase (3-hydroxy-L-kynurenine)"
+      - name: "kynurenine-oxoglutarate transaminase (3-hydroxy-L-kynurenine)"
       - metabolites: !!omap
           - MAM00788c: -1
           - MAM01306c: -1
@@ -78434,7 +78434,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07175"
-      - name: "acetylgalactosaminyl-O-glycosyl-glycoprotein beta-1,6-N- acetylglucosaminyltransferase (core 3)"
+      - name: "acetylgalactosaminyl-O-glycosyl-glycoprotein beta-1,6-N-acetylglucosaminyltransferase (core 3)"
       - metabolites: !!omap
           - MAM01608g: -1
           - MAM01609g: 1
@@ -78450,7 +78450,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07180"
-      - name: "beta-1,3-galactosyl-O-glycosyl-glycoprotein beta-1,6-N- acetylglucosaminyltransferase (Tn-antigen)"
+      - name: "beta-1,3-galactosyl-O-glycosyl-glycoprotein beta-1,6-N-acetylglucosaminyltransferase (Tn-antigen)"
       - metabolites: !!omap
           - MAM01871g: 1
           - MAM02039g: 1
@@ -78543,7 +78543,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07440"
-      - name: "beta-1,3-galactosyl-O-glycosyl-glycoprotein beta-1,6-N- acetylglucosaminyltransferase (T-antigen)"
+      - name: "beta-1,3-galactosyl-O-glycosyl-glycoprotein beta-1,6-N-acetylglucosaminyltransferase (T-antigen)"
       - metabolites: !!omap
           - MAM01607g: 1
           - MAM02039g: 1
@@ -78796,7 +78796,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07265"
-      - name: "N-acetylglucosaminyldiphosphodolichol N-acetylglucosaminyltransferase (N-acetyl-D-glucosaminyldiphosphodolichol)"
+      - name: "N-acetylglucosaminyldiphosphodolichol N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02498c: 1
@@ -78907,7 +78907,7 @@
       - confidence_score: 2
     - !!omap
       - id: "MAR07274"
-      - name: "ALG3 alpha-1,3- mannosyltransferase (dolichyl-phosphate-D-mannose)"
+      - name: "ALG3 alpha-1,3-mannosyltransferase (dolichyl-phosphate-D-mannose)"
       - metabolites: !!omap
           - MAM01733r: 1
           - MAM01734r: -1
@@ -79034,7 +79034,7 @@
       - confidence_score: 2
     - !!omap
       - id: "MAR07285"
-      - name: "dolichyl-diphosphooligosaccharide--protein glycotransferase ((Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1)"
+      - name: "dolichyl-diphosphooligosaccharide-protein glycotransferase ((Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1)"
       - metabolites: !!omap
           - MAM00140r: 1
           - MAM00154r: -1
@@ -79050,7 +79050,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07286"
-      - name: "mannosyl-oligosaccharide glucosidase ((alpha-D-Glucosyl)3-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein))"
+      - name: "mannosyl-oligosaccharide glucosidase"
       - metabolites: !!omap
           - MAM00139r: 1
           - MAM00140r: -1
@@ -79065,7 +79065,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07287"
-      - name: "glucosidase II alpha subunit ((alpha-D-Glucosyl)2-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein))"
+      - name: "glucosidase II alpha subunit"
       - metabolites: !!omap
           - MAM00138r: 1
           - MAM00139r: -1
@@ -79093,7 +79093,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07289"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00138r: -1
           - MAM01970r: 1
@@ -79121,7 +79121,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07291"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase (glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform C (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM01969r: 1
           - MAM01971r: -1
@@ -79149,7 +79149,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07293"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00151r: 1
           - MAM00153r: -1
@@ -79325,7 +79325,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07308"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00150g: 1
           - MAM00153g: -1
@@ -79340,7 +79340,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07309"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00152g: 1
           - MAM00153g: -1
@@ -79355,7 +79355,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07310"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform A (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00146g: 1
           - MAM00150g: -1
@@ -79370,7 +79370,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07311"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00147g: 1
           - MAM00151g: -1
@@ -79385,7 +79385,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07312"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00148g: 1
           - MAM00151g: -1
@@ -79400,7 +79400,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07313"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform A (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00149g: 1
           - MAM00150g: -1
@@ -79415,7 +79415,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07314"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform C (protein))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00149g: 1
           - MAM00152g: -1
@@ -79430,7 +79430,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07315"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (A))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00145g: 1
           - MAM00146g: -1
@@ -79445,7 +79445,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07316"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (B1))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00143g: 1
           - MAM00147g: -1
@@ -79460,7 +79460,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07317"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (B2))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00143g: 1
           - MAM00148g: -1
@@ -79475,7 +79475,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07318"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (B2))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00144g: 1
           - MAM00148g: -1
@@ -79490,7 +79490,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07319"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (C))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00145g: 1
           - MAM00149g: -1
@@ -79505,7 +79505,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07320"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)5-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (C))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00142g: 1
           - MAM00145g: -1
@@ -79520,7 +79520,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07321"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)5-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (B1))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00142g: 1
           - MAM00143g: -1
@@ -79535,7 +79535,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07322"
-      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase ((alpha-D-mannosyl)5-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (B2))"
+      - name: "mannosyl-oligosaccharide 1,2-alpha-mannosidase"
       - metabolites: !!omap
           - MAM00142g: 1
           - MAM00144g: -1
@@ -79550,7 +79550,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07323"
-      - name: "alpha-1,3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase ((alpha-D-mannosyl)4-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein))"
+      - name: "alpha-1,3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM00142g: -1
           - MAM02039g: 1
@@ -82813,7 +82813,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08667"
-      - name: "succinate--CoA ligase (ADP-forming) (mesaconyl-CoA)"
+      - name: "succinate-CoA ligase (ADP-forming) (mesaconyl-CoA)"
       - metabolites: !!omap
           - MAM01285m: -1
           - MAM01371m: 1
@@ -82830,7 +82830,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08668"
-      - name: "succinate--CoA ligase (ADP-forming) (mesaconate)"
+      - name: "succinate-CoA ligase (ADP-forming) (mesaconate)"
       - metabolites: !!omap
           - MAM01597m: -1
           - MAM01948m: 1
@@ -83811,7 +83811,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00188"
-      - name: "long-chain-fatty-acid--CoA ligase (lauric acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (lauric acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -83828,7 +83828,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00192"
-      - name: "long-chain-fatty-acid--CoA ligase (tridecylic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (tridecylic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -83845,7 +83845,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00196"
-      - name: "long-chain-fatty-acid--CoA ligase (myristic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (myristic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -83862,7 +83862,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00200"
-      - name: "long-chain-fatty-acid--CoA ligase ((9E)-tetradecenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((9E)-tetradecenoic acid)"
       - metabolites: !!omap
           - MAM00128c: -1
           - MAM00129c: 1
@@ -83879,7 +83879,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00204"
-      - name: "long-chain-fatty-acid--CoA ligase ((7Z)-tetradecenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((7Z)-tetradecenoic acid)"
       - metabolites: !!omap
           - MAM00117c: -1
           - MAM00118c: 1
@@ -83896,7 +83896,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00209"
-      - name: "long-chain-fatty-acid--CoA ligase (physeteric acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (physeteric acid)"
       - metabolites: !!omap
           - MAM01141c: 1
           - MAM01334c: 1
@@ -83913,7 +83913,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00213"
-      - name: "long-chain-fatty-acid--CoA ligase (pentadecylic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (pentadecylic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -83948,7 +83948,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00226"
-      - name: "long-chain-fatty-acid--CoA ligase (palmitolate)"
+      - name: "long-chain-fatty-acid-CoA ligase (palmitolate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -83966,7 +83966,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00233"
-      - name: "long-chain-fatty-acid--CoA ligase (7-palmitoleic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (7-palmitoleic acid)"
       - metabolites: !!omap
           - MAM01191c: 1
           - MAM01197c: -1
@@ -83983,7 +83983,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00237"
-      - name: "long-chain-fatty-acid--CoA ligase (margaric acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (margaric acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84000,7 +84000,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00241"
-      - name: "long-chain-fatty-acid--CoA ligase ((10Z)-heptadecenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((10Z)-heptadecenoic acid)"
       - metabolites: !!omap
           - MAM00003c: -1
           - MAM00004c: 1
@@ -84017,7 +84017,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00245"
-      - name: "long-chain-fatty-acid--CoA ligase (9-heptadecylenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (9-heptadecylenic acid)"
       - metabolites: !!omap
           - MAM01237c: 1
           - MAM01238c: -1
@@ -84034,7 +84034,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00249"
-      - name: "long-chain-fatty-acid--CoA ligase (stearate)"
+      - name: "long-chain-fatty-acid-CoA ligase (stearate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84052,7 +84052,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00255"
-      - name: "long-chain-fatty-acid--CoA ligase ((13Z)-octadecenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((13Z)-octadecenoic acid)"
       - metabolites: !!omap
           - MAM00019c: -1
           - MAM00020c: 1
@@ -84069,7 +84069,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00259"
-      - name: "long-chain-fatty-acid--CoA ligase (cis-vaccenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cis-vaccenic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84086,7 +84086,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00263"
-      - name: "long-chain-fatty-acid--CoA ligase (oleate)"
+      - name: "long-chain-fatty-acid-CoA ligase (oleate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84104,7 +84104,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00267"
-      - name: "long-chain-fatty-acid--CoA ligase (elaidate)"
+      - name: "long-chain-fatty-acid-CoA ligase (elaidate)"
       - metabolites: !!omap
           - MAM00127c: 1
           - MAM01334c: 1
@@ -84121,7 +84121,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00271"
-      - name: "long-chain-fatty-acid--CoA ligase ((7Z)-octadecenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((7Z)-octadecenoic acid)"
       - metabolites: !!omap
           - MAM00020c: 1
           - MAM00115c: -1
@@ -84138,7 +84138,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00275"
-      - name: "long-chain-fatty-acid--CoA ligase ((6Z,9Z)-octadecadienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((6Z,9Z)-octadecadienoic acid)"
       - metabolites: !!omap
           - MAM00104c: -1
           - MAM00106c: 1
@@ -84155,7 +84155,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00279"
-      - name: "long-chain-fatty-acid--CoA ligase (nonadecylic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (nonadecylic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84172,7 +84172,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00283"
-      - name: "long-chain-fatty-acid--CoA ligase (eicosanoate)"
+      - name: "long-chain-fatty-acid-CoA ligase (eicosanoate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84189,7 +84189,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00289"
-      - name: "long-chain-fatty-acid--CoA ligase ((13Z)-eicosenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((13Z)-eicosenoic acid)"
       - metabolites: !!omap
           - MAM00017c: -1
           - MAM00018c: 1
@@ -84206,7 +84206,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00293"
-      - name: "long-chain-fatty-acid--CoA ligase (cis-gondoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cis-gondoic acid)"
       - metabolites: !!omap
           - MAM00007c: 1
           - MAM01334c: 1
@@ -84223,7 +84223,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00297"
-      - name: "long-chain-fatty-acid--CoA ligase (9-eicosenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (9-eicosenoic acid)"
       - metabolites: !!omap
           - MAM01235c: -1
           - MAM01236c: 1
@@ -84240,7 +84240,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00301"
-      - name: "long-chain-fatty-acid--CoA ligase (8,11-eicosadienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (8,11-eicosadienoic acid)"
       - metabolites: !!omap
           - MAM00123c: 1
           - MAM01207c: -1
@@ -84257,7 +84257,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00305"
-      - name: "long-chain-fatty-acid--CoA ligase (mead acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (mead acid)"
       - metabolites: !!omap
           - MAM00101c: 1
           - MAM01334c: 1
@@ -84274,7 +84274,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00309"
-      - name: "long-chain-fatty-acid--CoA ligase (heneicosanoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (heneicosanoic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84291,7 +84291,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00313"
-      - name: "long-chain-fatty-acid--CoA ligase (behenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (behenic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84308,7 +84308,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00319"
-      - name: "long-chain-fatty-acid--CoA ligase (cis-erucic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cis-erucic acid)"
       - metabolites: !!omap
           - MAM00016c: 1
           - MAM01334c: 1
@@ -84325,7 +84325,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00323"
-      - name: "long-chain-fatty-acid--CoA ligase (cis-cetoleic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cis-cetoleic acid)"
       - metabolites: !!omap
           - MAM00006c: 1
           - MAM01334c: 1
@@ -84342,7 +84342,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00327"
-      - name: "long-chain-fatty-acid--CoA ligase (tricosanoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (tricosanoic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84359,7 +84359,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00331"
-      - name: "long-chain-fatty-acid--CoA ligase (lignocerate)"
+      - name: "long-chain-fatty-acid-CoA ligase (lignocerate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84376,7 +84376,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00337"
-      - name: "long-chain-fatty-acid--CoA ligase (nervonic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (nervonic acid)"
       - metabolites: !!omap
           - MAM00025c: 1
           - MAM01334c: 1
@@ -84393,7 +84393,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00341"
-      - name: "long-chain-fatty-acid--CoA ligase (cerotic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cerotic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84410,7 +84410,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00345"
-      - name: "long-chain-fatty-acid--CoA ligase (ximenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (ximenic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84427,7 +84427,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00349"
-      - name: "long-chain-fatty-acid--CoA ligase (linolenate)"
+      - name: "long-chain-fatty-acid-CoA ligase (linolenate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84444,7 +84444,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00353"
-      - name: "long-chain-fatty-acid--CoA ligase (stearidonic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (stearidonic acid)"
       - metabolites: !!omap
           - MAM00108c: 1
           - MAM01334c: 1
@@ -84461,7 +84461,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00357"
-      - name: "long-chain-fatty-acid--CoA ligase (omega-3-arachidonic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (omega-3-arachidonic acid)"
       - metabolites: !!omap
           - MAM00125c: 1
           - MAM01334c: 1
@@ -84478,7 +84478,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00361"
-      - name: "long-chain-fatty-acid--CoA ligase (EPA)"
+      - name: "long-chain-fatty-acid-CoA ligase (EPA)"
       - metabolites: !!omap
           - MAM00103c: 1
           - MAM01334c: 1
@@ -84496,7 +84496,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00365"
-      - name: "long-chain-fatty-acid--CoA ligase (DPA)"
+      - name: "long-chain-fatty-acid-CoA ligase (DPA)"
       - metabolites: !!omap
           - MAM00121c: 1
           - MAM01334c: 1
@@ -84513,7 +84513,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00369"
-      - name: "long-chain-fatty-acid--CoA ligase ((9Z,12Z,15Z,18Z,21Z)-TPA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((9Z,12Z,15Z,18Z,21Z)-TPA)"
       - metabolites: !!omap
           - MAM00134c: 1
           - MAM00135c: -1
@@ -84530,7 +84530,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00373"
-      - name: "long-chain-fatty-acid--CoA ligase ((6Z,9Z,12Z,15Z,18Z,21Z)-THA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((6Z,9Z,12Z,15Z,18Z,21Z)-THA)"
       - metabolites: !!omap
           - MAM00113c: 1
           - MAM00114c: -1
@@ -84548,7 +84548,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00377"
-      - name: "long-chain-fatty-acid--CoA ligase (DHA)"
+      - name: "long-chain-fatty-acid-CoA ligase (DHA)"
       - metabolites: !!omap
           - MAM00095c: 1
           - MAM01334c: 1
@@ -84565,7 +84565,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00381"
-      - name: "long-chain-fatty-acid--CoA ligase ((11Z,14Z,17Z)-eicosatrienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((11Z,14Z,17Z)-eicosatrienoic acid)"
       - metabolites: !!omap
           - MAM00010c: -1
           - MAM00012c: 1
@@ -84582,7 +84582,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00385"
-      - name: "long-chain-fatty-acid--CoA ligase (13,16,19-docosatrienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (13,16,19-docosatrienoic acid)"
       - metabolites: !!omap
           - MAM00341c: -1
           - MAM00343c: 1
@@ -84599,7 +84599,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00389"
-      - name: "long-chain-fatty-acid--CoA ligase (10,13,16,19-docosatetraenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (10,13,16,19-docosatetraenoic acid)"
       - metabolites: !!omap
           - MAM00260c: -1
           - MAM00262c: 1
@@ -84616,7 +84616,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00393"
-      - name: "long-chain-fatty-acid--CoA ligase (12,15,18,21-tetracosatetraenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (12,15,18,21-tetracosatetraenoic acid)"
       - metabolites: !!omap
           - MAM00315c: -1
           - MAM00317c: 1
@@ -84633,7 +84633,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00397"
-      - name: "long-chain-fatty-acid--CoA ligase (linoleate)"
+      - name: "long-chain-fatty-acid-CoA ligase (linoleate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84651,7 +84651,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00401"
-      - name: "long-chain-fatty-acid--CoA ligase (gamma-linolenate)"
+      - name: "long-chain-fatty-acid-CoA ligase (gamma-linolenate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84669,7 +84669,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00405"
-      - name: "long-chain-fatty-acid--CoA ligase (dihomo-gamma-linolenate)"
+      - name: "long-chain-fatty-acid-CoA ligase (dihomo-gamma-linolenate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -84704,7 +84704,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00413"
-      - name: "long-chain-fatty-acid--CoA ligase (adrenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (adrenic acid)"
       - metabolites: !!omap
           - MAM00119c: 1
           - MAM01291c: -1
@@ -84721,7 +84721,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00417"
-      - name: "long-chain-fatty-acid--CoA ligase ((9Z,12Z,15Z,18Z)-TTA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((9Z,12Z,15Z,18Z)-TTA)"
       - metabolites: !!omap
           - MAM00131c: 1
           - MAM00132c: -1
@@ -84738,7 +84738,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00421"
-      - name: "long-chain-fatty-acid--CoA ligase ((6Z,9Z,12Z,15Z,18Z)-TPA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((6Z,9Z,12Z,15Z,18Z)-TPA)"
       - metabolites: !!omap
           - MAM00110c: 1
           - MAM00111c: -1
@@ -84756,7 +84756,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00425"
-      - name: "long-chain-fatty-acid--CoA ligase ((4Z,7Z,10Z,13Z,16Z)-DPA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((4Z,7Z,10Z,13Z,16Z)-DPA)"
       - metabolites: !!omap
           - MAM00093c: 1
           - MAM00094c: -1
@@ -84773,7 +84773,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00429"
-      - name: "long-chain-fatty-acid--CoA ligase ((11Z,14Z)-eicosadienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((11Z,14Z)-eicosadienoic acid)"
       - metabolites: !!omap
           - MAM00008c: -1
           - MAM00009c: 1
@@ -84790,7 +84790,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00433"
-      - name: "long-chain-fatty-acid--CoA ligase ((13Z,16Z)-docosadienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((13Z,16Z)-docosadienoic acid)"
       - metabolites: !!omap
           - MAM00021c: -1
           - MAM00023c: 1
@@ -84807,7 +84807,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00437"
-      - name: "long-chain-fatty-acid--CoA ligase (10,13,16-docosatriynoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (10,13,16-docosatriynoic acid)"
       - metabolites: !!omap
           - MAM00264c: 1
           - MAM00265c: -1
@@ -84824,7 +84824,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02942"
-      - name: "long-chain-fatty-acid--CoA ligase (lauric acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (lauric acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -84841,7 +84841,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02943"
-      - name: "long-chain-fatty-acid--CoA ligase (tridecylic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (tridecylic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -84858,7 +84858,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02944"
-      - name: "long-chain-fatty-acid--CoA ligase (myristic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (myristic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -84875,7 +84875,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02945"
-      - name: "long-chain-fatty-acid--CoA ligase (physeteric acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (physeteric acid)"
       - metabolites: !!omap
           - MAM01141r: 1
           - MAM01334r: 1
@@ -84892,7 +84892,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02946"
-      - name: "long-chain-fatty-acid--CoA ligase ((9E)-tetradecenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((9E)-tetradecenoic acid)"
       - metabolites: !!omap
           - MAM00128r: -1
           - MAM00129r: 1
@@ -84909,7 +84909,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02947"
-      - name: "long-chain-fatty-acid--CoA ligase ((7Z)-tetradecenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((7Z)-tetradecenoic acid)"
       - metabolites: !!omap
           - MAM00117r: -1
           - MAM00118r: 1
@@ -84926,7 +84926,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02948"
-      - name: "long-chain-fatty-acid--CoA ligase (pentadecylic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (pentadecylic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -84961,7 +84961,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02951"
-      - name: "long-chain-fatty-acid--CoA ligase (7-palmitoleic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (7-palmitoleic acid)"
       - metabolites: !!omap
           - MAM01191r: 1
           - MAM01197r: -1
@@ -84978,7 +84978,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02952"
-      - name: "long-chain-fatty-acid--CoA ligase (palmitolate)"
+      - name: "long-chain-fatty-acid-CoA ligase (palmitolate)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -84996,7 +84996,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02954"
-      - name: "long-chain-fatty-acid--CoA ligase (margaric acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (margaric acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85013,7 +85013,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02955"
-      - name: "long-chain-fatty-acid--CoA ligase ((10Z)-heptadecenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((10Z)-heptadecenoic acid)"
       - metabolites: !!omap
           - MAM00003r: -1
           - MAM00004r: 1
@@ -85030,7 +85030,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02956"
-      - name: "long-chain-fatty-acid--CoA ligase (9-heptadecylenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (9-heptadecylenic acid)"
       - metabolites: !!omap
           - MAM01237r: 1
           - MAM01238r: -1
@@ -85047,7 +85047,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02957"
-      - name: "long-chain-fatty-acid--CoA ligase (stearate)"
+      - name: "long-chain-fatty-acid-CoA ligase (stearate)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85065,7 +85065,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02959"
-      - name: "long-chain-fatty-acid--CoA ligase (oleate)"
+      - name: "long-chain-fatty-acid-CoA ligase (oleate)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85083,7 +85083,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02961"
-      - name: "long-chain-fatty-acid--CoA ligase (elaidate)"
+      - name: "long-chain-fatty-acid-CoA ligase (elaidate)"
       - metabolites: !!omap
           - MAM00127r: 1
           - MAM01334r: 1
@@ -85100,7 +85100,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02962"
-      - name: "long-chain-fatty-acid--CoA ligase ((13Z)-octadecenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((13Z)-octadecenoic acid)"
       - metabolites: !!omap
           - MAM00019r: -1
           - MAM00020r: 1
@@ -85117,7 +85117,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02963"
-      - name: "long-chain-fatty-acid--CoA ligase (cis-vaccenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cis-vaccenic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85134,7 +85134,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02964"
-      - name: "long-chain-fatty-acid--CoA ligase ((6Z,9Z)-octadecadienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((6Z,9Z)-octadecadienoic acid)"
       - metabolites: !!omap
           - MAM00104r: -1
           - MAM00106r: 1
@@ -85151,7 +85151,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02965"
-      - name: "long-chain-fatty-acid--CoA ligase (nonadecylic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (nonadecylic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85168,7 +85168,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02966"
-      - name: "long-chain-fatty-acid--CoA ligase (eicosanoate)"
+      - name: "long-chain-fatty-acid-CoA ligase (eicosanoate)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85185,7 +85185,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02967"
-      - name: "long-chain-fatty-acid--CoA ligase (cis-gondoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cis-gondoic acid)"
       - metabolites: !!omap
           - MAM00007r: 1
           - MAM01334r: 1
@@ -85202,7 +85202,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02968"
-      - name: "long-chain-fatty-acid--CoA ligase ((13Z)-eicosenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((13Z)-eicosenoic acid)"
       - metabolites: !!omap
           - MAM00017r: -1
           - MAM00018r: 1
@@ -85219,7 +85219,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02969"
-      - name: "long-chain-fatty-acid--CoA ligase (9-eicosenoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (9-eicosenoic acid)"
       - metabolites: !!omap
           - MAM01235r: -1
           - MAM01236r: 1
@@ -85236,7 +85236,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02970"
-      - name: "long-chain-fatty-acid--CoA ligase (8,11-eicosadienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (8,11-eicosadienoic acid)"
       - metabolites: !!omap
           - MAM00123r: 1
           - MAM01207r: -1
@@ -85253,7 +85253,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02971"
-      - name: "long-chain-fatty-acid--CoA ligase (mead acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (mead acid)"
       - metabolites: !!omap
           - MAM00101r: 1
           - MAM01334r: 1
@@ -85270,7 +85270,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02972"
-      - name: "long-chain-fatty-acid--CoA ligase (heneicosanoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (heneicosanoic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85287,7 +85287,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02973"
-      - name: "long-chain-fatty-acid--CoA ligase (behenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (behenic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85304,7 +85304,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02974"
-      - name: "long-chain-fatty-acid--CoA ligase (cis-erucic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cis-erucic acid)"
       - metabolites: !!omap
           - MAM00016r: 1
           - MAM01334r: 1
@@ -85321,7 +85321,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02975"
-      - name: "long-chain-fatty-acid--CoA ligase (cis-cetoleic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cis-cetoleic acid)"
       - metabolites: !!omap
           - MAM00006r: 1
           - MAM01334r: 1
@@ -85338,7 +85338,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02976"
-      - name: "long-chain-fatty-acid--CoA ligase (tricosanoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (tricosanoic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85355,7 +85355,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02977"
-      - name: "long-chain-fatty-acid--CoA ligase (lignocerate)"
+      - name: "long-chain-fatty-acid-CoA ligase (lignocerate)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85372,7 +85372,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02978"
-      - name: "long-chain-fatty-acid--CoA ligase (nervonic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (nervonic acid)"
       - metabolites: !!omap
           - MAM00025r: 1
           - MAM01334r: 1
@@ -85389,7 +85389,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02979"
-      - name: "long-chain-fatty-acid--CoA ligase (cerotic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (cerotic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85406,7 +85406,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02980"
-      - name: "long-chain-fatty-acid--CoA ligase (ximenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (ximenic acid)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85423,7 +85423,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02981"
-      - name: "long-chain-fatty-acid--CoA ligase (linolenate)"
+      - name: "long-chain-fatty-acid-CoA ligase (linolenate)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85440,7 +85440,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02982"
-      - name: "long-chain-fatty-acid--CoA ligase (stearidonic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (stearidonic acid)"
       - metabolites: !!omap
           - MAM00108r: 1
           - MAM01334r: 1
@@ -85457,7 +85457,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02983"
-      - name: "long-chain-fatty-acid--CoA ligase (omega-3-arachidonic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (omega-3-arachidonic acid)"
       - metabolites: !!omap
           - MAM00125r: 1
           - MAM01334r: 1
@@ -85474,7 +85474,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02984"
-      - name: "long-chain-fatty-acid--CoA ligase (EPA)"
+      - name: "long-chain-fatty-acid-CoA ligase (EPA)"
       - metabolites: !!omap
           - MAM00103r: 1
           - MAM01334r: 1
@@ -85492,7 +85492,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02985"
-      - name: "long-chain-fatty-acid--CoA ligase (DPA)"
+      - name: "long-chain-fatty-acid-CoA ligase (DPA)"
       - metabolites: !!omap
           - MAM00121r: 1
           - MAM01334r: 1
@@ -85509,7 +85509,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02986"
-      - name: "long-chain-fatty-acid--CoA ligase ((9Z,12Z,15Z,18Z,21Z)-TPA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((9Z,12Z,15Z,18Z,21Z)-TPA)"
       - metabolites: !!omap
           - MAM00134r: 1
           - MAM00135r: -1
@@ -85526,7 +85526,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02987"
-      - name: "long-chain-fatty-acid--CoA ligase ((6Z,9Z,12Z,15Z,18Z,21Z)-THA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((6Z,9Z,12Z,15Z,18Z,21Z)-THA)"
       - metabolites: !!omap
           - MAM00113r: 1
           - MAM00114r: -1
@@ -85544,7 +85544,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02988"
-      - name: "long-chain-fatty-acid--CoA ligase (DHA)"
+      - name: "long-chain-fatty-acid-CoA ligase (DHA)"
       - metabolites: !!omap
           - MAM00095r: 1
           - MAM01334r: 1
@@ -85561,7 +85561,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02989"
-      - name: "long-chain-fatty-acid--CoA ligase ((11Z,14Z,17Z)-eicosatrienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((11Z,14Z,17Z)-eicosatrienoic acid)"
       - metabolites: !!omap
           - MAM00010r: -1
           - MAM00012r: 1
@@ -85578,7 +85578,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02990"
-      - name: "long-chain-fatty-acid--CoA ligase (13,16,19-docosatrienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (13,16,19-docosatrienoic acid)"
       - metabolites: !!omap
           - MAM00341r: -1
           - MAM00343r: 1
@@ -85595,7 +85595,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02991"
-      - name: "long-chain-fatty-acid--CoA ligase (linoleate)"
+      - name: "long-chain-fatty-acid-CoA ligase (linoleate)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85613,7 +85613,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02992"
-      - name: "long-chain-fatty-acid--CoA ligase (gamma-linolenate)"
+      - name: "long-chain-fatty-acid-CoA ligase (gamma-linolenate)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85631,7 +85631,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02994"
-      - name: "long-chain-fatty-acid--CoA ligase (dihomo-gamma-linolenate)"
+      - name: "long-chain-fatty-acid-CoA ligase (dihomo-gamma-linolenate)"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -85666,7 +85666,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02998"
-      - name: "long-chain-fatty-acid--CoA ligase (adrenic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase (adrenic acid)"
       - metabolites: !!omap
           - MAM00119r: 1
           - MAM01291r: -1
@@ -85683,7 +85683,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02999"
-      - name: "long-chain-fatty-acid--CoA ligase ((9Z,12Z,15Z,18Z)-TTA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((9Z,12Z,15Z,18Z)-TTA)"
       - metabolites: !!omap
           - MAM00131r: 1
           - MAM00132r: -1
@@ -85700,7 +85700,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03000"
-      - name: "long-chain-fatty-acid--CoA ligase ((6Z,9Z,12Z,15Z,18Z)-TPA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((6Z,9Z,12Z,15Z,18Z)-TPA)"
       - metabolites: !!omap
           - MAM00110r: 1
           - MAM00111r: -1
@@ -85718,7 +85718,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03001"
-      - name: "long-chain-fatty-acid--CoA ligase ((4Z,7Z,10Z,13Z,16Z)-DPA)"
+      - name: "long-chain-fatty-acid-CoA ligase ((4Z,7Z,10Z,13Z,16Z)-DPA)"
       - metabolites: !!omap
           - MAM00093r: 1
           - MAM00094r: -1
@@ -85735,7 +85735,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03002"
-      - name: "long-chain-fatty-acid--CoA ligase ((11Z,14Z)-eicosadienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((11Z,14Z)-eicosadienoic acid)"
       - metabolites: !!omap
           - MAM00008r: -1
           - MAM00009r: 1
@@ -85752,7 +85752,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03003"
-      - name: "long-chain-fatty-acid--CoA ligase ((13Z,16Z)-docosadienoic acid)"
+      - name: "long-chain-fatty-acid-CoA ligase ((13Z,16Z)-docosadienoic acid)"
       - metabolites: !!omap
           - MAM00021r: -1
           - MAM00023r: 1
@@ -88914,7 +88914,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02480"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-all-cis-8,11,14,17-eicosatetraenoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00708c: -1
           - MAM01769c: 1
@@ -88999,7 +88999,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02491"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-docosa-7,10,13,16,19-all-cis-pentaenoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00679c: 1
           - MAM00713c: -1
@@ -89082,7 +89082,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02501"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00680c: 1
           - MAM00718c: -1
@@ -89244,7 +89244,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02518"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-docosa-10,13,16,19-all-cis-tetraenoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00711c: -1
           - MAM02040c: 1
@@ -89311,7 +89311,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02526"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-tetracosa-12,15,18,21-all-cis-tetraenoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00716c: -1
           - MAM02040c: 1
@@ -89378,7 +89378,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02535"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase ((3S)-hydroxy-eicosa-cis,cis,cis-11,14,17-trienoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00086c: -1
           - MAM02040c: 1
@@ -89445,7 +89445,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02542"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-docosa-13,16,19-all-cis-trienoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00712c: -1
           - MAM02040c: 1
@@ -90191,7 +90191,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02389"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-docosa-7,10,13,16-all-cis-tetraenoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00074c: 1
           - MAM00714c: -1
@@ -90270,7 +90270,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02399"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-tetracosa-12,15,18,21-all-cis-tetraenoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00681c: 1
           - MAM00716c: -1
@@ -90430,7 +90430,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02419"
-      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-10,13,16-all-cis-docosatrienoyl-CoA)"
+      - name: "very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase"
       - metabolites: !!omap
           - MAM00698c: -1
           - MAM02040c: 1
@@ -90682,7 +90682,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03449"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (trans-2-cis,cis,cis-8,11,14-eicosatetraenoyl-CoA)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00710m: 1
           - MAM02040m: -1
@@ -90736,7 +90736,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03453"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex ((2E,6Z,9Z,12Z)-octadecatetraenoyl-CoA)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00073m: -1
           - MAM00697m: 1
@@ -93647,7 +93647,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01126"
-      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH---hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
+      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH-hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
       - metabolites: !!omap
           - MAM00599c: 1
           - MAM02039c: -1
@@ -93665,7 +93665,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01127"
-      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH---hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
+      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH-hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
       - metabolites: !!omap
           - MAM00599m: 1
           - MAM02039m: -1
@@ -93683,7 +93683,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01128"
-      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH---hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
+      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH-hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
       - metabolites: !!omap
           - MAM00599r: 1
           - MAM02039r: -1
@@ -93819,7 +93819,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01137"
-      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH---hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
+      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH-hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
       - metabolites: !!omap
           - MAM00588c: 1
           - MAM00599c: -1
@@ -93838,7 +93838,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01138"
-      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH---hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
+      - name: "(6Z,8E,10E,14Z)-(5S,12R)-5,12-dihydroxyicosa-6,8,10,14-tetraenoate,[reduced NADPH-hemoprotein reductase]:oxygen oxidoreductase (20-hydroxylating)"
       - metabolites: !!omap
           - MAM00588r: 1
           - MAM00599r: -1
@@ -94088,7 +94088,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01157"
-      - name: "long-chain-fatty-acid--CoA ligase (6,7-dihydro-5-oxo-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (6,7-dihydro-5-oxo-LTB4)"
       - metabolites: !!omap
           - MAM01120c: 1
           - MAM01152c: -1
@@ -94106,7 +94106,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01158"
-      - name: "long-chain-fatty-acid--CoA ligase (6,7-dihydro-5-oxo-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (6,7-dihydro-5-oxo-LTB4)"
       - metabolites: !!omap
           - MAM01120m: 1
           - MAM01152m: -1
@@ -94124,7 +94124,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01159"
-      - name: "long-chain-fatty-acid--CoA ligase (6,7-dihydro-5-oxo-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (6,7-dihydro-5-oxo-LTB4)"
       - metabolites: !!omap
           - MAM01120r: 1
           - MAM01152r: -1
@@ -94142,7 +94142,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01160"
-      - name: "long-chain-fatty-acid--CoA ligase (6,7-dihydro-5-oxo-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (6,7-dihydro-5-oxo-LTB4)"
       - metabolites: !!omap
           - MAM01120x: 1
           - MAM01152x: -1
@@ -94192,7 +94192,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01163"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (5-oxo-12(R)-hydroxy-eicosa-(2E,8E,10E,14Z)-tetraenoyl-CoA)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00689m: 1
           - MAM01119m: -1
@@ -94501,7 +94501,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01200"
-      - name: "long-chain-fatty-acid--CoA ligase (6,7-dihydro-5-oxo-12-epi-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (6,7-dihydro-5-oxo-12-epi-LTB4)"
       - metabolites: !!omap
           - MAM01122c: 1
           - MAM01151c: -1
@@ -94519,7 +94519,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01201"
-      - name: "long-chain-fatty-acid--CoA ligase (6,7-dihydro-5-oxo-12-epi-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (6,7-dihydro-5-oxo-12-epi-LTB4)"
       - metabolites: !!omap
           - MAM01122m: 1
           - MAM01151m: -1
@@ -94537,7 +94537,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01202"
-      - name: "long-chain-fatty-acid--CoA ligase (6,7-dihydro-5-oxo-12-epi-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (6,7-dihydro-5-oxo-12-epi-LTB4)"
       - metabolites: !!omap
           - MAM01122r: 1
           - MAM01151r: -1
@@ -94555,7 +94555,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01203"
-      - name: "long-chain-fatty-acid--CoA ligase (6,7-dihydro-5-oxo-12-epi-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (6,7-dihydro-5-oxo-12-epi-LTB4)"
       - metabolites: !!omap
           - MAM01122x: 1
           - MAM01151x: -1
@@ -94605,7 +94605,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01206"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (5-oxo-12(S)-hydroxy-eicosa-(2E,8E,10E,14Z)-tetraenoyl-CoA)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00690m: 1
           - MAM01121m: -1
@@ -95040,7 +95040,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01248"
-      - name: "long-chain-fatty-acid--CoA ligase (20-COOH-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (20-COOH-LTB4)"
       - metabolites: !!omap
           - MAM00582c: 1
           - MAM00585c: -1
@@ -95058,7 +95058,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01249"
-      - name: "long-chain-fatty-acid--CoA ligase (20-COOH-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (20-COOH-LTB4)"
       - metabolites: !!omap
           - MAM00582m: 1
           - MAM00585m: -1
@@ -95076,7 +95076,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01250"
-      - name: "long-chain-fatty-acid--CoA ligase (20-COOH-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (20-COOH-LTB4)"
       - metabolites: !!omap
           - MAM00582r: 1
           - MAM00585r: -1
@@ -95094,7 +95094,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01251"
-      - name: "long-chain-fatty-acid--CoA ligase (20-COOH-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (20-COOH-LTB4)"
       - metabolites: !!omap
           - MAM00582x: 1
           - MAM00585x: -1
@@ -95280,7 +95280,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01263"
-      - name: "long-chain-fatty-acid--CoA ligase (10,11-dihydro-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (10,11-dihydro-LTB4)"
       - metabolites: !!omap
           - MAM00257c: -1
           - MAM00258c: 1
@@ -95298,7 +95298,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01264"
-      - name: "long-chain-fatty-acid--CoA ligase (10,11-dihydro-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (10,11-dihydro-LTB4)"
       - metabolites: !!omap
           - MAM00257m: -1
           - MAM00258m: 1
@@ -95316,7 +95316,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01265"
-      - name: "long-chain-fatty-acid--CoA ligase (10,11-dihydro-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (10,11-dihydro-LTB4)"
       - metabolites: !!omap
           - MAM00257r: -1
           - MAM00258r: 1
@@ -95334,7 +95334,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01266"
-      - name: "long-chain-fatty-acid--CoA ligase (10,11-dihydro-LTB4)"
+      - name: "long-chain-fatty-acid-CoA ligase (10,11-dihydro-LTB4)"
       - metabolites: !!omap
           - MAM00257x: -1
           - MAM00258x: 1
@@ -95384,7 +95384,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01272"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (5(S),12(R)-dihydroxy-eicosa-2,8-trans-6,14-cis-tetraenoyl-CoA)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00691m: 1
           - MAM01037m: -1
@@ -95633,7 +95633,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01290"
-      - name: "long-chain-fatty-acid--CoA ligase (20-COOH-LTE4)"
+      - name: "long-chain-fatty-acid-CoA ligase (20-COOH-LTE4)"
       - metabolites: !!omap
           - MAM00586x: -1
           - MAM00587x: 1
@@ -96086,7 +96086,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08559"
-      - name: "(5Z,13E)-(15S)-9alpha,11alpha-epidioxy-15-hydroxyprosta-5,13- dienoate D-isomerase"
+      - name: "(5Z,13E)-(15S)-9alpha,11alpha-epidioxy-15-hydroxyprosta-5,13-dienoate D-isomerase"
       - metabolites: !!omap
           - MAM02783r: -1
           - MAM02794r: 1
@@ -96099,7 +96099,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08560"
-      - name: "(5Z,13E)-(15S)-9alpha,11alpha-epidioxy-15-hydroxyprosta-5,13- dienoate E-isomerase"
+      - name: "(5Z,13E)-(15S)-9alpha,11alpha-epidioxy-15-hydroxyprosta-5,13-dienoate E-isomerase"
       - metabolites: !!omap
           - MAM02786r: -1
           - MAM02794r: 1
@@ -105980,7 +105980,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03245"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (trans,cis-octadeca-2,11-dienoyl-CoA)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00170m: 1
           - MAM02040m: -1
@@ -106698,7 +106698,7 @@
       - rxnNotes: "Harpers illustrated Biochemistry (2009) 28th edition page 242, ISBN:9781282335806"
     - !!omap
       - id: "MAR03277"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (trans,cis,cis-2,9,12-octadecatrienoyl-CoA)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00083m: 1
           - MAM02040m: -1
@@ -106773,7 +106773,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03281"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (trans,cis,cis-2,7,10-hexadecatrienoyl-CoA)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00081m: 1
           - MAM02040m: -1
@@ -106845,7 +106845,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03285"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (trans-2-cis,cis-5,8-tetradecatrienoyl-CoA)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00696m: 1
           - MAM02040m: -1
@@ -107046,7 +107046,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01177"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (8(R)-hydroxy-hexadeca-(2E,6E,10Z)-trienoate)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00694m: 1
           - MAM01200m: -1
@@ -107131,7 +107131,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01182"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (6(R)-hydroxy-tetradeca-(2E,8Z)-dienoate)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00692m: 1
           - MAM01145m: -1
@@ -107234,7 +107234,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01219"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (3(S),8(S)-dihydroxy-(6E,10Z)-hexadecadienoate)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00695m: -1
           - MAM01205m: 1
@@ -107319,7 +107319,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01224"
-      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex (6(S)-hydroxy-tetradeca-(2E,8Z)-dienoate)"
+      - name: "hydroxyacyl-CoA dehydrogenase trifunctional multienzyme complex"
       - metabolites: !!omap
           - MAM00693m: 1
           - MAM01148m: -1
@@ -109859,7 +109859,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01479"
-      - name: "lanosterol,[reduced NADPH---hemoprotein reductase]:oxygen oxidoreductase (14-methyl cleaving)"
+      - name: "lanosterol,[reduced NADPH-hemoprotein reductase]:oxygen oxidoreductase (14-methyl cleaving)"
       - metabolites: !!omap
           - MAM00937c: -1
           - MAM00941c: 1
@@ -109913,7 +109913,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01493"
-      - name: "4alpha-methylsterol monooxygenase (4alpha-hydroxymethyl-4beta-methyl-5alpha-cholesta-8,24-dien-3beta-ol)"
+      - name: "4alpha-methylsterol monooxygenase"
       - metabolites: !!omap
           - MAM00957c: 1
           - MAM00961c: -1
@@ -109949,7 +109949,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01495"
-      - name: "NAD(P) dependent steroid dehydrogenase-like (4alpha-carboxy-4beta-methyl-5alpha-cholesta-8,24-dien-3beta-ol)"
+      - name: "NAD(P) dependent steroid dehydrogenase-like"
       - metabolites: !!omap
           - MAM00809c: 1
           - MAM00953c: -1
@@ -109967,7 +109967,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01496"
-      - name: "NAD(P) dependent steroid dehydrogenase-like (4alpha-carboxy-4beta-methyl-5alpha-cholesta-8,24-dien-3beta-ol)"
+      - name: "NAD(P) dependent steroid dehydrogenase-like"
       - metabolites: !!omap
           - MAM00809c: 1
           - MAM00953c: -1
@@ -110371,7 +110371,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01546"
-      - name: "NAD(P) dependent steroid dehydrogenase-like (4alpha-carboxy-4beta-methyl-5alpha-cholesta-8-en-3beta-ol)"
+      - name: "NAD(P) dependent steroid dehydrogenase-like"
       - metabolites: !!omap
           - MAM00954c: -1
           - MAM00966c: 1
@@ -110734,7 +110734,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02032"
-      - name: "19-hydroxyandrostenedione,NADPH---hemoprotein reductase:oxygen 19-oxidoreductase"
+      - name: "19-hydroxyandrostenedione,NADPH-hemoprotein reductase:oxygen 19-oxidoreductase"
       - metabolites: !!omap
           - MAM00431c: 1
           - MAM00971c: -1
@@ -110768,7 +110768,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02034"
-      - name: "19-oxoandrostenedione,NADPH---hemoprotein reductase:oxygen oxidoreductase (aromatizing, formate-forming)"
+      - name: "19-oxoandrostenedione,NADPH-hemoprotein reductase:oxygen oxidoreductase (aromatizing, formate-forming)"
       - metabolites: !!omap
           - MAM00433c: -1
           - MAM01790c: 1
@@ -115379,7 +115379,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08168"
-      - name: "alpha-N-acetylneuraminyl-2,3-beta-galactosyl-1,3-N-acetylgalactosaminide 6-alpha-sialyltransferase (CMP-N-acetylneuraminate)"
+      - name: "alpha-N-acetylneuraminyl-2,3-beta-galactosyl-1,3-N-acetylgalactosaminide 6-alpha-sialyltransferase"
       - metabolites: !!omap
           - MAM01590g: 1
           - MAM01592g: -1
@@ -118818,7 +118818,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00823"
-      - name: "alpha-N-acetylneuraminyl-2,3-beta-galactosyl-1,3-N-acetylgalactosaminide 6-alpha-sialyltransferase (CMP-N-acetylneuraminate)"
+      - name: "alpha-N-acetylneuraminyl-2,3-beta-galactosyl-1,3-N-acetylgalactosaminide 6-alpha-sialyltransferase"
       - metabolites: !!omap
           - MAM01590c: 1
           - MAM01592c: -1
@@ -119769,7 +119769,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00881"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (IV2Fuc-nLc4Cer)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02196c: -1
@@ -119819,7 +119819,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00884"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (IV2Fuc-nLc4Cer)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02196c: -1
@@ -119866,7 +119866,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00887"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (type III H glycolipid)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM03096c: 1
@@ -120134,7 +120134,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00902"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (UDP-N-acetyl-D-galactosamine)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM01877c: 1
           - MAM02039c: 1
@@ -120708,7 +120708,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08380"
-      - name: "phosphatidylinositol glycan anchor biosynthesis class L (N-acetyl-D-glucosaminylphosphatidylinositol)"
+      - name: "phosphatidylinositol glycan anchor biosynthesis class L"
       - metabolites: !!omap
           - MAM01143c: 1
           - MAM01252c: 1
@@ -120723,7 +120723,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07186"
-      - name: "phosphatidylinositol glycan anchor biosynthesis class L (N-acetyl-D-glucosaminylphosphatidylinositol)"
+      - name: "phosphatidylinositol glycan anchor biosynthesis class L"
       - metabolites: !!omap
           - MAM01143r: 1
           - MAM01252r: 1
@@ -120738,7 +120738,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08381"
-      - name: "phosphatidylinositol glycan anchor biosynthesis class W (6-(alpha-D-glucosaminyl)-1-phosphatidyl-1D-myo-inositol)"
+      - name: "phosphatidylinositol glycan anchor biosynthesis class W"
       - metabolites: !!omap
           - MAM01143c: -1
           - MAM01597c: 1
@@ -120753,7 +120753,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07187"
-      - name: "phosphatidylinositol glycan anchor biosynthesis class W (6-(alpha-D-glucosaminyl)-1-phosphatidyl-1D-myo-inositol)"
+      - name: "phosphatidylinositol glycan anchor biosynthesis class W"
       - metabolites: !!omap
           - MAM01143r: -1
           - MAM01597r: 1
@@ -121353,7 +121353,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01308"
-      - name: "(5Z,13E)-(15S)-9alpha,11alpha-Epidioxy-15-hydroxyprosta-5,13- dienoate 6-isomerase"
+      - name: "(5Z,13E)-(15S)-9alpha,11alpha-Epidioxy-15-hydroxyprosta-5,13-dienoate 6-isomerase"
       - metabolites: !!omap
           - MAM02794r: -1
           - MAM02795r: 1
@@ -121380,7 +121380,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01312"
-      - name: "(5Z,13E)-(15S)-9alpha,11alpha-epidioxy-15-hydroxyprosta-5,13- dienoate E-isomerase"
+      - name: "(5Z,13E)-(15S)-9alpha,11alpha-epidioxy-15-hydroxyprosta-5,13-dienoate E-isomerase"
       - metabolites: !!omap
           - MAM02786c: 1
           - MAM02794c: -1
@@ -121609,7 +121609,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01330"
-      - name: "(5Z,13E)-(15S)-9alpha,11alpha-epidioxy-15-hydroxyprosta-5,13- dienoate D-isomerase"
+      - name: "(5Z,13E)-(15S)-9alpha,11alpha-epidioxy-15-hydroxyprosta-5,13-dienoate D-isomerase"
       - metabolites: !!omap
           - MAM02783c: 1
           - MAM02794c: -1
@@ -122650,7 +122650,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07206"
-      - name: "glucuronylgalactosylproteoglycan 4-beta-N- acetylgalactosaminyltransferase (3-beta-D-glucuronosyl-3-beta-D-galactosyl-4-beta-D-galactosyl-O-beta-D-xylosylprotein)"
+      - name: "glucuronylgalactosylproteoglycan 4-beta-N-acetylgalactosaminyltransferase"
       - metabolites: !!omap
           - MAM00762g: -1
           - MAM01568g: 1
@@ -122666,7 +122666,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07207"
-      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N- acetylglucosaminyltransferase (3-beta-D-glucuronosyl-3-beta-D-galactosyl-4-beta-D-galactosyl-O-beta-D-xylosylprotein)"
+      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM00762g: -1
           - MAM02039g: 1
@@ -122682,7 +122682,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07208"
-      - name: "glucuronosyl-N-acetylglucosaminyl-proteoglycan 4-alpha-N- acetylglucosaminyltransferase (heparan sulfate, precursor 1)"
+      - name: "glucuronosyl-N-acetylglucosaminyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02081g: -1
@@ -122700,7 +122700,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07209"
-      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N- acetylglucosaminyltransferase (heparan sulfate, precursor 2)"
+      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02088g: -1
@@ -122719,7 +122719,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07210"
-      - name: "glucuronosyl-N-acetylglucosaminyl-proteoglycan 4-alpha-N- acetylglucosaminyltransferase (heparan sulfate, precursor 3)"
+      - name: "glucuronosyl-N-acetylglucosaminyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02089g: -1
@@ -122737,7 +122737,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07211"
-      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N- acetylglucosaminyltransferase (heparan sulfate, precursor 4)"
+      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02090g: -1
@@ -122756,7 +122756,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07212"
-      - name: "glucuronosyl-N-acetylglucosaminyl-proteoglycan 4-alpha-N- acetylglucosaminyltransferase (heparan sulfate, precursor 5)"
+      - name: "glucuronosyl-N-acetylglucosaminyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02091g: -1
@@ -122774,7 +122774,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07213"
-      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N- acetylglucosaminyltransferase (heparan sulfate, precursor 6)"
+      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02092g: -1
@@ -122793,7 +122793,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07214"
-      - name: "glucuronosyl-N-acetylglucosaminyl-proteoglycan 4-alpha-N- acetylglucosaminyltransferase (heparan sulfate, precursor 7)"
+      - name: "glucuronosyl-N-acetylglucosaminyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02093g: -1
@@ -122811,7 +122811,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07215"
-      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N- acetylglucosaminyltransferase (heparan sulfate, precursor 8)"
+      - name: "glucuronosyl-galactosyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02094g: -1
@@ -122959,7 +122959,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07491"
-      - name: "chondroitin 4-sulfotransferase (chondroitin sulfate precursor (GalNAc-GlcA-(Gal)2-Xyl-L-Ser (protein)))"
+      - name: "chondroitin 4-sulfotransferase"
       - metabolites: !!omap
           - MAM01518g: 1
           - MAM01568g: -1
@@ -122977,7 +122977,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07492"
-      - name: "carbohydrate sulfotransferase (chondroitin sulfate A (GalNAc4S-GlcA), B (IdoA2S-GalNAc4S), and E (GalNAc4,6diS-GlcA), precursor 1)"
+      - name: "carbohydrate sulfotransferase"
       - metabolites: !!omap
           - MAM01518g: -1
           - MAM01563g: 1
@@ -122993,7 +122993,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07493"
-      - name: "glucuronosyl-N-acetylgalactosaminyl-proteoglycan 4-beta-N- acetylgalactosaminyltransferase (chondroitin sulfate E (GalNAc4,6diS-GlcA), precursor 2)"
+      - name: "glucuronosyl-N-acetylgalactosaminyl-proteoglycan 4-beta-N-acetylgalactosaminyltransferase"
       - metabolites: !!omap
           - MAM01563g: -1
           - MAM01564g: 1
@@ -123011,7 +123011,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07494"
-      - name: "N-acetylgalactosaminyl-proteoglycan 3-beta-glucuronosyltransferase (chondroitin sulfate E (GalNAc4,6diS-GlcA), precursor 3)"
+      - name: "N-acetylgalactosaminyl-proteoglycan 3-beta-glucuronosyltransferase"
       - metabolites: !!omap
           - MAM01564g: -1
           - MAM01565g: 1
@@ -123027,7 +123027,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07495"
-      - name: "glucuronosyl-N-acetylgalactosaminyl-proteoglycan 4-beta-N- acetylgalactosaminyltransferase (chondroitin sulfate A (GalNAc4S-GlcA), B (IdoA2S-GalNAc4S), and E (GalNAc4,6diS-GlcA), precursor 1)"
+      - name: "glucuronosyl-N-acetylgalactosaminyl-proteoglycan 4-beta-N-acetylgalactosaminyltransferase"
       - metabolites: !!omap
           - MAM01515g: 1
           - MAM01518g: -1
@@ -123045,7 +123045,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07496"
-      - name: "N-acetylgalactosaminyl-proteoglycan 3-beta-glucuronosyltransferase (chondroitin sulfate A (GalNAc4S-GlcA) and B (IdoA2S-GalNAc4S), precursor 2)"
+      - name: "N-acetylgalactosaminyl-proteoglycan 3-beta-glucuronosyltransferase"
       - metabolites: !!omap
           - MAM01515g: -1
           - MAM01516g: 1
@@ -123072,7 +123072,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07498"
-      - name: "carbohydrate sulfotransferase (chondroitin sulfate A (GalNAc4S-GlcA) and B (IdoA2S-GalNAc4S), precursor 3)"
+      - name: "carbohydrate sulfotransferase"
       - metabolites: !!omap
           - MAM01516g: -1
           - MAM01517g: 1
@@ -123123,7 +123123,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07519"
-      - name: "chondroitin 6-sulfotransferase (chondroitin sulfate precursor (GalNAc-GlcA-(Gal)2-Xyl-L-Ser (protein)))"
+      - name: "chondroitin 6-sulfotransferase"
       - metabolites: !!omap
           - MAM01532g: 1
           - MAM01568g: -1
@@ -123141,7 +123141,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07520"
-      - name: "glucuronosyl-N-acetylgalactosaminyl-proteoglycan 4-beta-N- acetylgalactosaminyltransferase (chondroitin sulfate C (GalNAc6S-GlcA) and D (GlcNAc6S-GlcA2S), precursor 1)"
+      - name: "glucuronosyl-N-acetylgalactosaminyl-proteoglycan 4-beta-N-acetylgalactosaminyltransferase"
       - metabolites: !!omap
           - MAM01532g: -1
           - MAM01540g: 1
@@ -123159,7 +123159,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07521"
-      - name: "N-acetylgalactosaminyl-proteoglycan 3-beta-glucuronosyltransferase (chondroitin sulfate C (GalNAc6S-GlcA), precursor 2)"
+      - name: "N-acetylgalactosaminyl-proteoglycan 3-beta-glucuronosyltransferase"
       - metabolites: !!omap
           - MAM01540g: -1
           - MAM01541g: 1
@@ -123193,7 +123193,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07534"
-      - name: "uronyl 2-sulfotransferase (chondroitin sulfate C (GalNAc6S-GlcA) and D (GlcNAc6S-GlcA2S), precursor 1)"
+      - name: "uronyl 2-sulfotransferase"
       - metabolites: !!omap
           - MAM01532g: -1
           - MAM01542g: 1
@@ -123209,7 +123209,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07535"
-      - name: "glucuronosyl-N-acetylgalactosaminyl-proteoglycan 4-beta-N- acetylgalactosaminyltransferase (chondroitin sulfate D (GlcNAc6S-GlcA2S) precursor 2)"
+      - name: "glucuronosyl-N-acetylgalactosaminyl-proteoglycan 4-beta-N-acetylgalactosaminyltransferase"
       - metabolites: !!omap
           - MAM01542g: -1
           - MAM01551g: 1
@@ -123227,7 +123227,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07536"
-      - name: "N-acetylgalactosaminyl-proteoglycan 3-beta-glucuronosyltransferase (chondroitin sulfate D (GlcNAc6S-GlcA2S), precursor 3)"
+      - name: "N-acetylgalactosaminyl-proteoglycan 3-beta-glucuronosyltransferase"
       - metabolites: !!omap
           - MAM01551g: -1
           - MAM01552g: 1
@@ -123516,7 +123516,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07516"
-      - name: "beta-N-acetylhexosaminidase (chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S), degradation product 1)"
+      - name: "beta-N-acetylhexosaminidase"
       - metabolites: !!omap
           - MAM01526l: -1
           - MAM01527l: 1
@@ -124526,7 +124526,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07336"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 1)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02201g: -1
@@ -124556,7 +124556,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07338"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 3)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02223g: -1
@@ -124602,7 +124602,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07341"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 6)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02233g: -1
@@ -124648,7 +124648,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07344"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 9)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02202g: 1
@@ -124694,7 +124694,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07347"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 12)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02204g: -1
@@ -124740,7 +124740,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07350"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 15)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02207g: -1
@@ -124786,7 +124786,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07353"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 18)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02210g: -1
@@ -124832,7 +124832,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07356"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 21)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02214g: -1
@@ -124878,7 +124878,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07359"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 24)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02217g: -1
@@ -124924,7 +124924,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07362"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 27)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02220g: -1
@@ -124970,7 +124970,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07365"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 30)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02224g: -1
@@ -125016,7 +125016,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07368"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate I biosynthesis, precursor 33)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02227g: -1
@@ -125111,7 +125111,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07444"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate II biosynthesis, precursor 2)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02306g: -1
@@ -125141,7 +125141,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07446"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate II biosynthesis, precursor 4)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02308g: -1
@@ -125187,7 +125187,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07449"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate II biosynthesis, precursor 7)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02311g: -1
@@ -125282,7 +125282,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07473"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate II (core 4-linked), biosynthesis, precursor 2)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02291g: -1
@@ -125312,7 +125312,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07475"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate II (core 4-linked), biosynthesis, precursor 4)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02293g: -1
@@ -125358,7 +125358,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07478"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (keratan sulfate II (core 4-linked), biosynthesis, precursor 7)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02296g: -1
@@ -126790,7 +126790,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01589"
-      - name: "7alpha-hydroxycholest-4-en-3-one,[reduced NADPH---hemoprotein reductase]:oxygen oxidoreductase (12alpha-hydroxylating)"
+      - name: "7alpha-hydroxycholest-4-en-3-one,[reduced NADPH-hemoprotein reductase]:oxygen oxidoreductase (12alpha-hydroxylating)"
       - metabolites: !!omap
           - MAM01178r: 1
           - MAM01182r: -1
@@ -128060,7 +128060,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01738"
-      - name: "hydroxy-delta-5-steroid dehydrogenase, 3 beta- and steroid delta-isomerase (cholest-5-ene-3beta,7alpha,24(S)-triol)"
+      - name: "hydroxy-delta-5-steroid dehydrogenase, 3 beta- and steroid delta-isomerase"
       - metabolites: !!omap
           - MAM00978c: 1
           - MAM01446c: -1
@@ -128324,7 +128324,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01754"
-      - name: "cholate--CoA ligase (tetraHCA)"
+      - name: "cholate-CoA ligase (tetraHCA)"
       - metabolites: !!omap
           - MAM00615c: 1
           - MAM01334c: 1
@@ -128342,7 +128342,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01756"
-      - name: "cholate--CoA ligase (3,7,24THCA)"
+      - name: "cholate-CoA ligase (3,7,24THCA)"
       - metabolites: !!omap
           - MAM00742c: -1
           - MAM00743c: 1
@@ -128442,7 +128442,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01765"
-      - name: "cholest-5-ene-3beta,26-diol,[NADPH---hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
+      - name: "cholest-5-ene-3beta,26-diol,[NADPH-hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
       - metabolites: !!omap
           - MAM00625c: -1
           - MAM01448c: 1
@@ -128461,7 +128461,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01766"
-      - name: "hydroxy-delta-5-steroid dehydrogenase, 3 beta- and steroid delta-isomerase (cholest-5-ene-3beta,7alpha,27-triol)"
+      - name: "hydroxy-delta-5-steroid dehydrogenase, 3 beta- and steroid delta-isomerase"
       - metabolites: !!omap
           - MAM00979c: 1
           - MAM01448c: -1
@@ -128608,7 +128608,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01777"
-      - name: "cholest-5-ene-3beta,25-diol,[NADPH---hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
+      - name: "cholest-5-ene-3beta,25-diol,[NADPH-hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
       - metabolites: !!omap
           - MAM00619r: -1
           - MAM01447r: 1
@@ -128822,7 +128822,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01797"
-      - name: "cholest-5-ene-3beta,26-diol,[NADPH---hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
+      - name: "cholest-5-ene-3beta,26-diol,[NADPH-hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
       - metabolites: !!omap
           - MAM00623c: -1
           - MAM01448c: 1
@@ -128841,7 +128841,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01798"
-      - name: "cholest-5-ene-3beta,26-diol,[NADPH---hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
+      - name: "cholest-5-ene-3beta,26-diol,[NADPH-hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
       - metabolites: !!omap
           - MAM00623m: -1
           - MAM01448m: 1
@@ -128860,7 +128860,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01800"
-      - name: "cholest-5-ene-3beta,26-diol,[NADPH---hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
+      - name: "cholest-5-ene-3beta,26-diol,[NADPH-hemoprotein reductase]:oxygen oxidoreductase (7alpha-hydroxylating)"
       - metabolites: !!omap
           - MAM00761m: 1
           - MAM01448m: -1
@@ -129135,7 +129135,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01832"
-      - name: "cholate--CoA ligase (3alpha,12alpha-dihydroxy-5beta-cholanate)"
+      - name: "cholate-CoA ligase (3alpha,12alpha-dihydroxy-5beta-cholanate)"
       - metabolites: !!omap
           - MAM00745c: -1
           - MAM01334c: 1
@@ -129153,7 +129153,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01833"
-      - name: "cholate--CoA ligase (3alpha,12alpha-dihydroxy-5beta-cholanate)"
+      - name: "cholate-CoA ligase (3alpha,12alpha-dihydroxy-5beta-cholanate)"
       - metabolites: !!omap
           - MAM00745r: -1
           - MAM01334r: 1
@@ -129231,7 +129231,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01838"
-      - name: "lithocholate,[reduced NADPH---hemoprotein reductase]:oxygen oxidoreductase (6alpha-hydroxylating)"
+      - name: "lithocholate,[reduced NADPH-hemoprotein reductase]:oxygen oxidoreductase (6alpha-hydroxylating)"
       - metabolites: !!omap
           - MAM02039c: -2
           - MAM02040c: 1
@@ -130718,7 +130718,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08263"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (type I H glycolipid)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM03090g: 1
@@ -130749,7 +130749,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08267"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (type I H glycolipid)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM03091g: 1
@@ -130893,7 +130893,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08281"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (type II H glycolipid)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM01914g: 1
           - MAM02039g: 1
@@ -130909,7 +130909,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08284"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (type II H glycolipid)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM01262g: 1
           - MAM02039g: 1
@@ -130925,7 +130925,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08285"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (acgalfuc12gal14acglcgalgluside heparan sulfate)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM01262g: -1
           - MAM01907g: 1
@@ -130941,7 +130941,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08286"
-      - name: "type 1 galactoside alpha-(1,2)-fucosyltransferase (galacgalfuc12gal14acglcgalgluside heparan sulfate)"
+      - name: "type 1 galactoside alpha-(1,2)-fucosyltransferase"
       - metabolites: !!omap
           - MAM01907g: -1
           - MAM01948g: 1
@@ -130973,7 +130973,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08288"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (type III H glycolipid)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM03096g: 1
@@ -131005,7 +131005,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08292"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (UDP-N-acetyl-D-galactosamine)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM01263g: 1
           - MAM02039g: 1
@@ -131021,7 +131021,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08293"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (acgalfucgalacglcgal14acglcgalgluside heparan sulfate)"
+      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase"
       - metabolites: !!omap
           - MAM01263g: -1
           - MAM01908g: 1
@@ -131037,7 +131037,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08294"
-      - name: "type 1 galactoside alpha-(1,2)-fucosyltransferase (galacgalfucgalacglcgal14acglcgalgluside heparan sulfate)"
+      - name: "type 1 galactoside alpha-(1,2)-fucosyltransferase"
       - metabolites: !!omap
           - MAM01857g: 1
           - MAM01908g: -1
@@ -131053,7 +131053,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08295"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (fucgalacgalfucgalacglcgal14acglcgalgluside heparan sulfate)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM01857g: -1
           - MAM02039g: 1
@@ -131085,7 +131085,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08302"
-      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase (fucfucgalacglcgalacglcgal14acglcgalgluside heparan sulfate)"
+      - name: "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase"
       - metabolites: !!omap
           - MAM01856g: -1
           - MAM01916g: 1
@@ -137392,7 +137392,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04548"
-      - name: "melatonin,NADPH---hemoprotein reductase:oxygen oxidoreductase"
+      - name: "melatonin,NADPH-hemoprotein reductase:oxygen oxidoreductase"
       - metabolites: !!omap
           - MAM01161c: -1
           - MAM02039c: -1
@@ -140032,7 +140032,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07026"
-      - name: "D-arabinitol 4-dehydrogenase (1,2,3,4-tetrahydro-alpha,7-dihydroxy-beta-(hydroxymethyl)-9-methoxy-3,4-dioxocyclopenta[c][1]benzopyran-6-propanal)"
+      - name: "D-arabinitol 4-dehydrogenase"
       - metabolites: !!omap
           - MAM00229c: -1
           - MAM01156c: 1
@@ -140060,7 +140060,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07028"
-      - name: "D-arabinitol 4-dehydrogenase (alpha-(1,2-dihydroxyethyl)-1,2,3,4-tetrahydro-7-hydroxy-9-methoxy-3,4-dioxocyclopenta[c][1]benzopyran-6-acetaldehyde)"
+      - name: "D-arabinitol 4-dehydrogenase"
       - metabolites: !!omap
           - MAM01156c: 1
           - MAM01318c: -1
@@ -185459,7 +185459,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00251"
-      - name: " 2, 3-Diketo-5-Methylthio-1-Phosphopentane Degradation Reaction"
+      - name: "2, 3-Diketo-5-Methylthio-1-Phosphopentane Degradation Reaction"
       - metabolites: !!omap
           - MAM00572c: -1
           - MAM01016c: 1
@@ -187889,7 +187889,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01378"
-      - name: "Transport of D-Glucose  via Proton Symport"
+      - name: "Transport of D-Glucose via Proton Symport"
       - metabolites: !!omap
           - MAM01965c: 1
           - MAM01965e: -1
@@ -187945,7 +187945,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01386"
-      - name: "Transport of Glycine   via Proton Symport, Reversible, Lysosomal"
+      - name: "Transport of Glycine via Proton Symport, Reversible, Lysosomal"
       - metabolites: !!omap
           - MAM01986c: 1
           - MAM01986l: -1
@@ -187961,7 +187961,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01396"
-      - name: "Secretion of Glycine  via Secretory Vesicle (ATP Driven)"
+      - name: "Secretion of Glycine via Secretory Vesicle (ATP Driven)"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -188967,7 +188967,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01555"
-      - name: "Secretion of Noradrenaline  via Secretory Vesicle (ATP Driven)"
+      - name: "Secretion of Noradrenaline via Secretory Vesicle (ATP Driven)"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -189682,7 +189682,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01650"
-      - name: "Transport of L-Proline   via Proton Symport, Reversible, Lysosomal"
+      - name: "Transport of L-Proline via Proton Symport, Reversible, Lysosomal"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02039l: -1
@@ -191802,7 +191802,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02310"
-      - name: "Long-Chain-Fatty-Acid---Coa Ligase"
+      - name: "Long-Chain-Fatty-Acid-Coa Ligase"
       - metabolites: !!omap
           - MAM00051r: 1
           - MAM01334r: 1
@@ -191820,7 +191820,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02312"
-      - name: "Long-Chain-Fatty-Acid---Coa Ligase"
+      - name: "Long-Chain-Fatty-Acid-Coa Ligase"
       - metabolites: !!omap
           - MAM00051c: 1
           - MAM01334c: 1
@@ -191838,7 +191838,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02313"
-      - name: "Long-Chain-Fatty-Acid---Coa Ligase"
+      - name: "Long-Chain-Fatty-Acid-Coa Ligase"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -191857,7 +191857,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02314"
-      - name: "Long-Chain-Fatty-Acid---Coa Ligase"
+      - name: "Long-Chain-Fatty-Acid-Coa Ligase"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -200634,7 +200634,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04793"
-      - name: "Transport of Docosapentenoylcoa into Peroxisomes."
+      - name: "Transport of Docosapentenoylcoa into Peroxisomes"
       - metabolites: !!omap
           - MAM00093c: -1
           - MAM00093x: 1
@@ -203068,7 +203068,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06278"
-      - name: " (3-Hydroxyisovalerylcoa->3-Hydroxyisovalerylcarnitine)"
+      - name: "(3-Hydroxyisovalerylcoa->3-Hydroxyisovalerylcarnitine)"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02348c: -1
@@ -203699,7 +203699,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06596"
-      - name: "Transport of Lignocericyl Coenzyme A from Cytosol to Peroxisome."
+      - name: "Transport of Lignocericyl Coenzyme A from Cytosol to Peroxisome"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -203887,7 +203887,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06775"
-      - name: "Transport of Pristanoylcoa from Cytosol to Peroxisomes."
+      - name: "Transport of Pristanoylcoa from Cytosol to Peroxisomes"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -203921,7 +203921,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06779"
-      - name: "Transport of Phytanoylcoa from Cytosol to Peroxisomes."
+      - name: "Transport of Phytanoylcoa from Cytosol to Peroxisomes"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -204017,7 +204017,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06816"
-      - name: "Transport of Stearidonylcoa into Peroxisomes."
+      - name: "Transport of Stearidonylcoa into Peroxisomes"
       - metabolites: !!omap
           - MAM00108c: -1
           - MAM00108x: 1
@@ -206770,7 +206770,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09837"
-      - name: " Transport of UDP-Glucuronate"
+      - name: "Transport of UDP-Glucuronate"
       - metabolites: !!omap
           - MAM03109c: 1
           - MAM03109e: -1
@@ -223394,7 +223394,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11298"
-      - name: "Extracellular Transport of gncore  1"
+      - name: "Extracellular Transport of gncore 1"
       - metabolites: !!omap
           - MAM01954c: -1
           - MAM01954e: 1
@@ -224089,7 +224089,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11356"
-      - name: "Transport of gncore  1, Golgi Apparatus"
+      - name: "Transport of gncore 1, Golgi Apparatus"
       - metabolites: !!omap
           - MAM01954c: 1
           - MAM01954g: -1
@@ -230349,7 +230349,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11812"
-      - name: " (3, 4-Dihydroxyphenyl)Acetate (Dopac) Transport, Cytosol"
+      - name: "(3, 4-Dihydroxyphenyl)Acetate (Dopac) Transport, Cytosol"
       - metabolites: !!omap
           - MAM00729c: -1
           - MAM00729e: 1
@@ -233250,7 +233250,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12064"
-      - name: "Hexosaminidase A;Lysosomal Or Hexosaminidase B;Lysosomal"
+      - name: "Hexosaminidase A, Lysosomal Or Hexosaminidase B, Lysosomal"
       - metabolites: !!omap
           - MAM01905l: -1
           - MAM02040l: -1
@@ -234341,7 +234341,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12150"
-      - name: "3-Dehydrocholic acid  ABC bile acid transporter"
+      - name: "3-Dehydrocholic acid ABC bile acid transporter"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -234359,7 +234359,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12151"
-      - name: "3-Dehydrocholic acid  transport via bicarbonate countertransport"
+      - name: "3-Dehydrocholic acid transport via bicarbonate countertransport"
       - metabolites: !!omap
           - MAM02046c: -1
           - MAM02046e: 1
@@ -234374,7 +234374,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12152"
-      - name: "3-Dehydrocholic acid  transport via sodium cotransport"
+      - name: "3-Dehydrocholic acid transport via sodium cotransport"
       - metabolites: !!omap
           - MAM02519c: 2
           - MAM02519e: -2
@@ -235106,7 +235106,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12198"
-      - name: "Exchange of 12-Dehydrocholic acid; 12-Oxodeoxycholic acid; 12oxo-3alpha,7alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "Exchange of 12-Dehydrocholic acid, 12-Oxodeoxycholic acid, 12oxo-3alpha,7alpha-Dihydroxy-5beta-cholan-24-oic acid"
       - metabolites: !!omap
           - MAM00517e: -1
       - lower_bound: -1000
@@ -235116,7 +235116,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12199"
-      - name: "Exchange of 3-Dehydrochenodeoxychollyc acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "Exchange of 3-Dehydrochenodeoxychollyc acid, 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
       - metabolites: !!omap
           - MAM03206e: -1
       - lower_bound: -1000
@@ -235126,7 +235126,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12200"
-      - name: "Exchange of 3-Dehydrocholic acid; 3oxo-7alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "Exchange of 3-Dehydrocholic acid, 3oxo-7alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
       - metabolites: !!omap
           - MAM03207e: -1
       - lower_bound: -1000
@@ -235156,7 +235156,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12203"
-      - name: "Exchange of 7-Dehydrochenodeoxycholic acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "Exchange of 7-Dehydrochenodeoxycholic acid, 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
       - metabolites: !!omap
           - MAM03310e: -1
       - lower_bound: -1000
@@ -235166,7 +235166,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12204"
-      - name: "Exchange of 7-Dehydrocholic acid; 7-Oxodeoxycholic acid; 7oxo-3alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "Exchange of 7-Dehydrocholic acid, 7-Oxodeoxycholic acid, 7oxo-3alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
       - metabolites: !!omap
           - MAM03311e: -1
       - lower_bound: -1000
@@ -235336,7 +235336,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12221"
-      - name: "Exchange of Hyocholic acid; gamma-Muricholate"
+      - name: "Exchange of Hyocholic acid, gamma-Muricholate"
       - metabolites: !!omap
           - MAM03685e: -1
       - lower_bound: -1000
@@ -235346,7 +235346,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12222"
-      - name: "Exchange of Isochenodeoxycholic acid; 3beta,7alpha-Dihydroxy-5beta-cholanic acid"
+      - name: "Exchange of Isochenodeoxycholic acid, 3beta,7alpha-Dihydroxy-5beta-cholanic acid"
       - metabolites: !!omap
           - MAM03691e: -1
       - lower_bound: -1000
@@ -235356,7 +235356,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12223"
-      - name: "Exchange of Isochenodeoxycholic acid; 3beta,7alpha,12alpha-Trihydroxy-5beta-cholanic acid"
+      - name: "Exchange of Isochenodeoxycholic acid, 3beta,7alpha,12alpha-Trihydroxy-5beta-cholanic acid"
       - metabolites: !!omap
           - MAM03704e: -1
       - lower_bound: -1000
@@ -235426,7 +235426,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12230"
-      - name: "Exchange of Taurohyocholic acid; N-(3alpha,6alpha,7alpha-Trihydroxy-5beta-cholan-24-oyl)taurine"
+      - name: "Exchange of Taurohyocholic acid, N-(3alpha,6alpha,7alpha-Trihydroxy-5beta-cholan-24-oyl)taurine"
       - metabolites: !!omap
           - MAM03996e: -1
       - lower_bound: -1000
@@ -235446,7 +235446,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12232"
-      - name: "Exchange of Ursocholic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholan-24-oic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholanic acid; 7beta-Hydroxyisocholic acid; 7-Epicholic acid"
+      - name: "Exchange of Ursocholic acid, 3alpha,7beta,12alpha-Trihydroxy-5beta-cholan-24-oic acid, 3alpha,7beta,12alpha-Trihydroxy-5beta-cholanic acid, 7beta-Hydroxyisocholic acid, 7-Epicholic acid"
       - metabolites: !!omap
           - MAM04057e: -1
       - lower_bound: -1000
@@ -248333,7 +248333,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10094"
-      - name: "cholate--CoA ligase (beta-muricholic acid)"
+      - name: "cholate-CoA ligase (beta-muricholic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -248377,7 +248377,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10097"
-      - name: "cholate--CoA ligase (omega-muricholic acid)"
+      - name: "cholate-CoA ligase (omega-muricholic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -248506,7 +248506,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10105"
-      - name: "cholate--CoA ligase (hyocholic acid)"
+      - name: "cholate-CoA ligase (hyocholic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -248598,7 +248598,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10111"
-      - name: "cholate--CoA ligase (dehydrocholic acid)"
+      - name: "cholate-CoA ligase (dehydrocholic acid)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -248747,7 +248747,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10121"
-      - name: "cholate--CoA ligase (hyodeoxycholate)"
+      - name: "cholate-CoA ligase (hyodeoxycholate)"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
