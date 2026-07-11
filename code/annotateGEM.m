@@ -229,6 +229,22 @@ if ( addMiriams )
             % add SBO term (SBO:0000247, "simple chemical" for all mets)
             model.metMiriams{i} = appendMiriamData(model.metMiriams{i}, {'sbo'}, {'SBO:0000247'});
         end
+
+        % KEGG IDs are all stored in metKEGGID and were assigned the
+        % kegg.compound namespace above, but they belong to different KEGG
+        % sub-databases: compounds (Cxxxxx) use kegg.compound, drugs (Dxxxxx)
+        % use kegg.drug, and glycans (Gxxxxx) use kegg.glycan. Relabel the
+        % drug and glycan IDs to their correct identifiers.org namespace.
+        for i = 1:numel(model.mets)
+            mm = model.metMiriams{i};
+            if isempty(mm)
+                continue
+            end
+            isKegg = strcmp(mm.name, 'kegg.compound');
+            mm.name(isKegg & startsWith(mm.value, 'D')) = {'kegg.drug'};
+            mm.name(isKegg & startsWith(mm.value, 'G')) = {'kegg.glycan'};
+            model.metMiriams{i} = mm;
+        end
     end
     
     % Genes
