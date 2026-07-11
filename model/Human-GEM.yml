@@ -182088,7 +182088,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000066926"
       - rxnFrom: "Recon3D"
-      - eccodes: "4.99.1.1"
+      - eccodes: "4.98.1.1"
       - references: "PMID:7983009;PMID:11175906;PMID:11215517;PMID:11853551;PMID:11947230;PMID:1624416;PMID:182145;PMID:2310748;PMID:3196293;PMID:3702737;PMID:406931;PMID:6425295;PMID:7309736;PMID:8818224;PMID:9712849;PMID:9808757"
       - subsystem: "Porphyrin metabolism"
       - confidence_score: 0
