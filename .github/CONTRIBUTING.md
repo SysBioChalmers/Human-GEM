@@ -82,7 +82,18 @@ More examples [here](https://github.com/SysBioChalmers/Human-GEM/commits/main). 
 
 Everyone who contributes is credited in the `Contributors` section of the `README`, using [all-contributors](https://allcontributors.org).
 
-To credit someone, a maintainer comments `@all-contributors please add @username for bug, code` on any issue or pull request. The contribution types (`bug`, `code`, `doc`, `research`, and so on) come from the [emoji key](https://allcontributors.org/docs/en/emoji-key); list as many as apply, separated by commas.
+To credit someone, a maintainer comments `@all-contributors please add @username for bug, code` on any issue or pull request, listing one or more contribution types separated by commas. The full set is in the [emoji key](https://allcontributors.org/docs/en/emoji-key); the types most used in Human-GEM are:
+
+| Type | | Used for |
+|---|:--:|---|
+| `bug` | 🐛 | reporting an incorrect reaction, metabolite, GPR, or annotation |
+| `research` | 🔬 | literature or database evidence behind a change |
+| `code` | 💻 | scripts, functions, or workflow code |
+| `review` | 👀 | reviewing pull requests |
+| `content` | 🖋️ | supplying model content, such as values or cross-references |
+| `ideas` | 🤔 | suggesting a change or planning it |
+| `question` | 💬 | answering questions from users |
+| `data` | 🔣 | datasets used in curation |
 
 A GitHub Action (`.github/workflows/add-contributor.yml`) picks up the comment, updates `.all-contributorsrc` and the `README` with the [all-contributors CLI](https://github.com/all-contributors/all-contributors-cli), and opens a pull request against `develop`, which is merged after review. Crediting on `develop`, rather than the default `main` where the retired all-contributors bot added them, keeps the credit when `main` is rebuilt from `develop` at release.
 
