@@ -67,5 +67,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           TEST_RESULTS: ${{steps.macaw-run.outputs.results}}
-          GH_ACTION_RUN: ${{github.run_id}}
+          GH_ACTION_URL: ${{github.server_url}}/${{github.repository}}/actions/runs/${{github.run_id}}
           
