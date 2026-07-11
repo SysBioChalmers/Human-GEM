@@ -4,15 +4,22 @@ on: [push]
 
 jobs:
   check-metabolictasks:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
       matrix:
         task-type: [essential, verification]
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements.txt
 
       - name: Check ${{ matrix.task-type }} metabolic tasks
-        run: |
-          /usr/local/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath(genpath('.')); testMetabolicTasks('${{ matrix.task-type }}');"
+        run: python code/test/testMetabolicTasks.py ${{ matrix.task-type }}

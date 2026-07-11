@@ -1,0 +1,36 @@
+name: Re-evaluate gene essentiality summary
+
+# Regenerate data/testResults/gene-essential_summary.md from the already-committed
+# per-gene matrix (data/testResults/gene-essential.csv), comparing against the Hart
+# 2015 data. This does not re-run the expensive ftINIT / essential-gene solve, so
+# it finishes in seconds. Trigger it manually after changing only the evaluation
+# logic, instead of re-running the full gene-essentiality workflow.
+on: workflow_dispatch
+
+jobs:
+  reevaluate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Re-evaluate summary from the committed matrix
+        run: python code/test/reevaluateGeneEssentiality.py
+
+      - name: Auto-commit summary
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_user_name: memote-bot
+          commit_message: "chore: re-evaluate gene essentiality summary [skip ci]"
+          file_pattern: data/testResults/gene-essential_summary.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

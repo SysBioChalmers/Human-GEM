@@ -1,0 +1,13 @@
+# Python dependencies for the RAVEN-toolbox based CI tests
+# (testYamlConversion.py, testMetabolicTasks.py).
+#
+# raven-toolbox is the Python reimplementation of the RAVEN toolbox and pulls in
+# cobra, pandas and an LP interface. It is not on PyPI, so it is installed from
+# source. cobra ships GLPK, which is sufficient for the task-feasibility LPs used
+# by these two tests, so no commercial solver is required here.
+#
+# The gene-essentiality workflow additionally needs Gurobi for the tINIT MILP;
+# its extra dependencies live in requirements-gurobi.txt.
+raven-toolbox @ git+https://github.com/SysBioChalmers/raven-toolbox.git
+cobra
+pandas
