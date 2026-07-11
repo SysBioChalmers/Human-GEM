@@ -217966,12 +217966,13 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11311"
-      - name: "Calcium (Ca+2) Transport via Diffusion (Extracellular to Cytosol)"
+      - name: "Calcium (Ca+2) Transport via Ion Channels (Extracellular to Cytosol)"
       - metabolites: !!omap
           - MAM01413c: 1
           - MAM01413e: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000006283 or ENSG00000081248 or ENSG00000100346 or ENSG00000102001 or ENSG00000141837 or ENSG00000148408 or ENSG00000151067 or ENSG00000157388 or ENSG00000160991 or ENSG00000175938 or ENSG00000196557 or ENSG00000198216 or ENSG00000276045"
       - rxnFrom: "Recon3D"
       - references: "PMID:21749716"
       - subsystem: "Transport reactions"
@@ -254516,6 +254517,45 @@
     - !!omap
       - id: "ENSG00000196407"
       - name: "THEM5"
+    - !!omap
+      - id: "ENSG00000081248"
+      - name: "CACNA1S"
+    - !!omap
+      - id: "ENSG00000151067"
+      - name: "CACNA1C"
+    - !!omap
+      - id: "ENSG00000157388"
+      - name: "CACNA1D"
+    - !!omap
+      - id: "ENSG00000102001"
+      - name: "CACNA1F"
+    - !!omap
+      - id: "ENSG00000141837"
+      - name: "CACNA1A"
+    - !!omap
+      - id: "ENSG00000148408"
+      - name: "CACNA1B"
+    - !!omap
+      - id: "ENSG00000198216"
+      - name: "CACNA1E"
+    - !!omap
+      - id: "ENSG00000006283"
+      - name: "CACNA1G"
+    - !!omap
+      - id: "ENSG00000196557"
+      - name: "CACNA1H"
+    - !!omap
+      - id: "ENSG00000100346"
+      - name: "CACNA1I"
+    - !!omap
+      - id: "ENSG00000276045"
+      - name: "ORAI1"
+    - !!omap
+      - id: "ENSG00000160991"
+      - name: "ORAI2"
+    - !!omap
+      - id: "ENSG00000175938"
+      - name: "ORAI3"
 - compartments: !!omap
     - e: "Extracellular"
     - x: "Peroxisome"
