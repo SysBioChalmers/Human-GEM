@@ -1,10 +1,10 @@
 # Test results
 
-The file here contains results from the [MACAW](https://github.com/Devlin-Moyer/macaw) `dead_end_test` and `duplicate_test` tests, and from cell-line specific gene essentiality prediction based on the [Hart _et al._ (2015)](https://doi.org/10.1016/j.cell.2015.11.015) dataset.
+The file here contains results from the [MACAW](https://github.com/Devlin-Moyer/macaw) `dead_end_test` and `duplicate_test` tests, from a mass and charge balance report, and from cell-line specific gene essentiality prediction based on the [Hart _et al._ (2015)](https://doi.org/10.1016/j.cell.2015.11.015) dataset.
 
 The test results shown here were obtained by the GitHub Actions run in:
 
-- **PR #1029** (MACAW)
+- **PR #1035** (QC)
 - **PR #973** (gene essentiality)
 
 The results will be updated by any subsequent pull request. Summary results are shown as a comment in the corresponding pull request.
@@ -21,6 +21,9 @@ Identifies sets of reactions that may be duplicates of each other because they:
 - Represent the oxidation and/or reduction of the same metabolite, but use different electron acceptors/donors from the given list of pairs of oxidized and reduced forms of various electron carriers (e.g. NAD(H), NADP(H), FAD(H2), ubiquinone/ubiquinol, cytochromes).
 
 It is possible for a single reaction to fit in multiple of the above categories. There are sometimes cases where sets of reactions that fall into one of the above categories are completely legitimate representations of real biochemistry (e.g. separate irreversible reactions for importing vs exporting the same metabolite because two different transporters encoded by different genes are each responsible for transporting that metabolite in only one direction, enzymes that can use NAD(H) or NADP(H) interchangeably to catalyze the same redox reaction), but reactions that meet these criteria are generally worth close examination to ensure that they should actually all exist as separate reactions.
+
+### Mass and charge balance
+Reports the reactions whose elemental (mass) or charge sums do not balance, using cobrapy's `check_mass_balance()`. Boundary reactions (exchange/demand/sink) and the biomass reaction are excluded, as they are not expected to balance. The unbalanced reactions are written to `balance_results.csv`, so a pull request that introduces a new imbalance is visible in the committed diff. This is a report and does not fail the build.
 
 ### Cell-line specific gene essentiality
 Evaluate gene essentiality predictions in 5 cell-line specific GEMs with experimental fitness data gathered from the [Hart _et al._ (2015)](https://doi.org/10.1016/j.cell.2015.11.015).
