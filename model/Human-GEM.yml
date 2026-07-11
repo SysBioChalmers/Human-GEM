@@ -75423,7 +75423,7 @@
           - MAM02877c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000038274 or ENSG00000151224 or ENSG00000168906"
+      - gene_reaction_rule: "ENSG00000151224 or ENSG00000168906"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.5.1.6"
       - references: "PMID:7213623"
@@ -76794,7 +76794,7 @@
           - MAM02891c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000038274 or ENSG00000151224 or ENSG00000168906"
+      - gene_reaction_rule: "ENSG00000151224 or ENSG00000168906"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.5.1.6"
       - subsystem: "Metabolism of other amino acids"
@@ -246344,9 +246344,6 @@
     - !!omap
       - id: "ENSG00000038210"
       - name: "PI4K2B"
-    - !!omap
-      - id: "ENSG00000038274"
-      - name: "MAT2B"
     - !!omap
       - id: "ENSG00000039123"
       - name: "MTREX"
