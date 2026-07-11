@@ -5,6 +5,9 @@ on:
     branches:
       - "main"
       - "develop"
+  # Allow running the (long) gene-essentiality check on demand, e.g. to validate a
+  # model-building change without waiting for a pull-request trigger.
+  workflow_dispatch:
 
 jobs:
   gene-essentiality:
@@ -62,6 +65,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Mention PR# in README.md
+        if: github.event_name == 'pull_request'
         env:
           PR_NUMBER: ${{ github.event.number }}
         run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (gene /$PR_NUMBER\*\* (gene /" data/testResults/README.md
@@ -92,6 +96,7 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
 
       - name: Post comment
+        if: github.event_name == 'pull_request'
         uses: NejcZdovc/comment-pr@v2
         with:
           file: "commentGeneEssential.md"

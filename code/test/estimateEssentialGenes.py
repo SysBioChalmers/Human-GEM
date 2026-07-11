@@ -12,8 +12,10 @@ infeasible unless the template is first prepared the way prep_init_model does fo
 ftINIT. Two steps are needed and are applied here directly to the classic path:
 orient each task-essential reaction irreversibly in its required direction, and
 rescale the stoichiometry (rescale_for_init) so a single fixed big-M (100) is
-valid across all reactions. Classic tINIT keeps fewer reactions than ftINIT, so
-its models are sparser and give a stronger gene-essentiality signal.
+valid across all reactions. After the MILP, redundant low-expression isozyme
+genes are pruned with remove_low_score_genes, matching getINITModel2's
+removeGenes=true step, so unexpressed alternatives in an OR rule do not mask the
+genes that are actually essential for the expressed isozyme.
 
 Gene identifiers
 ----------------
@@ -36,7 +38,11 @@ import cobra
 import pandas as pd
 from cobra.flux_analysis import find_blocked_reactions
 
-from raven_toolbox.init import gene_scores_from_expression, get_init_model
+from raven_toolbox.init import (
+    gene_scores_from_expression,
+    get_init_model,
+    remove_low_score_genes,
+)
 from raven_toolbox.init.prep import rescale_for_init
 from raven_toolbox.tasks.check import find_task_essential_reactions
 from raven_toolbox.tasks.tasklist import parse_task_list
@@ -216,4 +222,9 @@ def _build_context_model(
     kept = {r.id for r in result.model.reactions}
     context = reference.copy()
     context.remove_reactions([r for r in context.reactions if r.id not in kept], remove_orphans=True)
+    # Prune redundant low-expression isozyme genes, as MATLAB getINITModel2 does with
+    # removeGenes=true: keep the highest-scoring isozyme in each OR rule so unexpressed
+    # alternatives do not mask genes that are essential for the expressed isozyme.
+    context, removed = remove_low_score_genes(context, gene_scores)
+    _log(f"    pruned {len(removed)} redundant low-score genes")
     return context
