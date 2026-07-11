@@ -70453,20 +70453,20 @@
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08611"
-      - name: "L-proline:(acceptor) oxidoreductase"
+      - id: "MAR03838"
+      - name: "L-proline:ubiquinone oxidoreductase"
       - metabolites: !!omap
           - MAM00559m: 1
-          - MAM01802m: -1
-          - MAM01803m: 1
           - MAM02039m: 1
           - MAM02770m: -1
+          - MAM03102m: 1
+          - MAM03103m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000100033 or ENSG00000250799"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.5.5.2"
-      - references: "PMID:18506409"
+      - references: "PMID:18506409;PMID:28990412"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
@@ -83461,7 +83461,7 @@
           - MAM03103m: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000016391 or ENSG00000100033 or ENSG00000102967 or ENSG00000105379 or ENSG00000115159 or ENSG00000137767 or ENSG00000140374 or ENSG00000171503 or ENSG00000250799"
+      - gene_reaction_rule: "ENSG00000105379 and ENSG00000140374 and ENSG00000171503"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.5.5.1"
       - references: "PMID:34428349"
@@ -101768,20 +101768,20 @@
       - subsystem: "Acylglycerides metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00449"
-      - name: "sn-Glycerol-3-phosphate:(acceptor) 2-oxidoreductase"
+      - id: "MAR00483"
+      - name: "sn-glycerol-3-phosphate:ubiquinone oxidoreductase"
       - metabolites: !!omap
-          - MAM01690m: 1
-          - MAM01802m: -1
-          - MAM01803m: 1
-          - MAM02914m: -1
+          - MAM01690c: 1
+          - MAM02914c: -1
+          - MAM03102m: 1
+          - MAM03103m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115159"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.5.3"
-      - references: "PMID:11955283;PMID:2115809;PMID:2923620;PMID:3338458;PMID:340460;PMID:8401296;PMID:8549872;PMID:8579375;PMID:9171333;PMID:9244403;PMID:9559543;PMID:7821823;PMID:8687421;PMID:8163052"
-      - subsystem: "Acylglycerides metabolism"
+      - references: "PMID:11955283;PMID:2115809;PMID:2923620;PMID:3338458;PMID:340460;PMID:8401296;PMID:8549872;PMID:8579375;PMID:9171333;PMID:9244403;PMID:9559543"
+      - subsystem: "Glycerophospholipid metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR00604"
@@ -187811,22 +187811,6 @@
       - eccodes: "2.4.1.152"
       - references: "PMID:10386598"
       - subsystem: "Blood group biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01169"
-      - name: "Glycerol-3-Phosphate Dehydrogenase (FAD), Mitochondrial"
-      - metabolites: !!omap
-          - MAM01690c: 1
-          - MAM01802m: -1
-          - MAM01803m: 1
-          - MAM02914c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115159"
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.1.5.3"
-      - references: "PMID:11955283;PMID:2115809;PMID:2923620;PMID:3338458;PMID:340460;PMID:8401296;PMID:8549872;PMID:8579375;PMID:9171333;PMID:9244403;PMID:9559543;PMID:11385633"
-      - subsystem: "Glycolysis / Gluconeogenesis"
       - confidence_score: 0
     - !!omap
       - id: "MAR01314"
