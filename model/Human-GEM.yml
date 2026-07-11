@@ -60362,7 +60362,7 @@
       - gene_reaction_rule: "ENSG00000164708 or ENSG00000171314 or ENSG00000172331 or ENSG00000226784"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "5.4.2.1"
+          - "5.4.2.11"
           - "5.4.2.4"
       - subsystem: "Glycolysis / Gluconeogenesis"
       - confidence_score: 0
@@ -60492,7 +60492,6 @@
           - "5.4.2.2"
           - "5.4.2.5"
           - "5.4.2.6"
-          - "5.2.2.2"
       - references: "PMID:600270"
       - subsystem: "Glycolysis / Gluconeogenesis"
       - confidence_score: 0
@@ -62536,8 +62535,9 @@
       - gene_reaction_rule: "ENSG00000122971 or ENSG00000196177"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.3.99.3"
           - "1.3.8.7"
+          - "1.3.8.8"
+          - "1.3.8.9"
       - references: "PMID:10502673;PMID:3597357;PMID:4062874"
       - subsystem: "Propanoate metabolism"
       - confidence_score: 0
@@ -62868,7 +62868,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000122971 or ENSG00000196177"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.3.99.3"
+      - eccodes: "1.3.8.7"
       - references: "PMID:13295225;PMID:3597357"
       - subsystem: "Butanoate metabolism"
       - confidence_score: 0
@@ -63673,7 +63673,7 @@
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "3.6.1.19"
+          - "3.6.1.9"
           - "3.6.1.8"
       - references: "PMID:11278832;PMID:4310599"
       - subsystem: "Purine metabolism"
@@ -63890,7 +63890,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000163655"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "6.3.4.1"
+      - eccodes: "6.3.5.2"
       - references: "PMID:6260205;PMID:6698284;PMID:7559506;PMID:7706277;PMID:8089153"
       - subsystem: "Purine metabolism"
       - confidence_score: 0
@@ -65515,7 +65515,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.6.1.19"
+      - eccodes: "3.6.1.9"
       - references: "PMID:15652174;PMID:16752921;PMID:17095758"
       - subsystem: "Pyrimidine metabolism"
       - confidence_score: 0
@@ -65715,7 +65715,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111732 or ENSG00000158825"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.5.4.14"
+      - eccodes: "3.5.4.5"
       - subsystem: "Pyrimidine metabolism"
       - confidence_score: 0
     - !!omap
@@ -65848,7 +65848,7 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "3.6.1.23"
-          - "3.6.1.19"
+          - "3.6.1.9"
       - references: "PMID:8631816"
       - subsystem: "Pyrimidine metabolism"
       - confidence_score: 0
@@ -66194,7 +66194,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.6.1.19"
+      - eccodes: "3.6.1.9"
       - subsystem: "Nucleotide metabolism"
       - confidence_score: 0
     - !!omap
@@ -67076,7 +67076,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000125877"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.6.1.19"
+      - eccodes: "3.6.1.9"
       - subsystem: "Nucleotide metabolism"
       - confidence_score: 0
     - !!omap
@@ -67990,7 +67990,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000125877"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.6.1.19"
+      - eccodes: "3.6.1.9"
       - subsystem: "Nucleotide metabolism"
       - confidence_score: 0
     - !!omap
@@ -68006,7 +68006,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000125877"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.6.1.19"
+      - eccodes: "3.6.1.9"
       - subsystem: "Nucleotide metabolism"
       - confidence_score: 0
     - !!omap
@@ -68140,7 +68140,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - subsystem: "Alanine, aspartate and glutamate metabolism"
       - confidence_score: 0
     - !!omap
@@ -68599,7 +68599,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000006625"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.3.2.4"
+      - eccodes: "4.3.2.9"
       - references: "PMID:2570694;PMID:6150932"
       - subsystem: "Alanine, aspartate and glutamate metabolism"
       - confidence_score: 0
@@ -68613,7 +68613,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000006625"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.3.2.4"
+      - eccodes: "4.3.2.9"
       - references: "PMID:2570694;PMID:6150932"
       - subsystem: "Alanine, aspartate and glutamate metabolism"
       - confidence_score: 0
@@ -68691,7 +68691,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - references: "PMID:1286669;PMID:2211729"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
@@ -68755,7 +68755,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
@@ -68769,7 +68769,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - references: "PMID:1286669;PMID:2211729;PMID:8621661"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
@@ -69041,7 +69041,8 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.4.3.10"
-          - "1.4.3.6"
+          - "1.4.3.21"
+          - "1.4.3.22"
       - references: "PMID:12072962;PMID:15795708;PMID:17006978;PMID:6403048"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
@@ -69249,7 +69250,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - references: "PMID:1286669;PMID:15535970;PMID:2211729"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
@@ -69267,7 +69268,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - references: "PMID:1286669;PMID:2211729"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
@@ -69365,7 +69366,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:7040832;PMID:10047787"
@@ -69386,7 +69386,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:7040832;PMID:10047787"
@@ -69407,7 +69406,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:7040832;PMID:10047787"
@@ -69428,7 +69426,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:10047787;PMID:7040832"
@@ -69449,7 +69446,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:10047787;PMID:7040832"
@@ -69470,7 +69466,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:10047787;PMID:7040832"
@@ -69536,7 +69531,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:10047787;PMID:7040832"
@@ -69557,7 +69551,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:10047787;PMID:7040832"
@@ -69578,7 +69571,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:10047787;PMID:7040832"
@@ -69599,7 +69591,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:7040832;PMID:10047787"
@@ -69620,7 +69611,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:7040832;PMID:10047787"
@@ -69641,7 +69631,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:7040832;PMID:10047787"
@@ -69662,7 +69651,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:7040832;PMID:10047787"
@@ -69683,7 +69671,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:7040832;PMID:10047787"
@@ -69704,7 +69691,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:7040832;PMID:10047787"
@@ -69725,7 +69711,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:10047787;PMID:7040832"
@@ -69746,7 +69731,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:10047787;PMID:7040832"
@@ -69767,7 +69751,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:10047787;PMID:7040832"
@@ -70051,7 +70034,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
@@ -70068,7 +70051,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
@@ -70301,7 +70284,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000250799"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.99.8"
+      - eccodes: "1.5.5.2"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
@@ -70317,7 +70300,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000100033 or ENSG00000250799"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.99.8"
+      - eccodes: "1.5.5.2"
       - references: "PMID:18506409"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
@@ -70405,7 +70388,6 @@
       - eccodes:
           - "1.3.8.5"
           - "1.3.8.1"
-          - "1.3.99.12"
       - references: "PMID:12855692;PMID:6401712;PMID:6874697;PMID:3597357"
       - subsystem: "Glycine, serine and threonine metabolism"
       - confidence_score: 0
@@ -70489,7 +70471,6 @@
       - eccodes:
           - "1.3.8.5"
           - "1.3.8.1"
-          - "1.3.99.12"
       - references: "PMID:6401712"
       - subsystem: "Glycine, serine and threonine metabolism"
       - confidence_score: 0
@@ -70605,7 +70586,7 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.5.3.1"
-          - "1.5.99.1"
+          - "1.5.8.3"
       - subsystem: "Glycine, serine and threonine metabolism"
       - confidence_score: 0
     - !!omap
@@ -71268,7 +71249,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000102030"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.3.1.88"
+      - eccodes: "2.3.1.255"
       - references: "PMID:9916263;PMID:11390029;PMID:1127438"
       - subsystem: "Histidine metabolism"
       - confidence_score: 0
@@ -71496,7 +71477,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - subsystem: "Histidine metabolism"
@@ -71550,7 +71530,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000055609 and ENSG00000272333) or (ENSG00000055609 and ENSG00000167548) or ENSG00000099381 or ENSG00000101945 or ENSG00000104885 or ENSG00000106462 or ENSG00000108799 or ENSG00000109685 or ENSG00000110066 or ENSG00000116539 or ENSG00000118058 or ENSG00000133247 or ENSG00000136169 or ENSG00000139718 or ENSG00000143379 or ENSG00000145391 or ENSG00000147548 or ENSG00000152455 or ENSG00000165671 or ENSG00000170364 or ENSG00000181090 or ENSG00000181555 or ENSG00000183955 or ENSG00000185420 or ENSG00000204371"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.1.1.43"
+      - eccodes: "2.1.1.354"
       - subsystem: "Lysine metabolism"
       - confidence_score: 0
     - !!omap
@@ -71747,7 +71727,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000055609 and ENSG00000272333) or (ENSG00000055609 and ENSG00000167548) or ENSG00000099381 or ENSG00000101945 or ENSG00000104885 or ENSG00000109685 or ENSG00000110066 or ENSG00000116539 or ENSG00000118058 or ENSG00000133247 or ENSG00000136169 or ENSG00000139718 or ENSG00000143379 or ENSG00000145391 or ENSG00000147548 or ENSG00000152455 or ENSG00000165671 or ENSG00000170364 or ENSG00000181090 or ENSG00000181555 or ENSG00000183955 or ENSG00000185420 or ENSG00000204371"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.1.1.43"
+      - eccodes: "2.1.1.354"
       - subsystem: "Lysine metabolism"
       - confidence_score: 0
     - !!omap
@@ -71763,7 +71743,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000055609 and ENSG00000272333) or (ENSG00000055609 and ENSG00000167548) or ENSG00000099381 or ENSG00000101945 or ENSG00000104885 or ENSG00000109685 or ENSG00000110066 or ENSG00000116539 or ENSG00000118058 or ENSG00000133247 or ENSG00000136169 or ENSG00000139718 or ENSG00000143379 or ENSG00000145391 or ENSG00000147548 or ENSG00000152455 or ENSG00000165671 or ENSG00000170364 or ENSG00000181090 or ENSG00000181555 or ENSG00000183955 or ENSG00000185420 or ENSG00000204371"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.1.1.43"
+      - eccodes: "2.1.1.354"
       - subsystem: "Lysine metabolism"
       - confidence_score: 0
     - !!omap
@@ -71779,7 +71759,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000055609 and ENSG00000272333) or (ENSG00000055609 and ENSG00000167548) or ENSG00000099381 or ENSG00000101945 or ENSG00000104885 or ENSG00000109685 or ENSG00000110066 or ENSG00000116539 or ENSG00000118058 or ENSG00000133247 or ENSG00000136169 or ENSG00000139718 or ENSG00000143379 or ENSG00000145391 or ENSG00000147548 or ENSG00000152455 or ENSG00000165671 or ENSG00000170364 or ENSG00000181090 or ENSG00000181555 or ENSG00000183955 or ENSG00000185420 or ENSG00000204371"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.1.1.43"
+      - eccodes: "2.1.1.354"
       - subsystem: "Lysine metabolism"
       - confidence_score: 0
     - !!omap
@@ -71861,7 +71841,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000129151"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.4.11.1"
+      - eccodes: "1.14.11.1"
       - subsystem: "Lysine metabolism"
       - confidence_score: 0
     - !!omap
@@ -71984,7 +71964,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000055609 and ENSG00000272333) or (ENSG00000055609 and ENSG00000167548) or ENSG00000099381 or ENSG00000101945 or ENSG00000104885 or ENSG00000106462 or ENSG00000108799 or ENSG00000109685 or ENSG00000110066 or ENSG00000116539 or ENSG00000118058 or ENSG00000133247 or ENSG00000136169 or ENSG00000139718 or ENSG00000143379 or ENSG00000145391 or ENSG00000147548 or ENSG00000152455 or ENSG00000165671 or ENSG00000170364 or ENSG00000181090 or ENSG00000181555 or ENSG00000183955 or ENSG00000204371"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.1.1.43"
+      - eccodes: "2.1.1.354"
       - subsystem: "Lysine metabolism"
       - confidence_score: 0
     - !!omap
@@ -71999,7 +71979,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000055609 and ENSG00000272333) or (ENSG00000055609 and ENSG00000167548) or ENSG00000099381 or ENSG00000101945 or ENSG00000104885 or ENSG00000106462 or ENSG00000108799 or ENSG00000109685 or ENSG00000110066 or ENSG00000116539 or ENSG00000118058 or ENSG00000133247 or ENSG00000136169 or ENSG00000139718 or ENSG00000143379 or ENSG00000145391 or ENSG00000147548 or ENSG00000152455 or ENSG00000165671 or ENSG00000170364 or ENSG00000181090 or ENSG00000181555 or ENSG00000183955 or ENSG00000204371"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.1.1.43"
+      - eccodes: "2.1.1.354"
       - subsystem: "Lysine metabolism"
       - confidence_score: 0
     - !!omap
@@ -72015,7 +71995,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000055609 and ENSG00000272333) or (ENSG00000055609 and ENSG00000167548) or ENSG00000099381 or ENSG00000101945 or ENSG00000104885 or ENSG00000106462 or ENSG00000108799 or ENSG00000109685 or ENSG00000110066 or ENSG00000116539 or ENSG00000118058 or ENSG00000133247 or ENSG00000136169 or ENSG00000139718 or ENSG00000143379 or ENSG00000145391 or ENSG00000147548 or ENSG00000152455 or ENSG00000165671 or ENSG00000170364 or ENSG00000181090 or ENSG00000181555 or ENSG00000183955 or ENSG00000204371"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.1.1.43"
+      - eccodes: "2.1.1.354"
       - subsystem: "Lysine metabolism"
       - confidence_score: 0
     - !!omap
@@ -72418,7 +72398,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase;Recon3D"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:11136547;PMID:14715500;PMID:9131641"
@@ -74031,7 +74010,6 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.4.3.4"
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
@@ -74047,7 +74025,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - eccodes: "4.2.1.78"
+      - eccodes: "3.5.99.14"
       - references: "PMID:8891913;PMID:10556560;PMID:8891913;PMID:8891913;PMID:10556560;PMID:10556560"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
@@ -74309,7 +74287,7 @@
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.1.1.222"
+          - "1.1.1.110"
           - "1.1.1.237"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
@@ -74779,8 +74757,8 @@
       - gene_reaction_rule: "ENSG00000197406 or ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.97.1.10"
-          - "1.97.1.11"
+          - "1.21.99.4"
+          - "1.21.99.3"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -74796,8 +74774,8 @@
       - gene_reaction_rule: "ENSG00000197406 or ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.97.1.10"
-          - "1.97.1.11"
+          - "1.21.99.4"
+          - "1.21.99.3"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -74876,7 +74854,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.97.1.10"
+      - eccodes: "1.21.99.4"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -74891,7 +74869,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.97.1.10"
+      - eccodes: "1.21.99.4"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -74970,7 +74948,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.97.1.10"
+      - eccodes: "1.21.99.4"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -74985,7 +74963,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.97.1.10"
+      - eccodes: "1.21.99.4"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -75064,7 +75042,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.97.1.10"
+      - eccodes: "1.21.99.4"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -75079,7 +75057,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.97.1.10"
+      - eccodes: "1.21.99.4"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -75127,7 +75105,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.97.1.10"
+      - eccodes: "1.21.99.4"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -75143,7 +75121,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000211448 or ENSG00000211452"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.97.1.10"
+      - eccodes: "1.21.99.4"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -75458,7 +75436,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000101444 or ENSG00000158467"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.3.1.1"
+      - eccodes: "3.13.2.1"
       - references: "PMID:8093102"
       - subsystem: "Cysteine and methionine metabolism"
       - confidence_score: 0
@@ -75674,7 +75652,7 @@
       - rxnFrom: "HMRdatabase;Recon3D"
       - eccodes:
           - "4.4.1.1"
-          - "4.4.1.8"
+          - "4.4.1.13"
       - references: "PMID:10212249;PMID:629532"
       - subsystem: "Cysteine and methionine metabolism"
       - confidence_score: 0
@@ -76194,7 +76172,12 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.11.1.9"
-          - "1.11.1.15"
+          - "1.11.1.24"
+          - "1.11.1.25"
+          - "1.11.1.26"
+          - "1.11.1.27"
+          - "1.11.1.28"
+          - "1.11.1.29"
       - references: "PMID:12427732;PMID:2229017;PMID:25178;PMID:28781;PMID:4209402;PMID:6882790;PMID:7437054"
       - subsystem: "Glutathione metabolism"
       - confidence_score: 0
@@ -76212,7 +76195,12 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.11.1.9"
-          - "1.11.1.15"
+          - "1.11.1.24"
+          - "1.11.1.25"
+          - "1.11.1.26"
+          - "1.11.1.27"
+          - "1.11.1.28"
+          - "1.11.1.29"
       - references: "PMID:12427732;PMID:2229017;PMID:25178;PMID:28781;PMID:4209402;PMID:6882790;PMID:7437054"
       - subsystem: "Glutathione metabolism"
       - confidence_score: 0
@@ -76230,7 +76218,12 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.11.1.9"
-          - "1.11.1.15"
+          - "1.11.1.24"
+          - "1.11.1.25"
+          - "1.11.1.26"
+          - "1.11.1.27"
+          - "1.11.1.28"
+          - "1.11.1.29"
       - references: "PMID:12427732;PMID:2229017;PMID:25178;PMID:28781;PMID:4209402;PMID:6882790;PMID:7437054"
       - subsystem: "Glutathione metabolism"
       - confidence_score: 0
@@ -76355,7 +76348,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000006625 or ENSG00000134864"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.3.2.4"
+      - eccodes: "4.3.2.9"
       - references: "PMID:6137189"
       - subsystem: "Glutathione metabolism"
       - confidence_score: 0
@@ -76383,7 +76376,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000006625 or ENSG00000134864"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.3.2.4"
+      - eccodes: "4.3.2.9"
       - subsystem: "Glutathione metabolism"
       - confidence_score: 0
     - !!omap
@@ -76517,7 +76510,7 @@
       - gene_reaction_rule: "ENSG00000133313 or ENSG00000150656"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "3.4.13.3"
+          - "3.4.13.18"
           - "3.4.13.20"
       - references: "PMID:2334521;PMID:4026801"
       - subsystem: "Beta-alanine metabolism"
@@ -76604,7 +76597,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase;Recon3D"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - references: "PMID:15035803;PMID:8920635;PMID:9653080"
@@ -76766,7 +76758,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000101444 or ENSG00000158467"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.3.1.1"
+      - eccodes: "3.13.2.1"
       - subsystem: "Metabolism of other amino acids"
       - confidence_score: 0
     - !!omap
@@ -78091,7 +78083,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "O-glycan metabolism"
       - confidence_score: 0
     - !!omap
@@ -78106,7 +78098,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000070526"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.3"
+      - eccodes: "2.4.3.3"
       - subsystem: "O-glycan metabolism"
       - confidence_score: 0
     - !!omap
@@ -78181,7 +78173,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000070526"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.3"
+      - eccodes: "2.4.3.3"
       - subsystem: "O-glycan metabolism"
       - confidence_score: 0
     - !!omap
@@ -79325,7 +79317,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000073849 or ENSG00000144057"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.1"
+      - eccodes: "2.4.3.1"
       - subsystem: "N-glycan metabolism"
       - confidence_score: 0
     - !!omap
@@ -83005,7 +82997,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000198804 and ENSG00000198712 and ENSG00000198938 and (ENSG00000131143 or ENSG00000131055) and ENSG00000178741 and ENSG00000135940 and (ENSG00000111775 or ENSG00000156885) and (ENSG00000126267 or ENSG00000160471) and ENSG00000164919 and (ENSG00000161281 or ENSG00000112695) and ENSG00000131174 and ENSG00000170516 and ENSG00000127184 and ENSG00000176340 and ENSG00000189043"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.9.3.1"
+      - eccodes: "7.1.1.9"
       - references: "PMID:3030416"
       - subsystem: "Oxidative phosphorylation"
       - confidence_score: 2
@@ -83026,13 +83018,13 @@
       - eccodes:
           - "3.6.1.3"
           - "3.6.1.5"
-          - "3.6.3.1"
-          - "3.6.3.10"
-          - "3.6.3.14"
-          - "3.6.3.8"
-          - "3.6.3.9"
-          - "3.6.4.3"
-          - "3.6.4.4"
+          - "7.6.2.1"
+          - "7.2.2.19"
+          - "7.1.2.2"
+          - "7.2.2.10"
+          - "7.2.2.13"
+          - "5.6.1.1"
+          - "5.6.1.3"
           - "3.6.4.6"
           - "3.6.4.12"
           - "3.6.4.13"
@@ -83052,7 +83044,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000010256 and ENSG00000127540 and ENSG00000140740 and ENSG00000156467 and ENSG00000164405 and ENSG00000169021 and ENSG00000173660 and ENSG00000179091 and ENSG00000184076 and ENSG00000198727"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.10.2.2"
+      - eccodes: "7.1.1.8"
       - references: "PMID:459885"
       - subsystem: "Oxidative phosphorylation"
       - confidence_score: 2
@@ -83070,7 +83062,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000004779 and ENSG00000023228 and ENSG00000065518 and ENSG00000090266 and ENSG00000099795 and ENSG00000109390 and ENSG00000110717 and ENSG00000115286 and ENSG00000119013 and ENSG00000119421 and ENSG00000125356 and ENSG00000128609 and ENSG00000130414 and ENSG00000131495 and ENSG00000136521 and ENSG00000139180 and ENSG00000140990 and ENSG00000145494 and ENSG00000147123 and ENSG00000147684 and ENSG00000151366 and ENSG00000158864 and ENSG00000160194 and ENSG00000164258 and ENSG00000165264 and ENSG00000166136 and ENSG00000167792 and ENSG00000168653 and ENSG00000170906 and ENSG00000174886 and ENSG00000178127 and ENSG00000183648 and ENSG00000184752 and ENSG00000184983 and ENSG00000186010 and ENSG00000189043 and ENSG00000198695 and ENSG00000198763 and ENSG00000198786 and ENSG00000198840 and ENSG00000198886 and ENSG00000198888 and ENSG00000212907 and ENSG00000213619 and ENSG00000267855"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.6.5.3"
+      - eccodes: "7.1.1.2"
       - references: "PMID:27626371;PMID:12611891"
       - subsystem: "Oxidative phosphorylation"
       - confidence_score: 4
@@ -85251,7 +85243,7 @@
       - gene_reaction_rule: "ENSG00000115425 or ENSG00000116353 or ENSG00000169710"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "2.1.3.85"
+          - "2.3.1.85"
           - "1.3.1.39"
       - subsystem: "Fatty acid biosynthesis (even-chain)"
       - confidence_score: 0
@@ -88839,7 +88831,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:8847485"
       - subsystem: "Omega-3 fatty acid metabolism"
       - confidence_score: 0
@@ -88857,7 +88849,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:8847485"
       - subsystem: "Omega-3 fatty acid metabolism"
       - confidence_score: 0
@@ -90735,7 +90727,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:7929234;PMID:1326548"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -90828,7 +90820,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9837935;PMID:2377602;PMID:10224163"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -91705,7 +91697,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9837935;PMID:2377602;PMID:10224163"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -91723,7 +91715,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9837935;PMID:2377602;PMID:10224163"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -91792,7 +91784,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -91823,7 +91815,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -91853,7 +91845,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -91883,7 +91875,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -91914,7 +91906,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -91945,7 +91937,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -91967,7 +91959,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:3040745"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -91985,7 +91977,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:3040745"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -92396,7 +92388,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -92414,7 +92406,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -92432,7 +92424,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -92450,7 +92442,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -92468,7 +92460,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -92486,7 +92478,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -92679,7 +92671,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
     - !!omap
@@ -92697,7 +92689,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
     - !!omap
@@ -92715,7 +92707,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
     - !!omap
@@ -92844,7 +92836,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -92863,7 +92855,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -92881,7 +92873,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -92899,7 +92891,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9799565;PMID:9862787;PMID:11368003"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -93808,7 +93800,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9862787;PMID:8244977"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -93826,7 +93818,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9862787;PMID:8244977"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -93844,7 +93836,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9862787;PMID:8244977"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -93862,7 +93854,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9862787;PMID:8244977"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -93880,7 +93872,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9862787;PMID:8244977"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -93898,7 +93890,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:9862787;PMID:8244977"
       - subsystem: "Leukotriene metabolism"
       - confidence_score: 0
@@ -102159,7 +102151,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000060971 and ENSG00000167306"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.3.1.154"
+      - eccodes: "2.3.1.176"
       - references: "PMID:10706581;PMID:16685654"
       - subsystem: "Beta oxidation of phytanic acid (peroxisomal)"
       - confidence_score: 0
@@ -102296,7 +102288,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000060971 and ENSG00000167306"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.3.1.154"
+      - eccodes: "2.3.1.176"
       - references: "PMID:11060359;PMID:11060359"
       - subsystem: "Beta oxidation of phytanic acid (peroxisomal)"
       - confidence_score: 0
@@ -102755,7 +102747,6 @@
           - "1.3.8.8"
           - "1.3.8.9"
           - "1.3.99.-"
-          - "1.3.99.3"
       - references: "PMID:13295225;PMID:1540149;PMID:17603022;PMID:1774065;PMID:3597357;PMID:6240978;PMID:7876265"
       - subsystem: "Beta oxidation of even-chain fatty acids (mitochondrial)"
       - confidence_score: 0
@@ -106335,7 +106326,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148795"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.9"
+      - eccodes: "1.14.14.19"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106390,7 +106381,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106444,7 +106435,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000172817"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.100"
+      - eccodes: "1.14.14.29"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106462,7 +106453,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106552,7 +106543,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106570,7 +106561,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148795"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.9"
+      - eccodes: "1.14.14.19"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106588,7 +106579,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106622,7 +106613,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000128039 or ENSG00000145545 or ENSG00000277893"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.3.1.30"
+      - eccodes: "1.3.1.22"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106671,7 +106662,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - references: "PMID:12376740"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
@@ -106689,7 +106680,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - references: "PMID:3487786;PMID:3038528"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
@@ -106853,7 +106844,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106902,7 +106893,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106955,7 +106946,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148795"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.9"
+      - eccodes: "1.14.14.19"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106972,7 +106963,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148795"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.9"
+      - eccodes: "1.14.14.19"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -106990,7 +106981,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148795"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.9"
+      - eccodes: "1.14.14.19"
       - subsystem: "Steroid metabolism"
       - confidence_score: 0
     - !!omap
@@ -107457,7 +107448,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148795"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.9"
+      - eccodes: "1.14.14.19"
       - references: "PMID:10406467"
       - subsystem: "Androgen metabolism"
       - confidence_score: 0
@@ -107475,7 +107466,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148795"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.9"
+      - eccodes: "1.14.14.19"
       - subsystem: "Androgen metabolism"
       - confidence_score: 0
     - !!omap
@@ -107526,7 +107517,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148795"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "4.1.2.30"
+      - eccodes: "1.14.14.32"
       - references: "PMID:10406467;PMID:9536209"
       - subsystem: "Androgen metabolism"
       - confidence_score: 0
@@ -108085,7 +108076,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000104549"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.132"
+      - eccodes: "1.14.14.17"
       - references: "PMID:10666321;PMID:10484604;PMID:10666321;PMID:11108725;PMID:7946524;PMID:8993542"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
@@ -108117,7 +108108,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000001630"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.70"
+      - eccodes: "1.14.14.154"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
     - !!omap
@@ -108134,7 +108125,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000001630"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.70"
+      - eccodes: "1.14.14.154"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
     - !!omap
@@ -108152,7 +108143,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000001630"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.70"
+      - eccodes: "1.14.14.154"
       - references: "PMID:11111101"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
@@ -108188,7 +108179,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
     - !!omap
@@ -108205,7 +108196,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
     - !!omap
@@ -108222,7 +108213,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
     - !!omap
@@ -108290,7 +108281,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
     - !!omap
@@ -108307,7 +108298,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
     - !!omap
@@ -108324,7 +108315,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
     - !!omap
@@ -108388,7 +108379,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000109929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.21.6"
+      - eccodes: "1.14.19.20"
       - references: "PMID:12189593;PMID:12812989;PMID:11969204"
       - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
@@ -108457,7 +108448,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000109929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.21.6"
+      - eccodes: "1.14.19.20"
       - references: "PMID:11731337;PMID:7946524"
       - subsystem: "Cholesterol biosynthesis 2"
       - confidence_score: 0
@@ -108476,7 +108467,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000109929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.21.6"
+      - eccodes: "1.14.19.20"
       - references: "PMID:11731337;PMID:7946524"
       - subsystem: "Cholesterol biosynthesis 2"
       - confidence_score: 0
@@ -108527,7 +108518,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000001630"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.70"
+      - eccodes: "1.14.14.154"
       - subsystem: "Cholesterol biosynthesis 3 (Kandustch-Russell pathway)"
       - confidence_score: 0
     - !!omap
@@ -108544,7 +108535,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000001630"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.70"
+      - eccodes: "1.14.14.154"
       - subsystem: "Cholesterol biosynthesis 3 (Kandustch-Russell pathway)"
       - confidence_score: 0
     - !!omap
@@ -108561,7 +108552,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000001630"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.70"
+      - eccodes: "1.14.14.154"
       - subsystem: "Cholesterol biosynthesis 3 (Kandustch-Russell pathway)"
       - confidence_score: 0
     - !!omap
@@ -108594,7 +108585,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 3 (Kandustch-Russell pathway)"
       - confidence_score: 0
     - !!omap
@@ -108611,7 +108602,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 3 (Kandustch-Russell pathway)"
       - confidence_score: 0
     - !!omap
@@ -108628,7 +108619,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 3 (Kandustch-Russell pathway)"
       - confidence_score: 0
     - !!omap
@@ -108676,7 +108667,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 3 (Kandustch-Russell pathway)"
       - confidence_score: 0
     - !!omap
@@ -108693,7 +108684,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 3 (Kandustch-Russell pathway)"
       - confidence_score: 0
     - !!omap
@@ -108710,7 +108701,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802 or ENSG00000170271"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol biosynthesis 3 (Kandustch-Russell pathway)"
       - confidence_score: 0
     - !!omap
@@ -108846,7 +108837,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:11254748;PMID:12581873"
       - subsystem: "Cholesterol metabolism"
       - confidence_score: 0
@@ -109168,7 +109159,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:1449532;PMID:9380738;PMID:9380738;PMID:1449532;PMID:1449532;PMID:9380738;PMID:9380738;PMID:1449532"
       - subsystem: "Estrogen metabolism"
       - confidence_score: 0
@@ -109186,7 +109177,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:1449532;PMID:9380738;PMID:9380738;PMID:1449532;PMID:1449532;PMID:9380738;PMID:9380738;PMID:1449532"
       - subsystem: "Estrogen metabolism"
       - confidence_score: 0
@@ -109220,7 +109211,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9380738;PMID:1449532;PMID:9380738;PMID:9380738;PMID:9380738;PMID:1449532;PMID:1449532;PMID:1449532"
       - subsystem: "Estrogen metabolism"
       - confidence_score: 0
@@ -109238,7 +109229,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9380738;PMID:1449532;PMID:9380738;PMID:9380738;PMID:9380738;PMID:1449532;PMID:1449532;PMID:1449532"
       - subsystem: "Estrogen metabolism"
       - confidence_score: 0
@@ -109256,7 +109247,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9380738;PMID:1449532;PMID:9380738;PMID:9380738;PMID:9380738;PMID:1449532;PMID:1449532;PMID:1449532"
       - subsystem: "Estrogen metabolism"
       - confidence_score: 0
@@ -109326,7 +109317,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532"
       - subsystem: "Estrogen metabolism"
       - confidence_score: 0
@@ -109344,7 +109335,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532"
       - subsystem: "Estrogen metabolism"
       - confidence_score: 0
@@ -109362,7 +109353,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532"
       - subsystem: "Estrogen metabolism"
       - confidence_score: 0
@@ -113460,7 +113451,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -113505,7 +113496,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111728"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.8"
+      - eccodes: "2.4.3.8"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -113550,7 +113541,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -113567,7 +113558,7 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "2.4.99.-"
-          - "2.4.99.7"
+          - "2.4.3.7"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -113811,7 +113802,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115525"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.9"
+      - eccodes: "2.4.3.9"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -113871,7 +113862,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -113886,7 +113877,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -116552,7 +116543,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.19"
+      - eccodes: "1.14.19.77"
       - subsystem: "Glycerophospholipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -116816,7 +116807,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -116845,7 +116836,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115525"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.9"
+      - eccodes: "2.4.3.9"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -116891,7 +116882,7 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "2.4.99.-"
-          - "2.4.99.7"
+          - "2.4.3.7"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -116906,7 +116897,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115525"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.9"
+      - eccodes: "2.4.3.9"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -116993,7 +116984,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -117052,7 +117043,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111728"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.8"
+      - eccodes: "2.4.3.8"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -117097,7 +117088,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -117170,7 +117161,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000070731 or ENSG00000115525"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.9"
+      - eccodes: "2.4.3.9"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -117199,7 +117190,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111728"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.8"
+      - eccodes: "2.4.3.8"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -117214,7 +117205,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111728"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.8"
+      - eccodes: "2.4.3.8"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -117229,7 +117220,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111728"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.8"
+      - eccodes: "2.4.3.8"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -117244,7 +117235,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111728"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.8"
+      - eccodes: "2.4.3.8"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
     - !!omap
@@ -117260,7 +117251,7 @@
       - gene_reaction_rule: "ENSG00000101638 or ENSG00000111728"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "2.4.99.8"
+          - "2.4.3.8"
           - "2.4.99.-"
       - subsystem: "Glycosphingolipid biosynthesis-ganglio series"
       - confidence_score: 0
@@ -117450,7 +117441,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Glycosphingolipid biosynthesis-globo series"
       - confidence_score: 0
     - !!omap
@@ -117480,7 +117471,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111728"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.8"
+      - eccodes: "2.4.3.8"
       - subsystem: "Glycosphingolipid biosynthesis-globo series"
       - confidence_score: 0
     - !!omap
@@ -117524,7 +117515,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110080 or ENSG00000126091"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.6"
+      - eccodes: "2.4.3.6"
       - subsystem: "Glycosphingolipid biosynthesis-lacto and neolacto series"
       - confidence_score: 0
     - !!omap
@@ -117705,7 +117696,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000064225"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.10"
+      - eccodes: "2.4.3.6"
       - subsystem: "Glycosphingolipid biosynthesis-lacto and neolacto series"
       - confidence_score: 0
     - !!omap
@@ -117720,7 +117711,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111728"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.8"
+      - eccodes: "2.4.3.8"
       - subsystem: "Glycosphingolipid biosynthesis-lacto and neolacto series"
       - confidence_score: 0
     - !!omap
@@ -118244,7 +118235,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000064225"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.10"
+      - eccodes: "2.4.3.6"
       - subsystem: "Glycosphingolipid biosynthesis-lacto and neolacto series"
       - confidence_score: 0
     - !!omap
@@ -118517,7 +118508,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000174607"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.1.45"
+      - eccodes: "2.4.1.47"
       - references: "PMID:9125199;PMID:423891;PMID:423891;PMID:423891;PMID:9125199;PMID:9125199"
       - subsystem: "Glycosphingolipid metabolism"
       - confidence_score: 0
@@ -118534,7 +118525,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000174607"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.1.45"
+      - eccodes: "2.4.1.47"
       - references: "PMID:9125199;PMID:423891;PMID:423891;PMID:423891;PMID:9125199;PMID:9125199"
       - subsystem: "Glycosphingolipid metabolism"
       - confidence_score: 0
@@ -118551,7 +118542,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000174607"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.1.45"
+      - eccodes: "2.4.1.47"
       - references: "PMID:9125199;PMID:423891;PMID:423891;PMID:423891;PMID:9125199;PMID:9125199"
       - subsystem: "Glycosphingolipid metabolism"
       - confidence_score: 0
@@ -119088,7 +119079,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000148795"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.9"
+      - eccodes: "1.14.14.19"
       - references: "PMID:10406467"
       - subsystem: "Glucocorticoid biosynthesis"
       - confidence_score: 0
@@ -119142,7 +119133,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - references: "PMID:3487786;PMID:3038528"
       - subsystem: "Glucocorticoid biosynthesis"
       - confidence_score: 0
@@ -119199,7 +119190,7 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.14.15.4"
-          - "1.14.99.9"
+          - "1.14.14.19"
       - references: "PMID:10049998"
       - subsystem: "Glucocorticoid biosynthesis"
       - confidence_score: 0
@@ -120221,7 +120212,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000064763 or ENSG00000197601"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.2.1.2"
+      - eccodes: "1.17.1.9"
       - references: "PMID:15220348"
       - subsystem: "Ether lipid metabolism"
       - confidence_score: 0
@@ -122261,7 +122252,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110080 or ENSG00000126091"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.6"
+      - eccodes: "2.4.3.6"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122794,7 +122785,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -122968,7 +122959,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008513 or ENSG00000110080 or ENSG00000157350"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.4"
+      - eccodes: "2.4.3.4"
       - subsystem: "Keratan sulfate biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -124357,7 +124348,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000167910"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.17"
+      - eccodes: "1.14.14.23"
       - references: "PMID:1591235;PMID:2106520;PMID:7288293"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -124409,7 +124400,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000180432"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.95"
+      - eccodes: "1.14.14.139"
       - references: "PMID:1591235;PMID:6806291"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -124427,7 +124418,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000180432"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.95"
+      - eccodes: "1.14.14.139"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -124526,7 +124517,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1591235;PMID:271969;PMID:4026854;PMID:7077149"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -124544,7 +124535,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:2019602;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -124560,7 +124551,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1591235;PMID:6338006"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -124576,7 +124567,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -124591,7 +124582,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -124609,7 +124600,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1591235;PMID:5723340;PMID:5914340"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -124626,7 +124617,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -124642,7 +124633,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -124774,7 +124765,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000180432"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.95"
+      - eccodes: "1.14.14.139"
       - references: "PMID:12543708"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -124787,7 +124778,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000180432"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.95"
+      - eccodes: "1.14.14.139"
       - references: "PMID:12543708"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -125068,7 +125059,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:2019602;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125086,7 +125077,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:2019602;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125118,7 +125109,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125169,7 +125160,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125204,7 +125195,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125411,9 +125402,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000060971 or ENSG00000116171 or ENSG00000167306"
       - rxnFrom: "HMRdatabase"
-      - eccodes:
-          - "2.3.1.176"
-          - "2.3.1.154"
+      - eccodes: "2.3.1.176"
       - references: "PMID:1703300;PMID:10706581"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125604,7 +125593,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036530"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.98"
+      - eccodes: "1.14.14.25"
       - references: "PMID:14640697;PMID:10377398"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125622,7 +125611,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000146233"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.99"
+      - eccodes: "1.14.14.26"
       - references: "PMID:10748047"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125656,7 +125645,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000180432"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.95"
+      - eccodes: "1.14.14.139"
       - references: "PMID:10051404"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125760,7 +125749,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:2019602;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125778,7 +125767,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:2019602;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125796,7 +125785,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125814,7 +125803,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125831,7 +125820,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125848,7 +125837,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -125971,7 +125960,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:1708392"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126000,7 +125989,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000172817"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.100"
+      - eccodes: "1.14.14.29"
       - references: "PMID:10588945"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126034,7 +126023,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000180432"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.95"
+      - eccodes: "1.14.14.139"
       - references: "PMID:10051404"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126157,7 +126146,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000172817"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.100"
+      - eccodes: "1.14.14.29"
       - references: "PMID:10588945"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126295,7 +126284,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126312,7 +126301,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126330,7 +126319,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126346,7 +126335,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126403,7 +126392,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126437,7 +126426,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126489,7 +126478,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126503,7 +126492,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:9210654;PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126521,7 +126510,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:11454857;PMID:9931427;PMID:10706592"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126539,7 +126528,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - references: "PMID:11454857"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126573,7 +126562,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:10706592;PMID:11454857;PMID:9931427"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126591,7 +126580,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:11454857;PMID:9931427;PMID:10706592"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126609,7 +126598,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:11454857;PMID:9931427;PMID:10706592"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126627,7 +126616,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000167910"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.17"
+      - eccodes: "1.14.14.23"
       - references: "PMID:12393855;PMID:11344576"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126645,7 +126634,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000167910"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.17"
+      - eccodes: "1.14.14.23"
       - references: "PMID:12393855;PMID:11344576"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126755,7 +126744,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.97"
+      - eccodes: "1.14.14.57"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -126772,7 +126761,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000180432"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.95"
+      - eccodes: "1.14.14.139"
       - references: "PMID:11980911"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -126790,7 +126779,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000180432"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.95"
+      - eccodes: "1.14.14.139"
       - references: "PMID:11980911"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -128618,7 +128607,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110080 or ENSG00000126091"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.6"
+      - eccodes: "2.4.3.6"
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -128662,7 +128651,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000064225"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.10"
+      - eccodes: "2.4.3.6"
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -128782,7 +128771,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000064225"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.99.10"
+      - eccodes: "2.4.3.6"
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -128898,7 +128887,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000147813"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.2.11"
+      - eccodes: "6.3.4.21"
       - references: "PMID:17604275"
       - subsystem: "Nicotinate and nicotinamide metabolism"
       - confidence_score: 0
@@ -129134,7 +129123,7 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.6.1.1"
-          - "1.6.1.2"
+          - "7.1.1.1"
       - references: "PMID:10216162;PMID:12223207"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -133029,7 +133018,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000100292 or ENSG00000103415"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.3"
+      - eccodes: "1.14.14.18"
       - subsystem: "Porphyrin metabolism"
       - confidence_score: 0
     - !!omap
@@ -135239,7 +135228,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000186104"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.159"
+      - eccodes: "1.14.14.24"
       - references: "PMID:15465040;PMID:7937829"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
@@ -135277,7 +135266,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000081479 and ENSG00000107611 and ENSG00000111012 and ENSG00000145321"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.13"
+      - eccodes: "1.14.15.18"
       - references: "PMID:11856765;PMID:12855575"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
@@ -135427,7 +135416,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.126"
+      - eccodes: "1.14.15.16"
       - references: "PMID:12466393;PMID:12485911"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
@@ -135445,7 +135434,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.126"
+      - eccodes: "1.14.15.16"
       - references: "PMID:12466393;PMID:12485911"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
@@ -135463,7 +135452,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.126"
+      - eccodes: "1.14.15.16"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -135480,7 +135469,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.126"
+      - eccodes: "1.14.15.16"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -135567,7 +135556,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -135584,7 +135573,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.126"
+      - eccodes: "1.14.15.16"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -135734,7 +135723,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -135752,7 +135741,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -135770,7 +135759,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:10191290;PMID:11997390;PMID:12368403;PMID:11997390;PMID:12368403;PMID:10191290"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -135788,7 +135777,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:10191290;PMID:11997390;PMID:12368403;PMID:11997390;PMID:12368403;PMID:10191290"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -135813,7 +135802,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -135927,7 +135916,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -135949,7 +135938,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -135967,7 +135956,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -135985,7 +135974,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136003,7 +135992,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136080,7 +136069,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -136142,7 +136131,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -136237,7 +136226,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136255,7 +136244,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136273,7 +136262,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136291,7 +136280,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136339,7 +136328,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -136370,7 +136359,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -136401,7 +136390,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -136423,7 +136412,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136457,7 +136446,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136475,7 +136464,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136493,7 +136482,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136541,7 +136530,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -136572,7 +136561,7 @@
       - eccodes:
           - "1.1.1.35"
           - "1.3.3.6"
-          - "2.3.1.154"
+          - "2.3.1.176"
           - "2.3.1.16"
           - "3.1.2.2"
           - "4.2.1.17"
@@ -138541,7 +138530,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000138109 or ENSG00000165841"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.80"
+      - eccodes: "1.14.14.53"
       - subsystem: "Xenobiotics metabolism"
       - confidence_score: 0
     - !!omap
@@ -139197,7 +139186,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036672 or ENSG00000048028 or ENSG00000055483 or ENSG00000058056 or ENSG00000068308 or ENSG00000077254 or ENSG00000083799 or ENSG00000085982 or ENSG00000090686 or ENSG00000101557 or ENSG00000102226 or ENSG00000103194 or ENSG00000103404 or ENSG00000106346 or ENSG00000109189 or ENSG00000111667 or ENSG00000114316 or ENSG00000114374 or ENSG00000115464 or ENSG00000118369 or ENSG00000123552 or ENSG00000124356 or ENSG00000124422 or ENSG00000124486 or ENSG00000129204 or ENSG00000131864 or ENSG00000134588 or ENSG00000135093 or ENSG00000135655 or ENSG00000135913 or ENSG00000136014 or ENSG00000136878 or ENSG00000138134 or ENSG00000138592 or ENSG00000140455 or ENSG00000143258 or ENSG00000152484 or ENSG00000154914 or ENSG00000155313 or ENSG00000156256 or ENSG00000161133 or ENSG00000162402 or ENSG00000162607 or ENSG00000164663 or ENSG00000170185 or ENSG00000170242 or ENSG00000170832 or ENSG00000172046 or ENSG00000184979 or ENSG00000187555 or ENSG00000223443 or ENSG00000227140 or ENSG00000228856 or ENSG00000229579 or ENSG00000230430 or ENSG00000231051 or ENSG00000231637 or ENSG00000232264 or ENSG00000235780 or ENSG00000247746 or ENSG00000248933 or ENSG00000273820"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.1.2.15"
+      - eccodes: "3.4.19.12"
       - subsystem: "Isolated"
       - confidence_score: 0
     - !!omap
@@ -139915,7 +139904,7 @@
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.6.5.2"
-          - "1.10.99.2"
+          - "1.10.5.1"
       - subsystem: "Isolated"
       - confidence_score: 0
     - !!omap
@@ -139931,7 +139920,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000167397"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.1.4.1"
+      - eccodes: "1.17.4.4"
       - subsystem: "Isolated"
       - confidence_score: 0
     - !!omap
@@ -140331,7 +140320,6 @@
       - gene_reaction_rule: "ENSG00000002726 or ENSG00000131471 or ENSG00000131480"
       - rxnFrom: "HMRdatabase"
       - eccodes:
-          - "1.4.3.6"
           - "1.4.3.21"
           - "1.4.3.22"
       - subsystem: "Isolated"
@@ -159693,7 +159681,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000017260 or ENSG00000058668 or ENSG00000064270 or ENSG00000067842 or ENSG00000070961 or ENSG00000074370 or ENSG00000157087 or ENSG00000174437 or ENSG00000196296"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.6.3.8"
+      - eccodes: "7.2.2.10"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -162104,7 +162092,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000105675 and ENSG00000186009) or (ENSG00000075673 and ENSG00000186009)"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.6.3.10"
+      - eccodes: "7.2.2.19"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -164072,7 +164060,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.126"
+      - eccodes: "1.14.15.16"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -178418,7 +178406,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111275 or ENSG00000137124"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - references: "PMID:11306106"
       - subsystem: "Tryptophan metabolism"
       - confidence_score: 0
@@ -178820,7 +178808,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "((ENSG00000071553 and ENSG00000105929 and ENSG00000113732 and ENSG00000117410 and ENSG00000147614 and ENSG00000185883) or (ENSG00000071553 and ENSG00000113732 and ENSG00000117410 and ENSG00000147614 and ENSG00000185344 and ENSG00000185883) or (ENSG00000071553 and ENSG00000105929 and ENSG00000113732 and ENSG00000117410 and ENSG00000159720 and ENSG00000185883) or (ENSG00000033627 and ENSG00000071553 and ENSG00000113732 and ENSG00000117410 and ENSG00000147614 and ENSG00000185883) or (ENSG00000033627 and ENSG00000071553 and ENSG00000113732 and ENSG00000117410 and ENSG00000159720 and ENSG00000185883) or (ENSG00000071553 and ENSG00000110719 and ENSG00000113732 and ENSG00000117410 and ENSG00000159720 and ENSG00000185883) or (ENSG00000071553 and ENSG00000113732 and ENSG00000117410 and ENSG00000159720 and ENSG00000185344 and ENSG00000185883) or (ENSG00000071553 and ENSG00000110719 and ENSG00000113732 and ENSG00000117410 and ENSG00000147614 and ENSG00000185883)) and ((ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000136888 and ENSG00000147416 and ENSG00000155097 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000136888 and ENSG00000155097 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000136888 and ENSG00000143882 and ENSG00000147416 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000131100 and ENSG00000136888 and ENSG00000147416 and ENSG00000155097) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000131100 and ENSG00000136888 and ENSG00000155097) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000147416 and ENSG00000155097 and ENSG00000213760 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000143882 and ENSG00000147416 and ENSG00000213760 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000131100 and ENSG00000147416 and ENSG00000155097 and ENSG00000213760) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000131100 and ENSG00000151418 and ENSG00000155097) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000143882 and ENSG00000147416 and ENSG00000151418 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000131100 and ENSG00000143882 and ENSG00000213760) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000143882 and ENSG00000213760 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000131100 and ENSG00000155097 and ENSG00000213760) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000147416 and ENSG00000151418 and ENSG00000155097 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000131100 and ENSG00000147416 and ENSG00000151418 and ENSG00000155097) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000155097 and ENSG00000213760 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000151418 and ENSG00000155097 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000131100 and ENSG00000143882 and ENSG00000147416 and ENSG00000151418) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000131100 and ENSG00000143882 and ENSG00000147416 and ENSG00000213760) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000131100 and ENSG00000143882 and ENSG00000151418) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000143882 and ENSG00000151418 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000136888 and ENSG00000143882 and ENSG00000250565) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000116039 and ENSG00000128524 and ENSG00000131100 and ENSG00000136888 and ENSG00000143882) or (ENSG00000047249 and ENSG00000100554 and ENSG00000114573 and ENSG00000128524 and ENSG00000131100 and ENSG00000136888 and ENSG00000143882 and ENSG00000147416))"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.14"
+      - eccodes: "7.1.2.2"
       - references: "PMID:10224039;PMID:12628346;PMID:33065002"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -178951,7 +178939,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111275 or ENSG00000137124"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - subsystem: "Beta-alanine metabolism"
       - confidence_score: 0
     - !!omap
@@ -179397,7 +179385,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000058668 or ENSG00000067842 or ENSG00000070961 or ENSG00000157087"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.6"
+      - eccodes: "7.1.2.1"
       - references: "PMID:7876199;PMID:8396145"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -179854,7 +179842,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000134824"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.99.25"
+      - eccodes: "1.14.19.3"
       - subsystem: "Fatty acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -179890,7 +179878,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000134824"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.99.25"
+      - eccodes: "1.14.19.3"
       - subsystem: "Fatty acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -179908,7 +179896,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000134824 or ENSG00000149485"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.99.25"
+      - eccodes: "1.14.19.3"
       - subsystem: "Fatty acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -181264,7 +181252,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000117054"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.3"
+      - eccodes: "1.3.8.7"
       - references: "PMID:9819701"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -181285,7 +181273,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000117054 or ENSG00000122971"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.3"
+      - eccodes: "1.3.8.7"
       - references: "PMID:2565344"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -181307,7 +181295,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000117054 or ENSG00000122971"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.3"
+      - eccodes: "1.3.8.7"
       - references: "PMID:2565344"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -181328,7 +181316,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000117054 or ENSG00000122971"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.3"
+      - eccodes: "1.3.8.7"
       - references: "PMID:2565344;PMID:3035565"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -181434,7 +181422,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000117054"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.3"
+      - eccodes: "1.3.8.7"
       - references: "PMID:2565344"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -181707,7 +181695,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000117054 or ENSG00000122971"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.3"
+      - eccodes: "1.3.8.7"
       - references: "PMID:2565344;PMID:3035565"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -182335,9 +182323,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115159"
       - rxnFrom: "Recon3D"
-      - eccodes:
-          - "1.1.5.3"
-          - "1.1.99.5"
+      - eccodes: "1.1.5.3"
       - references: "PMID:11955283;PMID:2115809;PMID:2923620;PMID:3338458;PMID:340460;PMID:8401296;PMID:8549872;PMID:8579375;PMID:9171333;PMID:9244403;PMID:9559543;PMID:11385633"
       - subsystem: "Glycolysis / Gluconeogenesis"
       - confidence_score: 0
@@ -182494,7 +182480,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111275 or ENSG00000137124 or ENSG00000159423"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - references: "PMID:3779687"
       - subsystem: "Vitamin C metabolism"
       - confidence_score: 0
@@ -182734,7 +182720,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000075673 and ENSG00000186009"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.10"
+      - eccodes: "7.2.2.19"
       - references: "PMID:2160952;PMID:7900835"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -182800,7 +182786,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000100292 or ENSG00000103415"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.99.3"
+      - eccodes: "1.14.14.18"
       - references: "PMID:16356137"
       - subsystem: "Heme degradation"
       - confidence_score: 0
@@ -183274,7 +183260,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000109929"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.3.2"
+      - eccodes: "1.14.19.20"
       - references: "PMID:10344195"
       - subsystem: "Cholesterol metabolism"
       - confidence_score: 0
@@ -183293,7 +183279,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000109929 or ENSG00000167910"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.3.2"
+      - eccodes: "1.14.19.20"
       - references: "PMID:10344195"
       - subsystem: "Cholesterol metabolism"
       - confidence_score: 0
@@ -183437,7 +183423,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111275 or ENSG00000137124 or ENSG00000159423"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
@@ -183729,7 +183715,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -183747,7 +183733,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000146233"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.15"
+      - eccodes: "1.14.15.15"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -183868,7 +183854,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000206190"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:10856717;PMID:11353404"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -183946,7 +183932,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000124406 or ENSG00000206190"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:10198212;PMID:10856717;PMID:11353404"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -183965,7 +183951,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000124406 or ENSG00000206190"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:10198212;PMID:10856717;PMID:11353404"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -184334,7 +184320,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.5.99.8"
+      - eccodes: "1.5.5.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -184526,7 +184512,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.5.1.12"
+      - eccodes: "1.2.1.88"
       - references: "PMID:1503811"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -184659,7 +184645,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000104549"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.99.7"
+      - eccodes: "1.14.14.17"
       - references: "PMID:1964954"
       - subsystem: "Cholesterol metabolism"
       - confidence_score: 0
@@ -184690,7 +184676,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "2.4.99.7"
+      - eccodes: "2.4.3.7"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -184703,7 +184689,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000178537"
       - rxnFrom: "Recon3D"
-      - eccodes: "2.4.99.7"
+      - eccodes: "2.4.3.7"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
@@ -185553,7 +185539,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000125877"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.1.19"
+      - eccodes: "3.6.1.9"
       - references: "PMID:15652174;PMID:16752921;PMID:17095758"
       - subsystem: "Pyrimidine metabolism"
       - confidence_score: 0
@@ -185953,7 +185939,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000001630"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.70"
+      - eccodes: "1.14.14.154"
       - references: "PMID:11969204;PMID:7946524"
       - subsystem: "Cholesterol metabolism"
       - confidence_score: 0
@@ -186331,7 +186317,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.72"
+      - eccodes: "1.14.18.9"
       - references: "PMID:14653780;PMID:6299366;PMID:7430141"
       - subsystem: "Cholesterol metabolism"
       - confidence_score: 0
@@ -188343,7 +188329,7 @@
       - gene_reaction_rule: "ENSG00000087008 or ENSG00000161533"
       - rxnFrom: "Recon3D;HMRdatabase"
       - eccodes:
-          - "1.3.99.13"
+          - "1.3.8.8"
           - "1.3.3.6"
       - references: "PMID:10407780;PMID:11356167;PMID:8973539"
       - subsystem: "Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)"
@@ -188360,7 +188346,7 @@
       - gene_reaction_rule: "ENSG00000087008 or ENSG00000161533"
       - rxnFrom: "Recon3D;HMRdatabase"
       - eccodes:
-          - "1.3.99.13"
+          - "1.3.8.8"
           - "1.3.3.6"
       - references: "PMID:10407780;PMID:11356167;PMID:8973539"
       - subsystem: "Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)"
@@ -188377,7 +188363,7 @@
       - gene_reaction_rule: "ENSG00000087008 or ENSG00000161533"
       - rxnFrom: "Recon3D;HMRdatabase"
       - eccodes:
-          - "1.3.99.13"
+          - "1.3.8.8"
           - "1.3.3.6"
       - references: "PMID:10407780;PMID:11356167;PMID:8973539"
       - subsystem: "Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)"
@@ -188393,7 +188379,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000087008 or ENSG00000161533"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.13"
+      - eccodes: "1.3.8.8"
       - references: "PMID:10407780;PMID:11356167;PMID:8973539;PMID:18536048;PMID:17458872"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -188506,7 +188492,12 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.5.3.11"
+      - eccodes:
+          - "1.5.3.13"
+          - "1.5.3.14"
+          - "1.5.3.15"
+          - "1.5.3.16"
+          - "1.5.3.17"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188522,7 +188513,12 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.5.3.11"
+      - eccodes:
+          - "1.5.3.13"
+          - "1.5.3.14"
+          - "1.5.3.15"
+          - "1.5.3.16"
+          - "1.5.3.17"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188540,7 +188536,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:10706592;PMID:11454857;PMID:9931427"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188573,7 +188569,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188591,7 +188587,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:10706592;PMID:11454857;PMID:9931427"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188625,7 +188621,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:10706592;PMID:11454857;PMID:9931427"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188643,7 +188639,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:10706592;PMID:11454857;PMID:9931427"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188721,7 +188717,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188755,7 +188751,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "2.3.1.154"
+      - eccodes: "2.3.1.176"
       - references: "PMID:10706581"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188773,7 +188769,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000116171"
       - rxnFrom: "Recon3D"
-      - eccodes: "2.3.1.154"
+      - eccodes: "2.3.1.176"
       - references: "PMID:10706581"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -188791,7 +188787,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000116171"
       - rxnFrom: "Recon3D"
-      - eccodes: "2.3.1.154"
+      - eccodes: "2.3.1.176"
       - references: "PMID:10706581"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -189016,7 +189012,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000231852"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.99.10"
+      - eccodes: "1.14.14.16"
       - references: "PMID:12376740"
       - subsystem: "Miscellaneous"
       - confidence_score: 0
@@ -189355,7 +189351,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9586962"
       - subsystem: "Miscellaneous"
       - confidence_score: 0
@@ -189375,7 +189371,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9586962"
       - subsystem: "Miscellaneous"
       - confidence_score: 0
@@ -189663,7 +189659,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.67"
+      - eccodes: "1.14.14.55"
       - references: "PMID:9660774"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -190047,7 +190043,9 @@
       - gene_reaction_rule: "ENSG00000087008 or ENSG00000161533"
       - rxnFrom: "Recon3D;HMRdatabase"
       - eccodes:
-          - "1.3.99.3"
+          - "1.3.8.7"
+          - "1.3.8.8"
+          - "1.3.8.9"
           - "1.3.3.6"
       - references: "PMID:1047780;PMID:11135616;PMID:8973539"
       - subsystem: "Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)"
@@ -190064,7 +190062,9 @@
       - gene_reaction_rule: "ENSG00000087008 or ENSG00000161533"
       - rxnFrom: "Recon3D;HMRdatabase"
       - eccodes:
-          - "1.3.99.3"
+          - "1.3.8.7"
+          - "1.3.8.8"
+          - "1.3.8.9"
           - "1.3.3.6"
       - references: "PMID:1047780;PMID:11135616;PMID:8973539"
       - subsystem: "Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)"
@@ -190080,7 +190080,10 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115361"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.3"
+      - eccodes:
+          - "1.3.8.7"
+          - "1.3.8.8"
+          - "1.3.8.9"
       - references: "PMID:1047780;PMID:11135616;PMID:8973539"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -190095,7 +190098,10 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000087008 or ENSG00000161533"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.3.99.3"
+      - eccodes:
+          - "1.3.8.7"
+          - "1.3.8.8"
+          - "1.3.8.9"
       - references: "PMID:1047780;PMID:11135616;PMID:8973539"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -190544,7 +190550,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:11356164"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
@@ -192238,7 +192244,10 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.5.1.29"
+      - eccodes:
+          - "1.5.1.38"
+          - "1.5.1.39"
+          - "1.5.1.41"
       - references: "PMID:11786541;PMID:8521498"
       - subsystem: "Eicosanoid metabolism"
       - confidence_score: 0
@@ -192267,7 +192276,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:8244977;PMID:9862787"
       - subsystem: "Eicosanoid metabolism"
       - confidence_score: 0
@@ -192286,7 +192295,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171954 or ENSG00000186115 or ENSG00000186529"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:8244977;PMID:9862787"
       - subsystem: "Eicosanoid metabolism"
       - confidence_score: 0
@@ -192499,7 +192508,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171954 or ENSG00000186115 or ENSG00000186529"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:1326548;PMID:7929234"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -192642,7 +192651,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:10224163;PMID:2377602;PMID:9837935"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -192661,7 +192670,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171954 or ENSG00000186115 or ENSG00000186529"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:10224163;PMID:2377602;PMID:9837935"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -192674,7 +192683,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.30"
+      - eccodes: "1.14.14.94"
       - references: "PMID:479166"
       - subsystem: "Miscellaneous"
       - confidence_score: 0
@@ -221414,8 +221423,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221568,8 +221577,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221583,8 +221592,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:8145081;PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221640,8 +221649,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221661,8 +221670,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221682,8 +221691,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221703,8 +221712,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221724,8 +221733,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221745,8 +221754,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221766,8 +221775,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221787,8 +221796,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221808,8 +221817,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221829,8 +221838,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221850,8 +221859,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221871,8 +221880,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221892,8 +221901,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221913,8 +221922,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221934,8 +221943,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221955,8 +221964,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221976,8 +221985,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -221997,8 +222006,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222018,8 +222027,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222039,8 +222048,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222060,8 +222069,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222081,8 +222090,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222102,8 +222111,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222123,8 +222132,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222144,8 +222153,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222165,8 +222174,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222185,7 +222194,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222204,7 +222213,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222223,7 +222232,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222242,7 +222251,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222261,7 +222270,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222280,7 +222289,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222299,7 +222308,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222318,7 +222327,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222337,7 +222346,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222356,7 +222365,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222375,7 +222384,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222394,7 +222403,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222413,7 +222422,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222432,7 +222441,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222452,8 +222461,8 @@
       - gene_reaction_rule: "ENSG00000005471 or ENSG00000081923 or ENSG00000143515 or ENSG00000165029 or ENSG00000206190"
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:9070263;PMID:11355874;PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222472,7 +222481,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000068650 or ENSG00000101974"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:25947375"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222496,7 +222505,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:11581500;PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222509,7 +222518,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:11581500;PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222522,7 +222531,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:11581500;PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222535,7 +222544,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:11581500;PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222548,7 +222557,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:11581500;PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222563,7 +222572,7 @@
       - rxnFrom: "Recon3D"
       - eccodes:
           - "2.3.1.13"
-          - "3.6.3.1"
+          - "7.6.2.1"
       - references: "PMID:11581500;PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222731,7 +222740,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -222840,8 +222849,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222903,8 +222912,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222918,8 +222927,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222933,8 +222942,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222948,8 +222957,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222963,8 +222972,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222978,8 +222987,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -222993,8 +223002,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223008,8 +223017,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223023,8 +223032,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223038,8 +223047,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223053,8 +223062,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223068,8 +223077,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223083,8 +223092,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223098,8 +223107,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223113,8 +223122,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223128,8 +223137,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223143,8 +223152,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223158,8 +223167,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223173,8 +223182,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223188,8 +223197,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223203,8 +223212,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223218,8 +223227,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223233,8 +223242,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223248,8 +223257,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223263,8 +223272,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223278,8 +223287,8 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - eccodes:
-          - "3.6.3.44"
-          - "3.6.3.1"
+          - "7.6.2.2"
+          - "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223292,7 +223301,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223305,7 +223314,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223318,7 +223327,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.1"
+      - eccodes: "7.6.2.1"
       - references: "PMID:10856719"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -223337,7 +223346,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223355,7 +223364,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223373,7 +223382,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223391,7 +223400,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223409,7 +223418,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223427,7 +223436,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223445,7 +223454,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223463,7 +223472,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223481,7 +223490,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223499,7 +223508,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223517,7 +223526,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223535,7 +223544,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223553,7 +223562,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223571,7 +223580,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223589,7 +223598,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223607,7 +223616,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223625,7 +223634,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223637,7 +223646,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -224354,7 +224363,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000103375"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:15948717"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224373,7 +224382,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000023839"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:19656454"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224408,7 +224417,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:17121932"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224436,7 +224445,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000155380"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:15686408"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224463,7 +224472,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000146477"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:12883891;PMID:16648665"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224490,7 +224499,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000112499"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:17460754"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224524,7 +224533,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000118777"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:20705604"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224555,7 +224564,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000164638"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:16099839"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224586,7 +224595,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000164638"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:26376205"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224620,7 +224629,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000103222 or ENSG00000125257"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:18353444;PMID:23945567"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224657,7 +224666,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000103222 or ENSG00000125257"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:18353444;PMID:23945567"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224694,7 +224703,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000103222 or ENSG00000125257"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:12835412;PMID:18353444"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224725,7 +224734,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111700 or ENSG00000134538 or ENSG00000137491"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:26383540"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224757,7 +224766,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110195 or ENSG00000110203 or ENSG00000165457"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:21568705"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -224788,7 +224797,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000103222 or ENSG00000165029"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -224817,7 +224826,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000155465 and ENSG00000168003"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -224845,7 +224854,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000112499 or ENSG00000146477 or ENSG00000175003"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:16722235"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -227114,7 +227123,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -227142,7 +227151,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:8640791"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -227185,7 +227194,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000017797 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:9164836"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -227409,7 +227418,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000017797 or ENSG00000103222"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -228872,7 +228881,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.97"
+      - eccodes: "1.14.14.57"
       - references: "PMID:15708356 ;PMID:17263554"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -228891,7 +228900,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.97"
+      - eccodes: "1.14.14.57"
       - references: "PMID:15708356 ;PMID:17263554"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -229024,7 +229033,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.97"
+      - eccodes: "1.14.14.57"
       - references: "PMID:15708356 ;PMID:17263554"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -229091,7 +229100,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.97"
+      - eccodes: "1.14.14.57"
       - references: "PMID:15708356 ;PMID:17263554"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -229484,7 +229493,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.97"
+      - eccodes: "1.14.14.57"
       - references: "PMID:10216279;PMID:17263554"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -230953,7 +230962,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000160868"
       - rxnFrom: "Recon3D"
-      - eccodes: "1.14.13.97"
+      - eccodes: "1.14.14.57"
       - references: "PMID:10216279;PMID:17263554"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -232318,7 +232327,7 @@
       - rxnFrom: "Recon3D"
       - eccodes:
           - "1.14.13.-"
-          - "1.14.13.30"
+          - "1.14.14.94"
       - references: "PMID:9929499;PMID:1680649;PMID:9804052;PMID:11192473"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -233705,7 +233714,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:16930294;PMID:20955690"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -234554,7 +234563,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:10751037;PMID:15616150"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -234692,7 +234701,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:15616150"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -234912,7 +234921,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563 or ENSG00000118777"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:20103563"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -235218,7 +235227,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:20103563"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -237614,7 +237623,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:20103563"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -237852,7 +237861,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:20103563"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -237977,7 +237986,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:20103563"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -238033,7 +238042,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:12751631"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -238899,7 +238908,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000085563"
       - rxnFrom: "Recon3D"
-      - eccodes: "3.6.3.44"
+      - eccodes: "7.6.2.2"
       - references: "PMID:15616150"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
