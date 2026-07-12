@@ -25,8 +25,7 @@ jobs:
           ## Return non-zero exit code on warnings as well as errors
           # strict: # optional, default is false
 
-      - name: Basic MEMOTE tests
-        run: python code/test/memoteTest.py
-
-      - name: Test import with cobrapy and consistency with annotation files
-        run: python code/test/sanityCheck.py
+      # The former semantic checks here (cobra load, model<->annotation consistency,
+      # duplicate/empty reactions) were consolidated into code/test/qcModelChecks.py,
+      # which runs in the Model QC checks workflow and writes a detailed CSV plus a
+      # pull-request comment for each finding.

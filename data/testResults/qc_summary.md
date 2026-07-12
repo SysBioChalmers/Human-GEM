@@ -16,5 +16,5 @@ Starting duplicate test...
 #### Mass and charge balance
 
 ```
-Unbalanced reactions (excluding boundary and biomass): 277 (87 mass, 240 charge)
+Unbalanced reactions (excluding boundary and biomass): 277 (87 mass, 240 charge, 0 could not be checked)
 ```
