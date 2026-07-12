@@ -59312,19 +59312,19 @@
       - id: "MAM01019r"
       - name: "4-nitrocatechol"
       - compartment: "r"
-      - formula: "C6H4NO4"
+      - formula: "C6H5NO4"
       - charge: 0
     - !!omap
       - id: "MAM02754r"
       - name: "PNP"
       - compartment: "r"
-      - formula: "C6H4NO3"
+      - formula: "C6H5NO3"
       - charge: 0
     - !!omap
       - id: "MAM01019i"
       - name: "4-nitrocatechol"
       - compartment: "i"
-      - formula: "C6H4NO4"
+      - formula: "C6H5NO4"
       - charge: 0
     - !!omap
       - id: "MAM02555i"
@@ -59336,7 +59336,7 @@
       - id: "MAM02754i"
       - name: "PNP"
       - compartment: "i"
-      - formula: "C6H4NO3"
+      - formula: "C6H5NO3"
       - charge: 0
     - !!omap
       - id: "MAM02554i"
