@@ -8,6 +8,11 @@ on:
   # Allow running the (long) gene-essentiality check on demand, e.g. to validate a
   # model-building change without waiting for a pull-request trigger.
   workflow_dispatch:
+    inputs:
+      diagnose:
+        description: "Time Step-1a per task (bounded diagnostic) instead of the full run"
+        type: boolean
+        default: false
 
 jobs:
   gene-essentiality:
@@ -53,7 +58,15 @@ jobs:
 
       - name: Run gene essentiality
         id: essentiality
+        env:
+          DIAGNOSE: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnose }}
         run: |
+          if [ "$DIAGNOSE" = "true" ]; then
+            echo "Running the bounded Step-1a per-task diagnostic."
+            timeout 2400 python code/test/diagnoseTaskEssential.py \
+              || echo "::warning::diagnostic ended (wall-clock cap or error)"
+            exit 0
+          fi
           python code/test/geneEssentiality.py
           cat data/testResults/gene-essential_summary.md
           # Pass the Markdown summary through as a multiline step output so it
