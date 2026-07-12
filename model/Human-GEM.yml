@@ -39008,7 +39008,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03419c"
-      - name: "Lysophosphatidic Acid"
+      - name: "lysophosphatidic acid"
       - compartment: "c"
       - formula: "C3H6O5PRCO2"
       - charge: -2
@@ -39102,7 +39102,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03791c"
-      - name: "11-Octadecenoyl Coenzyme A"
+      - name: "11-octadecenoyl-CoA"
       - compartment: "c"
       - formula: "C39H64N7O17P3S"
       - charge: -4
@@ -39138,7 +39138,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03548x"
-      - name: "Chenodeoxyglycocholoyl Coenzyme A"
+      - name: "chenodeoxyglycocholoyl-CoA"
       - compartment: "x"
       - formula: "C45H70N7O19P3S"
       - charge: -4
@@ -39341,7 +39341,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03554x"
-      - name: "4,8-Dimethylnonanoyl Coenzyme A"
+      - name: "4,8-dimethylnonanoyl-CoA"
       - compartment: "x"
       - formula: "C32H52N7O17P3S"
       - charge: -4
@@ -39486,14 +39486,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03553m"
-      - name: "2,6-Dimethylheptanoyl Coenzyme A"
+      - name: "2,6-dimethylheptanoyl-CoA"
       - compartment: "m"
       - formula: "C30H48N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03554m"
-      - name: "4,8-Dimethylnonanoyl Coenzyme A"
+      - name: "4,8-dimethylnonanoyl-CoA"
       - compartment: "m"
       - formula: "C32H52N7O17P3S"
       - charge: -4
@@ -39593,7 +39593,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03315e"
-      - name: "Fatty Acid 9-Cis-Retinol"
+      - name: "fatty acid 9-cis-retinol"
       - compartment: "e"
       - formula: "C21H29O2R"
       - charge: 0
@@ -39696,14 +39696,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03968c"
-      - name: "Cis-Tetradec-7-Enoyl-[Acyl-Carrier Protein] (N-C14:1)"
+      - name: "cis-tetradec-7-enoyl-[ACP] (N-C14:1)"
       - compartment: "c"
       - formula: "C25H45N2O8PRS"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03646c"
-      - name: "Cis-Hexadec-9-Enoyl-[Acyl-Carrier Protein] (N-C16:1)"
+      - name: "cis-hexadec-9-enoyl-[ACP] (N-C16:1)"
       - compartment: "c"
       - formula: "C27H49N2O8PRS"
       - charge: -1
@@ -39717,21 +39717,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03795c"
-      - name: "Cis-Octadec-11-Enoyl-[Acyl-Carrier Protein] (N-C18:1)"
+      - name: "cis-octadec-11-enoyl-[ACP] (N-C18:1)"
       - compartment: "c"
       - formula: "C29H53N2O8PRS"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03726c"
-      - name: "Linoleic Acid ACP (All Cis)"
+      - name: "linoleic acid ACP (all cis)"
       - compartment: "c"
       - formula: "C29H51N2O8PRS"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03725c"
-      - name: "Linoelaidic Acid ACP (All Trans)"
+      - name: "linoelaidic acid ACP (all trans)"
       - compartment: "c"
       - formula: "C29H51N2O8PRS"
       - charge: -1
@@ -39773,14 +39773,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03887c"
-      - name: "Pristanoyl Coenzyme A"
+      - name: "pristanoyl-CoA"
       - compartment: "c"
       - formula: "C40H68N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03791m"
-      - name: "11-Octadecenoyl Coenzyme A"
+      - name: "11-octadecenoyl-CoA"
       - compartment: "m"
       - formula: "C39H64N7O17P3S"
       - charge: -4
@@ -40015,7 +40015,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03315c"
-      - name: "Fatty Acid 9-Cis-Retinol"
+      - name: "fatty acid 9-cis-retinol"
       - compartment: "c"
       - formula: "C21H29O2R"
       - charge: 0
@@ -40161,14 +40161,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03850r"
-      - name: "Pseudoecgonyl Coenzyme A"
+      - name: "pseudoecgonyl-CoA"
       - compartment: "r"
       - formula: "C30H46N8O18P3S"
       - charge: -3
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03887x"
-      - name: "Pristanoyl Coenzyme A"
+      - name: "pristanoyl-CoA"
       - compartment: "x"
       - formula: "C40H68N7O17P3S"
       - charge: -4
@@ -40658,7 +40658,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03326m"
-      - name: "3-Oxolaur-Cis-5-Enoyl Coenzyme A"
+      - name: "3-oxolaur-cis-5-enoyl-CoA"
       - compartment: "m"
       - formula: "C33H50N7O18P3S"
       - charge: -4
@@ -41125,7 +41125,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03330c"
-      - name: "Cyanosulfurous Acid Anion"
+      - name: "cyanosulfurous acid anion"
       - compartment: "c"
       - formula: "CH2NO2S"
       - charge: 0
@@ -41140,7 +41140,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03330e"
-      - name: "Cyanosulfurous Acid Anion"
+      - name: "cyanosulfurous acid anion"
       - compartment: "e"
       - formula: "CH2NO2S"
       - charge: 0
@@ -41162,7 +41162,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03330l"
-      - name: "Cyanosulfurous Acid Anion"
+      - name: "cyanosulfurous acid anion"
       - compartment: "l"
       - formula: "CH2NO2S"
       - charge: 0
@@ -41184,7 +41184,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03330n"
-      - name: "Cyanosulfurous Acid Anion"
+      - name: "cyanosulfurous acid anion"
       - compartment: "n"
       - formula: "CH2NO2S"
       - charge: 0
@@ -42361,35 +42361,35 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03334c"
-      - name: "3(S)-3-Hydroxydodecen-(5Z)-Oyl Coenzyme A"
+      - name: "3(S)-3-hydroxydodecen-(5Z)-oyl-CoA"
       - compartment: "c"
       - formula: "C33H52N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03326c"
-      - name: "3-Oxolaur-Cis-5-Enoyl Coenzyme A"
+      - name: "3-oxolaur-cis-5-enoyl-CoA"
       - compartment: "c"
       - formula: "C33H50N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03334m"
-      - name: "3(S)-3-Hydroxydodecen-(5Z)-Oyl Coenzyme A"
+      - name: "3(S)-3-hydroxydodecen-(5Z)-oyl-CoA"
       - compartment: "m"
       - formula: "C33H52N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03334x"
-      - name: "3(S)-3-Hydroxydodecen-(5Z)-Oyl Coenzyme A"
+      - name: "3(S)-3-hydroxydodecen-(5Z)-oyl-CoA"
       - compartment: "x"
       - formula: "C33H52N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03326x"
-      - name: "3-Oxolaur-Cis-5-Enoyl Coenzyme A"
+      - name: "3-oxolaur-cis-5-enoyl-CoA"
       - compartment: "x"
       - formula: "C33H50N7O18P3S"
       - charge: -4
@@ -42417,14 +42417,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03333m"
-      - name: "Trans,Cis-Dodeca-2,5-Dienoyl Coenzyme A"
+      - name: "trans,cis-dodeca-2,5-dienoyl-CoA"
       - compartment: "m"
       - formula: "C33H50N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03333x"
-      - name: "Trans,Cis-Dodeca-2,5-Dienoyl Coenzyme A"
+      - name: "trans,cis-dodeca-2,5-dienoyl-CoA"
       - compartment: "x"
       - formula: "C33H50N7O17P3S"
       - charge: -4
@@ -42466,49 +42466,49 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03358m"
-      - name: "(3E,5Z,8Z)-Tetradecatrienoyl Coenzyme A"
+      - name: "(3E,5Z,8Z)-tetradecatrienoyl-CoA"
       - compartment: "m"
       - formula: "C35H52N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03359m"
-      - name: "Trans-2-Cis,Cis-4,8-Tetradecatrienoyl Coenzyme A"
+      - name: "trans-2-cis,cis-4,8-tetradecatrienoyl-CoA"
       - compartment: "m"
       - formula: "C35H52N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03360m"
-      - name: "Trans-3-Cis-8-Tetradecadienoyl Coenzyme A"
+      - name: "trans-3-cis-8-tetradecadienoyl-CoA"
       - compartment: "m"
       - formula: "C35H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03361m"
-      - name: "Trans-2-Cis-8-Tetradecadienoyl Coenzyme A"
+      - name: "trans-2-cis-8-tetradecadienoyl-CoA"
       - compartment: "m"
       - formula: "C35H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03350m"
-      - name: "(3S)-3-Hydroxy-Cis-8-Tetradecenoyl Coenzyme A"
+      - name: "(3S)-3-hydroxy-cis-8-tetradecenoyl-CoA"
       - compartment: "m"
       - formula: "C35H56N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03351m"
-      - name: "3-Oxo-Cis-8-Tetradecenoyl Coenzyme A"
+      - name: "3-oxo-cis-8-tetradecenoyl-CoA"
       - compartment: "m"
       - formula: "C35H54N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03352m"
-      - name: "Cis-6-Dodecenoyl Coenzyme A"
+      - name: "cis-6-dodecenoyl-CoA"
       - compartment: "m"
       - formula: "C33H52N7O17P3S"
       - charge: -4
@@ -42522,21 +42522,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03362x"
-      - name: "3(S)-Phytanoyl Coenzyme A"
+      - name: "3(S)-phytanoyl-CoA"
       - compartment: "x"
       - formula: "C41H70N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03363x"
-      - name: "3(S)-2-Hydroxyphytanoyl Coenzyme A"
+      - name: "3(S)-2-hydroxyphytanoyl-CoA"
       - compartment: "x"
       - formula: "C41H70N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03362c"
-      - name: "3(S)-Phytanoyl Coenzyme A"
+      - name: "3(S)-phytanoyl-CoA"
       - compartment: "c"
       - formula: "C41H70N7O17P3S"
       - charge: -4
@@ -42650,7 +42650,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03353r"
-      - name: "Tetracosa-9,12,15,18,21-All-Cis-Pentaenoyl Coenzyme A"
+      - name: "tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA"
       - compartment: "r"
       - formula: "C45H68N7O17P3S"
       - charge: -4
@@ -42980,63 +42980,63 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03364c"
-      - name: "3-Oxo-Cis-9-Octadecenoyl Coenzyme A"
+      - name: "3-oxo-cis-9-octadecenoyl-CoA"
       - compartment: "c"
       - formula: "C39H62N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03364r"
-      - name: "3-Oxo-Cis-9-Octadecenoyl Coenzyme A"
+      - name: "3-oxo-cis-9-octadecenoyl-CoA"
       - compartment: "r"
       - formula: "C39H62N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03365c"
-      - name: "3(S)-Hydroxy-Cis-9-Octadecenoyl Coenzyme A"
+      - name: "3(S)-hydroxy-cis-9-octadecenoyl-CoA"
       - compartment: "c"
       - formula: "C39H64N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03365r"
-      - name: "3(S)-Hydroxy-Cis-9-Octadecenoyl Coenzyme A"
+      - name: "3(S)-hydroxy-cis-9-octadecenoyl-CoA"
       - compartment: "r"
       - formula: "C39H64N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03366c"
-      - name: "Trans,Cis-2,9-Octadecadienoyl Coenzyme A"
+      - name: "trans,cis-2,9-octadecadienoyl-CoA"
       - compartment: "c"
       - formula: "C39H62N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03366r"
-      - name: "Trans,Cis-2,9-Octadecadienoyl Coenzyme A"
+      - name: "trans,cis-2,9-octadecadienoyl-CoA"
       - compartment: "r"
       - formula: "C39H62N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03367x"
-      - name: "24(R),25(R)-Varanoyl Coenzyme A"
+      - name: "24(R),25(R)-varanoyl-CoA"
       - compartment: "x"
       - formula: "C48H76N7O21P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03367c"
-      - name: "24(R),25(R)-Varanoyl Coenzyme A"
+      - name: "24(R),25(R)-varanoyl-CoA"
       - compartment: "c"
       - formula: "C48H76N7O21P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03368c"
-      - name: "24-Oxo-25(R)-Trihydroxycoprostanoyl Coenzyme A"
+      - name: "24-oxo-25(R)-trihydroxycoprostanoyl-CoA"
       - compartment: "c"
       - formula: "C48H74N7O21P3S"
       - charge: -4
@@ -43532,7 +43532,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03352x"
-      - name: "Cis-6-Dodecenoyl Coenzyme A"
+      - name: "cis-6-dodecenoyl-CoA"
       - compartment: "x"
       - formula: "C33H52N7O17P3S"
       - charge: -4
@@ -43918,28 +43918,28 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03408c"
-      - name: "Adipic Acid"
+      - name: "adipic acid"
       - compartment: "c"
       - formula: "C6H8O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03409c"
-      - name: "Adipoyl Coenzyme A"
+      - name: "adipoyl-CoA"
       - compartment: "c"
       - formula: "C27H39N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03408x"
-      - name: "Adipic Acid"
+      - name: "adipic acid"
       - compartment: "x"
       - formula: "C6H8O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03409x"
-      - name: "Adipoyl Coenzyme A"
+      - name: "adipoyl-CoA"
       - compartment: "x"
       - formula: "C27H39N7O19P3S"
       - charge: -5
@@ -43977,7 +43977,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03486c"
-      - name: "Decenoyl Coenzyme A"
+      - name: "decenoyl-CoA"
       - compartment: "c"
       - formula: "C31H48N7O17P3S"
       - charge: -4
@@ -44000,7 +44000,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03543c"
-      - name: "Decadienoyl Coenzyme A"
+      - name: "decadienoyl-CoA"
       - compartment: "c"
       - formula: "C31H46N7O17P3S"
       - charge: -4
@@ -44037,7 +44037,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03924c"
-      - name: "Sebacoyl Coenzyme A"
+      - name: "sebacoyl-CoA"
       - compartment: "c"
       - formula: "C31H47N7O19P3S"
       - charge: -5
@@ -44081,28 +44081,28 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03491x"
-      - name: "Dodecanedioyl Coenzyme A"
+      - name: "dodecanedioyl-CoA"
       - compartment: "x"
       - formula: "C33H51N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03562x"
-      - name: "Dodecanedioic Acid"
+      - name: "dodecanedioic acid"
       - compartment: "x"
       - formula: "C12H20O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03491c"
-      - name: "Dodecanedioyl Coenzyme A"
+      - name: "dodecanedioyl-CoA"
       - compartment: "c"
       - formula: "C33H51N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03562c"
-      - name: "Dodecanedioic Acid"
+      - name: "dodecanedioic acid"
       - compartment: "c"
       - formula: "C12H20O4"
       - charge: -2
@@ -44138,21 +44138,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03263m"
-      - name: "3-Hydroxy Tetradecenoyl-7 Coenzyme A"
+      - name: "3-hydroxy tetradecenoyl-7-CoA"
       - compartment: "m"
       - formula: "C35H56N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03263c"
-      - name: "3-Hydroxy Tetradecenoyl-7 Coenzyme A"
+      - name: "3-hydroxy tetradecenoyl-7-CoA"
       - compartment: "c"
       - formula: "C35H56N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03979c"
-      - name: "Tetradecenoyl Coenzyme A"
+      - name: "tetradecenoyl-CoA"
       - compartment: "c"
       - formula: "C35H56N7O17P3S"
       - charge: -4
@@ -44181,21 +44181,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03267m"
-      - name: "3-Hydroxy Trans5,8Tetradecadienoyl Coenzyme A"
+      - name: "3-hydroxy trans5,8tetradecadienoyl-CoA"
       - compartment: "m"
       - formula: "C35H54N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03267c"
-      - name: "3-Hydroxy Trans5,8Tetradecadienoyl Coenzyme A"
+      - name: "3-hydroxy trans5,8tetradecadienoyl-CoA"
       - compartment: "c"
       - formula: "C35H54N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03974c"
-      - name: "Tetradecadienoyl Coenzyme A"
+      - name: "tetradecadienoyl-CoA"
       - compartment: "c"
       - formula: "C35H54N7O17P3S"
       - charge: -4
@@ -44239,7 +44239,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03216c"
-      - name: "3-Hydroxyhexadecenoyl Coenzyme A"
+      - name: "3-hydroxyhexadecenoyl-CoA"
       - compartment: "c"
       - formula: "C37H60N7O18P3S"
       - charge: -4
@@ -44254,14 +44254,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03265m"
-      - name: "3-Hydroxy Trans7,10-Hexadecadienoyl Coenzyme A"
+      - name: "3-hydroxy trans7,10-hexadecadienoyl-CoA"
       - compartment: "m"
       - formula: "C37H58N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03265c"
-      - name: "3-Hydroxy Trans7,10-Hexadecadienoyl Coenzyme A"
+      - name: "3-hydroxy trans7,10-hexadecadienoyl-CoA"
       - compartment: "c"
       - formula: "C37H58N7O18P3S"
       - charge: -4
@@ -44282,28 +44282,28 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03655c"
-      - name: "Hexadecanedioyl Coenzyme A"
+      - name: "hexadecanedioyl-CoA"
       - compartment: "c"
       - formula: "C37H59N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03493c"
-      - name: "Hexadecanedioic Acid Mono-L-Carnitine Ester"
+      - name: "hexadecanedioic acid mono-L-carnitine ester"
       - compartment: "c"
       - formula: "C23H42NO6"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03493e"
-      - name: "Hexadecanedioic Acid Mono-L-Carnitine Ester"
+      - name: "hexadecanedioic acid mono-L-carnitine ester"
       - compartment: "e"
       - formula: "C23H42NO6"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03218c"
-      - name: "3-Hydroxyhexadecanoyl Coenzyme A"
+      - name: "3-hydroxyhexadecanoyl-CoA"
       - compartment: "c"
       - formula: "C37H62N7O18P3S"
       - charge: -4
@@ -44318,7 +44318,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03252c"
-      - name: "3-Hydroxyoctadecenoyl Coenzyme A"
+      - name: "3-hydroxyoctadecenoyl-CoA"
       - compartment: "c"
       - formula: "C39H64N7O18P3S"
       - charge: -4
@@ -44333,7 +44333,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03249c"
-      - name: "3-Hydroxyoctadecadienoyl Coenzyme A"
+      - name: "3-hydroxyoctadecadienoyl-CoA"
       - compartment: "c"
       - formula: "C39H62N7O18P3S"
       - charge: -4
@@ -44348,7 +44348,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03230c"
-      - name: "(S)-3-Hydroxyoctadecanoyl Coenzyme A"
+      - name: "(S)-3-hydroxyoctadecanoyl-CoA"
       - compartment: "c"
       - formula: "C39H66N7O18P3S"
       - charge: -4
@@ -44477,7 +44477,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03500c"
-      - name: "Octenoyl Coenzyme A"
+      - name: "octenoyl-CoA"
       - compartment: "c"
       - formula: "C29H44N7O17P3S"
       - charge: -4
@@ -44508,7 +44508,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03922c"
-      - name: "Suberyl Coenzyme A"
+      - name: "suberyl-CoA"
       - compartment: "c"
       - formula: "C29H43N7O19P3S"
       - charge: -5
@@ -44568,14 +44568,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03555c"
-      - name: "13-Docosenoyl Coenzyme A"
+      - name: "13-docosenoyl-CoA"
       - compartment: "c"
       - formula: "C43H72N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03555x"
-      - name: "13-Docosenoyl Coenzyme A"
+      - name: "13-docosenoyl-CoA"
       - compartment: "x"
       - formula: "C43H72N7O17P3S"
       - charge: -4
@@ -44691,140 +44691,140 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03542m"
-      - name: "4,7-Decadienoyl Coenzyme A"
+      - name: "4,7-decadienoyl-CoA"
       - compartment: "m"
       - formula: "C31H46N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03545m"
-      - name: "2,4,7-Decatrienoyl Coenzyme A"
+      - name: "2,4,7-decatrienoyl-CoA"
       - compartment: "m"
       - formula: "C31H44N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03542x"
-      - name: "4,7-Decadienoyl Coenzyme A"
+      - name: "4,7-decadienoyl-CoA"
       - compartment: "x"
       - formula: "C31H46N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03545x"
-      - name: "2,4,7-Decatrienoyl Coenzyme A"
+      - name: "2,4,7-decatrienoyl-CoA"
       - compartment: "x"
       - formula: "C31H44N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM02830m"
-      - name: "2,7-Decadienoyl Coenzyme A"
+      - name: "2,7-decadienoyl-CoA"
       - compartment: "m"
       - formula: "C31H46N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03794m"
-      - name: "5-Octenoyl Coenzyme A"
+      - name: "5-octenoyl-CoA"
       - compartment: "m"
       - formula: "C29H44N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM02830x"
-      - name: "2,7-Decadienoyl Coenzyme A"
+      - name: "2,7-decadienoyl-CoA"
       - compartment: "x"
       - formula: "C31H46N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03794x"
-      - name: "5-Octenoyl Coenzyme A"
+      - name: "5-octenoyl-CoA"
       - compartment: "x"
       - formula: "C29H44N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03205m"
-      - name: "3,7-Decadienoyl Coenzyme A"
+      - name: "3,7-decadienoyl-CoA"
       - compartment: "m"
       - formula: "C31H46N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03205x"
-      - name: "3,7-Decadienoyl Coenzyme A"
+      - name: "3,7-decadienoyl-CoA"
       - compartment: "x"
       - formula: "C31H46N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03924x"
-      - name: "Sebacoyl Coenzyme A"
+      - name: "sebacoyl-CoA"
       - compartment: "x"
       - formula: "C31H47N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03922x"
-      - name: "Suberyl Coenzyme A"
+      - name: "suberyl-CoA"
       - compartment: "x"
       - formula: "C29H43N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04004x"
-      - name: "2,6,10-Trimethyl Undecanoyl Coenzyme A"
+      - name: "2,6,10-trimethyl undecanoyl-CoA"
       - compartment: "x"
       - formula: "C35H58N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03539m"
-      - name: "5-Dodecenoyl Coenzyme A"
+      - name: "5-dodecenoyl-CoA"
       - compartment: "m"
       - formula: "C33H52N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM02698x"
-      - name: "2,6-Dodecadienoyl Coenzyme A"
+      - name: "2,6-dodecadienoyl-CoA"
       - compartment: "x"
       - formula: "C33H50N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03203x"
-      - name: "3,6-Dodecadienoyl Coenzyme A"
+      - name: "3,6-dodecadienoyl-CoA"
       - compartment: "x"
       - formula: "C33H50N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03172m"
-      - name: "2,6,9-Dodecatrienoyl Coenzyme A"
+      - name: "2,6,9-dodecatrienoyl-CoA"
       - compartment: "m"
       - formula: "C33H48N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03172x"
-      - name: "2,6,9-Dodecatrienoyl Coenzyme A"
+      - name: "2,6,9-dodecatrienoyl-CoA"
       - compartment: "x"
       - formula: "C33H48N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03211m"
-      - name: "3,6,9-Dodecatrienoyl Coenzyme A"
+      - name: "3,6,9-dodecatrienoyl-CoA"
       - compartment: "m"
       - formula: "C33H48N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03211x"
-      - name: "3,6,9-Dodecatrienoyl Coenzyme A"
+      - name: "3,6,9-dodecatrienoyl-CoA"
       - compartment: "x"
       - formula: "C33H48N7O17P3S"
       - charge: -4
@@ -44838,168 +44838,168 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03972m"
-      - name: "7-Tetradecenoyl Coenzyme A"
+      - name: "7-tetradecenoyl-CoA"
       - compartment: "m"
       - formula: "C35H56N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03978x"
-      - name: "5,8-Tetradecadienoyl Coenzyme A"
+      - name: "5,8-tetradecadienoyl-CoA"
       - compartment: "x"
       - formula: "C35H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04041m"
-      - name: "Trans5,8Tetradecadienoyl Coenzyme A"
+      - name: "trans5,8tetradecadienoyl-CoA"
       - compartment: "m"
       - formula: "C35H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03288m"
-      - name: "5,8,11-Tetradecatrienoyl Coenzyme A"
+      - name: "5,8,11-tetradecatrienoyl-CoA"
       - compartment: "m"
       - formula: "C35H52N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03288x"
-      - name: "5,8,11-Tetradecatrienoyl Coenzyme A"
+      - name: "5,8,11-tetradecatrienoyl-CoA"
       - compartment: "x"
       - formula: "C35H52N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03492x"
-      - name: "Tetradecanedioyl Coenzyme A"
+      - name: "tetradecanedioyl-CoA"
       - compartment: "x"
       - formula: "C35H55N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03216m"
-      - name: "3-Hydroxyhexadecenoyl Coenzyme A"
+      - name: "3-hydroxyhexadecenoyl-CoA"
       - compartment: "m"
       - formula: "C37H60N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03982m"
-      - name: "Trans7,10-Hexadecadienoyl Coenzyme A"
+      - name: "trans7,10-hexadecadienoyl-CoA"
       - compartment: "m"
       - formula: "C37H58N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03182x"
-      - name: "2,7,10-Hexadecatrienoyl Coenzyme A"
+      - name: "2,7,10-hexadecatrienoyl-CoA"
       - compartment: "x"
       - formula: "C37H56N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03658m"
-      - name: "7,10,13-Hexadecatrienoyl Coenzyme A"
+      - name: "7,10,13-hexadecatrienoyl-CoA"
       - compartment: "m"
       - formula: "C37H56N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03274x"
-      - name: "4,7,10-Hexadecatrienoyl Coenzyme A"
+      - name: "4,7,10-hexadecatrienoyl-CoA"
       - compartment: "x"
       - formula: "C37H56N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03653x"
-      - name: "2,4,7,10-Hexadecatetraenoyl Coenzyme A"
+      - name: "2,4,7,10-hexadecatetraenoyl-CoA"
       - compartment: "x"
       - formula: "C37H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03221x"
-      - name: "3,7,10-Hexadecatrienoyl Coenzyme A"
+      - name: "3,7,10-hexadecatrienoyl-CoA"
       - compartment: "x"
       - formula: "C37H56N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03181m"
-      - name: "2,7,10,13-Hexadecatetraenoyl Coenzyme A"
+      - name: "2,7,10,13-hexadecatetraenoyl-CoA"
       - compartment: "m"
       - formula: "C37H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03181x"
-      - name: "2,7,10,13-Hexadecatetraenoyl Coenzyme A"
+      - name: "2,7,10,13-hexadecatetraenoyl-CoA"
       - compartment: "x"
       - formula: "C37H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03273m"
-      - name: "4,7,10,13-Hexadecatetraenoyl Coenzyme A"
+      - name: "4,7,10,13-hexadecatetraenoyl-CoA"
       - compartment: "m"
       - formula: "C37H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03656m"
-      - name: "2,4,7,10,13-Hexadecapentaenoyl Coenzyme A"
+      - name: "2,4,7,10,13-hexadecapentaenoyl-CoA"
       - compartment: "m"
       - formula: "C37H52N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03273x"
-      - name: "4,7,10,13-Hexadecatetraenoyl Coenzyme A"
+      - name: "4,7,10,13-hexadecatetraenoyl-CoA"
       - compartment: "x"
       - formula: "C37H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03656x"
-      - name: "2,4,7,10,13-Hexadecapentaenoyl Coenzyme A"
+      - name: "2,4,7,10,13-hexadecapentaenoyl-CoA"
       - compartment: "x"
       - formula: "C37H52N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03220m"
-      - name: "3,7,10,13-Hexadecatetraenoyl Coenzyme A"
+      - name: "3,7,10,13-hexadecatetraenoyl-CoA"
       - compartment: "m"
       - formula: "C37H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03220x"
-      - name: "3,7,10,13-Hexadecatetraenoyl Coenzyme A"
+      - name: "3,7,10,13-hexadecatetraenoyl-CoA"
       - compartment: "x"
       - formula: "C37H54N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03218m"
-      - name: "3-Hydroxyhexadecanoyl Coenzyme A"
+      - name: "3-hydroxyhexadecanoyl-CoA"
       - compartment: "m"
       - formula: "C37H62N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03655x"
-      - name: "Hexadecanedioyl Coenzyme A"
+      - name: "hexadecanedioyl-CoA"
       - compartment: "x"
       - formula: "C37H59N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03655r"
-      - name: "Hexadecanedioyl Coenzyme A"
+      - name: "hexadecanedioyl-CoA"
       - compartment: "r"
       - formula: "C37H59N7O19P3S"
       - charge: -5
@@ -45020,175 +45020,175 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03789x"
-      - name: "9-Octadecenoyl Coenzyme A"
+      - name: "9-octadecenoyl-CoA"
       - compartment: "x"
       - formula: "C39H64N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03252m"
-      - name: "3-Hydroxyoctadecenoyl Coenzyme A"
+      - name: "3-hydroxyoctadecenoyl-CoA"
       - compartment: "m"
       - formula: "C39H64N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03792m"
-      - name: "Octadecenoyl Coenzyme A"
+      - name: "octadecenoyl-CoA"
       - compartment: "m"
       - formula: "C39H64N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03249m"
-      - name: "3-Hydroxyoctadecadienoyl Coenzyme A"
+      - name: "3-hydroxyoctadecadienoyl-CoA"
       - compartment: "m"
       - formula: "C39H62N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03194m"
-      - name: "2,6,9,12-Octadecatetraenoyl Coenzyme A"
+      - name: "2,6,9,12-octadecatetraenoyl-CoA"
       - compartment: "m"
       - formula: "C39H58N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03194x"
-      - name: "2,6,9,12-Octadecatetraenoyl Coenzyme A"
+      - name: "2,6,9,12-octadecatetraenoyl-CoA"
       - compartment: "x"
       - formula: "C39H58N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03254m"
-      - name: "3,6,9,12-Octadecatetraenoyl Coenzyme A"
+      - name: "3,6,9,12-octadecatetraenoyl-CoA"
       - compartment: "m"
       - formula: "C39H58N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03254x"
-      - name: "3,6,9,12-Octadecatetraenoyl Coenzyme A"
+      - name: "3,6,9,12-octadecatetraenoyl-CoA"
       - compartment: "x"
       - formula: "C39H58N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03195m"
-      - name: "2,6,9,12,15-Octadecapentenoyl Coenzyme A"
+      - name: "2,6,9,12,15-octadecapentenoyl-CoA"
       - compartment: "m"
       - formula: "C39H56N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03255m"
-      - name: "3,6,9,12,15-Octadecapentenoyl Coenzyme A"
+      - name: "3,6,9,12,15-octadecapentenoyl-CoA"
       - compartment: "m"
       - formula: "C39H56N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03230m"
-      - name: "(S)-3-Hydroxyoctadecanoyl Coenzyme A"
+      - name: "(S)-3-hydroxyoctadecanoyl-CoA"
       - compartment: "m"
       - formula: "C39H66N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03567x"
-      - name: "11-Eicosenoyl Coenzyme A"
+      - name: "11-eicosenoyl-CoA"
       - compartment: "x"
       - formula: "C41H68N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03571m"
-      - name: "5,8,11,14-Eicosatetraenoyl Coenzyme A"
+      - name: "5,8,11,14-eicosatetraenoyl-CoA"
       - compartment: "m"
       - formula: "C41H62N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03571x"
-      - name: "5,8,11,14-Eicosatetraenoyl Coenzyme A"
+      - name: "5,8,11,14-eicosatetraenoyl-CoA"
       - compartment: "x"
       - formula: "C41H62N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03570x"
-      - name: "2,5,8,11,14-Eicosapentaenoyl Coenzyme A"
+      - name: "2,5,8,11,14-eicosapentaenoyl-CoA"
       - compartment: "x"
       - formula: "C41H60N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03284m"
-      - name: "5,8,11,14,17-Eicosapentenoyl Coenzyme A"
+      - name: "5,8,11,14,17-eicosapentenoyl-CoA"
       - compartment: "m"
       - formula: "C41H60N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03171m"
-      - name: "2,7,10,13,16-Docosapentenoyl Coenzyme A"
+      - name: "2,7,10,13,16-docosapentenoyl-CoA"
       - compartment: "m"
       - formula: "C43H64N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03171x"
-      - name: "2,7,10,13,16-Docosapentenoyl Coenzyme A"
+      - name: "2,7,10,13,16-docosapentenoyl-CoA"
       - compartment: "x"
       - formula: "C43H64N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03557m"
-      - name: "2,4,7,10,13,16-Docosahexenoyl Coenzyme A"
+      - name: "2,4,7,10,13,16-docosahexenoyl-CoA"
       - compartment: "m"
       - formula: "C43H62N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03557x"
-      - name: "2,4,7,10,13,16-Docosahexenoyl Coenzyme A"
+      - name: "2,4,7,10,13,16-docosahexenoyl-CoA"
       - compartment: "x"
       - formula: "C43H62N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03210m"
-      - name: "3,7,10,13,16-Docosapentenoyl Coenzyme A"
+      - name: "3,7,10,13,16-docosapentenoyl-CoA"
       - compartment: "m"
       - formula: "C43H64N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03210x"
-      - name: "3,7,10,13,16-Docosapentenoyl Coenzyme A"
+      - name: "3,7,10,13,16-docosapentenoyl-CoA"
       - compartment: "x"
       - formula: "C43H64N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM02831m"
-      - name: "2,7,10,13,16,19-Docosahexenoyl Coenzyme A"
+      - name: "2,7,10,13,16,19-docosahexenoyl-CoA"
       - compartment: "m"
       - formula: "C43H62N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03556m"
-      - name: "2,4,7,10,13,16,19-Docosaheptenoyl Coenzyme A"
+      - name: "2,4,7,10,13,16,19-docosaheptenoyl-CoA"
       - compartment: "m"
       - formula: "C43H60N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03559m"
-      - name: "3,7,10,13,16,19-Docosahexenoyl Coenzyme A"
+      - name: "3,7,10,13,16,19-docosahexenoyl-CoA"
       - compartment: "m"
       - formula: "C43H62N7O17P3S"
       - charge: -4
@@ -45209,7 +45209,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03242m"
-      - name: "3-Hydroxyisovaleryl Coenzyme A"
+      - name: "3-hydroxyisovaleryl-CoA"
       - compartment: "m"
       - formula: "C26H40N7O18P3S"
       - charge: -4
@@ -45224,21 +45224,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03242c"
-      - name: "3-Hydroxyisovaleryl Coenzyme A"
+      - name: "3-hydroxyisovaleryl-CoA"
       - compartment: "c"
       - formula: "C26H40N7O18P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03659m"
-      - name: "3-Hexenoyl Coenzyme A"
+      - name: "3-hexenoyl-CoA"
       - compartment: "m"
       - formula: "C27H40N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03659x"
-      - name: "3-Hexenoyl Coenzyme A"
+      - name: "3-hexenoyl-CoA"
       - compartment: "x"
       - formula: "C27H40N7O17P3S"
       - charge: -4
@@ -45252,7 +45252,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03552m"
-      - name: "2,6-Dimethyl Heptanoyl Coenzyme A"
+      - name: "2,6-dimethyl heptanoyl-CoA"
       - compartment: "m"
       - formula: "C30H48N7O17P3S"
       - charge: -4
@@ -45294,28 +45294,28 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03969m"
-      - name: "Trans4Decenoyl Coenzyme A"
+      - name: "trans4decenoyl-CoA"
       - compartment: "m"
       - formula: "C31H48N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03522m"
-      - name: "Cis2Trans4Decadienoyl Coenzyme A"
+      - name: "cis2trans4decadienoyl-CoA"
       - compartment: "m"
       - formula: "C31H46N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03966m"
-      - name: "Trans2,6Dodecadienoyl Coenzyme A"
+      - name: "trans2,6dodecadienoyl-CoA"
       - compartment: "m"
       - formula: "C33H50N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03967m"
-      - name: "Trans3,6Dodecadienoyl Coenzyme A"
+      - name: "trans3,6dodecadienoyl-CoA"
       - compartment: "m"
       - formula: "C33H50N7O17P3S"
       - charge: -4
@@ -45352,14 +45352,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03792c"
-      - name: "Octadecenoyl Coenzyme A"
+      - name: "octadecenoyl-CoA"
       - compartment: "c"
       - formula: "C39H64N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03954x"
-      - name: "Suberic Acid"
+      - name: "suberic acid"
       - compartment: "x"
       - formula: "C8H12O4"
       - charge: -2
@@ -45373,7 +45373,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03954c"
-      - name: "Suberic Acid"
+      - name: "suberic acid"
       - compartment: "c"
       - formula: "C8H12O4"
       - charge: -2
@@ -45424,7 +45424,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03604e"
-      - name: "Beta Glucan-Taurocholic Acid Complex"
+      - name: "beta glucan-taurocholic acid complex"
       - compartment: "e"
       - formula: "C1200026H2200045NO1100007S"
       - charge: 0
@@ -45438,7 +45438,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03605e"
-      - name: "Beta Glucan-Taurodeoxycholic Acid Complex"
+      - name: "beta glucan-taurodeoxycholic acid complex"
       - compartment: "e"
       - formula: "C1200026H2200044NO1100006S"
       - charge: -1
@@ -45553,7 +45553,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03639e"
-      - name: "Guar Gum-Deoxyxholic Acid Complex"
+      - name: "guar gum-deoxyxholic acid complex"
       - compartment: "e"
       - formula: "C2760024H5060039O2530004"
       - charge: -1
@@ -45567,7 +45567,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03641e"
-      - name: "Guar Gum-Taurocholic Acid Complex"
+      - name: "guar gum-taurocholic acid complex"
       - compartment: "e"
       - formula: "C2760026H5060045NO2530007S"
       - charge: 0
@@ -45620,7 +45620,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03852e"
-      - name: "Pectin-Deoxycholic Acid Complex"
+      - name: "pectin-deoxycholic acid complex"
       - compartment: "e"
       - formula: "C2559H3549O2539"
       - charge: -1
@@ -45634,7 +45634,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03854e"
-      - name: "Pectin-Taurocholic Acid Complex"
+      - name: "pectin-taurocholic acid complex"
       - compartment: "e"
       - formula: "C2561H3555NO2542S"
       - charge: 0
@@ -45664,21 +45664,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03908e"
-      - name: "Psillium-Glycocholic Acid Complex"
+      - name: "psillium-glycocholic acid complex"
       - compartment: "e"
       - formula: "C9642032H15428743NO8667420"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03909e"
-      - name: "Psyllium-Taurocholic Acid Complex"
+      - name: "psyllium-taurocholic acid complex"
       - compartment: "e"
       - formula: "C9642032H15428745NO8667421S"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03910e"
-      - name: "Psyllium-Taurodeoxycholic Acid Complex"
+      - name: "psyllium-taurodeoxycholic acid complex"
       - compartment: "e"
       - formula: "C9642032H15428744NO8667420S"
       - charge: -1
@@ -46174,7 +46174,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03419x"
-      - name: "Lysophosphatidic Acid"
+      - name: "lysophosphatidic acid"
       - compartment: "x"
       - formula: "C3H6O5PRCO2"
       - charge: -2
@@ -46188,7 +46188,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03410c"
-      - name: "2-Hydroxyadipic Acid"
+      - name: "2-hydroxyadipic acid"
       - compartment: "c"
       - formula: "C6H8O5"
       - charge: -2
@@ -46210,7 +46210,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04040c"
-      - name: "Tetradecenoyl Coenzyme A (N-C14:1)"
+      - name: "tetradecenoyl-CoA (N-C14:1)"
       - compartment: "c"
       - formula: "C35H56N7O17P3S"
       - charge: -4
@@ -47204,14 +47204,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03569c"
-      - name: "Cis,Cis-11,14-Eicosadienoic Acid"
+      - name: "cis,cis-11,14-eicosadienoic acid"
       - compartment: "c"
       - formula: "C20H35O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03976c"
-      - name: "Cia-5,8, Tetradecadienoic Acid"
+      - name: "cia-5,8, tetradecadienoic acid"
       - compartment: "c"
       - formula: "C14H23O2"
       - charge: -1
@@ -47536,14 +47536,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03408e"
-      - name: "Adipic Acid"
+      - name: "adipic acid"
       - compartment: "e"
       - formula: "C6H8O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03410e"
-      - name: "2-Hydroxyadipic Acid"
+      - name: "2-hydroxyadipic acid"
       - compartment: "e"
       - formula: "C6H8O5"
       - charge: -2
@@ -47767,7 +47767,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03569e"
-      - name: "Cis,Cis-11,14-Eicosadienoic Acid"
+      - name: "cis,cis-11,14-eicosadienoic acid"
       - compartment: "e"
       - formula: "C20H35O2"
       - charge: -1
@@ -47856,7 +47856,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03562e"
-      - name: "Dodecanedioic Acid"
+      - name: "dodecanedioic acid"
       - compartment: "e"
       - formula: "C12H20O4"
       - charge: -2
@@ -48161,14 +48161,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03954e"
-      - name: "Suberic Acid"
+      - name: "suberic acid"
       - compartment: "e"
       - formula: "C8H12O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03976e"
-      - name: "Cia-5,8, Tetradecadienoic Acid"
+      - name: "cia-5,8, tetradecadienoic acid"
       - compartment: "e"
       - formula: "C14H23O2"
       - charge: -1
@@ -48378,7 +48378,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04061c"
-      - name: "Ursodeoxycholyl Coenzyme A"
+      - name: "ursodeoxycholyl-CoA"
       - compartment: "c"
       - formula: "C45H70N7O19P3S"
       - charge: -4
@@ -48399,7 +48399,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03485m"
-      - name: "Benzoyl Coenzyme A"
+      - name: "benzoyl-CoA"
       - compartment: "m"
       - formula: "C28H36N7O17P3S"
       - charge: -4
@@ -48492,21 +48492,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03215e"
-      - name: "3-Hydroxycinnamic Acid"
+      - name: "3-hydroxycinnamic acid"
       - compartment: "e"
       - formula: "C9H7O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03215c"
-      - name: "3-Hydroxycinnamic Acid"
+      - name: "3-hydroxycinnamic acid"
       - compartment: "c"
       - formula: "C9H7O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03231e"
-      - name: "3-Hydroxyphenylpropionic Acid (3-Hppa)"
+      - name: "3-hydroxyphenylpropionic acid (3-hppa)"
       - compartment: "e"
       - formula: "C9H9O3"
       - charge: -1
@@ -52676,7 +52676,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04073c"
-      - name: "Vanilpyruvic Acid"
+      - name: "vanilpyruvic acid"
       - compartment: "c"
       - formula: "C10H9O5"
       - charge: -1
@@ -52775,7 +52775,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03192m"
-      - name: "2-Methyl-3-Oxo-Valeryl Coenzyme A"
+      - name: "2-methyl-3-oxo-valeryl-CoA"
       - compartment: "m"
       - formula: "C27H40N7O18P3S"
       - charge: -4
@@ -52917,14 +52917,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03964m"
-      - name: "Trans-Delta-2-Glutaryl Coenzyme A"
+      - name: "trans-delta-2-glutaryl-CoA"
       - compartment: "m"
       - formula: "C26H35N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03222m"
-      - name: "3-Hydroxy-Glutaryl Coenzyme A"
+      - name: "3-hydroxy-glutaryl-CoA"
       - compartment: "m"
       - formula: "C26H37N7O20P3S"
       - charge: -5
@@ -52952,7 +52952,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03613m"
-      - name: "Glutaconyl Coenzyme A"
+      - name: "glutaconyl-CoA"
       - compartment: "m"
       - formula: "C26H35N7O19P3S"
       - charge: -5
@@ -52980,28 +52980,28 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03227m"
-      - name: "3-Hydroxyisovaleric Acid"
+      - name: "3-hydroxyisovaleric acid"
       - compartment: "m"
       - formula: "C5H9O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03227c"
-      - name: "3-Hydroxyisovaleric Acid"
+      - name: "3-hydroxyisovaleric acid"
       - compartment: "c"
       - formula: "C5H9O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03227e"
-      - name: "3-Hydroxyisovaleric Acid"
+      - name: "3-hydroxyisovaleric acid"
       - compartment: "e"
       - formula: "C5H9O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03213x"
-      - name: "3-Hydroxy-Adipoyl Coenzyme A"
+      - name: "3-hydroxy-adipoyl-CoA"
       - compartment: "x"
       - formula: "C27H39N7O20P3S"
       - charge: -5
@@ -53029,70 +53029,70 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03259x"
-      - name: "3-Hydroxy-Sebacoyl Coenzyme A"
+      - name: "3-hydroxy-sebacoyl-CoA"
       - compartment: "x"
       - formula: "C31H47N7O20P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03258x"
-      - name: "3-Hydroxy-Sebacic Acid"
+      - name: "3-hydroxy-sebacic acid"
       - compartment: "x"
       - formula: "C10H16O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03258c"
-      - name: "3-Hydroxy-Sebacic Acid"
+      - name: "3-hydroxy-sebacic acid"
       - compartment: "c"
       - formula: "C10H16O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03258e"
-      - name: "3-Hydroxy-Sebacic Acid"
+      - name: "3-hydroxy-sebacic acid"
       - compartment: "e"
       - formula: "C10H16O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03261x"
-      - name: "3-Hydoxy-Suberyl Coenzyme A"
+      - name: "3-hydoxy-suberyl-CoA"
       - compartment: "x"
       - formula: "C29H43N7O20P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03260x"
-      - name: "3-Hydoxy-Suberic Acid"
+      - name: "3-hydoxy-suberic acid"
       - compartment: "x"
       - formula: "C8H12O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03260c"
-      - name: "3-Hydoxy-Suberic Acid"
+      - name: "3-hydoxy-suberic acid"
       - compartment: "c"
       - formula: "C8H12O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03260e"
-      - name: "3-Hydoxy-Suberic Acid"
+      - name: "3-hydoxy-suberic acid"
       - compartment: "e"
       - formula: "C8H12O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03287c"
-      - name: "5-Hydroxyhexanoic Acid"
+      - name: "5-hydroxyhexanoic acid"
       - compartment: "c"
       - formula: "C6H11O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03287e"
-      - name: "5-Hydroxyhexanoic Acid"
+      - name: "5-hydroxyhexanoic acid"
       - compartment: "e"
       - formula: "C6H11O3"
       - charge: -1
@@ -53113,21 +53113,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03576c"
-      - name: "Ethylmalonyl Coenzyme A"
+      - name: "ethylmalonyl-CoA"
       - compartment: "c"
       - formula: "C26H37N7O19P3S"
       - charge: -5
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03575c"
-      - name: "Ethylmalonic Acid"
+      - name: "ethylmalonic acid"
       - compartment: "c"
       - formula: "C5H6O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03575e"
-      - name: "Ethylmalonic Acid"
+      - name: "ethylmalonic acid"
       - compartment: "e"
       - formula: "C5H6O4"
       - charge: -2
@@ -53148,7 +53148,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03766c"
-      - name: "Methyl-Succinyl Coenzyme A"
+      - name: "methyl-succinyl-CoA"
       - compartment: "c"
       - formula: "C26H37N7O19P3S"
       - charge: -5
@@ -53254,105 +53254,105 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03981m"
-      - name: "7Z,10Z-Hexadecadienoic Acid"
+      - name: "7Z,10Z-hexadecadienoic acid"
       - compartment: "m"
       - formula: "C16H27O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03981c"
-      - name: "7Z,10Z-Hexadecadienoic Acid"
+      - name: "7Z,10Z-hexadecadienoic acid"
       - compartment: "c"
       - formula: "C16H27O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03981e"
-      - name: "7Z,10Z-Hexadecadienoic Acid"
+      - name: "7Z,10Z-hexadecadienoic acid"
       - compartment: "e"
       - formula: "C16H27O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03657m"
-      - name: "(Z,Z,Z)-7,10,13-Hexadecatrienoic Acid"
+      - name: "(Z,Z,Z)-7,10,13-hexadecatrienoic acid"
       - compartment: "m"
       - formula: "C16H25O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03657c"
-      - name: "(Z,Z,Z)-7,10,13-Hexadecatrienoic Acid"
+      - name: "(Z,Z,Z)-7,10,13-hexadecatrienoic acid"
       - compartment: "c"
       - formula: "C16H25O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03657e"
-      - name: "(Z,Z,Z)-7,10,13-Hexadecatrienoic Acid"
+      - name: "(Z,Z,Z)-7,10,13-hexadecatrienoic acid"
       - compartment: "e"
       - formula: "C16H25O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03683m"
-      - name: "Trans-Delta-2-Heptadecanoyl Coenzyme A"
+      - name: "trans-delta-2-heptadecanoyl-CoA"
       - compartment: "m"
       - formula: "C38H62N7O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03682m"
-      - name: "Trans-Delta-2-Heptadecanoic Acid"
+      - name: "trans-delta-2-heptadecanoic acid"
       - compartment: "m"
       - formula: "C17H31O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03682c"
-      - name: "Trans-Delta-2-Heptadecanoic Acid"
+      - name: "trans-delta-2-heptadecanoic acid"
       - compartment: "c"
       - formula: "C17H31O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03682e"
-      - name: "Trans-Delta-2-Heptadecanoic Acid"
+      - name: "trans-delta-2-heptadecanoic acid"
       - compartment: "e"
       - formula: "C17H31O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03568c"
-      - name: "Trans,Cis,Cis-2,11,14-Eicosatrienoic Acid"
+      - name: "trans,cis,cis-2,11,14-eicosatrienoic acid"
       - compartment: "c"
       - formula: "C20H33O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03568e"
-      - name: "Trans,Cis,Cis-2,11,14-Eicosatrienoic Acid"
+      - name: "trans,cis,cis-2,11,14-eicosatrienoic acid"
       - compartment: "e"
       - formula: "C20H33O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03283m"
-      - name: "5,8,11,14,17-Eicosapentenoic Acid"
+      - name: "5,8,11,14,17-eicosapentenoic acid"
       - compartment: "m"
       - formula: "C20H29O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03283c"
-      - name: "5,8,11,14,17-Eicosapentenoic Acid"
+      - name: "5,8,11,14,17-eicosapentenoic acid"
       - compartment: "c"
       - formula: "C20H29O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03283e"
-      - name: "5,8,11,14,17-Eicosapentenoic Acid"
+      - name: "5,8,11,14,17-eicosapentenoic acid"
       - compartment: "e"
       - formula: "C20H29O2"
       - charge: -1
@@ -54634,42 +54634,42 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM00517c"
-      - name: "12-Dehydrocholic acid; 12-Oxodeoxycholic acid; 12oxo-3alpha,7alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "12-dehydrocholic acid"
       - compartment: "c"
       - formula: "C24H37O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM00517e"
-      - name: "12-Dehydrocholic acid; 12-Oxodeoxycholic acid; 12oxo-3alpha,7alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "12-dehydrocholic acid"
       - compartment: "e"
       - formula: "C24H37O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03207c"
-      - name: "3-Dehydrocholic acid; 3oxo-7alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "3-dehydrocholic acid"
       - compartment: "c"
       - formula: "C24H37O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03206c"
-      - name: "3-Dehydrochenodeoxychollyc acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "3-dehydrochenodeoxycholic acid"
       - compartment: "c"
       - formula: "C24H37O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03206e"
-      - name: "3-Dehydrochenodeoxychollyc acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "3-dehydrochenodeoxycholic acid"
       - compartment: "e"
       - formula: "C24H37O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03207e"
-      - name: "3-Dehydrocholic acid; 3oxo-7alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "3-dehydrocholic acid"
       - compartment: "e"
       - formula: "C24H37O5"
       - charge: -1
@@ -54704,28 +54704,28 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03310c"
-      - name: "7-Dehydrochenodeoxycholic acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "7-dehydrochenodeoxycholic acid"
       - compartment: "c"
       - formula: "C24H37O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03310e"
-      - name: "7-Dehydrochenodeoxycholic acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "7-dehydrochenodeoxycholic acid"
       - compartment: "e"
       - formula: "C24H37O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03311c"
-      - name: "7-Dehydrocholic acid; 7-Oxodeoxycholic acid; 7oxo-3alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "7-dehydrocholic acid"
       - compartment: "c"
       - formula: "C24H37O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03311e"
-      - name: "7-Dehydrocholic acid; 7-Oxodeoxycholic acid; 7oxo-3alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "7-dehydrocholic acid"
       - compartment: "e"
       - formula: "C24H37O5"
       - charge: -1
@@ -54809,7 +54809,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03685c"
-      - name: "Hyocholic acid; gamma-Muricholate"
+      - name: "hyocholic acid"
       - compartment: "c"
       - formula: "C24H39O5"
       - charge: -1
@@ -54942,14 +54942,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03691c"
-      - name: "Isochenodeoxycholic acid; 3beta,7alpha-Dihydroxy-5beta-cholanic acid"
+      - name: "isochenodeoxycholic acid"
       - compartment: "c"
       - formula: "C24H39O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03704c"
-      - name: "Isochenodeoxycholic acid; 3beta,7alpha,12alpha-Trihydroxy-5beta-cholanic acid"
+      - name: "isocholic acid"
       - compartment: "c"
       - formula: "C24H39O5"
       - charge: -1
@@ -54998,7 +54998,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03996c"
-      - name: "Taurohyocholic acid; N-(3alpha,6alpha,7alpha-Trihydroxy-5beta-cholan-24-oyl)taurine"
+      - name: "taurohyocholic acid"
       - compartment: "c"
       - formula: "C26H44NO7S"
       - charge: -1
@@ -55012,7 +55012,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04057c"
-      - name: "Ursocholic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholan-24-oic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholanic acid; 7beta-Hydroxyisocholic acid; 7-Epicholic acid"
+      - name: "ursocholic acid"
       - compartment: "c"
       - formula: "C24H39O5"
       - charge: -1
@@ -55082,21 +55082,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03685e"
-      - name: "Hyocholic acid; gamma-Muricholate"
+      - name: "hyocholic acid"
       - compartment: "e"
       - formula: "C24H39O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03691e"
-      - name: "Isochenodeoxycholic acid; 3beta,7alpha-Dihydroxy-5beta-cholanic acid"
+      - name: "isochenodeoxycholic acid"
       - compartment: "e"
       - formula: "C24H39O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03704e"
-      - name: "Isochenodeoxycholic acid; 3beta,7alpha,12alpha-Trihydroxy-5beta-cholanic acid"
+      - name: "isocholic acid"
       - compartment: "e"
       - formula: "C24H39O5"
       - charge: -1
@@ -55145,7 +55145,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03996e"
-      - name: "Taurohyocholic acid; N-(3alpha,6alpha,7alpha-Trihydroxy-5beta-cholan-24-oyl)taurine"
+      - name: "taurohyocholic acid"
       - compartment: "e"
       - formula: "C26H44NO7S"
       - charge: -1
@@ -55159,7 +55159,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04057e"
-      - name: "Ursocholic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholan-24-oic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholanic acid; 7beta-Hydroxyisocholic acid; 7-Epicholic acid"
+      - name: "ursocholic acid"
       - compartment: "e"
       - formula: "C24H39O5"
       - charge: -1
@@ -55173,7 +55173,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03685r"
-      - name: "Hyocholic acid; gamma-Muricholate"
+      - name: "hyocholic acid"
       - compartment: "r"
       - formula: "C24H39O5"
       - charge: -1
@@ -183768,7 +183768,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00043"
-      - name: "3-Hydroxyisobutyryl-Coenzyme A Hydrolase"
+      - name: "3-hydroxyisobutyryl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00799c: -1
           - MAM01597c: 1
@@ -183830,7 +183830,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00047"
-      - name: "4-Hydroxybenzoyl Coenzyme A Formation"
+      - name: "4-hydroxybenzoyl-CoA formation"
       - metabolites: !!omap
           - MAM00982m: -1
           - MAM00996m: 1
@@ -183980,7 +183980,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00057"
-      - name: "Acetyl Coenzyme A Transport"
+      - name: "acetyl-CoA transport"
       - metabolites: !!omap
           - MAM01261c: -1
           - MAM01261r: 1
@@ -184146,7 +184146,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00069"
-      - name: "Alpha-Methylacyl Coenzyme A Racemase (Reductase)"
+      - name: "alpha-methylacyl-CoA racemase (reductase)"
       - metabolites: !!omap
           - MAM00614x: -1
           - MAM00755x: 1
@@ -184161,7 +184161,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00070"
-      - name: "Alpha-Methylacyl Coenzyme A Racemase (Reductase)"
+      - name: "alpha-methylacyl-CoA racemase (reductase)"
       - metabolites: !!omap
           - MAM00614r: -1
           - MAM00755r: 1
@@ -184176,7 +184176,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00071"
-      - name: "Alpha-Methylacyl Coenzyme A Racemase"
+      - name: "alpha-methylacyl-CoA racemase"
       - metabolites: !!omap
           - MAM00616r: -1
           - MAM00618r: 1
@@ -184345,7 +184345,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00083"
-      - name: "Bile Acid Coenzyme A: Amino Acid N-Acyltransferase"
+      - name: "bile acid-CoA: amino acid N-acyltransferase"
       - metabolites: !!omap
           - MAM01514x: -1
           - MAM01597x: 1
@@ -184360,7 +184360,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00084"
-      - name: "Bile Acid Coenzyme A: Amino Acid N-Acyltransferase"
+      - name: "bile acid-CoA: amino acid N-acyltransferase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM01986x: -1
@@ -184375,7 +184375,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00085"
-      - name: "Bile Acid Coenzyme A: Amino Acid N-Acyltransferase"
+      - name: "bile acid-CoA: amino acid N-acyltransferase"
       - metabolites: !!omap
           - MAM01434x: -1
           - MAM01597x: 1
@@ -184390,7 +184390,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00086"
-      - name: "Biotin-[Acetyl Coenzyme A-Carboxylase] Ligase, Mitochondrial"
+      - name: "biotin-[acetyl-CoA-carboxylase] ligase, mitochondrial"
       - metabolites: !!omap
           - MAM01371m: -1
           - MAM01401m: -1
@@ -184694,7 +184694,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00108"
-      - name: "Transport of Octadecenoyl Coenzyme A into Mitochondrial Matrix"
+      - name: "Transport of octadecenoyl-CoA into Mitochondrial Matrix"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02348c: -1
@@ -184710,7 +184710,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00109"
-      - name: "Transport of Octadecenoyl Coenzyme A into Mitochondrial Matrix"
+      - name: "Transport of octadecenoyl-CoA into Mitochondrial Matrix"
       - metabolites: !!omap
           - MAM01597m: -1
           - MAM02348m: 1
@@ -185110,7 +185110,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00135"
-      - name: "P-Coumaroyl Coenzyme A Formation"
+      - name: "P-coumaroyl-CoA formation"
       - metabolites: !!omap
           - MAM00981m: -1
           - MAM00982m: 1
@@ -185236,7 +185236,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00144"
-      - name: "Palmitoyl Coenzyme A Desaturase (N-C16:0CoA -> N-C16:1CoA)"
+      - name: "palmitoyl-CoA desaturase (N-C16:0CoA -> N-C16:1CoA)"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02040c: 2
@@ -185255,7 +185255,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00145"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:2CoA -> N-C18:3CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:2CoA -> N-C18:3CoA)"
       - metabolites: !!omap
           - MAM00108c: 1
           - MAM02039c: -1
@@ -185273,7 +185273,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00146"
-      - name: "Stearoyl Coenzyme A Desaturase (N-C18:0CoA -> N-C18:1CoA)"
+      - name: "stearoyl-CoA desaturase (N-C18:0CoA -> N-C18:1CoA)"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02040c: 2
@@ -185292,7 +185292,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00147"
-      - name: "Stearoyl Coenzyme A Desaturase (N-C18:0CoA -> N-C18:1CoA)"
+      - name: "stearoyl-CoA desaturase (N-C18:0CoA -> N-C18:1CoA)"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02040c: 2
@@ -185311,7 +185311,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00148"
-      - name: "Stearoyl Coenzyme A Desaturase (N-C18:0CoA -> N-C18:1CoA)"
+      - name: "stearoyl-CoA desaturase (N-C18:0CoA -> N-C18:1CoA)"
       - metabolites: !!omap
           - MAM00057c: 1
           - MAM02039c: -1
@@ -185330,7 +185330,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00149"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:1CoA -> N-C18:2CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:1CoA -> N-C18:2CoA)"
       - metabolites: !!omap
           - MAM00106c: 1
           - MAM02039c: -1
@@ -185348,7 +185348,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00150"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:1CoA -> N-C18:2CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:1CoA -> N-C18:2CoA)"
       - metabolites: !!omap
           - MAM00106c: 1
           - MAM02039c: -1
@@ -185366,7 +185366,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00151"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:1CoA -> N-C18:2CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:1CoA -> N-C18:2CoA)"
       - metabolites: !!omap
           - MAM00057c: -1
           - MAM00106c: 1
@@ -185384,7 +185384,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00152"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:2CoA -> N-C18:3CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:2CoA -> N-C18:3CoA)"
       - metabolites: !!omap
           - MAM01934c: 1
           - MAM02039c: -1
@@ -185402,7 +185402,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00181"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C20:3CoA -> N-C20:4CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C20:3CoA -> N-C20:4CoA)"
       - metabolites: !!omap
           - MAM01364c: 1
           - MAM01697c: -1
@@ -185420,7 +185420,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00186"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C20:4CoA -> N-C20:5CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C20:4CoA -> N-C20:5CoA)"
       - metabolites: !!omap
           - MAM00103c: 1
           - MAM00125c: -1
@@ -185438,7 +185438,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00205"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C22:4CoA -> N-C22:5CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C22:4CoA -> N-C22:5CoA)"
       - metabolites: !!omap
           - MAM00093x: 1
           - MAM00119x: -1
@@ -185455,7 +185455,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00218"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C22:5CoA -> N-C22:6CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C22:5CoA -> N-C22:6CoA)"
       - metabolites: !!omap
           - MAM00095x: 1
           - MAM00121x: -1
@@ -185930,7 +185930,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00565"
-      - name: "Exchange of Fatty Acid 9-Cis-Retinol"
+      - name: "Exchange of fatty acid 9-cis-retinol"
       - metabolites: !!omap
           - MAM03315e: -1
       - lower_bound: -1000
@@ -186597,7 +186597,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00737"
-      - name: "Fatty-Acid- Coenzyme A Ligase"
+      - name: "fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00057c: 1
           - MAM01334c: 1
@@ -186615,7 +186615,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00739"
-      - name: "Fatty-Acid- Coenzyme A Ligase"
+      - name: "fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -186633,7 +186633,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00742"
-      - name: "Fatty-Acid- Coenzyme A Ligase (Butanoate), Mitochondrial"
+      - name: "fatty-acid-CoA ligase (butanoate), mitochondrial"
       - metabolites: !!omap
           - MAM01334m: 1
           - MAM01371m: -1
@@ -186651,7 +186651,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00743"
-      - name: "Fatty-Acyl Coenzyme A Elongation (N-C18:3CoA)"
+      - name: "fatty-acyl-CoA elongation (N-C18:3CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -186673,7 +186673,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00745"
-      - name: "Fatty-Acyl Coenzyme A Elongation (N-C20:4CoA)"
+      - name: "fatty-acyl-CoA elongation (N-C20:4CoA)"
       - metabolites: !!omap
           - MAM00108c: -1
           - MAM00125c: 1
@@ -186695,7 +186695,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00747"
-      - name: "Fatty-Acyl Coenzyme A Elongation (N-C20:4CoA)"
+      - name: "fatty-acyl-CoA elongation (N-C20:4CoA)"
       - metabolites: !!omap
           - MAM00119c: 1
           - MAM01364c: -1
@@ -186717,7 +186717,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00749"
-      - name: "Fatty-Acyl Coenzyme A Elongation (N-C20:5CoA)"
+      - name: "fatty-acyl-CoA elongation (N-C20:5CoA)"
       - metabolites: !!omap
           - MAM00103c: -1
           - MAM00121c: 1
@@ -187510,7 +187510,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01012"
-      - name: "Fatty Acyl Coenzyme A Synthase (N-C10:0CoA)"
+      - name: "fatty acyl-CoA synthase (N-C10:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187530,7 +187530,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01019"
-      - name: "Fatty-Acyl Coenzyme A Synthase (N-C12:0CoA)"
+      - name: "fatty-acyl-CoA synthase (N-C12:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187550,7 +187550,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01024"
-      - name: "Fatty-Acyl Coenzyme A Synthase (N-C14:0CoA)"
+      - name: "fatty-acyl-CoA synthase (N-C14:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187570,7 +187570,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01031"
-      - name: "Fatty-Acyl Coenzyme A Synthase (N-C16:0CoA)"
+      - name: "fatty-acyl-CoA synthase (N-C16:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187590,7 +187590,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01032"
-      - name: "Fatty-Acyl Coenzyme A Synthase (N-C18:0CoA)"
+      - name: "fatty-acyl-CoA synthase (N-C18:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187610,7 +187610,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01036"
-      - name: "Fatty Acyl Coenzyme A Synthase (N-C8:0CoA), Lumped Reaction"
+      - name: "fatty acyl-CoA synthase (N-C8:0CoA), lumped reaction"
       - metabolites: !!omap
           - MAM01261c: -1
           - MAM01596c: 3
@@ -188151,7 +188151,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01438"
-      - name: "Transport of Trans-Hexadec-2-Enoyl Coenzyme A"
+      - name: "transport of trans-hexadec-2-enoyl-CoA"
       - metabolites: !!omap
           - MAM00051c: -1
           - MAM00051x: 1
@@ -188229,7 +188229,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01446"
-      - name: "Hydroxymethylglutaryl Coenzyme A Reductase (Ir)"
+      - name: "hydroxymethylglutaryl-CoA reductase (Ir)"
       - metabolites: !!omap
           - MAM00167r: 1
           - MAM01597r: 1
@@ -188247,7 +188247,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01447"
-      - name: "Hydroxymethylglutaryl Coenzyme A Reversible Peroxisomal Transport"
+      - name: "hydroxymethylglutaryl-CoA reversible peroxisomal transport"
       - metabolites: !!omap
           - MAM02131c: -1
           - MAM02131x: 1
@@ -188259,7 +188259,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01449"
-      - name: "Hydroxymethylglutaryl Coenzyme A Lyase"
+      - name: "hydroxymethylglutaryl-CoA lyase"
       - metabolites: !!omap
           - MAM01253x: 1
           - MAM01261x: 1
@@ -188832,7 +188832,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01517"
-      - name: "Malonyl Coenzyme A-Acp Transacylase, Mitochondrial"
+      - name: "malonyl-CoA-acp transacylase, mitochondrial"
       - metabolites: !!omap
           - MAM00184m: -1
           - MAM01597m: 1
@@ -188882,7 +188882,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01521"
-      - name: "Methylmalonyl Coenzyme A Decarboxylase"
+      - name: "methylmalonyl-CoA decarboxylase"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM02039c: -1
@@ -188898,7 +188898,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01522"
-      - name: "Methylmalonyl Coenzyme A Decarboxylase, Peroxisomal"
+      - name: "methylmalonyl-CoA decarboxylase, peroxisomal"
       - metabolites: !!omap
           - MAM01596x: 1
           - MAM02039x: -1
@@ -189406,7 +189406,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01591"
-      - name: "Pseudoecgonine Coenzyme A Transferase, Endoplasmatic Reticulum"
+      - name: "pseudoecgonine-CoA transferase, endoplasmatic reticulum"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -189760,7 +189760,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01647"
-      - name: "Transport of Pristanoyl Coenzyme A, Peroxisomal"
+      - name: "Transport of pristanoyl-CoA, Peroxisomal"
       - metabolites: !!omap
           - MAM03887c: 1
           - MAM03887x: -1
@@ -189829,7 +189829,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01655"
-      - name: "Propenoyl Coenzyme A Hydrolase, Peroxisomal"
+      - name: "propenoyl-CoA hydrolase, peroxisomal"
       - metabolites: !!omap
           - MAM00799x: 1
           - MAM01265x: -1
@@ -189934,7 +189934,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01674"
-      - name: "Peroxisomal Acyl Coenzyme A Thioesterase"
+      - name: "peroxisomal acyl-CoA thioesterase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -189951,7 +189951,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01675"
-      - name: "Peroxisomal Acyl Coenzyme A Thioesterase"
+      - name: "peroxisomal acyl-CoA thioesterase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -189968,7 +189968,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01677"
-      - name: "Peroxisomal Acyl Coenzyme A Thioesterase"
+      - name: "peroxisomal acyl-CoA thioesterase"
       - metabolites: !!omap
           - MAM00119x: -1
           - MAM01291x: 1
@@ -191000,7 +191000,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02028"
-      - name: "Trans-Hexadec-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-hexadec-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00051m: 1
           - MAM02039m: 1
@@ -191051,7 +191051,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02121"
-      - name: "Palmitoyl Coenzyme A:L-Carnitine O-Palmitoyltransferase"
+      - name: "palmitoyl-CoA:L-carnitine O-palmitoyltransferase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02348x: -1
@@ -191067,7 +191067,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02122"
-      - name: "Palmitoyl Coenzyme A:L-Carnitine O-Palmitoyltransferase"
+      - name: "palmitoyl-CoA:L-carnitine O-palmitoyltransferase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02348x: -1
@@ -191083,7 +191083,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02123"
-      - name: "Palmitoyl Coenzyme A:L-Carnitine O-Palmitoyltransferase"
+      - name: "palmitoyl-CoA:L-carnitine O-palmitoyltransferase"
       - metabolites: !!omap
           - MAM01363x: 1
           - MAM01364x: -1
@@ -191171,7 +191171,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02146"
-      - name: "(S)-Methylmalonyl Coenzyme A Hydrolase"
+      - name: "(S)-methylmalonyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597m: 1
           - MAM02039m: 1
@@ -191205,7 +191205,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02148"
-      - name: "Trans-Oct-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-oct-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00059m: 1
           - MAM02039m: 1
@@ -191222,7 +191222,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02149"
-      - name: "Trans-Dodec-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-dodec-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00042m: 1
           - MAM02039m: 1
@@ -191239,7 +191239,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02183"
-      - name: "Trans-Tetradec-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-tetradec-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00066m: 1
           - MAM02039m: 1
@@ -191290,7 +191290,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02187"
-      - name: "Trans-Dec-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-dec-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00039m: 1
           - MAM01650m: -1
@@ -191468,7 +191468,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02207"
-      - name: "Trans-Hex-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-hex-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00053m: -1
           - MAM02039m: -1
@@ -192294,7 +192294,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02375"
-      - name: "Long-Chain-Acyl Coenzyme A Dehydrogenase"
+      - name: "long-chain-acyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM01596r: 4
           - MAM01597r: 2
@@ -192338,7 +192338,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02381"
-      - name: "Long-Chain-Acyl Coenzyme A Dehydrogenase"
+      - name: "long-chain-acyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00893m: -1
           - MAM01261m: 1
@@ -192843,7 +192843,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02487"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597m: 1
           - MAM02039m: 1
@@ -192860,7 +192860,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02488"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -192877,7 +192877,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02492"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00083c: -1
           - MAM00884c: 1
@@ -192943,7 +192943,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02500"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597m: 1
           - MAM01771m: 1
@@ -192960,7 +192960,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02502"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM01771x: 1
@@ -192977,7 +192977,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02504"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01373m: 1
           - MAM01597m: 1
@@ -192994,7 +192994,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02506"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01373x: 1
           - MAM01597x: 1
@@ -193011,7 +193011,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02507"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597m: 1
           - MAM02039m: 1
@@ -193028,7 +193028,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02508"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -193803,7 +193803,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02786"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334m: 1
           - MAM01371m: -1
@@ -193821,7 +193821,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02802"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334x: 1
           - MAM01371x: -1
@@ -193909,7 +193909,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02820"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00081c: -1
           - MAM00855c: 1
@@ -193925,7 +193925,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02826"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00696c: -1
           - MAM00854c: 1
@@ -193941,7 +193941,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02828"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00082c: -1
           - MAM00883c: 1
@@ -194256,7 +194256,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02940"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01434m: -1
           - MAM01435m: 1
@@ -194273,7 +194273,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02941"
-      - name: "Propionyl Coenzyme A C2-Trimethyltridecanoyltransferase"
+      - name: "propionyl-CoA C2-trimethyltridecanoyltransferase"
       - metabolites: !!omap
           - MAM00614c: -1
           - MAM01434c: 1
@@ -194290,7 +194290,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02950"
-      - name: "Propionyl Coenzyme A C2-Trimethyltridecanoyltransferase"
+      - name: "propionyl-CoA C2-trimethyltridecanoyltransferase"
       - metabolites: !!omap
           - MAM00614m: -1
           - MAM01434m: 1
@@ -194308,7 +194308,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02953"
-      - name: "Propionyl Coenzyme A C2-Trimethyltridecanoyltransferase"
+      - name: "propionyl-CoA C2-trimethyltridecanoyltransferase"
       - metabolites: !!omap
           - MAM00614x: -1
           - MAM01434x: 1
@@ -195458,7 +195458,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03266"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00177c: -1
           - MAM00894c: 1
@@ -195474,7 +195474,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03267"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00886c: 1
           - MAM01574c: -1
@@ -195490,7 +195490,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03268"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02552c: -1
@@ -195506,7 +195506,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03269"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039m: 1
           - MAM02552m: -1
@@ -195523,7 +195523,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03270"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039x: 1
           - MAM02552x: -1
@@ -195557,7 +195557,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03273"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334m: 1
           - MAM01371m: -1
@@ -195575,7 +195575,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03274"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334x: 1
           - MAM01371x: -1
@@ -195633,7 +195633,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03291"
-      - name: "acyl-CoA dehydrogenase long chain (Trans,Cis-Dodeca-2,5-Dienoyl Coenzyme A)"
+      - name: "acyl-CoA dehydrogenase long chain (trans,cis-dodeca-2,5-dienoyl-CoA)"
       - metabolites: !!omap
           - MAM00099m: 1
           - MAM01802m: 1
@@ -195652,7 +195652,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03295"
-      - name: "medium-chain acyl-CoA dehydrogenase (Trans,Cis-Dodeca-2,5-Dienoyl Coenzyme A)"
+      - name: "medium-chain acyl-CoA dehydrogenase (trans,cis-dodeca-2,5-dienoyl-CoA)"
       - metabolites: !!omap
           - MAM00099x: 1
           - MAM01802x: 1
@@ -195671,7 +195671,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03297"
-      - name: "Enoyl Coenzyme A Hydratase"
+      - name: "enoyl-CoA hydratase"
       - metabolites: !!omap
           - MAM02040m: -1
           - MAM03333m: -1
@@ -195686,7 +195686,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03299"
-      - name: "Enoyl Coenzyme A Hydratase"
+      - name: "enoyl-CoA hydratase"
       - metabolites: !!omap
           - MAM02040x: -1
           - MAM03333x: -1
@@ -195836,7 +195836,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03366"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM00682m: 1
           - MAM01364m: -1
@@ -195852,7 +195852,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03371"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM01576m: -1
           - MAM02041m: 1
@@ -195868,7 +195868,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03374"
-      - name: "Dodecenoyl Coenzyme A Isomerase"
+      - name: "dodecenoyl-CoA isomerase"
       - metabolites: !!omap
           - MAM03030m: -1
           - MAM03358m: 1
@@ -195882,7 +195882,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03376"
-      - name: "enoyl-CoA hydratase ((3E,5Z,8Z)-Tetradecatrienoyl Coenzyme A)"
+      - name: "enoyl-CoA hydratase ((3E,5Z,8Z)-tetradecatrienoyl-CoA)"
       - metabolites: !!omap
           - MAM03358m: -1
           - MAM03359m: 1
@@ -195896,7 +195896,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03377"
-      - name: "2,4-Dienoyl Coenzyme A Reductase (NADPH)"
+      - name: "2,4-dienoyl-CoA reductase (nadph)"
       - metabolites: !!omap
           - MAM02039m: -1
           - MAM02554m: 1
@@ -195913,7 +195913,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03378"
-      - name: "Dodecenoyl Coenzyme A Isomerase"
+      - name: "dodecenoyl-CoA isomerase"
       - metabolites: !!omap
           - MAM03360m: 1
           - MAM03361m: -1
@@ -195927,7 +195927,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03379"
-      - name: "Enoyl Coenzyme A Hydratase"
+      - name: "enoyl-CoA hydratase"
       - metabolites: !!omap
           - MAM02040m: -1
           - MAM03350m: 1
@@ -195942,7 +195942,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03380"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039m: 1
           - MAM02552m: -1
@@ -195959,7 +195959,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03381"
-      - name: "Acetyl Coenzyme A C-Acyltransferase"
+      - name: "acetyl-CoA C-acyltransferase"
       - metabolites: !!omap
           - MAM01261m: 1
           - MAM01597m: -1
@@ -196003,7 +196003,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03384"
-      - name: "Phytanoyl Coenzyme A Dioxygenase"
+      - name: "phytanoyl-CoA dioxygenase"
       - metabolites: !!omap
           - MAM01306x: -1
           - MAM01596x: 1
@@ -196021,7 +196021,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03385"
-      - name: "2-hydroxyacyl-CoA lyase (3(S)-2-Hydroxyphytanoyl Coenzyme A)"
+      - name: "2-hydroxyacyl-CoA lyase (3(S)-2-hydroxyphytanoyl-CoA)"
       - metabolites: !!omap
           - MAM00564x: 1
           - MAM01836x: 1
@@ -196054,7 +196054,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03387"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00078x: 1
           - MAM01334x: 1
@@ -196072,7 +196072,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03388"
-      - name: "Phytanate- Coenzyme A Ligase"
+      - name: "phytanate-CoA ligase"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -196089,7 +196089,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03389"
-      - name: "Phytanate- Coenzyme A Ligase"
+      - name: "phytanate-CoA ligase"
       - metabolites: !!omap
           - MAM01334x: 1
           - MAM01371x: -1
@@ -196660,7 +196660,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03483"
-      - name: "Acetyl Coenzyme A C-Acyltransferase"
+      - name: "acetyl-CoA C-acyltransferase"
       - metabolites: !!omap
           - MAM00119x: 1
           - MAM00853x: -1
@@ -197327,7 +197327,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03620"
-      - name: "acetyl-CoA C-acyltransferase (3-Oxo-Cis-9-Octadecenoyl Coenzyme A)"
+      - name: "acetyl-CoA C-acyltransferase (3-oxo-cis-9-octadecenoyl-CoA)"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02554c: 1
@@ -197343,7 +197343,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03621"
-      - name: "ELOVL fatty acid elongase (3-Oxo-Cis-9-Octadecenoyl Coenzyme A)"
+      - name: "ELOVL fatty acid elongase (3-oxo-cis-9-octadecenoyl-CoA)"
       - metabolites: !!omap
           - MAM02039r: -1
           - MAM02554r: 1
@@ -197360,7 +197360,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03623"
-      - name: "enoyl-CoA hydratase (3(S)-Hydroxy-Cis-9-Octadecenoyl Coenzyme A)"
+      - name: "enoyl-CoA hydratase (3(S)-hydroxy-cis-9-octadecenoyl-CoA)"
       - metabolites: !!omap
           - MAM02040c: 1
           - MAM03365c: -1
@@ -197374,7 +197374,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03624"
-      - name: "ELOVL fatty acid elongase (3(S)-Hydroxy-Cis-9-Octadecenoyl Coenzyme A)"
+      - name: "ELOVL fatty acid elongase (3(S)-hydroxy-cis-9-octadecenoyl-CoA)"
       - metabolites: !!omap
           - MAM02040r: 1
           - MAM03365r: -1
@@ -197389,7 +197389,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03745"
-      - name: "alpha-methylacyl-CoA racemase (Trans,Cis-2,9-Octadecadienoyl Coenzyme A)"
+      - name: "alpha-methylacyl-CoA racemase (trans,cis-2,9-octadecadienoyl-CoA)"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02554c: 1
@@ -197405,7 +197405,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03749"
-      - name: "ELOVL fatty acid elongase (Trans,Cis-2,9-Octadecadienoyl Coenzyme A)"
+      - name: "ELOVL fatty acid elongase (trans,cis-2,9-octadecadienoyl-CoA)"
       - metabolites: !!omap
           - MAM02039r: -1
           - MAM02554r: 1
@@ -197422,7 +197422,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03756"
-      - name: "Enoyl Coenzyme A Hydratase"
+      - name: "enoyl-CoA hydratase"
       - metabolites: !!omap
           - MAM00749x: -1
           - MAM02040x: -1
@@ -197437,7 +197437,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03758"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02552c: -1
@@ -197453,7 +197453,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03764"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00748x: 1
           - MAM02039x: 1
@@ -197638,7 +197638,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03801"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01120m: 1
           - MAM01151m: -1
@@ -197656,7 +197656,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03803"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01120r: 1
           - MAM01151r: -1
@@ -197674,7 +197674,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03805"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01120x: 1
           - MAM01151x: -1
@@ -197692,7 +197692,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03808"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00689c: -1
           - MAM00740c: 1
@@ -197709,7 +197709,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03810"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00835c: 1
           - MAM00836c: -1
@@ -197726,7 +197726,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03812"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00690c: -1
           - MAM00741c: 1
@@ -197743,7 +197743,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03814"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00837c: 1
           - MAM00838c: -1
@@ -197942,7 +197942,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03844"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00687c: 1
           - MAM00688c: -1
@@ -197959,7 +197959,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03846"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00252m: -1
           - MAM00258m: 1
@@ -197977,7 +197977,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03872"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00252r: -1
           - MAM00258r: 1
@@ -197995,7 +197995,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03874"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00252x: -1
           - MAM00258x: 1
@@ -198013,7 +198013,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03876"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00691c: -1
           - MAM00846c: 1
@@ -198615,7 +198615,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03981"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00421c: -1
           - MAM01597c: 1
@@ -198632,7 +198632,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03983"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00420c: 1
           - MAM00581c: -1
@@ -198697,7 +198697,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03997"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM02041m: 1
           - MAM02630m: -1
@@ -198713,7 +198713,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04001"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM01802x: -1
           - MAM01803x: 1
@@ -198729,7 +198729,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04003"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM00678m: 1
           - MAM00980m: -1
@@ -199792,7 +199792,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04327"
-      - name: "Exchange of Cyanosulfurous Acid Anion"
+      - name: "Exchange of cyanosulfurous acid anion"
       - metabolites: !!omap
           - MAM03330e: -1
       - lower_bound: -1000
@@ -200113,7 +200113,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04438"
-      - name: "Transport of 2-Methylcrotonoyl Coenzyme A into Cytosol"
+      - name: "transport of 2-methylcrotonoyl-CoA into cytosol"
       - metabolites: !!omap
           - MAM02999c: 1
           - MAM02999m: -1
@@ -200126,7 +200126,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04439"
-      - name: "Transport of (R)-3-Hydroxybutanoyl Coenzyme A into Cytosol"
+      - name: "transport of (R)-3-hydroxybutanoyl-CoA into cytosol"
       - metabolites: !!omap
           - MAM00159c: 1
           - MAM00159m: -1
@@ -200139,7 +200139,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04441"
-      - name: "Activation of Adipic Acid for Formation of Adipoyl Carnitine"
+      - name: "Activation of adipic acid for Formation of Adipoyl Carnitine"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -200183,7 +200183,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04447"
-      - name: "Thioesterification of Adipoyl Coenzyme A for Release into Cytosol"
+      - name: "Thioesterification of adipoyl-CoA for Release into Cytosol"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -200310,7 +200310,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04509"
-      - name: "Thioesterification of Dodecanedioyl Coenzyme A for Release into Cytosol"
+      - name: "Thioesterification of dodecanedioyl-CoA for Release into Cytosol"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -200327,7 +200327,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04511"
-      - name: "Activation of Dodecanedioic Acid"
+      - name: "Activation of dodecanedioic acid"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -200343,7 +200343,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04515"
-      - name: "Transport of Dodecanedioic Acid by Diffusion"
+      - name: "Transport of dodecanedioic acid by Diffusion"
       - metabolites: !!omap
           - MAM03562c: 1
           - MAM03562x: -1
@@ -200371,7 +200371,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04566"
-      - name: "Transport of 3-Hydroxytetradecenoyl Coenzyme A from Mitochondria into Cytosol"
+      - name: "transport of 3-hydroxytetradecenoyl-CoA from mitochondria into cytosol"
       - metabolites: !!omap
           - MAM03263c: 1
           - MAM03263m: -1
@@ -201125,7 +201125,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04884"
-      - name: "Exchange of Hexadecanedioic Acid Mono-L-Carnitine Ester"
+      - name: "Exchange of hexadecanedioic acid mono-L-carnitine ester"
       - metabolites: !!omap
           - MAM03493e: -1
       - lower_bound: -1000
@@ -203786,7 +203786,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06485"
-      - name: "Transport of Glutaryl Coenzyme A from Mitochondria into Cytosol"
+      - name: "transport of glutaryl-CoA from mitochondria into cytosol"
       - metabolites: !!omap
           - MAM01977c: 1
           - MAM01977m: -1
@@ -203799,7 +203799,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06487"
-      - name: "Transport of (S)-3-Hydroxydecanoyl Coenzyme A from Mitochondria into the Cytosol"
+      - name: "transport of (S)-3-hydroxydecanoyl-CoA from mitochondria into the cytosol"
       - metabolites: !!omap
           - MAM00181c: 1
           - MAM00181m: -1
@@ -203941,7 +203941,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06593"
-      - name: "Transport of Isovaleryl Coenzyme A from Mitochondria into Cytosol"
+      - name: "transport of isovaleryl-CoA from mitochondria into cytosol"
       - metabolites: !!omap
           - MAM02189c: 1
           - MAM02189m: -1
@@ -203954,7 +203954,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06596"
-      - name: "Transport of Lignocericyl Coenzyme A from Cytosol to Peroxisome"
+      - name: "transport of lignocericyl-CoA from cytosol to peroxisome"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -204051,7 +204051,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06688"
-      - name: "Transport of 3-Hydroxyoctadecadienoyl Coenzyme A from Mitochondria into Cytosol"
+      - name: "Transport of 3-hydroxyoctadecadienoyl-CoA from Mitochondria into Cytosol"
       - metabolites: !!omap
           - MAM03249c: 1
           - MAM03249m: -1
@@ -204064,7 +204064,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06689"
-      - name: "Transport of Octadecenoyl Coenzyme A into Mitochondrial Matrix"
+      - name: "Transport of octadecenoyl-CoA into Mitochondrial Matrix"
       - metabolites: !!omap
           - MAM03793c: -1
           - MAM03793m: 1
@@ -204077,7 +204077,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06696"
-      - name: "Transport of Octadecenoyl Coenzyme A into Mitochondrial Matrix"
+      - name: "Transport of octadecenoyl-CoA into Mitochondrial Matrix"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02348c: -1
@@ -204092,7 +204092,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06698"
-      - name: "Transport of Octadecenoyl Coenzyme A into Mitochondrial Matrix"
+      - name: "Transport of octadecenoyl-CoA into Mitochondrial Matrix"
       - metabolites: !!omap
           - MAM01597m: -1
           - MAM02348m: 1
@@ -204162,7 +204162,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06777"
-      - name: "Thioesterification of Suberyl Coenzyme A for Release into Cytosol"
+      - name: "Thioesterification of suberyl-CoA for Release into Cytosol"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -204259,7 +204259,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06812"
-      - name: "Transport of Stearoyl Coenzyme A from Cytosol to Peroxisomes"
+      - name: "transport of stearoyl-CoA from cytosol to peroxisomes"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -204295,7 +204295,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06821"
-      - name: "Transport of Suberic Acid into Cytosol (Diffusion)"
+      - name: "Transport of suberic acid into Cytosol (Diffusion)"
       - metabolites: !!omap
           - MAM03954c: 1
           - MAM03954x: -1
@@ -204336,7 +204336,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06833"
-      - name: "Activation of Suberic Acid for Formation of Suberyl Carnitine"
+      - name: "Activation of suberic acid for Formation of Suberyl Carnitine"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -204384,7 +204384,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06852"
-      - name: "Thioesterification of Succinyl Coenzyme A for Release into Cytosol"
+      - name: "thioesterification of succinyl-CoA for release into cytosol"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -205195,7 +205195,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07190"
-      - name: "Transport of Palmitoyl Coenzyme A"
+      - name: "transport of palmitoyl-CoA"
       - metabolites: !!omap
           - MAM02678c: -2
           - MAM02678r: 2
@@ -205613,7 +205613,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08204"
-      - name: "Pyrophasphatase (Dephospho Coenzyme A, Extracellular)"
+      - name: "pyrophasphatase (dephospho-CoA, extracellular)"
       - metabolites: !!omap
           - MAM01334e: 1
           - MAM01674e: -1
@@ -205744,7 +205744,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08649"
-      - name: "Exchange of Beta Glucan-Taurocholic Acid Complex"
+      - name: "Exchange of beta glucan-taurocholic acid complex"
       - metabolites: !!omap
           - MAM03604e: -1
       - lower_bound: -1000
@@ -205754,7 +205754,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08650"
-      - name: "Exchange of Beta Glucan-Taurodeoxycholic Acid Complex"
+      - name: "Exchange of beta glucan-taurodeoxycholic acid complex"
       - metabolites: !!omap
           - MAM03605e: -1
       - lower_bound: -1000
@@ -205794,7 +205794,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08708"
-      - name: "Exchange of Guar Gum-Deoxyxholic Acid Complex"
+      - name: "Exchange of guar gum-deoxyxholic acid complex"
       - metabolites: !!omap
           - MAM03639e: -1
       - lower_bound: -1000
@@ -205814,7 +205814,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08916"
-      - name: "Exchange of Guar Gum-Taurocholic Acid Complex"
+      - name: "Exchange of guar gum-taurocholic acid complex"
       - metabolites: !!omap
           - MAM03641e: -1
       - lower_bound: -1000
@@ -205854,7 +205854,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08951"
-      - name: "Exchange of Pectin-Deoxycholic Acid Complex"
+      - name: "Exchange of pectin-deoxycholic acid complex"
       - metabolites: !!omap
           - MAM03852e: -1
       - lower_bound: -1000
@@ -205874,7 +205874,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08953"
-      - name: "Exchange of Pectin-Taurocholic Acid Complex"
+      - name: "Exchange of pectin-taurocholic acid complex"
       - metabolites: !!omap
           - MAM03854e: -1
       - lower_bound: -1000
@@ -205894,7 +205894,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08955"
-      - name: "Exchange of Psillium-Glycocholic Acid Complex"
+      - name: "Exchange of psillium-glycocholic acid complex"
       - metabolites: !!omap
           - MAM03908e: -1
       - lower_bound: -1000
@@ -205904,7 +205904,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08956"
-      - name: "Exchange of Psyllium-Taurocholic Acid Complex"
+      - name: "Exchange of psyllium-taurocholic acid complex"
       - metabolites: !!omap
           - MAM03909e: -1
       - lower_bound: -1000
@@ -205914,7 +205914,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08957"
-      - name: "Exchange of Psyllium-Taurodeoxycholic Acid Complex"
+      - name: "Exchange of psyllium-taurodeoxycholic acid complex"
       - metabolites: !!omap
           - MAM03910e: -1
       - lower_bound: -1000
@@ -208575,7 +208575,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09948"
-      - name: "Acylcoa Hydrolase, Cis, Cis-11, 14-Eicosadienoyl Coenzyme A"
+      - name: "acylcoa hydrolase, cis, cis-11, 14-eicosadienoyl-CoA"
       - metabolites: !!omap
           - MAM00009c: -1
           - MAM01597c: 1
@@ -208590,7 +208590,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09950"
-      - name: "Hydrolysis of Tetradecadienoyl Coenzyme A to Cis-5, 8-Tetradecadienoic Acid"
+      - name: "Hydrolysis of tetradecadienoyl-CoA to Cis-5, 8-Tetradecadienoic Acid"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -209300,7 +209300,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10001"
-      - name: "Transport of Adipic Acid, Diffusion"
+      - name: "Transport of adipic acid, Diffusion"
       - metabolites: !!omap
           - MAM03408c: -1
           - MAM03408e: 1
@@ -209313,7 +209313,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10002"
-      - name: "Secretion of 2-Hydroxyadipic Acid"
+      - name: "Secretion of 2-hydroxyadipic acid"
       - metabolites: !!omap
           - MAM03410c: -1
           - MAM03410e: 1
@@ -210054,7 +210054,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10166"
-      - name: "Transport of Cis, Cis-11, 14-Eicosadienoyl Coenzyme A, Active Transport"
+      - name: "transport of cis, cis-11, 14-eicosadienoyl-CoA, active transport"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -210071,7 +210071,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10167"
-      - name: "Transport of Cis, Cis-11, 14-Eicosadienoyl Coenzyme A, Diffusion"
+      - name: "transport of cis, cis-11, 14-eicosadienoyl-CoA, diffusion"
       - metabolites: !!omap
           - MAM03569c: -1
           - MAM03569e: 1
@@ -210200,7 +210200,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10176"
-      - name: "Transport of Dodecanedioic Acid by FATP"
+      - name: "Transport of dodecanedioic acid by FATP"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -210217,7 +210217,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10177"
-      - name: "Transport of Dodecanedioic Acid by Diffusion"
+      - name: "Transport of dodecanedioic acid by Diffusion"
       - metabolites: !!omap
           - MAM03562c: -1
           - MAM03562e: 1
@@ -210449,7 +210449,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10200"
-      - name: "Exchange of Adipic Acid"
+      - name: "Exchange of adipic acid"
       - metabolites: !!omap
           - MAM03408e: -1
       - lower_bound: -1000
@@ -210459,7 +210459,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10201"
-      - name: "Exchange of 2-Hydroxyadipic Acid"
+      - name: "Exchange of 2-hydroxyadipic acid"
       - metabolites: !!omap
           - MAM03410e: -1
       - lower_bound: -1000
@@ -210729,7 +210729,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10228"
-      - name: "Exchange of Cis,Cis-11,14-Eicosadienoic Acid"
+      - name: "Exchange of cis,cis-11,14-eicosadienoic acid"
       - metabolites: !!omap
           - MAM03569e: -1
       - lower_bound: -1000
@@ -210849,7 +210849,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10240"
-      - name: "Exchange of Dodecanedioic Acid"
+      - name: "Exchange of dodecanedioic acid"
       - metabolites: !!omap
           - MAM03562e: -1
       - lower_bound: -1000
@@ -211839,7 +211839,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10339"
-      - name: "Exchange of Suberic Acid"
+      - name: "Exchange of suberic acid"
       - metabolites: !!omap
           - MAM03954e: -1
       - lower_bound: -1000
@@ -211849,7 +211849,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10340"
-      - name: "Exchange of Cia-5,8, Tetradecadienoic Acid"
+      - name: "Exchange of cia-5,8, tetradecadienoic acid"
       - metabolites: !!omap
           - MAM03976e: -1
       - lower_bound: -1000
@@ -212593,7 +212593,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10400"
-      - name: "Transport of Suberic Acid by Diffusion"
+      - name: "Transport of suberic acid by Diffusion"
       - metabolites: !!omap
           - MAM03954c: -1
           - MAM03954e: 1
@@ -213266,7 +213266,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10456"
-      - name: "Intracellular Transport of Lysophosphatidic Acid"
+      - name: "Intracellular Transport of lysophosphatidic acid"
       - metabolites: !!omap
           - MAM03419c: 1
           - MAM03419x: -1
@@ -213277,7 +213277,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10457"
-      - name: "Benzoyl Coenzyme A Formation"
+      - name: "benzoyl-CoA Formation"
       - metabolites: !!omap
           - MAM01334m: 1
           - MAM01371m: -1
@@ -213426,7 +213426,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10468"
-      - name: "3-Hydroxycinnamic Acid Uptake"
+      - name: "3-hydroxycinnamic acid Uptake"
       - metabolites: !!omap
           - MAM03215c: 1
           - MAM03215e: -1
@@ -213450,7 +213450,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10472"
-      - name: "Exchange of 3-Hydroxycinnamic Acid"
+      - name: "Exchange of 3-hydroxycinnamic acid"
       - metabolites: !!omap
           - MAM03215e: -1
       - lower_bound: -1000
@@ -213460,7 +213460,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10473"
-      - name: "Exchange of 3-Hydroxyphenylpropionic Acid (3-Hppa)"
+      - name: "Exchange of 3-hydroxyphenylpropionic acid (3-hppa)"
       - metabolites: !!omap
           - MAM03231e: -1
       - lower_bound: -1000
@@ -223228,7 +223228,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11255"
-      - name: "Transport of Hexadecanedioic Acid Mono-L-Carnitine Ester"
+      - name: "Transport of hexadecanedioic acid mono-L-carnitine ester"
       - metabolites: !!omap
           - MAM03493c: 1
           - MAM03493e: -1
@@ -223620,7 +223620,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11294"
-      - name: "Hydrolysis of Fatty Acyl Coenzyme A (14:1)"
+      - name: "hydrolysis of fatty acyl-CoA (14:1)"
       - metabolites: !!omap
           - MAM00128c: 1
           - MAM01597c: 1
@@ -223636,7 +223636,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11295"
-      - name: "Phenylacetate Coenzyme A Ligase, Mitochondrial"
+      - name: "phenylacetate-CoA ligase, mitochondrial"
       - metabolites: !!omap
           - MAM01334m: 1
           - MAM01371m: -1
@@ -224853,7 +224853,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11394"
-      - name: "Acetate Coenzyme A Ligase (ADP-Forming)"
+      - name: "acetate-CoA ligase (adp-forming)"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -225752,7 +225752,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11467"
-      - name: "Formation of Vanilpyruvic Acid from Vanilalanine"
+      - name: "Formation of vanilpyruvic acid from Vanilalanine"
       - metabolites: !!omap
           - MAM00830c: -1
           - MAM01306c: -1
@@ -226315,7 +226315,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11513"
-      - name: "glutaryl-CoA to Trans-Delta-2-Glutaryl Coenzyme A conversion"
+      - name: "glutaryl-CoA to trans-delta-2-glutaryl-CoA conversion"
       - metabolites: !!omap
           - MAM01802m: -1
           - MAM01803m: 1
@@ -226412,7 +226412,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11520"
-      - name: "Formation of Glutaconyl Coenzyme A"
+      - name: "Formation of glutaconyl-CoA"
       - metabolites: !!omap
           - MAM01802m: -1
           - MAM01803m: 1
@@ -226521,7 +226521,7 @@
       - rxnNotes: "ISBN:9783642157196;https://www.springer.com/gp/book/9789400957800"
     - !!omap
       - id: "MAR11528"
-      - name: "Exchange of 3-Hydroxyisovaleric Acid"
+      - name: "Exchange of 3-hydroxyisovaleric acid"
       - metabolites: !!omap
           - MAM03227e: -1
       - lower_bound: -1000
@@ -226622,7 +226622,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11535"
-      - name: "Formation of 3-Hydroxy-Sebacic Acid"
+      - name: "Formation of 3-hydroxy-sebacic acid"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -226637,7 +226637,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11536"
-      - name: "Transportof 3-Hydroxy-Sebacic Acid, Peroxisomal"
+      - name: "Transportof 3-hydroxy-sebacic acid, Peroxisomal"
       - metabolites: !!omap
           - MAM03258c: 1
           - MAM03258x: -1
@@ -226649,7 +226649,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11537"
-      - name: "Transport of 3-Hydroxy-Sebacic Acid, Extracellular"
+      - name: "Transport of 3-hydroxy-sebacic acid, Extracellular"
       - metabolites: !!omap
           - MAM03258c: -1
           - MAM03258e: 1
@@ -226662,7 +226662,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11538"
-      - name: "Exchange of 3-Hydroxy-Sebacic Acid"
+      - name: "Exchange of 3-hydroxy-sebacic acid"
       - metabolites: !!omap
           - MAM03258e: -1
       - lower_bound: -1000
@@ -226690,7 +226690,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11540"
-      - name: "Formation of 3-Hydoxy-Suberic Acid"
+      - name: "Formation of 3-hydoxy-suberic acid"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -226704,7 +226704,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11541"
-      - name: "Transport of 3-Hydoxy-Suberic Acid, Peroxisomal"
+      - name: "Transport of 3-hydoxy-suberic acid, Peroxisomal"
       - metabolites: !!omap
           - MAM03260c: 1
           - MAM03260x: -1
@@ -226717,7 +226717,7 @@
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
     - !!omap
       - id: "MAR11542"
-      - name: "Transport of 3-Hydoxy-Suberic Acid, Extracellular"
+      - name: "Transport of 3-hydoxy-suberic acid, Extracellular"
       - metabolites: !!omap
           - MAM03260c: -1
           - MAM03260e: 1
@@ -226730,7 +226730,7 @@
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
     - !!omap
       - id: "MAR11543"
-      - name: "Exchange of 3-Hydoxy-Suberic Acid"
+      - name: "Exchange of 3-hydoxy-suberic acid"
       - metabolites: !!omap
           - MAM03260e: -1
       - lower_bound: -1000
@@ -226790,7 +226790,7 @@
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
     - !!omap
       - id: "MAR11547"
-      - name: "Exchange of 5-Hydroxyhexanoic Acid"
+      - name: "Exchange of 5-hydroxyhexanoic acid"
       - metabolites: !!omap
           - MAM03287e: -1
       - lower_bound: -1000
@@ -226853,7 +226853,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11552"
-      - name: "Formation of Ethylmalonic Acid"
+      - name: "Formation of ethylmalonic acid"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -226868,7 +226868,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11553"
-      - name: "Transport of Ethylmalonic Acid"
+      - name: "Transport of ethylmalonic acid"
       - metabolites: !!omap
           - MAM03575c: -1
           - MAM03575e: 1
@@ -226880,7 +226880,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11554"
-      - name: "Exchange of Ethylmalonic Acid"
+      - name: "Exchange of ethylmalonic acid"
       - metabolites: !!omap
           - MAM03575e: -1
       - lower_bound: -1000
@@ -229468,7 +229468,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11739"
-      - name: "Exchange of 7Z,10Z-Hexadecadienoic Acid"
+      - name: "Exchange of 7Z,10Z-hexadecadienoic acid"
       - metabolites: !!omap
           - MAM03981e: -1
       - lower_bound: -1000
@@ -229527,7 +229527,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11743"
-      - name: "Exchange of (Z,Z,Z)-7,10,13-Hexadecatrienoic Acid"
+      - name: "Exchange of (Z,Z,Z)-7,10,13-hexadecatrienoic acid"
       - metabolites: !!omap
           - MAM03657e: -1
       - lower_bound: -1000
@@ -229570,7 +229570,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11746"
-      - name: "Transport of Trans-Delta-2-Heptadecanoic Acid, Mitochondrial"
+      - name: "Transport of trans-delta-2-heptadecanoic acid, Mitochondrial"
       - metabolites: !!omap
           - MAM02039i: -1
           - MAM02039m: 1
@@ -229585,7 +229585,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11747"
-      - name: "Transport of Trans-Delta-2-Heptadecanoic Acid, Extracellular"
+      - name: "Transport of trans-delta-2-heptadecanoic acid, Extracellular"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -229602,7 +229602,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11748"
-      - name: "Exchange of Trans-Delta-2-Heptadecanoic Acid"
+      - name: "Exchange of trans-delta-2-heptadecanoic acid"
       - metabolites: !!omap
           - MAM03682e: -1
       - lower_bound: -1000
@@ -229645,7 +229645,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11751"
-      - name: "Exchange of Trans,Cis,Cis-2,11,14-Eicosatrienoic Acid"
+      - name: "Exchange of trans,cis,cis-2,11,14-eicosatrienoic acid"
       - metabolites: !!omap
           - MAM03568e: -1
       - lower_bound: -1000
@@ -229704,7 +229704,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11755"
-      - name: "Exchange of 5,8,11,14,17-Eicosapentenoic Acid"
+      - name: "Exchange of 5,8,11,14,17-eicosapentenoic acid"
       - metabolites: !!omap
           - MAM03283e: -1
       - lower_bound: -1000
