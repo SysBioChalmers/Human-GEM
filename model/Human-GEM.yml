@@ -15795,14 +15795,14 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01394c"
-      - name: "betaine_aldehyde"
+      - name: "betaine aldehyde"
       - compartment: "c"
       - formula: "C5H12NO"
       - charge: 1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01394m"
-      - name: "betaine_aldehyde"
+      - name: "betaine aldehyde"
       - compartment: "m"
       - formula: "C5H12NO"
       - charge: 1
@@ -44582,21 +44582,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03560r"
-      - name: "Docosanedioicacid"
+      - name: "docosanedioic acid"
       - compartment: "r"
       - formula: "C22H40O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03560c"
-      - name: "Docosanedioicacid"
+      - name: "docosanedioic acid"
       - compartment: "c"
       - formula: "C22H40O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03560e"
-      - name: "Docosanedioicacid"
+      - name: "docosanedioic acid"
       - compartment: "e"
       - formula: "C22H40O4"
       - charge: -2
@@ -45195,7 +45195,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03798r"
-      - name: "W-Hydroxydocosanoicacid"
+      - name: "22-hydroxydocosanoic acid"
       - compartment: "r"
       - formula: "C22H42O3"
       - charge: -1
@@ -45259,7 +45259,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03797r"
-      - name: "W-Hydroxydecanoicacid"
+      - name: "10-hydroxydecanoic acid"
       - compartment: "r"
       - formula: "C10H19O3"
       - charge: -1
@@ -45273,21 +45273,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03798c"
-      - name: "W-Hydroxydocosanoicacid"
+      - name: "22-hydroxydocosanoic acid"
       - compartment: "c"
       - formula: "C22H42O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03797c"
-      - name: "W-Hydroxydecanoicacid"
+      - name: "10-hydroxydecanoic acid"
       - compartment: "c"
       - formula: "C10H19O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03923c"
-      - name: "Sebacicacid"
+      - name: "sebacic acid"
       - compartment: "c"
       - formula: "C10H16O4"
       - charge: -2
@@ -45366,7 +45366,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03923x"
-      - name: "Sebacicacid"
+      - name: "sebacic acid"
       - compartment: "x"
       - formula: "C10H16O4"
       - charge: -2
@@ -46233,7 +46233,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03862c"
-      - name: "Phenylacetylglycine_phacgly"
+      - name: "phenylacetylglycine"
       - compartment: "c"
       - formula: "C10H10NO3"
       - charge: -1
@@ -48034,7 +48034,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03923e"
-      - name: "Sebacicacid"
+      - name: "sebacic acid"
       - compartment: "e"
       - formula: "C10H16O4"
       - charge: -2
@@ -48363,7 +48363,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03862e"
-      - name: "Phenylacetylglycine_phacgly"
+      - name: "phenylacetylglycine"
       - compartment: "e"
       - formula: "C10H10NO3"
       - charge: -1
@@ -201285,7 +201285,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04936"
-      - name: "Exchange of Docosanedioicacid"
+      - name: "Exchange of docosanedioic acid"
       - metabolites: !!omap
           - MAM03560e: -1
       - lower_bound: -1000
@@ -211659,7 +211659,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10321"
-      - name: "Exchange of Sebacicacid"
+      - name: "Exchange of sebacic acid"
       - metabolites: !!omap
           - MAM03923e: -1
       - lower_bound: -1000
@@ -212888,7 +212888,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10424"
-      - name: "Exchange of Phenylacetylglycine_phacgly"
+      - name: "Exchange of phenylacetylglycine"
       - metabolites: !!omap
           - MAM03862e: -1
       - lower_bound: -1000
