@@ -52,6 +52,13 @@ GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
 
 GROWTH_TOLERANCE = 1e-6
 
+# Pseudo-metabolites (generic class sinks and biomass pools) intrinsically
+# have no molecular formula, so they are excluded from the completeness report.
+PSEUDO_METABOLITES = {
+    "MAM10001", "MAM10002", "MAM10003",              # steroids, xenobiotics, arachidonate derivatives
+    "MAM10012", "MAM10013", "MAM10014", "MAM10015",  # cofactor/protein/lipid/metabolite pool_biomass
+}
+
 
 def _tsv_column(path: str, column: str) -> list[str]:
     with open(path, newline="", encoding="utf-8") as fh:
@@ -232,6 +239,8 @@ def check_unused_entities(model: cobra.Model) -> tuple[int, int]:
 def check_metabolite_completeness(model: cobra.Model) -> tuple[int, int]:
     rows = []
     for met in model.metabolites:
+        if met.id[:-1] in PSEUDO_METABOLITES:
+            continue
         missing_formula = not (met.formula or "").strip()
         missing_charge = met.charge is None
         if missing_formula or missing_charge:
