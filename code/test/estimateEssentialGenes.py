@@ -137,6 +137,13 @@ def estimate_essential_genes(
         essential_ids_by_tissue  {tissue: set of gene ids essential for any task}
         context_models           {tissue: cobra.Model} the tINIT models
     """
+    # Run flux-variability analysis single-process. cobra's default parallel FVA
+    # forks worker processes, but Gurobi's environment is not fork-safe, so the
+    # workers deadlock non-deterministically on Linux CI runners (the step hangs
+    # until the job timeout, leaving orphaned python processes). Serial FVA is a
+    # little slower but reliable.
+    cobra.Configuration().processes = 1
+
     tasks = parse_task_list(task_file)
     tissues, expression = _read_rnaseq(rnaseq_file)
     symbol_of = _gene_symbol_map(model)

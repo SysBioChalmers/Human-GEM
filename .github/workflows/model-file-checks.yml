@@ -1,0 +1,57 @@
+name: Model file checks
+
+on: [push]
+
+jobs:
+  # Verify model/Human-GEM.yml reads and writes losslessly (the committed file is
+  # canonical) both with cobrapy alone and with the RAVEN toolbox, so users of
+  # either toolchain can rely on it.
+  round-trip:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - tool: cobra
+            deps: cobra
+          - tool: raven-toolbox
+            deps: -r code/test/requirements.txt
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install ${{ matrix.deps }}
+
+      - name: Round-trip with ${{ matrix.tool }}
+        run: python code/test/testYamlConversion.py --tool ${{ matrix.tool }}
+
+  # YAML syntax of the model files, and consistency of the model with its
+  # annotation .tsv files. Uses cobrapy only (no RAVEN toolbox needed).
+  lint-and-annotation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: YAML lint
+        uses: metabolicatlas/action-yamllint@v3
+        with:
+          file_or_dir: model/
+          config_data: "{extends: default, rules: {line-length: disable}}"
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install cobra pandas
+
+      - name: Model / annotation-file consistency
+        run: python code/test/sanityCheck.py
