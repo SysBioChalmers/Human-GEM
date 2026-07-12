@@ -39696,14 +39696,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03968c"
-      - name: "Cis-Tetradec-7-Enoyl-[Acyl-Carrier Protein] (N-C14:1)"
+      - name: "cis-tetradec-7-enoyl-[ACP] (N-C14:1)"
       - compartment: "c"
       - formula: "C25H45N2O8PRS"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03646c"
-      - name: "Cis-Hexadec-9-Enoyl-[Acyl-Carrier Protein] (N-C16:1)"
+      - name: "cis-hexadec-9-enoyl-[ACP] (N-C16:1)"
       - compartment: "c"
       - formula: "C27H49N2O8PRS"
       - charge: -1
@@ -39717,7 +39717,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03795c"
-      - name: "Cis-Octadec-11-Enoyl-[Acyl-Carrier Protein] (N-C18:1)"
+      - name: "cis-octadec-11-enoyl-[ACP] (N-C18:1)"
       - compartment: "c"
       - formula: "C29H53N2O8PRS"
       - charge: -1
