@@ -92,6 +92,60 @@ def _section_rows(scored: dict) -> list[tuple[str, float]]:
     return rows
 
 
+def _test_metric(scored: dict, test_id: str) -> float | None:
+    """The 0-1 metric of a single MEMOTE test (parametrised tests are averaged)."""
+    test = (scored.get("tests") or {}).get(test_id)
+    if not isinstance(test, dict):
+        return None
+    metric = test.get("metric")
+    if isinstance(metric, (int, float)):
+        return float(metric)
+    if isinstance(metric, dict):
+        values = [v for v in metric.values() if isinstance(v, (int, float))]
+        return sum(values) / len(values) if values else None
+    return None
+
+
+def _test_title(scored: dict, test_id: str) -> str:
+    test = (scored.get("tests") or {}).get(test_id) or {}
+    return str(test.get("title") or test_id)
+
+
+def _detailed_rows(scored: dict, config) -> list[tuple[str, str, float]]:
+    """Best-effort per-test scores grouped by section: (section, test, metric).
+
+    Uses the scoring configuration's section -> cases mapping to place each test,
+    and the per-test metric from the scored result. Returns [] if the layout is
+    not as expected, so the caller can fall back to the section summary.
+    """
+    try:
+        sections = config["cards"]["scored"]["sections"]
+    except (KeyError, TypeError, AttributeError):
+        return []
+    if not isinstance(sections, dict):
+        return []
+    rows: list[tuple[str, str, float]] = []
+    for section_id, section in sections.items():
+        if not isinstance(section, dict):
+            continue
+        title = str(section.get("title") or section_id)
+        for case in section.get("cases") or []:
+            metric = _test_metric(scored, case)
+            if metric is not None:
+                rows.append((title, _test_title(scored, case), metric))
+    if rows:
+        return rows
+    # Fallback: the section -> cases mapping was not where we expected it. List every
+    # scored test flat, so the detail is still available even if less tidy.
+    tests = scored.get("tests")
+    if isinstance(tests, dict):
+        for test_id in tests:
+            metric = _test_metric(scored, test_id)
+            if metric is not None:
+                rows.append(("", _test_title(scored, test_id), metric))
+    return rows
+
+
 def main() -> int:
     subset = bool(os.environ.get("MEMOTE_SUBSET"))
     skip = SLOW_TESTS if subset else None
@@ -145,8 +199,19 @@ def main() -> int:
         lines.append(f"**Total score: {pct:.1f}%**")
         rows = _section_rows(scored)
         if rows:
-            lines += ["", "| Section | Score |", "| --- | --- |"]
+            lines += ["", "### Section scores", "", "| Section | Score |", "| --- | ---: |"]
             lines += [f"| {name} | {value * 100:.1f}% |" for name, value in rows]
+
+        try:
+            detailed = _detailed_rows(scored, config)
+        except Exception as exc:  # noqa: BLE001 - detail is optional, never fail on it
+            print(f"::warning::Could not build the detailed MEMOTE scores ({exc}).")
+            detailed = []
+        if detailed:
+            lines += ["", "### Detailed scores", "", "| Section | Test | Score |",
+                      "| --- | --- | ---: |"]
+            lines += [f"| {section} | {test} | {metric * 100:.1f}% |"
+                      for section, test, metric in detailed]
 
     with open(SCORE_MD, "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")

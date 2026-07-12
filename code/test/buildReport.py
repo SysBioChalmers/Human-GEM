@@ -1,12 +1,13 @@
 """Build one consolidated model-quality report for the pull-request comment.
 
-Combines the three result sets so the model's quality shows up in a single
-comment instead of several:
+Combines the result sets so the model's quality shows up in a single comment
+instead of several:
 
   * Model QC checks (the Model QC workflow): growth, metabolite completeness,
     reaction bound/GPR sanity, annotation cross-references and the MEMOTE score,
     as a compact status table with the change versus the target branch.
-  * MACAW and mass/charge balance (the QC-tests workflow): its committed summary.
+  * MACAW and mass/charge balance (the QC-tests workflow): dead-end / duplicate
+    reaction findings and mass/charge imbalances, in the same status-table style.
   * Gene essentiality, Hart 2015 (the gene-essentiality workflow): the per-cell-
     line metrics table.
 
@@ -40,7 +41,7 @@ COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
 #   count  -> lower is better (more findings is a regression)
 #   score  -> higher is better
 #   growth -> pass/fail (must be positive)
-ROWS = [
+QC_ROWS = [
     ("Growth (biomass producible)", "growth", "growth"),
     ("Metabolites missing formula", "missing_formula", "count"),
     ("Metabolites missing charge", "missing_charge", "count"),
@@ -48,6 +49,15 @@ ROWS = [
     ("Malformed cross-references", "malformed", "count"),
     ("Cross-refs inconsistent across compartments", "inconsistent", "count"),
     ("MEMOTE score (%)", "memote", "score"),
+]
+
+# MACAW and mass/charge balance, counted from the committed result CSVs so the
+# summary carries the same value / delta / icon as the Model QC checks.
+MB_ROWS = [
+    ("Reactions flagged by MACAW dead-end test", "dead_end", "count"),
+    ("Reactions flagged as MACAW duplicates", "duplicates", "count"),
+    ("Mass-imbalanced reactions", "mass_imbalance", "count"),
+    ("Charge-imbalanced reactions", "charge_imbalance", "count"),
 ]
 
 
@@ -73,7 +83,7 @@ def _memote_score(directory: Path) -> float | None:
     return float(match.group(1)) if match else None
 
 
-def _metrics(directory: Path) -> dict:
+def _qc_metrics(directory: Path) -> dict:
     completeness = directory / "qc_metabolite_completeness.csv"
     annotation = directory / "qc_annotation_issues.csv"
     return {
@@ -84,6 +94,24 @@ def _metrics(directory: Path) -> dict:
         "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
         "inconsistent": _count_csv(annotation, lambda r: r.get("issue", "").startswith("inconsistent")),
         "memote": _memote_score(directory),
+    }
+
+
+_DUP_COLS = ("duplicate_test_exact", "duplicate_test_directions", "duplicate_test_coefficients")
+
+
+def _mb_metrics(directory: Path) -> dict:
+    macaw = directory / "macaw_results.csv"
+    balance = directory / "balance_results.csv"
+    return {
+        # dead_end_test is "ok" when fine, otherwise a reason (a metabolite list or
+        # "only when going forwards/backwards"): a non-ok value is a flagged reaction.
+        "dead_end": _count_csv(macaw, lambda r: r.get("dead_end_test", "") not in ("ok", "")),
+        "duplicates": _count_csv(
+            macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS)
+        ),
+        "mass_imbalance": _count_csv(balance, lambda r: r.get("mass_imbalance", "").strip() != ""),
+        "charge_imbalance": _count_csv(balance, lambda r: r.get("charge_imbalance", "").strip() != ""),
     }
 
 
@@ -114,40 +142,29 @@ def _delta_and_icon(current, base, kind: str) -> tuple[str, str]:
     return (f"{change:+d}" if change != 0 else "0"), icon
 
 
-def _qc_section() -> tuple[list[str], str]:
-    """Return (table lines, overall header) for the Model QC checks."""
-    current = _metrics(RESULTS)
-    have_base = bool(BASE_DIR) and Path(BASE_DIR).exists()
-    base = _metrics(Path(BASE_DIR)) if have_base else dict.fromkeys(current)
-
-    table, changed, failed = [], 0, False
-    for label, key, kind in ROWS:
-        value = current[key]
+def _table(rows, current: dict, base: dict) -> tuple[list[str], int, bool]:
+    """Build the status-table body for a set of rows. Returns (lines, changed, failed)."""
+    lines, changed, failed = [], 0, False
+    for label, key, kind in rows:
+        value = current.get(key)
         if value is None:  # not committed yet for this pull request
-            table.append(f"| {label} | pending | | :hourglass_flowing_sand: |")
+            lines.append(f"| {label} | pending | | :hourglass_flowing_sand: |")
             continue
         delta, icon = _delta_and_icon(value, base.get(key), kind)
         changed += icon == ":warning:"
         failed = failed or icon == ":x:"
-        table.append(f"| {label} | {_format_value(value, kind)} | {delta} | {icon} |")
+        lines.append(f"| {label} | {_format_value(value, kind)} | {delta} | {icon} |")
+    return lines, changed, failed
 
+
+def _header(changed: int, failed: bool, have_base: bool, what: str) -> str:
     if failed:
-        header = ":x: **A check failed.** See the detailed reports below."
-    elif not have_base:
-        header = ":information_source: First run for this comparison; no target-branch baseline yet."
-    elif changed:
-        header = f":warning: **{changed} Model QC check(s) changed** compared to `{BASE_REF}`."
-    else:
-        header = f":white_check_mark: **Model QC checks fine**, no changes compared to `{BASE_REF}`."
-    return table, header
-
-
-def _macaw_balance_section() -> str:
-    """The MACAW / mass-and-charge-balance summary written by the QC-tests workflow."""
-    path = RESULTS / "qc_summary.md"
-    if path.exists() and path.read_text(encoding="utf-8").strip():
-        return path.read_text(encoding="utf-8").strip()
-    return "_Not yet run for this pull request._"
+        return f":x: **A {what} check failed.** See the detailed reports below."
+    if not have_base:
+        return ":information_source: First run for this comparison; no target-branch baseline yet."
+    if changed:
+        return f":warning: **{changed} {what} check(s) changed** compared to `{BASE_REF}`."
+    return f":white_check_mark: **{what} checks fine**, no changes compared to `{BASE_REF}`."
 
 
 def _gene_essentiality_section() -> str:
@@ -167,22 +184,38 @@ def _gene_essentiality_section() -> str:
 
 
 def main() -> int:
-    table, header = _qc_section()
+    have_base = bool(BASE_DIR) and Path(BASE_DIR).exists()
+    base_dir = Path(BASE_DIR) if have_base else None
+
+    qc_cur = _qc_metrics(RESULTS)
+    qc_base = _qc_metrics(base_dir) if have_base else dict.fromkeys(qc_cur)
+    qc_table, qc_changed, qc_failed = _table(QC_ROWS, qc_cur, qc_base)
+
+    mb_cur = _mb_metrics(RESULTS)
+    mb_base = _mb_metrics(base_dir) if have_base else dict.fromkeys(mb_cur)
+    mb_table, mb_changed, mb_failed = _table(MB_ROWS, mb_cur, mb_base)
+
+    delta_head = f"| Check | Result | &Delta; vs `{BASE_REF}` | |"
+    delta_sep = "| --- | ---: | ---: | :---: |"
 
     lines = [
         "## Model quality report",
         "",
-        header,
+        _header(qc_changed, qc_failed, have_base, "Model QC"),
         "",
         "### Model QC checks",
         "",
-        f"| Check | Result | &Delta; vs `{BASE_REF}` | |",
-        "| --- | ---: | ---: | :---: |",
-        *table,
+        delta_head,
+        delta_sep,
+        *qc_table,
         "",
         "### MACAW and mass/charge balance",
         "",
-        _macaw_balance_section(),
+        _header(mb_changed, mb_failed, have_base, "MACAW / balance"),
+        "",
+        delta_head,
+        delta_sep,
+        *mb_table,
         "",
         "### Gene essentiality (Hart 2015)",
         "",

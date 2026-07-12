@@ -4,8 +4,9 @@ The file here contains results from the [MACAW](https://github.com/Devlin-Moyer/
 
 The test results shown here were obtained by the GitHub Actions run in:
 
-- **PR #1056** (QC)
-- **PR #1056** (QC)
+- **PR #1056** (model QC checks)
+- **PR #1056** (MEMOTE)
+- **PR #1056** (MACAW and mass/charge balance)
 - **PR #973** (gene essentiality)
 
 The results will be updated by any subsequent pull request. Summary results are shown as a comment in the corresponding pull request.
@@ -41,4 +42,4 @@ A set of lightweight model quality-control checks, run by the `Model QC checks` 
 
 The workflow also verifies the model can produce biomass under its default constraints (a growth sanity check), which is the one check that fails the build if it does not hold. The fast checks and MEMOTE run as two separate jobs, so the quick checks report without waiting for the (much slower) MEMOTE snapshot.
 
-All of the results here are combined into a single pull-request comment (`model_qc_summary.md`): a compact status table for the model QC checks (current value, change compared to the target branch, and an icon for a quick visual check), followed by the MACAW and mass/charge balance summary and the gene-essentiality metrics. Each workflow rebuilds and posts that comment from the committed result files, so a result set that has not finished yet shows as pending. The per-finding detail stays in the CSVs above, which is where you look to find out what changed or why something failed.
+All of the results here are combined into a single pull-request comment (`model_qc_summary.md`): a compact status table for the model QC checks and a second one for the MACAW and mass/charge balance findings (each row showing the current value, the change compared to the target branch, and an icon for a quick visual check), followed by the gene-essentiality metrics. Each workflow rebuilds and posts that comment from the committed result files, so a result set that has not finished yet shows as pending (an hourglass). The per-finding detail stays in the CSVs above, which is where you look to find out what changed or why something failed.

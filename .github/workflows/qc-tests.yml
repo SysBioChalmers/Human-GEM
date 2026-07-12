@@ -52,14 +52,14 @@ jobs:
         run: |
           git fetch --depth=1 origin "$BASE_REF" || true
           mkdir -p "$RUNNER_TEMP/base"
-          for f in qc_metabolite_completeness.csv qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md; do
+          for f in qc_metabolite_completeness.csv qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md macaw_results.csv balance_results.csv; do
             git show "origin/$BASE_REF:data/testResults/$f" > "$RUNNER_TEMP/base/$f" 2>/dev/null || rm -f "$RUNNER_TEMP/base/$f"
           done
 
       - name: Mention PR# in README.md
         env:
           PR_NUMBER: ${{ github.event.number }}
-        run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (QC)/$PR_NUMBER\*\* (QC)/" data/testResults/README.md
+        run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (MACAW/$PR_NUMBER\*\* (MACAW/" data/testResults/README.md
 
       - name: Update local branch before committing changes
         env:
