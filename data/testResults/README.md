@@ -4,7 +4,7 @@ The file here contains results from the [MACAW](https://github.com/Devlin-Moyer/
 
 The test results shown here were obtained by the GitHub Actions run in:
 
-- **PR #1056** (model QC checks)
+- **PR #1057** (model QC checks)
 - **PR #1056** (MEMOTE)
 - **PR #1056** (MACAW and mass/charge balance)
 - **PR #973** (gene essentiality)
