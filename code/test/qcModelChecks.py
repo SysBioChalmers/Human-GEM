@@ -1,7 +1,10 @@
 """Model quality-control checks for Human-GEM.
 
-Three checks that complement the MACAW, balance and MEMOTE tests:
+Four checks that complement the MACAW, balance and MEMOTE tests:
 
+  * No duplicate keys within a metabolite, reaction or gene entry (for
+    example, two 'name' fields on one reaction). RAVEN tolerates these but
+    cobra cannot load the model, so this is a hard gate.
   * Metabolite formula and charge completeness. A metabolite with no chemical
     formula or no charge is silently skipped by the mass/charge balance test, so
     tracking these keeps that test honest.
@@ -13,8 +16,8 @@ Three checks that complement the MACAW, balance and MEMOTE tests:
 
 The completeness and sanity findings are written as diff-friendly CSVs and are
 reports (they do not fail the build), following the balance-test convention. The
-growth check is a functional gate: a model that cannot grow is broken, so that
-one fails the build.
+duplicate-key and growth checks are functional gates (a model that cobra
+cannot load, or that cannot grow, is broken); they fail the build.
 
 Usage:
     python code/test/qcModelChecks.py
@@ -24,6 +27,7 @@ import csv
 import sys
 
 import cobra
+import yaml
 
 MODEL_FILE = "model/Human-GEM.yml"
 GENES_TSV = "model/genes.tsv"
@@ -91,7 +95,81 @@ def check_growth(model: cobra.Model) -> float:
     return float(value) if value is not None else float("nan")
 
 
+def check_no_duplicate_keys(model_file: str) -> list[tuple[str, str, str, int, int]]:
+    """Find duplicate keys inside any YAML ordered map (!!omap) in the model.
+
+    Every metabolite, reaction and gene is written as an !!omap; a repeated key
+    within one - two 'name' fields on the same reaction, or the same metabolite
+    twice in a reaction's stoichiometry - is written and re-read happily by
+    RAVEN, but makes the model unloadable by cobra: load_yaml_model raises a bare
+    AssertionError deep in the parser with no hint of the location. This scan
+    reports exactly which entry and key are duplicated.
+
+    Returns a list of (entry_id, scope, key, first_line, duplicate_line).
+    """
+    stack: list[dict] = []
+    expect: list[str] = []
+    firsts: list[list] = []
+    dups: list[tuple[str, str, str, int, int]] = []
+
+    def owner() -> str:
+        for ctx in reversed(stack):
+            if ctx["type"] == "omap" and ctx["id"]:
+                return ctx["id"]
+        return "(top level)"
+
+    with open(model_file, encoding="utf-8") as fh:
+        for event in yaml.parse(fh):
+            kind = type(event).__name__
+            line = event.start_mark.line + 1
+            if kind == "SequenceStartEvent":
+                is_omap = event.tag == "tag:yaml.org,2002:omap"
+                stack.append({"type": "omap" if is_omap else "seq",
+                              "keys": {}, "id": None})
+            elif kind == "SequenceEndEvent":
+                stack.pop()
+            elif kind == "MappingStartEvent":
+                stack.append({"type": "map"})
+                expect.append("key")
+                firsts.append([None, None])
+            elif kind == "MappingEndEvent":
+                stack.pop()
+                first_key, first_val = firsts.pop()
+                expect.pop()
+                if stack and stack[-1]["type"] == "omap" and first_key is not None:
+                    parent = stack[-1]
+                    if first_key in parent["keys"]:
+                        scope = "field" if parent["id"] else "member"
+                        dups.append((owner(), scope, first_key,
+                                     parent["keys"][first_key], line))
+                    else:
+                        parent["keys"][first_key] = line
+                    if first_key == "id" and parent["id"] is None:
+                        parent["id"] = first_val
+            elif kind == "ScalarEvent" and stack and stack[-1]["type"] == "map":
+                i = len(expect) - 1
+                if expect[i] == "key":
+                    if firsts[i][0] is None:
+                        firsts[i][0] = event.value
+                    expect[i] = "val"
+                else:
+                    if firsts[i][1] is None:
+                        firsts[i][1] = event.value
+                    expect[i] = "key"
+    return dups
+
+
 def main() -> int:
+    duplicates = check_no_duplicate_keys(MODEL_FILE)
+    if duplicates:
+        for entry_id, scope, key, first_line, dup_line in duplicates:
+            print(f"::error::Duplicate {scope} '{key}' in entry {entry_id} "
+                  f"({MODEL_FILE} lines {first_line} and {dup_line}).")
+        count = len(duplicates)
+        print(f"Found {count} duplicate key{'s' if count != 1 else ''}; "
+              f"cobra cannot load a model with duplicate keys in an !!omap block.")
+        return 1
+
     model = cobra.io.load_yaml_model(MODEL_FILE)
     # Use GLPK for the single growth LP so this check does not depend on a Gurobi
     # licence (gurobipy is installed for MEMOTE, and its bundled licence would

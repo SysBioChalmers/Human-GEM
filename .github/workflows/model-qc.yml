@@ -20,7 +20,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install cobra
+        run: pip install cobra pyyaml
 
       - name: Metabolite completeness, GPR/bounds and growth checks
         run: python code/test/qcModelChecks.py
