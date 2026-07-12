@@ -1,159 +1,158 @@
 reaction,name,mass_imbalance,charge_imbalance
-MAR00012,,C:16.2056;H:30.7154;O:-5.36409e-16;R:-1,-1
-MAR00015,,C:16.222;H:30.9664;O:-2.50668e-16;R:-1,-1
-MAR00016,,C:-16.271;H:-30.8218;O:6.45642e-17;R:1,1
-MAR00017,,C:6.5;H:13;R:-1,-1
-MAR00021,,C:-257;H:-441;N:-31;O:-136;P:-10;R:-17;S:-2;X:-1,9
-MAR00022,,C:-3270;Co:-1;Fe:-1;H:-5094;N:-895;O:-973;P:-11;S:-28;X:0.7,17
-MAR00023,,C:-434;H:-594;N:-1;O:-57;X:1,7
-MAR00031,,C:-13.4364;H:-19.2074;N:-0.0188;O:-4.4474;P:-0.02;R:-2.0826;X:1,0.0068
-MAR00033,,C:-108;H:-164;O:-18;X:1,
-MAR00034,,C:-37;H:-48;O:-14;X:1,2
-MAR00035,,Br:-6;C:-588;Cl:-12;H:-621;N:-66;O:-209;S:-15,11
-MAR00036,,C:-3170;H:-4890;N:-76;O:-823;P:-15;S:-23,174
-MAR00037,,C:-1116;H:-1488;I:-1;N:-81;O:-299;S:-24;Se:-1,24
-MAR00477,,C:-32;H:-61;N:-4;O:-24;P:-3;R:-5,-1
-MAR00545,,C:-16.6164;H:-31.9336;N:-1.56364e-15;O:3.21271e-15;P:-7.09827e-16;R:1;S:6.41035e-17,-2.56414e-16
-MAR00546,,C:-16.881;H:-31.9902;N:-4.53413e-16;O:4.21191e-15;P:-9.87383e-16;R:1;S:5.71646e-17,-2.28658e-16
-MAR00547,,C:-17.0032;H:-32.1644;N:-6.75458e-16;O:1.99146e-15;P:-1.59801e-15;R:1;S:9.87979e-17,-3.95192e-16
-MAR00548,,C:-16.8292;H:-31.8668;N:2.2855e-15;O:3.62904e-15;P:-6.62231e-16;R:1;S:3.34368e-16,-1.33747e-15
-MAR00549,,C:-17.4164;H:-31.8982;N:1.50834e-15;O:9.64506e-16;P:-2.73653e-16;R:1;S:4.4539e-16,-1.78156e-15
-MAR00550,,C:-17.993;H:-33.083;N:1.2863e-15;O:-8.11851e-16;P:1.70437e-16;R:1;S:5.56413e-16,-2.22565e-15
-MAR00551,,C:-17.595;H:-32.8888;N:1.2863e-15;O:3.62904e-15;P:-4.95697e-16;R:1;S:3.89879e-16,-1.55952e-15
-MAR00552,,C:-16.0152;H:-32.0204;N:-2.95944e-15;O:-9.46465e-15;P:2.34708e-15;R:1;S:5.20417e-18,-2.08167e-17
-MAR00553,,C:-16.881;H:-31.9902;N:-4.53413e-16;O:4.21191e-15;P:-9.87383e-16;R:1;S:5.71646e-17,-2.28658e-16
-MAR00555,,C:-15.6522;H:-31.5134;O:-4.53413e-16;P:-2.13452e-16;R:1,4.26905e-16
-MAR00556,,C:-16.8292;H:-31.8668;O:-4.59702e-17;P:1.30104e-18;R:1,-2.60209e-18
-MAR00557,,C:-17.4164;H:-31.8982;O:8.42208e-16;P:-5.42101e-17;R:1,1.0842e-16
-MAR00558,,C:-17.993;H:-33.083;O:1.2863e-15;P:5.68122e-17;R:1,-1.13624e-16
-MAR00559,,C:-17.595;H:-32.8888;O:2.17448e-15;P:1.30104e-18;R:1,-2.60209e-18
-MAR00560,,C:-16.0152;H:-32.0204;O:-9.61037e-16;P:-2.1684e-16;R:1,4.33681e-16
-MAR00561,,C:-16.881;H:-31.9902;O:-1.3971e-15;P:4.32868e-17;R:1,-8.65735e-17
-MAR00685,,C:15.6522;H:31.5134;O:2.38687e-16;R:-1,-1.19344e-16
-MAR00686,,C:16.881;H:31.9902;O:-2.57444e-16;R:-1,1.28722e-16
-MAR00687,,C:17.0032;H:32.1644;O:-6.92263e-17;R:-1,3.46132e-17
-MAR00688,,C:16.8292;H:31.8668;O:-7.62411e-16;R:-1,3.81205e-16
-MAR00689,,C:17.4164;H:31.8982;O:-4.51028e-16;R:-1,2.25514e-16
-MAR00690,,C:17.993;H:33.083;O:-1.00614e-15;R:-1,5.0307e-16
-MAR00691,,C:17.595;H:32.8888;O:-6.28837e-16;R:-1,3.14419e-16
-MAR00692,,C:16.0152;H:32.0204;O:3.19189e-16;R:-1,-1.59595e-16
+MAR00012,(10Z)-heptadecenoic acid formation,C:16.2056;H:30.7154;O:-5.36409e-16;R:-1,-1
+MAR00015,NEFA blood pool in to (10Z)-heptadecenoic acid conversion,C:16.222;H:30.9664;O:-2.50668e-16;R:-1,-1
+MAR00016,(10Z)-heptadecenoic acid to NEFA blood pool out conversion,C:-16.271;H:-30.8218;O:6.45642e-17;R:1,1
+MAR00017,SMCFA-blood-pool to butyrate conversion,C:6.5;H:13;R:-1,-1
+MAR00022,[protein]-N6-(lipoyl)lysine reduction,C:-3270;Co:-1;Fe:-1;H:-5094;N:-895;O:-973;P:-11;S:-28;X:0.7,17
+MAR00023,11-cis-retinol to vitamin A derivatives conversion,C:-434;H:-594;N:-1;O:-57;X:1,7
+MAR00031,lipid droplet formation,C:-13.4364;H:-19.2074;N:-0.0188;O:-4.4474;P:-0.02;R:-2.0826;X:1,0.0068
+MAR00033,"24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion",C:-108;H:-164;O:-18;X:1,
+MAR00034,3-carboxy-alpha-chromanol to vitamin E derivatives conversion,C:-37;H:-48;O:-14;X:1,2
+MAR00035,"(1aalpha,2beta,3alpha,11calpha)... to xenobiotics conversion",Br:-6;C:-588;Cl:-12;H:-621;N:-66;O:-209;S:-15,11
+MAR00036,(11R)-HPETE to arachidonate derivatives conversion,C:-3170;H:-4890;N:-76;O:-823;P:-15;S:-23,174
+MAR00037,16alpha-hydroxyestrone to steroids conversion,C:-1116;H:-1488;I:-1;N:-81;O:-299;S:-24;Se:-1,24
+MAR00477,phospholipids extracellular pool formation,C:-32;H:-61;N:-4;O:-24;P:-3;R:-5,-1
+MAR00545,acyl-CoA-CL pool (liver tissue) formation,C:-16.6164;H:-31.9336;N:-1.56364e-15;O:3.21271e-15;P:-7.09827e-16;R:1;S:6.41035e-17,-2.56414e-16
+MAR00546,acyl-CoA-LD-TG2 pool (liver tissue) formation,C:-16.881;H:-31.9902;N:-4.53413e-16;O:4.21191e-15;P:-9.87383e-16;R:1;S:5.71646e-17,-2.28658e-16
+MAR00547,acyl-CoA-LD-TG3 pool (liver tissue) formation,C:-17.0032;H:-32.1644;N:-6.75458e-16;O:1.99146e-15;P:-1.59801e-15;R:1;S:9.87979e-17,-3.95192e-16
+MAR00548,acyl-CoA-LD-PC pool (liver tissue) formation,C:-16.8292;H:-31.8668;N:2.2855e-15;O:3.62904e-15;P:-6.62231e-16;R:1;S:3.34368e-16,-1.33747e-15
+MAR00549,acyl-CoA-LD-PE pool (liver tissue) formation,C:-17.4164;H:-31.8982;N:1.50834e-15;O:9.64506e-16;P:-2.73653e-16;R:1;S:4.4539e-16,-1.78156e-15
+MAR00550,acyl-CoA-LD-PS pool (liver tissue) formation,C:-17.993;H:-33.083;N:1.2863e-15;O:-8.11851e-16;P:1.70437e-16;R:1;S:5.56413e-16,-2.22565e-15
+MAR00551,acyl-CoA-LD-PI pool (liver tissue) formation,C:-17.595;H:-32.8888;N:1.2863e-15;O:3.62904e-15;P:-4.95697e-16;R:1;S:3.89879e-16,-1.55952e-15
+MAR00552,acyl-CoA-LD-SM pool (liver tissue) formation,C:-16.0152;H:-32.0204;N:-2.95944e-15;O:-9.46465e-15;P:2.34708e-15;R:1;S:5.20417e-18,-2.08167e-17
+MAR00553,acyl-CoA-bile-PC pool formation,C:-16.881;H:-31.9902;N:-4.53413e-16;O:4.21191e-15;P:-9.87383e-16;R:1;S:5.71646e-17,-2.28658e-16
+MAR00555,1-acylglycerol-3P-LD-TG1 pool (liver tissue) formation,C:-15.6522;H:-31.5134;O:-4.53413e-16;P:-2.13452e-16;R:1,4.26905e-16
+MAR00556,1-acylglycerol-3P-LD-PC pool (liver tissue) formation,C:-16.8292;H:-31.8668;O:-4.59702e-17;P:1.30104e-18;R:1,-2.60209e-18
+MAR00557,1-acylglycerol-3P-LD-PE pool (liver tissue) formation,C:-17.4164;H:-31.8982;O:8.42208e-16;P:-5.42101e-17;R:1,1.0842e-16
+MAR00558,1-acylglycerol-3P-LD-PS pool (liver tissue) formation,C:-17.993;H:-33.083;O:1.2863e-15;P:5.68122e-17;R:1,-1.13624e-16
+MAR00559,1-acylglycerol-3P-LD-PI pool (liver tissue) formation,C:-17.595;H:-32.8888;O:2.17448e-15;P:1.30104e-18;R:1,-2.60209e-18
+MAR00560,1-acylglycerol-3P-LD-SM pool (liver tissue) formation,C:-16.0152;H:-32.0204;O:-9.61037e-16;P:-2.1684e-16;R:1,4.33681e-16
+MAR00561,1-acylglycerol-3P-bile-PC pool formation,C:-16.881;H:-31.9902;O:-1.3971e-15;P:4.32868e-17;R:1,-8.65735e-17
+MAR00685,(10Z)-heptadecenoic acid formation,C:15.6522;H:31.5134;O:2.38687e-16;R:-1,-1.19344e-16
+MAR00686,(10Z)-heptadecenoic acid formation,C:16.881;H:31.9902;O:-2.57444e-16;R:-1,1.28722e-16
+MAR00687,(10Z)-heptadecenoic acid formation,C:17.0032;H:32.1644;O:-6.92263e-17;R:-1,3.46132e-17
+MAR00688,(10Z)-heptadecenoic acid formation,C:16.8292;H:31.8668;O:-7.62411e-16;R:-1,3.81205e-16
+MAR00689,(10Z)-heptadecenoic acid formation,C:17.4164;H:31.8982;O:-4.51028e-16;R:-1,2.25514e-16
+MAR00690,(10Z)-heptadecenoic acid formation,C:17.993;H:33.083;O:-1.00614e-15;R:-1,5.0307e-16
+MAR00691,(10Z)-heptadecenoic acid formation,C:17.595;H:32.8888;O:-6.28837e-16;R:-1,3.14419e-16
+MAR00692,(10Z)-heptadecenoic acid formation,C:16.0152;H:32.0204;O:3.19189e-16;R:-1,-1.59595e-16
 MAR00751,Beta Oxidation of Long Chain Fatty Acid,,2
-MAR00961,,,-2
-MAR00964,,,-2
-MAR00967,,,-2
-MAR00971,,,-2
-MAR00976,,,-2
-MAR01013,,,-2
-MAR01014,,,-2
-MAR01065,,,-2
-MAR01067,,,-2
-MAR01068,,,-2
-MAR01070,,,-3
-MAR01073,,,-2
-MAR01075,,,-2
-MAR01077,,,-2
-MAR01079,,,-4
-MAR01146,,,1
-MAR01147,,,1
-MAR01148,,,1
-MAR01185,,,2
-MAR01227,,,2
-MAR01301,,,5
-MAR01302,,,-3
-MAR01303,,,-3
-MAR01307,,,-2
-MAR01334,,,-1
-MAR01337,,,2
-MAR01355,,,1
-MAR01358,,,2
-MAR01361,,,2
-MAR01363,,,4
-MAR01364,,,2
-MAR01366,,,-4
-MAR01383,,,2
-MAR01389,,,1
-MAR01392,,,-2
-MAR01393,,,-2
-MAR01403,,,-2
-MAR01404,,,-2
-MAR01405,,,2
-MAR01406,,,-2
-MAR01407,,,-2
-MAR01408,,,-2
-MAR01409,,,-2
-MAR01410,,,1
-MAR01411,,,1
-MAR01412,,,1
-MAR01413,,,1
-MAR01414,,,1
-MAR01416,,,1
-MAR01417,,,1
-MAR01418,,,-2
-MAR01419,,,-2
-MAR01427,,,-2
-MAR01430,,,-2
-MAR01431,,,-2
+MAR00961,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
+MAR00964,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
+MAR00967,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
+MAR00971,arachidonate 5-lipoxygenase (5(S)-HETE),,-2
+MAR00976,"arachidonate 12-lipoxygenase, 12S type (5-oxo-ETE)",,-2
+MAR01013,"arachidonate 5-lipoxygenase (14,15-DiHETE)",,-2
+MAR01014,"arachidonate 5-lipoxygenase (14,15-DiHETE)",,-2
+MAR01065,"3-hydroxyacyl-CoA dehydrogenase (11,12-EET)",,-2
+MAR01067,"3-hydroxyacyl-CoA dehydrogenase (7,8-epoxy-(4Z,10Z)-hexadecadienoic acid)",,-2
+MAR01068,"3-hydroxyacyl-CoA dehydrogenase (14,15-EET)",,-2
+MAR01070,"3-hydroxyacyl-CoA dehydrogenase (10,11-epoxy-(4Z,7Z)-hexadecadienoic acid)",,-3
+MAR01073,"arachidonate 12-lipoxygenase, 12S type (12(S)-HETE)",,-2
+MAR01075,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
+MAR01077,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
+MAR01079,fatty acid amide hydrolase (arachidonate),,-4
+MAR01146,carbonyl reductase (NADPH) (5-oxo-6-trans-LTB4),,1
+MAR01147,carbonyl reductase (NADPH) (5-oxo-6-trans-LTB4),,1
+MAR01148,carbonyl reductase (NADPH) (5-oxo-6-trans-LTB4),,1
+MAR01185,(2E)-dodecenoyl-CoA formation,,2
+MAR01227,(2E)-dodecenoyl-CoA formation,,2
+MAR01301,acetyl-CoA C-acyltransferase (16e-18-oxo-18-CoA-dinor-LTE4),,5
+MAR01302,choloyl-CoA hydrolase (omega-COOH-tetranor-LTE3-CoA),,-3
+MAR01303,acyl-CoA oxidase (omega-COOH-tetranor-LTE3-CoA),,-3
+MAR01307,prostaglandin-endoperoxide synthase (prostaglandin G2),,-2
+MAR01334,15-deoxy-PGD2 hydrolysis,,-1
+MAR01337,"13,14-dihydro-15-keto-PGD2 to 15-dehydro-prostaglandin D2 conversion",,2
+MAR01355,"arachidonate to 8-peroxy-(5Z,9E,11Z,14Z)-eicosatetraenoate conversion",,1
+MAR01358,"arachidonate to 9-peroxy-(5Z,7E,11Z,14Z)-eicosatetraenoate conversion",,2
+MAR01361,"arachidonate to 11-peroxy-(5Z,8Z,12E,14Z)-eicosatetraenoate conversion",,2
+MAR01363,"9,11,15-trihydroxyprosta-(5Z,13E)-dien-1-oate hydrolysis",,4
+MAR01364,"arachidonate to 12-peroxy-(5Z,8Z,10E,14Z)-eicosatetraenoate conversion",,2
+MAR01366,"11,15-cyclo-12,14-cycloperoxy... to 11,15-cyclo-8,12,14-trihydroxy... conversion",,-4
+MAR01383,9-deoxy-delta12-PGD2 hydrolysis,,2
+MAR01389,15(S)-HETrE hydrolysis,,1
+MAR01392,prostaglandin-endoperoxide synthase (prostaglandin G1),,-2
+MAR01393,prostaglandin-endoperoxide synthase (prostaglandin G1),,-2
+MAR01403,7-peroxy-docosahexaenoate to DHA conversion,,-2
+MAR01404,8-peroxy-docosahexaenoate to DHA conversion,,-2
+MAR01405,DHA to 10-peroxy-docosahexaenoate conversion,,2
+MAR01406,11-peroxy-docosahexaenoate to DHA conversion,,-2
+MAR01407,14-peroxy-docosahexaenoate to DHA conversion,,-2
+MAR01408,16-peroxy-docosahexaenoate to DHA conversion,,-2
+MAR01409,17-peroxy-docosahexaenoate to DHA conversion,,-2
+MAR01410,DHA to 11-peroxy-docosahexaenoate conversion,,1
+MAR01411,DHA to 11-peroxy-docosahexaenoate conversion,,1
+MAR01412,DHA to 10-hydroperoxy-H4-neuroprostane conversion,,1
+MAR01413,DHA to 11-hydroperoxy-H4-neuroprostane conversion,,1
+MAR01414,DHA to 13-hydroperoxy-H4-neuroprostane conversion,,1
+MAR01416,DHA to 14-peroxy-docosahexaenoate conversion,,1
+MAR01417,DHA to 16-peroxy-docosahexaenoate conversion,,1
+MAR01418,4-hydroperoxy-H4-neuroprostane to 4-hydroxy-D4-neuroprostane conversion,,-2
+MAR01419,4-hydroperoxy-H4-neuroprostane to 4-hydroxy-E4-neuroprostane conversion,,-2
+MAR01427,13-hydroperoxy-H4-neuroprostane to 13-hydroxy-D4-neuroprostane conversion,,-2
+MAR01430,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-E4-neuroprostane conversion,,-2
+MAR01431,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-D4-neuroprostane conversion,,-2
 MAR01500,4alpha-methylzymosterol:NADP+ 3-oxidoreductase,,-4
 MAR01600,Peroxisomal Lumped Long Chain Fatty Acid Oxidation,,2
 MAR01932,Cholesterol:oxygen oxidoreductase (side-chain-cleaving),,-2
 MAR01934,"17alpha,20alpha-Dihydroxycholesterol:oxygen oxidoreductase (side-chain-cleaving)",,-4
 MAR01935,20alpha-Hydroxycholesterol:oxygen oxidoreductase (side-chain-cleaving),,-2
-MAR01942,"11-deoxycorticosterone,reduced ferredoxin:oxygen oxidoreductase (11-hydroxylating)",,-2
+MAR01942,cytochrome P450 (11-deoxycorticosterone),,-2
 MAR01950,"17alpha,21-dihydroxypregnenolone:oxygen oxidoreductase (11-hydroxylating)",,-2
-MAR01970,,,-2
-MAR01971,,,-2
-MAR02022,,,2
+MAR01970,"steroid Delta-isomerase (5-androstene-3,17-dione)",,-2
+MAR01971,"steroid Delta-isomerase (5-androstene-3,17-dione)",,-2
+MAR02022,3beta-hydroxy-Delta(5)-steroid dehydrogenase (5-alpha-dihydrotestosterone),,2
 MAR02023,"L-Arginine, NADPH:Oxygen Oxidoreductase (Nitric-Oxide-Forming)",,1
-MAR02024,,,2
-MAR02029,,,-2
-MAR02030,,,-2
-MAR02032,"19-hydroxyandrostenedione,NADPH---hemoprotein reductase:oxygen 19-oxidoreductase",,-2
-MAR02033,,,-2
-MAR02061,,,-1
-MAR02062,,,-1
-MAR02063,,,-1
-MAR02076,,,-1
-MAR02077,,,-1
-MAR02078,,,-1
-MAR02091,,,-1
-MAR02099,,,1
-MAR02100,,,1
-MAR02126,"Steroyl Coenzyme A, Hydrogen-Donor:Oxygen Oxidoreductase Polyunsaturated Fatty Acid Biosynthesis",,-2
-MAR02128,"Steroyl Coenzyme A, Hydrogen-Donor:Oxygen Oxidoreductase Polyunsaturated Fatty Acid Biosynthesis",,-2
+MAR02024,3beta-hydroxy-Delta(5)-steroid dehydrogenase (5-alpha-dihydrotestosterone),,2
+MAR02029,cytochrome P450 (testosterone),,-2
+MAR02030,cytochrome P450 (19-hydroxytestosterone),,-2
+MAR02032,"19-hydroxyandrostenedione,NADPH-hemoprotein reductase:oxygen 19-oxidoreductase",,-2
+MAR02033,cytochrome P450 (19-hydroxyandrostenedione),,-2
+MAR02061,peroxidase (2-hydroxyestrone),,-1
+MAR02062,peroxidase (2-hydroxyestrone),,-1
+MAR02063,peroxidase (2-hydroxyestrone),,-1
+MAR02076,peroxidase (4-hydroxyestrone),,-1
+MAR02077,peroxidase (4-hydroxyestrone),,-1
+MAR02078,peroxidase (4-hydroxyestrone),,-1
+MAR02091,"17beta-estradiol-3,4-semiquinone to 17beta-estradiol-3,4-quinone conversion",,-1
+MAR02099,"peroxidase (17beta-estradiol-2,3-semiquinone)",,1
+MAR02100,"peroxidase (17beta-estradiol-2,3-semiquinone)",,1
+MAR02126,stearoyl-CoA desaturase (ferrocytochrome B5),,-2
+MAR02128,stearoyl-CoA desaturase (ferrocytochrome B5),,-2
 MAR02301,Hydroxysteroid (17-Beta) Dehydrogenase 7,,-4
 MAR02302,Biosynthesis of Steroids Enzyme Catalyzed,,6
-MAR02313,Long-Chain-Fatty-Acid---Coa Ligase,,-8
-MAR02443,,,-2
-MAR02449,,,-1
-MAR02451,,,2
-MAR02545,,,2
-MAR02559,,,1
-MAR02560,,,2
-MAR02567,,,2
-MAR02571,,,2
-MAR02577,,,2
-MAR03055,,,-8
-MAR03119,,,2
+MAR02313,Long-Chain-Fatty-Acid-Coa Ligase,,-8
+MAR02443,13(S)-HPODE to 13-oxy-radical-octadecadienoate conversion,,-2
+MAR02449,"12,13-epoxy-9-alkoxy-(10E)-octadecenoate hydrolysis",,-1
+MAR02451,"1-hydroperoxy-8-carboxyoctyl-3,4... to 4-oxo-2-nonenal conversion",,2
+MAR02545,5(S)-HEPE hydrolysis,,2
+MAR02559,15(S)-HEPE hydrolysis,,1
+MAR02560,15(R)-HEPE hydrolysis,,2
+MAR02567,15(R)-HEPE hydrolysis,,2
+MAR02571,15(R)-HEPE hydrolysis,,2
+MAR02577,15(R)-HEPE hydrolysis,,2
+MAR03055,"(9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA oxidation",,-8
+MAR03119,tryptase (melatonin),,2
 MAR03138,Methionine Synthase,,-2
-MAR03167,,,1
-MAR03168,,,1
-MAR03255,,,1
-MAR03265,,,1
-MAR03321,,,2
+MAR03167,glutathione transferase (urate),,1
+MAR03168,peptidyl-dipeptidase A (melatonin),,1
+MAR03255,melatonin radical to cyclic-3-hydroxymelatonin conversion,,1
+MAR03265,prostaglandin-F synthase (monodehydroascorbate),,1
+MAR03321,acyl-CoA oxidase (4-cis-decenoyl-CoA),,2
 MAR03400,3Beta-Hydroxy-Delta5-Steroid Dehydrogenase,,-2
-MAR03437,,,-2
-MAR03438,,,-2
-MAR03439,,,2
-MAR03440,,,2
-MAR03483,Acetyl Coenzyme A C-Acyltransferase,,-2
-MAR03537,,C:16.764;H:31.3344;O:-2.22045e-16;R:-1,
-MAR03622,,C:16.764;H:31.3344;O:-2.22045e-16;R:-1,
-MAR03800,,H:1;S:1,
-MAR03830,,,1
-MAR03898,,,1
-MAR03962,,,-2
+MAR03437,"(4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA reduction",,-2
+MAR03438,"ELOVL fatty acid elongase ((4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA)",,-2
+MAR03439,"ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA)",,2
+MAR03440,"ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)...)",,2
+MAR03483,acetyl-CoA C-acyltransferase,,-2
+MAR03537,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;O:-2.22045e-16;R:-1,
+MAR03622,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;O:-2.22045e-16;R:-1,
+MAR03800,branched chain keto acid dehydrogenase E1 (2-oxobutyrate),H:1;S:1,
+MAR03830,"enoyl-CoA hydratase (9,10-12,13-diepoxy-octadecanoate)",,1
+MAR03898,palmitoyl-CoA hydrolase (15(S)-HPETE),,1
+MAR03962,arachidonate 5-lipoxygenase (prostaglandin D2),,-2
 MAR03992,NADH:ferricytochrome-b5 oxidoreductase,,2
-MAR04007,,,1
+MAR04007,acyl-CoA oxidase (gamma-tocopheroxyl-radical),,1
 MAR04015,Methionine Synthase,,4
 MAR04027,Microsomal Epoxide Hydrolase,,2
 MAR04029,Microsomal Epoxide Hydrolase,,2
@@ -163,87 +162,88 @@ MAR04035,Microsomal Epoxide Hydrolase,,2
 MAR04037,Microsomal Epoxide Hydrolase,,2
 MAR04088,Unspecific Monooxygenase,,2
 MAR04090,Unspecific Monooxygenase,,2
-MAR04548,"melatonin,NADPH---hemoprotein reductase:oxygen oxidoreductase",,-2
-MAR04549,,,-2
-MAR04552,,,1
-MAR04553,,,-1
-MAR04599,2-Oxoadipate:lipoamde 2-oxidoreductase(decarboxylating and acceptor-succinylating),H:-2;S:-2,
-MAR04702,,,2
-MAR04763,,,1
-MAR04768,,,-6
-MAR04769,,,-6
-MAR04770,,,-6
-MAR04773,,,-6
-MAR04842,,,-1
-MAR05155,,C:-611;H:-1000;N:-165;O:-176;R:1;S:-7,
-MAR05156,,C:-452;H:-708;N:-103;O:-143;R:1;S:-6,
-MAR05257,,C:16.8292;H:31.8668;O:-7.62411e-16;R:-1,3.81205e-16
-MAR05266,,C:611;H:1000;N:165;O:176;R:-1;S:7,
-MAR05267,,C:452;H:708;N:103;O:143;R:-1;S:6,
+MAR04548,"melatonin,NADPH-hemoprotein reductase:oxygen oxidoreductase",,-2
+MAR04549,6-hydroxymelatonin-sulfate to 6-hydroxymelatonin conversion,,-2
+MAR04552,hydroxide to melatonin radical conversion,,1
+MAR04553,cyclic-3-hydroxymelatonin hydrolysis,,-1
+MAR04599,oxoglutarate dehydrogenase (succinyl-transferring) (lipoamide),H:-2;S:-2,
+MAR04702,homogentisate hydroxylation,,2
+MAR04763,heme oxygenase (biliverdin-producing) (hemoglobin),,1
+MAR04768,uroporphyrin III to uroporphyrinogen III conversion,,-6
+MAR04769,uroporphyrin I to uroporphyrinogen III conversion,,-6
+MAR04770,coproporphyrin III to coproporphyrinogen III conversion,,-6
+MAR04773,coproporphyrin I to coproporphyrinogen I conversion,,-6
+MAR04842,aldehyde dehydrogenase [NAD(P)(+)] (SAM),,-1
+MAR05155,glycyl-tRNA(gly) phosphorylation,C:-611;H:-1000;N:-165;O:-176;R:1;S:-7,
+MAR05156,glycyl-tRNA(gly) phosphorylation,C:-452;H:-708;N:-103;O:-143;R:1;S:-6,
+MAR05257,(10Z)-heptadecenoic acid formation,C:16.8292;H:31.8668;O:-7.62411e-16;R:-1,3.81205e-16
+MAR05266,apo-[ACP] phosphorylation,C:611;H:1000;N:165;O:176;R:-1;S:7,
+MAR05267,mitoApo-[ACP] phosphorylation,C:452;H:708;N:103;O:143;R:-1;S:6,
 MAR05427,"Fatty Acid Omega Oxidation (C22->W-Ohc22), Endoplasmatic Reticulum",,1
 MAR06350,Fatty Acid Omega Oxidation (W-Ohc22->C22Dc),,-1
-MAR06393,,,1
+MAR06393,hydroxide to dehydroascorbic acid conversion,,1
 MAR06402,octanoyl-[acp]:protein N6-octanoyltransferase,C:1367;H:2173;N:381;O:419;S:4,
-MAR06416,"3-methyl-2-oxobutanoate:[dihydrolipoyllysine-residue (2-methylpropanoyl)transferase] lipoyllysine 2-oxidoreductase (decarboxylating, acceptor-2-methylpropanoylating)",H:-1;N:-4;S:-1,
-MAR06419,"(S)-3-Methyl-2-oxopentanoate:[dihydrolipoyllysine-residue (2-methylpropanoyl)transferase] lipoyllysine 2-oxidoreductase (decarboxylating, acceptor-2-methylpropanoylating)",H:-1;S:-1,
-MAR06421,"4-methyl-2-oxopentanoate:[dihydrolipoyllysine-residue (2-methylpropanoyl)transferase] lipoyllysine 2-oxidoreductase (decarboxylating, acceptor-2-methylpropanoylating)",H:-1;S:-1,
-MAR06456,,,-1
-MAR06457,,,-1
-MAR06459,,,-1
-MAR06605,,,-1
-MAR06608,,,1
-MAR06634,,,2
-MAR06664,,,2
-MAR06665,,,2
-MAR06720,,,-2
+MAR06416,lipoamide to S-(2-methylpropanoyl)... conversion,H:-1;N:-4;S:-1,
+MAR06419,lipoamide to S-(2-methylbutanoyl)... conversion,H:-1;S:-1,
+MAR06421,lipoamide to S-(3-methylbutanoyl)... conversion,H:-1;S:-1,
+MAR06456,gamma-tocopheroxyl-radical to gamma-tocopherol conversion,,-1
+MAR06457,8alpha-hydroxy-gamma-tocopherone to gamma-tocopheroxyl-radical conversion,,-1
+MAR06459,5-nitro-gamma-tocopherol to gamma-tocopheroxyl-radical conversion,,-1
+MAR06605,urate radical hydrolysis,,-1
+MAR06608,hydroxide to hydroxyl radical conversion,,1
+MAR06634,cytochrome P450 (retinol),,2
+MAR06664,cytochrome P450 (9-cis-retinoate),,2
+MAR06665,cytochrome P450 (9-cis-retinoate),,2
+MAR06720,kynurenine glucuronidation,,-2
 MAR06729,L-Tyrosine:oxygen oxidoreductase,,-2
-MAR06740,,,2
-MAR06779,Transport of Phytanoylcoa from Cytosol to Peroxisomes.,C:4;H:-24,
-MAR06792,,,-2
-MAR06806,,,-2
-MAR06814,,,-1
-MAR06819,,,-1
-MAR06822,,,4
-MAR06823,,,-1
-MAR06881,,,2
-MAR06885,,,1
-MAR06974,,C:1;H:1;N:1;O:1;R:2;X:-1,
-MAR06978,,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
-MAR07006,,,2
-MAR07010,,,2
-MAR07025,,,-2
-MAR07026,,,-2
-MAR07027,,,-2
-MAR07028,,,-2
-MAR07046,,,2
-MAR07047,,,2
-MAR07070,,,2
-MAR07076,,,2
-MAR07085,,,-2
-MAR07086,,,-2
-MAR07087,,,-2
-MAR07106,,,-2
+MAR06740,dopa decarboxylase (salsolinol-1-carboxylate),,2
+MAR06779,Transport of Phytanoylcoa from Cytosol to Peroxisomes,C:4;H:-24,
+MAR06792,4-hydroxy-3-nitrophenylacetate to 4-hydroxyphenylacetate conversion,,-2
+MAR06806,"N,N-dimethylindoliumolate to N,N-dimethyldopaminequinone conversion",,-2
+MAR06814,crystallin zeta (aminochrome-O-semiquinone),,-1
+MAR06819,crystallin zeta (adrenochrome-O-semiquinone),,-1
+MAR06822,noradrenaline to noradrenochrome conversion,,4
+MAR06823,crystallin zeta (noradrenochrome-O-semiquinone),,-1
+MAR06881,"3,4-dihydro-1,4-benzothiazine-3-carboxylate decarboxylation",,2
+MAR06885,crystallin zeta (L-dopachrome),,1
+MAR06974,[protein] to [protein]-L-lysine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
+MAR06978,"signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
+MAR07006,"naphthalene-1,2-diol to 1,2-naphthoquinone conversion",,2
+MAR07010,"1,4-dihydroxynaphthalene to 1,4-naphthoquinone conversion",,2
+MAR07025,D-arabinitol 4-dehydrogenase (aflatoxin B1 dialdehyde),,-2
+MAR07026,D-arabinitol 4-dehydrogenase,,-2
+MAR07027,D-arabinitol 4-dehydrogenase (aflatoxin B1 dialdehyde),,-2
+MAR07028,D-arabinitol 4-dehydrogenase,,-2
+MAR07046,"4-bromocatechol to 4-bromo-3,5-cyclohexadiene-1,2-dione conversion",,2
+MAR07047,"bromobenzene-3,4-dihydrodiol to 4-bromocatechol conversion",,2
+MAR07070,4-hydroxy-1-(3-pyridinyl)-1-butanone hydroxylation,,2
+MAR07076,"1-(3-pyridinyl)-1,4-butanediol hydroxylation",,2
+MAR07085,1-nitronaphthalene to 1-nitrosonaphthalene conversion,,-2
+MAR07086,1-nitrosonaphthalene to N-hydroxy-1-aminonaphthalene conversion,,-2
+MAR07087,N-hydroxy-1-aminonaphthalene to 1-naphthylamine conversion,,-2
+MAR07106,S-(formylmethyl)glutathione to S-(2-hydroxyethyl)glutathione conversion,,-2
 MAR07160,Deoxynucleoside triphosphate:DNA deoxynucleotidyltransferase,C:0.2;H:5.7;N:-3.7;O:2;R:2,1
 MAR07161,nucleoside-triphosphate:RNA nucleotidyltransferase (DNA-directed),C:5.48;H:11.18;N:-3.86;O:12;P:2;R:3,-3
-MAR07162,,C:-5.48;H:-11.18;N:3.86;O:-12;P:-2;R:-3,3
-MAR07163,,C:-0.2;H:-5.7;N:3.7;O:-2;P:-5.55112e-17;R:-2,-1
-MAR07164,,C:-5.48;H:-11.18;N:3.86;O:-12;P:-2;R:-3,3
-MAR07165,,C:1;H:1;N:1;O:1;R:2;X:-1,
-MAR07197,,C:-3;H:-4;N:-1;O:-2,
-MAR07282,,C:-4;H:-5;N:-2;O:-2,
-MAR07601,"plasmanylethanolamine,ferrocytochrome b5:oxygen oxidoreductase (plasmenylethanolamine-forming)",C:2;H:4,
-MAR07616,,C:1;H:1;N:1;O:1;R:2;X:-1,
-MAR07621,,C:1;H:1;N:1;O:1;R:2;X:-1,
+MAR07162,polyribonucleotide nucleotidyltransferase (RNA),C:-5.48;H:-11.18;N:3.86;O:-12;P:-2;R:-3,3
+MAR07163,exodeoxyribonuclease III (DNA),C:-0.2;H:-5.7;N:3.7;O:-2;P:-5.55112e-17;R:-2,-1
+MAR07164,exodeoxyribonuclease III (RNA),C:-5.48;H:-11.18;N:3.86;O:-12;P:-2;R:-3,3
+MAR07165,[protein] to [protein]-L-cysteine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
+MAR07197,[protein] to [protein]-L-serine conversion,C:-3;H:-4;N:-1;O:-2,
+MAR07282,[protein] to [protein]-L-asparagine conversion,C:-4;H:-5;N:-2;O:-2,
+MAR07601,plasmanylethanolamine desaturase,C:2;H:4,
+MAR07616,[protein] to [protein]-L-tyrosine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
+MAR07621,[protein] to [protein]-L-arginine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
 MAR07625,NAD+:protein-L-arginine ADP-D-ribosyltransferase,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR07741,Ferredoxin:NADP+ oxidoreductase,,-2
-MAR08029,,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
-MAR08433,,C:-1367;H:-2170;N:-380;O:-419;S:-4,
-MAR08434,,C:1367;H:2170;N:380;O:419;S:4,
-MAR08607,,,-2
+MAR08029,"signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
+MAR08433,dihydrolipoyl dehydrogenase ([protein]-N6-(lipoyl)lysine),C:-1367;H:-2170;N:-380;O:-419;S:-4,
+MAR08434,dihydrolipoyl dehydrogenase (S-aminomethyldihydrolipoamide),C:1367;H:2170;N:380;O:419;S:4,
+MAR08607,4-methylthio-2-oxobutanoic acid to glutamate conversion,,-2
 MAR08615,ATP:cob(I)alamin Co-beta-adenosyltransferase,,1
 MAR09487,NAD+:poly(adenosine diphosphate D-ribose)ADP-D-ribosyltransferase,,2
-MAR09491,,,-1
-MAR09735,,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
+MAR09491,E2 ubiquitin-conjugating enzyme ([protein]-L-lysine),,-1
+MAR09735,[protein]-L-citrulline hydrolysis,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
+MAR09932,cholesterol phosphorylation,C:-5.56881;H:-9.55269;N:-0.519135;O:-5.56751;P:-0.718984;R:-0.547902;X:1,0.820554
 MAR10033,Fatty acid pool formation and breakdown,C:16.9524;H:31.9518;O:-4.44089e-16;R:-1,2.22045e-16
 MAR10034,Fatty acid pool formation and breakdown,C:16.9524;H:31.9518;O:-4.44089e-16;R:-1,2.22045e-16
 MAR10035,1-acylglycerol-3-phosphate pool formation and breakdown,C:16.9524;H:31.9518;O:-8.88178e-16;P:-2.22045e-16;R:-1,4.44089e-16
@@ -269,10 +269,10 @@ MAR13081,CYOOm3i,O:-3.46945e-17,0.06
 MAR20007,MAR20007,,1
 MAR20008,MAR20008,,1
 MAR20168,MAR20168,C:-1367;H:-2170;N:-380;O:-419;S:-4,
-MAR20173,,H:2;S:2,
-MAR20174,,H:1;N:4;S:1,
-MAR20175,,H:1;S:1,
-MAR20176,,H:1;S:1,
-MAR20177,,H:1;S:-1,
-MAR20178,,H:-2,
+MAR20173,2-oxoadipate decarboxylation,H:2;S:2,
+MAR20174,branched chain keto acid dehydrogenase E1 (3-methyl-2-oxobutyrate),H:1;N:4;S:1,
+MAR20175,branched chain keto acid dehydrogenase E1 (2-oxo-3-methylvalerate),H:1;S:1,
+MAR20176,branched chain keto acid dehydrogenase E1 (4-methyl-2-oxopentanoate),H:1;S:1,
+MAR20177,lipoamide to thiamin-PP conversion,H:1;S:-1,
+MAR20178,propanoyl-CoA:enzyme N6-(dihydrolipoyl)lysine S-propanoyltransferase,H:-2,
 MAR20189,Reduction of alpha-tocopheryl quinone by Complex III,H:1,-3

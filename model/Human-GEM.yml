@@ -190450,7 +190450,6 @@
     - !!omap
       - id: "MAR01801"
       - name: "thioredoxin-disulfide reductase (NADPH) (ubiquinone)"
-      - name: ""
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02554c: 1
