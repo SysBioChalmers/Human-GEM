@@ -103,6 +103,7 @@ jobs:
           BASE_RESULTS_DIR: ${{ runner.temp }}/base
           BASE_REF: ${{ github.event.pull_request.base.ref }}
           COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+          RESULTS_URL_BASE: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref }}/data/testResults
         run: |
           python code/test/buildReport.py
           {

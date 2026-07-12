@@ -328,17 +328,18 @@ def main() -> int:
     # GLPK for the growth LP so this does not depend on a Gurobi licence.
     model.solver = "glpk"
 
-    # Gates
+    # Non-blocking checks: written to CSV and tracked with a delta in the comment
+    # (a rising count shows as a regression), but they do not fail the build. The
+    # only gate that blocks the merge here is growth (and duplicate keys above,
+    # which stops the model loading at all).
     empty = check_empty_reactions(model)
     if empty:
-        print(f"::error::{len(empty)} reaction(s) have no metabolites; see {EMPTY_RXN_CSV}.")
-        gate_failed = True
+        print(f"::warning::{len(empty)} reaction(s) have no metabolites; see {EMPTY_RXN_CSV}.")
 
     annotation = check_annotation_consistency(model)
     if annotation:
-        print(f"::error::{len(annotation)} model/annotation-table inconsistency(ies); "
+        print(f"::warning::{len(annotation)} model/annotation-table inconsistency(ies); "
               f"see {ANNOTATION_CONSISTENCY_CSV}.")
-        gate_failed = True
 
     growth = check_growth(model)
     grows = growth == growth and growth > GROWTH_TOLERANCE  # not NaN and positive

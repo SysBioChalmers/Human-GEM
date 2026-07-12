@@ -33,17 +33,17 @@ Evaluate gene essentiality predictions in 5 cell-line specific GEMs with experim
 Cell-line specific GEMs are constructed with tINIT2 for DLD1, GBM, HCT116, HeLa and RPE1 cell lines. Then, the `metabolicTasks_Essential.txt` list of tasks is used to identify essential genes in each of these models. The predicted gene essentiality is compared to results from a high-throughput CRISPR-Cas9 screen for identifying genes that affect fitness. Only the summary statistics of this comparison are kept.
 
 ### Model QC checks
-`code/test/qcModelChecks.py` (the `Model QC checks` workflow) runs the structural checks in one place. Each check writes a detailed, diff-friendly CSV so whatever is wrong is spelled out in a committed file, not only in the workflow log. The checks are of two kinds.
+`code/test/qcModelChecks.py` (the `Model QC checks` workflow) runs the structural checks in one place. Each check writes a detailed, diff-friendly CSV so whatever is wrong is spelled out in a committed file, not only in the workflow log.
 
-**Build gates** (a finding fails the build; the model is broken):
+**Build gates** (a finding fails the build; the model is unusable):
 
-- `qc_duplicate_keys.csv`: duplicate keys inside a metabolite/reaction/gene `!!omap` entry (two `name` fields, the same metabolite twice in a stoichiometry). RAVEN tolerates these, but `cobra.io.load_yaml_model` then raises a bare `AssertionError` with no location; the CSV names the entry, key and line numbers.
-- `qc_empty_reactions.csv`: reactions with no metabolites.
-- `qc_annotation_consistency.csv`: the model and its annotation tables (`reactions.tsv` / `metabolites.tsv` / `genes.tsv`) disagree, a deprecated identifier is used, or the `spontaneous` column is not numeric.
+- `qc_duplicate_keys.csv`: duplicate keys inside a metabolite/reaction/gene `!!omap` entry (two `name` fields, the same metabolite twice in a stoichiometry). RAVEN tolerates these, but `cobra.io.load_yaml_model` then raises a bare `AssertionError` with no location; the CSV names the entry, key and line numbers. The model cannot be loaded, so this stops the run.
 - `qc_growth_blockers.csv`: when the model cannot produce biomass under its default constraints, the biomass precursors that cannot be made (empty when growth is fine).
 
-**Reports** (tracked with a delta versus the target branch; they do not fail the build):
+**Reports** (written to CSV and tracked with a delta versus the target branch; they do not fail the build, but a rising count shows as a regression in the comment):
 
+- `qc_empty_reactions.csv`: reactions with no metabolites.
+- `qc_annotation_consistency.csv`: the model and its annotation tables (`reactions.tsv` / `metabolites.tsv` / `genes.tsv`) disagree, a deprecated identifier is used, or the `spontaneous` column is not numeric.
 - `qc_metabolite_completeness.csv`: metabolites without a chemical formula or without a charge. Such metabolites are silently skipped by the mass/charge balance test, so tracking them keeps that test meaningful.
 - `qc_reaction_sanity.csv`: reactions with invalid flux bounds (`lb > ub` or outside +/-1000) or GPR issues (genes not annotated in `genes.tsv`, or a boundary reaction with a gene rule).
 - `qc_duplicate_reactions.csv`: reactions with identical stoichiometry (the strict "truly identical" duplicate). Near-duplicates (reverse direction, different coefficients, different electron carriers) are the remit of the MACAW `duplicate_test` above.
@@ -53,4 +53,4 @@ Cell-line specific GEMs are constructed with tINIT2 for DLD1, GBM, HCT116, HeLa 
 
 The fast checks and MEMOTE run as two separate jobs, so the quick checks report without waiting for the (much slower) MEMOTE snapshot. When a gate fails, the detail is still committed and the comment still posted before the build is failed, so the failure is visible in both.
 
-All of the results are combined into a single pull-request comment (`model_qc_summary.md`): a one-line verdict (merge blocked / regressions / still running / clean), then a **Build gates** table, a **Model QC reports** table, a **MACAW and mass/charge balance** table (each row: current value linked to its CSV, the change versus the target branch, and an icon), and the gene-essentiality metrics. Each result set is stamped with the commit it was computed for (`qc_checks.sha`, `qc_memote.sha`, `qc_macaw.sha`); if a stamp does not match the pull request's head commit, that set has not re-run for the current commit and its rows show as pending instead of showing stale numbers as current.
+All of the results are combined into a single pull-request comment (`model_qc_summary.md`): a one-line verdict (merge blocked / regressions / still running / clean), then a **Structural checks** table, a **Model QC reports** table, a **MACAW and mass/charge balance** table (each row: current value linked to its CSV, the change versus the target branch, and an icon), and the gene-essentiality metrics. The icon on each row is a red cross when a count rose versus the target branch (a regression this pull request introduced), a warning sign when a count is non-zero but did not rise (a pre-existing, non-blocking finding), and a check mark when the count is zero; growth is a check mark or cross, and the MEMOTE score warns only when it drops. Each result set is stamped with the commit it was computed for (`qc_checks.sha`, `qc_memote.sha`, `qc_macaw.sha`); a set whose stamp does not match the pull request's head commit has not run for the current commit, so its rows show as *running* (hourglass) rather than showing a previous run's numbers as current.

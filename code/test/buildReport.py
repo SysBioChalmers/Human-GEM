@@ -1,29 +1,28 @@
 """Build one model-quality report for the pull-request comment.
 
 Turns the committed result files under data/testResults/ into a single comment
-that leads with a one-line verdict (blocked / regressions / running / clean) and
-then three status tables:
+that leads with a one-line verdict and then three status tables (structural
+checks, model QC reports, MACAW/balance). Each result set is stamped with the
+commit it was computed for; a set whose stamp does not match this pull request's
+head commit has not (re-)run for the current commit and shows as *running*
+rather than showing a previous run's numbers.
 
-  * Build gates: the checks that fail the build (duplicate keys, empty reactions,
-    model vs annotation-table consistency, growth). A red X here means the merge
-    is blocked; the offending entries are in the linked CSV.
-  * Model QC reports: quality metrics tracked with a delta versus the target
-    branch (completeness, reaction sanity, exact duplicates, unused entities,
-    cross-references, MEMOTE score).
-  * MACAW and mass/charge balance: dead-end / duplicate / imbalance counts.
+Icon rule (per row):
+  * growth: white_check_mark if the model grows, x if it cannot (blocks the merge).
+  * MEMOTE score: warning if the score dropped versus the target branch, else
+    white_check_mark (a non-zero score is good).
+  * every other (count) metric: x if the count rose versus the target branch (a
+    regression this pull request introduced), warning if the count is non-zero
+    (a pre-existing finding, non-blocking), white_check_mark if it is zero.
+  * hourglass: the set has not run for this commit yet.
 
-Each result set is stamped with the commit it was computed for (data/testResults/
-qc_<group>.sha). If that does not match this pull request's head, the set has not
-re-run for the current commit and its rows show as pending instead of showing
-stale numbers as if they were current.
-
-Icons: white_check_mark = fine / gate passing / no regression, warning = a report
-metric worsened vs the target branch, x = a gate is failing, new = no baseline to
-compare against, hourglass = not (re-)run for this commit yet.
+Only two conditions fail the build: the model cannot load (duplicate `!!omap`
+keys) or cannot grow. Everything else is reported but does not block; a red x
+just flags a regression for review.
 
 Usage:
     BASE_RESULTS_DIR=<dir> BASE_REF=<branch> COMMIT_SHA=<sha> \
-        python code/test/buildReport.py
+        RESULTS_URL_BASE=<url> python code/test/buildReport.py
 """
 
 import csv
@@ -37,20 +36,20 @@ SUMMARY_MD = RESULTS / "model_qc_summary.md"
 BASE_DIR = os.environ.get("BASE_RESULTS_DIR", "")
 BASE_REF = os.environ.get("BASE_REF", "the target branch")
 COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
+# e.g. https://github.com/OWNER/REPO/blob/<branch>/data/testResults - used to link
+# each finding count to its CSV. Empty when run locally (then counts are plain text).
+URL_BASE = os.environ.get("RESULTS_URL_BASE", "").rstrip("/")
 
 # A result set is produced by one workflow job and stamped with the commit it ran
-# on. buildReport marks a set pending when its stamp does not match this commit.
+# on. A set is "fresh" only if its stamp matches this commit; otherwise it is still
+# running (or ran on an older commit) and its rows show as pending.
 GROUP_STAMPS = {"checks": "qc_checks.sha", "memote": "qc_memote.sha", "macaw": "qc_macaw.sha"}
 
-# Each row: (label, key, kind, group, detail_file). kind sets the good direction:
-#   gate   -> 0 is passing, anything > 0 fails the build (icon x)
-#   count  -> lower is better (a rise vs the target branch is a regression)
-#   score  -> higher is better
-#   growth -> pass/fail (must be positive)
-GATE_ROWS = [
-    ("Duplicate `!!omap` keys", "dup_keys", "gate", "checks", "qc_duplicate_keys.csv"),
-    ("Reactions with no metabolites", "empty_rxn", "gate", "checks", "qc_empty_reactions.csv"),
-    ("Model / annotation-table inconsistencies", "annot_consistency", "gate", "checks",
+# (label, key, kind, group, detail_file)
+STRUCTURAL_ROWS = [
+    ("Duplicate `!!omap` keys", "dup_keys", "count", "checks", "qc_duplicate_keys.csv"),
+    ("Reactions with no metabolites", "empty_rxn", "count", "checks", "qc_empty_reactions.csv"),
+    ("Model / annotation-table inconsistencies", "annot_consistency", "count", "checks",
      "qc_annotation_consistency.csv"),
     ("Growth (biomass producible)", "growth", "growth", "checks", "qc_growth_blockers.csv"),
 ]
@@ -110,12 +109,10 @@ def _metrics(directory: Path) -> dict:
     macaw = directory / "macaw_results.csv"
     balance = directory / "balance_results.csv"
     return {
-        # gates
         "dup_keys": _count_csv(directory / "qc_duplicate_keys.csv"),
         "empty_rxn": _count_csv(directory / "qc_empty_reactions.csv"),
         "annot_consistency": _count_csv(directory / "qc_annotation_consistency.csv"),
         "growth": _growth(directory),
-        # model QC reports
         "missing_formula": _count_csv(completeness, lambda r: r.get("missing_formula") == "yes"),
         "missing_charge": _count_csv(completeness, lambda r: r.get("missing_charge") == "yes"),
         "reaction_issues": _count_csv(directory / "qc_reaction_sanity.csv"),
@@ -125,7 +122,6 @@ def _metrics(directory: Path) -> dict:
         "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
         "inconsistent": _count_csv(annotation, lambda r: r.get("issue", "").startswith("inconsistent")),
         "memote": _memote_score(directory),
-        # MACAW / balance
         "dead_end": _count_csv(macaw, lambda r: r.get("dead_end_test", "") not in ("ok", "")),
         "duplicates": _count_csv(macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS)),
         "mass_imbalance": _count_csv(balance, lambda r: r.get("mass_imbalance", "").strip() != ""),
@@ -133,71 +129,70 @@ def _metrics(directory: Path) -> dict:
     }
 
 
-def _stale_groups() -> set[str]:
-    """Groups whose committed stamp does not match this pull request's head commit."""
+def _fresh_groups() -> set[str] | None:
+    """Groups whose stamp matches this commit. None when staleness cannot be judged
+    (no COMMIT_SHA, e.g. a local run) so nothing is marked pending on that basis."""
     if not COMMIT_SHA:
-        return set()
-    stale = set()
+        return None
+    fresh = set()
     for group, stamp in GROUP_STAMPS.items():
         path = RESULTS / stamp
-        # Only a present-but-different stamp counts as stale; a missing stamp is
-        # unknown, so leave it to the file-absence (pending) handling below.
-        if path.exists() and path.read_text(encoding="utf-8").strip() != COMMIT_SHA:
-            stale.add(group)
-    return stale
+        if path.exists() and path.read_text(encoding="utf-8").strip() == COMMIT_SHA:
+            fresh.add(group)
+    return fresh
 
 
-def _format_value(value, kind: str) -> str:
+def _icon(value, base, kind):
+    """Return (delta_text, icon, regression, fatal)."""
     if kind == "growth":
-        return f"{value:.3g}"
-    if kind == "score":
-        return f"{value:.1f}"
-    return str(int(value))
-
-
-def _delta_and_icon(current, base, kind: str):
-    """Return (delta_text, icon, worse). worse flags a report regression."""
-    if kind == "gate":
-        icon = ":x:" if current > 0 else ":white_check_mark:"
+        grows = value > 1e-6
+        icon = ":white_check_mark:" if grows else ":x:"
         if base is None:
-            return "new", icon, False
-        change = int(current) - int(base)
-        return (f"{change:+d}" if change else "0"), icon, False
-    if kind == "growth":
-        icon = ":white_check_mark:" if current > 1e-6 else ":x:"
+            return "new", icon, False, (not grows)
+        change = value - base
+        return (f"{change:+.3g}" if abs(change) > 1e-6 else "0"), icon, False, (not grows)
+    if kind == "score":  # higher is better; a drop is a (non-blocking) warning
         if base is None:
-            return "new", icon, False
-        change = current - base
-        return (f"{change:+.3g}" if abs(change) > 1e-6 else "0"), icon, False
+            return "new", (":white_check_mark:" if value > 0 else ":warning:"), False, False
+        change = value - base
+        dropped = change < -1e-9
+        return (f"{change:+.1f}" if abs(change) > 1e-9 else "0"), (":warning:" if dropped else ":white_check_mark:"), dropped, False
+    # count: rose vs base -> regression (x); non-zero -> pre-existing (warning); zero -> ok
     if base is None:
-        return "new", ":new:", False
-    if kind == "score":
-        change = current - base
-        worse = change < -1e-9
-        return (f"{change:+.1f}" if abs(change) > 1e-9 else "0"), (":warning:" if worse else ":white_check_mark:"), worse
-    change = int(current) - int(base)  # count: lower is better
-    worse = change > 0
-    return (f"{change:+d}" if change != 0 else "0"), (":warning:" if worse else ":white_check_mark:"), worse
+        return "new", (":warning:" if value > 0 else ":white_check_mark:"), False, False
+    change = int(value) - int(base)
+    if change > 0:
+        return f"+{change}", ":x:", True, False
+    if value > 0:
+        return ("0" if change == 0 else str(change)), ":warning:", False, False
+    return ("0" if change == 0 else str(change)), ":white_check_mark:", False, False
 
 
-def _table(rows, current: dict, base: dict, stale: set[str]):
-    """Return (lines, n_failed_gates, n_worse, n_pending)."""
-    lines, failed, worse, pending = [], 0, 0, 0
+def _cell(value, kind, detail) -> str:
+    text = f"{value:.3g}" if kind == "growth" else (f"{value:.1f}" if kind == "score" else str(int(value)))
+    # link a positive count (or a growth failure) to its CSV, if we know the repo URL
+    linkable = (kind == "count" and value) or (kind == "growth" and value <= 1e-6)
+    if URL_BASE and detail and linkable:
+        return f"[{text}]({URL_BASE}/{detail})"
+    return text
+
+
+def _table(rows, current: dict, base: dict, fresh: set[str] | None):
+    lines, regressions, warnings, pending = [], 0, 0, 0
+    fatal = False
     for label, key, kind, group, detail in rows:
         value = current.get(key)
-        if value is None or group in stale:
-            lines.append(f"| {label} | pending | | :hourglass_flowing_sand: |")
+        is_pending = value is None or (fresh is not None and group not in fresh)
+        if is_pending:
+            lines.append(f"| {label} | _running_ | | :hourglass_flowing_sand: |")
             pending += 1
             continue
-        delta, icon, is_worse = _delta_and_icon(value, base.get(key), kind)
-        if icon == ":x:":
-            failed += 1
-        worse += is_worse
-        cell = f"{_format_value(value, kind)}"
-        if detail and value and kind != "growth":
-            cell = f"[{cell}]({detail})"  # link the count to its detail file
-        lines.append(f"| {label} | {cell} | {delta} | {icon} |")
-    return lines, failed, worse, pending
+        delta, icon, regression, row_fatal = _icon(value, base.get(key), kind)
+        fatal = fatal or row_fatal or (key == "dup_keys" and value > 0)
+        regressions += regression
+        warnings += icon == ":warning:"
+        lines.append(f"| {label} | {_cell(value, kind, detail)} | {delta} | {icon} |")
+    return lines, regressions, warnings, pending, fatal
 
 
 def _gene_essentiality_section() -> str:
@@ -216,32 +211,31 @@ def _gene_essentiality_section() -> str:
 
 def main() -> int:
     have_base = bool(BASE_DIR) and Path(BASE_DIR).exists()
-    base_dir = Path(BASE_DIR) if have_base else None
-    stale = _stale_groups()
-
+    fresh = _fresh_groups()
     current = _metrics(RESULTS)
-    base = _metrics(base_dir) if have_base else {}
+    base = _metrics(Path(BASE_DIR)) if have_base else {}
 
-    gate_tbl, gate_fail, _, gate_pending = _table(GATE_ROWS, current, base, stale)
-    rep_tbl, _, rep_worse, rep_pending = _table(REPORT_ROWS, current, base, stale)
-    mb_tbl, _, mb_worse, mb_pending = _table(MB_ROWS, current, base, stale)
+    st_tbl, st_reg, st_warn, st_pend, fatal = _table(STRUCTURAL_ROWS, current, base, fresh)
+    rp_tbl, rp_reg, rp_warn, rp_pend, _ = _table(REPORT_ROWS, current, base, fresh)
+    mb_tbl, mb_reg, mb_warn, mb_pend, _ = _table(MB_ROWS, current, base, fresh)
 
-    worse = rep_worse + mb_worse
-    pending = gate_pending + rep_pending + mb_pending
+    regressions = st_reg + rp_reg + mb_reg
+    warnings = st_warn + rp_warn + mb_warn
+    pending = st_pend + rp_pend + mb_pend
 
-    if gate_fail:
-        verdict = (f":x: **Merge blocked: {gate_fail} build gate(s) failing.** "
-                   "Open the linked CSV(s) for the exact entries to fix.")
-    elif worse:
-        verdict = f":warning: **{worse} metric(s) worse than `{BASE_REF}`.** Review the changes below."
-    elif pending and not have_base:
-        verdict = ":information_source: First run for this comparison; results are still coming in."
+    if fatal:
+        verdict = ":x: **Merge blocked: the model cannot be loaded or cannot grow.** See the Structural checks table."
+    elif regressions:
+        extra = f" ({pending} check(s) still running)" if pending else ""
+        verdict = f":x: **{regressions} regression(s) vs `{BASE_REF}`** (this pull request increased a finding count){extra}. Review the :x: rows."
     elif pending:
-        verdict = f":hourglass_flowing_sand: **Some results are still running** ({pending} pending); the rest are unchanged vs `{BASE_REF}`."
+        verdict = f":hourglass_flowing_sand: **{pending} check(s) still running.** The rest are unchanged vs `{BASE_REF}`."
     elif not have_base:
         verdict = ":information_source: First run for this comparison; no target-branch baseline yet."
+    elif warnings:
+        verdict = f":warning: **{warnings} pre-existing finding(s), no regressions vs `{BASE_REF}`.** Non-blocking."
     else:
-        verdict = f":white_check_mark: **All checks pass, no regressions vs `{BASE_REF}`.**"
+        verdict = f":white_check_mark: **All checks clean, no regressions vs `{BASE_REF}`.**"
 
     head = f"| Check | Result | &Delta; vs `{BASE_REF}` | |"
     sep = "| --- | ---: | ---: | :---: |"
@@ -250,14 +244,14 @@ def main() -> int:
         "",
         verdict,
         "",
-        "### Build gates",
-        "_A red :x: blocks the merge; the count links to the CSV listing what to fix._",
+        "### Structural checks",
+        "_Duplicate keys (model unloadable) and no growth block the merge; the other rows are non-blocking._",
         "",
-        head, sep, *gate_tbl,
+        head, sep, *st_tbl,
         "",
         "### Model QC reports",
         "",
-        head, sep, *rep_tbl,
+        head, sep, *rp_tbl,
         "",
         "### MACAW and mass/charge balance",
         "",
@@ -267,8 +261,9 @@ def main() -> int:
         "",
         _gene_essentiality_section(),
         "",
-        "Per-finding detail is in the linked CSVs under `data/testResults/`; "
-        "the full MEMOTE result is uploaded as a build artifact.",
+        ":x: = a count rose vs the target branch (regression) &middot; "
+        ":warning: = a pre-existing non-zero finding (non-blocking) &middot; "
+        ":hourglass_flowing_sand: = still running. Counts link to the CSV listing the exact entries.",
     ]
     if COMMIT_SHA:
         lines += ["", f"Results for commit {COMMIT_SHA[:7]}."]
