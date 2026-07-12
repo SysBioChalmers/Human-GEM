@@ -2,6 +2,13 @@ name: Run QC tests
 
 on: [pull_request]
 
+env:
+  RESULT_FILES: >-
+    qc_duplicate_keys.csv qc_empty_reactions.csv qc_annotation_consistency.csv
+    qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
+    qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md
+    macaw_results.csv balance_results.csv
+
 jobs:
   qc-tests:
     runs-on: ubuntu-latest
@@ -19,7 +26,11 @@ jobs:
       - name: Install dependencies
         run: pip install git+https://github.com/Devlin-Moyer/macaw.git@main numpy==1.26.4
 
+      # continue-on-error so a MACAW crash does not skip the balance report and the
+      # comment; a MACAW crash leaves macaw_results.csv unchanged, so the comment
+      # shows those rows as pending rather than as this commit's result.
       - name: Run MACAW tests
+        continue-on-error: true
         run: python code/test/macawTests.py | tee "$RUNNER_TEMP/macaw_summary.txt"
 
       - name: Mass and charge balance report
@@ -46,13 +57,16 @@ jobs:
             echo '```'
           } > data/testResults/qc_summary.md
 
+      - name: Stamp results with the head commit
+        run: echo "${{ github.event.pull_request.head.sha }}" > data/testResults/qc_macaw.sha
+
       - name: Fetch target-branch results for comparison
         env:
           BASE_REF: ${{ github.event.pull_request.base.ref }}
         run: |
           git fetch --depth=1 origin "$BASE_REF" || true
           mkdir -p "$RUNNER_TEMP/base"
-          for f in qc_metabolite_completeness.csv qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md macaw_results.csv balance_results.csv; do
+          for f in $RESULT_FILES; do
             git show "origin/$BASE_REF:data/testResults/$f" > "$RUNNER_TEMP/base/$f" 2>/dev/null || rm -f "$RUNNER_TEMP/base/$f"
           done
 

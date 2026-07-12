@@ -2,28 +2,38 @@
 
 :information_source: First run for this comparison; no target-branch baseline yet.
 
-### Model QC checks
+### Build gates
+_A red :x: blocks the merge; the count links to the CSV listing what to fix._
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
+| Duplicate `!!omap` keys | 0 | new | :white_check_mark: |
+| Reactions with no metabolites | 0 | new | :white_check_mark: |
+| Model / annotation-table inconsistencies | 0 | new | :white_check_mark: |
 | Growth (biomass producible) | 125 | new | :white_check_mark: |
-| Metabolites missing formula | 7 | new | :new: |
+
+### Model QC reports
+
+| Check | Result | &Delta; vs `develop` | |
+| --- | ---: | ---: | :---: |
+| Metabolites missing formula | [7](qc_metabolite_completeness.csv) | new | :new: |
 | Metabolites missing charge | 0 | new | :new: |
 | Reaction bound / GPR issues | 0 | new | :new: |
-| Malformed cross-references | 59 | new | :new: |
-| Cross-refs inconsistent across compartments | 59 | new | :new: |
-| MEMOTE score (%) | 20.2 | new | :new: |
+| Exact-duplicate reaction groups | 0 | new | :new: |
+| Unused metabolites | 0 | new | :new: |
+| Unused genes | 0 | new | :new: |
+| Malformed cross-references | [59](qc_annotation_issues.csv) | new | :new: |
+| Cross-refs inconsistent across compartments | [59](qc_annotation_issues.csv) | new | :new: |
+| MEMOTE score (%) | [20.2](memote_score.md) | new | :new: |
 
 ### MACAW and mass/charge balance
 
-:information_source: First run for this comparison; no target-branch baseline yet.
-
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| Reactions flagged by MACAW dead-end test | 2510 | new | :new: |
-| Reactions flagged as MACAW duplicates | 377 | new | :new: |
-| Mass-imbalanced reactions | 87 | new | :new: |
-| Charge-imbalanced reactions | 240 | new | :new: |
+| Reactions flagged by MACAW dead-end test | [2510](macaw_results.csv) | new | :new: |
+| Reactions flagged as MACAW duplicates | [377](macaw_results.csv) | new | :new: |
+| Mass-imbalanced reactions | [87](balance_results.csv) | new | :new: |
+| Charge-imbalanced reactions | [240](balance_results.csv) | new | :new: |
 
 ### Gene essentiality (Hart 2015)
 
@@ -36,4 +46,4 @@
 | RPE1 | 15 | 2179 | 83 | 258 | 0.8655 | 0.05495 | 0.9633 | 0.08086 | 0.02935 |
 | all | 7 | 2379 | 95 | 112 | 0.9202 | 0.05882 | 0.9616 | 0.06335 | 0.02199 |
 
-Per-finding detail is committed to `data/testResults/` (`qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_annotation_issues.csv`, `macaw_results.csv`, `balance_results.csv`, `gene-essential.csv`); the full MEMOTE result is uploaded as a build artifact.
+Per-finding detail is in the linked CSVs under `data/testResults/`; the full MEMOTE result is uploaded as a build artifact.

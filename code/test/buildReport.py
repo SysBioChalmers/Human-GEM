@@ -1,24 +1,25 @@
-"""Build one consolidated model-quality report for the pull-request comment.
+"""Build one model-quality report for the pull-request comment.
 
-Combines the result sets so the model's quality shows up in a single comment
-instead of several:
+Turns the committed result files under data/testResults/ into a single comment
+that leads with a one-line verdict (blocked / regressions / running / clean) and
+then three status tables:
 
-  * Model QC checks (the Model QC workflow): growth, metabolite completeness,
-    reaction bound/GPR sanity, annotation cross-references and the MEMOTE score,
-    as a compact status table with the change versus the target branch.
-  * MACAW and mass/charge balance (the QC-tests workflow): dead-end / duplicate
-    reaction findings and mass/charge imbalances, in the same status-table style.
-  * Gene essentiality, Hart 2015 (the gene-essentiality workflow): the per-cell-
-    line metrics table.
+  * Build gates: the checks that fail the build (duplicate keys, empty reactions,
+    model vs annotation-table consistency, growth). A red X here means the merge
+    is blocked; the offending entries are in the linked CSV.
+  * Model QC reports: quality metrics tracked with a delta versus the target
+    branch (completeness, reaction sanity, exact duplicates, unused entities,
+    cross-references, MEMOTE score).
+  * MACAW and mass/charge balance: dead-end / duplicate / imbalance counts.
 
-Each of those workflows calls this script and posts the result to the same
-comment identifier, rebuilding the whole comment from the committed result files,
-so the last one to finish shows the complete picture. A result set a workflow has
-not committed yet for this pull request shows as pending.
+Each result set is stamped with the commit it was computed for (data/testResults/
+qc_<group>.sha). If that does not match this pull request's head, the set has not
+re-run for the current commit and its rows show as pending instead of showing
+stale numbers as if they were current.
 
-Icons: white_check_mark = fine / no regression, warning = changed vs the target
-branch (review it), x = failed, new = no baseline to compare against,
-hourglass = not committed yet for this pull request.
+Icons: white_check_mark = fine / gate passing / no regression, warning = a report
+metric worsened vs the target branch, x = a gate is failing, new = no baseline to
+compare against, hourglass = not (re-)run for this commit yet.
 
 Usage:
     BASE_RESULTS_DIR=<dir> BASE_REF=<branch> COMMIT_SHA=<sha> \
@@ -37,28 +38,40 @@ BASE_DIR = os.environ.get("BASE_RESULTS_DIR", "")
 BASE_REF = os.environ.get("BASE_REF", "the target branch")
 COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
 
-# Each row: (label, metric key, kind). kind sets which direction is "good":
-#   count  -> lower is better (more findings is a regression)
+# A result set is produced by one workflow job and stamped with the commit it ran
+# on. buildReport marks a set pending when its stamp does not match this commit.
+GROUP_STAMPS = {"checks": "qc_checks.sha", "memote": "qc_memote.sha", "macaw": "qc_macaw.sha"}
+
+# Each row: (label, key, kind, group, detail_file). kind sets the good direction:
+#   gate   -> 0 is passing, anything > 0 fails the build (icon x)
+#   count  -> lower is better (a rise vs the target branch is a regression)
 #   score  -> higher is better
 #   growth -> pass/fail (must be positive)
-QC_ROWS = [
-    ("Growth (biomass producible)", "growth", "growth"),
-    ("Metabolites missing formula", "missing_formula", "count"),
-    ("Metabolites missing charge", "missing_charge", "count"),
-    ("Reaction bound / GPR issues", "reaction_issues", "count"),
-    ("Malformed cross-references", "malformed", "count"),
-    ("Cross-refs inconsistent across compartments", "inconsistent", "count"),
-    ("MEMOTE score (%)", "memote", "score"),
+GATE_ROWS = [
+    ("Duplicate `!!omap` keys", "dup_keys", "gate", "checks", "qc_duplicate_keys.csv"),
+    ("Reactions with no metabolites", "empty_rxn", "gate", "checks", "qc_empty_reactions.csv"),
+    ("Model / annotation-table inconsistencies", "annot_consistency", "gate", "checks",
+     "qc_annotation_consistency.csv"),
+    ("Growth (biomass producible)", "growth", "growth", "checks", "qc_growth_blockers.csv"),
 ]
-
-# MACAW and mass/charge balance, counted from the committed result CSVs so the
-# summary carries the same value / delta / icon as the Model QC checks.
+REPORT_ROWS = [
+    ("Metabolites missing formula", "missing_formula", "count", "checks", "qc_metabolite_completeness.csv"),
+    ("Metabolites missing charge", "missing_charge", "count", "checks", "qc_metabolite_completeness.csv"),
+    ("Reaction bound / GPR issues", "reaction_issues", "count", "checks", "qc_reaction_sanity.csv"),
+    ("Exact-duplicate reaction groups", "dup_reactions", "count", "checks", "qc_duplicate_reactions.csv"),
+    ("Unused metabolites", "unused_met", "count", "checks", "qc_unused_entities.csv"),
+    ("Unused genes", "unused_gene", "count", "checks", "qc_unused_entities.csv"),
+    ("Malformed cross-references", "malformed", "count", "checks", "qc_annotation_issues.csv"),
+    ("Cross-refs inconsistent across compartments", "inconsistent", "count", "checks", "qc_annotation_issues.csv"),
+    ("MEMOTE score (%)", "memote", "score", "memote", "memote_score.md"),
+]
 MB_ROWS = [
-    ("Reactions flagged by MACAW dead-end test", "dead_end", "count"),
-    ("Reactions flagged as MACAW duplicates", "duplicates", "count"),
-    ("Mass-imbalanced reactions", "mass_imbalance", "count"),
-    ("Charge-imbalanced reactions", "charge_imbalance", "count"),
+    ("Reactions flagged by MACAW dead-end test", "dead_end", "count", "macaw", "macaw_results.csv"),
+    ("Reactions flagged as MACAW duplicates", "duplicates", "count", "macaw", "macaw_results.csv"),
+    ("Mass-imbalanced reactions", "mass_imbalance", "count", "macaw", "balance_results.csv"),
+    ("Charge-imbalanced reactions", "charge_imbalance", "count", "macaw", "balance_results.csv"),
 ]
+_DUP_COLS = ("duplicate_test_exact", "duplicate_test_directions", "duplicate_test_coefficients")
 
 
 def _count_csv(path: Path, predicate=None) -> int | None:
@@ -66,6 +79,13 @@ def _count_csv(path: Path, predicate=None) -> int | None:
         return None
     with open(path, newline="", encoding="utf-8") as fh:
         return sum(1 for row in csv.DictReader(fh) if predicate is None or predicate(row))
+
+
+def _distinct_csv(path: Path, column: str) -> int | None:
+    if not path.exists():
+        return None
+    with open(path, newline="", encoding="utf-8") as fh:
+        return len({row[column] for row in csv.DictReader(fh) if row.get(column)})
 
 
 def _growth(directory: Path) -> float | None:
@@ -83,36 +103,48 @@ def _memote_score(directory: Path) -> float | None:
     return float(match.group(1)) if match else None
 
 
-def _qc_metrics(directory: Path) -> dict:
+def _metrics(directory: Path) -> dict:
     completeness = directory / "qc_metabolite_completeness.csv"
     annotation = directory / "qc_annotation_issues.csv"
-    return {
-        "growth": _growth(directory),
-        "missing_formula": _count_csv(completeness, lambda r: r.get("missing_formula") == "yes"),
-        "missing_charge": _count_csv(completeness, lambda r: r.get("missing_charge") == "yes"),
-        "reaction_issues": _count_csv(directory / "qc_reaction_sanity.csv"),
-        "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
-        "inconsistent": _count_csv(annotation, lambda r: r.get("issue", "").startswith("inconsistent")),
-        "memote": _memote_score(directory),
-    }
-
-
-_DUP_COLS = ("duplicate_test_exact", "duplicate_test_directions", "duplicate_test_coefficients")
-
-
-def _mb_metrics(directory: Path) -> dict:
+    unused = directory / "qc_unused_entities.csv"
     macaw = directory / "macaw_results.csv"
     balance = directory / "balance_results.csv"
     return {
-        # dead_end_test is "ok" when fine, otherwise a reason (a metabolite list or
-        # "only when going forwards/backwards"): a non-ok value is a flagged reaction.
+        # gates
+        "dup_keys": _count_csv(directory / "qc_duplicate_keys.csv"),
+        "empty_rxn": _count_csv(directory / "qc_empty_reactions.csv"),
+        "annot_consistency": _count_csv(directory / "qc_annotation_consistency.csv"),
+        "growth": _growth(directory),
+        # model QC reports
+        "missing_formula": _count_csv(completeness, lambda r: r.get("missing_formula") == "yes"),
+        "missing_charge": _count_csv(completeness, lambda r: r.get("missing_charge") == "yes"),
+        "reaction_issues": _count_csv(directory / "qc_reaction_sanity.csv"),
+        "dup_reactions": _distinct_csv(directory / "qc_duplicate_reactions.csv", "group"),
+        "unused_met": _count_csv(unused, lambda r: r.get("kind") == "metabolite"),
+        "unused_gene": _count_csv(unused, lambda r: r.get("kind") == "gene"),
+        "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
+        "inconsistent": _count_csv(annotation, lambda r: r.get("issue", "").startswith("inconsistent")),
+        "memote": _memote_score(directory),
+        # MACAW / balance
         "dead_end": _count_csv(macaw, lambda r: r.get("dead_end_test", "") not in ("ok", "")),
-        "duplicates": _count_csv(
-            macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS)
-        ),
+        "duplicates": _count_csv(macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS)),
         "mass_imbalance": _count_csv(balance, lambda r: r.get("mass_imbalance", "").strip() != ""),
         "charge_imbalance": _count_csv(balance, lambda r: r.get("charge_imbalance", "").strip() != ""),
     }
+
+
+def _stale_groups() -> set[str]:
+    """Groups whose committed stamp does not match this pull request's head commit."""
+    if not COMMIT_SHA:
+        return set()
+    stale = set()
+    for group, stamp in GROUP_STAMPS.items():
+        path = RESULTS / stamp
+        # Only a present-but-different stamp counts as stale; a missing stamp is
+        # unknown, so leave it to the file-absence (pending) handling below.
+        if path.exists() and path.read_text(encoding="utf-8").strip() != COMMIT_SHA:
+            stale.add(group)
+    return stale
 
 
 def _format_value(value, kind: str) -> str:
@@ -123,52 +155,52 @@ def _format_value(value, kind: str) -> str:
     return str(int(value))
 
 
-def _delta_and_icon(current, base, kind: str) -> tuple[str, str]:
+def _delta_and_icon(current, base, kind: str):
+    """Return (delta_text, icon, worse). worse flags a report regression."""
+    if kind == "gate":
+        icon = ":x:" if current > 0 else ":white_check_mark:"
+        if base is None:
+            return "new", icon, False
+        change = int(current) - int(base)
+        return (f"{change:+d}" if change else "0"), icon, False
     if kind == "growth":
-        # A pass/fail gate: show the verdict even without a baseline to compare against.
         icon = ":white_check_mark:" if current > 1e-6 else ":x:"
         if base is None:
-            return "new", icon
+            return "new", icon, False
         change = current - base
-        return (f"{change:+.3g}" if abs(change) > 1e-9 else "0"), icon
+        return (f"{change:+.3g}" if abs(change) > 1e-6 else "0"), icon, False
     if base is None:
-        return "new", ":new:"
+        return "new", ":new:", False
     if kind == "score":
         change = current - base
-        icon = ":white_check_mark:" if change >= -1e-9 else ":warning:"
-        return (f"{change:+.1f}" if abs(change) > 1e-9 else "0"), icon
+        worse = change < -1e-9
+        return (f"{change:+.1f}" if abs(change) > 1e-9 else "0"), (":warning:" if worse else ":white_check_mark:"), worse
     change = int(current) - int(base)  # count: lower is better
-    icon = ":white_check_mark:" if change <= 0 else ":warning:"
-    return (f"{change:+d}" if change != 0 else "0"), icon
+    worse = change > 0
+    return (f"{change:+d}" if change != 0 else "0"), (":warning:" if worse else ":white_check_mark:"), worse
 
 
-def _table(rows, current: dict, base: dict) -> tuple[list[str], int, bool]:
-    """Build the status-table body for a set of rows. Returns (lines, changed, failed)."""
-    lines, changed, failed = [], 0, False
-    for label, key, kind in rows:
+def _table(rows, current: dict, base: dict, stale: set[str]):
+    """Return (lines, n_failed_gates, n_worse, n_pending)."""
+    lines, failed, worse, pending = [], 0, 0, 0
+    for label, key, kind, group, detail in rows:
         value = current.get(key)
-        if value is None:  # not committed yet for this pull request
+        if value is None or group in stale:
             lines.append(f"| {label} | pending | | :hourglass_flowing_sand: |")
+            pending += 1
             continue
-        delta, icon = _delta_and_icon(value, base.get(key), kind)
-        changed += icon == ":warning:"
-        failed = failed or icon == ":x:"
-        lines.append(f"| {label} | {_format_value(value, kind)} | {delta} | {icon} |")
-    return lines, changed, failed
-
-
-def _header(changed: int, failed: bool, have_base: bool, what: str) -> str:
-    if failed:
-        return f":x: **A {what} check failed.** See the detailed reports below."
-    if not have_base:
-        return ":information_source: First run for this comparison; no target-branch baseline yet."
-    if changed:
-        return f":warning: **{changed} {what} check(s) changed** compared to `{BASE_REF}`."
-    return f":white_check_mark: **{what} checks fine**, no changes compared to `{BASE_REF}`."
+        delta, icon, is_worse = _delta_and_icon(value, base.get(key), kind)
+        if icon == ":x:":
+            failed += 1
+        worse += is_worse
+        cell = f"{_format_value(value, kind)}"
+        if detail and value and kind != "growth":
+            cell = f"[{cell}]({detail})"  # link the count to its detail file
+        lines.append(f"| {label} | {cell} | {delta} | {icon} |")
+    return lines, failed, worse, pending
 
 
 def _gene_essentiality_section() -> str:
-    """Render the Hart 2015 per-cell-line metrics table."""
     path = RESULTS / "gene-essential.csv"
     if not path.exists():
         return "_Not yet run for this pull request._"
@@ -177,54 +209,66 @@ def _gene_essentiality_section() -> str:
     if len(rows) < 2:
         return "_No gene-essentiality results._"
     header, *body = rows
-    lines = ["| " + " | ".join(header) + " |",
-             "| " + " | ".join("---" for _ in header) + " |"]
-    lines += ["| " + " | ".join(cell for cell in row) + " |" for row in body]
+    lines = ["| " + " | ".join(header) + " |", "| " + " | ".join("---" for _ in header) + " |"]
+    lines += ["| " + " | ".join(row) + " |" for row in body]
     return "\n".join(lines)
 
 
 def main() -> int:
     have_base = bool(BASE_DIR) and Path(BASE_DIR).exists()
     base_dir = Path(BASE_DIR) if have_base else None
+    stale = _stale_groups()
 
-    qc_cur = _qc_metrics(RESULTS)
-    qc_base = _qc_metrics(base_dir) if have_base else dict.fromkeys(qc_cur)
-    qc_table, qc_changed, qc_failed = _table(QC_ROWS, qc_cur, qc_base)
+    current = _metrics(RESULTS)
+    base = _metrics(base_dir) if have_base else {}
 
-    mb_cur = _mb_metrics(RESULTS)
-    mb_base = _mb_metrics(base_dir) if have_base else dict.fromkeys(mb_cur)
-    mb_table, mb_changed, mb_failed = _table(MB_ROWS, mb_cur, mb_base)
+    gate_tbl, gate_fail, _, gate_pending = _table(GATE_ROWS, current, base, stale)
+    rep_tbl, _, rep_worse, rep_pending = _table(REPORT_ROWS, current, base, stale)
+    mb_tbl, _, mb_worse, mb_pending = _table(MB_ROWS, current, base, stale)
 
-    delta_head = f"| Check | Result | &Delta; vs `{BASE_REF}` | |"
-    delta_sep = "| --- | ---: | ---: | :---: |"
+    worse = rep_worse + mb_worse
+    pending = gate_pending + rep_pending + mb_pending
 
+    if gate_fail:
+        verdict = (f":x: **Merge blocked: {gate_fail} build gate(s) failing.** "
+                   "Open the linked CSV(s) for the exact entries to fix.")
+    elif worse:
+        verdict = f":warning: **{worse} metric(s) worse than `{BASE_REF}`.** Review the changes below."
+    elif pending and not have_base:
+        verdict = ":information_source: First run for this comparison; results are still coming in."
+    elif pending:
+        verdict = f":hourglass_flowing_sand: **Some results are still running** ({pending} pending); the rest are unchanged vs `{BASE_REF}`."
+    elif not have_base:
+        verdict = ":information_source: First run for this comparison; no target-branch baseline yet."
+    else:
+        verdict = f":white_check_mark: **All checks pass, no regressions vs `{BASE_REF}`.**"
+
+    head = f"| Check | Result | &Delta; vs `{BASE_REF}` | |"
+    sep = "| --- | ---: | ---: | :---: |"
     lines = [
         "## Model quality report",
         "",
-        _header(qc_changed, qc_failed, have_base, "Model QC"),
+        verdict,
         "",
-        "### Model QC checks",
+        "### Build gates",
+        "_A red :x: blocks the merge; the count links to the CSV listing what to fix._",
         "",
-        delta_head,
-        delta_sep,
-        *qc_table,
+        head, sep, *gate_tbl,
+        "",
+        "### Model QC reports",
+        "",
+        head, sep, *rep_tbl,
         "",
         "### MACAW and mass/charge balance",
         "",
-        _header(mb_changed, mb_failed, have_base, "MACAW / balance"),
-        "",
-        delta_head,
-        delta_sep,
-        *mb_table,
+        head, sep, *mb_tbl,
         "",
         "### Gene essentiality (Hart 2015)",
         "",
         _gene_essentiality_section(),
         "",
-        "Per-finding detail is committed to `data/testResults/` "
-        "(`qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, "
-        "`qc_annotation_issues.csv`, `macaw_results.csv`, `balance_results.csv`, "
-        "`gene-essential.csv`); the full MEMOTE result is uploaded as a build artifact.",
+        "Per-finding detail is in the linked CSVs under `data/testResults/`; "
+        "the full MEMOTE result is uploaded as a build artifact.",
     ]
     if COMMIT_SHA:
         lines += ["", f"Results for commit {COMMIT_SHA[:7]}."]
