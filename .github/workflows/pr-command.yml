@@ -1,0 +1,45 @@
+name: PR command
+
+# ChatOps: let maintainers start long / optional jobs by commenting on a pull
+# request. issue_comment fires from the default branch, so this only takes effect
+# once the workflow is on main.
+#
+# Commands (comment must start with the command):
+#   /run gene-essentiality   run the full gene-essentiality workflow on the PR branch
+#
+# To add a command, copy a job below, change the command in its `if`, and dispatch
+# the target workflow (or run steps directly).
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  actions: write        # dispatch workflow_dispatch workflows
+  pull-requests: write  # reply on the pull request
+
+jobs:
+  gene-essentiality:
+    # Only pull-request comments, from a trusted author, matching the command.
+    if: >
+      github.event.issue.pull_request &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association) &&
+      startsWith(github.event.comment.body, '/run gene-essentiality')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch gene-essentiality on the PR branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          data=$(gh pr view "$PR" --repo "$REPO" --json headRefName,isCrossRepository)
+          ref=$(echo "$data" | jq -r .headRefName)
+          fork=$(echo "$data" | jq -r .isCrossRepository)
+          if [ "$fork" = "true" ]; then
+            gh pr comment "$PR" --repo "$REPO" \
+              --body ":warning: \`/run gene-essentiality\` only works for branches in this repository, not forks."
+            exit 0
+          fi
+          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref"
+          gh pr comment "$PR" --repo "$REPO" \
+            --body ":dna: Started **gene-essentiality** on \`$ref\` (this takes a few hours). Track it in the [Actions tab]($GITHUB_SERVER_URL/$REPO/actions/workflows/gene-essentiality.yml)."
