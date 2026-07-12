@@ -183768,7 +183768,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00043"
-      - name: "3-Hydroxyisobutyryl-Coenzyme A Hydrolase"
+      - name: "3-hydroxyisobutyryl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00799c: -1
           - MAM01597c: 1
@@ -183830,7 +183830,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00047"
-      - name: "4-Hydroxybenzoyl Coenzyme A Formation"
+      - name: "4-hydroxybenzoyl-CoA formation"
       - metabolites: !!omap
           - MAM00982m: -1
           - MAM00996m: 1
@@ -183980,7 +183980,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00057"
-      - name: "Acetyl Coenzyme A Transport"
+      - name: "acetyl-CoA transport"
       - metabolites: !!omap
           - MAM01261c: -1
           - MAM01261r: 1
@@ -184146,7 +184146,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00069"
-      - name: "Alpha-Methylacyl Coenzyme A Racemase (Reductase)"
+      - name: "alpha-methylacyl-CoA racemase (reductase)"
       - metabolites: !!omap
           - MAM00614x: -1
           - MAM00755x: 1
@@ -184161,7 +184161,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00070"
-      - name: "Alpha-Methylacyl Coenzyme A Racemase (Reductase)"
+      - name: "alpha-methylacyl-CoA racemase (reductase)"
       - metabolites: !!omap
           - MAM00614r: -1
           - MAM00755r: 1
@@ -184176,7 +184176,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00071"
-      - name: "Alpha-Methylacyl Coenzyme A Racemase"
+      - name: "alpha-methylacyl-CoA racemase"
       - metabolites: !!omap
           - MAM00616r: -1
           - MAM00618r: 1
@@ -184345,7 +184345,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00083"
-      - name: "Bile Acid Coenzyme A: Amino Acid N-Acyltransferase"
+      - name: "bile acid-CoA: amino acid N-acyltransferase"
       - metabolites: !!omap
           - MAM01514x: -1
           - MAM01597x: 1
@@ -184360,7 +184360,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00084"
-      - name: "Bile Acid Coenzyme A: Amino Acid N-Acyltransferase"
+      - name: "bile acid-CoA: amino acid N-acyltransferase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM01986x: -1
@@ -184375,7 +184375,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00085"
-      - name: "Bile Acid Coenzyme A: Amino Acid N-Acyltransferase"
+      - name: "bile acid-CoA: amino acid N-acyltransferase"
       - metabolites: !!omap
           - MAM01434x: -1
           - MAM01597x: 1
@@ -184390,7 +184390,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00086"
-      - name: "Biotin-[Acetyl Coenzyme A-Carboxylase] Ligase, Mitochondrial"
+      - name: "biotin-[acetyl-CoA-carboxylase] ligase, mitochondrial"
       - metabolites: !!omap
           - MAM01371m: -1
           - MAM01401m: -1
@@ -185110,7 +185110,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00135"
-      - name: "P-Coumaroyl Coenzyme A Formation"
+      - name: "P-coumaroyl-CoA formation"
       - metabolites: !!omap
           - MAM00981m: -1
           - MAM00982m: 1
@@ -185236,7 +185236,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00144"
-      - name: "Palmitoyl Coenzyme A Desaturase (N-C16:0CoA -> N-C16:1CoA)"
+      - name: "palmitoyl-CoA desaturase (N-C16:0CoA -> N-C16:1CoA)"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02040c: 2
@@ -185255,7 +185255,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00145"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:2CoA -> N-C18:3CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:2CoA -> N-C18:3CoA)"
       - metabolites: !!omap
           - MAM00108c: 1
           - MAM02039c: -1
@@ -185273,7 +185273,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00146"
-      - name: "Stearoyl Coenzyme A Desaturase (N-C18:0CoA -> N-C18:1CoA)"
+      - name: "stearoyl-CoA desaturase (N-C18:0CoA -> N-C18:1CoA)"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02040c: 2
@@ -185292,7 +185292,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00147"
-      - name: "Stearoyl Coenzyme A Desaturase (N-C18:0CoA -> N-C18:1CoA)"
+      - name: "stearoyl-CoA desaturase (N-C18:0CoA -> N-C18:1CoA)"
       - metabolites: !!omap
           - MAM02039c: -1
           - MAM02040c: 2
@@ -185311,7 +185311,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00148"
-      - name: "Stearoyl Coenzyme A Desaturase (N-C18:0CoA -> N-C18:1CoA)"
+      - name: "stearoyl-CoA desaturase (N-C18:0CoA -> N-C18:1CoA)"
       - metabolites: !!omap
           - MAM00057c: 1
           - MAM02039c: -1
@@ -185330,7 +185330,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00149"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:1CoA -> N-C18:2CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:1CoA -> N-C18:2CoA)"
       - metabolites: !!omap
           - MAM00106c: 1
           - MAM02039c: -1
@@ -185348,7 +185348,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00150"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:1CoA -> N-C18:2CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:1CoA -> N-C18:2CoA)"
       - metabolites: !!omap
           - MAM00106c: 1
           - MAM02039c: -1
@@ -185366,7 +185366,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00151"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:1CoA -> N-C18:2CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:1CoA -> N-C18:2CoA)"
       - metabolites: !!omap
           - MAM00057c: -1
           - MAM00106c: 1
@@ -185384,7 +185384,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00152"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C18:2CoA -> N-C18:3CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C18:2CoA -> N-C18:3CoA)"
       - metabolites: !!omap
           - MAM01934c: 1
           - MAM02039c: -1
@@ -185402,7 +185402,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00181"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C20:3CoA -> N-C20:4CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C20:3CoA -> N-C20:4CoA)"
       - metabolites: !!omap
           - MAM01364c: 1
           - MAM01697c: -1
@@ -185420,7 +185420,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00186"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C20:4CoA -> N-C20:5CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C20:4CoA -> N-C20:5CoA)"
       - metabolites: !!omap
           - MAM00103c: 1
           - MAM00125c: -1
@@ -185438,7 +185438,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00205"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C22:4CoA -> N-C22:5CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C22:4CoA -> N-C22:5CoA)"
       - metabolites: !!omap
           - MAM00093x: 1
           - MAM00119x: -1
@@ -185455,7 +185455,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00218"
-      - name: "Fatty Acyl Coenzyme A Desaturase (N-C22:5CoA -> N-C22:6CoA)"
+      - name: "fatty acyl-CoA desaturase (N-C22:5CoA -> N-C22:6CoA)"
       - metabolites: !!omap
           - MAM00095x: 1
           - MAM00121x: -1
@@ -186597,7 +186597,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00737"
-      - name: "Fatty-Acid- Coenzyme A Ligase"
+      - name: "fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00057c: 1
           - MAM01334c: 1
@@ -186615,7 +186615,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00739"
-      - name: "Fatty-Acid- Coenzyme A Ligase"
+      - name: "fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -186633,7 +186633,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00742"
-      - name: "Fatty-Acid- Coenzyme A Ligase (Butanoate), Mitochondrial"
+      - name: "fatty-acid-CoA ligase (butanoate), mitochondrial"
       - metabolites: !!omap
           - MAM01334m: 1
           - MAM01371m: -1
@@ -186651,7 +186651,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00743"
-      - name: "Fatty-Acyl Coenzyme A Elongation (N-C18:3CoA)"
+      - name: "fatty-acyl-CoA elongation (N-C18:3CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -186673,7 +186673,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00745"
-      - name: "Fatty-Acyl Coenzyme A Elongation (N-C20:4CoA)"
+      - name: "fatty-acyl-CoA elongation (N-C20:4CoA)"
       - metabolites: !!omap
           - MAM00108c: -1
           - MAM00125c: 1
@@ -186695,7 +186695,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00747"
-      - name: "Fatty-Acyl Coenzyme A Elongation (N-C20:4CoA)"
+      - name: "fatty-acyl-CoA elongation (N-C20:4CoA)"
       - metabolites: !!omap
           - MAM00119c: 1
           - MAM01364c: -1
@@ -186717,7 +186717,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00749"
-      - name: "Fatty-Acyl Coenzyme A Elongation (N-C20:5CoA)"
+      - name: "fatty-acyl-CoA elongation (N-C20:5CoA)"
       - metabolites: !!omap
           - MAM00103c: -1
           - MAM00121c: 1
@@ -187510,7 +187510,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01012"
-      - name: "Fatty Acyl Coenzyme A Synthase (N-C10:0CoA)"
+      - name: "fatty acyl-CoA synthase (N-C10:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187530,7 +187530,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01019"
-      - name: "Fatty-Acyl Coenzyme A Synthase (N-C12:0CoA)"
+      - name: "fatty-acyl-CoA synthase (N-C12:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187550,7 +187550,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01024"
-      - name: "Fatty-Acyl Coenzyme A Synthase (N-C14:0CoA)"
+      - name: "fatty-acyl-CoA synthase (N-C14:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187570,7 +187570,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01031"
-      - name: "Fatty-Acyl Coenzyme A Synthase (N-C16:0CoA)"
+      - name: "fatty-acyl-CoA synthase (N-C16:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187590,7 +187590,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01032"
-      - name: "Fatty-Acyl Coenzyme A Synthase (N-C18:0CoA)"
+      - name: "fatty-acyl-CoA synthase (N-C18:0CoA)"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM01597c: 1
@@ -187610,7 +187610,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01036"
-      - name: "Fatty Acyl Coenzyme A Synthase (N-C8:0CoA), Lumped Reaction"
+      - name: "fatty acyl-CoA synthase (N-C8:0CoA), lumped reaction"
       - metabolites: !!omap
           - MAM01261c: -1
           - MAM01596c: 3
@@ -188151,7 +188151,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01438"
-      - name: "Transport of Trans-Hexadec-2-Enoyl Coenzyme A"
+      - name: "transport of trans-hexadec-2-enoyl-CoA"
       - metabolites: !!omap
           - MAM00051c: -1
           - MAM00051x: 1
@@ -188229,7 +188229,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01446"
-      - name: "Hydroxymethylglutaryl Coenzyme A Reductase (Ir)"
+      - name: "hydroxymethylglutaryl-CoA reductase (Ir)"
       - metabolites: !!omap
           - MAM00167r: 1
           - MAM01597r: 1
@@ -188247,7 +188247,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01447"
-      - name: "Hydroxymethylglutaryl Coenzyme A Reversible Peroxisomal Transport"
+      - name: "hydroxymethylglutaryl-CoA reversible peroxisomal transport"
       - metabolites: !!omap
           - MAM02131c: -1
           - MAM02131x: 1
@@ -188259,7 +188259,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01449"
-      - name: "Hydroxymethylglutaryl Coenzyme A Lyase"
+      - name: "hydroxymethylglutaryl-CoA lyase"
       - metabolites: !!omap
           - MAM01253x: 1
           - MAM01261x: 1
@@ -188832,7 +188832,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01517"
-      - name: "Malonyl Coenzyme A-Acp Transacylase, Mitochondrial"
+      - name: "malonyl-CoA-acp transacylase, mitochondrial"
       - metabolites: !!omap
           - MAM00184m: -1
           - MAM01597m: 1
@@ -188882,7 +188882,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01521"
-      - name: "Methylmalonyl Coenzyme A Decarboxylase"
+      - name: "methylmalonyl-CoA decarboxylase"
       - metabolites: !!omap
           - MAM01596c: 1
           - MAM02039c: -1
@@ -188898,7 +188898,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01522"
-      - name: "Methylmalonyl Coenzyme A Decarboxylase, Peroxisomal"
+      - name: "methylmalonyl-CoA decarboxylase, peroxisomal"
       - metabolites: !!omap
           - MAM01596x: 1
           - MAM02039x: -1
@@ -189406,7 +189406,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01591"
-      - name: "Pseudoecgonine Coenzyme A Transferase, Endoplasmatic Reticulum"
+      - name: "pseudoecgonine-CoA transferase, endoplasmatic reticulum"
       - metabolites: !!omap
           - MAM01334r: 1
           - MAM01371r: -1
@@ -189829,7 +189829,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01655"
-      - name: "Propenoyl Coenzyme A Hydrolase, Peroxisomal"
+      - name: "propenoyl-CoA hydrolase, peroxisomal"
       - metabolites: !!omap
           - MAM00799x: 1
           - MAM01265x: -1
@@ -189934,7 +189934,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01674"
-      - name: "Peroxisomal Acyl Coenzyme A Thioesterase"
+      - name: "peroxisomal acyl-CoA thioesterase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -189951,7 +189951,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01675"
-      - name: "Peroxisomal Acyl Coenzyme A Thioesterase"
+      - name: "peroxisomal acyl-CoA thioesterase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -189968,7 +189968,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01677"
-      - name: "Peroxisomal Acyl Coenzyme A Thioesterase"
+      - name: "peroxisomal acyl-CoA thioesterase"
       - metabolites: !!omap
           - MAM00119x: -1
           - MAM01291x: 1
@@ -191000,7 +191000,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02028"
-      - name: "Trans-Hexadec-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-hexadec-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00051m: 1
           - MAM02039m: 1
@@ -191051,7 +191051,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02121"
-      - name: "Palmitoyl Coenzyme A:L-Carnitine O-Palmitoyltransferase"
+      - name: "palmitoyl-CoA:L-carnitine O-palmitoyltransferase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02348x: -1
@@ -191067,7 +191067,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02122"
-      - name: "Palmitoyl Coenzyme A:L-Carnitine O-Palmitoyltransferase"
+      - name: "palmitoyl-CoA:L-carnitine O-palmitoyltransferase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02348x: -1
@@ -191083,7 +191083,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02123"
-      - name: "Palmitoyl Coenzyme A:L-Carnitine O-Palmitoyltransferase"
+      - name: "palmitoyl-CoA:L-carnitine O-palmitoyltransferase"
       - metabolites: !!omap
           - MAM01363x: 1
           - MAM01364x: -1
@@ -191171,7 +191171,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02146"
-      - name: "(S)-Methylmalonyl Coenzyme A Hydrolase"
+      - name: "(S)-methylmalonyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597m: 1
           - MAM02039m: 1
@@ -191205,7 +191205,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02148"
-      - name: "Trans-Oct-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-oct-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00059m: 1
           - MAM02039m: 1
@@ -191222,7 +191222,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02149"
-      - name: "Trans-Dodec-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-dodec-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00042m: 1
           - MAM02039m: 1
@@ -191239,7 +191239,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02183"
-      - name: "Trans-Tetradec-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-tetradec-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00066m: 1
           - MAM02039m: 1
@@ -191290,7 +191290,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02187"
-      - name: "Trans-Dec-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-dec-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00039m: 1
           - MAM01650m: -1
@@ -191468,7 +191468,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02207"
-      - name: "Trans-Hex-2-Enoyl Coenzyme A Reductase"
+      - name: "trans-hex-2-enoyl-CoA reductase"
       - metabolites: !!omap
           - MAM00053m: -1
           - MAM02039m: -1
@@ -192294,7 +192294,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02375"
-      - name: "Long-Chain-Acyl Coenzyme A Dehydrogenase"
+      - name: "long-chain-acyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM01596r: 4
           - MAM01597r: 2
@@ -192338,7 +192338,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02381"
-      - name: "Long-Chain-Acyl Coenzyme A Dehydrogenase"
+      - name: "long-chain-acyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00893m: -1
           - MAM01261m: 1
@@ -192843,7 +192843,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02487"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597m: 1
           - MAM02039m: 1
@@ -192860,7 +192860,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02488"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -192877,7 +192877,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02492"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00083c: -1
           - MAM00884c: 1
@@ -192943,7 +192943,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02500"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597m: 1
           - MAM01771m: 1
@@ -192960,7 +192960,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02502"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM01771x: 1
@@ -192977,7 +192977,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02504"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01373m: 1
           - MAM01597m: 1
@@ -192994,7 +192994,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02506"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01373x: 1
           - MAM01597x: 1
@@ -193011,7 +193011,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02507"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597m: 1
           - MAM02039m: 1
@@ -193028,7 +193028,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02508"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -193803,7 +193803,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02786"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334m: 1
           - MAM01371m: -1
@@ -193821,7 +193821,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02802"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334x: 1
           - MAM01371x: -1
@@ -193909,7 +193909,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02820"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00081c: -1
           - MAM00855c: 1
@@ -193925,7 +193925,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02826"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00696c: -1
           - MAM00854c: 1
@@ -193941,7 +193941,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02828"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00082c: -1
           - MAM00883c: 1
@@ -194256,7 +194256,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02940"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM01434m: -1
           - MAM01435m: 1
@@ -194273,7 +194273,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02941"
-      - name: "Propionyl Coenzyme A C2-Trimethyltridecanoyltransferase"
+      - name: "propionyl-CoA C2-trimethyltridecanoyltransferase"
       - metabolites: !!omap
           - MAM00614c: -1
           - MAM01434c: 1
@@ -194290,7 +194290,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02950"
-      - name: "Propionyl Coenzyme A C2-Trimethyltridecanoyltransferase"
+      - name: "propionyl-CoA C2-trimethyltridecanoyltransferase"
       - metabolites: !!omap
           - MAM00614m: -1
           - MAM01434m: 1
@@ -194308,7 +194308,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02953"
-      - name: "Propionyl Coenzyme A C2-Trimethyltridecanoyltransferase"
+      - name: "propionyl-CoA C2-trimethyltridecanoyltransferase"
       - metabolites: !!omap
           - MAM00614x: -1
           - MAM01434x: 1
@@ -195458,7 +195458,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03266"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00177c: -1
           - MAM00894c: 1
@@ -195474,7 +195474,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03267"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00886c: 1
           - MAM01574c: -1
@@ -195490,7 +195490,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03268"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02552c: -1
@@ -195506,7 +195506,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03269"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039m: 1
           - MAM02552m: -1
@@ -195523,7 +195523,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03270"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039x: 1
           - MAM02552x: -1
@@ -195557,7 +195557,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03273"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334m: 1
           - MAM01371m: -1
@@ -195575,7 +195575,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03274"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01334x: 1
           - MAM01371x: -1
@@ -195671,7 +195671,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03297"
-      - name: "Enoyl Coenzyme A Hydratase"
+      - name: "enoyl-CoA hydratase"
       - metabolites: !!omap
           - MAM02040m: -1
           - MAM03333m: -1
@@ -195686,7 +195686,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03299"
-      - name: "Enoyl Coenzyme A Hydratase"
+      - name: "enoyl-CoA hydratase"
       - metabolites: !!omap
           - MAM02040x: -1
           - MAM03333x: -1
@@ -195836,7 +195836,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03366"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM00682m: 1
           - MAM01364m: -1
@@ -195852,7 +195852,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03371"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM01576m: -1
           - MAM02041m: 1
@@ -195868,7 +195868,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03374"
-      - name: "Dodecenoyl Coenzyme A Isomerase"
+      - name: "dodecenoyl-CoA isomerase"
       - metabolites: !!omap
           - MAM03030m: -1
           - MAM03358m: 1
@@ -195896,7 +195896,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03377"
-      - name: "2,4-Dienoyl Coenzyme A Reductase (NADPH)"
+      - name: "2,4-dienoyl-CoA reductase (nadph)"
       - metabolites: !!omap
           - MAM02039m: -1
           - MAM02554m: 1
@@ -195913,7 +195913,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03378"
-      - name: "Dodecenoyl Coenzyme A Isomerase"
+      - name: "dodecenoyl-CoA isomerase"
       - metabolites: !!omap
           - MAM03360m: 1
           - MAM03361m: -1
@@ -195927,7 +195927,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03379"
-      - name: "Enoyl Coenzyme A Hydratase"
+      - name: "enoyl-CoA hydratase"
       - metabolites: !!omap
           - MAM02040m: -1
           - MAM03350m: 1
@@ -195942,7 +195942,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03380"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039m: 1
           - MAM02552m: -1
@@ -195959,7 +195959,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03381"
-      - name: "Acetyl Coenzyme A C-Acyltransferase"
+      - name: "acetyl-CoA C-acyltransferase"
       - metabolites: !!omap
           - MAM01261m: 1
           - MAM01597m: -1
@@ -196003,7 +196003,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03384"
-      - name: "Phytanoyl Coenzyme A Dioxygenase"
+      - name: "phytanoyl-CoA dioxygenase"
       - metabolites: !!omap
           - MAM01306x: -1
           - MAM01596x: 1
@@ -196054,7 +196054,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03387"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00078x: 1
           - MAM01334x: 1
@@ -196072,7 +196072,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03388"
-      - name: "Phytanate- Coenzyme A Ligase"
+      - name: "phytanate-CoA ligase"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -196089,7 +196089,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03389"
-      - name: "Phytanate- Coenzyme A Ligase"
+      - name: "phytanate-CoA ligase"
       - metabolites: !!omap
           - MAM01334x: 1
           - MAM01371x: -1
@@ -196660,7 +196660,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03483"
-      - name: "Acetyl Coenzyme A C-Acyltransferase"
+      - name: "acetyl-CoA C-acyltransferase"
       - metabolites: !!omap
           - MAM00119x: 1
           - MAM00853x: -1
@@ -197422,7 +197422,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03756"
-      - name: "Enoyl Coenzyme A Hydratase"
+      - name: "enoyl-CoA hydratase"
       - metabolites: !!omap
           - MAM00749x: -1
           - MAM02040x: -1
@@ -197437,7 +197437,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03758"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM02039c: 1
           - MAM02552c: -1
@@ -197453,7 +197453,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03764"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00748x: 1
           - MAM02039x: 1
@@ -197638,7 +197638,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03801"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01120m: 1
           - MAM01151m: -1
@@ -197656,7 +197656,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03803"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01120r: 1
           - MAM01151r: -1
@@ -197674,7 +197674,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03805"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM01120x: 1
           - MAM01151x: -1
@@ -197692,7 +197692,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03808"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00689c: -1
           - MAM00740c: 1
@@ -197709,7 +197709,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03810"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00835c: 1
           - MAM00836c: -1
@@ -197726,7 +197726,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03812"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00690c: -1
           - MAM00741c: 1
@@ -197743,7 +197743,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03814"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00837c: 1
           - MAM00838c: -1
@@ -197942,7 +197942,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03844"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00687c: 1
           - MAM00688c: -1
@@ -197959,7 +197959,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03846"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00252m: -1
           - MAM00258m: 1
@@ -197977,7 +197977,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03872"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00252r: -1
           - MAM00258r: 1
@@ -197995,7 +197995,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03874"
-      - name: "Long-Chain-Fatty-Acid- Coenzyme A Ligase"
+      - name: "long-chain-fatty-acid-CoA ligase"
       - metabolites: !!omap
           - MAM00252x: -1
           - MAM00258x: 1
@@ -198013,7 +198013,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03876"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00691c: -1
           - MAM00846c: 1
@@ -198615,7 +198615,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03981"
-      - name: "Palmitoyl Coenzyme A Hydrolase"
+      - name: "palmitoyl-CoA hydrolase"
       - metabolites: !!omap
           - MAM00421c: -1
           - MAM01597c: 1
@@ -198632,7 +198632,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03983"
-      - name: "3-Hydroxyacyl Coenzyme A Dehydrogenase"
+      - name: "3-hydroxyacyl-CoA dehydrogenase"
       - metabolites: !!omap
           - MAM00420c: 1
           - MAM00581c: -1
@@ -198697,7 +198697,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03997"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM02041m: 1
           - MAM02630m: -1
@@ -198713,7 +198713,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04001"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM01802x: -1
           - MAM01803x: 1
@@ -198729,7 +198729,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04003"
-      - name: "Acyl Coenzyme A Oxidase"
+      - name: "acyl-CoA oxidase"
       - metabolites: !!omap
           - MAM00678m: 1
           - MAM00980m: -1
@@ -200113,7 +200113,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04438"
-      - name: "Transport of 2-Methylcrotonoyl Coenzyme A into Cytosol"
+      - name: "transport of 2-methylcrotonoyl-CoA into cytosol"
       - metabolites: !!omap
           - MAM02999c: 1
           - MAM02999m: -1
@@ -200126,7 +200126,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04439"
-      - name: "Transport of (R)-3-Hydroxybutanoyl Coenzyme A into Cytosol"
+      - name: "transport of (R)-3-hydroxybutanoyl-CoA into cytosol"
       - metabolites: !!omap
           - MAM00159c: 1
           - MAM00159m: -1
@@ -200371,7 +200371,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04566"
-      - name: "Transport of 3-Hydroxytetradecenoyl Coenzyme A from Mitochondria into Cytosol"
+      - name: "transport of 3-hydroxytetradecenoyl-CoA from mitochondria into cytosol"
       - metabolites: !!omap
           - MAM03263c: 1
           - MAM03263m: -1
@@ -203786,7 +203786,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06485"
-      - name: "Transport of Glutaryl Coenzyme A from Mitochondria into Cytosol"
+      - name: "transport of glutaryl-CoA from mitochondria into cytosol"
       - metabolites: !!omap
           - MAM01977c: 1
           - MAM01977m: -1
@@ -203799,7 +203799,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06487"
-      - name: "Transport of (S)-3-Hydroxydecanoyl Coenzyme A from Mitochondria into the Cytosol"
+      - name: "transport of (S)-3-hydroxydecanoyl-CoA from mitochondria into the cytosol"
       - metabolites: !!omap
           - MAM00181c: 1
           - MAM00181m: -1
@@ -203941,7 +203941,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06593"
-      - name: "Transport of Isovaleryl Coenzyme A from Mitochondria into Cytosol"
+      - name: "transport of isovaleryl-CoA from mitochondria into cytosol"
       - metabolites: !!omap
           - MAM02189c: 1
           - MAM02189m: -1
@@ -203954,7 +203954,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06596"
-      - name: "Transport of Lignocericyl Coenzyme A from Cytosol to Peroxisome"
+      - name: "transport of lignocericyl-CoA from cytosol to peroxisome"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -204259,7 +204259,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06812"
-      - name: "Transport of Stearoyl Coenzyme A from Cytosol to Peroxisomes"
+      - name: "transport of stearoyl-CoA from cytosol to peroxisomes"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -204384,7 +204384,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06852"
-      - name: "Thioesterification of Succinyl Coenzyme A for Release into Cytosol"
+      - name: "thioesterification of succinyl-CoA for release into cytosol"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -205195,7 +205195,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07190"
-      - name: "Transport of Palmitoyl Coenzyme A"
+      - name: "transport of palmitoyl-CoA"
       - metabolites: !!omap
           - MAM02678c: -2
           - MAM02678r: 2
@@ -205613,7 +205613,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08204"
-      - name: "Pyrophasphatase (Dephospho Coenzyme A, Extracellular)"
+      - name: "pyrophasphatase (dephospho-CoA, extracellular)"
       - metabolites: !!omap
           - MAM01334e: 1
           - MAM01674e: -1
@@ -208575,7 +208575,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09948"
-      - name: "Acylcoa Hydrolase, Cis, Cis-11, 14-Eicosadienoyl Coenzyme A"
+      - name: "acylcoa hydrolase, cis, cis-11, 14-eicosadienoyl-CoA"
       - metabolites: !!omap
           - MAM00009c: -1
           - MAM01597c: 1
@@ -210054,7 +210054,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10166"
-      - name: "Transport of Cis, Cis-11, 14-Eicosadienoyl Coenzyme A, Active Transport"
+      - name: "transport of cis, cis-11, 14-eicosadienoyl-CoA, active transport"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -210071,7 +210071,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10167"
-      - name: "Transport of Cis, Cis-11, 14-Eicosadienoyl Coenzyme A, Diffusion"
+      - name: "transport of cis, cis-11, 14-eicosadienoyl-CoA, diffusion"
       - metabolites: !!omap
           - MAM03569c: -1
           - MAM03569e: 1
@@ -223620,7 +223620,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11294"
-      - name: "Hydrolysis of Fatty Acyl Coenzyme A (14:1)"
+      - name: "hydrolysis of fatty acyl-CoA (14:1)"
       - metabolites: !!omap
           - MAM00128c: 1
           - MAM01597c: 1
@@ -223636,7 +223636,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11295"
-      - name: "Phenylacetate Coenzyme A Ligase, Mitochondrial"
+      - name: "phenylacetate-CoA ligase, mitochondrial"
       - metabolites: !!omap
           - MAM01334m: 1
           - MAM01371m: -1
@@ -224853,7 +224853,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11394"
-      - name: "Acetate Coenzyme A Ligase (ADP-Forming)"
+      - name: "acetate-CoA ligase (adp-forming)"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
