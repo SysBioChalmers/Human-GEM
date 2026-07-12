@@ -43,8 +43,8 @@ end
 model_orig = model;
 
 % add boundary mets
-model = addBoundaryMets(model);
-refModel = addBoundaryMets(refModel);
+model = closeModel(model);
+refModel = closeModel(refModel);
 
 % reset biomass function
 if resetBiomass
