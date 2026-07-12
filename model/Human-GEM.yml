@@ -54634,42 +54634,42 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM00517c"
-      - name: "12-Dehydrocholic acid; 12-Oxodeoxycholic acid; 12oxo-3alpha,7alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "12-dehydrocholic acid"
       - compartment: "c"
       - formula: "C24H37O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM00517e"
-      - name: "12-Dehydrocholic acid; 12-Oxodeoxycholic acid; 12oxo-3alpha,7alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "12-dehydrocholic acid"
       - compartment: "e"
       - formula: "C24H37O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03207c"
-      - name: "3-Dehydrocholic acid; 3oxo-7alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "3-dehydrocholic acid"
       - compartment: "c"
       - formula: "C24H37O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03206c"
-      - name: "3-Dehydrochenodeoxychollyc acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "3-dehydrochenodeoxycholic acid"
       - compartment: "c"
       - formula: "C24H37O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03206e"
-      - name: "3-Dehydrochenodeoxychollyc acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "3-dehydrochenodeoxycholic acid"
       - compartment: "e"
       - formula: "C24H37O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03207e"
-      - name: "3-Dehydrocholic acid; 3oxo-7alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "3-dehydrocholic acid"
       - compartment: "e"
       - formula: "C24H37O5"
       - charge: -1
@@ -54704,28 +54704,28 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03310c"
-      - name: "7-Dehydrochenodeoxycholic acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "7-dehydrochenodeoxycholic acid"
       - compartment: "c"
       - formula: "C24H37O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03310e"
-      - name: "7-Dehydrochenodeoxycholic acid; 7oxo-3alpha-hydroxy-5beta-cholan-24-oic acid"
+      - name: "7-dehydrochenodeoxycholic acid"
       - compartment: "e"
       - formula: "C24H37O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03311c"
-      - name: "7-Dehydrocholic acid; 7-Oxodeoxycholic acid; 7oxo-3alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "7-dehydrocholic acid"
       - compartment: "c"
       - formula: "C24H37O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03311e"
-      - name: "7-Dehydrocholic acid; 7-Oxodeoxycholic acid; 7oxo-3alpha,12alpha-Dihydroxy-5beta-cholan-24-oic acid"
+      - name: "7-dehydrocholic acid"
       - compartment: "e"
       - formula: "C24H37O5"
       - charge: -1
@@ -54809,7 +54809,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03685c"
-      - name: "Hyocholic acid; gamma-Muricholate"
+      - name: "hyocholic acid"
       - compartment: "c"
       - formula: "C24H39O5"
       - charge: -1
@@ -54942,14 +54942,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03691c"
-      - name: "Isochenodeoxycholic acid; 3beta,7alpha-Dihydroxy-5beta-cholanic acid"
+      - name: "isochenodeoxycholic acid"
       - compartment: "c"
       - formula: "C24H39O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03704c"
-      - name: "Isochenodeoxycholic acid; 3beta,7alpha,12alpha-Trihydroxy-5beta-cholanic acid"
+      - name: "isocholic acid"
       - compartment: "c"
       - formula: "C24H39O5"
       - charge: -1
@@ -54998,7 +54998,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03996c"
-      - name: "Taurohyocholic acid; N-(3alpha,6alpha,7alpha-Trihydroxy-5beta-cholan-24-oyl)taurine"
+      - name: "taurohyocholic acid"
       - compartment: "c"
       - formula: "C26H44NO7S"
       - charge: -1
@@ -55012,7 +55012,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04057c"
-      - name: "Ursocholic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholan-24-oic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholanic acid; 7beta-Hydroxyisocholic acid; 7-Epicholic acid"
+      - name: "ursocholic acid"
       - compartment: "c"
       - formula: "C24H39O5"
       - charge: -1
@@ -55082,21 +55082,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03685e"
-      - name: "Hyocholic acid; gamma-Muricholate"
+      - name: "hyocholic acid"
       - compartment: "e"
       - formula: "C24H39O5"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03691e"
-      - name: "Isochenodeoxycholic acid; 3beta,7alpha-Dihydroxy-5beta-cholanic acid"
+      - name: "isochenodeoxycholic acid"
       - compartment: "e"
       - formula: "C24H39O4"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03704e"
-      - name: "Isochenodeoxycholic acid; 3beta,7alpha,12alpha-Trihydroxy-5beta-cholanic acid"
+      - name: "isocholic acid"
       - compartment: "e"
       - formula: "C24H39O5"
       - charge: -1
@@ -55145,7 +55145,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03996e"
-      - name: "Taurohyocholic acid; N-(3alpha,6alpha,7alpha-Trihydroxy-5beta-cholan-24-oyl)taurine"
+      - name: "taurohyocholic acid"
       - compartment: "e"
       - formula: "C26H44NO7S"
       - charge: -1
@@ -55159,7 +55159,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04057e"
-      - name: "Ursocholic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholan-24-oic acid; 3alpha,7beta,12alpha-Trihydroxy-5beta-cholanic acid; 7beta-Hydroxyisocholic acid; 7-Epicholic acid"
+      - name: "ursocholic acid"
       - compartment: "e"
       - formula: "C24H39O5"
       - charge: -1
@@ -55173,7 +55173,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03685r"
-      - name: "Hyocholic acid; gamma-Muricholate"
+      - name: "hyocholic acid"
       - compartment: "r"
       - formula: "C24H39O5"
       - charge: -1
