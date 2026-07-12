@@ -6,7 +6,7 @@ The test results shown here were obtained by the GitHub Actions run in:
 
 - **PR #1057** (model QC checks)
 - **PR #1056** (MEMOTE)
-- **PR #1056** (MACAW and mass/charge balance)
+- **PR #1057** (MACAW and mass/charge balance)
 - **PR #973** (gene essentiality)
 
 The results will be updated by any subsequent pull request. Summary results are shown as a comment in the corresponding pull request.
