@@ -39008,7 +39008,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03419c"
-      - name: "Lysophosphatidic Acid"
+      - name: "lysophosphatidic acid"
       - compartment: "c"
       - formula: "C3H6O5PRCO2"
       - charge: -2
@@ -39593,7 +39593,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03315e"
-      - name: "Fatty Acid 9-Cis-Retinol"
+      - name: "fatty acid 9-cis-retinol"
       - compartment: "e"
       - formula: "C21H29O2R"
       - charge: 0
@@ -39724,14 +39724,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03726c"
-      - name: "Linoleic Acid ACP (All Cis)"
+      - name: "linoleic acid ACP (all cis)"
       - compartment: "c"
       - formula: "C29H51N2O8PRS"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03725c"
-      - name: "Linoelaidic Acid ACP (All Trans)"
+      - name: "linoelaidic acid ACP (all trans)"
       - compartment: "c"
       - formula: "C29H51N2O8PRS"
       - charge: -1
@@ -40015,7 +40015,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03315c"
-      - name: "Fatty Acid 9-Cis-Retinol"
+      - name: "fatty acid 9-cis-retinol"
       - compartment: "c"
       - formula: "C21H29O2R"
       - charge: 0
@@ -41125,7 +41125,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03330c"
-      - name: "Cyanosulfurous Acid Anion"
+      - name: "cyanosulfurous acid anion"
       - compartment: "c"
       - formula: "CH2NO2S"
       - charge: 0
@@ -41140,7 +41140,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03330e"
-      - name: "Cyanosulfurous Acid Anion"
+      - name: "cyanosulfurous acid anion"
       - compartment: "e"
       - formula: "CH2NO2S"
       - charge: 0
@@ -41162,7 +41162,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03330l"
-      - name: "Cyanosulfurous Acid Anion"
+      - name: "cyanosulfurous acid anion"
       - compartment: "l"
       - formula: "CH2NO2S"
       - charge: 0
@@ -41184,7 +41184,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03330n"
-      - name: "Cyanosulfurous Acid Anion"
+      - name: "cyanosulfurous acid anion"
       - compartment: "n"
       - formula: "CH2NO2S"
       - charge: 0
@@ -43918,7 +43918,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03408c"
-      - name: "Adipic Acid"
+      - name: "adipic acid"
       - compartment: "c"
       - formula: "C6H8O4"
       - charge: -2
@@ -43932,7 +43932,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03408x"
-      - name: "Adipic Acid"
+      - name: "adipic acid"
       - compartment: "x"
       - formula: "C6H8O4"
       - charge: -2
@@ -44088,7 +44088,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03562x"
-      - name: "Dodecanedioic Acid"
+      - name: "dodecanedioic acid"
       - compartment: "x"
       - formula: "C12H20O4"
       - charge: -2
@@ -44102,7 +44102,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03562c"
-      - name: "Dodecanedioic Acid"
+      - name: "dodecanedioic acid"
       - compartment: "c"
       - formula: "C12H20O4"
       - charge: -2
@@ -44289,14 +44289,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03493c"
-      - name: "Hexadecanedioic Acid Mono-L-Carnitine Ester"
+      - name: "hexadecanedioic acid mono-L-carnitine ester"
       - compartment: "c"
       - formula: "C23H42NO6"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03493e"
-      - name: "Hexadecanedioic Acid Mono-L-Carnitine Ester"
+      - name: "hexadecanedioic acid mono-L-carnitine ester"
       - compartment: "e"
       - formula: "C23H42NO6"
       - charge: -1
@@ -45359,7 +45359,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03954x"
-      - name: "Suberic Acid"
+      - name: "suberic acid"
       - compartment: "x"
       - formula: "C8H12O4"
       - charge: -2
@@ -45373,7 +45373,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03954c"
-      - name: "Suberic Acid"
+      - name: "suberic acid"
       - compartment: "c"
       - formula: "C8H12O4"
       - charge: -2
@@ -45424,7 +45424,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03604e"
-      - name: "Beta Glucan-Taurocholic Acid Complex"
+      - name: "beta glucan-taurocholic acid complex"
       - compartment: "e"
       - formula: "C1200026H2200045NO1100007S"
       - charge: 0
@@ -45438,7 +45438,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03605e"
-      - name: "Beta Glucan-Taurodeoxycholic Acid Complex"
+      - name: "beta glucan-taurodeoxycholic acid complex"
       - compartment: "e"
       - formula: "C1200026H2200044NO1100006S"
       - charge: -1
@@ -45553,7 +45553,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03639e"
-      - name: "Guar Gum-Deoxyxholic Acid Complex"
+      - name: "guar gum-deoxyxholic acid complex"
       - compartment: "e"
       - formula: "C2760024H5060039O2530004"
       - charge: -1
@@ -45567,7 +45567,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03641e"
-      - name: "Guar Gum-Taurocholic Acid Complex"
+      - name: "guar gum-taurocholic acid complex"
       - compartment: "e"
       - formula: "C2760026H5060045NO2530007S"
       - charge: 0
@@ -45620,7 +45620,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03852e"
-      - name: "Pectin-Deoxycholic Acid Complex"
+      - name: "pectin-deoxycholic acid complex"
       - compartment: "e"
       - formula: "C2559H3549O2539"
       - charge: -1
@@ -45634,7 +45634,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03854e"
-      - name: "Pectin-Taurocholic Acid Complex"
+      - name: "pectin-taurocholic acid complex"
       - compartment: "e"
       - formula: "C2561H3555NO2542S"
       - charge: 0
@@ -45664,21 +45664,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03908e"
-      - name: "Psillium-Glycocholic Acid Complex"
+      - name: "psillium-glycocholic acid complex"
       - compartment: "e"
       - formula: "C9642032H15428743NO8667420"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03909e"
-      - name: "Psyllium-Taurocholic Acid Complex"
+      - name: "psyllium-taurocholic acid complex"
       - compartment: "e"
       - formula: "C9642032H15428745NO8667421S"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03910e"
-      - name: "Psyllium-Taurodeoxycholic Acid Complex"
+      - name: "psyllium-taurodeoxycholic acid complex"
       - compartment: "e"
       - formula: "C9642032H15428744NO8667420S"
       - charge: -1
@@ -46174,7 +46174,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03419x"
-      - name: "Lysophosphatidic Acid"
+      - name: "lysophosphatidic acid"
       - compartment: "x"
       - formula: "C3H6O5PRCO2"
       - charge: -2
@@ -46188,7 +46188,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03410c"
-      - name: "2-Hydroxyadipic Acid"
+      - name: "2-hydroxyadipic acid"
       - compartment: "c"
       - formula: "C6H8O5"
       - charge: -2
@@ -47204,14 +47204,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03569c"
-      - name: "Cis,Cis-11,14-Eicosadienoic Acid"
+      - name: "cis,cis-11,14-eicosadienoic acid"
       - compartment: "c"
       - formula: "C20H35O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03976c"
-      - name: "Cia-5,8, Tetradecadienoic Acid"
+      - name: "cia-5,8, tetradecadienoic acid"
       - compartment: "c"
       - formula: "C14H23O2"
       - charge: -1
@@ -47536,14 +47536,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03408e"
-      - name: "Adipic Acid"
+      - name: "adipic acid"
       - compartment: "e"
       - formula: "C6H8O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03410e"
-      - name: "2-Hydroxyadipic Acid"
+      - name: "2-hydroxyadipic acid"
       - compartment: "e"
       - formula: "C6H8O5"
       - charge: -2
@@ -47767,7 +47767,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03569e"
-      - name: "Cis,Cis-11,14-Eicosadienoic Acid"
+      - name: "cis,cis-11,14-eicosadienoic acid"
       - compartment: "e"
       - formula: "C20H35O2"
       - charge: -1
@@ -47856,7 +47856,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03562e"
-      - name: "Dodecanedioic Acid"
+      - name: "dodecanedioic acid"
       - compartment: "e"
       - formula: "C12H20O4"
       - charge: -2
@@ -48161,14 +48161,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03954e"
-      - name: "Suberic Acid"
+      - name: "suberic acid"
       - compartment: "e"
       - formula: "C8H12O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03976e"
-      - name: "Cia-5,8, Tetradecadienoic Acid"
+      - name: "cia-5,8, tetradecadienoic acid"
       - compartment: "e"
       - formula: "C14H23O2"
       - charge: -1
@@ -48492,21 +48492,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03215e"
-      - name: "3-Hydroxycinnamic Acid"
+      - name: "3-hydroxycinnamic acid"
       - compartment: "e"
       - formula: "C9H7O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03215c"
-      - name: "3-Hydroxycinnamic Acid"
+      - name: "3-hydroxycinnamic acid"
       - compartment: "c"
       - formula: "C9H7O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03231e"
-      - name: "3-Hydroxyphenylpropionic Acid (3-Hppa)"
+      - name: "3-hydroxyphenylpropionic acid (3-hppa)"
       - compartment: "e"
       - formula: "C9H9O3"
       - charge: -1
@@ -52676,7 +52676,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04073c"
-      - name: "Vanilpyruvic Acid"
+      - name: "vanilpyruvic acid"
       - compartment: "c"
       - formula: "C10H9O5"
       - charge: -1
@@ -52980,21 +52980,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03227m"
-      - name: "3-Hydroxyisovaleric Acid"
+      - name: "3-hydroxyisovaleric acid"
       - compartment: "m"
       - formula: "C5H9O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03227c"
-      - name: "3-Hydroxyisovaleric Acid"
+      - name: "3-hydroxyisovaleric acid"
       - compartment: "c"
       - formula: "C5H9O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03227e"
-      - name: "3-Hydroxyisovaleric Acid"
+      - name: "3-hydroxyisovaleric acid"
       - compartment: "e"
       - formula: "C5H9O3"
       - charge: -1
@@ -53036,21 +53036,21 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03258x"
-      - name: "3-Hydroxy-Sebacic Acid"
+      - name: "3-hydroxy-sebacic acid"
       - compartment: "x"
       - formula: "C10H16O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03258c"
-      - name: "3-Hydroxy-Sebacic Acid"
+      - name: "3-hydroxy-sebacic acid"
       - compartment: "c"
       - formula: "C10H16O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03258e"
-      - name: "3-Hydroxy-Sebacic Acid"
+      - name: "3-hydroxy-sebacic acid"
       - compartment: "e"
       - formula: "C10H16O5"
       - charge: -2
@@ -53064,35 +53064,35 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03260x"
-      - name: "3-Hydoxy-Suberic Acid"
+      - name: "3-hydoxy-suberic acid"
       - compartment: "x"
       - formula: "C8H12O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03260c"
-      - name: "3-Hydoxy-Suberic Acid"
+      - name: "3-hydoxy-suberic acid"
       - compartment: "c"
       - formula: "C8H12O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03260e"
-      - name: "3-Hydoxy-Suberic Acid"
+      - name: "3-hydoxy-suberic acid"
       - compartment: "e"
       - formula: "C8H12O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03287c"
-      - name: "5-Hydroxyhexanoic Acid"
+      - name: "5-hydroxyhexanoic acid"
       - compartment: "c"
       - formula: "C6H11O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03287e"
-      - name: "5-Hydroxyhexanoic Acid"
+      - name: "5-hydroxyhexanoic acid"
       - compartment: "e"
       - formula: "C6H11O3"
       - charge: -1
@@ -53120,14 +53120,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03575c"
-      - name: "Ethylmalonic Acid"
+      - name: "ethylmalonic acid"
       - compartment: "c"
       - formula: "C5H6O4"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03575e"
-      - name: "Ethylmalonic Acid"
+      - name: "ethylmalonic acid"
       - compartment: "e"
       - formula: "C5H6O4"
       - charge: -2
@@ -53254,42 +53254,42 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03981m"
-      - name: "7Z,10Z-Hexadecadienoic Acid"
+      - name: "7Z,10Z-hexadecadienoic acid"
       - compartment: "m"
       - formula: "C16H27O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03981c"
-      - name: "7Z,10Z-Hexadecadienoic Acid"
+      - name: "7Z,10Z-hexadecadienoic acid"
       - compartment: "c"
       - formula: "C16H27O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03981e"
-      - name: "7Z,10Z-Hexadecadienoic Acid"
+      - name: "7Z,10Z-hexadecadienoic acid"
       - compartment: "e"
       - formula: "C16H27O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03657m"
-      - name: "(Z,Z,Z)-7,10,13-Hexadecatrienoic Acid"
+      - name: "(Z,Z,Z)-7,10,13-hexadecatrienoic acid"
       - compartment: "m"
       - formula: "C16H25O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03657c"
-      - name: "(Z,Z,Z)-7,10,13-Hexadecatrienoic Acid"
+      - name: "(Z,Z,Z)-7,10,13-hexadecatrienoic acid"
       - compartment: "c"
       - formula: "C16H25O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03657e"
-      - name: "(Z,Z,Z)-7,10,13-Hexadecatrienoic Acid"
+      - name: "(Z,Z,Z)-7,10,13-hexadecatrienoic acid"
       - compartment: "e"
       - formula: "C16H25O2"
       - charge: -1
@@ -53303,56 +53303,56 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03682m"
-      - name: "Trans-Delta-2-Heptadecanoic Acid"
+      - name: "trans-delta-2-heptadecanoic acid"
       - compartment: "m"
       - formula: "C17H31O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03682c"
-      - name: "Trans-Delta-2-Heptadecanoic Acid"
+      - name: "trans-delta-2-heptadecanoic acid"
       - compartment: "c"
       - formula: "C17H31O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03682e"
-      - name: "Trans-Delta-2-Heptadecanoic Acid"
+      - name: "trans-delta-2-heptadecanoic acid"
       - compartment: "e"
       - formula: "C17H31O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03568c"
-      - name: "Trans,Cis,Cis-2,11,14-Eicosatrienoic Acid"
+      - name: "trans,cis,cis-2,11,14-eicosatrienoic acid"
       - compartment: "c"
       - formula: "C20H33O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03568e"
-      - name: "Trans,Cis,Cis-2,11,14-Eicosatrienoic Acid"
+      - name: "trans,cis,cis-2,11,14-eicosatrienoic acid"
       - compartment: "e"
       - formula: "C20H33O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03283m"
-      - name: "5,8,11,14,17-Eicosapentenoic Acid"
+      - name: "5,8,11,14,17-eicosapentenoic acid"
       - compartment: "m"
       - formula: "C20H29O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03283c"
-      - name: "5,8,11,14,17-Eicosapentenoic Acid"
+      - name: "5,8,11,14,17-eicosapentenoic acid"
       - compartment: "c"
       - formula: "C20H29O2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03283e"
-      - name: "5,8,11,14,17-Eicosapentenoic Acid"
+      - name: "5,8,11,14,17-eicosapentenoic acid"
       - compartment: "e"
       - formula: "C20H29O2"
       - charge: -1
@@ -185930,7 +185930,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00565"
-      - name: "Exchange of Fatty Acid 9-Cis-Retinol"
+      - name: "Exchange of fatty acid 9-cis-retinol"
       - metabolites: !!omap
           - MAM03315e: -1
       - lower_bound: -1000
@@ -199792,7 +199792,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04327"
-      - name: "Exchange of Cyanosulfurous Acid Anion"
+      - name: "Exchange of cyanosulfurous acid anion"
       - metabolites: !!omap
           - MAM03330e: -1
       - lower_bound: -1000
@@ -200139,7 +200139,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04441"
-      - name: "Activation of Adipic Acid for Formation of Adipoyl Carnitine"
+      - name: "Activation of adipic acid for Formation of Adipoyl Carnitine"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -200327,7 +200327,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04511"
-      - name: "Activation of Dodecanedioic Acid"
+      - name: "Activation of dodecanedioic acid"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -200343,7 +200343,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04515"
-      - name: "Transport of Dodecanedioic Acid by Diffusion"
+      - name: "Transport of dodecanedioic acid by Diffusion"
       - metabolites: !!omap
           - MAM03562c: 1
           - MAM03562x: -1
@@ -201125,7 +201125,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04884"
-      - name: "Exchange of Hexadecanedioic Acid Mono-L-Carnitine Ester"
+      - name: "Exchange of hexadecanedioic acid mono-L-carnitine ester"
       - metabolites: !!omap
           - MAM03493e: -1
       - lower_bound: -1000
@@ -204295,7 +204295,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06821"
-      - name: "Transport of Suberic Acid into Cytosol (Diffusion)"
+      - name: "Transport of suberic acid into Cytosol (Diffusion)"
       - metabolites: !!omap
           - MAM03954c: 1
           - MAM03954x: -1
@@ -204336,7 +204336,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06833"
-      - name: "Activation of Suberic Acid for Formation of Suberyl Carnitine"
+      - name: "Activation of suberic acid for Formation of Suberyl Carnitine"
       - metabolites: !!omap
           - MAM01334c: 1
           - MAM01371c: -1
@@ -205744,7 +205744,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08649"
-      - name: "Exchange of Beta Glucan-Taurocholic Acid Complex"
+      - name: "Exchange of beta glucan-taurocholic acid complex"
       - metabolites: !!omap
           - MAM03604e: -1
       - lower_bound: -1000
@@ -205754,7 +205754,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08650"
-      - name: "Exchange of Beta Glucan-Taurodeoxycholic Acid Complex"
+      - name: "Exchange of beta glucan-taurodeoxycholic acid complex"
       - metabolites: !!omap
           - MAM03605e: -1
       - lower_bound: -1000
@@ -205794,7 +205794,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08708"
-      - name: "Exchange of Guar Gum-Deoxyxholic Acid Complex"
+      - name: "Exchange of guar gum-deoxyxholic acid complex"
       - metabolites: !!omap
           - MAM03639e: -1
       - lower_bound: -1000
@@ -205814,7 +205814,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08916"
-      - name: "Exchange of Guar Gum-Taurocholic Acid Complex"
+      - name: "Exchange of guar gum-taurocholic acid complex"
       - metabolites: !!omap
           - MAM03641e: -1
       - lower_bound: -1000
@@ -205854,7 +205854,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08951"
-      - name: "Exchange of Pectin-Deoxycholic Acid Complex"
+      - name: "Exchange of pectin-deoxycholic acid complex"
       - metabolites: !!omap
           - MAM03852e: -1
       - lower_bound: -1000
@@ -205874,7 +205874,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08953"
-      - name: "Exchange of Pectin-Taurocholic Acid Complex"
+      - name: "Exchange of pectin-taurocholic acid complex"
       - metabolites: !!omap
           - MAM03854e: -1
       - lower_bound: -1000
@@ -205894,7 +205894,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08955"
-      - name: "Exchange of Psillium-Glycocholic Acid Complex"
+      - name: "Exchange of psillium-glycocholic acid complex"
       - metabolites: !!omap
           - MAM03908e: -1
       - lower_bound: -1000
@@ -205904,7 +205904,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08956"
-      - name: "Exchange of Psyllium-Taurocholic Acid Complex"
+      - name: "Exchange of psyllium-taurocholic acid complex"
       - metabolites: !!omap
           - MAM03909e: -1
       - lower_bound: -1000
@@ -205914,7 +205914,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08957"
-      - name: "Exchange of Psyllium-Taurodeoxycholic Acid Complex"
+      - name: "Exchange of psyllium-taurodeoxycholic acid complex"
       - metabolites: !!omap
           - MAM03910e: -1
       - lower_bound: -1000
@@ -209300,7 +209300,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10001"
-      - name: "Transport of Adipic Acid, Diffusion"
+      - name: "Transport of adipic acid, Diffusion"
       - metabolites: !!omap
           - MAM03408c: -1
           - MAM03408e: 1
@@ -209313,7 +209313,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10002"
-      - name: "Secretion of 2-Hydroxyadipic Acid"
+      - name: "Secretion of 2-hydroxyadipic acid"
       - metabolites: !!omap
           - MAM03410c: -1
           - MAM03410e: 1
@@ -210200,7 +210200,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10176"
-      - name: "Transport of Dodecanedioic Acid by FATP"
+      - name: "Transport of dodecanedioic acid by FATP"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -210217,7 +210217,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10177"
-      - name: "Transport of Dodecanedioic Acid by Diffusion"
+      - name: "Transport of dodecanedioic acid by Diffusion"
       - metabolites: !!omap
           - MAM03562c: -1
           - MAM03562e: 1
@@ -210449,7 +210449,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10200"
-      - name: "Exchange of Adipic Acid"
+      - name: "Exchange of adipic acid"
       - metabolites: !!omap
           - MAM03408e: -1
       - lower_bound: -1000
@@ -210459,7 +210459,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10201"
-      - name: "Exchange of 2-Hydroxyadipic Acid"
+      - name: "Exchange of 2-hydroxyadipic acid"
       - metabolites: !!omap
           - MAM03410e: -1
       - lower_bound: -1000
@@ -210729,7 +210729,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10228"
-      - name: "Exchange of Cis,Cis-11,14-Eicosadienoic Acid"
+      - name: "Exchange of cis,cis-11,14-eicosadienoic acid"
       - metabolites: !!omap
           - MAM03569e: -1
       - lower_bound: -1000
@@ -210849,7 +210849,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10240"
-      - name: "Exchange of Dodecanedioic Acid"
+      - name: "Exchange of dodecanedioic acid"
       - metabolites: !!omap
           - MAM03562e: -1
       - lower_bound: -1000
@@ -211839,7 +211839,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10339"
-      - name: "Exchange of Suberic Acid"
+      - name: "Exchange of suberic acid"
       - metabolites: !!omap
           - MAM03954e: -1
       - lower_bound: -1000
@@ -211849,7 +211849,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10340"
-      - name: "Exchange of Cia-5,8, Tetradecadienoic Acid"
+      - name: "Exchange of cia-5,8, tetradecadienoic acid"
       - metabolites: !!omap
           - MAM03976e: -1
       - lower_bound: -1000
@@ -212593,7 +212593,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10400"
-      - name: "Transport of Suberic Acid by Diffusion"
+      - name: "Transport of suberic acid by Diffusion"
       - metabolites: !!omap
           - MAM03954c: -1
           - MAM03954e: 1
@@ -213266,7 +213266,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10456"
-      - name: "Intracellular Transport of Lysophosphatidic Acid"
+      - name: "Intracellular Transport of lysophosphatidic acid"
       - metabolites: !!omap
           - MAM03419c: 1
           - MAM03419x: -1
@@ -213426,7 +213426,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10468"
-      - name: "3-Hydroxycinnamic Acid Uptake"
+      - name: "3-hydroxycinnamic acid Uptake"
       - metabolites: !!omap
           - MAM03215c: 1
           - MAM03215e: -1
@@ -213450,7 +213450,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10472"
-      - name: "Exchange of 3-Hydroxycinnamic Acid"
+      - name: "Exchange of 3-hydroxycinnamic acid"
       - metabolites: !!omap
           - MAM03215e: -1
       - lower_bound: -1000
@@ -213460,7 +213460,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10473"
-      - name: "Exchange of 3-Hydroxyphenylpropionic Acid (3-Hppa)"
+      - name: "Exchange of 3-hydroxyphenylpropionic acid (3-hppa)"
       - metabolites: !!omap
           - MAM03231e: -1
       - lower_bound: -1000
@@ -223228,7 +223228,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11255"
-      - name: "Transport of Hexadecanedioic Acid Mono-L-Carnitine Ester"
+      - name: "Transport of hexadecanedioic acid mono-L-carnitine ester"
       - metabolites: !!omap
           - MAM03493c: 1
           - MAM03493e: -1
@@ -225752,7 +225752,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11467"
-      - name: "Formation of Vanilpyruvic Acid from Vanilalanine"
+      - name: "Formation of vanilpyruvic acid from Vanilalanine"
       - metabolites: !!omap
           - MAM00830c: -1
           - MAM01306c: -1
@@ -226521,7 +226521,7 @@
       - rxnNotes: "ISBN:9783642157196;https://www.springer.com/gp/book/9789400957800"
     - !!omap
       - id: "MAR11528"
-      - name: "Exchange of 3-Hydroxyisovaleric Acid"
+      - name: "Exchange of 3-hydroxyisovaleric acid"
       - metabolites: !!omap
           - MAM03227e: -1
       - lower_bound: -1000
@@ -226622,7 +226622,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11535"
-      - name: "Formation of 3-Hydroxy-Sebacic Acid"
+      - name: "Formation of 3-hydroxy-sebacic acid"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -226637,7 +226637,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11536"
-      - name: "Transportof 3-Hydroxy-Sebacic Acid, Peroxisomal"
+      - name: "Transportof 3-hydroxy-sebacic acid, Peroxisomal"
       - metabolites: !!omap
           - MAM03258c: 1
           - MAM03258x: -1
@@ -226649,7 +226649,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11537"
-      - name: "Transport of 3-Hydroxy-Sebacic Acid, Extracellular"
+      - name: "Transport of 3-hydroxy-sebacic acid, Extracellular"
       - metabolites: !!omap
           - MAM03258c: -1
           - MAM03258e: 1
@@ -226662,7 +226662,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11538"
-      - name: "Exchange of 3-Hydroxy-Sebacic Acid"
+      - name: "Exchange of 3-hydroxy-sebacic acid"
       - metabolites: !!omap
           - MAM03258e: -1
       - lower_bound: -1000
@@ -226690,7 +226690,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11540"
-      - name: "Formation of 3-Hydoxy-Suberic Acid"
+      - name: "Formation of 3-hydoxy-suberic acid"
       - metabolites: !!omap
           - MAM01597x: 1
           - MAM02039x: 1
@@ -226704,7 +226704,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11541"
-      - name: "Transport of 3-Hydoxy-Suberic Acid, Peroxisomal"
+      - name: "Transport of 3-hydoxy-suberic acid, Peroxisomal"
       - metabolites: !!omap
           - MAM03260c: 1
           - MAM03260x: -1
@@ -226717,7 +226717,7 @@
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
     - !!omap
       - id: "MAR11542"
-      - name: "Transport of 3-Hydoxy-Suberic Acid, Extracellular"
+      - name: "Transport of 3-hydoxy-suberic acid, Extracellular"
       - metabolites: !!omap
           - MAM03260c: -1
           - MAM03260e: 1
@@ -226730,7 +226730,7 @@
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
     - !!omap
       - id: "MAR11543"
-      - name: "Exchange of 3-Hydoxy-Suberic Acid"
+      - name: "Exchange of 3-hydoxy-suberic acid"
       - metabolites: !!omap
           - MAM03260e: -1
       - lower_bound: -1000
@@ -226790,7 +226790,7 @@
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
     - !!omap
       - id: "MAR11547"
-      - name: "Exchange of 5-Hydroxyhexanoic Acid"
+      - name: "Exchange of 5-hydroxyhexanoic acid"
       - metabolites: !!omap
           - MAM03287e: -1
       - lower_bound: -1000
@@ -226853,7 +226853,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11552"
-      - name: "Formation of Ethylmalonic Acid"
+      - name: "Formation of ethylmalonic acid"
       - metabolites: !!omap
           - MAM01597c: 1
           - MAM02039c: 1
@@ -226868,7 +226868,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11553"
-      - name: "Transport of Ethylmalonic Acid"
+      - name: "Transport of ethylmalonic acid"
       - metabolites: !!omap
           - MAM03575c: -1
           - MAM03575e: 1
@@ -226880,7 +226880,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11554"
-      - name: "Exchange of Ethylmalonic Acid"
+      - name: "Exchange of ethylmalonic acid"
       - metabolites: !!omap
           - MAM03575e: -1
       - lower_bound: -1000
@@ -229468,7 +229468,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11739"
-      - name: "Exchange of 7Z,10Z-Hexadecadienoic Acid"
+      - name: "Exchange of 7Z,10Z-hexadecadienoic acid"
       - metabolites: !!omap
           - MAM03981e: -1
       - lower_bound: -1000
@@ -229527,7 +229527,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11743"
-      - name: "Exchange of (Z,Z,Z)-7,10,13-Hexadecatrienoic Acid"
+      - name: "Exchange of (Z,Z,Z)-7,10,13-hexadecatrienoic acid"
       - metabolites: !!omap
           - MAM03657e: -1
       - lower_bound: -1000
@@ -229570,7 +229570,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11746"
-      - name: "Transport of Trans-Delta-2-Heptadecanoic Acid, Mitochondrial"
+      - name: "Transport of trans-delta-2-heptadecanoic acid, Mitochondrial"
       - metabolites: !!omap
           - MAM02039i: -1
           - MAM02039m: 1
@@ -229585,7 +229585,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11747"
-      - name: "Transport of Trans-Delta-2-Heptadecanoic Acid, Extracellular"
+      - name: "Transport of trans-delta-2-heptadecanoic acid, Extracellular"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
@@ -229602,7 +229602,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11748"
-      - name: "Exchange of Trans-Delta-2-Heptadecanoic Acid"
+      - name: "Exchange of trans-delta-2-heptadecanoic acid"
       - metabolites: !!omap
           - MAM03682e: -1
       - lower_bound: -1000
@@ -229645,7 +229645,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11751"
-      - name: "Exchange of Trans,Cis,Cis-2,11,14-Eicosatrienoic Acid"
+      - name: "Exchange of trans,cis,cis-2,11,14-eicosatrienoic acid"
       - metabolites: !!omap
           - MAM03568e: -1
       - lower_bound: -1000
@@ -229704,7 +229704,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11755"
-      - name: "Exchange of 5,8,11,14,17-Eicosapentenoic Acid"
+      - name: "Exchange of 5,8,11,14,17-eicosapentenoic acid"
       - metabolites: !!omap
           - MAM03283e: -1
       - lower_bound: -1000
