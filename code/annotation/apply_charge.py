@@ -22,11 +22,10 @@ RDLogger.DisableLog("rdApp.*")
 YAML = Path("model/Human-GEM.yml")
 MET_TSV = Path("model/metabolites.tsv")
 PROP = Path("data/annotation/charge_proposals.tsv")
-APPLY = {"charge_fix", "formula_fix", "model_invalid_both"}
 
 
-def main(write: bool) -> int:
-    props = [r for r in csv.DictReader(PROP.open(encoding="utf-8"), delimiter="\t") if r["status"] in APPLY]
+def main(write: bool, apply_set) -> int:
+    props = [r for r in csv.DictReader(PROP.open(encoding="utf-8"), delimiter="\t") if r["status"] in apply_set]
     # key by metsNoComp + current formula/charge so every compartment is updated
     fix = {}
     for r in props:
@@ -100,4 +99,6 @@ def main(write: bool) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main("--write" in sys.argv))
+    default = {"charge_fix", "formula_fix", "model_invalid_both"}
+    aset = set(sys.argv[sys.argv.index("--status") + 1].split(",")) if "--status" in sys.argv else default
+    raise SystemExit(main("--write" in sys.argv, aset))

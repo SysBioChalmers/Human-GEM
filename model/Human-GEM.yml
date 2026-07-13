@@ -4870,7 +4870,7 @@
       - name: "15(S)-HEPE"
       - compartment: "c"
       - formula: "C20H29O3"
-      - charge: 0
+      - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00377c"
@@ -4884,7 +4884,7 @@
       - name: "15(S)-HETrE"
       - compartment: "c"
       - formula: "C20H33O3"
-      - charge: 0
+      - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00379c"
@@ -4947,7 +4947,7 @@
       - name: "15-deoxy-PGD2"
       - compartment: "c"
       - formula: "C20H29O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00385c"
@@ -13012,21 +13012,21 @@
       - name: "6-trans-LTB4"
       - compartment: "c"
       - formula: "C20H31O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01172m"
       - name: "6-trans-LTB4"
       - compartment: "m"
       - formula: "C20H31O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01172x"
       - name: "6-trans-LTB4"
       - compartment: "x"
       - formula: "C20H31O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01173c"
@@ -39617,7 +39617,7 @@
       - name: "(S)-Glycerate"
       - compartment: "e"
       - formula: "C3H5O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03623e"
@@ -39898,7 +39898,7 @@
       - name: "(S)-Glycerate"
       - compartment: "c"
       - formula: "C3H5O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03748r"
@@ -47756,14 +47756,14 @@
       - name: "6-trans-LTB4"
       - compartment: "e"
       - formula: "C20H31O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM00378e"
       - name: "15(S)-HETrE"
       - compartment: "e"
       - formula: "C20H33O3"
-      - charge: 0
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03569e"
@@ -47777,7 +47777,7 @@
       - name: "15-deoxy-PGD2"
       - compartment: "e"
       - formula: "C20H29O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM01337e"
@@ -47798,7 +47798,7 @@
       - name: "15(S)-HEPE"
       - compartment: "e"
       - formula: "C20H29O3"
-      - charge: 0
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM02365e"
@@ -50077,7 +50077,7 @@
       - name: "Tryptophanyl-Prolyl-Glycine"
       - compartment: "e"
       - formula: "C18H21N4O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04029e"
@@ -51876,7 +51876,7 @@
       - name: "Tryptophanyl-Prolyl-Glycine"
       - compartment: "c"
       - formula: "C18H21N4O4"
-      - charge: 0
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04029c"
@@ -59073,13 +59073,13 @@
       - name: "20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate"
       - compartment: "n"
       - formula: "C20H29O3"
-      - charge: 0
+      - charge: -1
     - !!omap
       - id: "MAM20004n"
       - name: "(5Z,8Z,11Z,14Z)-eicosatetraenedioate"
       - compartment: "n"
       - formula: "C20H28O4"
-      - charge: -1
+      - charge: -2
     - !!omap
       - id: "MAM20005c"
       - name: "20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate"
@@ -59145,13 +59145,13 @@
       - name: "15-oxoprostaglandin E2"
       - compartment: "g"
       - formula: "C20H29O5"
-      - charge: 0
+      - charge: -1
     - !!omap
       - id: "MAM20015g"
       - name: "13,14-dihydro-15-oxo-prostaglandin E2"
       - compartment: "g"
       - formula: "C20H31O5"
-      - charge: 0
+      - charge: -1
     - !!omap
       - id: "MAM02555g"
       - name: "NADPH"
@@ -59312,20 +59312,20 @@
       - id: "MAM01019r"
       - name: "4-nitrocatechol"
       - compartment: "r"
-      - formula: "C6H5NO4"
-      - charge: 0
+      - formula: "C6H4NO4"
+      - charge: -1
     - !!omap
       - id: "MAM02754r"
       - name: "PNP"
       - compartment: "r"
-      - formula: "C6H5NO3"
-      - charge: 0
+      - formula: "C6H4NO3"
+      - charge: -1
     - !!omap
       - id: "MAM01019i"
       - name: "4-nitrocatechol"
       - compartment: "i"
-      - formula: "C6H5NO4"
-      - charge: 0
+      - formula: "C6H4NO4"
+      - charge: -1
     - !!omap
       - id: "MAM02555i"
       - name: "NADPH"
@@ -59336,8 +59336,8 @@
       - id: "MAM02754i"
       - name: "PNP"
       - compartment: "i"
-      - formula: "C6H5NO3"
-      - charge: 0
+      - formula: "C6H4NO3"
+      - charge: -1
     - !!omap
       - id: "MAM02554i"
       - name: "NADP+"

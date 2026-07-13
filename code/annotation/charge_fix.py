@@ -66,6 +66,15 @@ def physiological_state(smiles):
     return Chem.MolToSmiles(m), elems(rdMolDescriptors.CalcMolFormula(m)), Chem.GetFormalCharge(m)
 
 
+# names that denote genuine odd-electron (radical) species; their odd electron
+# count is intentional, not an error, so the closed-shell test must not touch them
+_RADICAL = re.compile(r"radical|semiquinone|monodehydro|semidehydro|\bnitroxide\b", re.I)
+
+
+def is_radical(name):
+    return bool(_RADICAL.search(name or ""))
+
+
 def resolve_case(smiles, model_elems, model_charge):
     """Decide whether a formula/charge inconsistency is a charge error or a formula
     error by comparing to the physiological state. Returns (status, new_charge,
@@ -112,6 +121,10 @@ def main() -> int:
             old_charge = int(m.get("charge", ""))
         except ValueError:
             old_charge = None
+        if is_radical(m.get("name", "")):
+            props.append((mid, m.get("name", ""), m.get("formula", ""), str(old_charge),
+                          "", "", "", "radical_skip"))
+            continue
         status, new_charge, new_formula, new_smiles = resolve_case(
             smi, elems(m.get("formula", "")), old_charge)
         props.append((mid, m.get("name", ""), m.get("formula", ""), str(old_charge),
