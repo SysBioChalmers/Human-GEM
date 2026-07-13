@@ -28,3 +28,4 @@ node_modules/
 # derived annotation-overhaul audit artifacts (regenerable)
 data/annotation/metabolite_identity.tsv
 data/annotation/protonation_resolved.tsv
+data/annotation/crossref_audit.tsv
