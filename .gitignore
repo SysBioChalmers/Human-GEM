@@ -30,3 +30,4 @@ data/annotation/metabolite_identity.tsv
 data/annotation/protonation_resolved.tsv
 data/annotation/crossref_audit.tsv
 data/annotation/crossref_proposals.tsv
+data/annotation/charge_proposals.tsv
