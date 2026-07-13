@@ -1,25 +1,33 @@
-name: Model QC checks
+name: Model QC
 
 on: [pull_request]
 
 env:
-  # All committed result files, fetched from the target branch so buildReport can
-  # show a delta, and stamped so a stale set shows as pending.
+  # Committed result files, fetched from the target branch so buildReport can show a
+  # delta. No stamp files: freshness is passed to buildReport as RUNNING_GROUPS.
   RESULT_FILES: >-
     qc_duplicate_keys.csv qc_empty_reactions.csv qc_annotation_consistency.csv
     qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
     qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md
     macaw_results.csv balance_results.csv
 
+# One job runs every check and edits a single pull-request comment as results come
+# in: it posts a "running" comment immediately, fills in the fast checks, then fills
+# in the MEMOTE score when it finishes. Results are committed once, at the end, and
+# only if they changed - so a change that does not affect the model adds no commit.
 jobs:
-  # Fast structural checks (seconds to a couple of minutes). Writes a detailed CSV
-  # for every finding, commits them, and posts the shared model-quality comment
-  # straight away - even when a gate fails - so the comment always shows what is
-  # wrong. The build is failed at the end if a gate failed, so it can be a required
-  # check for branch protection.
-  checks:
+  qc:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # Ceiling only. The fast checks finish in minutes; the MEMOTE subset in a few
+    # more. The full MEMOTE suite (PRs to main) is capped by its own wall-clock limit
+    # below. Kept under GitHub's 6 h hosted-runner maximum.
+    timeout-minutes: 350
+
+    env:
+      BASE_REF: ${{ github.event.pull_request.base.ref }}
+      BASE_DIR: ${{ runner.temp }}/base
+      RESULTS_URL_BASE: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref }}/data/testResults
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
     steps:
       - name: Checkout
@@ -30,8 +38,27 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        run: pip install cobra pyyaml
+      - name: Install check dependencies
+        run: pip install cobra pyyaml git+https://github.com/Devlin-Moyer/macaw.git@main numpy==1.26.4
+
+      - name: Fetch target-branch results for comparison
+        run: |
+          git fetch --depth=1 origin "$BASE_REF" || true
+          mkdir -p "$BASE_DIR"
+          for f in $RESULT_FILES; do
+            git show "origin/$BASE_REF:data/testResults/$f" > "$BASE_DIR/$f" 2>/dev/null || rm -f "$BASE_DIR/$f"
+          done
+
+      # Immediate feedback: everything shows as running.
+      - name: Post running comment
+        uses: ./.github/actions/post-qc-comment
+        with:
+          running-groups: all
+          base-ref: ${{ env.BASE_REF }}
+          base-dir: ${{ env.BASE_DIR }}
+          results-url-base: ${{ env.RESULTS_URL_BASE }}
+          run-url: ${{ env.RUN_URL }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Structural QC checks (gates + reports)
         id: qc
@@ -42,101 +69,27 @@ jobs:
         continue-on-error: true
         run: python code/test/annotationTest.py
 
-      - name: Stamp results with the head commit
-        run: echo "${{ github.event.pull_request.head.sha }}" > data/testResults/qc_checks.sha
+      - name: MACAW dead-end and duplicate tests
+        continue-on-error: true
+        run: python code/test/macawTests.py
 
-      - name: Fetch target-branch results for comparison
-        env:
-          BASE_REF: ${{ github.event.pull_request.base.ref }}
-        run: |
-          git fetch --depth=1 origin "$BASE_REF" || true
-          mkdir -p "$RUNNER_TEMP/base"
-          for f in $RESULT_FILES; do
-            git show "origin/$BASE_REF:data/testResults/$f" > "$RUNNER_TEMP/base/$f" 2>/dev/null || rm -f "$RUNNER_TEMP/base/$f"
-          done
+      - name: Mass and charge balance report
+        continue-on-error: true
+        run: python code/test/balanceTest.py
 
-      - name: Mention PR# in README.md
-        env:
-          PR_NUMBER: ${{ github.event.number }}
-        run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (model QC/$PR_NUMBER\*\* (model QC/" data/testResults/README.md
-
-      - name: Update local branch before committing changes
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        run: |
-          git stash
-          git fetch
-          git checkout $BRANCH_NAME
-          if git stash list | grep -q 'stash@{'; then
-            git stash pop
-          fi
-
-      - name: Auto-commit results
-        uses: stefanzweifel/git-auto-commit-action@v7
+      # Fast checks are in; MEMOTE is still running.
+      - name: Update comment with fast checks
+        uses: ./.github/actions/post-qc-comment
         with:
-          commit_user_name: memote-bot
-          # [skip ci] so this results commit does not re-trigger the workflows.
-          commit_message: "chore: add model QC results [skip ci]"
-          file_pattern: data/testResults/*
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          running-groups: memote
+          base-ref: ${{ env.BASE_REF }}
+          base-dir: ${{ env.BASE_DIR }}
+          results-url-base: ${{ env.RESULTS_URL_BASE }}
+          run-url: ${{ env.RUN_URL }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build report comment
-        id: report
-        env:
-          BASE_RESULTS_DIR: ${{ runner.temp }}/base
-          BASE_REF: ${{ github.event.pull_request.base.ref }}
-          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
-          RESULTS_URL_BASE: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref }}/data/testResults
-        run: |
-          python code/test/buildReport.py
-          {
-            echo "results<<QC_EOF"
-            cat data/testResults/model_qc_summary.md
-            echo "QC_EOF"
-          } >> "$GITHUB_OUTPUT"
-
-      - name: Post comment
-        uses: NejcZdovc/comment-pr@v2
-        with:
-          file: "commentReport.md"
-          identifier: "GITHUB_COMMENT_QC"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TEST_RESULTS: ${{ steps.report.outputs.results }}
-          GH_ACTION_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-
-      # Fail the build if a gate failed, but only after the detail is committed and
-      # the comment posted, so the failure is visible in both.
-      - name: Fail if a build gate failed
-        if: steps.qc.outcome == 'failure'
-        run: |
-          echo "::error::A build gate failed; see the Build gates table in the PR comment and the linked CSVs."
-          exit 1
-
-  # MEMOTE snapshot. A fast core subset runs on every pull request; the full
-  # suite (which does FVA / a loopless MILP over every reaction and is far
-  # slower) runs only on pull requests to main. It reuses the fast checks'
-  # committed results and updates the same comment when it finishes.
-  memote:
-    runs-on: ubuntu-latest
-    # Ceiling only: the subset finishes in minutes; the per-run limit below caps
-    # the full suite. Kept under GitHub's 6 h hosted-runner maximum.
-    timeout-minutes: 350
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Set up Python 3
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        # gurobipy so MEMOTE's genome-scale MILP/FVA tests use Gurobi; with GLPK
-        # even the core subset struggles to finish on a genome-scale model.
-        run: pip install cobra memote gurobipy
+      - name: Install MEMOTE dependencies
+        run: pip install memote gurobipy
 
       - name: Set up Gurobi license
         env:
@@ -154,7 +107,6 @@ jobs:
         continue-on-error: true
         env:
           PYTHONUNBUFFERED: "1"
-          BASE_REF: ${{ github.event.pull_request.base.ref }}
           # Empty for PRs to main (run the full suite); "1" otherwise (subset).
           MEMOTE_SUBSET: ${{ github.event.pull_request.base.ref != 'main' && '1' || '' }}
         run: |
@@ -163,23 +115,24 @@ jobs:
           timeout "$LIMIT" python code/test/memoteSnapshot.py \
             || echo "::warning::MEMOTE did not finish within ${LIMIT}s; score unavailable this run."
 
-      - name: Stamp results with the head commit
-        run: echo "${{ github.event.pull_request.head.sha }}" > data/testResults/qc_memote.sha
-
-      - name: Fetch target-branch results for comparison
-        env:
-          BASE_REF: ${{ github.event.pull_request.base.ref }}
-        run: |
-          git fetch --depth=1 origin "$BASE_REF" || true
-          mkdir -p "$RUNNER_TEMP/base"
-          for f in $RESULT_FILES; do
-            git show "origin/$BASE_REF:data/testResults/$f" > "$RUNNER_TEMP/base/$f" 2>/dev/null || rm -f "$RUNNER_TEMP/base/$f"
-          done
+      # Everything is in.
+      - name: Update comment with all results
+        uses: ./.github/actions/post-qc-comment
+        with:
+          running-groups: ""
+          base-ref: ${{ env.BASE_REF }}
+          base-dir: ${{ env.BASE_DIR }}
+          results-url-base: ${{ env.RESULTS_URL_BASE }}
+          run-url: ${{ env.RUN_URL }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Mention PR# in README.md
         env:
           PR_NUMBER: ${{ github.event.number }}
-        run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (MEMOTE/$PR_NUMBER\*\* (MEMOTE/" data/testResults/README.md
+        run: |
+          for tag in "model QC" "MEMOTE" "MACAW"; do
+            sed -i -e "s/[[:digit:]]\{3,4\}\*\* ($tag/$PR_NUMBER\*\* ($tag/" data/testResults/README.md
+          done
 
       - name: Update local branch before committing changes
         env:
@@ -196,8 +149,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_user_name: memote-bot
-          # [skip ci] so this results commit does not re-trigger the workflows.
-          commit_message: "chore: add MEMOTE result [skip ci]"
+          # [skip ci] so this results commit does not re-trigger the workflow.
+          commit_message: "chore: update model QC results [skip ci]"
           file_pattern: data/testResults/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -209,27 +162,10 @@ jobs:
           path: memote_result.json
           if-no-files-found: ignore
 
-      - name: Build report comment
-        id: report
-        env:
-          BASE_RESULTS_DIR: ${{ runner.temp }}/base
-          BASE_REF: ${{ github.event.pull_request.base.ref }}
-          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
-          RESULTS_URL_BASE: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref }}/data/testResults
+      # Fail the build if a gate failed, but only after the detail is committed and
+      # the comment updated, so the failure is visible in both.
+      - name: Fail if a build gate failed
+        if: steps.qc.outcome == 'failure'
         run: |
-          python code/test/buildReport.py
-          {
-            echo "results<<QC_EOF"
-            cat data/testResults/model_qc_summary.md
-            echo "QC_EOF"
-          } >> "$GITHUB_OUTPUT"
-
-      - name: Post comment
-        uses: NejcZdovc/comment-pr@v2
-        with:
-          file: "commentReport.md"
-          identifier: "GITHUB_COMMENT_QC"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TEST_RESULTS: ${{ steps.report.outputs.results }}
-          GH_ACTION_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          echo "::error::A build gate failed; see the Structural checks table in the PR comment and the linked CSVs."
+          exit 1
