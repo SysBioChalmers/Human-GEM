@@ -90,6 +90,7 @@ id2miriam = {%reactions
              'metLipidMapsID'   'lipidmaps'
              'metRecon3DID'     'vmhmetabolite'
              'metMetaNetXID'    'metanetx.chemical'
+             'metSeedID'        'seed.compound'
              % genes
              'genes'            'ensembl'
              'geneENSTID'       'ensembl'
