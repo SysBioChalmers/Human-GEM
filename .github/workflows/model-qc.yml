@@ -24,14 +24,17 @@ jobs:
     timeout-minutes: 350
 
     env:
+      # runner.temp is not available in job-level env, so BASE_DIR is set in a step below.
       BASE_REF: ${{ github.event.pull_request.base.ref }}
-      BASE_DIR: ${{ runner.temp }}/base
       RESULTS_URL_BASE: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref }}/data/testResults
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Configure
+        run: echo "BASE_DIR=$RUNNER_TEMP/base" >> "$GITHUB_ENV"
 
       - name: Set up Python 3
         uses: actions/setup-python@v6
