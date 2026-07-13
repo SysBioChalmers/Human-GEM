@@ -33,3 +33,5 @@ data/annotation/crossref_proposals.tsv
 data/annotation/charge_proposals.tsv
 data/annotation/reaction_audit.tsv
 data/annotation/reaction_proposals.tsv
+data/annotation/crossref_corrections_confident.tsv
+data/annotation/crossref_corrections_genuine.tsv
