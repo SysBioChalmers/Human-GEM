@@ -25,3 +25,6 @@ Thumbs.db
 yarn.lock
 package.json
 node_modules/
+# derived annotation-overhaul audit artifacts (regenerable)
+data/annotation/metabolite_identity.tsv
+data/annotation/protonation_resolved.tsv

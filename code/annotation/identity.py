@@ -35,7 +35,9 @@ from rdkit.Chem import rdMolDescriptors
 RDLogger.DisableLog("rdApp.*")
 
 YAML = Path("model/Human-GEM.yml")
-STRUCT = Path("data/modelCuration/metabolites_SMILES_Inchi.tsv")
+# structures now live in metabolites.tsv (columns metSmiles / metInChI); this is
+# the source of truth the audit reads.
+STRUCT = Path("model/metabolites.tsv")
 OUT = Path("data/annotation/metabolite_identity.tsv")
 
 _ELEM = re.compile(r"([A-Z][a-z]?)(\d*)")
@@ -127,7 +129,7 @@ def main() -> int:
     struct = load_structures()
     rows, cats = [], Counter()
     for mid, m in model.items():
-        smi = (struct.get(mid, {}) or {}).get("SMILES", "").strip()
+        smi = (struct.get(mid, {}) or {}).get("metSmiles", "").strip()
         cat, rdf, rdc, canon, ik = classify(m.get("formula", ""), m.get("charge", ""), smi)
         cats[cat] += 1
         rows.append({
