@@ -9,7 +9,7 @@ env:
     qc_duplicate_keys.csv qc_empty_reactions.csv qc_annotation_consistency.csv
     qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
     qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md
-    macaw_results.csv balance_results.csv
+    macaw_results.csv balance_results.csv qc_structure_consistency.csv
 
 # One job runs every check and edits a single pull-request comment as results come
 # in: it posts a "running" comment immediately, fills in the fast checks, then fills
@@ -42,7 +42,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install check dependencies
-        run: pip install cobra pyyaml git+https://github.com/Devlin-Moyer/macaw.git@main numpy==1.26.4
+        run: pip install cobra pyyaml rdkit git+https://github.com/Devlin-Moyer/macaw.git@main numpy==1.26.4
 
       - name: Fetch target-branch results for comparison
         run: |
@@ -79,6 +79,11 @@ jobs:
       - name: Mass and charge balance report
         continue-on-error: true
         run: python code/test/balanceTest.py
+
+      # Structure (SMILES/InChI in metabolites.tsv) vs formula/charge (in the YAML).
+      - name: Structure / formula / charge consistency report
+        continue-on-error: true
+        run: python code/test/structureConsistencyTest.py
 
       # Fast checks are in; MEMOTE is still running.
       - name: Update comment with fast checks
