@@ -30,19 +30,88 @@ introduces a new inconsistency is visible.
 """
 
 import csv
-import sys
+import re
+from collections import Counter
 from pathlib import Path
 
-sys.path.insert(0, "code/annotation")
-from identity import classify, load_model_metabolites  # noqa: E402
-
-from rdkit import Chem, RDLogger  # noqa: E402
+from rdkit import Chem, RDLogger
+from rdkit.Chem import rdMolDescriptors
 
 RDLogger.DisableLog("rdApp.*")
 
+YAML = Path("model/Human-GEM.yml")
 MET_TSV = Path("model/metabolites.tsv")
 OUT = Path("data/testResults/qc_structure_consistency.csv")
 INCONSISTENT = {"protonation", "formula_error", "smiles_inchi"}
+_ELEM = re.compile(r"([A-Z][a-z]?)(\d*)")
+
+
+def parse_formula(formula: str) -> Counter:
+    """Element -> count for a Hill formula string (charge sign ignored)."""
+    c = Counter()
+    for sym, num in _ELEM.findall((formula or "").strip().rstrip("+-")):
+        if sym:
+            c[sym] += int(num) if num else 1
+    return c
+
+
+def load_model_metabolites() -> dict:
+    """id -> {name, formula, charge} from the YAML metabolites section."""
+    mets, cur, insec = {}, {}, False
+    for line in YAML.open(encoding="utf-8"):
+        if line.startswith("- ") and not line.startswith("- !!omap"):
+            insec = line.strip() == "- metabolites:"
+            continue
+        if not insec:
+            continue
+        s = line.strip()
+        if s == "- !!omap":
+            if cur.get("id"):
+                mets[cur["id"]] = cur
+            cur = {}
+            continue
+        m = re.match(r'- (\w+):\s*"?(.*?)"?\s*$', s)
+        if m:
+            cur[m.group(1)] = m.group(2)
+    if cur.get("id"):
+        mets[cur["id"]] = cur
+    return mets
+
+
+def classify(model_formula, model_charge, smiles):
+    """Relate a stored SMILES to the curated formula/charge. Returns
+    (category, rdkit_formula, rdkit_charge, canonical_smiles, inchikey)."""
+    if not smiles:
+        return "no_structure", "", "", "", ""
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        return "unparseable", "", "", "", ""
+    # generic: an R group (dummy atom) or an "R" in the model formula means there
+    # is no concrete structure to check against.
+    generic = "*" in smiles or "R" in (model_formula or "")
+    rd_formula = rdMolDescriptors.CalcMolFormula(mol)
+    rd_charge = Chem.GetFormalCharge(mol)
+    canon = Chem.MolToSmiles(mol)
+    try:
+        ik = Chem.MolToInchiKey(mol)
+    except Exception:
+        ik = ""
+    m_el, r_el = parse_formula(model_formula), parse_formula(rd_formula)
+    try:
+        m_charge = int(model_charge)
+    except (TypeError, ValueError):
+        m_charge = None
+    m_heavy = {k: v for k, v in m_el.items() if k != "H"}
+    r_heavy = {k: v for k, v in r_el.items() if k != "H"}
+    if generic:
+        cat = "generic"
+    elif m_heavy != r_heavy:
+        cat = "formula_error"
+    elif m_el == r_el and m_charge == rd_charge:
+        cat = "ok"
+    else:
+        cat = "protonation"
+    return cat, rd_formula, str(rd_charge), canon, ik
 
 
 def load_structures() -> dict:

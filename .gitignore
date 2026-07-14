@@ -25,13 +25,6 @@ Thumbs.db
 yarn.lock
 package.json
 node_modules/
-# derived annotation-overhaul audit artifacts (regenerable)
-data/annotation/metabolite_identity.tsv
-data/annotation/protonation_resolved.tsv
-data/annotation/crossref_audit.tsv
-data/annotation/crossref_proposals.tsv
-data/annotation/charge_proposals.tsv
-data/annotation/reaction_audit.tsv
-data/annotation/reaction_proposals.tsv
-data/annotation/crossref_corrections_confident.tsv
-data/annotation/crossref_corrections_genuine.tsv
+
+# MetaNetX reference cache for verifyAnnotations.py (downloaded on demand)
+data/annotation/.metanetx/
