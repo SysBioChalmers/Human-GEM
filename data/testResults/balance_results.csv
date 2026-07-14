@@ -9,7 +9,7 @@ MAR00031,lipid droplet formation,C:-13.4364;H:-19.2074;N:-0.0188;O:-4.4474;P:-0.
 MAR00033,"24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion",C:-108;H:-164;O:-18;X:1,
 MAR00034,3-carboxy-alpha-chromanol to vitamin E derivatives conversion,C:-37;H:-48;O:-14;X:1,2
 MAR00035,"(1aalpha,2beta,3alpha,11calpha)... to xenobiotics conversion",Br:-6;C:-588;Cl:-12;H:-621;N:-66;O:-209;S:-15,11
-MAR00036,(11R)-HPETE to arachidonate derivatives conversion,C:-3170;H:-4890;N:-76;O:-823;P:-15;S:-23,174
+MAR00036,(11R)-HPETE to arachidonate derivatives conversion,C:-3170;H:-4890;N:-76;O:-823;P:-15;S:-23,180
 MAR00037,16alpha-hydroxyestrone to steroids conversion,C:-1116;H:-1488;I:-1;N:-81;O:-299;S:-24;Se:-1,24
 MAR00477,phospholipids extracellular pool formation,C:-32;H:-61;N:-4;O:-24;P:-3;R:-5,-1
 MAR00545,acyl-CoA-CL pool (liver tissue) formation,C:-16.6164;H:-31.9336;N:-1.56364e-15;O:3.21271e-15;P:-7.09827e-16;R:1;S:6.41035e-17,-2.56414e-16
@@ -52,16 +52,12 @@ MAR01073,"arachidonate 12-lipoxygenase, 12S type (12(S)-HETE)",,-2
 MAR01075,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
 MAR01077,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
 MAR01079,fatty acid amide hydrolase (arachidonate),,-4
-MAR01146,carbonyl reductase (NADPH) (5-oxo-6-trans-LTB4),,1
-MAR01147,carbonyl reductase (NADPH) (5-oxo-6-trans-LTB4),,1
-MAR01148,carbonyl reductase (NADPH) (5-oxo-6-trans-LTB4),,1
 MAR01185,(2E)-dodecenoyl-CoA formation,,2
 MAR01227,(2E)-dodecenoyl-CoA formation,,2
 MAR01301,acetyl-CoA C-acyltransferase (16e-18-oxo-18-CoA-dinor-LTE4),,5
 MAR01302,choloyl-CoA hydrolase (omega-COOH-tetranor-LTE3-CoA),,-3
 MAR01303,acyl-CoA oxidase (omega-COOH-tetranor-LTE3-CoA),,-3
 MAR01307,prostaglandin-endoperoxide synthase (prostaglandin G2),,-2
-MAR01334,15-deoxy-PGD2 hydrolysis,,-1
 MAR01337,"13,14-dihydro-15-keto-PGD2 to 15-dehydro-prostaglandin D2 conversion",,2
 MAR01355,"arachidonate to 8-peroxy-(5Z,9E,11Z,14Z)-eicosatetraenoate conversion",,1
 MAR01358,"arachidonate to 9-peroxy-(5Z,7E,11Z,14Z)-eicosatetraenoate conversion",,2
@@ -70,7 +66,7 @@ MAR01363,"9,11,15-trihydroxyprosta-(5Z,13E)-dien-1-oate hydrolysis",,4
 MAR01364,"arachidonate to 12-peroxy-(5Z,8Z,10E,14Z)-eicosatetraenoate conversion",,2
 MAR01366,"11,15-cyclo-12,14-cycloperoxy... to 11,15-cyclo-8,12,14-trihydroxy... conversion",,-4
 MAR01383,9-deoxy-delta12-PGD2 hydrolysis,,2
-MAR01389,15(S)-HETrE hydrolysis,,1
+MAR01389,15(S)-HETrE hydrolysis,,2
 MAR01392,prostaglandin-endoperoxide synthase (prostaglandin G1),,-2
 MAR01393,prostaglandin-endoperoxide synthase (prostaglandin G1),,-2
 MAR01403,7-peroxy-docosahexaenoate to DHA conversion,,-2
@@ -92,6 +88,7 @@ MAR01419,4-hydroperoxy-H4-neuroprostane to 4-hydroxy-E4-neuroprostane conversion
 MAR01427,13-hydroperoxy-H4-neuroprostane to 13-hydroxy-D4-neuroprostane conversion,,-2
 MAR01430,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-E4-neuroprostane conversion,,-2
 MAR01431,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-D4-neuroprostane conversion,,-2
+MAR01453,Hydroxypyruvate Reductase (NADH),,-2
 MAR01500,4alpha-methylzymosterol:NADP+ 3-oxidoreductase,,-4
 MAR01600,Peroxisomal Lumped Long Chain Fatty Acid Oxidation,,2
 MAR01932,Cholesterol:oxygen oxidoreductase (side-chain-cleaving),,-2
@@ -126,7 +123,7 @@ MAR02443,13(S)-HPODE to 13-oxy-radical-octadecadienoate conversion,,-2
 MAR02449,"12,13-epoxy-9-alkoxy-(10E)-octadecenoate hydrolysis",,-1
 MAR02451,"1-hydroperoxy-8-carboxyoctyl-3,4... to 4-oxo-2-nonenal conversion",,2
 MAR02545,5(S)-HEPE hydrolysis,,2
-MAR02559,15(S)-HEPE hydrolysis,,1
+MAR02559,15(S)-HEPE hydrolysis,,2
 MAR02560,15(R)-HEPE hydrolysis,,2
 MAR02567,15(R)-HEPE hydrolysis,,2
 MAR02571,15(R)-HEPE hydrolysis,,2
@@ -149,7 +146,6 @@ MAR03537,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa 
 MAR03622,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;O:-2.22045e-16;R:-1,
 MAR03800,branched chain keto acid dehydrogenase E1 (2-oxobutyrate),H:1;S:1,
 MAR03830,"enoyl-CoA hydratase (9,10-12,13-diepoxy-octadecanoate)",,1
-MAR03898,palmitoyl-CoA hydrolase (15(S)-HPETE),,1
 MAR03962,arachidonate 5-lipoxygenase (prostaglandin D2),,-2
 MAR03992,NADH:ferricytochrome-b5 oxidoreductase,,2
 MAR04007,acyl-CoA oxidase (gamma-tocopheroxyl-radical),,1
@@ -257,7 +253,6 @@ MAR11040,Hydrolysis of GlnLysLys,,4
 MAR11099,Hydrolysis of LysArgLeu,,-1
 MAR11142,Hydrolysis of ProHisTyr,,1
 MAR11145,Hydrolysis of ProPhe,,-1
-MAR11188,Hydrolysis of TrpProGly,,1
 MAR12017,Dopamine-O-Quinone Oxidase,,-1
 MAR12991,3HPVSCOAhc,,-1
 MAR12992,3HPVSTEThc,,1
@@ -266,7 +261,6 @@ MAR12994,FVSCOAhc,,-1
 MAR12995,MDZGLChr,,-1
 MAR13078,PROTEIN_BS,C:-32.5694;H:-66.0418;N:-9.3852;O:-16.5863;S:-0.283;X:1,-0.202
 MAR13081,CYOOm3i,O:-3.46945e-17,0.06
-MAR20007,MAR20007,,1
 MAR20008,MAR20008,,1
 MAR20168,MAR20168,C:-1367;H:-2170;N:-380;O:-419;S:-4,
 MAR20173,2-oxoadipate decarboxylation,H:2;S:2,

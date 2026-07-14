@@ -73,6 +73,8 @@ MB_ROWS = [
     ("Reactions flagged as MACAW duplicates", "duplicates", "count", "macaw", "macaw_results.csv"),
     ("Mass-imbalanced reactions", "mass_imbalance", "count", "macaw", "balance_results.csv"),
     ("Charge-imbalanced reactions", "charge_imbalance", "count", "macaw", "balance_results.csv"),
+    ("Structure vs formula/charge inconsistencies", "structure_inconsistent", "count", "macaw",
+     "qc_structure_consistency.csv"),
 ]
 _DUP_COLS = ("duplicate_test_exact", "duplicate_test_directions", "duplicate_test_coefficients")
 
@@ -130,6 +132,8 @@ def _metrics(directory: Path) -> dict:
         "duplicates": _count_csv(macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS)),
         "mass_imbalance": _count_csv(balance, lambda r: r.get("mass_imbalance", "").strip() != ""),
         "charge_imbalance": _count_csv(balance, lambda r: r.get("charge_imbalance", "").strip() != ""),
+        # the CSV lists only the inconsistent metabolites, so its row count is the metric
+        "structure_inconsistent": _count_csv(directory / "qc_structure_consistency.csv"),
     }
 
 

@@ -1,10 +1,4 @@
 id,column,issue
 MAM00270,metChEBIID,inconsistent across compartments: CHEBI:34306 | CHEBI:76624
-MAM00270,metMetaNetXID,inconsistent across compartments: MNXM22451 | MNXM22451;MNXM6760 | MNXM732711
-MAM01230,metMetaNetXID,inconsistent across compartments: MNXM1105991 | MNXM162775;MNXM2209
-MAM01232,metMetaNetXID,inconsistent across compartments: MNXM1102095 | MNXM162711;MNXM2626
-MAM01657,metMetaNetXID,inconsistent across compartments: MNXM1137698 | MNXM148197
-MAM01778,metMetaNetXID,inconsistent across compartments: MNXM1107708 | MNXM11476;MNXM306;MNXM727012;MNXM92305
 MAM03652,metChEBIID,inconsistent across compartments: CHEBI:71464 | CHEBI:71465
 MAM20077,metChEBIID,inconsistent across compartments: CHEBI:29144 | CHEBI:83767
-MAM20077,metMetaNetXID,inconsistent across compartments: MNXM37367 | MNXM732228
