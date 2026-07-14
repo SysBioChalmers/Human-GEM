@@ -1,11 +1,12 @@
 """Build one model-quality report for the pull-request comment.
 
-Turns the committed result files under data/testResults/ into a single comment
-that leads with a one-line verdict and then three status tables (structural
-checks, model QC reports, MACAW/balance). Each result set is stamped with the
-commit it was computed for; a set whose stamp does not match this pull request's
-head commit has not (re-)run for the current commit and shows as *running*
-rather than showing a previous run's numbers.
+Turns the result files under data/testResults/ into a single comment that leads
+with a one-line verdict and then three status tables (structural checks, model QC
+reports, MACAW/balance). Groups still being computed on this run are passed in the
+RUNNING_GROUPS environment variable and their rows show as *running* (hourglass);
+the workflow calls this once with "all" before anything has run, once with
+"memote" while the slow MEMOTE snapshot is still going, and once with nothing when
+everything is in. No stamp files are involved.
 
 Icon rule (per row):
   * growth: white_check_mark if the model grows, x if it cannot (blocks the merge).
@@ -14,14 +15,14 @@ Icon rule (per row):
   * every other (count) metric: x if the count rose versus the target branch (a
     regression this pull request introduced), warning if the count is non-zero
     (a pre-existing finding, non-blocking), white_check_mark if it is zero.
-  * hourglass: the set has not run for this commit yet.
+  * hourglass: the group is still running on this pull request.
 
 Only two conditions fail the build: the model cannot load (duplicate `!!omap`
 keys) or cannot grow. Everything else is reported but does not block; a red x
 just flags a regression for review.
 
 Usage:
-    BASE_RESULTS_DIR=<dir> BASE_REF=<branch> COMMIT_SHA=<sha> \
+    RUNNING_GROUPS=<all|memote|...> BASE_RESULTS_DIR=<dir> BASE_REF=<branch> \
         RESULTS_URL_BASE=<url> python code/test/buildReport.py
 """
 
@@ -40,10 +41,13 @@ COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
 # each finding count to its CSV. Empty when run locally (then counts are plain text).
 URL_BASE = os.environ.get("RESULTS_URL_BASE", "").rstrip("/")
 
-# A result set is produced by one workflow job and stamped with the commit it ran
-# on. A set is "fresh" only if its stamp matches this commit; otherwise it is still
-# running (or ran on an older commit) and its rows show as pending.
-GROUP_STAMPS = {"checks": "qc_checks.sha", "memote": "qc_memote.sha", "macaw": "qc_macaw.sha"}
+# Groups whose results are still being computed on this run; their rows show as
+# "running". The workflow passes this on each call - "all" before anything has run,
+# "memote" while the (slow) MEMOTE snapshot is still going, empty once everything is
+# in - so no commit or stamp file is needed to track freshness.
+ALL_GROUPS = {"checks", "memote", "macaw"}
+_running = os.environ.get("RUNNING_GROUPS", "")
+RUNNING = set(ALL_GROUPS) if _running.strip() == "all" else {g.strip() for g in _running.split(",") if g.strip()}
 
 # (label, key, kind, group, detail_file)
 STRUCTURAL_ROWS = [
@@ -129,19 +133,6 @@ def _metrics(directory: Path) -> dict:
     }
 
 
-def _fresh_groups() -> set[str] | None:
-    """Groups whose stamp matches this commit. None when staleness cannot be judged
-    (no COMMIT_SHA, e.g. a local run) so nothing is marked pending on that basis."""
-    if not COMMIT_SHA:
-        return None
-    fresh = set()
-    for group, stamp in GROUP_STAMPS.items():
-        path = RESULTS / stamp
-        if path.exists() and path.read_text(encoding="utf-8").strip() == COMMIT_SHA:
-            fresh.add(group)
-    return fresh
-
-
 def _icon(value, base, kind):
     """Return (delta_text, icon, regression, fatal)."""
     if kind == "growth":
@@ -177,12 +168,12 @@ def _cell(value, kind, detail) -> str:
     return text
 
 
-def _table(rows, current: dict, base: dict, fresh: set[str] | None):
+def _table(rows, current: dict, base: dict):
     lines, regressions, warnings, pending = [], 0, 0, 0
     fatal = False
     for label, key, kind, group, detail in rows:
         value = current.get(key)
-        is_pending = value is None or (fresh is not None and group not in fresh)
+        is_pending = value is None or group in RUNNING
         if is_pending:
             lines.append(f"| {label} | _running_ | | :hourglass_flowing_sand: |")
             pending += 1
@@ -211,13 +202,12 @@ def _gene_essentiality_section() -> str:
 
 def main() -> int:
     have_base = bool(BASE_DIR) and Path(BASE_DIR).exists()
-    fresh = _fresh_groups()
     current = _metrics(RESULTS)
     base = _metrics(Path(BASE_DIR)) if have_base else {}
 
-    st_tbl, st_reg, st_warn, st_pend, fatal = _table(STRUCTURAL_ROWS, current, base, fresh)
-    rp_tbl, rp_reg, rp_warn, rp_pend, _ = _table(REPORT_ROWS, current, base, fresh)
-    mb_tbl, mb_reg, mb_warn, mb_pend, _ = _table(MB_ROWS, current, base, fresh)
+    st_tbl, st_reg, st_warn, st_pend, fatal = _table(STRUCTURAL_ROWS, current, base)
+    rp_tbl, rp_reg, rp_warn, rp_pend, _ = _table(REPORT_ROWS, current, base)
+    mb_tbl, mb_reg, mb_warn, mb_pend, _ = _table(MB_ROWS, current, base)
 
     regressions = st_reg + rp_reg + mb_reg
     warnings = st_warn + rp_warn + mb_warn

@@ -1,39 +1,39 @@
 ## Model quality report
 
-:information_source: First run for this comparison; no target-branch baseline yet.
+:warning: **5 pre-existing finding(s), no regressions vs `develop`.** Non-blocking.
 
-### Build gates
-_A red :x: blocks the merge; the count links to the CSV listing what to fix._
+### Structural checks
+_Duplicate keys (model unloadable) and no growth block the merge; the other rows are non-blocking._
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| Duplicate `!!omap` keys | 0 | new | :white_check_mark: |
-| Reactions with no metabolites | 0 | new | :white_check_mark: |
-| Model / annotation-table inconsistencies | 0 | new | :white_check_mark: |
-| Growth (biomass producible) | 125 | new | :white_check_mark: |
+| Duplicate `!!omap` keys | 0 | 0 | :white_check_mark: |
+| Reactions with no metabolites | 0 | 0 | :white_check_mark: |
+| Model / annotation-table inconsistencies | 0 | 0 | :white_check_mark: |
+| Growth (biomass producible) | 125 | 0 | :white_check_mark: |
 
 ### Model QC reports
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| Metabolites missing formula | [7](qc_metabolite_completeness.csv) | new | :new: |
-| Metabolites missing charge | 0 | new | :new: |
-| Reaction bound / GPR issues | 0 | new | :new: |
-| Exact-duplicate reaction groups | 0 | new | :new: |
-| Unused metabolites | 0 | new | :new: |
-| Unused genes | 0 | new | :new: |
-| Malformed cross-references | [59](qc_annotation_issues.csv) | new | :new: |
-| Cross-refs inconsistent across compartments | [59](qc_annotation_issues.csv) | new | :new: |
-| MEMOTE score (%) | [20.2](memote_score.md) | new | :new: |
+| Metabolites missing formula | 0 | 0 | :white_check_mark: |
+| Metabolites missing charge | 0 | 0 | :white_check_mark: |
+| Reaction bound / GPR issues | 0 | 0 | :white_check_mark: |
+| Exact-duplicate reaction groups | 0 | 0 | :white_check_mark: |
+| Unused metabolites | 0 | 0 | :white_check_mark: |
+| Unused genes | 0 | 0 | :white_check_mark: |
+| Malformed cross-references | 0 | 0 | :white_check_mark: |
+| Cross-refs inconsistent across compartments | [9](https://github.com/SysBioChalmers/Human-GEM/blob/ci/combine-qc-workflows/data/testResults/qc_annotation_issues.csv) | 0 | :warning: |
+| MEMOTE score (%) | 20.2 | 0 | :white_check_mark: |
 
 ### MACAW and mass/charge balance
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| Reactions flagged by MACAW dead-end test | [2510](macaw_results.csv) | new | :new: |
-| Reactions flagged as MACAW duplicates | [377](macaw_results.csv) | new | :new: |
-| Mass-imbalanced reactions | [87](balance_results.csv) | new | :new: |
-| Charge-imbalanced reactions | [240](balance_results.csv) | new | :new: |
+| Reactions flagged by MACAW dead-end test | [2510](https://github.com/SysBioChalmers/Human-GEM/blob/ci/combine-qc-workflows/data/testResults/macaw_results.csv) | 0 | :warning: |
+| Reactions flagged as MACAW duplicates | [377](https://github.com/SysBioChalmers/Human-GEM/blob/ci/combine-qc-workflows/data/testResults/macaw_results.csv) | 0 | :warning: |
+| Mass-imbalanced reactions | [87](https://github.com/SysBioChalmers/Human-GEM/blob/ci/combine-qc-workflows/data/testResults/balance_results.csv) | 0 | :warning: |
+| Charge-imbalanced reactions | [240](https://github.com/SysBioChalmers/Human-GEM/blob/ci/combine-qc-workflows/data/testResults/balance_results.csv) | 0 | :warning: |
 
 ### Gene essentiality (Hart 2015)
 
@@ -46,4 +46,4 @@ _A red :x: blocks the merge; the count links to the CSV listing what to fix._
 | RPE1 | 15 | 2179 | 83 | 258 | 0.8655 | 0.05495 | 0.9633 | 0.08086 | 0.02935 |
 | all | 7 | 2379 | 95 | 112 | 0.9202 | 0.05882 | 0.9616 | 0.06335 | 0.02199 |
 
-Per-finding detail is in the linked CSVs under `data/testResults/`; the full MEMOTE result is uploaded as a build artifact.
+:x: = a count rose vs the target branch (regression) &middot; :warning: = a pre-existing non-zero finding (non-blocking) &middot; :hourglass_flowing_sand: = still running. Counts link to the CSV listing the exact entries.
