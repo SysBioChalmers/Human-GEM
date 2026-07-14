@@ -1,0 +1,111 @@
+name: MEMOTE full suite
+
+# The full MEMOTE suite (FVA and a loopless MILP over every reaction) takes hours,
+# so it is run on demand only: comment /run memote on a pull request (see
+# pr-command.yml), which dispatches this on the PR branch and passes the PR number.
+# When it finishes it commits the score and updates the Model QC comment in place.
+on:
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: "Pull-request number to update the Model QC comment on"
+        default: ""
+
+env:
+  RESULT_FILES: >-
+    qc_duplicate_keys.csv qc_empty_reactions.csv qc_annotation_consistency.csv
+    qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
+    qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md
+    macaw_results.csv balance_results.csv qc_structure_consistency.csv
+    qc_roundtrip_cobra.txt qc_roundtrip_raven.txt qc_yamllint.txt
+    qc_tasks_essential.txt qc_tasks_verification.txt
+
+jobs:
+  memote-full:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install cobra memote gurobipy
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+          else
+            echo "::warning::Gurobi license secret not set; MEMOTE may not finish in time."
+          fi
+
+      - name: Resolve the pull request's base branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          base=$(gh pr view "${{ inputs.pr }}" --repo "${{ github.repository }}" --json baseRefName --jq .baseRefName)
+          echo "BASE_REF=$base" >> "$GITHUB_ENV"
+          echo "BASE_DIR=$RUNNER_TEMP/base" >> "$GITHUB_ENV"
+
+      - name: MEMOTE snapshot (full suite)
+        continue-on-error: true
+        env:
+          PYTHONUNBUFFERED: "1"
+          MEMOTE_SUBSET: ""
+        run: |
+          timeout 19800 python code/test/memoteSnapshot.py \
+            || echo "::warning::MEMOTE did not finish within the time limit; score unavailable."
+
+      - name: Fetch target-branch results for comparison
+        run: |
+          git fetch --depth=1 origin "$BASE_REF" || true
+          mkdir -p "$BASE_DIR"
+          for f in $RESULT_FILES; do
+            git show "origin/$BASE_REF:data/testResults/$f" > "$BASE_DIR/$f" 2>/dev/null || rm -f "$BASE_DIR/$f"
+          done
+
+      - name: Update local branch before committing changes
+        run: |
+          git stash
+          git fetch
+          git checkout ${{ github.ref_name }}
+          if git stash list | grep -q 'stash@{'; then
+            git stash pop
+          fi
+
+      - name: Auto-commit results
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_user_name: memote-bot
+          # [skip ci] so this results commit does not re-trigger the workflows.
+          commit_message: "chore: full MEMOTE result [skip ci]"
+          file_pattern: data/testResults/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload full MEMOTE result
+        uses: actions/upload-artifact@v7
+        with:
+          name: memote-result
+          path: memote_result.json
+          if-no-files-found: ignore
+
+      - name: Update the Model QC comment
+        uses: ./.github/actions/post-qc-comment
+        with:
+          running-groups: ""
+          base-ref: ${{ env.BASE_REF }}
+          base-dir: ${{ env.BASE_DIR }}
+          results-url-base: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/data/testResults
+          run-url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          issue-number: ${{ inputs.pr }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

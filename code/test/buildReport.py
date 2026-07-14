@@ -284,6 +284,9 @@ def main() -> int:
         "",
         _gene_essentiality_section(),
         "",
+        "_The MEMOTE row above is the fast core subset. Comment_ `/run memote` "
+        "_to run the full suite on this pull request; the score updates here when it finishes._",
+        "",
         ":x: = a count rose vs the target branch (regression) &middot; "
         ":warning: = a pre-existing non-zero finding (non-blocking) &middot; "
         ":hourglass_flowing_sand: = still running. Counts link to the CSV listing the exact entries.",

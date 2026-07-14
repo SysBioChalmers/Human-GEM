@@ -44,6 +44,33 @@ jobs:
           gh pr comment "$PR" --repo "$REPO" \
             --body ":dna: Started **gene-essentiality** on \`$ref\` (this takes a few hours). Track it in the [Actions tab]($GITHUB_SERVER_URL/$REPO/actions/workflows/gene-essentiality.yml)."
 
+  memote:
+    # Comment /run memote to run the full MEMOTE suite on the PR branch; the score
+    # updates the Model QC comment when it finishes.
+    if: >
+      github.event.issue.pull_request &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association) &&
+      startsWith(github.event.comment.body, '/run memote')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch the full MEMOTE suite on the PR branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          data=$(gh pr view "$PR" --repo "$REPO" --json headRefName,isCrossRepository)
+          ref=$(echo "$data" | jq -r .headRefName)
+          fork=$(echo "$data" | jq -r .isCrossRepository)
+          if [ "$fork" = "true" ]; then
+            gh pr comment "$PR" --repo "$REPO" \
+              --body ":warning: \`/run memote\` only works for branches in this repository, not forks."
+            exit 0
+          fi
+          gh workflow run memote-full.yml --repo "$REPO" --ref "$ref" -f pr="$PR"
+          gh pr comment "$PR" --repo "$REPO" \
+            --body ":microscope: Started the **full MEMOTE suite** on \`$ref\` (this takes hours). The score will update the Model QC comment when it finishes."
+
   reevaluate-gene-essentiality:
     # Fast: recompute gene-essential_summary.md from the committed per-gene matrix
     # (no solve), for when only the evaluation logic changed. Runs directly.

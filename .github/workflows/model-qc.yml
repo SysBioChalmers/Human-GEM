@@ -143,17 +143,17 @@ jobs:
             echo "::warning::Gurobi license secret not set; MEMOTE may not finish in time."
           fi
 
-      - name: MEMOTE snapshot (subset on normal PRs, full suite on PRs to main)
+      # The fast core subset runs on every pull request. The full suite (which does
+      # FVA / a loopless MILP over every reaction and takes hours) is run on demand
+      # only, by commenting /run memote (see pr-command.yml and memote-full.yml).
+      - name: MEMOTE snapshot (fast subset)
         continue-on-error: true
         env:
           PYTHONUNBUFFERED: "1"
-          # Empty for PRs to main (run the full suite); "1" otherwise (subset).
-          MEMOTE_SUBSET: ${{ github.event.pull_request.base.ref != 'main' && '1' || '' }}
+          MEMOTE_SUBSET: "1"
         run: |
-          if [ "$BASE_REF" = "main" ]; then LIMIT=19800; else LIMIT=2400; fi
-          echo "Running MEMOTE with a ${LIMIT}s wall-clock limit (base: $BASE_REF)."
-          timeout "$LIMIT" python code/test/memoteSnapshot.py \
-            || echo "::warning::MEMOTE did not finish within ${LIMIT}s; score unavailable this run."
+          timeout 2400 python code/test/memoteSnapshot.py \
+            || echo "::warning::MEMOTE did not finish within 2400s; score unavailable this run."
 
       # Everything is in.
       - name: Update comment with all results
