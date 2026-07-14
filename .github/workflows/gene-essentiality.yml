@@ -1,18 +1,18 @@
 name: Check gene essentiality with Hart 2015
 
 on:
-  pull_request:
-    branches:
-      - "main"
-      - "develop"
-  # Allow running the (long) gene-essentiality check on demand, e.g. to validate a
-  # model-building change without waiting for a pull-request trigger.
+  # Run on demand only (it takes hours): via workflow_dispatch, or by commenting
+  # /run gene-essentiality on a pull request (see pr-command.yml). It is not run on
+  # every pull request; the Model QC comment states it has not been run and how to.
   workflow_dispatch:
     inputs:
       diagnose:
         description: "Time Step-1a per task (bounded diagnostic) instead of the full run"
         type: boolean
         default: false
+      pr:
+        description: "Pull-request number to comment on (set by the /run command)"
+        default: ""
 
 jobs:
   gene-essentiality:
@@ -109,23 +109,24 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
 
       - name: Post comment
-        if: github.event_name == 'pull_request'
+        if: inputs.pr != ''
         uses: actions/github-script@v7
         env:
           TEST_RESULTS: ${{ steps.essentiality.outputs.results }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ISSUE_NUMBER: ${{ inputs.pr }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const marker = '<!-- GENE-ESSENTIALITY-COMMENT -->';
             const body = `${marker}\n`
-              + `This PR has been [automatically tested with GH Actions](${process.env.RUN_URL}). `
-              + `Here is the summary of the gene essentiality test:\n\n`
+              + `Gene essentiality was run on this pull request via [GH Actions](${process.env.RUN_URL}). `
+              + `Summary:\n\n`
               + `${process.env.TEST_RESULTS}\n\n`
               + `The full per-gene essentiality matrix is committed to \`data/testResults/gene-essential.csv\`.\n\n`
               + `> _Note: in the case of multiple test runs, this post is edited._`;
             const { owner, repo } = context.repo;
-            const issue_number = context.issue.number;
+            const issue_number = Number(process.env.ISSUE_NUMBER);
             const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
             const existing = comments.find(c => c.body && c.body.includes(marker));
             if (existing) {

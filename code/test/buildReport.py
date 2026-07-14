@@ -190,18 +190,43 @@ def _table(rows, current: dict, base: dict):
     return lines, regressions, warnings, pending, fatal
 
 
+def _status(name: str) -> str:
+    p = RESULTS / f"qc_{name}.txt"
+    return p.read_text(encoding="utf-8").strip() if p.exists() else ""
+
+
+def _model_integrity_section() -> str:
+    """Round-trip, YAML lint and metabolic-task pass/fail from the status files the
+    workflow writes. A missing file means the check has not finished yet."""
+    checks = [
+        ("YAML round-trip (cobrapy)", "roundtrip_cobra"),
+        ("YAML round-trip (RAVEN)", "roundtrip_raven"),
+        ("YAML lint", "yamllint"),
+        ("Essential metabolic tasks", "tasks_essential"),
+        ("Verification metabolic tasks", "tasks_verification"),
+    ]
+    out = ["| Check | Result | |", "| --- | ---: | :---: |"]
+    for label, name in checks:
+        val = _status(name)
+        if not val:
+            out.append(f"| {label} | _running_ | :hourglass_flowing_sand: |")
+        elif "/" in val:                       # tasks: "failed/total"
+            failed, total = val.split("/")[:2]
+            ok = int(failed) == 0
+            out.append(f"| {label} | {total + ' passed' if ok else failed + ' failed'} | "
+                       f"{':white_check_mark:' if ok else ':x:'} |")
+        else:                                  # round-trip / lint: pass|fail
+            ok = val.lower() == "pass"
+            out.append(f"| {label} | {val} | {':white_check_mark:' if ok else ':x:'} |")
+    return "\n".join(out)
+
+
 def _gene_essentiality_section() -> str:
-    path = RESULTS / "gene-essential.csv"
-    if not path.exists():
-        return "_Not yet run for this pull request._"
-    with open(path, newline="", encoding="utf-8") as fh:
-        rows = [r for r in csv.reader(fh) if r]
-    if len(rows) < 2:
-        return "_No gene-essentiality results._"
-    header, *body = rows
-    lines = ["| " + " | ".join(header) + " |", "| " + " | ".join("---" for _ in header) + " |"]
-    lines += ["| " + " | ".join(row) + " |" for row in body]
-    return "\n".join(lines)
+    # Gene essentiality takes hours and is not run on every pull request. Its result
+    # file (gene-essential.csv) is committed and persists across pull requests, so it
+    # would be stale here - the result is shown in its own comment when run instead.
+    return ("_Not run automatically (it takes hours). Comment_ `/run gene-essentiality` "
+            "_to run it on this pull request; the result posts as its own comment._")
 
 
 def main() -> int:
@@ -250,6 +275,10 @@ def main() -> int:
         "### MACAW and mass/charge balance",
         "",
         head, sep, *mb_tbl,
+        "",
+        "### Model file and metabolic tasks",
+        "",
+        _model_integrity_section(),
         "",
         "### Gene essentiality (Hart 2015)",
         "",

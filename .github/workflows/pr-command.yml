@@ -40,7 +40,7 @@ jobs:
               --body ":warning: \`/run gene-essentiality\` only works for branches in this repository, not forks."
             exit 0
           fi
-          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref"
+          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref" -f pr="$PR"
           gh pr comment "$PR" --repo "$REPO" \
             --body ":dna: Started **gene-essentiality** on \`$ref\` (this takes a few hours). Track it in the [Actions tab]($GITHUB_SERVER_URL/$REPO/actions/workflows/gene-essentiality.yml)."
 
