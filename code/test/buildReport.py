@@ -66,7 +66,6 @@ REPORT_ROWS = [
     ("Unused genes", "unused_gene", "count", "checks", "qc_unused_entities.csv"),
     ("Malformed cross-references", "malformed", "count", "checks", "qc_annotation_issues.csv"),
     ("Cross-refs inconsistent across compartments", "inconsistent", "count", "checks", "qc_annotation_issues.csv"),
-    ("MEMOTE score (%)", "memote", "score", "memote", "memote_score.md"),
 ]
 MB_ROWS = [
     ("Reactions flagged by MACAW dead-end test", "dead_end", "count", "macaw", "macaw_results.csv"),
@@ -100,12 +99,50 @@ def _growth(directory: Path) -> float | None:
         return None
 
 
-def _memote_score(directory: Path) -> float | None:
+def _memote_meta(directory: Path):
+    """Parse memote_score.md -> (total, mode, {section: score}, [(section, test, score)]),
+    or None if it has not been produced yet."""
     path = directory / "memote_score.md"
     if not path.exists():
         return None
-    match = re.search(r"Total score:\s*([\d.]+)\s*%", path.read_text(encoding="utf-8"))
-    return float(match.group(1)) if match else None
+    text = path.read_text(encoding="utf-8")
+    total = re.search(r"Total score:\s*([\d.]+)\s*%", text)
+    mode = re.search(r"Mode:\s*(.+?)\.", text)
+    sections = {m.group(1): float(m.group(2))
+                for m in re.finditer(r"^\| (\w+) \| ([\d.]+)% \|$", text, re.M)}
+    detailed = [(s, t, sc) for s, t, sc in re.findall(r"^\| (.+?) \| (.+?) \| ([\d.]+)% \|$", text, re.M)]
+    return (float(total.group(1)) if total else None, mode.group(1) if mode else "", sections, detailed)
+
+
+def _score_delta(cur, base) -> str:
+    if cur is None or base is None:
+        return ""
+    d = cur - base
+    if abs(d) < 0.05:
+        return "0"
+    return f"{d:+.1f} {':warning:' if d < 0 else ':white_check_mark:'}"
+
+
+def _memote_section(current: Path, base: Path | None) -> str:
+    if "memote" in RUNNING:
+        return "_running_ &middot; :hourglass_flowing_sand:"
+    meta = _memote_meta(current)
+    if meta is None:
+        return "_running_ &middot; :hourglass_flowing_sand:"
+    total, mode, sections, detailed = meta
+    b = _memote_meta(base) if base and base.exists() else None
+    b_total, b_sections = (b[0], b[2]) if b else (None, {})
+    lines = [f"**Total score: {total:.1f}%** ({mode}) &nbsp; {_score_delta(total, b_total)}".rstrip(), ""]
+    if sections:
+        lines += ["| Section | Score | &Delta; vs base |", "| --- | ---: | ---: |"]
+        lines += [f"| {sec} | {sc:.1f}% | {_score_delta(sc, b_sections.get(sec))} |"
+                  for sec, sc in sections.items()]
+    if detailed:
+        lines += ["", "<details><summary>Per-test scores</summary>", "",
+                  "| Section | Test | Score |", "| --- | --- | ---: |"]
+        lines += [f"| {s} | {t} | {sc}% |" for s, t, sc in detailed]
+        lines += ["", "</details>"]
+    return "\n".join(lines)
 
 
 def _metrics(directory: Path) -> dict:
@@ -127,7 +164,6 @@ def _metrics(directory: Path) -> dict:
         "unused_gene": _count_csv(unused, lambda r: r.get("kind") == "gene"),
         "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
         "inconsistent": _count_csv(annotation, lambda r: r.get("issue", "").startswith("inconsistent")),
-        "memote": _memote_score(directory),
         "dead_end": _count_csv(macaw, lambda r: r.get("dead_end_test", "") not in ("ok", "")),
         "duplicates": _count_csv(macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS)),
         "mass_imbalance": _count_csv(balance, lambda r: r.get("mass_imbalance", "").strip() != ""),
@@ -280,12 +316,16 @@ def main() -> int:
         "",
         _model_integrity_section(),
         "",
+        "### MEMOTE",
+        "",
+        _memote_section(RESULTS, Path(BASE_DIR) if BASE_DIR else None),
+        "",
+        "_The score above is the fast core subset. Comment_ `/run memote` "
+        "_to run the full suite on this pull request; the score updates here when it finishes._",
+        "",
         "### Gene essentiality (Hart 2015)",
         "",
         _gene_essentiality_section(),
-        "",
-        "_The MEMOTE row above is the fast core subset. Comment_ `/run memote` "
-        "_to run the full suite on this pull request; the score updates here when it finishes._",
         "",
         ":x: = a count rose vs the target branch (regression) &middot; "
         ":warning: = a pre-existing non-zero finding (non-blocking) &middot; "
