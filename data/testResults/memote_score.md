@@ -21,7 +21,7 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | --- | --- | ---: |
 | Consistency | Stoichiometric Consistency | 100.0% |
 | Consistency | Mass Balance | 0.8% |
-| Consistency | Charge Balance | 2.2% |
+| Consistency | Charge Balance | 2.1% |
 | Consistency | Metabolite Connectivity | 0.0% |
 | Consistency | Unbounded Flux In Default Medium | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |

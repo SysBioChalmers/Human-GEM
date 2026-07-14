@@ -25,9 +25,6 @@ MAM00303c,11-peroxy-docosahexaenoate,formula_error,C22H30O4,-1,C36H60O2,0,CCCCCC
 MAM00311c,"12,13-epoxy-9-alkoxy-(10E)-octadecenoate",formula_error,C18H30O4,-1,C5H4BrN,0,Brc1ccccn1
 MAM00335c,"12-peroxy-(5Z,8Z,10E,14Z)-eicosatetraenoate",protonation,C20H30O4,-1,C20H31O4-,-1,CCCCC/C=C\CC(C=C/C=C\C/C=C\CCCC(=O)[O-])OO
 MAM00348c,13-cis-oxo-retinoate,protonation,C20H27O3,-1,C20H25O3-,-1,CC1=C(/C=C/C(C)=C/C=C/C(C)=C\C(=O)[O-])C(C)(C)CCC1=O
-MAM00376c,15(S)-HEPE,protonation,C20H29O3,0,C20H30O3,0,CC/C=C\C[C@H](O)/C=C/C=C\C/C=C\C/C=C\CCCC(=O)O
-MAM00378c,15(S)-HETrE,protonation,C20H33O3,0,C20H34O3,0,CCCCCC(O)C=CC=CCC=CCCCCCCC(=O)O
-MAM00384c,15-deoxy-PGD2,protonation,C20H29O4,0,C20H30O4,0,CCCCC/C=C/C=C1/C(=O)C[C@H](O)[C@@H]1C/C=C\CCCC(=O)O
 MAM00397x,16(S)-hydroxy-18-oxo-18-CoA-LTE4,protonation,C42H62N8O23P3S2,-5,C42H63N8O23P3S2-4,-4,CC(C)(COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@@H](O)[C@H]1OP(=O)([O-])[O-])C(O)C(=O)NCCC(=O)NCCSC(=O)C[C@@H](O)CCC/C=C\C=C\C=C\[C@@H](SC[C@@H](N)C(=O)O)[C@@H](O)CCCC(=O)O
 MAM00398x,"16,18-oxo-18-CoA-dinor-LTE4",protonation,C42H60N8O23P3S2,-5,C42H61N8O23P3S2-4,-4,CC(C)(COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@@H](O)[C@H]1OP(=O)([O-])[O-])C(O)C(=O)NCCC(=O)NCCSC(=O)CC(=O)CCC/C=C\C=C\C=C\[C@@H](SC[C@@H](N)C(=O)O)[C@@H](O)CCCC(=O)O
 MAM00401x,16e-18-oxo-18-CoA-dinor-LTE4,protonation,C42H60N8O22P3S2,-5,C42H61N8O22P3S2-4,-4,CC(C)(COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@@H](O)[C@H]1OP(=O)([O-])[O-])C(O)C(=O)NCCC(=O)NCCSC(=O)/C=C/CCC/C=C\C=C\C=C\[C@@H](SC[C@@H](N)C(=O)O)[C@@H](O)CCCC(=O)O
@@ -77,9 +74,6 @@ MAM01133c,5-pp-inspP5,protonation,C6H6O27P7,-13,C6H19O27P7,0,O=P(O)(O)O[C@H]1[C@
 MAM01133n,5-pp-inspP5,protonation,C6H6O27P7,-13,C6H19O27P7,0,O=P(O)(O)O[C@H]1[C@@H](OP(=O)(O)O)[C@@H](OP(=O)(O)O)[C@H](OP(=O)(O)O)[C@@H](OP(=O)(O)OP(=O)(O)O)[C@@H]1OP(=O)(O)O
 MAM01163c,6-hydroxypaclitaxel,protonation,C47H31NO15,0,C47H51NO15,0,CC(=O)O[C@H]1C(=O)[C@]2(C)[C@@H](O)[C@H](O)[C@H]3OC[C@@]3(OC(C)=O)[C@H]2[C@H](OC(=O)c2ccccc2)[C@]2(O)C[C@H](OC(=O)[C@H](O)[C@@H](NC(=O)c3ccccc3)c3ccccc3)C(C)=C1C2(C)C
 MAM01163e,6-hydroxypaclitaxel,protonation,C47H31NO15,0,C47H51NO15,0,CC(=O)O[C@H]1C(=O)[C@]2(C)[C@@H](O)[C@H](O)[C@H]3OC[C@@]3(OC(C)=O)[C@H]2[C@H](OC(=O)c2ccccc2)[C@]2(O)C[C@H](OC(=O)[C@H](O)[C@@H](NC(=O)c3ccccc3)c3ccccc3)C(C)=C1C2(C)C
-MAM01172c,6-trans-LTB4,protonation,C20H31O4,0,C20H32O4,0,CCCCC/C=C\C[C@@H](O)/C=C/C=C/C=C/[C@@H](O)CCCC(=O)O
-MAM01172m,6-trans-LTB4,protonation,C20H31O4,0,C20H32O4,0,CCCCC/C=C\C[C@@H](O)/C=C/C=C/C=C/[C@@H](O)CCCC(=O)O
-MAM01172x,6-trans-LTB4,protonation,C20H31O4,0,C20H32O4,0,CCCCC/C=C\C[C@@H](O)/C=C/C=C/C=C/[C@@H](O)CCCC(=O)O
 MAM01198c,7-peroxy-docosahexaenoate,protonation,C22H30O4,-1,C22H31O4-,-1,CC/C=C/C/C=C/CC/C=C/C=C/C/C=C(/C/C=C/CCC(=O)[O-])OO
 MAM01210c,"8,9-epoxy-(5Z)-tetradecenoic acid",protonation,C14H24O3,-1,C14H24O3,0,CCCCCC1OC1C/C=C\CCCC(=O)O
 MAM01214c,"8-peroxy-(5Z,9E,11Z,14Z)-eicosatetraenoate",protonation,C20H30O4,-1,C20H31O4-,-1,CCCCC/C=C\C/C=C\C=C\C(C/C=C\CCCC(=O)[O-])OO
@@ -245,8 +239,6 @@ MAM00348n,13-cis-oxo-retinoate,protonation,C20H27O3,-1,C20H25O3-,-1,CC1=C(/C=C/C
 MAM03758c,Melanin,formula_error,C9H6NO4,-1,C18H10N2O4,0,Cc1c(=O)c(=O)c2c3c[nH]c4c(C)c(=O)c(=O)c(c5c[nH]c1c52)c43
 MAM01026n,4-oxo-13-cis-retinoate,protonation,C20H27O3,-1,C20H26O3,0,CC(C=CC1=C(C)C(=O)CCC1(C)C)=CC=CC(C)=CC(=O)O
 MAM01731c,dolichyl-D-glucosyl-phosphate,formula_error,C106H174O9P,-1,C31H55O9P,0,CC(C)=CCC/C(C)=C/CC/C(C)=C/CC/C(C)=C\CCC(C)CCOP(=O)(O)O[C@@H]1O[C@H](CO)[C@@H](O)[C@H](O)[C@H]1O
-MAM03620e,(S)-Glycerate,protonation,C3H5O4,0,C3H6O4,0,O=C(O)[C@@H](O)CO
-MAM03620c,(S)-Glycerate,protonation,C3H5O4,0,C3H6O4,0,O=C(O)[C@@H](O)CO
 MAM02970m,tetracosanoylcarnitine,formula_error,C31H61NO4,0,C31H64NO3+,1,CCCCCCCCCCCCCCCCCCCCCCCCO[C@H](CC(=O)O)C[N+](C)(C)C
 MAM03850r,pseudoecgonyl-CoA,protonation,C30H46N8O18P3S,-3,C30H49N8O18P3S,0,CN1C2CCC1[C@H](C(=O)SCCNC(=O)CCNC(=O)C(O)C(C)(C)COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n3cnc4c(N)ncnc43)[C@H](O)[C@@H]1OP(=O)(O)O)[C@@H](O)C2
 MAM03103c,ubiquinone,formula_error,C59H90O4,0,C19H26O4,0,COC1=C(OC)C(=O)C(C/C=C(\C)CCC=C(C)C)=C(C)C1=O
@@ -344,10 +336,6 @@ MAM03810c,1-Docosahexaenoylglycerophosphocholine,protonation,C34H59NO7P,0,C34H59
 MAM03811c,"1-Eicosadienoylglycerophosphocholine (Delta 11,14)",protonation,C28H55NO7P,0,C28H55NO7P+,1,CCCCC/C=C\C/C=C\CCCCCCCCCC(=O)OCC(O)COP(=O)(O)OCC[N+](C)(C)C
 MAM03812c,"1-Eicosatrienoylglycerophosphocholine (Delta 11, 14, 17)",protonation,C28H53NO7P,0,C28H53NO7P+,1,CC/C=C/C/C=C\C/C=C\CCCCCCCCCC(=O)OCC(O)COP(=O)(O)OCC[N+](C)(C)C
 MAM03814c,"1-Linoleoylglycerophosphocholine (Delta 9,12)",protonation,C26H51NO7P,0,C26H50NO7P,0,CCCCC/C=C\C/C=C\CCCCCCCC(=O)OC[C@@H](O)COP(=O)([O-])OCC[N+](C)(C)C
-MAM01172e,6-trans-LTB4,protonation,C20H31O4,0,C20H32O4,0,CCCCC/C=C\C[C@@H](O)/C=C/C=C/C=C/[C@@H](O)CCCC(=O)O
-MAM00378e,15(S)-HETrE,protonation,C20H33O3,0,C20H34O3,0,CCCCCC(O)C=CC=CCC=CCCCCCCC(=O)O
-MAM00384e,15-deoxy-PGD2,protonation,C20H29O4,0,C20H30O4,0,CCCCC/C=C/C=C1/C(=O)C[C@H](O)[C@@H]1C/C=C\CCCC(=O)O
-MAM00376e,15(S)-HEPE,protonation,C20H29O3,0,C20H30O3,0,CC/C=C\C[C@H](O)/C=C/C=C\C/C=C\C/C=C\CCCC(=O)O
 MAM03936e,"Sm (D18:0/24:1), Sphingomyelin",protonation,C47H96N2O6P,0,C47H96N2O6P+,1,CCCCCCCC/C=C/CCCCCCCCCCCCCC(=O)NC(COP(=O)(O)OCC[N+](C)(C)C)C(O)CCCCCCCCCCCCCCC
 MAM03937e,"Sm (D18:1/14:0), Sphingomyelin",protonation,C37H76N2O6P,0,C37H76N2O6P+,1,CCCCCCCCCCCCC/C=C/C(O)C(COP(=O)(O)OCC[N+](C)(C)C)NC(=O)CCCCCCCCCCCCC
 MAM03938e,"Sm (D18:1/15:0), Sphingomyelin",protonation,C38H78N2O6P,0,C38H78N2O6P+,1,CCCCCCCCCCCCC/C=C/C(O)C(COP(=O)(O)OCC[N+](C)(C)C)NC(=O)CCCCCCCCCCCCCC
@@ -372,7 +360,6 @@ MAM03738e,Lysyl-Arginyl-Leucine,protonation,C18H38N7O4,2,C18H36N7O4-,-1,CC(C)C[C
 MAM03741e,Lysyl-Glutamyl-Glutamate,formula_error,C16H27N4O8,-1,C27H45N7O12-2,-2,NCCCC[C@H](N)C(=O)N[C@@H](CCC(=O)[O-])C(=O)OC(=O)CC[C@H](N)C(=O)OC(=O)[C@H](CCC(=O)[O-])NC(=O)[C@@H](N)CCCCN
 MAM03898e,Prolyl-Histidyl-Tyrosine,protonation,C20H26N5O5,0,C20H25N5O5,0,O=C(O)[C@H](Cc1ccc(O)cc1)NC(=O)[C@H](Cc1cnc[nH]1)NC(=O)[C@@H]1CCCN1
 MAM03901e,Prolyl-Phenylalanine,protonation,C14H18N2O3,1,C14H18N2O3,0,O=C(O)[C@H](Cc1ccccc1)NC(=O)[C@@H]1CCCN1
-MAM04028e,Tryptophanyl-Prolyl-Glycine,protonation,C18H21N4O4,0,C18H22N4O4,0,N[C@@H](Cc1c[nH]c2ccccc12)C(=O)N1CCC[C@H]1C(=O)NCC(=O)O
 MAM03414c,Alanyl-Glycyl-Lysine,protonation,C11H23N4O4,2,C11H22N4O4,0,C[C@H](N)C(=O)NCC(=O)N[C@@H](CCCCN)C(=O)O
 MAM03598c,Glutaminyl-Histidyl-Lysine,protonation,C17H30N7O5,-1,C17H28N7O5-,-1,NCCCC[C@H](NC(=O)[C@H](Cc1cnc[nH]1)NC(=O)[C@@H](N)CCC(N)=O)C(=O)[O-]
 MAM03599c,Glutaminyl-Lysyl-Lysine,protonation,C17H36N6O5,-2,C17H33N6O5-,-1,NCCCC[C@H](NC(=O)[C@H](CCCCN)NC(=O)[C@@H](N)CCC(N)=O)C(=O)[O-]
@@ -381,7 +368,6 @@ MAM03738c,Lysyl-Arginyl-Leucine,protonation,C18H38N7O4,2,C18H36N7O4-,-1,CC(C)C[C
 MAM03741c,Lysyl-Glutamyl-Glutamate,formula_error,C16H27N4O8,-1,C27H45N7O12-2,-2,NCCCC[C@H](N)C(=O)N[C@@H](CCC(=O)[O-])C(=O)OC(=O)CC[C@H](N)C(=O)OC(=O)[C@H](CCC(=O)[O-])NC(=O)[C@@H](N)CCCCN
 MAM03898c,Prolyl-Histidyl-Tyrosine,protonation,C20H26N5O5,0,C20H25N5O5,0,O=C(O)[C@H](Cc1ccc(O)cc1)NC(=O)[C@H](Cc1cnc[nH]1)NC(=O)[C@@H]1CCCN1
 MAM03901c,Prolyl-Phenylalanine,protonation,C14H18N2O3,1,C14H18N2O3,0,O=C(O)[C@H](Cc1ccccc1)NC(=O)[C@@H]1CCCN1
-MAM04028c,Tryptophanyl-Prolyl-Glycine,protonation,C18H21N4O4,0,C18H22N4O4,0,N[C@@H](Cc1c[nH]c2ccccc12)C(=O)N1CCC[C@H]1C(=O)NCC(=O)O
 MAM03585e,D-Galactosamine,formula_error,C6H13NO5,0,C6H14NO8P,0,N[C@H]1C(O)O[C@H](COP(=O)(O)O)[C@H](O)[C@@H]1O
 MAM03585c,D-Galactosamine,formula_error,C6H13NO5,0,C6H14NO8P,0,N[C@H]1C(O)O[C@H](COP(=O)(O)O)[C@H](O)[C@@H]1O
 MAM03683m,trans-delta-2-heptadecanoyl-CoA,formula_error,C38H62N7O17P3S,-4,C36H58N7O17P3S-4,-4,CCCCCCCCCCCC/C=C/C(=O)SCCNC(=O)CCNC(=O)C(O)C(C)(C)COP(=O)([O-])OP(=O)([O-])OCC1OC(n2cnc3c(N)ncnc32)C(O)C1OP(=O)([O-])[O-]
@@ -401,16 +387,12 @@ MAM03800c,oxypurinol-7-riboside,formula_error,C10H12N4O7,0,C10H11N4O6+,1,O[C@@H]
 MAM03404r,acetaminophen-glutathione-conjugate,formula_error,C18H27N4O10S,0,C18H24N4O8S,0,CC(=O)Nc1ccc(O)c(SC[C@H](NC(=O)CC[C@H](N)C(=O)O)C(=O)NCC(=O)O)c1
 MAM02682r,PAPS,protonation,C10H11N5O13P2S,-4,C10H15N5O13P2S,0,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OS(=O)(=O)O)[C@@H](OP(=O)(O)O)[C@H]1O
 MAM01442m,chloride,protonation,Cl,-1,Cl,0,[Cl]
-MAM20003n,"20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate",protonation,C20H29O3,0,C20H29O3-,-1,O=CCCCC/C=C\C/C=C\C/C=C\C/C=C\CCCC(=O)[O-]
-MAM20004n,"(5Z,8Z,11Z,14Z)-eicosatetraenedioate",protonation,C20H28O4,-1,C20H28O4-2,-2,O=C([O-])CCC/C=C\C/C=C\C/C=C\C/C=C\CCCCC(=O)[O-]
 MAM20005c,"20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate",protonation,C20H29O3,0,C20H29O3-,-1,O=CCCCC/C=C\C/C=C\C/C=C\C/C=C\CCCC(=O)[O-]
 MAM20006c,"(5Z,8Z,11Z,14Z)-eicosatetraenedioate",protonation,C20H28O4,-1,C20H28O4-2,-2,O=C([O-])CCC/C=C\C/C=C\C/C=C\C/C=C\CCCCC(=O)[O-]
-MAM20014g,15-oxoprostaglandin E2,protonation,C20H29O5,0,C20H29O5-,-1,CCCCCC(=O)/C=C/[C@H]1[C@H](O)CC(=O)[C@@H]1C/C=C\CCCC(=O)[O-]
-MAM20015g,"13,14-dihydro-15-oxo-prostaglandin E2",protonation,C20H31O5,0,C20H31O5-,-1,CCCCCC(=O)CC[C@H]1[C@H](O)CC(=O)[C@@H]1C/C=C\CCCC(=O)[O-]
 MAM20016n,15-oxoprostaglandin E2,protonation,C20H29O5,0,C20H29O5-,-1,CCCCCC(=O)/C=C/[C@H]1[C@H](O)CC(=O)[C@@H]1C/C=C\CCCC(=O)[O-]
 MAM20017n,"13,14-dihydro-15-oxo-prostaglandin E2",protonation,C20H31O5,0,C20H31O5-,-1,CCCCCC(=O)CC[C@H]1[C@H](O)CC(=O)[C@@H]1C/C=C\CCCC(=O)[O-]
-MAM01019r,4-nitrocatechol,protonation,C6H4NO4,0,C6H4NO4-,-1,O=[N+]([O-])c1ccc([O-])c(O)c1
-MAM02754r,PNP,protonation,C6H4NO3,0,C6H4NO3-,-1,O=[N+]([O-])c1ccc([O-])cc1
-MAM01019i,4-nitrocatechol,protonation,C6H4NO4,0,C6H4NO4-,-1,O=[N+]([O-])c1ccc([O-])c(O)c1
-MAM02754i,PNP,protonation,C6H4NO3,0,C6H4NO3-,-1,O=[N+]([O-])c1ccc([O-])cc1
+MAM01019r,4-nitrocatechol,protonation,C6H5NO4,-1,C6H4NO4-,-1,O=[N+]([O-])c1ccc([O-])c(O)c1
+MAM02754r,PNP,protonation,C6H5NO3,-1,C6H4NO3-,-1,O=[N+]([O-])c1ccc([O-])cc1
+MAM01019i,4-nitrocatechol,protonation,C6H5NO4,-1,C6H4NO4-,-1,O=[N+]([O-])c1ccc([O-])c(O)c1
+MAM02754i,PNP,protonation,C6H5NO3,-1,C6H4NO3-,-1,O=[N+]([O-])c1ccc([O-])cc1
 MAM01657r,dehydrodolichol-diphosphate,formula_error,C40H65O7P2,-3,C25H44O7P2,0,CC(C)=CCC/C(C)=C/CC/C(C)=C/CC/C(C)=C\CC/C(C)=C\COP(=O)(O)OP(=O)(O)O
