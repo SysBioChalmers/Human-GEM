@@ -90,6 +90,7 @@ id2miriam = {%reactions
              'metLipidMapsID'   'lipidmaps'
              'metRecon3DID'     'vmhmetabolite'
              'metMetaNetXID'    'metanetx.chemical'
+             'metSeedID'        'seed.compound'
              % genes
              'genes'            'ensembl'
              'geneENSTID'       'ensembl'
@@ -348,7 +349,17 @@ if ( addFields )
         end
         
     end
-    
+
+end
+
+% SMILES and InChI are stored in metabolites.tsv (columns metSmiles and
+% metInChI) alongside the other metabolite annotations. The addFields step
+% above adds them as model.metSmiles (RAVEN's canonical structure field, which
+% exportModel writes to the standard annotation) and model.metInChI. RAVEN's
+% canonical field for InChI is model.inchis, so move it there.
+if isfield(model,'metInChI')
+    model.inchis = model.metInChI;
+    model = rmfield(model,'metInChI');
 end
 
 %%

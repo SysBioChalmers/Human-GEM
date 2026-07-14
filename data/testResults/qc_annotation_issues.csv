@@ -1,0 +1,4 @@
+id,column,issue
+MAM00270,metChEBIID,inconsistent across compartments: CHEBI:34306 | CHEBI:76624
+MAM03652,metChEBIID,inconsistent across compartments: CHEBI:71464 | CHEBI:71465
+MAM20077,metChEBIID,inconsistent across compartments: CHEBI:29144 | CHEBI:83767

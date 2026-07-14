@@ -21,6 +21,7 @@ import cobra
 def main():
     model = cobra.io.load_yaml_model("model/Human-GEM.yml")
     rows = []
+    errored = []
     for rxn in model.reactions:
         if rxn.boundary:
             continue
@@ -28,7 +29,12 @@ def main():
             continue
         try:
             imbalance = rxn.check_mass_balance()
-        except Exception:
+        except Exception as exc:  # noqa: BLE001 - record, do not silently drop
+            # A reaction whose balance cannot be evaluated (usually a malformed
+            # formula) is a finding, not something to hide: record it as its own
+            # row so it shows up in the committed diff and the count.
+            errored.append(rxn.id)
+            rows.append((rxn.id, rxn.name or "", f"check_failed:{exc}", ""))
             continue
         if imbalance:
             mass = {k: v for k, v in imbalance.items() if k != "charge"}
@@ -44,12 +50,15 @@ def main():
         writer = csv.writer(fh)
         writer.writerow(["reaction", "name", "mass_imbalance", "charge_imbalance"])
         writer.writerows(rows)
-    n_mass = sum(1 for r in rows if r[2])
+    n_mass = sum(1 for r in rows if r[2])  # includes uncheckable reactions (surfaced, not hidden)
     n_charge = sum(1 for r in rows if r[3])
     print(
         f"Unbalanced reactions (excluding boundary and biomass): {len(rows)} "
-        f"({n_mass} mass, {n_charge} charge)"
+        f"({n_mass} mass, {n_charge} charge, {len(errored)} could not be checked)"
     )
+    if errored:
+        print(f"::warning::{len(errored)} reaction(s) could not be balance-checked: "
+              f"{';'.join(errored[:20])}{' ...' if len(errored) > 20 else ''}")
 
 
 if __name__ == "__main__":

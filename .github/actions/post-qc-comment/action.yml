@@ -1,0 +1,57 @@
+name: Post QC comment
+description: Build the model-quality report and create or update the single QC comment on the pull request.
+
+inputs:
+  running-groups:
+    description: Groups still running (their rows show as running); "all", "memote", or empty.
+    required: false
+    default: ""
+  base-ref:
+    description: Target branch, shown in the delta column.
+    required: true
+  base-dir:
+    description: Directory with the target-branch result files for the delta comparison.
+    required: false
+    default: ""
+  results-url-base:
+    description: Base URL that finding counts link to.
+    required: false
+    default: ""
+  run-url:
+    description: URL of the workflow run, shown in the comment footer.
+    required: true
+  github-token:
+    description: Token used to create/update the comment.
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Build report
+      shell: bash
+      env:
+        RUNNING_GROUPS: ${{ inputs.running-groups }}
+        BASE_REF: ${{ inputs.base-ref }}
+        BASE_RESULTS_DIR: ${{ inputs.base-dir }}
+        RESULTS_URL_BASE: ${{ inputs.results-url-base }}
+      run: python code/test/buildReport.py
+
+    - name: Create or update the comment
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ inputs.github-token }}
+        script: |
+          const fs = require('fs');
+          const marker = '<!-- MODEL-QC-COMMENT -->';
+          const report = fs.readFileSync('data/testResults/model_qc_summary.md', 'utf8');
+          const footer = `\n\n[Full workflow run](${{ inputs.run-url }}) &middot; _this comment is edited as results come in_`;
+          const body = `${marker}\n${report}${footer}`;
+          const { owner, repo } = context.repo;
+          const issue_number = context.issue.number;
+          const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+          const existing = comments.find(c => c.body && c.body.includes(marker));
+          if (existing) {
+            await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+          } else {
+            await github.rest.issues.createComment({ owner, repo, issue_number, body });
+          }

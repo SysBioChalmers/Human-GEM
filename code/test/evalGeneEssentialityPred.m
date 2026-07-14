@@ -6,7 +6,7 @@ function [metrics, modelEssential] = evalGeneEssentialityPred(model, expData, me
 %   model       Genome-scale metabolic model structure.
 %
 %               NOTE: The model should include boundary metabolites! These
-%               can be added using the addBoundaryMets function.
+%               can be added using the closeModel function.
 %
 %   expData     A two-column cell array, where the first column contains
 %               gene names or IDs (of the same type as those used in the

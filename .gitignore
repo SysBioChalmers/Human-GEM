@@ -25,3 +25,6 @@ Thumbs.db
 yarn.lock
 package.json
 node_modules/
+
+# MetaNetX reference cache for verifyAnnotations.py (downloaded on demand)
+data/annotation/.metanetx/

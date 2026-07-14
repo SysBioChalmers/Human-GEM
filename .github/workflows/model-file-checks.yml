@@ -31,9 +31,10 @@ jobs:
       - name: Round-trip with ${{ matrix.tool }}
         run: python code/test/testYamlConversion.py --tool ${{ matrix.tool }}
 
-  # YAML syntax of the model files, and consistency of the model with its
-  # annotation .tsv files. Uses cobrapy only (no RAVEN toolbox needed).
-  lint-and-annotation:
+  # YAML syntax of the model files. Model/annotation-table consistency is checked
+  # by the Model QC workflow (qcModelChecks.py), which absorbed the former
+  # sanityCheck.py in the QC consolidation.
+  yaml-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,14 +45,3 @@ jobs:
         with:
           file_or_dir: model/
           config_data: "{extends: default, rules: {line-length: disable}}"
-
-      - name: Set up Python 3
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install cobra pandas
-
-      - name: Model / annotation-file consistency
-        run: python code/test/sanityCheck.py
