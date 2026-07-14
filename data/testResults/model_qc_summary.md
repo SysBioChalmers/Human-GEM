@@ -36,15 +36,18 @@ _Duplicate keys (model unloadable) and no growth block the merge; the other rows
 | Charge-imbalanced reactions | [234](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/balance_results.csv) | 0 | :warning: |
 | Structure vs formula/charge inconsistencies | [397](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/qc_structure_consistency.csv) | 0 | :warning: |
 
+### Model file and metabolic tasks
+
+| Check | Result | |
+| --- | ---: | :---: |
+| YAML round-trip (cobrapy) | pass | :white_check_mark: |
+| YAML round-trip (RAVEN) | pass | :white_check_mark: |
+| YAML lint | pass | :white_check_mark: |
+| Essential metabolic tasks | 69 passed | :white_check_mark: |
+| Verification metabolic tasks | 21 passed | :white_check_mark: |
+
 ### Gene essentiality (Hart 2015)
 
-| cellLine | TP | TN | FP | FN | accuracy | sensitivity | specificity | F1 | MCC |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 38 | 2158 | 60 | 280 | 0.8659 | 0.1195 | 0.9729 | 0.1827 | 0.1588 |
-| GBM | 34 | 2137 | 64 | 300 | 0.8564 | 0.1018 | 0.9709 | 0.1574 | 0.1276 |
-| HCT116 | 47 | 2181 | 55 | 308 | 0.8599 | 0.1324 | 0.9754 | 0.2057 | 0.1906 |
-| HELA | 32 | 2241 | 70 | 250 | 0.8766 | 0.1135 | 0.9697 | 0.1667 | 0.1332 |
-| RPE1 | 15 | 2179 | 83 | 258 | 0.8655 | 0.05495 | 0.9633 | 0.08086 | 0.02935 |
-| all | 7 | 2379 | 95 | 112 | 0.9202 | 0.05882 | 0.9616 | 0.06335 | 0.02199 |
+_Not run automatically (it takes hours). Comment_ `/run gene-essentiality` _to run it on this pull request; the result posts as its own comment._
 
 :x: = a count rose vs the target branch (regression) &middot; :warning: = a pre-existing non-zero finding (non-blocking) &middot; :hourglass_flowing_sand: = still running. Counts link to the CSV listing the exact entries.
