@@ -23,18 +23,18 @@ _Duplicate keys (model unloadable) and no growth block the merge; the other rows
 | Unused metabolites | 0 | 0 | :white_check_mark: |
 | Unused genes | 0 | 0 | :white_check_mark: |
 | Malformed cross-references | 0 | 0 | :white_check_mark: |
-| Cross-refs inconsistent across compartments | [3](https://github.com/SysBioChalmers/Human-GEM/blob/annotation-overhaul/data/testResults/qc_annotation_issues.csv) | -6 | :warning: |
+| Cross-refs inconsistent across compartments | [3](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/qc_annotation_issues.csv) | 0 | :warning: |
 | MEMOTE score (%) | 20.2 | 0 | :white_check_mark: |
 
 ### MACAW and mass/charge balance
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| Reactions flagged by MACAW dead-end test | [2510](https://github.com/SysBioChalmers/Human-GEM/blob/annotation-overhaul/data/testResults/macaw_results.csv) | 0 | :warning: |
-| Reactions flagged as MACAW duplicates | [377](https://github.com/SysBioChalmers/Human-GEM/blob/annotation-overhaul/data/testResults/macaw_results.csv) | 0 | :warning: |
-| Mass-imbalanced reactions | [87](https://github.com/SysBioChalmers/Human-GEM/blob/annotation-overhaul/data/testResults/balance_results.csv) | 0 | :warning: |
-| Charge-imbalanced reactions | [234](https://github.com/SysBioChalmers/Human-GEM/blob/annotation-overhaul/data/testResults/balance_results.csv) | -6 | :warning: |
-| Structure vs formula/charge inconsistencies | [397](https://github.com/SysBioChalmers/Human-GEM/blob/annotation-overhaul/data/testResults/qc_structure_consistency.csv) | new | :warning: |
+| Reactions flagged by MACAW dead-end test | [2510](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/macaw_results.csv) | 0 | :warning: |
+| Reactions flagged as MACAW duplicates | [377](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/macaw_results.csv) | 0 | :warning: |
+| Mass-imbalanced reactions | [87](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/balance_results.csv) | 0 | :warning: |
+| Charge-imbalanced reactions | [234](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/balance_results.csv) | 0 | :warning: |
+| Structure vs formula/charge inconsistencies | [397](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/qc_structure_consistency.csv) | 0 | :warning: |
 
 ### Gene essentiality (Hart 2015)
 
