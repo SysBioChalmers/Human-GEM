@@ -17,6 +17,9 @@ Two modes, chosen by the MEMOTE_SUBSET environment variable:
 Writes the total score to data/testResults/memote_score.md (diff-friendly) and the
 scored result JSON to memote_result.json in the repository root, which the workflow
 uploads as a build artifact (it is not committed, to avoid bloating the repository).
+memote_score.md keeps a "Core subset" and a "Full suite" section; each run rewrites
+only its own section, so a routine subset run never overwrites a committed full-suite
+score (see _write_section).
 
 Set GRB_LICENSE_FILE (a full Gurobi licence) to run with Gurobi; the genome-scale
 MILPs are impractical with GLPK. Without it the script falls back to the default
@@ -38,6 +41,15 @@ from memote.suite.reporting import ReportConfiguration, SnapshotReport
 MODEL_FILE = "model/Human-GEM.yml"
 RESULT_JSON = "memote_result.json"  # repo root -> uploaded as artifact, not committed
 SCORE_MD = "data/testResults/memote_score.md"
+
+# memote_score.md holds two independent sections. The fast core subset runs on every
+# pull request and the full suite runs on demand (/run memote); they share the file
+# but must not overwrite each other, so each run rewrites only its own section and
+# leaves the other intact. A routine subset run therefore never erases a previously
+# committed full-suite score, and buildReport compares each section only against the
+# same section on the base branch (never subset vs full).
+CORE_TITLE = "Core subset"
+FULL_TITLE = "Full suite"
 
 # The tests that dominate MEMOTE runtime on a genome-scale model. Two groups:
 #  * consistency: MILP / flux-variability / per-metabolite optimisation over the
@@ -146,6 +158,41 @@ def _detailed_rows(scored: dict, config) -> list[tuple[str, str, float]]:
     return rows
 
 
+def _load_sections(path: str) -> dict:
+    """Existing memote_score.md as {section_title: body_text}. Empty if absent."""
+    sections: dict[str, str] = {}
+    if not os.path.exists(path):
+        return sections
+    current, buf = None, []
+    for line in open(path, encoding="utf-8").read().splitlines():
+        if line.startswith("## "):
+            if current is not None:
+                sections[current] = "\n".join(buf).strip("\n")
+            current, buf = line[3:].strip(), []
+        elif current is not None:
+            buf.append(line)
+    if current is not None:
+        sections[current] = "\n".join(buf).strip("\n")
+    return sections
+
+
+def _placeholder(title: str) -> str:
+    if title == FULL_TITLE:
+        return "_Not run for this commit. Comment_ `/run memote` _to populate this section._"
+    return "_Not yet computed for this commit._"
+
+
+def _write_section(this_title: str, body: str) -> None:
+    """Rewrite only this run's section, preserving the other one (or a placeholder)."""
+    sections = _load_sections(SCORE_MD)
+    sections[this_title] = body
+    out = ["# MEMOTE snapshot", ""]
+    for title in (CORE_TITLE, FULL_TITLE):
+        out += [f"## {title}", "", sections.get(title) or _placeholder(title), ""]
+    with open(SCORE_MD, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(out).rstrip() + "\n")
+
+
 def main() -> int:
     subset = bool(os.environ.get("MEMOTE_SUBSET"))
     skip = SLOW_TESTS if subset else None
@@ -186,7 +233,7 @@ def main() -> int:
     print("Scored MEMOTE result top-level keys:", sorted(scored.keys()), flush=True)
 
     total = _total_score(scored)
-    lines = ["# MEMOTE snapshot", "", f"Mode: {kind}."]
+    lines = [f"Mode: {kind}."]
     if subset:
         lines.append(f"Skipped (slow) tests: {', '.join(SLOW_TESTS)}.")
     lines.append("")
@@ -213,8 +260,8 @@ def main() -> int:
             lines += [f"| {section} | {test} | {metric * 100:.1f}% |"
                       for section, test, metric in detailed]
 
-    with open(SCORE_MD, "w", encoding="utf-8") as fh:
-        fh.write("\n".join(lines) + "\n")
+    # Rewrite only this run's section (core subset or full suite), keeping the other.
+    _write_section(CORE_TITLE if subset else FULL_TITLE, "\n".join(lines))
     return 0
 
 

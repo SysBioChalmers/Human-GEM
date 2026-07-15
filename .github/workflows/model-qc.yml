@@ -4,19 +4,23 @@ on: [pull_request]
 
 env:
   # Committed result files, fetched from the target branch so buildReport can show a
-  # delta. No stamp files: freshness is passed to buildReport as RUNNING_GROUPS.
+  # delta. No stamp files: freshness is passed to buildReport as RUNNING_GROUPS. The
+  # one-line checks (round-trip, yamllint, metabolic tasks) and the growth value all
+  # live together in qc_status.tsv (see qcStatus.py) rather than one file each.
   RESULT_FILES: >-
     qc_duplicate_keys.csv qc_empty_reactions.csv qc_annotation_consistency.csv
     qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
-    qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md
-    macaw_results.csv balance_results.csv qc_structure_consistency.csv
-    qc_roundtrip_cobra.txt qc_roundtrip_raven.txt qc_yamllint.txt
-    qc_tasks_essential.txt qc_tasks_verification.txt
+    qc_reaction_sanity.csv qc_annotation_issues.csv qc_deprecation_completeness.csv
+    qc_status.tsv memote_score.md macaw_results.csv balance_results.csv
+    qc_structure_consistency.csv
 
-# One job runs every check and edits a single pull-request comment as results come
-# in: it posts a "running" comment immediately, fills in the fast checks, then fills
-# in the MEMOTE score when it finishes. Results are committed once, at the end, and
-# only if they changed - so a change that does not affect the model adds no commit.
+# One job runs every check and edits a single pull-request comment. It posts a
+# "running" comment immediately (all rows as hourglasses, no numbers), then works in
+# two phases: it commits the fast-check results and updates the comment from the
+# committed files (MEMOTE still a running row), then commits the MEMOTE score and
+# updates the comment again. Each commit lands before its comment update, so the
+# comment never reports numbers, or links to CSVs, that are not yet on the branch.
+# Commits use [skip ci] and only happen if something changed.
 jobs:
   qc:
     runs-on: ubuntu-latest
@@ -36,7 +40,9 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Configure
-        run: echo "BASE_DIR=$RUNNER_TEMP/base" >> "$GITHUB_ENV"
+        run: |
+          echo "BASE_DIR=$RUNNER_TEMP/base" >> "$GITHUB_ENV"
+          echo "BASE_MODEL_DIR=$RUNNER_TEMP/base-model" >> "$GITHUB_ENV"
 
       - name: Set up Python 3
         uses: actions/setup-python@v6
@@ -52,6 +58,12 @@ jobs:
           mkdir -p "$BASE_DIR"
           for f in $RESULT_FILES; do
             git show "origin/$BASE_REF:data/testResults/$f" > "$BASE_DIR/$f" 2>/dev/null || rm -f "$BASE_DIR/$f"
+          done
+          # Base-branch model tables: qcModelChecks.py diffs them against this model
+          # to flag identifiers removed here but not moved to a deprecated list.
+          mkdir -p "$BASE_MODEL_DIR"
+          for f in reactions.tsv metabolites.tsv; do
+            git show "origin/$BASE_REF:model/$f" > "$BASE_MODEL_DIR/$f" 2>/dev/null || rm -f "$BASE_MODEL_DIR/$f"
           done
 
       # Immediate feedback: everything shows as running.
@@ -95,11 +107,15 @@ jobs:
 
       - name: YAML round-trip (cobrapy)
         continue-on-error: true
-        run: python code/test/testYamlConversion.py --tool cobra && echo pass > data/testResults/qc_roundtrip_cobra.txt || echo fail > data/testResults/qc_roundtrip_cobra.txt
+        run: |
+          if python code/test/testYamlConversion.py --tool cobra; then r=pass; else r=fail; fi
+          python code/test/qcStatus.py roundtrip_cobra "$r"
 
       - name: YAML round-trip (RAVEN)
         continue-on-error: true
-        run: python code/test/testYamlConversion.py --tool raven-toolbox && echo pass > data/testResults/qc_roundtrip_raven.txt || echo fail > data/testResults/qc_roundtrip_raven.txt
+        run: |
+          if python code/test/testYamlConversion.py --tool raven-toolbox; then r=pass; else r=fail; fi
+          python code/test/qcStatus.py roundtrip_raven "$r"
 
       - name: YAML lint
         id: yamllint
@@ -111,21 +127,61 @@ jobs:
 
       - name: Record YAML lint result
         if: always()
-        run: echo "${{ steps.yamllint.outcome == 'success' && 'pass' || 'fail' }}" > data/testResults/qc_yamllint.txt
+        run: python code/test/qcStatus.py yamllint "${{ steps.yamllint.outcome == 'success' && 'pass' || 'fail' }}"
 
       - name: Metabolic tasks (essential and verification)
         continue-on-error: true
         run: python code/test/testMetabolicTasks.py all
 
-      # Fast checks are in; MEMOTE is still running.
-      - name: Update comment with fast checks
+      # Fast checks are in; MEMOTE is still running. Commit the fast results first,
+      # then update the comment from the committed files - so every number shown is
+      # already on the branch. MEMOTE stays a running row until its own commit below.
+      - name: Render fast-check report
         uses: ./.github/actions/post-qc-comment
         with:
+          mode: build
           running-groups: memote
           base-ref: ${{ env.BASE_REF }}
           base-dir: ${{ env.BASE_DIR }}
           results-url-base: ${{ env.RESULTS_URL_BASE }}
           run-url: ${{ env.RUN_URL }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Mention PR# in README.md
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          for tag in "model QC" "MEMOTE" "MACAW"; do
+            sed -i -e "s/[[:digit:]]\{3,4\}\*\* ($tag/$PR_NUMBER\*\* ($tag/" data/testResults/README.md
+          done
+
+      - name: Update local branch before committing (fast checks)
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        run: |
+          git stash
+          git fetch
+          git checkout $BRANCH_NAME
+          if git stash list | grep -q 'stash@{'; then
+            git stash pop
+          fi
+
+      - name: Commit fast-check results
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_user_name: memote-bot
+          # [skip ci] so this results commit does not re-trigger the workflow.
+          commit_message: "chore: update model QC results (fast checks) [skip ci]"
+          file_pattern: data/testResults/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update comment with fast checks
+        uses: ./.github/actions/post-qc-comment
+        with:
+          mode: post
+          run-url: ${{ env.RUN_URL }}
+          base-ref: ${{ env.BASE_REF }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install MEMOTE dependencies
@@ -155,10 +211,13 @@ jobs:
           timeout 2400 python code/test/memoteSnapshot.py \
             || echo "::warning::MEMOTE did not finish within 2400s; score unavailable this run."
 
-      # Everything is in.
-      - name: Update comment with all results
+      # MEMOTE is in: render the final summary so it is part of the commit below, then
+      # post from the committed file. As with the fast phase, the comment is updated
+      # only after the results are committed (so its numbers and CSV links resolve).
+      - name: Render final report
         uses: ./.github/actions/post-qc-comment
         with:
+          mode: build
           running-groups: ""
           base-ref: ${{ env.BASE_REF }}
           base-dir: ${{ env.BASE_DIR }}
@@ -166,15 +225,7 @@ jobs:
           run-url: ${{ env.RUN_URL }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Mention PR# in README.md
-        env:
-          PR_NUMBER: ${{ github.event.number }}
-        run: |
-          for tag in "model QC" "MEMOTE" "MACAW"; do
-            sed -i -e "s/[[:digit:]]\{3,4\}\*\* ($tag/$PR_NUMBER\*\* ($tag/" data/testResults/README.md
-          done
-
-      - name: Update local branch before committing changes
+      - name: Update local branch before committing (final)
         env:
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
@@ -195,6 +246,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Now that the results (including model_qc_summary.md) are committed, post the
+      # comment from the committed summary.
+      - name: Post final comment
+        if: always()
+        uses: ./.github/actions/post-qc-comment
+        with:
+          mode: post
+          run-url: ${{ env.RUN_URL }}
+          base-ref: ${{ env.BASE_REF }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload full MEMOTE result
         uses: actions/upload-artifact@v7
         with:
@@ -209,12 +271,12 @@ jobs:
         run: |
           fail=0
           [ "${{ steps.qc.outcome }}" = "failure" ] && fail=1
-          for f in qc_roundtrip_cobra qc_roundtrip_raven qc_yamllint; do
-            [ "$(cat data/testResults/$f.txt 2>/dev/null)" = "fail" ] && { echo "::error::$f failed"; fail=1; }
+          for k in roundtrip_cobra roundtrip_raven yamllint; do
+            [ "$(python code/test/qcStatus.py --get $k)" = "fail" ] && { echo "::error::$k failed"; fail=1; }
           done
-          for f in qc_tasks_essential qc_tasks_verification; do
-            v=$(cat "data/testResults/$f.txt" 2>/dev/null)
-            [ -n "$v" ] && [ "${v%%/*}" != "0" ] && { echo "::error::$f: ${v%%/*} task(s) failed"; fail=1; }
+          for k in tasks_essential tasks_verification; do
+            v=$(python code/test/qcStatus.py --get $k)
+            [ -n "$v" ] && [ "${v%%/*}" != "0" ] && { echo "::error::$k: ${v%%/*} task(s) failed"; fail=1; }
           done
           if [ "$fail" = 1 ]; then
             echo "::error::A build gate failed; see the PR comment and the linked results."

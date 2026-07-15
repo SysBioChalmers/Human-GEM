@@ -1,5 +1,7 @@
 # MEMOTE snapshot
 
+## Core subset
+
 Mode: core subset.
 Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metabolites, test_inconsistent_min_stoichiometry, test_detect_energy_generating_cycles, test_find_stoichiometrically_balanced_cycles, test_blocked_reactions, test_find_reactions_unbounded_flux_default_condition, test_find_metabolites_not_produced_with_open_bounds, test_find_metabolites_not_consumed_with_open_bounds, test_number_independent_conservation_relations, test_matrix_rank, test_degrees_of_freedom.
 
@@ -46,3 +48,7 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | Annotation - SBO Terms | Gene General SBO Presence | 100.0% |
 | Annotation - SBO Terms | Gene SBO:0000243 Presence | 100.0% |
 | Annotation - SBO Terms | Biomass Reactions SBO:0000629 Presence | 100.0% |
+
+## Full suite
+
+_Not run for this commit. Comment_ `/run memote` _to populate this section._
