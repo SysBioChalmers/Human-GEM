@@ -15,12 +15,11 @@ env:
     qc_structure_consistency.csv
 
 # One job runs every check and edits a single pull-request comment. It posts a
-# "running" comment immediately (all rows as hourglasses, no numbers), then works in
-# two phases: it commits the fast-check results and updates the comment from the
-# committed files (MEMOTE still a running row), then commits the MEMOTE score and
-# updates the comment again. Each commit lands before its comment update, so the
-# comment never reports numbers, or links to CSVs, that are not yet on the branch.
-# Commits use [skip ci] and only happen if something changed.
+# "running" comment immediately (all rows as hourglasses, no numbers), runs every
+# check including the MEMOTE fast subset, commits the results once at the end (with
+# [skip ci], and only if something changed), and only then edits the comment to show
+# the results - so the comment never reports numbers, or links to CSVs, that are not
+# yet on the branch.
 jobs:
   qc:
     runs-on: ubuntu-latest
@@ -133,57 +132,9 @@ jobs:
         continue-on-error: true
         run: python code/test/testMetabolicTasks.py all
 
-      # Fast checks are in; MEMOTE is still running. Commit the fast results first,
-      # then update the comment from the committed files - so every number shown is
-      # already on the branch. MEMOTE stays a running row until its own commit below.
-      - name: Render fast-check report
-        uses: ./.github/actions/post-qc-comment
-        with:
-          mode: build
-          running-groups: memote
-          base-ref: ${{ env.BASE_REF }}
-          base-dir: ${{ env.BASE_DIR }}
-          results-url-base: ${{ env.RESULTS_URL_BASE }}
-          run-url: ${{ env.RUN_URL }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Mention PR# in README.md
-        env:
-          PR_NUMBER: ${{ github.event.number }}
-        run: |
-          for tag in "model QC" "MEMOTE" "MACAW"; do
-            sed -i -e "s/[[:digit:]]\{3,4\}\*\* ($tag/$PR_NUMBER\*\* ($tag/" data/testResults/README.md
-          done
-
-      - name: Update local branch before committing (fast checks)
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        run: |
-          git stash
-          git fetch
-          git checkout $BRANCH_NAME
-          if git stash list | grep -q 'stash@{'; then
-            git stash pop
-          fi
-
-      - name: Commit fast-check results
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_user_name: memote-bot
-          # [skip ci] so this results commit does not re-trigger the workflow.
-          commit_message: "chore: update model QC results (fast checks) [skip ci]"
-          file_pattern: data/testResults/*
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update comment with fast checks
-        uses: ./.github/actions/post-qc-comment
-        with:
-          mode: post
-          run-url: ${{ env.RUN_URL }}
-          base-ref: ${{ env.BASE_REF }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
+      # The MEMOTE fast subset finishes quickly, so there is no interim update: all
+      # checks (fast + MEMOTE) run, then everything is committed once and the comment
+      # is posted from the committed files below. Until then the running comment stands.
       - name: Install MEMOTE dependencies
         run: pip install memote gurobipy
 
@@ -211,9 +162,9 @@ jobs:
           timeout 2400 python code/test/memoteSnapshot.py \
             || echo "::warning::MEMOTE did not finish within 2400s; score unavailable this run."
 
-      # MEMOTE is in: render the final summary so it is part of the commit below, then
-      # post from the committed file. As with the fast phase, the comment is updated
-      # only after the results are committed (so its numbers and CSV links resolve).
+      # Everything is in: render the final summary so it is part of the commit below,
+      # then post from the committed file - the comment is updated only after the
+      # results are committed (so its numbers and CSV links resolve).
       - name: Render final report
         uses: ./.github/actions/post-qc-comment
         with:
@@ -225,7 +176,15 @@ jobs:
           run-url: ${{ env.RUN_URL }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update local branch before committing (final)
+      - name: Mention PR# in README.md
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          for tag in "model QC" "MEMOTE" "MACAW"; do
+            sed -i -e "s/[[:digit:]]\{3,4\}\*\* ($tag/$PR_NUMBER\*\* ($tag/" data/testResults/README.md
+          done
+
+      - name: Update local branch before committing changes
         env:
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
