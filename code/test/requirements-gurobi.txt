@@ -1,0 +1,9 @@
+# Additional dependencies for the gene-essentiality workflow.
+#
+# tINIT (get_init_model) solves a genome-scale MILP that GLPK cannot handle in
+# reasonable time, so Gurobi is required. On ubuntu-latest gurobipy is installed
+# from PyPI and a full (WLS) license is supplied through a GitHub Actions secret;
+# the size-limited license bundled with the pip package is not sufficient for a
+# genome-scale model.
+-r requirements.txt
+gurobipy

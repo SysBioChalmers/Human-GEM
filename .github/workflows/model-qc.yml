@@ -10,6 +10,8 @@ env:
     qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
     qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md
     macaw_results.csv balance_results.csv qc_structure_consistency.csv
+    qc_roundtrip_cobra.txt qc_roundtrip_raven.txt qc_yamllint.txt
+    qc_tasks_essential.txt qc_tasks_verification.txt
 
 # One job runs every check and edits a single pull-request comment as results come
 # in: it posts a "running" comment immediately, fills in the fast checks, then fills
@@ -85,6 +87,36 @@ jobs:
         continue-on-error: true
         run: python code/test/structureConsistencyTest.py
 
+      # Model-file checks and metabolic tasks (formerly the model-file-checks and
+      # check-metabolictasks workflows). Each writes a one-line pass/fail status the
+      # comment reads; the final step fails the build on any of them.
+      - name: Install RAVEN toolbox
+        run: pip install -r code/test/requirements.txt
+
+      - name: YAML round-trip (cobrapy)
+        continue-on-error: true
+        run: python code/test/testYamlConversion.py --tool cobra && echo pass > data/testResults/qc_roundtrip_cobra.txt || echo fail > data/testResults/qc_roundtrip_cobra.txt
+
+      - name: YAML round-trip (RAVEN)
+        continue-on-error: true
+        run: python code/test/testYamlConversion.py --tool raven-toolbox && echo pass > data/testResults/qc_roundtrip_raven.txt || echo fail > data/testResults/qc_roundtrip_raven.txt
+
+      - name: YAML lint
+        id: yamllint
+        continue-on-error: true
+        uses: metabolicatlas/action-yamllint@v3
+        with:
+          file_or_dir: model/
+          config_data: "{extends: default, rules: {line-length: disable}}"
+
+      - name: Record YAML lint result
+        if: always()
+        run: echo "${{ steps.yamllint.outcome == 'success' && 'pass' || 'fail' }}" > data/testResults/qc_yamllint.txt
+
+      - name: Metabolic tasks (essential and verification)
+        continue-on-error: true
+        run: python code/test/testMetabolicTasks.py all
+
       # Fast checks are in; MEMOTE is still running.
       - name: Update comment with fast checks
         uses: ./.github/actions/post-qc-comment
@@ -111,17 +143,17 @@ jobs:
             echo "::warning::Gurobi license secret not set; MEMOTE may not finish in time."
           fi
 
-      - name: MEMOTE snapshot (subset on normal PRs, full suite on PRs to main)
+      # The fast core subset runs on every pull request. The full suite (which does
+      # FVA / a loopless MILP over every reaction and takes hours) is run on demand
+      # only, by commenting /run memote (see pr-command.yml and memote-full.yml).
+      - name: MEMOTE snapshot (fast subset)
         continue-on-error: true
         env:
           PYTHONUNBUFFERED: "1"
-          # Empty for PRs to main (run the full suite); "1" otherwise (subset).
-          MEMOTE_SUBSET: ${{ github.event.pull_request.base.ref != 'main' && '1' || '' }}
+          MEMOTE_SUBSET: "1"
         run: |
-          if [ "$BASE_REF" = "main" ]; then LIMIT=19800; else LIMIT=2400; fi
-          echo "Running MEMOTE with a ${LIMIT}s wall-clock limit (base: $BASE_REF)."
-          timeout "$LIMIT" python code/test/memoteSnapshot.py \
-            || echo "::warning::MEMOTE did not finish within ${LIMIT}s; score unavailable this run."
+          timeout 2400 python code/test/memoteSnapshot.py \
+            || echo "::warning::MEMOTE did not finish within 2400s; score unavailable this run."
 
       # Everything is in.
       - name: Update comment with all results
@@ -171,9 +203,20 @@ jobs:
           if-no-files-found: ignore
 
       # Fail the build if a gate failed, but only after the detail is committed and
-      # the comment updated, so the failure is visible in both.
+      # the comment updated, so the failure is visible in both. Gates: structural QC
+      # (duplicate keys / no growth), YAML round-trip, YAML lint, metabolic tasks.
       - name: Fail if a build gate failed
-        if: steps.qc.outcome == 'failure'
         run: |
-          echo "::error::A build gate failed; see the Structural checks table in the PR comment and the linked CSVs."
-          exit 1
+          fail=0
+          [ "${{ steps.qc.outcome }}" = "failure" ] && fail=1
+          for f in qc_roundtrip_cobra qc_roundtrip_raven qc_yamllint; do
+            [ "$(cat data/testResults/$f.txt 2>/dev/null)" = "fail" ] && { echo "::error::$f failed"; fail=1; }
+          done
+          for f in qc_tasks_essential qc_tasks_verification; do
+            v=$(cat "data/testResults/$f.txt" 2>/dev/null)
+            [ -n "$v" ] && [ "${v%%/*}" != "0" ] && { echo "::error::$f: ${v%%/*} task(s) failed"; fail=1; }
+          done
+          if [ "$fail" = 1 ]; then
+            echo "::error::A build gate failed; see the PR comment and the linked results."
+            exit 1
+          fi

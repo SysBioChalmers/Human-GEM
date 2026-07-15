@@ -66,7 +66,6 @@ REPORT_ROWS = [
     ("Unused genes", "unused_gene", "count", "checks", "qc_unused_entities.csv"),
     ("Malformed cross-references", "malformed", "count", "checks", "qc_annotation_issues.csv"),
     ("Cross-refs inconsistent across compartments", "inconsistent", "count", "checks", "qc_annotation_issues.csv"),
-    ("MEMOTE score (%)", "memote", "score", "memote", "memote_score.md"),
 ]
 MB_ROWS = [
     ("Reactions flagged by MACAW dead-end test", "dead_end", "count", "macaw", "macaw_results.csv"),
@@ -100,12 +99,50 @@ def _growth(directory: Path) -> float | None:
         return None
 
 
-def _memote_score(directory: Path) -> float | None:
+def _memote_meta(directory: Path):
+    """Parse memote_score.md -> (total, mode, {section: score}, [(section, test, score)]),
+    or None if it has not been produced yet."""
     path = directory / "memote_score.md"
     if not path.exists():
         return None
-    match = re.search(r"Total score:\s*([\d.]+)\s*%", path.read_text(encoding="utf-8"))
-    return float(match.group(1)) if match else None
+    text = path.read_text(encoding="utf-8")
+    total = re.search(r"Total score:\s*([\d.]+)\s*%", text)
+    mode = re.search(r"Mode:\s*(.+?)\.", text)
+    sections = {m.group(1): float(m.group(2))
+                for m in re.finditer(r"^\| (\w+) \| ([\d.]+)% \|$", text, re.M)}
+    detailed = [(s, t, sc) for s, t, sc in re.findall(r"^\| (.+?) \| (.+?) \| ([\d.]+)% \|$", text, re.M)]
+    return (float(total.group(1)) if total else None, mode.group(1) if mode else "", sections, detailed)
+
+
+def _score_delta(cur, base) -> str:
+    if cur is None or base is None:
+        return ""
+    d = cur - base
+    if abs(d) < 0.05:
+        return "0"
+    return f"{d:+.1f} {':warning:' if d < 0 else ':white_check_mark:'}"
+
+
+def _memote_section(current: Path, base: Path | None) -> str:
+    if "memote" in RUNNING:
+        return "_running_ &middot; :hourglass_flowing_sand:"
+    meta = _memote_meta(current)
+    if meta is None:
+        return "_running_ &middot; :hourglass_flowing_sand:"
+    total, mode, sections, detailed = meta
+    b = _memote_meta(base) if base and base.exists() else None
+    b_total, b_sections = (b[0], b[2]) if b else (None, {})
+    lines = [f"**Total score: {total:.1f}%** ({mode}) &nbsp; {_score_delta(total, b_total)}".rstrip(), ""]
+    if sections:
+        lines += ["| Section | Score | &Delta; vs base |", "| --- | ---: | ---: |"]
+        lines += [f"| {sec} | {sc:.1f}% | {_score_delta(sc, b_sections.get(sec))} |"
+                  for sec, sc in sections.items()]
+    if detailed:
+        lines += ["", "<details><summary>Per-test scores</summary>", "",
+                  "| Section | Test | Score |", "| --- | --- | ---: |"]
+        lines += [f"| {s} | {t} | {sc}% |" for s, t, sc in detailed]
+        lines += ["", "</details>"]
+    return "\n".join(lines)
 
 
 def _metrics(directory: Path) -> dict:
@@ -127,7 +164,6 @@ def _metrics(directory: Path) -> dict:
         "unused_gene": _count_csv(unused, lambda r: r.get("kind") == "gene"),
         "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
         "inconsistent": _count_csv(annotation, lambda r: r.get("issue", "").startswith("inconsistent")),
-        "memote": _memote_score(directory),
         "dead_end": _count_csv(macaw, lambda r: r.get("dead_end_test", "") not in ("ok", "")),
         "duplicates": _count_csv(macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS)),
         "mass_imbalance": _count_csv(balance, lambda r: r.get("mass_imbalance", "").strip() != ""),
@@ -190,18 +226,43 @@ def _table(rows, current: dict, base: dict):
     return lines, regressions, warnings, pending, fatal
 
 
+def _status(name: str) -> str:
+    p = RESULTS / f"qc_{name}.txt"
+    return p.read_text(encoding="utf-8").strip() if p.exists() else ""
+
+
+def _model_integrity_section() -> str:
+    """Round-trip, YAML lint and metabolic-task pass/fail from the status files the
+    workflow writes. A missing file means the check has not finished yet."""
+    checks = [
+        ("YAML round-trip (cobrapy)", "roundtrip_cobra"),
+        ("YAML round-trip (RAVEN)", "roundtrip_raven"),
+        ("YAML lint", "yamllint"),
+        ("Essential metabolic tasks", "tasks_essential"),
+        ("Verification metabolic tasks", "tasks_verification"),
+    ]
+    out = ["| Check | Result | |", "| --- | ---: | :---: |"]
+    for label, name in checks:
+        val = _status(name)
+        if not val:
+            out.append(f"| {label} | _running_ | :hourglass_flowing_sand: |")
+        elif "/" in val:                       # tasks: "failed/total"
+            failed, total = val.split("/")[:2]
+            ok = int(failed) == 0
+            out.append(f"| {label} | {total + ' passed' if ok else failed + ' failed'} | "
+                       f"{':white_check_mark:' if ok else ':x:'} |")
+        else:                                  # round-trip / lint: pass|fail
+            ok = val.lower() == "pass"
+            out.append(f"| {label} | {val} | {':white_check_mark:' if ok else ':x:'} |")
+    return "\n".join(out)
+
+
 def _gene_essentiality_section() -> str:
-    path = RESULTS / "gene-essential.csv"
-    if not path.exists():
-        return "_Not yet run for this pull request._"
-    with open(path, newline="", encoding="utf-8") as fh:
-        rows = [r for r in csv.reader(fh) if r]
-    if len(rows) < 2:
-        return "_No gene-essentiality results._"
-    header, *body = rows
-    lines = ["| " + " | ".join(header) + " |", "| " + " | ".join("---" for _ in header) + " |"]
-    lines += ["| " + " | ".join(row) + " |" for row in body]
-    return "\n".join(lines)
+    # Gene essentiality takes hours and is not run on every pull request. Its result
+    # file (gene-essential.csv) is committed and persists across pull requests, so it
+    # would be stale here - the result is shown in its own comment when run instead.
+    return ("_Not run automatically (it takes hours). Comment_ `/run gene-essentiality` "
+            "_to run it on this pull request; the result posts as its own comment._")
 
 
 def main() -> int:
@@ -250,6 +311,17 @@ def main() -> int:
         "### MACAW and mass/charge balance",
         "",
         head, sep, *mb_tbl,
+        "",
+        "### Model file and metabolic tasks",
+        "",
+        _model_integrity_section(),
+        "",
+        "### MEMOTE",
+        "",
+        _memote_section(RESULTS, Path(BASE_DIR) if BASE_DIR else None),
+        "",
+        "_The score above is the fast core subset. Comment_ `/run memote` "
+        "_to run the full suite on this pull request; the score updates here when it finishes._",
         "",
         "### Gene essentiality (Hart 2015)",
         "",

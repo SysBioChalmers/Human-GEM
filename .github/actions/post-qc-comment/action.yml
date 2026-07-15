@@ -20,6 +20,10 @@ inputs:
   run-url:
     description: URL of the workflow run, shown in the comment footer.
     required: true
+  issue-number:
+    description: Pull-request number to comment on. Defaults to the PR that triggered the run; set it for workflow_dispatch runs (e.g. /run memote) that have no PR context.
+    required: false
+    default: ""
   github-token:
     description: Token used to create/update the comment.
     required: true
@@ -38,6 +42,8 @@ runs:
 
     - name: Create or update the comment
       uses: actions/github-script@v7
+      env:
+        ISSUE_NUMBER: ${{ inputs.issue-number }}
       with:
         github-token: ${{ inputs.github-token }}
         script: |
@@ -47,7 +53,7 @@ runs:
           const footer = `\n\n[Full workflow run](${{ inputs.run-url }}) &middot; _this comment is edited as results come in_`;
           const body = `${marker}\n${report}${footer}`;
           const { owner, repo } = context.repo;
-          const issue_number = context.issue.number;
+          const issue_number = process.env.ISSUE_NUMBER ? Number(process.env.ISSUE_NUMBER) : context.issue.number;
           const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
           const existing = comments.find(c => c.body && c.body.includes(marker));
           if (existing) {
