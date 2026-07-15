@@ -1,6 +1,6 @@
 ## Model quality report
 
-:warning: **6 pre-existing finding(s), no regressions vs `develop`.** Non-blocking.
+:x: **2 regression(s) vs `develop`** (this pull request increased a finding count). Review the :x: rows.
 
 ### Structural checks
 _Duplicate keys (model unloadable) and no growth block the merge; the other rows are non-blocking._
@@ -9,7 +9,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; the other rows
 | --- | ---: | ---: | :---: |
 | Duplicate `!!omap` keys | 0 | 0 | :white_check_mark: |
 | Reactions with no metabolites | 0 | 0 | :white_check_mark: |
-| Model / annotation-table inconsistencies | 0 | 0 | :white_check_mark: |
+| Model / annotation-table inconsistencies | [2](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/qc_annotation_consistency.csv) | +2 | :x: |
 | Growth (biomass producible) | 125 | 0 | :white_check_mark: |
 
 ### Model QC reports
@@ -23,17 +23,17 @@ _Duplicate keys (model unloadable) and no growth block the merge; the other rows
 | Unused metabolites | 0 | 0 | :white_check_mark: |
 | Unused genes | 0 | 0 | :white_check_mark: |
 | Malformed cross-references | 0 | 0 | :white_check_mark: |
-| Cross-refs inconsistent across compartments | [3](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/qc_annotation_issues.csv) | 0 | :warning: |
+| Cross-refs inconsistent across compartments | [3](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/qc_annotation_issues.csv) | 0 | :warning: |
 
 ### MACAW and mass/charge balance
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| Reactions flagged by MACAW dead-end test | [2510](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/macaw_results.csv) | 0 | :warning: |
-| Reactions flagged as MACAW duplicates | [377](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/macaw_results.csv) | 0 | :warning: |
-| Mass-imbalanced reactions | [87](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/balance_results.csv) | 0 | :warning: |
-| Charge-imbalanced reactions | [234](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/balance_results.csv) | 0 | :warning: |
-| Structure vs formula/charge inconsistencies | [397](https://github.com/SysBioChalmers/Human-GEM/blob/worktree-matlab-to-python-workflows/data/testResults/qc_structure_consistency.csv) | 0 | :warning: |
+| Reactions flagged by MACAW dead-end test | [2511](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/macaw_results.csv) | +1 | :x: |
+| Reactions flagged as MACAW duplicates | [377](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/macaw_results.csv) | 0 | :warning: |
+| Mass-imbalanced reactions | [87](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/balance_results.csv) | 0 | :warning: |
+| Charge-imbalanced reactions | [234](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/balance_results.csv) | 0 | :warning: |
+| Structure vs formula/charge inconsistencies | [397](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/qc_structure_consistency.csv) | 0 | :warning: |
 
 ### Model file and metabolic tasks
 
