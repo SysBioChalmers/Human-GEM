@@ -8,10 +8,6 @@
 #
 # The gene-essentiality workflow additionally needs Gurobi for the tINIT MILP;
 # its extra dependencies live in requirements-gurobi.txt.
-# Pinned to the fix/ftinit-raven-parity branch (PR #69), which corrects the
-# task-essential-reaction discovery to match RAVEN's checkTasks (metabolicTasks
-# reuse a few task ids across many tasks; the previous id-keyed union dropped most
-# of them). Revert to the default branch once that PR merges into develop.
-raven-toolbox @ git+https://github.com/SysBioChalmers/raven-toolbox.git@fix/ftinit-raven-parity
+raven-toolbox @ git+https://github.com/SysBioChalmers/raven-toolbox.git
 cobra
 pandas
