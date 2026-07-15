@@ -36,7 +36,7 @@ MODEL_DIR = REPO_ROOT / "model"
 sys.path.insert(0, str(REPO_ROOT / "code"))
 from annotateGEM import annotate_gem  # noqa: E402
 
-from raven_toolbox.io import export_for_git, read_yaml_model  # noqa: E402
+from raven_toolbox.io import export_for_git, read_yaml_model, write_yaml_model  # noqa: E402
 
 # model attribute <-> TSV file <-> id column, for the consistency check.
 _ID_TABLES = (
@@ -133,12 +133,14 @@ def increase_human_gem_version(bump_type: str, test: bool = False) -> str | None
 
     _check_tsv_consistency(model)
 
-    # Export via raven-toolbox's Standard-GEM writer. The plain formats (yml/mat)
-    # keep their cross-references in the TSV tables; the annotated formats (xml/xlsx/
-    # txt) carry the merged TSV cross-references and SBO terms (see annotateGEM.py).
-    # export_for_git also (re)writes model/dependencies.txt.
-    export_for_git(model, MODEL_DIR, prefix="Human-GEM",
-                   formats=("yml", "mat"), sub_dirs=False)
+    # Plain exports keep their cross-references in the TSV tables. YAML via
+    # raven-toolbox; MATLAB via cobra with the "humanGEM" variable name (which
+    # export_for_git would not set - it uses cobra's default, the model id).
+    write_yaml_model(model, MODEL_DIR / "Human-GEM.yml")
+    cobra.io.save_matlab_model(model, str(MODEL_DIR / "Human-GEM.mat"), varname="humanGEM")
+
+    # Annotated exports (xml/xlsx/txt) carry the merged TSV cross-references and SBO
+    # terms (see annotateGEM.py); export_for_git also (re)writes dependencies.txt.
     export_for_git(annotate_gem(model.copy(), MODEL_DIR), MODEL_DIR,
                    prefix="Human-GEM", formats=("xml", "xlsx", "txt"), sub_dirs=False)
 
