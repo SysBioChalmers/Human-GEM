@@ -22,11 +22,8 @@ from __future__ import annotations
 
 import argparse
 import datetime
-import platform
 import subprocess
 import sys
-import warnings
-from importlib import metadata as _md
 from pathlib import Path
 
 import cobra
@@ -39,8 +36,7 @@ MODEL_DIR = REPO_ROOT / "model"
 sys.path.insert(0, str(REPO_ROOT / "code"))
 from annotateGEM import annotate_gem  # noqa: E402
 
-from raven_toolbox.io import read_yaml_model, write_yaml_model  # noqa: E402
-from raven_toolbox.io.excel import _equation, export_to_excel  # noqa: E402
+from raven_toolbox.io import export_for_git, read_yaml_model  # noqa: E402
 
 # model attribute <-> TSV file <-> id column, for the consistency check.
 _ID_TABLES = (
@@ -102,46 +98,6 @@ def _set_version(model: cobra.Model, new_version: str) -> None:
     model.notes = notes
 
 
-def _write_txt(model: cobra.Model, path: Path) -> None:
-    """Single-file reaction table (RAVEN exportForGit txt / raven-toolbox layout)."""
-    with open(path, "w", encoding="utf-8") as fh:
-        fh.write("Rxn name\tFormula\tGene-reaction association\tLB\tUB\tObjective\n")
-        for r in model.reactions:
-            fh.write(
-                f"{r.id}\t{_equation(r)}\t{r.gene_reaction_rule}\t"
-                f"{r.lower_bound:g}\t{r.upper_bound:g}\t{r.objective_coefficient:g}\n"
-            )
-
-
-def _version(package: str) -> str:
-    try:
-        return _md.version(package)
-    except _md.PackageNotFoundError:
-        return "unknown"
-
-
-def _write_dependencies(path: Path) -> None:
-    with open(path, "w", encoding="utf-8") as fh:
-        fh.write(f"python\t{platform.python_version()}\n")
-        fh.write(f"cobra\t{_version('cobra')}\n")
-        fh.write(f"raven_toolbox\t{_version('raven_toolbox')}\n")
-
-
-def _export_annotated(model: cobra.Model) -> None:
-    """Write the annotated exports (xml / xlsx / txt) plus dependencies.txt."""
-    annotated = annotate_gem(model.copy(), MODEL_DIR)
-    cobra.io.write_sbml_model(annotated, str(MODEL_DIR / "Human-GEM.xml"))
-    try:
-        export_to_excel(annotated, MODEL_DIR / "Human-GEM.xlsx")
-    except ImportError as exc:
-        warnings.warn(
-            f"Skipped Human-GEM.xlsx: {exc}. Install openpyxl before a real release.",
-            stacklevel=2,
-        )
-    _write_txt(annotated, MODEL_DIR / "Human-GEM.txt")
-    _write_dependencies(MODEL_DIR / "dependencies.txt")
-
-
 def _update_readme(model: cobra.Model) -> None:
     readme = REPO_ROOT / "README.md"
     content = readme.read_text(encoding="utf-8")
@@ -177,12 +133,14 @@ def increase_human_gem_version(bump_type: str, test: bool = False) -> str | None
 
     _check_tsv_consistency(model)
 
-    # Plain exports (cross-references live in the TSV tables, not here).
-    write_yaml_model(model, MODEL_DIR / "Human-GEM.yml")
-    cobra.io.save_matlab_model(model, str(MODEL_DIR / "Human-GEM.mat"), varname="humanGEM")
-
-    # Annotated exports (TSV cross-references + SBO terms merged in).
-    _export_annotated(model)
+    # Export via raven-toolbox's Standard-GEM writer. The plain formats (yml/mat)
+    # keep their cross-references in the TSV tables; the annotated formats (xml/xlsx/
+    # txt) carry the merged TSV cross-references and SBO terms (see annotateGEM.py).
+    # export_for_git also (re)writes model/dependencies.txt.
+    export_for_git(model, MODEL_DIR, prefix="Human-GEM",
+                   formats=("yml", "mat"), sub_dirs=False)
+    export_for_git(annotate_gem(model.copy(), MODEL_DIR), MODEL_DIR,
+                   prefix="Human-GEM", formats=("xml", "xlsx", "txt"), sub_dirs=False)
 
     if not test:
         version_file.write_text(new_version, encoding="utf-8")

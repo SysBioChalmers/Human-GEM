@@ -47,6 +47,7 @@ from memote.suite.reporting import ReportConfiguration, SnapshotReport
 # annotateGEM lives in code/ (one level up), the canonical annotation helper.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from annotateGEM import annotate_gem
+from raven_toolbox.io import read_yaml_model
 
 MODEL_FILE = "model/Human-GEM.yml"
 MODEL_DIR = "model"                 # holds the reactions/metabolites/genes TSV tables
@@ -215,8 +216,9 @@ def main() -> int:
         cobra.Configuration().solver = "gurobi"
 
     # memote reads an SBML model, so convert the canonical YAML model to a
-    # temporary SBML file first (memote fails on a .yml directly).
-    model = cobra.io.load_yaml_model(MODEL_FILE)
+    # temporary SBML file first (memote fails on a .yml directly). Load via
+    # raven-toolbox, like the other RAVEN-based tests.
+    model = read_yaml_model(MODEL_FILE)
 
     # The YAML model has only ids and names; attach the cross-references and SBO
     # terms from the annotation tables (the canonical annotateGEM helper) so MEMOTE's
