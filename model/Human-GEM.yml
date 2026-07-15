@@ -70454,13 +70454,13 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08611"
-      - name: "L-proline:(acceptor) oxidoreductase"
+      - name: "L-proline:ubiquinone oxidoreductase"
       - metabolites: !!omap
           - MAM00559m: 1
-          - MAM01802m: -1
-          - MAM01803m: 1
           - MAM02039m: 1
           - MAM02770m: -1
+          - MAM03102m: 1
+          - MAM03103m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000100033 or ENSG00000250799"
@@ -101769,12 +101769,12 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00449"
-      - name: "sn-Glycerol-3-phosphate:(acceptor) 2-oxidoreductase"
+      - name: "sn-glycerol-3-phosphate:ubiquinone oxidoreductase"
       - metabolites: !!omap
           - MAM01690m: 1
-          - MAM01802m: -1
-          - MAM01803m: 1
           - MAM02914m: -1
+          - MAM03102m: 1
+          - MAM03103m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115159"
@@ -187814,12 +187814,12 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01169"
-      - name: "Glycerol-3-Phosphate Dehydrogenase (FAD), Mitochondrial"
+      - name: "Glycerol-3-Phosphate Dehydrogenase (ubiquinone), Mitochondrial"
       - metabolites: !!omap
           - MAM01690c: 1
-          - MAM01802m: -1
-          - MAM01803m: 1
           - MAM02914c: -1
+          - MAM03102m: 1
+          - MAM03103m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115159"
