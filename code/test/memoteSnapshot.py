@@ -21,10 +21,10 @@ memote_score.md keeps a "Core subset" and a "Full suite" section; each run rewri
 only its own section, so a routine subset run never overwrites a committed full-suite
 score (see _write_section).
 
-Before exporting the SBML, the model is enriched with the database cross-references
-from the annotation tables (see annotateModel.py) so MEMOTE's annotation tests score
-against the identifiers Human-GEM actually carries. The enriched model exists only in
-memory for the temporary SBML; it is never committed.
+Before exporting the SBML, the model is enriched with the cross-references and SBO
+terms from the annotation tables (the canonical code/annotateGEM.py helper) so
+MEMOTE's annotation tests score against the identifiers Human-GEM actually carries.
+The enriched model exists only in memory for the temporary SBML; it is never committed.
 
 Set GRB_LICENSE_FILE (a full Gurobi licence) to run with Gurobi; the genome-scale
 MILPs are impractical with GLPK. Without it the script falls back to the default
@@ -38,14 +38,18 @@ import json
 import os
 import sys
 import tempfile
+from pathlib import Path
 
 import cobra
 import memote.suite.api as api
 from memote.suite.reporting import ReportConfiguration, SnapshotReport
 
-import annotateModel
+# annotateGEM lives in code/ (one level up), the canonical annotation helper.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from annotateGEM import annotate_gem
 
 MODEL_FILE = "model/Human-GEM.yml"
+MODEL_DIR = "model"                 # holds the reactions/metabolites/genes TSV tables
 RESULT_JSON = "memote_result.json"  # repo root -> uploaded as artifact, not committed
 SCORE_MD = "data/testResults/memote_score.md"
 
@@ -214,13 +218,16 @@ def main() -> int:
     # temporary SBML file first (memote fails on a .yml directly).
     model = cobra.io.load_yaml_model(MODEL_FILE)
 
-    # The YAML model has only ids and names; attach the database cross-references
-    # from the annotation tables so MEMOTE's annotation tests see them. This mutates
-    # the in-memory model only - the SBML written below is temporary and the enriched
-    # model is never committed.
-    counts = annotateModel.enrich(model)
-    print(f"Annotated for MEMOTE (temporary): {counts['metabolites']} metabolites, "
-          f"{counts['reactions']} reactions, {counts['genes']} genes.", flush=True)
+    # The YAML model has only ids and names; attach the cross-references and SBO
+    # terms from the annotation tables (the canonical annotateGEM helper) so MEMOTE's
+    # annotation tests see them. This mutates the in-memory model only - the SBML
+    # written below is temporary and the enriched model is never committed.
+    annotate_gem(model, MODEL_DIR)
+    n_met = sum(1 for m in model.metabolites if any(k != "sbo" for k in m.annotation))
+    n_rxn = sum(1 for r in model.reactions if any(k != "sbo" for k in r.annotation))
+    n_gene = sum(1 for g in model.genes if any(k != "sbo" for k in g.annotation))
+    print(f"Annotated for MEMOTE (temporary): {n_met} metabolites, {n_rxn} reactions, "
+          f"{n_gene} genes cross-referenced, plus SBO terms.", flush=True)
 
     sbml_path = os.path.join(tempfile.gettempdir(), "human-gem.xml")
     cobra.io.write_sbml_model(model, sbml_path)

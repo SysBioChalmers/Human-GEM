@@ -168,11 +168,12 @@ stoichiometric-consistency MILP and matrix-rank tests that dominate runtime).
 Comment `/run memote` to run the full suite; the score then updates in place. Higher
 is better, so the comment warns only when the score drops versus the target branch.
 
-Before running, the model is enriched with the database cross-references from the
-annotation tables (`annotateModel.py`), so the annotation tests score against the
-identifiers Human-GEM actually carries rather than the bare ids in the YAML. The
-enriched model is used only to build the temporary SBML MEMOTE reads; it is not
-committed. The score is stored in two sections, `Core subset` and `Full suite`.
+Before running, the model is enriched with the cross-references and SBO terms from
+the annotation tables (the canonical `code/annotateGEM.py` helper), so the annotation
+tests score against the identifiers Human-GEM actually carries rather than the bare
+ids in the YAML. The enriched model is used only to build the temporary SBML MEMOTE
+reads; it is not committed. The score is stored in two sections, `Core subset` and
+`Full suite`.
 
 ### Gene essentiality (Hart 2015)
 Gene-essentiality predictions in five cell-line-specific GEMs (DLD1, GBM, HCT116,
