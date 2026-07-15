@@ -156,16 +156,18 @@ def find_task_essential_genes(
     # even when apply_task_constraints errors after a partial modification.
     saved = {m.id: (base.constraints[m.id].lb, base.constraints[m.id].ub) for m in base.metabolites}
 
-    # One parsimonious flux distribution per feasible, non-should-fail task.
+    # One parsimonious flux distribution per feasible, non-should-fail task. Each task
+    # is paired with its own flux set (by position, not id): the task list reuses a few
+    # ids across many distinct tasks (57 tasks under 5 ids: ER/BS/SU/IC/GR), so keying
+    # flux sets by task.id let same-id tasks overwrite each other, applying the wrong
+    # task's flux filter and dropping genes essential for the overwritten tasks.
     testable = [t for t in tasks if not t.should_fail]
     emit(f"computing flux distributions for {len(testable)} tasks")
-    flux_sets: dict[str, set[str]] = {}
-    passing: list[Task] = []
+    passing: list[tuple[Task, set[str]]] = []
     for task in testable:
         flux_set = _task_flux_set(base, task, name_to_id, comp_to_ids, original_ids, saved)
         if flux_set is not None:
-            passing.append(task)
-            flux_sets[task.id] = flux_set
+            passing.append((task, flux_set))
 
     gene_disabled = _gene_disabled_reactions(base)
     total = len(gene_disabled)
@@ -176,10 +178,10 @@ def find_task_essential_genes(
     for i, (gene_id, disabled) in enumerate(gene_disabled.items(), start=1):
         if not disabled:
             continue
-        for task in passing:
+        for task, flux_set in passing:
             # The knockout can only matter if it hits a reaction carrying flux in
             # this task's solution; otherwise that solution survives the knockout.
-            if not (disabled & flux_sets[task.id]):
+            if not (disabled & flux_set):
                 continue
             solves += 1
             if not _task_feasible_without(base, task, name_to_id, comp_to_ids, disabled, saved):
