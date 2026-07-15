@@ -188,6 +188,47 @@ def _metrics(tp: int, tn: int, fp: int, fn: int) -> dict[str, float]:
     }
 
 
+def experimental_status(
+    ref_gene_ids: Iterable[str],
+    tissues: list[str],
+    *,
+    symbol_of: Mapping[str, str] | None = None,
+    genes_tsv: str | Path = GENES_TSV,
+    table_path: str | Path = HART_TABLE_S2,
+) -> dict[str, dict[str, set[str]]]:
+    """Map Hart 2015 fitness data into model-gene (Ensembl) space, per cell line.
+
+    Returns ``{cell_line: {"scored": set(gene_id), "essential": set(gene_id)}}`` (plus an
+    ``"all"`` key = intersection across cell lines). A model gene is *scored* / *essential*
+    in a cell line when any of its symbols or aliases is scored / a fitness gene there.
+    """
+    ref = set(ref_gene_ids)
+    hart = _load_hart2015(table_path)
+    gene_names = _model_gene_names(genes_tsv)
+
+    def names_for(gene_id: str) -> set[str]:
+        entry = set(gene_names.get(gene_id, ()))
+        if symbol_of and symbol_of.get(gene_id):
+            entry.add(symbol_of[gene_id].upper())
+        return entry
+
+    names = {gene_id: names_for(gene_id) for gene_id in ref}
+    status: dict[str, dict[str, set[str]]] = {}
+    for cell_line in tissues:
+        scored_syms = hart[cell_line]["scored"]
+        essential_syms = hart[cell_line]["essential"]
+        status[cell_line] = {
+            "scored": {g for g in ref if names[g] & scored_syms},
+            "essential": {g for g in ref if names[g] & essential_syms},
+        }
+    if tissues:
+        status["all"] = {
+            "scored": set.intersection(*(status[c]["scored"] for c in tissues)),
+            "essential": set.intersection(*(status[c]["essential"] for c in tissues)),
+        }
+    return status
+
+
 def evaluate_hart2015_essentiality(
     ref_gene_ids: Iterable[str],
     tissues: list[str],
@@ -215,29 +256,11 @@ def evaluate_hart2015_essentiality(
     RESULT_COLUMNS.
     """
     ref = set(ref_gene_ids)
-    hart = _load_hart2015(table_path)
-    gene_names = _model_gene_names(genes_tsv)
-
-    def names_for(gene_id: str) -> set[str]:
-        entry = set(gene_names.get(gene_id, ()))
-        if symbol_of and symbol_of.get(gene_id):
-            entry.add(symbol_of[gene_id].upper())
-        return entry
-
-    names = {gene_id: names_for(gene_id) for gene_id in ref}
-
-    # Map Hart's symbol-level scored/essential sets into model-gene (Ensembl) space:
-    # a model gene is scored/essential when any of its symbols/aliases is.
-    exp_scored: dict[str, set[str]] = {}
-    exp_essential: dict[str, set[str]] = {}
-    for cell_line in tissues:
-        scored_syms = hart[cell_line]["scored"]
-        essential_syms = hart[cell_line]["essential"]
-        exp_scored[cell_line] = {g for g in ref if names[g] & scored_syms}
-        exp_essential[cell_line] = {g for g in ref if names[g] & essential_syms}
-    if tissues:
-        exp_scored["all"] = set.intersection(*(exp_scored[c] for c in tissues))
-        exp_essential["all"] = set.intersection(*(exp_essential[c] for c in tissues))
+    status = experimental_status(
+        ref_gene_ids, tissues, symbol_of=symbol_of, genes_tsv=genes_tsv, table_path=table_path
+    )
+    exp_scored = {c: status[c]["scored"] for c in status}
+    exp_essential = {c: status[c]["essential"] for c in status}
 
     pred = {cell_line: set(essential_ids_by_tissue.get(cell_line, ())) & ref for cell_line in tissues}
     pred["all"] = set.intersection(*pred.values()) if pred else set()
@@ -289,19 +312,39 @@ def essentiality_matrix_csv(
     symbol_of: Mapping[str, str],
     tissues: list[str],
     essential_ids_by_tissue: Mapping[str, Iterable[str]],
+    experimental: Mapping[str, Mapping[str, Iterable[str]]],
 ) -> str:
-    """Build the detailed per-gene essentiality matrix as CSV text.
+    """Build the per-gene prediction-vs-Hart2015 table as CSV text.
 
-    One row per model gene (``gene_ids``, in the given order), one column per cell
-    line, with ``yes`` when the gene is predicted essential for any task in that
-    cell line's model and ``no`` otherwise. A stable full-gene matrix makes diffs
-    between runs easy to read.
+    One row per gene, one column per cell line, holding the confusion class of the
+    prediction against the Hart 2015 fitness call:
+
+        TP  predicted essential  & Hart fitness gene       (correct)
+        TN  predicted non-essential & Hart non-fitness     (correct)
+        FP  predicted essential  & Hart non-fitness        (wrong: over-predicted)
+        FN  predicted non-essential & Hart fitness gene    (wrong: missed)
+        P   predicted essential, gene not scored by Hart   (unvalidated positive)
+        .   predicted non-essential, gene not scored       (uninformative)
+
+    Because Hart's truth is fixed, a cell changing between two runs is exactly a
+    prediction change, with its direction built in: gaining ``FN``/``FP`` is a
+    regression, gaining ``TP``/``TN`` an improvement. Every model gene is kept (one
+    stable row per gene, in the given order), so diffs show only changed cells.
     """
-    essential_sets = {t: set(essential_ids_by_tissue.get(t, ())) for t in tissues}
+    pred = {t: set(essential_ids_by_tissue.get(t, ())) for t in tissues}
+    ess = {t: set(experimental.get(t, {}).get("essential", ())) for t in tissues}
+    scored = {t: set(experimental.get(t, {}).get("scored", ())) for t in tissues}
+
+    def klass(gid: str, t: str) -> str:
+        predicted = gid in pred[t]
+        if gid not in scored[t]:
+            return "P" if predicted else "."
+        fitness = gid in ess[t]
+        return ("TP" if fitness else "FP") if predicted else ("FN" if fitness else "TN")
+
     header = ["genes", "geneSymbol", *tissues]
     lines = [",".join(header)]
     for gid in gene_ids:
-        row = [gid, symbol_of.get(gid, "")]
-        row.extend("yes" if gid in essential_sets[t] else "no" for t in tissues)
+        row = [gid, symbol_of.get(gid, ""), *(klass(gid, t) for t in tissues)]
         lines.append(",".join(row))
     return "\n".join(lines) + "\n"
