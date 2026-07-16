@@ -37,8 +37,11 @@ jobs:
         with:
           python-version: "3.11"
 
+      # requirements.txt brings raven-toolbox (plus cobra and pandas): memoteSnapshot
+      # imports annotateGEM, which needs raven_toolbox for add_sbo_terms and the model
+      # reader. Without it the run dies instantly with ModuleNotFoundError.
       - name: Install dependencies
-        run: pip install cobra memote gurobipy
+        run: pip install -r code/test/requirements.txt memote gurobipy
 
       - name: Set up Gurobi license
         env:
@@ -59,14 +62,28 @@ jobs:
           echo "BASE_REF=$base" >> "$GITHUB_ENV"
           echo "BASE_DIR=$RUNNER_TEMP/base" >> "$GITHUB_ENV"
 
+      # Producing the score is this workflow's whole purpose, so a crash must fail the
+      # run. Only a genuine timeout (exit 124) is tolerated. `|| echo` would swallow
+      # every non-zero exit and report a 1-second crash as "did not finish in time".
+      # The publish steps below are !cancelled(), so a failure here still salvages
+      # whatever exists.
       - name: MEMOTE snapshot (full suite)
-        continue-on-error: true
         env:
           PYTHONUNBUFFERED: "1"
           MEMOTE_SUBSET: ""
         run: |
-          timeout 19800 python code/test/memoteSnapshot.py \
-            || echo "::warning::MEMOTE did not finish within the time limit; score unavailable."
+          set +e
+          timeout 19800 python code/test/memoteSnapshot.py
+          rc=$?
+          set -e
+          if [ "$rc" -eq 124 ]; then
+            echo "::warning::MEMOTE did not finish within the time limit; score unavailable."
+            exit 0
+          fi
+          if [ "$rc" -ne 0 ]; then
+            echo "::error::MEMOTE failed with exit $rc; score unavailable. See the log above."
+            exit "$rc"
+          fi
 
       - name: Fetch target-branch results for comparison
         run: |
