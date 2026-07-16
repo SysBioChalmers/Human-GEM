@@ -24,8 +24,12 @@ jobs:
       PYTHONUNBUFFERED: "1"
 
     steps:
+      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
+      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Set up Python 3
         uses: actions/setup-python@v6
@@ -110,8 +114,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.number }}
 
+      # !cancelled() rather than the implicit success(): this run takes hours, so its
+      # result must still be posted even if the results push above failed.
       - name: Post comment
-        if: inputs.pr != ''
+        if: ${{ !cancelled() && inputs.pr != '' }}
         uses: actions/github-script@v9
         env:
           TEST_RESULTS: ${{ steps.essentiality.outputs.results }}

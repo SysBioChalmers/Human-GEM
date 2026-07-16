@@ -35,8 +35,15 @@ jobs:
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
     steps:
+      # actions/checkout persists these credentials for the results push below. The
+      # default GITHUB_TOKEN cannot push to a protected branch, which the release
+      # pull request needs (its head is develop), so use CI_PUSH_TOKEN when it is
+      # set and fall back to GITHUB_TOKEN otherwise (forks, or before the secret
+      # exists) - the fallback still works for every ordinary topic-branch head.
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Configure
         run: |
@@ -206,9 +213,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Now that the results (including model_qc_summary.md) are committed, post the
-      # comment from the committed summary.
+      # comment from the committed summary. The steps from here on are guarded with
+      # !cancelled() rather than the implicit success(): if the results push fails
+      # (e.g. a protected head branch), the comment, the artifact and the gate verdict
+      # must still happen instead of being skipped, so a long run is never lost.
       - name: Post final comment
-        if: always()
+        if: ${{ !cancelled() }}
         uses: ./.github/actions/post-qc-comment
         with:
           mode: post
@@ -217,6 +227,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload full MEMOTE result
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v7
         with:
           name: memote-result
@@ -226,7 +237,10 @@ jobs:
       # Fail the build if a gate failed, but only after the detail is committed and
       # the comment updated, so the failure is visible in both. Gates: structural QC
       # (duplicate keys / no growth), YAML round-trip, YAML lint, metabolic tasks.
+      # Runs even when an earlier step failed, so a plumbing failure (a rejected
+      # results push, say) can never mask which gate actually went red.
       - name: Fail if a build gate failed
+        if: ${{ !cancelled() }}
         run: |
           fail=0
           [ "${{ steps.qc.outcome }}" = "failure" ] && fail=1
