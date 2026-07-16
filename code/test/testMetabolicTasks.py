@@ -17,6 +17,8 @@ from pathlib import Path
 from raven_toolbox.io import read_yaml_model
 from raven_toolbox.tasks import check_tasks
 
+import qcStatus
+
 # Repository root: this file is code/test/testMetabolicTasks.py
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -24,7 +26,6 @@ TASK_FILES = {
     "essential": REPO_ROOT / "data" / "metabolicTasks" / "metabolicTasks_Essential.txt",
     "verification": REPO_ROOT / "data" / "metabolicTasks" / "metabolicTasks_VerifyModel.txt",
 }
-STATUS_DIR = REPO_ROOT / "data" / "testResults"
 
 
 def _check_one(model, task_type: str) -> int:
@@ -37,10 +38,8 @@ def _check_one(model, task_type: str) -> int:
         print(f"::error::Failed in {task_type} tasks ({len(failed)}/{len(results)} failed).")
     else:
         print(f"Succeeded with {task_type} tasks ({len(results)} passed).")
-    # one-line status for the QC comment
-    STATUS_DIR.mkdir(parents=True, exist_ok=True)
-    (STATUS_DIR / f"qc_tasks_{task_type}.txt").write_text(
-        f"{len(failed)}/{len(results)}\n", encoding="utf-8")
+    # one-line status for the QC comment, in the shared qc_status.tsv
+    qcStatus.set_status(f"tasks_{task_type}", f"{len(failed)}/{len(results)}")
     return 1 if failed else 0
 
 

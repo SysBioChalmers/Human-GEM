@@ -19,18 +19,24 @@ Checks split into two kinds:
       - metabolites missing a formula or a charge;
       - reaction bound / GPR sanity;
       - exact-duplicate reactions (same stoichiometry);
-      - metabolites and genes not used by any reaction.
+      - metabolites and genes not used by any reaction;
+      - identifiers removed since the base branch that were not moved to a
+        deprecated list (needs BASE_MODEL_DIR; skipped when unavailable).
 
 Usage:
     python code/test/qcModelChecks.py
 """
 
 import csv
+import os
 import sys
 from collections import Counter, defaultdict
+from pathlib import Path
 
 import cobra
 import yaml
+
+import qcStatus
 
 MODEL_FILE = "model/Human-GEM.yml"
 GENES_TSV = "model/genes.tsv"
@@ -47,8 +53,15 @@ ANNOTATION_CONSISTENCY_CSV = f"{RESULTS}/qc_annotation_consistency.csv"
 UNUSED_CSV = f"{RESULTS}/qc_unused_entities.csv"
 COMPLETENESS_CSV = f"{RESULTS}/qc_metabolite_completeness.csv"
 REACTION_SANITY_CSV = f"{RESULTS}/qc_reaction_sanity.csv"
-GROWTH_TXT = f"{RESULTS}/qc_growth.txt"
+DEPRECATION_COMPLETENESS_CSV = f"{RESULTS}/qc_deprecation_completeness.csv"
+# Growth value goes into the shared qc_status.tsv (via qcStatus); only the
+# variable-length list of blocking precursors keeps its own CSV.
 GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
+
+# Base-branch copies of reactions.tsv / metabolites.tsv, used to spot identifiers
+# this pull request removed from the model. The workflow fetches them from the
+# target branch; empty (check skipped) when run locally or on the first comparison.
+BASE_MODEL_DIR = os.environ.get("BASE_MODEL_DIR", "")
 
 GROWTH_TOLERANCE = 1e-6
 
@@ -187,6 +200,47 @@ def check_annotation_consistency(model: cobra.Model) -> list[tuple]:
 
     _write_csv(ANNOTATION_CONSISTENCY_CSV, ["kind", "id", "issue"], issues)
     return issues
+
+
+# --------------------------------------------------------------------------- #
+# Report: removed identifiers must be moved to the deprecated lists
+# --------------------------------------------------------------------------- #
+def check_deprecation_completeness(model: cobra.Model) -> list[tuple]:
+    """Reactions/metabolites present in the base branch but gone from this model
+    must appear in the matching deprecated identifier file. Returns [(kind, id, issue)].
+
+    Human-GEM's convention is to retire identifiers, never silently delete them, so a
+    removed identifier stays resolvable. Detection needs the base-branch model tables
+    (BASE_MODEL_DIR); the check is skipped (empty result) when they are not available,
+    e.g. locally or on the first comparison for a branch.
+    """
+    rows: list[tuple] = []
+    if not BASE_MODEL_DIR or not Path(BASE_MODEL_DIR).exists():
+        _write_csv(DEPRECATION_COMPLETENESS_CSV, ["kind", "id", "issue"], rows)
+        return rows
+
+    current = {
+        "reaction": {r.id for r in model.reactions},
+        "metabolite": {m.id for m in model.metabolites},
+    }
+    # (kind, base table, id column, deprecated list, deprecated id column)
+    specs = [
+        ("reaction", "reactions.tsv", "rxns", DEPRECATED_RXN_TSV, "rxns"),
+        ("metabolite", "metabolites.tsv", "mets", DEPRECATED_MET_TSV, "mets"),
+    ]
+    for kind, base_name, base_col, dep_tsv, dep_col in specs:
+        base_path = Path(BASE_MODEL_DIR) / base_name
+        if not base_path.exists():
+            continue
+        base_ids = set(_tsv_column(str(base_path), base_col))
+        deprecated = set(_tsv_column(dep_tsv, dep_col))
+        removed = base_ids - current[kind]
+        for missing in sorted(removed - deprecated):
+            issue = f"removed from the model but not listed in {Path(dep_tsv).name}"
+            rows.append((kind, missing, issue))
+
+    _write_csv(DEPRECATION_COMPLETENESS_CSV, ["kind", "id", "issue"], rows)
+    return rows
 
 
 # --------------------------------------------------------------------------- #
@@ -341,10 +395,14 @@ def main() -> int:
         print(f"::warning::{len(annotation)} model/annotation-table inconsistency(ies); "
               f"see {ANNOTATION_CONSISTENCY_CSV}.")
 
+    undeprecated = check_deprecation_completeness(model)
+    if undeprecated:
+        print(f"::warning::{len(undeprecated)} identifier(s) removed from the model but not "
+              f"added to a deprecated list; see {DEPRECATION_COMPLETENESS_CSV}.")
+
     growth = check_growth(model)
     grows = growth == growth and growth > GROWTH_TOLERANCE  # not NaN and positive
-    with open(GROWTH_TXT, "w", encoding="utf-8") as fh:
-        fh.write(f"{growth:.6g}\n")
+    qcStatus.set_status("growth", f"{growth:.6g}")
     if not grows:
         blockers = write_growth_blockers(model)
         print(f"::error::Model cannot produce biomass under its default constraints "
@@ -364,6 +422,7 @@ def main() -> int:
     print(f"Reactions with bound/GPR issues: {n_reaction_issues}")
     print(f"Exact-duplicate reaction groups: {n_dup_rxn}")
     print(f"Unused metabolites / genes: {n_unused_met} / {n_unused_gene}")
+    print(f"Removed identifiers not deprecated: {len(undeprecated)}")
     print(f"Growth (max biomass, default constraints): {growth:.4g} "
           f"({'ok' if grows else 'NO GROWTH'})")
 

@@ -77,10 +77,12 @@ jobs:
             echo "GENEESS_EOF"
           } >> "$GITHUB_OUTPUT"
 
+      # This workflow is dispatched (by /run gene-essentiality), so it has no
+      # pull_request context; the PR number arrives as the `pr` input instead.
       - name: Mention PR# in README.md
-        if: github.event_name == 'pull_request'
+        if: inputs.pr != ''
         env:
-          PR_NUMBER: ${{ github.event.number }}
+          PR_NUMBER: ${{ inputs.pr }}
         run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (gene /$PR_NUMBER\*\* (gene /" data/testResults/README.md
 
       - name: Update local branch before committing changes
@@ -110,7 +112,7 @@ jobs:
 
       - name: Post comment
         if: inputs.pr != ''
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         env:
           TEST_RESULTS: ${{ steps.essentiality.outputs.results }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
