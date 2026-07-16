@@ -160,14 +160,28 @@ jobs:
       # The fast core subset runs on every pull request. The full suite (which does
       # FVA / a loopless MILP over every reaction and takes hours) is run on demand
       # only, by commenting /run memote (see pr-command.yml and memote-full.yml).
+      # continue-on-error: MEMOTE is one report among many here, so its failure must not
+      # stop the other checks' results being committed. But distinguish a real timeout
+      # from a crash: `|| echo` reported both as "did not finish", so a MEMOTE that died
+      # in a second looked like a slow one and the stale score stood.
       - name: MEMOTE snapshot (fast subset)
         continue-on-error: true
         env:
           PYTHONUNBUFFERED: "1"
           MEMOTE_SUBSET: "1"
         run: |
-          timeout 2400 python code/test/memoteSnapshot.py \
-            || echo "::warning::MEMOTE did not finish within 2400s; score unavailable this run."
+          set +e
+          timeout 2400 python code/test/memoteSnapshot.py
+          rc=$?
+          set -e
+          if [ "$rc" -eq 124 ]; then
+            echo "::warning::MEMOTE did not finish within 2400s; score unavailable this run."
+            exit 0
+          fi
+          if [ "$rc" -ne 0 ]; then
+            echo "::error::MEMOTE failed with exit $rc; the score shown is the previously committed one."
+            exit "$rc"
+          fi
 
       # Everything is in: render the final summary so it is part of the commit below,
       # then post from the committed file - the comment is updated only after the
