@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "human-gem"
+version = "0.1.0"
+description = "Python interface to the Human-GEM genome-scale metabolic model, on cobrapy and raven-toolbox."
+requires-python = ">=3.11"
+authors = [{ name = "SysBioChalmers" }]
+dependencies = [
+    "cobra>=0.29",
+    "pandas>=1.5",
+    # raven-toolbox is the Python RAVEN port; not on PyPI, installed from source.
+    "raven-toolbox @ git+https://github.com/SysBioChalmers/raven-toolbox.git",
+]
+
+[project.urls]
+Homepage = "https://github.com/SysBioChalmers/Human-GEM"
+Repository = "https://github.com/SysBioChalmers/Human-GEM"
+
+[tool.setuptools]
+packages = ["human_gem"]
