@@ -63,10 +63,35 @@ runs:
           const body = `${marker}\n${report}${footer}`;
           const { owner, repo } = context.repo;
           const issue_number = process.env.ISSUE_NUMBER ? Number(process.env.ISSUE_NUMBER) : context.issue.number;
-          const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+
+          // The GitHub API occasionally returns a transient 5xx (e.g. a 503 "Unicorn"
+          // page) or a secondary-rate-limit 429. This hours-long run has already done
+          // its real work by the time it posts, so a blip here must not fail it: retry
+          // transient errors with exponential backoff before giving up.
+          const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+          async function withRetry(label, fn) {
+            const maxAttempts = 5;
+            for (let attempt = 1; ; attempt++) {
+              try {
+                return await fn();
+              } catch (error) {
+                const status = error.status || (error.response && error.response.status);
+                const transient = status === 429 || (status >= 500 && status < 600);
+                if (!transient || attempt >= maxAttempts) throw error;
+                const delay = Math.min(2000 * 2 ** (attempt - 1), 30000);
+                core.warning(`${label} failed with ${status || error.message}; retrying in ${delay} ms (attempt ${attempt}/${maxAttempts - 1})`);
+                await sleep(delay);
+              }
+            }
+          }
+
+          const comments = await withRetry('listComments', () =>
+            github.paginate(github.rest.issues.listComments, { owner, repo, issue_number }));
           const existing = comments.find(c => c.body && c.body.includes(marker));
           if (existing) {
-            await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            await withRetry('updateComment', () =>
+              github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body }));
           } else {
-            await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            await withRetry('createComment', () =>
+              github.rest.issues.createComment({ owner, repo, issue_number, body }));
           }

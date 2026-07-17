@@ -94,12 +94,31 @@ jobs:
           done
 
       - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
-          git stash
-          git fetch
-          git checkout ${{ github.ref_name }}
-          if git stash list | grep -q 'stash@{'; then
-            git stash pop
+          # The full suite runs for ~40 min, during which the branch can move on: a
+          # concurrent results run, or (on a re-run) this workflow's own earlier
+          # attempt, may already have pushed a "full MEMOTE result" commit. The old
+          # `git checkout` left local behind origin, so the auto-commit push below was
+          # rejected as non-fast-forward. Reset local to the remote tip first.
+          #
+          # memote_score.md is the only file this workflow commits, so it is preserved
+          # across the reset (it wins over the remote); every other result file is
+          # taken from the up-to-date remote. memote_result.json is untracked at the
+          # repo root, so `git reset --hard` leaves it in place for the artifact upload.
+          git fetch origin "$BRANCH_NAME"
+          # Preserve the score only if this run actually rewrote it (a timed-out run
+          # leaves it unchanged); otherwise keep whatever the remote already has.
+          changed=""
+          if ! git diff --quiet -- data/testResults/memote_score.md; then
+            cp -a data/testResults/memote_score.md "$RUNNER_TEMP/memote_score.md"
+            changed=1
+          fi
+          git checkout "$BRANCH_NAME"
+          git reset --hard "origin/$BRANCH_NAME"
+          if [ -n "$changed" ]; then
+            cp -a "$RUNNER_TEMP/memote_score.md" data/testResults/memote_score.md
           fi
 
       - name: Auto-commit results
