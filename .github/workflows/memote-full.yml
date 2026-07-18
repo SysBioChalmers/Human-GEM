@@ -1,0 +1,154 @@
+name: MEMOTE full suite
+
+# The full MEMOTE suite (FVA and a loopless MILP over every reaction) takes hours,
+# so it is run on demand only: comment /run memote on a pull request (see
+# pr-command.yml), which dispatches this on the PR branch and passes the PR number.
+# When it finishes it commits the score and updates the Model QC comment in place.
+on:
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: "Pull-request number to update the Model QC comment on"
+        default: ""
+
+env:
+  RESULT_FILES: >-
+    qc_duplicate_keys.csv qc_empty_reactions.csv qc_annotation_consistency.csv
+    qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
+    qc_reaction_sanity.csv qc_annotation_issues.csv qc_deprecation_completeness.csv
+    qc_status.tsv memote_score.md macaw_results.csv balance_results.csv
+    qc_structure_consistency.csv
+
+jobs:
+  memote-full:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
+      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      # requirements.txt brings raven-toolbox (plus cobra and pandas): memoteSnapshot
+      # imports annotateGEM, which needs raven_toolbox for add_sbo_terms and the model
+      # reader. Without it the run dies instantly with ModuleNotFoundError.
+      - name: Install dependencies
+        run: pip install -r code/test/requirements.txt memote gurobipy
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+          else
+            echo "::warning::Gurobi license secret not set; MEMOTE may not finish in time."
+          fi
+
+      - name: Resolve the pull request's base branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          base=$(gh pr view "${{ inputs.pr }}" --repo "${{ github.repository }}" --json baseRefName --jq .baseRefName)
+          echo "BASE_REF=$base" >> "$GITHUB_ENV"
+          echo "BASE_DIR=$RUNNER_TEMP/base" >> "$GITHUB_ENV"
+
+      # Producing the score is this workflow's whole purpose, so a crash must fail the
+      # run. Only a genuine timeout (exit 124) is tolerated. `|| echo` would swallow
+      # every non-zero exit and report a 1-second crash as "did not finish in time".
+      # The publish steps below are !cancelled(), so a failure here still salvages
+      # whatever exists.
+      - name: MEMOTE snapshot (full suite)
+        env:
+          PYTHONUNBUFFERED: "1"
+          MEMOTE_SUBSET: ""
+        run: |
+          set +e
+          timeout 19800 python code/test/memoteSnapshot.py
+          rc=$?
+          set -e
+          if [ "$rc" -eq 124 ]; then
+            echo "::warning::MEMOTE did not finish within the time limit; score unavailable."
+            exit 0
+          fi
+          if [ "$rc" -ne 0 ]; then
+            echo "::error::MEMOTE failed with exit $rc; score unavailable. See the log above."
+            exit "$rc"
+          fi
+
+      - name: Fetch target-branch results for comparison
+        run: |
+          git fetch --depth=1 origin "$BASE_REF" || true
+          mkdir -p "$BASE_DIR"
+          for f in $RESULT_FILES; do
+            git show "origin/$BASE_REF:data/testResults/$f" > "$BASE_DIR/$f" 2>/dev/null || rm -f "$BASE_DIR/$f"
+          done
+
+      - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: |
+          # The full suite runs for ~40 min, during which the branch can move on: a
+          # concurrent results run, or (on a re-run) this workflow's own earlier
+          # attempt, may already have pushed a "full MEMOTE result" commit. The old
+          # `git checkout` left local behind origin, so the auto-commit push below was
+          # rejected as non-fast-forward. Reset local to the remote tip first.
+          #
+          # memote_score.md is the only file this workflow commits, so it is preserved
+          # across the reset (it wins over the remote); every other result file is
+          # taken from the up-to-date remote. memote_result.json is untracked at the
+          # repo root, so `git reset --hard` leaves it in place for the artifact upload.
+          git fetch origin "$BRANCH_NAME"
+          # Preserve the score only if this run actually rewrote it (a timed-out run
+          # leaves it unchanged); otherwise keep whatever the remote already has.
+          changed=""
+          if ! git diff --quiet -- data/testResults/memote_score.md; then
+            cp -a data/testResults/memote_score.md "$RUNNER_TEMP/memote_score.md"
+            changed=1
+          fi
+          git checkout "$BRANCH_NAME"
+          git reset --hard "origin/$BRANCH_NAME"
+          if [ -n "$changed" ]; then
+            cp -a "$RUNNER_TEMP/memote_score.md" data/testResults/memote_score.md
+          fi
+
+      - name: Auto-commit results
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_user_name: memote-bot
+          # [skip ci] so this results commit does not re-trigger the workflows.
+          commit_message: "chore: full MEMOTE result [skip ci]"
+          file_pattern: data/testResults/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # !cancelled() rather than the implicit success(): the full suite runs for hours,
+      # so the artifact and the comment must survive a failed results push above.
+      - name: Upload full MEMOTE result
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: memote-result
+          path: memote_result.json
+          if-no-files-found: ignore
+
+      - name: Update the Model QC comment
+        if: ${{ !cancelled() }}
+        uses: ./.github/actions/post-qc-comment
+        with:
+          running-groups: ""
+          base-ref: ${{ env.BASE_REF }}
+          base-dir: ${{ env.BASE_DIR }}
+          results-url-base: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/data/testResults
+          run-url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          issue-number: ${{ inputs.pr }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

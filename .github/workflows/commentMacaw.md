@@ -1,9 +1,0 @@
-This PR has been [automatically tested with GH Actions]({GH_ACTION_URL}). Here is the output of the [MACAW](https://github.com/Devlin-Moyer/macaw) test:
-
-<pre>
-{TEST_RESULTS}
-</pre>
-
-This and a more detailed output from MACAW are also committed to `data/testResults/`.
-
-> _Note: In the case of multiple test runs, this post will be edited._
