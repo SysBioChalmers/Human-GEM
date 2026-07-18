@@ -14,7 +14,7 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | consistency | 42.4% |
 | annotation_met | 73.0% |
 | annotation_rxn | 72.7% |
-| annotation_gene | 46.7% |
+| annotation_gene | 46.6% |
 | annotation_sbo | 81.7% |
 
 ### Detailed scores
@@ -35,7 +35,7 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | Annotation - Reactions | Reaction Annotation Conformity Per Database | 33.3% |
 | Annotation - Reactions | Uniform Reaction Identifier Namespace | 0.0% |
 | Annotation - Genes | Presence of Gene Annotation | 0.0% |
-| Annotation - Genes | Gene Annotations Per Database | 80.0% |
+| Annotation - Genes | Gene Annotations Per Database | 80.1% |
 | Annotation - Genes | Gene Annotation Conformity Per Database | 80.0% |
 | Annotation - SBO Terms | Metabolite General SBO Presence | 0.0% |
 | Annotation - SBO Terms | Metabolite SBO:0000247 Presence | 0.1% |
