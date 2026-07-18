@@ -109,7 +109,7 @@ function [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks, delete
 %   NOTE: Boundary metabolites should normally not be removed from the model
 %   when using this approach, since checkTasks/fitTasks rely on putting specific
 %   constraints for each task. The INIT algorithm will remove boundary metabolites
-%   if any are present. Use the addBoundaryMets function to add boundary
+%   if any are present. Use the closeModel function to add boundary
 %   metabolites to a model.
 %
 %   Usage: [model, metProduction, essentialRxnsForTasks, addedRxnsForTasks,...
@@ -150,7 +150,7 @@ end
 
 %Check that the model is in the closed form
 if ~isfield(refModel,'unconstrained')
-    EM = 'Boundary metabolites should normally be present in the model when using getINITModel2. Use addBoundaryMets(model) to add boundary metabolites to a model';
+    EM = 'Boundary metabolites should normally be present in the model when using getINITModel2. Use closeModel(model) to add boundary metabolites to a model';
     dispEM(EM);
 end
 

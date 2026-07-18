@@ -1,0 +1,271 @@
+name: Model QC
+
+on: [pull_request]
+
+env:
+  # Committed result files, fetched from the target branch so buildReport can show a
+  # delta. No stamp files: freshness is passed to buildReport as RUNNING_GROUPS. The
+  # one-line checks (round-trip, yamllint, metabolic tasks) and the growth value all
+  # live together in qc_status.tsv (see qcStatus.py) rather than one file each.
+  RESULT_FILES: >-
+    qc_duplicate_keys.csv qc_empty_reactions.csv qc_annotation_consistency.csv
+    qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
+    qc_reaction_sanity.csv qc_annotation_issues.csv qc_deprecation_completeness.csv
+    qc_status.tsv memote_score.md macaw_results.csv balance_results.csv
+    qc_structure_consistency.csv
+
+# One job runs every check and edits a single pull-request comment. It posts a
+# "running" comment immediately (all rows as hourglasses, no numbers), runs every
+# check including the MEMOTE fast subset, commits the results once at the end (with
+# [skip ci], and only if something changed), and only then edits the comment to show
+# the results - so the comment never reports numbers, or links to CSVs, that are not
+# yet on the branch.
+jobs:
+  qc:
+    runs-on: ubuntu-latest
+    # Ceiling only. The fast checks finish in minutes; the MEMOTE subset in a few
+    # more. The full MEMOTE suite (PRs to main) is capped by its own wall-clock limit
+    # below. Kept under GitHub's 6 h hosted-runner maximum.
+    timeout-minutes: 350
+
+    env:
+      # runner.temp is not available in job-level env, so BASE_DIR is set in a step below.
+      BASE_REF: ${{ github.event.pull_request.base.ref }}
+      RESULTS_URL_BASE: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref }}/data/testResults
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+    steps:
+      # actions/checkout persists these credentials for the results push below. The
+      # default GITHUB_TOKEN cannot push to a protected branch, which the release
+      # pull request needs (its head is develop), so use CI_PUSH_TOKEN when it is
+      # set and fall back to GITHUB_TOKEN otherwise (forks, or before the secret
+      # exists) - the fallback still works for every ordinary topic-branch head.
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Configure
+        run: |
+          echo "BASE_DIR=$RUNNER_TEMP/base" >> "$GITHUB_ENV"
+          echo "BASE_MODEL_DIR=$RUNNER_TEMP/base-model" >> "$GITHUB_ENV"
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install check dependencies
+        run: pip install cobra pyyaml rdkit git+https://github.com/Devlin-Moyer/macaw.git@main numpy==1.26.4
+
+      - name: Fetch target-branch results for comparison
+        run: |
+          git fetch --depth=1 origin "$BASE_REF" || true
+          mkdir -p "$BASE_DIR"
+          for f in $RESULT_FILES; do
+            git show "origin/$BASE_REF:data/testResults/$f" > "$BASE_DIR/$f" 2>/dev/null || rm -f "$BASE_DIR/$f"
+          done
+          # Base-branch model tables: qcModelChecks.py diffs them against this model
+          # to flag identifiers removed here but not moved to a deprecated list.
+          mkdir -p "$BASE_MODEL_DIR"
+          for f in reactions.tsv metabolites.tsv; do
+            git show "origin/$BASE_REF:model/$f" > "$BASE_MODEL_DIR/$f" 2>/dev/null || rm -f "$BASE_MODEL_DIR/$f"
+          done
+
+      # Immediate feedback: everything shows as running.
+      - name: Post running comment
+        uses: ./.github/actions/post-qc-comment
+        with:
+          running-groups: all
+          base-ref: ${{ env.BASE_REF }}
+          base-dir: ${{ env.BASE_DIR }}
+          results-url-base: ${{ env.RESULTS_URL_BASE }}
+          run-url: ${{ env.RUN_URL }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Structural QC checks (gates + reports)
+        id: qc
+        continue-on-error: true
+        run: python code/test/qcModelChecks.py
+
+      - name: Annotation and cross-reference validation
+        continue-on-error: true
+        run: python code/test/annotationTest.py
+
+      - name: MACAW dead-end and duplicate tests
+        continue-on-error: true
+        run: python code/test/macawTests.py
+
+      - name: Mass and charge balance report
+        continue-on-error: true
+        run: python code/test/balanceTest.py
+
+      # Structure (SMILES/InChI in metabolites.tsv) vs formula/charge (in the YAML).
+      - name: Structure / formula / charge consistency report
+        continue-on-error: true
+        run: python code/test/structureConsistencyTest.py
+
+      # Model-file checks and metabolic tasks (formerly the model-file-checks and
+      # check-metabolictasks workflows). Each writes a one-line pass/fail status the
+      # comment reads; the final step fails the build on any of them.
+      - name: Install RAVEN toolbox
+        run: pip install -r code/test/requirements.txt
+
+      - name: YAML round-trip (cobrapy)
+        continue-on-error: true
+        run: |
+          if python code/test/testYamlConversion.py --tool cobra; then r=pass; else r=fail; fi
+          python code/test/qcStatus.py roundtrip_cobra "$r"
+
+      - name: YAML round-trip (RAVEN)
+        continue-on-error: true
+        run: |
+          if python code/test/testYamlConversion.py --tool raven-toolbox; then r=pass; else r=fail; fi
+          python code/test/qcStatus.py roundtrip_raven "$r"
+
+      - name: YAML lint
+        id: yamllint
+        continue-on-error: true
+        uses: metabolicatlas/action-yamllint@v3
+        with:
+          file_or_dir: model/
+          config_data: "{extends: default, rules: {line-length: disable}}"
+
+      - name: Record YAML lint result
+        if: always()
+        run: python code/test/qcStatus.py yamllint "${{ steps.yamllint.outcome == 'success' && 'pass' || 'fail' }}"
+
+      - name: Metabolic tasks (essential and verification)
+        continue-on-error: true
+        run: python code/test/testMetabolicTasks.py all
+
+      # The MEMOTE fast subset finishes quickly, so there is no interim update: all
+      # checks (fast + MEMOTE) run, then everything is committed once and the comment
+      # is posted from the committed files below. Until then the running comment stands.
+      - name: Install MEMOTE dependencies
+        run: pip install memote gurobipy
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+            echo "Gurobi license configured."
+          else
+            echo "::warning::Gurobi license secret not set; MEMOTE may not finish in time."
+          fi
+
+      # The fast core subset runs on every pull request. The full suite (which does
+      # FVA / a loopless MILP over every reaction and takes hours) is run on demand
+      # only, by commenting /run memote (see pr-command.yml and memote-full.yml).
+      # continue-on-error: MEMOTE is one report among many here, so its failure must not
+      # stop the other checks' results being committed. But distinguish a real timeout
+      # from a crash: `|| echo` reported both as "did not finish", so a MEMOTE that died
+      # in a second looked like a slow one and the stale score stood.
+      - name: MEMOTE snapshot (fast subset)
+        continue-on-error: true
+        env:
+          PYTHONUNBUFFERED: "1"
+          MEMOTE_SUBSET: "1"
+        run: |
+          set +e
+          timeout 2400 python code/test/memoteSnapshot.py
+          rc=$?
+          set -e
+          if [ "$rc" -eq 124 ]; then
+            echo "::warning::MEMOTE did not finish within 2400s; score unavailable this run."
+            exit 0
+          fi
+          if [ "$rc" -ne 0 ]; then
+            echo "::error::MEMOTE failed with exit $rc; the score shown is the previously committed one."
+            exit "$rc"
+          fi
+
+      # Everything is in: render the final summary so it is part of the commit below,
+      # then post from the committed file - the comment is updated only after the
+      # results are committed (so its numbers and CSV links resolve).
+      - name: Render final report
+        uses: ./.github/actions/post-qc-comment
+        with:
+          mode: build
+          running-groups: ""
+          base-ref: ${{ env.BASE_REF }}
+          base-dir: ${{ env.BASE_DIR }}
+          results-url-base: ${{ env.RESULTS_URL_BASE }}
+          run-url: ${{ env.RUN_URL }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Mention PR# in README.md
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          for tag in "model QC" "MEMOTE" "MACAW"; do
+            sed -i -e "s/[[:digit:]]\{3,4\}\*\* ($tag/$PR_NUMBER\*\* ($tag/" data/testResults/README.md
+          done
+
+      - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        run: |
+          git stash
+          git fetch
+          git checkout $BRANCH_NAME
+          if git stash list | grep -q 'stash@{'; then
+            git stash pop
+          fi
+
+      - name: Auto-commit results
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_user_name: memote-bot
+          # [skip ci] so this results commit does not re-trigger the workflow.
+          commit_message: "chore: update model QC results [skip ci]"
+          file_pattern: data/testResults/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Now that the results (including model_qc_summary.md) are committed, post the
+      # comment from the committed summary. The steps from here on are guarded with
+      # !cancelled() rather than the implicit success(): if the results push fails
+      # (e.g. a protected head branch), the comment, the artifact and the gate verdict
+      # must still happen instead of being skipped, so a long run is never lost.
+      - name: Post final comment
+        if: ${{ !cancelled() }}
+        uses: ./.github/actions/post-qc-comment
+        with:
+          mode: post
+          run-url: ${{ env.RUN_URL }}
+          base-ref: ${{ env.BASE_REF }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload full MEMOTE result
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: memote-result
+          path: memote_result.json
+          if-no-files-found: ignore
+
+      # Fail the build if a gate failed, but only after the detail is committed and
+      # the comment updated, so the failure is visible in both. Gates: structural QC
+      # (duplicate keys / no growth), YAML round-trip, YAML lint, metabolic tasks.
+      # Runs even when an earlier step failed, so a plumbing failure (a rejected
+      # results push, say) can never mask which gate actually went red.
+      - name: Fail if a build gate failed
+        if: ${{ !cancelled() }}
+        run: |
+          fail=0
+          [ "${{ steps.qc.outcome }}" = "failure" ] && fail=1
+          for k in roundtrip_cobra roundtrip_raven yamllint; do
+            [ "$(python code/test/qcStatus.py --get $k)" = "fail" ] && { echo "::error::$k failed"; fail=1; }
+          done
+          for k in tasks_essential tasks_verification; do
+            v=$(python code/test/qcStatus.py --get $k)
+            [ -n "$v" ] && [ "${v%%/*}" != "0" ] && { echo "::error::$k: ${v%%/*} task(s) failed"; fail=1; }
+          done
+          if [ "$fail" = 1 ]; then
+            echo "::error::A build gate failed; see the PR comment and the linked results."
+            exit 1
+          fi
