@@ -15,10 +15,9 @@ env:
   RESULT_FILES: >-
     qc_duplicate_keys.csv qc_empty_reactions.csv qc_annotation_consistency.csv
     qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
-    qc_reaction_sanity.csv qc_annotation_issues.csv qc_growth.txt memote_score.md
-    macaw_results.csv balance_results.csv qc_structure_consistency.csv
-    qc_roundtrip_cobra.txt qc_roundtrip_raven.txt qc_yamllint.txt
-    qc_tasks_essential.txt qc_tasks_verification.txt
+    qc_reaction_sanity.csv qc_annotation_issues.csv qc_deprecation_completeness.csv
+    qc_status.tsv memote_score.md macaw_results.csv balance_results.csv
+    qc_structure_consistency.csv
 
 jobs:
   memote-full:
@@ -26,16 +25,23 @@ jobs:
     timeout-minutes: 350
 
     steps:
+      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
+      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Set up Python 3
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
+      # requirements.txt brings raven-toolbox (plus cobra and pandas): memoteSnapshot
+      # imports annotateGEM, which needs raven_toolbox for add_sbo_terms and the model
+      # reader. Without it the run dies instantly with ModuleNotFoundError.
       - name: Install dependencies
-        run: pip install cobra memote gurobipy
+        run: pip install -r code/test/requirements.txt memote gurobipy
 
       - name: Set up Gurobi license
         env:
@@ -56,14 +62,28 @@ jobs:
           echo "BASE_REF=$base" >> "$GITHUB_ENV"
           echo "BASE_DIR=$RUNNER_TEMP/base" >> "$GITHUB_ENV"
 
+      # Producing the score is this workflow's whole purpose, so a crash must fail the
+      # run. Only a genuine timeout (exit 124) is tolerated. `|| echo` would swallow
+      # every non-zero exit and report a 1-second crash as "did not finish in time".
+      # The publish steps below are !cancelled(), so a failure here still salvages
+      # whatever exists.
       - name: MEMOTE snapshot (full suite)
-        continue-on-error: true
         env:
           PYTHONUNBUFFERED: "1"
           MEMOTE_SUBSET: ""
         run: |
-          timeout 19800 python code/test/memoteSnapshot.py \
-            || echo "::warning::MEMOTE did not finish within the time limit; score unavailable."
+          set +e
+          timeout 19800 python code/test/memoteSnapshot.py
+          rc=$?
+          set -e
+          if [ "$rc" -eq 124 ]; then
+            echo "::warning::MEMOTE did not finish within the time limit; score unavailable."
+            exit 0
+          fi
+          if [ "$rc" -ne 0 ]; then
+            echo "::error::MEMOTE failed with exit $rc; score unavailable. See the log above."
+            exit "$rc"
+          fi
 
       - name: Fetch target-branch results for comparison
         run: |
@@ -74,12 +94,31 @@ jobs:
           done
 
       - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
-          git stash
-          git fetch
-          git checkout ${{ github.ref_name }}
-          if git stash list | grep -q 'stash@{'; then
-            git stash pop
+          # The full suite runs for ~40 min, during which the branch can move on: a
+          # concurrent results run, or (on a re-run) this workflow's own earlier
+          # attempt, may already have pushed a "full MEMOTE result" commit. The old
+          # `git checkout` left local behind origin, so the auto-commit push below was
+          # rejected as non-fast-forward. Reset local to the remote tip first.
+          #
+          # memote_score.md is the only file this workflow commits, so it is preserved
+          # across the reset (it wins over the remote); every other result file is
+          # taken from the up-to-date remote. memote_result.json is untracked at the
+          # repo root, so `git reset --hard` leaves it in place for the artifact upload.
+          git fetch origin "$BRANCH_NAME"
+          # Preserve the score only if this run actually rewrote it (a timed-out run
+          # leaves it unchanged); otherwise keep whatever the remote already has.
+          changed=""
+          if ! git diff --quiet -- data/testResults/memote_score.md; then
+            cp -a data/testResults/memote_score.md "$RUNNER_TEMP/memote_score.md"
+            changed=1
+          fi
+          git checkout "$BRANCH_NAME"
+          git reset --hard "origin/$BRANCH_NAME"
+          if [ -n "$changed" ]; then
+            cp -a "$RUNNER_TEMP/memote_score.md" data/testResults/memote_score.md
           fi
 
       - name: Auto-commit results
@@ -92,7 +131,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # !cancelled() rather than the implicit success(): the full suite runs for hours,
+      # so the artifact and the comment must survive a failed results push above.
       - name: Upload full MEMOTE result
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v7
         with:
           name: memote-result
@@ -100,6 +142,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Update the Model QC comment
+        if: ${{ !cancelled() }}
         uses: ./.github/actions/post-qc-comment
         with:
           running-groups: ""

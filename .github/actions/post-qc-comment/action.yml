@@ -2,6 +2,13 @@ name: Post QC comment
 description: Build the model-quality report and create or update the single QC comment on the pull request.
 
 inputs:
+  mode:
+    description: >-
+      "both" (default) builds the report and posts the comment; "build" only renders
+      data/testResults/model_qc_summary.md (so it can be committed first); "post" only
+      posts the already-rendered summary (use after the commit).
+    required: false
+    default: both
   running-groups:
     description: Groups still running (their rows show as running); "all", "memote", or empty.
     required: false
@@ -32,6 +39,7 @@ runs:
   using: composite
   steps:
     - name: Build report
+      if: inputs.mode == 'both' || inputs.mode == 'build'
       shell: bash
       env:
         RUNNING_GROUPS: ${{ inputs.running-groups }}
@@ -41,7 +49,8 @@ runs:
       run: python code/test/buildReport.py
 
     - name: Create or update the comment
-      uses: actions/github-script@v7
+      if: inputs.mode == 'both' || inputs.mode == 'post'
+      uses: actions/github-script@v9
       env:
         ISSUE_NUMBER: ${{ inputs.issue-number }}
       with:
@@ -54,10 +63,35 @@ runs:
           const body = `${marker}\n${report}${footer}`;
           const { owner, repo } = context.repo;
           const issue_number = process.env.ISSUE_NUMBER ? Number(process.env.ISSUE_NUMBER) : context.issue.number;
-          const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+
+          // The GitHub API occasionally returns a transient 5xx (e.g. a 503 "Unicorn"
+          // page) or a secondary-rate-limit 429. This hours-long run has already done
+          // its real work by the time it posts, so a blip here must not fail it: retry
+          // transient errors with exponential backoff before giving up.
+          const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+          async function withRetry(label, fn) {
+            const maxAttempts = 5;
+            for (let attempt = 1; ; attempt++) {
+              try {
+                return await fn();
+              } catch (error) {
+                const status = error.status || (error.response && error.response.status);
+                const transient = status === 429 || (status >= 500 && status < 600);
+                if (!transient || attempt >= maxAttempts) throw error;
+                const delay = Math.min(2000 * 2 ** (attempt - 1), 30000);
+                core.warning(`${label} failed with ${status || error.message}; retrying in ${delay} ms (attempt ${attempt}/${maxAttempts - 1})`);
+                await sleep(delay);
+              }
+            }
+          }
+
+          const comments = await withRetry('listComments', () =>
+            github.paginate(github.rest.issues.listComments, { owner, repo, issue_number }));
           const existing = comments.find(c => c.body && c.body.includes(marker));
           if (existing) {
-            await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            await withRetry('updateComment', () =>
+              github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body }));
           } else {
-            await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            await withRetry('createComment', () =>
+              github.rest.issues.createComment({ owner, repo, issue_number, body }));
           }

@@ -1,9 +1,11 @@
 """Build one model-quality report for the pull-request comment.
 
 Turns the result files under data/testResults/ into a single comment that leads
-with a one-line verdict and then three status tables (structural checks, model QC
-reports, MACAW/balance). Groups still being computed on this run are passed in the
-RUNNING_GROUPS environment variable and their rows show as *running* (hourglass);
+with a one-line verdict and then the status tables (model checks, MACAW/balance,
+model-file/metabolic tasks, MEMOTE, gene essentiality). Each check name links to
+its explanation in this folder's README. Groups still being computed on this run
+are passed in the RUNNING_GROUPS environment variable and their rows show as
+*running* (hourglass);
 the workflow calls this once with "all" before anything has run, once with
 "memote" while the slow MEMOTE snapshot is still going, and once with nothing when
 everything is in. No stamp files are involved.
@@ -49,15 +51,34 @@ ALL_GROUPS = {"checks", "memote", "macaw"}
 _running = os.environ.get("RUNNING_GROUPS", "")
 RUNNING = set(ALL_GROUPS) if _running.strip() == "all" else {g.strip() for g in _running.split(",") if g.strip()}
 
+
+def _slug(label: str) -> str:
+    """GitHub heading-anchor slug for a table label. Mirrors GitHub's algorithm
+    (lowercase, drop punctuation, spaces to hyphens) so a label links to the
+    same-named section in this folder's README."""
+    s = label.lower().replace("`", "")
+    s = re.sub(r"[^\w\s-]", "", s)
+    return s.strip().replace(" ", "-")
+
+
+def _labelled(label: str) -> str:
+    """The test name, linked to its explanation in the testResults README when the
+    repo URL is known (in CI); plain text when run locally."""
+    return f"[{label}]({URL_BASE}/README.md#{_slug(label)})" if URL_BASE else label
+
 # (label, key, kind, group, detail_file)
-STRUCTURAL_ROWS = [
+# Structural gates and the model-QC reports share one table: the split between them
+# was arbitrary (growth next to unused genes). The two gates (duplicate keys, growth)
+# lead the table; every other row is a non-blocking report. Each label links to the
+# matching section in this folder's README (see _labelled).
+MODEL_ROWS = [
     ("Duplicate `!!omap` keys", "dup_keys", "count", "checks", "qc_duplicate_keys.csv"),
+    ("Growth (biomass producible)", "growth", "growth", "checks", "qc_growth_blockers.csv"),
     ("Reactions with no metabolites", "empty_rxn", "count", "checks", "qc_empty_reactions.csv"),
     ("Model / annotation-table inconsistencies", "annot_consistency", "count", "checks",
      "qc_annotation_consistency.csv"),
-    ("Growth (biomass producible)", "growth", "growth", "checks", "qc_growth_blockers.csv"),
-]
-REPORT_ROWS = [
+    ("Removed reactions or metabolites not deprecated", "removed_not_deprecated", "count", "checks",
+     "qc_deprecation_completeness.csv"),
     ("Metabolites missing formula", "missing_formula", "count", "checks", "qc_metabolite_completeness.csv"),
     ("Metabolites missing charge", "missing_charge", "count", "checks", "qc_metabolite_completeness.csv"),
     ("Reaction bound / GPR issues", "reaction_issues", "count", "checks", "qc_reaction_sanity.csv"),
@@ -92,26 +113,57 @@ def _distinct_csv(path: Path, column: str) -> int | None:
         return len({row[column] for row in csv.DictReader(fh) if row.get(column)})
 
 
+def _status_map(directory: Path) -> dict:
+    """The combined qc_status.tsv as {check: result} ({} if absent). Holds the
+    one-line checks (round-trip, yamllint, metabolic tasks) and the growth value."""
+    path = directory / "qc_status.tsv"
+    if not path.exists():
+        return {}
+    out: dict[str, str] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        parts = line.split("\t")
+        if len(parts) >= 2 and parts[0] != "check":
+            out[parts[0]] = parts[1]
+    return out
+
+
 def _growth(directory: Path) -> float | None:
     try:
-        return float((directory / "qc_growth.txt").read_text(encoding="utf-8").strip())
-    except (FileNotFoundError, ValueError):
+        return float(_status_map(directory)["growth"])
+    except (KeyError, ValueError):
         return None
 
 
-def _memote_meta(directory: Path):
-    """Parse memote_score.md -> (total, mode, {section: score}, [(section, test, score)]),
-    or None if it has not been produced yet."""
+# memote_score.md is split into these two sections (see memoteSnapshot.py); each is
+# parsed and compared only against the same section on the base branch, so a subset
+# score is never diffed against a full-suite score.
+MEMOTE_CORE = "Core subset"
+MEMOTE_FULL = "Full suite"
+
+
+def _memote_meta(directory: Path, title: str):
+    """Parse one section of memote_score.md ->
+    (total, mode, {section: score}, [(section, test, score)]), or None if that section
+    is absent or not yet computed (a placeholder with no total)."""
     path = directory / "memote_score.md"
     if not path.exists():
         return None
-    text = path.read_text(encoding="utf-8")
+    full = path.read_text(encoding="utf-8")
+    m = re.search(rf"^## {re.escape(title)}\s*$(.*?)(?=^## |\Z)", full, re.M | re.S)
+    if m:
+        text = m.group(1)
+    elif title == MEMOTE_CORE:
+        text = full  # back-compat: an older single-section file is the core subset
+    else:
+        return None
     total = re.search(r"Total score:\s*([\d.]+)\s*%", text)
+    if not total:
+        return None
     mode = re.search(r"Mode:\s*(.+?)\.", text)
     sections = {m.group(1): float(m.group(2))
                 for m in re.finditer(r"^\| (\w+) \| ([\d.]+)% \|$", text, re.M)}
     detailed = [(s, t, sc) for s, t, sc in re.findall(r"^\| (.+?) \| (.+?) \| ([\d.]+)% \|$", text, re.M)]
-    return (float(total.group(1)) if total else None, mode.group(1) if mode else "", sections, detailed)
+    return (float(total.group(1)), mode.group(1) if mode else "", sections, detailed)
 
 
 def _score_delta(cur, base) -> str:
@@ -126,11 +178,12 @@ def _score_delta(cur, base) -> str:
 def _memote_section(current: Path, base: Path | None) -> str:
     if "memote" in RUNNING:
         return "_running_ &middot; :hourglass_flowing_sand:"
-    meta = _memote_meta(current)
-    if meta is None:
+    core = _memote_meta(current, MEMOTE_CORE)
+    if core is None:
         return "_running_ &middot; :hourglass_flowing_sand:"
-    total, mode, sections, detailed = meta
-    b = _memote_meta(base) if base and base.exists() else None
+    total, mode, sections, detailed = core
+    base_ok = base and base.exists()
+    b = _memote_meta(base, MEMOTE_CORE) if base_ok else None
     b_total, b_sections = (b[0], b[2]) if b else (None, {})
     lines = [f"**Total score: {total:.1f}%** ({mode}) &nbsp; {_score_delta(total, b_total)}".rstrip(), ""]
     if sections:
@@ -142,6 +195,17 @@ def _memote_section(current: Path, base: Path | None) -> str:
                   "| Section | Test | Score |", "| --- | --- | ---: |"]
         lines += [f"| {s} | {t} | {sc}% |" for s, t, sc in detailed]
         lines += ["", "</details>"]
+
+    # Full suite: shown only if a /run memote result is committed. Compared to the
+    # full-suite section on the base branch, never to the subset score above.
+    full = _memote_meta(current, MEMOTE_FULL)
+    if full is not None:
+        bf = _memote_meta(base, MEMOTE_FULL) if base_ok else None
+        bf_total = bf[0] if bf else None
+        lines += ["", f"**Full suite: {full[0]:.1f}%** &nbsp; {_score_delta(full[0], bf_total)} "
+                  "&middot; _from the last_ `/run memote`.".rstrip()]
+    else:
+        lines += ["", "_Full suite not run for this commit; comment_ `/run memote` _to add it._"]
     return "\n".join(lines)
 
 
@@ -155,6 +219,7 @@ def _metrics(directory: Path) -> dict:
         "dup_keys": _count_csv(directory / "qc_duplicate_keys.csv"),
         "empty_rxn": _count_csv(directory / "qc_empty_reactions.csv"),
         "annot_consistency": _count_csv(directory / "qc_annotation_consistency.csv"),
+        "removed_not_deprecated": _count_csv(directory / "qc_deprecation_completeness.csv"),
         "growth": _growth(directory),
         "missing_formula": _count_csv(completeness, lambda r: r.get("missing_formula") == "yes"),
         "missing_charge": _count_csv(completeness, lambda r: r.get("missing_charge") == "yes"),
@@ -215,25 +280,24 @@ def _table(rows, current: dict, base: dict):
         value = current.get(key)
         is_pending = value is None or group in RUNNING
         if is_pending:
-            lines.append(f"| {label} | _running_ | | :hourglass_flowing_sand: |")
+            lines.append(f"| {_labelled(label)} | _running_ | | :hourglass_flowing_sand: |")
             pending += 1
             continue
         delta, icon, regression, row_fatal = _icon(value, base.get(key), kind)
         fatal = fatal or row_fatal or (key == "dup_keys" and value > 0)
         regressions += regression
         warnings += icon == ":warning:"
-        lines.append(f"| {label} | {_cell(value, kind, detail)} | {delta} | {icon} |")
+        lines.append(f"| {_labelled(label)} | {_cell(value, kind, detail)} | {delta} | {icon} |")
     return lines, regressions, warnings, pending, fatal
 
 
-def _status(name: str) -> str:
-    p = RESULTS / f"qc_{name}.txt"
-    return p.read_text(encoding="utf-8").strip() if p.exists() else ""
-
-
 def _model_integrity_section() -> str:
-    """Round-trip, YAML lint and metabolic-task pass/fail from the status files the
-    workflow writes. A missing file means the check has not finished yet."""
+    """Round-trip, YAML lint and metabolic-task pass/fail from the shared qc_status.tsv
+    the workflow writes. That file is committed, so it is present at checkout with
+    stale values from a previous run; it is only refreshed once the checks in the
+    early "checks" phase have run. While that phase is still going ("checks" in
+    RUNNING) show every row as running rather than the stale committed value; a
+    missing key likewise means the check has not finished yet."""
     checks = [
         ("YAML round-trip (cobrapy)", "roundtrip_cobra"),
         ("YAML round-trip (RAVEN)", "roundtrip_raven"),
@@ -242,18 +306,20 @@ def _model_integrity_section() -> str:
         ("Verification metabolic tasks", "tasks_verification"),
     ]
     out = ["| Check | Result | |", "| --- | ---: | :---: |"]
+    pending = "checks" in RUNNING
+    status = {} if pending else _status_map(RESULTS)
     for label, name in checks:
-        val = _status(name)
+        val = status.get(name, "")
         if not val:
-            out.append(f"| {label} | _running_ | :hourglass_flowing_sand: |")
+            out.append(f"| {_labelled(label)} | _running_ | :hourglass_flowing_sand: |")
         elif "/" in val:                       # tasks: "failed/total"
             failed, total = val.split("/")[:2]
             ok = int(failed) == 0
-            out.append(f"| {label} | {total + ' passed' if ok else failed + ' failed'} | "
+            out.append(f"| {_labelled(label)} | {total + ' passed' if ok else failed + ' failed'} | "
                        f"{':white_check_mark:' if ok else ':x:'} |")
         else:                                  # round-trip / lint: pass|fail
             ok = val.lower() == "pass"
-            out.append(f"| {label} | {val} | {':white_check_mark:' if ok else ':x:'} |")
+            out.append(f"| {_labelled(label)} | {val} | {':white_check_mark:' if ok else ':x:'} |")
     return "\n".join(out)
 
 
@@ -270,13 +336,12 @@ def main() -> int:
     current = _metrics(RESULTS)
     base = _metrics(Path(BASE_DIR)) if have_base else {}
 
-    st_tbl, st_reg, st_warn, st_pend, fatal = _table(STRUCTURAL_ROWS, current, base)
-    rp_tbl, rp_reg, rp_warn, rp_pend, _ = _table(REPORT_ROWS, current, base)
+    md_tbl, md_reg, md_warn, md_pend, fatal = _table(MODEL_ROWS, current, base)
     mb_tbl, mb_reg, mb_warn, mb_pend, _ = _table(MB_ROWS, current, base)
 
-    regressions = st_reg + rp_reg + mb_reg
-    warnings = st_warn + rp_warn + mb_warn
-    pending = st_pend + rp_pend + mb_pend
+    regressions = md_reg + mb_reg
+    warnings = md_warn + mb_warn
+    pending = md_pend + mb_pend
 
     if fatal:
         verdict = ":x: **Merge blocked: the model cannot be loaded or cannot grow.** See the Structural checks table."
@@ -299,14 +364,14 @@ def main() -> int:
         "",
         verdict,
         "",
-        "### Structural checks",
-        "_Duplicate keys (model unloadable) and no growth block the merge; the other rows are non-blocking._",
+        "_Each check name links to its explanation in the "
+        f"[testResults README]({URL_BASE}/README.md)._" if URL_BASE else "",
         "",
-        head, sep, *st_tbl,
+        "### Model checks",
+        "_Duplicate keys (model unloadable) and no growth block the merge; every other row "
+        "is a non-blocking report._",
         "",
-        "### Model QC reports",
-        "",
-        head, sep, *rp_tbl,
+        head, sep, *md_tbl,
         "",
         "### MACAW and mass/charge balance",
         "",
@@ -316,14 +381,14 @@ def main() -> int:
         "",
         _model_integrity_section(),
         "",
-        "### MEMOTE",
+        f"### {_labelled('MEMOTE')}",
         "",
         _memote_section(RESULTS, Path(BASE_DIR) if BASE_DIR else None),
         "",
         "_The score above is the fast core subset. Comment_ `/run memote` "
         "_to run the full suite on this pull request; the score updates here when it finishes._",
         "",
-        "### Gene essentiality (Hart 2015)",
+        f"### {_labelled('Gene essentiality (Hart 2015)')}",
         "",
         _gene_essentiality_section(),
         "",
