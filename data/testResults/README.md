@@ -26,7 +26,7 @@ own files. The pull request in each row is the one whose run last wrote those fi
 | `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1028** (model QC checks) |
 | `macaw_results.csv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1028** (MACAW and balance) |
 | `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1028** (MEMOTE) |
-| `gene-essential.csv`, `gene-essential_summary.md` | `geneEssentiality.py` via `/run gene-essentiality` | **PR #1027** (gene essentiality) |
+| `gene-essential.csv`, `gene-essential_summary.md` | `geneEssentiality.py` via `/run gene-essentiality` | **PR #1028** (gene essentiality) |
 
 ## 2. What each check means
 
