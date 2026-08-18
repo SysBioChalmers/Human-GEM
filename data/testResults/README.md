@@ -183,6 +183,15 @@ hours and is not run on every pull request; comment `/run gene-essentiality` to 
 it, and the result posts as its own comment. Only the summary statistics of the
 comparison are kept here.
 
+A gene counts as essential here when its knockout breaks *any* of the 57 essential
+tasks, which mixes viability tasks (`GR` growth, `ER` energy and redox) with capability
+tasks (`SU` substrate utilization, `BS` biosynthesis, `IC` internal conversions). Genes
+essential only for a capability task, such as the ETF complex for beta-oxidation, are
+therefore counted as false positives against a proliferation screen. `gradedEssentiality.py`
+analyses that scoping: it reports the task categories behind every call together with a
+continuous biomass growth ratio, and scores both against Hart. It is run manually and its
+output is not committed here. See issue #1076.
+
 ## 3. Files in this folder
 
 | File | Contents |

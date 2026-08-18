@@ -348,3 +348,69 @@ def essentiality_matrix_csv(
         row = [gid, symbol_of.get(gid, ""), *(klass(gid, t) for t in tissues)]
         lines.append(",".join(row))
     return "\n".join(lines) + "\n"
+
+
+def _load_hart2015_bayes_factors(table_path: str | Path = HART_TABLE_S2) -> dict[str, dict[str, float]]:
+    """Load the *continuous* Bayes Factor per cell line from Hart 2015 Table S2.
+
+    Returns ``{cell_line: {symbol: bayes_factor}}`` (symbols upper case). This is the
+    same table :func:`_load_hart2015` reads, kept unthresholded so a graded comparison
+    can use the strength of the experimental evidence, not only the 5% FDR call.
+    """
+    headers, rows = _read_xlsx_rows(table_path)
+    for dup_gene in ("MARCH1", "MARCH2"):
+        idxs = [i for i, r in enumerate(rows) if str(r.get("Gene") or "").upper() == dup_gene]
+        if idxs:
+            del rows[idxs[-1]]
+    bf_headers = [
+        h for h in headers
+        if h.upper().startswith("BF_") and h.upper().replace("BF_", "") in BF_THRESHOLDS
+    ]
+    result: dict[str, dict[str, float]] = {}
+    for header in bf_headers:
+        cell_line = header.upper().replace("BF_", "")
+        values: dict[str, float] = {}
+        for r in rows:
+            bf = r.get(header)
+            if isinstance(bf, float) and not math.isnan(bf):
+                values[str(r.get("Gene") or "").upper()] = bf
+        result[cell_line] = values
+    return result
+
+
+def bayes_factors(
+    ref_gene_ids: Iterable[str],
+    tissues: list[str],
+    *,
+    symbol_of: Mapping[str, str] | None = None,
+    genes_tsv: str | Path = GENES_TSV,
+    table_path: str | Path = HART_TABLE_S2,
+) -> dict[str, dict[str, float]]:
+    """Hart 2015 Bayes Factors in model-gene (Ensembl) space, per cell line.
+
+    Returns ``{cell_line: {gene_id: bayes_factor}}``, holding only the genes Hart
+    scored. A model gene takes the *maximum* Bayes Factor over its matching symbols
+    and aliases, which is consistent with :func:`experimental_status` calling a gene
+    a fitness gene when any of its aliases passes the threshold.
+    """
+    ref = set(ref_gene_ids)
+    hart = _load_hart2015_bayes_factors(table_path)
+    gene_names = _model_gene_names(genes_tsv)
+
+    def names_for(gene_id: str) -> set[str]:
+        entry = set(gene_names.get(gene_id, ()))
+        if symbol_of and symbol_of.get(gene_id):
+            entry.add(symbol_of[gene_id].upper())
+        return entry
+
+    names = {gene_id: names_for(gene_id) for gene_id in ref}
+    out: dict[str, dict[str, float]] = {}
+    for cell_line in tissues:
+        by_symbol = hart[cell_line]
+        values: dict[str, float] = {}
+        for gene_id in ref:
+            matched = [by_symbol[s] for s in names[gene_id] if s in by_symbol]
+            if matched:
+                values[gene_id] = max(matched)
+        out[cell_line] = values
+    return out
