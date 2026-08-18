@@ -414,3 +414,197 @@ def bayes_factors(
                 values[gene_id] = max(matched)
         out[cell_line] = values
     return out
+
+
+# --- Graded, task-scoped scoring (issue #1076) -------------------------------------
+# Task categories representing viability of a proliferating cell, and those
+# representing a capability the reconstruction should have. Together they are the five
+# category ids used by metabolicTasks_Essential.txt.
+VIABILITY_CATEGORIES = frozenset({"GR", "ER"})
+CAPABILITY_CATEGORIES = frozenset({"SU", "BS", "IC"})
+
+# Decimals kept for the growth ratio. The committed matrix is the record the summary
+# is regenerated from (reevaluateGeneEssentiality.py), so the ratio is rounded to this
+# precision *before* scoring as well; otherwise the stored and in-memory values tie
+# differently and the rank-based AUROC/AUPRC would not survive a round trip.
+GROWTH_DECIMALS = 6
+
+GRADED_COLUMNS = [
+    "cellLine", "allTaskMCC", "allTaskFP", "viabilityMCC", "viabilityFP",
+    "growthAUROC", "growthAUPRC", "baseRate", "capabilityOnly",
+]
+
+
+def auroc(scored: Iterable[tuple[float, int]]) -> float:
+    """Area under the ROC curve for ``(score, label)`` pairs, ties rank-averaged."""
+    pairs = list(scored)
+    n_pos = sum(label for _score, label in pairs)
+    n_neg = len(pairs) - n_pos
+    if not n_pos or not n_neg:
+        return math.nan
+    order = sorted(pairs, key=lambda pair: pair[0])
+    ranks = [0.0] * len(order)
+    i = 0
+    while i < len(order):
+        j = i
+        while j + 1 < len(order) and order[j + 1][0] == order[i][0]:
+            j += 1
+        average = (i + j) / 2.0 + 1.0
+        for k in range(i, j + 1):
+            ranks[k] = average
+        i = j + 1
+    rank_sum = sum(rank for rank, (_score, label) in zip(ranks, order) if label)
+    return (rank_sum - n_pos * (n_pos + 1) / 2.0) / (n_pos * n_neg)
+
+
+def auprc(scored: Iterable[tuple[float, int]]) -> float:
+    """Average precision (area under the precision-recall curve).
+
+    Preferred over AUROC as the headline number here because essential genes are the
+    minority class, so precision-recall reflects the useful operating range. Compare it
+    with the base rate (the share of positives), which is the random-guess level.
+    """
+    pairs = sorted(scored, key=lambda pair: -pair[0])
+    n_pos = sum(label for _score, label in pairs)
+    if not n_pos:
+        return math.nan
+    true_pos = false_pos = 0
+    average_precision = 0.0
+    previous_recall = 0.0
+    index = 0
+    while index < len(pairs):
+        # Consume every entry sharing this score together. Scoring them one by one
+        # would make the result depend on the order equal scores happen to be in,
+        # and many genes share a growth ratio of exactly 1.0.
+        end = index
+        while end < len(pairs) and pairs[end][0] == pairs[index][0]:
+            if pairs[end][1]:
+                true_pos += 1
+            else:
+                false_pos += 1
+            end += 1
+        recall = true_pos / n_pos
+        if recall > previous_recall:
+            average_precision += (recall - previous_recall) * (true_pos / (true_pos + false_pos))
+            previous_recall = recall
+        index = end
+    return average_precision
+
+
+def _mcc(counts: Mapping[str, int]) -> float:
+    tp, tn, fp, fn = counts["TP"], counts["TN"], counts["FP"], counts["FN"]
+    denominator = math.sqrt((tp + fp) * (tp + fn) * (tn + fp) * (tn + fn))
+    return ((tp * tn) - (fp * fn)) / denominator if denominator else math.nan
+
+
+def _confusion_class(predicted: bool, fitness: bool) -> str:
+    return ("TP" if fitness else "FP") if predicted else ("FN" if fitness else "TN")
+
+
+def evaluate_graded(
+    per_tissue: Mapping[str, Mapping[str, dict]],
+    tissues: list[str],
+    gene_ids: Iterable[str],
+    *,
+    symbol_of: Mapping[str, str],
+) -> tuple[list[dict], str]:
+    """Score the graded predictions against Hart 2015.
+
+    ``per_tissue`` maps cell line -> gene id -> ``{"tasks": [category ids], "growth":
+    ratio or None}``. Returns the per-cell-line summary rows and the per-gene CSV text.
+    """
+    gene_ids = list(gene_ids)
+    hart_bf = bayes_factors(gene_ids, tissues, symbol_of=symbol_of)
+
+    rows: list[dict] = []
+    pooled: list[tuple[float, int]] = []
+    for tissue in tissues:
+        predictions = per_tissue.get(tissue, {})
+        by_gene = hart_bf.get(tissue, {})
+        threshold = BF_THRESHOLDS[tissue]
+        all_counts = dict(TP=0, TN=0, FP=0, FN=0)
+        viability_counts = dict(TP=0, TN=0, FP=0, FN=0)
+        graded: list[tuple[float, int]] = []
+        capability_only = 0
+        for gene_id, record in predictions.items():
+            categories = set(record["tasks"])
+            essential_any = bool(categories)
+            essential_viability = bool(categories & VIABILITY_CATEGORIES)
+            if essential_any and not essential_viability:
+                capability_only += 1
+            if gene_id not in by_gene:
+                continue
+            fitness = by_gene[gene_id] > threshold
+            all_counts[_confusion_class(essential_any, fitness)] += 1
+            viability_counts[_confusion_class(essential_viability, fitness)] += 1
+            growth = record.get("growth")
+            if growth is not None:
+                graded.append((1.0 - round(growth, GROWTH_DECIMALS), int(fitness)))
+        pooled += graded
+        base_rate = (sum(label for _s, label in graded) / len(graded)) if graded else math.nan
+        rows.append({
+            "cellLine": tissue,
+            "allTaskMCC": round(_mcc(all_counts), 4),
+            "allTaskFP": all_counts["FP"],
+            "viabilityMCC": round(_mcc(viability_counts), 4),
+            "viabilityFP": viability_counts["FP"],
+            "growthAUROC": round(auroc(graded), 4),
+            "growthAUPRC": round(auprc(graded), 4),
+            "baseRate": round(base_rate, 4),
+            "capabilityOnly": capability_only,
+        })
+    if pooled:
+        rows.append({
+            "cellLine": "all",
+            "allTaskMCC": "", "allTaskFP": "", "viabilityMCC": "", "viabilityFP": "",
+            "growthAUROC": round(auroc(pooled), 4),
+            "growthAUPRC": round(auprc(pooled), 4),
+            "baseRate": round(sum(label for _s, label in pooled) / len(pooled), 4),
+            "capabilityOnly": "",
+        })
+
+    header = ["genes", "geneSymbol"]
+    for tissue in tissues:
+        header += [f"{tissue}_class", f"{tissue}_tasks", f"{tissue}_growth"]
+    lines = [",".join(header)]
+    for gene_id in gene_ids:
+        row = [gene_id, symbol_of.get(gene_id, "")]
+        for tissue in tissues:
+            record = per_tissue.get(tissue, {}).get(gene_id)
+            if record is None:
+                row += [".", ".", "."]
+                continue
+            categories = set(record["tasks"])
+            essential_any = bool(categories)
+            essential_viability = bool(categories & VIABILITY_CATEGORIES)
+            by_gene = hart_bf.get(tissue, {})
+            if gene_id in by_gene:
+                fitness = by_gene[gene_id] > BF_THRESHOLDS[tissue]
+                old = _confusion_class(essential_any, fitness)
+                new = _confusion_class(essential_viability, fitness)
+            else:
+                old = "P" if essential_any else "."
+                new = "P" if essential_viability else "."
+            # Mark the cells whose call the viability scoping actually changes, so a
+            # meaningful reclassification (for example ETF moving FP -> TN) stands out.
+            growth = record.get("growth")
+            row += [
+                new if old == new else f"{old}->{new}",
+                "|".join(sorted(categories)),
+                "" if growth is None else f"{growth:.{GROWTH_DECIMALS}f}",
+            ]
+        lines.append(",".join(row))
+    return rows, "\n".join(lines) + "\n"
+
+
+def summary_to_markdown(rows: list[dict]) -> str:
+    """Render the per-cell-line summary as a Markdown table."""
+    out = [
+        "### Graded gene essentiality vs Hart 2015 (task-scope analysis)",
+        "",
+        "| " + " | ".join(GRADED_COLUMNS) + " |",
+        "| " + " | ".join("---" for _ in GRADED_COLUMNS) + " |",
+    ]
+    for row in rows:
+        out.append("| " + " | ".join(str(row.get(column, "")) for column in GRADED_COLUMNS) + " |")
+    return "\n".join(out) + "\n"

@@ -71,7 +71,7 @@ jobs:
               || echo "::warning::diagnostic ended (wall-clock cap or error)"
             exit 0
           fi
-          python code/test/geneEssentiality.py
+          python code/test/gradedEssentiality.py
           cat data/testResults/gene-essential_summary.md
           # Pass the Markdown summary through as a multiline step output so it
           # renders as a table in the PR comment (no <br> substitution needed).
@@ -129,9 +129,13 @@ jobs:
             const marker = '<!-- GENE-ESSENTIALITY-COMMENT -->';
             const body = `${marker}\n`
               + `Gene essentiality was run on this pull request via [GH Actions](${process.env.RUN_URL}). `
-              + `Summary:\n\n`
+              + `Essentiality for a *viability* task (\`GR\` growth, \`ER\` energy/redox) is reported `
+              + `separately from essentiality for a *capability* task (\`SU\`, \`BS\`, \`IC\`), and the `
+              + `biomass growth ratio gives a threshold-free score (see #1076). Summary:\n\n`
               + `${process.env.TEST_RESULTS}\n\n`
-              + `The full per-gene essentiality matrix is committed to \`data/testResults/gene-essential.csv\`.\n\n`
+              + `The full per-gene matrix is committed to \`data/testResults/gene-essential.csv\`, holding `
+              + `for each cell line the confusion class, the task categories the knockout breaks and the `
+              + `biomass growth ratio.\n\n`
               + `> _Note: in the case of multiple test runs, this post is edited._`;
             const { owner, repo } = context.repo;
             const issue_number = Number(process.env.ISSUE_NUMBER);

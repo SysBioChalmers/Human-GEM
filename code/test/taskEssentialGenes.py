@@ -175,6 +175,9 @@ def _scan(base, passing, gene_disabled, name_to_id, comp_to_ids, saved, emit, *,
     """
     broken: dict[str, set[str]] = {}
     total = len(gene_disabled)
+    # Once a gene has broken a task of every category there is nothing left to learn
+    # from testing it further, so the categorised scan can stop on it too.
+    all_categories = {task.id for task, _flux_set in passing}
     solves = 0
     for i, (gene_id, disabled) in enumerate(gene_disabled.items(), start=1):
         if not disabled:
@@ -187,7 +190,7 @@ def _scan(base, passing, gene_disabled, name_to_id, comp_to_ids, saved, emit, *,
             solves += 1
             if not _task_feasible_without(base, task, name_to_id, comp_to_ids, disabled, saved):
                 broken.setdefault(gene_id, set()).add(task.id)
-                if stop_early:
+                if stop_early or broken[gene_id] >= all_categories:
                     break
         if i % 250 == 0 or i == total:
             emit(f"scanned {i}/{total} genes, {solves} solves, {len(broken)} essential")
