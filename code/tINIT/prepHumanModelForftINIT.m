@@ -27,6 +27,11 @@ taskStruct = parseTaskList(essentialTasksFilePath);
 %Spontaneous reactions:
 rxns_tsv = importTsvFile(rxnsFilePath);
 spont = rxns_tsv.spontaneous;
+% importTsvFile returns this column as text when reactions.tsv has no quoted
+% fields (as in Human-GEM v2.0.0 and later), so coerce to numeric (see #1020)
+if iscell(spont)
+    spont = str2double(spont);
+end
 spontRxnNames = rxns_tsv.rxns(spont == 1);%very few
 
 %remove some reactions often not used from the model to speed up calculations

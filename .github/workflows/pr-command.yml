@@ -1,0 +1,127 @@
+name: PR command
+
+# ChatOps: let maintainers start long / optional jobs by commenting on a pull
+# request. issue_comment fires from the default branch, so this only takes effect
+# once the workflow is on main.
+#
+# Commands (comment must start with the command):
+#   /run gene-essentiality   run the full gene-essentiality workflow on the PR branch
+#
+# To add a command, copy a job below, change the command in its `if`, and dispatch
+# the target workflow (or run steps directly).
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  actions: write        # dispatch workflow_dispatch workflows
+  pull-requests: write  # reply on the pull request
+
+jobs:
+  gene-essentiality:
+    # Only pull-request comments, from a trusted author, matching the command.
+    if: >
+      github.event.issue.pull_request &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association) &&
+      startsWith(github.event.comment.body, '/run gene-essentiality')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch gene-essentiality on the PR branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          data=$(gh pr view "$PR" --repo "$REPO" --json headRefName,isCrossRepository)
+          ref=$(echo "$data" | jq -r .headRefName)
+          fork=$(echo "$data" | jq -r .isCrossRepository)
+          if [ "$fork" = "true" ]; then
+            gh pr comment "$PR" --repo "$REPO" \
+              --body ":warning: \`/run gene-essentiality\` only works for branches in this repository, not forks."
+            exit 0
+          fi
+          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref" -f pr="$PR"
+          gh pr comment "$PR" --repo "$REPO" \
+            --body ":dna: Started **gene-essentiality** on \`$ref\` (this takes a few hours). Track it in the [Actions tab]($GITHUB_SERVER_URL/$REPO/actions/workflows/gene-essentiality.yml)."
+
+  memote:
+    # Comment /run memote to run the full MEMOTE suite on the PR branch; the score
+    # updates the Model QC comment when it finishes.
+    if: >
+      github.event.issue.pull_request &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association) &&
+      startsWith(github.event.comment.body, '/run memote')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch the full MEMOTE suite on the PR branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          data=$(gh pr view "$PR" --repo "$REPO" --json headRefName,isCrossRepository)
+          ref=$(echo "$data" | jq -r .headRefName)
+          fork=$(echo "$data" | jq -r .isCrossRepository)
+          if [ "$fork" = "true" ]; then
+            gh pr comment "$PR" --repo "$REPO" \
+              --body ":warning: \`/run memote\` only works for branches in this repository, not forks."
+            exit 0
+          fi
+          gh workflow run memote-full.yml --repo "$REPO" --ref "$ref" -f pr="$PR"
+          gh pr comment "$PR" --repo "$REPO" \
+            --body ":microscope: Started the **full MEMOTE suite** on \`$ref\` (this takes hours). The score will update the Model QC comment when it finishes."
+
+  reevaluate-gene-essentiality:
+    # Fast: recompute gene-essential_summary.md from the committed per-gene matrix
+    # (no solve), for when only the evaluation logic changed. Runs directly.
+    if: >
+      github.event.issue.pull_request &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association) &&
+      startsWith(github.event.comment.body, '/reevaluate gene-essentiality')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # commit the regenerated summary
+      pull-requests: write    # reply on the pull request
+    steps:
+      - name: Resolve the PR branch
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          data=$(gh pr view "$PR" --repo "$REPO" --json headRefName,isCrossRepository)
+          echo "ref=$(echo "$data" | jq -r .headRefName)" >> "$GITHUB_OUTPUT"
+          if [ "$(echo "$data" | jq -r .isCrossRepository)" = "true" ]; then
+            echo "fork=true" >> "$GITHUB_OUTPUT"
+            gh pr comment "$PR" --repo "$REPO" \
+              --body ":warning: \`/reevaluate gene-essentiality\` only works for branches in this repository, not forks."
+          fi
+
+      - name: Checkout the PR branch
+        if: steps.pr.outputs.fork != 'true'
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ steps.pr.outputs.ref }}
+
+      - name: Set up Python 3
+        if: steps.pr.outputs.fork != 'true'
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Re-evaluate summary from the committed matrix
+        if: steps.pr.outputs.fork != 'true'
+        run: |
+          pip install pandas
+          python code/test/reevaluateGeneEssentiality.py
+
+      - name: Commit the regenerated summary
+        if: steps.pr.outputs.fork != 'true'
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_user_name: memote-bot
+          commit_message: "chore: re-evaluate gene essentiality summary [skip ci]"
+          file_pattern: data/testResults/gene-essential_summary.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

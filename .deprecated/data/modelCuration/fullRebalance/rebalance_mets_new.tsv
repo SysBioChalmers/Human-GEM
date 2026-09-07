@@ -1,7 +1,0 @@
-mets	metNames	metComps	metFormulas	metCharges	metKEGGID	metBiGGID	metChEBIID	metMetaNetXID
-m10008c	protein C terminal	c	CO2R	-1			CHEBI:33711	
-m10009c	protein N terminal	c	H3NR	1			CHEBI:33712	
-m10010c	S-[(2E,6E)-farnesyl]-L-cysteine methyl ester	c	C19H34NO2S	1			CHEBI:87167	
-m10011c	N-formyl-L-glutamate	c	C6H7NO5	-2	C01045	Nforglu	CHEBI:21710	MNXM1287
-m10011s	N-formyl-L-glutamate	s	C6H7NO5	-2	C01045	Nforglu	CHEBI:21710	MNXM1287
-m10011x	N-formyl-L-glutamate	x	C6H7NO5	-2	C01045	Nforglu	CHEBI:21710	MNXM1287

@@ -55,11 +55,10 @@ preferred-citation:
       given-names: "Jens"
     - family-names: "Li"
       given-names: "Feiran"
-  doi: ""
-  journal: "In press"
+  doi: "10.1073/pnas.2516511123"
+  journal: "Proceedings of the National Academy of Sciences"
   title: "Reconstruction of human metabolic models with large language models"
-  issue: 
-  volume: 
-  year: 
-  start: # First page number
-  end: # Last page number
+  volume: 123
+  issue: 15
+  year: 2026
+  start: "e2516511123"

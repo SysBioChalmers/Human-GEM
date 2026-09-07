@@ -76,7 +76,7 @@ arrayData.threshold = 1;
 
 % run tINIT 
 disp('Step 2: get tissue models')
-model = addBoundaryMets(model);
+model = closeModel(model);
 params = {};
 INIT_output = {};
     
