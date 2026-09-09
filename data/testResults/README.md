@@ -21,12 +21,12 @@ own files. The pull request in each row is the one whose run last wrote those fi
 
 | Result file(s) | Produced by | Last updated by |
 | --- | --- | --- |
-| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1061** (model QC checks) |
-| `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1061** (model QC checks) |
-| `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1061** (model QC checks) |
-| `macaw_results.csv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1061** (MACAW and balance) |
-| `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1061** (MEMOTE) |
-| `gene-essential.csv`, `gene-essential_summary.md` | `geneEssentiality.py` via `/run gene-essentiality` | **PR #1027** (gene essentiality) |
+| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1077** (model QC checks) |
+| `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1077** (model QC checks) |
+| `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1077** (model QC checks) |
+| `macaw_results.csv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1077** (MACAW and balance) |
+| `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1077** (MEMOTE) |
+| `gene-essential.csv`, `gene-essential_summary.md` | `gradedEssentiality.py` via `/run gene-essentiality` | **PR #1077** (gene essentiality) |
 
 ## 2. What each check means
 
@@ -183,6 +183,17 @@ hours and is not run on every pull request; comment `/run gene-essentiality` to 
 it, and the result posts as its own comment. Only the summary statistics of the
 comparison are kept here.
 
+A gene counts as essential here when its knockout breaks *any* of the 57 essential
+tasks, which mixes viability tasks (`GR` growth, `ER` energy and redox) with capability
+tasks (`SU` substrate utilization, `BS` biosynthesis, `IC` internal conversions). Genes
+essential only for a capability task, such as the ETF complex for beta-oxidation, are
+therefore counted as false positives against a proliferation screen. `gradedEssentiality.py`
+reports the task categories behind every call together with a continuous biomass growth
+ratio, and scores both against Hart, so the two kinds of essentiality stay separable. The
+summary reports the all-task and the viability-only MCC side by side, plus the
+threshold-free AUROC/AUPRC of the growth ratio against the Hart Bayes Factors. See issue
+#1076.
+
 ## 3. Files in this folder
 
 | File | Contents |
@@ -203,8 +214,8 @@ comparison are kept here.
 | `macaw_results.csv` | Full MACAW output (dead-end and duplicate tests) per reaction. |
 | `balance_results.csv` | Mass- and charge-imbalanced reactions. |
 | `memote_score.md` | MEMOTE scores in two sections, core subset and full suite (see the MEMOTE explanation above). |
-| `gene-essential.csv` | Per-gene essentiality matrix across the five cell-line models. |
-| `gene-essential_summary.md` | Summary statistics of the gene-essentiality comparison against Hart 2015. |
+| `gene-essential.csv` | Per-gene matrix across the five cell-line models: per cell line the confusion class (marked `FP->TN` where the viability scoping changes the call), the task categories the knockout breaks, and the biomass growth ratio. |
+| `gene-essential_summary.md` | Summary statistics of the gene-essentiality comparison against Hart 2015: all-task and viability-only MCC and false positives, growth-ratio AUROC/AUPRC with the base rate, and the number of capability-only essential genes. |
 | `README.md` | This file. |
 </content>
 </invoke>

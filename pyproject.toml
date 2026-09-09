@@ -11,8 +11,9 @@ authors = [{ name = "SysBioChalmers" }]
 dependencies = [
     "cobra>=0.29",
     "pandas>=1.5",
-    # raven-toolbox is the Python RAVEN port; not on PyPI, installed from source.
-    "raven-toolbox @ git+https://github.com/SysBioChalmers/raven-toolbox.git",
+    # raven-toolbox is the Python RAVEN port. 3.0.0b1 is a pre-release, and naming it
+    # in the specifier is what lets pip install one for this requirement.
+    "raven-toolbox>=3.0.0b1",
 ]
 
 [project.urls]
