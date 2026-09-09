@@ -93,7 +93,12 @@ jobs:
         env:
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
-          git stash
+          # --include-untracked: a result file that is new in this run is untracked
+          # here, but is already tracked at the branch tip once any earlier run has
+          # committed it, and plain `git stash` leaves untracked files in place, so
+          # the checkout below then refuses to overwrite them and the job dies after
+          # the run has already finished.
+          git stash --include-untracked
           git fetch
           git checkout $BRANCH_NAME
           if git stash list | grep -q 'stash@{'; then
