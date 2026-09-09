@@ -132,22 +132,13 @@ def _task_feasible_without(
             _restore_constraints(base, task_mets or saved, saved)
 
 
-def find_task_essential_genes(
-    model: cobra.Model,
-    tasks: str | Iterable[Task],
-    *,
-    log: Callable[[str], None] | None = None,
-) -> set[str]:
-    """Return the set of gene ids essential for at least one task in ``model``.
+def _prepare_scan(model: cobra.Model, tasks: str | Iterable[Task], emit):
+    """Shared setup for the gene scans.
 
-    ``model`` is a context-specific model; ``tasks`` is a parsed task list or a
-    path to a task-list file. Boundary reactions are closed internally so that
-    task inputs/outputs define the exchange, exactly as in check_tasks.
-
-    ``log`` is an optional callable used to report progress; when omitted the
-    function is silent.
+    Copies the model once, builds the task name maps, snapshots the mass-balance
+    bounds and computes one parsimonious flux distribution per feasible task.
+    Returns ``(base, passing, gene_disabled, name_to_id, comp_to_ids, saved)``.
     """
-    emit = log or (lambda _msg: None)
     tasks = _as_tasks(tasks)
     base = _prepare_base(model)
     name_to_id, comp_to_ids = task_name_maps(base)
@@ -170,10 +161,23 @@ def find_task_essential_genes(
             passing.append((task, flux_set))
 
     gene_disabled = _gene_disabled_reactions(base)
-    total = len(gene_disabled)
-    emit(f"{len(passing)}/{len(testable)} tasks feasible; scanning {total} candidate genes")
+    emit(f"{len(passing)}/{len(testable)} tasks feasible; "
+         f"scanning {len(gene_disabled)} candidate genes")
+    return base, passing, gene_disabled, name_to_id, comp_to_ids, saved
 
-    essential_genes: set[str] = set()
+
+def _scan(base, passing, gene_disabled, name_to_id, comp_to_ids, saved, emit, *, stop_early):
+    """Knock out each gene and record the id of every task the knockout breaks.
+
+    With ``stop_early`` the scan moves on to the next gene as soon as one task breaks,
+    which is all that is needed to call the gene essential and is much cheaper. Without
+    it every task is tested, so the full set of broken task ids (= categories) is known.
+    """
+    broken: dict[str, set[str]] = {}
+    total = len(gene_disabled)
+    # Once a gene has broken a task of every category there is nothing left to learn
+    # from testing it further, so the categorised scan can stop on it too.
+    all_categories = {task.id for task, _flux_set in passing}
     solves = 0
     for i, (gene_id, disabled) in enumerate(gene_disabled.items(), start=1):
         if not disabled:
@@ -185,9 +189,53 @@ def find_task_essential_genes(
                 continue
             solves += 1
             if not _task_feasible_without(base, task, name_to_id, comp_to_ids, disabled, saved):
-                essential_genes.add(gene_id)
-                break
+                broken.setdefault(gene_id, set()).add(task.id)
+                if stop_early or broken[gene_id] >= all_categories:
+                    break
         if i % 250 == 0 or i == total:
-            emit(f"scanned {i}/{total} genes, {solves} solves, {len(essential_genes)} essential")
+            emit(f"scanned {i}/{total} genes, {solves} solves, {len(broken)} essential")
+    return broken
 
-    return essential_genes
+
+def find_task_essential_genes(
+    model: cobra.Model,
+    tasks: str | Iterable[Task],
+    *,
+    log: Callable[[str], None] | None = None,
+) -> set[str]:
+    """Return the set of gene ids essential for at least one task in ``model``.
+
+    ``model`` is a context-specific model; ``tasks`` is a parsed task list or a
+    path to a task-list file. Boundary reactions are closed internally so that
+    task inputs/outputs define the exchange, exactly as in check_tasks.
+
+    ``log`` is an optional callable used to report progress; when omitted the
+    function is silent.
+    """
+    emit = log or (lambda _msg: None)
+    scan_args = _prepare_scan(model, tasks, emit)
+    return set(_scan(*scan_args, emit, stop_early=True))
+
+
+def find_task_essential_categories(
+    model: cobra.Model,
+    tasks: str | Iterable[Task],
+    *,
+    log: Callable[[str], None] | None = None,
+) -> dict[str, set[str]]:
+    """Map gene id -> ids of the tasks it is essential for, for every essential gene.
+
+    The essential-task list labels each task with its category, so the returned ids
+    are the categories ``ER`` (energy and redox), ``IC`` (internal conversions),
+    ``SU`` (substrate utilization), ``BS`` (biosynthesis of products) and ``GR``
+    (growth). This distinguishes a gene needed for *viability* (``GR``/``ER``) from
+    one needed only for a *capability* the network should have (``SU``/``BS``/``IC``),
+    which :func:`find_task_essential_genes` cannot express.
+
+    Unlike :func:`find_task_essential_genes` this cannot stop at the first broken
+    task, so it is several times slower; it is meant for analysis, not for the
+    per-pull-request run.
+    """
+    emit = log or (lambda _msg: None)
+    scan_args = _prepare_scan(model, tasks, emit)
+    return _scan(*scan_args, emit, stop_early=False)
