@@ -1,0 +1,187 @@
+name: Release
+
+# Cuts a release branch from develop, stamps the version and regenerates the
+# model exports with code/io/increaseHumanGEMVersion.py, and opens the release
+# pull request into main for a human to approve. On merge, tags the release,
+# publishes it on GitHub from docs/releaseNotes/<version>.md, and opens the
+# sync-back pull request into develop.
+#
+# The release pull request is checked by model-qc.yml, which runs on every pull
+# request, so the model quality report appears on it without extra wiring here.
+#
+# See .github/CONTRIBUTING.md, "Releasing a new version", for the manual steps
+# that remain (writing the release notes).
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "New version, e.g. 2.1.0. Needs docs/releaseNotes/<version>.md."
+        required: true
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  # Generated or stamped at release time, tracked on main only. Kept in one place
+  # because both the build commit and the sync-back need the same list, and
+  # branch-hygiene.yml rejects them on develop.
+  RELEASE_ONLY_FILES: >-
+    model/Human-GEM.mat model/Human-GEM.txt model/Human-GEM.xlsx
+    model/Human-GEM.xml model/dependencies.txt version.txt
+
+jobs:
+  # --- Cut the branch ----------------------------------------------------
+
+  cut:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: develop
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements.txt
+
+      # Fails here, before a branch exists, rather than partway through the
+      # build job. Reads the current version from origin/main, since develop
+      # does not track version.txt.
+      - name: Validate the version and its release notes
+        run: |
+          python code/io/increaseHumanGEMVersion.py validate \
+            --version "${{ github.event.inputs.version }}"
+
+      - name: Cut the release branch
+        run: |
+          git checkout -b "release/${{ github.event.inputs.version }}"
+          git push origin "release/${{ github.event.inputs.version }}"
+
+  # --- Stamp the version and regenerate the exports ----------------------
+
+  build:
+    needs: cut
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: release/${{ github.event.inputs.version }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      # openpyxl is what pandas writes .xlsx through, and is not pulled in by
+      # code/test/requirements.txt, which covers the task and round-trip tests.
+      - name: Install dependencies
+        run: |
+          pip install -r code/test/requirements.txt
+          pip install openpyxl
+
+      # Writes version.txt, stamps the version into the model metadata,
+      # regenerates model/Human-GEM.{yml,mat,xml,xlsx,txt} and
+      # model/dependencies.txt, and fills the {{nRXN}} / {{nMET}} / {{nGENE}} /
+      # {{DATE}} placeholders README.md carries on develop.
+      - name: Build the release
+        run: |
+          python code/io/increaseHumanGEMVersion.py build \
+            --version "${{ github.event.inputs.version }}"
+
+      # release/X.Y.Z is not protected, so the default token can push to it
+      # directly. Everything into main or develop still goes through a
+      # reviewed pull request.
+      - name: Commit
+        run: |
+          git config user.name "human-gem-bot"
+          git config user.email "human-gem-bot@users.noreply.github.com"
+          git add $RELEASE_ONLY_FILES model/Human-GEM.yml README.md
+          git commit -m "chore: version ${{ github.event.inputs.version }}"
+          git push
+
+  # --- Open the release pull request -------------------------------------
+
+  open-pr:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: release/${{ github.event.inputs.version }}
+
+      - name: Open the release pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ github.event.inputs.version }}
+        run: |
+          gh pr create --base main --head "release/$VERSION" \
+            --title "chore: version $VERSION" \
+            --body "Automated release build for $VERSION.
+
+          Review the Model QC comment below, and [the release notes](https://github.com/${{ github.repository }}/blob/release/$VERSION/docs/releaseNotes/$VERSION.md), before approving. Merging tags \`v$VERSION\`, publishes the release, and opens the sync-back pull request into \`develop\`."
+
+  # --- On merge: tag, release, sync back ---------------------------------
+
+  finalize:
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.base.ref == 'main' &&
+      startsWith(github.event.pull_request.head.ref, 'release/')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      # The tag keeps the "vX.Y.Z" form used by every existing tag, and the
+      # release title follows the "Human X.Y.Z" convention of every release
+      # published so far.
+      - name: Tag and publish the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="${{ github.event.pull_request.head.ref }}"
+          version="${version#release/}"
+          gh release create "v$version" --target main --title "Human $version" \
+            --notes-file "docs/releaseNotes/$version.md"
+
+      # main after the release is develop plus the release branch's own commits,
+      # so this is an ordinary merge. The generated files and version.txt are
+      # dropped from it, and README.md is taken back from develop: the build
+      # substituted its {{nRXN}} / {{nMET}} / {{nGENE}} placeholders, and develop
+      # keeps the unsubstituted template for the next release.
+      - name: Open the sync-back pull request into develop
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="${{ github.event.pull_request.head.ref }}"
+          version="${version#release/}"
+          git config user.name "human-gem-bot"
+          git config user.email "human-gem-bot@users.noreply.github.com"
+          git fetch origin develop
+          git checkout -b "sync/main-to-develop-$version" origin/develop
+          git merge --no-commit --no-ff origin/main
+          git rm --cached $RELEASE_ONLY_FILES
+          git checkout origin/develop -- README.md
+          git commit -m "chore: merge main into develop after $version, without the release-only files"
+          git push origin "sync/main-to-develop-$version"
+          gh pr create --base develop --head "sync/main-to-develop-$version" \
+            --title "chore: sync main into develop after $version" \
+            --body "Brings $version back into \`develop\`, keeping the generated model files and \`version.txt\` off it, and keeping the \`README.md\` placeholders. See branch-hygiene.yml, which would otherwise flag them."

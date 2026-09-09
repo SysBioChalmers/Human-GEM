@@ -1,0 +1,49 @@
+name: Branch hygiene
+
+# The generated model files and version.txt are produced or stamped at release
+# time and belong on main only. develop is never "at" a version, it is ahead of
+# the last release by an unknown number of increments. .gitignore cannot keep
+# them off develop: it is consulted only for untracked paths, so once a file is
+# tracked on main, a merge of main into develop carries it across regardless.
+# This check is what prevents that.
+on:
+  pull_request:
+    branches: [develop]
+  push:
+    branches: [develop]
+
+jobs:
+  no-release-artifacts-on-develop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      # On a pull_request event this runs against the merge result rather than
+      # the pull-request branch, so it answers "would develop contain these once
+      # this is merged?", which also catches files arriving through a merge
+      # commit rather than being added directly.
+      - name: No release-only files on develop
+        run: |
+          # Exact paths, not globs: '*.xlsx' would match
+          # data/datasets/Hart2015_TableS2.xlsx and '*.txt' would match the
+          # requirements files and data/datasets/Hart2015_RNAseq.txt, all of
+          # which are legitimately tracked on develop.
+          found=$(git ls-files \
+            'model/Human-GEM.mat' 'model/Human-GEM.txt' \
+            'model/Human-GEM.xlsx' 'model/Human-GEM.xml' \
+            'model/dependencies.txt' 'version.txt')
+          if [ -n "$found" ]; then
+            echo "::error::These are generated or stamped at release time, but belong on main only:"
+            echo "$found" | sed 's/^/  /'
+            echo ""
+            echo "If they arrived here through a merge of main into develop,"
+            echo "drop them in the merge commit:"
+            echo ""
+            echo "  git rm --cached $(echo $found | tr '\n' ' ')"
+            echo ""
+            echo "A local, untracked copy is fine: this only rejects tracked files."
+            exit 1
+          fi
+          echo "No release-only files tracked on develop."
