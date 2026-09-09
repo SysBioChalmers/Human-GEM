@@ -8,6 +8,11 @@
 #
 # The gene-essentiality workflow additionally needs Gurobi for the tINIT MILP;
 # its extra dependencies live in requirements-gurobi.txt.
+#
+# qcModelChecks.py reads model/Human-GEM.yml with PyYAML to find duplicate keys,
+# which it has to do before cobra loads the file. It was reaching PyYAML through
+# another package's dependencies rather than declaring it.
 raven-toolbox @ git+https://github.com/SysBioChalmers/raven-toolbox.git
 cobra
 pandas
+pyyaml
