@@ -1,0 +1,16 @@
+# Lint configuration for the scripts under code/.
+#
+# The rule set is selected explicitly rather than left to ruff's defaults, which
+# differ between ruff versions: an unpinned ruff in CI would otherwise start failing
+# on a ruff release rather than on a change to this repository.
+target-version = "py311"
+
+[lint]
+# Import placement (E4), statement-level mistakes (E7), syntax and runtime errors
+# (E9), and pyflakes (F): undefined names, unused imports and variables, f-strings
+# without placeholders, redefinitions. These report mistakes rather than layout.
+#
+# Line length (E501) is left out: nothing formats this repository, and the existing
+# scripts run to 147 characters, so selecting it would report 38 pre-existing lines
+# without saying anything about correctness.
+select = ["E4", "E7", "E9", "F"]
