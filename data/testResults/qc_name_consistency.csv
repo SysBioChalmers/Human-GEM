@@ -1,0 +1,3 @@
+kind,id,issue
+metabolite,MAM02766,"name differs across compartments: '(2S)-pristanic acid' (MAM02766c, MAM02766e, MAM02766x); 'pristanic acid' (MAM02766r)"
+metabolite,MAM20077,name differs across compartments: '2-(4-carboxy-1-hydroxybutyl)thiamine diphosphate' (MAM20077m); '2-O-acetyl-ADP-D-ribose' (MAM20077n)

@@ -1,6 +1,6 @@
 ## Model quality report
 
-:warning: **6 pre-existing finding(s), no regressions vs `develop`.** Non-blocking.
+:warning: **7 pre-existing finding(s), no regressions vs `develop`.** Non-blocking.
 
 _Each check name links to its explanation in the [testResults README](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md)._
 
@@ -17,6 +17,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Metabolites missing formula](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Reaction bound / GPR issues](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
+| [Naming issues (missing or inconsistent)](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#naming-issues-missing-or-inconsistent) | [2](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/qc_name_consistency.csv) | new | :warning: |
 | [Exact-duplicate reaction groups](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
 | [Unused metabolites](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
 | [Unused genes](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#unused-genes) | 0 | 0 | :white_check_mark: |
@@ -39,6 +40,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | --- | ---: | :---: |
 | [YAML round-trip (cobrapy)](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#yaml-round-trip-cobrapy) | pass | :white_check_mark: |
 | [YAML round-trip (RAVEN)](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#yaml-round-trip-raven) | pass | :white_check_mark: |
+| [SBML round-trip](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#sbml-round-trip) | pass | :white_check_mark: |
 | [YAML lint](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#yaml-lint) | pass | :white_check_mark: |
 | [Essential metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#essential-metabolic-tasks) | 57 passed | :white_check_mark: |
 | [Verification metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/README.md#verification-metabolic-tasks) | 21 passed | :white_check_mark: |
