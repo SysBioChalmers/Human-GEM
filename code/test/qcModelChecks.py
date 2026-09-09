@@ -30,7 +30,7 @@ Usage:
 import csv
 import os
 import sys
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 
 import cobra
@@ -54,6 +54,7 @@ UNUSED_CSV = f"{RESULTS}/qc_unused_entities.csv"
 COMPLETENESS_CSV = f"{RESULTS}/qc_metabolite_completeness.csv"
 REACTION_SANITY_CSV = f"{RESULTS}/qc_reaction_sanity.csv"
 DEPRECATION_COMPLETENESS_CSV = f"{RESULTS}/qc_deprecation_completeness.csv"
+NAME_CONSISTENCY_CSV = f"{RESULTS}/qc_name_consistency.csv"
 # Growth value goes into the shared qc_status.tsv (via qcStatus); only the
 # variable-length list of blocking precursors keeps its own CSV.
 GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
@@ -330,6 +331,44 @@ def check_reaction_sanity(model: cobra.Model) -> int:
     return len(rows)
 
 
+def check_name_consistency(model: cobra.Model) -> list[tuple]:
+    """Names that are missing, or that disagree between a metabolite's compartments.
+
+    Names are curated in model/Human-GEM.yml, and reactions.tsv/metabolites.tsv carry
+    cross-references only, so there is no second copy of a name to drift against. Two
+    things can still go wrong:
+
+    * an entity with no name, which the naming curation brought to zero;
+    * one chemical carrying different names in different compartments. The same
+      compound is the same compound wherever it sits, so the names should agree, and a
+      disagreement is either a naming slip or two unrelated compounds sharing a base
+      identifier.
+
+    Returns [(kind, id, issue)].
+    """
+    rows: list[tuple] = []
+    for kind, entities in (("reaction", model.reactions), ("metabolite", model.metabolites)):
+        for entity in entities:
+            if not (entity.name or "").strip():
+                rows.append((kind, entity.id, "missing name"))
+
+    # Metabolite ids are the base identifier plus a one-letter compartment suffix.
+    names_by_base: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
+    for met in model.metabolites:
+        base = met.id[:-1] if met.id[-1:].isalpha() else met.id
+        names_by_base[base][(met.name or "").strip()].append(met.id)
+    for base, by_name in sorted(names_by_base.items()):
+        if len(by_name) > 1:
+            spelled = "; ".join(
+                f"{name!r} ({', '.join(sorted(ids))})" for name, ids in sorted(by_name.items())
+            )
+            rows.append(("metabolite", base, f"name differs across compartments: {spelled}"))
+
+    rows.sort()
+    _write_csv(NAME_CONSISTENCY_CSV, ["kind", "id", "issue"], rows)
+    return rows
+
+
 # --------------------------------------------------------------------------- #
 # Gate: growth, with the blocking biomass precursors when it fails
 # --------------------------------------------------------------------------- #
@@ -417,9 +456,14 @@ def main() -> int:
     n_dup_rxn = check_duplicate_reactions(model)
     n_unused_met, n_unused_gene = check_unused_entities(model)
 
+    name_issues = check_name_consistency(model)
+    if name_issues:
+        print(f"::warning::{len(name_issues)} naming issue(s); see {NAME_CONSISTENCY_CSV}.")
+
     print(f"Metabolites missing a formula: {n_formula}")
     print(f"Metabolites missing a charge: {n_charge}")
     print(f"Reactions with bound/GPR issues: {n_reaction_issues}")
+    print(f"Naming issues (missing or inconsistent): {len(name_issues)}")
     print(f"Exact-duplicate reaction groups: {n_dup_rxn}")
     print(f"Unused metabolites / genes: {n_unused_met} / {n_unused_gene}")
     print(f"Removed identifiers not deprecated: {len(undeprecated)}")

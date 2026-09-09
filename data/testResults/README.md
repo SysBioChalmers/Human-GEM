@@ -21,9 +21,9 @@ own files. The pull request in each row is the one whose run last wrote those fi
 
 | Result file(s) | Produced by | Last updated by |
 | --- | --- | --- |
-| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1078** (model QC checks) |
+| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_name_consistency.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1078** (model QC checks) |
 | `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1078** (model QC checks) |
-| `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1078** (model QC checks) |
+| `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testSbmlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1078** (model QC checks) |
 | `macaw_results.csv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1078** (MACAW and balance) |
 | `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1078** (MEMOTE) |
 | `gene-essential.csv`, `gene-essential_summary.md` | `geneEssentiality.py` via `/run gene-essentiality` | **PR #1027** (gene essentiality) |
@@ -87,6 +87,14 @@ Reactions with invalid flux bounds (`lb > ub`, or a bound outside +/-1000) or
 gene-rule problems (a gene not annotated in `genes.tsv`, or a boundary reaction that
 carries a gene rule).
 
+#### Naming issues (missing or inconsistent)
+Reactions or metabolites with no name, and metabolites whose name depends on the
+compartment. Names are curated in `model/Human-GEM.yml`; `reactions.tsv` and
+`metabolites.tsv` hold cross-references only, so there is no second copy of a name to
+drift against. One chemical is the same chemical in every compartment, so a name that
+differs between compartments is either a naming slip or two unrelated compounds sharing
+a base identifier.
+
 #### Exact-duplicate reaction groups
 Groups of two or more reactions with **identical** stoichiometry (same metabolites
 and same coefficients). This is the strict "truly identical" case; near-duplicates
@@ -149,6 +157,14 @@ failure means the YAML does not survive a cobrapy round-trip. **Gate.**
 #### YAML round-trip (RAVEN)
 The same round-trip through the RAVEN toolbox. **Gate.**
 
+#### SBML round-trip
+The model, with its cross-references and SBO terms merged in, is written to SBML, read
+back and compared with the model it came from (`testSbmlConversion.py`). `model/Human-GEM.xml`
+is written at release time and read back by nothing else, so a loss in the SBML writer
+or reader would otherwise reach a release unnoticed. Identifiers are compared as sets,
+because the SBML writer emits an identifier listed twice on one entity only once, and
+returns a single cross-reference as a string rather than a one-element list. **Gate.**
+
 #### YAML lint
 `yamllint` over `model/` (line-length rule disabled). **Gate.**
 
@@ -196,6 +212,7 @@ comparison are kept here.
 | `qc_deprecation_completeness.csv` | Reactions/metabolites removed since the target branch but not added to a deprecated list: `kind, id, issue`. |
 | `qc_metabolite_completeness.csv` | Metabolites missing a formula and/or a charge: `metabolite, name, missing_formula, missing_charge`. |
 | `qc_reaction_sanity.csv` | Reactions with bound or GPR issues: `reaction, name, issues`. |
+| `qc_name_consistency.csv` | Entities with no name, and metabolites whose name differs between compartments: `kind, id, issue`. |
 | `qc_duplicate_reactions.csv` | Exact-duplicate reaction groups: `group, reaction, equation`. |
 | `qc_unused_entities.csv` | Metabolites and genes used by no reaction: `kind, id`. |
 | `qc_annotation_issues.csv` | Malformed and cross-compartment-inconsistent cross-references. |

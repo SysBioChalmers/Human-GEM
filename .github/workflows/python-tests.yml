@@ -1,0 +1,50 @@
+name: Python tests
+
+# Unit tests and lint for the scripts under code/. Those scripts decide whether a
+# pull request passes model QC, and they are run as files rather than installed as a
+# package, so nothing else exercises them. They are fast (seconds) and need no model,
+# no solver and no licence, so they run on every pull request.
+on:
+  pull_request:
+    paths:
+      - 'code/**'
+      - '.github/workflows/python-tests.yml'
+  push:
+    branches: [develop, main]
+    paths:
+      - 'code/**'
+      - '.github/workflows/python-tests.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: code/test/requirements.txt
+
+      # cobra and pandas come from the QC requirements: the tests build small cobra
+      # models rather than reading model/Human-GEM.yml, so raven-toolbox and a solver
+      # licence are not needed.
+      - name: Install dependencies
+        run: |
+          pip install -r code/test/requirements.txt
+          pip install pytest ruff
+
+      - name: Lint with ruff
+        run: ruff check code
+
+      - name: Run pytest
+        run: python -m pytest code/test/unit -q
