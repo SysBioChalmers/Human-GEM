@@ -34,6 +34,23 @@ not part of the per-pull-request checks. It overwrites the two usual artifacts i
 
 ``--checkpoint-dir`` stores one JSON file per finished cell line and skips the cell
 lines already present, so an interrupted run resumes without repeating hours of work.
+
+Building every cell line is independent (each starts from the same, once-per-run
+:func:`_prep_human_model_for_ftinit` output and touches only its own checkpoint file),
+so a run can be split across several parallel processes or CI jobs by cell line:
+
+    python code/test/gradedEssentiality.py --checkpoint-dir DIR \
+        --shard-index I --shard-count N
+
+with ``I`` from ``0`` to ``N - 1``. Each shard runs Step 1 for itself (it is not shared
+across processes), builds only the cell lines where ``index % N == I``, writes their
+checkpoints, and exits without writing the final report. Once every shard has finished:
+
+    python code/test/gradedEssentiality.py --checkpoint-dir DIR --aggregate-only
+
+reads every cell line's checkpoint (Gurobi is not needed for this step) and writes the
+final ``gene-essential.csv`` / ``gene-essential_summary.md``, exactly as a single
+unsharded run would have.
 """
 
 from __future__ import annotations
@@ -144,6 +161,11 @@ def growth_ratios(
     return ratios, wild_type, len(exchange_ids), unresolved
 
 
+def _shard(tissues: list[str], shard_index: int, shard_count: int) -> list[str]:
+    """This shard's cell lines: every ``shard_count``-th one, starting at ``shard_index``."""
+    return tissues if shard_count <= 1 else tissues[shard_index::shard_count]
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Graded, task-scoped gene-essentiality analysis")
     parser.add_argument(
@@ -152,73 +174,109 @@ def main(argv: list[str] | None = None) -> int:
         default=None,
         help="directory for per-cell-line JSON checkpoints; finished cell lines are skipped",
     )
+    parser.add_argument(
+        "--shard-index",
+        type=int,
+        default=0,
+        help="0-based index of this run's slice of cell lines; requires --checkpoint-dir",
+    )
+    parser.add_argument(
+        "--shard-count",
+        type=int,
+        default=1,
+        help="split cell lines into this many slices; this run builds index I where "
+             "I %% shard-count == shard-index, then exits without the final report",
+    )
+    parser.add_argument(
+        "--aggregate-only",
+        action="store_true",
+        help="skip building; combine every cell line's --checkpoint-dir checkpoint "
+             "(all must already be present) into the final report",
+    )
     args = parser.parse_args(argv)
+    if (args.aggregate_only or args.shard_count > 1) and not args.checkpoint_dir:
+        parser.error("--aggregate-only and --shard-count > 1 require --checkpoint-dir")
+    if args.shard_count < 1 or not 0 <= args.shard_index < args.shard_count:
+        parser.error("--shard-index must be in [0, --shard-count) and --shard-count >= 1")
     if args.checkpoint_dir:
         args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
-    # Silence Gurobi's per-copy "Read LP format model from file ..." banner.
-    import gurobipy
-    gurobipy.setParam("OutputFlag", 0)
-    # Serial FVA: Gurobi's environment is not fork-safe (see estimateEssentialGenes).
-    cobra.Configuration().processes = 1
-
     started = time.time()
-    model = read_yaml_model(MODEL_FILE)
-    model.solver = "gurobi"
     tasks = parse_task_list(ESSENTIAL_TASKS)
     growth_task = next(task for task in tasks if task.id == "GR")
     tissues, expression = _read_rnaseq(RNASEQ_FILE)
+    model = read_yaml_model(MODEL_FILE)
     symbol_of = _gene_symbol_map(model)
 
     def checkpoint_path(tissue: str) -> Path | None:
         return args.checkpoint_dir / f"graded_{tissue}.json" if args.checkpoint_dir else None
 
-    per_tissue: dict[str, dict[str, dict]] = {}
-    pending = [t for t in tissues if not (checkpoint_path(t) and checkpoint_path(t).exists())]
+    if args.aggregate_only:
+        missing = [t for t in tissues if not (checkpoint_path(t) and checkpoint_path(t).exists())]
+        if missing:
+            _log(f"ERROR: no checkpoint for {len(missing)}/{len(tissues)} cell line(s): {missing}")
+            return 1
+        per_tissue = {t: json.loads(checkpoint_path(t).read_text()) for t in tissues}
+    else:
+        model.solver = "gurobi"
+        # Silence Gurobi's per-copy "Read LP format model from file ..." banner.
+        import gurobipy
+        gurobipy.setParam("OutputFlag", 0)
+        # Serial FVA: Gurobi's environment is not fork-safe (see estimateEssentialGenes).
+        cobra.Configuration().processes = 1
 
-    prep = None
-    if pending:
-        _log("Step 1: prepHumanModelForftINIT (clean + prepINITModel) ...")
-        prep = _prep_human_model_for_ftinit(model, tasks)
-        _log(f"Step 1 done: reference {len(prep.ref_model.reactions)} reactions, "
-             f"{len(prep.essential_rxns)} task-essential; {len(prep.tasks)} feasible tasks")
+        shard = _shard(tissues, args.shard_index, args.shard_count)
+        pending = [t for t in shard if not (checkpoint_path(t) and checkpoint_path(t).exists())]
 
-    for index, tissue in enumerate(tissues, start=1):
-        cached = checkpoint_path(tissue)
-        if cached and cached.exists():
-            _log(f"Cell line {index}/{len(tissues)}: {tissue} (from checkpoint)")
-            per_tissue[tissue] = json.loads(cached.read_text())
-            continue
+        per_tissue = {}
+        prep = None
+        if pending:
+            _log("Step 1: prepHumanModelForftINIT (clean + prepINITModel) ...")
+            prep = _prep_human_model_for_ftinit(model, tasks)
+            _log(f"Step 1 done: reference {len(prep.ref_model.reactions)} reactions, "
+                 f"{len(prep.essential_rxns)} task-essential; {len(prep.tasks)} feasible tasks")
 
-        _log(f"Cell line {index}/{len(tissues)}: {tissue}")
-        context = _build_context_model(
-            prep, model, expression[tissue], BIG_M, MIP_GAP_ABS, TIME_LIMIT
-        )
-        context.id = tissue
-        _log(f"  {tissue}: model has {len(context.reactions)} reactions, "
-             f"{len(context.genes)} genes; scanning task categories ...")
-        categories = find_task_essential_categories(
-            context, prep.tasks, log=lambda message, t=tissue: _log(f"    {t}: {message}")
-        )
-        _log(f"  {tissue}: {len(categories)} genes essential for at least one task")
+        for index, tissue in enumerate(shard, start=1):
+            cached = checkpoint_path(tissue)
+            if cached and cached.exists():
+                _log(f"Cell line {index}/{len(shard)}: {tissue} (from checkpoint)")
+                per_tissue[tissue] = json.loads(cached.read_text())
+                continue
 
-        ratios, wild_type, n_media, unresolved = growth_ratios(context, growth_task)
-        if not ratios:
-            _log(f"  {tissue}: WARNING no growth on the task medium (flux {wild_type:.3g}), "
-                 f"growth ratios unavailable")
-        if unresolved:
-            _log(f"  {tissue}: WARNING unresolved medium inputs: {unresolved}")
-        lethal = sum(1 for value in ratios.values() if value < 1e-6)
-        _log(f"  {tissue}: wild-type biomass {wild_type:.3g} on {n_media} medium exchanges; "
-             f"{lethal} growth-lethal genes")
+            _log(f"Cell line {index}/{len(shard)}: {tissue}")
+            context = _build_context_model(
+                prep, model, expression[tissue], BIG_M, MIP_GAP_ABS, TIME_LIMIT
+            )
+            context.id = tissue
+            _log(f"  {tissue}: model has {len(context.reactions)} reactions, "
+                 f"{len(context.genes)} genes; scanning task categories ...")
+            categories = find_task_essential_categories(
+                context, prep.tasks, log=lambda message, t=tissue: _log(f"    {t}: {message}")
+            )
+            _log(f"  {tissue}: {len(categories)} genes essential for at least one task")
 
-        per_tissue[tissue] = {
-            gene.id: {"tasks": sorted(categories.get(gene.id, ())), "growth": ratios.get(gene.id)}
-            for gene in context.genes
-        }
-        if cached:
-            cached.write_text(json.dumps(per_tissue[tissue]))
-            _log(f"  {tissue}: checkpoint written to {cached}")
+            ratios, wild_type, n_media, unresolved = growth_ratios(context, growth_task)
+            if not ratios:
+                _log(f"  {tissue}: WARNING no growth on the task medium (flux {wild_type:.3g}), "
+                     f"growth ratios unavailable")
+            if unresolved:
+                _log(f"  {tissue}: WARNING unresolved medium inputs: {unresolved}")
+            lethal = sum(1 for value in ratios.values() if value < 1e-6)
+            _log(f"  {tissue}: wild-type biomass {wild_type:.3g} on {n_media} medium exchanges; "
+                 f"{lethal} growth-lethal genes")
+
+            per_tissue[tissue] = {
+                gene.id: {"tasks": sorted(categories.get(gene.id, ())), "growth": ratios.get(gene.id)}
+                for gene in context.genes
+            }
+            if cached:
+                cached.write_text(json.dumps(per_tissue[tissue]))
+                _log(f"  {tissue}: checkpoint written to {cached}")
+
+        if args.shard_count > 1:
+            _log(f"Shard {args.shard_index}/{args.shard_count} done in {time.time() - started:.0f}s; "
+                 f"run --aggregate-only once every shard has finished.")
+            return 0
 
     rows, matrix_csv = evaluate_graded(
         per_tissue, tissues, sorted(symbol_of), symbol_of=symbol_of
