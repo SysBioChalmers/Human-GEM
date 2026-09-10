@@ -117,6 +117,11 @@ jobs:
     if: ${{ !inputs.diagnose }}
     strategy:
       fail-fast: false
+      # The Gurobi_Eduard WLS license has a session baseline of 2: shards must run one
+      # at a time, each holding a single Gurobi session (see --processes 1 below), or
+      # the license server accepts the overage briefly and then kills sessions
+      # ("Overage for too long, N active sessions and over the baseline for N minutes").
+      max-parallel: 1
       matrix:
         shard: [0, 1, 2, 3, 4]
     env:
@@ -164,10 +169,14 @@ jobs:
 
       - name: Build this shard's cell lines
         run: |
+          # --processes 1: each additional worker process opens its own Gurobi
+          # session (see taskEssentialGenes._scan), and the Gurobi_Eduard WLS
+          # license's session baseline is 2, one of which this shard's own main
+          # process already holds.
           python code/test/gradedEssentiality.py \
             --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" \
             --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
-            --prep-cache "$RUNNER_TEMP/prep-data.pkl"
+            --prep-cache "$RUNNER_TEMP/prep-data.pkl" --processes 1
 
       - name: Upload this shard's checkpoints
         uses: actions/upload-artifact@v7
