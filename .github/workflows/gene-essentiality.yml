@@ -134,7 +134,11 @@ jobs:
     env:
       SHARD_COUNT: 5
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # A cell line's ftINIT build is two extraction steps, each up to three solves (the
+    # proven-gap solve and resolve_ties' two tie-break phases) capped at TIME_LIMIT
+    # (30 min) apiece, so up to 180 min before task gap-filling. The timeout covers
+    # that ceiling rather than a typical cell line's runtime.
+    timeout-minutes: 240
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -175,6 +179,10 @@ jobs:
           path: ${{ runner.temp }}
 
       - name: Build this shard's context models
+        env:
+          # Report each ftINIT solve's status and achieved gap as it finishes, since the
+          # solver's own log is silenced for these models.
+          FTINIT_DEBUG: "1"
         run: |
           python code/test/gradedEssentiality.py \
             --build-models-only --model-dir "$RUNNER_TEMP/context-models" \

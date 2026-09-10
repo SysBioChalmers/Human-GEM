@@ -353,7 +353,7 @@ def _build_context_model(
         context = ftinit(
             prep, rxn_scores, gene_scores=gene_scores, series="1+1", fill_gaps=True,
             big_m=big_m, mip_gap_abs=mip_gap_abs, time_limit=time_limit,
-            resolve_ties=RESOLVE_TIES, prove_abs_gap=PROVE_ABS_GAP,
+            resolve_ties=RESOLVE_TIES, prove_abs_gap=PROVE_ABS_GAP, verbose=True,
         )
     finally:
         _set_solver_verbosity(False)  # quiet again for the copy-heavy gene-essentiality scan
