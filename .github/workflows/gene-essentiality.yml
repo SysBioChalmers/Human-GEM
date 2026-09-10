@@ -57,14 +57,63 @@ jobs:
           timeout 2400 python code/test/diagnoseTaskEssential.py \
             || echo "::warning::diagnostic ended (wall-clock cap or error)"
 
+  # Step 1 (prepHumanModelForftINIT + prepINITModel) is expression-independent, so its
+  # result is identical for every cell line; building it once here and handing it to
+  # every `build` shard as an artifact means the 5 shards below share it instead of each
+  # repeating the same tens-of-minutes computation for itself.
+  prep:
+    if: ${{ !inputs.diagnose }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+            echo "Gurobi license configured from the Gurobi_Eduard secret."
+          else
+            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
+                 "visible to this repository. The gene-essentiality workflow needs a full"\
+                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
+                 "the size-limited license bundled with the pip gurobipy package is not"\
+                 "sufficient."
+            exit 1
+          fi
+
+      - name: Build the shared prepData once
+        run: |
+          python code/test/gradedEssentiality.py \
+            --prep-only --prep-cache "$RUNNER_TEMP/prep-data.pkl"
+
+      - name: Upload the shared prepData
+        uses: actions/upload-artifact@v7
+        with:
+          name: prep-data
+          path: ${{ runner.temp }}/prep-data.pkl
+          retention-days: 1
+
   # One shard per Hart2015 cell line (data/datasets/Hart2015_RNAseq.txt has 5:
   # DLD1, GBM, HCT116, HELA, RPE1); update SHARD_COUNT below and this list together
   # if that file's cell-line columns change. Building a cell line is independent of
-  # every other (each starts from its own run of the once-per-run prepINITModel step
-  # and only ever touches its own checkpoint file), so sharding by cell line turns
-  # the hours-long sequential loop into one wait per shard instead of a sum over all
-  # of them.
+  # every other (each only ever touches its own checkpoint file), so sharding by cell
+  # line turns the hours-long sequential loop into one wait per shard instead of a sum
+  # over all of them.
   build:
+    needs: prep
     if: ${{ !inputs.diagnose }}
     strategy:
       fail-fast: false
@@ -107,11 +156,18 @@ jobs:
             exit 1
           fi
 
+      - name: Download the shared prepData
+        uses: actions/download-artifact@v8
+        with:
+          name: prep-data
+          path: ${{ runner.temp }}
+
       - name: Build this shard's cell lines
         run: |
           python code/test/gradedEssentiality.py \
             --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" \
-            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT"
+            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
+            --prep-cache "$RUNNER_TEMP/prep-data.pkl"
 
       - name: Upload this shard's checkpoints
         uses: actions/upload-artifact@v7
