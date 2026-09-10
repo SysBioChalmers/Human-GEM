@@ -1,6 +1,6 @@
 ## Model quality report
 
-:x: **1 regression(s) vs `develop`** (this pull request increased a finding count). Review the :x: rows.
+:warning: **6 pre-existing finding(s), no regressions vs `develop`.** Non-blocking.
 
 _Each check name links to its explanation in the [testResults README](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md)._
 
@@ -31,7 +31,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Reactions flagged as MACAW duplicates](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#reactions-flagged-as-macaw-duplicates) | [377](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/macaw_results.csv) | 0 | :warning: |
 | [Mass-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#mass-imbalanced-reactions) | [87](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/balance_results.csv) | 0 | :warning: |
 | [Charge-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#charge-imbalanced-reactions) | [234](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/balance_results.csv) | 0 | :warning: |
-| [Structure vs formula/charge inconsistencies](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#structure-vs-formulacharge-inconsistencies) | [6385](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/qc_structure_consistency.csv) | +5988 | :x: |
+| [Structure vs formula/charge inconsistencies](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#structure-vs-formulacharge-inconsistencies) | [397](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/qc_structure_consistency.csv) | 0 | :warning: |
 
 ### Model file and metabolic tasks
 
@@ -39,17 +39,17 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | --- | ---: | :---: |
 | [YAML round-trip (cobrapy)](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#yaml-round-trip-cobrapy) | pass | :white_check_mark: |
 | [YAML round-trip (RAVEN)](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#yaml-round-trip-raven) | pass | :white_check_mark: |
-| [YAML lint](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#yaml-lint) | fail | :x: |
+| [YAML lint](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#yaml-lint) | pass | :white_check_mark: |
 | [Essential metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#essential-metabolic-tasks) | 57 passed | :white_check_mark: |
 | [Verification metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#verification-metabolic-tasks) | 21 passed | :white_check_mark: |
 
 ### [MEMOTE](https://github.com/SysBioChalmers/Human-GEM/blob/feat/human-gem-python-package/data/testResults/README.md#memote)
 
-**Total score: 63.3%** (core subset) &nbsp; +0.1 :white_check_mark:
+**Total score: 63.2%** (core subset) &nbsp; 0
 
 | Section | Score | &Delta; vs base |
 | --- | ---: | ---: |
-| consistency | 42.7% | +0.3 :white_check_mark: |
+| consistency | 42.4% | 0 |
 | annotation_met | 73.0% | 0 |
 | annotation_rxn | 72.7% | 0 |
 | annotation_gene | 46.7% | 0 |
@@ -61,7 +61,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | --- | --- | ---: |
 | Consistency | Stoichiometric Consistency | 100.0% |
 | Consistency | Mass Balance | 0.8% |
-| Consistency | Charge Balance | 0.0% |
+| Consistency | Charge Balance | 2.1% |
 | Consistency | Metabolite Connectivity | 0.0% |
 | Consistency | Unbounded Flux In Default Medium | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 0.0% |
