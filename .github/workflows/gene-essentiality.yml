@@ -14,22 +14,69 @@ on:
         description: "Pull-request number to comment on (set by the /run command)"
         default: ""
 
-jobs:
-  gene-essentiality:
-    runs-on: ubuntu-latest
-    timeout-minutes: 360
-    env:
-      # Stream Python (and raven-toolbox) stdout/stderr live into the Actions log
-      # instead of block-buffering, so long steps show progress as it happens.
-      PYTHONUNBUFFERED: "1"
+env:
+  # Stream Python (and raven-toolbox) stdout/stderr live into the Actions log
+  # instead of block-buffering, so long steps show progress as it happens.
+  PYTHONUNBUFFERED: "1"
 
+jobs:
+  diagnose:
+    if: ${{ inputs.diagnose }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
     steps:
-      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
-      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
         with:
-          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+          else
+            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
+                 "visible to this repository. The gene-essentiality workflow needs a full"\
+                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
+                 "the size-limited license bundled with the pip gurobipy package is not"\
+                 "sufficient."
+            exit 1
+          fi
+
+      - name: Run Step-1a diagnostic
+        run: |
+          timeout 2400 python code/test/diagnoseTaskEssential.py \
+            || echo "::warning::diagnostic ended (wall-clock cap or error)"
+
+  # One shard per Hart2015 cell line (data/datasets/Hart2015_RNAseq.txt has 5:
+  # DLD1, GBM, HCT116, HELA, RPE1); update SHARD_COUNT below and this list together
+  # if that file's cell-line columns change. Building a cell line is independent of
+  # every other (each starts from its own run of the once-per-run prepINITModel step
+  # and only ever touches its own checkpoint file), so sharding by cell line turns
+  # the hours-long sequential loop into one wait per shard instead of a sum over all
+  # of them.
+  build:
+    if: ${{ !inputs.diagnose }}
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    env:
+      SHARD_COUNT: 5
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
 
       - name: Set up Python 3
         uses: actions/setup-python@v6
@@ -60,18 +107,61 @@ jobs:
             exit 1
           fi
 
-      - name: Run gene essentiality
-        id: essentiality
-        env:
-          DIAGNOSE: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnose }}
+      - name: Build this shard's cell lines
         run: |
-          if [ "$DIAGNOSE" = "true" ]; then
-            echo "Running the bounded Step-1a per-task diagnostic."
-            timeout 2400 python code/test/diagnoseTaskEssential.py \
-              || echo "::warning::diagnostic ended (wall-clock cap or error)"
-            exit 0
+          python code/test/gradedEssentiality.py \
+            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" \
+            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT"
+
+      - name: Upload this shard's checkpoints
+        uses: actions/upload-artifact@v7
+        with:
+          name: graded-checkpoints-${{ matrix.shard }}
+          path: ${{ runner.temp }}/graded-checkpoints
+          retention-days: 1
+
+  aggregate:
+    needs: build
+    if: ${{ !cancelled() && needs.build.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
+      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
           fi
-          python code/test/gradedEssentiality.py
+
+      - name: Download every shard's checkpoints
+        uses: actions/download-artifact@v8
+        with:
+          pattern: graded-checkpoints-*
+          path: ${{ runner.temp }}/graded-checkpoints
+          merge-multiple: true
+
+      - name: Combine cell lines into the final report
+        id: essentiality
+        run: |
+          python code/test/gradedEssentiality.py \
+            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" --aggregate-only
           cat data/testResults/gene-essential_summary.md
           # Pass the Markdown summary through as a multiline step output so it
           # renders as a table in the PR comment (no <br> substitution needed).
