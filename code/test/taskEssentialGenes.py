@@ -37,6 +37,7 @@ knockout.
 from __future__ import annotations
 
 import concurrent.futures as cf
+import multiprocessing
 from collections import defaultdict
 from collections.abc import Callable, Iterable
 
@@ -286,8 +287,18 @@ def _scan(base, passing, gene_disabled, name_to_id, comp_to_ids, saved, emit, *,
             solves += n_solves
             record(disabled_key, categories)
     else:
+        # 'spawn', not the platform default ('fork' on Linux): forking duplicates the
+        # parent's already-running Gurobi environment (and its internal license/logging
+        # threads) into every worker, which is exactly the non-fork-safe state that made
+        # cobra's default parallel FVA deadlock on Linux CI runners (the reason
+        # estimateEssentialGenes.estimate_essential_genes and gradedEssentiality.main
+        # both pin FVA to processes=1). 'spawn' starts each worker as a fresh interpreter
+        # that only creates its own Gurobi environment inside _init_worker, after the
+        # fork boundary, so there is nothing shared to deadlock on.
+        ctx = multiprocessing.get_context("spawn")
         with cf.ProcessPoolExecutor(
             max_workers=min(processes, len(groups)),
+            mp_context=ctx,
             initializer=_init_worker,
             initargs=(base, passing, name_to_id, comp_to_ids, saved, all_categories, stop_early),
         ) as pool:
