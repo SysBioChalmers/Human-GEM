@@ -35,15 +35,25 @@ not part of the per-pull-request checks. It overwrites the two usual artifacts i
 ``--checkpoint-dir`` stores one JSON file per finished cell line and skips the cell
 lines already present, so an interrupted run resumes without repeating hours of work.
 
-Building every cell line is independent (each starts from the same, once-per-run
-:func:`_prep_human_model_for_ftinit` output and touches only its own checkpoint file),
-so a run can be split across several parallel processes or CI jobs by cell line:
+Building every cell line is independent given the same Step-1 output (the once-per-run
+:func:`_prep_human_model_for_ftinit` result: a cleaned, task-essential-annotated,
+merged-and-scaled ``PrepData``, identical for every cell line since it is built before
+any cell line's expression data is applied), so a run can be split across several
+parallel processes or CI jobs by cell line:
 
     python code/test/gradedEssentiality.py --checkpoint-dir DIR \
-        --shard-index I --shard-count N
+        --shard-index I --shard-count N --prep-cache PREP_PATH
 
-with ``I`` from ``0`` to ``N - 1``. Each shard runs Step 1 for itself (it is not shared
-across processes), builds only the cell lines where ``index % N == I``, writes their
+with ``I`` from ``0`` to ``N - 1``. Step 1 is expensive (tens of minutes) but produces
+the same result regardless of which cell line asks for it, so it belongs to
+``--prep-cache`` rather than to any one shard: build it once with ``--prep-only``,
+
+    python code/test/gradedEssentiality.py --prep-only --prep-cache PREP_PATH
+
+then point every shard at that same ``PREP_PATH`` (a pickled ``PrepData``, e.g. shared
+between CI jobs as an uploaded/downloaded artifact) so each one loads it instead of
+recomputing it. Without ``--prep-cache`` a shard falls back to computing its own Step 1,
+as before. Each shard builds only the cell lines where ``index % N == I``, writes their
 checkpoints, and exits without writing the final report. Once every shard has finished:
 
     python code/test/gradedEssentiality.py --checkpoint-dir DIR --aggregate-only
@@ -64,6 +74,7 @@ import argparse
 import json
 import math
 import os
+import pickle
 import sys
 import time
 from pathlib import Path
@@ -172,6 +183,33 @@ def _shard(tissues: list[str], shard_index: int, shard_count: int) -> list[str]:
     return tissues if shard_count <= 1 else tissues[shard_index::shard_count]
 
 
+def _load_or_build_prep(model: cobra.Model, tasks, prep_cache: Path | None):
+    """Step 1's ``PrepData``: loaded from ``prep_cache`` if present, else built and cached.
+
+    Step 1 (:func:`_prep_human_model_for_ftinit`) is expensive but expression-independent,
+    so its result is identical for every cell line; ``prep_cache`` lets several shards
+    share one build of it instead of each running Step 1 for itself.
+    """
+    if prep_cache and prep_cache.exists():
+        _log(f"Step 1: loading shared prepData from {prep_cache}")
+        with open(prep_cache, "rb") as fh:
+            return pickle.load(fh)
+
+    _log("Step 1: prepHumanModelForftINIT (clean + prepINITModel) ...")
+    prep = _prep_human_model_for_ftinit(model, tasks)
+    _log(f"Step 1 done: reference {len(prep.ref_model.reactions)} reactions, "
+         f"{len(prep.essential_rxns)} task-essential; {len(prep.tasks)} feasible tasks")
+
+    if prep_cache:
+        prep_cache.parent.mkdir(parents=True, exist_ok=True)
+        tmp = prep_cache.with_name(prep_cache.name + ".part")
+        with open(tmp, "wb") as fh:
+            pickle.dump(prep, fh)
+        tmp.replace(prep_cache)
+        _log(f"Step 1: wrote shared prepData to {prep_cache}")
+    return prep
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Graded, task-scoped gene-essentiality analysis")
     parser.add_argument(
@@ -200,6 +238,18 @@ def main(argv: list[str] | None = None) -> int:
              "(all must already be present) into the final report",
     )
     parser.add_argument(
+        "--prep-cache",
+        type=Path,
+        default=None,
+        help="pickle path for the shared, expression-independent Step-1 PrepData: "
+             "loaded from here if present, else computed and written here",
+    )
+    parser.add_argument(
+        "--prep-only",
+        action="store_true",
+        help="build --prep-cache (required) and exit without building any cell line",
+    )
+    parser.add_argument(
         "--processes",
         type=int,
         default=os.cpu_count() or 1,
@@ -211,6 +261,10 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("--aggregate-only and --shard-count > 1 require --checkpoint-dir")
     if args.shard_count < 1 or not 0 <= args.shard_index < args.shard_count:
         parser.error("--shard-index must be in [0, --shard-count) and --shard-count >= 1")
+    if args.prep_only and not args.prep_cache:
+        parser.error("--prep-only requires --prep-cache")
+    if args.prep_only and args.aggregate_only:
+        parser.error("--prep-only and --aggregate-only are mutually exclusive")
     if args.checkpoint_dir:
         args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
@@ -223,6 +277,15 @@ def main(argv: list[str] | None = None) -> int:
 
     def checkpoint_path(tissue: str) -> Path | None:
         return args.checkpoint_dir / f"graded_{tissue}.json" if args.checkpoint_dir else None
+
+    if args.prep_only:
+        model.solver = "gurobi"
+        import gurobipy
+        gurobipy.setParam("OutputFlag", 0)
+        cobra.Configuration().processes = 1
+        _load_or_build_prep(model, tasks, args.prep_cache)
+        _log(f"Wrote {args.prep_cache} in {time.time() - started:.0f}s")
+        return 0
 
     if args.aggregate_only:
         missing = [t for t in tissues if not (checkpoint_path(t) and checkpoint_path(t).exists())]
@@ -244,10 +307,7 @@ def main(argv: list[str] | None = None) -> int:
         per_tissue = {}
         prep = None
         if pending:
-            _log("Step 1: prepHumanModelForftINIT (clean + prepINITModel) ...")
-            prep = _prep_human_model_for_ftinit(model, tasks)
-            _log(f"Step 1 done: reference {len(prep.ref_model.reactions)} reactions, "
-                 f"{len(prep.essential_rxns)} task-essential; {len(prep.tasks)} feasible tasks")
+            prep = _load_or_build_prep(model, tasks, args.prep_cache)
 
         for index, tissue in enumerate(shard, start=1):
             cached = checkpoint_path(tissue)
