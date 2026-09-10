@@ -1,3 +1,0 @@
-python	3.14.3
-cobra	0.32.1
-raven_toolbox	0.4.0
