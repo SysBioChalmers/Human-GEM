@@ -5,13 +5,13 @@
 Mode: core subset.
 Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metabolites, test_inconsistent_min_stoichiometry, test_detect_energy_generating_cycles, test_find_stoichiometrically_balanced_cycles, test_blocked_reactions, test_find_reactions_unbounded_flux_default_condition, test_find_metabolites_not_produced_with_open_bounds, test_find_metabolites_not_consumed_with_open_bounds, test_number_independent_conservation_relations, test_matrix_rank, test_degrees_of_freedom.
 
-**Total score: 63.2%**
+**Total score: 63.3%**
 
 ### Section scores
 
 | Section | Score |
 | --- | ---: |
-| consistency | 42.4% |
+| consistency | 42.7% |
 | annotation_met | 73.0% |
 | annotation_rxn | 72.7% |
 | annotation_gene | 46.7% |
@@ -23,7 +23,7 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | --- | --- | ---: |
 | Consistency | Stoichiometric Consistency | 100.0% |
 | Consistency | Mass Balance | 0.8% |
-| Consistency | Charge Balance | 2.1% |
+| Consistency | Charge Balance | 0.0% |
 | Consistency | Metabolite Connectivity | 0.0% |
 | Consistency | Unbounded Flux In Default Medium | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 0.0% |
