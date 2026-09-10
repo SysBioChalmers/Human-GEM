@@ -29,7 +29,7 @@ Starting from Human-GEM v1.5.0, all the releases are also archived in [Zenodo](h
 ### Model overview
 |Taxonomy | Template Model | Reactions | Metabolites| Genes |
 | ------------- |:-------------:|:-------------:|:-------------:|:-----:|
-|_Homo sapiens_ |   HMR2, Recon3D, iHsa|    {{nRXN}}|  {{nMET}}|  {{nGENE}}|
+|_Homo sapiens_ |   HMR2, Recon3D, iHsa|    12877|  8460|  2848|
 
 ## Contributing
 Contributions are always welcome! Read more about the project's philosophy in our [wiki](https://github.com/SysBioChalmers/Human-GEM/wiki) or have a look at the [Contributing guidelines](https://github.com/SysBioChalmers/Human-GEM/blob/main/.github/CONTRIBUTING.md) before starting.
