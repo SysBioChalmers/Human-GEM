@@ -62,6 +62,24 @@ reads every cell line's checkpoint (Gurobi is not needed for this step) and writ
 final ``gene-essential.csv`` / ``gene-essential_summary.md``, exactly as a single
 unsharded run would have.
 
+Building a cell line's context-specific model (:func:`_build_context_model`, a genome-scale
+MILP) and scanning it for task-essential genes each hold their own Gurobi session for the
+whole step. A shared license's concurrent-session limit is best respected by never letting
+more cell lines run one of these steps at once than the license allows, so ``--model-dir``
+splits the two into a barrier: build every shard's context model and pickle it there first,
+
+    python code/test/gradedEssentiality.py --build-models-only --model-dir MODEL_DIR \
+        --shard-index I --shard-count N --prep-cache PREP_PATH
+
+then, once every shard's model-building run has finished (so none of those Gurobi sessions
+are still open), point the normal run at the same ``--model-dir`` to load each cell line's
+model instead of rebuilding it:
+
+    python code/test/gradedEssentiality.py --checkpoint-dir DIR --model-dir MODEL_DIR \
+        --shard-index I --shard-count N --prep-cache PREP_PATH
+
+Without ``--model-dir`` a shard builds its own context models inline, as before.
+
 Within one cell line, the distinct gene knockouts are independent of each other (see
 :func:`taskEssentialGenes.find_task_essential_categories`) and are split across
 ``--processes`` worker processes, one machine's cores rather than one CI shard; it
@@ -250,6 +268,20 @@ def main(argv: list[str] | None = None) -> int:
         help="build --prep-cache (required) and exit without building any cell line",
     )
     parser.add_argument(
+        "--model-dir",
+        type=Path,
+        default=None,
+        help="directory holding one pickled context-specific model per cell line: written "
+             "there by --build-models-only, and loaded from there instead of rebuilding if "
+             "present otherwise",
+    )
+    parser.add_argument(
+        "--build-models-only",
+        action="store_true",
+        help="build and pickle this shard's cell-line context models into --model-dir "
+             "(required), then exit without gene-essentiality scanning",
+    )
+    parser.add_argument(
         "--processes",
         type=int,
         default=os.cpu_count() or 1,
@@ -257,14 +289,20 @@ def main(argv: list[str] | None = None) -> int:
              "(default: this machine's core count)",
     )
     args = parser.parse_args(argv)
-    if (args.aggregate_only or args.shard_count > 1) and not args.checkpoint_dir:
-        parser.error("--aggregate-only and --shard-count > 1 require --checkpoint-dir")
+    if args.aggregate_only and not args.checkpoint_dir:
+        parser.error("--aggregate-only requires --checkpoint-dir")
+    if args.shard_count > 1 and not args.build_models_only and not args.checkpoint_dir:
+        parser.error("--shard-count > 1 requires --checkpoint-dir (unless --build-models-only)")
     if args.shard_count < 1 or not 0 <= args.shard_index < args.shard_count:
         parser.error("--shard-index must be in [0, --shard-count) and --shard-count >= 1")
     if args.prep_only and not args.prep_cache:
         parser.error("--prep-only requires --prep-cache")
     if args.prep_only and args.aggregate_only:
         parser.error("--prep-only and --aggregate-only are mutually exclusive")
+    if args.build_models_only and not args.model_dir:
+        parser.error("--build-models-only requires --model-dir")
+    if args.build_models_only and (args.prep_only or args.aggregate_only):
+        parser.error("--build-models-only and --prep-only/--aggregate-only are mutually exclusive")
     if args.checkpoint_dir:
         args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
@@ -278,6 +316,9 @@ def main(argv: list[str] | None = None) -> int:
     def checkpoint_path(tissue: str) -> Path | None:
         return args.checkpoint_dir / f"graded_{tissue}.json" if args.checkpoint_dir else None
 
+    def model_path(tissue: str) -> Path | None:
+        return args.model_dir / f"context_{tissue}.pkl" if args.model_dir else None
+
     if args.prep_only:
         model.solver = "gurobi"
         import gurobipy
@@ -285,6 +326,39 @@ def main(argv: list[str] | None = None) -> int:
         cobra.Configuration().processes = 1
         _load_or_build_prep(model, tasks, args.prep_cache)
         _log(f"Wrote {args.prep_cache} in {time.time() - started:.0f}s")
+        return 0
+
+    if args.build_models_only:
+        model.solver = "gurobi"
+        import gurobipy
+        gurobipy.setParam("OutputFlag", 0)
+        cobra.Configuration().processes = 1
+
+        shard = _shard(tissues, args.shard_index, args.shard_count)
+        prep = _load_or_build_prep(model, tasks, args.prep_cache)
+        args.model_dir.mkdir(parents=True, exist_ok=True)
+
+        for index, tissue in enumerate(shard, start=1):
+            target = model_path(tissue)
+            if target.exists():
+                _log(f"Cell line {index}/{len(shard)}: {tissue} model (from cache)")
+                continue
+
+            _log(f"Cell line {index}/{len(shard)}: {tissue}")
+            context = _build_context_model(
+                prep, model, expression[tissue], BIG_M, MIP_GAP_ABS, TIME_LIMIT
+            )
+            context.id = tissue
+            _log(f"  {tissue}: model has {len(context.reactions)} reactions, "
+                 f"{len(context.genes)} genes")
+            tmp = target.with_name(target.name + ".part")
+            with open(tmp, "wb") as fh:
+                pickle.dump(context, fh)
+            tmp.replace(target)
+            _log(f"  {tissue}: wrote context model to {target}")
+
+        _log(f"Shard {args.shard_index}/{args.shard_count} model-build done "
+             f"in {time.time() - started:.0f}s")
         return 0
 
     if args.aggregate_only:
@@ -317,10 +391,16 @@ def main(argv: list[str] | None = None) -> int:
                 continue
 
             _log(f"Cell line {index}/{len(shard)}: {tissue}")
-            context = _build_context_model(
-                prep, model, expression[tissue], BIG_M, MIP_GAP_ABS, TIME_LIMIT
-            )
-            context.id = tissue
+            cached_model = model_path(tissue)
+            if cached_model and cached_model.exists():
+                _log(f"  {tissue}: loading context model from {cached_model}")
+                with open(cached_model, "rb") as fh:
+                    context = pickle.load(fh)
+            else:
+                context = _build_context_model(
+                    prep, model, expression[tissue], BIG_M, MIP_GAP_ABS, TIME_LIMIT
+                )
+                context.id = tissue
             _log(f"  {tissue}: model has {len(context.reactions)} reactions, "
                  f"{len(context.genes)} genes; scanning task categories ...")
             categories = find_task_essential_categories(

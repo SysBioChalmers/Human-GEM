@@ -112,22 +112,29 @@ jobs:
   # every other (each only ever touches its own checkpoint file), so sharding by cell
   # line turns the hours-long sequential loop into one wait per shard instead of a sum
   # over all of them.
-  build:
+  #
+  # Building a shard's context model and scanning it for task-essential genes each hold
+  # their own Gurobi session for the whole step, and the Gurobi_Eduard WLS license's
+  # session baseline is 2. Five shards building models concurrently, or one shard's
+  # essentiality scan spread across several worker processes (each its own session),
+  # already sustains more than 2 sessions past that baseline for as long as the step
+  # takes, and the license server eventually kills sessions once that overage has lasted
+  # too long ("Overage for too long, N active sessions and over the baseline for N
+  # minutes"). build-model and build-test split the two steps into a barrier instead:
+  # every shard finishes building (and so closes its Gurobi session) before any shard
+  # starts scanning, so the two 5-way-parallel bursts never overlap into a sustained
+  # over-baseline stretch the way a single combined step would.
+  build-model:
     needs: prep
     if: ${{ !inputs.diagnose }}
     strategy:
       fail-fast: false
-      # The Gurobi_Eduard WLS license has a session baseline of 2: shards must run one
-      # at a time, each holding a single Gurobi session (see --processes 1 below), or
-      # the license server accepts the overage briefly and then kills sessions
-      # ("Overage for too long, N active sessions and over the baseline for N minutes").
-      max-parallel: 1
       matrix:
         shard: [0, 1, 2, 3, 4]
     env:
       SHARD_COUNT: 5
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 90
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -167,14 +174,81 @@ jobs:
           name: prep-data
           path: ${{ runner.temp }}
 
-      - name: Build this shard's cell lines
+      - name: Build this shard's context models
+        run: |
+          python code/test/gradedEssentiality.py \
+            --build-models-only --model-dir "$RUNNER_TEMP/context-models" \
+            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
+            --prep-cache "$RUNNER_TEMP/prep-data.pkl"
+
+      - name: Upload this shard's context models
+        uses: actions/upload-artifact@v7
+        with:
+          name: context-models-${{ matrix.shard }}
+          path: ${{ runner.temp }}/context-models
+          retention-days: 1
+
+  build-test:
+    needs: build-model
+    if: ${{ !inputs.diagnose }}
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    env:
+      SHARD_COUNT: 5
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+            echo "Gurobi license configured from the Gurobi_Eduard secret."
+          else
+            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
+                 "visible to this repository. The gene-essentiality workflow needs a full"\
+                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
+                 "the size-limited license bundled with the pip gurobipy package is not"\
+                 "sufficient."
+            exit 1
+          fi
+
+      - name: Download the shared prepData
+        uses: actions/download-artifact@v8
+        with:
+          name: prep-data
+          path: ${{ runner.temp }}
+
+      - name: Download this shard's context models
+        uses: actions/download-artifact@v8
+        with:
+          name: context-models-${{ matrix.shard }}
+          path: ${{ runner.temp }}/context-models
+
+      - name: Scan this shard's cell lines for task-essential genes
         run: |
           # --processes 1: each additional worker process opens its own Gurobi
-          # session (see taskEssentialGenes._scan), and the Gurobi_Eduard WLS
-          # license's session baseline is 2, one of which this shard's own main
-          # process already holds.
+          # session (see taskEssentialGenes._scan), and this step already runs
+          # five shards at once, each holding one session against the
+          # Gurobi_Eduard WLS license's baseline of 2.
           python code/test/gradedEssentiality.py \
             --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" \
+            --model-dir "$RUNNER_TEMP/context-models" \
             --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
             --prep-cache "$RUNNER_TEMP/prep-data.pkl" --processes 1
 
@@ -186,8 +260,8 @@ jobs:
           retention-days: 1
 
   aggregate:
-    needs: build
-    if: ${{ !cancelled() && needs.build.result != 'skipped' }}
+    needs: build-test
+    if: ${{ !cancelled() && needs.build-test.result != 'skipped' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
