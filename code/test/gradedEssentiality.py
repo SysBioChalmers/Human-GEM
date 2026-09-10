@@ -51,6 +51,11 @@ checkpoints, and exits without writing the final report. Once every shard has fi
 reads every cell line's checkpoint (Gurobi is not needed for this step) and writes the
 final ``gene-essential.csv`` / ``gene-essential_summary.md``, exactly as a single
 unsharded run would have.
+
+Within one cell line, the distinct gene knockouts are independent of each other (see
+:func:`taskEssentialGenes.find_task_essential_categories`) and are split across
+``--processes`` worker processes, one machine's cores rather than one CI shard; it
+defaults to the machine's core count.
 """
 
 from __future__ import annotations
@@ -58,6 +63,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import sys
 import time
 from pathlib import Path
@@ -193,6 +199,13 @@ def main(argv: list[str] | None = None) -> int:
         help="skip building; combine every cell line's --checkpoint-dir checkpoint "
              "(all must already be present) into the final report",
     )
+    parser.add_argument(
+        "--processes",
+        type=int,
+        default=os.cpu_count() or 1,
+        help="worker processes for one cell line's gene-knockout scan "
+             "(default: this machine's core count)",
+    )
     args = parser.parse_args(argv)
     if (args.aggregate_only or args.shard_count > 1) and not args.checkpoint_dir:
         parser.error("--aggregate-only and --shard-count > 1 require --checkpoint-dir")
@@ -251,7 +264,8 @@ def main(argv: list[str] | None = None) -> int:
             _log(f"  {tissue}: model has {len(context.reactions)} reactions, "
                  f"{len(context.genes)} genes; scanning task categories ...")
             categories = find_task_essential_categories(
-                context, prep.tasks, log=lambda message, t=tissue: _log(f"    {t}: {message}")
+                context, prep.tasks, processes=args.processes,
+                log=lambda message, t=tissue: _log(f"    {t}: {message}"),
             )
             _log(f"  {tissue}: {len(categories)} genes essential for at least one task")
 
