@@ -191,6 +191,14 @@ jobs:
           git stash --include-untracked
           git fetch
           git checkout $BRANCH_NAME
+          # `git fetch` only moves the origin/$BRANCH_NAME ref, not this local branch,
+          # so without this reset the branch stays at whatever commit the job started
+          # from; if anything else pushed to it while the (hours-long) build ran, the
+          # auto-commit step below still bases its commit on that stale tip and its
+          # push is rejected as non-fast-forward. The working tree is clean here (the
+          # result-file changes are in the stash, popped back on next), so resetting
+          # to origin's tip is exactly the missing "update".
+          git reset --hard origin/$BRANCH_NAME
           if git stash list | grep -q 'stash@{'; then
             git stash pop
           fi
