@@ -190,7 +190,13 @@ jobs:
 
   build-test:
     needs: build-model
-    if: ${{ !inputs.diagnose }}
+    # !cancelled() rather than the implicit success(): a bare `if` still ANDs an overall
+    # success() onto `needs`, so one failed build-model shard (e.g. a cell line whose
+    # ftINIT run outgrows the timeout) would skip build-test for every shard, including
+    # the ones whose context model built fine. The shard with no context-models-N
+    # artifact fails cleanly at "Download this shard's context models" below; fail-fast:
+    # false (as on build-model) keeps that from cancelling its siblings.
+    if: ${{ !inputs.diagnose && !cancelled() && needs.build-model.result != 'skipped' }}
     strategy:
       fail-fast: false
       matrix:
