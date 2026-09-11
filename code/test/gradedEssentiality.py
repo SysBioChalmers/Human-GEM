@@ -256,7 +256,7 @@ def _use_gurobi_solver(model: cobra.Model, *, retries: int = 5, initial_delay: f
             delay *= 2
 
 
-def _dispose_gurobi_session() -> None:
+def _dispose_gurobi_session(*, timeout: float = 20.0) -> None:
     """Best-effort: close this process's default Gurobi environment right away.
 
     A cobra Model's Gurobi-backed solver otherwise only closes its WLS session when
@@ -267,16 +267,38 @@ def _dispose_gurobi_session() -> None:
     object this process created has gone out of scope (the caller should first drop its
     own references, e.g. reassign the built context model and the template model to
     ``None``) so the session is released now instead of on the license server's own
-    timeout. Wrapped in a broad except so a cleanup hiccup never turns an otherwise
-    finished, already-written-to-disk shard into a failed job.
+    timeout.
+
+    ``disposeDefaultEnv()`` releasing a WLS session is a network round trip to Gurobi's
+    license server, unlike the everyday case of a local/named-user license closing
+    instantly -- an already-finished, already-written-to-disk shard must never be stuck
+    "in progress" waiting on that call, so it runs on a background thread with a bounded
+    join instead of inline. A timeout (or any other error) is logged and swallowed: the
+    process is about to exit either way, which releases the session itself, just later.
     """
-    try:
-        import gc
-        import gurobipy
-        gc.collect()
-        gurobipy.disposeDefaultEnv()
-    except Exception as exc:
-        _log(f"WARNING: could not release the Gurobi session cleanly: {exc}")
+    import gc
+    import threading
+
+    gc.collect()
+    done = threading.Event()
+    error: list[BaseException] = []
+
+    def _dispose() -> None:
+        try:
+            import gurobipy
+            gurobipy.disposeDefaultEnv()
+        except BaseException as exc:  # noqa: BLE001 -- reported on the main thread below
+            error.append(exc)
+        finally:
+            done.set()
+
+    thread = threading.Thread(target=_dispose, daemon=True)
+    thread.start()
+    if not done.wait(timeout):
+        _log(f"WARNING: Gurobi session release did not finish within {timeout:.0f}s; "
+             f"moving on (the process exiting will release it anyway).")
+    elif error:
+        _log(f"WARNING: could not release the Gurobi session cleanly: {error[0]}")
 
 
 def main(argv: list[str] | None = None) -> int:
