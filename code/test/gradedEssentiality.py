@@ -228,100 +228,6 @@ def _load_or_build_prep(model: cobra.Model, tasks, prep_cache: Path | None):
     return prep
 
 
-def _use_gurobi_solver(model: cobra.Model, *, retries: int = 5, initial_delay: float = 30.0) -> None:
-    """Switch ``model`` onto the Gurobi solver, retrying past a transient session cap.
-
-    Acquiring a Gurobi WLS session is a round trip against the license server's own
-    session table, and a sibling shard's session does not always clear from that table
-    the instant its process exits -- a finished build-test shard's session blocked the
-    very next job (aggregate) from acquiring its own with "Too many sessions, 5 active
-    sessions for a baseline of 2" moments after the 5-way build-test matrix finished. A
-    concurrent shard's session clearing a minute or two into a wait is far more likely
-    than the license actually being exhausted, so back off and retry a bounded number
-    of times before giving up.
-
-    A failed attempt can leave gurobipy's process-wide default environment in a
-    half-initialised state (the crash is inside its own construction), so a retry that
-    reuses it blind could behave differently from the first attempt for reasons that
-    have nothing to do with the license server; best-effort dispose it before each
-    retry so every attempt starts from the same clean slate.
-
-    Logs how many attempts and how long acquisition took, and the CPU count / Gurobi
-    thread count once acquired -- separating "time spent getting a session" from "time
-    spent solving" and surfacing possible CPU oversubscription across concurrent
-    shards, both invisible from the outside while a job is still running.
-    """
-    import gurobipy
-
-    started = time.time()
-    delay = initial_delay
-    for attempt in range(1, retries + 1):
-        try:
-            model.solver = "gurobi"
-            break
-        except gurobipy.GurobiError as exc:
-            if attempt == retries:
-                raise
-            _log(f"Gurobi session unavailable ({exc}); retrying in {delay:.0f}s "
-                 f"({attempt}/{retries}) ...")
-            try:
-                gurobipy.disposeDefaultEnv()
-            except Exception:
-                pass  # nothing to clean up, or the env never got that far -- fine either way
-            time.sleep(delay)
-            delay *= 2
-
-    elapsed = time.time() - started
-    threads = model.solver.problem.Params.Threads
-    _log(f"Gurobi session acquired in {elapsed:.1f}s ({attempt} attempt(s)); "
-         f"{os.cpu_count()} CPU(s) visible, solver Threads={threads}")
-
-
-def _dispose_gurobi_session(*, timeout: float = 20.0) -> None:
-    """Best-effort: close this process's default Gurobi environment right away.
-
-    A cobra Model's Gurobi-backed solver otherwise only closes its WLS session when
-    the interpreter exits, and even then the license server does not always notice the
-    dropped connection immediately -- it can keep counting the session as active for a
-    while, which is exactly what let a finished shard's session block the next job's
-    session request (see :func:`_use_gurobi_solver`). Call this once every Gurobi-backed
-    object this process created has gone out of scope (the caller should first drop its
-    own references, e.g. reassign the built context model and the template model to
-    ``None``) so the session is released now instead of on the license server's own
-    timeout.
-
-    ``disposeDefaultEnv()`` releasing a WLS session is a network round trip to Gurobi's
-    license server, unlike the everyday case of a local/named-user license closing
-    instantly -- an already-finished, already-written-to-disk shard must never be stuck
-    "in progress" waiting on that call, so it runs on a background thread with a bounded
-    join instead of inline. A timeout (or any other error) is logged and swallowed: the
-    process is about to exit either way, which releases the session itself, just later.
-    """
-    import gc
-    import threading
-
-    gc.collect()
-    done = threading.Event()
-    error: list[BaseException] = []
-
-    def _dispose() -> None:
-        try:
-            import gurobipy
-            gurobipy.disposeDefaultEnv()
-        except BaseException as exc:  # noqa: BLE001 -- reported on the main thread below
-            error.append(exc)
-        finally:
-            done.set()
-
-    thread = threading.Thread(target=_dispose, daemon=True)
-    thread.start()
-    if not done.wait(timeout):
-        _log(f"WARNING: Gurobi session release did not finish within {timeout:.0f}s; "
-             f"moving on (the process exiting will release it anyway).")
-    elif error:
-        _log(f"WARNING: could not release the Gurobi session cleanly: {error[0]}")
-
-
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Graded, task-scoped gene-essentiality analysis")
     parser.add_argument(
@@ -421,18 +327,16 @@ def main(argv: list[str] | None = None) -> int:
         return args.model_dir / f"context_{tissue}.pkl" if args.model_dir else None
 
     if args.prep_only:
-        _use_gurobi_solver(model)
+        model.solver = "gurobi"
         import gurobipy
         gurobipy.setParam("OutputFlag", 0)
         cobra.Configuration().processes = 1
         _load_or_build_prep(model, tasks, args.prep_cache)
         _log(f"Wrote {args.prep_cache} in {time.time() - started:.0f}s")
-        model = None
-        _dispose_gurobi_session()
         return 0
 
     if args.build_models_only:
-        _use_gurobi_solver(model)
+        model.solver = "gurobi"
         import gurobipy
         gurobipy.setParam("OutputFlag", 0)
         cobra.Configuration().processes = 1
@@ -441,7 +345,6 @@ def main(argv: list[str] | None = None) -> int:
         prep = _load_or_build_prep(model, tasks, args.prep_cache)
         args.model_dir.mkdir(parents=True, exist_ok=True)
 
-        context = None
         for index, tissue in enumerate(shard, start=1):
             target = model_path(tissue)
             if target.exists():
@@ -463,8 +366,6 @@ def main(argv: list[str] | None = None) -> int:
 
         _log(f"Shard {args.shard_index}/{args.shard_count} model-build done "
              f"in {time.time() - started:.0f}s")
-        context = prep = model = None
-        _dispose_gurobi_session()
         return 0
 
     if args.aggregate_only:
@@ -474,7 +375,7 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         per_tissue = {t: json.loads(checkpoint_path(t).read_text()) for t in tissues}
     else:
-        _use_gurobi_solver(model)
+        model.solver = "gurobi"
         # Silence Gurobi's per-copy "Read LP format model from file ..." banner.
         import gurobipy
         gurobipy.setParam("OutputFlag", 0)
@@ -533,8 +434,6 @@ def main(argv: list[str] | None = None) -> int:
                 cached.write_text(json.dumps(per_tissue[tissue]))
                 _log(f"  {tissue}: checkpoint written to {cached}")
 
-        context = prep = model = None
-        _dispose_gurobi_session()
         if args.shard_count > 1:
             _log(f"Shard {args.shard_index}/{args.shard_count} done in {time.time() - started:.0f}s; "
                  f"run --aggregate-only once every shard has finished.")

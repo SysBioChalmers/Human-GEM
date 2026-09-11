@@ -178,21 +178,6 @@ jobs:
           name: prep-data
           path: ${{ runner.temp }}
 
-      - name: Start resource monitor
-        run: |
-          {
-            while true; do
-              echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
-              echo "nproc: $(nproc)"
-              free -h
-              echo "--- top CPU processes ---"
-              ps -eo pid,ppid,%cpu,%mem,etime,cmd --sort=-%cpu | head -20
-              echo
-              sleep 60
-            done
-          } > "$RUNNER_TEMP/resource-monitor.log" 2>&1 &
-          echo $! > "$RUNNER_TEMP/resource-monitor.pid"
-
       - name: Build this shard's context models
         env:
           # Report each ftINIT solve's status and achieved gap as it finishes, since the
@@ -203,24 +188,6 @@ jobs:
             --build-models-only --model-dir "$RUNNER_TEMP/context-models" \
             --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
             --prep-cache "$RUNNER_TEMP/prep-data.pkl"
-
-      # Runs even if the build step above times out or fails, so a stuck shard still
-      # tells us what its CPU/memory/process picture looked like the whole way through.
-      - name: Stop resource monitor
-        if: always()
-        run: |
-          if [ -f "$RUNNER_TEMP/resource-monitor.pid" ]; then
-            kill "$(cat "$RUNNER_TEMP/resource-monitor.pid")" 2>/dev/null || true
-          fi
-
-      - name: Upload this shard's resource monitor log
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: build-model-resource-monitor-${{ matrix.shard }}
-          path: ${{ runner.temp }}/resource-monitor.log
-          retention-days: 1
-          if-no-files-found: warn
 
       - name: Upload this shard's context models
         uses: actions/upload-artifact@v7
@@ -287,21 +254,6 @@ jobs:
           name: context-models-${{ matrix.shard }}
           path: ${{ runner.temp }}/context-models
 
-      - name: Start resource monitor
-        run: |
-          {
-            while true; do
-              echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
-              echo "nproc: $(nproc)"
-              free -h
-              echo "--- top CPU processes ---"
-              ps -eo pid,ppid,%cpu,%mem,etime,cmd --sort=-%cpu | head -20
-              echo
-              sleep 60
-            done
-          } > "$RUNNER_TEMP/resource-monitor.log" 2>&1 &
-          echo $! > "$RUNNER_TEMP/resource-monitor.pid"
-
       - name: Scan this shard's cell lines for task-essential genes
         run: |
           # --processes 1: each additional worker process opens its own Gurobi
@@ -313,24 +265,6 @@ jobs:
             --model-dir "$RUNNER_TEMP/context-models" \
             --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
             --prep-cache "$RUNNER_TEMP/prep-data.pkl" --processes 1
-
-      # Runs even if the scan step above times out or fails, so a stuck shard still
-      # tells us what its CPU/memory/process picture looked like the whole way through.
-      - name: Stop resource monitor
-        if: always()
-        run: |
-          if [ -f "$RUNNER_TEMP/resource-monitor.pid" ]; then
-            kill "$(cat "$RUNNER_TEMP/resource-monitor.pid")" 2>/dev/null || true
-          fi
-
-      - name: Upload this shard's resource monitor log
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: build-test-resource-monitor-${{ matrix.shard }}
-          path: ${{ runner.temp }}/resource-monitor.log
-          retention-days: 1
-          if-no-files-found: warn
 
       - name: Upload this shard's checkpoints
         uses: actions/upload-artifact@v7
