@@ -239,21 +239,42 @@ def _use_gurobi_solver(model: cobra.Model, *, retries: int = 5, initial_delay: f
     concurrent shard's session clearing a minute or two into a wait is far more likely
     than the license actually being exhausted, so back off and retry a bounded number
     of times before giving up.
+
+    A failed attempt can leave gurobipy's process-wide default environment in a
+    half-initialised state (the crash is inside its own construction), so a retry that
+    reuses it blind could behave differently from the first attempt for reasons that
+    have nothing to do with the license server; best-effort dispose it before each
+    retry so every attempt starts from the same clean slate.
+
+    Logs how many attempts and how long acquisition took, and the CPU count / Gurobi
+    thread count once acquired -- separating "time spent getting a session" from "time
+    spent solving" and surfacing possible CPU oversubscription across concurrent
+    shards, both invisible from the outside while a job is still running.
     """
     import gurobipy
 
+    started = time.time()
     delay = initial_delay
     for attempt in range(1, retries + 1):
         try:
             model.solver = "gurobi"
-            return
+            break
         except gurobipy.GurobiError as exc:
             if attempt == retries:
                 raise
             _log(f"Gurobi session unavailable ({exc}); retrying in {delay:.0f}s "
                  f"({attempt}/{retries}) ...")
+            try:
+                gurobipy.disposeDefaultEnv()
+            except Exception:
+                pass  # nothing to clean up, or the env never got that far -- fine either way
             time.sleep(delay)
             delay *= 2
+
+    elapsed = time.time() - started
+    threads = model.solver.problem.Params.Threads
+    _log(f"Gurobi session acquired in {elapsed:.1f}s ({attempt} attempt(s)); "
+         f"{os.cpu_count()} CPU(s) visible, solver Threads={threads}")
 
 
 def _dispose_gurobi_session(*, timeout: float = 20.0) -> None:
