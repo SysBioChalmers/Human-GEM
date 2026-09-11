@@ -22,10 +22,22 @@ compute one parsimonious (pFBA) flux distribution up front and only re-test a
 gene against the (few) tasks whose flux-carrying reactions it disables.
 Reactions essential for a task appear in every feasible solution, so this filter
 never drops a real essential gene.
+
+Two genes that knock out the identical set of reactions (subunits of the same
+AND-linked complex, e.g. a mitochondrial ETC complex) get the identical
+feasibility verdict for every task, so the scan tests each distinct knockout
+once and copies the result to every gene that shares it, rather than solving it
+once per gene. Distinct knockouts are also independent of each other, so
+``processes`` splits them across a process pool the same way
+:func:`raven_toolbox.tasks.check.find_task_essential_reactions` splits tasks:
+each worker receives one copy of the base model at pool startup, not per
+knockout.
 """
 
 from __future__ import annotations
 
+import concurrent.futures as cf
+import multiprocessing
 from collections import defaultdict
 from collections.abc import Callable, Iterable
 
@@ -51,6 +63,22 @@ def _prepare_base(model: cobra.Model) -> cobra.Model:
     for rxn in base.boundary:
         rxn.bounds = (0.0, 0.0)
     return base
+
+
+def _pin_single_threaded(model: cobra.Model) -> None:
+    """Force one thread per LP solve (Gurobi-specific, a no-op on other backends).
+
+    The scan re-solves thousands of small LPs that differ from each other by only a
+    few reaction bounds. Gurobi's default automatic/concurrent method spins up several
+    threads for a problem this size regardless, which adds synchronisation overhead to
+    every one of those solves without shortening any single one of them. Pinning to one
+    thread removes that overhead and leaves the rest of the machine's cores free for
+    ``processes`` to use across knockouts instead of within one.
+    """
+    try:
+        model.solver.problem.Params.Threads = 1
+    except Exception:  # noqa: BLE001 - gurobipy optional; no-op without it
+        pass
 
 
 def _set_constraint_bounds(constraint, lb: float, ub: float) -> None:
@@ -141,6 +169,7 @@ def _prepare_scan(model: cobra.Model, tasks: str | Iterable[Task], emit):
     """
     tasks = _as_tasks(tasks)
     base = _prepare_base(model)
+    _pin_single_threaded(base)
     name_to_id, comp_to_ids = task_name_maps(base)
     original_ids = {r.id for r in base.reactions}
     # Snapshot every mass-balance bound once so a task application can be reverted
@@ -166,34 +195,116 @@ def _prepare_scan(model: cobra.Model, tasks: str | Iterable[Task], emit):
     return base, passing, gene_disabled, name_to_id, comp_to_ids, saved
 
 
-def _scan(base, passing, gene_disabled, name_to_id, comp_to_ids, saved, emit, *, stop_early):
+def _test_knockout(
+    base, passing, name_to_id, comp_to_ids, saved, disabled, all_categories, *, stop_early
+) -> tuple[set[str], int]:
+    """Task ids broken by forcing ``disabled`` to zero, and how many solves that took.
+
+    With ``stop_early`` this stops at the first broken task, which is all that is
+    needed to call the knockout essential and is much cheaper. Without it every
+    matching task is tested, so the full set of broken task ids (= categories) is
+    known; it also stops once every category has been broken once, since testing
+    further tasks cannot add a new category.
+    """
+    broken_categories: set[str] = set()
+    solves = 0
+    for task, flux_set in passing:
+        # The knockout can only matter if it hits a reaction carrying flux in this
+        # task's solution; otherwise that solution survives the knockout.
+        if not (disabled & flux_set):
+            continue
+        solves += 1
+        if not _task_feasible_without(base, task, name_to_id, comp_to_ids, disabled, saved):
+            broken_categories.add(task.id)
+            if stop_early or broken_categories >= all_categories:
+                break
+    return broken_categories, solves
+
+
+# Set once per worker process by _init_worker; module-level so ProcessPoolExecutor's
+# workers (which import this module fresh rather than inheriting parent state on
+# 'spawn') can reach it without re-pickling the shared arguments per knockout.
+_WORKER: dict = {}
+
+
+def _init_worker(base, passing, name_to_id, comp_to_ids, saved, all_categories, stop_early) -> None:
+    _pin_single_threaded(base)
+    _WORKER.update(
+        base=base, passing=passing, name_to_id=name_to_id, comp_to_ids=comp_to_ids,
+        saved=saved, all_categories=all_categories, stop_early=stop_early,
+    )
+
+
+def _knockout_worker(disabled: frozenset[str]) -> tuple[frozenset[str], set[str], int]:
+    categories, solves = _test_knockout(
+        _WORKER["base"], _WORKER["passing"], _WORKER["name_to_id"], _WORKER["comp_to_ids"],
+        _WORKER["saved"], disabled, _WORKER["all_categories"], stop_early=_WORKER["stop_early"],
+    )
+    return disabled, categories, solves
+
+
+def _scan(base, passing, gene_disabled, name_to_id, comp_to_ids, saved, emit, *, stop_early, processes=1):
     """Knock out each gene and record the id of every task the knockout breaks.
 
-    With ``stop_early`` the scan moves on to the next gene as soon as one task breaks,
-    which is all that is needed to call the gene essential and is much cheaper. Without
-    it every task is tested, so the full set of broken task ids (= categories) is known.
+    Genes that disable the identical set of reactions (subunits of the same AND-linked
+    complex) get the identical verdict for every task, so they are grouped and each
+    distinct reaction set is tested once, then applied to every gene in its group. With
+    ``processes`` > 1 the distinct knockouts are independent of each other and are split
+    across a :class:`~concurrent.futures.ProcessPoolExecutor`, each worker holding its
+    own copy of ``base`` (sent once at pool startup, not per knockout).
     """
-    broken: dict[str, set[str]] = {}
     total = len(gene_disabled)
-    # Once a gene has broken a task of every category there is nothing left to learn
-    # from testing it further, so the categorised scan can stop on it too.
     all_categories = {task.id for task, _flux_set in passing}
+
+    groups: dict[frozenset[str], list[str]] = defaultdict(list)
+    for gene_id, disabled in gene_disabled.items():
+        if disabled:
+            groups[frozenset(disabled)].append(gene_id)
+    n_shared = total - len(groups)
+    if n_shared:
+        emit(f"{len(groups)} distinct knockouts among {total} candidate genes "
+             f"({n_shared} share a reaction set with another gene, e.g. multi-subunit complexes)")
+
+    broken: dict[str, set[str]] = {}
     solves = 0
-    for i, (gene_id, disabled) in enumerate(gene_disabled.items(), start=1):
-        if not disabled:
-            continue
-        for task, flux_set in passing:
-            # The knockout can only matter if it hits a reaction carrying flux in
-            # this task's solution; otherwise that solution survives the knockout.
-            if not (disabled & flux_set):
-                continue
-            solves += 1
-            if not _task_feasible_without(base, task, name_to_id, comp_to_ids, disabled, saved):
-                broken.setdefault(gene_id, set()).add(task.id)
-                if stop_early or broken[gene_id] >= all_categories:
-                    break
-        if i % 250 == 0 or i == total:
-            emit(f"scanned {i}/{total} genes, {solves} solves, {len(broken)} essential")
+    scanned = 0
+
+    def record(disabled_key: frozenset[str], categories: set[str]) -> None:
+        nonlocal scanned
+        for gene_id in groups[disabled_key]:
+            scanned += 1
+            if categories:
+                broken[gene_id] = set(categories)
+            if scanned % 250 == 0 or scanned == total:
+                emit(f"scanned {scanned}/{total} genes, {solves} solves, {len(broken)} essential")
+
+    if processes <= 1 or len(groups) <= 1:
+        for disabled_key in groups:
+            categories, n_solves = _test_knockout(
+                base, passing, name_to_id, comp_to_ids, saved, disabled_key, all_categories,
+                stop_early=stop_early,
+            )
+            solves += n_solves
+            record(disabled_key, categories)
+    else:
+        # 'spawn', not the platform default ('fork' on Linux): forking duplicates the
+        # parent's already-running Gurobi environment (and its internal license/logging
+        # threads) into every worker, which is exactly the non-fork-safe state that made
+        # cobra's default parallel FVA deadlock on Linux CI runners (the reason
+        # estimateEssentialGenes.estimate_essential_genes and gradedEssentiality.main
+        # both pin FVA to processes=1). 'spawn' starts each worker as a fresh interpreter
+        # that only creates its own Gurobi environment inside _init_worker, after the
+        # fork boundary, so there is nothing shared to deadlock on.
+        ctx = multiprocessing.get_context("spawn")
+        with cf.ProcessPoolExecutor(
+            max_workers=min(processes, len(groups)),
+            mp_context=ctx,
+            initializer=_init_worker,
+            initargs=(base, passing, name_to_id, comp_to_ids, saved, all_categories, stop_early),
+        ) as pool:
+            for disabled_key, categories, n_solves in pool.map(_knockout_worker, groups):
+                solves += n_solves
+                record(disabled_key, categories)
     return broken
 
 
@@ -202,6 +313,7 @@ def find_task_essential_genes(
     tasks: str | Iterable[Task],
     *,
     log: Callable[[str], None] | None = None,
+    processes: int = 1,
 ) -> set[str]:
     """Return the set of gene ids essential for at least one task in ``model``.
 
@@ -210,11 +322,12 @@ def find_task_essential_genes(
     task inputs/outputs define the exchange, exactly as in check_tasks.
 
     ``log`` is an optional callable used to report progress; when omitted the
-    function is silent.
+    function is silent. ``processes`` (default 1, sequential) splits the distinct
+    gene knockouts across a process pool; see :func:`_scan`.
     """
     emit = log or (lambda _msg: None)
     scan_args = _prepare_scan(model, tasks, emit)
-    return set(_scan(*scan_args, emit, stop_early=True))
+    return set(_scan(*scan_args, emit, stop_early=True, processes=processes))
 
 
 def find_task_essential_categories(
@@ -222,6 +335,7 @@ def find_task_essential_categories(
     tasks: str | Iterable[Task],
     *,
     log: Callable[[str], None] | None = None,
+    processes: int = 1,
 ) -> dict[str, set[str]]:
     """Map gene id -> ids of the tasks it is essential for, for every essential gene.
 
@@ -234,8 +348,9 @@ def find_task_essential_categories(
 
     Unlike :func:`find_task_essential_genes` this cannot stop at the first broken
     task, so it is several times slower; it is meant for analysis, not for the
-    per-pull-request run.
+    per-pull-request run. ``processes`` (default 1, sequential) splits the distinct
+    gene knockouts across a process pool; see :func:`_scan`.
     """
     emit = log or (lambda _msg: None)
     scan_args = _prepare_scan(model, tasks, emit)
-    return _scan(*scan_args, emit, stop_early=False)
+    return _scan(*scan_args, emit, stop_early=False, processes=processes)

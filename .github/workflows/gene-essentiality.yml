@@ -14,22 +14,134 @@ on:
         description: "Pull-request number to comment on (set by the /run command)"
         default: ""
 
-jobs:
-  gene-essentiality:
-    runs-on: ubuntu-latest
-    timeout-minutes: 360
-    env:
-      # Stream Python (and raven-toolbox) stdout/stderr live into the Actions log
-      # instead of block-buffering, so long steps show progress as it happens.
-      PYTHONUNBUFFERED: "1"
+env:
+  # Stream Python (and raven-toolbox) stdout/stderr live into the Actions log
+  # instead of block-buffering, so long steps show progress as it happens.
+  PYTHONUNBUFFERED: "1"
 
+jobs:
+  diagnose:
+    if: ${{ inputs.diagnose }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
     steps:
-      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
-      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
         with:
-          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+          else
+            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
+                 "visible to this repository. The gene-essentiality workflow needs a full"\
+                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
+                 "the size-limited license bundled with the pip gurobipy package is not"\
+                 "sufficient."
+            exit 1
+          fi
+
+      - name: Run Step-1a diagnostic
+        run: |
+          timeout 2400 python code/test/diagnoseTaskEssential.py \
+            || echo "::warning::diagnostic ended (wall-clock cap or error)"
+
+  # Step 1 (prepHumanModelForftINIT + prepINITModel) is expression-independent, so its
+  # result is identical for every cell line; building it once here and handing it to
+  # every `build` shard as an artifact means the 5 shards below share it instead of each
+  # repeating the same tens-of-minutes computation for itself.
+  prep:
+    if: ${{ !inputs.diagnose }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+            echo "Gurobi license configured from the Gurobi_Eduard secret."
+          else
+            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
+                 "visible to this repository. The gene-essentiality workflow needs a full"\
+                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
+                 "the size-limited license bundled with the pip gurobipy package is not"\
+                 "sufficient."
+            exit 1
+          fi
+
+      - name: Build the shared prepData once
+        run: |
+          python code/test/gradedEssentiality.py \
+            --prep-only --prep-cache "$RUNNER_TEMP/prep-data.pkl"
+
+      - name: Upload the shared prepData
+        uses: actions/upload-artifact@v7
+        with:
+          name: prep-data
+          path: ${{ runner.temp }}/prep-data.pkl
+          retention-days: 1
+
+  # One shard per Hart2015 cell line (data/datasets/Hart2015_RNAseq.txt has 5:
+  # DLD1, GBM, HCT116, HELA, RPE1); update SHARD_COUNT below and this list together
+  # if that file's cell-line columns change. Building a cell line is independent of
+  # every other (each only ever touches its own checkpoint file), so sharding by cell
+  # line turns the hours-long sequential loop into one wait per shard instead of a sum
+  # over all of them.
+  #
+  # Building a shard's context model and scanning it for task-essential genes each hold
+  # their own Gurobi session for the whole step, and the Gurobi_Eduard WLS license's
+  # session baseline is 2. Five shards building models concurrently, or one shard's
+  # essentiality scan spread across several worker processes (each its own session),
+  # already sustains more than 2 sessions past that baseline for as long as the step
+  # takes, and the license server eventually kills sessions once that overage has lasted
+  # too long ("Overage for too long, N active sessions and over the baseline for N
+  # minutes"). build-model and build-test split the two steps into a barrier instead:
+  # every shard finishes building (and so closes its Gurobi session) before any shard
+  # starts scanning, so the two 5-way-parallel bursts never overlap into a sustained
+  # over-baseline stretch the way a single combined step would.
+  build-model:
+    needs: prep
+    if: ${{ !inputs.diagnose }}
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    env:
+      SHARD_COUNT: 5
+    runs-on: ubuntu-latest
+    # A cell line's ftINIT build is two extraction steps, each up to three solves (the
+    # proven-gap solve and resolve_ties' two tie-break phases) capped at TIME_LIMIT
+    # (30 min) apiece, so up to 180 min before task gap-filling. The timeout covers
+    # that ceiling rather than a typical cell line's runtime.
+    timeout-minutes: 240
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
 
       - name: Set up Python 3
         uses: actions/setup-python@v6
@@ -60,18 +172,215 @@ jobs:
             exit 1
           fi
 
-      - name: Run gene essentiality
-        id: essentiality
-        env:
-          DIAGNOSE: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnose }}
+      - name: Download the shared prepData
+        uses: actions/download-artifact@v8
+        with:
+          name: prep-data
+          path: ${{ runner.temp }}
+
+      - name: Start resource monitor
         run: |
-          if [ "$DIAGNOSE" = "true" ]; then
-            echo "Running the bounded Step-1a per-task diagnostic."
-            timeout 2400 python code/test/diagnoseTaskEssential.py \
-              || echo "::warning::diagnostic ended (wall-clock cap or error)"
-            exit 0
+          {
+            while true; do
+              echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
+              echo "nproc: $(nproc)"
+              free -h
+              echo "--- top CPU processes ---"
+              ps -eo pid,ppid,%cpu,%mem,etime,cmd --sort=-%cpu | head -20
+              echo
+              sleep 60
+            done
+          } > "$RUNNER_TEMP/resource-monitor.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/resource-monitor.pid"
+
+      - name: Build this shard's context models
+        env:
+          # Report each ftINIT solve's status and achieved gap as it finishes, since the
+          # solver's own log is silenced for these models.
+          FTINIT_DEBUG: "1"
+        run: |
+          python code/test/gradedEssentiality.py \
+            --build-models-only --model-dir "$RUNNER_TEMP/context-models" \
+            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
+            --prep-cache "$RUNNER_TEMP/prep-data.pkl"
+
+      # Runs even if the build step above times out or fails, so a stuck shard still
+      # tells us what its CPU/memory/process picture looked like the whole way through.
+      - name: Stop resource monitor
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/resource-monitor.pid" ]; then
+            kill "$(cat "$RUNNER_TEMP/resource-monitor.pid")" 2>/dev/null || true
           fi
-          python code/test/gradedEssentiality.py
+
+      - name: Upload this shard's resource monitor log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: build-model-resource-monitor-${{ matrix.shard }}
+          path: ${{ runner.temp }}/resource-monitor.log
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Upload this shard's context models
+        uses: actions/upload-artifact@v7
+        with:
+          name: context-models-${{ matrix.shard }}
+          path: ${{ runner.temp }}/context-models
+          retention-days: 1
+
+  build-test:
+    needs: build-model
+    # !cancelled() rather than the implicit success(): a bare `if` still ANDs an overall
+    # success() onto `needs`, so one failed build-model shard (e.g. a cell line whose
+    # ftINIT run outgrows the timeout) would skip build-test for every shard, including
+    # the ones whose context model built fine. The shard with no context-models-N
+    # artifact fails cleanly at "Download this shard's context models" below; fail-fast:
+    # false (as on build-model) keeps that from cancelling its siblings.
+    if: ${{ !inputs.diagnose && !cancelled() && needs.build-model.result != 'skipped' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    env:
+      SHARD_COUNT: 5
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+            echo "Gurobi license configured from the Gurobi_Eduard secret."
+          else
+            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
+                 "visible to this repository. The gene-essentiality workflow needs a full"\
+                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
+                 "the size-limited license bundled with the pip gurobipy package is not"\
+                 "sufficient."
+            exit 1
+          fi
+
+      - name: Download the shared prepData
+        uses: actions/download-artifact@v8
+        with:
+          name: prep-data
+          path: ${{ runner.temp }}
+
+      - name: Download this shard's context models
+        uses: actions/download-artifact@v8
+        with:
+          name: context-models-${{ matrix.shard }}
+          path: ${{ runner.temp }}/context-models
+
+      - name: Start resource monitor
+        run: |
+          {
+            while true; do
+              echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
+              echo "nproc: $(nproc)"
+              free -h
+              echo "--- top CPU processes ---"
+              ps -eo pid,ppid,%cpu,%mem,etime,cmd --sort=-%cpu | head -20
+              echo
+              sleep 60
+            done
+          } > "$RUNNER_TEMP/resource-monitor.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/resource-monitor.pid"
+
+      - name: Scan this shard's cell lines for task-essential genes
+        run: |
+          # --processes 1: each additional worker process opens its own Gurobi
+          # session (see taskEssentialGenes._scan), and this step already runs
+          # five shards at once, each holding one session against the
+          # Gurobi_Eduard WLS license's baseline of 2.
+          python code/test/gradedEssentiality.py \
+            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" \
+            --model-dir "$RUNNER_TEMP/context-models" \
+            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
+            --prep-cache "$RUNNER_TEMP/prep-data.pkl" --processes 1
+
+      # Runs even if the scan step above times out or fails, so a stuck shard still
+      # tells us what its CPU/memory/process picture looked like the whole way through.
+      - name: Stop resource monitor
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/resource-monitor.pid" ]; then
+            kill "$(cat "$RUNNER_TEMP/resource-monitor.pid")" 2>/dev/null || true
+          fi
+
+      - name: Upload this shard's resource monitor log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: build-test-resource-monitor-${{ matrix.shard }}
+          path: ${{ runner.temp }}/resource-monitor.log
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Upload this shard's checkpoints
+        uses: actions/upload-artifact@v7
+        with:
+          name: graded-checkpoints-${{ matrix.shard }}
+          path: ${{ runner.temp }}/graded-checkpoints
+          retention-days: 1
+
+  aggregate:
+    needs: build-test
+    if: ${{ !cancelled() && needs.build-test.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
+      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+          fi
+
+      - name: Download every shard's checkpoints
+        uses: actions/download-artifact@v8
+        with:
+          pattern: graded-checkpoints-*
+          path: ${{ runner.temp }}/graded-checkpoints
+          merge-multiple: true
+
+      - name: Combine cell lines into the final report
+        id: essentiality
+        run: |
+          python code/test/gradedEssentiality.py \
+            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" --aggregate-only
           cat data/testResults/gene-essential_summary.md
           # Pass the Markdown summary through as a multiline step output so it
           # renders as a table in the PR comment (no <br> substitution needed).
@@ -101,6 +410,14 @@ jobs:
           git stash --include-untracked
           git fetch
           git checkout $BRANCH_NAME
+          # `git fetch` only moves the origin/$BRANCH_NAME ref, not this local branch,
+          # so without this reset the branch stays at whatever commit the job started
+          # from; if anything else pushed to it while the (hours-long) build ran, the
+          # auto-commit step below still bases its commit on that stale tip and its
+          # push is rejected as non-fast-forward. The working tree is clean here (the
+          # result-file changes are in the stash, popped back on next), so resetting
+          # to origin's tip is exactly the missing "update".
+          git reset --hard origin/$BRANCH_NAME
           if git stash list | grep -q 'stash@{'; then
             git stash pop
           fi

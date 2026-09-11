@@ -31,6 +31,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ github.event.issue.number }}
           REPO: ${{ github.repository }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
           data=$(gh pr view "$PR" --repo "$REPO" --json headRefName,isCrossRepository)
           ref=$(echo "$data" | jq -r .headRefName)
@@ -41,8 +43,11 @@ jobs:
             exit 0
           fi
           gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref" -f pr="$PR"
-          gh pr comment "$PR" --repo "$REPO" \
-            --body ":dna: Started **gene-essentiality** on \`$ref\` (this takes a few hours). Track it in the [Actions tab]($GITHUB_SERVER_URL/$REPO/actions/workflows/gene-essentiality.yml)."
+          # Edit the triggering comment itself rather than posting a separate new one,
+          # so the thread shows the command and its acknowledgement together.
+          notice=$(printf '%s\n\n:dna: Started **gene-essentiality** on `%s` (this takes a few hours). Track it in the [Actions tab](%s/%s/actions/workflows/gene-essentiality.yml).' \
+            "$COMMENT_BODY" "$ref" "$GITHUB_SERVER_URL" "$REPO")
+          gh api "repos/$REPO/issues/comments/$COMMENT_ID" -X PATCH -f body="$notice" --silent
 
   memote:
     # Comment /run memote to run the full MEMOTE suite on the PR branch; the score

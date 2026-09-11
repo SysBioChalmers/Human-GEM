@@ -23,7 +23,10 @@ Mapping to raven-toolbox:
   * ``ftINIT(..., '1+1', removeGenes=true, useScoresForTasks=true)`` ->
     :func:`raven_toolbox.init.ftinit` with ``series='1+1'``, ``gene_scores`` supplied
     (prunes negative-scoring genes, == ``removeGenes``) and ``fill_gaps=True`` with
-    score-weighted task gap-filling (== ``useScoresForTasks``).
+    score-weighted task gap-filling (== ``useScoresForTasks``). ``resolve_ties`` and
+    ``prove_abs_gap`` are additionally enabled, which RAVEN has no counterpart for;
+    they pin which of the equally-scoring optima is returned, so the predicted
+    essential genes are reproducible (see RESOLVE_TIES / PROVE_ABS_GAP below).
   * ``checkTasksGenes(..., getEssential=true)`` -> ``find_task_essential_genes``.
 
 Gene identifiers
@@ -79,6 +82,26 @@ EXPRESSION_THRESHOLD = 1.0
 BIG_M = 100.0
 MIP_GAP_ABS = 10.0
 TIME_LIMIT = 1800.0
+
+# The extraction MILP is degenerate: many reaction sets score identically, so which one
+# is returned is otherwise left to the solver, and the essential genes predicted from it
+# move with it. Neither setting makes the extracted model biologically more accurate,
+# since the optima they choose among are equally consistent with the expression data;
+# they pin which optimum comes back, so a re-run reports the same genes.
+#
+# resolve_ties adds a lexicographic phase that takes the sparsest, then lowest-id,
+# optimum. On Human-GEM/DLD1 it makes repeated builds at a fixed seed identical and
+# halves the seed-to-seed spread in predicted essential genes. Its tie-break phases can
+# exhaust TIME_LIMIT at genome scale, in which case it narrows rather than removes that
+# spread and warns.
+#
+# PROVE_ABS_GAP replaces the relative-gap escalation with one solve per step proven to
+# this absolute gap. The escalation returns a solution 2.0 below the optimum at the
+# first stage on Human-GEM/DLD1 and 4.0 at the second (351 kept reactions rather than
+# 349); values from 1.0 to 2.0 prove the true optimum, at roughly 2.4x the runtime,
+# while 0.5 and below stop being provable inside the time limit.
+RESOLVE_TIES = True
+PROVE_ABS_GAP = 1.0
 
 # prepHumanModelForftINIT: reactions that can "always be on" and are ignored while
 # scoring (protein creation/degradation + metabolite-pooling reactions). The commented
@@ -330,6 +353,7 @@ def _build_context_model(
         context = ftinit(
             prep, rxn_scores, gene_scores=gene_scores, series="1+1", fill_gaps=True,
             big_m=big_m, mip_gap_abs=mip_gap_abs, time_limit=time_limit,
+            resolve_ties=RESOLVE_TIES, prove_abs_gap=PROVE_ABS_GAP, verbose=True,
         )
     finally:
         _set_solver_verbosity(False)  # quiet again for the copy-heavy gene-essentiality scan
