@@ -57,14 +57,28 @@ jobs:
           timeout 2400 python code/test/diagnoseTaskEssential.py \
             || echo "::warning::diagnostic ended (wall-clock cap or error)"
 
-  # Step 1 (prepHumanModelForftINIT + prepINITModel) is expression-independent, so its
-  # result is identical for every cell line; building it once here and handing it to
-  # every `build` shard as an artifact means the 5 shards below share it instead of each
-  # repeating the same tens-of-minutes computation for itself.
-  prep:
+  # EXPERIMENTAL, not wired to any PR: process every cell line in one process, one
+  # Gurobi session at a time, instead of the 5-way concurrent build-model/build-test
+  # matrix + aggregate split. Two things went wrong under that 5-way concurrency:
+  # (1) a genuine race acquiring a Gurobi session ("Too many sessions, 5 active
+  # sessions for a baseline of 2") when several shards start at once, and (2) every
+  # ftINIT solve taking roughly 2x its own configured TIME_LIMIT in wall-clock time,
+  # suspected to be CPU oversubscription from 5 simultaneous Gurobi processes. A
+  # single sequential job never holds more than 1 session (nowhere near the baseline
+  # of 2, so no race is possible) and never runs more than one Gurobi solve at a time
+  # (so if the 2x slowdown was contention-driven, it should disappear here). This
+  # also tests whether the total fits GitHub-hosted runners' hard 360-minute-per-job
+  # cap: the original, unsharded run's five cell lines took roughly 9.5+18+20+24+103
+  # minutes plus ~35 minutes of shared Step-1 prep, i.e. ~210 min -- comfortably
+  # under 360 if timing reverts to that; if the 2x slowdown persists even without
+  # concurrency, ~380 min would instead exceed it, which is itself the answer to
+  # whether concurrency was the cause.
+  run-sequential:
     if: ${{ !inputs.diagnose }}
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # GitHub-hosted runners hard-cap job execution at 360 minutes regardless of this
+    # value; set it to that ceiling deliberately (see rationale above).
+    timeout-minutes: 360
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -94,311 +108,22 @@ jobs:
             exit 1
           fi
 
-      - name: Build the shared prepData once
-        run: |
-          python code/test/gradedEssentiality.py \
-            --prep-only --prep-cache "$RUNNER_TEMP/prep-data.pkl"
-
-      - name: Upload the shared prepData
-        uses: actions/upload-artifact@v7
-        with:
-          name: prep-data
-          path: ${{ runner.temp }}/prep-data.pkl
-          retention-days: 1
-
-  # One shard per Hart2015 cell line (data/datasets/Hart2015_RNAseq.txt has 5:
-  # DLD1, GBM, HCT116, HELA, RPE1); update SHARD_COUNT below and this list together
-  # if that file's cell-line columns change. Building a cell line is independent of
-  # every other (each only ever touches its own checkpoint file), so sharding by cell
-  # line turns the hours-long sequential loop into one wait per shard instead of a sum
-  # over all of them.
-  #
-  # Building a shard's context model and scanning it for task-essential genes each hold
-  # their own Gurobi session for the whole step, and the Gurobi_Eduard WLS license's
-  # session baseline is 2. Five shards building models concurrently, or one shard's
-  # essentiality scan spread across several worker processes (each its own session),
-  # already sustains more than 2 sessions past that baseline for as long as the step
-  # takes, and the license server eventually kills sessions once that overage has lasted
-  # too long ("Overage for too long, N active sessions and over the baseline for N
-  # minutes"). build-model and build-test split the two steps into a barrier instead:
-  # every shard finishes building (and so closes its Gurobi session) before any shard
-  # starts scanning, so the two 5-way-parallel bursts never overlap into a sustained
-  # over-baseline stretch the way a single combined step would.
-  build-model:
-    needs: prep
-    if: ${{ !inputs.diagnose }}
-    strategy:
-      fail-fast: false
-      matrix:
-        shard: [0, 1, 2, 3, 4]
-    env:
-      SHARD_COUNT: 5
-    runs-on: ubuntu-latest
-    # A cell line's ftINIT build is two extraction steps, each up to three solves (the
-    # proven-gap solve and resolve_ties' two tie-break phases) capped at TIME_LIMIT
-    # (30 min) apiece, so up to 180 min before task gap-filling. The timeout covers
-    # that ceiling rather than a typical cell line's runtime.
-    timeout-minutes: 240
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Set up Python 3
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install -r code/test/requirements-gurobi.txt
-
-      - name: Set up Gurobi license
-        env:
-          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
-        run: |
-          # Only point Gurobi at a license file when the secret is actually set.
-          # Writing an empty file and exporting GRB_LICENSE_FILE would override
-          # gurobipy's built-in license and make Gurobi fail with a confusing
-          # "No HostID specified in license file" error.
-          if [ -n "$GUROBI_LICENSE" ]; then
-            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
-            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
-            echo "Gurobi license configured from the Gurobi_Eduard secret."
-          else
-            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
-                 "visible to this repository. The gene-essentiality workflow needs a full"\
-                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
-                 "the size-limited license bundled with the pip gurobipy package is not"\
-                 "sufficient."
-            exit 1
-          fi
-
-      - name: Download the shared prepData
-        uses: actions/download-artifact@v8
-        with:
-          name: prep-data
-          path: ${{ runner.temp }}
-
-      - name: Build this shard's context models
+      - name: Run gene essentiality for every cell line, one at a time
         env:
           # Report each ftINIT solve's status and achieved gap as it finishes, since the
           # solver's own log is silenced for these models.
           FTINIT_DEBUG: "1"
         run: |
-          python code/test/gradedEssentiality.py \
-            --build-models-only --model-dir "$RUNNER_TEMP/context-models" \
-            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
-            --prep-cache "$RUNNER_TEMP/prep-data.pkl"
-
-      - name: Upload this shard's context models
-        uses: actions/upload-artifact@v7
-        with:
-          name: context-models-${{ matrix.shard }}
-          path: ${{ runner.temp }}/context-models
-          retention-days: 1
-
-  build-test:
-    needs: build-model
-    # !cancelled() rather than the implicit success(): a bare `if` still ANDs an overall
-    # success() onto `needs`, so one failed build-model shard (e.g. a cell line whose
-    # ftINIT run outgrows the timeout) would skip build-test for every shard, including
-    # the ones whose context model built fine. The shard with no context-models-N
-    # artifact fails cleanly at "Download this shard's context models" below; fail-fast:
-    # false (as on build-model) keeps that from cancelling its siblings.
-    if: ${{ !inputs.diagnose && !cancelled() && needs.build-model.result != 'skipped' }}
-    strategy:
-      fail-fast: false
-      matrix:
-        shard: [0, 1, 2, 3, 4]
-    env:
-      SHARD_COUNT: 5
-    runs-on: ubuntu-latest
-    timeout-minutes: 150
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Set up Python 3
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install -r code/test/requirements-gurobi.txt
-
-      - name: Set up Gurobi license
-        env:
-          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
-        run: |
-          if [ -n "$GUROBI_LICENSE" ]; then
-            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
-            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
-            echo "Gurobi license configured from the Gurobi_Eduard secret."
-          else
-            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
-                 "visible to this repository. The gene-essentiality workflow needs a full"\
-                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
-                 "the size-limited license bundled with the pip gurobipy package is not"\
-                 "sufficient."
-            exit 1
-          fi
-
-      - name: Download the shared prepData
-        uses: actions/download-artifact@v8
-        with:
-          name: prep-data
-          path: ${{ runner.temp }}
-
-      - name: Download this shard's context models
-        uses: actions/download-artifact@v8
-        with:
-          name: context-models-${{ matrix.shard }}
-          path: ${{ runner.temp }}/context-models
-
-      - name: Scan this shard's cell lines for task-essential genes
-        run: |
-          # --processes 1: each additional worker process opens its own Gurobi
-          # session (see taskEssentialGenes._scan), and this step already runs
-          # five shards at once, each holding one session against the
-          # Gurobi_Eduard WLS license's baseline of 2.
-          python code/test/gradedEssentiality.py \
-            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" \
-            --model-dir "$RUNNER_TEMP/context-models" \
-            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
-            --prep-cache "$RUNNER_TEMP/prep-data.pkl" --processes 1
-
-      - name: Upload this shard's checkpoints
-        uses: actions/upload-artifact@v7
-        with:
-          name: graded-checkpoints-${{ matrix.shard }}
-          path: ${{ runner.temp }}/graded-checkpoints
-          retention-days: 1
-
-  aggregate:
-    needs: build-test
-    if: ${{ !cancelled() && needs.build-test.result != 'skipped' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
-      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
-      - name: Checkout
-        uses: actions/checkout@v7
-        with:
-          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
-
-      - name: Set up Python 3
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install -r code/test/requirements-gurobi.txt
-
-      - name: Set up Gurobi license
-        env:
-          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
-        run: |
-          if [ -n "$GUROBI_LICENSE" ]; then
-            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
-            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
-          fi
-
-      - name: Download every shard's checkpoints
-        uses: actions/download-artifact@v8
-        with:
-          pattern: graded-checkpoints-*
-          path: ${{ runner.temp }}/graded-checkpoints
-          merge-multiple: true
-
-      - name: Combine cell lines into the final report
-        id: essentiality
-        run: |
-          python code/test/gradedEssentiality.py \
-            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" --aggregate-only
+          python code/test/gradedEssentiality.py --checkpoint-dir "$RUNNER_TEMP/checkpoints"
           cat data/testResults/gene-essential_summary.md
-          # Pass the Markdown summary through as a multiline step output so it
-          # renders as a table in the PR comment (no <br> substitution needed).
-          {
-            echo "results<<GENEESS_EOF"
-            cat data/testResults/gene-essential_summary.md
-            echo "GENEESS_EOF"
-          } >> "$GITHUB_OUTPUT"
 
-      # This workflow is dispatched (by /run gene-essentiality), so it has no
-      # pull_request context; the PR number arrives as the `pr` input instead.
-      - name: Mention PR# in README.md
-        if: inputs.pr != ''
-        env:
-          PR_NUMBER: ${{ inputs.pr }}
-        run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (gene /$PR_NUMBER\*\* (gene /" data/testResults/README.md
-
-      - name: Update local branch before committing changes
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        run: |
-          # --include-untracked: a result file that is new in this run is untracked
-          # here, but is already tracked at the branch tip once any earlier run has
-          # committed it, and plain `git stash` leaves untracked files in place, so
-          # the checkout below then refuses to overwrite them and the job dies after
-          # the run has already finished.
-          git stash --include-untracked
-          git fetch
-          git checkout $BRANCH_NAME
-          # `git fetch` only moves the origin/$BRANCH_NAME ref, not this local branch,
-          # so without this reset the branch stays at whatever commit the job started
-          # from; if anything else pushed to it while the (hours-long) build ran, the
-          # auto-commit step below still bases its commit on that stale tip and its
-          # push is rejected as non-fast-forward. The working tree is clean here (the
-          # result-file changes are in the stash, popped back on next), so resetting
-          # to origin's tip is exactly the missing "update".
-          git reset --hard origin/$BRANCH_NAME
-          if git stash list | grep -q 'stash@{'; then
-            git stash pop
-          fi
-
-      - name: Auto-commit results
-        uses: stefanzweifel/git-auto-commit-action@v7
+      # Runs even on a timeout or failure, so a run that does not finish in 360
+      # minutes still leaves behind whichever cell lines it did complete.
+      - name: Upload checkpoints (partial results included)
+        if: always()
+        uses: actions/upload-artifact@v7
         with:
-          commit_user_name: memote-bot
-          # [skip ci] so this results commit does not re-trigger the workflows.
-          # Without it the memote-bot commit fires a fresh pull_request run whose
-          # actor is github-actions[bot], which the repository's "require approval
-          # for first-time contributors" policy holds for manual approval.
-          commit_message: "chore: add gene essentiality test result [skip ci]"
-          file_pattern: data/testResults/*
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.number }}
-
-      # !cancelled() rather than the implicit success(): this run takes hours, so its
-      # result must still be posted even if the results push above failed.
-      - name: Post comment
-        if: ${{ !cancelled() && inputs.pr != '' }}
-        uses: actions/github-script@v9
-        env:
-          TEST_RESULTS: ${{ steps.essentiality.outputs.results }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          ISSUE_NUMBER: ${{ inputs.pr }}
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const marker = '<!-- GENE-ESSENTIALITY-COMMENT -->';
-            const body = `${marker}\n`
-              + `Gene essentiality was run on this pull request via [GH Actions](${process.env.RUN_URL}). `
-              + `Essentiality for a *viability* task (\`GR\` growth, \`ER\` energy/redox) is reported `
-              + `separately from essentiality for a *capability* task (\`SU\`, \`BS\`, \`IC\`), and the `
-              + `biomass growth ratio gives a threshold-free score (see #1076). Summary:\n\n`
-              + `${process.env.TEST_RESULTS}\n\n`
-              + `The full per-gene matrix is committed to \`data/testResults/gene-essential.csv\`, holding `
-              + `for each cell line the confusion class, the task categories the knockout breaks and the `
-              + `biomass growth ratio.\n\n`
-              + `> _Note: in the case of multiple test runs, this post is edited._`;
-            const { owner, repo } = context.repo;
-            const issue_number = Number(process.env.ISSUE_NUMBER);
-            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
-            const existing = comments.find(c => c.body && c.body.includes(marker));
-            if (existing) {
-              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
-            } else {
-              await github.rest.issues.createComment({ owner, repo, issue_number, body });
-            }
+          name: graded-checkpoints
+          path: ${{ runner.temp }}/checkpoints
+          retention-days: 1
+          if-no-files-found: warn
