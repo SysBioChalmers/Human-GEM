@@ -33,8 +33,12 @@ jobs:
         with:
           python-version: "3.11"
 
+      # EXPERIMENT (perf-diagnostic branch only, not for merge): swapped out for a
+      # minimal, raven-toolbox/cobra-free perf benchmark, reusing the already-registered
+      # `diagnose` input/job so it's dispatchable without landing a brand-new workflow
+      # file on the default branch first. See code/test/perfDiagnostic.py.
       - name: Install dependencies
-        run: pip install -r code/test/requirements-gurobi.txt
+        run: pip install numpy gurobipy
 
       - name: Set up Gurobi license
         env:
@@ -52,10 +56,8 @@ jobs:
             exit 1
           fi
 
-      - name: Run Step-1a diagnostic
-        run: |
-          timeout 2400 python code/test/diagnoseTaskEssential.py \
-            || echo "::warning::diagnostic ended (wall-clock cap or error)"
+      - name: Run performance diagnostic
+        run: python code/test/perfDiagnostic.py
 
   # Step 1 (prepHumanModelForftINIT + prepINITModel) is expression-independent, so its
   # result is identical for every cell line; building it once here and handing it to
