@@ -24,9 +24,8 @@ Mapping to raven-toolbox:
     :func:`raven_toolbox.init.ftinit` with ``series='1+1'``, ``gene_scores`` supplied
     (prunes negative-scoring genes, == ``removeGenes``) and ``fill_gaps=True`` with
     score-weighted task gap-filling (== ``useScoresForTasks``). ``resolve_ties`` and
-    ``prove_abs_gap`` are additionally enabled, which RAVEN has no counterpart for;
-    they pin which of the equally-scoring optima is returned, so the predicted
-    essential genes are reproducible (see RESOLVE_TIES / PROVE_ABS_GAP below).
+    ``prove_abs_gap`` are RAVEN-less extras that pin which of the equally-scoring
+    optima is returned; currently off (see RESOLVE_TIES / PROVE_ABS_GAP below).
   * ``checkTasksGenes(..., getEssential=true)`` -> ``find_task_essential_genes``.
 
 Gene identifiers
@@ -90,18 +89,18 @@ TIME_LIMIT = 1800.0
 # they pin which optimum comes back, so a re-run reports the same genes.
 #
 # resolve_ties adds a lexicographic phase that takes the sparsest, then lowest-id,
-# optimum. On Human-GEM/DLD1 it makes repeated builds at a fixed seed identical and
-# halves the seed-to-seed spread in predicted essential genes. Its tie-break phases can
-# exhaust TIME_LIMIT at genome scale, in which case it narrows rather than removes that
-# spread and warns.
-#
-# PROVE_ABS_GAP replaces the relative-gap escalation with one solve per step proven to
-# this absolute gap. The escalation returns a solution 2.0 below the optimum at the
-# first stage on Human-GEM/DLD1 and 4.0 at the second (351 kept reactions rather than
-# 349); values from 1.0 to 2.0 prove the true optimum, at roughly 2.4x the runtime,
-# while 0.5 and below stop being provable inside the time limit.
-RESOLVE_TIES = True
-PROVE_ABS_GAP = 1.0
+# optimum (halves the seed-to-seed spread in predicted essential genes on
+# Human-GEM/DLD1), at a 3-7x build-time cost. PROVE_ABS_GAP replaces the relative-gap
+# escalation with one solve per step proven to this absolute gap, at roughly 2.4x the
+# runtime. Both are off for now: at the genome scale and the 1e-9 solver tolerances
+# this pipeline uses, the extra tie-break/proven-gap solves are exquisitely sensitive
+# to floating-point differences between CPU vendors, and GitHub-hosted `ubuntu-latest`
+# runners are not hardware-homogeneous -- confirmed drawing Intel and AMD chips across
+# consecutive dispatches. That turns "expensive but bounded" into occasional multi-hour
+# solves that blow through TIME_LIMIT. Revisit once CI runs on fixed hardware, or if
+# reproducibility across builds becomes a hard requirement again.
+RESOLVE_TIES = False
+PROVE_ABS_GAP = None
 
 # prepHumanModelForftINIT: reactions that can "always be on" and are ignored while
 # scoring (protein creation/degradation + metabolite-pooling reactions). The commented

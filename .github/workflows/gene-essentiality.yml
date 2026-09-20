@@ -134,10 +134,11 @@ jobs:
     env:
       SHARD_COUNT: 5
     runs-on: ubuntu-latest
-    # A cell line's ftINIT build is two extraction steps, each up to three solves (the
-    # proven-gap solve and resolve_ties' two tie-break phases) capped at TIME_LIMIT
-    # (30 min) apiece, so up to 180 min before task gap-filling. The timeout covers
-    # that ceiling rather than a typical cell line's runtime.
+    # A cell line's ftINIT build is two extraction steps, each capped at TIME_LIMIT
+    # (30 min), plus task gap-filling; resolve_ties/prove_abs_gap are currently off
+    # (see estimateEssentialGenes.py), so this is generous headroom rather than a
+    # tight ceiling -- kept wide because build time on shared ubuntu-latest hardware
+    # has been seen to vary far more than the per-step time limit alone would suggest.
     timeout-minutes: 240
     steps:
       - name: Checkout
