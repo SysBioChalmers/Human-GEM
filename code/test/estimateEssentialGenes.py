@@ -25,7 +25,8 @@ Mapping to raven-toolbox:
     (prunes negative-scoring genes, == ``removeGenes``) and ``fill_gaps=True`` with
     score-weighted task gap-filling (== ``useScoresForTasks``). ``resolve_ties`` and
     ``prove_abs_gap`` are RAVEN-less extras that pin which of the equally-scoring
-    optima is returned; currently off (see RESOLVE_TIES / PROVE_ABS_GAP below).
+    optima is returned; only ``prove_abs_gap`` is currently on (see RESOLVE_TIES /
+    PROVE_ABS_GAP below).
   * ``checkTasksGenes(..., getEssential=true)`` -> ``find_task_essential_genes``.
 
 Gene identifiers
@@ -90,17 +91,23 @@ TIME_LIMIT = 1800.0
 #
 # resolve_ties adds a lexicographic phase that takes the sparsest, then lowest-id,
 # optimum (halves the seed-to-seed spread in predicted essential genes on
-# Human-GEM/DLD1), at a 3-7x build-time cost. PROVE_ABS_GAP replaces the relative-gap
-# escalation with one solve per step proven to this absolute gap, at roughly 2.4x the
-# runtime. Both are off for now: at the genome scale and the 1e-9 solver tolerances
-# this pipeline uses, the extra tie-break/proven-gap solves are exquisitely sensitive
-# to floating-point differences between CPU vendors, and GitHub-hosted `ubuntu-latest`
-# runners are not hardware-homogeneous -- confirmed drawing Intel and AMD chips across
-# consecutive dispatches. That turns "expensive but bounded" into occasional multi-hour
-# solves that blow through TIME_LIMIT. Revisit once CI runs on fixed hardware, or if
-# reproducibility across builds becomes a hard requirement again.
+# Human-GEM/DLD1), at a 3-7x build-time cost -- and, like the base solve below, that
+# cost is exquisitely sensitive to floating-point differences between CPU vendors on
+# GitHub-hosted `ubuntu-latest` runners (confirmed drawing Intel and AMD chips across
+# consecutive dispatches), turning "expensive but bounded" into occasional multi-hour
+# solves. Left off; revisit once CI runs on fixed hardware, or if reproducibility
+# across builds becomes a hard requirement again.
+#
+# PROVE_ABS_GAP replaces the relative-gap escalation with one solve per step proven to
+# this absolute gap, at roughly 2.4x the runtime -- back on: the escalation it replaces
+# is not a cheaper alternative, it's an open-ended loop of full-TIME_LIMIT re-solves,
+# which on 2026-09-20 (PR #1069, run 35517420976) took over an hour per step and, with
+# five shards holding Gurobi sessions that long concurrently, tripped the WLS license's
+# "Overage for too long" kill on two of them. A single bounded solve per step is worse
+# on average but has a known ceiling; the escalation's ceiling is TIME_LIMIT times an
+# unbounded number of rounds.
 RESOLVE_TIES = False
-PROVE_ABS_GAP = None
+PROVE_ABS_GAP = 1.0
 
 # prepHumanModelForftINIT: reactions that can "always be on" and are ignored while
 # scoring (protein creation/degradation + metabolite-pooling reactions). The commented
