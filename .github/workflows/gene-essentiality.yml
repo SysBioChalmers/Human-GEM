@@ -115,20 +115,28 @@ jobs:
   #
   # Building a shard's context model and scanning it for task-essential genes each hold
   # their own Gurobi session for the whole step, and the Gurobi_Eduard WLS license's
-  # session baseline is 2. Five shards building models concurrently, or one shard's
-  # essentiality scan spread across several worker processes (each its own session),
-  # already sustains more than 2 sessions past that baseline for as long as the step
-  # takes, and the license server eventually kills sessions once that overage has lasted
-  # too long ("Overage for too long, N active sessions and over the baseline for N
-  # minutes"). build-model and build-test split the two steps into a barrier instead:
-  # every shard finishes building (and so closes its Gurobi session) before any shard
-  # starts scanning, so the two 5-way-parallel bursts never overlap into a sustained
-  # over-baseline stretch the way a single combined step would.
+  # session baseline is 2. Splitting into build-model and build-test (a barrier: every
+  # shard finishes building, and so closes its Gurobi session, before any shard starts
+  # scanning) was meant to keep the two 5-way-parallel bursts from overlapping into a
+  # sustained over-baseline stretch the way a single combined step would.
+  #
+  # That assumed each burst was short. It isn't: a cell line's ftINIT build now commonly
+  # takes 1-2+ hours (genome-scale MILP solve time on shared ubuntu-latest hardware
+  # varies far more than TIME_LIMIT alone suggests -- see estimateEssentialGenes.py).
+  # Five shards holding a session each for that long is a sustained 5-session stretch far
+  # past the baseline of 2, and on PR #1069 (2026-09-20/21) this reliably killed some
+  # shards outright ("Overage for too long") and, once a build-model shard crashed
+  # mid-solve rather than releasing its session cleanly, poisoned other shards' sessions
+  # for the rest of the run too ("Maximum number of failing server authorization attempts
+  # reached"). max-parallel below caps build-model at 2 concurrent shards -- matching the
+  # WLS baseline -- so at most 2 sessions are ever open at once, independent of how long
+  # any individual shard's solve takes.
   build-model:
     needs: prep
     if: ${{ !inputs.diagnose }}
     strategy:
       fail-fast: false
+      max-parallel: 2
       matrix:
         shard: [0, 1, 2, 3, 4]
     env:
