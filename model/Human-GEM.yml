@@ -251951,6 +251951,23 @@
       - references: "PMID:11080211;PMID:1356223;PMID:14583610;PMID:16213501;PMID:7595668;PMID:8838581;PMID:9053810"
       - subsystem: "Alanine, aspartate and glutamate metabolism"
       - confidence_score: 0
+    - !!omap
+      - id: "MAR20192"
+      - name: "trans-4-Hydroxy-L-proline:ubiquinone oxidoreductase"
+      - metabolites: !!omap
+          - MAM02039m: 1
+          - MAM02320m: 1
+          - MAM03037m: -1
+          - MAM03102m: 1
+          - MAM03103m: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000250799"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "1.5.5.3"
+      - references: "PMID:25697095"
+      - subsystem: "Arginine and proline metabolism"
+      - confidence_score: 0
 - genes:
     - !!omap
       - id: "ENSG00000000419"
