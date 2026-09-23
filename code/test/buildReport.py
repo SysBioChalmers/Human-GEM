@@ -1,16 +1,19 @@
-"""Build one model-quality report for the pull-request comment.
+"""Build the model-quality report: a full detail file and a condensed pull-request comment.
 
-Turns the result files under data/testResults/ into a single comment that leads
-with a one-line verdict and then the status tables (model checks, MACAW/balance,
-model-file/metabolic tasks, MEMOTE, gene essentiality). Each check name links to
-its explanation in this folder's README. Groups still being computed on this run
-are passed in the RUNNING_GROUPS environment variable and their rows show as
-*running* (hourglass);
-the workflow calls this once with "all" before anything has run, once with
-"memote" while the slow MEMOTE snapshot is still going, and once with nothing when
-everything is in. No stamp files are involved.
+data/testResults/model_qc_summary.md is the full, per-check breakdown (every row,
+MEMOTE's per-section and per-test scores, everything) -- committed, so it is always
+browsable on GitHub regardless of size. data/testResults/model_qc_comment.md is what
+actually gets posted as the pull-request comment: one row per section (not per check),
+naming only the checks that need attention (a new regression, or a pre-existing,
+non-blocking finding) and linking to the full file for everything else. A check that is
+clean contributes only to its section's count, never its own line in the comment.
 
-Icon rule (per row):
+Groups still being computed on this run are passed in the RUNNING_GROUPS environment
+variable and show as *running*; the workflow calls this once with "all" before anything
+has run, once with "memote" while the slow MEMOTE snapshot is still going, and once with
+nothing when everything is in. No stamp files are involved.
+
+Icon rule (per check, both files):
   * growth: white_check_mark if the model grows, x if it cannot (blocks the merge).
   * MEMOTE score: warning if the score dropped versus the target branch, else
     white_check_mark (a non-zero score is good).
@@ -19,9 +22,9 @@ Icon rule (per row):
     (a pre-existing finding, non-blocking), white_check_mark if it is zero.
   * hourglass: the group is still running on this pull request.
 
-Only two conditions fail the build: the model cannot load (duplicate `!!omap`
-keys) or cannot grow. Everything else is reported but does not block; a red x
-just flags a regression for review.
+Only two conditions fail the build: the model cannot load (duplicate `!!omap` keys) or
+cannot grow. Everything else is reported but does not block; a red x just flags a
+regression for review.
 
 Usage:
     RUNNING_GROUPS=<all|memote|...> BASE_RESULTS_DIR=<dir> BASE_REF=<branch> \
@@ -35,7 +38,8 @@ import sys
 from pathlib import Path
 
 RESULTS = Path("data/testResults")
-SUMMARY_MD = RESULTS / "model_qc_summary.md"
+FULL_MD = RESULTS / "model_qc_summary.md"
+COMMENT_MD = RESULTS / "model_qc_comment.md"
 BASE_DIR = os.environ.get("BASE_RESULTS_DIR", "")
 BASE_REF = os.environ.get("BASE_REF", "the target branch")
 COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
@@ -63,11 +67,14 @@ def _slug(label: str) -> str:
 
 def _labelled(label: str) -> str:
     """The test name, linked to its explanation in the testResults README when the
-    repo URL is known (in CI); plain text when run locally."""
+    repo URL is known (in CI); plain text when run locally. Full-detail file only --
+    the condensed comment links whole sections to the full file instead (see module
+    docstring)."""
     return f"[{label}]({URL_BASE}/README.md#{_slug(label)})" if URL_BASE else label
 
+
 # (label, key, kind, group, detail_file)
-# Structural gates and the model-QC reports share one table: the split between them
+# Structural gates and the model-QC reports share one section: the split between them
 # was arbitrary (growth next to unused genes). The two gates (duplicate keys, growth)
 # lead the table; every other row is a non-blocking report. Each label links to the
 # matching section in this folder's README (see _labelled).
@@ -95,6 +102,13 @@ MB_ROWS = [
     ("Charge-imbalanced reactions", "charge_imbalance", "count", "macaw", "balance_results.csv"),
     ("Structure vs formula/charge inconsistencies", "structure_inconsistent", "count", "macaw",
      "qc_structure_consistency.csv"),
+]
+TASK_CHECKS = [
+    ("YAML round-trip (cobrapy)", "roundtrip_cobra"),
+    ("YAML round-trip (RAVEN)", "roundtrip_raven"),
+    ("YAML lint", "yamllint"),
+    ("Essential metabolic tasks", "tasks_essential"),
+    ("Verification metabolic tasks", "tasks_verification"),
 ]
 _DUP_COLS = ("duplicate_test_exact", "duplicate_test_directions", "duplicate_test_coefficients")
 
@@ -175,40 +189,6 @@ def _score_delta(cur, base) -> str:
     return f"{d:+.1f} {':warning:' if d < 0 else ':white_check_mark:'}"
 
 
-def _memote_section(current: Path, base: Path | None) -> str:
-    if "memote" in RUNNING:
-        return "_running_ &middot; :hourglass_flowing_sand:"
-    core = _memote_meta(current, MEMOTE_CORE)
-    if core is None:
-        return "_running_ &middot; :hourglass_flowing_sand:"
-    total, mode, sections, detailed = core
-    base_ok = base and base.exists()
-    b = _memote_meta(base, MEMOTE_CORE) if base_ok else None
-    b_total, b_sections = (b[0], b[2]) if b else (None, {})
-    lines = [f"**Total score: {total:.1f}%** ({mode}) &nbsp; {_score_delta(total, b_total)}".rstrip(), ""]
-    if sections:
-        lines += ["| Section | Score | &Delta; vs base |", "| --- | ---: | ---: |"]
-        lines += [f"| {sec} | {sc:.1f}% | {_score_delta(sc, b_sections.get(sec))} |"
-                  for sec, sc in sections.items()]
-    if detailed:
-        lines += ["", "<details><summary>Per-test scores</summary>", "",
-                  "| Section | Test | Score |", "| --- | --- | ---: |"]
-        lines += [f"| {s} | {t} | {sc}% |" for s, t, sc in detailed]
-        lines += ["", "</details>"]
-
-    # Full suite: shown only if a /run memote result is committed. Compared to the
-    # full-suite section on the base branch, never to the subset score above.
-    full = _memote_meta(current, MEMOTE_FULL)
-    if full is not None:
-        bf = _memote_meta(base, MEMOTE_FULL) if base_ok else None
-        bf_total = bf[0] if bf else None
-        lines += ["", f"**Full suite: {full[0]:.1f}%** &nbsp; {_score_delta(full[0], bf_total)} "
-                  "&middot; _from the last_ `/run memote`.".rstrip()]
-    else:
-        lines += ["", "_Full suite not run for this commit; comment_ `/run memote` _to add it._"]
-    return "\n".join(lines)
-
-
 def _metrics(directory: Path) -> dict:
     completeness = directory / "qc_metabolite_completeness.csv"
     annotation = directory / "qc_annotation_issues.csv"
@@ -273,85 +253,162 @@ def _cell(value, kind, detail) -> str:
     return text
 
 
-def _table(rows, current: dict, base: dict):
-    """Split rows into ``(always, folded, regressions, warnings, pending, fatal)``.
-
-    A row that needs attention right now -- a new regression, or still running -- is
-    always shown. A clean row and a pre-existing, unchanged finding are folded
-    together: the point of comparing against ``base`` is that "unchanged", clean or
-    not, is not this pull request's problem, so neither needs to take up space by
-    default. ``len(folded) - warnings`` recovers how many of the folded rows were
-    clean vs. pre-existing findings without a second pass.
-    """
-    always, folded, regressions, warnings, pending = [], [], 0, 0, 0
-    fatal = False
-    for label, key, kind, group, detail in rows:
+def _compute_rows(rows_spec, current: dict, base: dict) -> list[dict]:
+    """Evaluate every (label, key, kind, group, detail) row once. Both the full-detail
+    table and the condensed comment's section row/callouts are built from this list,
+    so the two can never disagree with each other."""
+    computed = []
+    for label, key, kind, group, detail in rows_spec:
         value = current.get(key)
-        is_pending = value is None or group in RUNNING
-        if is_pending:
-            always.append(f"| {label} | _running_ | | :hourglass_flowing_sand: |")
-            pending += 1
+        if value is None or group in RUNNING:
+            computed.append({"label": label, "kind": kind, "detail": detail, "key": key, "pending": True,
+                              "icon": ":hourglass_flowing_sand:"})
             continue
-        delta, icon, regression, row_fatal = _icon(value, base.get(key), kind)
-        fatal = fatal or row_fatal or (key == "dup_keys" and value > 0)
-        regressions += regression
-        warnings += icon == ":warning:"
-        line = f"| {label} | {_cell(value, kind, detail)} | {delta} | {icon} |"
-        (always if icon == ":x:" else folded).append(line)
-    return always, folded, regressions, warnings, pending, fatal
+        delta, icon, regression, fatal = _icon(value, base.get(key), kind)
+        fatal = fatal or (key == "dup_keys" and value > 0)
+        computed.append({
+            "label": label, "kind": kind, "detail": detail, "key": key, "pending": False,
+            "value": value, "delta": delta, "icon": icon, "regression": regression, "fatal": fatal,
+        })
+    return computed
 
 
-def _model_integrity_section() -> str:
+def _full_table(computed: list[dict]) -> list[str]:
+    """Every row, unabbreviated. Full-detail file only."""
+    lines = []
+    for r in computed:
+        if r["pending"]:
+            lines.append(f"| {_labelled(r['label'])} | _running_ | | :hourglass_flowing_sand: |")
+        else:
+            lines.append(f"| {_labelled(r['label'])} | {_cell(r['value'], r['kind'], r['detail'])} | "
+                          f"{r['delta']} | {r['icon']} |")
+    return lines
+
+
+def _section_summary(computed: list[dict]) -> dict:
+    """One section's condensed-comment row, plus the specific non-clean rows to name
+    beneath it. A clean row contributes only to the section's count."""
+    regressions = [r for r in computed if not r["pending"] and r.get("regression")]
+    warnings = [r for r in computed if not r["pending"] and r["icon"] == ":warning:"]
+    pending = [r for r in computed if r["pending"]]
+    fatal = any(r.get("fatal") for r in computed)
+    if fatal:
+        status = ":x: **blocked**"
+    elif regressions:
+        status = f":x: **{len(regressions)}** regression(s)"
+    elif pending:
+        status = f":hourglass_flowing_sand: **{len(pending)}** running"
+    elif warnings:
+        status = f":warning: **{len(warnings)}** pre-existing"
+    else:
+        status = ":white_check_mark: all clean"
+    return {"status": status, "fatal": fatal, "regressions": regressions, "warnings": warnings, "pending": pending}
+
+
+def _callout(rows: list[dict], *, verb: str) -> str:
+    """One compact line naming specific rows (e.g. 'Pre-existing, non-blocking: Cross-refs
+    inconsistent across compartments 3, ...'). Only called for rows that need naming --
+    a clean row is already fully accounted for by the section row's count."""
+    if not rows:
+        return ""
+    items = [f"{r['label']} {_cell(r['value'], r['kind'], r['detail'])}" for r in rows]
+    return f"{verb}: " + ", ".join(items) + "."
+
+
+def _task_rows() -> list[dict]:
     """Round-trip, YAML lint and metabolic-task pass/fail from the shared qc_status.tsv
     the workflow writes. That file is committed, so it is present at checkout with
     stale values from a previous run; it is only refreshed once the checks in the
     early "checks" phase have run. While that phase is still going ("checks" in
-    RUNNING) show every row as running rather than the stale committed value; a
+    RUNNING) every row shows as running rather than the stale committed value; a
     missing key likewise means the check has not finished yet.
 
-    Every row here is a merge gate (see the README), unlike most of the model-checks
-    table, so none of them fold away: all pass collapses to one line, and any failure
-    (or still-running row) gets its own line so it cannot be missed.
+    Every one of these is a merge gate (see the README), unlike most of the model
+    checks, so a failure here is always named, never folded into a bare count.
     """
-    checks = [
-        ("YAML round-trip (cobrapy)", "roundtrip_cobra"),
-        ("YAML round-trip (RAVEN)", "roundtrip_raven"),
-        ("YAML lint", "yamllint"),
-        ("Essential metabolic tasks", "tasks_essential"),
-        ("Verification metabolic tasks", "tasks_verification"),
-    ]
-    pending = "checks" in RUNNING
-    status = {} if pending else _status_map(RESULTS)
-    rows = []  # (label, result_text, ok)
-    for label, name in checks:
+    pending_group = "checks" in RUNNING
+    status = {} if pending_group else _status_map(RESULTS)
+    rows = []
+    for label, name in TASK_CHECKS:
         val = status.get(name, "")
         if not val:
-            rows.append((label, "_running_", None))
-        elif "/" in val:                       # tasks: "failed/total"
+            rows.append({"label": label, "pending": True, "icon": ":hourglass_flowing_sand:", "result": "_running_"})
+        elif "/" in val:  # tasks: "failed/total"
             failed, total = val.split("/")[:2]
             ok = int(failed) == 0
-            rows.append((label, f"{total} passed" if ok else f"{failed} failed", ok))
-        else:                                  # round-trip / lint: pass|fail
+            rows.append({"label": label, "pending": False, "ok": ok,
+                         "result": f"{total} passed" if ok else f"{failed} failed",
+                         "icon": ":white_check_mark:" if ok else ":x:"})
+        else:  # round-trip / lint: pass|fail
             ok = val.lower() == "pass"
-            rows.append((label, val, ok))
-
-    if all(ok is True for _, _, ok in rows):
-        results = {label: result for label, result, _ in rows}
-        essential = results["Essential metabolic tasks"].removesuffix(" passed")
-        verification = results["Verification metabolic tasks"].removesuffix(" passed")
-        return (
-            f"All 5 pass: YAML round-trip (cobrapy, RAVEN), YAML lint, "
-            f"{essential} essential + {verification} verification tasks. :white_check_mark:"
-        )
-
-    out = ["| Check | Result | |", "| --- | ---: | :---: |"]
-    for label, result, ok in rows:
-        icon = ":hourglass_flowing_sand:" if ok is None else (":white_check_mark:" if ok else ":x:")
-        out.append(f"| {label} | {result} | {icon} |")
-    return "\n".join(out)
+            rows.append({"label": label, "pending": False, "ok": ok, "result": val,
+                         "icon": ":white_check_mark:" if ok else ":x:"})
+    return rows
 
 
-def _gene_essentiality_section() -> str:
+def _task_summary(rows: list[dict]) -> dict:
+    failed = [r for r in rows if not r["pending"] and not r["ok"]]
+    pending = [r for r in rows if r["pending"]]
+    if failed:
+        status = f":x: **{len(failed)}** failed"
+    elif pending:
+        status = f":hourglass_flowing_sand: **{len(pending)}** running"
+    else:
+        status = ":white_check_mark: all pass"
+    return {"status": status, "failed": failed, "pending": pending}
+
+
+def _memote_data(current: Path, base: Path | None) -> dict:
+    """Parsed MEMOTE state, shared by the full-file section and the condensed row."""
+    if "memote" in RUNNING:
+        return {"pending": True}
+    core = _memote_meta(current, MEMOTE_CORE)
+    if core is None:
+        return {"pending": True}
+    total, mode, sections, detailed = core
+    base_ok = bool(base and base.exists())
+    b = _memote_meta(base, MEMOTE_CORE) if base_ok else None
+    b_total, b_sections = (b[0], b[2]) if b else (None, {})
+    full = _memote_meta(current, MEMOTE_FULL)
+    bf = _memote_meta(base, MEMOTE_FULL) if base_ok else None
+    return {
+        "pending": False, "total": total, "mode": mode, "sections": sections, "detailed": detailed,
+        "b_total": b_total, "b_sections": b_sections, "full": full, "bf_total": bf[0] if bf else None,
+    }
+
+
+def _memote_full_section(data: dict) -> str:
+    if data["pending"]:
+        return "_running_ &middot; :hourglass_flowing_sand:"
+    lines = [f"**Total score: {data['total']:.1f}%** ({data['mode']}) &nbsp; "
+             f"{_score_delta(data['total'], data['b_total'])}".rstrip(), ""]
+    if data["sections"]:
+        lines += ["| Section | Score | &Delta; vs base |", "| --- | ---: | ---: |"]
+        lines += [f"| {sec} | {sc:.1f}% | {_score_delta(sc, data['b_sections'].get(sec))} |"
+                  for sec, sc in data["sections"].items()]
+    if data["detailed"]:
+        lines += ["", "<details><summary>Per-test scores</summary>", "",
+                  "| Section | Test | Score |", "| --- | --- | ---: |"]
+        lines += [f"| {s} | {t} | {sc}% |" for s, t, sc in data["detailed"]]
+        lines += ["", "</details>"]
+    if data["full"] is not None:
+        lines += ["", f"**Full suite: {data['full'][0]:.1f}%** &nbsp; "
+                  f"{_score_delta(data['full'][0], data['bf_total'])} "
+                  "&middot; _from the last_ `/run memote`.".rstrip()]
+    else:
+        lines += ["", "_Full suite not run for this commit; comment_ `/run memote` _to add it._"]
+    return "\n".join(lines)
+
+
+def _memote_summary(data: dict) -> dict:
+    if data["pending"]:
+        return {"status": ":hourglass_flowing_sand: running", "dropped": False}
+    dropped = data["b_total"] is not None and (data["total"] - data["b_total"]) < -0.05
+    icon = ":warning:" if dropped else ":white_check_mark:"
+    return {"status": f"{icon} **{data['total']:.1f}%**", "dropped": dropped}
+
+
+def _gene_essentiality_full_section() -> str:
     # Gene essentiality takes hours and is not run on every pull request. Its result
     # file (gene-essential.csv) is committed and persists across pull requests, so it
     # would be stale here - the result is shown in its own comment when run instead.
@@ -359,9 +416,14 @@ def _gene_essentiality_section() -> str:
             "_to run it on this pull request; the result posts as its own comment._")
 
 
+def _gene_essentiality_summary() -> dict:
+    has_run = (RESULTS / "gene-essential.csv").exists()
+    return {"status": "see the gene-essentiality comment" if has_run else "_not run_"}
+
+
 def _gates_line(current: dict, base: dict) -> str:
     """One-line status of the two merge gates (duplicate keys, growth), appended to the
-    verdict so they are visible without opening the folded table below (see _table)."""
+    verdict so they are visible without following any link."""
     if "checks" in RUNNING:
         return ""
     parts = []
@@ -371,7 +433,7 @@ def _gates_line(current: dict, base: dict) -> str:
             return ""
         _, icon, _, _ = _icon(value, base.get(key), kind)
         text = f"{value:.3g}" if kind == "growth" else str(int(value))
-        parts.append(f"{label} {text} {icon}")
+        parts.append(f"{label} **{text}** {icon}")
     return " Gates: " + ", ".join(parts) + "."
 
 
@@ -380,79 +442,113 @@ def main() -> int:
     current = _metrics(RESULTS)
     base = _metrics(Path(BASE_DIR)) if have_base else {}
 
-    # One table instead of two (the split was already noted as arbitrary): a row that
-    # needs attention now is always shown, everything unchanged vs base -- clean or a
-    # pre-existing finding alike -- folds away together (see _table).
-    always, folded, regressions, warnings, pending, fatal = _table(MODEL_ROWS + MB_ROWS, current, base)
-    clean = len(folded) - warnings
+    network_rows = _compute_rows(MODEL_ROWS + MB_ROWS, current, base)
+    network_summary = _section_summary(network_rows)
+    task_rows = _task_rows()
+    task_summary = _task_summary(task_rows)
+    memote_data = _memote_data(RESULTS, Path(BASE_DIR) if BASE_DIR else None)
+    memote_summary = _memote_summary(memote_data)
+    gene_summary = _gene_essentiality_summary()
+
+    fatal = network_summary["fatal"] or bool(task_summary["failed"])
+    regressions = len(network_summary["regressions"])
+    pending = len(network_summary["pending"]) + len(task_summary["pending"]) + (1 if memote_data["pending"] else 0)
+    warnings = len(network_summary["warnings"])
 
     if fatal:
-        verdict = ":x: **Merge blocked: the model cannot be loaded or cannot grow.**"
+        verdict = ":x: **Merge blocked: the model cannot be loaded or cannot grow, or a build gate failed.**"
     elif regressions:
         extra = f" ({pending} check(s) still running)" if pending else ""
-        verdict = f":x: **{regressions} regression(s) vs `{BASE_REF}`** (this pull request increased a finding count){extra}. Review the :x: rows below."
+        verdict = f":x: **{regressions}** regression(s) vs `{BASE_REF}`{extra}. Review the row(s) below."
     elif pending:
-        verdict = f":hourglass_flowing_sand: **{pending} check(s) still running.** The rest are unchanged vs `{BASE_REF}`."
+        verdict = f":hourglass_flowing_sand: **{pending}** check(s) still running. The rest are unchanged vs `{BASE_REF}`."
     elif not have_base:
         verdict = ":information_source: First run for this comparison; no target-branch baseline yet."
     elif warnings:
-        verdict = f":warning: **{warnings} pre-existing finding(s), no regressions vs `{BASE_REF}`.** Non-blocking."
+        verdict = f":warning: **{warnings}** pre-existing finding(s), no regressions vs `{BASE_REF}`. Non-blocking."
     else:
-        verdict = f":white_check_mark: **All checks clean, no regressions vs `{BASE_REF}`.**"
+        verdict = f":white_check_mark: All checks clean, no regressions vs `{BASE_REF}`."
     verdict += _gates_line(current, base)
 
-    head = f"| Check | Result | &Delta; vs `{BASE_REF}` | |"
-    sep = "| --- | ---: | ---: | :---: |"
-    checks_section = [
-        "### Model & network checks",
-        "_Duplicate keys (model unloadable) and no growth block the merge; every other row "
-        "is a non-blocking report._",
-        "",
+    # --- condensed comment: one row per section, only non-clean checks named ---
+    full_url = f"{URL_BASE}/model_qc_summary.md" if URL_BASE else ""
+    section_table = [
+        "| Section | Status |",
+        "| --- | --- |",
+        f"| Model &amp; network checks ({len(network_rows)}) | {network_summary['status']} |",
+        f"| Model file &amp; metabolic tasks ({len(task_rows)} gates) | {task_summary['status']} |",
+        f"| MEMOTE | {memote_summary['status']} |",
+        f"| Gene essentiality | {gene_summary['status']} |",
     ]
-    if always:
-        checks_section += [head, sep, *always, ""]
-    if folded:
-        checks_section += [
-            f"<details><summary>{len(folded)} more check(s) unchanged vs `{BASE_REF}` "
-            f"({clean} clean, {warnings} pre-existing finding(s)) -- show</summary>",
-            "", head, sep, *folded, "", "</details>", "",
-        ]
-    elif not always:
-        checks_section.append(f"_All checks clean, unchanged vs_ `{BASE_REF}`.")
+    callouts = [
+        _callout(network_summary["regressions"], verb="Regression(s)"),
+        (f"Gate failure(s): " + ", ".join(f"{r['label']} ({r['result']})" for r in task_summary["failed"]) + "."
+         if task_summary["failed"] else ""),
+        _callout(network_summary["warnings"], verb="Pre-existing, non-blocking") if not regressions else "",
+    ]
+    callouts = [c for c in callouts if c]
 
-    lines = [
+    comment_lines = [
         "## Model quality report",
         "",
         verdict,
         "",
-        "_Row names match the headings in the "
-        f"[testResults README]({URL_BASE}/README.md)._" if URL_BASE else "",
+        *section_table,
         "",
-        *checks_section,
+        *callouts,
+    ]
+    if callouts:
+        comment_lines.append("")
+    if full_url:
+        comment_lines.append(
+            f"[Full report]({full_url}) -- every check, MEMOTE's per-test breakdown, "
+            f"and how to run gene essentiality."
+        )
+    if COMMIT_SHA:
+        comment_lines += ["", f"Results for commit {COMMIT_SHA[:7]}."]
+    COMMENT_MD.write_text("\n".join(comment_lines) + "\n", encoding="utf-8")
+
+    # --- full detail file: every row, unabbreviated ---
+    head = f"| Check | Result | &Delta; vs `{BASE_REF}` | |"
+    sep = "| --- | ---: | ---: | :---: |"
+    task_head = "| Check | Result | |"
+    task_sep = "| --- | ---: | :---: |"
+    full_lines = [
+        "## Model quality report -- full detail",
+        "",
+        "_This is the full, per-check breakdown behind the pull-request comment's summary table._ "
+        + (f"_Row names link to their explanation in the [testResults README]({URL_BASE}/README.md)._"
+           if URL_BASE else ""),
+        "",
+        "### Model & network checks",
+        "_Duplicate keys (model unloadable) and no growth block the merge; every other row "
+        "is a non-blocking report._",
+        "",
+        head, sep, *_full_table(network_rows),
+        "",
         "### Model file and metabolic tasks",
         "",
-        _model_integrity_section(),
+        task_head, task_sep,
+        *[f"| {_labelled(r['label'])} | {r['result']} | {r['icon']} |" for r in task_rows],
         "",
         f"### {_labelled('MEMOTE')}",
         "",
-        _memote_section(RESULTS, Path(BASE_DIR) if BASE_DIR else None),
+        _memote_full_section(memote_data),
         "",
         "_The score above is the fast core subset. Comment_ `/run memote` "
         "_to run the full suite on this pull request; the score updates here when it finishes._",
         "",
         f"### {_labelled('Gene essentiality (Hart 2015)')}",
         "",
-        _gene_essentiality_section(),
+        _gene_essentiality_full_section(),
         "",
         ":x: = a count rose vs the target branch (regression) &middot; "
         ":warning: = a pre-existing non-zero finding (non-blocking) &middot; "
         ":hourglass_flowing_sand: = still running. Counts link to the CSV listing the exact entries.",
     ]
-    if COMMIT_SHA:
-        lines += ["", f"Results for commit {COMMIT_SHA[:7]}."]
+    FULL_MD.write_text("\n".join(full_lines) + "\n", encoding="utf-8")
 
-    SUMMARY_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print("\n".join(lines))
+    print("\n".join(comment_lines))
     return 0
 
 
