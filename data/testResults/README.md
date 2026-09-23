@@ -116,8 +116,9 @@ and charge balance report, and the structure-vs-formula check.
 #### Reactions flagged by MACAW dead-end test
 Reactions prevented from carrying steady-state flux because one of their metabolites
 can only ever be produced, or only consumed, by every reaction it takes part in (the
-simplest case being a metabolite in a single reaction). Also flags reversible
-reactions that can therefore run in only one direction.
+simplest case being a metabolite in a single reaction). `macaw_results.csv` also marks
+reversible reactions that can only run in one direction (`only when going forwards` or
+`only when going backwards`); these can still carry flux and are not counted here.
 
 #### Reactions flagged as MACAW duplicates
 Sets of reactions that may be duplicates because they involve the same metabolites

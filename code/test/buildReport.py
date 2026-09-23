@@ -209,7 +209,13 @@ def _metrics(directory: Path) -> dict:
         "unused_gene": _count_csv(unused, lambda r: r.get("kind") == "gene"),
         "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
         "inconsistent": _count_csv(annotation, lambda r: r.get("issue", "").startswith("inconsistent")),
-        "dead_end": _count_csv(macaw, lambda r: r.get("dead_end_test", "") not in ("ok", "")),
+        # "only when going ..." marks a reversible reaction limited to one direction; it can
+        # still carry flux, so only true dead ends are counted.
+        "dead_end": _count_csv(
+            macaw,
+            lambda r: r.get("dead_end_test", "") not in ("ok", "")
+            and not r.get("dead_end_test", "").startswith("only when going"),
+        ),
         "duplicates": _count_csv(macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS)),
         "mass_imbalance": _count_csv(balance, lambda r: r.get("mass_imbalance", "").strip() != ""),
         "charge_imbalance": _count_csv(balance, lambda r: r.get("charge_imbalance", "").strip() != ""),
