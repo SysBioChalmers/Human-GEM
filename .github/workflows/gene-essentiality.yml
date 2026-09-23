@@ -507,22 +507,28 @@ jobs:
           script: |
             const marker = '<!-- GENE-ESSENTIALITY-COMMENT -->';
             let body = `${marker}\n`
-              + `Gene essentiality was run on this pull request via [GH Actions](${process.env.RUN_URL}). `
-              + `Essentiality for a *viability* task (\`GR\` growth, \`ER\` energy/redox) is reported `
-              + `separately from essentiality for a *capability* task (\`SU\`, \`BS\`, \`IC\`), and the `
-              + `biomass growth ratio gives a threshold-free score (see #1076). Summary:\n\n`
-              + `${process.env.TEST_RESULTS}\n\n`
-              + `The full per-gene matrix is committed to \`data/testResults/gene-essential.csv\`, holding `
-              + `for each cell line the confusion class, the task categories the knockout breaks and the `
-              + `biomass growth ratio.\n\n`;
+              + `Gene essentiality was run on this pull request via [GH Actions](${process.env.RUN_URL}).\n\n`;
             if (process.env.DIFF_RESULTS) {
-              // The table above is diluted by ftINIT's run-to-run noise across ~3000 genes
-              // unrelated to this PR; this section is scoped to genes this PR's own model
-              // changes could plausibly affect (see diffGeneEssentiality.py) and is the part
-              // actually worth reading in review.
+              // Scoped to genes this PR's own model changes could plausibly affect (see
+              // diffGeneEssentiality.py) -- this is what's worth reading in review, so it
+              // replaces the full ~3000-gene table rather than sitting alongside it (that
+              // table is dominated by ftINIT's run-to-run noise in genes this PR never
+              // touched and says nothing about whether this PR's own change was good or
+              // bad). The full table is still available as an artifact and in the commit.
               body += `${process.env.DIFF_RESULTS}\n\n`
-                + `(Per-gene, per-cell-line detail for this section: the \`gene-essentiality-diff\` `
-                + `artifact on [this run](${process.env.RUN_URL}).)\n\n`;
+                + `The full per-gene matrix (every gene, not just the ones above) is committed to `
+                + `\`data/testResults/gene-essential.csv\`; per-line detail for this section is the `
+                + `\`gene-essentiality-diff\` artifact on [this run](${process.env.RUN_URL}).\n\n`;
+            } else {
+              // No base to diff against (a manual, non-PR dispatch, or the target branch has
+              // no committed gene-essential.csv yet) -- fall back to the full, unscoped table.
+              body += `Essentiality for a *viability* task (\`GR\` growth, \`ER\` energy/redox) is reported `
+                + `separately from essentiality for a *capability* task (\`SU\`, \`BS\`, \`IC\`), and the `
+                + `biomass growth ratio gives a threshold-free score (see #1076). Summary:\n\n`
+                + `${process.env.TEST_RESULTS}\n\n`
+                + `The full per-gene matrix is committed to \`data/testResults/gene-essential.csv\`, holding `
+                + `for each cell line the confusion class, the task categories the knockout breaks and the `
+                + `biomass growth ratio.\n\n`;
             }
             body += `> _Note: in the case of multiple test runs, this post is edited._`;
             const { owner, repo } = context.repo;
