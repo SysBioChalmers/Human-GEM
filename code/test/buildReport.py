@@ -274,21 +274,31 @@ def _cell(value, kind, detail) -> str:
 
 
 def _table(rows, current: dict, base: dict):
-    lines, regressions, warnings, pending = [], 0, 0, 0
+    """Split rows into ``(always, folded, regressions, warnings, pending, fatal)``.
+
+    A row that needs attention right now -- a new regression, or still running -- is
+    always shown. A clean row and a pre-existing, unchanged finding are folded
+    together: the point of comparing against ``base`` is that "unchanged", clean or
+    not, is not this pull request's problem, so neither needs to take up space by
+    default. ``len(folded) - warnings`` recovers how many of the folded rows were
+    clean vs. pre-existing findings without a second pass.
+    """
+    always, folded, regressions, warnings, pending = [], [], 0, 0, 0
     fatal = False
     for label, key, kind, group, detail in rows:
         value = current.get(key)
         is_pending = value is None or group in RUNNING
         if is_pending:
-            lines.append(f"| {_labelled(label)} | _running_ | | :hourglass_flowing_sand: |")
+            always.append(f"| {label} | _running_ | | :hourglass_flowing_sand: |")
             pending += 1
             continue
         delta, icon, regression, row_fatal = _icon(value, base.get(key), kind)
         fatal = fatal or row_fatal or (key == "dup_keys" and value > 0)
         regressions += regression
         warnings += icon == ":warning:"
-        lines.append(f"| {_labelled(label)} | {_cell(value, kind, detail)} | {delta} | {icon} |")
-    return lines, regressions, warnings, pending, fatal
+        line = f"| {label} | {_cell(value, kind, detail)} | {delta} | {icon} |"
+        (always if icon == ":x:" else folded).append(line)
+    return always, folded, regressions, warnings, pending, fatal
 
 
 def _model_integrity_section() -> str:
@@ -297,7 +307,12 @@ def _model_integrity_section() -> str:
     stale values from a previous run; it is only refreshed once the checks in the
     early "checks" phase have run. While that phase is still going ("checks" in
     RUNNING) show every row as running rather than the stale committed value; a
-    missing key likewise means the check has not finished yet."""
+    missing key likewise means the check has not finished yet.
+
+    Every row here is a merge gate (see the README), unlike most of the model-checks
+    table, so none of them fold away: all pass collapses to one line, and any failure
+    (or still-running row) gets its own line so it cannot be missed.
+    """
     checks = [
         ("YAML round-trip (cobrapy)", "roundtrip_cobra"),
         ("YAML round-trip (RAVEN)", "roundtrip_raven"),
@@ -305,21 +320,34 @@ def _model_integrity_section() -> str:
         ("Essential metabolic tasks", "tasks_essential"),
         ("Verification metabolic tasks", "tasks_verification"),
     ]
-    out = ["| Check | Result | |", "| --- | ---: | :---: |"]
     pending = "checks" in RUNNING
     status = {} if pending else _status_map(RESULTS)
+    rows = []  # (label, result_text, ok)
     for label, name in checks:
         val = status.get(name, "")
         if not val:
-            out.append(f"| {_labelled(label)} | _running_ | :hourglass_flowing_sand: |")
+            rows.append((label, "_running_", None))
         elif "/" in val:                       # tasks: "failed/total"
             failed, total = val.split("/")[:2]
             ok = int(failed) == 0
-            out.append(f"| {_labelled(label)} | {total + ' passed' if ok else failed + ' failed'} | "
-                       f"{':white_check_mark:' if ok else ':x:'} |")
+            rows.append((label, f"{total} passed" if ok else f"{failed} failed", ok))
         else:                                  # round-trip / lint: pass|fail
             ok = val.lower() == "pass"
-            out.append(f"| {_labelled(label)} | {val} | {':white_check_mark:' if ok else ':x:'} |")
+            rows.append((label, val, ok))
+
+    if all(ok is True for _, _, ok in rows):
+        results = {label: result for label, result, _ in rows}
+        essential = results["Essential metabolic tasks"].removesuffix(" passed")
+        verification = results["Verification metabolic tasks"].removesuffix(" passed")
+        return (
+            f"All 5 pass: YAML round-trip (cobrapy, RAVEN), YAML lint, "
+            f"{essential} essential + {verification} verification tasks. :white_check_mark:"
+        )
+
+    out = ["| Check | Result | |", "| --- | ---: | :---: |"]
+    for label, result, ok in rows:
+        icon = ":hourglass_flowing_sand:" if ok is None else (":white_check_mark:" if ok else ":x:")
+        out.append(f"| {label} | {result} | {icon} |")
     return "\n".join(out)
 
 
@@ -331,23 +359,38 @@ def _gene_essentiality_section() -> str:
             "_to run it on this pull request; the result posts as its own comment._")
 
 
+def _gates_line(current: dict, base: dict) -> str:
+    """One-line status of the two merge gates (duplicate keys, growth), appended to the
+    verdict so they are visible without opening the folded table below (see _table)."""
+    if "checks" in RUNNING:
+        return ""
+    parts = []
+    for label, key, kind in (("duplicate keys", "dup_keys", "count"), ("growth", "growth", "growth")):
+        value = current.get(key)
+        if value is None:
+            return ""
+        _, icon, _, _ = _icon(value, base.get(key), kind)
+        text = f"{value:.3g}" if kind == "growth" else str(int(value))
+        parts.append(f"{label} {text} {icon}")
+    return " Gates: " + ", ".join(parts) + "."
+
+
 def main() -> int:
     have_base = bool(BASE_DIR) and Path(BASE_DIR).exists()
     current = _metrics(RESULTS)
     base = _metrics(Path(BASE_DIR)) if have_base else {}
 
-    md_tbl, md_reg, md_warn, md_pend, fatal = _table(MODEL_ROWS, current, base)
-    mb_tbl, mb_reg, mb_warn, mb_pend, _ = _table(MB_ROWS, current, base)
-
-    regressions = md_reg + mb_reg
-    warnings = md_warn + mb_warn
-    pending = md_pend + mb_pend
+    # One table instead of two (the split was already noted as arbitrary): a row that
+    # needs attention now is always shown, everything unchanged vs base -- clean or a
+    # pre-existing finding alike -- folds away together (see _table).
+    always, folded, regressions, warnings, pending, fatal = _table(MODEL_ROWS + MB_ROWS, current, base)
+    clean = len(folded) - warnings
 
     if fatal:
-        verdict = ":x: **Merge blocked: the model cannot be loaded or cannot grow.** See the Structural checks table."
+        verdict = ":x: **Merge blocked: the model cannot be loaded or cannot grow.**"
     elif regressions:
         extra = f" ({pending} check(s) still running)" if pending else ""
-        verdict = f":x: **{regressions} regression(s) vs `{BASE_REF}`** (this pull request increased a finding count){extra}. Review the :x: rows."
+        verdict = f":x: **{regressions} regression(s) vs `{BASE_REF}`** (this pull request increased a finding count){extra}. Review the :x: rows below."
     elif pending:
         verdict = f":hourglass_flowing_sand: **{pending} check(s) still running.** The rest are unchanged vs `{BASE_REF}`."
     elif not have_base:
@@ -356,27 +399,36 @@ def main() -> int:
         verdict = f":warning: **{warnings} pre-existing finding(s), no regressions vs `{BASE_REF}`.** Non-blocking."
     else:
         verdict = f":white_check_mark: **All checks clean, no regressions vs `{BASE_REF}`.**"
+    verdict += _gates_line(current, base)
 
     head = f"| Check | Result | &Delta; vs `{BASE_REF}` | |"
     sep = "| --- | ---: | ---: | :---: |"
+    checks_section = [
+        "### Model & network checks",
+        "_Duplicate keys (model unloadable) and no growth block the merge; every other row "
+        "is a non-blocking report._",
+        "",
+    ]
+    if always:
+        checks_section += [head, sep, *always, ""]
+    if folded:
+        checks_section += [
+            f"<details><summary>{len(folded)} more check(s) unchanged vs `{BASE_REF}` "
+            f"({clean} clean, {warnings} pre-existing finding(s)) -- show</summary>",
+            "", head, sep, *folded, "", "</details>", "",
+        ]
+    elif not always:
+        checks_section.append(f"_All checks clean, unchanged vs_ `{BASE_REF}`.")
+
     lines = [
         "## Model quality report",
         "",
         verdict,
         "",
-        "_Each check name links to its explanation in the "
+        "_Row names match the headings in the "
         f"[testResults README]({URL_BASE}/README.md)._" if URL_BASE else "",
         "",
-        "### Model checks",
-        "_Duplicate keys (model unloadable) and no growth block the merge; every other row "
-        "is a non-blocking report._",
-        "",
-        head, sep, *md_tbl,
-        "",
-        "### MACAW and mass/charge balance",
-        "",
-        head, sep, *mb_tbl,
-        "",
+        *checks_section,
         "### Model file and metabolic tasks",
         "",
         _model_integrity_section(),
