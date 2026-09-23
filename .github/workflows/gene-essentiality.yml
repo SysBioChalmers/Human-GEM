@@ -426,6 +426,7 @@ jobs:
             python code/test/diffGeneEssentiality.py \
               --base-model "$RUNNER_TEMP/base/Human-GEM.yml" \
               --base-matrix "$RUNNER_TEMP/base/gene-essential.csv" \
+              --base-label "$BASE_REF" \
               --out-summary "$RUNNER_TEMP/gene-essential-diff.md" \
               --out-csv "$RUNNER_TEMP/gene-essential-diff.csv"
             {
@@ -501,11 +502,13 @@ jobs:
           TEST_RESULTS: ${{ steps.essentiality.outputs.results }}
           DIFF_RESULTS: ${{ steps.diff.outputs.results }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          CSV_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential.csv
           ISSUE_NUMBER: ${{ inputs.pr }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const marker = '<!-- GENE-ESSENTIALITY-COMMENT -->';
+            const csvUrl = process.env.CSV_URL;
             let body = `${marker}\n`
               + `Gene essentiality was run on this pull request via [GH Actions](${process.env.RUN_URL}).\n\n`;
             if (process.env.DIFF_RESULTS) {
@@ -517,7 +520,7 @@ jobs:
               // bad). The full table is still available as an artifact and in the commit.
               body += `${process.env.DIFF_RESULTS}\n\n`
                 + `The full per-gene matrix (every gene, not just the ones above) is committed to `
-                + `\`data/testResults/gene-essential.csv\`; per-line detail for this section is the `
+                + `[gene-essential.csv](${csvUrl}); per-line detail for this section is the `
                 + `\`gene-essentiality-diff\` artifact on [this run](${process.env.RUN_URL}).\n\n`;
             } else {
               // No base to diff against (a manual, non-PR dispatch, or the target branch has
@@ -526,7 +529,7 @@ jobs:
                 + `separately from essentiality for a *capability* task (\`SU\`, \`BS\`, \`IC\`), and the `
                 + `biomass growth ratio gives a threshold-free score (see #1076). Summary:\n\n`
                 + `${process.env.TEST_RESULTS}\n\n`
-                + `The full per-gene matrix is committed to \`data/testResults/gene-essential.csv\`, holding `
+                + `The full per-gene matrix is committed to [gene-essential.csv](${csvUrl}), holding `
                 + `for each cell line the confusion class, the task categories the knockout breaks and the `
                 + `biomass growth ratio.\n\n`;
             }

@@ -296,6 +296,7 @@ def build_report(
     head_matrix_path: Path,
     *,
     growth_tolerance: float = 0.01,
+    base_label: str = "the target branch",
 ) -> tuple[str, str]:
     """Returns ``(summary_text, detail_csv_text)``."""
     print(f"Loading base model from {base_model_path} ...", file=sys.stderr)
@@ -354,19 +355,20 @@ def build_report(
     ]
     stable = [r for r in results if id(r) not in consensus_ids and r not in isolated]
 
+    n_added = sum(1 for i in changed.values() if i["kind"] == "added")
+    n_removed = sum(1 for i in changed.values() if i["kind"] == "removed")
+    n_modified = sum(1 for i in changed.values() if i["kind"] == "modified")
     summary_lines = [
         "### Gene essentiality: effect of this change",
         "",
-        f"{len(changed)} reaction(s) changed vs the target branch "
-        f"({sum(1 for i in changed.values() if i['kind'] == 'added')} added, "
-        f"{sum(1 for i in changed.values() if i['kind'] == 'removed')} removed, "
-        f"{sum(1 for i in changed.values() if i['kind'] == 'modified')} modified). "
-        f"Checked {len(direct)} gene(s) in those reactions plus {len(neighbors)} more that "
-        f"share a metabolite with one of them.",
+        f"**{len(changed)}** reaction(s) changed vs `{base_label}` "
+        f"(**{n_added}** added, **{n_removed}** removed, **{n_modified}** modified). "
+        f"Checked **{len(direct)}** gene(s) in those reactions plus **{len(neighbors)}** more "
+        f"that share a metabolite with one of them.",
         "",
-        f"Only a flip seen in the same direction in at least {CONSENSUS_MIN_LINES} of the 5 "
+        f"_Only a flip seen in the same direction in at least {CONSENSUS_MIN_LINES} of the 5 "
         f"cell-line models is listed below. Fewer than that is likely just noise from ftINIT's "
-        f"run-to-run variability, listed separately.",
+        f"run-to-run variability, listed separately._",
         "",
     ]
 
@@ -431,10 +433,13 @@ def build_report(
 
     if isolated:
         summary_lines.append(
-            f"**Likely noise** ({len(isolated)} gene(s), flipped in fewer than {CONSENSUS_MIN_LINES}/5 lines): "
-            + ", ".join(sorted(r["symbol"] or r["gene"] for r in isolated))
-            + "."
+            f"<details><summary>Likely noise: {len(isolated)} gene(s) flipped in fewer than "
+            f"{CONSENSUS_MIN_LINES}/5 lines (show)</summary>"
         )
+        summary_lines.append("")
+        summary_lines.append(", ".join(sorted(r["symbol"] or r["gene"] for r in isolated)) + ".")
+        summary_lines.append("")
+        summary_lines.append("</details>")
         summary_lines.append("")
 
     summary_lines.append(f"**No change:** {len(stable)} gene(s).")
@@ -474,13 +479,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--head-model", type=Path, default=DEFAULT_HEAD_MODEL, help="Human-GEM.yml for this branch (default: model/Human-GEM.yml)")
     parser.add_argument("--head-matrix", type=Path, default=DEFAULT_HEAD_MATRIX, help="gene-essential.csv for this branch (default: data/testResults/gene-essential.csv)")
     parser.add_argument("--growth-tolerance", type=float, default=0.01, help="minimum |growth ratio delta| to flag independent of task-based flips (default: 0.01)")
+    parser.add_argument("--base-label", type=str, default="the target branch", help="name shown for the base branch, e.g. 'develop' (default: 'the target branch')")
     parser.add_argument("--out-summary", type=Path, default=None, help="write the summary text here instead of only stdout")
     parser.add_argument("--out-csv", type=Path, default=None, help="write the per-gene per-line detail CSV here")
     args = parser.parse_args(argv)
 
     summary, detail_csv = build_report(
         args.base_model, args.head_model, args.base_matrix, args.head_matrix,
-        growth_tolerance=args.growth_tolerance,
+        growth_tolerance=args.growth_tolerance, base_label=args.base_label,
     )
     print(summary)
     if args.out_summary:
