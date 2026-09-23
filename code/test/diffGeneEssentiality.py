@@ -35,12 +35,18 @@ This script instead:
 Needs raven-toolbox to read the two model versions and the Hart 2015 table already in
 data/datasets/; does not need Gurobi or a fresh ftINIT run.
 
+Writes three things, split by audience (see build_report): a condensed, icons-and-
+counts-only table for the pull-request comment (--out-summary); the per-gene detail
+behind it, meant to be appended to the committed gene-essential_summary.md rather than
+posted in the comment (--out-detail); and the full per-gene, per-line CSV (--out-csv).
+
 Usage:
     python code/test/diffGeneEssentiality.py \\
         --base-model /path/to/base/Human-GEM.yml \\
         --base-matrix /path/to/base/gene-essential.csv \\
         [--head-model model/Human-GEM.yml] [--head-matrix data/testResults/gene-essential.csv] \\
-        [--growth-tolerance 0.01] [--out-csv PATH] [--out-summary PATH]
+        [--growth-tolerance 0.01] [--csv-url URL] [--summary-url URL] \\
+        [--out-summary PATH] [--out-detail PATH] [--out-csv PATH]
 
 The base model/matrix are typically pulled from the target branch with ``git show``,
 for example:
@@ -79,6 +85,9 @@ CATEGORY_LABELS = {
 # A gene needs to flip in the same direction in at least this many compared cell
 # lines to be reported as a consistent change rather than an isolated one.
 CONSENSUS_MIN_LINES = 3
+
+IMPROVED = ":sparkles:"  # a flip that moved closer to Hart 2015 -- distinct from
+                         # white_check_mark, which here means "nothing changed"
 
 
 def _describe_categories(categories) -> str:
@@ -298,12 +307,19 @@ def build_report(
     growth_tolerance: float = 0.01,
     base_label: str = "the target branch",
     csv_url: str = "",
-) -> tuple[str, str]:
-    """Returns ``(summary_text, detail_csv_text)``.
+    summary_url: str = "",
+) -> tuple[str, str, str]:
+    """Returns ``(comment_text, detail_text, detail_csv_text)``.
 
-    ``csv_url`` is the committed blob URL of the per-gene detail CSV this call is about
-    to write (e.g. from ``--out-csv`` under ``data/testResults/``), linked from the
-    summary instead of duplicating any of that detail into the summary text itself.
+    ``comment_text`` is the condensed, one-row-per-category table meant for the pull
+    request comment: icons and counts only, no gene names. ``detail_text`` is the
+    per-gene breakdown behind it (which genes, what changed), meant to be appended to
+    the committed ``gene-essential_summary.md`` rather than posted in the comment --
+    ``comment_text`` links to it instead of duplicating it. ``csv_url`` is the
+    committed blob URL of the per-gene, per-line CSV this call is about to write (e.g.
+    from ``--out-csv``), linked from ``detail_text``. ``summary_url`` is the committed
+    blob URL of ``gene-essential_summary.md`` (with ``detail_text`` appended to it),
+    linked from ``comment_text``.
     """
     print(f"Loading base model from {base_model_path} ...", file=sys.stderr)
     base_model = read_yaml_model(base_model_path)
@@ -361,23 +377,6 @@ def build_report(
     ]
     stable = [r for r in results if id(r) not in consensus_ids and r not in isolated]
 
-    n_added = sum(1 for i in changed.values() if i["kind"] == "added")
-    n_removed = sum(1 for i in changed.values() if i["kind"] == "removed")
-    n_modified = sum(1 for i in changed.values() if i["kind"] == "modified")
-    summary_lines = [
-        "### Gene essentiality: effect of this change",
-        "",
-        f"**{len(changed)}** reaction(s) changed vs `{base_label}` "
-        f"(**{n_added}** added, **{n_removed}** removed, **{n_modified}** modified). "
-        f"Checked **{len(direct)}** gene(s) in those reactions plus **{len(neighbors)}** more "
-        f"that share a metabolite with one of them.",
-        "",
-        f"_A gene counts as changed below only if the flip agrees in direction across at least "
-        f"{CONSENSUS_MIN_LINES} of the 5 cell-line models; fewer than that is grouped as likely "
-        f"noise from ftINIT's run-to-run variability instead._",
-        "",
-    ]
-
     def _grouped_rows(rows: list[dict], key_fn) -> list[tuple[tuple, list[str]]]:
         """Group genes sharing the same outcome (same key) into one row's gene list.
 
@@ -395,10 +394,10 @@ def build_report(
         direction = "gained" if r["viability_verdict"].endswith("gained") else "lost"
         change_text = "knockout now blocks growth" if direction == "gained" else "knockout no longer blocks growth"
         icon = {
-            "improvement": ":white_check_mark: correct",
+            "improvement": f"{IMPROVED} correct",
             "regression": ":x: wrong",
             "mixed": ":warning: mixed across lines",
-        }.get(r["hart_verdict"], f":question: {r['hart_verdict']}")
+        }.get(r["hart_verdict"], f":information_source: {r['hart_verdict']}")
         return r["viability_count"], change_text, icon
 
     def _capability_key(r: dict) -> tuple[str, str, str]:
@@ -407,27 +406,76 @@ def build_report(
         categories = r["gained_categories"] | r["lost_categories"]
         return r["any_count"], _describe_categories(categories), change_text
 
-    def _named_detail(rows: list[dict], key_fn) -> str:
-        """Genes named with what changed for them, grouped by identical outcome --
-        only called for the two small, actionable categories (growth-relevant and
-        capability-only); noise and unchanged genes are counted, never named here."""
-        groups = _grouped_rows(rows, key_fn)
-        parts = [f"{', '.join(sorted(genes))} ({', '.join(str(k) for k in key)})" for key, genes in groups]
-        return "; ".join(parts)
+    # --- condensed comment: one row per category, icons and counts only, no gene names ---
+    def _growth_status(rows: list[dict]) -> str:
+        if not rows:
+            return ":white_check_mark: **0**"
+        verdicts = {r["hart_verdict"] for r in rows}
+        if "regression" in verdicts:
+            return f":x: **{len(rows)}** wrong"
+        if "mixed" in verdicts:
+            return f":warning: **{len(rows)}** mixed"
+        if verdicts == {"improvement"}:
+            return f"{IMPROVED} **{len(rows)}** correct"
+        return f":information_source: **{len(rows)}** not scored by Hart"
 
-    csv_ref = f"[gene-essential-diff.csv]({csv_url})" if csv_url else "the full detail CSV"
+    def _neutral_status(rows: list[dict]) -> str:
+        return f":white_check_mark: **0**" if not rows else f":information_source: **{len(rows)}**"
 
-    table_rows = [
-        ("Growth effect changed (vs Hart 2015)", len(growth_relevant), _named_detail(growth_relevant, _growth_key)),
-        ("Other role changed (not Hart-comparable)", len(capability_only), _named_detail(capability_only, _capability_key)),
-        (f"Likely noise (<{CONSENSUS_MIN_LINES}/5 lines)", len(isolated), f"see {csv_ref}" if isolated else ""),
-        ("No change", len(stable), ""),
+    summary_url_ref = f"[gene-essential_summary.md]({summary_url})" if summary_url else "`gene-essential_summary.md`"
+    summary_lines = [
+        "### Gene essentiality: effect of this change",
+        "",
+        f"Checked **{len(direct)}** gene(s) directly affected plus **{len(neighbors)}** more "
+        f"that share a metabolite with one of them.",
+        "",
+        f"_A gene counts as changed below only if the flip agrees in direction across at least "
+        f"{CONSENSUS_MIN_LINES} of the 5 cell-line models; fewer than that is grouped as likely "
+        f"noise from ftINIT's run-to-run variability instead._",
+        "",
+        "| Category | Status |",
+        "| --- | --- |",
+        f"| Growth effect changed (vs Hart 2015) | {_growth_status(growth_relevant)} |",
+        f"| Other role changed (not Hart-comparable) | {_neutral_status(capability_only)} |",
+        f"| Likely noise (<{CONSENSUS_MIN_LINES}/5 lines) | {_neutral_status(isolated)} |",
+        f"| No change | :white_check_mark: **{len(stable)}** |",
+        "",
+        f"Full detail: {summary_url_ref}.",
+        "",
+        f":white_check_mark: unchanged &middot; {IMPROVED} correct vs Hart 2015 &middot; "
+        f":x: wrong vs Hart 2015 &middot; :information_source: not comparable to Hart 2015",
     ]
-    summary_lines += ["| Category | Genes | Detail |", "| --- | --- | --- |"]
-    summary_lines += [f"| {cat} | **{n}** | {detail or '--'} |" for cat, n, detail in table_rows]
-    summary_lines.append("")
-    summary_lines.append(f"Full per-gene, per-line detail (every gene checked, not just the ones named above): {csv_ref}.")
     summary = "\n".join(summary_lines) + "\n"
+
+    # --- detail: per-gene breakdown, appended to the committed gene-essential_summary.md ---
+    csv_ref = f"[gene-essential-diff.csv]({csv_url})" if csv_url else "the per-gene detail CSV"
+    detail_lines = [
+        f"### Gene essentiality: effect of this change (vs `{base_label}`)",
+        "",
+        f"Checked **{len(direct)}** gene(s) directly affected plus **{len(neighbors)}** more "
+        f"that share a metabolite with one of them.",
+        "",
+    ]
+    if growth_relevant:
+        detail_lines.append("**Growth effect changed** (vs Hart 2015):")
+        for (lines_text, change_text, icon), genes in _grouped_rows(growth_relevant, _growth_key):
+            detail_lines.append(f"- {', '.join(sorted(genes))}: {lines_text} lines, {change_text} -- {icon}")
+        detail_lines.append("")
+    if capability_only:
+        detail_lines.append("**Other role changed** (not Hart-comparable):")
+        for (lines_text, role_text, change_text), genes in _grouped_rows(capability_only, _capability_key):
+            detail_lines.append(f"- {', '.join(sorted(genes))}: {lines_text} lines, {role_text} -- {change_text}")
+        detail_lines.append("")
+    if isolated:
+        detail_lines.append(
+            f"**Likely noise** ({len(isolated)} gene(s), <{CONSENSUS_MIN_LINES}/5 lines): "
+            + ", ".join(sorted(r["symbol"] or r["gene"] for r in isolated)) + "."
+        )
+        detail_lines.append("")
+    detail_lines.append(f"**No change:** {len(stable)} gene(s).")
+    detail_lines.append("")
+    detail_lines.append(f"Full per-gene, per-line detail (every gene checked, not just the ones named above): {csv_ref}.")
+    detail_text = "\n".join(detail_lines) + "\n"
 
     detail_header = [
         "gene", "symbol", "hop", "any_verdict", "any_count", "viability_verdict", "viability_count", "hart_verdict",
@@ -451,7 +499,7 @@ def build_report(
         detail_rows.append(",".join(row))
     detail_csv = "\n".join(detail_rows) + "\n"
 
-    return summary, detail_csv
+    return summary, detail_text, detail_csv
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -462,18 +510,25 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--head-matrix", type=Path, default=DEFAULT_HEAD_MATRIX, help="gene-essential.csv for this branch (default: data/testResults/gene-essential.csv)")
     parser.add_argument("--growth-tolerance", type=float, default=0.01, help="minimum |growth ratio delta| to flag independent of task-based flips (default: 0.01)")
     parser.add_argument("--base-label", type=str, default="the target branch", help="name shown for the base branch, e.g. 'develop' (default: 'the target branch')")
-    parser.add_argument("--csv-url", type=str, default="", help="committed blob URL of --out-csv, linked from the summary instead of duplicating its content there")
-    parser.add_argument("--out-summary", type=Path, default=None, help="write the summary text here instead of only stdout")
+    parser.add_argument("--csv-url", type=str, default="", help="committed blob URL of --out-csv, linked from --out-detail instead of duplicating its content there")
+    parser.add_argument("--summary-url", type=str, default="", help="committed blob URL of gene-essential_summary.md (with --out-detail appended to it), linked from --out-summary")
+    parser.add_argument("--out-summary", type=Path, default=None, help="write the condensed, pull-request-comment text here instead of only stdout")
+    parser.add_argument("--out-detail", type=Path, default=None, help="write the per-gene detail text here (meant to be appended to gene-essential_summary.md)")
     parser.add_argument("--out-csv", type=Path, default=None, help="write the per-gene per-line detail CSV here")
     args = parser.parse_args(argv)
 
-    summary, detail_csv = build_report(
+    summary, detail_text, detail_csv = build_report(
         args.base_model, args.head_model, args.base_matrix, args.head_matrix,
-        growth_tolerance=args.growth_tolerance, base_label=args.base_label, csv_url=args.csv_url,
+        growth_tolerance=args.growth_tolerance, base_label=args.base_label,
+        csv_url=args.csv_url, summary_url=args.summary_url,
     )
     print(summary)
     if args.out_summary:
         args.out_summary.write_text(summary, encoding="utf-8")
+    if args.out_detail:
+        args.out_detail.write_text(detail_text, encoding="utf-8")
+    else:
+        print(detail_text)
     if args.out_csv:
         args.out_csv.write_text(detail_csv, encoding="utf-8")
     else:

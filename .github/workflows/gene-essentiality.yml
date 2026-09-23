@@ -423,6 +423,7 @@ jobs:
         env:
           BASE_REF: ${{ inputs.base }}
           CSV_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential-diff.csv
+          SUMMARY_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential_summary.md
         run: |
           git fetch origin "refs/heads/$BASE_REF:refs/remotes/origin/$BASE_REF" --depth=1
           mkdir -p "$RUNNER_TEMP/base"
@@ -434,13 +435,21 @@ jobs:
               --base-matrix "$RUNNER_TEMP/base/gene-essential.csv" \
               --base-label "$BASE_REF" \
               --csv-url "$CSV_URL" \
+              --summary-url "$SUMMARY_URL" \
               --out-summary "$RUNNER_TEMP/gene-essential-diff.md" \
+              --out-detail "$RUNNER_TEMP/gene-essential-diff-detail.md" \
               --out-csv data/testResults/gene-essential-diff.csv
             {
               echo "results<<GENEESS_DIFF_EOF"
               cat "$RUNNER_TEMP/gene-essential-diff.md"
               echo "GENEESS_DIFF_EOF"
             } >> "$GITHUB_OUTPUT"
+            # The condensed comment (above) links here for the per-gene names and what
+            # changed for them, instead of posting them in the comment itself.
+            {
+              echo ""
+              cat "$RUNNER_TEMP/gene-essential-diff-detail.md"
+            } >> data/testResults/gene-essential_summary.md
           else
             echo "::warning::$BASE_REF has no data/testResults/gene-essential.csv yet"\
                  "(gene essentiality has never been run there); skipping the scoped diff."
@@ -516,8 +525,8 @@ jobs:
               // replaces the full ~3000-gene table rather than sitting alongside it (that
               // table is dominated by ftINIT's run-to-run noise in genes this PR never
               // touched and says nothing about whether this PR's own change was good or
-              // bad). DIFF_RESULTS already links its own per-gene detail CSV (see --csv-url
-              // in the step above); this just adds where the unscoped, every-gene matrix is.
+              // bad). DIFF_RESULTS already links gene-essential_summary.md for the named
+              // per-gene detail; this just adds where the unscoped, every-gene matrix is.
               body += `${process.env.DIFF_RESULTS}\n\n`
                 + `The unscoped, every-gene matrix behind the table above is committed to `
                 + `[gene-essential.csv](${csvUrl}).\n\n`;
