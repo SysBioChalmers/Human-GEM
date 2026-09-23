@@ -297,8 +297,14 @@ def build_report(
     *,
     growth_tolerance: float = 0.01,
     base_label: str = "the target branch",
+    csv_url: str = "",
 ) -> tuple[str, str]:
-    """Returns ``(summary_text, detail_csv_text)``."""
+    """Returns ``(summary_text, detail_csv_text)``.
+
+    ``csv_url`` is the committed blob URL of the per-gene detail CSV this call is about
+    to write (e.g. from ``--out-csv`` under ``data/testResults/``), linked from the
+    summary instead of duplicating any of that detail into the summary text itself.
+    """
     print(f"Loading base model from {base_model_path} ...", file=sys.stderr)
     base_model = read_yaml_model(base_model_path)
     print(f"Loading head model from {head_model_path} ...", file=sys.stderr)
@@ -366,9 +372,9 @@ def build_report(
         f"Checked **{len(direct)}** gene(s) in those reactions plus **{len(neighbors)}** more "
         f"that share a metabolite with one of them.",
         "",
-        f"_Only a flip seen in the same direction in at least {CONSENSUS_MIN_LINES} of the 5 "
-        f"cell-line models is listed below. Fewer than that is likely just noise from ftINIT's "
-        f"run-to-run variability, listed separately._",
+        f"_A gene counts as changed below only if the flip agrees in direction across at least "
+        f"{CONSENSUS_MIN_LINES} of the 5 cell-line models; fewer than that is grouped as likely "
+        f"noise from ftINIT's run-to-run variability instead._",
         "",
     ]
 
@@ -385,66 +391,42 @@ def build_report(
             groups.setdefault(key_fn(r), []).append(r["symbol"] or r["gene"])
         return sorted(groups.items(), key=lambda kv: sorted(kv[1]))
 
-    if growth_relevant:
-        summary_lines.append("**Growth effect changed** (checked against the Hart 2015 experiment):")
-        summary_lines.append("")
-        summary_lines.append("| Gene | Lines | Change | Verdict |")
-        summary_lines.append("| --- | --- | --- | --- |")
+    def _growth_key(r: dict) -> tuple[str, str, str]:
+        direction = "gained" if r["viability_verdict"].endswith("gained") else "lost"
+        change_text = "knockout now blocks growth" if direction == "gained" else "knockout no longer blocks growth"
+        icon = {
+            "improvement": ":white_check_mark: correct",
+            "regression": ":x: wrong",
+            "mixed": ":warning: mixed across lines",
+        }.get(r["hart_verdict"], f":question: {r['hart_verdict']}")
+        return r["viability_count"], change_text, icon
 
-        def _growth_key(r: dict) -> tuple[str, str, str]:
-            direction = "gained" if r["viability_verdict"].endswith("gained") else "lost"
-            change_text = (
-                "knockout now blocks growth" if direction == "gained"
-                else "knockout no longer blocks growth"
-            )
-            icon = {
-                "improvement": ":white_check_mark: correct",
-                "regression": ":x: wrong",
-                "mixed": ":warning: mixed across lines",
-            }.get(r["hart_verdict"], f":question: {r['hart_verdict']}")
-            return r["viability_count"], change_text, icon
+    def _capability_key(r: dict) -> tuple[str, str, str]:
+        direction = "gained" if r["any_verdict"].endswith("gained") else "lost"
+        change_text = "now required" if direction == "gained" else "no longer required"
+        categories = r["gained_categories"] | r["lost_categories"]
+        return r["any_count"], _describe_categories(categories), change_text
 
-        for (lines_text, change_text, icon), genes in _grouped_rows(growth_relevant, _growth_key):
-            summary_lines.append(f"| {', '.join(sorted(genes))} | {lines_text} | {change_text} | {icon} |")
-        summary_lines.append("")
+    def _named_detail(rows: list[dict], key_fn) -> str:
+        """Genes named with what changed for them, grouped by identical outcome --
+        only called for the two small, actionable categories (growth-relevant and
+        capability-only); noise and unchanged genes are counted, never named here."""
+        groups = _grouped_rows(rows, key_fn)
+        parts = [f"{', '.join(sorted(genes))} ({', '.join(str(k) for k in key)})" for key, genes in groups]
+        return "; ".join(parts)
 
-    if capability_only:
-        summary_lines.append(
-            "**Other role changed, growth unaffected** (not comparable to Hart 2015, which only "
-            "measures growth; expected for a gene meant to be coupled into a pathway):"
-        )
-        summary_lines.append("")
-        summary_lines.append("| Gene | Lines | Role | Change |")
-        summary_lines.append("| --- | --- | --- | --- |")
+    csv_ref = f"[gene-essential-diff.csv]({csv_url})" if csv_url else "the full detail CSV"
 
-        def _capability_key(r: dict) -> tuple[str, str, str]:
-            direction = "gained" if r["any_verdict"].endswith("gained") else "lost"
-            change_text = "now required" if direction == "gained" else "no longer required"
-            categories = r["gained_categories"] | r["lost_categories"]
-            return r["any_count"], _describe_categories(categories), change_text
-
-        for (lines_text, role_text, change_text), genes in _grouped_rows(capability_only, _capability_key):
-            summary_lines.append(f"| {', '.join(sorted(genes))} | {lines_text} | {role_text} | {change_text} |")
-        summary_lines.append("")
-
-    if not growth_relevant and not capability_only:
-        summary_lines.append("**No consistent change found.**")
-        summary_lines.append("")
-
-    if isolated:
-        summary_lines.append(
-            f"<details><summary>Likely noise: {len(isolated)} gene(s) flipped in fewer than "
-            f"{CONSENSUS_MIN_LINES}/5 lines (show)</summary>"
-        )
-        summary_lines.append("")
-        summary_lines.append(", ".join(sorted(r["symbol"] or r["gene"] for r in isolated)) + ".")
-        summary_lines.append("")
-        summary_lines.append("</details>")
-        summary_lines.append("")
-
-    summary_lines.append(f"**No change:** {len(stable)} gene(s).")
+    table_rows = [
+        ("Growth effect changed (vs Hart 2015)", len(growth_relevant), _named_detail(growth_relevant, _growth_key)),
+        ("Other role changed (not Hart-comparable)", len(capability_only), _named_detail(capability_only, _capability_key)),
+        (f"Likely noise (<{CONSENSUS_MIN_LINES}/5 lines)", len(isolated), f"see {csv_ref}" if isolated else ""),
+        ("No change", len(stable), ""),
+    ]
+    summary_lines += ["| Category | Genes | Detail |", "| --- | --- | --- |"]
+    summary_lines += [f"| {cat} | **{n}** | {detail or '--'} |" for cat, n, detail in table_rows]
     summary_lines.append("")
-    summary_lines.append("Full detail per gene and cell line is in the attached CSV.")
+    summary_lines.append(f"Full per-gene, per-line detail (every gene checked, not just the ones named above): {csv_ref}.")
     summary = "\n".join(summary_lines) + "\n"
 
     detail_header = [
@@ -480,13 +462,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--head-matrix", type=Path, default=DEFAULT_HEAD_MATRIX, help="gene-essential.csv for this branch (default: data/testResults/gene-essential.csv)")
     parser.add_argument("--growth-tolerance", type=float, default=0.01, help="minimum |growth ratio delta| to flag independent of task-based flips (default: 0.01)")
     parser.add_argument("--base-label", type=str, default="the target branch", help="name shown for the base branch, e.g. 'develop' (default: 'the target branch')")
+    parser.add_argument("--csv-url", type=str, default="", help="committed blob URL of --out-csv, linked from the summary instead of duplicating its content there")
     parser.add_argument("--out-summary", type=Path, default=None, help="write the summary text here instead of only stdout")
     parser.add_argument("--out-csv", type=Path, default=None, help="write the per-gene per-line detail CSV here")
     args = parser.parse_args(argv)
 
     summary, detail_csv = build_report(
         args.base_model, args.head_model, args.base_matrix, args.head_matrix,
-        growth_tolerance=args.growth_tolerance, base_label=args.base_label,
+        growth_tolerance=args.growth_tolerance, base_label=args.base_label, csv_url=args.csv_url,
     )
     print(summary)
     if args.out_summary:

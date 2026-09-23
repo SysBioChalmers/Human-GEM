@@ -412,11 +412,17 @@ jobs:
       # solve. The global summary above is diluted by ftINIT's run-to-run noise across
       # ~3000 genes unrelated to this PR; this is the part actually worth reading in
       # review. Skipped for a manual (non-PR) dispatch, since there is no base to diff.
+      # The per-gene detail CSV is written straight to data/testResults/ so the
+      # auto-commit step below picks it up (same treatment as gene-essential.csv
+      # itself) -- it is a committed, permanently browsable file, not a 30-day
+      # workflow artifact, matching the "full detail lives in the file, not the
+      # comment" split the condensed summary above links to.
       - name: Scope essentiality changes to this pull request's model diff
         id: diff
         if: inputs.pr != '' && inputs.base != ''
         env:
           BASE_REF: ${{ inputs.base }}
+          CSV_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential-diff.csv
         run: |
           git fetch origin "refs/heads/$BASE_REF:refs/remotes/origin/$BASE_REF" --depth=1
           mkdir -p "$RUNNER_TEMP/base"
@@ -427,8 +433,9 @@ jobs:
               --base-model "$RUNNER_TEMP/base/Human-GEM.yml" \
               --base-matrix "$RUNNER_TEMP/base/gene-essential.csv" \
               --base-label "$BASE_REF" \
+              --csv-url "$CSV_URL" \
               --out-summary "$RUNNER_TEMP/gene-essential-diff.md" \
-              --out-csv "$RUNNER_TEMP/gene-essential-diff.csv"
+              --out-csv data/testResults/gene-essential-diff.csv
             {
               echo "results<<GENEESS_DIFF_EOF"
               cat "$RUNNER_TEMP/gene-essential-diff.md"
@@ -438,14 +445,6 @@ jobs:
             echo "::warning::$BASE_REF has no data/testResults/gene-essential.csv yet"\
                  "(gene essentiality has never been run there); skipping the scoped diff."
           fi
-
-      - name: Upload the scoped essentiality diff
-        if: ${{ !cancelled() && steps.diff.outputs.results != '' }}
-        uses: actions/upload-artifact@v7
-        with:
-          name: gene-essentiality-diff
-          path: ${{ runner.temp }}/gene-essential-diff.csv
-          retention-days: 30
 
       # This workflow is dispatched (by /run gene-essentiality), so it has no
       # pull_request context; the PR number arrives as the `pr` input instead.
@@ -517,11 +516,11 @@ jobs:
               // replaces the full ~3000-gene table rather than sitting alongside it (that
               // table is dominated by ftINIT's run-to-run noise in genes this PR never
               // touched and says nothing about whether this PR's own change was good or
-              // bad). The full table is still available as an artifact and in the commit.
+              // bad). DIFF_RESULTS already links its own per-gene detail CSV (see --csv-url
+              // in the step above); this just adds where the unscoped, every-gene matrix is.
               body += `${process.env.DIFF_RESULTS}\n\n`
-                + `The full per-gene matrix (every gene, not just the ones above) is committed to `
-                + `[gene-essential.csv](${csvUrl}); per-line detail for this section is the `
-                + `\`gene-essentiality-diff\` artifact on [this run](${process.env.RUN_URL}).\n\n`;
+                + `The unscoped, every-gene matrix behind the table above is committed to `
+                + `[gene-essential.csv](${csvUrl}).\n\n`;
             } else {
               // No base to diff against (a manual, non-PR dispatch, or the target branch has
               // no committed gene-essential.csv yet) -- fall back to the full, unscoped table.
