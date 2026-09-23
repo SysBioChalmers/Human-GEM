@@ -13,6 +13,9 @@ on:
       pr:
         description: "Pull-request number to comment on (set by the /run command)"
         default: ""
+      base:
+        description: "Pull request's base branch, to scope the essentiality diff to this PR's own model changes (set by the /run command)"
+        default: ""
 
 env:
   # Stream Python (and raven-toolbox) stdout/stderr live into the Actions log
@@ -353,7 +356,10 @@ jobs:
     needs: build-test
     if: ${{ !cancelled() && needs.build-test.result != 'skipped' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # 20 min was enough before the scoped-diff step; that step loads the full model
+    # twice with raven-toolbox (~1-2 min each on this hardware), so 35 min leaves
+    # comfortable headroom instead of trimming it close.
+    timeout-minutes: 35
     steps:
       # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
       # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
@@ -399,6 +405,46 @@ jobs:
             cat data/testResults/gene-essential_summary.md
             echo "GENEESS_EOF"
           } >> "$GITHUB_OUTPUT"
+
+      # Scopes the run to genes this pull request's own model changes could plausibly
+      # affect (its changed reactions, plus one metabolite hop out), diffing the
+      # already-committed gene-essential.csv on both sides -- no extra ftINIT/Gurobi
+      # solve. The global summary above is diluted by ftINIT's run-to-run noise across
+      # ~3000 genes unrelated to this PR; this is the part actually worth reading in
+      # review. Skipped for a manual (non-PR) dispatch, since there is no base to diff.
+      - name: Scope essentiality changes to this pull request's model diff
+        id: diff
+        if: inputs.pr != '' && inputs.base != ''
+        env:
+          BASE_REF: ${{ inputs.base }}
+        run: |
+          git fetch origin "refs/heads/$BASE_REF:refs/remotes/origin/$BASE_REF" --depth=1
+          mkdir -p "$RUNNER_TEMP/base"
+          git show "origin/$BASE_REF:model/Human-GEM.yml" > "$RUNNER_TEMP/base/Human-GEM.yml"
+          if git show "origin/$BASE_REF:data/testResults/gene-essential.csv" \
+              > "$RUNNER_TEMP/base/gene-essential.csv" 2>/dev/null; then
+            python code/test/diffGeneEssentiality.py \
+              --base-model "$RUNNER_TEMP/base/Human-GEM.yml" \
+              --base-matrix "$RUNNER_TEMP/base/gene-essential.csv" \
+              --out-summary "$RUNNER_TEMP/gene-essential-diff.md" \
+              --out-csv "$RUNNER_TEMP/gene-essential-diff.csv"
+            {
+              echo "results<<GENEESS_DIFF_EOF"
+              cat "$RUNNER_TEMP/gene-essential-diff.md"
+              echo "GENEESS_DIFF_EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::$BASE_REF has no data/testResults/gene-essential.csv yet"\
+                 "(gene essentiality has never been run there); skipping the scoped diff."
+          fi
+
+      - name: Upload the scoped essentiality diff
+        if: ${{ !cancelled() && steps.diff.outputs.results != '' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: gene-essentiality-diff
+          path: ${{ runner.temp }}/gene-essential-diff.csv
+          retention-days: 30
 
       # This workflow is dispatched (by /run gene-essentiality), so it has no
       # pull_request context; the PR number arrives as the `pr` input instead.
@@ -453,13 +499,14 @@ jobs:
         uses: actions/github-script@v9
         env:
           TEST_RESULTS: ${{ steps.essentiality.outputs.results }}
+          DIFF_RESULTS: ${{ steps.diff.outputs.results }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           ISSUE_NUMBER: ${{ inputs.pr }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const marker = '<!-- GENE-ESSENTIALITY-COMMENT -->';
-            const body = `${marker}\n`
+            let body = `${marker}\n`
               + `Gene essentiality was run on this pull request via [GH Actions](${process.env.RUN_URL}). `
               + `Essentiality for a *viability* task (\`GR\` growth, \`ER\` energy/redox) is reported `
               + `separately from essentiality for a *capability* task (\`SU\`, \`BS\`, \`IC\`), and the `
@@ -467,8 +514,17 @@ jobs:
               + `${process.env.TEST_RESULTS}\n\n`
               + `The full per-gene matrix is committed to \`data/testResults/gene-essential.csv\`, holding `
               + `for each cell line the confusion class, the task categories the knockout breaks and the `
-              + `biomass growth ratio.\n\n`
-              + `> _Note: in the case of multiple test runs, this post is edited._`;
+              + `biomass growth ratio.\n\n`;
+            if (process.env.DIFF_RESULTS) {
+              // The table above is diluted by ftINIT's run-to-run noise across ~3000 genes
+              // unrelated to this PR; this section is scoped to genes this PR's own model
+              // changes could plausibly affect (see diffGeneEssentiality.py) and is the part
+              // actually worth reading in review.
+              body += `${process.env.DIFF_RESULTS}\n\n`
+                + `(Per-gene, per-cell-line detail for this section: the \`gene-essentiality-diff\` `
+                + `artifact on [this run](${process.env.RUN_URL}).)\n\n`;
+            }
+            body += `> _Note: in the case of multiple test runs, this post is edited._`;
             const { owner, repo } = context.repo;
             const issue_number = Number(process.env.ISSUE_NUMBER);
             const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });

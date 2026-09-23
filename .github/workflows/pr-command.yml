@@ -34,15 +34,16 @@ jobs:
           COMMENT_ID: ${{ github.event.comment.id }}
           COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
-          data=$(gh pr view "$PR" --repo "$REPO" --json headRefName,isCrossRepository)
+          data=$(gh pr view "$PR" --repo "$REPO" --json headRefName,baseRefName,isCrossRepository)
           ref=$(echo "$data" | jq -r .headRefName)
+          base=$(echo "$data" | jq -r .baseRefName)
           fork=$(echo "$data" | jq -r .isCrossRepository)
           if [ "$fork" = "true" ]; then
             gh pr comment "$PR" --repo "$REPO" \
               --body ":warning: \`/run gene-essentiality\` only works for branches in this repository, not forks."
             exit 0
           fi
-          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref" -f pr="$PR"
+          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref" -f pr="$PR" -f base="$base"
           # Edit the triggering comment itself rather than posting a separate new one,
           # so the thread shows the command and its acknowledgement together.
           notice=$(printf '%s\n\n:dna: Started **gene-essentiality** on `%s` (this takes a few hours). Track it in the [Actions tab](%s/%s/actions/workflows/gene-essentiality.yml).' \
