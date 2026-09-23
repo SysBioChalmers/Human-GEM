@@ -1,47 +1,40 @@
 ## Model quality report
 
-:warning: **6 pre-existing finding(s), no regressions vs `develop`.** Non-blocking.
+:warning: **6 pre-existing finding(s), no regressions vs `develop`.** Non-blocking. Gates: duplicate keys 0 :white_check_mark:, growth 125 :white_check_mark:.
 
-_Each check name links to its explanation in the [testResults README](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md)._
+_Row names match the headings in the [testResults README](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md)._
 
-### Model checks
+### Model & network checks
 _Duplicate keys (model unloadable) and no growth block the merge; every other row is a non-blocking report._
 
-| Check | Result | &Delta; vs `develop` | |
-| --- | ---: | ---: | :---: |
-| [Duplicate `!!omap` keys](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#duplicate-omap-keys) | 0 | 0 | :white_check_mark: |
-| [Growth (biomass producible)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#growth-biomass-producible) | 125 | 0 | :white_check_mark: |
-| [Reactions with no metabolites](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
-| [Model / annotation-table inconsistencies](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#model--annotation-table-inconsistencies) | 0 | 0 | :white_check_mark: |
-| [Removed reactions or metabolites not deprecated](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#removed-reactions-or-metabolites-not-deprecated) | 0 | 0 | :white_check_mark: |
-| [Metabolites missing formula](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
-| [Metabolites missing charge](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
-| [Reaction bound / GPR issues](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
-| [Exact-duplicate reaction groups](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
-| [Unused metabolites](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
-| [Unused genes](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#unused-genes) | 0 | 0 | :white_check_mark: |
-| [Malformed cross-references](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
-| [Cross-refs inconsistent across compartments](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#cross-refs-inconsistent-across-compartments) | [3](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/qc_annotation_issues.csv) | 0 | :warning: |
-
-### MACAW and mass/charge balance
+<details><summary>18 more check(s) unchanged vs `develop` (12 clean, 6 pre-existing finding(s)) -- show</summary>
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| [Reactions flagged by MACAW dead-end test](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#reactions-flagged-by-macaw-dead-end-test) | [2510](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/macaw_results.csv) | 0 | :warning: |
-| [Reactions flagged as MACAW duplicates](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#reactions-flagged-as-macaw-duplicates) | [377](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/macaw_results.csv) | 0 | :warning: |
-| [Mass-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#mass-imbalanced-reactions) | [87](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/balance_results.csv) | 0 | :warning: |
-| [Charge-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#charge-imbalanced-reactions) | [234](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/balance_results.csv) | 0 | :warning: |
-| [Structure vs formula/charge inconsistencies](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#structure-vs-formulacharge-inconsistencies) | [397](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/qc_structure_consistency.csv) | 0 | :warning: |
+| Duplicate `!!omap` keys | 0 | 0 | :white_check_mark: |
+| Growth (biomass producible) | 125 | 0 | :white_check_mark: |
+| Reactions with no metabolites | 0 | 0 | :white_check_mark: |
+| Model / annotation-table inconsistencies | 0 | 0 | :white_check_mark: |
+| Removed reactions or metabolites not deprecated | 0 | 0 | :white_check_mark: |
+| Metabolites missing formula | 0 | 0 | :white_check_mark: |
+| Metabolites missing charge | 0 | 0 | :white_check_mark: |
+| Reaction bound / GPR issues | 0 | 0 | :white_check_mark: |
+| Exact-duplicate reaction groups | 0 | 0 | :white_check_mark: |
+| Unused metabolites | 0 | 0 | :white_check_mark: |
+| Unused genes | 0 | 0 | :white_check_mark: |
+| Malformed cross-references | 0 | 0 | :white_check_mark: |
+| Cross-refs inconsistent across compartments | [3](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/qc_annotation_issues.csv) | 0 | :warning: |
+| Reactions flagged by MACAW dead-end test | [2510](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/macaw_results.csv) | 0 | :warning: |
+| Reactions flagged as MACAW duplicates | [377](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/macaw_results.csv) | 0 | :warning: |
+| Mass-imbalanced reactions | [87](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/balance_results.csv) | 0 | :warning: |
+| Charge-imbalanced reactions | [234](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/balance_results.csv) | 0 | :warning: |
+| Structure vs formula/charge inconsistencies | [397](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/qc_structure_consistency.csv) | 0 | :warning: |
+
+</details>
 
 ### Model file and metabolic tasks
 
-| Check | Result | |
-| --- | ---: | :---: |
-| [YAML round-trip (cobrapy)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#yaml-round-trip-cobrapy) | pass | :white_check_mark: |
-| [YAML round-trip (RAVEN)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#yaml-round-trip-raven) | pass | :white_check_mark: |
-| [YAML lint](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#yaml-lint) | pass | :white_check_mark: |
-| [Essential metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#essential-metabolic-tasks) | 57 passed | :white_check_mark: |
-| [Verification metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#verification-metabolic-tasks) | 21 passed | :white_check_mark: |
+All 5 pass: YAML round-trip (cobrapy, RAVEN), YAML lint, 57 essential + 21 verification tasks. :white_check_mark:
 
 ### [MEMOTE](https://github.com/SysBioChalmers/Human-GEM/blob/fix/etf-ubiquinone-coupling/data/testResults/README.md#memote)
 
