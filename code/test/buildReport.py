@@ -218,34 +218,52 @@ def _metrics(directory: Path) -> dict:
     }
 
 
+IMPROVED = ":sparkles:"  # this got better vs base -- distinct from white_check_mark ("unchanged")
+
+
 def _icon(value, base, kind):
-    """Return (delta_text, icon, regression, fatal)."""
+    """Return (delta_text, icon, regression, fatal). ``white_check_mark`` means
+    unchanged (clean now, and either no base or no change since it); an actual
+    improvement -- a count that fell, a score that rose, growth that got fixed --
+    gets IMPROVED instead, so "better than before" is never confused with "nothing
+    to see here"."""
     if kind == "growth":
         grows = value > 1e-6
-        icon = ":white_check_mark:" if grows else ":x:"
+        if not grows:
+            return "new" if base is None else (f"{value - base:+.3g}" if abs(value - (base or 0)) > 1e-6 else "0"), ":x:", False, True
         if base is None:
-            return "new", icon, False, (not grows)
+            return "new", ":white_check_mark:", False, False
         change = value - base
-        return (f"{change:+.3g}" if abs(change) > 1e-6 else "0"), icon, False, (not grows)
+        delta = f"{change:+.3g}" if abs(change) > 1e-6 else "0"
+        grew_before = base > 1e-6
+        return delta, (":white_check_mark:" if grew_before else IMPROVED), False, False
     if kind == "score":  # higher is better; a drop is a (non-blocking) warning
         if base is None:
             return "new", (":white_check_mark:" if value > 0 else ":warning:"), False, False
         change = value - base
-        dropped = change < -1e-9
-        return (f"{change:+.1f}" if abs(change) > 1e-9 else "0"), (":warning:" if dropped else ":white_check_mark:"), dropped, False
-    # count: rose vs base -> regression (x); non-zero -> pre-existing (warning); zero -> ok
+        if change < -0.05:
+            return f"{change:+.1f}", ":warning:", True, False
+        if change > 0.05:
+            return f"{change:+.1f}", IMPROVED, False, False
+        return "0", ":white_check_mark:", False, False
+    # count: rose vs base -> regression (x); fell -> improved; non-zero and unchanged
+    # -> pre-existing (warning); zero -> ok
     if base is None:
         return "new", (":warning:" if value > 0 else ":white_check_mark:"), False, False
     change = int(value) - int(base)
     if change > 0:
         return f"+{change}", ":x:", True, False
+    if change < 0:
+        return str(change), IMPROVED, False, False
     if value > 0:
-        return ("0" if change == 0 else str(change)), ":warning:", False, False
-    return ("0" if change == 0 else str(change)), ":white_check_mark:", False, False
+        return "0", ":warning:", False, False
+    return "0", ":white_check_mark:", False, False
 
 
-def _cell(value, kind, detail) -> str:
+def _cell(value, kind, detail, *, bold: bool = False) -> str:
     text = f"{value:.3g}" if kind == "growth" else (f"{value:.1f}" if kind == "score" else str(int(value)))
+    if bold:
+        text = f"**{text}**"
     # link a positive count (or a growth failure) to its CSV, if we know the repo URL
     linkable = (kind == "count" and value) or (kind == "growth" and value <= 1e-6)
     if URL_BASE and detail and linkable:
@@ -289,6 +307,7 @@ def _section_summary(computed: list[dict]) -> dict:
     """One section's condensed-comment row, plus the specific non-clean rows to name
     beneath it. A clean row contributes only to the section's count."""
     regressions = [r for r in computed if not r["pending"] and r.get("regression")]
+    improved = [r for r in computed if not r["pending"] and r["icon"] == IMPROVED]
     warnings = [r for r in computed if not r["pending"] and r["icon"] == ":warning:"]
     pending = [r for r in computed if r["pending"]]
     fatal = any(r.get("fatal") for r in computed)
@@ -300,19 +319,26 @@ def _section_summary(computed: list[dict]) -> dict:
         status = f":hourglass_flowing_sand: **{len(pending)}** running"
     elif warnings:
         status = f":warning: **{len(warnings)}** pre-existing"
+    elif improved:
+        status = f"{IMPROVED} **{len(improved)}** improved"
     else:
         status = ":white_check_mark: all clean"
-    return {"status": status, "fatal": fatal, "regressions": regressions, "warnings": warnings, "pending": pending}
+    return {
+        "status": status, "fatal": fatal, "regressions": regressions,
+        "improved": improved, "warnings": warnings, "pending": pending,
+    }
 
 
-def _callout(rows: list[dict], *, verb: str) -> str:
-    """One compact line naming specific rows (e.g. 'Pre-existing, non-blocking: Cross-refs
-    inconsistent across compartments 3, ...'). Only called for rows that need naming --
-    a clean row is already fully accounted for by the section row's count."""
+def _callout(rows: list[dict], *, verb: str) -> list[str]:
+    """A bulleted list naming specific rows, e.g. '**Pre-existing:**' /
+    '- Cross-refs inconsistent across compartments: **3**'. Only called for rows that
+    need naming -- a clean row is already fully accounted for by the section row's
+    count. Returns the lines to insert (empty when there is nothing to name)."""
     if not rows:
-        return ""
-    items = [f"{r['label']} {_cell(r['value'], r['kind'], r['detail'])}" for r in rows]
-    return f"{verb}: " + ", ".join(items) + "."
+        return []
+    return [f"**{verb}:**"] + [
+        f"- {r['label']}: {_cell(r['value'], r['kind'], r['detail'], bold=True)}" for r in rows
+    ]
 
 
 def _task_rows() -> list[dict]:
@@ -402,9 +428,8 @@ def _memote_full_section(data: dict) -> str:
 
 def _memote_summary(data: dict) -> dict:
     if data["pending"]:
-        return {"status": ":hourglass_flowing_sand: running", "dropped": False}
-    dropped = data["b_total"] is not None and (data["total"] - data["b_total"]) < -0.05
-    icon = ":warning:" if dropped else ":white_check_mark:"
+        return {"status": ":hourglass_flowing_sand: running"}
+    _, icon, dropped, _ = _icon(data["total"], data["b_total"], "score")
     return {"status": f"{icon} **{data['total']:.1f}%**", "dropped": dropped}
 
 
@@ -414,11 +439,6 @@ def _gene_essentiality_full_section() -> str:
     # would be stale here - the result is shown in its own comment when run instead.
     return ("_Not run automatically (it takes hours). Comment_ `/run gene-essentiality` "
             "_to run it on this pull request; the result posts as its own comment._")
-
-
-def _gene_essentiality_summary() -> dict:
-    has_run = (RESULTS / "gene-essential.csv").exists()
-    return {"status": "see the gene-essentiality comment" if has_run else "_not run_"}
 
 
 def _gates_line(current: dict, base: dict) -> str:
@@ -448,7 +468,6 @@ def main() -> int:
     task_summary = _task_summary(task_rows)
     memote_data = _memote_data(RESULTS, Path(BASE_DIR) if BASE_DIR else None)
     memote_summary = _memote_summary(memote_data)
-    gene_summary = _gene_essentiality_summary()
 
     fatal = network_summary["fatal"] or bool(task_summary["failed"])
     regressions = len(network_summary["regressions"])
@@ -472,21 +491,28 @@ def main() -> int:
 
     # --- condensed comment: one row per section, only non-clean checks named ---
     full_url = f"{URL_BASE}/model_qc_summary.md" if URL_BASE else ""
+    full_report_status = f"[model_qc_summary.md]({full_url})" if full_url else "`model_qc_summary.md`"
     section_table = [
         "| Section | Status |",
         "| --- | --- |",
         f"| Model &amp; network checks ({len(network_rows)}) | {network_summary['status']} |",
-        f"| Model file &amp; metabolic tasks ({len(task_rows)} gates) | {task_summary['status']} |",
+        f"| Model file &amp; metabolic tasks ({len(task_rows)}) | {task_summary['status']} |",
         f"| MEMOTE | {memote_summary['status']} |",
-        f"| Gene essentiality | {gene_summary['status']} |",
+        f"| Full report | {full_report_status} |",
     ]
-    callouts = [
+    callout_blocks = [
         _callout(network_summary["regressions"], verb="Regression(s)"),
-        (f"Gate failure(s): " + ", ".join(f"{r['label']} ({r['result']})" for r in task_summary["failed"]) + "."
-         if task_summary["failed"] else ""),
-        _callout(network_summary["warnings"], verb="Pre-existing, non-blocking") if not regressions else "",
+        ([f"**Gate failure(s):**"] + [f"- {r['label']}: {r['result']}" for r in task_summary["failed"]]
+         if task_summary["failed"] else []),
+        _callout(network_summary["improved"], verb="Improved"),
+        _callout(network_summary["warnings"], verb="Pre-existing") if not regressions else [],
     ]
-    callouts = [c for c in callouts if c]
+    callout_blocks = [b for b in callout_blocks if b]
+    callouts: list[str] = []
+    for i, block in enumerate(callout_blocks):
+        if i:
+            callouts.append("")
+        callouts.extend(block)
 
     comment_lines = [
         "## Model quality report",
@@ -499,11 +525,10 @@ def main() -> int:
     ]
     if callouts:
         comment_lines.append("")
-    if full_url:
-        comment_lines.append(
-            f"[Full report]({full_url}) -- every check, MEMOTE's per-test breakdown, "
-            f"and how to run gene essentiality."
-        )
+    comment_lines.append(
+        f":white_check_mark: unchanged &middot; {IMPROVED} improved vs `{BASE_REF}` &middot; "
+        f":warning: pre-existing, non-blocking &middot; :x: regression"
+    )
     if COMMIT_SHA:
         comment_lines += ["", f"Results for commit {COMMIT_SHA[:7]}."]
     COMMENT_MD.write_text("\n".join(comment_lines) + "\n", encoding="utf-8")
