@@ -211,12 +211,15 @@ def _load_or_build_prep(model: cobra.Model, tasks, prep_cache: Path | None):
     if prep_cache and prep_cache.exists():
         _log(f"Step 1: loading shared prepData from {prep_cache}")
         with open(prep_cache, "rb") as fh:
-            return pickle.load(fh)
+            prep = pickle.load(fh)
+        _log(f"Step 1: ftINIT MILP solver {type(prep.min_model.solver).__module__}")
+        return prep
 
     _log("Step 1: prepHumanModelForftINIT (clean + prepINITModel) ...")
     prep = _prep_human_model_for_ftinit(model, tasks)
     _log(f"Step 1 done: reference {len(prep.ref_model.reactions)} reactions, "
          f"{len(prep.essential_rxns)} task-essential; {len(prep.tasks)} feasible tasks")
+    _log(f"Step 1: ftINIT MILP solver {type(prep.min_model.solver).__module__}")
 
     if prep_cache:
         prep_cache.parent.mkdir(parents=True, exist_ok=True)
@@ -270,6 +273,10 @@ def _use_gurobi_solver(model: cobra.Model, *, retries: int = 5, initial_delay: f
                 pass  # nothing to clean up, or the env never got that far -- fine either way
             time.sleep(delay)
             delay *= 2
+
+    # Models built from scratch later on (prepINITModel's merged min_model, which
+    # ftINIT's MILP is built on) take cobra's global default solver, not this model's.
+    cobra.Configuration().solver = "gurobi"
 
     elapsed = time.time() - started
     threads = model.solver.problem.Params.Threads
@@ -409,7 +416,8 @@ def main(argv: list[str] | None = None) -> int:
     # would open a Gurobi WLS session even for --aggregate-only, which never solves
     # anything and does not need one -- exactly what let the aggregate job's model load
     # collide with a still-active build-test session. Force glpk up front; the branches
-    # that actually need Gurobi's MILP solver switch to it explicitly below.
+    # that actually need Gurobi's MILP solver switch to it explicitly below, and that
+    # switch makes Gurobi the default again for every model built after it.
     cobra.Configuration().solver = "glpk"
     model = read_yaml_model(MODEL_FILE)
     symbol_of = _gene_symbol_map(model)
