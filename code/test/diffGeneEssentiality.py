@@ -370,12 +370,26 @@ def build_report(
         "",
     ]
 
+    def _grouped_rows(rows: list[dict], key_fn) -> list[tuple[tuple, list[str]]]:
+        """Group genes sharing the same outcome (same key) into one row's gene list.
+
+        Several genes commonly move together for the same reason (e.g. the three ETF
+        complex subunits), and listing each on its own line just repeats the same
+        three cells three times; one row with a comma-joined gene list reads the same
+        information without the repetition.
+        """
+        groups: dict[tuple, list[str]] = {}
+        for r in rows:
+            groups.setdefault(key_fn(r), []).append(r["symbol"] or r["gene"])
+        return sorted(groups.items(), key=lambda kv: sorted(kv[1]))
+
     if growth_relevant:
         summary_lines.append("**Growth effect changed** (checked against the Hart 2015 experiment):")
         summary_lines.append("")
         summary_lines.append("| Gene | Lines | Change | Verdict |")
         summary_lines.append("| --- | --- | --- | --- |")
-        for r in sorted(growth_relevant, key=lambda r: r["gene"]):
+
+        def _growth_key(r: dict) -> tuple[str, str, str]:
             direction = "gained" if r["viability_verdict"].endswith("gained") else "lost"
             change_text = (
                 "knockout now blocks growth" if direction == "gained"
@@ -386,9 +400,10 @@ def build_report(
                 "regression": ":x: wrong",
                 "mixed": ":warning: mixed across lines",
             }.get(r["hart_verdict"], f":question: {r['hart_verdict']}")
-            summary_lines.append(
-                f"| {r['symbol'] or r['gene']} | {r['viability_count']} | {change_text} | {icon} |"
-            )
+            return r["viability_count"], change_text, icon
+
+        for (lines_text, change_text, icon), genes in _grouped_rows(growth_relevant, _growth_key):
+            summary_lines.append(f"| {', '.join(sorted(genes))} | {lines_text} | {change_text} | {icon} |")
         summary_lines.append("")
 
     if capability_only:
@@ -399,13 +414,15 @@ def build_report(
         summary_lines.append("")
         summary_lines.append("| Gene | Lines | Role | Change |")
         summary_lines.append("| --- | --- | --- | --- |")
-        for r in sorted(capability_only, key=lambda r: r["gene"]):
+
+        def _capability_key(r: dict) -> tuple[str, str, str]:
             direction = "gained" if r["any_verdict"].endswith("gained") else "lost"
             change_text = "now required" if direction == "gained" else "no longer required"
             categories = r["gained_categories"] | r["lost_categories"]
-            summary_lines.append(
-                f"| {r['symbol'] or r['gene']} | {r['any_count']} | {_describe_categories(categories)} | {change_text} |"
-            )
+            return r["any_count"], _describe_categories(categories), change_text
+
+        for (lines_text, role_text, change_text), genes in _grouped_rows(capability_only, _capability_key):
+            summary_lines.append(f"| {', '.join(sorted(genes))} | {lines_text} | {role_text} | {change_text} |")
         summary_lines.append("")
 
     if not growth_relevant and not capability_only:
