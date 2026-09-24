@@ -58,6 +58,7 @@ RXN_DB = {
     "rxnKEGGID": ("kegg.reaction",),
     "rxnBiGGID": ("bigg.reaction",),
     "rxnRheaID": ("rhea",),
+    "rxnSeedID": ("seed.reaction",),
 }
 SKIP_MNX = {"MNXM01", "MNXM1", "WATER", "MNXM2"}  # H+, H2O
 MNXM_OK = re.compile(r"^MNXM\d+$")

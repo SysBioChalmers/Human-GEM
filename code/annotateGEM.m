@@ -78,6 +78,7 @@ id2miriam = {%reactions
              'rxnREACTOMEID'    'reactome'
              'rxnRecon3DID'     'vmhreaction'
              'rxnMetaNetXID'    'metanetx.reaction'
+             'rxnSeedID'        'seed.reaction'
              'rxnTCDBID'        'tcdb'
              'rxnRheaID'        'rhea'
              'rxnRheaMasterID'  'rhea'
