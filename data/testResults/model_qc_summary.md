@@ -19,7 +19,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Unused metabolites](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
 | [Unused genes](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/README.md#unused-genes) | 0 | 0 | :white_check_mark: |
 | [Malformed cross-references](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
-| [Cross-refs inconsistent across compartments](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/README.md#cross-refs-inconsistent-across-compartments) | [3](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/qc_annotation_issues.csv) | 0 | :warning: |
+| [Cross-refs inconsistent across compartments](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/README.md#cross-refs-inconsistent-across-compartments) | [2](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/qc_annotation_issues.csv) | -1 | :sparkles: |
 | [Reactions flagged by MACAW dead-end test](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/README.md#reactions-flagged-by-macaw-dead-end-test) | [1141](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/macaw_results.tsv) | 0 | :warning: |
 | [Reactions flagged as MACAW duplicates](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/README.md#reactions-flagged-as-macaw-duplicates) | [377](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/macaw_results.tsv) | 0 | :warning: |
 | [Mass-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/README.md#mass-imbalanced-reactions) | [87](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/balance_results.csv) | 0 | :warning: |
@@ -38,12 +38,12 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 
 ### [MEMOTE](https://github.com/SysBioChalmers/Human-GEM/blob/feat/reaction-xrefs/data/testResults/README.md#memote)
 
-**Total score: 63.5%** (core subset) &nbsp; 0
+**Total score: 63.6%** (core subset) &nbsp; +0.1 :white_check_mark:
 
 | Section | Score | &Delta; vs base |
 | --- | ---: | ---: |
 | consistency | 42.4% | 0 |
-| annotation_met | 77.0% | 0 |
+| annotation_met | 77.5% | +0.5 :white_check_mark: |
 | annotation_rxn | 73.2% | +0.5 :white_check_mark: |
 | annotation_gene | 46.7% | 0 |
 | annotation_sbo | 81.7% | 0 |
@@ -58,7 +58,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | Consistency | Metabolite Connectivity | 0.0% |
 | Consistency | Unbounded Flux In Default Medium | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 0.0% |
-| Annotation - Metabolites | Metabolite Annotations Per Database | 55.4% |
+| Annotation - Metabolites | Metabolite Annotations Per Database | 53.4% |
 | Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 36.7% |
 | Annotation - Metabolites | Uniform Metabolite Identifier Namespace | 0.0% |
 | Annotation - Reactions | Presence of Reaction Annotation | 0.0% |
