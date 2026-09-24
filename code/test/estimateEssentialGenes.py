@@ -23,7 +23,9 @@ Mapping to raven-toolbox:
   * ``ftINIT(..., '1+1', removeGenes=true, useScoresForTasks=true)`` ->
     :func:`raven_toolbox.init.ftinit` with ``series='1+1'``, ``gene_scores`` supplied
     (prunes negative-scoring genes, == ``removeGenes``) and ``fill_gaps=True`` with
-    score-weighted task gap-filling (== ``useScoresForTasks``).
+    score-weighted task gap-filling (== ``useScoresForTasks``). ``resolve_ties`` and
+    ``prove_abs_gap`` are RAVEN-less extras that pin which of the equally-scoring
+    optima is returned; both are on (see RESOLVE_TIES / PROVE_ABS_GAP below).
   * ``checkTasksGenes(..., getEssential=true)`` -> ``find_task_essential_genes``.
 
 Gene identifiers
@@ -79,6 +81,26 @@ EXPRESSION_THRESHOLD = 1.0
 BIG_M = 100.0
 MIP_GAP_ABS = 10.0
 TIME_LIMIT = 1800.0
+
+# The extraction MILP is degenerate: many reaction sets score identically, so which one
+# is returned is otherwise left to the solver, and the essential genes predicted from it
+# move with it. Neither setting makes the extracted model biologically more accurate,
+# since the optima they choose among are equally consistent with the expression data;
+# they pin which optimum comes back, so a re-run reports the same genes.
+#
+# resolve_ties adds a lexicographic phase after each step's solve that takes the
+# sparsest, then lowest-id, optimum. Without it, the same prepData loaded onto Gurobi by
+# two different routes gave context models 4-9 reactions apart per Hart2015 cell line;
+# with it, the two were identical. It raises the five cell lines' summed build time from
+# about 92 to 124 min (HCT116 7 -> 22 min, RPE1 38 -> 59 min). A tie-break phase that
+# reaches its time limit adopts an unproven incumbent (GBM step 2 and RPE1 step 1 do), so
+# for those steps the result is pinned for a given CPU but not proven unique.
+#
+# PROVE_ABS_GAP replaces RAVEN's relative-gap escalation with one solve per step proven
+# to this absolute gap, which returns the optimum instead of an incumbent 2.0-4.0 below
+# it and bounds each step at a single TIME_LIMIT.
+RESOLVE_TIES = True
+PROVE_ABS_GAP = 1.0
 
 # prepHumanModelForftINIT: reactions that can "always be on" and are ignored while
 # scoring (protein creation/degradation + metabolite-pooling reactions). The commented
@@ -330,6 +352,7 @@ def _build_context_model(
         context = ftinit(
             prep, rxn_scores, gene_scores=gene_scores, series="1+1", fill_gaps=True,
             big_m=big_m, mip_gap_abs=mip_gap_abs, time_limit=time_limit,
+            resolve_ties=RESOLVE_TIES, prove_abs_gap=PROVE_ABS_GAP, verbose=True,
         )
     finally:
         _set_solver_verbosity(False)  # quiet again for the copy-heavy gene-essentiality scan

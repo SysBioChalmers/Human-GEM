@@ -13,23 +13,146 @@ on:
       pr:
         description: "Pull-request number to comment on (set by the /run command)"
         default: ""
+      base:
+        description: "Pull request's base branch, to scope the essentiality diff to this PR's own model changes (set by the /run command)"
+        default: ""
+
+env:
+  # Stream Python (and raven-toolbox) stdout/stderr live into the Actions log
+  # instead of block-buffering, so long steps show progress as it happens.
+  PYTHONUNBUFFERED: "1"
 
 jobs:
-  gene-essentiality:
+  diagnose:
+    if: ${{ inputs.diagnose }}
     runs-on: ubuntu-latest
-    timeout-minutes: 360
-    env:
-      # Stream Python (and raven-toolbox) stdout/stderr live into the Actions log
-      # instead of block-buffering, so long steps show progress as it happens.
-      PYTHONUNBUFFERED: "1"
-
+    timeout-minutes: 50
     steps:
-      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
-      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
         with:
-          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+          else
+            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
+                 "visible to this repository. The gene-essentiality workflow needs a full"\
+                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
+                 "the size-limited license bundled with the pip gurobipy package is not"\
+                 "sufficient."
+            exit 1
+          fi
+
+      - name: Run Step-1a diagnostic
+        run: |
+          timeout 2400 python code/test/diagnoseTaskEssential.py \
+            || echo "::warning::diagnostic ended (wall-clock cap or error)"
+
+  # Step 1 (prepHumanModelForftINIT + prepINITModel) is expression-independent, so its
+  # result is identical for every cell line; building it once here and handing it to
+  # every `build` shard as an artifact means the 5 shards below share it instead of each
+  # repeating the same tens-of-minutes computation for itself.
+  prep:
+    if: ${{ !inputs.diagnose }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+            echo "Gurobi license configured from the Gurobi_Eduard secret."
+          else
+            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
+                 "visible to this repository. The gene-essentiality workflow needs a full"\
+                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
+                 "the size-limited license bundled with the pip gurobipy package is not"\
+                 "sufficient."
+            exit 1
+          fi
+
+      - name: Build the shared prepData once
+        run: |
+          python code/test/gradedEssentiality.py \
+            --prep-only --prep-cache "$RUNNER_TEMP/prep-data.pkl"
+
+      - name: Upload the shared prepData
+        uses: actions/upload-artifact@v7
+        with:
+          name: prep-data
+          path: ${{ runner.temp }}/prep-data.pkl
+          retention-days: 1
+
+  # One shard per Hart2015 cell line (data/datasets/Hart2015_RNAseq.txt has 5:
+  # DLD1, GBM, HCT116, HELA, RPE1); update SHARD_COUNT below and this list together
+  # if that file's cell-line columns change. Building a cell line is independent of
+  # every other (each only ever touches its own checkpoint file), so sharding by cell
+  # line turns the hours-long sequential loop into one wait per shard instead of a sum
+  # over all of them.
+  #
+  # Building a shard's context model and scanning it for task-essential genes each hold
+  # their own Gurobi session for the whole step, and the Gurobi_Eduard WLS license's
+  # session baseline is 2. Splitting into build-model and build-test (a barrier: every
+  # shard finishes building, and so closes its Gurobi session, before any shard starts
+  # scanning) was meant to keep the two 5-way-parallel bursts from overlapping into a
+  # sustained over-baseline stretch the way a single combined step would.
+  #
+  # That assumed each burst was short. It isn't: a cell line's ftINIT build now commonly
+  # takes 1-2+ hours (genome-scale MILP solve time on shared ubuntu-latest hardware
+  # varies far more than TIME_LIMIT alone suggests -- see estimateEssentialGenes.py).
+  # Five shards holding a session each for that long is a sustained 5-session stretch far
+  # past the baseline of 2, and on PR #1069 (2026-09-20/21) this reliably killed some
+  # shards outright ("Overage for too long") and, once a build-model shard crashed
+  # mid-solve rather than releasing its session cleanly, poisoned other shards' sessions
+  # for the rest of the run too ("Maximum number of failing server authorization attempts
+  # reached"). max-parallel below caps build-model at 2 concurrent shards -- matching the
+  # WLS baseline -- so at most 2 sessions are ever open at once, independent of how long
+  # any individual shard's solve takes.
+  build-model:
+    needs: prep
+    if: ${{ !inputs.diagnose }}
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    env:
+      SHARD_COUNT: 5
+    runs-on: ubuntu-latest
+    # A cell line's ftINIT build is two extraction steps, each one solve proven to
+    # PROVE_ABS_GAP and capped at TIME_LIMIT (30 min) followed by two tie-break phases
+    # capped at TIME_LIMIT/2 each (RESOLVE_TIES), plus task gap-filling: at most about
+    # 2 h, and 5-60 min in practice (see estimateEssentialGenes.py).
+    timeout-minutes: 240
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
 
       - name: Set up Python 3
         uses: actions/setup-python@v6
@@ -60,18 +183,218 @@ jobs:
             exit 1
           fi
 
-      - name: Run gene essentiality
-        id: essentiality
-        env:
-          DIAGNOSE: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnose }}
+      - name: Download the shared prepData
+        uses: actions/download-artifact@v8
+        with:
+          name: prep-data
+          path: ${{ runner.temp }}
+
+      - name: Start resource monitor
         run: |
-          if [ "$DIAGNOSE" = "true" ]; then
-            echo "Running the bounded Step-1a per-task diagnostic."
-            timeout 2400 python code/test/diagnoseTaskEssential.py \
-              || echo "::warning::diagnostic ended (wall-clock cap or error)"
-            exit 0
+          {
+            while true; do
+              echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
+              echo "nproc: $(nproc)"
+              free -h
+              echo "--- top CPU processes ---"
+              ps -eo pid,ppid,%cpu,%mem,etime,cmd --sort=-%cpu | head -20
+              echo
+              sleep 60
+            done
+          } > "$RUNNER_TEMP/resource-monitor.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/resource-monitor.pid"
+
+      - name: Build this shard's context models
+        env:
+          # Report each ftINIT solve's status and achieved gap as it finishes, since the
+          # solver's own log is silenced for these models.
+          FTINIT_DEBUG: "1"
+        run: |
+          python code/test/gradedEssentiality.py \
+            --build-models-only --model-dir "$RUNNER_TEMP/context-models" \
+            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
+            --prep-cache "$RUNNER_TEMP/prep-data.pkl"
+
+      # Runs even if the build step above times out or fails, so a stuck shard still
+      # tells us what its CPU/memory/process picture looked like the whole way through.
+      - name: Stop resource monitor
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/resource-monitor.pid" ]; then
+            kill "$(cat "$RUNNER_TEMP/resource-monitor.pid")" 2>/dev/null || true
           fi
-          python code/test/geneEssentiality.py
+
+      - name: Upload this shard's resource monitor log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: build-model-resource-monitor-${{ matrix.shard }}
+          path: ${{ runner.temp }}/resource-monitor.log
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Upload this shard's context models
+        uses: actions/upload-artifact@v7
+        with:
+          name: context-models-${{ matrix.shard }}
+          path: ${{ runner.temp }}/context-models
+          retention-days: 1
+
+  build-test:
+    needs: build-model
+    # !cancelled() rather than the implicit success(): a bare `if` still ANDs an overall
+    # success() onto `needs`, so one failed build-model shard (e.g. a cell line whose
+    # ftINIT run outgrows the timeout) would skip build-test for every shard, including
+    # the ones whose context model built fine. The shard with no context-models-N
+    # artifact fails cleanly at "Download this shard's context models" below; fail-fast:
+    # false (as on build-model) keeps that from cancelling its siblings.
+    if: ${{ !inputs.diagnose && !cancelled() && needs.build-model.result != 'skipped' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    env:
+      SHARD_COUNT: 5
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+            echo "Gurobi license configured from the Gurobi_Eduard secret."
+          else
+            echo "::error::The Gurobi license secret (Gurobi_Eduard) is not set or not"\
+                 "visible to this repository. The gene-essentiality workflow needs a full"\
+                 "Gurobi license (WLS or named-user) to solve the genome-scale tINIT MILP;"\
+                 "the size-limited license bundled with the pip gurobipy package is not"\
+                 "sufficient."
+            exit 1
+          fi
+
+      - name: Download the shared prepData
+        uses: actions/download-artifact@v8
+        with:
+          name: prep-data
+          path: ${{ runner.temp }}
+
+      - name: Download this shard's context models
+        uses: actions/download-artifact@v8
+        with:
+          name: context-models-${{ matrix.shard }}
+          path: ${{ runner.temp }}/context-models
+
+      - name: Start resource monitor
+        run: |
+          {
+            while true; do
+              echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
+              echo "nproc: $(nproc)"
+              free -h
+              echo "--- top CPU processes ---"
+              ps -eo pid,ppid,%cpu,%mem,etime,cmd --sort=-%cpu | head -20
+              echo
+              sleep 60
+            done
+          } > "$RUNNER_TEMP/resource-monitor.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/resource-monitor.pid"
+
+      - name: Scan this shard's cell lines for task-essential genes
+        run: |
+          # --processes 1: each additional worker process opens its own Gurobi
+          # session (see taskEssentialGenes._scan), and this step already runs
+          # five shards at once, each holding one session against the
+          # Gurobi_Eduard WLS license's baseline of 2.
+          python code/test/gradedEssentiality.py \
+            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" \
+            --model-dir "$RUNNER_TEMP/context-models" \
+            --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
+            --prep-cache "$RUNNER_TEMP/prep-data.pkl" --processes 1
+
+      # Runs even if the scan step above times out or fails, so a stuck shard still
+      # tells us what its CPU/memory/process picture looked like the whole way through.
+      - name: Stop resource monitor
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/resource-monitor.pid" ]; then
+            kill "$(cat "$RUNNER_TEMP/resource-monitor.pid")" 2>/dev/null || true
+          fi
+
+      - name: Upload this shard's resource monitor log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: build-test-resource-monitor-${{ matrix.shard }}
+          path: ${{ runner.temp }}/resource-monitor.log
+          retention-days: 1
+          if-no-files-found: warn
+
+      - name: Upload this shard's checkpoints
+        uses: actions/upload-artifact@v7
+        with:
+          name: graded-checkpoints-${{ matrix.shard }}
+          path: ${{ runner.temp }}/graded-checkpoints
+          retention-days: 1
+
+  aggregate:
+    needs: build-test
+    if: ${{ !cancelled() && needs.build-test.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    # 20 min was enough before the scoped-diff step; that step loads the full model
+    # twice with raven-toolbox (~1-2 min each on this hardware), so 35 min leaves
+    # comfortable headroom instead of trimming it close.
+    timeout-minutes: 35
+    steps:
+      # CI_PUSH_TOKEN lets the results push reach a protected branch (e.g. a run
+      # dispatched against develop); GITHUB_TOKEN is the fallback. See model-qc.yml.
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.CI_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r code/test/requirements-gurobi.txt
+
+      - name: Set up Gurobi license
+        env:
+          GUROBI_LICENSE: ${{ secrets.Gurobi_Eduard }}
+        run: |
+          if [ -n "$GUROBI_LICENSE" ]; then
+            echo "$GUROBI_LICENSE" > "$HOME/gurobi.lic"
+            echo "GRB_LICENSE_FILE=$HOME/gurobi.lic" >> "$GITHUB_ENV"
+          fi
+
+      - name: Download every shard's checkpoints
+        uses: actions/download-artifact@v8
+        with:
+          pattern: graded-checkpoints-*
+          path: ${{ runner.temp }}/graded-checkpoints
+          merge-multiple: true
+
+      - name: Combine cell lines into the final report
+        id: essentiality
+        run: |
+          python code/test/gradedEssentiality.py \
+            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" --aggregate-only
           cat data/testResults/gene-essential_summary.md
           # Pass the Markdown summary through as a multiline step output so it
           # renders as a table in the PR comment (no <br> substitution needed).
@@ -80,6 +403,55 @@ jobs:
             cat data/testResults/gene-essential_summary.md
             echo "GENEESS_EOF"
           } >> "$GITHUB_OUTPUT"
+
+      # Scopes the run to genes this pull request's own model changes could plausibly
+      # affect (its changed reactions, plus one metabolite hop out), diffing the
+      # already-committed gene-essential.csv on both sides -- no extra ftINIT/Gurobi
+      # solve. The global summary above is diluted by ftINIT's run-to-run noise across
+      # ~3000 genes unrelated to this PR; this is the part actually worth reading in
+      # review. Skipped for a manual (non-PR) dispatch, since there is no base to diff.
+      # The per-gene detail CSV is written straight to data/testResults/ so the
+      # auto-commit step below picks it up (same treatment as gene-essential.csv
+      # itself) -- it is a committed, permanently browsable file, not a 30-day
+      # workflow artifact, matching the "full detail lives in the file, not the
+      # comment" split the condensed summary above links to.
+      - name: Scope essentiality changes to this pull request's model diff
+        id: diff
+        if: inputs.pr != '' && inputs.base != ''
+        env:
+          BASE_REF: ${{ inputs.base }}
+          CSV_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential-diff.csv
+          SUMMARY_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential_summary.md
+        run: |
+          git fetch origin "refs/heads/$BASE_REF:refs/remotes/origin/$BASE_REF" --depth=1
+          mkdir -p "$RUNNER_TEMP/base"
+          git show "origin/$BASE_REF:model/Human-GEM.yml" > "$RUNNER_TEMP/base/Human-GEM.yml"
+          if git show "origin/$BASE_REF:data/testResults/gene-essential.csv" \
+              > "$RUNNER_TEMP/base/gene-essential.csv" 2>/dev/null; then
+            python code/test/diffGeneEssentiality.py \
+              --base-model "$RUNNER_TEMP/base/Human-GEM.yml" \
+              --base-matrix "$RUNNER_TEMP/base/gene-essential.csv" \
+              --base-label "$BASE_REF" \
+              --csv-url "$CSV_URL" \
+              --summary-url "$SUMMARY_URL" \
+              --out-summary "$RUNNER_TEMP/gene-essential-diff.md" \
+              --out-detail "$RUNNER_TEMP/gene-essential-diff-detail.md" \
+              --out-csv data/testResults/gene-essential-diff.csv
+            {
+              echo "results<<GENEESS_DIFF_EOF"
+              cat "$RUNNER_TEMP/gene-essential-diff.md"
+              echo "GENEESS_DIFF_EOF"
+            } >> "$GITHUB_OUTPUT"
+            # The condensed comment (above) links here for the per-gene names and what
+            # changed for them, instead of posting them in the comment itself.
+            {
+              echo ""
+              cat "$RUNNER_TEMP/gene-essential-diff-detail.md"
+            } >> data/testResults/gene-essential_summary.md
+          else
+            echo "::warning::$BASE_REF has no data/testResults/gene-essential.csv yet"\
+                 "(gene essentiality has never been run there); skipping the scoped diff."
+          fi
 
       # This workflow is dispatched (by /run gene-essentiality), so it has no
       # pull_request context; the PR number arrives as the `pr` input instead.
@@ -93,9 +465,22 @@ jobs:
         env:
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
-          git stash
+          # --include-untracked: a result file that is new in this run is untracked
+          # here, but is already tracked at the branch tip once any earlier run has
+          # committed it, and plain `git stash` leaves untracked files in place, so
+          # the checkout below then refuses to overwrite them and the job dies after
+          # the run has already finished.
+          git stash --include-untracked
           git fetch
           git checkout $BRANCH_NAME
+          # `git fetch` only moves the origin/$BRANCH_NAME ref, not this local branch,
+          # so without this reset the branch stays at whatever commit the job started
+          # from; if anything else pushed to it while the (hours-long) build ran, the
+          # auto-commit step below still bases its commit on that stale tip and its
+          # push is rejected as non-fast-forward. The working tree is clean here (the
+          # result-file changes are in the stash, popped back on next), so resetting
+          # to origin's tip is exactly the missing "update".
+          git reset --hard origin/$BRANCH_NAME
           if git stash list | grep -q 'stash@{'; then
             git stash pop
           fi
@@ -121,18 +506,40 @@ jobs:
         uses: actions/github-script@v9
         env:
           TEST_RESULTS: ${{ steps.essentiality.outputs.results }}
+          DIFF_RESULTS: ${{ steps.diff.outputs.results }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          CSV_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential.csv
           ISSUE_NUMBER: ${{ inputs.pr }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const marker = '<!-- GENE-ESSENTIALITY-COMMENT -->';
-            const body = `${marker}\n`
-              + `Gene essentiality was run on this pull request via [GH Actions](${process.env.RUN_URL}). `
-              + `Summary:\n\n`
-              + `${process.env.TEST_RESULTS}\n\n`
-              + `The full per-gene essentiality matrix is committed to \`data/testResults/gene-essential.csv\`.\n\n`
-              + `> _Note: in the case of multiple test runs, this post is edited._`;
+            const csvUrl = process.env.CSV_URL;
+            let body = `${marker}\n`
+              + `Gene essentiality was run on this pull request via [GH Actions](${process.env.RUN_URL}).\n\n`;
+            if (process.env.DIFF_RESULTS) {
+              // Scoped to genes this PR's own model changes could plausibly affect (see
+              // diffGeneEssentiality.py) -- this is what's worth reading in review, so it
+              // replaces the full ~3000-gene table rather than sitting alongside it (that
+              // table is dominated by ftINIT's run-to-run noise in genes this PR never
+              // touched and says nothing about whether this PR's own change was good or
+              // bad). DIFF_RESULTS already links gene-essential_summary.md for the named
+              // per-gene detail; this just adds where the unscoped, every-gene matrix is.
+              body += `${process.env.DIFF_RESULTS}\n\n`
+                + `The unscoped, every-gene matrix behind the table above is committed to `
+                + `[gene-essential.csv](${csvUrl}).\n\n`;
+            } else {
+              // No base to diff against (a manual, non-PR dispatch, or the target branch has
+              // no committed gene-essential.csv yet) -- fall back to the full, unscoped table.
+              body += `Essentiality for a *viability* task (\`GR\` growth, \`ER\` energy/redox) is reported `
+                + `separately from essentiality for a *capability* task (\`SU\`, \`BS\`, \`IC\`), and the `
+                + `biomass growth ratio gives a threshold-free score (see #1076). Summary:\n\n`
+                + `${process.env.TEST_RESULTS}\n\n`
+                + `The full per-gene matrix is committed to [gene-essential.csv](${csvUrl}), holding `
+                + `for each cell line the confusion class, the task categories the knockout breaks and the `
+                + `biomass growth ratio.\n\n`;
+            }
+            body += `> _Note: in the case of multiple test runs, this post is edited._`;
             const { owner, repo } = context.repo;
             const issue_number = Number(process.env.ISSUE_NUMBER);
             const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });

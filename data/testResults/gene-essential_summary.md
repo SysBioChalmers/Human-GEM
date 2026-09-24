@@ -1,10 +1,23 @@
-### Gene essentiality vs Hart 2015 fitness genes
+### Graded gene essentiality vs Hart 2015 (task-scope analysis)
 
-| cellLine | TP | TN | FP | FN | accuracy | sensitivity | specificity | F1 | MCC |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 125 | 2172 | 124 | 224 | 0.8684 | 0.3582 | 0.946 | 0.4181 | 0.3525 |
-| GBM | 111 | 2145 | 138 | 251 | 0.8529 | 0.3066 | 0.9396 | 0.3633 | 0.2897 |
-| HCT116 | 141 | 2189 | 130 | 246 | 0.861 | 0.3643 | 0.9439 | 0.4286 | 0.3595 |
-| HELA | 114 | 2233 | 164 | 197 | 0.8667 | 0.3666 | 0.9316 | 0.3871 | 0.3132 |
-| RPE1 | 86 | 2183 | 162 | 214 | 0.8578 | 0.2867 | 0.9309 | 0.3139 | 0.2367 |
-| all | 59 | 2355 | 159 | 69 | 0.9137 | 0.4609 | 0.9368 | 0.341 | 0.3103 |
+| cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| DLD1 | 0.3613 | 134 | 0.3764 | 101 | 0.6712 | 0.3265 | 0.1684 | 45 |
+| GBM | 0.2893 | 168 | 0.33 | 122 | 0.6518 | 0.2888 | 0.1624 | 53 |
+| HCT116 | 0.3776 | 131 | 0.3775 | 104 | 0.6783 | 0.3448 | 0.1806 | 41 |
+| HELA | 0.325 | 166 | 0.3216 | 134 | 0.6685 | 0.2798 | 0.1469 | 45 |
+| RPE1 | 0.2528 | 183 | 0.3054 | 122 | 0.6599 | 0.2625 | 0.1357 | 70 |
+| all |  |  |  |  | 0.6663 | 0.3009 | 0.1591 |  |
+
+### Gene essentiality: effect of this change (vs `develop`)
+
+Checked **4** gene(s) directly affected plus **441** more that share a metabolite with one of them.
+
+**Growth effect changed** (vs Hart 2015):
+- PRDX6: 3/5 lines, knockout now blocks growth -- :x: wrong
+
+**Likely noise** (26 gene(s), <3/5 lines): AKR1A1, ALDH4A1, ASRGL1, BCKDHA, BCKDHB, CA5B, CLYBL, CYP27A1, DCK, DUT, ETFA, ETFB, ETFDH, FPGS, GOT2, HSD3B1, LDHB, MLYCD, MPC1, MPC2, NAGS, PC, SHMT2, SLC16A1, SLC25A1, SLC25A2.
+
+**No change:** 418 gene(s).
+
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sqor-chdh-prodh2-ubiquinone/data/testResults/gene-essential-diff.csv).
