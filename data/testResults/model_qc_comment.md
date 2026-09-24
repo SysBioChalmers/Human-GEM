@@ -6,15 +6,15 @@
 | --- | --- |
 | Model &amp; network checks (18) | :warning: **6** pre-existing |
 | Model file &amp; metabolic tasks (5) | :white_check_mark: all pass |
-| MEMOTE | :white_check_mark: **63.2%** |
-| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sam-synthesis-gpr/data/testResults/model_qc_summary.md) |
+| MEMOTE | :sparkles: **63.5%** |
+| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/export-tsv-inchi/data/testResults/model_qc_summary.md) |
 
 **Pre-existing:**
-- Cross-refs inconsistent across compartments: [**3**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sam-synthesis-gpr/data/testResults/qc_annotation_issues.csv)
-- Reactions flagged by MACAW dead-end test: [**1141**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sam-synthesis-gpr/data/testResults/macaw_results.tsv)
-- Reactions flagged as MACAW duplicates: [**377**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sam-synthesis-gpr/data/testResults/macaw_results.tsv)
-- Mass-imbalanced reactions: [**87**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sam-synthesis-gpr/data/testResults/balance_results.csv)
-- Charge-imbalanced reactions: [**234**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sam-synthesis-gpr/data/testResults/balance_results.csv)
-- Structure vs formula/charge inconsistencies: [**397**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sam-synthesis-gpr/data/testResults/qc_structure_consistency.csv)
+- Cross-refs inconsistent across compartments: [**3**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/export-tsv-inchi/data/testResults/qc_annotation_issues.csv)
+- Reactions flagged by MACAW dead-end test: [**1141**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/export-tsv-inchi/data/testResults/macaw_results.tsv)
+- Reactions flagged as MACAW duplicates: [**377**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/export-tsv-inchi/data/testResults/macaw_results.tsv)
+- Mass-imbalanced reactions: [**87**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/export-tsv-inchi/data/testResults/balance_results.csv)
+- Charge-imbalanced reactions: [**234**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/export-tsv-inchi/data/testResults/balance_results.csv)
+- Structure vs formula/charge inconsistencies: [**397**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/export-tsv-inchi/data/testResults/qc_structure_consistency.csv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
