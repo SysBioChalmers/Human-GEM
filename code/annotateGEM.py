@@ -3,10 +3,12 @@
 Python/raven-toolbox port of ``code/annotateGEM.m``.
 
 The YAML model stores only the inline fields (``eccodes``, ``metFrom``,
-``smiles``); the full set of external identifiers lives in the annotation
-tables ``model/reactions.tsv``, ``model/metabolites.tsv`` and
-``model/genes.tsv``. This module reads those tables and writes the identifiers
-onto each cobra entity's ``annotation`` dict (namespace -> list of ids). SBO terms
+``smiles``); the full set of external identifiers, and each metabolite's InChI,
+live in the annotation tables ``model/reactions.tsv``, ``model/metabolites.tsv``
+and ``model/genes.tsv``. This module reads those tables and writes the identifiers
+onto each cobra entity's ``annotation`` dict (namespace -> list of ids). A
+metabolite's InChI (``metInChI``) goes to ``notes['inchis']``, which fills the
+Excel InChI column, and to ``annotation['inchi']`` for the SBML. SBO terms
 for metabolites and reactions come from raven_toolbox's canonical ``add_sbo_terms``
 (classifying exchange/demand/sink, transport, biomass, simple chemical, ...); genes,
 which that helper does not cover, get SBO:0000243 here. The exported SBML / Excel /
@@ -136,7 +138,12 @@ def annotate_gem(
         mets = _read_tsv(model_dir / "metabolites.tsv").set_index("mets")
         for met in model.metabolites:
             if met.id in mets.index:
-                _apply_row(met.annotation, mets.loc[met.id], _MET_ID2MIRIAM)
+                row = mets.loc[met.id]
+                _apply_row(met.annotation, row, _MET_ID2MIRIAM)
+                inchi = str(row.get("metInChI", "")).strip()
+                if inchi:
+                    met.notes["inchis"] = inchi
+                    met.annotation["inchi"] = [inchi]
 
     if "rxn" in types:
         rxns = _read_tsv(model_dir / "reactions.tsv").set_index("rxns")
@@ -172,9 +179,11 @@ def _main() -> int:
     n_rxn = sum(1 for r in model.reactions if any(k != "sbo" for k in r.annotation))
     n_met = sum(1 for m in model.metabolites if m.annotation)
     n_gene = sum(1 for g in model.genes if g.annotation)
+    n_inchi = sum(1 for m in model.metabolites if m.notes.get("inchis"))
     print(f"annotated reactions (cross-refs): {n_rxn}/{len(model.reactions)}")
     print(f"annotated metabolites:            {n_met}/{len(model.metabolites)}")
     print(f"annotated genes:                  {n_gene}/{len(model.genes)}")
+    print(f"metabolites with an InChI:        {n_inchi}/{len(model.metabolites)}")
     return 0
 
 
