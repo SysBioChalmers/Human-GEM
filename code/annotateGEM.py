@@ -36,6 +36,7 @@ _RXN_ID2MIRIAM = {
     "rxnREACTOMEID": "reactome",
     "rxnRecon3DID": "vmhreaction",
     "rxnMetaNetXID": "metanetx.reaction",
+    "rxnSeedID": "seed.reaction",
     "rxnTCDBID": "tcdb",
     "rxnRheaID": "rhea",
     "rxnRheaMasterID": "rhea",
