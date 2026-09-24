@@ -5,14 +5,14 @@
 Mode: core subset.
 Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metabolites, test_inconsistent_min_stoichiometry, test_detect_energy_generating_cycles, test_find_stoichiometrically_balanced_cycles, test_blocked_reactions, test_find_reactions_unbounded_flux_default_condition, test_find_metabolites_not_produced_with_open_bounds, test_find_metabolites_not_consumed_with_open_bounds, test_number_independent_conservation_relations, test_matrix_rank, test_degrees_of_freedom.
 
-**Total score: 63.2%**
+**Total score: 63.5%**
 
 ### Section scores
 
 | Section | Score |
 | --- | ---: |
 | consistency | 42.4% |
-| annotation_met | 73.0% |
+| annotation_met | 77.0% |
 | annotation_rxn | 72.7% |
 | annotation_gene | 46.7% |
 | annotation_sbo | 81.7% |
@@ -27,8 +27,8 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | Consistency | Metabolite Connectivity | 0.0% |
 | Consistency | Unbounded Flux In Default Medium | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 0.0% |
-| Annotation - Metabolites | Metabolite Annotations Per Database | 62.3% |
-| Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 45.8% |
+| Annotation - Metabolites | Metabolite Annotations Per Database | 55.4% |
+| Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 36.7% |
 | Annotation - Metabolites | Uniform Metabolite Identifier Namespace | 0.0% |
 | Annotation - Reactions | Presence of Reaction Annotation | 0.0% |
 | Annotation - Reactions | Reaction Annotations Per Database | 75.9% |
