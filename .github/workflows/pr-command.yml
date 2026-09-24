@@ -43,9 +43,10 @@ jobs:
               --body ":warning: \`/run gene-essentiality\` only works for branches in this repository, not forks."
             exit 0
           fi
-          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref" -f pr="$PR" -f base="$base"
+          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref" -f pr="$PR" -f base="$base" -f comment="$COMMENT_ID"
           # Edit the triggering comment itself rather than posting a separate new one,
-          # so the thread shows the command and its acknowledgement together.
+          # so the thread shows the command and its acknowledgement together; the
+          # finished run then overwrites this same comment with the results.
           notice=$(printf '%s\n\n:dna: Started **gene-essentiality** on `%s` (this takes a few hours). Track it in the [Actions tab](%s/%s/actions/workflows/gene-essentiality.yml).' \
             "$COMMENT_BODY" "$ref" "$GITHUB_SERVER_URL" "$REPO")
           gh api "repos/$REPO/issues/comments/$COMMENT_ID" -X PATCH -f body="$notice" --silent
