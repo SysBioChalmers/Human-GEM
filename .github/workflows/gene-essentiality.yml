@@ -16,6 +16,9 @@ on:
       base:
         description: "Pull request's base branch, to scope the essentiality diff to this PR's own model changes (set by the /run command)"
         default: ""
+      comment:
+        description: "ID of the /run comment to overwrite with the results (set by the /run command)"
+        default: ""
 
 env:
   # Stream Python (and raven-toolbox) stdout/stderr live into the Actions log
@@ -510,6 +513,7 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           CSV_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential.csv
           ISSUE_NUMBER: ${{ inputs.pr }}
+          COMMENT_ID: ${{ inputs.comment }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -543,9 +547,13 @@ jobs:
             const { owner, repo } = context.repo;
             const issue_number = Number(process.env.ISSUE_NUMBER);
             const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+            // Prefer a previous results comment (re-runs), else overwrite the "/run"
+            // comment that started this run (its "Started ..." notice), else post anew.
             const existing = comments.find(c => c.body && c.body.includes(marker));
-            if (existing) {
-              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            const comment_id = existing ? existing.id
+              : (process.env.COMMENT_ID ? Number(process.env.COMMENT_ID) : null);
+            if (comment_id) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id, body });
             } else {
               await github.rest.issues.createComment({ owner, repo, issue_number, body });
             }
