@@ -8,3 +8,14 @@
 | HELA | 0.3283 | 166 | 0.3251 | 134 | 0.6706 | 0.2823 | 0.147 | 45 |
 | RPE1 | 0.2566 | 183 | 0.3095 | 122 | 0.6623 | 0.2653 | 0.1358 | 70 |
 | all |  |  |  |  | 0.6674 | 0.3022 | 0.1592 |  |
+
+### Gene essentiality: effect of this change (vs `develop`)
+
+Checked **3** gene(s) directly affected plus **1463** more that share a metabolite with one of them.
+
+**Growth effect changed** (vs Hart 2015):
+- MAT2A: 4/5 lines, knockout now blocks growth -- :warning: mixed across lines
+
+**No change:** 1465 gene(s).
+
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sam-synthesis-gpr/data/testResults/gene-essential-diff.csv).
