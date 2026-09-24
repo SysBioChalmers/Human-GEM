@@ -24,9 +24,9 @@ own files. The pull request in each row is the one whose run last wrote those fi
 | `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1082** (model QC checks) |
 | `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1082** (model QC checks) |
 | `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1082** (model QC checks) |
-| `macaw_results.csv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1082** (MACAW and balance) |
+| `macaw_results.tsv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1082** (MACAW and balance) |
 | `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1082** (MEMOTE) |
-| `gene-essential.csv`, `gene-essential_summary.md` | `gradedEssentiality.py` via `/run gene-essentiality` | **PR #1082** (gene essentiality) |
+| `gene-essential.csv`, `gene-essential_summary.md` | `gradedEssentiality.py` via `/run gene-essentiality` | **PR #1081** (gene essentiality) |
 
 ## 2. What each check means
 
@@ -116,8 +116,10 @@ and charge balance report, and the structure-vs-formula check.
 #### Reactions flagged by MACAW dead-end test
 Reactions prevented from carrying steady-state flux because one of their metabolites
 can only ever be produced, or only consumed, by every reaction it takes part in (the
-simplest case being a metabolite in a single reaction). Also flags reversible
-reactions that can therefore run in only one direction.
+simplest case being a metabolite in a single reaction). Reversible reactions that
+MACAW limits to one direction (`only when going forwards` or `only when going
+backwards`) can still carry flux, so they are neither counted nor listed on their own
+in `macaw_results.tsv`.
 
 #### Reactions flagged as MACAW duplicates
 Sets of reactions that may be duplicates because they involve the same metabolites
@@ -211,7 +213,7 @@ threshold-free AUROC/AUPRC of the growth ratio against the Hart Bayes Factors. S
 | `qc_unused_entities.csv` | Metabolites and genes used by no reaction: `kind, id`. |
 | `qc_annotation_issues.csv` | Malformed and cross-compartment-inconsistent cross-references. |
 | `qc_structure_consistency.csv` | Metabolites whose structure disagrees with the model formula/charge. |
-| `macaw_results.csv` | Full MACAW output (dead-end and duplicate tests) per reaction. |
+| `macaw_results.tsv` | MACAW dead-end and duplicate findings, one row per reaction that has a finding (tab-separated). |
 | `balance_results.csv` | Mass- and charge-imbalanced reactions. |
 | `memote_score.md` | MEMOTE scores in two sections, core subset and full suite (see the MEMOTE explanation above). |
 | `gene-essential.csv` | Per-gene matrix across the five cell-line models: per cell line the confusion class (marked `FP->TN` where the viability scoping changes the call), the task categories the knockout breaks, and the biomass growth ratio. |

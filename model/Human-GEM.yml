@@ -70430,22 +70430,6 @@
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08610"
-      - name: "L-proline:(acceptor) oxidoreductase"
-      - metabolites: !!omap
-          - MAM00559c: 1
-          - MAM01802c: -1
-          - MAM01803c: 1
-          - MAM02039c: 1
-          - MAM02770c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000250799"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.5.5.2"
-      - subsystem: "Arginine and proline metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR03838"
       - name: "L-proline:ubiquinone oxidoreductase"
       - metabolites: !!omap
@@ -70456,7 +70440,7 @@
           - MAM03103m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000100033 or ENSG00000250799"
+      - gene_reaction_rule: "ENSG00000100033"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.5.5.2"
       - references: "PMID:18506409;PMID:28990412"
@@ -71358,8 +71342,8 @@
       - metabolites: !!omap
           - MAM01394m: 1
           - MAM01513m: -1
-          - MAM01802m: -1
-          - MAM01803m: 1
+          - MAM03102m: 1
+          - MAM03103m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000016391"
@@ -251875,11 +251859,11 @@
       - id: "MAR20186"
       - name: "Sulfide:glutathione,quinone oxidoreductase"
       - metabolites: !!omap
-          - MAM01802m: -1
-          - MAM01803m: 1
           - MAM02026m: -1
           - MAM02039m: -1
           - MAM02042m: -1
+          - MAM03102m: 1
+          - MAM03103m: -1
           - MAM20086m: 1
       - lower_bound: 0
       - upper_bound: 1000
@@ -251966,6 +251950,23 @@
       - eccodes: "6.3.1.2"
       - references: "PMID:11080211;PMID:1356223;PMID:14583610;PMID:16213501;PMID:7595668;PMID:8838581;PMID:9053810"
       - subsystem: "Alanine, aspartate and glutamate metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20192"
+      - name: "trans-4-Hydroxy-L-proline:ubiquinone oxidoreductase"
+      - metabolites: !!omap
+          - MAM02039m: 1
+          - MAM02320m: 1
+          - MAM03037m: -1
+          - MAM03102m: 1
+          - MAM03103m: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000250799"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "1.5.5.3"
+      - references: "PMID:25697095"
+      - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
 - genes:
     - !!omap

@@ -96,8 +96,8 @@ MODEL_ROWS = [
     ("Cross-refs inconsistent across compartments", "inconsistent", "count", "checks", "qc_annotation_issues.csv"),
 ]
 MB_ROWS = [
-    ("Reactions flagged by MACAW dead-end test", "dead_end", "count", "macaw", "macaw_results.csv"),
-    ("Reactions flagged as MACAW duplicates", "duplicates", "count", "macaw", "macaw_results.csv"),
+    ("Reactions flagged by MACAW dead-end test", "dead_end", "count", "macaw", "macaw_results.tsv"),
+    ("Reactions flagged as MACAW duplicates", "duplicates", "count", "macaw", "macaw_results.tsv"),
     ("Mass-imbalanced reactions", "mass_imbalance", "count", "macaw", "balance_results.csv"),
     ("Charge-imbalanced reactions", "charge_imbalance", "count", "macaw", "balance_results.csv"),
     ("Structure vs formula/charge inconsistencies", "structure_inconsistent", "count", "macaw",
@@ -113,11 +113,11 @@ TASK_CHECKS = [
 _DUP_COLS = ("duplicate_test_exact", "duplicate_test_directions", "duplicate_test_coefficients")
 
 
-def _count_csv(path: Path, predicate=None) -> int | None:
+def _count_csv(path: Path, predicate=None, delimiter: str = ",") -> int | None:
     if not path.exists():
         return None
     with open(path, newline="", encoding="utf-8") as fh:
-        return sum(1 for row in csv.DictReader(fh) if predicate is None or predicate(row))
+        return sum(1 for row in csv.DictReader(fh, delimiter=delimiter) if predicate is None or predicate(row))
 
 
 def _distinct_csv(path: Path, column: str) -> int | None:
@@ -193,7 +193,7 @@ def _metrics(directory: Path) -> dict:
     completeness = directory / "qc_metabolite_completeness.csv"
     annotation = directory / "qc_annotation_issues.csv"
     unused = directory / "qc_unused_entities.csv"
-    macaw = directory / "macaw_results.csv"
+    macaw = directory / "macaw_results.tsv"
     balance = directory / "balance_results.csv"
     return {
         "dup_keys": _count_csv(directory / "qc_duplicate_keys.csv"),
@@ -209,8 +209,17 @@ def _metrics(directory: Path) -> dict:
         "unused_gene": _count_csv(unused, lambda r: r.get("kind") == "gene"),
         "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
         "inconsistent": _count_csv(annotation, lambda r: r.get("issue", "").startswith("inconsistent")),
-        "dead_end": _count_csv(macaw, lambda r: r.get("dead_end_test", "") not in ("ok", "")),
-        "duplicates": _count_csv(macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS)),
+        # "only when going ..." marks a reversible reaction limited to one direction; it can
+        # still carry flux, so only true dead ends are counted.
+        "dead_end": _count_csv(
+            macaw,
+            lambda r: r.get("dead_end_test", "") not in ("ok", "")
+            and not r.get("dead_end_test", "").startswith("only when going"),
+            delimiter="\t",
+        ),
+        "duplicates": _count_csv(
+            macaw, lambda r: any(r.get(c, "") not in ("ok", "N/A", "") for c in _DUP_COLS), delimiter="\t"
+        ),
         "mass_imbalance": _count_csv(balance, lambda r: r.get("mass_imbalance", "").strip() != ""),
         "charge_imbalance": _count_csv(balance, lambda r: r.get("charge_imbalance", "").strip() != ""),
         # the CSV lists only the inconsistent metabolites, so its row count is the metric
