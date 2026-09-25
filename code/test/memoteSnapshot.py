@@ -119,15 +119,23 @@ def _section_rows(scored: dict) -> list[tuple[str, float]]:
 
 
 def _test_metric(scored: dict, test_id: str) -> float | None:
-    """The 0-1 metric of a single MEMOTE test (parametrised tests are averaged)."""
+    """The 0-1 score of a single MEMOTE test, or None if it was skipped or has none.
+
+    A test's metric measures failure (e.g. the fraction of unbalanced reactions, or
+    1 for an inconsistent model); MEMOTE scores it as 1 - metric, averaging the
+    parameters of a parametrised test. A skipped test keeps a default metric of 1,
+    which is not a result, so it is left out.
+    """
     test = (scored.get("tests") or {}).get(test_id)
     if not isinstance(test, dict):
         return None
-    metric = test.get("metric")
+    result, metric = test.get("result"), test.get("metric")
     if isinstance(metric, (int, float)):
-        return float(metric)
+        return None if result == "skipped" else 1.0 - float(metric)
     if isinstance(metric, dict):
-        values = [v for v in metric.values() if isinstance(v, (int, float))]
+        outcome = result if isinstance(result, dict) else {}
+        values = [1.0 - v for k, v in metric.items()
+                  if isinstance(v, (int, float)) and outcome.get(k) != "skipped"]
         return sum(values) / len(values) if values else None
     return None
 
