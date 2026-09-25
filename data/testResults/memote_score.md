@@ -4,7 +4,7 @@
 
 Mode: core subset.
 
-Model version: 8f8cf02ed5c3.
+Model version: 93f14620ef2c.
 Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metabolites, test_inconsistent_min_stoichiometry, test_detect_energy_generating_cycles, test_find_stoichiometrically_balanced_cycles, test_blocked_reactions, test_find_reactions_unbounded_flux_default_condition, test_find_metabolites_not_produced_with_open_bounds, test_find_metabolites_not_consumed_with_open_bounds, test_number_independent_conservation_relations, test_matrix_rank, test_degrees_of_freedom.
 
 **Total score: 63.8%**
@@ -55,16 +55,16 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 
 Mode: full suite.
 
-**Total score: 64.2%**
+**Total score: 64.9%**
 
 ### Section scores
 
 | Section | Score |
 | --- | ---: |
 | consistency | 45.1% |
-| annotation_met | 73.0% |
-| annotation_rxn | 72.7% |
-| annotation_gene | 46.7% |
+| annotation_met | 77.7% |
+| annotation_rxn | 76.6% |
+| annotation_gene | 46.6% |
 | annotation_sbo | 81.7% |
 
 ### Detailed scores
@@ -75,17 +75,17 @@ Mode: full suite.
 | Consistency | Mass Balance | 0.8% |
 | Consistency | Charge Balance | 2.1% |
 | Consistency | Metabolite Connectivity | 0.0% |
-| Consistency | Unbounded Flux In Default Medium | 81.0% |
+| Consistency | Unbounded Flux In Default Medium | 81.2% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 0.0% |
-| Annotation - Metabolites | Metabolite Annotations Per Database | 62.3% |
-| Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 45.8% |
+| Annotation - Metabolites | Metabolite Annotations Per Database | 52.6% |
+| Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 36.7% |
 | Annotation - Metabolites | Uniform Metabolite Identifier Namespace | 0.0% |
 | Annotation - Reactions | Presence of Reaction Annotation | 0.0% |
-| Annotation - Reactions | Reaction Annotations Per Database | 75.9% |
-| Annotation - Reactions | Reaction Annotation Conformity Per Database | 33.3% |
+| Annotation - Reactions | Reaction Annotations Per Database | 71.5% |
+| Annotation - Reactions | Reaction Annotation Conformity Per Database | 22.2% |
 | Annotation - Reactions | Uniform Reaction Identifier Namespace | 0.0% |
 | Annotation - Genes | Presence of Gene Annotation | 0.0% |
-| Annotation - Genes | Gene Annotations Per Database | 80.0% |
+| Annotation - Genes | Gene Annotations Per Database | 80.1% |
 | Annotation - Genes | Gene Annotation Conformity Per Database | 80.0% |
 | Annotation - SBO Terms | Metabolite General SBO Presence | 0.0% |
 | Annotation - SBO Terms | Metabolite SBO:0000247 Presence | 0.1% |
