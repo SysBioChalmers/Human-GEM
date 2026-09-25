@@ -2854,7 +2854,7 @@
     - !!omap
       - id: "MAM00208m"
       - name: "[protein]-N6-(dihydrolipoyl)lysine"
-      - compartment: "c"
+      - compartment: "m"
       - formula: "C1375H2187N381O420S6"
       - charge: 0
       - metFrom: "HMRdatabase"
@@ -22469,6 +22469,13 @@
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
+      - id: "MAM01884g"
+      - name: "G00083"
+      - compartment: "g"
+      - formula: "C70H122N3O41RCO"
+      - charge: 0
+      - metFrom: "HMRdatabase"
+    - !!omap
       - id: "MAM01885c"
       - name: "G00084"
       - compartment: "c"
@@ -22662,27 +22669,6 @@
       - name: "galfuc12gal14acglcgalgluside heparan sulfate"
       - compartment: "e"
       - formula: "C56H99N2O31RCO"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM01915c"
-      - name: "galfucgalacglcgal14acglcgalgluside heparan sulfate"
-      - compartment: "c"
-      - formula: "C70H122N3O41RCO"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM01915g"
-      - name: "galfucgalacglcgal14acglcgalgluside heparan sulfate"
-      - compartment: "g"
-      - formula: "C70H122N3O41RCO"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM01915e"
-      - name: "galfucgalacglcgal14acglcgalgluside heparan sulfate"
-      - compartment: "e"
-      - formula: "C70H122N3O41RCO"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
@@ -26420,6 +26406,13 @@
       - id: "MAM02186c"
       - name: "iso-nLc8Cer"
       - compartment: "c"
+      - formula: "C73H125N4O43R"
+      - charge: 0
+      - metFrom: "HMRdatabase"
+    - !!omap
+      - id: "MAM02186g"
+      - name: "iso-nLc8Cer"
+      - compartment: "g"
       - formula: "C73H125N4O43R"
       - charge: 0
       - metFrom: "HMRdatabase"
@@ -47761,13 +47754,6 @@
       - name: "3-hydroxycinnamic acid"
       - compartment: "c"
       - formula: "C9H7O3"
-      - charge: -1
-      - metFrom: "Recon3D"
-    - !!omap
-      - id: "MAM03231e"
-      - name: "3-hydroxyphenylpropionic acid (3-hppa)"
-      - compartment: "e"
-      - formula: "C9H9O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
@@ -129838,22 +129824,6 @@
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08279"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (nLc5Cer)"
-      - metabolites: !!omap
-          - MAM02039g: 1
-          - MAM02593g: -1
-          - MAM02594c: 1
-          - MAM03106g: 1
-          - MAM03107g: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000179913"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.1.-"
-      - subsystem: "Blood group biosynthesis"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR08280"
       - name: "type 1 galactoside alpha-(1,2)-fucosyltransferase (GDP-L-fucose)"
       - metabolites: !!omap
@@ -130049,7 +130019,7 @@
       - id: "MAR08298"
       - name: "UDP-galactose to galfucgalacglcgal14acglcgalglus... conversion"
       - metabolites: !!omap
-          - MAM01915g: 1
+          - MAM01884g: 1
           - MAM02039g: 1
           - MAM03106g: 1
           - MAM03107g: -1
@@ -130175,16 +130145,16 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08317"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (G00077)"
+      - name: "beta-1,4-galactosyltransferase (G00077)"
       - metabolites: !!omap
           - MAM01880g: -1
-          - MAM02039c: 1
-          - MAM02186c: 1
+          - MAM02039g: 1
+          - MAM02186g: 1
           - MAM03106g: 1
           - MAM03107g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000121578 or ENSG00000158850"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.4.1.-"
       - subsystem: "Blood group biosynthesis"
@@ -164373,17 +164343,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08300"
-      - name: "transport of galfucgalacglcgal14acglcgalgluside... (cytosol to extracellular)"
-      - metabolites: !!omap
-          - MAM01915c: -1
-          - MAM01915e: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR08304"
       - name: "transport of galgalfucfucgalacglcgalacglcgal... (cytosol to extracellular)"
       - metabolites: !!omap
@@ -175335,8 +175294,8 @@
       - id: "MAR08299"
       - name: "transport of galfucgalacglcgal14acglcgalglus... (cytosol to Golgi apparatus)"
       - metabolites: !!omap
-          - MAM01915c: -1
-          - MAM01915g: 1
+          - MAM01884c: -1
+          - MAM01884g: 1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
@@ -176059,7 +176018,7 @@
       - name: "prostaglandin-endoperoxide synthase (prostaglandin G1)"
       - metabolites: !!omap
           - MAM02039c: -2
-          - MAM02040r: 1
+          - MAM02040c: 1
           - MAM02791c: -1
           - MAM02793c: 1
       - lower_bound: -1000
@@ -176067,7 +176026,7 @@
       - gene_reaction_rule: "ENSG00000073756 or ENSG00000095303"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.99.1"
-      - subsystem: "Transport reactions"
+      - subsystem: "Prostaglandin biosynthesis"
       - confidence_score: 0
     - !!omap
       - id: "MAR01530"
@@ -180543,16 +180502,6 @@
       - subsystem: "Exchange/demand reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR09333"
-      - name: "Exchange of galfucgalacglcgal14acglcgalgluside heparan sulfate"
-      - metabolites: !!omap
-          - MAM01915e: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Exchange/demand reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR09334"
       - name: "Exchange of galgalfucfucgalacglcgalacglcgal14acglcgalgluside heparan sulfate"
       - metabolites: !!omap
@@ -183225,7 +183174,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00081"
-      - name: "UDP-GlcNac:Betagal Beta-1, 3-N-Acetylglucosaminyltransferase 3, Golgi Apparatus"
+      - name: "beta-1,4-galactosyltransferase (nLc5Cer)"
       - metabolites: !!omap
           - MAM02039g: 1
           - MAM02593g: -1
@@ -183234,7 +183183,7 @@
           - MAM03107g: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000121578 or ENSG00000158850"
       - rxnFrom: "Recon3D"
       - eccodes: "2.4.1.-"
       - references: "PMID:10072769"
@@ -186742,18 +186691,6 @@
       - gene_reaction_rule: "ENSG00000101438"
       - rxnFrom: "Recon3D"
       - references: "PMID:12750892;PMID:15383652"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01340"
-      - name: "Blood Group Intracellular Transport"
-      - metabolites: !!omap
-          - MAM01884c: 1
-          - MAM01915g: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "3.2.1.23"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -203081,11 +203018,11 @@
           - MAM01285c: 1
           - MAM01371c: -1
           - MAM01597c: 1
-          - MAM02039c: 1
+          - MAM02039c: 2
           - MAM02040c: -2
           - MAM02751c: 1
           - MAM03362c: -1
-          - MAM03384x: 1
+          - MAM03884x: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000117528"
@@ -212323,32 +212260,10 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR10470"
-      - name: "3-Hydroxyphenylpropionic Acid Uptake"
-      - metabolites: !!omap
-          - MAM03231e: -1
-          - MAM03232c: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - references: "PMID:12904817;PMID:12663291"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR10472"
       - name: "Exchange of 3-hydroxycinnamic acid"
       - metabolites: !!omap
           - MAM03215e: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - subsystem: "Exchange/demand reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR10473"
-      - name: "Exchange of 3-hydroxyphenylpropionic acid (3-hppa)"
-      - metabolites: !!omap
-          - MAM03231e: -1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"

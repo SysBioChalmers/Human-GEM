@@ -21,7 +21,7 @@ own files. The pull request in each row is the one whose run last wrote those fi
 
 | Result file(s) | Produced by | Last updated by |
 | --- | --- | --- |
-| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1038** (model QC checks) |
+| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_duplicate_reactions.csv`, `qc_split_compartments.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1038** (model QC checks) |
 | `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1038** (model QC checks) |
 | `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1038** (model QC checks) |
 | `macaw_results.tsv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1038** (MACAW and balance) |
@@ -63,8 +63,9 @@ signals a broken edit.
 #### Model / annotation-table inconsistencies
 The model and its annotation tables (`reactions.tsv` / `metabolites.tsv` /
 `genes.tsv`) must list the same identifiers. Flags identifiers in the model but not
-the table (or the reverse), any deprecated identifier still used in the model, and a
-non-numeric value in the `spontaneous` column of `reactions.tsv`.
+the table (or the reverse), any deprecated identifier still used in the model, a
+metabolite whose identifier ends in a different compartment than its `compartment`
+field, and a non-numeric value in the `spontaneous` column of `reactions.tsv`.
 
 #### Removed reactions or metabolites not deprecated
 Human-GEM retires identifiers rather than deleting them, so a removed identifier
@@ -92,6 +93,16 @@ Groups of two or more reactions with **identical** stoichiometry (same metabolit
 and same coefficients). This is the strict "truly identical" case; near-duplicates
 (reverse direction, different coefficients, different electron carriers) are the
 remit of the MACAW duplicate test below.
+
+#### Reactions split across compartments
+Reactions whose own chemistry spans more than one compartment. Metabolites that a
+reaction moves between compartments (present in two compartments of the same
+reaction) are ignored; if the remaining metabolites are still in more than one
+compartment, the reaction is listed. This usually means one metabolite is in the
+wrong compartment, such as a cytosolic substrate in a mitochondrial reaction. Some
+enzymes do work across a membrane (e.g. HGSNAT, GPD2, fatty-acid uptake coupled to
+acyl-CoA synthesis), so pre-existing entries are not necessarily wrong; a rise in
+the count is what to review. Artificial reactions (pools, biomass) are skipped.
 
 #### Unused metabolites
 Metabolites not used by any reaction in the model.
@@ -205,11 +216,12 @@ threshold-free AUROC/AUPRC of the growth ratio against the Hart Bayes Factors. S
 | `qc_duplicate_keys.csv` | Duplicate `!!omap` keys: entry, scope, key, first and duplicate line numbers. |
 | `qc_growth_blockers.csv` | Biomass precursors that cannot be produced; empty when the model grows. |
 | `qc_empty_reactions.csv` | Reactions with no metabolites. |
-| `qc_annotation_consistency.csv` | Model-vs-annotation-table mismatches, deprecated-identifier use, and `spontaneous`-column problems: `kind, id, issue`. |
+| `qc_annotation_consistency.csv` | Model-vs-annotation-table mismatches, deprecated-identifier use, metabolite id/compartment mismatches, and `spontaneous`-column problems: `kind, id, issue`. |
 | `qc_deprecation_completeness.csv` | Reactions/metabolites removed since the target branch but not added to a deprecated list: `kind, id, issue`. |
 | `qc_metabolite_completeness.csv` | Metabolites missing a formula and/or a charge: `metabolite, name, missing_formula, missing_charge`. |
 | `qc_reaction_sanity.csv` | Reactions with bound or GPR issues: `reaction, name, issues`. |
 | `qc_duplicate_reactions.csv` | Exact-duplicate reaction groups: `group, reaction, equation`. |
+| `qc_split_compartments.csv` | Reactions whose chemistry is split across compartments: `reaction, name, compartments, equation`. |
 | `qc_unused_entities.csv` | Metabolites and genes used by no reaction: `kind, id`. |
 | `qc_annotation_issues.csv` | Malformed and cross-compartment-inconsistent cross-references. |
 | `qc_structure_consistency.csv` | Metabolites whose structure disagrees with the model formula/charge. |
