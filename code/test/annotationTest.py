@@ -36,7 +36,7 @@ MET_PATTERNS = {
     "metChEBIID": r"CHEBI:\d+",
     "metHMDBID": r"HMDB\d+",
     "metPubChemID": r"\d+",
-    "metMetaNetXID": r"MNXM\d+",
+    "metMetaNetXID": r"MNXM\d+|WATER",  # WATER is MetaNetX's id for H2O
     "metSeedID": r"cpd\d{5}",
     "metLipidMapsID": r"LM[A-Z]{2}\w+",
     "metEHMNID": r"C[A-Z]\d+",

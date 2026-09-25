@@ -57466,7 +57466,7 @@
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
-      - id: "MAM03971e"
+      - id: "MAM03970e"
       - name: "biomass"
       - compartment: "e"
       - formula: "X"
@@ -58023,13 +58023,13 @@
       - formula: "C20H28O4"
       - charge: -2
     - !!omap
-      - id: "MAM20005c"
+      - id: "MAM20003c"
       - name: "20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate"
       - compartment: "c"
       - formula: "C20H29O3"
       - charge: 0
     - !!omap
-      - id: "MAM20006c"
+      - id: "MAM20004c"
       - name: "(5Z,8Z,11Z,14Z)-eicosatetraenedioate"
       - compartment: "c"
       - formula: "C20H28O4"
@@ -58053,13 +58053,13 @@
       - formula: "C6H6O2"
       - charge: 0
     - !!omap
-      - id: "MAM20009c"
+      - id: "MAM20007c"
       - name: "1,4-benzoquinone"
       - compartment: "c"
       - formula: "C6H4O2"
       - charge: 0
     - !!omap
-      - id: "MAM20010c"
+      - id: "MAM20008c"
       - name: "hydroquinone"
       - compartment: "c"
       - formula: "C6H6O2"
@@ -58107,7 +58107,7 @@
       - formula: "C21H25N7O17P3"
       - charge: -3
     - !!omap
-      - id: "MAM20016n"
+      - id: "MAM20014n"
       - name: "15-oxoprostaglandin E2"
       - compartment: "n"
       - formula: "C20H29O5"
@@ -58191,7 +58191,7 @@
       - formula: "C20H29O2"
       - charge: -1
     - !!omap
-      - id: "MAM20025i"
+      - id: "MAM20024i"
       - name: "19-hydroxy-(5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate"
       - compartment: "i"
       - formula: "C20H29O3"
@@ -58227,7 +58227,7 @@
       - formula: "C12H23O2"
       - charge: -1
     - !!omap
-      - id: "MAM20029i"
+      - id: "MAM20028i"
       - name: "11-hydroxydodecanoate"
       - compartment: "i"
       - formula: "C12H23O3"
@@ -58239,7 +58239,7 @@
       - formula: "C14H27O3"
       - charge: -1
     - !!omap
-      - id: "MAM20031i"
+      - id: "MAM20030i"
       - name: "13-hydroxytetradecanoate"
       - compartment: "i"
       - formula: "C14H27O3"
@@ -58299,7 +58299,7 @@
       - formula: "C6H12O6"
       - charge: 0
     - !!omap
-      - id: "MAM20033c"
+      - id: "MAM20032c"
       - name: "beta-D-galactose"
       - compartment: "c"
       - formula: "C6H12O6"
@@ -58377,7 +58377,7 @@
       - formula: "C22H41O3"
       - charge: -1
     - !!omap
-      - id: "MAM20044c"
+      - id: "MAM20043c"
       - name: "22-oxodocosanoate"
       - compartment: "c"
       - formula: "C22H41O3"
@@ -58401,7 +58401,7 @@
       - formula: "C18H36O"
       - charge: 0
     - !!omap
-      - id: "MAM20046c"
+      - id: "MAM20045c"
       - name: "octadecanal"
       - compartment: "c"
       - formula: "C18H36O"
@@ -58413,7 +58413,7 @@
       - formula: "C12H24O"
       - charge: 0
     - !!omap
-      - id: "MAM20048c"
+      - id: "MAM20047c"
       - name: "dodecanal"
       - compartment: "c"
       - formula: "C12H24O"
@@ -58443,7 +58443,7 @@
       - formula: "C14H28O"
       - charge: 0
     - !!omap
-      - id: "MAM20053r"
+      - id: "MAM20013r"
       - name: "octanal"
       - compartment: "r"
       - formula: "C8H16O"
@@ -246282,7 +246282,7 @@
       - name: "transport of biomass (cytosol to extracellular)"
       - metabolites: !!omap
           - MAM03970c: -1
-          - MAM03971e: 1
+          - MAM03970e: 1
       - lower_bound: 0
       - upper_bound: 1000
       - subsystem: "Transport reactions"
@@ -246291,7 +246291,7 @@
       - id: "MAR10024"
       - name: "Exchange of biomass"
       - metabolites: !!omap
-          - MAM03971e: -1
+          - MAM03970e: -1
       - lower_bound: -1000
       - upper_bound: 1000
       - subsystem: "Exchange/demand reactions"
@@ -248242,8 +248242,8 @@
           - MAM02040c: -1
           - MAM02552c: -1
           - MAM02553c: 1
-          - MAM20005c: -1
-          - MAM20006c: 1
+          - MAM20003c: -1
+          - MAM20004c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000198099 or ENSG00000197894"
@@ -248273,7 +248273,7 @@
           - MAM02039c: 1
           - MAM02552c: -1
           - MAM02553c: 1
-          - MAM20005c: 1
+          - MAM20003c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000198099 or ENSG00000197894"
@@ -248305,8 +248305,8 @@
           - MAM02039c: -1
           - MAM02552c: 1
           - MAM02553c: -1
-          - MAM20009c: -1
-          - MAM20010c: 1
+          - MAM20007c: -1
+          - MAM20008c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000198099"
@@ -248403,7 +248403,7 @@
           - MAM02039n: 1
           - MAM02554n: -1
           - MAM02555n: 1
-          - MAM20016n: 1
+          - MAM20014n: 1
           - MAM20017n: -1
       - lower_bound: 0
       - upper_bound: 1000
@@ -248468,7 +248468,7 @@
           - MAM02040i: 1
           - MAM02630i: -1
           - MAM20019i: -1
-          - MAM20025i: 1
+          - MAM20024i: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000130649"
@@ -248532,7 +248532,7 @@
           - MAM02344i: -1
           - MAM02630i: -1
           - MAM20019i: -1
-          - MAM20029i: 1
+          - MAM20028i: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000130649"
@@ -248564,7 +248564,7 @@
           - MAM02494i: -1
           - MAM02630i: -1
           - MAM20019i: -1
-          - MAM20031i: 1
+          - MAM20030i: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000130649"
@@ -248622,7 +248622,7 @@
       - name: "MAR20034"
       - metabolites: !!omap
           - MAM01910c: -1
-          - MAM20033c: 1
+          - MAM20032c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000143891"
@@ -248857,7 +248857,7 @@
           - MAM02552c: -1
           - MAM02553c: 1
           - MAM03560c: 1
-          - MAM20044c: -1
+          - MAM20043c: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000072210"
@@ -248905,7 +248905,7 @@
           - MAM02552c: -1
           - MAM02553c: 1
           - MAM02938c: 1
-          - MAM20046c: -1
+          - MAM20045c: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000072210"
@@ -248940,7 +248940,7 @@
           - MAM02344c: -1
           - MAM02552c: 1
           - MAM02553c: -1
-          - MAM20048c: 1
+          - MAM20047c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000072210"
@@ -249033,7 +249033,7 @@
           - MAM02552r: -1
           - MAM02553r: 1
           - MAM02642r: 1
-          - MAM20053r: -1
+          - MAM20013r: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000072210"
