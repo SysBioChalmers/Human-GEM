@@ -61008,16 +61008,17 @@
       - id: "MAR03859"
       - name: "(R)-Lactate:ferricytochrome-c 2-oxidoreductase"
       - metabolites: !!omap
-          - MAM01716c: -1
+          - MAM01716m: -1
           - MAM01824m: -2
           - MAM01826m: 2
-          - MAM02039c: 2
-          - MAM02819c: 1
+          - MAM02039m: 2
+          - MAM02819m: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000166816"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.2.4"
+      - references: "PMID:12127981;PMID:30931947"
       - subsystem: "Pyruvate metabolism"
       - confidence_score: 0
     - !!omap
@@ -61417,22 +61418,6 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000166816"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.1.2.4"
-      - subsystem: "Pyruvate metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR08514"
-      - name: "(S)-Lactate:ferricytochrome-c 2-oxidoreductase"
-      - metabolites: !!omap
-          - MAM01824m: -2
-          - MAM01826m: 2
-          - MAM02039c: 2
-          - MAM02403c: -1
-          - MAM02819c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000182224"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.2.4"
       - subsystem: "Pyruvate metabolism"
@@ -168690,7 +168675,7 @@
       - metabolites: !!omap
           - MAM01307c: -1
           - MAM01307m: 1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000164466"
       - rxnFrom: "HMRdatabase"
@@ -258143,9 +258128,6 @@
     - !!omap
       - id: "ENSG00000182199"
       - name: "SHMT2"
-    - !!omap
-      - id: "ENSG00000182224"
-      - name: "CYB5D1"
     - !!omap
       - id: "ENSG00000182247"
       - name: "UBE2E2"
