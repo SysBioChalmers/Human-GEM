@@ -2,20 +2,17 @@
 
 | cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 0.3645 | 134 | 0.3796 | 101 | 0.6731 | 0.329 | 0.1685 | 45 |
-| GBM | 0.288 | 169 | 0.3286 | 123 | 0.6514 | 0.2879 | 0.1625 | 53 |
-| HCT116 | 0.3775 | 131 | 0.3774 | 104 | 0.6783 | 0.3449 | 0.1807 | 41 |
-| HELA | 0.3283 | 166 | 0.3251 | 134 | 0.6706 | 0.2823 | 0.147 | 45 |
-| RPE1 | 0.2566 | 183 | 0.3095 | 122 | 0.6623 | 0.2653 | 0.1358 | 70 |
-| all |  |  |  |  | 0.6674 | 0.3022 | 0.1592 |  |
+| DLD1 | 0.374 | 131 | 0.3932 | 94 | 0.676 | 0.3416 | 0.1686 | 50 |
+| GBM | 0.2904 | 173 | 0.3274 | 124 | 0.6543 | 0.2906 | 0.1622 | 59 |
+| HCT116 | 0.3793 | 135 | 0.3744 | 105 | 0.6756 | 0.3418 | 0.1809 | 48 |
+| HELA | 0.3253 | 170 | 0.3214 | 138 | 0.6736 | 0.2812 | 0.1462 | 45 |
+| RPE1 | 0.2544 | 184 | 0.3056 | 127 | 0.6564 | 0.2575 | 0.1363 | 64 |
+| all |  |  |  |  | 0.6673 | 0.3023 | 0.1591 |  |
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **3** gene(s) directly affected plus **1463** more that share a metabolite with one of them.
+Checked **13** gene(s) directly affected plus **18** more that share a metabolite with one of them.
 
-**Growth effect changed** (vs Hart 2015):
-- MAT2A: 4/5 lines, knockout now blocks growth -- :warning: mixed across lines
+**No change:** 31 gene(s).
 
-**No change:** 1465 gene(s).
-
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/sam-synthesis-gpr/data/testResults/gene-essential-diff.csv).
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/ca-influx-channels/data/testResults/gene-essential-diff.csv).
