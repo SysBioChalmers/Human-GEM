@@ -21,12 +21,12 @@ own files. The pull request in each row is the one whose run last wrote those fi
 
 | Result file(s) | Produced by | Last updated by |
 | --- | --- | --- |
-| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1039** (model QC checks) |
-| `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1039** (model QC checks) |
-| `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1039** (model QC checks) |
-| `macaw_results.tsv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1039** (MACAW and balance) |
-| `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1039** (MEMOTE) |
-| `gene-essential.csv`, `gene-essential_summary.md` | `gradedEssentiality.py` via `/run gene-essentiality` | **PR #1039** (gene essentiality) |
+| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1097** (model QC checks) |
+| `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1097** (model QC checks) |
+| `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1097** (model QC checks) |
+| `macaw_results.tsv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1097** (MACAW and balance) |
+| `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1097** (MEMOTE) |
+| `gene-essential.csv`, `gene-essential_summary.md` | `gradedEssentiality.py` via `/run gene-essentiality` | **PR #1038** (gene essentiality) |
 
 ## 2. What each check means
 
@@ -167,8 +167,14 @@ The total score, plus per-section and per-test scores, from the
 [MEMOTE](https://memote.readthedocs.io) suite (`memoteSnapshot.py`). Every pull
 request runs a fast core subset (skipping the flux-variability,
 stoichiometric-consistency MILP and matrix-rank tests that dominate runtime).
-Comment `/run memote` to run the full suite; the score then updates in place. Higher
-is better, so the comment warns only when the score drops versus the target branch.
+Comment `/run memote` to run the full suite. Higher is better, so the comment warns
+only when the score drops versus the target branch.
+
+Each score records the model version it was computed on (a hash of the model file and
+its annotation tables). The summary row shows the full-suite score, marked
+"full suite", while it matches the current model; otherwise it shows the core-subset
+score, marked "core subset". A full-suite score from an earlier model version, e.g.
+one inherited from the target branch, is listed as such in the full report.
 
 Before running, the model is enriched with the cross-references and SBO terms from
 the annotation tables (the canonical `code/annotateGEM.py` helper), so the annotation

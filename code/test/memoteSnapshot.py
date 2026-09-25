@@ -49,6 +49,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from annotateGEM import annotate_gem
 from raven_toolbox.io import read_yaml_model
 
+import qcStatus
+
 MODEL_FILE = "model/Human-GEM.yml"
 MODEL_DIR = "model"                 # holds the reactions/metabolites/genes TSV tables
 RESULT_JSON = "memote_result.json"  # repo root -> uploaded as artifact, not committed
@@ -258,7 +260,7 @@ def main() -> int:
     print("Scored MEMOTE result top-level keys:", sorted(scored.keys()), flush=True)
 
     total = _total_score(scored)
-    lines = [f"Mode: {kind}."]
+    lines = [f"Mode: {kind}.", "", f"Model version: {qcStatus.model_version()}."]
     if subset:
         lines.append(f"Skipped (slow) tests: {', '.join(SLOW_TESTS)}.")
     lines.append("")
