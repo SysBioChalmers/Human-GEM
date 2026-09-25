@@ -4595,24 +4595,10 @@
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM00356c"
-      - name: "13-hydroxy-alpha-tocopherol"
-      - compartment: "c"
-      - formula: "C29H50O3"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM00356r"
       - name: "13-hydroxy-alpha-tocopherol"
       - compartment: "r"
       - formula: "C29H50O3"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM00357c"
-      - name: "13-hydroxy-alpha-tocotrienol"
-      - compartment: "c"
-      - formula: "C29H44O3"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
@@ -4637,24 +4623,10 @@
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM00360c"
-      - name: "13-hydroxy-gamma-tocopherol"
-      - compartment: "c"
-      - formula: "C28H48O3"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM00360r"
       - name: "13-hydroxy-gamma-tocopherol"
       - compartment: "r"
       - formula: "C28H48O3"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM00361c"
-      - name: "13-hydroxy-gamma-tocotrienol"
-      - compartment: "c"
-      - formula: "C28H42O3"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
@@ -137524,25 +137496,6 @@
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR06426"
-      - name: "leukotriene-B4 20-monooxygenase (alpha-tocotrienol)"
-      - metabolites: !!omap
-          - MAM00357c: 1
-          - MAM01330c: -1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.14.94"
-      - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
-      - subsystem: "Vitamin E metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR06427"
       - name: "leukotriene-B4 20-monooxygenase (alpha-tocotrienol)"
       - metabolites: !!omap
@@ -137555,29 +137508,10 @@
           - MAM02630r: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
+      - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
       - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
-      - subsystem: "Vitamin E metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR06428"
-      - name: "leukotriene-B4 20-monooxygenase (13-hydroxy-alpha-tocotrienol)"
-      - metabolites: !!omap
-          - MAM00345c: 1
-          - MAM00357c: -1
-          - MAM02039c: -1
-          - MAM02040c: 3
-          - MAM02554c: 2
-          - MAM02555c: -2
-          - MAM02630c: -2
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.14.94"
-      - references: "PMID:10191290;PMID:11997390;PMID:12368403;PMID:11997390;PMID:12368403;PMID:10191290"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
@@ -137593,7 +137527,7 @@
           - MAM02630r: -2
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
+      - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
       - references: "PMID:10191290;PMID:11997390;PMID:12368403;PMID:11997390;PMID:12368403;PMID:10191290"
@@ -137616,7 +137550,7 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000242110"
+      - gene_reaction_rule: "ENSG00000084754 and ENSG00000138029"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137639,16 +137573,16 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000104325 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000167969 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000198721 or ENSG00000242110 or ENSG00000242612"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000084754 and ENSG00000138029"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137680,6 +137614,7 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -137693,14 +137628,14 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 1
           - MAM02040m: -2
-          - MAM02041m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000104325 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000167969 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000198721 or ENSG00000242110 or ENSG00000242612"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137724,17 +137659,17 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000242110"
+      - gene_reaction_rule: "ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137745,25 +137680,6 @@
           - "4.2.1.17"
           - "5.1.99.4"
           - "6.2.1.-"
-      - subsystem: "Vitamin E metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR06441"
-      - name: "leukotriene-B4 20-monooxygenase (gamma-tocotrienol)"
-      - metabolites: !!omap
-          - MAM00361c: 1
-          - MAM01938c: -1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.14.94"
-      - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
@@ -137779,26 +137695,7 @@
           - MAM02630r: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.14.94"
-      - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
-      - subsystem: "Vitamin E metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR06443"
-      - name: "leukotriene-B4 20-monooxygenase (13-hydroxy-gamma-tocotrienol)"
-      - metabolites: !!omap
-          - MAM00347c: 1
-          - MAM00361c: -1
-          - MAM02039c: -1
-          - MAM02040c: 3
-          - MAM02554c: 2
-          - MAM02555c: -2
-          - MAM02630c: -2
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
+      - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
       - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
@@ -137817,7 +137714,7 @@
           - MAM02630r: -2
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
+      - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
       - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
@@ -137840,6 +137737,7 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000084754 and ENSG00000138029"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -137853,16 +137751,16 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000104325 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000167969 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000198721 or ENSG00000242110 or ENSG00000242612"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000084754 and ENSG00000138029"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137894,7 +137792,7 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000242110"
+      - gene_reaction_rule: "ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137917,14 +137815,14 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 1
           - MAM02040m: -2
-          - MAM02041m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000104325 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000167969 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000198721 or ENSG00000242110 or ENSG00000242612"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137947,18 +137845,18 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM01923m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000242110"
+      - gene_reaction_rule: "ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -138051,25 +137949,6 @@
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR06464"
-      - name: "leukotriene-B4 20-monooxygenase (gamma-tocopherol)"
-      - metabolites: !!omap
-          - MAM00360c: 1
-          - MAM01935c: -1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.14.94"
-      - references: "PMID:11997390"
-      - subsystem: "Vitamin E metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR06465"
       - name: "leukotriene-B4 20-monooxygenase (gamma-tocopherol)"
       - metabolites: !!omap
@@ -138082,26 +137961,7 @@
           - MAM02630r: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.14.94"
-      - references: "PMID:11997390"
-      - subsystem: "Vitamin E metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR06466"
-      - name: "leukotriene-B4 20-monooxygenase (13-hydroxy-gamma-tocopherol)"
-      - metabolites: !!omap
-          - MAM00346c: 1
-          - MAM00360c: -1
-          - MAM02039c: -1
-          - MAM02040c: 3
-          - MAM02554c: 2
-          - MAM02555c: -2
-          - MAM02630c: -2
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
+      - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
@@ -138120,7 +137980,7 @@
           - MAM02630r: -2
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
+      - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
@@ -138135,16 +137995,17 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000084754 and ENSG00000138029"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -138158,16 +138019,16 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000242110"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000084754 and ENSG00000138029"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -138189,17 +138050,17 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000242110"
+      - gene_reaction_rule: "ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -138222,16 +138083,16 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000242110"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -138242,25 +138103,6 @@
           - "4.2.1.17"
           - "5.1.99.4"
           - "6.2.1.-"
-      - subsystem: "Vitamin E metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR06476"
-      - name: "leukotriene-B4 20-monooxygenase (alpha-tocopherol)"
-      - metabolites: !!omap
-          - MAM00356c: 1
-          - MAM01327c: -1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.14.94"
-      - references: "PMID:11997390"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
@@ -138293,26 +138135,7 @@
           - MAM02630r: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.14.94"
-      - references: "PMID:11997390"
-      - subsystem: "Vitamin E metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR06478"
-      - name: "leukotriene-B4 20-monooxygenase (13-hydroxy-alpha-tocopherol)"
-      - metabolites: !!omap
-          - MAM00344c: 1
-          - MAM00356c: -1
-          - MAM02039c: -1
-          - MAM02040c: 3
-          - MAM02554c: 2
-          - MAM02555c: -2
-          - MAM02630c: -2
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
+      - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
@@ -138331,7 +138154,7 @@
           - MAM02630r: -2
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171903 or ENSG00000171954 or ENSG00000186115 or ENSG00000186526 or ENSG00000186529"
+      - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
       - references: "PMID:11997390"
@@ -138346,16 +138169,17 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000084754 and ENSG00000138029"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -138369,16 +138193,16 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000242110"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000084754 and ENSG00000138029"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -138400,17 +138224,17 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000060971 or ENSG00000072506 or ENSG00000084754 or ENSG00000087008 or ENSG00000097021 or ENSG00000101473 or ENSG00000119673 or ENSG00000127884 or ENSG00000130304 or ENSG00000133835 or ENSG00000136881 or ENSG00000138029 or ENSG00000138796 or ENSG00000140284 or ENSG00000143554 or ENSG00000157426 or ENSG00000161533 or ENSG00000167107 or ENSG00000167114 or ENSG00000167315 or ENSG00000176715 or ENSG00000177465 or ENSG00000184227 or ENSG00000242110"
+      - gene_reaction_rule: "ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -138433,15 +138257,16 @@
           - MAM01334m: 1
           - MAM01371m: -1
           - MAM01597m: -1
+          - MAM01802m: -1
+          - MAM01803m: 1
           - MAM02039m: 2
           - MAM02040m: -2
-          - MAM02041m: 1
           - MAM02552m: -1
           - MAM02553m: 1
-          - MAM02630m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
