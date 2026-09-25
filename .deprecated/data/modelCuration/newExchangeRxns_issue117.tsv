@@ -1,9 +1,0 @@
-rxns	rxnNames	lb	ub	subSystems	rxnEqns
-HMR_10025	Exchange of 20-hydroxy-arachidonate	-1000	1000	Exchange/demand reactions	20-hydroxy-arachidonate[s] <=> 20-hydroxy-arachidonate[x]
-HMR_10026	Exchange of chenodiol	-1000	1000	Exchange/demand reactions	chenodiol[s] <=> chenodiol[x]
-HMR_10027	Exchange of LacCer pool	-1000	1000	Exchange/demand reactions	LacCer pool[s] <=> LacCer pool[x]
-HMR_10028	Exchange of Chylomicron Lipoprotein	-1000	1000	Exchange/demand reactions	Chylomicron Lipoprotein[s] <=> Chylomicron Lipoprotein[x]
-HMR_10029	Exchange of steroids	-1000	1000	Exchange/demand reactions	steroids[s] <=> steroids[x]
-HMR_10030	Exchange of xenobiotics	-1000	1000	Exchange/demand reactions	xenobiotics[s] <=> xenobiotics[x]
-HMR_10031	Exchange of arachidonate derivatives	-1000	1000	Exchange/demand reactions	arachidonate derivatives[s] <=> arachidonate derivatives[x]
-HMR_10032	Exchange of others	-1000	1000	Exchange/demand reactions	others[s] <=> others[x]
