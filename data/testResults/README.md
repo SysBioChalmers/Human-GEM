@@ -167,8 +167,14 @@ The total score, plus per-section and per-test scores, from the
 [MEMOTE](https://memote.readthedocs.io) suite (`memoteSnapshot.py`). Every pull
 request runs a fast core subset (skipping the flux-variability,
 stoichiometric-consistency MILP and matrix-rank tests that dominate runtime).
-Comment `/run memote` to run the full suite; the score then updates in place. Higher
-is better, so the comment warns only when the score drops versus the target branch.
+Comment `/run memote` to run the full suite. Higher is better, so the comment warns
+only when the score drops versus the target branch.
+
+Each score records the model version it was computed on (a hash of the model file and
+its annotation tables). The summary row shows the full-suite score, marked
+"full suite", while it matches the current model; otherwise it shows the core-subset
+score, marked "core subset". A full-suite score from an earlier model version, e.g.
+one inherited from the target branch, is listed as such in the full report.
 
 Before running, the model is enriched with the cross-references and SBO terms from
 the annotation tables (the canonical `code/annotateGEM.py` helper), so the annotation
