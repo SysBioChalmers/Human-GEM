@@ -250916,6 +250916,20 @@
       - references: "PMID:25697095"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
+    - !!omap
+      - id: "MAR20193"
+      - name: "succinate transport via proton symport"
+      - metabolites: !!omap
+          - MAM02039c: -1
+          - MAM02039e: 1
+          - MAM02943c: -1
+          - MAM02943e: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000141526 or ENSG00000155380"
+      - references: "PMID:35363247"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
 - genes:
     - !!omap
       - id: "ENSG00000000419"
