@@ -137,6 +137,12 @@ jobs:
   # reached"). max-parallel below caps build-model at 2 concurrent shards -- matching the
   # WLS baseline -- so at most 2 sessions are ever open at once, independent of how long
   # any individual shard's solve takes.
+  #
+  # With only 2 slots, the matrix lists the slowest shards first: GBM (1) and RPE1 (4)
+  # take the longest to build, so they start straight away and the three quick ones
+  # (DLD1, HCT116, HELA) share whichever slot frees first. Listing order only decides
+  # when a shard starts; each shard still builds the same cell line, and the report
+  # keeps the order of Hart2015_RNAseq.txt.
   build-model:
     needs: prep
     if: ${{ !inputs.diagnose }}
@@ -144,7 +150,7 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        shard: [0, 1, 2, 3, 4]
+        shard: [1, 4, 0, 2, 3]
     env:
       SHARD_COUNT: 5
     runs-on: ubuntu-latest
