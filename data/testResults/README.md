@@ -52,9 +52,15 @@ and rewrites these, but `cobra.io.load_yaml_model` then raises a bare
 entry, key and line numbers.
 
 #### Growth (biomass producible)
-**Gate.** Whether the model can produce biomass under its default constraints
-(`slim_optimize`). When it cannot, `qc_growth_blockers.csv` lists the biomass
-precursors that cannot be made, which are what to fix.
+**Gate.** Whether the model can produce biomass on a defined medium, and how much.
+The medium is Ham's medium as defined by the `GR` task in
+`data/metabolicTasks/metabolicTasks_Essential.txt`. Every other uptake is closed,
+secretion stays open, and each nutrient's uptake is capped at 1 (O2 and H2O are not
+capped). Growth is then limited by the nutrients rather than by a reaction reaching
+an arbitrary flux bound, so the value can be compared between commits; it is not a
+physiological growth rate. When the model cannot grow, `qc_growth_blockers.csv`
+lists the biomass precursors that cannot be made on this medium, which are what to
+fix.
 
 #### Reactions with no metabolites
 Reactions whose stoichiometry is empty. Such a reaction does nothing and usually
