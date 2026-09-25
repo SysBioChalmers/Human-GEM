@@ -2273,3 +2273,7 @@ MAM00209c	MAM00209		C16237							M00209	MNXM96070	m00209c	m00209c
 MAM00210c	MAM00210		C16236							M00210	MNXM4090	m00210c	m00210c
 MAM01622x	MAM01622	b2coa	C00877		CHEBI:15473	5280381			HC00572	b2coa	MNXM214	m01622p	m01622p
 MAM01690m	MAM01690	dhap	C00111		CHEBI:16108	668			HC00109	dhap	MNXM77	m01690m	m01690m
+MAM01915c	MAM01915	galfucgalacglcgal14acglcgalgluside_hs								galfucgalacglcgal14acglcgalgluside_hs	MNXM7941	m01915c	m01915c
+MAM01915g	MAM01915	galfucgalacglcgal14acglcgalgluside_hs								galfucgalacglcgal14acglcgalgluside_hs	MNXM7941	m01915g	m01915g
+MAM01915e	MAM01915	galfucgalacglcgal14acglcgalgluside_hs								galfucgalacglcgal14acglcgalgluside_hs	MNXM7941	m01915s	m01915s
+MAM03231e	MAM03231	3hpppn	C11457	HMDB0000375	CHEBI:1427	91				3hppa	MNXM1634		3hppa_s
