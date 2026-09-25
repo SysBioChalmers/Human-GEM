@@ -197,6 +197,33 @@ jobs:
           run-url: ${{ env.RUN_URL }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+      # The results were produced on the pull request's merge commit, but are committed
+      # to its head branch, whose committed result files can differ (e.g. when the target
+      # branch has newer results). Merging the two (git stash pop) then conflicts, and a
+      # conflicted file would be committed and posted. The files are generated, so this
+      # job's version simply replaces the branch's: copy the result files this job
+      # changed aside, move to the branch tip, and copy them back. README.md is partly
+      # hand-written and is left as it is on the branch; only the PR number is updated
+      # in it below.
+      - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        run: |
+          changed=$( { git diff --name-only -- data/testResults
+                       git ls-files --others --exclude-standard -- data/testResults; } \
+                     | grep -vx 'data/testResults/README.md' || true )
+          keep=$(mktemp -d)
+          for f in $changed; do
+            mkdir -p "$keep/$(dirname "$f")" && cp -a "$f" "$keep/$f"
+          done
+          git reset --hard --quiet
+          git clean -fdq -- data/testResults
+          git fetch --quiet origin "$BRANCH_NAME"
+          git checkout --quiet -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
+          for f in $changed; do
+            mkdir -p "$(dirname "$f")" && cp -a "$keep/$f" "$f"
+          done
+
       - name: Mention PR# in README.md
         env:
           PR_NUMBER: ${{ github.event.number }}
@@ -204,17 +231,6 @@ jobs:
           for tag in "model QC" "MEMOTE" "MACAW"; do
             sed -i -e "s/[[:digit:]]\{3,4\}\*\* ($tag/$PR_NUMBER\*\* ($tag/" data/testResults/README.md
           done
-
-      - name: Update local branch before committing changes
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        run: |
-          git stash
-          git fetch
-          git checkout $BRANCH_NAME
-          if git stash list | grep -q 'stash@{'; then
-            git stash pop
-          fi
 
       - name: Auto-commit results
         uses: stefanzweifel/git-auto-commit-action@v7
