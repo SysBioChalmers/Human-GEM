@@ -11,8 +11,8 @@
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **13** gene(s) directly affected plus **18** more that share a metabolite with one of them.
+Checked **6** gene(s) directly affected plus **1269** more that share a metabolite with one of them.
 
-**No change:** 31 gene(s).
+**No change:** 1275 gene(s).
 
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/ca-influx-channels/data/testResults/gene-essential-diff.csv).
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/mar11479-ldhal6a/data/testResults/gene-essential-diff.csv).
