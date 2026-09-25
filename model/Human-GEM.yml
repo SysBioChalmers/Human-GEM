@@ -2873,6 +2873,18 @@
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
+      - id: "MAM20087m"
+      - name: "[protein]-L-lysine"
+      - compartment: "m"
+      - formula: "C1367H2173N381O419S4"
+      - charge: 0
+    - !!omap
+      - id: "MAM20088m"
+      - name: "[protein]-N6-(S-aminomethyldihydrolipoyl)lysine"
+      - compartment: "m"
+      - formula: "C1376H2191N382O420S6"
+      - charge: 1
+    - !!omap
       - id: "MAM00211c"
       - name: "[protein]-N6,N6,N6-trimethyl-L-lysine"
       - compartment: "c"
@@ -34646,13 +34658,6 @@
       - charge: 1
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM02878m"
-      - name: "S-aminomethyldihydrolipoamide"
-      - compartment: "m"
-      - formula: "C9H21N2OS2"
-      - charge: 1
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM02880c"
       - name: "sarcosine"
       - compartment: "c"
@@ -58905,37 +58910,37 @@
       - id: "MAM20077m"
       - name: "2-(4-carboxy-1-hydroxybutyl)thiamine diphosphate"
       - compartment: "m"
-      - formula: "C17H25N4O10P2S3-"
+      - formula: "C17H23N4O10P2S"
       - charge: -3
     - !!omap
       - id: "MAM20078m"
       - name: "2-(2-methyl-1-hydroxypropyl)thiamine diphosphate"
       - compartment: "m"
-      - formula: "C16H25N4O8N4P2S2-"
+      - formula: "C16H24N4O8P2S"
       - charge: -2
     - !!omap
       - id: "MAM20079m"
       - name: "2-(2-methyl-1-hydroxybutyl)thiamine diphosphate"
       - compartment: "m"
-      - formula: "C17H27N4O8P2S2-"
+      - formula: "C17H26N4O8P2S"
       - charge: -2
     - !!omap
       - id: "MAM20080m"
       - name: "2-(3-methyl-1-hydroxybutyl)thiamine diphosphate"
       - compartment: "m"
-      - formula: "C17H27N4O8P2S2-"
+      - formula: "C17H26N4O8P2S"
       - charge: -2
     - !!omap
       - id: "MAM20081m"
       - name: "2-(1-hydroxypropyl)thiamine diphosphate"
       - compartment: "m"
-      - formula: "C15H23N4O8P2S2-"
+      - formula: "C15H22N4O8P2S"
       - charge: -2
     - !!omap
       - id: "MAM20082m"
       - name: "S-propanoyldihydrolipoamide"
       - compartment: "m"
-      - formula: "C11H23N1O2S2"
+      - formula: "C11H21NO2S2"
       - charge: 0
     - !!omap
       - id: "MAM20083x"
@@ -70208,7 +70213,7 @@
           - MAM01596m: 1
           - MAM01986m: -1
           - MAM02039m: -1
-          - MAM02878m: 1
+          - MAM20088m: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000140905 and ENSG00000178445"
@@ -70227,8 +70232,8 @@
           - MAM01045m: 1
           - MAM02039m: 1
           - MAM02578m: 1
-          - MAM02878m: -1
           - MAM02980m: -1
+          - MAM20088m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000140905 and ENSG00000145020"
@@ -87737,6 +87742,7 @@
           - MAM00210m: 1
           - MAM02484m: 1
           - MAM02643m: -1
+          - MAM20087m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000004779 and ENSG00000140905 and ENSG00000175536"
@@ -250529,6 +250535,8 @@
       - metabolites: !!omap
           - MAM00209m: -1
           - MAM02393m: 1
+          - MAM02578m: -1
+          - MAM20087m: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000144182"
@@ -250847,7 +250855,9 @@
           - MAM01824m: -2
           - MAM01826m: 2
           - MAM02039i: 4
-          - MAM02039m: -5
+          - MAM02039m: -2
+          - MAM03102m: -2
+          - MAM03103m: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000010256 and ENSG00000127540 and ENSG00000140740 and ENSG00000156467 and ENSG00000164405 and ENSG00000169021 and ENSG00000173660 and ENSG00000179091 and ENSG00000184076 and ENSG00000198727"
@@ -250905,6 +250915,20 @@
       - eccodes: "1.5.5.3"
       - references: "PMID:25697095"
       - subsystem: "Arginine and proline metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20193"
+      - name: "succinate transport via proton symport"
+      - metabolites: !!omap
+          - MAM02039c: -1
+          - MAM02039e: 1
+          - MAM02943c: -1
+          - MAM02943e: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000141526 or ENSG00000155380"
+      - references: "PMID:35363247"
+      - subsystem: "Transport reactions"
       - confidence_score: 0
 - genes:
     - !!omap

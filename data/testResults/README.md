@@ -52,9 +52,15 @@ and rewrites these, but `cobra.io.load_yaml_model` then raises a bare
 entry, key and line numbers.
 
 #### Growth (biomass producible)
-**Gate.** Whether the model can produce biomass under its default constraints
-(`slim_optimize`). When it cannot, `qc_growth_blockers.csv` lists the biomass
-precursors that cannot be made, which are what to fix.
+**Gate.** Whether the model can produce biomass on a defined medium, and how much.
+The medium is Ham's medium as defined by the `GR` task in
+`data/metabolicTasks/metabolicTasks_Essential.txt`. Every other uptake is closed,
+secretion stays open, and each nutrient's uptake is capped at 1 (O2 and H2O are not
+capped). Growth is then limited by the nutrients rather than by a reaction reaching
+an arbitrary flux bound, so the value can be compared between commits; it is not a
+physiological growth rate. When the model cannot grow, `qc_growth_blockers.csv`
+lists the biomass precursors that cannot be made on this medium, which are what to
+fix.
 
 #### Reactions with no metabolites
 Reactions whose stoichiometry is empty. Such a reaction does nothing and usually
@@ -167,14 +173,8 @@ The total score, plus per-section and per-test scores, from the
 [MEMOTE](https://memote.readthedocs.io) suite (`memoteSnapshot.py`). Every pull
 request runs a fast core subset (skipping the flux-variability,
 stoichiometric-consistency MILP and matrix-rank tests that dominate runtime).
-Comment `/run memote` to run the full suite. Higher is better, so the comment warns
-only when the score drops versus the target branch.
-
-Each score records the model version it was computed on (a hash of the model file and
-its annotation tables). The summary row shows the full-suite score, marked
-"full suite", while it matches the current model; otherwise it shows the core-subset
-score, marked "core subset". A full-suite score from an earlier model version, e.g.
-one inherited from the target branch, is listed as such in the full report.
+Comment `/run memote` to run the full suite; the score then updates in place. Higher
+is better, so the comment warns only when the score drops versus the target branch.
 
 Before running, the model is enriched with the cross-references and SBO terms from
 the annotation tables (the canonical `code/annotateGEM.py` helper), so the annotation
