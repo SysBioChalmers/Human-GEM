@@ -171016,7 +171016,9 @@
           - MAM01986x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171027,7 +171029,9 @@
           - MAM02880x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171060,7 +171064,9 @@
           - MAM02187x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171071,8 +171077,9 @@
           - MAM01690x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:17045662"
+      - references: "PMID:17045662;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171083,7 +171090,9 @@
           - MAM02896x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171094,7 +171103,9 @@
           - MAM02154x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171105,7 +171116,9 @@
           - MAM03148x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171116,7 +171129,9 @@
           - MAM01307x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171230,8 +171245,9 @@
           - MAM02759x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:3031070;PMID:6253473"
+      - references: "PMID:3031070;PMID:6253473;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171253,8 +171269,9 @@
           - MAM02914x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:17045662"
+      - references: "PMID:17045662;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171290,7 +171307,9 @@
           - MAM02926x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171301,7 +171320,9 @@
           - MAM02923x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171312,7 +171333,9 @@
           - MAM02183x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171323,7 +171346,9 @@
           - MAM02943x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171356,7 +171381,9 @@
           - MAM01641x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171379,7 +171406,9 @@
           - MAM01998x: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171390,7 +171419,9 @@
           - MAM02007x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171423,7 +171454,9 @@
           - MAM01306x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171434,7 +171467,9 @@
           - MAM02426x: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171445,7 +171480,9 @@
           - MAM00556x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171478,7 +171515,9 @@
           - MAM02159x: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171500,7 +171539,9 @@
           - MAM03120x: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171522,7 +171563,9 @@
           - MAM01740x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171533,7 +171576,9 @@
           - MAM01640x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171555,7 +171600,9 @@
           - MAM01252x: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -171566,7 +171613,9 @@
           - MAM02633x: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -182888,8 +182937,10 @@
           - MAM01253x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
       - eccodes: "2.3.1.16"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -188096,9 +188147,10 @@
           - MAM02661x: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
       - eccodes: "4.1.1.23"
-      - references: "PMID:15240345"
+      - references: "PMID:15240345;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -188537,8 +188589,10 @@
           - MAM02751x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
       - eccodes: "2.4.1.198"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -199058,8 +199112,9 @@
           - MAM03408x: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
-      - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294"
+      - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
@@ -199246,8 +199301,9 @@
           - MAM03562x: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
-      - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294"
+      - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
@@ -203117,8 +203173,9 @@
           - MAM03923x: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
-      - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294"
+      - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
@@ -203198,8 +203255,9 @@
           - MAM03954x: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
-      - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294"
+      - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
@@ -205032,8 +205090,9 @@
           - MAM02403x: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
-      - references: "PMID:17173541"
+      - references: "PMID:17173541;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -205071,8 +205130,9 @@
           - MAM02439x: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
-      - references: "PMID:17173541"
+      - references: "PMID:17173541;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -225460,8 +225520,9 @@
           - MAM03214x: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
-      - references: "PMID:2739576"
+      - references: "PMID:2739576;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
@@ -225530,8 +225591,9 @@
           - MAM03258x: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
-      - references: "PMID:8295400;PMID:14708889;PMID:1444166"
+      - references: "PMID:8295400;PMID:14708889;PMID:1444166;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -225597,8 +225659,9 @@
           - MAM03260x: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
-      - references: "PMID:2001377"
+      - references: "PMID:2001377;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
@@ -229936,7 +229999,9 @@
           - MAM01101x: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -231429,7 +231494,9 @@
           - MAM01073x: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000176894"
       - rxnFrom: "Recon3D"
+      - references: "PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -257879,6 +257946,9 @@
     - !!omap
       - id: "ENSG00000176890"
       - name: "TYMS"
+    - !!omap
+      - id: "ENSG00000176894"
+      - name: "PXMP2"
     - !!omap
       - id: "ENSG00000176920"
       - name: "FUT2"
