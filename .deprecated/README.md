@@ -1,7 +1,10 @@
 # Deprecated
 
-This directory contains old scripts, data, models, log files, etc. that are **no longer maintained or used**. They are stored here rather than deleted to maintain a historical account of repository activity in an easily accessible and searchable location.  
+Scripts, data, model files, and logs that were used during Human-GEM curation but are no longer maintained were once archived in this directory. They have been removed for the Human2 release (v2.0.0 and later) to keep the repository lean.
 
-Code in this directory is **unlikely to function as expected**, and should not be modified. If a script or dataset is to be revived or updated in some way, it should be moved from this directory to the appropriate location in the repository.
+These files remain fully available:
 
+- in the git history of this repository, and
+- in the last Human1 release, [v1.19.0](https://github.com/SysBioChalmers/Human-GEM/releases/tag/v1.19.0), which holds the complete set of deprecated and one-off curation files as they stood at the end of the Human1 series.
 
+To revive a file, retrieve it from that release or from the git history and move it to the appropriate location in the repository.

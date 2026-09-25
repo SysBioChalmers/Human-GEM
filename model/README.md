@@ -49,6 +49,9 @@ metEHMNID      |EHMN metabolite ID       |
 metHepatoNET1ID|HepatoNET1 metabolite ID |
 metRecon3DID   |Recon3D metabolite ID    |
 metMetaNetXID  |MetaNetX metabolite ID   |
+metSmiles      |SMILES structure         |
+metInChI       |InChI structure          |
+metSeedID      |ModelSEED compound ID    |
 metHMR2ID      |HMR2 metabolite ID       |
 metMAID        |MA metabolite ID         |
 

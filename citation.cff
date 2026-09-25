@@ -1,0 +1,64 @@
+cff-version: 1.2.0
+message: "If you use human-GEM, please cite the article as below."
+title: "Human-GEM"
+authors:
+  - family-names: "Luo"
+    given-names: "Jiahao"
+  - family-names: "Wang"
+    given-names: "Hao"
+  - family-names: "Moyer"
+    given-names: "Devlin"
+  - family-names: "Guo"
+    given-names: "Zhetao"
+  - family-names: "Robinson"
+    given-names: "Jonathan L."
+  - family-names: "Gustafsson"
+    given-names: "Johan"
+  - family-names: "Anton"
+    given-names: "Mihail"
+  - family-names: "Chen"
+    given-names: "Yu"
+  - family-names: "Kerkhoven"
+    given-names: "Eduard J."
+  - family-names: "Nielsen"
+    given-names: "Jens"
+  - family-names: "Li"
+    given-names: "Feiran"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.4099692
+repository-code: 'https://github.com/SysBioChalmers/Human-GEM'
+version: 2.0.0
+date-released: 2026-03-30
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Luo"
+      given-names: "Jiahao"
+    - family-names: "Wang"
+      given-names: "Hao"
+    - family-names: "Moyer"
+      given-names: "Devlin"
+    - family-names: "Guo"
+      given-names: "Zhetao"
+    - family-names: "Robinson"
+      given-names: "Jonathan L."
+    - family-names: "Gustafsson"
+      given-names: "Johan"
+    - family-names: "Anton"
+      given-names: "Mihail"
+    - family-names: "Chen"
+      given-names: "Yu"
+    - family-names: "Kerkhoven"
+      given-names: "Eduard J."
+    - family-names: "Nielsen"
+      given-names: "Jens"
+    - family-names: "Li"
+      given-names: "Feiran"
+  doi: "10.1073/pnas.2516511123"
+  journal: "Proceedings of the National Academy of Sciences"
+  title: "Reconstruction of human metabolic models with large language models"
+  volume: 123
+  issue: 15
+  year: 2026
+  start: "e2516511123"
