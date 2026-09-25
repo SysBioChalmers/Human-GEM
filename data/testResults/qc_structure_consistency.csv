@@ -312,6 +312,4 @@ MAM20016n,15-oxoprostaglandin E2,protonation,C20H29O5,0,C20H29O5-,-1,CCCCCC(=O)/
 MAM20017n,"13,14-dihydro-15-oxo-prostaglandin E2",protonation,C20H31O5,0,C20H31O5-,-1,CCCCCC(=O)CC[C@H]1[C@H](O)CC(=O)[C@@H]1C/C=C\CCCC(=O)[O-]
 MAM01019r,4-nitrocatechol,protonation,C6H5NO4,-1,C6H4NO4-,-1,O=[N+]([O-])c1ccc([O-])c(O)c1
 MAM02754r,PNP,protonation,C6H5NO3,-1,C6H4NO3-,-1,O=[N+]([O-])c1ccc([O-])cc1
-MAM01019i,4-nitrocatechol,protonation,C6H5NO4,-1,C6H4NO4-,-1,O=[N+]([O-])c1ccc([O-])c(O)c1
-MAM02754i,PNP,protonation,C6H5NO3,-1,C6H4NO3-,-1,O=[N+]([O-])c1ccc([O-])cc1
 MAM01657r,dehydrodolichol-diphosphate,formula_error,C40H65O7P2,-3,C25H44O7P2,0,CC(C)=CCC/C(C)=C/CC/C(C)=C/CC/C(C)=C\CC/C(C)=C\COP(=O)(O)OP(=O)(O)O
