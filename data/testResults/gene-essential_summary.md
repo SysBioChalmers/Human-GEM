@@ -8,3 +8,11 @@
 | HELA | 0.3253 | 170 | 0.3214 | 138 | 0.6736 | 0.2812 | 0.1462 | 45 |
 | RPE1 | 0.2544 | 184 | 0.3056 | 127 | 0.6564 | 0.2575 | 0.1363 | 64 |
 | all |  |  |  |  | 0.6673 | 0.3023 | 0.1591 |  |
+
+### Gene essentiality: effect of this change (vs `develop`)
+
+Checked **6** gene(s) directly affected plus **1269** more that share a metabolite with one of them.
+
+**No change:** 1275 gene(s).
+
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/mar11479-ldhal6a/data/testResults/gene-essential-diff.csv).
