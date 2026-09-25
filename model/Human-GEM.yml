@@ -2854,7 +2854,7 @@
     - !!omap
       - id: "MAM00208m"
       - name: "[protein]-N6-(dihydrolipoyl)lysine"
-      - compartment: "c"
+      - compartment: "m"
       - formula: "C1375H2187N381O420S6"
       - charge: 0
       - metFrom: "HMRdatabase"
@@ -58695,7 +58695,7 @@
       - formula: "C16H33NO2"
       - charge: 0
     - !!omap
-      - id: "MAM20076n"
+      - id: "MAM20076c"
       - name: "N-hexadecanoylsphing-4-enine"
       - compartment: "c"
       - formula: "C34H67NO3"
@@ -249521,10 +249521,10 @@
           - MAM02040c: -1
           - MAM02674c: 1
           - MAM02929c: 1
-          - MAM20076n: -1
+          - MAM20076c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138744"
+      - gene_reaction_rule: "ENSG00000104763 or ENSG00000138744 or ENSG00000177076 or ENSG00000188611"
       - eccodes: "3.5.1.23"
       - subsystem: "Fatty acid metabolism"
       - confidence_score: 0
@@ -249538,7 +249538,7 @@
           - MAM20075c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138744"
+      - gene_reaction_rule: "ENSG00000104763 or ENSG00000138744 or ENSG00000177076 or ENSG00000188611"
       - eccodes: "3.5.1.23"
       - subsystem: "Fatty acid metabolism"
       - confidence_score: 0
