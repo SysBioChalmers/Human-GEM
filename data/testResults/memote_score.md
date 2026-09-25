@@ -15,7 +15,7 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | annotation_met | 77.7% |
 | annotation_rxn | 76.6% |
 | annotation_gene | 46.6% |
-| annotation_sbo | 81.7% |
+| annotation_sbo | 81.8% |
 
 ### Detailed scores
 
@@ -41,7 +41,7 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | Annotation - SBO Terms | Metabolite SBO:0000247 Presence | 0.1% |
 | Annotation - SBO Terms | Reaction General SBO Presence | 0.0% |
 | Annotation - SBO Terms | Metabolic Reaction SBO:0000176 Presence | 0.0% |
-| Annotation - SBO Terms | Transport Reaction SBO:0000185 Presence | 0.7% |
+| Annotation - SBO Terms | Transport Reaction SBO:0000185 Presence | 0.5% |
 | Annotation - SBO Terms | Exchange Reaction SBO:0000627 Presence | 0.0% |
 | Annotation - SBO Terms | Demand Reaction SBO:0000628 Presence | 100.0% |
 | Annotation - SBO Terms | Sink Reactions SBO:0000632 Presence | 100.0% |

@@ -1,0 +1,30 @@
+reaction,name,compartments,equation
+MAR00119,Ca ATPase,ce,ATP + Ca2+ + H2O --> ADP + Ca2+ + H+ + Pi
+MAR00483,sn-glycerol-3-phosphate:ubiquinone oxidoreductase,cm,sn-glycerol-3-phosphate + ubiquinone --> DHAP + ubiquinol
+MAR03481,ATP binding cassette subfamily D ((3R)-phytanoyl-CoA),cx,ATP + 2 H2O + (3R)-phytanoyl-CoA <=> ADP + CoA + 2 H+ + (3R)-phytanic acid + Pi
+MAR03859,(R)-Lactate:ferricytochrome-c 2-oxidoreductase,cm,D-lactate + 2 ferricytochrome C --> 2 ferrocytochrome C + 2 H+ + pyruvate
+MAR04184,sulfite:ferricytochrome-c oxidoreductase,cm,2 ferricytochrome C + H2O + sulfite --> 2 ferrocytochrome C + 2 H+ + sulfate
+MAR04805,Absorption Or Uptake of 13-Docosenoic Acid into Cells,ce,ATP + cis-erucic acid + CoA --> AMP + PPi + 13-docosenoyl-CoA
+MAR06500,NADH:ubiquinone oxidoreductase (alpha-tocopheryl quinone),cm,alpha-tocopheryl quinone + 5 H+ + NADH --> alpha-tocopheryl hydroquinone + 4 H+ + NAD+
+MAR06604,Uptake of Vaccenic Acid,ce,ATP + cis-vaccenic acid + CoA --> AMP + PPi + 11-octadecenoyl-CoA
+MAR06779,Transport of Phytanoylcoa from Cytosol to Peroxisomes,cx,ATP + 2 H2O + 3(S)-phytanoyl-CoA --> ADP + CoA + 2 H+ + Pi + (3S)-phytanic acid
+MAR07152,Uptake of Linoleic Acid,ce,ATP + CoA + linoleate --> AMP + linoleoyl-CoA + PPi
+MAR07156,Uptake of Octadecenoate,ce,ATP + CoA + oleate --> AMP + oleoyl-CoA + PPi
+MAR07157,Transport of Hexadecanoate,ce,ATP + CoA + palmitate --> AMP + palmitoyl-CoA + PPi
+MAR07228,heparan-alpha-glucosaminide N-acetyltransferase (acetyl-CoA),cl,"acetyl-CoA + heparan sulfate, degradation product 2 --> CoA + H+ + heparan sulfate, degradation product 3"
+MAR07233,heparan-alpha-glucosaminide N-acetyltransferase (acetyl-CoA),cl,"acetyl-CoA + heparan sulfate, degradation product 7 --> CoA + H+ + heparan sulfate, degradation product 8"
+MAR07239,heparan-alpha-glucosaminide N-acetyltransferase (acetyl-CoA),cl,"acetyl-CoA + heparan sulfate, degradation product 13 --> CoA + H+ + heparan sulfate, degradation product 14"
+MAR07245,heparan-alpha-glucosaminide N-acetyltransferase (acetyl-CoA),cl,"acetyl-CoA + heparan sulfate, degradation product 19 --> CoA + H+ + heparan sulfate, degradation product 20"
+MAR07568,hyaluronan synthase (UDP-glucuronate),ce,"UDP-glucuronate + UDP-N-acetylglucosamine --> 2 H+ + hyaluronan biosynthesis, precursor 1 + 2 UDP"
+MAR07569,"hyaluronan synthase (hyaluronan biosynthesis, precursor 1)",ce,"hyaluronan biosynthesis, precursor 1 + UDP-glucuronate + UDP-N-acetylglucosamine --> 2 H+ + hyaluronate + 2 UDP"
+MAR07807,Uptake of Arachidate,ce,ATP + CoA + eicosanoate --> AMP + eicosanoyl-CoA + PPi
+MAR08514,(S)-Lactate:ferricytochrome-c 2-oxidoreductase,cm,2 ferricytochrome C + L-lactate --> 2 ferrocytochrome C + 2 H+ + pyruvate
+MAR08769,gamma-glutamyltransferase (alanine),ce,alanine + GSH --> (5-L-glutamyl)-L-amino acid + cys-gly
+MAR08770,gamma-glutamylcyclotransferase ((5-L-glutamyl)-L-amino acid),ce,(5-L-glutamyl)-L-amino acid --> 5-oxoproline + alanine
+MAR08983,Uptake of Octadecanoate (N-C18:0),ce,ATP + CoA + stearate --> AMP + PPi + stearoyl-CoA
+MAR08996,Uptake of Hexadecanoate,ce,ATP + CoA + myristic acid --> AMP + myristoyl-CoA + PPi
+MAR09870,Arachidonate (N-C18:1) Transport by FATP,ce,arachidonate + ATP + CoA --> AMP + arachidonyl-CoA + PPi
+MAR09894,Lignocerate Transport by FATP,ce,ATP + CoA + lignocerate --> AMP + PPi + tetracosanoyl-CoA
+MAR10023,transport of biomass (cytosol to extracellular),ce,biomass --> biomass
+MAR20167,MAR20167,cm,ubiquinone + FMNH2 <=> FMN + ubiquinol
+MAR20189,Reduction of alpha-tocopheryl quinone by Complex III,cm,alpha-tocopheryl quinone + 2 ferricytochrome C + 5 H+ --> alpha-tocopheryl hydroquinone + 2 ferrocytochrome C + 4 H+
