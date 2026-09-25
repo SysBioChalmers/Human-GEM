@@ -22616,13 +22616,6 @@
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM01911c"
-      - name: "galactose-1-phosphate"
-      - compartment: "c"
-      - formula: "C6H11O9P"
-      - charge: -2
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM01912c"
       - name: "galactosylgloboside"
       - compartment: "c"
@@ -60080,6 +60073,7 @@
       - gene_reaction_rule: "ENSG00000108479 or ENSG00000156958"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.6"
+      - references: "PMID:8908517"
       - subsystem: "Galactose metabolism"
       - confidence_score: 0
     - !!omap
@@ -60091,21 +60085,6 @@
           - MAM03107c: -1
           - MAM03108c: 1
       - lower_bound: -1000
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000213930"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "2.7.7.12"
-      - subsystem: "Galactose metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR04132"
-      - name: "UDP-glucose:alpha-D-galactose-1-phosphate uridylyltransferase"
-      - metabolites: !!omap
-          - MAM01911c: -1
-          - MAM01967c: 1
-          - MAM03107c: 1
-          - MAM03108c: -1
-      - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000213930"
       - rxnFrom: "HMRdatabase"
@@ -60130,23 +60109,6 @@
           - "3.2.1.20"
           - "3.2.1.48"
       - references: "PMID:12055199"
-      - subsystem: "Galactose metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR04414"
-      - name: "ATP:alpha-D-galactose 1-phosphotransferase"
-      - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM01910c: -1
-          - MAM01911c: 1
-          - MAM02039c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000108479 or ENSG00000156958 or ENSG00000166262"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "2.7.1.6"
-      - references: "PMID:8908517"
       - subsystem: "Galactose metabolism"
       - confidence_score: 0
     - !!omap
@@ -60306,9 +60268,10 @@
           - MAM03130c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000213930"
+      - gene_reaction_rule: "ENSG00000169764"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.7.7.12"
+      - eccodes: "2.7.7.10"
+      - references: "PMID:10799308"
       - subsystem: "Galactose metabolism"
       - confidence_score: 0
     - !!omap
@@ -256939,9 +256902,6 @@
     - !!omap
       - id: "ENSG00000166228"
       - name: "PCBD1"
-    - !!omap
-      - id: "ENSG00000166262"
-      - name: "FAM227B"
     - !!omap
       - id: "ENSG00000166311"
       - name: "SMPD1"
