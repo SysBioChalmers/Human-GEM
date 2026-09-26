@@ -11187,6 +11187,34 @@
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
+      - id: "MAM20090c"
+      - name: "4-hydroxy-13-cis-retinoate"
+      - compartment: "c"
+      - formula: "C20H27O3"
+      - charge: -1
+      - metFrom: "HumanGEM"
+    - !!omap
+      - id: "MAM20090r"
+      - name: "4-hydroxy-13-cis-retinoate"
+      - compartment: "r"
+      - formula: "C20H27O3"
+      - charge: -1
+      - metFrom: "HumanGEM"
+    - !!omap
+      - id: "MAM20091c"
+      - name: "4-hydroxy-9-cis-retinoate"
+      - compartment: "c"
+      - formula: "C20H27O3"
+      - charge: -1
+      - metFrom: "HumanGEM"
+    - !!omap
+      - id: "MAM20091r"
+      - name: "4-hydroxy-9-cis-retinoate"
+      - compartment: "r"
+      - formula: "C20H27O3"
+      - charge: -1
+      - metFrom: "HumanGEM"
+    - !!omap
       - id: "MAM01027c"
       - name: "4-oxo-2-nonenal"
       - compartment: "c"
@@ -11239,6 +11267,13 @@
       - id: "MAM01031c"
       - name: "4-oxo-all-trans-retinoate"
       - compartment: "c"
+      - formula: "C20H25O3"
+      - charge: -1
+      - metFrom: "HMRdatabase"
+    - !!omap
+      - id: "MAM01031n"
+      - name: "4-oxo-all-trans-retinoate"
+      - compartment: "n"
       - formula: "C20H25O3"
       - charge: -1
       - metFrom: "HMRdatabase"
@@ -134952,38 +134987,38 @@
       - id: "MAR06664"
       - name: "cytochrome P450 (9-cis-retinoate)"
       - metabolites: !!omap
-          - MAM01029c: 1
           - MAM01231c: -1
-          - MAM02039c: -2
-          - MAM02040c: 3
-          - MAM02554c: 2
-          - MAM02555c: -2
-          - MAM02630c: -2
+          - MAM02039c: -1
+          - MAM02040c: 1
+          - MAM02554c: 1
+          - MAM02555c: -1
+          - MAM02630c: -1
+          - MAM20091c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003137"
+      - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868 or ENSG00000160870"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:12091498;PMID:10823918"
+      - references: "PMID:11911845"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR06665"
       - name: "cytochrome P450 (9-cis-retinoate)"
       - metabolites: !!omap
-          - MAM01029r: 1
           - MAM01231r: -1
-          - MAM02039r: -2
-          - MAM02040r: 3
-          - MAM02554r: 2
-          - MAM02555r: -2
-          - MAM02630r: -2
+          - MAM02039r: -1
+          - MAM02040r: 1
+          - MAM02554r: 1
+          - MAM02555r: -1
+          - MAM02630r: -1
+          - MAM20091r: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003137"
+      - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868 or ENSG00000160870"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:12091498;PMID:10823918"
+      - references: "PMID:11911845"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
@@ -135238,18 +135273,18 @@
       - name: "cytochrome P450 (13-cis-retinoate)"
       - metabolites: !!omap
           - MAM00350c: -1
-          - MAM01026c: 1
-          - MAM02039c: -2
-          - MAM02040c: 3
-          - MAM02554c: 2
-          - MAM02555c: -2
-          - MAM02630c: -2
+          - MAM02039c: -1
+          - MAM02040c: 1
+          - MAM02554c: 1
+          - MAM02555c: -1
+          - MAM02630c: -1
+          - MAM20090c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003137 or ENSG00000160868 or ENSG00000138115"
+      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115 or ENSG00000160870"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:12091498;PMID:10823918;PMID:25039756;PMID:20421446"
+      - references: "PMID:11911845;PMID:20421446"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
@@ -135257,18 +135292,18 @@
       - name: "cytochrome P450 (13-cis-retinoate)"
       - metabolites: !!omap
           - MAM00350r: -1
-          - MAM01026r: 1
-          - MAM02039r: -2
-          - MAM02040r: 3
-          - MAM02554r: 2
-          - MAM02555r: -2
-          - MAM02630r: -2
+          - MAM02039r: -1
+          - MAM02040r: 1
+          - MAM02554r: 1
+          - MAM02555r: -1
+          - MAM02630r: -1
+          - MAM20090r: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003137 or ENSG00000160868 or ENSG00000138115"
+      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115 or ENSG00000160870"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:12091498;PMID:10823918;PMID:25039756;PMID:20421446"
+      - references: "PMID:11911845;PMID:20421446"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
@@ -187310,7 +187345,19 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01563"
-      - name: "4-oxo-13-cis-retinoate transport, nuclear"
+      - name: "4-Oxo-Retinoic Acid Transport, Nuclear"
+      - metabolites: !!omap
+          - MAM01031c: -1
+          - MAM01031n: 1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - rxnFrom: "Recon3D"
+      - references: "PMID:1503811"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR01564"
+      - name: "13-Cis-4-Oxo-Retinoic Acid Transport, Nuclear"
       - metabolites: !!omap
           - MAM01026c: -1
           - MAM01026n: 1
@@ -249766,6 +249813,82 @@
       - gene_reaction_rule: "ENSG00000141526 or ENSG00000155380"
       - references: "PMID:35363247"
       - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20197"
+      - name: "cytochrome P450 (4-hydroxy-13-cis-retinoate)"
+      - metabolites: !!omap
+          - MAM01026c: 1
+          - MAM02039c: -1
+          - MAM02040c: 2
+          - MAM02554c: 1
+          - MAM02555c: -1
+          - MAM02630c: -1
+          - MAM20090c: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "1.14.-.-"
+      - references: "PMID:11911845;PMID:25039756"
+      - subsystem: "Retinol metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20198"
+      - name: "cytochrome P450 (4-hydroxy-13-cis-retinoate)"
+      - metabolites: !!omap
+          - MAM01026r: 1
+          - MAM02039r: -1
+          - MAM02040r: 2
+          - MAM02554r: 1
+          - MAM02555r: -1
+          - MAM02630r: -1
+          - MAM20090r: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "1.14.-.-"
+      - references: "PMID:11911845;PMID:25039756"
+      - subsystem: "Retinol metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20199"
+      - name: "cytochrome P450 (4-hydroxy-9-cis-retinoate)"
+      - metabolites: !!omap
+          - MAM01029c: 1
+          - MAM02039c: -1
+          - MAM02040c: 2
+          - MAM02554c: 1
+          - MAM02555c: -1
+          - MAM02630c: -1
+          - MAM20091c: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "1.14.-.-"
+      - references: "PMID:11911845"
+      - subsystem: "Retinol metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20200"
+      - name: "cytochrome P450 (4-hydroxy-9-cis-retinoate)"
+      - metabolites: !!omap
+          - MAM01029r: 1
+          - MAM02039r: -1
+          - MAM02040r: 2
+          - MAM02554r: 1
+          - MAM02555r: -1
+          - MAM02630r: -1
+          - MAM20091r: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "1.14.-.-"
+      - references: "PMID:11911845"
+      - subsystem: "Retinol metabolism"
       - confidence_score: 0
 - genes:
     - !!omap
