@@ -2572,6 +2572,13 @@
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
+      - id: "MAM00180e"
+      - name: "(S)-dihydroorotate"
+      - compartment: "e"
+      - formula: "C5H5N2O4"
+      - charge: -1
+      - metFrom: "HMRdatabase"
+    - !!omap
       - id: "MAM00181m"
       - name: "(S)-hydroxydecanoyl-CoA"
       - compartment: "m"
@@ -249815,6 +249822,26 @@
       - name: "Exchange of 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen"
       - metabolites: !!omap
           - MAM00232e: -1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - subsystem: "Exchange/demand reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20201"
+      - name: "(S)-dihydroorotate transport, cytosol to extracellular"
+      - metabolites: !!omap
+          - MAM00180c: -1
+          - MAM00180e: 1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - references: "PMID:30643150"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20202"
+      - name: "Exchange of (S)-dihydroorotate"
+      - metabolites: !!omap
+          - MAM00180e: -1
       - lower_bound: -1000
       - upper_bound: 1000
       - subsystem: "Exchange/demand reactions"
