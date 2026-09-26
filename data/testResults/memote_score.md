@@ -4,7 +4,7 @@
 
 Mode: core subset.
 
-Model version: bd4c3623919e.
+Model version: ced305d30084.
 Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metabolites, test_inconsistent_min_stoichiometry, test_detect_energy_generating_cycles, test_find_stoichiometrically_balanced_cycles, test_blocked_reactions, test_find_reactions_unbounded_flux_default_condition, test_find_metabolites_not_produced_with_open_bounds, test_find_metabolites_not_consumed_with_open_bounds, test_number_independent_conservation_relations, test_matrix_rank, test_degrees_of_freedom.
 
 **Total score: 63.8%**
@@ -15,8 +15,8 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | --- | ---: |
 | consistency | 42.5% |
 | annotation_met | 77.6% |
-| annotation_rxn | 76.6% |
-| annotation_gene | 46.6% |
+| annotation_rxn | 76.4% |
+| annotation_gene | 46.7% |
 | annotation_sbo | 81.7% |
 
 ### Detailed scores
@@ -27,15 +27,15 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | Consistency | Charge Balance | 97.9% |
 | Consistency | Metabolite Connectivity | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |
-| Annotation - Metabolites | Metabolite Annotations Per Database | 47.3% |
+| Annotation - Metabolites | Metabolite Annotations Per Database | 47.2% |
 | Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 63.3% |
 | Annotation - Metabolites | Uniform Metabolite Identifier Namespace | 100.0% |
 | Annotation - Reactions | Presence of Reaction Annotation | 100.0% |
-| Annotation - Reactions | Reaction Annotations Per Database | 28.5% |
+| Annotation - Reactions | Reaction Annotations Per Database | 27.8% |
 | Annotation - Reactions | Reaction Annotation Conformity Per Database | 77.8% |
 | Annotation - Reactions | Uniform Reaction Identifier Namespace | 100.0% |
 | Annotation - Genes | Presence of Gene Annotation | 100.0% |
-| Annotation - Genes | Gene Annotations Per Database | 19.9% |
+| Annotation - Genes | Gene Annotations Per Database | 20.0% |
 | Annotation - Genes | Gene Annotation Conformity Per Database | 20.0% |
 | Annotation - SBO Terms | Metabolite General SBO Presence | 100.0% |
 | Annotation - SBO Terms | Metabolite SBO:0000247 Presence | 99.9% |

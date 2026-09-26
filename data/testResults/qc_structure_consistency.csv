@@ -58,8 +58,6 @@ MAM01315e,alloxan,formula_error,C4N2O4,-2,C5H4N4O2,0,Oc1nc(O)c2cn[nH]c2n1
 MAM01318c,"alpha-(1,2-dihydroxyethyl)-1,2,3,4-tetrahydro-7-hydroxy-9-methoxy-3,4-dioxocyclopenta[c][1]benzopyran-6-acetaldehyde",protonation,C17H15O8,-1,C17H16O8,0,COc1cc(O)c(C(C=O)C(O)CO)c2oc(=O)c3c(c12)CCC3=O
 MAM01323c,alpha-D-mannosyl-beta-D-mannosyl-diacetylchitobiosyldiphosphodolichol,formula_error,C128H210N2O27P2,-2,C53H92N2O27P2,0,CC(=O)N[C@H]1[C@H](O[C@@H]2[C@@H](CO)O[C@H](OP(=O)(O)OP(=O)(O)OCCC(C)CC/C=C(/C)CC/C=C(\C)CC/C=C(\C)CCC=C(C)C)[C@H](NC(C)=O)[C@H]2O)O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@@H](O)[C@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]3O)[C@@H]2O)[C@@H]1O
 MAM01367c,arsenite,protonation,AsH2O3,-1,AsO3-3,-3,[O-][As]([O-])[O-]
-MAM01368c,ascorbate,protonation,C6H7O6,-1,C6H8O6,0,O=C1O[C@H]([C@@H](O)CO)C(O)=C1O
-MAM01368e,ascorbate,protonation,C6H7O6,-1,C6H8O6,0,O=C1O[C@H]([C@@H](O)CO)C(O)=C1O
 MAM01381c,benzothiazine,formula_error,C11H12N2O3S,0,C8H7NS,0,C1=Nc2ccccc2SC1
 MAM01390c,beta-D-mannosyldiacetylchitobiosyldiphosphodolichol,formula_error,C122H200N2O22P2,-2,C47H82N2O22P2,0,CC(=O)N[C@H]1[C@H](O[C@@H]2[C@@H](CO)O[C@H](OP(=O)(O)OP(=O)(O)OCCC(C)CC/C=C(/C)CC/C=C(\C)CC/C=C(\C)CCC=C(C)C)[C@H](NC(C)=O)[C@H]2O)O[C@H](CO)[C@@H](O[C@@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]2O)[C@@H]1O
 MAM01402c,biotinyl-5-AMP,protonation,C20H27N7O9PS,-1,C20H28N7O9PS,0,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OC(=O)CCCC[C@@H]2SC[C@@H]3NC(=O)N[C@H]23)[C@@H](O)[C@H]1O
@@ -103,7 +101,6 @@ MAM01966e,"glucose-1,6-bisphosphate",protonation,C6H11O12P2,-3,C6H14O12P2,0,O=P(
 MAM01995c,glycogenin G8,formula_error,C1827H2805N455O568S14,0,C6H11O5,0,OC[C@H]1O[CH][C@H](O)[C@@H](O)[C@@H]1O
 MAM02042c,H2S,protonation,HS,-1,H2S,0,S
 MAM02042e,H2S,protonation,HS,-1,H2S,0,S
-MAM02043c,H2S2O3,protonation,HO3S2,-1,H2O3S2,0,O=S(=O)(O)S
 MAM02104c,heptaglutamyl-folate(DHF),formula_error,C49H55N13O24,-8,C54H68N14O27,0,Nc1nc(=O)c2nc(CNc3ccc(C(=O)N(C(=O)[C@@H](N)CCC(=O)O)C(C(=O)OC(=O)[C@@H](N)CCC(=O)O)(C(=O)[C@@H](N)CCC(=O)O)C(C(=O)[C@@H](N)CCC(=O)O)(C(=O)[C@@H](N)CCC(=O)O)C(C(=O)O)(C(=O)[C@@H](N)CCC(=O)O)C(=O)[C@@H](N)CCC(=O)O)cc3)cnc2[nH]1
 MAM02104l,heptaglutamyl-folate(DHF),formula_error,C49H55N13O24,-8,C54H68N14O27,0,Nc1nc(=O)c2nc(CNc3ccc(C(=O)N(C(=O)[C@@H](N)CCC(=O)O)C(C(=O)OC(=O)[C@@H](N)CCC(=O)O)(C(=O)[C@@H](N)CCC(=O)O)C(C(=O)[C@@H](N)CCC(=O)O)(C(=O)[C@@H](N)CCC(=O)O)C(C(=O)O)(C(=O)[C@@H](N)CCC(=O)O)C(=O)[C@@H](N)CCC(=O)O)cc3)cnc2[nH]1
 MAM02104m,heptaglutamyl-folate(DHF),formula_error,C49H55N13O24,-8,C54H68N14O27,0,Nc1nc(=O)c2nc(CNc3ccc(C(=O)N(C(=O)[C@@H](N)CCC(=O)O)C(C(=O)OC(=O)[C@@H](N)CCC(=O)O)(C(=O)[C@@H](N)CCC(=O)O)C(C(=O)[C@@H](N)CCC(=O)O)(C(=O)[C@@H](N)CCC(=O)O)C(C(=O)O)(C(=O)[C@@H](N)CCC(=O)O)C(=O)[C@@H](N)CCC(=O)O)cc3)cnc2[nH]1

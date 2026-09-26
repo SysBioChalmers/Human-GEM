@@ -2867,7 +2867,7 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM20087m"
-      - name: "[protein]-L-lysine"
+      - name: "[glycine cleavage system H protein]-L-lysine"
       - compartment: "m"
       - formula: "C1367H2173N381O419S4"
       - charge: 0
@@ -4923,7 +4923,7 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00384c"
-      - name: "15-deoxy-PGD2"
+      - name: "15-deoxy-delta-12,14-PGD2"
       - compartment: "c"
       - formula: "C20H29O4"
       - charge: -1
@@ -8535,7 +8535,7 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00751m"
-      - name: "3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al"
+      - name: "(25R)-3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-26-al"
       - compartment: "m"
       - formula: "C27H46O4"
       - charge: 0
@@ -11636,7 +11636,7 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM04082c"
-      - name: "Zymosterol Intermediate 2"
+      - name: "5alpha-cholesta-8,24-dien-3-one"
       - compartment: "c"
       - formula: "C27H42O"
       - charge: 0
@@ -12387,6 +12387,13 @@
       - id: "MAM01136c"
       - name: "5-S-glutathionyl-aminochrome reduced"
       - compartment: "c"
+      - formula: "C18H23N4O8S"
+      - charge: -1
+      - metFrom: "HMRdatabase"
+    - !!omap
+      - id: "MAM01136e"
+      - name: "5-S-glutathionyl-aminochrome reduced"
+      - compartment: "e"
       - formula: "C18H23N4O8S"
       - charge: -1
       - metFrom: "HMRdatabase"
@@ -15157,28 +15164,28 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01364c"
-      - name: "arachidonyl-CoA"
+      - name: "arachidonoyl-CoA"
       - compartment: "c"
       - formula: "C41H62N7O17P3S"
       - charge: -4
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01364m"
-      - name: "arachidonyl-CoA"
+      - name: "arachidonoyl-CoA"
       - compartment: "m"
       - formula: "C41H62N7O17P3S"
       - charge: -4
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01364x"
-      - name: "arachidonyl-CoA"
+      - name: "arachidonoyl-CoA"
       - compartment: "x"
       - formula: "C41H62N7O17P3S"
       - charge: -4
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01364r"
-      - name: "arachidonyl-CoA"
+      - name: "arachidonoyl-CoA"
       - compartment: "r"
       - formula: "C41H62N7O17P3S"
       - charge: -4
@@ -16647,14 +16654,14 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01468l"
-      - name: "cholesterol-ester-5,8,11,14,17-eico"
+      - name: "cholesteryl (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate"
       - compartment: "l"
       - formula: "C47H74O2"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01468r"
-      - name: "cholesterol-ester-5,8,11,14,17-eico"
+      - name: "cholesteryl (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate"
       - compartment: "r"
       - formula: "C47H74O2"
       - charge: 0
@@ -17872,14 +17879,14 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01576m"
-      - name: "cis,cis-myristo-5,8-dienoyl-CoA"
+      - name: "(5Z,8Z)-tetradecadienoyl-CoA"
       - compartment: "m"
       - formula: "C35H54N7O17P3S"
       - charge: -4
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01576x"
-      - name: "cis,cis-myristo-5,8-dienoyl-CoA"
+      - name: "(5Z,8Z)-tetradecadienoyl-CoA"
       - compartment: "x"
       - formula: "C35H54N7O17P3S"
       - charge: -4
@@ -20446,7 +20453,7 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01739c"
-      - name: "dopaminochrome"
+      - name: "5,6-dihydroxyindole"
       - compartment: "c"
       - formula: "C8H7NO2"
       - charge: 0
@@ -24599,13 +24606,6 @@
       - name: "H2S"
       - compartment: "e"
       - formula: "HS"
-      - charge: -1
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM02043c"
-      - name: "H2S2O3"
-      - compartment: "c"
-      - formula: "HO3S2"
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
@@ -30939,8 +30939,8 @@
       - id: "MAM02599c"
       - name: "N-methyl-4,6,7-trihydroxy-1,2,3,4-tetrahydroisoquinoline"
       - compartment: "c"
-      - formula: "C10H13NO3"
-      - charge: 0
+      - formula: "C10H14NO3"
+      - charge: 1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02600c"
@@ -31455,21 +31455,21 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02638c"
-      - name: "octadecenoylcarnitine(11)"
+      - name: "(7Z)-octadecenoylcarnitine"
       - compartment: "c"
       - formula: "C25H47NO4"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02638m"
-      - name: "octadecenoylcarnitine(11)"
+      - name: "(7Z)-octadecenoylcarnitine"
       - compartment: "m"
       - formula: "C25H47NO4"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02638r"
-      - name: "octadecenoylcarnitine(11)"
+      - name: "(7Z)-octadecenoylcarnitine"
       - compartment: "r"
       - formula: "C25H47NO4"
       - charge: 0
@@ -31497,21 +31497,21 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02640c"
-      - name: "octadecenoylcarnitine(7)"
+      - name: "(11Z)-octadecenoylcarnitine"
       - compartment: "c"
       - formula: "C25H47NO4"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02640m"
-      - name: "octadecenoylcarnitine(7)"
+      - name: "(11Z)-octadecenoylcarnitine"
       - compartment: "m"
       - formula: "C25H47NO4"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02640r"
-      - name: "octadecenoylcarnitine(7)"
+      - name: "(11Z)-octadecenoylcarnitine"
       - compartment: "r"
       - formula: "C25H47NO4"
       - charge: 0
@@ -38768,7 +38768,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04082r"
-      - name: "Zymosterol Intermediate 2"
+      - name: "5alpha-cholesta-8,24-dien-3-one"
       - compartment: "r"
       - formula: "C27H42O"
       - charge: 0
@@ -41532,20 +41532,6 @@
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
-      - id: "MAM01739x"
-      - name: "dopaminochrome"
-      - compartment: "x"
-      - formula: "C8H7NO2"
-      - charge: 0
-      - metFrom: "Recon3D"
-    - !!omap
-      - id: "MAM01136x"
-      - name: "5-S-glutathionyl-aminochrome reduced"
-      - compartment: "x"
-      - formula: "C18H23N4O8S"
-      - charge: -1
-      - metFrom: "Recon3D"
-    - !!omap
       - id: "MAM01973e"
       - name: "glucuronate"
       - compartment: "e"
@@ -41610,7 +41596,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM00751c"
-      - name: "3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al"
+      - name: "(25R)-3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-26-al"
       - compartment: "c"
       - formula: "C27H46O4"
       - charge: 0
@@ -42051,14 +42037,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03331c"
-      - name: "4,4-Dimethylcholesta-8(9),14-Dien-3Beta-Ol"
+      - name: "4,4-dimethyl-5alpha-cholesta-8,14-dien-3beta-ol"
       - compartment: "c"
       - formula: "C29H48O"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03331r"
-      - name: "4,4-Dimethylcholesta-8(9),14-Dien-3Beta-Ol"
+      - name: "4,4-dimethyl-5alpha-cholesta-8,14-dien-3beta-ol"
       - compartment: "r"
       - formula: "C29H48O"
       - charge: 0
@@ -42492,7 +42478,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM00751r"
-      - name: "3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al"
+      - name: "(25R)-3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-26-al"
       - compartment: "r"
       - formula: "C27H46O4"
       - charge: 0
@@ -43094,7 +43080,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03386c"
-      - name: "7,12-Dimethylbenz[A]Anthracene-3,4-Oxide"
+      - name: "7,12-dimethylbenz[a]anthracene 3,4-oxide"
       - compartment: "c"
       - formula: "C20H16O"
       - charge: 0
@@ -43108,49 +43094,49 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03386r"
-      - name: "7,12-Dimethylbenz[A]Anthracene-3,4-Oxide"
+      - name: "7,12-dimethylbenz[a]anthracene 3,4-oxide"
       - compartment: "r"
       - formula: "C20H16O"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03387c"
-      - name: "7,12-Dimethylbenz[A]Anthracene-3,4-Diol"
+      - name: "trans-3,4-dihydro-3,4-dihydroxy-7,12-dimethylbenz[a]anthracene"
       - compartment: "c"
       - formula: "C20H18O2"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03387r"
-      - name: "7,12-Dimethylbenz[A]Anthracene-3,4-Diol"
+      - name: "trans-3,4-dihydro-3,4-dihydroxy-7,12-dimethylbenz[a]anthracene"
       - compartment: "r"
       - formula: "C20H18O2"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03386x"
-      - name: "7,12-Dimethylbenz[A]Anthracene-3,4-Oxide"
+      - name: "7,12-dimethylbenz[a]anthracene 3,4-oxide"
       - compartment: "x"
       - formula: "C20H16O"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03387x"
-      - name: "7,12-Dimethylbenz[A]Anthracene-3,4-Diol"
+      - name: "trans-3,4-dihydro-3,4-dihydroxy-7,12-dimethylbenz[a]anthracene"
       - compartment: "x"
       - formula: "C20H18O2"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03388c"
-      - name: "7,12-Dimethylbenz[A]Anthracene-3,4-Diol-1,2-Epoxide"
+      - name: "(1aalpha,2beta,3alpha,11calpha)-1a,2,3,11c-tetrahydro-6,11-dimethylbenzo[6,7]phenanthro[3,4-b]oxirene-2,3-diol"
       - compartment: "c"
       - formula: "C20H18O3"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03388r"
-      - name: "7,12-Dimethylbenz[A]Anthracene-3,4-Diol-1,2-Epoxide"
+      - name: "(1aalpha,2beta,3alpha,11calpha)-1a,2,3,11c-tetrahydro-6,11-dimethylbenzo[6,7]phenanthro[3,4-b]oxirene-2,3-diol"
       - compartment: "r"
       - formula: "C20H18O3"
       - charge: 0
@@ -44494,7 +44480,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03552m"
-      - name: "2,6-dimethyl heptanoyl-CoA"
+      - name: "2,6-dimethylheptanoyl-CoA"
       - compartment: "m"
       - formula: "C30H48N7O17P3S"
       - charge: -4
@@ -45362,7 +45348,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM01892c"
-      - name: "15-Keto-Prostaglandin F2A"
+      - name: "15-keto-prostaglandin F2alpha"
       - compartment: "c"
       - formula: "C20H31O5"
       - charge: -1
@@ -45537,7 +45523,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM01468e"
-      - name: "cholesterol-ester-5,8,11,14,17-eico"
+      - name: "cholesteryl (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate"
       - compartment: "e"
       - formula: "C47H74O2"
       - charge: 0
@@ -46384,7 +46370,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM01892e"
-      - name: "15-Keto-Prostaglandin F2A"
+      - name: "15-keto-prostaglandin F2alpha"
       - compartment: "e"
       - formula: "C20H31O5"
       - charge: -1
@@ -46839,7 +46825,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM00384e"
-      - name: "15-deoxy-PGD2"
+      - name: "15-deoxy-delta-12,14-PGD2"
       - compartment: "e"
       - formula: "C20H29O4"
       - charge: -1
@@ -50990,7 +50976,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM01468c"
-      - name: "cholesterol-ester-5,8,11,14,17-eico"
+      - name: "cholesteryl (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate"
       - compartment: "c"
       - formula: "C47H74O2"
       - charge: 0
@@ -52019,14 +52005,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03188c"
-      - name: "2-Hydroxy-Glutarate"
+      - name: "2-hydroxyglutarate"
       - compartment: "c"
       - formula: "C5H6O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03188e"
-      - name: "2-Hydroxy-Glutarate"
+      - name: "2-hydroxyglutarate"
       - compartment: "e"
       - formula: "C5H6O5"
       - charge: -2
@@ -53003,20 +52989,6 @@
       - compartment: "c"
       - formula: "C8H7NO2"
       - charge: 0
-      - metFrom: "Recon3D"
-    - !!omap
-      - id: "MAM03270c"
-      - name: "4-S-Glutathionyl-5,6-Dihydroxyindoline"
-      - compartment: "c"
-      - formula: "C18H23N4O8S"
-      - charge: -1
-      - metFrom: "Recon3D"
-    - !!omap
-      - id: "MAM03270e"
-      - name: "4-S-Glutathionyl-5,6-Dihydroxyindoline"
-      - compartment: "e"
-      - formula: "C18H23N4O8S"
-      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03281e"
@@ -61440,9 +61412,9 @@
           - MAM02039m: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - rxnNotes: "Acetoacetate decarboxylates non-enzymatically; no mammalian acetoacetate decarboxylase gene is known (PMID:12726989). A weak activity attributed to serum albumin was reported (PMID:4624981, PMID:963888)."
       - rxnFrom: "HMRdatabase"
-      - eccodes: "4.1.1.4"
-      - references: "PMID:4076528;PMID:4624981;PMID:963888"
+      - references: "PMID:4076528;PMID:4624981;PMID:963888;PMID:12726989"
       - subsystem: "Propanoate metabolism"
       - confidence_score: 0
     - !!omap
@@ -61649,7 +61621,8 @@
           - MAM02553c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000166796 or ENSG00000166800 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800"
+      - references: "PMID:26014429;PMID:26059096"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.27"
       - subsystem: "Butanoate metabolism"
@@ -68623,7 +68596,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06955"
-      - name: "putrescine-2-oxoglutarate transaminase (1-pyrroline)"
+      - name: "4-aminobutanal to 1-pyrroline conversion"
       - metabolites: !!omap
           - MAM00557m: -1
           - MAM00969m: 1
@@ -68631,7 +68604,6 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.6.1.82"
       - references: "PMID:7040832;PMID:10047787"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
@@ -69081,6 +69053,9 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171097"
+      - eccodes:
+          - "2.6.1.117"
+          - "2.6.1.64"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Cysteine and methionine metabolism"
       - confidence_score: 0
@@ -70034,6 +70009,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000016391"
+      - references: "PMID:1218095;PMID:9630673;PMID:34428349"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.99.1"
       - subsystem: "Glycine, serine and threonine metabolism"
@@ -72186,13 +72162,13 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06712"
-      - name: "1,2,3,4-tetrahydro-beta-carboline hydrolysis"
+      - name: "Pictet-Spengler condensation of tryptamine with formaldehyde"
       - metabolites: !!omap
-          - MAM00230c: -1
-          - MAM01831c: 1
-          - MAM02040c: -1
-          - MAM03088c: 1
-      - lower_bound: -1000
+          - MAM00230c: 1
+          - MAM01831c: -1
+          - MAM02040c: 1
+          - MAM03088c: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:8891913"
@@ -72601,13 +72577,13 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06742"
-      - name: "4,6,7-trihydroxy-1,2,3,4-tetrahydroisoquinoline hydrolysis"
+      - name: "Pictet-Spengler condensation of noradrenaline with formaldehyde"
       - metabolites: !!omap
-          - MAM00945c: -1
-          - MAM01831c: 1
-          - MAM02040c: -1
-          - MAM02617c: 1
-      - lower_bound: -1000
+          - MAM00945c: 1
+          - MAM01831c: -1
+          - MAM02040c: 1
+          - MAM02617c: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:8891913"
@@ -72631,14 +72607,13 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06744"
-      - name: "N-methyl-4,6,7-trihydroxy-1,2,3,4-tetrahydroisoquinoline hydrolysis"
+      - name: "Pictet-Spengler condensation of adrenaline with formaldehyde"
       - metabolites: !!omap
-          - MAM01290c: 1
-          - MAM01831c: 1
-          - MAM02039c: -1
-          - MAM02040c: -1
-          - MAM02599c: -1
-      - lower_bound: -1000
+          - MAM01290c: -1
+          - MAM01831c: -1
+          - MAM02040c: 1
+          - MAM02599c: 1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:8891913"
@@ -73442,13 +73417,13 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06807"
-      - name: "6,7-dihydroxy-1,2,3,4-tetrahydroisoquinoline hydrolysis"
+      - name: "Pictet-Spengler condensation of dopamine with formaldehyde"
       - metabolites: !!omap
-          - MAM01154c: -1
-          - MAM01736c: 1
-          - MAM01831c: 1
-          - MAM02040c: -1
-      - lower_bound: -1000
+          - MAM01154c: 1
+          - MAM01736c: -1
+          - MAM01831c: -1
+          - MAM02040c: 1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:8891913"
@@ -73490,10 +73465,10 @@
       - name: "peroxidase (dopamine-O-quinone)"
       - metabolites: !!omap
           - MAM01738c: -1
-          - MAM01739c: 1
           - MAM02039c: 1
           - MAM02040c: 2
           - MAM02041c: -1
+          - MAM02160c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000005381 or ENSG00000115705 or ENSG00000121053 or ENSG00000167419"
@@ -73509,7 +73484,7 @@
       - name: "crystallin zeta (aminochrome-O-semiquinone)"
       - metabolites: !!omap
           - MAM01333c: -1
-          - MAM01739c: 1
+          - MAM02160c: 1
           - MAM02554c: -1
           - MAM02555c: 1
       - lower_bound: -1000
@@ -73517,38 +73492,6 @@
       - gene_reaction_rule: "ENSG00000116791"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.6.5.5"
-      - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR06815"
-      - name: "glutathione transferase (5-S-glutathionyl-aminochrome reduced)"
-      - metabolites: !!omap
-          - MAM01136c: -1
-          - MAM01739c: 1
-          - MAM02026c: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000008394 or ENSG00000065621 or ENSG00000084207 or ENSG00000085871 or ENSG00000100577 or ENSG00000133433 or ENSG00000134184 or ENSG00000134201 or ENSG00000134202 or ENSG00000143198 or ENSG00000148834 or ENSG00000163106 or ENSG00000168765 or ENSG00000170899 or ENSG00000174156 or ENSG00000182793 or ENSG00000197448 or ENSG00000213366 or ENSG00000243955 or ENSG00000244067"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "2.5.1.18"
-      - references: "PMID:9503014;PMID:8307579;PMID:9480897;PMID:9480897;PMID:2034681;PMID:2345169;PMID:2345169;PMID:8276420;PMID:8473333;PMID:1885604;PMID:7587384;PMID:8617495;PMID:7789971;PMID:9396740;PMID:9417084;PMID:8703034;PMID:9278457;PMID:10783391;PMID:12618591;PMID:12618591;PMID:12042665;PMID:12720545;PMID:14742434"
-      - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR06817"
-      - name: "crystallin zeta (dopaminochrome)"
-      - metabolites: !!omap
-          - MAM01739c: -1
-          - MAM02039c: -1
-          - MAM02361c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000116791"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.6.5.5"
-      - references: "PMID:9164836"
       - subsystem: "Phenylalanine, tyrosine and tryptophan biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -74087,12 +74030,12 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06877"
-      - name: "5-S-cysteinyldopa to cysteine conversion"
+      - name: "cysteine and L-dopaquinone to 5-S-cysteinyldopa conversion"
       - metabolites: !!omap
-          - MAM01134c: -1
-          - MAM01628c: 1
-          - MAM02356c: 1
-      - lower_bound: -1000
+          - MAM01134c: 1
+          - MAM01628c: -1
+          - MAM02356c: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:8931873;PMID:8819121;PMID:8819121;PMID:8931873;PMID:8819121;PMID:8931873"
@@ -74487,23 +74430,6 @@
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.1"
       - references: "PMID:7126172"
-      - subsystem: "Cysteine and methionine metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR03928"
-      - name: "3-mercaptopyruvate:sulfide sulfurtransferase"
-      - metabolites: !!omap
-          - MAM02039c: -1
-          - MAM02043c: 1
-          - MAM02464c: -1
-          - MAM02819c: 1
-          - MAM02949c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000128309 or ENSG00000128311"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "2.8.1.2"
-      - references: "PMID:1953758;PMID:851908"
       - subsystem: "Cysteine and methionine metabolism"
       - confidence_score: 0
     - !!omap
@@ -81358,21 +81284,6 @@
       - gene_reaction_rule: "ENSG00000123453 or ENSG00000132837"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.5.8.4"
-      - subsystem: "Sulfur metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR04840"
-      - name: "3alpha-hydroxysteroid 3-dehydrogenase (Si-specific) (H2S2O3)"
-      - metabolites: !!omap
-          - MAM02039c: 2
-          - MAM02040c: -1
-          - MAM02042c: 1
-          - MAM02043c: -1
-          - MAM02946c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.1.1.50"
       - subsystem: "Sulfur metabolism"
       - confidence_score: 0
     - !!omap
@@ -107108,7 +107019,7 @@
       - gene_reaction_rule: "ENSG00000115705"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.8"
-      - subsystem: "Steroid metabolism"
+      - subsystem: "Tyrosine metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR06794"
@@ -107124,7 +107035,7 @@
       - gene_reaction_rule: "ENSG00000115705"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.8"
-      - subsystem: "Steroid metabolism"
+      - subsystem: "Tyrosine metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR06795"
@@ -108957,7 +108868,7 @@
           - MAM03331c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000143815 or ENSG00000149809 or ENSG00000149809"
+      - gene_reaction_rule: "ENSG00000143815 or ENSG00000149809"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.3.1.70"
       - references: "PMID:11111101"
@@ -120025,12 +119936,12 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01310"
-      - name: "6-oxo-prostaglandin F1alpha to prostaglandin I2 conversion"
+      - name: "prostaglandin I2 hydrolysis"
       - metabolites: !!omap
-          - MAM01168r: -1
-          - MAM02040r: 1
-          - MAM02795r: 1
-      - lower_bound: -1000
+          - MAM01168r: 1
+          - MAM02040r: -1
+          - MAM02795r: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:10534257"
@@ -120071,7 +119982,7 @@
           - MAM02040r: -1
           - MAM02994r: -1
           - MAM02995r: 1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - subsystem: "Prostaglandin biosynthesis"
@@ -120092,12 +120003,12 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01318"
-      - name: "6-oxo-prostaglandin F1alpha to prostaglandin I2 conversion"
+      - name: "prostaglandin I2 hydrolysis"
       - metabolites: !!omap
-          - MAM01168c: -1
-          - MAM02040c: 1
-          - MAM02795c: 1
-      - lower_bound: -1000
+          - MAM01168c: 1
+          - MAM02040c: -1
+          - MAM02795c: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - subsystem: "Prostaglandin biosynthesis"
@@ -125573,7 +125484,7 @@
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929 or ENSG00000130649 or ENSG00000135929"
+      - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:2019602;PMID:9660774"
@@ -125641,10 +125552,10 @@
           - MAM02553c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929 or ENSG00000108602 or ENSG00000143149"
+      - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.15.15"
-      - references: "PMID:1591235;PMID:5723340;PMID:5914340"
+      - references: "PMID:1591235;PMID:5723340;PMID:5914340;PMID:1708392;PMID:11412116"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -127053,7 +126964,7 @@
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929 or ENSG00000138135"
+      - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.15.15"
       - references: "PMID:1708392"
@@ -127083,7 +126994,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000172817 or ENSG00000130649 or ENSG00000135929"
+      - gene_reaction_rule: "ENSG00000172817"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.29"
       - references: "PMID:10588945"
@@ -127502,7 +127413,7 @@
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000130649 or ENSG00000135929 or ENSG00000135929"
+      - gene_reaction_rule: "ENSG00000130649 or ENSG00000135929"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.13.-"
       - references: "PMID:9210654;PMID:9660774"
@@ -128187,23 +128098,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01857"
-      - name: "transport of taurocholate (extracellular to peroxisome)"
-      - metabolites: !!omap
-          - MAM01285x: 2
-          - MAM01371x: -2
-          - MAM02039x: 2
-          - MAM02040x: -2
-          - MAM02751x: 2
-          - MAM02963e: 1
-          - MAM02963x: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - references: "PMID:12663868;PMID:14716480;PMID:15209530;PMID:15297262;PMID:1599411;PMID:17416343;PMID:9068608"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR01859"
       - name: "transport of glycochenodeoxycholate and lepidimoide (cytosol to extracellular)"
       - metabolites: !!omap
@@ -128214,23 +128108,6 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01861"
-      - name: "transport of taurochenodeoxycholate (extracellular to peroxisome)"
-      - metabolites: !!omap
-          - MAM01285x: 2
-          - MAM01371x: -2
-          - MAM02039x: 2
-          - MAM02040x: -2
-          - MAM02751x: 2
-          - MAM02962e: 1
-          - MAM02962x: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - references: "PMID:15297262;PMID:17416343"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -135490,7 +135367,8 @@
           - MAM02833c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000095596 or ENSG00000134716 or ENSG00000138109 or ENSG00000138115"
+      - gene_reaction_rule: "ENSG00000095596 or ENSG00000138109 or ENSG00000138115"
+      - references: "PMID:22020119;PMID:11093772;PMID:10484078"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
       - subsystem: "Retinol metabolism"
@@ -136016,13 +135894,13 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR04554"
-      - name: "6-hydroxy-1,2,3,4-tetrahydro-beta-carboline hydrolysis"
+      - name: "Pictet-Spengler condensation of serotonin with formaldehyde"
       - metabolites: !!omap
-          - MAM01160c: -1
-          - MAM01831c: 1
-          - MAM02040c: -1
-          - MAM02897c: 1
-      - lower_bound: -1000
+          - MAM01160c: 1
+          - MAM01831c: -1
+          - MAM02040c: 1
+          - MAM02897c: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:8891913"
@@ -138837,6 +138715,7 @@
           - MAM01407c: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - references: "PMID:6144485"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Xenobiotics metabolism"
       - confidence_score: 0
@@ -138866,6 +138745,7 @@
           - MAM00975c: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - references: "PMID:6145555"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Xenobiotics metabolism"
       - confidence_score: 0
@@ -146963,9 +146843,9 @@
           - MAM02578e: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000112077"
+      - gene_reaction_rule: "ENSG00000112077 or ENSG00000132677 or ENSG00000140519"
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:3888072"
+      - references: "PMID:3888072;PMID:24077989"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -163814,9 +163694,7 @@
       - metabolites: !!omap
           - MAM01256c: 1
           - MAM01256e: -1
-          - MAM02039c: 1
-          - MAM02039e: -1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
@@ -163840,6 +163718,8 @@
           - MAM02041e: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000165272 or ENSG00000103375 or ENSG00000103569"
+      - references: "PMID:20724658;PMID:31546170"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -166980,6 +166860,8 @@
           - MAM02041m: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000103375"
+      - references: "PMID:22910329"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -167418,8 +167300,9 @@
           - MAM02578m: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "NH3 permeates lipid bilayers (PMID:3735402); mitochondrial AQP8 facilitates it in liver (PMID:20132793, PMID:34292591) but is absent from e.g. brain mitochondria, so the reaction is kept as spontaneous diffusion without a GPR."
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:3888072"
+      - references: "PMID:3888072;PMID:3735402;PMID:20132793;PMID:34292591"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -169418,20 +169301,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08365"
-      - name: "transport of acetone (cytosol to mitochondria)"
-      - metabolites: !!omap
-          - MAM01256c: -1
-          - MAM01256m: 1
-          - MAM02039i: -1
-          - MAM02039m: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000155380"
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR08411"
       - name: "transport of O2- (cytosol to mitochondria)"
       - metabolites: !!omap
@@ -170242,6 +170111,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170255,6 +170125,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170278,6 +170149,8 @@
           - MAM02041x: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "No peroxiporin is known in the peroxisomal membrane and PXMP2 is not required; H2O2 crosses it without a known protein (PMID:31129117, human Flp-In T-REx 293 cells)."
+      - references: "PMID:31129117;PMID:31672544"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -170290,6 +170163,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170303,6 +170177,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:17045662;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170316,6 +170191,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170329,6 +170205,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170342,6 +170219,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170355,6 +170233,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170471,6 +170350,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:3031070;PMID:6253473;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170495,6 +170375,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:17045662;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170533,6 +170414,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170546,6 +170428,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170559,6 +170442,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170572,6 +170456,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170607,6 +170492,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170632,6 +170518,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170645,6 +170532,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170680,6 +170568,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170693,6 +170582,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170706,6 +170596,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170741,6 +170632,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170765,6 +170657,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170789,6 +170682,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170802,6 +170696,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170826,6 +170721,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170839,6 +170735,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170849,7 +170746,7 @@
       - metabolites: !!omap
           - MAM02555c: -1
           - MAM02555n: 1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
@@ -171332,8 +171229,10 @@
       - metabolites: !!omap
           - MAM00204c: -1
           - MAM00204n: 1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000196497"
+      - references: "PMID:36103578"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -171435,6 +171334,8 @@
           - MAM02750n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -171446,6 +171347,8 @@
           - MAM02736n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -171457,6 +171360,8 @@
           - MAM00553n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -171620,8 +171525,10 @@
       - metabolites: !!omap
           - MAM00240c: 1
           - MAM00240n: -1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -172657,6 +172564,8 @@
           - MAM02041l: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "No peroxiporin is known in the lysosomal membrane; H2O2 reaches the lysosomal lumen without a known protein, where it drives iron-dependent (Fenton) damage (PMID:8386686)."
+      - references: "PMID:8386686"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -181479,7 +181388,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09725"
-      - name: "NADP+ reduction"
+      - name: "exchange of NADP+ and NADPH (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM02554c: -1
           - MAM02554n: 1
@@ -181488,7 +181397,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - subsystem: "Artificial reactions"
+      - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
       - id: "MAR00031"
@@ -181746,7 +181655,7 @@
           - MAM00376c: -1
           - MAM00378c: -1
           - MAM00383c: -1
-          - MAM00384c: -2
+          - MAM00384c: -1
           - MAM00386c: -1
           - MAM00386r: -1
           - MAM00386x: -1
@@ -182094,25 +182003,22 @@
       - subsystem: "Tryptophan metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00052"
-      - name: "5-Hydroxy-L-Tryptophan Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07634"
+      - name: "transport of 5-hydroxy-L-tryptophan (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01107c: -1
-          - MAM01107e: 1
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02751c: 1
+          - MAM01107c: -3
+          - MAM01107e: 3
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.13.11.52"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00053"
       - name: "5-Methyltetrahydrofolate Transport via Anion Antiport"
@@ -182163,6 +182069,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - eccodes: "2.3.1.16"
       - references: "PMID:19352492"
@@ -182181,24 +182088,22 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00058"
-      - name: "Acetylcholine Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07681"
+      - name: "transport of acetylcholine (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01260c: -1
-          - MAM01260e: 1
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02751c: 1
+          - MAM01260c: -3
+          - MAM01260e: 3
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000187714"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00060"
       - name: "O-Acetylcarnintine Transport into Mitochondria via Diffusion"
@@ -182269,24 +182174,22 @@
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00065"
-      - name: "Adrenaline Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07635"
+      - name: "transport of adrenaline (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01290c: -1
-          - MAM01290e: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01290c: -3
+          - MAM01290e: 3
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00066"
       - name: "L-Alanine Reversible Transport via Proton Symport, Lysosomal"
@@ -182598,25 +182501,22 @@
       - subsystem: "Biotin metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00087"
-      - name: "B-Alanine Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07736"
+      - name: "transport of beta-alanine (cytosol to extracellular)"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
-          - MAM01383c: -1
-          - MAM01383e: 1
+          - MAM01383c: -3
+          - MAM01383e: 3
           - MAM02039c: 1
           - MAM02040c: -1
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000101438"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.3.1.65"
-      - references: "PMID:12750892;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00088"
       - name: "Beta-Aminopropion Aldehyde:NAD+ Oxidoreductase, Mitochondrial"
@@ -183838,25 +183738,22 @@
       - subsystem: "N-glycan metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00334"
-      - name: "Secretion of Dopamine via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07636"
+      - name: "transport of dopamine (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM01736c: -1
-          - MAM01736e: 1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM01736c: -3
+          - MAM01736e: 3
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.1.1.6"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00441"
       - name: "Diphosphomevalonate Decarboxylase"
@@ -184910,26 +184807,6 @@
       - eccodes: "2.3.1.86"
       - references: "PMID:11138005;PMID:15189125"
       - subsystem: "Fatty acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR00751"
-      - name: "Beta Oxidation of Long Chain Fatty Acid"
-      - metabolites: !!omap
-          - MAM01261m: 1
-          - MAM01597m: -1
-          - MAM02039m: 3
-          - MAM02040m: -1
-          - MAM02552m: -1
-          - MAM02553m: 1
-          - MAM03552m: 1
-          - MAM03554m: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000117054"
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.3.8.7"
-      - references: "PMID:9819701"
-      - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
       - id: "MAR00752"
@@ -185987,11 +185864,11 @@
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01314"
-      - name: "GABA Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07738"
+      - name: "transport of 4-aminobutyrate (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM00970c: -1
-          - MAM00970e: 1
+          - MAM00970c: -3
+          - MAM00970e: 3
           - MAM01285c: 1
           - MAM01371c: -1
           - MAM02039c: 1
@@ -186000,11 +185877,9 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000101438"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:12750892;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01340"
       - name: "Blood Group Intracellular Transport"
@@ -186230,24 +186105,22 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01396"
-      - name: "Secretion of Glycine via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07737"
+      - name: "transport of glycine (cytosol to extracellular)"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
-          - MAM01986c: -1
-          - MAM01986e: 1
+          - MAM01986c: -3
+          - MAM01986e: 3
           - MAM02039c: 1
           - MAM02040c: -1
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000101438"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:12750892;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01397"
       - name: "Geranyltranstransferase"
@@ -186348,25 +186221,22 @@
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01442"
-      - name: "Histamine Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07633"
+      - name: "transport of histamine (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02124c: -1
-          - MAM02124e: 1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02124c: -3
+          - MAM02124e: 3
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.7.1.1"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01444"
       - name: "H+/K+ Gastric/Non-Gastric P-ATPase And ABC ATPase"
@@ -187008,23 +186878,21 @@
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01518"
-      - name: "Metanephrine Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR08922"
+      - name: "transport of L-metanephrine (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02407c: -1
-          - MAM02407e: 1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02407c: -3
+          - MAM02407e: 3
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.1.1.37"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01520"
       - name: "Mevalonate Kinase (ATP)"
@@ -187245,25 +187113,22 @@
       - subsystem: "Nicotinate and nicotinamide metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01555"
-      - name: "Secretion of Noradrenaline via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07637"
+      - name: "transport of noradrenaline (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02617c: -1
-          - MAM02617e: 1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02617c: -3
+          - MAM02617e: 3
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.7.7.18"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01556"
       - name: "Carnitine Transferase"
@@ -187362,6 +187227,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - eccodes: "4.1.1.23"
       - references: "PMID:15240345;PMID:19352492"
@@ -187498,12 +187364,14 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01582"
-      - name: "Phosphatidate Transport, Nuclear"
+      - name: "transport of phosphatidate-LD-TAG pool (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM02733c: -1
           - MAM02733n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -187804,6 +187672,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - eccodes: "2.4.1.198"
       - references: "PMID:19352492"
@@ -189678,14 +189547,13 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02222"
-      - name: "Free Diffusion"
+      - name: "transport of acetone (mitochondria to cytosol)"
       - metabolites: !!omap
-          - MAM01256e: 1
+          - MAM01256c: 1
           - MAM01256m: -1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - references: "PMID:4358819"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -190296,15 +190164,14 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR02346"
-      - name: "Free Diffusion"
+      - name: "transport of formaldehyde (cytosol to extracellular)"
       - metabolites: !!omap
           - MAM01831c: 1
           - MAM01831e: -1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - eccodes: "4.2.1.1"
-      - references: "PMID:10938543;PMID:11493685;PMID:12713833;PMID:12747791;PMID:14640555;PMID:17259996;PMID:17504134;PMID:17826101;PMID:7011879;PMID:7672338"
+      - references: ""
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -193158,21 +193025,6 @@
       - rxnFrom: "Recon3D"
       - eccodes: "2.5.1.18"
       - references: "PMID:10903891"
-      - subsystem: "Tyrosine metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR03161"
-      - name: "Glutathione Transferase"
-      - metabolites: !!omap
-          - MAM01136x: 1
-          - MAM01739x: -1
-          - MAM02026x: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000197448"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.5.1.18"
-      - references: "PMID:10783391;PMID:12042665;PMID:12618591;PMID:12720545;PMID:14742434;PMID:1885604;PMID:2034681;PMID:2345169;PMID:7587384;PMID:7789971;PMID:8276420;PMID:8307579;PMID:8473333;PMID:8617495;PMID:8703034;PMID:9278457;PMID:9396740;PMID:9417084;PMID:9480897;PMID:9503014"
       - subsystem: "Tyrosine metabolism"
       - confidence_score: 0
     - !!omap
@@ -197065,7 +196917,8 @@
           - MAM03388c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000021461 or ENSG00000106258 or ENSG00000108242 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841"
+      - gene_reaction_rule: "ENSG00000138061 or ENSG00000140465"
+      - references: "PMID:8555413;PMID:8674051"
       - rxnFrom: "Recon3D"
       - eccodes: "1.14.14.1"
       - subsystem: "Xenobiotics metabolism"
@@ -198152,6 +198005,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
@@ -198341,6 +198195,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
@@ -201533,6 +201388,7 @@
           - MAM03554m: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000117054"
       - rxnFrom: "Recon3D"
       - references: "PMID:9469587;PMID:9714723;PMID:11591435"
       - subsystem: "Fatty acid oxidation"
@@ -202213,6 +202069,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
@@ -202295,6 +202152,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
@@ -203404,11 +203262,11 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR07750"
-      - name: "Tanslocation of 1-Alpha, 25-Dihydroxyvitamin D3 to Nucleus"
+      - name: "transport of calcitriol (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM01417c: -1
           - MAM01417n: 1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - references: "PMID:16374421"
@@ -203428,11 +203286,11 @@
       - rxnNotes: "no transporter could be identified, so diffusion is assumed."
     - !!omap
       - id: "MAR07752"
-      - name: "Transport of GABA"
+      - name: "transport of 4-aminobutyrate (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM00970c: -1
           - MAM00970n: 1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
@@ -204130,6 +203988,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:17173541;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -204170,6 +204029,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:17173541;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -205420,8 +205280,8 @@
       - metabolites: !!omap
           - MAM01393c: 1
           - MAM01393e: -1
-          - MAM01442c: 1
-          - MAM01442e: -1
+          - MAM01442c: 2
+          - MAM01442e: -2
           - MAM02519c: 3
           - MAM02519e: -3
       - lower_bound: -1000
@@ -205625,8 +205485,8 @@
       - metabolites: !!omap
           - MAM00970c: 1
           - MAM00970e: -1
-          - MAM01442c: 1
-          - MAM01442e: -1
+          - MAM01442c: 2
+          - MAM01442e: -2
           - MAM02519c: 3
           - MAM02519e: -3
       - lower_bound: -1000
@@ -210572,7 +210432,7 @@
           - MAM02040c: -1
           - MAM02994c: -1
           - MAM02995c: 1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - references: "PMID:21962087"
@@ -221709,9 +221569,9 @@
           - MAM01413e: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000006283 or ENSG00000081248 or ENSG00000100346 or ENSG00000102001 or ENSG00000141837 or ENSG00000148408 or ENSG00000151067 or ENSG00000157388 or ENSG00000160991 or ENSG00000175938 or ENSG00000196557 or ENSG00000198216 or ENSG00000276045"
+      - gene_reaction_rule: "ENSG00000006283 or ENSG00000081248 or ENSG00000100346 or ENSG00000102001 or ENSG00000127412 or ENSG00000141837 or ENSG00000148408 or ENSG00000151067 or ENSG00000157388 or ENSG00000160991 or ENSG00000165125 or ENSG00000175938 or ENSG00000196557 or ENSG00000198216 or ENSG00000276045"
       - rxnFrom: "Recon3D"
-      - references: "PMID:21749716"
+      - references: "PMID:21749716;PMID:21746798;PMID:16921383;PMID:17442569;PMID:11097838;PMID:19261737;PMID:29258289"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -223728,10 +223588,10 @@
           - MAM03176c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166816 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.27"
-      - references: "PMID:1429566"
+      - references: "PMID:26014429;PMID:26059096"
       - subsystem: "Valine, leucine, and isoleucine metabolism"
       - confidence_score: 0
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
@@ -223767,10 +223627,10 @@
           - MAM03186c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166816 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.27"
-      - references: "PMID:1429566"
+      - references: "PMID:26014429;PMID:26059096"
       - subsystem: "Valine, leucine, and isoleucine metabolism"
       - confidence_score: 0
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
@@ -224090,13 +223950,13 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11506"
-      - name: "Formation of Mevalonate-Lactone"
+      - name: "mevalonate lactonisation"
       - metabolites: !!omap
           - MAM00167c: -1
           - MAM02039c: -1
           - MAM02040c: 1
           - MAM03777c: 1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - references: "PMID:11522061"
@@ -224415,7 +224275,7 @@
       - references: "PMID:2739576;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
+      - rxnNotes: "https://www.springer.com/gp/book/9789400957800. PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
     - !!omap
       - id: "MAR11532"
       - name: "Transport of 3-Hydroxy-Adipate, Extracellular"
@@ -224482,6 +224342,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:8295400;PMID:14708889;PMID:1444166;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -224554,7 +224415,7 @@
       - references: "PMID:2001377;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
+      - rxnNotes: "https://www.springer.com/gp/book/9789400957800. PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
     - !!omap
       - id: "MAR11542"
       - name: "Transport of 3-hydoxy-suberic acid, Extracellular"
@@ -228890,6 +228751,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -230385,6 +230247,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -230804,7 +230667,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
-      - references: "PMID:9952424"
+      - references: "PMID:14985818;PMID:9952424"
       - subsystem: "Tyrosine metabolism"
       - confidence_score: 0
     - !!omap
@@ -230857,12 +230720,14 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12022"
-      - name: "2, 3-Dihydro-1H-Indole-5, 6-Dione Tautomerization"
+      - name: "aminochrome tautomerisation to 5,6-dihydroxyindole"
       - metabolites: !!omap
           - MAM01739c: 1
           - MAM02160c: -1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
+      - rxnNotes: "Non-enzymatic rearrangement of aminochrome (dopaminochrome) to 5,6-dihydroxyindole (PMID:17395592); RHEA:70199 is catalysed only by an insect enzyme (Drosophila yellow-h)."
+      - references: "PMID:17395592"
       - rxnFrom: "Recon3D"
       - subsystem: "Tyrosine metabolism"
       - confidence_score: 0
@@ -230870,9 +230735,9 @@
       - id: "MAR12023"
       - name: "2, 3-Dihydro-1H-Indole-5, 6-Dione Glutathione Conjugation"
       - metabolites: !!omap
+          - MAM01136c: 1
           - MAM02026c: -1
           - MAM02160c: -1
-          - MAM03270c: 1
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000213366"
@@ -230901,13 +230766,13 @@
       - id: "MAR12025"
       - name: "Transport of 4-S-Glutathionyl-5, 6-Dihydroxyindoline"
       - metabolites: !!omap
+          - MAM01136c: -1
+          - MAM01136e: 1
           - MAM01285c: 1
           - MAM01371c: -1
           - MAM02039c: 1
           - MAM02040c: -1
           - MAM02751c: 1
-          - MAM03270c: -1
-          - MAM03270e: 1
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
@@ -230917,7 +230782,7 @@
       - id: "MAR12026"
       - name: "Exchange of 4-S-Glutathionyl-5,6-Dihydroxyindoline"
       - metabolites: !!omap
-          - MAM03270e: -1
+          - MAM01136e: -1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
@@ -231780,11 +231645,11 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12091"
-      - name: "UDPgalactose Transport (Nuclear)"
+      - name: "transport of UDP-galactose (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM03107c: -1
           - MAM03107n: 1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
@@ -231835,12 +231700,14 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12096"
-      - name: "Phosphatidylcholine Scramblase"
+      - name: "transport of PC-LD pool (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM02684c: -1
           - MAM02684n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -231879,12 +231746,14 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12100"
-      - name: "Sphinganine Intracellular Transport"
+      - name: "transport of sphinganine (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM02927c: -1
           - MAM02927n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -231901,12 +231770,14 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12102"
-      - name: "Sphingosine Intracellular Transport"
+      - name: "transport of sphingosine (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM02929c: -1
           - MAM02929n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -232052,23 +231923,27 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12116"
-      - name: "Galactocerebroside Intracellular Transport"
+      - name: "transport of D-galactosyl-N-acylsphingosine (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM01679c: -1
           - MAM01679n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
       - id: "MAR12117"
-      - name: "Ceramide Transport Protei"
+      - name: "transport of ceramide pool (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM01430c: -1
           - MAM01430n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -232085,12 +231960,14 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12119"
-      - name: "Transport of Gd1A"
+      - name: "transport of GD1a (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM01941c: -1
           - MAM01941n: 1
-      - lower_bound: 0
+      - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -241936,7 +241813,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12813"
-      - name: "pitavastatin-glucuronide to glucuronate conversion"
+      - name: "pitavastatin acyl glucuronide lactonisation"
       - metabolites: !!omap
           - MAM01973r: 2
           - MAM03912r: -1
@@ -242608,7 +242485,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12857"
-      - name: "fluvstatin-glucuronide to glucuronate conversion"
+      - name: "fluvastatin acyl glucuronide lactonisation"
       - metabolites: !!omap
           - MAM01973r: 1
           - MAM03581r: -1
@@ -244320,6 +244197,8 @@
           - MAM02041r: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000178301 or ENSG00000103375"
+      - references: "PMID:31546170"
       - rxnFrom: "Recon3D"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -245698,12 +245577,14 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10045"
-      - name: "1,2-diacylglycerol-LD-PC pool transport(Cytosol to Nucleus)"
+      - name: "transport of 1,2-diacylglycerol-LD-PC pool (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM00235c: -1
           - MAM00235n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -245727,12 +245608,14 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10048"
-      - name: "1,2-diacylglycerol-LD-PI pool transport(Cytosol to Extracellular)"
+      - name: "transport of 1,2-diacylglycerol-LD-PI pool (cytosol to nucleus)"
       - metabolites: !!omap
           - MAM00237c: -1
           - MAM00237n: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
+      - references: "PMID:29937227;PMID:32530796"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -246541,7 +246424,7 @@
           - MAM03996e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000023839 or ENSG00000073734 or ENSG00000108846 or ENSG00000073734 or ENSG00000108846"
+      - gene_reaction_rule: "ENSG00000023839 or ENSG00000073734 or ENSG00000108846"
       - references: "PMID:17404808;PMID:19498215"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -246575,7 +246458,7 @@
           - MAM03685e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000023839 or ENSG00000073734 or ENSG00000108846 or ENSG00000073734 or ENSG00000108846"
+      - gene_reaction_rule: "ENSG00000023839 or ENSG00000073734 or ENSG00000108846"
       - references: "PMID:17404808;PMID:19498215"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -246819,7 +246702,7 @@
           - MAM03685e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000100652 or ENSG00000125255 or ENSG00000100652"
+      - gene_reaction_rule: "ENSG00000100652 or ENSG00000125255"
       - references: "PMID:17404808;PMID:19498215"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -249401,7 +249284,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR20168"
-      - name: "MAR20168"
+      - name: "lipoyl transfer from H protein to E2 (LIPT1)"
       - metabolites: !!omap
           - MAM00209m: -1
           - MAM02393m: 1
@@ -249412,7 +249295,7 @@
       - gene_reaction_rule: "ENSG00000144182"
       - eccodes: "2.3.1.200"
       - references: "PMID:29987032"
-      - subsystem: "Miscellaneous"
+      - subsystem: "Lipoic acid metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR20169"
@@ -249790,14 +249673,15 @@
       - id: "MAR20193"
       - name: "succinate transport via proton symport"
       - metabolites: !!omap
-          - MAM02039c: -1
-          - MAM02039e: 1
+          - MAM02039c: -2
+          - MAM02039e: 2
           - MAM02943c: -1
           - MAM02943e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000141526 or ENSG00000155380"
-      - references: "PMID:35363247"
+      - gene_reaction_rule: "ENSG00000155380"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:32946811;PMID:35363247"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -249818,6 +249702,22 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - subsystem: "Exchange/demand reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20203"
+      - name: "thiosulfate sulfurtransferase (S-sulfanylglutathione)"
+      - metabolites: !!omap
+          - MAM02026m: 1
+          - MAM02949m: -1
+          - MAM02991m: 1
+          - MAM20086m: -1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000128311"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "2.8.1.1"
+      - references: "PMID:25225291;PMID:24981631"
+      - subsystem: "Sulfur metabolism"
       - confidence_score: 0
 - genes:
     - !!omap
@@ -256868,6 +256768,9 @@
       - id: "ENSG00000178234"
       - name: "GALNT11"
     - !!omap
+      - id: "ENSG00000178301"
+      - name: "AQP11"
+    - !!omap
       - id: "ENSG00000178445"
       - name: "GLDC"
     - !!omap
@@ -257512,6 +257415,9 @@
     - !!omap
       - id: "ENSG00000196475"
       - name: "GK2"
+    - !!omap
+      - id: "ENSG00000196497"
+      - name: "IPO4"
     - !!omap
       - id: "ENSG00000196502"
       - name: "SULT1A1"
@@ -258403,6 +258309,12 @@
     - !!omap
       - id: "ENSG00000175938"
       - name: "ORAI3"
+    - !!omap
+      - id: "ENSG00000127412"
+      - name: "TRPV5"
+    - !!omap
+      - id: "ENSG00000165125"
+      - name: "TRPV6"
 - compartments: !!omap
     - e: "Extracellular"
     - x: "Peroxisome"
