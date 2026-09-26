@@ -11174,16 +11174,16 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01026c"
-      - name: "4-hydroxy-13-cis-retinoate"
+      - name: "4-oxo-13-cis-retinoate"
       - compartment: "c"
-      - formula: "C20H27O3"
+      - formula: "C20H25O3"
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01026r"
-      - name: "4-hydroxy-13-cis-retinoate"
+      - name: "4-oxo-13-cis-retinoate"
       - compartment: "r"
-      - formula: "C20H27O3"
+      - formula: "C20H25O3"
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
@@ -38964,9 +38964,9 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM01026n"
-      - name: "4-hydroxy-13-cis-retinoate"
+      - name: "4-oxo-13-cis-retinoate"
       - compartment: "n"
-      - formula: "C20H27O3"
+      - formula: "C20H25O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
@@ -134954,11 +134954,11 @@
       - metabolites: !!omap
           - MAM01029c: 1
           - MAM01231c: -1
-          - MAM02039c: 1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
+          - MAM02039c: -2
+          - MAM02040c: 3
+          - MAM02554c: 2
+          - MAM02555c: -2
+          - MAM02630c: -2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000003137"
@@ -134973,11 +134973,11 @@
       - metabolites: !!omap
           - MAM01029r: 1
           - MAM01231r: -1
-          - MAM02039r: 1
-          - MAM02040r: 1
-          - MAM02554r: 1
-          - MAM02555r: -1
-          - MAM02630r: -1
+          - MAM02039r: -2
+          - MAM02040r: 3
+          - MAM02554r: 2
+          - MAM02555r: -2
+          - MAM02630r: -2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000003137"
@@ -135239,17 +135239,17 @@
       - metabolites: !!omap
           - MAM00350c: -1
           - MAM01026c: 1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
+          - MAM02039c: -2
+          - MAM02040c: 3
+          - MAM02554c: 2
+          - MAM02555c: -2
+          - MAM02630c: -2
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003137"
+      - gene_reaction_rule: "ENSG00000003137 or ENSG00000160868 or ENSG00000138115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:12091498;PMID:10823918"
+      - references: "PMID:12091498;PMID:10823918;PMID:25039756;PMID:20421446"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
@@ -135258,17 +135258,17 @@
       - metabolites: !!omap
           - MAM00350r: -1
           - MAM01026r: 1
-          - MAM02039r: -1
-          - MAM02040r: 1
-          - MAM02554r: 1
-          - MAM02555r: -1
-          - MAM02630r: -1
+          - MAM02039r: -2
+          - MAM02040r: 3
+          - MAM02554r: 2
+          - MAM02555r: -2
+          - MAM02630r: -2
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000003137"
+      - gene_reaction_rule: "ENSG00000003137 or ENSG00000160868 or ENSG00000138115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:12091498;PMID:10823918"
+      - references: "PMID:12091498;PMID:10823918;PMID:25039756;PMID:20421446"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
@@ -135623,25 +135623,12 @@
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08703"
-      - name: "retinoate to 4-hydroxy-all-trans-retinoate conversion"
+      - id: "MAR08704"
+      - name: "4-oxo-13-cis-retinoate to 4-oxo-all-trans-retinoate conversion"
       - metabolites: !!omap
-          - MAM00993c: 2
-          - MAM02630c: -1
-          - MAM02833c: -2
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Retinol metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR08706"
-      - name: "13-cis-retinoate to 4-hydroxy-13-cis-retinoate conversion"
-      - metabolites: !!omap
-          - MAM00350c: -2
-          - MAM01026c: 2
-          - MAM02630c: -1
-      - lower_bound: 0
+          - MAM01026c: -1
+          - MAM01031c: 1
+      - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - subsystem: "Retinol metabolism"
@@ -187570,7 +187557,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01563"
-      - name: "4-hydroxy-13-cis-retinoate transport, nuclear"
+      - name: "4-oxo-13-cis-retinoate transport, nuclear"
       - metabolites: !!omap
           - MAM01026c: -1
           - MAM01026n: 1
