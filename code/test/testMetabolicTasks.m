@@ -23,7 +23,7 @@ ymlFile=fullfile(modelPath,'model','Human-GEM.yml');
 humanGEM = readYAMLmodel(ymlFile);
 
 % parse metabolic tasks
-model = addBoundaryMets(humanGEM);
+model = closeModel(humanGEM);
 if taskType == "essential"
     taskFile=fullfile(modelPath,'data','metabolicTasks','metabolicTasks_Essential.txt');
 elseif taskType == "verification"

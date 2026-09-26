@@ -1,0 +1,4 @@
+gene,symbol,hop,any_verdict,any_count,viability_verdict,viability_count,hart_verdict,DLD1_before_tasks,DLD1_after_tasks,DLD1_before_growth,DLD1_after_growth,GBM_before_tasks,GBM_after_tasks,GBM_before_growth,GBM_after_growth,HCT116_before_tasks,HCT116_after_tasks,HCT116_before_growth,HCT116_after_growth,HELA_before_tasks,HELA_after_tasks,HELA_before_growth,HELA_after_growth,RPE1_before_tasks,RPE1_after_tasks,RPE1_before_growth,RPE1_after_growth
+ENSG00000083444,PLOD1,direct,stable,,stable,,n/a,.,,,1.000000,.,,,1.000000,.,,,1.000000,.,,,1.000000,.,,,1.000000
+ENSG00000106397,PLOD3,direct,stable,,stable,,n/a,.,,,1.000000,.,,,1.000000,.,,,1.000000,.,,,1.000000,.,,,1.000000
+ENSG00000152952,PLOD2,direct,stable,,stable,,n/a,.,,,1.000000,.,,,1.000000,.,,,1.000000,.,,,1.000000,.,,,1.000000
