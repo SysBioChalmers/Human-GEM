@@ -4,7 +4,7 @@ MAR00015,NEFA blood pool in to (10Z)-heptadecenoic acid conversion,C:16.222;H:30
 MAR00016,(10Z)-heptadecenoic acid to NEFA blood pool out conversion,C:-16.271;H:-30.8218;R:1,1
 MAR00017,SMCFA-blood-pool to butyrate conversion,C:6.5;H:13;R:-1,-1
 MAR00022,[protein]-N6-(lipoyl)lysine reduction,C:-3270;Co:-1;Fe:-1;H:-5094;N:-895;O:-973;P:-11;S:-28;X:0.7,17
-MAR00023,11-cis-retinol to vitamin A derivatives conversion,C:-434;H:-594;N:-1;O:-57;X:1,7
+MAR00023,11-cis-retinol to vitamin A derivatives conversion,C:-434;H:-592;N:-1;O:-57;X:1,7
 MAR00031,lipid droplet formation,C:-13.4364;H:-19.2074;N:-0.0188;O:-4.4474;P:-0.02;R:-2.0826;X:1,0.0068
 MAR00033,"24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion",C:-108;H:-164;O:-18;X:1,
 MAR00034,3-carboxy-alpha-chromanol to vitamin E derivatives conversion,C:-37;H:-48;O:-14;X:1,2
@@ -177,8 +177,6 @@ MAR06459,5-nitro-gamma-tocopherol to gamma-tocopheroxyl-radical conversion,,-1
 MAR06605,urate radical hydrolysis,,-1
 MAR06608,hydroxide to hydroxyl radical conversion,,1
 MAR06634,cytochrome P450 (retinol),,2
-MAR06664,cytochrome P450 (9-cis-retinoate),,2
-MAR06665,cytochrome P450 (9-cis-retinoate),,2
 MAR06720,kynurenine glucuronidation,,-2
 MAR06729,L-Tyrosine:oxygen oxidoreductase,,-2
 MAR06740,dopa decarboxylase (salsolinol-1-carboxylate),,2
