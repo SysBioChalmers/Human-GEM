@@ -6826,13 +6826,6 @@
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM00592r"
-      - name: "20-hydroxycholesterol"
-      - compartment: "r"
-      - formula: "C27H46O2"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM00593c"
       - name: "20-hydroxy-D4-neuroprostane"
       - compartment: "c"
@@ -15581,13 +15574,6 @@
       - compartment: "e"
       - formula: "C5H11NO2"
       - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM01394c"
-      - name: "betaine aldehyde"
-      - compartment: "c"
-      - formula: "C5H12NO"
-      - charge: 1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01394m"
@@ -25786,17 +25772,10 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02143c"
-      - name: "hydrobromic acid"
+      - name: "bromide"
       - compartment: "c"
       - formula: "Br"
       - charge: -1
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM02144c"
-      - name: "hydrochloride"
-      - compartment: "c"
-      - formula: "HCl"
-      - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02145c"
@@ -52005,18 +51984,25 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03188c"
-      - name: "2-hydroxyglutarate"
+      - name: "(S)-2-hydroxyglutarate"
       - compartment: "c"
       - formula: "C5H6O5"
       - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03188e"
-      - name: "2-hydroxyglutarate"
+      - name: "(S)-2-hydroxyglutarate"
       - compartment: "e"
       - formula: "C5H6O5"
       - charge: -2
       - metFrom: "Recon3D"
+    - !!omap
+      - id: "MAM03188m"
+      - name: "(S)-2-hydroxyglutarate"
+      - compartment: "m"
+      - formula: "C5H6O5"
+      - charge: -2
+      - metFrom: "HumanGEM"
     - !!omap
       - id: "MAM03614c"
       - name: "Glutarate"
@@ -57799,6 +57785,20 @@
       - formula: "C5H6O5"
       - charge: -2
     - !!omap
+      - id: "MAM20012c"
+      - name: "(R)-2-hydroxyglutarate"
+      - compartment: "c"
+      - formula: "C5H6O5"
+      - charge: -2
+      - metFrom: "HumanGEM"
+    - !!omap
+      - id: "MAM20012e"
+      - name: "(R)-2-hydroxyglutarate"
+      - compartment: "e"
+      - formula: "C5H6O5"
+      - charge: -2
+      - metFrom: "HumanGEM"
+    - !!omap
       - id: "MAM20013c"
       - name: "octanal"
       - compartment: "c"
@@ -61128,22 +61128,6 @@
       - subsystem: "Pyruvate metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08512"
-      - name: "(R)-Lactate:NAD+ oxidoreductase"
-      - metabolites: !!omap
-          - MAM01716c: -1
-          - MAM02039c: 1
-          - MAM02552c: -1
-          - MAM02553c: 1
-          - MAM02819c: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000166816"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.1.2.4"
-      - subsystem: "Pyruvate metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR08514"
       - name: "(S)-Lactate:ferricytochrome-c 2-oxidoreductase"
       - metabolites: !!omap
@@ -61498,33 +61482,36 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00718"
-      - name: "2-Hydroxyglutarate:(acceptor) 2-oxidoreductase"
+      - name: "(S)-2-hydroxyglutarate:ubiquinone oxidoreductase"
       - metabolites: !!omap
-          - MAM01306c: -1
-          - MAM01802c: 1
-          - MAM01803c: -1
-          - MAM03188c: 1
+          - MAM01306m: 1
+          - MAM03102m: 1
+          - MAM03103m: -1
+          - MAM03188m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000087299"
+      - rxnNotes: "Electron acceptor written as ubiquinone (shown in vitro for Drosophila L2HGDH, PMID:42203459); in human cells L2HGDH also works with a fully reduced CoQ pool (PMID:42162436), so the physiological acceptor may be another or several."
+      - references: "PMID:15548604;PMID:16005139;PMID:17603759;PMID:42203459;PMID:42162436"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.99.2"
       - subsystem: "Butanoate metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR00719"
-      - name: "phosphoglycerate dehydrogenase (AKG)"
+      - name: "phosphoglycerate dehydrogenase ((R)-2-hydroxyglutarate)"
       - metabolites: !!omap
           - MAM01306c: -1
           - MAM02039c: -1
           - MAM02552c: 1
           - MAM02553c: -1
-          - MAM03188c: 1
+          - MAM20012c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000092621"
+      - references: "PMID:25406093"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.1.1.95"
+      - eccodes: "1.1.1.399"
       - subsystem: "Butanoate metabolism"
       - confidence_score: 0
     - !!omap
@@ -67523,7 +67510,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR03819"
-      - name: "aldehyde dehydrogenase (1-pyrroline-5-carboxylate)"
+      - name: "1-pyrroline-5-carboxylate hydration (spontaneous)"
       - metabolites: !!omap
           - MAM00559c: -1
           - MAM02039c: -1
@@ -67531,14 +67518,12 @@
           - MAM02374c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.2.1.88"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR03820"
-      - name: "aldehyde dehydrogenase (1-pyrroline-5-carboxylate)"
+      - name: "1-pyrroline-5-carboxylate hydration (spontaneous)"
       - metabolites: !!omap
           - MAM00559m: -1
           - MAM02039m: -1
@@ -67546,9 +67531,7 @@
           - MAM02374m: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.2.1.88"
       - references: "PMID:1286669;PMID:2211729;PMID:8621661"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
@@ -68837,7 +68820,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08096"
-      - name: "aldehyde dehydrogenase (L-1-pyrroline-3-hydroxy-5-carboxylate)"
+      - name: "L-1-pyrroline-3-hydroxy-5-carboxylate hydration (spontaneous)"
       - metabolites: !!omap
           - MAM02039m: -1
           - MAM02040m: -1
@@ -68845,9 +68828,7 @@
           - MAM02327m: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000159423"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.2.1.88"
       - subsystem: "Arginine and proline metabolism"
       - confidence_score: 0
     - !!omap
@@ -69652,58 +69633,6 @@
       - gene_reaction_rule: "ENSG00000104879 or ENSG00000131730 or ENSG00000166165 or ENSG00000223572 or ENSG00000237289"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.3.2"
-      - subsystem: "Glycine, serine and threonine metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR04696"
-      - name: "choline dehydrogenase (choline)"
-      - metabolites: !!omap
-          - MAM01394c: 1
-          - MAM01513c: -1
-          - MAM02039c: 1
-          - MAM02552c: -1
-          - MAM02553c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000016391"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.1.99.1"
-      - subsystem: "Glycine, serine and threonine metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR04697"
-      - name: "p-cumic alcohol:NAD+ oxidoreductase"
-      - metabolites: !!omap
-          - MAM01393c: 1
-          - MAM01394c: -1
-          - MAM02039c: 2
-          - MAM02040c: -1
-          - MAM02552c: -1
-          - MAM02553c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000164904"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.2.1.8"
-      - references: "PMID:10505788;PMID:7646513"
-      - subsystem: "Glycine, serine and threonine metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR04698"
-      - name: "p-Cumic alcohol:NADP+ oxidoreductase"
-      - metabolites: !!omap
-          - MAM01393c: 1
-          - MAM01394c: -1
-          - MAM02039c: 2
-          - MAM02040c: -1
-          - MAM02554c: -1
-          - MAM02555c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000164904"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.2.1.8"
-      - references: "PMID:10505788;PMID:7646513"
       - subsystem: "Glycine, serine and threonine metabolism"
       - confidence_score: 0
     - !!omap
@@ -81807,7 +81736,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08773"
-      - name: "L-xylulose 1-phosphate glycolaldehyde-lyase (glycerone-phosphate-forming)"
+      - name: "D-xylulose 1-phosphate glycolaldehyde-lyase (glycerone-phosphate-forming)"
       - metabolites: !!omap
           - MAM01690c: 1
           - MAM01760c: -1
@@ -81909,7 +81838,7 @@
           - MAM02661c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000166796 or ENSG00000166800 or ENSG00000166816 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800 or ENSG00000171989"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.27"
       - subsystem: "Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism"
@@ -120218,15 +120147,15 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01334"
-      - name: "15-deoxy-PGD2 hydrolysis"
+      - name: "prostaglandin D2 dehydration (15-deoxy-delta-12,14-PGD2)"
       - metabolites: !!omap
-          - MAM00384c: -1
-          - MAM02040c: -1
-          - MAM02783c: 1
-      - lower_bound: -1000
+          - MAM00384c: 1
+          - MAM02040c: 1
+          - MAM02783c: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:8521498;PMID:11786541"
+      - references: "PMID:8521498;PMID:11786541;PMID:34620168"
       - subsystem: "Prostaglandin biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -125501,26 +125430,10 @@
           - MAM02553c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
+      - gene_reaction_rule: "ENSG00000196616"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.15.15"
-      - references: "PMID:1591235;PMID:6338006"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01609"
-      - name: "cytochrome P450 (5beta-cholestane-3alpha,7alpha,12alpha,26-tetrol)"
-      - metabolites: !!omap
-          - MAM00751m: 1
-          - MAM01090m: -1
-          - MAM02039m: 1
-          - MAM02552m: -1
-          - MAM02553m: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.15.15"
+      - references: "PMID:6338006;PMID:5723340;PMID:1591235"
+      - eccodes: "1.1.1.1"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -125529,9 +125442,11 @@
       - metabolites: !!omap
           - MAM00751m: 1
           - MAM01090m: -1
-          - MAM02039m: 1
-          - MAM02554m: -1
-          - MAM02555m: 1
+          - MAM02039m: -1
+          - MAM02040m: 2
+          - MAM02554m: 1
+          - MAM02555m: -1
+          - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135929"
@@ -125552,9 +125467,7 @@
           - MAM02553c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.15.15"
       - references: "PMID:1591235;PMID:5723340;PMID:5914340;PMID:1708392;PMID:11412116"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
@@ -127180,63 +127093,6 @@
       - gene_reaction_rule: "ENSG00000099377"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.181"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01781"
-      - name: "cholesterol 25-hydroxylase (cholesterol)"
-      - metabolites: !!omap
-          - MAM00592r: 1
-          - MAM01450r: -1
-          - MAM02039r: -1
-          - MAM02040r: 1
-          - MAM02554r: 1
-          - MAM02555r: -1
-          - MAM02630r: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138135"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.38"
-      - references: "PMID:9852097"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01783"
-      - name: "3beta-hydroxy-Delta(5)-steroid dehydrogenase (20-hydroxycholesterol)"
-      - metabolites: !!omap
-          - MAM00592r: -1
-          - MAM01182r: 1
-          - MAM02039r: 1
-          - MAM02552r: -1
-          - MAM02553r: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000203857 or ENSG00000203859"
-      - rxnFrom: "HMRdatabase"
-      - eccodes:
-          - "1.1.1.145"
-          - "5.3.3.1"
-      - references: "PMID:11067870;PMID:11454857;PMID:10599696;PMID:1401999"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01785"
-      - name: "cholesterol 26-hydroxylase"
-      - metabolites: !!omap
-          - MAM00623r: 1
-          - MAM01450r: -1
-          - MAM02039r: -1
-          - MAM02040r: 1
-          - MAM02554r: 1
-          - MAM02555r: -1
-          - MAM02630r: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138135"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.38"
-      - references: "PMID:9852097"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -138493,8 +138349,9 @@
       - id: "MAR07029"
       - name: "trichloroethene:glutathione S-(1,2-dichlorovinyl)transferase"
       - metabolites: !!omap
+          - MAM01442c: 1
           - MAM02026c: -1
-          - MAM02144c: 1
+          - MAM02039c: 1
           - MAM02850c: 1
           - MAM03044c: -1
       - lower_bound: 0
@@ -139401,8 +139258,9 @@
       - metabolites: !!omap
           - MAM00227c: -1
           - MAM00565c: 1
+          - MAM01442c: 1
           - MAM02026c: -1
-          - MAM02144c: 1
+          - MAM02039c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008394 or ENSG00000065621 or ENSG00000084207 or ENSG00000085871 or ENSG00000134184 or ENSG00000134201 or ENSG00000134202 or ENSG00000143198 or ENSG00000148834 or ENSG00000168765 or ENSG00000170899 or ENSG00000174156 or ENSG00000182793 or ENSG00000197448 or ENSG00000213366 or ENSG00000243955 or ENSG00000244067"
@@ -139416,8 +139274,9 @@
       - metabolites: !!omap
           - MAM00565c: -1
           - MAM00566c: 1
+          - MAM01442c: 1
           - MAM02026c: -1
-          - MAM02144c: 1
+          - MAM02039c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000008394 or ENSG00000065621 or ENSG00000084207 or ENSG00000085871 or ENSG00000134184 or ENSG00000134201 or ENSG00000134202 or ENSG00000143198 or ENSG00000148834 or ENSG00000168765 or ENSG00000170899 or ENSG00000174156 or ENSG00000182793 or ENSG00000197448 or ENSG00000213366 or ENSG00000243955 or ENSG00000244067"
@@ -139474,9 +139333,10 @@
       - id: "MAR07097"
       - name: "chloroacetyl-chloride:glutathione S-chloroacetyltransferase"
       - metabolites: !!omap
+          - MAM01442c: 1
           - MAM01444c: -1
           - MAM02026c: -1
-          - MAM02144c: 1
+          - MAM02039c: 1
           - MAM02854c: 1
       - lower_bound: 0
       - upper_bound: 1000
@@ -161860,20 +161720,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR06989"
-      - name: "transport of iodide (cytosol to extracellular)"
-      - metabolites: !!omap
-          - MAM02174c: 1
-          - MAM02174e: -1
-          - MAM02519c: 1
-          - MAM02519e: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000105641"
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR06991"
       - name: "transport of nitrite (cytosol to extracellular)"
       - metabolites: !!omap
@@ -164068,11 +163914,12 @@
       - metabolites: !!omap
           - MAM01442c: 1
           - MAM01442e: -1
-          - MAM02174c: -2
-          - MAM02174e: 2
+          - MAM02174c: -1
+          - MAM02174e: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000091137"
+      - references: "PMID:15155570"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -164650,11 +164497,11 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08892"
-      - name: "transport of K+ (cytosol to extracellular)"
+      - name: "H+/K+-exchanging ATPase"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
-          - MAM02039c: 1
+          - MAM02039e: 1
           - MAM02040c: -1
           - MAM02200c: 1
           - MAM02200e: -1
@@ -164662,6 +164509,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000105675 and ENSG00000186009) or (ENSG00000075673 and ENSG00000186009)"
+      - references: "PMID:11341842;PMID:2160952"
       - rxnFrom: "HMRdatabase"
       - eccodes: "7.2.2.19"
       - subsystem: "Transport reactions"
@@ -164834,6 +164682,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000105641"
+      - references: "PMID:9341168;PMID:12488351"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -170876,7 +170725,6 @@
           - MAM01592n: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000164414"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -171120,7 +170968,6 @@
           - MAM03130n: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "(ENSG00000030066 and ENSG00000069248 and ENSG00000075188 and ENSG00000110713 and ENSG00000111581 and ENSG00000120253 and ENSG00000125450) or ENSG00000093000 or ENSG00000095319 or ENSG00000102900 or ENSG00000108559 or ENSG00000113569 or ENSG00000124789 or ENSG00000126883 or ENSG00000132182 or ENSG00000136243 or ENSG00000138750 or ENSG00000139496 or ENSG00000143552 or ENSG00000153201 or ENSG00000155561 or ENSG00000163002 or ENSG00000198088 or ENSG00000213024"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -171310,9 +171157,7 @@
           - MAM01668n: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000112759 or ENSG00000174669"
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:12838422;PMID:12006583;PMID:14747464;PMID:16595656;PMID:17187757;PMID:17279066;PMID:7479738"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -181582,10 +181427,11 @@
           - MAM01301c: -1
           - MAM01302c: -1
           - MAM01376c: -1
+          - MAM01442c: -1
           - MAM01691c: -1
           - MAM01929c: -1
+          - MAM02039c: -1
           - MAM02143c: -2
-          - MAM02144c: -1
           - MAM02589c: -1
           - MAM02607c: -1
           - MAM02608c: -1
@@ -182015,7 +181861,6 @@
           - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -186238,27 +186083,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01444"
-      - name: "H+/K+ Gastric/Non-Gastric P-ATPase And ABC ATPase"
-      - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02200c: 1
-          - MAM02200e: -1
-          - MAM02519c: -2
-          - MAM02519e: 2
-          - MAM02751c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000075673 and ENSG00000186009"
-      - rxnFrom: "Recon3D"
-      - eccodes: "7.2.2.19"
-      - references: "PMID:2160952;PMID:7900835"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR01446"
       - name: "hydroxymethylglutaryl-CoA reductase (Ir)"
       - metabolites: !!omap
@@ -186342,17 +186166,17 @@
       - id: "MAR01453"
       - name: "Hydroxypyruvate Reductase (NADH)"
       - metabolites: !!omap
-          - MAM02039c: -3
-          - MAM02154c: -2
+          - MAM02039c: -1
+          - MAM02154c: -1
           - MAM02552c: 1
           - MAM02553c: -1
-          - MAM03620c: 2
+          - MAM03620c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166800 or ENSG00000166816 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000134333 or ENSG00000111716"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.27"
-      - references: "PMID:14635115;PMID:5635456"
+      - references: "PMID:5635456;PMID:16198644;PMID:196642"
       - subsystem: "Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism"
       - confidence_score: 0
     - !!omap
@@ -186876,22 +186700,6 @@
       - eccodes: "2.3.1.39"
       - references: "PMID:12882974"
       - subsystem: "Fatty acid oxidation"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR08922"
-      - name: "transport of L-metanephrine (cytosol to extracellular)"
-      - metabolites: !!omap
-          - MAM01285c: 2
-          - MAM01371c: -2
-          - MAM02039c: 2
-          - MAM02040c: -2
-          - MAM02407c: -3
-          - MAM02407e: 3
-          - MAM02751c: 2
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
       - id: "MAR01520"
@@ -187489,18 +187297,6 @@
       - rxnFrom: "Recon3D"
       - eccodes: "7.6.2.1"
       - references: "PMID:10198212;PMID:10856717;PMID:11353404"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01597"
-      - name: "Peptide (Lysine) Nuclear Transport via Diffusion"
-      - metabolites: !!omap
-          - MAM00204e: -1
-          - MAM00204n: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "3.1.4.17"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -210286,18 +210082,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR10395"
-      - name: "Formation of Prostaglandin I2"
-      - metabolites: !!omap
-          - MAM01892c: 1
-          - MAM02795c: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - references: "PMID:21962087"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR10396"
       - name: "Transport of O-Phospho-L-Serine, Diffusion"
       - metabolites: !!omap
@@ -227059,7 +226843,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11731"
-      - name: "Transport of 2-Hydroxy-Glutarate, Extracellular, Antiport"
+      - name: "Transport of (S)-2-hydroxyglutarate, extracellular, antiport (2-oxoglutarate)"
       - metabolites: !!omap
           - MAM01306c: 1
           - MAM01306e: -1
@@ -227067,13 +226851,14 @@
           - MAM03188e: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000149452"
+      - gene_reaction_rule: "ENSG00000197901"
+      - references: "PMID:18365245;PMID:21264516"
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
       - id: "MAR11732"
-      - name: "Exchange of 2-Hydroxy-Glutarate"
+      - name: "Exchange of (S)-2-hydroxyglutarate"
       - metabolites: !!omap
           - MAM03188e: -1
       - lower_bound: -1000
@@ -227083,7 +226868,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11733"
-      - name: "Transport of 2-Hydroxy-Glutarate, Extracellular"
+      - name: "Transport of (S)-2-hydroxyglutarate, extracellular"
       - metabolites: !!omap
           - MAM03188c: -1
           - MAM03188e: 1
@@ -247143,16 +246928,16 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR20018"
-      - name: "MAR20018"
+      - name: "15-oxoprostaglandin 13-reductase (15-oxo-PGE2)"
       - metabolites: !!omap
-          - MAM02039g: 1
-          - MAM02554g: -1
-          - MAM02555g: 1
-          - MAM20014g: 1
-          - MAM20015g: -1
+          - MAM02039g: -1
+          - MAM02554g: 1
+          - MAM02555g: -1
+          - MAM20014g: -1
+          - MAM20015g: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000180011 or ENSG00000180011"
+      - gene_reaction_rule: "ENSG00000180011"
       - eccodes: "1.3.1.48"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
@@ -249718,6 +249503,109 @@
       - eccodes: "2.8.1.1"
       - references: "PMID:25225291;PMID:24981631"
       - subsystem: "Sulfur metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20204"
+      - name: "(R)-2-hydroxyglutarate:FAD oxidoreductase (D2HGDH)"
+      - metabolites: !!omap
+          - MAM01306m: 1
+          - MAM01802m: -1
+          - MAM01803m: 1
+          - MAM20012m: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000180902"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "1.1.99.39"
+      - references: "PMID:15070399;PMID:16037974;PMID:31349060;PMID:33431826"
+      - subsystem: "Butanoate metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20205"
+      - name: "2-oxoglutarate reductase ((S)-2-hydroxyglutarate-forming), mitochondrial"
+      - metabolites: !!omap
+          - MAM01306m: -1
+          - MAM02039m: -1
+          - MAM02552m: 1
+          - MAM02553m: -1
+          - MAM03188m: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000146701"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:17603759;PMID:26212716;PMID:27510037;PMID:28263965;PMID:42162436"
+      - subsystem: "Butanoate metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20206"
+      - name: "2-oxoglutarate reductase ((S)-2-hydroxyglutarate-forming), cytosolic"
+      - metabolites: !!omap
+          - MAM01306c: -1
+          - MAM02039c: -1
+          - MAM02552c: 1
+          - MAM02553c: -1
+          - MAM03188c: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000134333 or ENSG00000014641"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:26212717;PMID:28263965;PMID:27510037;PMID:34012073;PMID:17603759"
+      - subsystem: "Butanoate metabolism"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20207"
+      - name: "Exchange of (R)-2-hydroxyglutarate"
+      - metabolites: !!omap
+          - MAM20012e: -1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - rxnFrom: "HumanGEM"
+      - subsystem: "Exchange/demand reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20208"
+      - name: "Transport of (R)-2-hydroxyglutarate, extracellular, antiport (2-oxoglutarate)"
+      - metabolites: !!omap
+          - MAM01306c: 1
+          - MAM01306e: -1
+          - MAM20012c: -1
+          - MAM20012e: 1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000197901"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:18365245"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20209"
+      - name: "Transport of (S)-2-hydroxyglutarate, sodium symport (NaDC3)"
+      - metabolites: !!omap
+          - MAM02519c: 3
+          - MAM02519e: -3
+          - MAM03188c: 1
+          - MAM03188e: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000158296"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:18365245;PMID:21264516"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20210"
+      - name: "Transport of (R)-2-hydroxyglutarate, sodium symport (NaDC3)"
+      - metabolites: !!omap
+          - MAM02519c: 3
+          - MAM02519e: -3
+          - MAM20012c: 1
+          - MAM20012e: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000158296"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:18365245;PMID:21264516"
+      - subsystem: "Transport reactions"
       - confidence_score: 0
 - genes:
     - !!omap
@@ -254200,9 +254088,6 @@
       - id: "ENSG00000143515"
       - name: "ATP8B2"
     - !!omap
-      - id: "ENSG00000143552"
-      - name: "NUP210L"
-    - !!omap
       - id: "ENSG00000143554"
       - name: "SLC27A3"
     - !!omap
@@ -257587,9 +257472,6 @@
       - id: "ENSG00000198077"
       - name: "CYP2A7"
     - !!omap
-      - id: "ENSG00000198088"
-      - name: "NUP62CL"
-    - !!omap
       - id: "ENSG00000198099"
       - name: "ADH4"
     - !!omap
@@ -258315,6 +258197,9 @@
     - !!omap
       - id: "ENSG00000165125"
       - name: "TRPV6"
+    - !!omap
+      - id: "ENSG00000180902"
+      - name: "D2HGDH"
 - compartments: !!omap
     - e: "Extracellular"
     - x: "Peroxisome"
