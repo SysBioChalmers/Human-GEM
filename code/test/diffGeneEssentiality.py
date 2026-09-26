@@ -63,6 +63,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+import cobra
 from raven_toolbox.io import read_yaml_model
 
 from evaluateHart2015Essentiality import BF_THRESHOLDS, bayes_factors
@@ -322,6 +323,10 @@ def build_report(
     blob URL of ``gene-essential_summary.md`` (with ``detail_text`` appended to it),
     linked from ``comment_text``.
     """
+    # Nothing here is solved. cobra otherwise defaults to Gurobi whenever gurobipy is
+    # importable, and every model load would take a WLS licence session that the
+    # build-test shards may still hold.
+    cobra.Configuration().solver = "glpk"
     print(f"Loading base model from {base_model_path} ...", file=sys.stderr)
     base_model = read_yaml_model(base_model_path)
     print(f"Loading head model from {head_model_path} ...", file=sys.stderr)
