@@ -9,7 +9,7 @@ MAR00031,lipid droplet formation,C:-13.4364;H:-19.2074;N:-0.0188;O:-4.4474;P:-0.
 MAR00033,"24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion",C:-108;H:-164;O:-18;X:1,
 MAR00034,3-carboxy-alpha-chromanol to vitamin E derivatives conversion,C:-37;H:-48;O:-14;X:1,2
 MAR00035,"(1aalpha,2beta,3alpha,11calpha)... to xenobiotics conversion",Br:-6;C:-588;Cl:-12;H:-621;N:-66;O:-209;S:-15,11
-MAR00036,(11R)-HPETE to arachidonate derivatives conversion,C:-3170;H:-4890;N:-76;O:-823;P:-15;S:-23,180
+MAR00036,(11R)-HPETE to arachidonate derivatives conversion,C:-3170;H:-4889;N:-76;O:-823;P:-15;S:-23,180
 MAR00037,16alpha-hydroxyestrone to steroids conversion,C:-1116;H:-1488;I:-1;N:-81;O:-299;S:-24;Se:-1,24
 MAR00477,phospholipids extracellular pool formation,C:-32;H:-61;N:-4;O:-24;P:-3;R:-5,-1
 MAR00545,acyl-CoA-CL pool (liver tissue) formation,C:-16.6164;H:-31.9336;R:1,
@@ -47,7 +47,6 @@ MAR01014,"arachidonate 5-lipoxygenase (14,15-DiHETE)",,-2
 MAR01065,"3-hydroxyacyl-CoA dehydrogenase (11,12-EET)",,-2
 MAR01067,"3-hydroxyacyl-CoA dehydrogenase (7,8-epoxy-(4Z,10Z)-hexadecadienoic acid)",,-2
 MAR01068,"3-hydroxyacyl-CoA dehydrogenase (14,15-EET)",,-2
-MAR01070,"3-hydroxyacyl-CoA dehydrogenase (10,11-epoxy-(4Z,7Z)-hexadecadienoic acid)",,-3
 MAR01073,"arachidonate 12-lipoxygenase, 12S type (12(S)-HETE)",,-2
 MAR01075,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
 MAR01077,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
@@ -125,7 +124,7 @@ MAR02571,15(R)-HEPE hydrolysis,,2
 MAR02577,15(R)-HEPE hydrolysis,,2
 MAR03055,"(9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA oxidation",,-8
 MAR03119,tryptase (melatonin),,2
-MAR03138,Methionine Synthase,,-2
+MAR03138,Methionine Synthase,,-1
 MAR03167,glutathione transferase (urate),,1
 MAR03168,peptidyl-dipeptidase A (melatonin),,1
 MAR03255,melatonin radical to cyclic-3-hydroxymelatonin conversion,,1
@@ -168,8 +167,6 @@ MAR05156,glycyl-tRNA(gly) phosphorylation,C:-452;H:-708;N:-103;O:-143;R:1;S:-6,
 MAR05257,(10Z)-heptadecenoic acid formation,C:16.8292;H:31.8668;R:-1,
 MAR05266,apo-[ACP] phosphorylation,C:611;H:1000;N:165;O:176;R:-1;S:7,
 MAR05267,mitoApo-[ACP] phosphorylation,C:452;H:708;N:103;O:143;R:-1;S:6,
-MAR05427,"Fatty Acid Omega Oxidation (C22->W-Ohc22), Endoplasmatic Reticulum",,1
-MAR06350,Fatty Acid Omega Oxidation (W-Ohc22->C22Dc),,-1
 MAR06393,hydroxide to dehydroascorbic acid conversion,,1
 MAR06456,gamma-tocopheroxyl-radical to gamma-tocopherol conversion,,-1
 MAR06457,8alpha-hydroxy-gamma-tocopherone to gamma-tocopheroxyl-radical conversion,,-1
@@ -233,18 +230,9 @@ MAR10036,acyl-CoA pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
 MAR10037,cholesterol-ester pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
 MAR10038,cholesterol-ester pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
 MAR10061,fatty acyl-CoA reduction,C:-1;H:-2,
-MAR10984,Hydrolysis of AlaGlyLys,,-1
-MAR11039,Hydrolysis of GlnHisLys,,2
-MAR11040,Hydrolysis of GlnLysLys,,4
-MAR11099,Hydrolysis of LysArgLeu,,-1
-MAR11142,Hydrolysis of ProHisTyr,,1
-MAR11145,Hydrolysis of ProPhe,,-1
-MAR12017,Dopamine-O-Quinone Oxidase,,-1
 MAR12991,3HPVSCOAhc,,-1
 MAR12992,3HPVSTEThc,,1
-MAR12993,ACMPGLUTTRsc,,-1
 MAR12994,FVSCOAhc,,-1
 MAR12995,MDZGLChr,,-1
 MAR13078,PROTEIN_BS,C:-32.5694;H:-66.0418;N:-9.3852;O:-16.5863;S:-0.283;X:1,-0.202
 MAR13081,CYOOm3i,,0.06
-MAR20008,MAR20008,,1
