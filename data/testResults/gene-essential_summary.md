@@ -2,17 +2,17 @@
 
 | cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 0.3444 | 142 | 0.384 | 96 | 0.6691 | 0.3277 | 0.1676 | 55 |
-| GBM | 0.3271 | 140 | 0.3586 | 103 | 0.661 | 0.3071 | 0.1615 | 44 |
-| HCT116 | 0.3723 | 130 | 0.3751 | 103 | 0.6707 | 0.3358 | 0.1797 | 40 |
-| HELA | 0.3124 | 169 | 0.3151 | 137 | 0.6703 | 0.2752 | 0.1457 | 43 |
-| RPE1 | 0.2544 | 176 | 0.3035 | 128 | 0.6593 | 0.2573 | 0.1361 | 51 |
-| all |  |  |  |  | 0.6659 | 0.3005 | 0.1584 |  |
+| DLD1 | 0.3494 | 139 | 0.3852 | 96 | 0.6671 | 0.3267 | 0.1671 | 52 |
+| GBM | 0.3234 | 143 | 0.3602 | 102 | 0.6624 | 0.3093 | 0.1614 | 48 |
+| HCT116 | 0.3736 | 129 | 0.3782 | 101 | 0.6731 | 0.3403 | 0.1797 | 41 |
+| HELA | 0.3158 | 166 | 0.319 | 134 | 0.6688 | 0.2768 | 0.1456 | 43 |
+| RPE1 | 0.2642 | 167 | 0.3145 | 120 | 0.6597 | 0.2628 | 0.1361 | 50 |
+| all |  |  |  |  | 0.6662 | 0.3033 | 0.1582 |  |
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **3** gene(s) directly affected plus **0** more that share a metabolite with one of them.
+Checked **0** gene(s) directly affected plus **2** more that share a metabolite with one of them.
 
-**No change:** 3 gene(s).
+**No change:** 2 gene(s).
 
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/collagen-secretion/data/testResults/gene-essential-diff.csv).
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/feat/dihydroorotate-transport/data/testResults/gene-essential-diff.csv).
