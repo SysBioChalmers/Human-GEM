@@ -58159,13 +58159,13 @@
       - name: "4-nitrocatechol"
       - compartment: "r"
       - formula: "C6H5NO4"
-      - charge: -1
+      - charge: 0
     - !!omap
       - id: "MAM02754r"
       - name: "PNP"
       - compartment: "r"
       - formula: "C6H5NO3"
-      - charge: -1
+      - charge: 0
     - !!omap
       - id: "MAM20032n"
       - name: "beta-D-galactose"
