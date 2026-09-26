@@ -69072,17 +69072,17 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08607"
-      - name: "4-methylthio-2-oxobutanoic acid to glutamate conversion"
+      - name: "glutamine transaminase K (4-methylthio-2-oxobutanoate)"
       - metabolites: !!omap
+          - MAM00672c: 1
           - MAM01016c: -1
-          - MAM01974c: 1
           - MAM01975c: -1
-          - MAM02039c: -2
           - MAM02471c: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000171097"
       - rxnFrom: "HMRdatabase"
-      - subsystem: "Arginine and proline metabolism"
+      - subsystem: "Cysteine and methionine metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR08608"
