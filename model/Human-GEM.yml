@@ -57863,7 +57863,7 @@
       - formula: "C20H29O5"
       - charge: -1
     - !!omap
-      - id: "MAM20017n"
+      - id: "MAM20015n"
       - name: "13,14-dihydro-15-oxo-prostaglandin E2"
       - compartment: "n"
       - formula: "C20H31O5"
@@ -247303,7 +247303,7 @@
           - MAM02554n: -1
           - MAM02555n: 1
           - MAM20014n: 1
-          - MAM20017n: -1
+          - MAM20015n: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000180011 or ENSG00000180011"
