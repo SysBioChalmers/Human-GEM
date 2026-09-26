@@ -144,7 +144,6 @@ MAR03440,"ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)...)",,2
 MAR03483,acetyl-CoA C-acyltransferase,,-2
 MAR03537,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;O:-2.22045e-16;R:-1,
 MAR03622,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;O:-2.22045e-16;R:-1,
-MAR03800,branched chain keto acid dehydrogenase E1 (2-oxobutyrate),H:1;S:1,
 MAR03830,"enoyl-CoA hydratase (9,10-12,13-diepoxy-octadecanoate)",,1
 MAR03962,arachidonate 5-lipoxygenase (prostaglandin D2),,-2
 MAR03992,NADH:ferricytochrome-b5 oxidoreductase,,2
@@ -162,7 +161,6 @@ MAR04548,"melatonin,NADPH-hemoprotein reductase:oxygen oxidoreductase",,-2
 MAR04549,6-hydroxymelatonin-sulfate to 6-hydroxymelatonin conversion,,-2
 MAR04552,hydroxide to melatonin radical conversion,,1
 MAR04553,cyclic-3-hydroxymelatonin hydrolysis,,-1
-MAR04599,oxoglutarate dehydrogenase (succinyl-transferring) (lipoamide),H:-2;S:-2,
 MAR04702,homogentisate hydroxylation,,2
 MAR04763,heme oxygenase (biliverdin-producing) (hemoglobin),,1
 MAR04768,uroporphyrin III to uroporphyrinogen III conversion,,-6
@@ -178,10 +176,6 @@ MAR05267,mitoApo-[ACP] phosphorylation,C:452;H:708;N:103;O:143;R:-1;S:6,
 MAR05427,"Fatty Acid Omega Oxidation (C22->W-Ohc22), Endoplasmatic Reticulum",,1
 MAR06350,Fatty Acid Omega Oxidation (W-Ohc22->C22Dc),,-1
 MAR06393,hydroxide to dehydroascorbic acid conversion,,1
-MAR06402,octanoyl-[acp]:protein N6-octanoyltransferase,C:1367;H:2173;N:381;O:419;S:4,
-MAR06416,lipoamide to S-(2-methylpropanoyl)... conversion,H:-1;N:-4;S:-1,
-MAR06419,lipoamide to S-(2-methylbutanoyl)... conversion,H:-1;S:-1,
-MAR06421,lipoamide to S-(3-methylbutanoyl)... conversion,H:-1;S:-1,
 MAR06456,gamma-tocopheroxyl-radical to gamma-tocopherol conversion,,-1
 MAR06457,8alpha-hydroxy-gamma-tocopherone to gamma-tocopheroxyl-radical conversion,,-1
 MAR06459,5-nitro-gamma-tocopherol to gamma-tocopheroxyl-radical conversion,,-1
@@ -232,8 +226,6 @@ MAR07621,[protein] to [protein]-L-arginine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
 MAR07625,NAD+:protein-L-arginine ADP-D-ribosyltransferase,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR07741,Ferredoxin:NADP+ oxidoreductase,,-2
 MAR08029,"signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
-MAR08433,dihydrolipoyl dehydrogenase ([protein]-N6-(lipoyl)lysine),C:-1367;H:-2170;N:-380;O:-419;S:-4,
-MAR08434,dihydrolipoyl dehydrogenase (S-aminomethyldihydrolipoamide),C:1367;H:2170;N:380;O:419;S:4,
 MAR08607,4-methylthio-2-oxobutanoic acid to glutamate conversion,,-2
 MAR08615,ATP:cob(I)alamin Co-beta-adenosyltransferase,,1
 MAR09487,NAD+:poly(adenosine diphosphate D-ribose)ADP-D-ribosyltransferase,,2
@@ -262,11 +254,3 @@ MAR12995,MDZGLChr,,-1
 MAR13078,PROTEIN_BS,C:-32.5694;H:-66.0418;N:-9.3852;O:-16.5863;S:-0.283;X:1,-0.202
 MAR13081,CYOOm3i,O:-3.46945e-17,0.06
 MAR20008,MAR20008,,1
-MAR20168,MAR20168,C:-1367;H:-2170;N:-380;O:-419;S:-4,
-MAR20173,2-oxoadipate decarboxylation,H:2;S:2,
-MAR20174,branched chain keto acid dehydrogenase E1 (3-methyl-2-oxobutyrate),H:1;N:4;S:1,
-MAR20175,branched chain keto acid dehydrogenase E1 (2-oxo-3-methylvalerate),H:1;S:1,
-MAR20176,branched chain keto acid dehydrogenase E1 (4-methyl-2-oxopentanoate),H:1;S:1,
-MAR20177,lipoamide to thiamin-PP conversion,H:1;S:-1,
-MAR20178,propanoyl-CoA:enzyme N6-(dihydrolipoyl)lysine S-propanoyltransferase,H:-2,
-MAR20189,Reduction of alpha-tocopheryl quinone by Complex III,H:1,-3
