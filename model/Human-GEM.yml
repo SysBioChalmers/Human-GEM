@@ -23755,27 +23755,6 @@
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM01999c"
-      - name: "glycolipid"
-      - compartment: "c"
-      - formula: "C56H99N2O30RCO"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM01999g"
-      - name: "glycolipid"
-      - compartment: "g"
-      - formula: "C56H99N2O30RCO"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM01999e"
-      - name: "glycolipid"
-      - compartment: "e"
-      - formula: "C56H99N2O30RCO"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM02000c"
       - name: "glycolithocholate"
       - compartment: "c"
@@ -38508,20 +38487,6 @@
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
-      - id: "MAM03586c"
-      - name: "Galactosyl Glucosyl Ceramide"
-      - compartment: "c"
-      - formula: "C30H56NO12RCO"
-      - charge: 0
-      - metFrom: "Recon3D"
-    - !!omap
-      - id: "MAM03586g"
-      - name: "Galactosyl Glucosyl Ceramide"
-      - compartment: "g"
-      - formula: "C30H56NO12RCO"
-      - charge: 0
-      - metFrom: "Recon3D"
-    - !!omap
       - id: "MAM01253x"
       - name: "acetoacetate"
       - compartment: "x"
@@ -39345,13 +39310,6 @@
       - name: "Leb Glycolipid"
       - compartment: "g"
       - formula: "C56H99N2O30RCO"
-      - charge: 0
-      - metFrom: "Recon3D"
-    - !!omap
-      - id: "MAM03586l"
-      - name: "Galactosyl Glucosyl Ceramide"
-      - compartment: "l"
-      - formula: "C30H56NO12RCO"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -47805,7 +47763,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03464e"
-      - name: "Asparaginyl-Alanyl-Arginine"
+      - name: "Aspartyl-Alanyl-Arginine"
       - compartment: "e"
       - formula: "C13H24N6O6"
       - charge: 0
@@ -48008,14 +47966,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03606e"
-      - name: "Glutaminyl-Arginyl-Leucine"
+      - name: "Glutamyl-Arginyl-Leucine"
       - compartment: "e"
       - formula: "C17H32N6O6"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03607e"
-      - name: "Glutaminyl-Asparaginyl-Leucine"
+      - name: "Glutamyl-Asparaginyl-Leucine"
       - compartment: "e"
       - formula: "C15H25N4O7"
       - charge: -1
@@ -49499,7 +49457,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03464c"
-      - name: "Asparaginyl-Alanyl-Arginine"
+      - name: "Aspartyl-Alanyl-Arginine"
       - compartment: "c"
       - formula: "C13H24N6O6"
       - charge: 0
@@ -49702,14 +49660,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03606c"
-      - name: "Glutaminyl-Arginyl-Leucine"
+      - name: "Glutamyl-Arginyl-Leucine"
       - compartment: "c"
       - formula: "C17H32N6O6"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03607c"
-      - name: "Glutaminyl-Asparaginyl-Leucine"
+      - name: "Glutamyl-Asparaginyl-Leucine"
       - compartment: "c"
       - formula: "C15H25N4O7"
       - charge: -1
@@ -53066,13 +53024,6 @@
       - compartment: "r"
       - formula: "C18H40NO3"
       - charge: 1
-      - metFrom: "Recon3D"
-    - !!omap
-      - id: "MAM03586e"
-      - name: "Galactosyl Glucosyl Ceramide"
-      - compartment: "e"
-      - formula: "C30H56NO12RCO"
-      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03635l"
@@ -113902,6 +113853,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000135454"
+      - references: "PMID:1601877;PMID:8702839"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.4.1.92"
       - subsystem: "Sphingolipid metabolism"
@@ -118971,7 +118923,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00804"
-      - name: "beta-N-acetylhexosaminidase (globotriaosylceramide)"
+      - name: "alpha-galactosidase (globotriaosylceramide)"
       - metabolites: !!omap
           - MAM01910l: 1
           - MAM01960l: -1
@@ -118979,9 +118931,10 @@
           - MAM02328l: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000049860 or ENSG00000169660 or ENSG00000213614"
+      - gene_reaction_rule: "ENSG00000102393 and ENSG00000197746"
+      - references: "PMID:8804427;PMID:10838196"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "3.2.1.52"
+      - eccodes: "3.2.1.22"
       - subsystem: "Glycosphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -129189,12 +129142,13 @@
       - metabolites: !!omap
           - MAM01948g: 1
           - MAM01950g: -1
-          - MAM01999g: 1
           - MAM02039g: 1
           - MAM03092g: -1
+          - MAM03578g: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000130383 or ENSG00000156413 or ENSG00000171124"
+      - gene_reaction_rule: "ENSG00000171124 or ENSG00000130383"
+      - references: "PMID:12424536;PMID:12493760;PMID:1977660"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.4.1.65"
       - subsystem: "Blood group biosynthesis"
@@ -129361,18 +129315,19 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR08287"
-      - name: "fucosyltransferase (GDP-L-fucose)"
+      - name: "alpha-(1,3)-fucosyltransferase (type II H glycolipid)"
       - metabolites: !!omap
           - MAM01948g: 1
           - MAM01950g: -1
-          - MAM01999g: 1
           - MAM02039g: 1
           - MAM03095g: -1
+          - MAM03577g: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000172461"
+      - references: "PMID:10386598"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.1.-"
+      - eccodes: "2.4.1.152"
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -163504,8 +163459,8 @@
       - id: "MAR08273"
       - name: "transport of glycolipid (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01999c: -1
-          - MAM01999e: 1
+          - MAM03578c: -1
+          - MAM03578e: 1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
@@ -174476,8 +174431,8 @@
       - id: "MAR08272"
       - name: "transport of glycolipid (cytosol to Golgi apparatus)"
       - metabolites: !!omap
-          - MAM01999c: -1
-          - MAM01999g: 1
+          - MAM03578c: -1
+          - MAM03578g: 1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
@@ -179601,7 +179556,7 @@
       - id: "MAR09320"
       - name: "Exchange of glycolipid"
       - metabolites: !!omap
-          - MAM01999e: -1
+          - MAM03578e: -1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
@@ -184152,16 +184107,6 @@
       - subsystem: "Exchange/demand reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00595"
-      - name: "Exchange of Leb Glycolipid"
-      - metabolites: !!omap
-          - MAM03578e: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - subsystem: "Exchange/demand reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR00603"
       - name: "Exchange of (S)-Glycerate"
       - metabolites: !!omap
@@ -185792,29 +185737,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01076"
-      - name: "Blood Group Intracellular Transport"
-      - metabolites: !!omap
-          - MAM03578c: 1
-          - MAM03578e: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01078"
-      - name: "Blood Group Intracellular Transport"
-      - metabolites: !!omap
-          - MAM03578c: 1
-          - MAM03578g: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "3.2.1.51"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR01083"
       - name: "Galactoside 2-Alpha-L-Fucosyltransferase 1"
       - metabolites: !!omap
@@ -185829,40 +185751,6 @@
       - rxnFrom: "Recon3D"
       - eccodes: "2.4.1.69"
       - references: "PMID:2118655"
-      - subsystem: "Blood group biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01118"
-      - name: "fucosyltransferase 3 (Lewis blood group) (GDP-L-fucose)"
-      - metabolites: !!omap
-          - MAM01948g: 1
-          - MAM01950g: -1
-          - MAM02039g: 1
-          - MAM03092g: -1
-          - MAM03578g: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000171124"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.4.1.65"
-      - references: "PMID:12424536;PMID:12493760;PMID:1977660"
-      - subsystem: "Blood group biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01141"
-      - name: "Alpha- (1, 3)-Fucosyltransferase"
-      - metabolites: !!omap
-          - MAM01948g: 1
-          - MAM01950g: -1
-          - MAM02039g: 1
-          - MAM03095g: -1
-          - MAM03577g: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000172461"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.4.1.152"
-      - references: "PMID:10386598"
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -185893,47 +185781,6 @@
       - rxnFrom: "Recon3D"
       - eccodes: "3.2.1.23"
       - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01348"
-      - name: "Transport of Galactosyl Glucosyl Ceramide"
-      - metabolites: !!omap
-          - MAM03586c: -1
-          - MAM03586g: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "3.2.1.23"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01349"
-      - name: "Transport of Galactosyl Glucosyl Ceramide"
-      - metabolites: !!omap
-          - MAM03586c: -1
-          - MAM03586l: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "3.2.1.23"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01351"
-      - name: "Beta-1, 4 N-Acetylgalactosaminyltransferase"
-      - metabolites: !!omap
-          - MAM01905g: 1
-          - MAM02039g: 1
-          - MAM03106g: 1
-          - MAM03110g: -1
-          - MAM03586g: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135454"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.4.1.92"
-      - references: "PMID:1601877;PMID:8702839"
-      - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR01353"
@@ -193264,10 +193111,10 @@
       - id: "MAR03253"
       - name: "Galactosylceramide Sulfotransferase"
       - metabolites: !!omap
+          - MAM02328g: -1
           - MAM02334g: 1
           - MAM02681g: 1
           - MAM02682g: -1
-          - MAM03586g: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000128242"
@@ -230890,7 +230737,7 @@
           - MAM01910e: 1
           - MAM01972e: 1
           - MAM02040e: -1
-          - MAM03586e: -1
+          - MAM02328e: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000170266"
@@ -231051,8 +230898,8 @@
       - id: "MAR12048"
       - name: "Lactosylceramide Endocytosis"
       - metabolites: !!omap
-          - MAM03586e: -1
-          - MAM03586g: 1
+          - MAM02328e: -1
+          - MAM02328g: 1
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
@@ -231062,8 +230909,8 @@
       - id: "MAR12049"
       - name: "Lactosylceramide Endocytosis"
       - metabolites: !!omap
-          - MAM03586e: -1
-          - MAM03586l: 1
+          - MAM02328e: -1
+          - MAM02328l: 1
       - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
@@ -231105,21 +230952,6 @@
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR12053"
-      - name: "Alpha-Galactosidase, Lysosomal"
-      - metabolites: !!omap
-          - MAM01910l: 1
-          - MAM01960l: -1
-          - MAM02040l: -1
-          - MAM03586l: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000102393 and ENSG00000197746"
-      - rxnFrom: "Recon3D"
-      - eccodes: "3.2.1.22"
-      - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR12054"
@@ -231259,27 +231091,13 @@
       - metabolites: !!omap
           - MAM01905l: -1
           - MAM02040l: -1
+          - MAM02328l: 1
           - MAM02525l: 1
-          - MAM03586l: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000049860 and ENSG00000196743 and ENSG00000213614) or (ENSG00000049860 and ENSG00000196743)"
       - rxnFrom: "Recon3D"
       - eccodes: "3.2.1.52"
-      - subsystem: "Sphingolipid metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR12065"
-      - name: "Sialidase, Lysosomal (Neu1)"
-      - metabolites: !!omap
-          - MAM02015l: -1
-          - MAM02040l: -1
-          - MAM02543l: 1
-          - MAM03586l: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000064601 and ENSG00000141012 and ENSG00000170266 and ENSG00000204386"
-      - rxnFrom: "Recon3D"
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
@@ -231346,8 +231164,8 @@
       - metabolites: !!omap
           - MAM02015e: -1
           - MAM02040e: -1
+          - MAM02328e: 1
           - MAM02543e: 1
-          - MAM03586e: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000162139"
@@ -232098,16 +231916,6 @@
       - name: "Exchange of 5-S-cysteinyldopa"
       - metabolites: !!omap
           - MAM01134e: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - subsystem: "Exchange/demand reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR12132"
-      - name: "Exchange of Galactosyl Glucosyl Ceramide"
-      - metabolites: !!omap
-          - MAM03586e: -1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
