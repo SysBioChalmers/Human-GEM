@@ -226,7 +226,6 @@ MAR07621,[protein] to [protein]-L-arginine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
 MAR07625,NAD+:protein-L-arginine ADP-D-ribosyltransferase,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR07741,Ferredoxin:NADP+ oxidoreductase,,-2
 MAR08029,"signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
-MAR08607,4-methylthio-2-oxobutanoic acid to glutamate conversion,,-2
 MAR08615,ATP:cob(I)alamin Co-beta-adenosyltransferase,,1
 MAR09487,NAD+:poly(adenosine diphosphate D-ribose)ADP-D-ribosyltransferase,,2
 MAR09491,E2 ubiquitin-conjugating enzyme ([protein]-L-lysine),,-1

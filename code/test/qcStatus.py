@@ -12,8 +12,9 @@ they all upsert into one key/value TSV:
     tasks_verification	0/21
     yamllint	pass
 
-Upsert (read, set the one key, rewrite) keeps it order-independent and rerun-safe,
-and because the QC steps run sequentially in one job there is no contention. Keys
+Upsert (read, set the one key, rewrite) keeps it order-independent and rerun-safe.
+The model-QC checks run as parallel jobs, each on its own copy of the file; each job
+passes on only the keys it changed, and the report job sets those in one file. Keys
 are a fixed set, so nothing stale accumulates.
 
 CLI (used by the workflow's shell steps):
