@@ -7,16 +7,16 @@
 | Model &amp; network checks (18) | :warning: **3** pre-existing |
 | Model file &amp; metabolic tasks (5) | :white_check_mark: all pass |
 | MEMOTE | :white_check_mark: **63.8%** (core subset) |
-| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/duplicate-metabolite-ids/data/testResults/model_qc_summary.md) |
+| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remove-mar01364/data/testResults/model_qc_summary.md) |
 
 **Improved:**
-- Reactions flagged by MACAW dead-end test: [**1130**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/duplicate-metabolite-ids/data/testResults/macaw_results.tsv)
-- Charge-imbalanced reactions: [**232**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/duplicate-metabolite-ids/data/testResults/balance_results.csv)
-- Structure vs formula/charge inconsistencies: [**315**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/duplicate-metabolite-ids/data/testResults/qc_structure_consistency.csv)
+- Reactions flagged by MACAW dead-end test: [**1126**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remove-mar01364/data/testResults/macaw_results.tsv)
+- Mass-imbalanced reactions: [**70**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remove-mar01364/data/testResults/balance_results.csv)
+- Charge-imbalanced reactions: [**198**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remove-mar01364/data/testResults/balance_results.csv)
 
 **Pre-existing:**
-- Cross-refs inconsistent across compartments: [**2**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/duplicate-metabolite-ids/data/testResults/qc_annotation_issues.csv)
-- Reactions flagged as MACAW duplicates: [**377**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/duplicate-metabolite-ids/data/testResults/macaw_results.tsv)
-- Mass-imbalanced reactions: [**71**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/duplicate-metabolite-ids/data/testResults/balance_results.csv)
+- Cross-refs inconsistent across compartments: [**2**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remove-mar01364/data/testResults/qc_annotation_issues.csv)
+- Reactions flagged as MACAW duplicates: [**377**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remove-mar01364/data/testResults/macaw_results.tsv)
+- Structure vs formula/charge inconsistencies: [**315**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remove-mar01364/data/testResults/qc_structure_consistency.csv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
