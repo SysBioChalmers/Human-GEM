@@ -41413,13 +41413,6 @@
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
-      - id: "MAM03322c"
-      - name: "Methylcobalamin"
-      - compartment: "c"
-      - formula: "C63CoH91N13O14P"
-      - charge: 0
-      - metFrom: "Recon3D"
-    - !!omap
       - id: "MAM02156e"
       - name: "hypochlorite"
       - compartment: "e"
@@ -193018,21 +193011,6 @@
       - subsystem: "Miscellaneous"
       - confidence_score: 0
     - !!omap
-      - id: "MAR03138"
-      - name: "Methionine Synthase"
-      - metabolites: !!omap
-          - MAM01599c: -1
-          - MAM02871c: 1
-          - MAM02877c: -1
-          - MAM03322c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.1.1.13"
-      - references: "PMID:10377254"
-      - subsystem: "Vitamin B12 metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR03140"
       - name: "Peroxidase"
       - metabolites: !!omap
@@ -247297,16 +247275,16 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR20019"
-      - name: "MAR20019"
+      - name: "15-oxoprostaglandin 13-reductase (15-oxo-PGE2)"
       - metabolites: !!omap
-          - MAM02039n: 1
-          - MAM02554n: -1
-          - MAM02555n: 1
-          - MAM20014n: 1
-          - MAM20015n: -1
+          - MAM02039n: -1
+          - MAM02554n: 1
+          - MAM02555n: -1
+          - MAM20014n: -1
+          - MAM20015n: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000180011 or ENSG00000180011"
+      - gene_reaction_rule: "ENSG00000180011"
       - eccodes: "1.3.1.48"
       - subsystem: "Arachidonic acid metabolism"
       - confidence_score: 0
