@@ -3,5 +3,5 @@ growth	1.9022
 roundtrip_cobra	pass
 roundtrip_raven	pass
 tasks_essential	0/57
-tasks_verification	8/21
+tasks_verification	0/21
 yamllint	pass
