@@ -58427,10 +58427,10 @@
       - formula: "C49H56FeN4O5"
       - charge: -2
     - !!omap
-      - id: "MAM03652c"
-      - name: "Hexadecenoyl Ethanolamide, C16:1-Ethanolamide (Delta 9)"
+      - id: "MAM03885c"
+      - name: "Palmitoylethanolamide"
       - compartment: "c"
-      - formula: "C18H35NO2"
+      - formula: "C18H37NO2"
       - charge: 0
     - !!omap
       - id: "MAM03550c"
@@ -248375,8 +248375,8 @@
       - metabolites: !!omap
           - MAM01797c: 1
           - MAM02040c: -1
-          - MAM02675c: 1
-          - MAM03652c: -1
+          - MAM02674c: 1
+          - MAM03885c: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000138744"
