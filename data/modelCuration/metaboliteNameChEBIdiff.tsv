@@ -1,0 +1,548 @@
+metsNoComp	example_met	model_name	chebi_id	chebi_preferred	category
+MAM00005	MAM00005c	(11R)-HPETE	CHEBI:34127	11(R)-HPETE	close-typo
+MAM00028	MAM00028c	(18R)-HEPE	CHEBI:81563	18(R)-HEPE	close-typo
+MAM00163	MAM00163c	(R)-4-phosphopantothenoyl-cysteine	CHEBI:15769	N-[(R)-4-phosphopantothenoyl]-L-cysteine	close-typo
+MAM00521	MAM00521c	1D-myo-inositol-1,3,4,5,6-pentakisphosphate	CHEBI:16322	myo-inositol 1,3,4,5,6-pentakisphosphate	close-typo
+MAM00523	MAM00523c	1D-myo-inositol-1,3,4,6-tetrakisphosphate	CHEBI:16155	myo-inositol 1,3,4,6-tetrakisphosphate	close-typo
+MAM00561	MAM00561m	2-(alpha-hydroxyethyl)thiamine-diphosphate	CHEBI:978	2-(1-hydroxyethyl)thiamine diphosphate	close-typo
+MAM00965	MAM00965c	4alpha-hydroxytetrahydrobiopterin	CHEBI:15374	4a-hydroxytetrahydrobiopterin	close-typo
+MAM00998	MAM00998c	4-hydroxy-debrisoquine	CHEBI:63800	4-hydroxydebrisoquin	close-typo
+MAM01107	MAM01107c	5-hydroxy-L-tryptophan	CHEBI:28171	5-hydroxytryptophan	close-typo
+MAM01143	MAM01143c	6-(alpha-D-glucosaminyl)-1-phosphatidyl-1D-myo-inositol	CHEBI:17049	6-(α-D-glucosaminyl)-1-phosphatidyl-1D-myo-inositol	close-typo
+MAM01278	MAM01278c	acylglycerone-phosphate	CHEBI:15835	1-acylglycerone 3-phosphate	close-typo
+MAM01283	MAM01283c	adenylyl sulfate	CHEBI:17709	5'-adenylyl sulfate	close-typo
+MAM01288	MAM01288c	ADP-ribose	CHEBI:16960	ADP-D-ribose	close-typo
+MAM01311	MAM01311c	alkyl-glycerone-3-phosphate	CHEBI:17197	1-alkylglycerone 3-phosphate	close-typo
+MAM01316	MAM01316r	all-trans-decaprenyl-diphosphate	CHEBI:60721	all-trans-decaprenyl diphosphate(3−)	close-typo
+MAM01718	MAM01718c	D-myo-inositol-1,4,5-trisphosphate	CHEBI:16595	1D-myo-inositol 1,4,5-trisphosphate	close-typo
+MAM01750	MAM01750c	dTDP-galactose	CHEBI:14086	dTDP-D-galactose	close-typo
+MAM01785	MAM01785c	erythrose-4-phosphate	CHEBI:48153	D-erythrose 4-phosphate	close-typo
+MAM01966	MAM01966c	glucose-1,6-bisphosphate	CHEBI:18148	α-D-glucose 1,6-bisphosphate	close-typo
+MAM02327	MAM02327m	L-4-hydroxyglutamate semialdehyde	CHEBI:27809	L-4-hydroxyglutamic semialdehyde	close-typo
+MAM02454	MAM02454c	mannose-1-phosphate	CHEBI:35374	D-mannose 1-phosphate	close-typo
+MAM02455	MAM02455c	mannose-6-phosphate	CHEBI:17369	D-mannose 6-phosphate	close-typo
+MAM02476	MAM02476c	methylimidazole-acetaldehyde	CHEBI:28104	1-methylimidazole-4-acetaldehyde	close-typo
+MAM02526	MAM02526c	N-acetylgalactosamine-1-phosphate	CHEBI:55404	N-acetyl-D-galactosamine 1-phosphate	close-typo
+MAM02527	MAM02527c	N-acetylglucosamine	CHEBI:506227	N-acetyl-D-glucosamine	close-typo
+MAM02529	MAM02529c	N-acetylglucosamine-6-phosphate	CHEBI:15784	N-acetyl-D-glucosamine 6-phosphate	close-typo
+MAM02658	MAM02658c	ornithine	CHEBI:15729	L-ornithine	close-typo
+MAM02700	MAM02700c	peptide-2-[3-carboxy-3-(methylammonio)propyl]-L-histidine	CHEBI:16475	2-[3-carboxy-3-(methylammonio)propyl]-L-histidine	close-typo
+MAM02814	MAM02814c	pyridoxal-phosphate	CHEBI:18405	pyridoxal 5'-phosphate	close-typo
+MAM02816	MAM02816c	pyridoxamine-phosphate	CHEBI:18335	pyridoxamine 5'-phosphate	close-typo
+MAM02818	MAM02818c	pyridoxine-phosphate	CHEBI:28803	pyridoxine 5'-phosphate	close-typo
+MAM02846	MAM02846c	ribulose-5-phosphate	CHEBI:17363	D-ribulose 5-phosphate	close-typo
+MAM02878	MAM02878m	S-aminomethyldihydrolipoamide	CHEBI:50622	S8-aminomethyldihydrolipoamide	close-typo
+MAM02888	MAM02888c	selenocystathionine	CHEBI:27760	L-selenocystathionine	close-typo
+MAM02895	MAM02895c	se-methyl-L-selenocysteine	CHEBI:9068	Se-methylselenocysteine	close-typo
+MAM02951	MAM02951c	sulfoglycolithocholate	CHEBI:60007	sulfoglycolithocholate(2−)	close-typo
+MAM02998	MAM02998c	thyroxine	CHEBI:18332	L-thyroxine	close-typo
+MAM03232	MAM03232c	3-(3-Hydroxy-Phenyl)Propionate	CHEBI:57277	3-(3-hydroxyphenyl)propanoate	close-typo
+MAM03590	MAM03590r	2-Trans,6-Trans,10-Trans-Geranylgeranyl Diphosphate	CHEBI:58756	2-trans,6-trans,10-trans-geranylgeranyl diphosphate(3−)	close-typo
+MAM03798	MAM03798r	W-Hydroxydocosanoicacid	CHEBI:76322	22-hydroxydocosanoic acid	close-typo
+MAM20062	MAM20062n	3-O-acetyl-ADP-D-ribose	CHEBI:142723	3''-O-acetyl-ADP-D-ribose(2−)	close-typo
+MAM20077	MAM20077n	2-O-acetyl-ADP-D-ribose	CHEBI:83767	2''-O-acetyl-ADP-D-ribose(2−)	close-typo
+MAM20078	MAM20078m	2-(2-methyl-1-hydroxypropyl)thiamine diphosphate	CHEBI:48522	2-methyl-1-hydroxypropylthiamine diphosphate	close-typo
+MAM20079	MAM20079m	2-(2-methyl-1-hydroxybutyl)thiamine diphosphate	CHEBI:29141	2-methyl-1-hydroxybutylthiamine diphosphate	close-typo
+MAM20080	MAM20080m	2-(3-methyl-1-hydroxybutyl)thiamine diphosphate	CHEBI:29143	3-methyl-1-hydroxybutylthiamine diphosphate	close-typo
+MAM20081	MAM20081m	2-(1-hydroxypropyl)thiamine diphosphate	CHEBI:190398	2-(alpha-Hydroxypropyl)thiamine diphosphate	close-typo
+MAM00010	MAM00010c	(11Z,14Z,17Z)-eicosatrienoic acid	CHEBI:53460	all-cis-icosa-11,14,17-trienoic acid	far-check-id
+MAM00014	MAM00014x	(13E)-tetranor-16-carboxy-LTE4	CHEBI:74057	(13E)-16-carboxy-Δ13-17,18,19,20-tetranor-leukotriene E4	far-check-id
+MAM00075	MAM00075x	(2R)-pristanoyl-CoA	CHEBI:20067	3-hydroxybutyric acid	far-check-id
+MAM00094	MAM00094c	(4Z,7Z,10Z,13Z,16Z)-DPA	CHEBI:65136	(4Z,7Z,10Z,13Z,16Z)-docosa-4,7,10,13,16-pentaenoic acid	far-check-id
+MAM00097	MAM00097e	(5-L-glutamyl)-L-amino acid	CHEBI:50619	γ-Glu-Ala	far-check-id
+MAM00154	MAM00154r	(Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1	CHEBI:53019	glycan G00008	far-check-id
+MAM00167	MAM00167c	(R)-mevalonate	CHEBI:25351	mevalonic acid	far-check-id
+MAM00196	MAM00196c	[protein]	CHEBI:16541	protein polypeptide chain	far-check-id
+MAM00277	MAM00277c	11,12-DHET	CHEBI:84031	(5Z,8Z,14Z)-11,12-dihydroxyicosatrienoate	far-check-id
+MAM00280	MAM00280c	11,14,15-THETA	CHEBI:137327	11,14,15-trihydroxy-(5Z,8Z,12E)-icosatrienoate(1−)	far-check-id
+MAM00350	MAM00350c	13-cis-retinoate	CHEBI:6067	isotretinoin	far-check-id
+MAM00614	MAM00614c	25(R)DHCA-CoA	CHEBI:15494	3α,7α-dihydroxy-5β-cholestan-26-oyl-CoA	far-check-id
+MAM00616	MAM00616c	25(R)THCA-CoA	CHEBI:37642	(25R)-3α,7α,12α-trihydroxy-5β-cholestan-26-oyl-CoA	far-check-id
+MAM00618	MAM00618x	25(S)THCA-CoA	CHEBI:37643	(25S)-3α,7α,12α-trihydroxy-5β-cholestanoyl-CoA	far-check-id
+MAM00671	MAM00671c	2-oxobutyrate	CHEBI:30831	2-oxobutanoic acid	far-check-id
+MAM00745	MAM00745c	3alpha,12alpha-dihydroxy-5beta-cholanate	CHEBI:28834	deoxycholic acid	far-check-id
+MAM00767	MAM00767c	3-decaprenyl-4-hydroxybenzoate	CHEBI:84503	4-hydroxy-3-all-trans-decaprenylbenzoate	far-check-id
+MAM00946	MAM00946c	4,6-dideoxy-4-oxo-dTDP-D-glucose	CHEBI:16620	dTDP-4-dehydro-6-deoxy-D-galactose	far-check-id
+MAM00976	MAM00976c	4-cholesten-7alpha,12alpha,24(S)-triol-3-one	CHEBI:48714	7α,12α,24-trihydroxycholest-4-en-3-one	far-check-id
+MAM00993	MAM00993c	4-hydroxy-all-trans-retinoate	CHEBI:63795	all-trans-4-hydroxyretinoic acid	far-check-id
+MAM01044	MAM01044c	5,10-methenyl-THF	CHEBI:15638	(6R)-5,10-methenyltetrahydrofolic acid	far-check-id
+MAM01069	MAM01069c	5-alpha-dihydrotestosterone	CHEBI:16330	17β-hydroxy-5α-androstan-3-one	far-check-id
+MAM01100	MAM01100c	5-formyl-THF	CHEBI:209153	Oxisterigmatocystin D	far-check-id
+MAM01113	MAM01113c	5-methoxytryptophol	CHEBI:114833	1-[5-(2-amino-5-methyl-4-thiazolyl)-2,3-dihydroindol-1-yl]-1-butanone	far-check-id
+MAM01130	MAM01130c	5-phosphoribosyl-4-carboxy-5-aminoimidazole	CHEBI:28413	5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylic acid	far-check-id
+MAM01132	MAM01132c	5-phosphoribosylformylglycinamidine	CHEBI:18413	2-formamido-N1-(5-phospho-D-ribosyl)acetamidine	far-check-id
+MAM01133	MAM01133c	5-pp-inspP5	CHEBI:30164	5-diphospho-1D-myo-inositol pentakisphosphate	far-check-id
+MAM01154	MAM01154c	6,7-dihydroxy-1,2,3,4-tetrahydroisoquinoline	CHEBI:110006	N-[[(4R,5S)-2-[(2R)-1-hydroxypropan-2-yl]-4-methyl-1,1-dioxo-8-(5-pyrimidinyl)-4,5-dihydro-3H-6,1$l^{6},2-benzoxathiazocin-5-yl]methyl]-N-methylcyclohexanecarboxamide	far-check-id
+MAM01235	MAM01235c	9-eicosenoic acid	CHEBI:32419	gadoleic acid	far-check-id
+MAM01247	MAM01247c	A2PE	CHEBI:71980	N-retinylidene-N-retinylethanolamine	far-check-id
+MAM01252	MAM01252c	acetate	CHEBI:15366	acetic acid	far-check-id
+MAM01299	MAM01299c	aflatoxin B1-exo-8,9-epoxide-GSH	CHEBI:2505	8,9-dihydro-8-(S-glutathionyl)-9-hydroxyaflatoxin B1	far-check-id
+MAM01305	MAM01305c	AIR	CHEBI:28843	5-amino-1-(5-phospho-D-ribosyl)imidazole	far-check-id
+MAM01306	MAM01306c	AKG	CHEBI:30915	2-oxoglutaric acid	far-check-id
+MAM01370	MAM01370c	aspartate	CHEBI:17053	L-aspartic acid	far-check-id
+MAM01392	MAM01392c	beta-hydroxy-beta-methylbutyrate	CHEBI:37084	3-hydroxyisovaleric acid	far-check-id
+MAM01398	MAM01398c	bilirubin-monoglucuronoside	CHEBI:16427	mono(glucosyluronic acid)bilirubin	far-check-id
+MAM01414	MAM01414c	caffeate	CHEBI:16433	trans-caffeic acid	far-check-id
+MAM01445	MAM01445c	cholate	CHEBI:16359	cholic acid	far-check-id
+MAM01587	MAM01587c	citrate	CHEBI:30769	citric acid	far-check-id
+MAM01607	MAM01607g	core 2	CHEBI:15876	β-D-galactosyl-1,3-(N-acetyl-β-D-glucosaminyl-1,6)-N-acetyl-D-galactosaminyl group	far-check-id
+MAM01608	MAM01608g	core 3	CHEBI:16250	N-acetyl-β-D-glucosaminyl-(1→3)-N-acetyl-D-galactosaminyl group	far-check-id
+MAM01609	MAM01609g	core 4	CHEBI:16478	N-acetyl-β-D-glucosaminyl-1,6-(N-acetyl-β-D-glucosaminyl-1,3)-N-acetyl-D-galactosaminyl group	far-check-id
+MAM01620	MAM01620c	creatine-phosphate	CHEBI:58092	N-phosphocreatinate(2−)	far-check-id
+MAM01631	MAM01631m	cytochrome-C	CHEBI:83739	ferroheme c di-L-cysteine(2−) residue	far-check-id
+MAM01657	MAM01657c	dehydrodolichol-diphosphate	CHEBI:136960	ditrans,polycis-polyprenyl diphosphate(3−)	far-check-id
+MAM01660	MAM01660c	dehydroepiandrosterone	CHEBI:220467	Wortmannine E	far-check-id
+MAM01696	MAM01696c	dihomo-gamma-linolenate	CHEBI:53486	all-cis-icosa-8,11,14-trienoic acid	far-check-id
+MAM01697	MAM01697c	dihomo-gamma-linolenoyl-CoA	CHEBI:27979	all-cis-icosa-8,11,14-trienoyl-CoA	far-check-id
+MAM01706	MAM01706c	dimethylallyl-PP	CHEBI:16057	prenyl diphosphate	far-check-id
+MAM01716	MAM01716c	D-lactate	CHEBI:42111	(R)-lactic acid	far-check-id
+MAM01739	MAM01739c	dopaminochrome	CHEBI:27404	5,6-dihydroxyindole	far-check-id
+MAM01765	MAM01765c	ebastine	CHEBI:211060	Xylariterpenoid K	far-check-id
+MAM01798	MAM01798c	ethanolamine-phosphate	CHEBI:17553	O-phosphoethanolamine	far-check-id
+MAM01806	MAM01806c	farnesyl-PP	CHEBI:17407	2-trans,6-trans-farnesyl diphosphate	far-check-id
+MAM01829	MAM01829g	fn2m2masn	CHEBI:32984	N4-{N-acetyl-β-D-glucosaminyl-(1→2)-α-D-mannosyl-(1→3)-[N-acetyl-β-D-glucosaminyl-(1→2)-α-D-mannosyl-(1→6)]-β-D-mannosyl-(1→4)-N-acetyl-β-D-glucosaminyl-(1→4)-[α-L-fucosyl-(1→6)]-N-acetyl-β-D-glucosaminyl}-L-asparagine	far-check-id
+MAM01833	MAM01833c	formate	CHEBI:30751	formic acid	far-check-id
+MAM01866	MAM01866c	G00006	CHEBI:37633	(α-D-mannosyl)4-β-D-mannosyldiacetylchitobiosyldiphosphodolichol	far-check-id
+MAM01922	MAM01922c	gamma-butyrobetaine	CHEBI:16244	4-(trimethylammonio)butanoate	far-check-id
+MAM01932	MAM01932c	gamma-linolenate	CHEBI:28661	γ-linolenic acid	far-check-id
+MAM01959	MAM01959c	globoside	CHEBI:18259	N-acetyl-β-D-galactosaminyl-(1→3)-α-D-galactosyl-(1→4)-β-D-galactosyl-(1→4)-β-D-glucosylceramide	far-check-id
+MAM01961	MAM01961c	glucono-1,5-lactone-6-phosphate	CHEBI:16938	6-O-phosphono-D-glucono-1,5-lactone	far-check-id
+MAM01982	MAM01982c	glycerate	CHEBI:32398	D-glyceric acid	far-check-id
+MAM01983	MAM01983c	glycerol	CHEBI:17522	alditol	far-check-id
+MAM02039	MAM02039c	H+	CHEBI:24636	proton	far-check-id
+MAM02096	MAM02096c	hepoxilin A3	CHEBI:15631	(5Z,9E,14Z)-(8ξ,11R,12S)-11,12-epoxy-8-hydroxyicosa-5,9,14-trienoic acid	far-check-id
+MAM02139	MAM02139l	hyaluronan biosynthesis, precursor 1	CHEBI:16126	3-(4-deoxy-β-D-gluc-4-enosyluronic acid)-N-acetyl-D-glucosamine	far-check-id
+MAM02142	MAM02142m	hydracrylate	CHEBI:33404	3-hydroxypropionic acid	far-check-id
+MAM02182	MAM02182c	isocaproic-aldehyde	CHEBI:17998	4-methylpentanal	far-check-id
+MAM02200	MAM02200c	K+	CHEBI:26216	potassium atom	far-check-id
+MAM02346	MAM02346c	lc3Cer	CHEBI:17103	N-acetyl-β-D-glucosaminyl-(1→3)-β-D-galactosyl-(1→4)-β-D-glucosylceramide(d18:1(4E))	far-check-id
+MAM02350	MAM02350c	L-cysteate	CHEBI:21260	cysteic acid	far-check-id
+MAM02385	MAM02385c	lignocerate	CHEBI:28866	tetracosanoic acid	far-check-id
+MAM02403	MAM02403c	L-lactate	CHEBI:422	(S)-lactic acid	far-check-id
+MAM02407	MAM02407c	L-metanephrine	CHEBI:144365	N2-[4-(indol-3-yl)butanoyl]-L-glutamine	far-check-id
+MAM02450	MAM02450c	maltose	CHEBI:47937	α-D-glucosyl-(1→4)-α-D-mannose	far-check-id
+MAM02484	MAM02484m	mitoACP	CHEBI:64479	O-(pantetheine-4'-phosphoryl)serine(1−) residue	far-check-id
+MAM02485	MAM02485c	mitoApo-[ACP]	CHEBI:29999	L-serine residue	far-check-id
+MAM02486	MAM02486m	mitooxidized thioredoxin	CHEBI:18191	thioredoxin disulfide	far-check-id
+MAM02540	MAM02540c	N-acetylmethionine	CHEBI:165927	Tyr-Phe-Met	far-check-id
+MAM02593	MAM02593c	nLc5Cer	CHEBI:16297	N-acetyl-β-D-glucosaminyl-(1→3)-β-D-galactosyl-(1→4)-N-acetyl-β-D-glucosaminyl-(1→3)-β-D-galactosyl-(1→4)-β-D-glucosylceramide	far-check-id
+MAM02622	MAM02622c	normetanephrine	CHEBI:144308	Thuringione	far-check-id
+MAM02659	MAM02659c	orotate	CHEBI:16742	orotic acid	far-check-id
+MAM02661	MAM02661c	oxalate	CHEBI:16995	oxalic acid	far-check-id
+MAM02683	MAM02683c	paragloboside	CHEBI:17006	β-D-galactosyl-(1→4)-N-acetyl-β-D-glucosaminyl-(1→3)-β-D-galactosyl-(1→4)-β-D-glucosylceramide	far-check-id
+MAM02751	MAM02751c	Pi	CHEBI:18367	phosphate(3−)	far-check-id
+MAM02772	MAM02772c	propanoate	CHEBI:30768	propionic acid	far-check-id
+MAM02833	MAM02833c	retinoate	CHEBI:15367	all-trans-retinoic acid	far-check-id
+MAM02875	MAM02875c	salsolinol	CHEBI:123715	N-[[(3R,9R,10S)-12-[(2R)-1-hydroxypropan-2-yl]-16-(methanesulfonamido)-3,10-dimethyl-13-oxo-2,8-dioxa-12-azabicyclo[12.4.0]octadeca-1(14),15,17-trien-9-yl]methyl]-N-methylcyclohexanecarboxamide	far-check-id
+MAM02886	MAM02886c	selenide	CHEBI:16503	selane	far-check-id
+MAM02906	MAM02906g	sialyl-T antigen	CHEBI:16565	α-N-acetylneuraminyl-(2→3)-β-D-galactosyl-(1→3)-N-acetyl-α-D-galactosaminyl group	far-check-id
+MAM02912	MAM02912c	sn-glycerol-3-PC	CHEBI:16870	choline alfoscerate	far-check-id
+MAM02938	MAM02938c	stearate	CHEBI:28842	octadecanoic acid	far-check-id
+MAM02954	MAM02954c	TAG epoxide	CHEBI:28888	trichloroepoxyethane	far-check-id
+MAM02957	MAM02957e	TAG-extraction	CHEBI:17855	triglyceride	far-check-id
+MAM02960	MAM02960g	T-antigen	CHEBI:16117	β-D-galactosyl-(1→3)-N-acetyl-α-D-galactosaminyl group	far-check-id
+MAM02983	MAM02983c	thiamin-P	CHEBI:37574	thiamine(1+) monophosphate(1−)	far-check-id
+MAM02984	MAM02984c	thiamin-PP	CHEBI:9532	thiamine(1+) diphosphate	far-check-id
+MAM02985	MAM02985c	thiamin-PPP	CHEBI:9534	thiamine(1+) triphosphate	far-check-id
+MAM02992	MAM02992c	threonate	CHEBI:15908	L-threonic acid	far-check-id
+MAM03022	MAM03022m	trans,cis-myristo-2,5-dienoyl-CoA	CHEBI:87701	(2E,5Z)-tetradecadienoyl-CoA(4−)	far-check-id
+MAM03055	MAM03055c	trioxilin A3	CHEBI:15630	(5Z,9E,12S,14Z)-8,11,12-trihydroxyicosa-5,9,14-trienoic acid	far-check-id
+MAM03124	MAM03124c	urocanate	CHEBI:30817	trans-urocanic acid	far-check-id
+MAM03150	MAM03150c	xanthosine-5-phosphate	CHEBI:15652	5'-xanthylic acid	far-check-id
+MAM03151	MAM03151c	xanthurenate	CHEBI:217069	Youbetaoufene B3	far-check-id
+MAM03160	MAM03160l	GM4	CHEBI:27499	N-acetyl-α-neuraminosyl-(2→3)-β-D-galactosylceramide	far-check-id
+MAM03353	MAM03353r	Tetracosa-9,12,15,18,21-All-Cis-Pentaenoyl Coenzyme A	CHEBI:63543	(9Z,12Z,15Z,18Z,21Z)-tetracosapentaenoyl-CoA	far-check-id
+MAM03368	MAM03368c	24-Oxo-25(R)-Trihydroxycoprostanoyl Coenzyme A	CHEBI:27379	3α,7α,12α-trihydroxy-24-oxo-5β-cholestan-26-oyl-CoA	far-check-id
+MAM03522	MAM03522m	Cis2Trans4Decadienoyl Coenzyme A	CHEBI:137593	(2E,4Z)-deca-2,4-dienoyl-CoA(4−)	far-check-id
+MAM03550	MAM03550e	C12:0-Ethanolamide, Didecanoyl Ethanolamide	CHEBI:85263	N-(dodecanoyl)ethanolamine	far-check-id
+MAM03558	MAM03558e	Docosahexaenoyl Ethanolamide	CHEBI:134165	N-acylethanolamine 22:6	far-check-id
+MAM03561	MAM03561e	Docosatetraenoyl Ethanolamide (22:4, Delta 7, 10, 13, 16)	CHEBI:34478	7,10,13,16-Docosatetraenoylethanolamine	far-check-id
+MAM03626	MAM03626c	Glycylleucine	CHEBI:185298	2-{3b-[5,7-dihydroxy-3-(3,4,5-trihydroxybenzoyloxy)-3,4-dihydro-2H-1-benzopyran-2-yl]-5,7,8a-trihydroxy-1,6,8-trioxo-1H,3ah,3BH,6H,8H,8ah-cyclopenta[a]inden-3-yl}-5,7-dihydroxy-3,4-dihydro-2H-1-benzopyran-3-yl 3,4,5-trihydroxybenzoate	far-check-id
+MAM03649	MAM03649e	Heptadecanoyl Thanolamide (C17:0)	CHEBI:165587	Margaroyl-EA	far-check-id
+MAM03652	MAM03652e	Hexadecenoyl Ethanolamide, C16:1-Ethanolamide (Delta 9)	CHEBI:71465	palmitoleoyl ethanolamide	far-check-id
+MAM03685	MAM03685c	Hyocholic acid; gamma-Muricholate	CHEBI:81244	hyocholic acid	far-check-id
+MAM03851	MAM03851e	Pectin	CHEBI:47954	β-D-galacturonic acid	far-check-id
+MAM03922	MAM03922c	Suberyl Coenzyme A	CHEBI:76317	octanedioyl-CoA(5−)	far-check-id
+MAM03924	MAM03924c	Sebacoyl Coenzyme A	CHEBI:76316	decanedioyl-CoA(5−)	far-check-id
+MAM03996	MAM03996c	Taurohyocholic acid; N-(3alpha,6alpha,7alpha-Trihydroxy-5beta-cholan-24-oyl)taurine	CHEBI:52022	taurohyocholic acid	far-check-id
+MAM10008	MAM10008c	protein C terminal	CHEBI:33711	C-terminal amino-acid residue	far-check-id
+MAM10009	MAM10009c	protein N terminal	CHEBI:33712	N-terminal amino-acid residue	far-check-id
+MAM10023	MAM10023c	dehydrocholic acid	CHEBI:137881	3,7,12-trioxo-5β-cholan-24-oate	far-check-id
+MAM20061	MAM20061c	epsilon-(gamma-L-Glutamyl)-L-lysine	CHEBI:133752	ε-(γ-glutamyl)lysine dizwitterion	far-check-id
+MAM20084	MAM20084m	4Fe4S iron-sulfur cluster	CHEBI:33722	tetra-μ3-sulfido-tetrairon(2+)	far-check-id
+MAM20085	MAM20085m	2Fe2S iron-sulfur cluster	CHEBI:33737	di-μ-sulfido-diiron(2+)	far-check-id
+MAM20086	MAM20086m	GSSH	CHEBI:52857	S-sulfanylglutathione	far-check-id
+MAM00002	MAM00002c	(+)-alpha-pinene	CHEBI:36740	α-pinene	moderate
+MAM00003	MAM00003c	(10Z)-heptadecenoic acid	CHEBI:78990	(10Z)-heptadecenoate	moderate
+MAM00008	MAM00008c	(11Z,14Z)-eicosadienoic acid	CHEBI:77220	(11Z,14Z)-icosadienoate	moderate
+MAM00017	MAM00017c	(13Z)-eicosenoic acid	CHEBI:134479	(Z)-icos-13-enoic acid	moderate
+MAM00019	MAM00019c	(13Z)-octadecenoic acid	CHEBI:82618	(13Z)-octadecenoate	moderate
+MAM00021	MAM00021c	(13Z,16Z)-docosadienoic acid	CHEBI:77806	(13Z,16Z)-docosadienoate	moderate
+MAM00036	MAM00036x	(24R,25R)3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA	CHEBI:52050	(24R,25R)-3α,7α,12α,24-tetrahydroxy-5β-cholestan-26-oyl-CoA	moderate
+MAM00037	MAM00037x	(24R,25R)3alpha,7alpha,24-trihydroxy-5beta-cholestanoyl-CoA	CHEBI:27403	3α,7α,24-trihydroxy-5β-cholestan-26-oyl-CoA	moderate
+MAM00046	MAM00046m	(2E)-heptadecenoyl-CoA	CHEBI:77551	trans-2-heptadecenoyl-CoA(4−)	moderate
+MAM00071	MAM00071m	(2E)-undecenoyl-CoA	CHEBI:77548	trans-2-undecenoyl-CoA(4−)	moderate
+MAM00077	MAM00077c	(2R)-pristanic acid	CHEBI:51340	pristanic acid	moderate
+MAM00117	MAM00117c	(7Z)-tetradecenoic acid	CHEBI:53206	cis-tetradec-7-enoic acid	moderate
+MAM00157	MAM00157c	(R)-3-hydroxybutanoate	CHEBI:17066	(R)-3-hydroxybutyric acid	moderate
+MAM00179	MAM00179c	(S)-3-sulfolactate	CHEBI:16712	(S)-3-sulfolactic acid	moderate
+MAM00180	MAM00180c	(S)-dihydroorotate	CHEBI:17025	(S)-dihydroorotic acid	moderate
+MAM00270	MAM00270c	10-HETE	CHEBI:34306	20-HETE	moderate
+MAM00373	MAM00373e	15(R)-HEPE	CHEBI:90819	15(R)-HEPE(1−)	moderate
+MAM00403	MAM00403c	16-hydroxyhexadecanoic acid	CHEBI:55329	16-hydroxyhexadecanoate	moderate
+MAM00550	MAM00550x	1-palmitoyl-dihydroxyacetone-phosphate	CHEBI:17868	1-palmitoylglycerone 3-phosphate	moderate
+MAM00556	MAM00556c	1-piperideine-6-carboxylate	CHEBI:49015	1-piperideine-6-carboxylic acid	moderate
+MAM00564	MAM00564r	2(S)-pristanal	CHEBI:49189	pristanal	moderate
+MAM00579	MAM00579c	20alpha,22beta dihydroxycholesterol	CHEBI:1294	(20R,22R)-20,22-dihydroxycholesterol	moderate
+MAM00580	MAM00580c	20alpha-hydroxy-4-pregnen-3-one	CHEBI:36729	(20R)-20-hydroxypregn-4-en-3-one	moderate
+MAM00596	MAM00596x	20-hydroxy-LTE4	CHEBI:28700	20-hydroxy-leukotriene E4	moderate
+MAM00606	MAM00606m	22beta-hydroxycholesterol	CHEBI:1301	(22S)-22-hydroxycholesterol	moderate
+MAM00634	MAM00634c	2-aminomuconate	CHEBI:16886	2-aminomuconic acid	moderate
+MAM00639	MAM00639c	2-deoxy-D-ribose-1-phosphate	CHEBI:28542	2-deoxy-D-ribofuranose 1-phosphate	moderate
+MAM00643	MAM00643c	2-hydroxy-3-(4-hydroxyphenyl)propenoate	CHEBI:27683	2-hydroxy-3-(4-hydroxyphenyl)prop-2-enoic acid	moderate
+MAM00648	MAM00648c	2-hydroxybutyrate	CHEBI:1148	2-hydroxybutyric acid	moderate
+MAM00653	MAM00653c	2-hydroxyglutarate	CHEBI:17084	2-hydroxyglutaric acid	moderate
+MAM00654	MAM00654c	2-hydroxyphenylacetate	CHEBI:28478	(2-hydroxyphenyl)acetic acid	moderate
+MAM00665	MAM00665c	2-methylcitrate	CHEBI:30835	2-methylcitric acid	moderate
+MAM00670	MAM00670c	2-oxoadipate	CHEBI:15753	2-oxoadipic acid	moderate
+MAM00672	MAM00672c	2-oxoglutaramate	CHEBI:30882	2-oxoglutaramic acid	moderate
+MAM00729	MAM00729c	3,4-dihydroxyphenylacetate	CHEBI:41941	(3,4-dihydroxyphenyl)acetic acid	moderate
+MAM00734	MAM00734c	3,5,3-triiodothyronine-4-sulfate	CHEBI:35432	3,3',5-triiodo-L-thyronine sulfate	moderate
+MAM00750	MAM00750c	3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-26-al	CHEBI:48940	(25R)-3α,7α,12α-trihydroxy-5β-cholestan-26-al	moderate
+MAM00751	MAM00751m	3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al	CHEBI:48940	(25R)-3α,7α,12α-trihydroxy-5β-cholestan-26-al	moderate
+MAM00752	MAM00752c	3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate	CHEBI:48043	(25R)-3α,7α,12α-trihydroxy-5β-cholestan-26-oic acid	moderate
+MAM00754	MAM00754x	3alpha,7alpha-dihydroxy-24-oxo-5beta-cholestanoyl coa	CHEBI:28533	3α,7α-dihydroxy-24-oxo-5β-cholestan-26-oyl-CoA	moderate
+MAM00758	MAM00758c	3alpha,7alpha-dihydroxy-5beta-cholestanate	CHEBI:48467	(25R)-3α,7α-dihydroxy-5β-cholestan-26-oic acid	moderate
+MAM00760	MAM00760c	3-amino-propanal	CHEBI:58374	3-ammoniopropanal	moderate
+MAM00775	MAM00775c	3-hydroxyanthranilate	CHEBI:15793	3-hydroxyanthranilic acid	moderate
+MAM00784	MAM00784m	3-hydroxyisobutyrate	CHEBI:37373	(S)-3-hydroxyisobutyric acid	moderate
+MAM00813	MAM00813x	3-ketopristanoyl-CoA	CHEBI:57291	3-oxopristanoyl-CoA(4−)	moderate
+MAM00815	MAM00815c	3-mercaptolactate	CHEBI:28580	3-mercaptolactic acid	moderate
+MAM00824	MAM00824c	3-methyl-2-oxobutyrate	CHEBI:16530	3-methyl-2-oxobutanoic acid	moderate
+MAM00900	MAM00900m	3-oxopropanoate	CHEBI:17960	3-oxopropanoic acid	moderate
+MAM00914	MAM00914c	3-phosphonooxypyruvate	CHEBI:30933	3-phosphonooxypyruvic acid	moderate
+MAM00952	MAM00952c	4-acetamidobutanoate	CHEBI:17645	4-acetamidobutanoic acid	moderate
+MAM00970	MAM00970c	4-aminobutyrate	CHEBI:16865	γ-aminobutyric acid	moderate
+MAM00988	MAM00988c	4-hydroxy-2-nonenal	CHEBI:58968	(E)-4-hydroxynon-2-enal	moderate
+MAM00989	MAM00989m	4-hydroxy-2-oxoglutarate	CHEBI:30923	4-hydroxy-2-oxoglutaric acid	moderate
+MAM00995	MAM00995c	4-hydroxybenzoate	CHEBI:30763	4-hydroxybenzoic acid	moderate
+MAM01004	MAM01004c	4-hydroxyphenyllactate	CHEBI:17385	3-(4-hydroxyphenyl)lactic acid	moderate
+MAM01005	MAM01005c	4-hydroxyphenylpyruvate	CHEBI:15999	4-hydroxyphenylpyruvic acid	moderate
+MAM01021	MAM01021c	4-nitrophenyl-sulfate	CHEBI:35422	4-nitrophenyl hydrogen sulfate	moderate
+MAM01033	MAM01033c	4-pyridoxate	CHEBI:17405	4-pyridoxic acid	moderate
+MAM01065	MAM01065c	5alpha-androstane-3alpha,17beta-diol	CHEBI:36713	5α-androstane-3α,17β-diol	moderate
+MAM01078	MAM01078c	5beta-cholestan-3alpha,7alpha,12alpha-triol	CHEBI:16496	5β-cholestane-3α,7α,12α-triol	moderate
+MAM01092	MAM01092c	5beta-cholestane-3alpha,7alpha,12alpha,27-tetraol	CHEBI:17278	5β-cholestane-3α,7α,12α,26-tetrol	moderate
+MAM01103	MAM01103c	5-hydroxyindoleacetate	CHEBI:27823	(5-hydroxyindol-3-yl)acetic acid	moderate
+MAM01127	MAM01127c	5-oxoproline	CHEBI:18183	5-oxo-L-proline	moderate
+MAM01141	MAM01141c	5-tetradecenoyl-CoA	CHEBI:84650	(5Z)-tetradecenoyl-CoA(4−)	moderate
+MAM01168	MAM01168c	6-oxo-prostaglandin F1alpha	CHEBI:28158	6-oxoprostaglandin F1α	moderate
+MAM01171	MAM01171c	6-trans-12-epi-LTB4	CHEBI:63982	Δ6-trans-12-epi-leukotriene B4	moderate
+MAM01191	MAM01191c	7-hexadecenoyl-CoA	CHEBI:87698	(7Z)-hexadecenoyl-CoA(4−)	moderate
+MAM01253	MAM01253c	acetoacetate	CHEBI:15344	acetoacetic acid	moderate
+MAM01287	MAM01287c	ADP-mannose	CHEBI:28845	ADP-α-D-mannose	moderate
+MAM01289	MAM01289c	ADP-ribose-2-phosphate	CHEBI:37463	ADP-D-ribose 2'-phosphate	moderate
+MAM01312	MAM01312c	allantoate	CHEBI:30837	allantoic acid	moderate
+MAM01322	MAM01322c	alpha-D-galactose-1-phosphate	CHEBI:17973	α-D-galactose 1-phosphate	moderate
+MAM01339	MAM01339c	androsterone-glucuronide	CHEBI:28832	androsterone 3-glucosiduronic acid	moderate
+MAM01342	MAM01342c	anthranilate	CHEBI:30754	anthranilic acid	moderate
+MAM01366	MAM01366c	argininosuccinate	CHEBI:15682	(Nω-L-arginino)succinic acid	moderate
+MAM01380	MAM01380c	benzoate	CHEBI:30746	benzoic acid	moderate
+MAM01410	MAM01410c	butyrate	CHEBI:30772	butyric acid	moderate
+MAM01412	MAM01412c	butyryl-CoA	CHEBI:57371	butyryl-CoA(4−)	moderate
+MAM01436	MAM01436c	chitin(n-1)	CHEBI:17029	chitin	moderate
+MAM01442	MAM01442c	chloride	CHEBI:29311	chlorine(•)	moderate
+MAM01499	MAM01499l	cholesterol-ester-lin	CHEBI:41509	cholesteryl linoleate	moderate
+MAM01503	MAM01503l	cholesterol-ester-ol	CHEBI:46898	cholesteryl oleate	moderate
+MAM01504	MAM01504l	cholesterol-ester-palm	CHEBI:3663	cholesteryl palmitate	moderate
+MAM01580	MAM01580c	cis-aconitate	CHEBI:32805	cis-aconitic acid	moderate
+MAM01581	MAM01581c	cis-beta-D-glucosyl-2-hydroxycinnamate	CHEBI:62223	2-(β-D-glucosyloxy)-cis-cinnamate	moderate
+MAM01582	MAM01582c	cis-cetoleic acid	CHEBI:32428	cetoleic acid	moderate
+MAM01583	MAM01583c	cis-erucic acid	CHEBI:28792	erucic acid	moderate
+MAM01629	MAM01629c	cystine	CHEBI:16283	L-cystine	moderate
+MAM01636	MAM01636c	D-4-phosphopantothenate	CHEBI:15905	(R)-4'-phosphopantothenic acid	moderate
+MAM01641	MAM01641c	D-aspartate	CHEBI:17364	D-aspartic acid	moderate
+MAM01663	MAM01663x	delta1-piperideine-2-carboxylate	CHEBI:30912	1-piperideine-2-carboxylic acid	moderate
+MAM01681	MAM01681c	D-glucarate	CHEBI:16002	D-glucaric acid	moderate
+MAM01684	MAM01684c	D-glucuronate 1-phosphate	CHEBI:35145	D-glucuronic acid 1-phosphate	moderate
+MAM01702	MAM01702c	dihydrolipoate	CHEBI:18047	dihydrolipoic acid	moderate
+MAM01734	MAM01734c	dolichyl-phosphate-D-mannose	CHEBI:15809	dolichyl D-mannosyl phosphate	moderate
+MAM01746	MAM01746c	D-tagatose-6-phosphate	CHEBI:4251	D-tagatofuranose 6-phosphate	moderate
+MAM01749	MAM01749c	dTDP-6-deoxy-L-mannose	CHEBI:35452	dTDP-L-rhamnose	moderate
+MAM01751	MAM01751c	dTDP-glucose	CHEBI:15700	dTDP-α-D-glucose	moderate
+MAM01771	MAM01771c	eicosanoate	CHEBI:28822	icosanoic acid	moderate
+MAM01795	MAM01795c	estrone-glucuronide	CHEBI:28919	estrone 3-O-(β-D-glucuronide)	moderate
+MAM01835	MAM01835c	formylanthranilate	CHEBI:36575	N-formylanthranilic acid	moderate
+MAM01841	MAM01841c	fructose-1,6-bisphosphate	CHEBI:16905	keto-D-fructose 1,6-bisphosphate	moderate
+MAM01842	MAM01842c	fructose-1-phosphate	CHEBI:18105	keto-D-fructose 1-phosphate	moderate
+MAM01843	MAM01843c	fructose-2,6-bisphosphate	CHEBI:28602	β-D-fructofuranose 2,6-bisphosphate	moderate
+MAM01862	MAM01862c	fumarate	CHEBI:18012	fumaric acid	moderate
+MAM01863	MAM01863c	fumarylacetoacetate	CHEBI:30907	4-fumarylacetoacetic acid	moderate
+MAM01892	MAM01892e	15-Keto-Prostaglandin F2A	CHEBI:133409	15-oxoprostaglandin F2α(1−)	moderate
+MAM01910	MAM01910c	galactose	CHEBI:28061	α-D-galactose	moderate
+MAM01926	MAM01926e	gamma-glutamyl-beta-cyanoalanine	CHEBI:10565	γ-glutamyl-β-cyanoalanine	moderate
+MAM01927	MAM01927c	gamma-glutamyl-cysteine	CHEBI:17515	L-γ-glutamyl-L-cysteine	moderate
+MAM01951	MAM01951c	GDP-mannose	CHEBI:15820	GDP-α-D-mannose	moderate
+MAM01953	MAM01953c	geranyl-PP	CHEBI:17211	geranyl diphosphate	moderate
+MAM01963	MAM01963c	glucosamine-6-phosphate	CHEBI:15873	α-D-glucosamine 6-phosphate	moderate
+MAM01967	MAM01967c	glucose-1-phosphate	CHEBI:16077	D-glucopyranose 1-phosphate	moderate
+MAM01968	MAM01968c	glucose-6-phosphate	CHEBI:4170	D-glucopyranose 6-phosphate	moderate
+MAM01973	MAM01973c	glucuronate	CHEBI:42717	α-D-glucuronic acid	moderate
+MAM01976	MAM01976m	glutamyl-5-phosphate	CHEBI:17798	L-γ-glutamyl phosphate	moderate
+MAM01998	MAM01998c	glycolate	CHEBI:17497	glycolic acid	moderate
+MAM02080	MAM02080l	heparan sulfate, free chain	CHEBI:28815	heparan sulfate	moderate
+MAM02116	MAM02116r	hexadecenal	CHEBI:17585	trans-hexadec-2-enal	moderate
+MAM02135	MAM02135c	homogentisate	CHEBI:44747	homogentisic acid	moderate
+MAM02137	MAM02137c	homovanillate	CHEBI:545959	homovanillic acid	moderate
+MAM02141	MAM02141l	hyaluronate	CHEBI:16336	hyaluronic acid	moderate
+MAM02154	MAM02154c	hydroxypyruvate	CHEBI:30841	3-hydroxypyruvic acid	moderate
+MAM02169	MAM02169c	indoleacetate	CHEBI:16411	indole-3-acetic acid	moderate
+MAM02172	MAM02172c	inositol-1,3-bisphosphate	CHEBI:18225	myo-inositol 1,3-bisphosphate	moderate
+MAM02173	MAM02173c	inositol-1-phosphate	CHEBI:18297	1D-myo-inositol 1-phosphate	moderate
+MAM02183	MAM02183c	isocitrate	CHEBI:30887	isocitric acid	moderate
+MAM02187	MAM02187c	isopentenyl-pPP	CHEBI:16584	isopentenyl diphosphate	moderate
+MAM02191	MAM02191c	itaconate	CHEBI:30838	itaconic acid	moderate
+MAM02322	MAM02322c	L-2-aminoadipate	CHEBI:37024	2-aminoadipic acid	moderate
+MAM02325	MAM02325c	L-3-amino-isobutanoate	CHEBI:33094	(S)-3-aminoisobutyric acid	moderate
+MAM02348	MAM02348c	L-carnitine	CHEBI:11060	(S)-carnitine	moderate
+MAM02372	MAM02372c	L-fucose-1-phosphate	CHEBI:28319	L-fucopyranose 1-phosphate	moderate
+MAM02378	MAM02378c	L-gulonate	CHEBI:16154	L-gulonic acid	moderate
+MAM02381	MAM02381c	L-hydroxylysine	CHEBI:18040	erythro-5-hydroxy-L-lysine	moderate
+MAM02384	MAM02384c	L-iduronic acid	CHEBI:47903	L-idopyranuronic acid	moderate
+MAM02386	MAM02386c	limonene	CHEBI:15383	(4S)-limonene	moderate
+MAM02387	MAM02387c	linoleate	CHEBI:17351	linoleic acid	moderate
+MAM02389	MAM02389c	linolenate	CHEBI:27432	α-linolenic acid	moderate
+MAM02402	MAM02402c	lithocholate	CHEBI:16325	lithocholic acid	moderate
+MAM02413	MAM02413x	L-pipecolate	CHEBI:30913	L-pipecolic acid	moderate
+MAM02417	MAM02417c	L-sorbose	CHEBI:10295	α-L-sorbopyranose	moderate
+MAM02440	MAM02440c	malonate	CHEBI:30794	malonic acid	moderate
+MAM02441	MAM02441c	malonic-dialdehyde	CHEBI:566274	malonaldehyde	moderate
+MAM02453	MAM02453c	mannose	CHEBI:4208	D-mannopyranose	moderate
+MAM02465	MAM02465m	mesaconate	CHEBI:16600	mesaconic acid	moderate
+MAM02479	MAM02479c	methylmalonate	CHEBI:30860	methylmalonic acid	moderate
+MAM02487	MAM02487c	mitothioredoxin	CHEBI:15967	thioredoxin dithiol	moderate
+MAM02523	MAM02523c	N-acetyl-D-glucosaminylphosphatidylinositol	CHEBI:12194	6-(N-acetyl-α-D-glucosaminyl)-1-phosphatidyl-1D-myo-inositol	moderate
+MAM02532	MAM02532c	N-acetyl-L-aspartate	CHEBI:21547	N-acetyl-L-aspartic acid	moderate
+MAM02537	MAM02537m	N-acetyl-L-glutamate-5-phosphate	CHEBI:16878	N-acetyl-L-γ-glutamyl phosphate	moderate
+MAM02539	MAM02539c	N-acetylmannosamine-6-phosphate	CHEBI:28273	aldehydo-N-acetyl-D-mannosamine 6-phosphate	moderate
+MAM02541	MAM02541c	N-acetylmuramate	CHEBI:21615	N-acetyl-D-muramic acid	moderate
+MAM02543	MAM02543c	N-acetylneuraminate	CHEBI:45744	N-acetyl-β-neuraminic acid	moderate
+MAM02544	MAM02544c	N-acetylneuraminate-9-phosphate	CHEBI:27438	N-acetylneuraminic acid 9-phosphate	moderate
+MAM02586	MAM02586c	nicotinate	CHEBI:15940	nicotinic acid	moderate
+MAM02628	MAM02628c	N-trimethyl-2-aminoethylphosphonate	CHEBI:7347	2-trimethylaminoethylphosphonic acid	moderate
+MAM02675	MAM02675c	palmitolate	CHEBI:28716	palmitoleic acid	moderate
+MAM02680	MAM02680c	pantothenate	CHEBI:7916	pantothenic acid	moderate
+MAM02699	MAM02699c	peptide-2-(3-carboxy-3-aminopropyl)-L-histidine	CHEBI:17144	2-(3-amino-3-carboxypropyl)-L-histidine	moderate
+MAM02703	MAM02703c	peptide-L-methionine-(S)-S-oxide	CHEBI:15989	L-methionine S-oxide residue	moderate
+MAM02704	MAM02704c	peptide-L-methionine	CHEBI:16044	L-methionine residue	moderate
+MAM02710	MAM02710c	peptidylproline-(omega=180)	CHEBI:15701	peptidylproline (ω=180)	moderate
+MAM02720	MAM02720c	phenylacetate	CHEBI:30745	phenylacetic acid	moderate
+MAM02735	MAM02735c	phosphatidylinositol-3,5-bisphosphate	CHEBI:16851	1-phosphatidyl-1D-myo-inositol 3,5-bisphosphate	moderate
+MAM02746	MAM02746c	(3R)-phytanic acid	CHEBI:16285	phytanic acid	moderate
+MAM02747	MAM02747c	(3R)-phytanoyl-CoA	CHEBI:15538	phytanoyl-CoA	moderate
+MAM02764	MAM02764c	presqualene-PP	CHEBI:15442	presqualene diphosphate	moderate
+MAM02766	MAM02766x	(2S)-pristanic acid	CHEBI:51340	pristanic acid	moderate
+MAM02819	MAM02819c	pyruvate	CHEBI:32816	pyruvic acid	moderate
+MAM02822	MAM02822c	quinolinate	CHEBI:16675	quinolinic acid	moderate
+MAM02823	MAM02823c	quinonoid dihydrobiopterin	CHEBI:64277	7,8-dihydrobiopterin	moderate
+MAM02836	MAM02836c	retinoyl-glucuronide	CHEBI:28870	1-O-all-trans-retinoyl-β-glucuronic acid	moderate
+MAM02838	MAM02838c	retinyl-ester	CHEBI:63410	all-trans-retinyl ester	moderate
+MAM02839	MAM02839c	reverse triiodthyronine	CHEBI:28774	3,3',5'-triiodothyronine	moderate
+MAM02843	MAM02843c	ribose	CHEBI:16988	D-ribose	moderate
+MAM02844	MAM02844c	ribose-1-phosphate	CHEBI:35425	D-ribose 1-phosphate	moderate
+MAM02845	MAM02845c	ribose-5-phosphate	CHEBI:17797	aldehydo-D-ribose 5-phosphate	moderate
+MAM02885	MAM02885c	selenate	CHEBI:18170	selenic acid	moderate
+MAM02913	MAM02913c	sn-glycerol-3-PE	CHEBI:16929	sn-glycero-3-phosphoethanolamine	moderate
+MAM02943	MAM02943c	succinate	CHEBI:15741	succinic acid	moderate
+MAM02952	MAM02952c	sulfotaurolithocholate	CHEBI:17864	taurolithocholic acid sulfate	moderate
+MAM03005	MAM03005c	trans,cis,cis,cis-2,11,14,17-eicosatetraenoyl-CoA	CHEBI:76456	(2E,11Z,14Z,17Z)-icosatetraenoyl-CoA(4−)	moderate
+MAM03019	MAM03019m	trans,cis-hexadeca-2,7-dienoyl-CoA	CHEBI:87717	(2E,7Z)-hexadecadienoyl-CoA(4−)	moderate
+MAM03020	MAM03020m	trans,cis-hexadeca-2,9-dienoyl-CoA	CHEBI:77549	(2E,9Z)-hexadecadienoyl-CoA(4−)	moderate
+MAM03024	MAM03024m	trans,cis-octadeca-2,11-dienoyl-CoA	CHEBI:76558	(2E,11Z)-octadecadienoyl-CoA(4−)	moderate
+MAM03025	MAM03025m	trans,cis-octadeca-2,9-dienoyl-CoA	CHEBI:77553	(2E,9Z)-octadecadienoyl-CoA(4−)	moderate
+MAM03027	MAM03027x	trans-2,3-dehydropristanoyl-CoA	CHEBI:77293	(E)-2,3-didehydropristanoyl-CoA(4−)	moderate
+MAM03028	MAM03028x	trans-2-all-cis-6,9,12,15,18-tetracosahexaenoyl-CoA	CHEBI:76364	(2E,6Z,9Z,12Z,15Z,18Z)-tetracosahexaenoyl-CoA(4−)	moderate
+MAM03029	MAM03029c	trans-2-cis,cis,cis-8,11,14-eicosatetraenoyl-CoA	CHEBI:76412	(2E,8Z,11Z,14Z)-icosatetraenoyl-CoA(4−)	moderate
+MAM03033	MAM03033m	trans-3-cis-5,8,11,14-eicosapentaenoyl-CoA	CHEBI:85090	(3E,5Z,8Z,11Z,14Z)-icosapentaenoyl-CoA(4−)	moderate
+MAM03035	MAM03035m	trans-3-decenoyl-CoA	CHEBI:84793	trans-dec-3-enoyl-CoA(4−)	moderate
+MAM03041	MAM03041c	trichloroacetate	CHEBI:30956	trichloroacetic acid	moderate
+MAM03056	MAM03056c	trioxilin B3	CHEBI:78099	trioxilin B3(1−)	moderate
+MAM03109	MAM03109c	UDP-glucuronate	CHEBI:17200	UDP-α-D-glucuronic acid	moderate
+MAM03122	MAM03122c	ureidoglycolate	CHEBI:15412	(−)-ureidoglycolic acid	moderate
+MAM03157	MAM03157c	zinc	CHEBI:29105	zinc(2+)	moderate
+MAM03242	MAM03242m	3-Hydroxyisovaleryl Coenzyme A	CHEBI:62555	3-hydroxyisovaleryl-CoA(4−)	moderate
+MAM03362	MAM03362x	3(S)-Phytanoyl Coenzyme A	CHEBI:15538	phytanoyl-CoA	moderate
+MAM03402	MAM03402r	acetaminophen/paracetamol	CHEBI:46195	paracetamol	moderate
+MAM03491	MAM03491x	Dodecanedioyl Coenzyme A	CHEBI:76315	dodecanedioyl-CoA(5−)	moderate
+MAM03552	MAM03552m	2,6-Dimethyl Heptanoyl Coenzyme A	CHEBI:84847	2,6-dimethylheptanoyl-CoA(4−)	moderate
+MAM03560	MAM03560r	Docosanedioicacid	CHEBI:76299	docosanedioate(2−)	moderate
+MAM03562	MAM03562e	Dodecanedioic Acid	CHEBI:76273	dodecanedioate(2−)	moderate
+MAM03585	MAM03585e	D-Galactosamine	CHEBI:18232	D-galactosamine 6-phosphate	moderate
+MAM03614	MAM03614e	Glutarate	CHEBI:17859	glutaric acid	moderate
+MAM03654	MAM03654r	Hexadecanediocacid	CHEBI:76276	hexadecanedioate(2−)	moderate
+MAM03655	MAM03655c	Hexadecanedioyl Coenzyme A	CHEBI:77085	hexadecanedioyl-CoA(5−)	moderate
+MAM03814	MAM03814c	1-Linoleoylglycerophosphocholine (Delta 9,12)	CHEBI:28733	1-linoleoyl-sn-glycero-3-phosphocholine	moderate
+MAM03856	MAM03856c	1-Linoleoylglycerophosphoethanolamine (Delta 9,12)	CHEBI:83058	1-linoleoyl-sn-glycero-3-phosphoethanolamine	moderate
+MAM03884	MAM03884c	(3S)-phytanic acid	CHEBI:16285	phytanic acid	moderate
+MAM03887	MAM03887c	Pristanoyl Coenzyme A	CHEBI:64039	(2S)-pristanoyl-CoA	moderate
+MAM03977	MAM03977c	C14:0-Ethanolamide, Tetradecanoyl Ethanolamide	CHEBI:85262	N-(tetradecanoyl)ethanolamine	moderate
+MAM10021	MAM10021c	alpha-muricholic acid	CHEBI:134116	α-muricholate	moderate
+MAM10022	MAM10022c	beta-muricholic acid	CHEBI:134119	β-muricholate	moderate
+MAM10024	MAM10024c	tauro-alpha-muricholic acid	CHEBI:172400	tauro-α-muricholate(1−)	moderate
+MAM10025	MAM10025c	omega-muricholic acid	CHEBI:81299	ω-muricholic acid	moderate
+MAM10027	MAM10027c	glycohyocholic acid	CHEBI:133177	glycohyocholate	moderate
+MAM10031	MAM10031c	tauro-omega-muricholic acid	CHEBI:139137	tauro-ω-muricholic acid	moderate
+MAM10035	MAM10035c	alpha-muricholoyl-CoA	CHEBI:138378	β-muricholoyl-CoA	moderate
+MAM10036	MAM10036c	beta-muricholoyl-CoA	CHEBI:138378	β-muricholoyl-CoA	moderate
+MAM10037	MAM10037c	omega-muricholoyl-CoA	CHEBI:138378	β-muricholoyl-CoA	moderate
+MAM20063	MAM20063n	alpha-NAD(+)	CHEBI:77017	α-NAD(1−)	moderate
+MAM20083	MAM20083x	(2R)-pristanal	CHEBI:49189	pristanal	moderate
+MAM00233	MAM00233c	1,2-diacylglycerol-bile-PC pool	CHEBI:17815	1,2-diacyl-sn-glycerol	pool
+MAM00234	MAM00234e	1,2-diacylglycerol-chylomicron pool	CHEBI:17815	1,2-diacyl-sn-glycerol	pool
+MAM00235	MAM00235c	1,2-diacylglycerol-LD-PC pool	CHEBI:17815	1,2-diacyl-sn-glycerol	pool
+MAM00236	MAM00236c	1,2-diacylglycerol-LD-PE pool	CHEBI:17815	1,2-diacyl-sn-glycerol	pool
+MAM00237	MAM00237c	1,2-diacylglycerol-LD-PI pool	CHEBI:17815	1,2-diacyl-sn-glycerol	pool
+MAM00238	MAM00238c	1,2-diacylglycerol-LD-PS pool	CHEBI:17815	1,2-diacyl-sn-glycerol	pool
+MAM00239	MAM00239c	1,2-diacylglycerol-LD-SM pool	CHEBI:17815	1,2-diacyl-sn-glycerol	pool
+MAM00240	MAM00240c	1,2-diacylglycerol-LD-TAG pool	CHEBI:17815	1,2-diacyl-sn-glycerol	pool
+MAM00241	MAM00241e	1,2-diacylglycerol-VLDL pool	CHEBI:17815	1,2-diacyl-sn-glycerol	pool
+MAM00473	MAM00473c	1-acylglycerol-3P-bile-PC pool	CHEBI:16975	1-acyl-sn-glycerol 3-phosphate	pool
+MAM00485	MAM00485c	1-acylglycerol-3P-LD-PC pool (liver tissue)	CHEBI:16975	1-acyl-sn-glycerol 3-phosphate	pool
+MAM00486	MAM00486c	1-acylglycerol-3P-LD-PE pool (liver tissue)	CHEBI:16975	1-acyl-sn-glycerol 3-phosphate	pool
+MAM00487	MAM00487c	1-acylglycerol-3P-LD-PI pool (liver tissue)	CHEBI:16975	1-acyl-sn-glycerol 3-phosphate	pool
+MAM00488	MAM00488c	1-acylglycerol-3P-LD-PS pool (liver tissue)	CHEBI:16975	1-acyl-sn-glycerol 3-phosphate	pool
+MAM00489	MAM00489c	1-acylglycerol-3P-LD-SM pool (liver tissue)	CHEBI:16975	1-acyl-sn-glycerol 3-phosphate	pool
+MAM00490	MAM00490c	1-acylglycerol-3P-LD-TG1 pool (liver tissue)	CHEBI:16975	1-acyl-sn-glycerol 3-phosphate	pool
+MAM00503	MAM00503c	1-acylglycerol-chylomicron pool	CHEBI:17408	monoacylglycerol	pool
+MAM00504	MAM00504c	1-acylglycerol-LD-PC pool	CHEBI:17408	monoacylglycerol	pool
+MAM00505	MAM00505c	1-acylglycerol-LD-PE pool	CHEBI:17408	monoacylglycerol	pool
+MAM00506	MAM00506c	1-acylglycerol-LD-PI pool	CHEBI:17408	monoacylglycerol	pool
+MAM00507	MAM00507c	1-acylglycerol-LD-PS pool	CHEBI:17408	monoacylglycerol	pool
+MAM00508	MAM00508c	1-acylglycerol-LD-SM pool	CHEBI:17408	monoacylglycerol	pool
+MAM00509	MAM00509c	1-acylglycerol-LD-TG1 pool	CHEBI:17408	monoacylglycerol	pool
+MAM00510	MAM00510c	1-acylglycerol-VLDL pool	CHEBI:17408	monoacylglycerol	pool
+MAM00656	MAM00656c	2-lysolecithin pool	CHEBI:17504	1-O-acyl-sn-glycero-3-phosphocholine(1+)	pool
+MAM01430	MAM01430c	ceramide pool	CHEBI:52639	N-acylsphingosine	pool
+MAM01451	MAM01451c	cholesterol-ester pool	CHEBI:17002	cholesteryl ester	pool
+MAM01589	MAM01589c	CL pool	CHEBI:28494	cardiolipin	pool
+MAM01699	MAM01699c	dihydroceramide pool	CHEBI:31488	N-acylsphinganine	pool
+MAM01808	MAM01808c	fatty acid-LD-PC pool (liver tissue)	CHEBI:35366	fatty acid	pool
+MAM01809	MAM01809c	fatty acid-LD-PE pool (liver tissue)	CHEBI:35366	fatty acid	pool
+MAM01810	MAM01810c	fatty acid-LD-PI pool (liver tissue)	CHEBI:35366	fatty acid	pool
+MAM01811	MAM01811c	fatty acid-LD-PS pool (liver tissue)	CHEBI:35366	fatty acid	pool
+MAM01812	MAM01812c	fatty acid-LD-SM pool (liver tissue)	CHEBI:35366	fatty acid	pool
+MAM01813	MAM01813c	fatty acid-LD-TG1 pool (liver tissue)	CHEBI:35366	fatty acid	pool
+MAM01814	MAM01814c	fatty acid-LD-TG2 pool (liver tissue)	CHEBI:35366	fatty acid	pool
+MAM01815	MAM01815c	fatty acid-LD-TG3 pool (liver tissue)	CHEBI:35366	fatty acid	pool
+MAM01819	MAM01819e	fatty acid-uptake pool	CHEBI:35366	fatty acid	pool
+MAM01820	MAM01820e	fatty acid-VLDL pool	CHEBI:35366	fatty acid	pool
+MAM01972	MAM01972c	glucosylceramide pool	CHEBI:18368	D-glucosyl-N-acylsphingosine	pool
+MAM02328	MAM02328c	LacCer pool	CHEBI:17950	β-D-galactosyl-(1→4)-β-D-glucosyl-(1↔1)-N-acylsphingosine	pool
+MAM02684	MAM02684c	PC-LD pool	CHEBI:16110	1,2-diacyl-sn-glycero-3-phosphocholine(1+)	pool
+MAM02685	MAM02685c	PE-LD pool	CHEBI:16038	phosphatidylethanolamine	pool
+MAM02686	MAM02686c	PE-NME-LD pool	CHEBI:15958	phosphatidyl-N-methylethanolamine	pool
+MAM02726	MAM02726c	phosphatidate-bile-PC pool	CHEBI:16337	phosphatidic acid	pool
+MAM02727	MAM02727m	phosphatidate-CL pool	CHEBI:16337	phosphatidic acid	pool
+MAM02728	MAM02728c	phosphatidate-LD-PC pool	CHEBI:16337	phosphatidic acid	pool
+MAM02729	MAM02729c	phosphatidate-LD-PE pool	CHEBI:16337	phosphatidic acid	pool
+MAM02730	MAM02730c	phosphatidate-LD-PI pool	CHEBI:16337	phosphatidic acid	pool
+MAM02731	MAM02731c	phosphatidate-LD-PS pool	CHEBI:16337	phosphatidic acid	pool
+MAM02732	MAM02732c	phosphatidate-LD-SM pool	CHEBI:16337	phosphatidic acid	pool
+MAM02733	MAM02733c	phosphatidate-LD-TAG pool	CHEBI:16337	phosphatidic acid	pool
+MAM02740	MAM02740e	phospholipids extracellular pool	CHEBI:16247	phospholipid	pool
+MAM02748	MAM02748c	phytoceramide pool	CHEBI:31998	N-acylphytosphingosine	pool
+MAM02750	MAM02750c	PI pool	CHEBI:16749	1-phosphatidyl-1D-myo-inositol	pool
+MAM02808	MAM02808c	PS-LD pool	CHEBI:18303	phosphatidyl-L-serine	pool
+MAM02908	MAM02908c	SM pool	CHEBI:17636	sphingomyelin d18:1	pool
+MAM02956	MAM02956e	TAG-chylomicron pool	CHEBI:17855	triglyceride	pool
+MAM02958	MAM02958c	TAG-LD pool	CHEBI:17855	triglyceride	pool
+MAM02959	MAM02959e	TAG-VLDL pool	CHEBI:17855	triglyceride	pool
+MAM10004	MAM10004r	cholesterol-ester plasma pool	CHEBI:17002	cholesteryl ester	pool
+MAM10005	MAM10005e	fatty acid pool	CHEBI:35366	fatty acid	pool
+MAM10006	MAM10006e	1-acylglycerol-3P pool	CHEBI:16975	1-acyl-sn-glycerol 3-phosphate	pool
+MAM10007	MAM10007c	acyl-CoA pool	CHEBI:58342	acyl-CoA(4−)	pool
+MAM00522	MAM00522c	1D-myo-inositol-1,3,4,5-tetrakisphosphate	CHEBI:16783	1D-myo-inositol 1,3,4,5-tetrakisphosphate	stylistic
+MAM00524	MAM00524c	1D-myo-inositol-1,3,4-trisphosphate	CHEBI:18228	1D-myo-inositol 1,3,4-trisphosphate	stylistic
+MAM00525	MAM00525c	1D-myo-inositol-1,4,5,6-tetrakisphosphate	CHEBI:16067	1D-myo-inositol 1,4,5,6-tetrakisphosphate	stylistic
+MAM00526	MAM00526c	1D-myo-inositol-1,4-bisphosphate	CHEBI:17816	1D-myo-inositol 1,4-bisphosphate	stylistic
+MAM00527	MAM00527c	1D-myo-inositol-3,4,5,6-tetrakisphosphate	CHEBI:15844	1D-myo-inositol 3,4,5,6-tetrakisphosphate	stylistic
+MAM00528	MAM00528c	1D-myo-inositol-3,4-bisphosphate	CHEBI:28858	1D-myo-inositol 3,4-bisphosphate	stylistic
+MAM00529	MAM00529c	1D-myo-inositol-3-phosphate	CHEBI:18169	1D-myo-inositol 3-phosphate	stylistic
+MAM00530	MAM00530c	1D-myo-inositol-4-phosphate	CHEBI:18384	1D-myo-inositol 4-phosphate	stylistic
+MAM00551	MAM00551c	1-phosphatidyl-1D-myo-inositol-3,4-bisphosphate	CHEBI:16152	1-phosphatidyl-1D-myo-inositol 3,4-bisphosphate	stylistic
+MAM00552	MAM00552c	1-phosphatidyl-1D-myo-inositol-3-phosphate	CHEBI:17283	1-phosphatidyl-1D-myo-inositol 3-phosphate	stylistic
+MAM00553	MAM00553c	1-phosphatidyl-1D-myo-inositol-4-phosphate	CHEBI:17526	1-phosphatidyl-1D-myo-inositol 4-phosphate	stylistic
+MAM00554	MAM00554c	1-phosphatidyl-1D-myo-inositol-5-phosphate	CHEBI:16500	1-phosphatidyl-1D-myo-inositol 5-phosphate	stylistic
+MAM00640	MAM00640c	2-deoxy-D-ribose-5-phosphate	CHEBI:16132	2-deoxy-D-ribose 5-phosphate	stylistic
+MAM00915	MAM00915c	3-phosphopolynucleotide	CHEBI:1359	3'-phosphopolynucleotide	stylistic
+MAM00921	MAM00921c	3-UMP	CHEBI:28895	3'-UMP	stylistic
+MAM01007	MAM01007c	4-hydroxy-tolbutamide	CHEBI:63799	4-hydroxytolbutamide	stylistic
+MAM01020	MAM01020e	4-nitrophenyl-phosphate	CHEBI:17440	4-nitrophenyl phosphate	stylistic
+MAM01167	MAM01167c	6-oxo-prostaglandin E1	CHEBI:28269	6-oxoprostaglandin E1	stylistic
+MAM01394	MAM01394c	betaine_aldehyde	CHEBI:15710	betaine aldehyde	stylistic
+MAM01402	MAM01402c	biotinyl-5-AMP	CHEBI:3110	biotinyl-5'-AMP	stylistic
+MAM01420	MAM01420c	carbamoyl-phosphate	CHEBI:17672	carbamoyl phosphate	stylistic
+MAM01512	MAM01512c	cholesterol-sulfate	CHEBI:41321	cholesterol sulfate	stylistic
+MAM01731	MAM01731r	dolichyl-D-glucosyl-phosphate	CHEBI:15812	dolichyl β-D-glucosyl phosphate	stylistic
+MAM01732	MAM01732c	dolichyl-diphosphate	CHEBI:15750	dolichyl diphosphate	stylistic
+MAM01733	MAM01733c	dolichyl-phosphate	CHEBI:16214	dolichyl phosphate	stylistic
+MAM01737	MAM01737c	dopamine-3-O-sulfate	CHEBI:37946	dopamine 3-O-sulfate	stylistic
+MAM01767	MAM01767c	ecgonine-methyl ester	CHEBI:31529	ecgonine methyl ester	stylistic
+MAM01837	MAM01837c	formylglutathione	CHEBI:16225	S-formylglutathione	stylistic
+MAM02145	MAM02145c	hydrogen-cyanide	CHEBI:18407	hydrogen cyanide	stylistic
+MAM02152	MAM02152c	hydroxymethylglutathione	CHEBI:48926	S-(hydroxymethyl)glutathione	stylistic
+MAM02390	MAM02390c	linolenoyl-CoA	CHEBI:51985	α-linolenoyl-CoA	stylistic
+MAM02480	MAM02480m	methylmalonyl-CoA	CHEBI:15466	(S)-methylmalonyl-CoA	stylistic
+MAM02492	MAM02492c	myo-inositol-hexakisphosphate	CHEBI:17401	myo-inositol hexakisphosphate	stylistic
+MAM02549	MAM02549c	N-acetyl-serotonin	CHEBI:17697	N-acetylserotonin	stylistic
+MAM02600	MAM02600c	N-methylethanolamine-phosphate	CHEBI:16463	N-methylethanolamine phosphate	stylistic
+MAM02660	MAM02660c	orotidine-5-phosphate	CHEBI:15842	orotidine 5'-phosphate	stylistic
+MAM02670	MAM02670c	P1,P4-bis(5-adenosyl)-tetraphosphate	CHEBI:17422	P1,P4-bis(5'-adenosyl) tetraphosphate	stylistic
+MAM02671	MAM02671c	P1,P4-bis(5-guanosyl)-tetraphosphate	CHEBI:15883	P1,P4-bis(5'-guanosyl) tetraphosphate	stylistic
+MAM02767	MAM02767c	procollagen-5-hydroxy-L-lysine	CHEBI:51807	procollagen 5-hydroxy-L-lysine	stylistic
+MAM02807	MAM02807c	pseudouridine-5-phosphate	CHEBI:18116	pseudouridine 5'-phosphate	stylistic
+MAM02883	MAM02883c	sedoheptulose-1,7-bisphosphate	CHEBI:17969	sedoheptulose 1,7-bisphosphate	stylistic
+MAM02884	MAM02884c	sedoheptulose-7-phosphate	CHEBI:15721	sedoheptulose 7-phosphate	stylistic
+MAM02910	MAM02910c	S-methyl-5-thio-D-ribulose-1-phosphate	CHEBI:28096	S-methyl-5-thio-D-ribulose 1-phosphate	stylistic
+MAM02928	MAM02928c	sphinganine-1-phosphate	CHEBI:16893	sphinganine 1-phosphate	stylistic
+MAM03054	MAM03054c	trimethylamine-N-oxide	CHEBI:15724	trimethylamine N-oxide	stylistic
+MAM03166	MAM03166c	sedoheptulose-1-phosphate	CHEBI:9082	sedoheptulose 1-phosphate	stylistic
+MAM03243	MAM03243c	3-Hydroxy-Isovaleryl Carnitine	CHEBI:73027	3-hydroxyisovalerylcarnitine	stylistic
+MAM03404	MAM03404e	acetaminophen-glutathione-conjugate	CHEBI:32639	acetaminophen glutathione conjugate	stylistic
+MAM03751	MAM03751e	1-Arachidonoyl Glycerol	CHEBI:75612	1-arachidonoylglycerol	stylistic
+MAM03923	MAM03923c	Sebacicacid	CHEBI:41865	sebacic acid	stylistic
+MAM00341	MAM00341c	13,16,19-docosatrienoic acid	CHEBI:1038735		unresolved-chebi-id
+MAM00604	MAM00604c	21-hydroxyallopregnanolone	CHEBI:805752		unresolved-chebi-id
+MAM00623	MAM00623c	26-hydroxycholesterol	CHEBI:387060		unresolved-chebi-id
+MAM00664	MAM00664m	2-methylbutyrylglycine	CHEBI:240943		unresolved-chebi-id
+MAM00762	MAM00762g	3-beta-D-glucuronosyl-3-beta-D-galactosyl-4-beta-D-galactosyl-O-beta-D-xylosylprotein	G00157		unresolved-chebi-id
+MAM00821	MAM00821c	3-methoxytyramine	CHEBI:742324		unresolved-chebi-id
+MAM01142	MAM01142r	6-(alpha-D-glucosaminyl)-1D-myo-inositol	G12396		unresolved-chebi-id
+MAM01161	MAM01161c	6-hydroxymelatonin	CHEBI:308079		unresolved-chebi-id
+MAM01315	MAM01315c	alloxan	CHEBI:730073		unresolved-chebi-id
+MAM01368	MAM01368c	ascorbate	CHEBI:17208		unresolved-chebi-id
+MAM01450	MAM01450c	cholesterol	CHEBI:1307929		unresolved-chebi-id
+MAM01597	MAM01597c	CoA	CHEBI:1146900		unresolved-chebi-id
+MAM01600	MAM01600m	cobamide-coenzyme	CHEBI:8408		unresolved-chebi-id
+MAM01679	MAM01679c	D-galactosyl-N-acylsphingosine	CHEBI:12947		unresolved-chebi-id
+MAM01766	MAM01766r	ecgonine	CHEBI:708641		unresolved-chebi-id
+MAM01904	MAM01904c	GA1	G00124		unresolved-chebi-id
+MAM01906	MAM01906g	Gal2-Xyl-L-Ser-[protein]	G00156		unresolved-chebi-id
+MAM02197	MAM02197c	IV3GalNAca-Gb4Cer	G00095		unresolved-chebi-id
+MAM02457	MAM02457c	mead acid	CHEBI:1306412		unresolved-chebi-id
+MAM02477	MAM02477c	methylimidazoleacetic acid	CHEBI:8122		unresolved-chebi-id
+MAM02498	MAM02498c	N,N-chitobiosyldiphosphodolichol	G00002		unresolved-chebi-id
+MAM02522	MAM02522c	N-acetyl-D-glucosaminyldiphosphodolichol	G00001		unresolved-chebi-id
+MAM02536	MAM02536m	N-acetyl-L-glutamate	CHEBI:12575		unresolved-chebi-id
+MAM02736	MAM02736c	phosphatidylinositol-4,5-bisphosphate	CHEBI:28910		unresolved-chebi-id
+MAM02744	MAM02744c	phylloquinone	CHEBI:583972		unresolved-chebi-id
+MAM03091	MAM03091c	type I B glycolipid	G00039		unresolved-chebi-id
+MAM03093	MAM03093c	type II A antigen	G00054		unresolved-chebi-id
+MAM03136	MAM03136c	vanillylmandelate	CHEBI:1127735		unresolved-chebi-id
+MAM03142	MAM03142c	vitamin D3	CHEBI:283119		unresolved-chebi-id
+MAM03155	MAM03155c	xylitol	CHEBI:1305691		unresolved-chebi-id
+MAM03156	MAM03156g	Xyl-L-Ser-[protein]	G00154		unresolved-chebi-id
+MAM03569	MAM03569c	Cis,Cis-11,14-Eicosadienoic Acid	CHEBI:603631		unresolved-chebi-id
+MAM03630	MAM03630e	Glycylproline	CHEBI:356660		unresolved-chebi-id
+MAM03813	MAM03813e	1-Heptadecanoylglycerophosphocholine	CHEBI:580913		unresolved-chebi-id
+MAM10011	MAM10011c	N-formyl-L-glutamate	CHEBI:21710		unresolved-chebi-id

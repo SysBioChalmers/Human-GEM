@@ -27,7 +27,7 @@ rxnMetaNetXID  |MetaNetX reaction ID    |
 rxnHMR2ID      |HMR2 reaction ID        |
 rxnRatconID    |Ratcon reaction ID      |
 rxnTCDBID      |TCDB ID                 |
-spontaneous    |Spontaneous status      |
+spontaneous    |1 if the reaction needs no enzyme: non-enzymatic chemistry, or diffusion (transport between cytosol and nucleus through nuclear pores, and gases and water across membranes). ftINIT always keeps these reactions in context-specific models.|
 rxnMAID        |MA reaction ID          |
 rxnRheaID      |Rhea ID                 |
 rxnRheaMasterID|Master Rhea ID          |
@@ -49,6 +49,9 @@ metEHMNID      |EHMN metabolite ID       |
 metHepatoNET1ID|HepatoNET1 metabolite ID |
 metRecon3DID   |Recon3D metabolite ID    |
 metMetaNetXID  |MetaNetX metabolite ID   |
+metSmiles      |SMILES structure         |
+metInChI       |InChI structure          |
+metSeedID      |ModelSEED compound ID    |
 metHMR2ID      |HMR2 metabolite ID       |
 metMAID        |MA metabolite ID         |
 

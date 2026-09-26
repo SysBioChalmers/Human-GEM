@@ -1,0 +1,100 @@
+name: Add contributor
+
+# Credits a contributor from a comment, replacing the all-contributors GitHub
+# App. The App can only open pull requests against the default branch (main);
+# see https://github.com/all-contributors/app/issues/243. Additions on main are
+# lost when main is rebuilt from develop at release, so this workflow opens the
+# pull request against develop instead.
+#
+# Trigger it by commenting on any issue or pull request:
+#   @all-contributors please add @username for bug, code
+# Contribution type keys: https://allcontributors.org/docs/en/emoji-key
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  add-contributor:
+    # Only act on the trigger phrase, and only from users with write access.
+    if: >
+      contains(github.event.comment.body, '@all-contributors') &&
+      (github.event.comment.author_association == 'OWNER' ||
+       github.event.comment.author_association == 'MEMBER' ||
+       github.event.comment.author_association == 'COLLABORATOR')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Parse the command
+        id: parse
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const body = context.payload.comment.body || '';
+            const m = body.match(/add\s+@?([A-Za-z0-9-]+)\s+for\s+([^\n\r.!]+)/i);
+            if (!m) {
+              core.info('No "please add <user> for <types>" command found; skipping.');
+              core.setOutput('found', 'false');
+              return;
+            }
+            const user = m[1];
+            const types = m[2]
+              .split(/\s*,\s*|\s+and\s+/i)
+              .map(s => s.trim())
+              .filter(Boolean)
+              .join(',');
+            core.setOutput('found', 'true');
+            core.setOutput('user', user);
+            core.setOutput('types', types);
+            core.info(`Adding ${user} for ${types}`);
+
+      - name: Checkout develop
+        if: steps.parse.outputs.found == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+
+      - name: Set up Node
+        if: steps.parse.outputs.found == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update contributor list
+        if: steps.parse.outputs.found == 'true'
+        env:
+          PRIVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx --yes -p all-contributors-cli@6 all-contributors add \
+            "${{ steps.parse.outputs.user }}" "${{ steps.parse.outputs.types }}"
+
+      - name: Open pull request against develop
+        if: steps.parse.outputs.found == 'true'
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          base: develop
+          branch: all-contributors/${{ steps.parse.outputs.user }}
+          delete-branch: true
+          commit-message: "docs: add ${{ steps.parse.outputs.user }} as a contributor"
+          title: "docs: add ${{ steps.parse.outputs.user }} as a contributor"
+          body: |
+            Adds [@${{ steps.parse.outputs.user }}](https://github.com/${{ steps.parse.outputs.user }}) to the contributor list for: ${{ steps.parse.outputs.types }}.
+
+            Requested in ${{ github.event.comment.html_url }}.
+          labels: documentation
+
+      - name: Reply with the pull request link
+        if: steps.parse.outputs.found == 'true' && steps.cpr.outputs.pull-request-number
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const n = '${{ steps.cpr.outputs.pull-request-number }}';
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `Opened #${n} against \`develop\` to add @${{ steps.parse.outputs.user }} to the contributor list. It will be merged after review.`
+            });
