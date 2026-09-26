@@ -220,13 +220,10 @@ def main() -> int:
     skip = SLOW_TESTS if subset else None
     kind = "core subset" if subset else "full suite"
 
-    # The full suite's genome-scale consistency and FVA MILPs are impractical with
-    # GLPK, so it uses Gurobi when a licence is configured. The core subset skips
-    # those tests and always uses GLPK, so it never takes a Gurobi licence session.
-    if not subset and os.environ.get("GRB_LICENSE_FILE"):
+    # Use Gurobi when a full licence is configured; the genome-scale consistency
+    # and FVA MILPs are impractical with GLPK.
+    if os.environ.get("GRB_LICENSE_FILE"):
         cobra.Configuration().solver = "gurobi"
-    else:
-        cobra.Configuration().solver = "glpk"
 
     # memote reads an SBML model, so convert the canonical YAML model to a
     # temporary SBML file first (memote fails on a .yml directly). Load via
