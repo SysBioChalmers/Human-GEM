@@ -3621,14 +3621,14 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00270c"
-      - name: "10-HETE"
+      - name: "20-HETE"
       - compartment: "c"
       - formula: "C20H31O3"
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00270r"
-      - name: "10-HETE"
+      - name: "20-HETE"
       - compartment: "r"
       - formula: "C20H31O3"
       - charge: -1
@@ -39176,7 +39176,7 @@
       - id: "MAM04081e"
       - name: "Cholesterol Ester"
       - compartment: "e"
-      - formula: "C27H45XCO2"
+      - formula: "C27H45RCO2"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -39792,7 +39792,7 @@
       - id: "MAM04081c"
       - name: "Cholesterol Ester"
       - compartment: "c"
-      - formula: "C27H45XCO2"
+      - formula: "C27H45RCO2"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -40140,7 +40140,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM00270e"
-      - name: "10-HETE"
+      - name: "20-HETE"
       - compartment: "e"
       - formula: "C20H31O3"
       - charge: -1
@@ -57786,7 +57786,7 @@
       - charge: -1
     - !!omap
       - id: "MAM00270n"
-      - name: "10-HETE"
+      - name: "20-HETE"
       - compartment: "n"
       - formula: "C20H31O3"
       - charge: -1
@@ -58140,7 +58140,7 @@
       - charge: 0
     - !!omap
       - id: "MAM02766r"
-      - name: "pristanic acid"
+      - name: "(2S)-pristanic acid"
       - compartment: "r"
       - formula: "C19H37O2"
       - charge: -1
@@ -58430,7 +58430,7 @@
       - id: "MAM03652c"
       - name: "Hexadecenoyl Ethanolamide, C16:1-Ethanolamide (Delta 9)"
       - compartment: "c"
-      - formula: "C18H37NO2"
+      - formula: "C18H35NO2"
       - charge: 0
     - !!omap
       - id: "MAM03550c"
@@ -58652,7 +58652,7 @@
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
-      - id: "MAM20077m"
+      - id: "MAM20089m"
       - name: "2-(4-carboxy-1-hydroxybutyl)thiamine diphosphate"
       - compartment: "m"
       - formula: "C17H23N4O10P2S"
@@ -70442,7 +70442,7 @@
           - MAM02393m: -1
           - MAM02899m: 1
           - MAM02984m: 1
-          - MAM20077m: -1
+          - MAM20089m: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "(ENSG00000105953 and ENSG00000119689) or (ENSG00000181192 and ENSG00000119689)"
@@ -210173,7 +210173,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10348"
-      - name: "Exchange of 10-HETE"
+      - name: "Exchange of 20-HETE"
       - metabolites: !!omap
           - MAM00270e: -1
       - lower_bound: -1000
@@ -248706,7 +248706,7 @@
       - metabolites: !!omap
           - MAM01797c: 1
           - MAM02040c: -1
-          - MAM02674c: 1
+          - MAM02675c: 1
           - MAM03652c: -1
       - lower_bound: 0
       - upper_bound: 1000
@@ -249835,7 +249835,7 @@
           - MAM01596m: 1
           - MAM02039m: -1
           - MAM02984m: -1
-          - MAM20077m: 1
+          - MAM20089m: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000105953 or ENSG00000181192"
