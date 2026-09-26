@@ -165729,7 +165729,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09607"
-      - name: "transport of pantothenate (cytosol to extracellular)"
+      - name: "Pantothenate Transport via Sodium Symport"
       - metabolites: !!omap
           - MAM02519c: 2
           - MAM02519e: -2
@@ -165739,6 +165739,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000138074"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:10329687;PMID:10334869;PMID:12646417;PMID:15561972;PMID:9516450"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -165758,7 +165759,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR09609"
-      - name: "transport of biotin (cytosol to extracellular)"
+      - name: "Biotin Transport via Sodium Symport"
       - metabolites: !!omap
           - MAM01401c: 1
           - MAM01401e: -1
@@ -165768,6 +165769,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000138074"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:10329687;PMID:10334869;PMID:12646417;PMID:15561972;PMID:9516450"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -182720,21 +182722,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00094"
-      - name: "Biotin Transport via Sodium Symport"
-      - metabolites: !!omap
-          - MAM01401c: 1
-          - MAM01401e: -1
-          - MAM02519c: 2
-          - MAM02519e: -2
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138074"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:10329687;PMID:10334869;PMID:12646417;PMID:15561972;PMID:9516450"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR00095"
       - name: "Biotin Uptake (Antiport)"
       - metabolites: !!omap
@@ -187882,21 +187869,6 @@
       - eccodes: "2.7.1.33"
       - references: "PMID:11479594;PMID:11923312;PMID:12554685"
       - subsystem: "Pantothenate and CoA metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01636"
-      - name: "Pantothenate Sodium Symporter Ii"
-      - metabolites: !!omap
-          - MAM02519c: 2
-          - MAM02519e: -2
-          - MAM02680c: 1
-          - MAM02680e: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138074"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:10329687;PMID:10334869;PMID:12646417;PMID:15561972;PMID:9516450"
-      - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
       - id: "MAR01640"
