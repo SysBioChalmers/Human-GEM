@@ -74090,12 +74090,12 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR06877"
-      - name: "5-S-cysteinyldopa to cysteine conversion"
+      - name: "cysteine and L-dopaquinone to 5-S-cysteinyldopa conversion"
       - metabolites: !!omap
-          - MAM01134c: -1
-          - MAM01628c: 1
-          - MAM02356c: 1
-      - lower_bound: -1000
+          - MAM01134c: 1
+          - MAM01628c: -1
+          - MAM02356c: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:8931873;PMID:8819121;PMID:8819121;PMID:8931873;PMID:8819121;PMID:8931873"
@@ -120028,12 +120028,12 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01310"
-      - name: "6-oxo-prostaglandin F1alpha to prostaglandin I2 conversion"
+      - name: "prostaglandin I2 hydrolysis"
       - metabolites: !!omap
-          - MAM01168r: -1
-          - MAM02040r: 1
-          - MAM02795r: 1
-      - lower_bound: -1000
+          - MAM01168r: 1
+          - MAM02040r: -1
+          - MAM02795r: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:10534257"
@@ -120074,7 +120074,7 @@
           - MAM02040r: -1
           - MAM02994r: -1
           - MAM02995r: 1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - subsystem: "Prostaglandin biosynthesis"
@@ -120095,12 +120095,12 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01318"
-      - name: "6-oxo-prostaglandin F1alpha to prostaglandin I2 conversion"
+      - name: "prostaglandin I2 hydrolysis"
       - metabolites: !!omap
-          - MAM01168c: -1
-          - MAM02040c: 1
-          - MAM02795c: 1
-      - lower_bound: -1000
+          - MAM01168c: 1
+          - MAM02040c: -1
+          - MAM02795c: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - subsystem: "Prostaglandin biosynthesis"
@@ -163809,6 +163809,8 @@
           - MAM02041e: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000165272 or ENSG00000103375 or ENSG00000103569"
+      - references: "PMID:20724658;PMID:31546170"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -166949,6 +166951,8 @@
           - MAM02041m: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000103375"
+      - references: "PMID:22910329"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -171301,8 +171305,10 @@
       - metabolites: !!omap
           - MAM00204c: -1
           - MAM00204n: 1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000196497"
+      - references: "PMID:36103578"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -210497,7 +210503,7 @@
           - MAM02040c: -1
           - MAM02994c: -1
           - MAM02995c: 1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "Recon3D"
       - references: "PMID:21962087"
@@ -244245,6 +244251,8 @@
           - MAM02041r: -1
       - lower_bound: -1000
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000178301 or ENSG00000103375"
+      - references: "PMID:31546170"
       - rxnFrom: "Recon3D"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
@@ -256794,6 +256802,9 @@
       - id: "ENSG00000178234"
       - name: "GALNT11"
     - !!omap
+      - id: "ENSG00000178301"
+      - name: "AQP11"
+    - !!omap
       - id: "ENSG00000178445"
       - name: "GLDC"
     - !!omap
@@ -257438,6 +257449,9 @@
     - !!omap
       - id: "ENSG00000196475"
       - name: "GK2"
+    - !!omap
+      - id: "ENSG00000196497"
+      - name: "IPO4"
     - !!omap
       - id: "ENSG00000196502"
       - name: "SULT1A1"
