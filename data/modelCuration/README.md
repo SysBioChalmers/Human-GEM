@@ -1,8 +1,8 @@
 # Model curation data
 
-This directory contains curation-related data files used for making changes to the Human-GEM model. These model curation data files help to improve transparency of changes made to the model.
+This directory contains curation-related data files that support changes to the Human-GEM model and improve the transparency of those changes.
 
-- #241: `rhea_reaction_association.tsv` includes Rhea reaction ids that are associated with Human-GEM reactions by equation mapping method and/or via UniProt id.
 - `metabolite_name_synonyms.tsv` stores mapped synonymous metabolite names used in Human-GEM and other databases.
-- `Swissprot_compartments.tsv`: Subcellular location annotations extracted from SwissProt on 2022-11-15.
-- `CellAtlasCompartments_science_2017.tsv`: Experimentally [validated](https://www.science.org/doi/10.1126/science.aal3321) subcellular location information downloaded from [Cell Atlas](https://www.proteinatlas.org/search/has_protein_data_in%3ACell).
+- `metaboliteNameChEBIdiff.tsv` compares each metabolite name with its ChEBI id's preferred name and synonyms (see #1037), categorised to guide name-curation batches.
+
+Static dumps of external sources that were kept here during the Human1 series (SwissProt / Cell Atlas / DeepLoc2 subcellular locations, Rhea reaction associations, and metabolite SMILES/InChI) have been removed for the Human2 release. They had gone stale and are better queried fresh from the source when needed. They remain in the git history and in the last Human1 release, [v1.19.0](https://github.com/SysBioChalmers/Human-GEM/releases/tag/v1.19.0).

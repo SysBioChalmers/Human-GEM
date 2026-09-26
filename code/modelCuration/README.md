@@ -1,5 +1,5 @@
 # Model curation scripts
 
-This directory contains curation-related scripts and functions used to make changes to the Human-GEM repository. These curation scripts help to improve transparency of changes made to the model when the number of changes is too large to view practically.
+This directory holds scripts used to make curation changes to Human-GEM when the number of changes is too large to view or reproduce practically. Keeping the scripts here improves the transparency of how the model was changed.
 
-- `getCompFromUniprotCellAtlas.py`: Code for collecting subcellular localization information for existing metabolic enzymes from **Swissprot** and **Cell Atlas** ([HPA](https://www.proteinatlas.org/search/has_protein_data_in%3ACell)), and then incorporating the compartment info from both sources into `genes.tsv`.
+The one-off curation scripts from the Human1 series (2018-2024) have been removed for the Human2 release to keep the repository lean. They remain in the git history and in the last Human1 release, [v1.19.0](https://github.com/SysBioChalmers/Human-GEM/releases/tag/v1.19.0). New curation scripts should be added here.
