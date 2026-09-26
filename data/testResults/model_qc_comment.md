@@ -10,7 +10,7 @@
 | Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/model_qc_summary.md) |
 
 **Improved:**
-- Reactions flagged by MACAW dead-end test: [**1121**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/macaw_results.tsv)
+- Reactions flagged by MACAW dead-end test: [**1122**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/macaw_results.tsv)
 - Charge-imbalanced reactions: [**196**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/balance_results.csv)
 - Structure vs formula/charge inconsistencies: [**310**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/qc_structure_consistency.csv)
 
