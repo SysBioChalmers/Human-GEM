@@ -69081,6 +69081,9 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171097"
+      - eccodes:
+          - "2.6.1.117"
+          - "2.6.1.64"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Cysteine and methionine metabolism"
       - confidence_score: 0
@@ -108957,7 +108960,7 @@
           - MAM03331c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000143815 or ENSG00000149809 or ENSG00000149809"
+      - gene_reaction_rule: "ENSG00000143815 or ENSG00000149809"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.3.1.70"
       - references: "PMID:11111101"
@@ -125573,7 +125576,7 @@
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929 or ENSG00000130649 or ENSG00000135929"
+      - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.15.15"
       - references: "PMID:1708392;PMID:2019602;PMID:9660774"
@@ -127053,7 +127056,7 @@
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929 or ENSG00000138135"
+      - gene_reaction_rule: "ENSG00000135929"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.15.15"
       - references: "PMID:1708392"
@@ -127083,7 +127086,7 @@
           - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000172817 or ENSG00000130649 or ENSG00000135929"
+      - gene_reaction_rule: "ENSG00000172817"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.29"
       - references: "PMID:10588945"
@@ -127502,7 +127505,7 @@
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000130649 or ENSG00000135929 or ENSG00000135929"
+      - gene_reaction_rule: "ENSG00000130649 or ENSG00000135929"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.13.-"
       - references: "PMID:9210654;PMID:9660774"
@@ -128187,23 +128190,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01857"
-      - name: "transport of taurocholate (extracellular to peroxisome)"
-      - metabolites: !!omap
-          - MAM01285x: 2
-          - MAM01371x: -2
-          - MAM02039x: 2
-          - MAM02040x: -2
-          - MAM02751x: 2
-          - MAM02963e: 1
-          - MAM02963x: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - references: "PMID:12663868;PMID:14716480;PMID:15209530;PMID:15297262;PMID:1599411;PMID:17416343;PMID:9068608"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR01859"
       - name: "transport of glycochenodeoxycholate and lepidimoide (cytosol to extracellular)"
       - metabolites: !!omap
@@ -128214,23 +128200,6 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01861"
-      - name: "transport of taurochenodeoxycholate (extracellular to peroxisome)"
-      - metabolites: !!omap
-          - MAM01285x: 2
-          - MAM01371x: -2
-          - MAM02039x: 2
-          - MAM02040x: -2
-          - MAM02751x: 2
-          - MAM02962e: 1
-          - MAM02962x: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - references: "PMID:15297262;PMID:17416343"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -181746,7 +181715,7 @@
           - MAM00376c: -1
           - MAM00378c: -1
           - MAM00383c: -1
-          - MAM00384c: -2
+          - MAM00384c: -1
           - MAM00386c: -1
           - MAM00386r: -1
           - MAM00386x: -1
@@ -182094,25 +182063,22 @@
       - subsystem: "Tryptophan metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00052"
-      - name: "5-Hydroxy-L-Tryptophan Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07634"
+      - name: "transport of 5-hydroxy-L-tryptophan (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01107c: -1
-          - MAM01107e: 1
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02751c: 1
+          - MAM01107c: -3
+          - MAM01107e: 3
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.13.11.52"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00053"
       - name: "5-Methyltetrahydrofolate Transport via Anion Antiport"
@@ -182181,24 +182147,22 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00058"
-      - name: "Acetylcholine Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07681"
+      - name: "transport of acetylcholine (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01260c: -1
-          - MAM01260e: 1
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02751c: 1
+          - MAM01260c: -3
+          - MAM01260e: 3
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000187714"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00060"
       - name: "O-Acetylcarnintine Transport into Mitochondria via Diffusion"
@@ -182269,24 +182233,22 @@
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00065"
-      - name: "Adrenaline Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07635"
+      - name: "transport of adrenaline (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01290c: -1
-          - MAM01290e: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01290c: -3
+          - MAM01290e: 3
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00066"
       - name: "L-Alanine Reversible Transport via Proton Symport, Lysosomal"
@@ -182598,25 +182560,22 @@
       - subsystem: "Biotin metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00087"
-      - name: "B-Alanine Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07736"
+      - name: "transport of beta-alanine (cytosol to extracellular)"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
-          - MAM01383c: -1
-          - MAM01383e: 1
+          - MAM01383c: -3
+          - MAM01383e: 3
           - MAM02039c: 1
           - MAM02040c: -1
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000101438"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.3.1.65"
-      - references: "PMID:12750892;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00088"
       - name: "Beta-Aminopropion Aldehyde:NAD+ Oxidoreductase, Mitochondrial"
@@ -183838,25 +183797,22 @@
       - subsystem: "N-glycan metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00334"
-      - name: "Secretion of Dopamine via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07636"
+      - name: "transport of dopamine (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM01736c: -1
-          - MAM01736e: 1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM01736c: -3
+          - MAM01736e: 3
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.1.1.6"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR00441"
       - name: "Diphosphomevalonate Decarboxylase"
@@ -184910,26 +184866,6 @@
       - eccodes: "2.3.1.86"
       - references: "PMID:11138005;PMID:15189125"
       - subsystem: "Fatty acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR00751"
-      - name: "Beta Oxidation of Long Chain Fatty Acid"
-      - metabolites: !!omap
-          - MAM01261m: 1
-          - MAM01597m: -1
-          - MAM02039m: 3
-          - MAM02040m: -1
-          - MAM02552m: -1
-          - MAM02553m: 1
-          - MAM03552m: 1
-          - MAM03554m: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000117054"
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.3.8.7"
-      - references: "PMID:9819701"
-      - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
       - id: "MAR00752"
@@ -185987,11 +185923,11 @@
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01314"
-      - name: "GABA Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07738"
+      - name: "transport of 4-aminobutyrate (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM00970c: -1
-          - MAM00970e: 1
+          - MAM00970c: -3
+          - MAM00970e: 3
           - MAM01285c: 1
           - MAM01371c: -1
           - MAM02039c: 1
@@ -186000,11 +185936,9 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000101438"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:12750892;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01340"
       - name: "Blood Group Intracellular Transport"
@@ -186230,24 +186164,22 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01396"
-      - name: "Secretion of Glycine via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07737"
+      - name: "transport of glycine (cytosol to extracellular)"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
-          - MAM01986c: -1
-          - MAM01986e: 1
+          - MAM01986c: -3
+          - MAM01986e: 3
           - MAM02039c: 1
           - MAM02040c: -1
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000101438"
-      - rxnFrom: "Recon3D"
-      - references: "PMID:12750892;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01397"
       - name: "Geranyltranstransferase"
@@ -186348,25 +186280,22 @@
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01442"
-      - name: "Histamine Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07633"
+      - name: "transport of histamine (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02124c: -1
-          - MAM02124e: 1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02124c: -3
+          - MAM02124e: 3
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.7.1.1"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01444"
       - name: "H+/K+ Gastric/Non-Gastric P-ATPase And ABC ATPase"
@@ -187008,23 +186937,21 @@
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01518"
-      - name: "Metanephrine Secretion via Secretory Vesicle (ATP Driven)"
+      - id: "MAR08922"
+      - name: "transport of L-metanephrine (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02407c: -1
-          - MAM02407e: 1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02407c: -3
+          - MAM02407e: 3
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.1.1.37"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01520"
       - name: "Mevalonate Kinase (ATP)"
@@ -187245,25 +187172,22 @@
       - subsystem: "Nicotinate and nicotinamide metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01555"
-      - name: "Secretion of Noradrenaline via Secretory Vesicle (ATP Driven)"
+      - id: "MAR07637"
+      - name: "transport of noradrenaline (cytosol to extracellular)"
       - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02617c: -1
-          - MAM02617e: 1
-          - MAM02751c: 1
+          - MAM01285c: 2
+          - MAM01371c: -2
+          - MAM02039c: 2
+          - MAM02040c: -2
+          - MAM02617c: -3
+          - MAM02617e: 3
+          - MAM02751c: 2
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000036565 or ENSG00000165646"
-      - rxnFrom: "Recon3D"
-      - eccodes: "2.7.7.18"
-      - references: "PMID:12827358;PMID:15383652"
+      - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "ATP represents the V-ATPase cost of vesicular loading; see #347"
     - !!omap
       - id: "MAR01556"
       - name: "Carnitine Transferase"
@@ -201533,6 +201457,7 @@
           - MAM03554m: -1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000117054"
       - rxnFrom: "Recon3D"
       - references: "PMID:9469587;PMID:9714723;PMID:11591435"
       - subsystem: "Fatty acid oxidation"
@@ -205420,8 +205345,8 @@
       - metabolites: !!omap
           - MAM01393c: 1
           - MAM01393e: -1
-          - MAM01442c: 1
-          - MAM01442e: -1
+          - MAM01442c: 2
+          - MAM01442e: -2
           - MAM02519c: 3
           - MAM02519e: -3
       - lower_bound: -1000
@@ -205625,8 +205550,8 @@
       - metabolites: !!omap
           - MAM00970c: 1
           - MAM00970e: -1
-          - MAM01442c: 1
-          - MAM01442e: -1
+          - MAM01442c: 2
+          - MAM01442e: -2
           - MAM02519c: 3
           - MAM02519e: -3
       - lower_bound: -1000
@@ -223728,7 +223653,7 @@
           - MAM03176c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166816 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000171989"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.27"
       - references: "PMID:1429566"
@@ -223767,7 +223692,7 @@
           - MAM03186c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166816 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000171989"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.27"
       - references: "PMID:1429566"
@@ -246541,7 +246466,7 @@
           - MAM03996e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000023839 or ENSG00000073734 or ENSG00000108846 or ENSG00000073734 or ENSG00000108846"
+      - gene_reaction_rule: "ENSG00000023839 or ENSG00000073734 or ENSG00000108846"
       - references: "PMID:17404808;PMID:19498215"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -246575,7 +246500,7 @@
           - MAM03685e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000023839 or ENSG00000073734 or ENSG00000108846 or ENSG00000073734 or ENSG00000108846"
+      - gene_reaction_rule: "ENSG00000023839 or ENSG00000073734 or ENSG00000108846"
       - references: "PMID:17404808;PMID:19498215"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -246819,7 +246744,7 @@
           - MAM03685e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000100652 or ENSG00000125255 or ENSG00000100652"
+      - gene_reaction_rule: "ENSG00000100652 or ENSG00000125255"
       - references: "PMID:17404808;PMID:19498215"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -249790,14 +249715,15 @@
       - id: "MAR20193"
       - name: "succinate transport via proton symport"
       - metabolites: !!omap
-          - MAM02039c: -1
-          - MAM02039e: 1
+          - MAM02039c: -2
+          - MAM02039e: 2
           - MAM02943c: -1
           - MAM02943e: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000141526 or ENSG00000155380"
-      - references: "PMID:35363247"
+      - gene_reaction_rule: "ENSG00000155380"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:32946811;PMID:35363247"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
