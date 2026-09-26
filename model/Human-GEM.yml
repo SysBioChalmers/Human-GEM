@@ -2867,7 +2867,7 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM20087m"
-      - name: "[protein]-L-lysine"
+      - name: "[glycine cleavage system H protein]-L-lysine"
       - compartment: "m"
       - formula: "C1367H2173N381O419S4"
       - charge: 0
@@ -61649,7 +61649,8 @@
           - MAM02553c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000166796 or ENSG00000166800 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800"
+      - references: "PMID:26014429;PMID:26059096"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.27"
       - subsystem: "Butanoate metabolism"
@@ -70037,6 +70038,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000016391"
+      - references: "PMID:1218095;PMID:9630673;PMID:34428349"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.99.1"
       - subsystem: "Glycine, serine and threonine metabolism"
@@ -107111,7 +107113,7 @@
       - gene_reaction_rule: "ENSG00000115705"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.8"
-      - subsystem: "Steroid metabolism"
+      - subsystem: "Tyrosine metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR06794"
@@ -107127,7 +107129,7 @@
       - gene_reaction_rule: "ENSG00000115705"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.11.1.8"
-      - subsystem: "Steroid metabolism"
+      - subsystem: "Tyrosine metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR06795"
@@ -170215,6 +170217,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170228,6 +170231,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170263,6 +170267,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170276,6 +170281,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:17045662;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170289,6 +170295,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170302,6 +170309,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170315,6 +170323,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170328,6 +170337,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170444,6 +170454,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:3031070;PMID:6253473;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170468,6 +170479,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:17045662;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170506,6 +170518,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170519,6 +170532,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170532,6 +170546,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170545,6 +170560,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170580,6 +170596,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170605,6 +170622,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170618,6 +170636,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170653,6 +170672,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170666,6 +170686,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170679,6 +170700,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170714,6 +170736,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170738,6 +170761,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170762,6 +170786,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170775,6 +170800,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170799,6 +170825,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -170812,6 +170839,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "HMRdatabase"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -182135,6 +182163,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - eccodes: "2.3.1.16"
       - references: "PMID:19352492"
@@ -187292,6 +187321,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - eccodes: "4.1.1.23"
       - references: "PMID:15240345;PMID:19352492"
@@ -187734,6 +187764,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - eccodes: "2.4.1.198"
       - references: "PMID:19352492"
@@ -198082,6 +198113,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
@@ -198271,6 +198303,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
@@ -202144,6 +202177,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
@@ -202226,6 +202260,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:20086080;PMID:16829065;PMID:19801636;PMID:10446294;PMID:19352492"
       - subsystem: "Fatty acid oxidation"
@@ -204061,6 +204096,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:17173541;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -204101,6 +204137,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:17173541;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -223659,10 +223696,10 @@
           - MAM03176c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.27"
-      - references: "PMID:1429566"
+      - references: "PMID:26014429;PMID:26059096"
       - subsystem: "Valine, leucine, and isoleucine metabolism"
       - confidence_score: 0
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
@@ -223698,10 +223735,10 @@
           - MAM03186c: 1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000171989"
+      - gene_reaction_rule: "ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.27"
-      - references: "PMID:1429566"
+      - references: "PMID:26014429;PMID:26059096"
       - subsystem: "Valine, leucine, and isoleucine metabolism"
       - confidence_score: 0
       - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
@@ -224346,7 +224383,7 @@
       - references: "PMID:2739576;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
+      - rxnNotes: "https://www.springer.com/gp/book/9789400957800. PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
     - !!omap
       - id: "MAR11532"
       - name: "Transport of 3-Hydroxy-Adipate, Extracellular"
@@ -224413,6 +224450,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:8295400;PMID:14708889;PMID:1444166;PMID:19352492"
       - subsystem: "Transport reactions"
@@ -224485,7 +224523,7 @@
       - references: "PMID:2001377;PMID:19352492"
       - subsystem: "Transport reactions"
       - confidence_score: 0
-      - rxnNotes: "https://www.springer.com/gp/book/9789400957800"
+      - rxnNotes: "https://www.springer.com/gp/book/9789400957800. PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
     - !!omap
       - id: "MAR11542"
       - name: "Transport of 3-hydoxy-suberic acid, Extracellular"
@@ -228821,6 +228859,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -230316,6 +230355,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000176894"
+      - rxnNotes: "PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)"
       - rxnFrom: "Recon3D"
       - references: "PMID:19352492"
       - subsystem: "Transport reactions"
@@ -249334,7 +249374,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR20168"
-      - name: "MAR20168"
+      - name: "lipoyl transfer from H protein to E2 (LIPT1)"
       - metabolites: !!omap
           - MAM00209m: -1
           - MAM02393m: 1
@@ -249345,7 +249385,7 @@
       - gene_reaction_rule: "ENSG00000144182"
       - eccodes: "2.3.1.200"
       - references: "PMID:29987032"
-      - subsystem: "Miscellaneous"
+      - subsystem: "Lipoic acid metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR20169"
