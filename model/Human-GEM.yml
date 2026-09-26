@@ -3481,28 +3481,28 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00265c"
-      - name: "10,13,16-docosatriynoic acid"
+      - name: "(10Z,13Z,16Z)-docosatrienoic acid"
       - compartment: "c"
       - formula: "C22H37O2"
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00265l"
-      - name: "10,13,16-docosatriynoic acid"
+      - name: "(10Z,13Z,16Z)-docosatrienoic acid"
       - compartment: "l"
       - formula: "C22H37O2"
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00265r"
-      - name: "10,13,16-docosatriynoic acid"
+      - name: "(10Z,13Z,16Z)-docosatrienoic acid"
       - compartment: "r"
       - formula: "C22H37O2"
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM00265e"
-      - name: "10,13,16-docosatriynoic acid"
+      - name: "(10Z,13Z,16Z)-docosatrienoic acid"
       - compartment: "e"
       - formula: "C22H37O2"
       - charge: -1
@@ -12709,14 +12709,14 @@
       - id: "MAM01163c"
       - name: "6-hydroxypaclitaxel"
       - compartment: "c"
-      - formula: "C47H31NO15"
+      - formula: "C47H51NO15"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM01163e"
       - name: "6-hydroxypaclitaxel"
       - compartment: "e"
-      - formula: "C47H31NO15"
+      - formula: "C47H51NO15"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
@@ -13185,7 +13185,7 @@
       - id: "MAM01210c"
       - name: "8,9-epoxy-(5Z)-tetradecenoic acid"
       - compartment: "c"
-      - formula: "C14H24O3"
+      - formula: "C14H23O3"
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
@@ -31406,21 +31406,21 @@
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02636c"
-      - name: "ocosatetraenoylcarnitine"
+      - name: "docosatetraenoylcarnitine"
       - compartment: "c"
       - formula: "C29H49NO4"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02636m"
-      - name: "ocosatetraenoylcarnitine"
+      - name: "docosatetraenoylcarnitine"
       - compartment: "m"
       - formula: "C29H49NO4"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02636r"
-      - name: "ocosatetraenoylcarnitine"
+      - name: "docosatetraenoylcarnitine"
       - compartment: "r"
       - formula: "C29H49NO4"
       - charge: 0
@@ -31918,14 +31918,14 @@
       - id: "MAM02673c"
       - name: "paclitaxel"
       - compartment: "c"
-      - formula: "C47H31NO14"
+      - formula: "C47H51NO14"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02673e"
       - name: "paclitaxel"
       - compartment: "e"
-      - formula: "C47H31NO14"
+      - formula: "C47H51NO14"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
@@ -34976,14 +34976,14 @@
       - id: "MAM02915c"
       - name: "somatostatin fragment 3-14"
       - compartment: "c"
-      - formula: "C72H100N16O17S2"
+      - formula: "C71H98N16O17S2"
       - charge: 2
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM02916c"
       - name: "somatostatin"
       - compartment: "c"
-      - formula: "C77H108N18O19S2"
+      - formula: "C76H106N18O19S2"
       - charge: 2
       - metFrom: "HMRdatabase"
     - !!omap
@@ -38378,14 +38378,14 @@
       - id: "MAM03169c"
       - name: "insulin-(SS)"
       - compartment: "c"
-      - formula: "C256H379N65O77S6"
+      - formula: "C257H381N65O77S6"
       - charge: -2
       - metFrom: "HMRdatabase"
     - !!omap
       - id: "MAM03170c"
       - name: "Insulin-(SH)2"
       - compartment: "c"
-      - formula: "C256H381N65O77S6"
+      - formula: "C257H383N65O77S6"
       - charge: -2
       - metFrom: "HMRdatabase"
     - !!omap
@@ -41417,7 +41417,7 @@
       - name: "Methylcobalamin"
       - compartment: "c"
       - formula: "C63CoH91N13O14P"
-      - charge: -1
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM02156e"
@@ -44440,7 +44440,7 @@
       - id: "MAM03798r"
       - name: "22-hydroxydocosanoic acid"
       - compartment: "r"
-      - formula: "C22H42O3"
+      - formula: "C22H43O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
@@ -44517,7 +44517,7 @@
       - id: "MAM03798c"
       - name: "22-hydroxydocosanoic acid"
       - compartment: "c"
-      - formula: "C22H42O3"
+      - formula: "C22H43O3"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
@@ -44944,7 +44944,7 @@
       - id: "MAM03933e"
       - name: "S-Sulfo-L-Cysteine"
       - compartment: "e"
-      - formula: "C3H8NO5S2"
+      - formula: "C3H6NO5S2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
@@ -44979,7 +44979,7 @@
       - id: "MAM03933c"
       - name: "S-Sulfo-L-Cysteine"
       - compartment: "c"
-      - formula: "C3H8NO5S2"
+      - formula: "C3H6NO5S2"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
@@ -45413,14 +45413,14 @@
       - id: "MAM03815e"
       - name: "1-Myristoylglycerophosphocholine"
       - compartment: "e"
-      - formula: "C22H47NO7P"
+      - formula: "C22H46NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03832e"
       - name: "1-Oleoylglycerophosphocholine (Delta 9)"
       - compartment: "e"
-      - formula: "C26H53NO7P"
+      - formula: "C26H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -45434,14 +45434,14 @@
       - id: "MAM03834e"
       - name: "1-Palmitoleoylglycerophosphocholine (Delta 9)"
       - compartment: "e"
-      - formula: "C24H49NO7P"
+      - formula: "C24H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03833e"
       - name: "1-Palmitoylglycerophosphocholine"
       - compartment: "e"
-      - formula: "C24H51NO7P"
+      - formula: "C24H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -45469,7 +45469,7 @@
       - id: "MAM03835e"
       - name: "1-Stearoylglycerophosphocholine"
       - compartment: "e"
-      - formula: "C26H55NO7P"
+      - formula: "C26H54NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -45490,7 +45490,7 @@
       - id: "MAM03805e"
       - name: "2-Linoleoylglycerophosphocholine"
       - compartment: "e"
-      - formula: "C26H51NO7P"
+      - formula: "C26H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -45504,21 +45504,21 @@
       - id: "MAM03806e"
       - name: "2-Oleoylglycerophosphocholine"
       - compartment: "e"
-      - formula: "C26H53NO7P"
+      - formula: "C26H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03807e"
       - name: "2-Palmitoylglycerophosphocholine"
       - compartment: "e"
-      - formula: "C24H51NO7P"
+      - formula: "C24H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03808e"
       - name: "2-Stearoylglycerophosphocholine"
       - compartment: "e"
-      - formula: "C26H55NO7P"
+      - formula: "C26H54NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -45560,84 +45560,84 @@
       - id: "MAM03816e"
       - name: "1-Pentadecanoylglycerophosphocholine, Sn1-Lpc (15:0)"
       - compartment: "e"
-      - formula: "C23H49NO7P"
+      - formula: "C23H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03809e"
       - name: "1-Arachidonoyl-Glycero-3-Phosphocholine"
       - compartment: "e"
-      - formula: "C28H51NO7P"
+      - formula: "C28H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03818e"
       - name: "1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 9, 12, 15)"
       - compartment: "e"
-      - formula: "C26H49NO7P"
+      - formula: "C26H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03817e"
       - name: "1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 6, 9, 12)"
       - compartment: "e"
-      - formula: "C26H49NO7P"
+      - formula: "C26H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03819e"
       - name: "1-Nonadecanoylglycerophosphocholine, Sn1-Lpc (19:0)"
       - compartment: "e"
-      - formula: "C27H57NO7P"
+      - formula: "C27H56NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03820e"
       - name: "1-Eicosenoylglycerophosphocholine (Delta 11) ,Sn1-Lpc (20:1)"
       - compartment: "e"
-      - formula: "C28H57NO7P"
+      - formula: "C28H56NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03822e"
       - name: "1-Eicosatetraenoylglycerophosphocholine (Delta 8, 11, 14, 17), Sn1-Lpc (20:4)"
       - compartment: "e"
-      - formula: "C28H51NO7P"
+      - formula: "C28H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03823e"
       - name: "1-Eicosapentenoylglycerophosphocholine (Delta 5, 8, 11, 14, 17), Sn1-Lpc (20:5)"
       - compartment: "e"
-      - formula: "C28H49NO7P"
+      - formula: "C28H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03824e"
       - name: "1-Docosatetraenoylglycerophosphocholine (Delta 7, 10, 13, 16), Sn1-Lpc (22:4)"
       - compartment: "e"
-      - formula: "C30H55NO7P"
+      - formula: "C30H54NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03826e"
       - name: "1-Docosapentenoylglycerophosphocholine (Delta 7, 10, 13, 16, 19), Sn1-Lpc (22:5)-W3"
       - compartment: "e"
-      - formula: "C30H53NO7P"
+      - formula: "C30H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03825e"
       - name: "1-Docosapentenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16), Sn1-Lpc (22:5)-W6"
       - compartment: "e"
-      - formula: "C30H53NO7P"
+      - formula: "C30H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03827e"
       - name: "1-Docosahexenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16, 19), Sn1-Lpc (22:6)"
       - compartment: "e"
-      - formula: "C30H51NO7P"
+      - formula: "C30H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -45721,7 +45721,7 @@
       - id: "MAM03821e"
       - name: "1-Dihomo-Linolenoylglycerophosphocholine (20:3, Delta 8, 11, 14), Lysopc A C20:3"
       - compartment: "e"
-      - formula: "C28H53NO7P"
+      - formula: "C28H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -45735,63 +45735,63 @@
       - id: "MAM03828e"
       - name: "1-Lignocericylglycerophosphocholine (24:0), Lysopc A C24"
       - compartment: "e"
-      - formula: "C32H67NO7P"
+      - formula: "C32H66NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03829e"
       - name: "Lysopc A C26:1 (Delta 5)"
       - compartment: "e"
-      - formula: "C34H69NO7P"
+      - formula: "C34H68NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03830e"
       - name: "Lysopc A C28:1 (Delta 5)"
       - compartment: "e"
-      - formula: "C36H73NO7P"
+      - formula: "C36H72NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03831e"
       - name: "Lysopc A C28:0"
       - compartment: "e"
-      - formula: "C36H75NO7P"
+      - formula: "C36H74NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03810e"
       - name: "1-Docosahexaenoylglycerophosphocholine"
       - compartment: "e"
-      - formula: "C34H59NO7P"
+      - formula: "C30H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03811e"
       - name: "1-Eicosadienoylglycerophosphocholine (Delta 11,14)"
       - compartment: "e"
-      - formula: "C28H55NO7P"
+      - formula: "C28H54NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03812e"
       - name: "1-Eicosatrienoylglycerophosphocholine (Delta 11, 14, 17)"
       - compartment: "e"
-      - formula: "C28H53NO7P"
+      - formula: "C28H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03813e"
       - name: "1-Heptadecanoylglycerophosphocholine"
       - compartment: "e"
-      - formula: "C25H53NO7P"
+      - formula: "C25H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03814e"
       - name: "1-Linoleoylglycerophosphocholine (Delta 9,12)"
       - compartment: "e"
-      - formula: "C26H51NO7P"
+      - formula: "C26H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -45805,112 +45805,112 @@
       - id: "MAM03937c"
       - name: "Sm (D18:1/14:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C37H76N2O6P"
+      - formula: "C37H75N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03946c"
       - name: "Sm (D18:1/21:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C44H90N2O6P"
+      - formula: "C44H89N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03947c"
       - name: "Sm (D18:1/22:1), Sphingomyelin"
       - compartment: "c"
-      - formula: "C45H90N2O6P"
+      - formula: "C45H89N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03948c"
       - name: "Sm (D18:1/22:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C45H92N2O6P"
+      - formula: "C45H91N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03949c"
       - name: "Sm (D18:1/23:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C46H94N2O6P"
+      - formula: "C46H93N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03936c"
       - name: "Sm (D18:0/24:1), Sphingomyelin"
       - compartment: "c"
-      - formula: "C47H96N2O6P"
+      - formula: "C47H95N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03950c"
       - name: "Sm (D18:0/24:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C47H98N2O6P"
+      - formula: "C47H97N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03951c"
       - name: "Sm (D18:0/25:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C48H100N2O6P"
+      - formula: "C48H99N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03938c"
       - name: "Sm (D18:1/15:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C38H78N2O6P"
+      - formula: "C38H77N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03939c"
       - name: "Sm (D18:1/16:1), Sphingomyelin"
       - compartment: "c"
-      - formula: "C39H78N2O6P"
+      - formula: "C39H77N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03940c"
       - name: "Sm (D18:1/16:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C39H80N2O6P"
+      - formula: "C39H79N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03941c"
       - name: "Sm (D18:1/17:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C40H82N2O6P"
+      - formula: "C40H81N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03943c"
       - name: "Sm (D18:1/18:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C41H84N2O6P"
+      - formula: "C41H83N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03942c"
       - name: "Sm (D18:1/18:1), Sphingomyelin"
       - compartment: "c"
-      - formula: "C41H82N2O6P"
+      - formula: "C41H81N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03944c"
       - name: "Sm (D18:1/20:1), Sphingomyelin"
       - compartment: "c"
-      - formula: "C43H86N2O6P"
+      - formula: "C43H85N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03945c"
       - name: "Sm (D18:1/20:0), Sphingomyelin"
       - compartment: "c"
-      - formula: "C43H88N2O6P"
+      - formula: "C43H87N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -45987,14 +45987,14 @@
       - id: "MAM03815c"
       - name: "1-Myristoylglycerophosphocholine"
       - compartment: "c"
-      - formula: "C22H47NO7P"
+      - formula: "C22H46NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03832c"
       - name: "1-Oleoylglycerophosphocholine (Delta 9)"
       - compartment: "c"
-      - formula: "C26H53NO7P"
+      - formula: "C26H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -46008,14 +46008,14 @@
       - id: "MAM03834c"
       - name: "1-Palmitoleoylglycerophosphocholine (Delta 9)"
       - compartment: "c"
-      - formula: "C24H49NO7P"
+      - formula: "C24H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03833c"
       - name: "1-Palmitoylglycerophosphocholine"
       - compartment: "c"
-      - formula: "C24H51NO7P"
+      - formula: "C24H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -46036,14 +46036,14 @@
       - id: "MAM03835c"
       - name: "1-Stearoylglycerophosphocholine"
       - compartment: "c"
-      - formula: "C26H55NO7P"
+      - formula: "C26H54NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03805c"
       - name: "2-Linoleoylglycerophosphocholine"
       - compartment: "c"
-      - formula: "C26H51NO7P"
+      - formula: "C26H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -46057,105 +46057,105 @@
       - id: "MAM03806c"
       - name: "2-Oleoylglycerophosphocholine"
       - compartment: "c"
-      - formula: "C26H53NO7P"
+      - formula: "C26H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03807c"
       - name: "2-Palmitoylglycerophosphocholine"
       - compartment: "c"
-      - formula: "C24H51NO7P"
+      - formula: "C24H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03808c"
       - name: "2-Stearoylglycerophosphocholine"
       - compartment: "c"
-      - formula: "C26H55NO7P"
+      - formula: "C26H54NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03816c"
       - name: "1-Pentadecanoylglycerophosphocholine, Sn1-Lpc (15:0)"
       - compartment: "c"
-      - formula: "C23H49NO7P"
+      - formula: "C23H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03809c"
       - name: "1-Arachidonoyl-Glycero-3-Phosphocholine"
       - compartment: "c"
-      - formula: "C28H51NO7P"
+      - formula: "C28H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03818c"
       - name: "1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 9, 12, 15)"
       - compartment: "c"
-      - formula: "C26H49NO7P"
+      - formula: "C26H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03817c"
       - name: "1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 6, 9, 12)"
       - compartment: "c"
-      - formula: "C26H49NO7P"
+      - formula: "C26H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03819c"
       - name: "1-Nonadecanoylglycerophosphocholine, Sn1-Lpc (19:0)"
       - compartment: "c"
-      - formula: "C27H57NO7P"
+      - formula: "C27H56NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03820c"
       - name: "1-Eicosenoylglycerophosphocholine (Delta 11) ,Sn1-Lpc (20:1)"
       - compartment: "c"
-      - formula: "C28H57NO7P"
+      - formula: "C28H56NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03822c"
       - name: "1-Eicosatetraenoylglycerophosphocholine (Delta 8, 11, 14, 17), Sn1-Lpc (20:4)"
       - compartment: "c"
-      - formula: "C28H51NO7P"
+      - formula: "C28H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03823c"
       - name: "1-Eicosapentenoylglycerophosphocholine (Delta 5, 8, 11, 14, 17), Sn1-Lpc (20:5)"
       - compartment: "c"
-      - formula: "C28H49NO7P"
+      - formula: "C28H48NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03824c"
       - name: "1-Docosatetraenoylglycerophosphocholine (Delta 7, 10, 13, 16), Sn1-Lpc (22:4)"
       - compartment: "c"
-      - formula: "C30H55NO7P"
+      - formula: "C30H54NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03826c"
       - name: "1-Docosapentenoylglycerophosphocholine (Delta 7, 10, 13, 16, 19), Sn1-Lpc (22:5)-W3"
       - compartment: "c"
-      - formula: "C30H53NO7P"
+      - formula: "C30H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03825c"
       - name: "1-Docosapentenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16), Sn1-Lpc (22:5)-W6"
       - compartment: "c"
-      - formula: "C30H53NO7P"
+      - formula: "C30H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03827c"
       - name: "1-Docosahexenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16, 19), Sn1-Lpc (22:6)"
       - compartment: "c"
-      - formula: "C30H51NO7P"
+      - formula: "C30H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -46239,7 +46239,7 @@
       - id: "MAM03821c"
       - name: "1-Dihomo-Linolenoylglycerophosphocholine (20:3, Delta 8, 11, 14), Lysopc A C20:3"
       - compartment: "c"
-      - formula: "C28H53NO7P"
+      - formula: "C28H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -46253,63 +46253,63 @@
       - id: "MAM03828c"
       - name: "1-Lignocericylglycerophosphocholine (24:0), Lysopc A C24"
       - compartment: "c"
-      - formula: "C32H67NO7P"
+      - formula: "C32H66NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03829c"
       - name: "Lysopc A C26:1 (Delta 5)"
       - compartment: "c"
-      - formula: "C34H69NO7P"
+      - formula: "C34H68NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03830c"
       - name: "Lysopc A C28:1 (Delta 5)"
       - compartment: "c"
-      - formula: "C36H73NO7P"
+      - formula: "C36H72NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03831c"
       - name: "Lysopc A C28:0"
       - compartment: "c"
-      - formula: "C36H75NO7P"
+      - formula: "C36H74NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03810c"
       - name: "1-Docosahexaenoylglycerophosphocholine"
       - compartment: "c"
-      - formula: "C34H59NO7P"
+      - formula: "C30H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03811c"
       - name: "1-Eicosadienoylglycerophosphocholine (Delta 11,14)"
       - compartment: "c"
-      - formula: "C28H55NO7P"
+      - formula: "C28H54NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03812c"
       - name: "1-Eicosatrienoylglycerophosphocholine (Delta 11, 14, 17)"
       - compartment: "c"
-      - formula: "C28H53NO7P"
+      - formula: "C28H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03813c"
       - name: "1-Heptadecanoylglycerophosphocholine"
       - compartment: "c"
-      - formula: "C25H53NO7P"
+      - formula: "C25H52NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03814c"
       - name: "1-Linoleoylglycerophosphocholine (Delta 9,12)"
       - compartment: "c"
-      - formula: "C26H51NO7P"
+      - formula: "C26H50NO7P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -47093,112 +47093,112 @@
       - id: "MAM03936e"
       - name: "Sm (D18:0/24:1), Sphingomyelin"
       - compartment: "e"
-      - formula: "C47H96N2O6P"
+      - formula: "C47H95N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03937e"
       - name: "Sm (D18:1/14:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C37H76N2O6P"
+      - formula: "C37H75N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03938e"
       - name: "Sm (D18:1/15:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C38H78N2O6P"
+      - formula: "C38H77N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03940e"
       - name: "Sm (D18:1/16:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C39H80N2O6P"
+      - formula: "C39H79N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03939e"
       - name: "Sm (D18:1/16:1), Sphingomyelin"
       - compartment: "e"
-      - formula: "C39H78N2O6P"
+      - formula: "C39H77N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03941e"
       - name: "Sm (D18:1/17:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C40H82N2O6P"
+      - formula: "C40H81N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03943e"
       - name: "Sm (D18:1/18:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C41H84N2O6P"
+      - formula: "C41H83N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03942e"
       - name: "Sm (D18:1/18:1), Sphingomyelin"
       - compartment: "e"
-      - formula: "C41H82N2O6P"
+      - formula: "C41H81N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03945e"
       - name: "Sm (D18:1/20:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C43H88N2O6P"
+      - formula: "C43H87N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03944e"
       - name: "Sm (D18:1/20:1), Sphingomyelin"
       - compartment: "e"
-      - formula: "C43H86N2O6P"
+      - formula: "C43H85N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03946e"
       - name: "Sm (D18:1/21:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C44H90N2O6P"
+      - formula: "C44H89N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03948e"
       - name: "Sm (D18:1/22:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C45H92N2O6P"
+      - formula: "C45H91N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03947e"
       - name: "Sm (D18:1/22:1), Sphingomyelin"
       - compartment: "e"
-      - formula: "C45H90N2O6P"
+      - formula: "C45H89N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03949e"
       - name: "Sm (D18:1/23:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C46H94N2O6P"
+      - formula: "C46H93N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03950e"
       - name: "Sm (D18:0/24:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C47H98N2O6P"
+      - formula: "C47H97N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03951e"
       - name: "Sm (D18:0/25:0), Sphingomyelin"
       - compartment: "e"
-      - formula: "C48H100N2O6P"
+      - formula: "C48H99N2O6P"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -47598,7 +47598,7 @@
       - name: "Alanyl-Glycyl-Lysine"
       - compartment: "e"
       - formula: "C11H23N4O4"
-      - charge: 2
+      - charge: 1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03415e"
@@ -47983,14 +47983,14 @@
       - name: "Glutaminyl-Histidyl-Lysine"
       - compartment: "e"
       - formula: "C17H30N7O5"
-      - charge: -1
+      - charge: 1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03599e"
       - name: "Glutaminyl-Lysyl-Lysine"
       - compartment: "e"
       - formula: "C17H36N6O5"
-      - charge: -2
+      - charge: 2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03600e"
@@ -48183,7 +48183,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03669e"
-      - name: "Histidyl-Lysyl-Lysine"
+      - name: "Histidyl-Glycyl-Lysine"
       - compartment: "e"
       - formula: "C14H25N6O4"
       - charge: 1
@@ -48403,7 +48403,7 @@
       - name: "Lysyl-Arginyl-Leucine"
       - compartment: "e"
       - formula: "C18H38N7O4"
-      - charge: 2
+      - charge: 1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03739e"
@@ -48704,7 +48704,7 @@
       - name: "Prolyl-Histidyl-Tyrosine"
       - compartment: "e"
       - formula: "C20H26N5O5"
-      - charge: 0
+      - charge: 1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03899e"
@@ -48725,7 +48725,7 @@
       - name: "Prolyl-Phenylalanine"
       - compartment: "e"
       - formula: "C14H18N2O3"
-      - charge: 1
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03902e"
@@ -49292,7 +49292,7 @@
       - name: "Alanyl-Glycyl-Lysine"
       - compartment: "c"
       - formula: "C11H23N4O4"
-      - charge: 2
+      - charge: 1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03415c"
@@ -49677,14 +49677,14 @@
       - name: "Glutaminyl-Histidyl-Lysine"
       - compartment: "c"
       - formula: "C17H30N7O5"
-      - charge: -1
+      - charge: 1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03599c"
       - name: "Glutaminyl-Lysyl-Lysine"
       - compartment: "c"
       - formula: "C17H36N6O5"
-      - charge: -2
+      - charge: 2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03600c"
@@ -49877,7 +49877,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03669c"
-      - name: "Histidyl-Lysyl-Lysine"
+      - name: "Histidyl-Glycyl-Lysine"
       - compartment: "c"
       - formula: "C14H25N6O4"
       - charge: 1
@@ -50097,7 +50097,7 @@
       - name: "Lysyl-Arginyl-Leucine"
       - compartment: "c"
       - formula: "C18H38N7O4"
-      - charge: 2
+      - charge: 1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03739c"
@@ -50398,7 +50398,7 @@
       - name: "Prolyl-Histidyl-Tyrosine"
       - compartment: "c"
       - formula: "C20H26N5O5"
-      - charge: 0
+      - charge: 1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03899c"
@@ -50419,7 +50419,7 @@
       - name: "Prolyl-Phenylalanine"
       - compartment: "c"
       - formula: "C14H18N2O3"
-      - charge: 1
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03902c"
@@ -52988,7 +52988,7 @@
       - name: "6-Hydroxydopamine-Quinone"
       - compartment: "c"
       - formula: "C8H10NO3"
-      - charge: 0
+      - charge: 1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03281c"
@@ -55248,15 +55248,15 @@
       - id: "MAM03404e"
       - name: "acetaminophen-glutathione-conjugate"
       - compartment: "e"
-      - formula: "C18H27N4O10S"
-      - charge: 0
+      - formula: "C18H23N4O8S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03404c"
       - name: "acetaminophen-glutathione-conjugate"
       - compartment: "c"
-      - formula: "C18H27N4O10S"
-      - charge: 0
+      - formula: "C18H23N4O8S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03403c"
@@ -57166,8 +57166,8 @@
       - id: "MAM03404r"
       - name: "acetaminophen-glutathione-conjugate"
       - compartment: "r"
-      - formula: "C18H27N4O10S"
-      - charge: 0
+      - formula: "C18H23N4O8S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03526r"
@@ -57777,13 +57777,13 @@
       - name: "20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate"
       - compartment: "c"
       - formula: "C20H29O3"
-      - charge: 0
+      - charge: -1
     - !!omap
       - id: "MAM20004c"
       - name: "(5Z,8Z,11Z,14Z)-eicosatetraenedioate"
       - compartment: "c"
       - formula: "C20H28O4"
-      - charge: -1
+      - charge: -2
     - !!omap
       - id: "MAM00270n"
       - name: "20-HETE"
@@ -57861,13 +57861,13 @@
       - name: "15-oxoprostaglandin E2"
       - compartment: "n"
       - formula: "C20H29O5"
-      - charge: 0
+      - charge: -1
     - !!omap
       - id: "MAM20017n"
       - name: "13,14-dihydro-15-oxo-prostaglandin E2"
       - compartment: "n"
       - formula: "C20H31O5"
-      - charge: 0
+      - charge: -1
     - !!omap
       - id: "MAM20018r"
       - name: "19-hydroxy-(5Z,8Z,11Z)-eicosatrienoate"
@@ -91513,11 +91513,13 @@
           - MAM01334c: 1
           - MAM01371c: -1
           - MAM01597c: -1
-          - MAM02039c: -1
+          - MAM02039c: 1
           - MAM02040c: -2
           - MAM02041c: 1
           - MAM02552c: -1
           - MAM02553c: 1
+          - MAM02554c: 1
+          - MAM02555c: -1
           - MAM02630c: -1
           - MAM02759c: 1
       - lower_bound: 0
@@ -201535,6 +201537,7 @@
       - name: "Fatty Acid Omega Oxidation (C22->W-Ohc22), Endoplasmatic Reticulum"
       - metabolites: !!omap
           - MAM01373r: -1
+          - MAM02039r: -1
           - MAM02040r: 1
           - MAM02554r: 1
           - MAM02555r: -1
@@ -201951,7 +201954,7 @@
       - id: "MAR06350"
       - name: "Fatty Acid Omega Oxidation (W-Ohc22->C22Dc)"
       - metabolites: !!omap
-          - MAM02039c: 2
+          - MAM02039c: 3
           - MAM02040c: -1
           - MAM02552c: -2
           - MAM02553c: 2
@@ -204647,7 +204650,8 @@
       - id: "MAR08993"
       - name: "Formation of Sulfocysteine"
       - metabolites: !!omap
-          - MAM01628c: -1
+          - MAM01628c: 1
+          - MAM01629c: -1
           - MAM02039c: -1
           - MAM02949c: -1
           - MAM03933c: 1
@@ -244550,6 +244554,7 @@
       - metabolites: !!omap
           - MAM01974r: 1
           - MAM01986r: 1
+          - MAM02040r: -2
           - MAM03404r: -1
           - MAM03526r: 1
       - lower_bound: 0
