@@ -117,7 +117,6 @@ MAM02119l,hexaglutamyl-folate(THF),protonation,C44H51N12O21,-7,C44H54N12O21,0,Nc
 MAM02119m,hexaglutamyl-folate(THF),protonation,C44H51N12O21,-7,C44H54N12O21,0,Nc1nc(=O)c2nc(CNc3ccc(C(=O)N(C(=O)CC[C@H](N)C(=O)O)[C@](C(=O)CC[C@H](N)C(=O)O)(C(=O)OC(=O)CC[C@H](N)C(=O)O)C(CC(=O)O)(C(=O)CC[C@H](N)C(=O)O)C(=O)CC[C@H](N)C(=O)O)cc3)cnc2[nH]1
 MAM02119e,hexaglutamyl-folate(THF),protonation,C44H51N12O21,-7,C44H54N12O21,0,Nc1nc(=O)c2nc(CNc3ccc(C(=O)N(C(=O)CC[C@H](N)C(=O)O)[C@](C(=O)CC[C@H](N)C(=O)O)(C(=O)OC(=O)CC[C@H](N)C(=O)O)C(CC(=O)O)(C(=O)CC[C@H](N)C(=O)O)C(=O)CC[C@H](N)C(=O)O)cc3)cnc2[nH]1
 MAM02143c,hydrobromic acid,protonation,Br,-1,HBr,0,Br
-MAM02146c,hydroiodic acid,protonation,I,-1,HI,0,I
 MAM02151c,hydroxymethylbilane,protonation,C40H38N4O17,-8,C40H46N4O17,0,O=C(O)CCc1c[nH]c(Cc2[nH]c(Cc3[nH]c(Cc4[nH]c(CO)c(CC(=O)O)c4CCC(=O)O)c(CC(=O)O)c3CCC(=O)O)c(CC(=O)O)c2CCC(=O)O)c1CC(=O)O
 MAM02153c,hydroxy-nifedipine,formula_error,C17H18N2O7,0,C17H18N2O6,0,COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]
 MAM02153e,hydroxy-nifedipine,formula_error,C17H18N2O7,0,C17H18N2O6,0,COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]
