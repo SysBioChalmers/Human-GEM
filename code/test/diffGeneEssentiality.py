@@ -60,8 +60,10 @@ from __future__ import annotations
 import argparse
 import csv
 import sys
+from collections import Counter
 from pathlib import Path
 
+import cobra
 from raven_toolbox.io import read_yaml_model
 
 from evaluateHart2015Essentiality import BF_THRESHOLDS, bayes_factors
@@ -321,6 +323,10 @@ def build_report(
     blob URL of ``gene-essential_summary.md`` (with ``detail_text`` appended to it),
     linked from ``comment_text``.
     """
+    # Nothing here is solved. cobra otherwise defaults to Gurobi whenever gurobipy is
+    # importable, and every model load would take a WLS licence session that the
+    # build-test shards may still hold.
+    cobra.Configuration().solver = "glpk"
     print(f"Loading base model from {base_model_path} ...", file=sys.stderr)
     base_model = read_yaml_model(base_model_path)
     print(f"Loading head model from {head_model_path} ...", file=sys.stderr)
@@ -408,16 +414,17 @@ def build_report(
 
     # --- condensed comment: one row per category, icons and counts only, no gene names ---
     def _growth_status(rows: list[dict]) -> str:
+        """One count per Hart verdict, worst first, so correct and wrong changes in the same
+        run are both visible (e.g. ":x: **2** wrong &middot; :sparkles: **2** correct")."""
         if not rows:
             return ":white_check_mark: **0**"
-        verdicts = {r["hart_verdict"] for r in rows}
-        if "regression" in verdicts:
-            return f":x: **{len(rows)}** wrong"
-        if "mixed" in verdicts:
-            return f":warning: **{len(rows)}** mixed"
-        if verdicts == {"improvement"}:
-            return f"{IMPROVED} **{len(rows)}** correct"
-        return f":information_source: **{len(rows)}** not scored by Hart"
+        counts = Counter(r["hart_verdict"] for r in rows)
+        labels = [("regression", ":x: **{}** wrong"), ("mixed", ":warning: **{}** mixed"),
+                  ("improvement", IMPROVED + " **{}** correct")]
+        parts = [fmt.format(counts.pop(v)) for v, fmt in labels if counts.get(v)]
+        if counts:  # any remaining verdict is one Hart does not score
+            parts.append(f":information_source: **{sum(counts.values())}** not scored by Hart")
+        return " &middot; ".join(parts)
 
     def _neutral_status(rows: list[dict]) -> str:
         return f":white_check_mark: **0**" if not rows else f":information_source: **{len(rows)}**"

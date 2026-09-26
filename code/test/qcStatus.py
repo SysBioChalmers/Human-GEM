@@ -12,8 +12,9 @@ they all upsert into one key/value TSV:
     tasks_verification	0/21
     yamllint	pass
 
-Upsert (read, set the one key, rewrite) keeps it order-independent and rerun-safe,
-and because the QC steps run sequentially in one job there is no contention. Keys
+Upsert (read, set the one key, rewrite) keeps it order-independent and rerun-safe.
+The model-QC checks run as parallel jobs, each on its own copy of the file; each job
+passes on only the keys it changed, and the report job sets those in one file. Keys
 are a fixed set, so nothing stale accumulates.
 
 CLI (used by the workflow's shell steps):
@@ -21,10 +22,25 @@ CLI (used by the workflow's shell steps):
     python code/test/qcStatus.py --get <key>       # print one value (empty if unset)
 """
 
+import hashlib
 import sys
 from pathlib import Path
 
 STATUS_FILE = Path(__file__).resolve().parents[2] / "data" / "testResults" / "qc_status.tsv"
+MODEL_DIR = Path(__file__).resolve().parents[2] / "model"
+_MODEL_FILES = ("Human-GEM.yml", "reactions.tsv", "metabolites.tsv", "genes.tsv")
+
+
+def model_version(model_dir: Path = MODEL_DIR) -> str:
+    """Short hash of the model file and its annotation tables: the inputs a MEMOTE
+    run scores. Identical for any two commits whose model is identical, so a stored
+    result can be matched to the model it was computed on."""
+    digest = hashlib.sha256()
+    for name in _MODEL_FILES:
+        path = model_dir / name
+        digest.update(name.encode())
+        digest.update(path.read_bytes() if path.exists() else b"")
+    return digest.hexdigest()[:12]
 _HEADER = ("check", "result")
 
 
