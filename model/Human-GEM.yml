@@ -54352,28 +54352,28 @@
       - id: "MAM03916r"
       - name: "pravastatin"
       - compartment: "r"
-      - formula: "C23H35NaO7"
-      - charge: 0
+      - formula: "C23H35O7"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03198r"
       - name: "3'-alpha,5'beta-dihydroxy-pravastatin / 3'-alpha5'beta6'beta-trihydroxy pravastatin"
       - compartment: "r"
-      - formula: "C23H34NaO9"
+      - formula: "C23H35O9"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03198c"
       - name: "3'-alpha,5'beta-dihydroxy-pravastatin / 3'-alpha5'beta6'beta-trihydroxy pravastatin"
       - compartment: "c"
-      - formula: "C23H34NaO9"
+      - formula: "C23H35O9"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03198e"
       - name: "3'-alpha,5'beta-dihydroxy-pravastatin / 3'-alpha5'beta6'beta-trihydroxy pravastatin"
       - compartment: "e"
-      - formula: "C23H34NaO9"
+      - formula: "C23H35O9"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
@@ -54485,64 +54485,64 @@
       - id: "MAM03236m"
       - name: "3'-S-hydroxy-pravastatin-CoA"
       - compartment: "m"
-      - formula: "C44H66N7NaO23P3S"
+      - formula: "C44H66N7O23P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03238m"
       - name: "3'-S-hydroxy-pravastatin-tetranor-CoA"
       - compartment: "m"
-      - formula: "C40H58N7NaO21P3S"
+      - formula: "C40H58N7O21P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03236x"
       - name: "3'-S-hydroxy-pravastatin-CoA"
       - compartment: "x"
-      - formula: "C44H66N7NaO23P3S"
+      - formula: "C44H66N7O23P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03238x"
       - name: "3'-S-hydroxy-pravastatin-tetranor-CoA"
       - compartment: "x"
-      - formula: "C40H58N7NaO21P3S"
+      - formula: "C40H58N7O21P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03237c"
       - name: "3'-S-hydroxy-pravastatin-tetranor"
       - compartment: "c"
-      - formula: "C19H27NaO6"
-      - charge: 0
+      - formula: "C19H27O6"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03237e"
       - name: "3'-S-hydroxy-pravastatin-tetranor"
       - compartment: "e"
-      - formula: "C19H27NaO6"
-      - charge: 0
+      - formula: "C19H27O6"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03235r"
       - name: "3'-S-hydroxy-pravastatin"
       - compartment: "r"
-      - formula: "C23H35NaO8"
-      - charge: 0
+      - formula: "C23H35O8"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03235c"
       - name: "3'-S-hydroxy-pravastatin"
       - compartment: "c"
-      - formula: "C23H35NaO8"
-      - charge: 0
+      - formula: "C23H35O8"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03235e"
       - name: "3'-S-hydroxy-pravastatin"
       - compartment: "e"
-      - formula: "C23H35NaO8"
-      - charge: 0
+      - formula: "C23H35O8"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03239c"
@@ -54583,22 +54583,22 @@
       - id: "MAM03916c"
       - name: "pravastatin"
       - compartment: "c"
-      - formula: "C23H35NaO7"
-      - charge: 0
+      - formula: "C23H35O7"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03241c"
       - name: "3-alpha-iso-pravastatin"
       - compartment: "c"
-      - formula: "C23H35NaO7"
-      - charge: 0
+      - formula: "C23H35O7"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03241e"
       - name: "3-alpha-iso-pravastatin"
       - compartment: "e"
-      - formula: "C23H35NaO7"
-      - charge: 0
+      - formula: "C23H35O7"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03256c"
@@ -54744,106 +54744,106 @@
       - id: "MAM04007r"
       - name: "triol metabolite of pravastatin"
       - compartment: "r"
-      - formula: "C23H37NaO9"
-      - charge: 0
+      - formula: "C23H37O9"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03279r"
       - name: "3-keto-5,6,-dihydroxy-pravastatin"
       - compartment: "r"
-      - formula: "C23H35NaO9"
-      - charge: 0
+      - formula: "C23H35O9"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03279c"
       - name: "3-keto-5,6,-dihydroxy-pravastatin"
       - compartment: "c"
-      - formula: "C23H35NaO9"
-      - charge: 0
+      - formula: "C23H35O9"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03279e"
       - name: "3-keto-5,6,-dihydroxy-pravastatin"
       - compartment: "e"
-      - formula: "C23H35NaO9"
-      - charge: 0
+      - formula: "C23H35O9"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03241r"
       - name: "3-alpha-iso-pravastatin"
       - compartment: "r"
-      - formula: "C23H35NaO7"
-      - charge: 0
+      - formula: "C23H35O7"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03280r"
       - name: "5,6-epoxy-3-alpha-iso-pravastatin"
       - compartment: "r"
-      - formula: "C23H35NaO8"
-      - charge: 0
+      - formula: "C23H35O8"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03280c"
       - name: "5,6-epoxy-3-alpha-iso-pravastatin"
       - compartment: "c"
-      - formula: "C23H35NaO8"
-      - charge: 0
+      - formula: "C23H35O8"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03280e"
       - name: "5,6-epoxy-3-alpha-iso-pravastatin"
       - compartment: "e"
-      - formula: "C23H35NaO8"
-      - charge: 0
+      - formula: "C23H35O8"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03285r"
       - name: "5-hydroxy-fluvastatin"
       - compartment: "r"
-      - formula: "C24H25FNNaO5"
-      - charge: 0
+      - formula: "C24H25FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03286r"
       - name: "5-hydroxy-fluvastatin-glucuronide"
       - compartment: "r"
-      - formula: "C30H32FNNaO11"
-      - charge: -1
+      - formula: "C30H32FNO11"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03286c"
       - name: "5-hydroxy-fluvastatin-glucuronide"
       - compartment: "c"
-      - formula: "C30H32FNNaO11"
-      - charge: -1
+      - formula: "C30H32FNO11"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03286e"
       - name: "5-hydroxy-fluvastatin-glucuronide"
       - compartment: "e"
-      - formula: "C30H32FNNaO11"
-      - charge: -1
+      - formula: "C30H32FNO11"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03579r"
       - name: "fluvastatin"
       - compartment: "r"
-      - formula: "C24H25FNNaO4"
-      - charge: 0
+      - formula: "C24H25FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03285c"
       - name: "5-hydroxy-fluvastatin"
       - compartment: "c"
-      - formula: "C24H25FNNaO5"
-      - charge: 0
+      - formula: "C24H25FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03285e"
       - name: "5-hydroxy-fluvastatin"
       - compartment: "e"
-      - formula: "C24H25FNNaO5"
-      - charge: 0
+      - formula: "C24H25FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03289c"
@@ -54947,15 +54947,15 @@
       - id: "MAM03294c"
       - name: "6-epipravastatin"
       - compartment: "c"
-      - formula: "C23H35NaO7"
-      - charge: 0
+      - formula: "C23H35O7"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03294e"
       - name: "6-epipravastatin"
       - compartment: "e"
-      - formula: "C23H35NaO7"
-      - charge: 0
+      - formula: "C23H35O7"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03296c"
@@ -55059,43 +55059,43 @@
       - id: "MAM03306r"
       - name: "6-hydroxy-fluvastatin-glucuronide"
       - compartment: "r"
-      - formula: "C30H32FNNaO11"
-      - charge: -1
+      - formula: "C30H32FNO11"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03306c"
       - name: "6-hydroxy-fluvastatin-glucuronide"
       - compartment: "c"
-      - formula: "C30H32FNNaO11"
-      - charge: -1
+      - formula: "C30H32FNO11"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03306e"
       - name: "6-hydroxy-fluvastatin-glucuronide"
       - compartment: "e"
-      - formula: "C30H32FNNaO11"
-      - charge: -1
+      - formula: "C30H32FNO11"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03305r"
       - name: "6-hydroxy-fluvastatin"
       - compartment: "r"
-      - formula: "C24H25FNNaO5"
-      - charge: 0
+      - formula: "C24H25FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03305c"
       - name: "6-hydroxy-fluvastatin"
       - compartment: "c"
-      - formula: "C24H25FNNaO5"
-      - charge: 0
+      - formula: "C24H25FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03305e"
       - name: "6-hydroxy-fluvastatin"
       - compartment: "e"
-      - formula: "C24H25FNNaO5"
-      - charge: 0
+      - formula: "C24H25FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03307c"
@@ -55164,22 +55164,22 @@
       - id: "MAM03312r"
       - name: "7-hydroxy-3-alpha-iso-pravastatin"
       - compartment: "r"
-      - formula: "C23H35NaO8"
-      - charge: 0
+      - formula: "C23H35O8"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03312c"
       - name: "7-hydroxy-3-alpha-iso-pravastatin"
       - compartment: "c"
-      - formula: "C23H35NaO8"
-      - charge: 0
+      - formula: "C23H35O8"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03312e"
       - name: "7-hydroxy-3-alpha-iso-pravastatin"
       - compartment: "e"
-      - formula: "C23H35NaO8"
-      - charge: 0
+      - formula: "C23H35O8"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03418e"
@@ -55668,120 +55668,120 @@
       - id: "MAM03515r"
       - name: "cerivastatin-M1"
       - compartment: "r"
-      - formula: "C24H29FNNaO5"
-      - charge: 0
+      - formula: "C25H31FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03518r"
       - name: "cerivastatin-M24"
       - compartment: "r"
-      - formula: "C24H29FNNaO6"
-      - charge: 0
+      - formula: "C25H31FNO6"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03515c"
       - name: "cerivastatin-M1"
       - compartment: "c"
-      - formula: "C24H29FNNaO5"
-      - charge: 0
+      - formula: "C25H31FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03515e"
       - name: "cerivastatin-M1"
       - compartment: "e"
-      - formula: "C24H29FNNaO5"
-      - charge: 0
+      - formula: "C25H31FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03517r"
       - name: "cerivastatin-M23"
       - compartment: "r"
-      - formula: "C25H31FNNaO6"
-      - charge: 0
+      - formula: "C26H33FNO6"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03514e"
       - name: "cerivastatin"
       - compartment: "e"
-      - formula: "C25H31FNNaO5"
-      - charge: 0
+      - formula: "C26H33FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03514c"
       - name: "cerivastatin"
       - compartment: "c"
-      - formula: "C25H31FNNaO5"
-      - charge: 0
+      - formula: "C26H33FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03516c"
       - name: "cerivastatin-M22"
       - compartment: "c"
-      - formula: "C25H29FNNaO4"
-      - charge: 0
+      - formula: "C26H31FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03514r"
       - name: "cerivastatin"
       - compartment: "r"
-      - formula: "C25H31FNNaO5"
-      - charge: 0
+      - formula: "C26H33FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03523r"
       - name: "cerivastatin-M1-glucuronide"
       - compartment: "r"
-      - formula: "C30H36FNNaO11"
-      - charge: -1
+      - formula: "C31H38FNO11"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03516r"
       - name: "cerivastatin-M22"
       - compartment: "r"
-      - formula: "C25H29FNNaO4"
-      - charge: 0
+      - formula: "C26H31FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03524r"
       - name: "cerivastatin-M23-glucuronide"
       - compartment: "r"
-      - formula: "C31H38FNNaO12"
-      - charge: -1
+      - formula: "C32H40FNO12"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03517c"
       - name: "cerivastatin-M23"
       - compartment: "c"
-      - formula: "C25H31FNNaO6"
-      - charge: 0
+      - formula: "C26H33FNO6"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03517e"
       - name: "cerivastatin-M23"
       - compartment: "e"
-      - formula: "C25H31FNNaO6"
-      - charge: 0
+      - formula: "C26H33FNO6"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03518c"
       - name: "cerivastatin-M24"
       - compartment: "c"
-      - formula: "C24H29FNNaO6"
-      - charge: 0
+      - formula: "C25H31FNO6"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03518e"
       - name: "cerivastatin-M24"
       - compartment: "e"
-      - formula: "C24H29FNNaO6"
-      - charge: 0
+      - formula: "C25H31FNO6"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03519r"
       - name: "cerivastatin-M31"
       - compartment: "r"
-      - formula: "C26H31FNNaO5"
-      - charge: 0
+      - formula: "C27H33FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03521c"
@@ -55829,57 +55829,57 @@
       - id: "MAM03519c"
       - name: "cerivastatin-M31"
       - compartment: "c"
-      - formula: "C26H31FNNaO5"
-      - charge: 0
+      - formula: "C27H33FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03579x"
       - name: "fluvastatin"
       - compartment: "x"
-      - formula: "C24H25FNNaO4"
-      - charge: 0
+      - formula: "C24H25FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03546x"
       - name: "deoxy-fluvastatin-dinor"
       - compartment: "x"
-      - formula: "C22H21FNNaO2"
-      - charge: 0
+      - formula: "C22H21FNO2"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03546c"
       - name: "deoxy-fluvastatin-dinor"
       - compartment: "c"
-      - formula: "C22H21FNNaO2"
-      - charge: 0
+      - formula: "C22H21FNO2"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03546e"
       - name: "deoxy-fluvastatin-dinor"
       - compartment: "e"
-      - formula: "C22H21FNNaO2"
-      - charge: 0
+      - formula: "C22H21FNO2"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03547r"
       - name: "N-desisopropyl-fluvastatin"
       - compartment: "r"
-      - formula: "C21H19FNNaO4"
-      - charge: 0
+      - formula: "C21H19FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03547c"
       - name: "N-desisopropyl-fluvastatin"
       - compartment: "c"
-      - formula: "C21H19FNNaO4"
-      - charge: 0
+      - formula: "C21H19FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03547e"
       - name: "N-desisopropyl-fluvastatin"
       - compartment: "e"
-      - formula: "C21H19FNNaO4"
-      - charge: 0
+      - formula: "C21H19FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03549c"
@@ -55906,22 +55906,22 @@
       - id: "MAM03566r"
       - name: "desacyl dehydro-pravastatin"
       - compartment: "r"
-      - formula: "C18H23NaO5"
-      - charge: 0
+      - formula: "C18H23O5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03566c"
       - name: "desacyl dehydro-pravastatin"
       - compartment: "c"
-      - formula: "C18H23NaO5"
-      - charge: 0
+      - formula: "C18H23O5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03566e"
       - name: "desacyl dehydro-pravastatin"
       - compartment: "e"
-      - formula: "C18H23NaO5"
-      - charge: 0
+      - formula: "C18H23O5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03572r"
@@ -55948,22 +55948,22 @@
       - id: "MAM03579e"
       - name: "fluvastatin"
       - compartment: "e"
-      - formula: "C24H25FNNaO4"
-      - charge: 0
+      - formula: "C24H25FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03582e"
       - name: "des-isopropyl-dihydro-fluvastatin-tetranor"
       - compartment: "e"
-      - formula: "C17H13FNNaO2"
-      - charge: 0
+      - formula: "C17H13FNO2"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03583e"
       - name: "des-isopropyl-dihydro-fluvastatin-tetranor-glucuronide"
       - compartment: "e"
-      - formula: "C23H20FNNaO8"
-      - charge: -1
+      - formula: "C23H20FNO8"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03594e"
@@ -56109,8 +56109,8 @@
       - id: "MAM03780e"
       - name: "N-desmethyl-rosuvastatin"
       - compartment: "e"
-      - formula: "C42H48CaF2N6O12S2"
-      - charge: -2
+      - formula: "C21H25FN3O6S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03781e"
@@ -56165,57 +56165,57 @@
       - id: "MAM03892e"
       - name: "des-isoproylpropionic-acid-fluvastatin"
       - compartment: "e"
-      - formula: "C18H16FNNaO2"
-      - charge: 0
+      - formula: "C18H15FNO2"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03911e"
       - name: "pitavastatin"
       - compartment: "e"
-      - formula: "C50H46CaF2N2O8"
-      - charge: 0
+      - formula: "C25H23FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03913e"
       - name: "pitavastatin-lactone"
       - compartment: "e"
-      - formula: "C50H44CaF2N2O6"
-      - charge: 2
+      - formula: "C25H22FNO3"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03915e"
       - name: "pitavastatin-M3"
       - compartment: "e"
-      - formula: "C50H42CaF2N2O8"
-      - charge: 0
+      - formula: "C25H21FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03916e"
       - name: "pravastatin"
       - compartment: "e"
-      - formula: "C23H35NaO7"
-      - charge: 0
+      - formula: "C23H35O7"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03917e"
       - name: "pravastatin glucuronide"
       - compartment: "e"
-      - formula: "C29H42NaO13"
-      - charge: -1
+      - formula: "C29H42O13"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03918e"
       - name: "rosuvastatin"
       - compartment: "e"
-      - formula: "C44H54CaF2N6O12S2"
-      - charge: 0
+      - formula: "C22H27FN3O6S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03920e"
       - name: "rosuvastatin-5S-lactone"
       - compartment: "e"
-      - formula: "C44H52CaF2N6O10S2"
-      - charge: 2
+      - formula: "C22H26FN3O5S"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03921e"
@@ -56270,14 +56270,14 @@
       - id: "MAM03985e"
       - name: "threo-isomer of fluvastain"
       - compartment: "e"
-      - formula: "C24H25FNNaO4"
-      - charge: 0
+      - formula: "C24H25FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03998e"
       - name: "trans-lactone-fluvastatin"
       - compartment: "e"
-      - formula: "C24H23FNNaO3"
+      - formula: "C24H24FNO3"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -56312,8 +56312,8 @@
       - id: "MAM04007e"
       - name: "triol metabolite of pravastatin"
       - compartment: "e"
-      - formula: "C23H37NaO9"
-      - charge: 0
+      - formula: "C23H37O9"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04038e"
@@ -56333,50 +56333,50 @@
       - id: "MAM03581r"
       - name: "fluvstatin-glucuronide"
       - compartment: "r"
-      - formula: "C30H32FNNaO10"
+      - formula: "C30H33FNO10"
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03582r"
       - name: "des-isopropyl-dihydro-fluvastatin-tetranor"
       - compartment: "r"
-      - formula: "C17H13FNNaO2"
-      - charge: 0
+      - formula: "C17H13FNO2"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03583r"
       - name: "des-isopropyl-dihydro-fluvastatin-tetranor-glucuronide"
       - compartment: "r"
-      - formula: "C23H20FNNaO8"
-      - charge: -1
+      - formula: "C23H20FNO8"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03583c"
       - name: "des-isopropyl-dihydro-fluvastatin-tetranor-glucuronide"
       - compartment: "c"
-      - formula: "C23H20FNNaO8"
-      - charge: -1
+      - formula: "C23H20FNO8"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03582c"
       - name: "des-isopropyl-dihydro-fluvastatin-tetranor"
       - compartment: "c"
-      - formula: "C17H13FNNaO2"
-      - charge: 0
+      - formula: "C17H13FNO2"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03998r"
       - name: "trans-lactone-fluvastatin"
       - compartment: "r"
-      - formula: "C24H23FNNaO3"
+      - formula: "C24H24FNO3"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03579c"
       - name: "fluvastatin"
       - compartment: "c"
-      - formula: "C24H25FNNaO4"
-      - charge: 0
+      - formula: "C24H25FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03244r"
@@ -56711,22 +56711,22 @@
       - id: "MAM03918r"
       - name: "rosuvastatin"
       - compartment: "r"
-      - formula: "C44H54CaF2N6O12S2"
-      - charge: 0
+      - formula: "C22H27FN3O6S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03780r"
       - name: "N-desmethyl-rosuvastatin"
       - compartment: "r"
-      - formula: "C42H48CaF2N6O12S2"
-      - charge: -2
+      - formula: "C21H25FN3O6S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03780c"
       - name: "N-desmethyl-rosuvastatin"
       - compartment: "c"
-      - formula: "C42H48CaF2N6O12S2"
-      - charge: -2
+      - formula: "C21H25FN3O6S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03781r"
@@ -56802,127 +56802,127 @@
       - id: "MAM03580x"
       - name: "fluvastatin-CoA form"
       - compartment: "x"
-      - formula: "C45H56FN8NaO19P3S"
+      - formula: "C45H56FN8O19P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03893x"
       - name: "des-isoproylpropionic-acid-fluvastatin-CoA"
       - compartment: "x"
-      - formula: "C37H42FN8NaO17P3S"
+      - formula: "C37H42FN8O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03893c"
       - name: "des-isoproylpropionic-acid-fluvastatin-CoA"
       - compartment: "c"
-      - formula: "C37H42FN8NaO17P3S"
+      - formula: "C37H42FN8O17P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03892c"
       - name: "des-isoproylpropionic-acid-fluvastatin"
       - compartment: "c"
-      - formula: "C18H16FNNaO2"
-      - charge: 0
+      - formula: "C18H15FNO2"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03911c"
       - name: "pitavastatin"
       - compartment: "c"
-      - formula: "C50H46CaF2N2O8"
-      - charge: 0
+      - formula: "C25H23FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03911r"
       - name: "pitavastatin"
       - compartment: "r"
-      - formula: "C50H46CaF2N2O8"
-      - charge: 0
+      - formula: "C25H23FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03912r"
       - name: "pitavastatin-glucuronide"
       - compartment: "r"
-      - formula: "C62H62CaF2N2O20"
-      - charge: 0
+      - formula: "C31H31FNO10"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03913r"
       - name: "pitavastatin-lactone"
       - compartment: "r"
-      - formula: "C50H44CaF2N2O6"
-      - charge: 2
+      - formula: "C25H22FNO3"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03913c"
       - name: "pitavastatin-lactone"
       - compartment: "c"
-      - formula: "C50H44CaF2N2O6"
-      - charge: 2
+      - formula: "C25H22FNO3"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03914r"
       - name: "pitavastatin-M13"
       - compartment: "r"
-      - formula: "C50H46CaF2N2O10"
-      - charge: 0
+      - formula: "C25H23FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03915c"
       - name: "pitavastatin-M3"
       - compartment: "c"
-      - formula: "C50H42CaF2N2O8"
-      - charge: 0
+      - formula: "C25H21FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03915r"
       - name: "pitavastatin-M3"
       - compartment: "r"
-      - formula: "C50H42CaF2N2O8"
-      - charge: 0
+      - formula: "C25H21FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03917r"
       - name: "pravastatin glucuronide"
       - compartment: "r"
-      - formula: "C29H42NaO13"
-      - charge: -1
+      - formula: "C29H42O13"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03917c"
       - name: "pravastatin glucuronide"
       - compartment: "c"
-      - formula: "C29H42NaO13"
-      - charge: -1
+      - formula: "C29H42O13"
+      - charge: -2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03918c"
       - name: "rosuvastatin"
       - compartment: "c"
-      - formula: "C44H54CaF2N6O12S2"
-      - charge: 0
+      - formula: "C22H27FN3O6S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03919r"
       - name: "rosuvastatin-glucuronide"
       - compartment: "r"
-      - formula: "C56H70CaF2N6O24S2"
-      - charge: 0
+      - formula: "C28H35FN3O12S"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03920r"
       - name: "rosuvastatin-5S-lactone"
       - compartment: "r"
-      - formula: "C44H52CaF2N6O10S2"
-      - charge: 2
+      - formula: "C22H26FN3O5S"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03920c"
       - name: "rosuvastatin-5S-lactone"
       - compartment: "c"
-      - formula: "C44H52CaF2N6O10S2"
-      - charge: 2
+      - formula: "C22H26FN3O5S"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03921c"
@@ -56984,8 +56984,8 @@
       - id: "MAM03985c"
       - name: "threo-isomer of fluvastain"
       - compartment: "c"
-      - formula: "C24H25FNNaO4"
-      - charge: 0
+      - formula: "C24H25FNO4"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03995r"
@@ -56998,7 +56998,7 @@
       - id: "MAM03998c"
       - name: "trans-lactone-fluvastatin"
       - compartment: "c"
-      - formula: "C24H23FNNaO3"
+      - formula: "C24H24FNO3"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -57061,8 +57061,8 @@
       - id: "MAM04007c"
       - name: "triol metabolite of pravastatin"
       - compartment: "c"
-      - formula: "C23H37NaO9"
-      - charge: 0
+      - formula: "C23H37O9"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04038c"
@@ -57096,21 +57096,21 @@
       - id: "MAM03236c"
       - name: "3'-S-hydroxy-pravastatin-CoA"
       - compartment: "c"
-      - formula: "C44H66N7NaO23P3S"
+      - formula: "C44H66N7O23P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03238c"
       - name: "3'-S-hydroxy-pravastatin-tetranor-CoA"
       - compartment: "c"
-      - formula: "C40H58N7NaO21P3S"
+      - formula: "C40H58N7O21P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03580c"
       - name: "fluvastatin-CoA form"
       - compartment: "c"
-      - formula: "C45H56FN8NaO19P3S"
+      - formula: "C45H56FN8O19P3S"
       - charge: -4
       - metFrom: "Recon3D"
     - !!omap
@@ -57124,15 +57124,15 @@
       - id: "MAM03914c"
       - name: "pitavastatin-M13"
       - compartment: "c"
-      - formula: "C50H46CaF2N2O10"
-      - charge: 0
+      - formula: "C25H23FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03914e"
       - name: "pitavastatin-M13"
       - compartment: "e"
-      - formula: "C50H46CaF2N2O10"
-      - charge: 0
+      - formula: "C25H23FNO5"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03404r"
@@ -96012,6 +96012,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
+      - references: "PMID:10856709;PMID:9063439;PMID:11257506"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.21"
       - subsystem: "Carnitine shuttle (cytosolic)"
@@ -97192,6 +97193,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000095321 or ENSG00000157184"
+      - references: "PMID:10856709;PMID:9063439;PMID:11257506"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.7"
       - subsystem: "Carnitine shuttle (mitochondrial)"
@@ -235412,7 +235414,7 @@
       - id: "MAR12360"
       - name: "conversion of pravastatin to 3-alpha-5-beta-dihydroxy pravastatin in entercoytes"
       - metabolites: !!omap
-          - MAM02039r: -1
+          - MAM02039r: -2
           - MAM02040r: 2
           - MAM02554r: 2
           - MAM02555r: -2
@@ -240334,7 +240336,6 @@
       - id: "MAR12720"
       - name: "glucuronidation of fluvastatin"
       - metabolites: !!omap
-          - MAM02039r: 1
           - MAM03106r: 1
           - MAM03109r: -1
           - MAM03579r: -1
@@ -240388,6 +240389,7 @@
       - id: "MAR12724"
       - name: "hydrolysis of lactone to fluvastatin in hepatocytes"
       - metabolites: !!omap
+          - MAM02039r: 1
           - MAM02040r: -1
           - MAM03579r: 1
           - MAM03998r: -1
@@ -241487,13 +241489,12 @@
       - id: "MAR12792"
       - name: "demethylation of rosuvastatin in hepatocytes"
       - metabolites: !!omap
+          - MAM01831r: 1
           - MAM02039r: -1
-          - MAM02041r: 1
+          - MAM02040r: 1
           - MAM02554r: 1
           - MAM02555r: -1
           - MAM02630r: -1
-          - MAM02871r: -2
-          - MAM02877r: 2
           - MAM03780r: 1
           - MAM03918r: -1
       - lower_bound: 0
@@ -241752,7 +241753,7 @@
       - name: "SAM to SAH conversion"
       - metabolites: !!omap
           - MAM01597c: 1
-          - MAM02039c: 2
+          - MAM02039c: 3
           - MAM02040c: -1
           - MAM02871c: 2
           - MAM02877c: -2
@@ -241799,8 +241800,8 @@
       - id: "MAR12812"
       - name: "glucuronidation of pitavastatin in hepatocytes"
       - metabolites: !!omap
-          - MAM03106r: 2
-          - MAM03109r: -2
+          - MAM03106r: 1
+          - MAM03109r: -1
           - MAM03911r: -1
           - MAM03912r: 1
       - lower_bound: 0
@@ -241815,7 +241816,7 @@
       - id: "MAR12813"
       - name: "pitavastatin acyl glucuronide lactonisation"
       - metabolites: !!omap
-          - MAM01973r: 2
+          - MAM01973r: 1
           - MAM03912r: -1
           - MAM03913r: 1
       - lower_bound: 0
@@ -241841,10 +241842,10 @@
       - name: "oxidation of pitavastatin to pitavastatin-M13 in hepatocytes"
       - metabolites: !!omap
           - MAM02039r: -1
-          - MAM02041r: 1
+          - MAM02040r: 1
           - MAM02554r: 1
           - MAM02555r: -1
-          - MAM02630r: -2
+          - MAM02630r: -1
           - MAM03911r: -1
           - MAM03914r: 1
       - lower_bound: 0
@@ -241880,7 +241881,10 @@
       - id: "MAR12817"
       - name: "oxidation of pitavastatin to pitavastatin-M3 in hepatocytes"
       - metabolites: !!omap
+          - MAM02039r: -1
           - MAM02040r: 2
+          - MAM02554r: 1
+          - MAM02555r: -1
           - MAM02630r: -1
           - MAM03911r: -1
           - MAM03915r: 1
@@ -241896,8 +241900,8 @@
       - id: "MAR12818"
       - name: "hydrolysis of latone to free acid form of pitavastatin in hepatocytes"
       - metabolites: !!omap
-          - MAM02039r: 2
-          - MAM02040r: -2
+          - MAM02039r: 1
+          - MAM02040r: -1
           - MAM03911r: 1
           - MAM03913r: -1
       - lower_bound: 0
@@ -242063,21 +242067,22 @@
       - id: "MAR12829"
       - name: "glucuronidation of rosuvastatin in hepatocytes"
       - metabolites: !!omap
-          - MAM03106r: 2
-          - MAM03109r: -2
+          - MAM03106r: 1
+          - MAM03109r: -1
           - MAM03918r: -1
           - MAM03919r: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000241635 or ENSG00000288702 or ENSG00000171234"
       - rxnFrom: "Recon3D"
-      - references: "PMID:14693307;PMID:11256847;PMID:22108655"
+      - references: "PMID:14693307;PMID:11256847;PMID:22108655;PMID:26412035"
       - subsystem: "Drug metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR12830"
       - name: "spontaneous conversion to rosuvastatin-5S-lactone in hepatocytes"
       - metabolites: !!omap
-          - MAM01973r: 2
+          - MAM01973r: 1
           - MAM03919r: -1
           - MAM03920r: 1
       - lower_bound: 0
@@ -242109,8 +242114,8 @@
       - id: "MAR12832"
       - name: "conversion of lactone to open acid form of rosuvastatin"
       - metabolites: !!omap
-          - MAM02039c: 2
-          - MAM02040c: -2
+          - MAM02039c: 1
+          - MAM02040c: -1
           - MAM03918c: 1
           - MAM03920c: -1
       - lower_bound: 0
@@ -242125,9 +242130,9 @@
       - id: "MAR12833"
       - name: "beta-glucuronidase of rosuvastatin-glucuronide in hepatocytes"
       - metabolites: !!omap
-          - MAM01973r: 2
-          - MAM02039r: 2
-          - MAM02040r: -2
+          - MAM01973r: 1
+          - MAM02039r: 1
+          - MAM02040r: -1
           - MAM03918r: 1
           - MAM03919r: -1
       - lower_bound: 0
