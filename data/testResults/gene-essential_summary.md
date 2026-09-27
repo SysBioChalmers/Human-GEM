@@ -2,17 +2,22 @@
 
 | cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 0.3443 | 142 | 0.3792 | 99 | 0.6641 | 0.3217 | 0.1677 | 52 |
-| GBM | 0.3194 | 146 | 0.3554 | 105 | 0.6611 | 0.3059 | 0.1616 | 48 |
-| HCT116 | 0.3683 | 133 | 0.3706 | 106 | 0.6697 | 0.3326 | 0.1798 | 40 |
-| HELA | 0.3179 | 164 | 0.3176 | 135 | 0.6717 | 0.2774 | 0.1458 | 40 |
-| RPE1 | 0.2512 | 179 | 0.2982 | 132 | 0.6579 | 0.2537 | 0.1362 | 50 |
-| all |  |  |  |  | 0.6647 | 0.2982 | 0.1585 |  |
+| DLD1 | 0.3417 | 144 | 0.3792 | 99 | 0.6703 | 0.3266 | 0.1677 | 54 |
+| GBM | 0.3203 | 140 | 0.3566 | 102 | 0.6588 | 0.3057 | 0.1616 | 44 |
+| HCT116 | 0.3695 | 132 | 0.372 | 105 | 0.6698 | 0.3342 | 0.1799 | 40 |
+| HELA | 0.3123 | 169 | 0.3112 | 140 | 0.669 | 0.2728 | 0.1458 | 40 |
+| RPE1 | 0.253 | 177 | 0.3019 | 129 | 0.6556 | 0.2542 | 0.1365 | 51 |
+| all |  |  |  |  | 0.6647 | 0.2987 | 0.1586 |  |
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **1** gene(s) directly affected plus **334** more that share a metabolite with one of them.
+Checked **9** gene(s) directly affected plus **1986** more that share a metabolite with one of them.
 
-**No change:** 335 gene(s).
+**Growth effect changed** (vs Hart 2015):
+- HSD17B7: 3/5 lines, knockout now blocks growth -- :information_source: not scored by Hart 2015
 
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/gene-essential-diff.csv).
+**Likely noise** (11 gene(s), <3/5 lines): AKR1A1, GNPAT, LIPA, MPC1, MPC2, NAGK, PISD, PXMP2, RDH5, SLC17A5, SLC27A5.
+
+**No change:** 1983 gene(s).
+
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/880-compartment-check/data/testResults/gene-essential-diff.csv).

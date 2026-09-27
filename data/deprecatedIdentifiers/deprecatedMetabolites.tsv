@@ -2366,3 +2366,7 @@ MAM01019i	MAM01019	24nph	C02235	HMDB0002916	CHEBI:16318						MNXM1982
 MAM02555i	MAM02555	nadph	C00005	HMDB0000221	CHEBI:57783						MNXM738702		
 MAM02754i	MAM02754	4nph	C00870	HMDB0001232	CHEBI:16836	980					MNXM526		
 MAM02554i	MAM02554	nadp	C00006	HMDB0000217	CHEBI:58349						MNXM5		
+MAM01915c	MAM01915	galfucgalacglcgal14acglcgalgluside_hs								galfucgalacglcgal14acglcgalgluside_hs	MNXM7941	m01915c	m01915c
+MAM01915g	MAM01915	galfucgalacglcgal14acglcgalgluside_hs								galfucgalacglcgal14acglcgalgluside_hs	MNXM7941	m01915g	m01915g
+MAM01915e	MAM01915	galfucgalacglcgal14acglcgalgluside_hs								galfucgalacglcgal14acglcgalgluside_hs	MNXM7941	m01915s	m01915s
+MAM03231e	MAM03231	3hpppn	C11457	HMDB0000375	CHEBI:1427	91				3hppa	MNXM1634		3hppa_s
