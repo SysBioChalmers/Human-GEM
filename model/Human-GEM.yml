@@ -15870,6 +15870,20 @@
       - charge: 2
       - metFrom: "HMRdatabase"
     - !!omap
+      - id: "MAM01413r"
+      - name: "Ca2+"
+      - compartment: "r"
+      - formula: "Ca"
+      - charge: 2
+      - metFrom: "HumanGEM"
+    - !!omap
+      - id: "MAM01413g"
+      - name: "Ca2+"
+      - compartment: "g"
+      - formula: "Ca"
+      - charge: 2
+      - metFrom: "HumanGEM"
+    - !!omap
       - id: "MAM01414c"
       - name: "caffeate"
       - compartment: "c"
@@ -162156,24 +162170,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR07629"
-      - name: "transport of Ca2+ (cytosol to extracellular)"
-      - metabolites: !!omap
-          - MAM01285c: 1
-          - MAM01371c: -1
-          - MAM01413c: -2
-          - MAM01413e: 2
-          - MAM02039c: 1
-          - MAM02040c: -1
-          - MAM02751c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000017260 or ENSG00000058668 or ENSG00000064270 or ENSG00000067842 or ENSG00000070961 or ENSG00000074370 or ENSG00000157087 or ENSG00000174437 or ENSG00000196296"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "7.2.2.10"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR07630"
       - name: "transport of Ca2+ and Na+ (cytosol to extracellular)"
       - metabolites: !!omap
@@ -182876,21 +182872,21 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00119"
-      - name: "Ca ATPase"
+      - name: "transport of Ca2+ (cytosol to extracellular), PMCA"
       - metabolites: !!omap
           - MAM01285c: 1
           - MAM01371c: -1
           - MAM01413c: -1
           - MAM01413e: 1
-          - MAM02039e: 1
+          - MAM02039c: 1
           - MAM02040c: -1
           - MAM02751c: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000058668 or ENSG00000067842 or ENSG00000070961 or ENSG00000157087"
       - rxnFrom: "Recon3D"
-      - eccodes: "7.1.2.1"
-      - references: "PMID:7876199;PMID:8396145"
+      - eccodes: "7.2.2.10"
+      - references: "PMID:691040;PMID:8396145"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
@@ -249655,6 +249651,89 @@
       - upper_bound: 1000
       - subsystem: "Exchange/demand reactions"
       - confidence_score: 0
+    - !!omap
+      - id: "MAR20212"
+      - name: "transport of Ca2+ (cytosol to endoplasmic reticulum), SERCA"
+      - metabolites: !!omap
+          - MAM01285c: 1
+          - MAM01371c: -1
+          - MAM01413c: -2
+          - MAM01413r: 2
+          - MAM02039c: 1
+          - MAM02040c: -1
+          - MAM02751c: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000196296 or ENSG00000174437 or ENSG00000074370"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "7.2.2.10"
+      - references: "PMID:15189143;PMID:7876199"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20213"
+      - name: "transport of Ca2+ (cytosol to Golgi apparatus), SERCA"
+      - metabolites: !!omap
+          - MAM01285c: 1
+          - MAM01371c: -1
+          - MAM01413c: -2
+          - MAM01413g: 2
+          - MAM02039c: 1
+          - MAM02040c: -1
+          - MAM02751c: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000196296 or ENSG00000174437 or ENSG00000074370"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "7.2.2.10"
+      - references: "PMID:15590060;PMID:20439740"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20214"
+      - name: "transport of Ca2+ (cytosol to Golgi apparatus), SPCA"
+      - metabolites: !!omap
+          - MAM01285c: 1
+          - MAM01371c: -1
+          - MAM01413c: -1
+          - MAM01413g: 1
+          - MAM02039c: 1
+          - MAM02040c: -1
+          - MAM02751c: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000017260 or ENSG00000064270"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "7.2.2.10"
+      - references: "PMID:15590060;PMID:15831496;PMID:20439740"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20215"
+      - name: "transport of Ca2+ (endoplasmic reticulum to cytosol)"
+      - metabolites: !!omap
+          - MAM01413c: 1
+          - MAM01413r: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000150995 or ENSG00000123104 or ENSG00000096433 or ENSG00000196218 or ENSG00000198626 or ENSG00000198838 or ENSG00000143183"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:25555684;PMID:27212239"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20216"
+      - name: "transport of Ca2+ (Golgi apparatus to cytosol)"
+      - metabolites: !!omap
+          - MAM01413c: 1
+          - MAM01413g: -1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000150995 or ENSG00000123104 or ENSG00000096433 or ENSG00000196218 or ENSG00000198626 or ENSG00000198838"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:9736609;PMID:20439740"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
 - genes:
     - !!omap
       - id: "ENSG00000000419"
@@ -258233,6 +258312,27 @@
     - !!omap
       - id: "ENSG00000175938"
       - name: "ORAI3"
+    - !!omap
+      - id: "ENSG00000150995"
+      - name: "ITPR1"
+    - !!omap
+      - id: "ENSG00000123104"
+      - name: "ITPR2"
+    - !!omap
+      - id: "ENSG00000096433"
+      - name: "ITPR3"
+    - !!omap
+      - id: "ENSG00000196218"
+      - name: "RYR1"
+    - !!omap
+      - id: "ENSG00000198626"
+      - name: "RYR2"
+    - !!omap
+      - id: "ENSG00000198838"
+      - name: "RYR3"
+    - !!omap
+      - id: "ENSG00000143183"
+      - name: "TMCO1"
 - compartments: !!omap
     - e: "Extracellular"
     - x: "Peroxisome"
