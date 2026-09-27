@@ -11,8 +11,8 @@
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **0** gene(s) directly affected plus **2** more that share a metabolite with one of them.
+Checked **4** gene(s) directly affected plus **904** more that share a metabolite with one of them.
 
-**No change:** 2 gene(s).
+**No change:** 908 gene(s).
 
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/feat/dihydroorotate-transport/data/testResults/gene-essential-diff.csv).
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/compartment-id-mismatch/data/testResults/gene-essential-diff.csv).
