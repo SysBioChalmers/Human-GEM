@@ -1,22 +1,15 @@
 ## Model quality report
 
-:warning: **4** pre-existing finding(s), no regressions vs `develop`. Non-blocking. Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:.
+:x: **1** regression(s) vs `develop`. Review the row(s) below. Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:.
 
 | Section | Status |
 | --- | --- |
-| Model &amp; network checks (18) | :warning: **4** pre-existing |
+| Model &amp; network checks (18) | :x: **1** regression(s) |
 | Model file &amp; metabolic tasks (5) | :white_check_mark: all pass |
 | MEMOTE | :white_check_mark: **63.8%** (core subset) |
-| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/model_qc_summary.md) |
+| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1000-ca-atpases/data/testResults/model_qc_summary.md) |
 
-**Improved:**
-- Reactions flagged by MACAW dead-end test: [**1112**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/macaw_results.tsv)
-- Structure vs formula/charge inconsistencies: [**306**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/qc_structure_consistency.csv)
-
-**Pre-existing:**
-- Cross-refs inconsistent across compartments: [**2**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/qc_annotation_issues.csv)
-- Reactions flagged as MACAW duplicates: [**342**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/macaw_results.tsv)
-- Mass-imbalanced reactions: [**70**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/balance_results.csv)
-- Charge-imbalanced reactions: [**196**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/balance_results.csv)
+**Regression(s):**
+- Reactions flagged as MACAW duplicates: [**344**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1000-ca-atpases/data/testResults/macaw_results.tsv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
