@@ -117,7 +117,6 @@ MAM02119l,hexaglutamyl-folate(THF),protonation,C44H51N12O21,-7,C44H54N12O21,0,Nc
 MAM02119m,hexaglutamyl-folate(THF),protonation,C44H51N12O21,-7,C44H54N12O21,0,Nc1nc(=O)c2nc(CNc3ccc(C(=O)N(C(=O)CC[C@H](N)C(=O)O)[C@](C(=O)CC[C@H](N)C(=O)O)(C(=O)OC(=O)CC[C@H](N)C(=O)O)C(CC(=O)O)(C(=O)CC[C@H](N)C(=O)O)C(=O)CC[C@H](N)C(=O)O)cc3)cnc2[nH]1
 MAM02119e,hexaglutamyl-folate(THF),protonation,C44H51N12O21,-7,C44H54N12O21,0,Nc1nc(=O)c2nc(CNc3ccc(C(=O)N(C(=O)CC[C@H](N)C(=O)O)[C@](C(=O)CC[C@H](N)C(=O)O)(C(=O)OC(=O)CC[C@H](N)C(=O)O)C(CC(=O)O)(C(=O)CC[C@H](N)C(=O)O)C(=O)CC[C@H](N)C(=O)O)cc3)cnc2[nH]1
 MAM02143c,hydrobromic acid,protonation,Br,-1,HBr,0,Br
-MAM02146c,hydroiodic acid,protonation,I,-1,HI,0,I
 MAM02151c,hydroxymethylbilane,protonation,C40H38N4O17,-8,C40H46N4O17,0,O=C(O)CCc1c[nH]c(Cc2[nH]c(Cc3[nH]c(Cc4[nH]c(CO)c(CC(=O)O)c4CCC(=O)O)c(CC(=O)O)c3CCC(=O)O)c(CC(=O)O)c2CCC(=O)O)c1CC(=O)O
 MAM02153c,hydroxy-nifedipine,formula_error,C17H18N2O7,0,C17H18N2O6,0,COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]
 MAM02153e,hydroxy-nifedipine,formula_error,C17H18N2O7,0,C17H18N2O6,0,COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]
@@ -306,9 +305,9 @@ MAM03800c,oxypurinol-7-riboside,formula_error,C10H12N4O7,0,C10H11N4O6+,1,O[C@@H]
 MAM03404r,acetaminophen-glutathione-conjugate,formula_error,C18H27N4O10S,0,C18H24N4O8S,0,CC(=O)Nc1ccc(O)c(SC[C@H](NC(=O)CC[C@H](N)C(=O)O)C(=O)NCC(=O)O)c1
 MAM02682r,PAPS,protonation,C10H11N5O13P2S,-4,C10H15N5O13P2S,0,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OS(=O)(=O)O)[C@@H](OP(=O)(O)O)[C@H]1O
 MAM01442m,chloride,protonation,Cl,-1,Cl,0,[Cl]
-MAM20005c,"20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate",protonation,C20H29O3,0,C20H29O3-,-1,O=CCCCC/C=C\C/C=C\C/C=C\C/C=C\CCCC(=O)[O-]
-MAM20006c,"(5Z,8Z,11Z,14Z)-eicosatetraenedioate",protonation,C20H28O4,-1,C20H28O4-2,-2,O=C([O-])CCC/C=C\C/C=C\C/C=C\C/C=C\CCCCC(=O)[O-]
-MAM20016n,15-oxoprostaglandin E2,protonation,C20H29O5,0,C20H29O5-,-1,CCCCCC(=O)/C=C/[C@H]1[C@H](O)CC(=O)[C@@H]1C/C=C\CCCC(=O)[O-]
+MAM20003c,"20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate",protonation,C20H29O3,0,C20H29O3-,-1,O=CCCCC/C=C\C/C=C\C/C=C\C/C=C\CCCC(=O)[O-]
+MAM20004c,"(5Z,8Z,11Z,14Z)-eicosatetraenedioate",protonation,C20H28O4,-1,C20H28O4-2,-2,O=C([O-])CCC/C=C\C/C=C\C/C=C\C/C=C\CCCCC(=O)[O-]
+MAM20014n,15-oxoprostaglandin E2,protonation,C20H29O5,0,C20H29O5-,-1,CCCCCC(=O)/C=C/[C@H]1[C@H](O)CC(=O)[C@@H]1C/C=C\CCCC(=O)[O-]
 MAM20017n,"13,14-dihydro-15-oxo-prostaglandin E2",protonation,C20H31O5,0,C20H31O5-,-1,CCCCCC(=O)CC[C@H]1[C@H](O)CC(=O)[C@@H]1C/C=C\CCCC(=O)[O-]
 MAM01019r,4-nitrocatechol,protonation,C6H5NO4,-1,C6H4NO4-,-1,O=[N+]([O-])c1ccc([O-])c(O)c1
 MAM02754r,PNP,protonation,C6H5NO3,-1,C6H4NO3-,-1,O=[N+]([O-])c1ccc([O-])cc1

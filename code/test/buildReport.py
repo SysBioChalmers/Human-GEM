@@ -37,6 +37,8 @@ import re
 import sys
 from pathlib import Path
 
+import qcStatus
+
 RESULTS = Path("data/testResults")
 FULL_MD = RESULTS / "model_qc_summary.md"
 COMMENT_MD = RESULTS / "model_qc_comment.md"
@@ -157,8 +159,9 @@ MEMOTE_FULL = "Full suite"
 
 def _memote_meta(directory: Path, title: str):
     """Parse one section of memote_score.md ->
-    (total, mode, {section: score}, [(section, test, score)]), or None if that section
-    is absent or not yet computed (a placeholder with no total)."""
+    (total, mode, {section: score}, [(section, test, score)], model_version), or None
+    if that section is absent or not yet computed (a placeholder with no total).
+    model_version is empty for a section written before it was recorded."""
     path = directory / "memote_score.md"
     if not path.exists():
         return None
@@ -174,10 +177,12 @@ def _memote_meta(directory: Path, title: str):
     if not total:
         return None
     mode = re.search(r"Mode:\s*(.+?)\.", text)
+    version = re.search(r"Model version:\s*(\w+)", text)
     sections = {m.group(1): float(m.group(2))
                 for m in re.finditer(r"^\| (\w+) \| ([\d.]+)% \|$", text, re.M)}
     detailed = [(s, t, sc) for s, t, sc in re.findall(r"^\| (.+?) \| (.+?) \| ([\d.]+)% \|$", text, re.M)]
-    return (float(total.group(1)), mode.group(1) if mode else "", sections, detailed)
+    return (float(total.group(1)), mode.group(1) if mode else "", sections, detailed,
+            version.group(1) if version else "")
 
 
 def _score_delta(cur, base) -> str:
@@ -400,15 +405,20 @@ def _memote_data(current: Path, base: Path | None) -> dict:
     core = _memote_meta(current, MEMOTE_CORE)
     if core is None:
         return {"pending": True}
-    total, mode, sections, detailed = core
+    total, mode, sections, detailed, _ = core
     base_ok = bool(base and base.exists())
     b = _memote_meta(base, MEMOTE_CORE) if base_ok else None
     b_total, b_sections = (b[0], b[2]) if b else (None, {})
     full = _memote_meta(current, MEMOTE_FULL)
     bf = _memote_meta(base, MEMOTE_FULL) if base_ok else None
+    # The full suite runs only on request, so its section can be left over from an
+    # earlier model (e.g. inherited from the target branch). It counts as this
+    # model's score only when it was computed on exactly this model version.
+    full_current = bool(full and full[4] and full[4] == qcStatus.model_version())
     return {
         "pending": False, "total": total, "mode": mode, "sections": sections, "detailed": detailed,
         "b_total": b_total, "b_sections": b_sections, "full": full, "bf_total": bf[0] if bf else None,
+        "full_current": full_current,
     }
 
 
@@ -426,20 +436,30 @@ def _memote_full_section(data: dict) -> str:
                   "| Section | Test | Score |", "| --- | --- | ---: |"]
         lines += [f"| {s} | {t} | {sc}% |" for s, t, sc in data["detailed"]]
         lines += ["", "</details>"]
-    if data["full"] is not None:
+    if data["full"] is not None and data["full_current"]:
         lines += ["", f"**Full suite: {data['full'][0]:.1f}%** &nbsp; "
                   f"{_score_delta(data['full'][0], data['bf_total'])} "
-                  "&middot; _from the last_ `/run memote`.".rstrip()]
+                  "&middot; _for this model version._".rstrip()]
+    elif data["full"] is not None:
+        lines += ["", f"_Full suite: {data['full'][0]:.1f}%, from an earlier model version; "
+                  "comment_ `/run memote` _to update it._"]
     else:
-        lines += ["", "_Full suite not run for this commit; comment_ `/run memote` _to add it._"]
+        lines += ["", "_Full suite not run for this model version; comment_ `/run memote` _to add it._"]
     return "\n".join(lines)
 
 
 def _memote_summary(data: dict) -> dict:
     if data["pending"]:
         return {"status": ":hourglass_flowing_sand: running"}
-    _, icon, dropped, _ = _icon(data["total"], data["b_total"], "score")
-    return {"status": f"{icon} **{data['total']:.1f}%**", "dropped": dropped}
+    # The full suite is the better score, so it is shown whenever it is current;
+    # otherwise the core subset, which runs on every push. Each is compared only with
+    # the same kind of score on the base branch.
+    if data["full_current"]:
+        total, base_total, kind = data["full"][0], data["bf_total"], "full suite"
+    else:
+        total, base_total, kind = data["total"], data["b_total"], "core subset"
+    _, icon, dropped, _ = _icon(total, base_total, "score")
+    return {"status": f"{icon} **{total:.1f}%** ({kind})", "dropped": dropped}
 
 
 def _gene_essentiality_full_section() -> str:
@@ -569,8 +589,8 @@ def main() -> int:
         "",
         _memote_full_section(memote_data),
         "",
-        "_The score above is the fast core subset. Comment_ `/run memote` "
-        "_to run the full suite on this pull request; the score updates here when it finishes._",
+        "_The total above is the fast core subset, run on every push. Comment_ `/run memote` "
+        "_to run the full suite on this pull request; the summary shows it while the model is unchanged._",
         "",
         f"### {_labelled('Gene essentiality (Hart 2015)')}",
         "",
