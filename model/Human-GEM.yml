@@ -30005,13 +30005,6 @@
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM02525g"
-      - name: "N-acetylgalactosamine"
-      - compartment: "g"
-      - formula: "C8H15NO6"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM02525l"
       - name: "N-acetylgalactosamine"
       - compartment: "l"
@@ -39579,13 +39572,6 @@
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
-      - id: "MAM00592m"
-      - name: "20-hydroxycholesterol"
-      - compartment: "m"
-      - formula: "C27H46O2"
-      - charge: 0
-      - metFrom: "Recon3D"
-    - !!omap
       - id: "MAM02733g"
       - name: "phosphatidate-LD-TAG pool"
       - compartment: "g"
@@ -40850,13 +40836,6 @@
       - name: "7alpha-hydroxycholesterol"
       - compartment: "c"
       - formula: "C27H46O2"
-      - charge: 0
-      - metFrom: "Recon3D"
-    - !!omap
-      - id: "MAM01182m"
-      - name: "7alpha-hydroxycholest-4-en-3-one"
-      - compartment: "m"
-      - formula: "C27H44O2"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
@@ -163800,7 +163779,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000091137"
-      - references: "PMID:15155570"
+      - references: "PMID:15155570;PMID:18565999"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -174004,17 +173983,6 @@
       - metabolites: !!omap
           - MAM01711c: -1
           - MAM01711g: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR08193"
-      - name: "transport of N-acetylgalactosamine (cytosol to Golgi apparatus)"
-      - metabolites: !!omap
-          - MAM02525c: -1
-          - MAM02525g: 1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
@@ -186989,23 +186957,6 @@
       - subsystem: "Eicosanoid metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01578"
-      - name: "Cholesterol Monooxygenase"
-      - metabolites: !!omap
-          - MAM00592m: 1
-          - MAM01450m: -1
-          - MAM02039m: -1
-          - MAM02040m: 1
-          - MAM02554m: 1
-          - MAM02555m: -1
-          - MAM02630m: -1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - references: "PMID:1525048"
-      - subsystem: "Cholesterol metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR01579"
       - name: "Phosphatidate Scramblase"
       - metabolites: !!omap
@@ -191681,22 +191632,6 @@
       - rxnFrom: "Recon3D"
       - eccodes: "1.14.14.55"
       - references: "PMID:10706592;PMID:11454857;PMID:9931427"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR02895"
-      - name: "3Alpha-Hydroxysteroid 3-Dehydrogenase (Si-Specific)"
-      - metabolites: !!omap
-          - MAM01095m: -1
-          - MAM01182m: 1
-          - MAM02039m: 2
-          - MAM02554m: -2
-          - MAM02555m: 2
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.1.1.50"
-      - references: "PMID:11454857"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -226628,7 +226563,7 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000197901"
-      - references: "PMID:18365245;PMID:21264516"
+      - references: "PMID:18365245"
       - rxnFrom: "Recon3D"
       - subsystem: "Transport reactions"
       - confidence_score: 0
@@ -249384,6 +249319,21 @@
       - gene_reaction_rule: "ENSG00000158296"
       - rxnFrom: "HumanGEM"
       - references: "PMID:18365245;PMID:21264516"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20211"
+      - name: "transport of (R)-2-hydroxyglutarate and estrone 3-sulfate (cytosol to extracellular)"
+      - metabolites: !!omap
+          - MAM01789c: 1
+          - MAM01789e: -1
+          - MAM20012c: -1
+          - MAM20012e: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000168065"
+      - rxnFrom: "HumanGEM"
+      - references: "PMID:18365245"
       - subsystem: "Transport reactions"
       - confidence_score: 0
 - genes:
