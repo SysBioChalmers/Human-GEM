@@ -12,13 +12,15 @@ Checks split into two kinds:
       - reactions with no metabolites;
       - the model and its annotation tables (reactions.tsv / metabolites.tsv /
         genes.tsv) disagree, or a deprecated identifier is used;
-      - the model cannot produce biomass under its default constraints (the
-        blocking biomass precursors are written out so it can be fixed).
+      - the model cannot produce biomass on a defined medium (Ham's medium from the
+        GR metabolic task, each nutrient's uptake capped; the blocking biomass
+        precursors are written out so it can be fixed).
   * Reports (do not fail): quality metrics tracked with a delta versus the
       target branch.
       - metabolites missing a formula or a charge;
       - reaction bound / GPR sanity;
       - exact-duplicate reactions (same stoichiometry);
+      - reactions whose chemistry is split across compartments;
       - metabolites and genes not used by any reaction;
       - identifiers removed since the base branch that were not moved to a
         deprecated list (needs BASE_MODEL_DIR; skipped when unavailable).
@@ -48,6 +50,7 @@ DEPRECATED_MET_TSV = "data/deprecatedIdentifiers/deprecatedMetabolites.tsv"
 RESULTS = "data/testResults"
 DUP_KEYS_CSV = f"{RESULTS}/qc_duplicate_keys.csv"
 DUP_RXN_CSV = f"{RESULTS}/qc_duplicate_reactions.csv"
+SPLIT_COMPARTMENT_CSV = f"{RESULTS}/qc_split_compartments.csv"
 EMPTY_RXN_CSV = f"{RESULTS}/qc_empty_reactions.csv"
 ANNOTATION_CONSISTENCY_CSV = f"{RESULTS}/qc_annotation_consistency.csv"
 UNUSED_CSV = f"{RESULTS}/qc_unused_entities.csv"
@@ -64,6 +67,18 @@ GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
 BASE_MODEL_DIR = os.environ.get("BASE_MODEL_DIR", "")
 
 GROWTH_TOLERANCE = 1e-6
+
+# Growth is tested on a defined medium rather than the model's default bounds, which
+# leave most uptakes open at 1000: there the value mostly reflects which uptake and
+# secretion routes exist, and one new route can shift it a lot. The medium is Ham's
+# medium as defined by the GR (growth) essential metabolic task; every other uptake is
+# closed and secretion stays open. Each nutrient's uptake is capped at
+# MEDIUM_UPTAKE_CAP, so growth is limited by the nutrients, not by a flux bound;
+# the value is comparable between commits, not a physiological growth rate.
+MEDIUM_TASKS_FILE = "data/metabolicTasks/metabolicTasks_Essential.txt"
+MEDIUM_TASK_ID = "GR"
+MEDIUM_UPTAKE_CAP = 1.0
+MEDIUM_UNCAPPED = {"O2", "H2O"}
 
 # Pseudo-metabolites (generic class sinks and biomass pools) intrinsically
 # have no molecular formula, so they are excluded from the completeness report.
@@ -164,7 +179,8 @@ def check_empty_reactions(model: cobra.Model) -> list[str]:
 # --------------------------------------------------------------------------- #
 def check_annotation_consistency(model: cobra.Model) -> list[tuple]:
     """Compare model ids against reactions/metabolites/genes.tsv and the deprecated
-    lists. Returns [(kind, id, issue)]."""
+    lists, and each metabolite id's compartment suffix against its compartment.
+    Returns [(kind, id, issue)]."""
     issues: list[tuple] = []
 
     def compare(kind: str, in_model: set[str], in_tsv: set[str], deprecated: set[str]):
@@ -184,6 +200,13 @@ def check_annotation_consistency(model: cobra.Model) -> list[tuple]:
     # genes.tsv has no deprecated list; only check presence in both directions.
     compare("gene",
             {g.id for g in model.genes}, set(_tsv_column(GENES_TSV, "genes")), set())
+
+    # A metabolite id ends in its compartment; a mismatch puts the metabolite somewhere
+    # other than its id says, which no id-based review can see.
+    for met in model.metabolites:
+        if met.id[-1] != met.compartment:
+            issues.append(("metabolite", met.id,
+                           f"id suffix '{met.id[-1]}' but compartment '{met.compartment}'"))
 
     # The 'spontaneous' column in reactions.tsv must be numeric (RAVEN reads it).
     def _numeric(value: str) -> bool:
@@ -273,6 +296,39 @@ def check_duplicate_reactions(model: cobra.Model) -> int:
 
 
 # --------------------------------------------------------------------------- #
+# Report: reactions whose chemistry is split across compartments
+# --------------------------------------------------------------------------- #
+def check_split_compartments(model: cobra.Model) -> int:
+    """Reactions whose metabolites, apart from those they move between
+    compartments, still sit in more than one compartment.
+
+    A metabolite that appears in two compartments of the same reaction is what the
+    reaction transports, and is ignored. The metabolites left over are the reaction's
+    own chemistry, which normally takes place in one compartment; one of them in a
+    different compartment (e.g. a cytosolic substrate in a mitochondrial reaction) is
+    usually a curation error. Some enzymes do work across a membrane (e.g. HGSNAT,
+    GPD2, fatty-acid uptake coupled to acyl-CoA synthesis), so this is a report, and
+    only a rise in the count is flagged. Artificial (pool and biomass) reactions are
+    skipped.
+    """
+    rows = []
+    for rxn in model.reactions:
+        if rxn.subsystem == "Artificial reactions":
+            continue
+        compartments_of = defaultdict(set)
+        for met in rxn.metabolites:
+            compartments_of[met.id[:-1]].add(met.compartment)
+        chemistry = [m for m in rxn.metabolites if len(compartments_of[m.id[:-1]]) == 1]
+        compartments = sorted({m.compartment for m in chemistry})
+        if len(compartments) > 1:
+            rows.append((rxn.id, rxn.name or "", "".join(compartments),
+                         rxn.build_reaction_string(use_metabolite_names=True)))
+    rows.sort()
+    _write_csv(SPLIT_COMPARTMENT_CSV, ["reaction", "name", "compartments", "equation"], rows)
+    return len(rows)
+
+
+# --------------------------------------------------------------------------- #
 # Report: metabolites / genes not used by any reaction
 # --------------------------------------------------------------------------- #
 def check_unused_entities(model: cobra.Model) -> tuple[int, int]:
@@ -333,8 +389,50 @@ def check_reaction_sanity(model: cobra.Model) -> int:
 # --------------------------------------------------------------------------- #
 # Gate: growth, with the blocking biomass precursors when it fails
 # --------------------------------------------------------------------------- #
+def _medium_inputs(path: str = MEDIUM_TASKS_FILE, task_id: str = MEDIUM_TASK_ID) -> list[str]:
+    """The IN metabolites (``name[compartment]``) of one task in a RAVEN task list."""
+    with open(path, newline="", encoding="utf-8") as fh:
+        rows = list(csv.reader(fh, delimiter="\t"))
+    header = rows[0]
+    id_col, in_col = header.index("ID"), header.index("IN")
+    inputs, in_task = [], False
+    for row in rows[1:]:
+        row = row + [""] * (len(header) - len(row))
+        if row[id_col].strip():
+            if in_task:
+                break
+            in_task = row[id_col].strip() == task_id
+        if in_task and row[in_col].strip():
+            inputs.append(row[in_col].strip())
+    return inputs
+
+
+def apply_growth_medium(model: cobra.Model) -> list[str]:
+    """Close every uptake, then open the medium's inputs (capped, see above).
+    Call inside ``with model:``. Returns the inputs no exchange reaction matched."""
+    for rxn in model.boundary:
+        rxn.lower_bound = 0
+    unresolved = []
+    for token in _medium_inputs():
+        name, compartment = token.rsplit("[", 1)
+        compartment = compartment.rstrip("]")
+        exchanges = [rxn for met in model.metabolites
+                     if met.name == name and met.compartment == compartment
+                     for rxn in met.reactions if rxn.boundary]
+        if not exchanges:
+            unresolved.append(token)
+        cap = 1000.0 if name in MEDIUM_UNCAPPED else MEDIUM_UPTAKE_CAP
+        for rxn in exchanges:
+            rxn.lower_bound = -cap
+    return unresolved
+
+
 def check_growth(model: cobra.Model) -> float:
-    value = model.slim_optimize()
+    with model:
+        unresolved = apply_growth_medium(model)
+        if unresolved:
+            print(f"::warning::Medium inputs without an exchange reaction: {', '.join(unresolved)}")
+        value = model.slim_optimize()
     return float(value) if value is not None else float("nan")
 
 
@@ -351,6 +449,7 @@ def write_growth_blockers(model: cobra.Model) -> list[str]:
         precursors = sorted({m.id for r in objective for m, c in r.metabolites.items() if c < 0})
         for met_id in precursors:
             with model:
+                apply_growth_medium(model)
                 met = model.metabolites.get_by_id(met_id)
                 demand = model.add_boundary(met, type="demand")
                 model.objective = demand
@@ -405,7 +504,7 @@ def main() -> int:
     qcStatus.set_status("growth", f"{growth:.6g}")
     if not grows:
         blockers = write_growth_blockers(model)
-        print(f"::error::Model cannot produce biomass under its default constraints "
+        print(f"::error::Model cannot produce biomass on the defined medium "
               f"({len(blockers)} blocked precursor(s); see {GROWTH_BLOCKERS_CSV}).")
         gate_failed = True
     else:
@@ -415,15 +514,17 @@ def main() -> int:
     n_formula, n_charge = check_metabolite_completeness(model)
     n_reaction_issues = check_reaction_sanity(model)
     n_dup_rxn = check_duplicate_reactions(model)
+    n_split = check_split_compartments(model)
     n_unused_met, n_unused_gene = check_unused_entities(model)
 
     print(f"Metabolites missing a formula: {n_formula}")
     print(f"Metabolites missing a charge: {n_charge}")
     print(f"Reactions with bound/GPR issues: {n_reaction_issues}")
     print(f"Exact-duplicate reaction groups: {n_dup_rxn}")
+    print(f"Reactions with chemistry split across compartments: {n_split}")
     print(f"Unused metabolites / genes: {n_unused_met} / {n_unused_gene}")
     print(f"Removed identifiers not deprecated: {len(undeprecated)}")
-    print(f"Growth (max biomass, default constraints): {growth:.4g} "
+    print(f"Growth (max biomass, defined medium): {growth:.4g} "
           f"({'ok' if grows else 'NO GROWTH'})")
 
     return 1 if gate_failed else 0
