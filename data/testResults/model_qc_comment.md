@@ -11,7 +11,7 @@
 
 **Improved:**
 - Reactions flagged as MACAW duplicates: [**338**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/macaw_results.tsv)
-- Charge-imbalanced reactions: [**196**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/balance_results.csv)
+- Charge-imbalanced reactions: [**193**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/balance_results.csv)
 - Structure vs formula/charge inconsistencies: [**309**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/qc_structure_consistency.csv)
 
 **Pre-existing:**
