@@ -10459,6 +10459,13 @@
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
+      - id: "MAM00955r"
+      - name: "4alpha-carboxy-5alpha-cholesta-8,24-dien-3beta-ol"
+      - compartment: "r"
+      - formula: "C28H44O3"
+      - charge: 0
+      - metFrom: "HumanGEM"
+    - !!omap
       - id: "MAM00956c"
       - name: "4alpha-carboxy-5alpha-cholesta-8-en-3beta-ol"
       - compartment: "c"
@@ -108423,9 +108430,9 @@
       - metabolites: !!omap
           - MAM00809c: -1
           - MAM00968c: 1
-          - MAM02039c: -3
-          - MAM02554c: -1
-          - MAM02555c: 1
+          - MAM02039c: -1
+          - MAM02554c: 1
+          - MAM02555c: -1
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000132196"
@@ -182543,10 +182550,10 @@
           - MAM04082r: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000133835"
+      - gene_reaction_rule: "ENSG00000132196"
       - rxnFrom: "Recon3D"
-      - eccodes: "4.2.1.17"
       - references: "PMID:12829805"
+      - eccodes: "1.1.1.270"
       - subsystem: "Cholesterol metabolism"
       - confidence_score: 0
     - !!omap
@@ -182564,42 +182571,7 @@
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000052802"
       - rxnFrom: "Recon3D"
-      - eccodes: "4.2.1.17"
-      - subsystem: "Cholesterol metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR00117"
-      - name: "C-4 Methyl Sterol Oxidase"
-      - metabolites: !!omap
-          - MAM00809r: -1
-          - MAM01596r: 1
-          - MAM02039r: 1
-          - MAM02554r: -1
-          - MAM02555r: 1
-          - MAM02630r: -1
-          - MAM04082r: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000147383"
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.1.1.170"
-      - subsystem: "Cholesterol metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR00118"
-      - name: "C-4 Methyl Sterol Oxidase"
-      - metabolites: !!omap
-          - MAM00809r: -1
-          - MAM01596r: 1
-          - MAM02039r: 1
-          - MAM02552r: -1
-          - MAM02553r: 1
-          - MAM02630r: -1
-          - MAM04082r: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000052802 or ENSG00000147383"
-      - rxnFrom: "Recon3D"
+      - eccodes: "1.14.18.9"
       - subsystem: "Cholesterol metabolism"
       - confidence_score: 0
     - !!omap
@@ -189354,30 +189326,15 @@
       - metabolites: !!omap
           - MAM00809r: -1
           - MAM00968r: 1
-          - MAM02039r: -3
-          - MAM02554r: -1
-          - MAM02555r: 1
+          - MAM02039r: -1
+          - MAM02554r: 1
+          - MAM02555r: -1
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000132196"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.270"
       - references: "PMID:10544267;PMID:12732193;PMID:12829805"
-      - subsystem: "Cholesterol metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR02302"
-      - name: "Biosynthesis of Steroids Enzyme Catalyzed"
-      - metabolites: !!omap
-          - MAM00968r: -1
-          - MAM01596r: 1
-          - MAM02039r: 6
-          - MAM02040r: -2
-          - MAM03158r: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - references: "PMID:11108725"
       - subsystem: "Cholesterol metabolism"
       - confidence_score: 0
     - !!omap
@@ -249306,6 +249263,43 @@
       - rxnFrom: "HumanGEM"
       - references: "PMID:18365245"
       - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20217"
+      - name: "methylsterol monooxygenase (4alpha-methylzymosterol)"
+      - metabolites: !!omap
+          - MAM00955r: 1
+          - MAM00968r: -1
+          - MAM02039r: -3
+          - MAM02040r: 4
+          - MAM02554r: 3
+          - MAM02555r: -3
+          - MAM02630r: -3
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000052802"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "1.14.18.9"
+      - references: "PMID:21285510;PMID:28673550"
+      - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20218"
+      - name: "sterol-4alpha-carboxylate 3-dehydrogenase (4alpha-carboxyzymosterol)"
+      - metabolites: !!omap
+          - MAM00955r: -1
+          - MAM01596r: 1
+          - MAM02039r: 1
+          - MAM02554r: -1
+          - MAM02555r: 1
+          - MAM04082r: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000147383"
+      - rxnFrom: "HumanGEM"
+      - eccodes: "1.1.1.170"
+      - references: "PMID:14506130"
+      - subsystem: "Cholesterol biosynthesis 1 (Bloch pathway)"
       - confidence_score: 0
 - genes:
     - !!omap
