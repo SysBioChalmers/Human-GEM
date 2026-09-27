@@ -15534,27 +15534,6 @@
       - charge: -2
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM01391c"
-      - name: "beta-GalNAc-globoside"
-      - compartment: "c"
-      - formula: "C52H92N3O27RCO"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM01391g"
-      - name: "beta-GalNAc-globoside"
-      - compartment: "g"
-      - formula: "C52H92N3O27RCO"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM01391l"
-      - name: "beta-GalNAc-globoside"
-      - compartment: "l"
-      - formula: "C52H92N3O27RCO"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM01393c"
       - name: "betaine"
       - compartment: "c"
@@ -114272,35 +114251,6 @@
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08194"
-      - name: "UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (globoside)"
-      - metabolites: !!omap
-          - MAM01391g: 1
-          - MAM01959g: -1
-          - MAM02040g: 1
-          - MAM02525g: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000179913"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.1.-"
-      - subsystem: "Sphingolipid metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR08197"
-      - name: "beta-GalNAc-globoside to globoside conversion"
-      - metabolites: !!omap
-          - MAM01391l: -1
-          - MAM01959l: 1
-          - MAM02039l: -1
-          - MAM03106l: -1
-          - MAM03110l: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Sphingolipid metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR08198"
       - name: "globoside alpha-N-acetylgalactosaminyltransferase (globoside)"
       - metabolites: !!omap
@@ -114322,12 +114272,12 @@
       - metabolites: !!omap
           - MAM01324l: -1
           - MAM01959l: 1
-          - MAM02039l: -1
-          - MAM03106l: -1
-          - MAM03110l: 1
+          - MAM02040l: -1
+          - MAM02525l: 1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000198951"
+      - references: "PMID:1418679"
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.2.1.49"
       - subsystem: "Sphingolipid metabolism"
@@ -120121,28 +120071,28 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01332"
-      - name: "prostaglandin J2 hydrolysis"
+      - name: "prostaglandin D2 dehydration (prostaglandin J2)"
       - metabolites: !!omap
-          - MAM02040c: -1
-          - MAM02783c: 1
-          - MAM02796c: -1
-      - lower_bound: -1000
+          - MAM02040c: 1
+          - MAM02783c: -1
+          - MAM02796c: 1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:9755286;PMID:10200320;PMID:10200320;PMID:11786541;PMID:8521498;PMID:8521498;PMID:11786541"
+      - references: "PMID:6578214;PMID:11786541"
       - subsystem: "Prostaglandin biosynthesis"
       - confidence_score: 0
     - !!omap
       - id: "MAR01333"
-      - name: "prostaglandin J2 hydrolysis"
+      - name: "prostaglandin D2 dehydration (prostaglandin J2)"
       - metabolites: !!omap
-          - MAM02040r: -1
-          - MAM02783r: 1
-          - MAM02796r: -1
-      - lower_bound: -1000
+          - MAM02040r: 1
+          - MAM02783r: -1
+          - MAM02796r: 1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:9755286;PMID:10200320;PMID:10200320;PMID:11786541;PMID:8521498;PMID:8521498;PMID:11786541"
+      - references: "PMID:6578214;PMID:11786541"
       - subsystem: "Prostaglandin biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -120160,15 +120110,15 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR01335"
-      - name: "delta-12-prostaglandin J2 hydrolysis"
+      - name: "prostaglandin D2 dehydration (delta-12-prostaglandin J2)"
       - metabolites: !!omap
-          - MAM01662r: -1
-          - MAM02040r: -1
-          - MAM02783r: 1
-      - lower_bound: -1000
+          - MAM01662r: 1
+          - MAM02040r: 1
+          - MAM02783r: -1
+      - lower_bound: 0
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
-      - references: "PMID:9755286"
+      - references: "PMID:6578214;PMID:11786541"
       - subsystem: "Prostaglandin biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -125382,25 +125332,6 @@
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
-      - id: "MAR01604"
-      - name: "cytochrome P450 (5beta-cholestan-3alpha,7alpha,12alpha-triol)"
-      - metabolites: !!omap
-          - MAM01078c: -1
-          - MAM01090c: 1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.15.15"
-      - references: "PMID:1591235;PMID:271969;PMID:4026854;PMID:7077149"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR01605"
       - name: "cytochrome P450 (5beta-cholestan-3alpha,7alpha,12alpha-triol)"
       - metabolites: !!omap
@@ -125469,23 +125400,6 @@
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
       - references: "PMID:1591235;PMID:5723340;PMID:5914340;PMID:1708392;PMID:11412116"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01613"
-      - name: "cytochrome P450 (3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-26-al)"
-      - metabolites: !!omap
-          - MAM00751m: -1
-          - MAM00752m: 1
-          - MAM02040m: 1
-          - MAM02552m: 1
-          - MAM02553m: -1
-          - MAM02630m: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.15.15"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -127093,39 +127007,6 @@
       - gene_reaction_rule: "ENSG00000099377"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.181"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01786"
-      - name: "cholesterol 26-hydroxylase"
-      - metabolites: !!omap
-          - MAM00623c: 1
-          - MAM01450c: -1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.99.38"
-      - references: "PMID:9852097"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR01787"
-      - name: "26-hydroxycholesterol oxidation"
-      - metabolites: !!omap
-          - MAM00623r: -1
-          - MAM01182r: 1
-          - MAM02039r: 1
-          - MAM02552r: -1
-          - MAM02553r: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -172569,17 +172450,6 @@
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08196"
-      - name: "transport of beta-GalNAc-globoside (cytosol to lysosome)"
-      - metabolites: !!omap
-          - MAM01391c: -1
-          - MAM01391l: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR08200"
       - name: "transport of alpha-GalNAc-globoside (cytosol to lysosome)"
       - metabolites: !!omap
@@ -174145,17 +174015,6 @@
       - metabolites: !!omap
           - MAM02525c: -1
           - MAM02525g: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "HMRdatabase"
-      - subsystem: "Transport reactions"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR08195"
-      - name: "transport of beta-GalNAc-globoside (cytosol to Golgi apparatus)"
-      - metabolites: !!omap
-          - MAM01391c: -1
-          - MAM01391g: 1
       - lower_bound: -1000
       - upper_bound: 1000
       - rxnFrom: "HMRdatabase"
@@ -189065,23 +188924,6 @@
       - subsystem: "Fatty acid oxidation"
       - confidence_score: 0
     - !!omap
-      - id: "MAR02184"
-      - name: "Cholest-5-Ene-3Beta, 7Alpha-Diol:NAD+ 3-Oxidoreductase Bile Acid Biosynthesis"
-      - metabolites: !!omap
-          - MAM00619r: -1
-          - MAM01182r: 1
-          - MAM02039r: 1
-          - MAM02554r: -1
-          - MAM02555r: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000099377"
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.1.1.181"
-      - references: "PMID:12679481"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR02186"
       - name: "alkaline phosphatase, biomineralization associated"
       - metabolites: !!omap
@@ -191728,23 +191570,6 @@
       - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
-      - id: "MAR02881"
-      - name: "Steroid Delta-Isomerase"
-      - metabolites: !!omap
-          - MAM00592m: -1
-          - MAM01182m: 1
-          - MAM02039m: 1
-          - MAM02552m: -1
-          - MAM02553m: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000203857 or ENSG00000203859"
-      - rxnFrom: "Recon3D"
-      - eccodes: "5.3.3.1"
-      - references: "PMID:10599696;PMID:11067870;PMID:11454857;PMID:1401999"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR02883"
       - name: "N(1)-acetylpolyamine oxidase (5beta-cholestane-3alpha,7alpha,27-triol)"
       - metabolites: !!omap
@@ -192921,40 +192746,6 @@
       - subsystem: "Miscellaneous"
       - confidence_score: 0
     - !!omap
-      - id: "MAR03210"
-      - name: "3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al oxidation"
-      - metabolites: !!omap
-          - MAM00751c: -1
-          - MAM00752c: 1
-          - MAM02039c: 2
-          - MAM02040c: -1
-          - MAM02554c: -1
-          - MAM02555c: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - references: "PMID:9210654;PMID:9660774"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR03214"
-      - name: "cytochrome P450 (3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-27-al)"
-      - metabolites: !!omap
-          - MAM00751m: -1
-          - MAM00752m: 1
-          - MAM02039m: 2
-          - MAM02040m: -1
-          - MAM02554m: -1
-          - MAM02555m: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000135929"
-      - rxnFrom: "Recon3D"
-      - eccodes: "1.14.15.15"
-      - references: "PMID:9210654;PMID:9660774"
-      - subsystem: "Bile acid biosynthesis"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR03216"
       - name: "methionine synthase (cholest-5-ene-3beta,7alpha,27-triol)"
       - metabolites: !!omap
@@ -193101,21 +192892,6 @@
       - eccodes: "2.3.1.65"
       - references: "PMID:10049998"
       - subsystem: "Steroid metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR03259"
-      - name: "N-acyl-aliphatic-L-amino acid amidohydrolase (26-hydroxycholesterol)"
-      - metabolites: !!omap
-          - MAM00623m: -1
-          - MAM01182m: 1
-          - MAM02039m: 1
-          - MAM02552m: -1
-          - MAM02553m: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - rxnFrom: "Recon3D"
-      - eccodes: "3.5.1.14"
-      - subsystem: "Bile acid biosynthesis"
       - confidence_score: 0
     - !!omap
       - id: "MAR03261"
@@ -226868,14 +226644,17 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR11733"
-      - name: "Transport of (S)-2-hydroxyglutarate, extracellular"
+      - name: "transport of (S)-2-hydroxyglutarate and estrone 3-sulfate (cytosol to extracellular)"
       - metabolites: !!omap
+          - MAM01789c: 1
+          - MAM01789e: -1
           - MAM03188c: -1
           - MAM03188e: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - gene_reaction_rule: "ENSG00000168065"
       - rxnFrom: "Recon3D"
-      - references: "PMID:16573641"
+      - references: "PMID:18365245"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
