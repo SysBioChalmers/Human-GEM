@@ -249879,6 +249879,8 @@
       - eccodes: "1.14.-.-"
       - references: "PMID:11911845"
       - subsystem: "Retinol metabolism"
+      - confidence_score: 0
+    - !!omap
       - id: "MAR20195"
       - name: "Transport of 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen (Cytosol to Extracellular)"
       - metabolites: !!omap
