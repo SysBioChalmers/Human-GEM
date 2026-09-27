@@ -1,1 +1,7 @@
 entry,scope,key,first_line,duplicate_line
+MAR20200,field,id,249866,249883
+MAR20200,field,lower_bound,249876,249888
+MAR20200,field,metabolites,249875,249887
+MAR20200,field,name,249867,249884
+MAR20200,field,subsystem,249882,249890
+MAR20200,field,upper_bound,249877,249889
