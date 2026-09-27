@@ -2572,6 +2572,13 @@
       - charge: -1
       - metFrom: "HMRdatabase"
     - !!omap
+      - id: "MAM00180e"
+      - name: "(S)-dihydroorotate"
+      - compartment: "e"
+      - formula: "C5H5N2O4"
+      - charge: -1
+      - metFrom: "HMRdatabase"
+    - !!omap
       - id: "MAM00181m"
       - name: "(S)-hydroxydecanoyl-CoA"
       - compartment: "m"
@@ -2847,7 +2854,7 @@
     - !!omap
       - id: "MAM00208m"
       - name: "[protein]-N6-(dihydrolipoyl)lysine"
-      - compartment: "c"
+      - compartment: "m"
       - formula: "C1375H2187N381O420S6"
       - charge: 0
       - metFrom: "HMRdatabase"
@@ -3049,6 +3056,13 @@
       - id: "MAM00232c"
       - name: "1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen"
       - compartment: "c"
+      - formula: "C19H34N3O13R2"
+      - charge: 1
+      - metFrom: "HMRdatabase"
+    - !!omap
+      - id: "MAM00232e"
+      - name: "1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen"
+      - compartment: "e"
       - formula: "C19H34N3O13R2"
       - charge: 1
       - metFrom: "HMRdatabase"
@@ -33252,13 +33266,6 @@
       - charge: 1
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM02768c"
-      - name: "procollagen-L-lysine"
-      - compartment: "c"
-      - formula: "C7H14N3O2R2"
-      - charge: 1
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM02769c"
       - name: "progesterone"
       - compartment: "c"
@@ -58466,7 +58473,7 @@
       - formula: "C16H33NO2"
       - charge: 0
     - !!omap
-      - id: "MAM20076n"
+      - id: "MAM20076c"
       - name: "N-hexadecanoylsphing-4-enine"
       - compartment: "c"
       - formula: "C34H67NO3"
@@ -141567,23 +141574,6 @@
       - gene_reaction_rule: "ENSG00000122824 or ENSG00000173598 or ENSG00000196368 or ENSG00000272325"
       - rxnFrom: "HMRdatabase"
       - eccodes: "3.6.1.52"
-      - subsystem: "Isolated"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR09553"
-      - name: "procollagen-lysine 5-dioxygenase (AKG)"
-      - metabolites: !!omap
-          - MAM01306c: -1
-          - MAM01596c: 1
-          - MAM02630c: -1
-          - MAM02767c: 1
-          - MAM02768c: -1
-          - MAM02943c: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000083444 or ENSG00000106397 or ENSG00000152952"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.11.4"
       - subsystem: "Isolated"
       - confidence_score: 0
     - !!omap
@@ -248412,10 +248402,10 @@
           - MAM02040c: -1
           - MAM02674c: 1
           - MAM02929c: 1
-          - MAM20076n: -1
+          - MAM20076c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138744"
+      - gene_reaction_rule: "ENSG00000104763 or ENSG00000138744 or ENSG00000177076 or ENSG00000188611"
       - eccodes: "3.5.1.23"
       - subsystem: "Fatty acid metabolism"
       - confidence_score: 0
@@ -248429,7 +248419,7 @@
           - MAM20075c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138744"
+      - gene_reaction_rule: "ENSG00000104763 or ENSG00000138744 or ENSG00000177076 or ENSG00000188611"
       - eccodes: "3.5.1.23"
       - subsystem: "Fatty acid metabolism"
       - confidence_score: 0
@@ -249889,6 +249879,43 @@
       - eccodes: "1.14.-.-"
       - references: "PMID:11911845"
       - subsystem: "Retinol metabolism"
+      - id: "MAR20195"
+      - name: "Transport of 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen (Cytosol to Extracellular)"
+      - metabolites: !!omap
+          - MAM00232c: -1
+          - MAM00232e: 1
+      - lower_bound: 0
+      - upper_bound: 1000
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20196"
+      - name: "Exchange of 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen"
+      - metabolites: !!omap
+          - MAM00232e: -1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - subsystem: "Exchange/demand reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20201"
+      - name: "(S)-dihydroorotate transport, cytosol to extracellular"
+      - metabolites: !!omap
+          - MAM00180c: -1
+          - MAM00180e: 1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - references: "PMID:30643150"
+      - subsystem: "Transport reactions"
+      - confidence_score: 0
+    - !!omap
+      - id: "MAR20202"
+      - name: "Exchange of (S)-dihydroorotate"
+      - metabolites: !!omap
+          - MAM00180e: -1
+      - lower_bound: -1000
+      - upper_bound: 1000
+      - subsystem: "Exchange/demand reactions"
       - confidence_score: 0
 - genes:
     - !!omap
