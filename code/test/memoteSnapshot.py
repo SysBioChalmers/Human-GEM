@@ -49,6 +49,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from annotateGEM import annotate_gem
 from raven_toolbox.io import read_yaml_model
 
+import qcStatus
+
 MODEL_FILE = "model/Human-GEM.yml"
 MODEL_DIR = "model"                 # holds the reactions/metabolites/genes TSV tables
 RESULT_JSON = "memote_result.json"  # repo root -> uploaded as artifact, not committed
@@ -117,15 +119,23 @@ def _section_rows(scored: dict) -> list[tuple[str, float]]:
 
 
 def _test_metric(scored: dict, test_id: str) -> float | None:
-    """The 0-1 metric of a single MEMOTE test (parametrised tests are averaged)."""
+    """The 0-1 score of a single MEMOTE test, or None if it was skipped or has none.
+
+    A test's metric measures failure (e.g. the fraction of unbalanced reactions, or
+    1 for an inconsistent model); MEMOTE scores it as 1 - metric, averaging the
+    parameters of a parametrised test. A skipped test keeps a default metric of 1,
+    which is not a result, so it is left out.
+    """
     test = (scored.get("tests") or {}).get(test_id)
     if not isinstance(test, dict):
         return None
-    metric = test.get("metric")
+    result, metric = test.get("result"), test.get("metric")
     if isinstance(metric, (int, float)):
-        return float(metric)
+        return None if result == "skipped" else 1.0 - float(metric)
     if isinstance(metric, dict):
-        values = [v for v in metric.values() if isinstance(v, (int, float))]
+        outcome = result if isinstance(result, dict) else {}
+        values = [1.0 - v for k, v in metric.items()
+                  if isinstance(v, (int, float)) and outcome.get(k) != "skipped"]
         return sum(values) / len(values) if values else None
     return None
 
@@ -210,10 +220,13 @@ def main() -> int:
     skip = SLOW_TESTS if subset else None
     kind = "core subset" if subset else "full suite"
 
-    # Use Gurobi when a full licence is configured; the genome-scale consistency
-    # and FVA MILPs are impractical with GLPK.
-    if os.environ.get("GRB_LICENSE_FILE"):
+    # The full suite's genome-scale consistency and FVA MILPs are impractical with
+    # GLPK, so it uses Gurobi when a licence is configured. The core subset skips
+    # those tests and always uses GLPK, so it never takes a Gurobi licence session.
+    if not subset and os.environ.get("GRB_LICENSE_FILE"):
         cobra.Configuration().solver = "gurobi"
+    else:
+        cobra.Configuration().solver = "glpk"
 
     # memote reads an SBML model, so convert the canonical YAML model to a
     # temporary SBML file first (memote fails on a .yml directly). Load via
@@ -258,7 +271,7 @@ def main() -> int:
     print("Scored MEMOTE result top-level keys:", sorted(scored.keys()), flush=True)
 
     total = _total_score(scored)
-    lines = [f"Mode: {kind}."]
+    lines = [f"Mode: {kind}.", "", f"Model version: {qcStatus.model_version()}."]
     if subset:
         lines.append(f"Skipped (slow) tests: {', '.join(SLOW_TESTS)}.")
     lines.append("")
