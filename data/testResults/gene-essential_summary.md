@@ -11,13 +11,8 @@
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **2** gene(s) directly affected plus **405** more that share a metabolite with one of them.
+Checked **1** gene(s) directly affected plus **334** more that share a metabolite with one of them.
 
-**Growth effect changed** (vs Hart 2015):
-- GPT2: 3/5 lines, knockout no longer blocks growth -- :sparkles: correct
+**No change:** 335 gene(s).
 
-**Likely noise** (16 gene(s), <3/5 lines): AKR1A1, ALDH4A1, ASRGL1, BCKDHA, BCKDHB, CA5B, DECR2, FPGS, GOT2, HOGA1, MPC1, MPC2, NAGS, PC, SHMT2, SLC25A2.
-
-**No change:** 390 gene(s).
-
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/418-modifymodel-curations/data/testResults/gene-essential-diff.csv).
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/gene-essential-diff.csv).
