@@ -55668,8 +55668,8 @@
       - id: "MAM03516c"
       - name: "cerivastatin-M22"
       - compartment: "c"
-      - formula: "C26H31FNO4"
-      - charge: -1
+      - formula: "C25H30FNO4"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03514r"
@@ -55682,22 +55682,22 @@
       - id: "MAM03523r"
       - name: "cerivastatin-M1-glucuronide"
       - compartment: "r"
-      - formula: "C31H38FNO11"
-      - charge: -2
+      - formula: "C31H39FNO11"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03516r"
       - name: "cerivastatin-M22"
       - compartment: "r"
-      - formula: "C26H31FNO4"
-      - charge: -1
+      - formula: "C25H30FNO4"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03524r"
       - name: "cerivastatin-M23-glucuronide"
       - compartment: "r"
-      - formula: "C32H40FNO12"
-      - charge: -2
+      - formula: "C32H41FNO12"
+      - charge: -1
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03517c"
@@ -55731,8 +55731,8 @@
       - id: "MAM03519r"
       - name: "cerivastatin-M31"
       - compartment: "r"
-      - formula: "C27H33FNO5"
-      - charge: -1
+      - formula: "C26H32FNO5"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03521c"
@@ -55780,8 +55780,8 @@
       - id: "MAM03519c"
       - name: "cerivastatin-M31"
       - compartment: "c"
-      - formula: "C27H33FNO5"
-      - charge: -1
+      - formula: "C26H32FNO5"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03579x"
@@ -95963,7 +95963,6 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000110090 or ENSG00000169169 or ENSG00000205560"
-      - references: "PMID:10856709;PMID:9063439;PMID:11257506"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.21"
       - subsystem: "Carnitine shuttle (cytosolic)"
@@ -97144,7 +97143,6 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000095321 or ENSG00000157184"
-      - references: "PMID:10856709;PMID:9063439;PMID:11257506"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.3.1.7"
       - subsystem: "Carnitine shuttle (mitochondrial)"
@@ -113555,22 +113553,6 @@
       - subsystem: "Sphingolipid metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR00766"
-      - name: "beta-galactosidase (galactose)"
-      - metabolites: !!omap
-          - MAM01910e: -1
-          - MAM01972e: -1
-          - MAM02040e: 1
-          - MAM02328e: 1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115850 or ENSG00000163521 or ENSG00000170266"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "3.2.1.23"
-      - references: "PMID:12133002;PMID:4475632;PMID:5810070"
-      - subsystem: "Sphingolipid metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR00767"
       - name: "3-sn-phosphatidate phosphohydrolase"
       - metabolites: !!omap
@@ -129148,7 +129130,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000171124 or ENSG00000130383"
-      - references: "PMID:12424536;PMID:12493760;PMID:1977660"
+      - references: "PMID:12493760;PMID:1977660;PMID:7721776"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.4.1.65"
       - subsystem: "Blood group biosynthesis"
@@ -211640,7 +211622,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10532"
-      - name: "Exchange of Asparaginyl-Alanyl-Arginine"
+      - name: "Exchange of Aspartyl-Alanyl-Arginine"
       - metabolites: !!omap
           - MAM03464e: -1
       - lower_bound: -1000
@@ -211930,7 +211912,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10561"
-      - name: "Exchange of Glutaminyl-Arginyl-Leucine"
+      - name: "Exchange of Glutamyl-Arginyl-Leucine"
       - metabolites: !!omap
           - MAM03606e: -1
       - lower_bound: -1000
@@ -211940,7 +211922,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR10562"
-      - name: "Exchange of Glutaminyl-Asparaginyl-Leucine"
+      - name: "Exchange of Glutamyl-Asparaginyl-Leucine"
       - metabolites: !!omap
           - MAM03607e: -1
       - lower_bound: -1000
@@ -238088,12 +238070,10 @@
       - rxnNotes: "DOI:10.1007/978-1-4419-0840-7_2"
     - !!omap
       - id: "MAR12538"
-      - name: "de-lactonization of cerivastatin-M22 to cerivastatin-M1 in hepatocytes"
+      - name: "hydrolysis of cerivastatin-M22 (lactone) to M1"
       - metabolites: !!omap
-          - MAM02039c: -1
+          - MAM02039c: 1
           - MAM02040c: -1
-          - MAM02871c: -1
-          - MAM02877c: 1
           - MAM03515c: 1
           - MAM03516c: -1
       - lower_bound: 0
@@ -238130,6 +238110,7 @@
       - name: "beta-glucuronidase of cerivastatin-M1-glucuronide to M1 form"
       - metabolites: !!omap
           - MAM01973r: 1
+          - MAM02039r: 1
           - MAM02040r: -1
           - MAM03515r: 1
           - MAM03523r: -1
@@ -238161,12 +238142,9 @@
       - rxnNotes: "https://link.springer.com/chapter/10.1007/978-1-4419-0840-7_2"
     - !!omap
       - id: "MAR12542"
-      - name: "spontaneous conversion of glucuronide to cerivastatin-M22 in hepatocytes"
+      - name: "spontaneous lactonisation of cerivastatin-M1 acyl glucuronide"
       - metabolites: !!omap
           - MAM01973r: 1
-          - MAM02039r: 1
-          - MAM02871r: 1
-          - MAM02877r: -1
           - MAM03516r: 1
           - MAM03523r: -1
       - lower_bound: 0
@@ -238199,6 +238177,7 @@
       - name: "beta-glucuronidase of cerivastatin-M23-glucuronide to M23 form"
       - metabolites: !!omap
           - MAM01973r: 1
+          - MAM02039r: 1
           - MAM02040r: -1
           - MAM03517r: 1
           - MAM03524r: -1
@@ -238273,12 +238252,9 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12549"
-      - name: "spontaneous conversion of glucuronide to cerivastatin-M31 in hepatocytes"
+      - name: "spontaneous lactonisation of cerivastatin-M23 acyl glucuronide"
       - metabolites: !!omap
           - MAM01973r: 1
-          - MAM02039r: 1
-          - MAM02871r: 1
-          - MAM02877r: -1
           - MAM03519r: 1
           - MAM03524r: -1
       - lower_bound: 0
@@ -238396,7 +238372,6 @@
       - id: "MAR12557"
       - name: "glucuronidation of cerivastatin-M1"
       - metabolites: !!omap
-          - MAM02039r: 1
           - MAM03106r: 1
           - MAM03109r: -1
           - MAM03515r: -1
@@ -238413,7 +238388,6 @@
       - id: "MAR12558"
       - name: "glucuronidation of cerivastatin-M23"
       - metabolites: !!omap
-          - MAM02039r: 1
           - MAM03106r: 1
           - MAM03109r: -1
           - MAM03517r: -1
@@ -238460,12 +238434,10 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR12561"
-      - name: "de-lactonization of cerivastatin-M31 to cerivastatin-M23 in hepatocytes"
+      - name: "hydrolysis of cerivastatin-M31 (lactone) to M23"
       - metabolites: !!omap
-          - MAM02039c: -1
+          - MAM02039c: 1
           - MAM02040c: -1
-          - MAM02871c: -1
-          - MAM02877c: 1
           - MAM03517c: 1
           - MAM03519c: -1
       - lower_bound: 0
