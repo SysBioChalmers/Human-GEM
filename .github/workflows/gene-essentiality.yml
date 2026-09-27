@@ -534,17 +534,30 @@ jobs:
               + `${process.env.DIFF_RESULTS}\n\n`
               + `The unscoped, every-gene matrix behind the table above is committed to `
               + `[gene-essential.csv](${csvUrl}).\n\n`;
-            body += `> _Note: in the case of multiple test runs, this post is edited._`;
+            body += `> _Note: each run posts its results in place of its own start notice; earlier results link here._`;
             const { owner, repo } = context.repo;
             const issue_number = Number(process.env.ISSUE_NUMBER);
             const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
-            // Prefer a previous results comment (re-runs), else overwrite the "/run"
-            // comment that started this run (its "Started ..." notice), else post anew.
-            const existing = comments.find(c => c.body && c.body.includes(marker));
-            const comment_id = existing ? existing.id
-              : (process.env.COMMENT_ID ? Number(process.env.COMMENT_ID) : null);
+            // The results replace the comment that announced this run: the "/run" comment
+            // passed in by pr-command.yml, or else the latest "Started **gene-essentiality**"
+            // notice (older pr-command.yml versions post that as a separate comment and pass
+            // no id). Without either, the latest results comment is edited, else one is posted.
+            const notices = comments.filter(c => c.body && c.body.includes('Started **gene-essentiality**'));
+            const previous = comments.filter(c => c.body && c.body.includes(marker));
+            let comment_id = process.env.COMMENT_ID ? Number(process.env.COMMENT_ID)
+              : notices.length ? notices[notices.length - 1].id
+              : previous.length ? previous[previous.length - 1].id
+              : null;
+            let url;
             if (comment_id) {
-              await github.rest.issues.updateComment({ owner, repo, comment_id, body });
+              url = (await github.rest.issues.updateComment({ owner, repo, comment_id, body })).data.html_url;
             } else {
-              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+              const created = await github.rest.issues.createComment({ owner, repo, issue_number, body });
+              comment_id = created.data.id;
+              url = created.data.html_url;
+            }
+            // Results of earlier runs point to these instead of keeping outdated tables.
+            for (const c of previous.filter(c => c.id !== comment_id)) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: c.id,
+                body: `Gene essentiality results of an earlier run; see the [latest results](${url}).` });
             }
