@@ -12,8 +12,9 @@ Checks split into two kinds:
       - reactions with no metabolites;
       - the model and its annotation tables (reactions.tsv / metabolites.tsv /
         genes.tsv) disagree, or a deprecated identifier is used;
-      - the model cannot produce biomass under its default constraints (the
-        blocking biomass precursors are written out so it can be fixed).
+      - the model cannot produce biomass on a defined medium (Ham's medium from the
+        GR metabolic task, each nutrient's uptake capped; the blocking biomass
+        precursors are written out so it can be fixed).
   * Reports (do not fail): quality metrics tracked with a delta versus the
       target branch.
       - metabolites missing a formula or a charge;
@@ -64,6 +65,18 @@ GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
 BASE_MODEL_DIR = os.environ.get("BASE_MODEL_DIR", "")
 
 GROWTH_TOLERANCE = 1e-6
+
+# Growth is tested on a defined medium rather than the model's default bounds, which
+# leave most uptakes open at 1000: there the value mostly reflects which uptake and
+# secretion routes exist, and one new route can shift it a lot. The medium is Ham's
+# medium as defined by the GR (growth) essential metabolic task; every other uptake is
+# closed and secretion stays open. Each nutrient's uptake is capped at
+# MEDIUM_UPTAKE_CAP, so growth is limited by the nutrients, not by a flux bound;
+# the value is comparable between commits, not a physiological growth rate.
+MEDIUM_TASKS_FILE = "data/metabolicTasks/metabolicTasks_Essential.txt"
+MEDIUM_TASK_ID = "GR"
+MEDIUM_UPTAKE_CAP = 1.0
+MEDIUM_UNCAPPED = {"O2", "H2O"}
 
 # Pseudo-metabolites (generic class sinks and biomass pools) intrinsically
 # have no molecular formula, so they are excluded from the completeness report.
@@ -333,8 +346,50 @@ def check_reaction_sanity(model: cobra.Model) -> int:
 # --------------------------------------------------------------------------- #
 # Gate: growth, with the blocking biomass precursors when it fails
 # --------------------------------------------------------------------------- #
+def _medium_inputs(path: str = MEDIUM_TASKS_FILE, task_id: str = MEDIUM_TASK_ID) -> list[str]:
+    """The IN metabolites (``name[compartment]``) of one task in a RAVEN task list."""
+    with open(path, newline="", encoding="utf-8") as fh:
+        rows = list(csv.reader(fh, delimiter="\t"))
+    header = rows[0]
+    id_col, in_col = header.index("ID"), header.index("IN")
+    inputs, in_task = [], False
+    for row in rows[1:]:
+        row = row + [""] * (len(header) - len(row))
+        if row[id_col].strip():
+            if in_task:
+                break
+            in_task = row[id_col].strip() == task_id
+        if in_task and row[in_col].strip():
+            inputs.append(row[in_col].strip())
+    return inputs
+
+
+def apply_growth_medium(model: cobra.Model) -> list[str]:
+    """Close every uptake, then open the medium's inputs (capped, see above).
+    Call inside ``with model:``. Returns the inputs no exchange reaction matched."""
+    for rxn in model.boundary:
+        rxn.lower_bound = 0
+    unresolved = []
+    for token in _medium_inputs():
+        name, compartment = token.rsplit("[", 1)
+        compartment = compartment.rstrip("]")
+        exchanges = [rxn for met in model.metabolites
+                     if met.name == name and met.compartment == compartment
+                     for rxn in met.reactions if rxn.boundary]
+        if not exchanges:
+            unresolved.append(token)
+        cap = 1000.0 if name in MEDIUM_UNCAPPED else MEDIUM_UPTAKE_CAP
+        for rxn in exchanges:
+            rxn.lower_bound = -cap
+    return unresolved
+
+
 def check_growth(model: cobra.Model) -> float:
-    value = model.slim_optimize()
+    with model:
+        unresolved = apply_growth_medium(model)
+        if unresolved:
+            print(f"::warning::Medium inputs without an exchange reaction: {', '.join(unresolved)}")
+        value = model.slim_optimize()
     return float(value) if value is not None else float("nan")
 
 
@@ -351,6 +406,7 @@ def write_growth_blockers(model: cobra.Model) -> list[str]:
         precursors = sorted({m.id for r in objective for m, c in r.metabolites.items() if c < 0})
         for met_id in precursors:
             with model:
+                apply_growth_medium(model)
                 met = model.metabolites.get_by_id(met_id)
                 demand = model.add_boundary(met, type="demand")
                 model.objective = demand
@@ -405,7 +461,7 @@ def main() -> int:
     qcStatus.set_status("growth", f"{growth:.6g}")
     if not grows:
         blockers = write_growth_blockers(model)
-        print(f"::error::Model cannot produce biomass under its default constraints "
+        print(f"::error::Model cannot produce biomass on the defined medium "
               f"({len(blockers)} blocked precursor(s); see {GROWTH_BLOCKERS_CSV}).")
         gate_failed = True
     else:
@@ -423,7 +479,7 @@ def main() -> int:
     print(f"Exact-duplicate reaction groups: {n_dup_rxn}")
     print(f"Unused metabolites / genes: {n_unused_met} / {n_unused_gene}")
     print(f"Removed identifiers not deprecated: {len(undeprecated)}")
-    print(f"Growth (max biomass, default constraints): {growth:.4g} "
+    print(f"Growth (max biomass, defined medium): {growth:.4g} "
           f"({'ok' if grows else 'NO GROWTH'})")
 
     return 1 if gate_failed else 0

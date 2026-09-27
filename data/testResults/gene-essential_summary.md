@@ -2,17 +2,22 @@
 
 | cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 0.374 | 131 | 0.3932 | 94 | 0.676 | 0.3416 | 0.1686 | 50 |
-| GBM | 0.2904 | 173 | 0.3274 | 124 | 0.6543 | 0.2906 | 0.1622 | 59 |
-| HCT116 | 0.3793 | 135 | 0.3744 | 105 | 0.6756 | 0.3418 | 0.1809 | 48 |
-| HELA | 0.3253 | 170 | 0.3214 | 138 | 0.6736 | 0.2812 | 0.1462 | 45 |
-| RPE1 | 0.2544 | 184 | 0.3056 | 127 | 0.6564 | 0.2575 | 0.1363 | 64 |
-| all |  |  |  |  | 0.6673 | 0.3023 | 0.1591 |  |
+| DLD1 | 0.3443 | 142 | 0.3792 | 99 | 0.6641 | 0.3217 | 0.1677 | 52 |
+| GBM | 0.3194 | 146 | 0.3554 | 105 | 0.6611 | 0.3059 | 0.1616 | 48 |
+| HCT116 | 0.3683 | 133 | 0.3706 | 106 | 0.6697 | 0.3326 | 0.1798 | 40 |
+| HELA | 0.3179 | 164 | 0.3176 | 135 | 0.6717 | 0.2774 | 0.1458 | 40 |
+| RPE1 | 0.2512 | 179 | 0.2982 | 132 | 0.6579 | 0.2537 | 0.1362 | 50 |
+| all |  |  |  |  | 0.6647 | 0.2982 | 0.1585 |  |
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **6** gene(s) directly affected plus **1269** more that share a metabolite with one of them.
+Checked **2** gene(s) directly affected plus **405** more that share a metabolite with one of them.
 
-**No change:** 1275 gene(s).
+**Growth effect changed** (vs Hart 2015):
+- GPT2: 3/5 lines, knockout no longer blocks growth -- :sparkles: correct
 
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/mar11479-ldhal6a/data/testResults/gene-essential-diff.csv).
+**Likely noise** (16 gene(s), <3/5 lines): AKR1A1, ALDH4A1, ASRGL1, BCKDHA, BCKDHB, CA5B, DECR2, FPGS, GOT2, HOGA1, MPC1, MPC2, NAGS, PC, SHMT2, SLC25A2.
+
+**No change:** 390 gene(s).
+
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/418-modifymodel-curations/data/testResults/gene-essential-diff.csv).
