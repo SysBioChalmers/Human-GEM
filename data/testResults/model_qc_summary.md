@@ -7,7 +7,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| [Duplicate `!!omap` keys](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#duplicate-omap-keys) | [6](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/qc_duplicate_keys.csv) | +6 | :x: |
+| [Duplicate `!!omap` keys](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#duplicate-omap-keys) | 0 | 0 | :white_check_mark: |
 | [Growth (biomass producible)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#growth-biomass-producible) | 1.9 | 0 | :white_check_mark: |
 | [Reactions with no metabolites](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
 | [Model / annotation-table inconsistencies](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#model--annotation-table-inconsistencies) | 0 | 0 | :white_check_mark: |
@@ -20,18 +20,18 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Unused genes](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#unused-genes) | 0 | 0 | :white_check_mark: |
 | [Malformed cross-references](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
 | [Cross-refs inconsistent across compartments](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#cross-refs-inconsistent-across-compartments) | [2](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/qc_annotation_issues.csv) | 0 | :warning: |
-| [Reactions flagged by MACAW dead-end test](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#reactions-flagged-by-macaw-dead-end-test) | [1122](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/macaw_results.tsv) | 0 | :warning: |
+| [Reactions flagged by MACAW dead-end test](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#reactions-flagged-by-macaw-dead-end-test) | [1118](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/macaw_results.tsv) | -4 | :sparkles: |
 | [Reactions flagged as MACAW duplicates](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#reactions-flagged-as-macaw-duplicates) | [342](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/macaw_results.tsv) | 0 | :warning: |
 | [Mass-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#mass-imbalanced-reactions) | [70](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/balance_results.csv) | 0 | :warning: |
-| [Charge-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#charge-imbalanced-reactions) | [198](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/balance_results.csv) | 0 | :warning: |
+| [Charge-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#charge-imbalanced-reactions) | [196](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/balance_results.csv) | -2 | :sparkles: |
 | [Structure vs formula/charge inconsistencies](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#structure-vs-formulacharge-inconsistencies) | [310](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/qc_structure_consistency.csv) | -5 | :sparkles: |
 
 ### Model file and metabolic tasks
 
 | Check | Result | |
 | --- | ---: | :---: |
-| [YAML round-trip (cobrapy)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#yaml-round-trip-cobrapy) | fail | :x: |
-| [YAML round-trip (RAVEN)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#yaml-round-trip-raven) | fail | :x: |
+| [YAML round-trip (cobrapy)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#yaml-round-trip-cobrapy) | pass | :white_check_mark: |
+| [YAML round-trip (RAVEN)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#yaml-round-trip-raven) | pass | :white_check_mark: |
 | [YAML lint](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#yaml-lint) | pass | :white_check_mark: |
 | [Essential metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#essential-metabolic-tasks) | 57 passed | :white_check_mark: |
 | [Verification metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/fix/retinoate-4hydroxy-13cis/data/testResults/README.md#verification-metabolic-tasks) | 21 passed | :white_check_mark: |
@@ -53,7 +53,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | Section | Test | Score |
 | --- | --- | ---: |
 | Consistency | Mass Balance | 99.3% |
-| Consistency | Charge Balance | 97.9% |
+| Consistency | Charge Balance | 98.0% |
 | Consistency | Metabolite Connectivity | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |
 | Annotation - Metabolites | Metabolite Annotations Per Database | 47.3% |
