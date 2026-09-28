@@ -59654,7 +59654,7 @@
       - gene_reaction_rule: "ENSG00000108479 or ENSG00000156958"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.1.6"
-      - references: "PMID:8908517"
+      - references: "PMID:12694189;PMID:7542884"
       - subsystem: "Galactose metabolism"
       - confidence_score: 0
     - !!omap
@@ -59670,7 +59670,7 @@
       - gene_reaction_rule: "ENSG00000213930"
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.7.12"
-      - references: "PMID:10993714"
+      - references: "PMID:22461411;PMID:27005423"
       - subsystem: "Galactose metabolism"
       - confidence_score: 0
     - !!omap
@@ -59850,9 +59850,10 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000169764"
+      - rxnNotes: "Minor side activity of UGP2: GALT is about 1000-fold more active toward galactose-1-phosphate in liver (PMID:15862277, mouse), and galactose-1-phosphate inhibits human UGP2 (Ki 0.47 mM, PMID:12626383)."
       - rxnFrom: "HMRdatabase"
       - eccodes: "2.7.7.10"
-      - references: "PMID:10799308"
+      - references: "PMID:10799308;PMID:12626383;PMID:15862277"
       - subsystem: "Galactose metabolism"
       - confidence_score: 0
     - !!omap
@@ -134632,10 +134633,10 @@
           - MAM20091c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868 or ENSG00000160870"
+      - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868 or ENSG00000160870 or ENSG00000095596"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:11911845"
+      - references: "PMID:11911845;PMID:29476041"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
@@ -134651,10 +134652,10 @@
           - MAM20091r: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868 or ENSG00000160870"
+      - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868 or ENSG00000160870 or ENSG00000095596"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:11911845"
+      - references: "PMID:11911845;PMID:29476041"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
@@ -134917,10 +134918,11 @@
           - MAM20090c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115 or ENSG00000160870"
+      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115 or ENSG00000160870 or ENSG00000138109 or ENSG00000197408 or ENSG00000165841 or ENSG00000106258 or ENSG00000095596"
+      - rxnNotes: "CYP1B1 and CYP4A11 had the lowest activities in a single-CYP screen (PMID:11911845) without later confirmation and are not included."
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:11911845;PMID:20421446"
+      - references: "PMID:11911845;PMID:20421446;PMID:25039756;PMID:29476041"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
@@ -134936,10 +134938,11 @@
           - MAM20090r: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115 or ENSG00000160870"
+      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115 or ENSG00000160870 or ENSG00000138109 or ENSG00000197408 or ENSG00000165841 or ENSG00000106258 or ENSG00000095596"
+      - rxnNotes: "CYP1B1 and CYP4A11 had the lowest activities in a single-CYP screen (PMID:11911845) without later confirmation and are not included."
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.-.-"
-      - references: "PMID:11911845;PMID:20421446"
+      - references: "PMID:11911845;PMID:20421446;PMID:25039756;PMID:29476041"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
     - !!omap
@@ -135302,6 +135305,8 @@
           - MAM01031c: 1
       - lower_bound: -1000
       - upper_bound: 1000
+      - rxnNotes: "The isomerisation is documented in rat in vivo (PMID:1599515); whether it occurs in human, or is an artefact of analysis, is not resolved (PMID:6120808)."
+      - references: "PMID:1599515;PMID:6120808"
       - rxnFrom: "HMRdatabase"
       - subsystem: "Retinol metabolism"
       - confidence_score: 0
@@ -249193,7 +249198,8 @@
           - MAM20090c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115"
+      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115 or ENSG00000106258 or ENSG00000165841 or ENSG00000197408 or ENSG00000138109"
+      - rxnNotes: "Single-isoform evidence: recombinant CYP3A4, CYP2C8, CYP2C19, CYP3A5, CYP2C9 and CYP2B6 form 4-oxo-13-cis-retinoate from 13-cis-retinoate through the 4-hydroxy intermediate (PMID:25039756). CYP3A7 has data for the 4-hydroxylation only (PMID:11911845)."
       - rxnFrom: "HumanGEM"
       - eccodes: "1.14.-.-"
       - references: "PMID:11911845;PMID:25039756"
@@ -249212,7 +249218,8 @@
           - MAM20090r: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115"
+      - gene_reaction_rule: "ENSG00000160868 or ENSG00000138115 or ENSG00000106258 or ENSG00000165841 or ENSG00000197408 or ENSG00000138109"
+      - rxnNotes: "Single-isoform evidence: recombinant CYP3A4, CYP2C8, CYP2C19, CYP3A5, CYP2C9 and CYP2B6 form 4-oxo-13-cis-retinoate from 13-cis-retinoate through the 4-hydroxy intermediate (PMID:25039756). CYP3A7 has data for the 4-hydroxylation only (PMID:11911845)."
       - rxnFrom: "HumanGEM"
       - eccodes: "1.14.-.-"
       - references: "PMID:11911845;PMID:25039756"
@@ -249232,6 +249239,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868"
+      - rxnNotes: "The isoform assignment rests on correlation with CYP activities in human liver microsomes (PMID:11911845); the only enzyme curated for this step (RHEA:75855) is CYP26C1, which is not in the model."
       - rxnFrom: "HumanGEM"
       - eccodes: "1.14.-.-"
       - references: "PMID:11911845"
@@ -249251,6 +249259,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000138109 or ENSG00000138115 or ENSG00000160868"
+      - rxnNotes: "The isoform assignment rests on correlation with CYP activities in human liver microsomes (PMID:11911845); the only enzyme curated for this step (RHEA:75855) is CYP26C1, which is not in the model."
       - rxnFrom: "HumanGEM"
       - eccodes: "1.14.-.-"
       - references: "PMID:11911845"
