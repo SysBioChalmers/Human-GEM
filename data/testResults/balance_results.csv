@@ -78,8 +78,6 @@ MAR01419,4-hydroperoxy-H4-neuroprostane to 4-hydroxy-E4-neuroprostane conversion
 MAR01427,13-hydroperoxy-H4-neuroprostane to 13-hydroxy-D4-neuroprostane conversion,,-2
 MAR01430,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-E4-neuroprostane conversion,,-2
 MAR01431,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-D4-neuroprostane conversion,,-2
-MAR01453,Hydroxypyruvate Reductase (NADH),,-2
-MAR01500,4alpha-methylzymosterol:NADP+ 3-oxidoreductase,,-4
 MAR01600,Peroxisomal Lumped Long Chain Fatty Acid Oxidation,,2
 MAR01932,Cholesterol:oxygen oxidoreductase (side-chain-cleaving),,-2
 MAR01934,"17alpha,20alpha-Dihydroxycholesterol:oxygen oxidoreductase (side-chain-cleaving)",,-4
@@ -106,8 +104,6 @@ MAR02099,"peroxidase (17beta-estradiol-2,3-semiquinone)",,1
 MAR02100,"peroxidase (17beta-estradiol-2,3-semiquinone)",,1
 MAR02126,stearoyl-CoA desaturase (ferrocytochrome B5),,-2
 MAR02128,stearoyl-CoA desaturase (ferrocytochrome B5),,-2
-MAR02301,Hydroxysteroid (17-Beta) Dehydrogenase 7,,-4
-MAR02302,Biosynthesis of Steroids Enzyme Catalyzed,,6
 MAR02313,Long-Chain-Fatty-Acid-Coa Ligase,,-8
 MAR02443,13(S)-HPODE to 13-oxy-radical-octadecadienoate conversion,,-2
 MAR02449,"12,13-epoxy-9-alkoxy-(10E)-octadecenoate hydrolysis",,-1

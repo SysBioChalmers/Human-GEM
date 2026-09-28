@@ -19,6 +19,7 @@ MAR07569,"hyaluronan synthase (hyaluronan biosynthesis, precursor 1)",ce,"hyalur
 MAR07807,Uptake of Arachidate,ce,ATP + CoA + eicosanoate --> AMP + eicosanoyl-CoA + PPi
 MAR08769,gamma-glutamyltransferase (alanine),ce,alanine + GSH --> (5-L-glutamyl)-L-amino acid + cys-gly
 MAR08770,gamma-glutamylcyclotransferase ((5-L-glutamyl)-L-amino acid),ce,(5-L-glutamyl)-L-amino acid --> 5-oxoproline + alanine
+MAR08892,H+/K+-exchanging ATPase,ce,ATP + H2O + K+ --> ADP + H+ + K+ + Pi
 MAR08983,Uptake of Octadecanoate (N-C18:0),ce,ATP + CoA + stearate --> AMP + PPi + stearoyl-CoA
 MAR08996,Uptake of Hexadecanoate,ce,ATP + CoA + myristic acid --> AMP + myristoyl-CoA + PPi
 MAR09870,Arachidonate (N-C18:1) Transport by FATP,ce,arachidonate + ATP + CoA --> AMP + arachidonoyl-CoA + PPi

@@ -29,7 +29,6 @@ MAM01674l,dephospho-CoA,protonation,C21H33N7O13P2S,-2,C21H35N7O13P2S,0,CC(C)(COP
 MAM01674m,dephospho-CoA,protonation,C21H33N7O13P2S,-2,C21H35N7O13P2S,0,CC(C)(COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1O)[C@@H](O)C(=O)NCCC(=O)NCCS
 MAM01966c,"glucose-1,6-bisphosphate",protonation,C6H11O12P2,-3,C6H14O12P2,0,O=P(O)(O)OC[C@H]1O[C@H](OP(=O)(O)O)[C@H](O)[C@@H](O)[C@@H]1O
 MAM01966e,"glucose-1,6-bisphosphate",protonation,C6H11O12P2,-3,C6H14O12P2,0,O=P(O)(O)OC[C@H]1O[C@H](OP(=O)(O)O)[C@H](O)[C@@H](O)[C@@H]1O
-MAM02143c,hydrobromic acid,protonation,Br,-1,HBr,0,Br
 MAM02151c,hydroxymethylbilane,protonation,C40H38N4O17,-8,C40H46N4O17,0,O=C(O)CCc1c[nH]c(Cc2[nH]c(Cc3[nH]c(Cc4[nH]c(CO)c(CC(=O)O)c4CCC(=O)O)c(CC(=O)O)c3CCC(=O)O)c(CC(=O)O)c2CCC(=O)O)c1CC(=O)O
 MAM02357c,lepidimoide,formula_error,X,0,C12H17NaO10,0,C[C@@H]1O[C@H](O)[C@H](O[C@H]2OC(C(=O)[O-])=C[C@H](O)[C@H]2O)[C@H](O)[C@H]1O.[Na+]
 MAM02357e,lepidimoide,formula_error,X,0,C12H17NaO10,0,C[C@@H]1O[C@H](O)[C@H](O[C@H]2OC(C(=O)[O-])=C[C@H](O)[C@H]2O)[C@H](O)[C@H]1O.[Na+]
