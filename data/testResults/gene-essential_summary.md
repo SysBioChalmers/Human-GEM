@@ -2,23 +2,22 @@
 
 | cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 0.3531 | 134 | 0.3774 | 99 | 0.669 | 0.3229 | 0.1666 | 44 |
-| GBM | 0.3161 | 148 | 0.3397 | 115 | 0.6575 | 0.295 | 0.1618 | 40 |
-| HCT116 | 0.3684 | 133 | 0.3663 | 109 | 0.6693 | 0.3292 | 0.1796 | 37 |
-| HELA | 0.3193 | 163 | 0.314 | 138 | 0.67 | 0.2734 | 0.1455 | 36 |
-| RPE1 | 0.2598 | 170 | 0.2958 | 133 | 0.654 | 0.2502 | 0.1365 | 40 |
-| all |  |  |  |  | 0.664 | 0.2941 | 0.1583 |  |
+| DLD1 | 0.3531 | 138 | 0.3764 | 101 | 0.6651 | 0.319 | 0.1671 | 47 |
+| GBM | 0.3183 | 141 | 0.3422 | 111 | 0.6572 | 0.2956 | 0.1616 | 36 |
+| HCT116 | 0.3659 | 135 | 0.3634 | 111 | 0.6685 | 0.327 | 0.1795 | 37 |
+| HELA | 0.3116 | 173 | 0.3029 | 147 | 0.6634 | 0.2643 | 0.1454 | 38 |
+| RPE1 | 0.2677 | 163 | 0.2986 | 131 | 0.6564 | 0.252 | 0.1363 | 35 |
+| all |  |  |  |  | 0.6621 | 0.2915 | 0.1582 |  |
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **110** gene(s) directly affected plus **2340** more that share a metabolite with one of them.
+Checked **83** gene(s) directly affected plus **2385** more that share a metabolite with one of them.
 
-**Growth effect changed** (vs Hart 2015):
-- ACAA2: 5/5 lines, knockout now blocks growth -- :x: wrong
-- AKR1A1, CYP3A4, GNPAT: 3/5 lines, knockout no longer blocks growth -- :sparkles: correct
+**Other role changed** (not Hart-comparable):
+- PCYT1A: 3/5 lines, biosynthesis -- now required
 
-**Likely noise** (20 gene(s), <3/5 lines): CA13, CA5B, CRAT, CYP2J2, CYP3A5, ELOVL1, HSD17B7, IDH1, LIPA, MPC1, MPC2, NAGK, PISD, PXMP2, RDH5, SGPL1, SLC17A5, SLC22A5, SLC25A17, SLC27A5.
+**Likely noise** (25 gene(s), <3/5 lines): AKR1A1, ALDH4A1, ATP8A1, CA5B, CRAT, ELOVL1, FPGS, GGH, GNPAT, HSD17B7, IDH1, LIPA, MPC1, MPC2, NAGK, PC, PCYT2, PLD1, PXMP2, SGPL1, SLC17A5, SLC22A5, SLC27A5, SLC36A1, SLC37A4.
 
-**No change:** 2426 gene(s).
+**No change:** 2442 gene(s).
 
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/gene-essential-diff.csv).
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/gene-essential-diff.csv).
