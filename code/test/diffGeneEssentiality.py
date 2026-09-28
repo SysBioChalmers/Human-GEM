@@ -45,7 +45,7 @@ Usage:
         --base-model /path/to/base/Human-GEM.yml \\
         --base-matrix /path/to/base/gene-essential.csv \\
         [--head-model model/Human-GEM.yml] [--head-matrix data/testResults/gene-essential.csv] \\
-        [--growth-tolerance 0.01] [--csv-url URL] [--summary-url URL] \\
+        [--growth-tolerance 0.01] [--summary-url URL] \\
         [--out-summary PATH] [--out-detail PATH] [--out-csv PATH]
 
 The base model/matrix are typically pulled from the target branch with ``git show``,
@@ -308,7 +308,6 @@ def build_report(
     *,
     growth_tolerance: float = 0.01,
     base_label: str = "the target branch",
-    csv_url: str = "",
     summary_url: str = "",
 ) -> tuple[str, str, str]:
     """Returns ``(comment_text, detail_text, detail_csv_text)``.
@@ -317,9 +316,9 @@ def build_report(
     request comment: icons and counts only, no gene names. ``detail_text`` is the
     per-gene breakdown behind it (which genes, what changed), meant to be appended to
     the committed ``gene-essential_summary.md`` rather than posted in the comment --
-    ``comment_text`` links to it instead of duplicating it. ``csv_url`` is the
-    committed blob URL of the per-gene, per-line CSV this call is about to write (e.g.
-    from ``--out-csv``), linked from ``detail_text``. ``summary_url`` is the committed
+    ``comment_text`` links to it instead of duplicating it. ``detail_text`` links to the
+    per-gene, per-line CSV (``--out-csv``) by file name, since both sit in
+    data/testResults; ``summary_url`` is the committed
     blob URL of ``gene-essential_summary.md`` (with ``detail_text`` appended to it),
     linked from ``comment_text``.
     """
@@ -455,7 +454,7 @@ def build_report(
     summary = "\n".join(summary_lines) + "\n"
 
     # --- detail: per-gene breakdown, appended to the committed gene-essential_summary.md ---
-    csv_ref = f"[gene-essential-diff.csv]({csv_url})" if csv_url else "the per-gene detail CSV"
+    csv_ref = "[gene-essential-diff.csv](gene-essential-diff.csv)"
     detail_lines = [
         f"### Gene essentiality: effect of this change (vs `{base_label}`)",
         "",
@@ -517,7 +516,6 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--head-matrix", type=Path, default=DEFAULT_HEAD_MATRIX, help="gene-essential.csv for this branch (default: data/testResults/gene-essential.csv)")
     parser.add_argument("--growth-tolerance", type=float, default=0.01, help="minimum |growth ratio delta| to flag independent of task-based flips (default: 0.01)")
     parser.add_argument("--base-label", type=str, default="the target branch", help="name shown for the base branch, e.g. 'develop' (default: 'the target branch')")
-    parser.add_argument("--csv-url", type=str, default="", help="committed blob URL of --out-csv, linked from --out-detail instead of duplicating its content there")
     parser.add_argument("--summary-url", type=str, default="", help="committed blob URL of gene-essential_summary.md (with --out-detail appended to it), linked from --out-summary")
     parser.add_argument("--out-summary", type=Path, default=None, help="write the condensed, pull-request-comment text here instead of only stdout")
     parser.add_argument("--out-detail", type=Path, default=None, help="write the per-gene detail text here (meant to be appended to gene-essential_summary.md)")
@@ -527,7 +525,7 @@ def main(argv: list[str] | None = None) -> int:
     summary, detail_text, detail_csv = build_report(
         args.base_model, args.head_model, args.base_matrix, args.head_matrix,
         growth_tolerance=args.growth_tolerance, base_label=args.base_label,
-        csv_url=args.csv_url, summary_url=args.summary_url,
+        summary_url=args.summary_url,
     )
     print(summary)
     if args.out_summary:

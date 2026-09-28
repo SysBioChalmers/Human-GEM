@@ -1,50 +1,50 @@
 ## Model quality report -- full detail
 
-_This is the full, per-check breakdown behind the pull-request comment's summary table._ _Row names link to their explanation in the [testResults README](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md)._
+_This is the full, per-check breakdown behind the pull-request comment's summary table._ _Row names link to their explanation in the [testResults README](README.md)._
 
 ### Model & network checks
 _Duplicate keys (model unloadable) and no growth block the merge; every other row is a non-blocking report._
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| [Duplicate `!!omap` keys](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#duplicate-omap-keys) | 0 | 0 | :white_check_mark: |
-| [Growth (biomass producible)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#growth-biomass-producible) | 1.9 | 0 | :white_check_mark: |
-| [Reactions with no metabolites](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
-| [Model / annotation-table inconsistencies](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#model--annotation-table-inconsistencies) | 0 | 0 | :white_check_mark: |
-| [Removed reactions or metabolites not deprecated](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#removed-reactions-or-metabolites-not-deprecated) | 0 | 0 | :white_check_mark: |
-| [Metabolites missing formula](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
-| [Metabolites missing charge](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
-| [Reaction bound / GPR issues](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
-| [Exact-duplicate reaction groups](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
-| [Reactions split across compartments](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#reactions-split-across-compartments) | [27](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/qc_split_compartments.csv) | +1 | :x: |
-| [Unused metabolites](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
-| [Unused genes](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#unused-genes) | 0 | 0 | :white_check_mark: |
-| [Malformed cross-references](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
-| [Cross-refs inconsistent across compartments](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#cross-refs-inconsistent-across-compartments) | 0 | 0 | :white_check_mark: |
-| [Reactions flagged by MACAW dead-end test](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#reactions-flagged-by-macaw-dead-end-test) | [1107](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/macaw_results.tsv) | +7 | :x: |
-| [Reactions flagged as MACAW duplicates](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#reactions-flagged-as-macaw-duplicates) | [338](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/macaw_results.tsv) | -4 | :sparkles: |
-| [Mass-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#mass-imbalanced-reactions) | [69](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/balance_results.csv) | 0 | :warning: |
-| [Charge-imbalanced reactions](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#charge-imbalanced-reactions) | [175](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/balance_results.csv) | -4 | :sparkles: |
-| [Structure vs formula/charge inconsistencies](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#structure-vs-formulacharge-inconsistencies) | [57](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/qc_structure_consistency.csv) | -1 | :sparkles: |
+| [Duplicate `!!omap` keys](README.md#duplicate-omap-keys) | 0 | 0 | :white_check_mark: |
+| [Growth (biomass producible)](README.md#growth-biomass-producible) | 1.9 | 0 | :white_check_mark: |
+| [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
+| [Model / annotation-table inconsistencies](README.md#model--annotation-table-inconsistencies) | 0 | 0 | :white_check_mark: |
+| [Removed reactions or metabolites not deprecated](README.md#removed-reactions-or-metabolites-not-deprecated) | 0 | 0 | :white_check_mark: |
+| [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
+| [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
+| [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
+| [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
+| [Reactions split across compartments](README.md#reactions-split-across-compartments) | [27](qc_split_compartments.csv) | 0 | :warning: |
+| [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
+| [Unused genes](README.md#unused-genes) | 0 | 0 | :white_check_mark: |
+| [Malformed cross-references](README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
+| [Cross-refs inconsistent across compartments](README.md#cross-refs-inconsistent-across-compartments) | 0 | 0 | :white_check_mark: |
+| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1111](macaw_results.tsv) | +4 | :x: |
+| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [338](macaw_results.tsv) | 0 | :warning: |
+| [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | 0 | :warning: |
+| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [172](balance_results.csv) | -3 | :sparkles: |
+| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [57](qc_structure_consistency.csv) | 0 | :warning: |
 
 ### Model file and metabolic tasks
 
 | Check | Result | |
 | --- | ---: | :---: |
-| [YAML round-trip (cobrapy)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#yaml-round-trip-cobrapy) | pass | :white_check_mark: |
-| [YAML round-trip (RAVEN)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#yaml-round-trip-raven) | pass | :white_check_mark: |
-| [YAML lint](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#yaml-lint) | pass | :white_check_mark: |
-| [Essential metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#essential-metabolic-tasks) | 57 passed | :white_check_mark: |
-| [Verification metabolic tasks](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#verification-metabolic-tasks) | 21 passed | :white_check_mark: |
+| [YAML round-trip (cobrapy)](README.md#yaml-round-trip-cobrapy) | pass | :white_check_mark: |
+| [YAML round-trip (RAVEN)](README.md#yaml-round-trip-raven) | pass | :white_check_mark: |
+| [YAML lint](README.md#yaml-lint) | pass | :white_check_mark: |
+| [Essential metabolic tasks](README.md#essential-metabolic-tasks) | 57 passed | :white_check_mark: |
+| [Verification metabolic tasks](README.md#verification-metabolic-tasks) | 21 passed | :white_check_mark: |
 
-### [MEMOTE](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#memote)
+### [MEMOTE](README.md#memote)
 
 **Total score: 63.8%** (core subset) &nbsp; 0
 
 | Section | Score | &Delta; vs base |
 | --- | ---: | ---: |
 | consistency | 42.5% | 0 |
-| annotation_met | 77.5% | 0 |
+| annotation_met | 77.7% | +0.2 :white_check_mark: |
 | annotation_rxn | 76.4% | 0 |
 | annotation_gene | 46.7% | 0 |
 | annotation_sbo | 81.8% | 0 |
@@ -54,10 +54,10 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | Section | Test | Score |
 | --- | --- | ---: |
 | Consistency | Mass Balance | 99.3% |
-| Consistency | Charge Balance | 98.1% |
+| Consistency | Charge Balance | 98.2% |
 | Consistency | Metabolite Connectivity | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |
-| Annotation - Metabolites | Metabolite Annotations Per Database | 46.9% |
+| Annotation - Metabolites | Metabolite Annotations Per Database | 47.4% |
 | Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 63.3% |
 | Annotation - Metabolites | Uniform Metabolite Identifier Namespace | 100.0% |
 | Annotation - Reactions | Presence of Reaction Annotation | 100.0% |
@@ -83,7 +83,7 @@ _Full suite: 64.9%, from an earlier model version; comment_ `/run memote` _to up
 
 _The total above is the fast core subset, run on every push. Comment_ `/run memote` _to run the full suite on this pull request; the summary shows it while the model is unchanged._
 
-### [Gene essentiality (Hart 2015)](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/README.md#gene-essentiality-hart-2015)
+### [Gene essentiality (Hart 2015)](README.md#gene-essentiality-hart-2015)
 
 _Not run automatically (it takes hours). Comment_ `/run gene-essentiality` _to run it on this pull request; the result posts as its own comment._
 
