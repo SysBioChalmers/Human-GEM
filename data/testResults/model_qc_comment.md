@@ -1,23 +1,23 @@
 ## Model quality report
 
-:warning: **4** pre-existing finding(s), no regressions vs `develop`. Non-blocking. Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:.
+:warning: **3** pre-existing finding(s), no regressions vs `develop`. Non-blocking. Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:.
 
 | Section | Status |
 | --- | --- |
-| Model &amp; network checks (19) | :warning: **4** pre-existing |
+| Model &amp; network checks (19) | :warning: **3** pre-existing |
 | Model file &amp; metabolic tasks (5) | :white_check_mark: all pass |
 | MEMOTE | :white_check_mark: **63.8%** (core subset) |
-| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/model_qc_summary.md) |
+| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1085-metabolite-curation/data/testResults/model_qc_summary.md) |
 
 **Improved:**
-- Reactions flagged by MACAW dead-end test: [**1101**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/macaw_results.tsv)
-- Charge-imbalanced reactions: [**195**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/balance_results.csv)
-- Structure vs formula/charge inconsistencies: [**303**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/qc_structure_consistency.csv)
+- Cross-refs inconsistent across compartments: **0**
+- Reactions flagged by MACAW dead-end test: [**1105**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1085-metabolite-curation/data/testResults/macaw_results.tsv)
+- Charge-imbalanced reactions: [**183**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1085-metabolite-curation/data/testResults/balance_results.csv)
+- Structure vs formula/charge inconsistencies: [**61**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1085-metabolite-curation/data/testResults/qc_structure_consistency.csv)
 
 **Pre-existing:**
-- Reactions split across compartments: [**26**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/qc_split_compartments.csv)
-- Cross-refs inconsistent across compartments: [**2**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/qc_annotation_issues.csv)
-- Reactions flagged as MACAW duplicates: [**342**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/macaw_results.tsv)
-- Mass-imbalanced reactions: [**69**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/balance_results.csv)
+- Reactions split across compartments: [**26**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1085-metabolite-curation/data/testResults/qc_split_compartments.csv)
+- Reactions flagged as MACAW duplicates: [**342**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1085-metabolite-curation/data/testResults/macaw_results.tsv)
+- Mass-imbalanced reactions: [**69**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1085-metabolite-curation/data/testResults/balance_results.csv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
