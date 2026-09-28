@@ -21,7 +21,7 @@ MAR08769,gamma-glutamyltransferase (alanine),ce,alanine + GSH --> (5-L-glutamyl)
 MAR08770,gamma-glutamylcyclotransferase ((5-L-glutamyl)-L-amino acid),ce,(5-L-glutamyl)-L-amino acid --> 5-oxoproline + alanine
 MAR08983,Uptake of Octadecanoate (N-C18:0),ce,ATP + CoA + stearate --> AMP + PPi + stearoyl-CoA
 MAR08996,Uptake of Hexadecanoate,ce,ATP + CoA + myristic acid --> AMP + myristoyl-CoA + PPi
-MAR09870,Arachidonate (N-C18:1) Transport by FATP,ce,arachidonate + ATP + CoA --> AMP + arachidonyl-CoA + PPi
+MAR09870,Arachidonate (N-C18:1) Transport by FATP,ce,arachidonate + ATP + CoA --> AMP + arachidonoyl-CoA + PPi
 MAR09894,Lignocerate Transport by FATP,ce,ATP + CoA + lignocerate --> AMP + PPi + tetracosanoyl-CoA
 MAR20167,MAR20167,cm,ubiquinone + FMNH2 <=> FMN + ubiquinol
 MAR20189,Reduction of alpha-tocopheryl quinone by Complex III,cm,alpha-tocopheryl quinone + 2 ferricytochrome C + 2 H+ + 2 ubiquinol --> alpha-tocopheryl hydroquinone + 2 ferrocytochrome C + 4 H+ + 2 ubiquinone
