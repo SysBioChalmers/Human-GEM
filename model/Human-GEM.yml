@@ -38655,13 +38655,6 @@
       - charge: -1
       - metFrom: "Recon3D"
     - !!omap
-      - id: "MAM03584g"
-      - name: "I-Antigen"
-      - compartment: "g"
-      - formula: "C72H125N4O42RCO"
-      - charge: 0
-      - metFrom: "Recon3D"
-    - !!omap
       - id: "MAM01988x"
       - name: "glycocholate"
       - compartment: "x"
@@ -60569,7 +60562,7 @@
       - gene_reaction_rule: "ENSG00000166816"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.2.4"
-      - references: "PMID:12127981;PMID:30931947"
+      - references: "PMID:12127981;PMID:30931947;PMID:31638601;PMID:38413804"
       - subsystem: "Pyruvate metabolism"
       - confidence_score: 0
     - !!omap
@@ -61011,9 +61004,10 @@
       - lower_bound: -1000
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000111716 or ENSG00000171989"
+      - rxnNotes: "Mitochondrial LDH is contested: LDHB localises to the inner mitochondrial membrane and oxamate-sensitive lactate respiration was shown in HeLa mitochondria (PMID:27618187), but human vastus lateralis mitochondria had no LDH activity (PMID:12042361). The side of the inner membrane is not resolved."
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.27"
-      - references: "PMID:12042361;PMID:17045662;PMID:7449128;PMID:9927705;PMID:18253497"
+      - references: "PMID:9927705;PMID:18253497;PMID:27618187"
       - subsystem: "Pyruvate metabolism"
       - confidence_score: 0
     - !!omap
@@ -119722,8 +119716,10 @@
       - id: "MAR01307"
       - name: "prostaglandin-endoperoxide synthase (prostaglandin G2)"
       - metabolites: !!omap
-          - MAM02039r: -2
+          - MAM02039r: -1
           - MAM02040r: 1
+          - MAM02554r: 1
+          - MAM02555r: -1
           - MAM02792r: -1
           - MAM02794r: 1
       - lower_bound: 0
@@ -120578,11 +120574,13 @@
       - id: "MAR01393"
       - name: "prostaglandin-endoperoxide synthase (prostaglandin G1)"
       - metabolites: !!omap
-          - MAM02039r: -2
+          - MAM02039r: -1
           - MAM02040r: 1
+          - MAM02554r: 1
+          - MAM02555r: -1
           - MAM02791r: -1
           - MAM02793r: 1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000073756 or ENSG00000095303"
       - rxnFrom: "HMRdatabase"
@@ -129396,22 +129394,6 @@
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
-      - id: "MAR08317"
-      - name: "beta-1,4-galactosyltransferase (G00077)"
-      - metabolites: !!omap
-          - MAM01880g: -1
-          - MAM02039g: 1
-          - MAM02186g: 1
-          - MAM03106g: 1
-          - MAM03107g: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000121578 or ENSG00000158850"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "2.4.1.-"
-      - subsystem: "Blood group biosynthesis"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR08318"
       - name: "N-acetyllactosaminide alpha-2,3-sialyltransferase (CMP-N-acetylneuraminate)"
       - metabolites: !!omap
@@ -136720,7 +136702,7 @@
       - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
-      - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
+      - references: "PMID:11997390;PMID:10191290;PMID:12368403"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
@@ -136737,9 +136719,10 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000186115"
+      - rxnNotes: "Human liver microsomes form 13'-carboxychromanols from 13'-hydroxychromanols with NADPH alone; NAD+ increases the yield (PMID:11997390, PMID:15753130). CYP4F2 oxidises omega-hydroxy fatty acids to dicarboxylic acids (PMID:18182499), but for those substrates an NAD+-dependent alcohol and aldehyde dehydrogenase route (ALDH3A2) predominates; this route has not been shown for tocopherols."
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
-      - references: "PMID:10191290;PMID:11997390;PMID:12368403;PMID:11997390;PMID:12368403;PMID:10191290"
+      - references: "PMID:10191290;PMID:11997390;PMID:12368403;PMID:15753130;PMID:18182499"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
@@ -136823,7 +136806,8 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
       - rxnFrom: "HMRdatabase"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -136841,10 +136825,16 @@
           - MAM01803m: 1
           - MAM02039m: 1
           - MAM02040m: -2
+          - MAM02552m: -1
+          - MAM02553m: 1
+          - MAM02554m: 1
+          - MAM02555m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000104325 and (ENSG00000167969 or ENSG00000198721) and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "The 4-methyl-branched dienoyl intermediate is reduced by DECR1 and isomerised by ECI1/ECI2, as the saturated product (CMBHC) detected in HepG2 cells requires (PMID:12368403); activity of these enzymes on this substrate is inferred. Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
+      - references: "PMID:12368403"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -136878,7 +136868,8 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -136907,7 +136898,7 @@
       - gene_reaction_rule: "ENSG00000186115"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
-      - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
+      - references: "PMID:11997390;PMID:10191290;PMID:12368403"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
@@ -136924,9 +136915,10 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000186115"
+      - rxnNotes: "Human liver microsomes form 13'-carboxychromanols from 13'-hydroxychromanols with NADPH alone; NAD+ increases the yield (PMID:11997390, PMID:15753130). CYP4F2 oxidises omega-hydroxy fatty acids to dicarboxylic acids (PMID:18182499), but for those substrates an NAD+-dependent alcohol and aldehyde dehydrogenase route (ALDH3A2) predominates; this route has not been shown for tocopherols."
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
-      - references: "PMID:11997390;PMID:10191290;PMID:12368403;PMID:11997390;PMID:10191290;PMID:12368403"
+      - references: "PMID:10191290;PMID:11997390;PMID:12368403;PMID:15753130;PMID:18182499"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
@@ -137001,7 +136993,8 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137028,10 +137021,16 @@
           - MAM01803m: 1
           - MAM02039m: 1
           - MAM02040m: -2
+          - MAM02552m: -1
+          - MAM02553m: 1
+          - MAM02554m: 1
+          - MAM02555m: -1
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000104325 and (ENSG00000167969 or ENSG00000198721) and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "The 4-methyl-branched dienoyl intermediate is reduced by DECR1 and isomerised by ECI1/ECI2, as the saturated product (CMBHC) detected in HepG2 cells requires (PMID:12368403); activity of these enzymes on this substrate is inferred. Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
+      - references: "PMID:12368403"
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137065,7 +137064,8 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137190,9 +137190,10 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000186115"
+      - rxnNotes: "Human liver microsomes form 13'-carboxychromanols from 13'-hydroxychromanols with NADPH alone; NAD+ increases the yield (PMID:11997390, PMID:15753130). CYP4F2 oxidises omega-hydroxy fatty acids to dicarboxylic acids (PMID:18182499), but for those substrates an NAD+-dependent alcohol and aldehyde dehydrogenase route (ALDH3A2) predominates; this route has not been shown for tocopherols."
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
-      - references: "PMID:11997390"
+      - references: "PMID:11997390;PMID:15753130;PMID:18182499"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
@@ -137215,6 +137216,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115361 and ENSG00000084754 and ENSG00000138029"
+      - rxnNotes: "C12' of 13'-carboxy-tocopherol is a stereocentre; its configuration after CYP4F2 omega-hydroxylation is not known, so whether AMACR is needed in this round is not known."
       - rxnFrom: "HMRdatabase"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -137269,7 +137271,8 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137301,7 +137304,8 @@
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137364,9 +137368,10 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000186115"
+      - rxnNotes: "Human liver microsomes form 13'-carboxychromanols from 13'-hydroxychromanols with NADPH alone; NAD+ increases the yield (PMID:11997390, PMID:15753130). CYP4F2 oxidises omega-hydroxy fatty acids to dicarboxylic acids (PMID:18182499), but for those substrates an NAD+-dependent alcohol and aldehyde dehydrogenase route (ALDH3A2) predominates; this route has not been shown for tocopherols."
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.14.94"
-      - references: "PMID:11997390"
+      - references: "PMID:11997390;PMID:15753130;PMID:18182499"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
     - !!omap
@@ -137389,6 +137394,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000115361 and ENSG00000084754 and ENSG00000138029"
+      - rxnNotes: "C12' of 13'-carboxy-tocopherol is a stereocentre; its configuration after CYP4F2 omega-hydroxylation is not known, so whether AMACR is needed in this round is not known."
       - rxnFrom: "HMRdatabase"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -137443,7 +137449,8 @@
           - MAM02774m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
       - rxnFrom: "HMRdatabase"
       - eccodes:
           - "1.1.1.35"
@@ -137475,7 +137482,8 @@
           - MAM02759m: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)"
+      - gene_reaction_rule: "ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315"
+      - rxnNotes: "Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity."
       - rxnFrom: "HMRdatabase"
       - subsystem: "Vitamin E metabolism"
       - confidence_score: 0
@@ -139247,7 +139255,8 @@
           - MAM02754c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000130649"
+      - gene_reaction_rule: "ENSG00000130649 or ENSG00000160868"
+      - references: "PMID:9348445"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.13.-"
       - subsystem: "Xenobiotics metabolism"
@@ -174857,11 +174866,13 @@
       - id: "MAR01392"
       - name: "prostaglandin-endoperoxide synthase (prostaglandin G1)"
       - metabolites: !!omap
-          - MAM02039c: -2
+          - MAM02039c: -1
           - MAM02040c: 1
+          - MAM02554c: 1
+          - MAM02555c: -1
           - MAM02791c: -1
           - MAM02793c: 1
-      - lower_bound: -1000
+      - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000073756 or ENSG00000095303"
       - rxnFrom: "HMRdatabase"
@@ -182029,19 +182040,19 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR00082"
-      - name: "UDP-GlcNac:Betagal Beta-1, 3-N-Acetylglucosaminyltransferase 3, Golgi Apparatus"
+      - name: "beta-1,4-galactosyltransferase (G00077)"
       - metabolites: !!omap
           - MAM01880g: -1
           - MAM02039g: 1
+          - MAM02186g: 1
           - MAM03106g: 1
           - MAM03107g: -1
-          - MAM03584g: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000179913"
+      - gene_reaction_rule: "ENSG00000086062 or ENSG00000117411 or ENSG00000158850 or ENSG00000121578"
       - rxnFrom: "Recon3D"
       - eccodes: "2.4.1.-"
-      - references: "PMID:10072769"
+      - references: "PMID:9405390;PMID:9792633"
       - subsystem: "Blood group biosynthesis"
       - confidence_score: 0
     - !!omap
@@ -185426,7 +185437,7 @@
           - MAM01948g: 2
           - MAM01950g: -2
           - MAM02039g: 2
-          - MAM03584g: -1
+          - MAM02186g: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000174951"
@@ -246745,7 +246756,7 @@
       - confidence_score: 0
     - !!omap
       - id: "MAR20021"
-      - name: "MAR20021"
+      - name: "mead acid (omega-1)-hydroxylase"
       - metabolites: !!omap
           - MAM02039r: -1
           - MAM02040r: 1
@@ -246757,12 +246768,13 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000130649"
+      - references: "PMID:18577768"
       - eccodes: "1.14.14.1"
       - subsystem: "Fatty acid metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR20023"
-      - name: "MAR20023"
+      - name: "eicosapentaenoate (omega-1)-hydroxylase"
       - metabolites: !!omap
           - MAM01784r: -1
           - MAM02039r: -1
@@ -246774,12 +246786,13 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000130649"
+      - references: "PMID:18577768"
       - eccodes: "1.14.14.1"
       - subsystem: "Fatty acid metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR20025"
-      - name: "MAR20025"
+      - name: "docosahexaenoate (omega-1)-hydroxylase"
       - metabolites: !!omap
           - MAM01689r: -1
           - MAM02039r: -1
@@ -246791,12 +246804,13 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000130649"
+      - references: "PMID:18577768"
       - eccodes: "1.14.14.1"
       - subsystem: "Fatty acid metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR20027"
-      - name: "MAR20027"
+      - name: "laurate (omega-1)-hydroxylase"
       - metabolites: !!omap
           - MAM02039r: -1
           - MAM02040r: 1
@@ -246808,12 +246822,13 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000130649"
+      - references: "PMID:10553002"
       - eccodes: "1.14.14.1"
       - subsystem: "Fatty acid metabolism"
       - confidence_score: 0
     - !!omap
       - id: "MAR20029"
-      - name: "MAR20029"
+      - name: "myristate (omega-1)-hydroxylase"
       - metabolites: !!omap
           - MAM02039r: -1
           - MAM02040r: 1
@@ -246825,6 +246840,7 @@
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000130649"
+      - references: "PMID:10553002"
       - eccodes: "1.14.14.1"
       - subsystem: "Fatty acid metabolism"
       - confidence_score: 0
@@ -249248,6 +249264,8 @@
           - MAM00232e: 1
       - lower_bound: 0
       - upper_bound: 1000
+      - rxnNotes: "Stands in for secretory-pathway export of procollagen; the lysine modifications (MAR06983-MAR06985) occur in the ER lumen, see #335."
+      - references: "PMID:7982970;PMID:20470363"
       - subsystem: "Transport reactions"
       - confidence_score: 0
     - !!omap
