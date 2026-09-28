@@ -155,9 +155,10 @@ jobs:
       SHARD_COUNT: 5
     runs-on: ubuntu-latest
     # A cell line's ftINIT build is two extraction steps, each one solve proven to
-    # PROVE_ABS_GAP and capped at TIME_LIMIT (30 min) followed by two tie-break phases
-    # capped at TIME_LIMIT/2 each (RESOLVE_TIES), plus task gap-filling: at most about
-    # 2 h, and 5-60 min in practice (see estimateEssentialGenes.py).
+    # PROVE_ABS_GAP and capped at TIME_LIMIT (15 min) followed, when the solve finished
+    # within that limit, by two tie-break phases capped at TIME_LIMIT/2 each
+    # (RESOLVE_TIES), plus task gap-filling: at most about 1 h, and 5-25 min in practice
+    # (see estimateEssentialGenes.py).
     timeout-minutes: 240
     steps:
       - name: Checkout
