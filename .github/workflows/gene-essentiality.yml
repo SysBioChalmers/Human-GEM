@@ -425,7 +425,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ inputs.pr }}
           BASE_REF: ${{ inputs.base }}
-          CSV_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential-diff.csv
           SUMMARY_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.head_ref || github.ref_name }}/data/testResults/gene-essential_summary.md
         run: |
           if [ -z "$BASE_REF" ]; then
@@ -444,7 +443,6 @@ jobs:
             --base-model "$RUNNER_TEMP/base/Human-GEM.yml" \
             --base-matrix "$RUNNER_TEMP/base/gene-essential.csv" \
             --base-label "$BASE_REF" \
-            --csv-url "$CSV_URL" \
             --summary-url "$SUMMARY_URL" \
             --out-summary "$RUNNER_TEMP/gene-essential-diff.md" \
             --out-detail "$RUNNER_TEMP/gene-essential-diff-detail.md" \
