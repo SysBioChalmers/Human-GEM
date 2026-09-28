@@ -47791,7 +47791,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03464e"
-      - name: "Asparaginyl-Alanyl-Arginine"
+      - name: "Aspartyl-Alanyl-Arginine"
       - compartment: "e"
       - formula: "C13H24N6O6"
       - charge: 0
@@ -47994,14 +47994,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03606e"
-      - name: "Glutaminyl-Arginyl-Leucine"
+      - name: "Glutamyl-Arginyl-Leucine"
       - compartment: "e"
       - formula: "C17H32N6O6"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03607e"
-      - name: "Glutaminyl-Asparaginyl-Leucine"
+      - name: "Glutamyl-Asparaginyl-Leucine"
       - compartment: "e"
       - formula: "C15H25N4O7"
       - charge: -1
@@ -48374,8 +48374,8 @@
       - id: "MAM03738e"
       - name: "Lysyl-Arginyl-Leucine"
       - compartment: "e"
-      - formula: "C18H38N7O4"
-      - charge: 1
+      - formula: "C18H39N7O4"
+      - charge: 2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03739e"
@@ -48675,8 +48675,8 @@
       - id: "MAM03898e"
       - name: "Prolyl-Histidyl-Tyrosine"
       - compartment: "e"
-      - formula: "C20H26N5O5"
-      - charge: 1
+      - formula: "C20H25N5O5"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03899e"
@@ -48997,8 +48997,8 @@
       - id: "MAM04028e"
       - name: "Tryptophanyl-Prolyl-Glycine"
       - compartment: "e"
-      - formula: "C18H21N4O4"
-      - charge: -1
+      - formula: "C18H22N4O4"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04029e"
@@ -49485,7 +49485,7 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03464c"
-      - name: "Asparaginyl-Alanyl-Arginine"
+      - name: "Aspartyl-Alanyl-Arginine"
       - compartment: "c"
       - formula: "C13H24N6O6"
       - charge: 0
@@ -49688,14 +49688,14 @@
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03606c"
-      - name: "Glutaminyl-Arginyl-Leucine"
+      - name: "Glutamyl-Arginyl-Leucine"
       - compartment: "c"
       - formula: "C17H32N6O6"
       - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03607c"
-      - name: "Glutaminyl-Asparaginyl-Leucine"
+      - name: "Glutamyl-Asparaginyl-Leucine"
       - compartment: "c"
       - formula: "C15H25N4O7"
       - charge: -1
@@ -50068,8 +50068,8 @@
       - id: "MAM03738c"
       - name: "Lysyl-Arginyl-Leucine"
       - compartment: "c"
-      - formula: "C18H38N7O4"
-      - charge: 1
+      - formula: "C18H39N7O4"
+      - charge: 2
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03739c"
@@ -50369,8 +50369,8 @@
       - id: "MAM03898c"
       - name: "Prolyl-Histidyl-Tyrosine"
       - compartment: "c"
-      - formula: "C20H26N5O5"
-      - charge: 1
+      - formula: "C20H25N5O5"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM03899c"
@@ -50691,8 +50691,8 @@
       - id: "MAM04028c"
       - name: "Tryptophanyl-Prolyl-Glycine"
       - compartment: "c"
-      - formula: "C18H21N4O4"
-      - charge: -1
+      - formula: "C18H22N4O4"
+      - charge: 0
       - metFrom: "Recon3D"
     - !!omap
       - id: "MAM04029c"
@@ -218561,7 +218561,6 @@
       - name: "Hydrolysis of LysArgLeu"
       - metabolites: !!omap
           - MAM01365c: 1
-          - MAM02039c: -1
           - MAM02040c: -2
           - MAM02360c: 1
           - MAM02426c: 1
@@ -219148,7 +219147,6 @@
       - id: "MAR11142"
       - name: "Hydrolysis of ProHisTyr"
       - metabolites: !!omap
-          - MAM02039c: 1
           - MAM02040c: -2
           - MAM02125c: 1
           - MAM02770c: 1
@@ -219779,7 +219777,6 @@
       - id: "MAR11188"
       - name: "Hydrolysis of TrpProGly"
       - metabolites: !!omap
-          - MAM02039c: 1
           - MAM02040c: 1
           - MAM03089c: -1
           - MAM03896c: -1
