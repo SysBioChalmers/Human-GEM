@@ -14,8 +14,6 @@ MAM00912c,3-phosphoadenylylselenate,protonation,C10H11N5O13P2Se,-4,C10H15N5O13P2
 MAM01294c,aflatoxin B1 dialdehyde,protonation,C17H13O8,-1,C17H14O8,0,COc1cc(O)c([C@@H](C=O)[C@@H](O)C=O)c2oc(=O)c3c(c12)CCC3=O
 MAM01318c,"alpha-(1,2-dihydroxyethyl)-1,2,3,4-tetrahydro-7-hydroxy-9-methoxy-3,4-dioxocyclopenta[c][1]benzopyran-6-acetaldehyde",protonation,C17H15O8,-1,C17H16O8,0,COc1cc(O)c(C(C=O)C(O)CO)c2oc(=O)c3c(c12)CCC3=O
 MAM01367c,arsenite,protonation,AsH2O3,-1,AsO3-3,-3,[O-][As]([O-])[O-]
-MAM01368c,ascorbate,protonation,C6H7O6,-1,C6H8O6,0,O=C1O[C@H]([C@@H](O)CO)C(O)=C1O
-MAM01368e,ascorbate,protonation,C6H7O6,-1,C6H8O6,0,O=C1O[C@H]([C@@H](O)CO)C(O)=C1O
 MAM01402c,biotinyl-5-AMP,protonation,C20H27N7O9PS,-1,C20H28N7O9PS,0,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OC(=O)CCCC[C@@H]2SC[C@@H]3NC(=O)N[C@H]23)[C@@H](O)[C@H]1O
 MAM01591c,CMP-2-aminoethylphosphonate,protonation,C11H19N4O10P2,-1,C11H20N4O10P2,0,NCCP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2ccc(N)nc2=O)[C@H](O)[C@@H]1O
 MAM01592c,CMP-N-acetylneuraminate,protonation,C20H29N4O16P,-2,C20H31N4O16P,0,CC(=O)N[C@@H]1[C@@H](O)C[C@@](OP(=O)(O)OC[C@H]2O[C@@H](n3ccc(N)nc3=O)[C@H](O)[C@@H]2O)(C(=O)O)O[C@H]1[C@H](O)[C@H](O)CO
@@ -31,7 +29,6 @@ MAM01674l,dephospho-CoA,protonation,C21H33N7O13P2S,-2,C21H35N7O13P2S,0,CC(C)(COP
 MAM01674m,dephospho-CoA,protonation,C21H33N7O13P2S,-2,C21H35N7O13P2S,0,CC(C)(COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1O)[C@@H](O)C(=O)NCCC(=O)NCCS
 MAM01966c,"glucose-1,6-bisphosphate",protonation,C6H11O12P2,-3,C6H14O12P2,0,O=P(O)(O)OC[C@H]1O[C@H](OP(=O)(O)O)[C@H](O)[C@@H](O)[C@@H]1O
 MAM01966e,"glucose-1,6-bisphosphate",protonation,C6H11O12P2,-3,C6H14O12P2,0,O=P(O)(O)OC[C@H]1O[C@H](OP(=O)(O)O)[C@H](O)[C@@H](O)[C@@H]1O
-MAM02043c,H2S2O3,protonation,HO3S2,-1,H2O3S2,0,O=S(=O)(O)S
 MAM02143c,hydrobromic acid,protonation,Br,-1,HBr,0,Br
 MAM02151c,hydroxymethylbilane,protonation,C40H38N4O17,-8,C40H46N4O17,0,O=C(O)CCc1c[nH]c(Cc2[nH]c(Cc3[nH]c(Cc4[nH]c(CO)c(CC(=O)O)c4CCC(=O)O)c(CC(=O)O)c3CCC(=O)O)c(CC(=O)O)c2CCC(=O)O)c1CC(=O)O
 MAM02357c,lepidimoide,formula_error,X,0,C12H17NaO10,0,C[C@@H]1O[C@H](O)[C@H](O[C@H]2OC(C(=O)[O-])=C[C@H](O)[C@H]2O)[C@H](O)[C@H]1O.[Na+]
