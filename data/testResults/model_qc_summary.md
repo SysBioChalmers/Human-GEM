@@ -10,21 +10,21 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Duplicate `!!omap` keys](README.md#duplicate-omap-keys) | 0 | 0 | :white_check_mark: |
 | [Growth (biomass producible)](README.md#growth-biomass-producible) | 1.9 | 0 | :white_check_mark: |
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
-| [Model / annotation-table inconsistencies](README.md#model--annotation-table-inconsistencies) | 0 | 0 | :white_check_mark: |
+| [Model / annotation-table inconsistencies](README.md#model--annotation-table-inconsistencies) | [9](qc_annotation_consistency.csv) | +9 | :x: |
 | [Removed reactions or metabolites not deprecated](README.md#removed-reactions-or-metabolites-not-deprecated) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
-| [Reactions split across compartments](README.md#reactions-split-across-compartments) | [27](qc_split_compartments.csv) | 0 | :warning: |
+| [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | -1 | :sparkles: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
 | [Unused genes](README.md#unused-genes) | 0 | 0 | :white_check_mark: |
 | [Malformed cross-references](README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
 | [Cross-refs inconsistent across compartments](README.md#cross-refs-inconsistent-across-compartments) | 0 | 0 | :white_check_mark: |
-| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1111](macaw_results.tsv) | +4 | :x: |
-| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [338](macaw_results.tsv) | 0 | :warning: |
+| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1111](macaw_results.tsv) | 0 | :warning: |
+| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | +2 | :x: |
 | [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | 0 | :warning: |
-| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [172](balance_results.csv) | -3 | :sparkles: |
+| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [172](balance_results.csv) | 0 | :warning: |
 | [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [57](qc_structure_consistency.csv) | 0 | :warning: |
 
 ### Model file and metabolic tasks
@@ -44,7 +44,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | Section | Score | &Delta; vs base |
 | --- | ---: | ---: |
 | consistency | 42.5% | 0 |
-| annotation_met | 77.7% | +0.2 :white_check_mark: |
+| annotation_met | 77.7% | 0 |
 | annotation_rxn | 76.4% | 0 |
 | annotation_gene | 46.7% | 0 |
 | annotation_sbo | 81.8% | 0 |
