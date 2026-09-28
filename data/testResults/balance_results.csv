@@ -218,9 +218,6 @@ MAR10036,acyl-CoA pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
 MAR10037,cholesterol-ester pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
 MAR10038,cholesterol-ester pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
 MAR10061,fatty acyl-CoA reduction,C:-1;H:-2,
-MAR12991,3HPVSCOAhc,,-1
-MAR12992,3HPVSTEThc,,1
-MAR12994,FVSCOAhc,,-1
 MAR12995,MDZGLChr,,-1
 MAR13078,PROTEIN_BS,C:-32.5694;H:-66.0418;N:-9.3852;O:-16.5863;S:-0.283;X:1,-0.202
 MAR13081,CYOOm3i,,0.06
