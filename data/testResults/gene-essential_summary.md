@@ -20,4 +20,4 @@ Checked **83** gene(s) directly affected plus **2385** more that share a metabol
 
 **No change:** 2442 gene(s).
 
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/remaining-reactions/data/testResults/gene-essential-diff.csv).
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](gene-essential-diff.csv).
