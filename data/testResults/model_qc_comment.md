@@ -10,7 +10,7 @@
 | Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/model_qc_summary.md) |
 
 **Improved:**
-- Reactions flagged by MACAW dead-end test: [**1102**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/macaw_results.tsv)
+- Reactions flagged by MACAW dead-end test: [**1101**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/macaw_results.tsv)
 - Charge-imbalanced reactions: [**195**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/balance_results.csv)
 - Structure vs formula/charge inconsistencies: [**303**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/review-v2.0.1-curation/data/testResults/qc_structure_consistency.csv)
 
