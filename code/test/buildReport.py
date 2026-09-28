@@ -45,8 +45,10 @@ COMMENT_MD = RESULTS / "model_qc_comment.md"
 BASE_DIR = os.environ.get("BASE_RESULTS_DIR", "")
 BASE_REF = os.environ.get("BASE_REF", "the target branch")
 COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
-# e.g. https://github.com/OWNER/REPO/blob/<branch>/data/testResults - used to link
-# each finding count to its CSV. Empty when run locally (then counts are plain text).
+# e.g. https://github.com/OWNER/REPO/blob/<branch>/data/testResults - used by the posted
+# comment to link each finding count to its CSV (relative links do not resolve in a
+# comment). The full-detail file uses relative links. Empty when run locally (then the
+# comment's counts are plain text).
 URL_BASE = os.environ.get("RESULTS_URL_BASE", "").rstrip("/")
 
 # Groups whose results are still being computed on this run; their rows show as
@@ -68,11 +70,11 @@ def _slug(label: str) -> str:
 
 
 def _labelled(label: str) -> str:
-    """The test name, linked to its explanation in the testResults README when the
-    repo URL is known (in CI); plain text when run locally. Full-detail file only --
-    the condensed comment links whole sections to the full file instead (see module
-    docstring)."""
-    return f"[{label}]({URL_BASE}/README.md#{_slug(label)})" if URL_BASE else label
+    """The test name, linked to its explanation in the testResults README. Full-detail
+    file only, which sits next to the README, so the link is relative and does not
+    depend on the branch; the condensed comment links whole sections to the full file
+    instead (see module docstring)."""
+    return f"[{label}](README.md#{_slug(label)})"
 
 
 # (label, key, kind, group, detail_file)
@@ -92,6 +94,7 @@ MODEL_ROWS = [
     ("Metabolites missing charge", "missing_charge", "count", "checks", "qc_metabolite_completeness.csv"),
     ("Reaction bound / GPR issues", "reaction_issues", "count", "checks", "qc_reaction_sanity.csv"),
     ("Exact-duplicate reaction groups", "dup_reactions", "count", "checks", "qc_duplicate_reactions.csv"),
+    ("Reactions split across compartments", "split_compartments", "count", "checks", "qc_split_compartments.csv"),
     ("Unused metabolites", "unused_met", "count", "checks", "qc_unused_entities.csv"),
     ("Unused genes", "unused_gene", "count", "checks", "qc_unused_entities.csv"),
     ("Malformed cross-references", "malformed", "count", "checks", "qc_annotation_issues.csv"),
@@ -210,6 +213,7 @@ def _metrics(directory: Path) -> dict:
         "missing_charge": _count_csv(completeness, lambda r: r.get("missing_charge") == "yes"),
         "reaction_issues": _count_csv(directory / "qc_reaction_sanity.csv"),
         "dup_reactions": _distinct_csv(directory / "qc_duplicate_reactions.csv", "group"),
+        "split_compartments": _count_csv(directory / "qc_split_compartments.csv"),
         "unused_met": _count_csv(unused, lambda r: r.get("kind") == "metabolite"),
         "unused_gene": _count_csv(unused, lambda r: r.get("kind") == "gene"),
         "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
@@ -274,14 +278,17 @@ def _icon(value, base, kind):
     return "0", ":white_check_mark:", False, False
 
 
-def _cell(value, kind, detail, *, bold: bool = False) -> str:
+def _cell(value, kind, detail, *, bold: bool = False, relative: bool = False) -> str:
+    """The value, linked to its detail CSV when it is a positive count or a growth
+    failure. relative=True links next to the file (the full-detail file, which sits in
+    the same folder as the CSVs); otherwise the absolute URL is used, as the posted
+    comment needs, and the value stays plain when the repo URL is not known."""
     text = f"{value:.3g}" if kind == "growth" else (f"{value:.1f}" if kind == "score" else str(int(value)))
     if bold:
         text = f"**{text}**"
-    # link a positive count (or a growth failure) to its CSV, if we know the repo URL
     linkable = (kind == "count" and value) or (kind == "growth" and value <= 1e-6)
-    if URL_BASE and detail and linkable:
-        return f"[{text}]({URL_BASE}/{detail})"
+    if detail and linkable and (relative or URL_BASE):
+        return f"[{text}]({detail if relative else f'{URL_BASE}/{detail}'})"
     return text
 
 
@@ -312,7 +319,7 @@ def _full_table(computed: list[dict]) -> list[str]:
         if r["pending"]:
             lines.append(f"| {_labelled(r['label'])} | _running_ | | :hourglass_flowing_sand: |")
         else:
-            lines.append(f"| {_labelled(r['label'])} | {_cell(r['value'], r['kind'], r['detail'])} | "
+            lines.append(f"| {_labelled(r['label'])} | {_cell(r['value'], r['kind'], r['detail'], relative=True)} | "
                           f"{r['delta']} | {r['icon']} |")
     return lines
 
@@ -571,8 +578,7 @@ def main() -> int:
         "## Model quality report -- full detail",
         "",
         "_This is the full, per-check breakdown behind the pull-request comment's summary table._ "
-        + (f"_Row names link to their explanation in the [testResults README]({URL_BASE}/README.md)._"
-           if URL_BASE else ""),
+        "_Row names link to their explanation in the [testResults README](README.md)._",
         "",
         "### Model & network checks",
         "_Duplicate keys (model unloadable) and no growth block the merge; every other row "

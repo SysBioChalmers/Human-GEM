@@ -2,17 +2,22 @@
 
 | cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 0.3443 | 142 | 0.3792 | 99 | 0.6641 | 0.3217 | 0.1677 | 52 |
-| GBM | 0.3194 | 146 | 0.3554 | 105 | 0.6611 | 0.3059 | 0.1616 | 48 |
-| HCT116 | 0.3683 | 133 | 0.3706 | 106 | 0.6697 | 0.3326 | 0.1798 | 40 |
-| HELA | 0.3179 | 164 | 0.3176 | 135 | 0.6717 | 0.2774 | 0.1458 | 40 |
-| RPE1 | 0.2512 | 179 | 0.2982 | 132 | 0.6579 | 0.2537 | 0.1362 | 50 |
-| all |  |  |  |  | 0.6647 | 0.2982 | 0.1585 |  |
+| DLD1 | 0.348 | 142 | 0.3749 | 102 | 0.6674 | 0.3201 | 0.1671 | 50 |
+| GBM | 0.3156 | 143 | 0.3406 | 112 | 0.6554 | 0.2944 | 0.1618 | 37 |
+| HCT116 | 0.3671 | 134 | 0.3648 | 110 | 0.6689 | 0.3281 | 0.1796 | 37 |
+| HELA | 0.3117 | 173 | 0.303 | 147 | 0.6648 | 0.2651 | 0.1453 | 38 |
+| RPE1 | 0.2578 | 172 | 0.287 | 140 | 0.6456 | 0.241 | 0.1363 | 35 |
+| all |  |  |  |  | 0.6606 | 0.2894 | 0.1583 |  |
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **1** gene(s) directly affected plus **334** more that share a metabolite with one of them.
+Checked **29** gene(s) directly affected plus **1783** more that share a metabolite with one of them.
 
-**No change:** 335 gene(s).
+**Growth effect changed** (vs Hart 2015):
+- AKR1A1, GNPAT: 3/5 lines, knockout now blocks growth -- :x: wrong
 
-Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](https://github.com/SysBioChalmers/Human-GEM/blob/fix/992-cyp2e1-nadph/data/testResults/gene-essential-diff.csv).
+**Likely noise** (10 gene(s), <3/5 lines): FPGS, GGH, H6PD, LIPA, NAGK, PISD, SLC17A5, SLC27A5, SLC35D1, SLC36A1.
+
+**No change:** 1800 gene(s).
+
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](gene-essential-diff.csv).
