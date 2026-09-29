@@ -10,7 +10,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Duplicate `!!omap` keys](README.md#duplicate-omap-keys) | 0 | 0 | :white_check_mark: |
 | [Growth (biomass producible)](README.md#growth-biomass-producible) | 1.9 | 0 | :white_check_mark: |
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
-| [Model / annotation-table inconsistencies](README.md#model--annotation-table-inconsistencies) | [9](qc_annotation_consistency.csv) | +9 | :x: |
+| [Model / annotation-table inconsistencies](README.md#model--annotation-table-inconsistencies) | 0 | 0 | :white_check_mark: |
 | [Removed reactions or metabolites not deprecated](README.md#removed-reactions-or-metabolites-not-deprecated) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
