@@ -6,7 +6,7 @@
 | --- | --- |
 | Model &amp; network checks (20) | :warning: **6** pre-existing |
 | Model file &amp; metabolic tasks (6) | :white_check_mark: all pass |
-| MEMOTE | :white_check_mark: **63.8%** (core subset) |
+| MEMOTE | :white_check_mark: **64.9%** (full suite) |
 | Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/feat/release-workflow/data/testResults/model_qc_summary.md) |
 
 **Pre-existing:**

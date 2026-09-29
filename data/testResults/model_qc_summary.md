@@ -81,7 +81,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 
 </details>
 
-_Full suite: 64.9%, from an earlier model version; comment_ `/run memote` _to update it._
+**Full suite: 64.9%** &nbsp; 0 &middot; _for this model version._
 
 _The total above is the fast core subset, run on every push. Comment_ `/run memote` _to run the full suite on this pull request; the summary shows it while the model is unchanged._
 
