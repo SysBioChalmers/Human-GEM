@@ -16,13 +16,13 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
-| [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | -1 | :sparkles: |
+| [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
 | [Unused genes](README.md#unused-genes) | 0 | 0 | :white_check_mark: |
 | [Malformed cross-references](README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
 | [Cross-refs inconsistent across compartments](README.md#cross-refs-inconsistent-across-compartments) | 0 | 0 | :white_check_mark: |
 | [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1111](macaw_results.tsv) | 0 | :warning: |
-| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | +2 | :x: |
+| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | 0 | :warning: |
 | [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | 0 | :warning: |
 | [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [172](balance_results.csv) | 0 | :warning: |
 | [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [57](qc_structure_consistency.csv) | 0 | :warning: |
