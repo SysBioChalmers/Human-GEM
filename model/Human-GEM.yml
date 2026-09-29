@@ -6952,24 +6952,10 @@
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM00607c"
-      - name: "23S,25,26-trihydroxyvitamin D3"
-      - compartment: "c"
-      - formula: "C27H44O4"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM00607m"
       - name: "23S,25,26-trihydroxyvitamin D3"
       - compartment: "m"
       - formula: "C27H44O4"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM00608c"
-      - name: "23s,25-dihydroxyvitamin D3"
-      - compartment: "c"
-      - formula: "C27H44O3"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
@@ -6994,24 +6980,10 @@
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM00611c"
-      - name: "24-oxo-1alpha,23,25-trihydroxyvitamin D3"
-      - compartment: "c"
-      - formula: "C27H42O5"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM00611m"
       - name: "24-oxo-1alpha,23,25-trihydroxyvitamin D3"
       - compartment: "m"
       - formula: "C27H42O5"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM00612c"
-      - name: "24-oxo-1alpha,25-dihydroxyvitamin D3"
-      - compartment: "c"
-      - formula: "C27H42O4"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
@@ -7141,24 +7113,10 @@
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
-      - id: "MAM00621c"
-      - name: "25-hydroxyvitamin D3-26,23-lactol"
-      - compartment: "c"
-      - formula: "C27H42O4"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
       - id: "MAM00621m"
       - name: "25-hydroxyvitamin D3-26,23-lactol"
       - compartment: "m"
       - formula: "C27H42O4"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM00622c"
-      - name: "25-hydroxyvitamin D3-26,23-lactone"
-      - compartment: "c"
-      - formula: "C27H40O4"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
@@ -15839,13 +15797,6 @@
       - name: "calcidiol"
       - compartment: "e"
       - formula: "C27H44O2"
-      - charge: 0
-      - metFrom: "HMRdatabase"
-    - !!omap
-      - id: "MAM01416c"
-      - name: "calcitetrol"
-      - compartment: "c"
-      - formula: "C27H44O4"
       - charge: 0
       - metFrom: "HMRdatabase"
     - !!omap
@@ -133967,7 +133918,7 @@
           - MAM02553c: -1
       - lower_bound: -1000
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000025423 or ENSG00000135437 or ENSG00000139547 or ENSG00000140522 or ENSG00000157326 or ENSG00000170786 or ENSG00000187630 or ENSG00000198099 or ENSG00000265203"
+      - gene_reaction_rule: "ENSG00000025423 or ENSG00000135437 or ENSG00000139547 or ENSG00000140522 or ENSG00000157326 or ENSG00000187630 or ENSG00000198099 or ENSG00000265203"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.1.1.105"
       - subsystem: "Retinol metabolism"
@@ -135881,60 +135832,22 @@
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR02129"
-      - name: "cytochrome P450 (calcidiol)"
-      - metabolites: !!omap
-          - MAM00608c: 1
-          - MAM01415c: -1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
-      - subsystem: "Vitamin D metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR02130"
       - name: "cytochrome P450 (23s,25-dihydroxyvitamin D3)"
       - metabolites: !!omap
-          - MAM00608m: -1
-          - MAM01415m: 1
-          - MAM02039m: 1
-          - MAM02040m: -1
-          - MAM02554m: -1
-          - MAM02555m: 1
-          - MAM02630m: 1
-      - lower_bound: -1000
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
-      - subsystem: "Vitamin D metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR02131"
-      - name: "cytochrome P450 (23s,25-dihydroxyvitamin D3)"
-      - metabolites: !!omap
-          - MAM00607c: 1
-          - MAM00608c: -1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02552c: 1
-          - MAM02553c: -1
-          - MAM02630c: -1
+          - MAM00608m: 1
+          - MAM01415m: -1
+          - MAM02039m: -1
+          - MAM02040m: 1
+          - MAM02554m: 1
+          - MAM02555m: -1
+          - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
+      - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
+      - references: "PMID:11012668;PMID:8679605;PMID:24893882"
+      - eccodes: "1.14.15.16"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -135945,31 +135858,15 @@
           - MAM00608m: -1
           - MAM02039m: -1
           - MAM02040m: 1
-          - MAM02552m: 1
-          - MAM02553m: -1
+          - MAM02554m: 1
+          - MAM02555m: -1
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
+      - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
-      - subsystem: "Vitamin D metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR02133"
-      - name: "cytochrome P450 (23S,25,26-trihydroxyvitamin D3)"
-      - metabolites: !!omap
-          - MAM00607c: -1
-          - MAM00621c: 1
-          - MAM02041c: 1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
+      - references: "PMID:11012668;PMID:8679605;PMID:24893882"
+      - eccodes: "1.14.15.16"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -135978,30 +135875,17 @@
       - metabolites: !!omap
           - MAM00607m: -1
           - MAM00621m: 1
-          - MAM02041m: 1
+          - MAM02039m: -1
+          - MAM02040m: 2
+          - MAM02554m: 1
+          - MAM02555m: -1
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
+      - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
-      - subsystem: "Vitamin D metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR02135"
-      - name: "cytochrome P450 (25-hydroxyvitamin D3-26,23-lactol)"
-      - metabolites: !!omap
-          - MAM00621c: -1
-          - MAM00622c: 1
-          - MAM02041c: 1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
+      - references: "PMID:11012668;PMID:8679605;PMID:24893882"
+      - eccodes: "1.14.15.16"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -136010,33 +135894,17 @@
       - metabolites: !!omap
           - MAM00621m: -1
           - MAM00622m: 1
-          - MAM02041m: 1
+          - MAM02039m: -1
+          - MAM02040m: 2
+          - MAM02554m: 1
+          - MAM02555m: -1
           - MAM02630m: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
-      - subsystem: "Vitamin D metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR02137"
-      - name: "cytochrome P450 (calcidiol)"
-      - metabolites: !!omap
-          - MAM00035c: 1
-          - MAM01415c: -1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
       - lower_bound: 0
       - upper_bound: 1000
       - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
+      - references: "PMID:11012668;PMID:8679605;PMID:24893882"
       - eccodes: "1.14.15.16"
-      - references: "PMID:12466393;PMID:12485911"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -136059,24 +135927,6 @@
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR02139"
-      - name: "cytochrome P450 ((24R)-24,25-dihydroxycalciol)"
-      - metabolites: !!omap
-          - MAM00035c: -1
-          - MAM01416c: 1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02552c: 1
-          - MAM02553c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000019186"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.15.16"
-      - subsystem: "Vitamin D metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR02140"
       - name: "cytochrome P450 ((24R)-24,25-dihydroxycalciol)"
       - metabolites: !!omap
@@ -136095,24 +135945,6 @@
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
-      - id: "MAR02142"
-      - name: "cytochrome P450 (calcitetrol)"
-      - metabolites: !!omap
-          - MAM00612c: 1
-          - MAM01416c: -1
-          - MAM02039c: -1
-          - MAM02040c: 2
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - subsystem: "Vitamin D metabolism"
-      - confidence_score: 0
-    - !!omap
       - id: "MAR02143"
       - name: "cytochrome P450 (calcitetrol)"
       - metabolites: !!omap
@@ -136125,28 +135957,10 @@
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
+      - gene_reaction_rule: "ENSG00000019186"
+      - references: "PMID:11012668;PMID:8679605;PMID:24893882"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - subsystem: "Vitamin D metabolism"
-      - confidence_score: 0
-    - !!omap
-      - id: "MAR02144"
-      - name: "cytochrome P450 (24-oxo-1alpha,25-dihydroxyvitamin D3)"
-      - metabolites: !!omap
-          - MAM00611c: 1
-          - MAM00612c: -1
-          - MAM02039c: -1
-          - MAM02040c: 1
-          - MAM02554c: 1
-          - MAM02555c: -1
-          - MAM02630c: -1
-      - lower_bound: 0
-      - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
-      - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
+      - eccodes: "1.14.15.16"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -136162,10 +135976,10 @@
           - MAM02630m: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000119723 or ENSG00000130649 or ENSG00000145476"
+      - gene_reaction_rule: "ENSG00000019186"
       - rxnFrom: "HMRdatabase"
-      - eccodes: "1.14.13.-"
-      - references: "PMID:11012668"
+      - references: "PMID:11012668;PMID:8679605;PMID:24893882"
+      - eccodes: "1.14.15.16"
       - subsystem: "Vitamin D metabolism"
       - confidence_score: 0
     - !!omap
@@ -138974,7 +138788,8 @@
           - MAM02674c: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000162365 or ENSG00000187048"
+      - gene_reaction_rule: "ENSG00000162365 or ENSG00000187048 or ENSG00000145476"
+      - references: "PMID:19661213"
       - rxnFrom: "HMRdatabase"
       - eccodes: "1.14.15.3"
       - subsystem: "Xenobiotics metabolism"
@@ -180741,9 +180556,7 @@
       - id: "MAR00033"
       - name: "24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion"
       - metabolites: !!omap
-          - MAM00611c: -1
           - MAM00611m: -1
-          - MAM00622c: -1
           - MAM00622m: -1
           - MAM03140c: 1
       - lower_bound: 0
@@ -187053,7 +186866,7 @@
           - MAM02555c: 1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000072042 or ENSG00000080511 or ENSG00000139988 or ENSG00000160439 or ENSG00000170786 or ENSG00000240857"
+      - gene_reaction_rule: "ENSG00000072042 or ENSG00000080511 or ENSG00000139988 or ENSG00000160439 or ENSG00000240857"
       - rxnFrom: "Recon3D"
       - eccodes: "1.1.1.105"
       - references: "PMID:12226107;PMID:12372410;PMID:12435598;PMID:1503811;PMID:15258582;PMID:15322982"
@@ -202740,7 +202553,8 @@
           - MAM02040e: -1
       - lower_bound: 0
       - upper_bound: 1000
-      - gene_reaction_rule: "ENSG00000197594"
+      - gene_reaction_rule: "ENSG00000135318"
+      - references: "PMID:36309091"
       - rxnFrom: "Recon3D"
       - eccodes: "3.6.1.-"
       - subsystem: "Vitamin B2 metabolism"
@@ -244684,10 +244498,8 @@
           - MAM00291c: -0.0345
           - MAM00427c: -0.0172
           - MAM00427r: -0.0172
-          - MAM00611c: -0.0172
-          - MAM00611m: -0.0172
-          - MAM00622c: -0.0172
-          - MAM00622m: -0.0172
+          - MAM00611m: -0.0345
+          - MAM00622m: -0.0345
           - MAM00766c: -0.0345
           - MAM01008c: -0.0172
           - MAM01008r: -0.0172

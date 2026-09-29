@@ -6,7 +6,7 @@ MAR00017,SMCFA-blood-pool to butyrate conversion,C:6.5;H:13;R:-1,-1
 MAR00022,[protein]-N6-(lipoyl)lysine reduction,C:-3270;Co:-1;Fe:-1;H:-5094;N:-895;O:-973;P:-11;S:-28;X:0.7,17
 MAR00023,11-cis-retinol to vitamin A derivatives conversion,C:-434;H:-592;N:-1;O:-57;X:1,7
 MAR00031,lipid droplet formation,C:-13.4364;H:-19.2074;N:-0.0188;O:-4.4474;P:-0.02;R:-2.0826;X:1,0.0068
-MAR00033,"24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion",C:-108;H:-164;O:-18;X:1,
+MAR00033,"24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion",C:-54;H:-82;O:-9;X:1,
 MAR00034,3-carboxy-alpha-chromanol to vitamin E derivatives conversion,C:-37;H:-48;O:-14;X:1,2
 MAR00035,"(1aalpha,2beta,3alpha,11calpha)... to xenobiotics conversion",Br:-6;C:-588;Cl:-12;H:-621;N:-66;O:-209;S:-15,11
 MAR00036,(11R)-HPETE to arachidonate derivatives conversion,C:-3150;H:-4860;N:-76;O:-819;P:-15;S:-23,179
