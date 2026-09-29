@@ -10,7 +10,7 @@ regenerates every export in ``model/``:
 * ``Human-GEM.xml`` (SBML), ``Human-GEM.xlsx`` and ``Human-GEM.txt`` from a copy
   that has the TSV cross-references and SBO terms merged in (see annotateGEM.py).
 
-``build`` additionally writes ``version.txt``, stamps the version into the model
+``build`` additionally writes ``version.txt``, stamps the version and release date into the model
 metadata, and fills the ``{{nRXN}}`` / ``{{nMET}}`` / ``{{nGENE}}`` / ``{{DATE}}``
 placeholders in ``README.md``. Those placeholders are the state ``develop`` keeps;
 only the release branch and ``main`` carry the substituted values.
@@ -122,11 +122,14 @@ def _check_tsv_consistency(model: cobra.Model) -> None:
         raise ValueError("Model / TSV mismatch:\n  " + "\n  ".join(problems))
 
 
-def _set_version(model: cobra.Model, new_version: str) -> None:
-    """Write the version into the metaData block that write_yaml_model emits."""
+def _set_version(model: cobra.Model, new_version: str, date: str) -> None:
+    """Write the version and release date into the metaData block that
+    write_yaml_model emits. The writer keeps the stored date rather than
+    stamping the current one, so the release sets it here."""
     notes = model.notes or {}
     meta = dict(notes.get("metaData") or {})
     meta["version"] = new_version          # metaData wins in write_yaml_model
+    meta["date"] = date
     notes["metaData"] = meta
     notes["version"] = new_version
     model.notes = notes
@@ -171,7 +174,7 @@ def cmd_build(args: argparse.Namespace) -> int:
     """Stamp the version, regenerate the exports and fill the README placeholders."""
     _check_version(args.version)
     model = read_yaml_model(MODEL_DIR / "Human-GEM.yml")
-    _set_version(model, args.version)
+    _set_version(model, args.version, datetime.date.today().isoformat())
     _check_tsv_consistency(model)
     _export(model)
     VERSION_TXT.write_text(args.version, encoding="utf-8")

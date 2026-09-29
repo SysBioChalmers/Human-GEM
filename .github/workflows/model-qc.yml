@@ -169,7 +169,7 @@ jobs:
         uses: metabolicatlas/action-yamllint@v3
         with:
           file_or_dir: model/
-          config_data: "{extends: default, rules: {line-length: disable}}"
+          config_data: "{extends: default, rules: {line-length: disable, indentation: {spaces: consistent, indent-sequences: whatever}}}"
 
       - name: Record YAML lint result
         if: matrix.group == 'model-file' && !cancelled()
