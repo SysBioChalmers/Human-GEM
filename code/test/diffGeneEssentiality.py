@@ -426,7 +426,7 @@ def build_report(
         return " &middot; ".join(parts)
 
     def _neutral_status(rows: list[dict]) -> str:
-        return f":white_check_mark: **0**" if not rows else f":information_source: **{len(rows)}**"
+        return ":white_check_mark: **0**" if not rows else f":information_source: **{len(rows)}**"
 
     summary_url_ref = f"[gene-essential_summary.md]({summary_url})" if summary_url else "`gene-essential_summary.md`"
     summary_lines = [

@@ -93,6 +93,8 @@ MODEL_ROWS = [
     ("Metabolites missing formula", "missing_formula", "count", "checks", "qc_metabolite_completeness.csv"),
     ("Metabolites missing charge", "missing_charge", "count", "checks", "qc_metabolite_completeness.csv"),
     ("Reaction bound / GPR issues", "reaction_issues", "count", "checks", "qc_reaction_sanity.csv"),
+    ("Naming issues (missing or inconsistent)", "name_issues", "count", "checks",
+     "qc_name_consistency.csv"),
     ("Exact-duplicate reaction groups", "dup_reactions", "count", "checks", "qc_duplicate_reactions.csv"),
     ("Reactions split across compartments", "split_compartments", "count", "checks", "qc_split_compartments.csv"),
     ("Unused metabolites", "unused_met", "count", "checks", "qc_unused_entities.csv"),
@@ -111,6 +113,7 @@ MB_ROWS = [
 TASK_CHECKS = [
     ("YAML round-trip (cobrapy)", "roundtrip_cobra"),
     ("YAML round-trip (RAVEN)", "roundtrip_raven"),
+    ("SBML round-trip", "roundtrip_sbml"),
     ("YAML lint", "yamllint"),
     ("Essential metabolic tasks", "tasks_essential"),
     ("Verification metabolic tasks", "tasks_verification"),
@@ -212,6 +215,7 @@ def _metrics(directory: Path) -> dict:
         "missing_formula": _count_csv(completeness, lambda r: r.get("missing_formula") == "yes"),
         "missing_charge": _count_csv(completeness, lambda r: r.get("missing_charge") == "yes"),
         "reaction_issues": _count_csv(directory / "qc_reaction_sanity.csv"),
+        "name_issues": _count_csv(directory / "qc_name_consistency.csv"),
         "dup_reactions": _distinct_csv(directory / "qc_duplicate_reactions.csv", "group"),
         "split_compartments": _count_csv(directory / "qc_split_compartments.csv"),
         "unused_met": _count_csv(unused, lambda r: r.get("kind") == "metabolite"),
@@ -538,7 +542,7 @@ def main() -> int:
     ]
     callout_blocks = [
         _callout(network_summary["regressions"], verb="Regression(s)"),
-        ([f"**Gate failure(s):**"] + [f"- {r['label']}: {r['result']}" for r in task_summary["failed"]]
+        (["**Gate failure(s):**"] + [f"- {r['label']}: {r['result']}" for r in task_summary["failed"]]
          if task_summary["failed"] else []),
         _callout(network_summary["improved"], verb="Improved"),
         _callout(network_summary["warnings"], verb="Pre-existing") if not regressions else [],

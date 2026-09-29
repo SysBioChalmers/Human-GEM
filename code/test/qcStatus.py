@@ -44,8 +44,13 @@ def model_version(model_dir: Path = MODEL_DIR) -> str:
 _HEADER = ("check", "result")
 
 
-def read_status(path: Path = STATUS_FILE) -> dict:
-    """Return the status file as a {check: result} dict ({} if it does not exist)."""
+def read_status(path: Path | None = None) -> dict:
+    """Return the status file as a {check: result} dict ({} if it does not exist).
+
+    The default is resolved here rather than in the signature, so that reads and
+    writes always agree on which file is current.
+    """
+    path = STATUS_FILE if path is None else path
     if not path.exists():
         return {}
     out: dict[str, str] = {}
