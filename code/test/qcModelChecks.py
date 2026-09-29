@@ -314,7 +314,9 @@ def check_split_compartments(model: cobra.Model) -> int:
     """
     rows = []
     for rxn in model.reactions:
-        if rxn.subsystem == "Artificial reactions":
+        # A subsystem is a string, or a list of them in the RAVEN 3 YAML format.
+        subsystems = rxn.subsystem if isinstance(rxn.subsystem, list) else [rxn.subsystem]
+        if "Artificial reactions" in subsystems:
             continue
         compartments_of = defaultdict(set)
         for met in rxn.metabolites:

@@ -98,7 +98,7 @@ def classify(model_formula, model_charge, smiles):
         ik = ""
     m_el, r_el = parse_formula(model_formula), parse_formula(rd_formula)
     try:
-        m_charge = int(model_charge)
+        m_charge = int(float(model_charge))
     except (TypeError, ValueError):
         m_charge = None
     m_heavy = {k: v for k, v in m_el.items() if k != "H"}

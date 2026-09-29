@@ -207,9 +207,11 @@ jobs:
 
       # main after the release is develop plus the release branch's own commits,
       # so this is an ordinary merge. The generated files and version.txt are
-      # dropped from it, and README.md is taken back from develop: the build
-      # substituted its {{nRXN}} / {{nMET}} / {{nGENE}} placeholders, and develop
-      # keeps the unsubstituted template for the next release.
+      # dropped from it, and README.md and model/Human-GEM.yml are taken back from
+      # develop: the build substituted the README's {{nRXN}} / {{nMET}} / {{nGENE}}
+      # placeholders and rewrote the YAML in the export format with the version
+      # stamped, while develop keeps the template README and the YAML in its
+      # curation format, without a version.
       - name: Open the sync-back pull request into develop
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -222,9 +224,9 @@ jobs:
           git checkout -b "sync/main-to-develop-$version" origin/develop
           git merge --no-commit --no-ff origin/main
           git rm --cached $RELEASE_ONLY_FILES
-          git checkout origin/develop -- README.md
+          git checkout origin/develop -- README.md model/Human-GEM.yml
           git commit -m "chore: merge main into develop after $version, without the release-only files"
           git push origin "sync/main-to-develop-$version"
           gh pr create --base develop --head "sync/main-to-develop-$version" \
             --title "chore: sync main into develop after $version" \
-            --body "Brings $version back into \`develop\`, keeping the generated model files and \`version.txt\` off it, and keeping the \`README.md\` placeholders. See branch-hygiene.yml, which would otherwise flag them."
+            --body "Brings $version back into \`develop\`, keeping the generated model files and \`version.txt\` off it, and keeping \`develop\`'s \`README.md\` placeholders and \`model/Human-GEM.yml\`. See branch-hygiene.yml, which would otherwise flag them."

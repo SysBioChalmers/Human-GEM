@@ -15,7 +15,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
-| [Naming issues (missing or inconsistent)](README.md#naming-issues-missing-or-inconsistent) | 0 | new | :white_check_mark: |
+| [Naming issues (missing or inconsistent)](README.md#naming-issues-missing-or-inconsistent) | 0 | 0 | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
@@ -81,7 +81,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 
 </details>
 
-**Full suite: 64.9%** &nbsp; 0 &middot; _for this model version._
+_Full suite: 64.9%, from an earlier model version; comment_ `/run memote` _to update it._
 
 _The total above is the fast core subset, run on every push. Comment_ `/run memote` _to run the full suite on this pull request; the summary shows it while the model is unchanged._
 
