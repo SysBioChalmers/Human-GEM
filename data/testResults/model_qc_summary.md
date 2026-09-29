@@ -15,6 +15,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
+| [Naming issues (missing or inconsistent)](README.md#naming-issues-missing-or-inconsistent) | 0 | new | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
@@ -33,6 +34,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | --- | ---: | :---: |
 | [YAML round-trip (cobrapy)](README.md#yaml-round-trip-cobrapy) | pass | :white_check_mark: |
 | [YAML round-trip (RAVEN)](README.md#yaml-round-trip-raven) | pass | :white_check_mark: |
+| [SBML round-trip](README.md#sbml-round-trip) | pass | :white_check_mark: |
 | [YAML lint](README.md#yaml-lint) | pass | :white_check_mark: |
 | [Essential metabolic tasks](README.md#essential-metabolic-tasks) | 57 passed | :white_check_mark: |
 | [Verification metabolic tasks](README.md#verification-metabolic-tasks) | 21 passed | :white_check_mark: |
