@@ -2,22 +2,22 @@
 
 | cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 0.348 | 142 | 0.3749 | 102 | 0.6674 | 0.3201 | 0.1671 | 50 |
-| GBM | 0.3156 | 143 | 0.3406 | 112 | 0.6554 | 0.2944 | 0.1618 | 37 |
-| HCT116 | 0.3671 | 134 | 0.3648 | 110 | 0.6689 | 0.3281 | 0.1796 | 37 |
-| HELA | 0.3117 | 173 | 0.303 | 147 | 0.6648 | 0.2651 | 0.1453 | 38 |
-| RPE1 | 0.2578 | 172 | 0.287 | 140 | 0.6456 | 0.241 | 0.1363 | 35 |
-| all |  |  |  |  | 0.6606 | 0.2894 | 0.1583 |  |
+| DLD1 | 0.3393 | 149 | 0.3644 | 109 | 0.6626 | 0.311 | 0.1669 | 50 |
+| GBM | 0.3152 | 149 | 0.3386 | 116 | 0.6549 | 0.2925 | 0.1613 | 40 |
+| HCT116 | 0.3701 | 132 | 0.3666 | 109 | 0.6671 | 0.327 | 0.1791 | 36 |
+| HELA | 0.3075 | 174 | 0.3046 | 146 | 0.6651 | 0.2657 | 0.1449 | 39 |
+| RPE1 | 0.2592 | 171 | 0.2963 | 133 | 0.656 | 0.25 | 0.136 | 41 |
+| all |  |  |  |  | 0.661 | 0.2893 | 0.1579 |  |
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **29** gene(s) directly affected plus **1783** more that share a metabolite with one of them.
+Checked **16** gene(s) directly affected plus **1887** more that share a metabolite with one of them.
 
-**Growth effect changed** (vs Hart 2015):
-- AKR1A1, GNPAT: 3/5 lines, knockout now blocks growth -- :x: wrong
+**Other role changed** (not Hart-comparable):
+- PXMP2: 3/5 lines, substrate utilization -- now required
 
-**Likely noise** (10 gene(s), <3/5 lines): FPGS, GGH, H6PD, LIPA, NAGK, PISD, SLC17A5, SLC27A5, SLC35D1, SLC36A1.
+**Likely noise** (11 gene(s), <3/5 lines): AKR1A1, GNPAT, LIPA, MPC1, MPC2, NAGK, PISD, RDH5, SLC17A5, SLC25A17, SLC27A5.
 
-**No change:** 1800 gene(s).
+**No change:** 1891 gene(s).
 
 Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](gene-essential-diff.csv).

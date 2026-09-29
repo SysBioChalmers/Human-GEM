@@ -80,7 +80,7 @@ EXPRESSION_THRESHOLD = 1.0
 # by an absolute MIP gap and a time limit for tractability on the genome-scale model.
 BIG_M = 100.0
 MIP_GAP_ABS = 10.0
-TIME_LIMIT = 1800.0
+TIME_LIMIT = 900.0
 
 # The extraction MILP is degenerate: many reaction sets score identically, so which one
 # is returned is otherwise left to the solver, and the essential genes predicted from it
@@ -93,8 +93,13 @@ TIME_LIMIT = 1800.0
 # two different routes gave context models 4-9 reactions apart per Hart2015 cell line;
 # with it, the two were identical. It raises the five cell lines' summed build time from
 # about 92 to 124 min (HCT116 7 -> 22 min, RPE1 38 -> 59 min). A tie-break phase that
-# reaches its time limit adopts an unproven incumbent (GBM step 2 and RPE1 step 1 do), so
-# for those steps the result is pinned for a given CPU but not proven unique.
+# reaches its time limit adopts an unproven incumbent (GBM step 2 does), so for such
+# steps the result is pinned for a given CPU but not proven unique. When the primary
+# solve itself reaches TIME_LIMIT (RPE1 step 1), raven-toolbox skips the tie-break.
+#
+# TIME_LIMIT: RPE1 step 1 is the only solve that reaches it. Its incumbent is the same
+# at 900 s as at 1800 s, and building all five lines with 900 s gave the same context
+# models and essentiality calls as with 1800 s, with RPE1 built in 20 instead of 53 min.
 #
 # PROVE_ABS_GAP replaces RAVEN's relative-gap escalation with one solve per step proven
 # to this absolute gap, which returns the optimum instead of an incumbent 2.0-4.0 below

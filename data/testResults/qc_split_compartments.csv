@@ -1,5 +1,4 @@
 reaction,name,compartments,equation
-MAR00119,Ca ATPase,ce,ATP + Ca2+ + H2O --> ADP + Ca2+ + H+ + Pi
 MAR00483,sn-glycerol-3-phosphate:ubiquinone oxidoreductase,cm,sn-glycerol-3-phosphate + ubiquinone --> DHAP + ubiquinol
 MAR03481,ATP binding cassette subfamily D ((3R)-phytanoyl-CoA),cx,ATP + 2 H2O + (3R)-phytanoyl-CoA <=> ADP + CoA + 2 H+ + (3R)-phytanic acid + Pi
 MAR04184,sulfite:ferricytochrome-c oxidoreductase,cm,2 ferricytochrome C + H2O + sulfite --> 2 ferrocytochrome C + 2 H+ + sulfate
