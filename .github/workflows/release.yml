@@ -2,9 +2,10 @@ name: Release
 
 # Cuts a release branch from develop, stamps the version and regenerates the
 # model exports with code/io/increaseHumanGEMVersion.py, and opens the release
-# pull request into main for a human to approve. On merge, tags the release,
-# publishes it on GitHub from docs/releaseNotes/<version>.md, and opens the
-# sync-back pull request into develop.
+# pull request into main for a human to approve. The release notes are written
+# in the description of that pull request, and a check keeps it from being merged
+# without them. On merge, tags the release, publishes it on GitHub with the notes
+# as its text, and opens the sync-back pull request into develop.
 #
 # The release pull request is checked by model-qc.yml, which runs on every pull
 # request, so the model quality report appears on it without extra wiring here.
@@ -16,18 +17,21 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "New version, e.g. 2.1.0. Needs docs/releaseNotes/<version>.md."
+        description: "New version, e.g. 2.1.0"
         required: true
   pull_request:
-    types: [closed]
+    types: [opened, edited, reopened, synchronize, closed]
     branches: [main]
 
 permissions:
   contents: write
   pull-requests: write
 
+# The release itself (dispatch and merge) runs one at a time; the notes check of a
+# release pull request runs in its own group, so editing the description never
+# queues behind or replaces a release run.
 concurrency:
-  group: release
+  group: ${{ (github.event_name == 'workflow_dispatch' || github.event.action == 'closed') && 'release' || format('release-notes-{0}', github.event.pull_request.number) }}
   cancel-in-progress: false
 
 env:
@@ -60,7 +64,7 @@ jobs:
       # Fails here, before a branch exists, rather than partway through the
       # build job. Reads the current version from origin/main, since develop
       # does not track version.txt.
-      - name: Validate the version and its release notes
+      - name: Validate the version
         run: |
           python code/io/increaseHumanGEMVersion.py validate \
             --version "${{ github.event.inputs.version }}"
@@ -127,12 +131,47 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ github.event.inputs.version }}
+        # The description is the release notes: everything outside HTML comments is
+        # published as the text of the GitHub release (and of its Zenodo record).
         run: |
-          gh pr create --base main --head "release/$VERSION" \
-            --title "chore: version $VERSION" \
-            --body "Automated release build for $VERSION.
+          cat > "$RUNNER_TEMP/body.md" <<EOF
+          <!--
+          Automated release build for $VERSION. Write the release notes in this
+          description, replacing the placeholder line below: everything outside
+          these comments becomes the text of the GitHub release "Human $VERSION".
+          See the wiki page "How to make a new release" for their structure.
 
-          Review the Model QC comment below, and [the release notes](https://github.com/${{ github.repository }}/blob/release/$VERSION/docs/releaseNotes/$VERSION.md), before approving. Merging tags \`v$VERSION\`, publishes the release, and opens the sync-back pull request into \`develop\`."
+          Review the Model QC comment, then merge with a merge commit. Merging tags
+          v$VERSION, publishes the release, and opens the sync-back pull request
+          into develop.
+          -->
+
+          RELEASE-NOTES-PLACEHOLDER: replace this line with the release notes.
+          EOF
+          gh pr create --base main --head "release/$VERSION" \
+            --title "chore: version $VERSION" --body-file "$RUNNER_TEMP/body.md"
+
+  # --- Keep the release pull request from merging without notes -----------
+
+  check-notes:
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.action != 'closed' &&
+      startsWith(github.event.pull_request.head.ref, 'release/')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # The description arrives through an environment variable, never inlined
+      # into the script, so its text cannot run as shell.
+      - name: Check that the release notes are written
+        env:
+          BODY: ${{ github.event.pull_request.body }}
+        run: |
+          notes=$(printf '%s' "$BODY" | perl -0pe 's/<!--.*?-->//gs' | sed '/^[[:space:]]*$/d')
+          if [ -z "$notes" ] || printf '%s' "$notes" | grep -q 'RELEASE-NOTES-PLACEHOLDER'; then
+            echo "::error::Write the release notes in the description of this pull request; they become the text of the GitHub release."
+            exit 1
+          fi
 
   # --- On merge: tag, release, sync back ---------------------------------
 
@@ -153,14 +192,18 @@ jobs:
       # The tag keeps the "vX.Y.Z" form used by every existing tag, and the
       # release title follows the "Human X.Y.Z" convention of every release
       # published so far.
+      # The release text is the merged pull request's description without its
+      # HTML comments, passed through an environment variable (see check-notes).
       - name: Tag and publish the release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BODY: ${{ github.event.pull_request.body }}
         run: |
           version="${{ github.event.pull_request.head.ref }}"
           version="${version#release/}"
+          printf '%s\n' "$BODY" | perl -0pe 's/<!--.*?-->//gs; s/\A\s+//' > "$RUNNER_TEMP/notes.md"
           gh release create "v$version" --target main --title "Human $version" \
-            --notes-file "docs/releaseNotes/$version.md"
+            --notes-file "$RUNNER_TEMP/notes.md"
 
       # main after the release is develop plus the release branch's own commits,
       # so this is an ordinary merge. The generated files and version.txt are
