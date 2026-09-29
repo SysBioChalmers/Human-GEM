@@ -10,6 +10,9 @@ file is missing or empty, so the release workflow stops before it creates a bran
 Because the notes are committed, they travel with the release branch and are part
 of the release pull request, where they can be reviewed alongside the model changes.
 
+The notes of every earlier release, from 0.1.0 to 2.0.1, are kept here as published
+in their GitHub release announcements.
+
 ## Structure
 
 The releases published so far open with a short summary of the themes, then list
