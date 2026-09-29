@@ -97,14 +97,13 @@ A GitHub Action (`.github/workflows/add-contributor.yml`) picks up the comment, 
 
 ### Releasing a new version
 
-Releases are cut by the `Release` workflow (`.github/workflows/release.yml`), which runs the version bump, opens the release pull request, and publishes the release. Two steps are done by hand:
+Releases are cut by the `Release` workflow (`.github/workflows/release.yml`), which runs the version bump, opens the release pull request, and publishes the release. The release notes are written by hand, in the description of the release pull request, and become the text of the GitHub release and of its Zenodo record; they are not kept as a file in the repository.
 
-1. Write the release notes on `develop`, in `docs/releaseNotes/<version>.md`. See the [README there](../docs/releaseNotes/README.md) for the structure. The workflow refuses a version whose notes file is missing or empty.
-2. Start the workflow from the Actions tab, giving the new version (for example `2.1.0`). It must be a major, minor or patch increment of `version.txt` on `main`.
+1. Start the workflow from the Actions tab, giving the new version (for example `2.1.0`). It must be a major, minor or patch increment of `version.txt` on `main`.
+2. The workflow cuts `release/<version>` from `develop`, stamps the version, regenerates `model/Human-GEM.{yml,mat,xml,xlsx,txt}` and `model/dependencies.txt` with `code/io/increaseHumanGEMVersion.py`, fills the `{{nRXN}}` / `{{nMET}}` / `{{nGENE}}` placeholders in `README.md`, and opens a pull request into `main`. The Model QC workflow comments on that pull request as it does on any other, so the release is reviewed against the same checks.
+3. Write the release notes in the description of that pull request, replacing its placeholder line. A check keeps the pull request from being merged while the notes are missing. See the wiki page [How to make a new release](https://github.com/SysBioChalmers/Human-GEM/wiki/How-to-make-a-new-release) for their structure, and earlier [releases](https://github.com/SysBioChalmers/Human-GEM/releases) for examples.
 
-The workflow then cuts `release/<version>` from `develop`, stamps the version, regenerates `model/Human-GEM.{yml,mat,xml,xlsx,txt}` and `model/dependencies.txt` with `code/io/increaseHumanGEMVersion.py`, fills the `{{nRXN}}` / `{{nMET}}` / `{{nGENE}}` placeholders in `README.md`, and opens a pull request into `main`. The Model QC workflow comments on that pull request as it does on any other, so the release is reviewed against the same checks.
-
-Merging that pull request tags `v<version>`, publishes the release titled `Human <version>` from the notes file, and opens a sync-back pull request into `develop`. The sync-back keeps the generated model files and `version.txt` off `develop`, and restores the `README.md` placeholders, so `develop` stays a template that is ahead of the last release rather than at a version.
+Merging that pull request tags `v<version>`, publishes the release titled `Human <version>` with the notes as its text, and opens a sync-back pull request into `develop`. The sync-back keeps the generated model files and `version.txt` off `develop`, and restores the `README.md` placeholders, so `develop` stays a template that is ahead of the last release rather than at a version.
 
 ## Acknowledgments
 

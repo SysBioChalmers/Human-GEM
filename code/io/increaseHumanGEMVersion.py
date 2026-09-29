@@ -15,10 +15,10 @@ metadata, and fills the ``{{nRXN}}`` / ``{{nMET}}`` / ``{{nGENE}}`` / ``{{DATE}}
 placeholders in ``README.md``. Those placeholders are the state ``develop`` keeps;
 only the release branch and ``main`` carry the substituted values.
 
-The release notes for a version live in ``docs/releaseNotes/<version>.md`` and are
-written before the release branch is cut. ``validate`` refuses a version whose notes
-file is missing, so the release workflow fails before it creates a branch rather than
-partway through the build.
+``validate`` refuses a version that is not a major, minor or patch increment of the
+released version, so the release workflow fails before it creates a branch rather than
+partway through the build. The release notes are not a file: they are written in the
+release pull request and published as the text of the GitHub release.
 
 Usage:
     python code/io/increaseHumanGEMVersion.py validate --version 2.1.0
@@ -39,7 +39,6 @@ import pandas as pd
 REPO_ROOT = Path(__file__).resolve().parents[2]
 MODEL_DIR = REPO_ROOT / "model"
 VERSION_TXT = REPO_ROOT / "version.txt"
-RELEASE_NOTES_DIR = REPO_ROOT / "docs" / "releaseNotes"
 
 # Make the sibling code/annotateGEM.py importable regardless of the caller's cwd.
 sys.path.insert(0, str(REPO_ROOT / "code"))
@@ -93,12 +92,8 @@ def _current_version_text() -> str:
     return result.stdout
 
 
-def release_notes_path(version: str) -> Path:
-    return RELEASE_NOTES_DIR / f"{version}.md"
-
-
 def _check_version(version: str) -> None:
-    """Error unless ``version`` is a legal increment with release notes present."""
+    """Error unless ``version`` is a legal increment of the released version."""
     old = _parse_version(_current_version_text())
     new = _parse_version(version)
     allowed = _legal_bumps(old)
@@ -107,13 +102,6 @@ def _check_version(version: str) -> None:
         raise SystemExit(
             f"{version} is not a major, minor or patch increment of "
             f"{'.'.join(map(str, old))}. Expected one of: {options}."
-        )
-
-    notes = release_notes_path(version)
-    if not notes.is_file() or not notes.read_text(encoding="utf-8").strip():
-        raise SystemExit(
-            f"{notes.relative_to(REPO_ROOT).as_posix()} is missing or empty. "
-            "Write the release notes before cutting the release branch."
         )
 
 
@@ -173,10 +161,9 @@ def _export(model: cobra.Model) -> None:
 
 
 def cmd_validate(args: argparse.Namespace) -> int:
-    """Check the version and its release notes. No side effects."""
+    """Check the version increment. No side effects."""
     _check_version(args.version)
-    print(f"{args.version} is a legal increment of {_current_version_text().strip()}, "
-          f"and {release_notes_path(args.version).relative_to(REPO_ROOT).as_posix()} is ready.")
+    print(f"{args.version} is a legal increment of {_current_version_text().strip()}.")
     return 0
 
 
@@ -209,7 +196,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     sub = parser.add_subparsers(dest="command", required=True)
 
-    p = sub.add_parser("validate", help="check the version increment and release notes")
+    p = sub.add_parser("validate", help="check the version increment")
     p.add_argument("--version", required=True, help="new version, e.g. 2.1.0")
     p.set_defaults(func=cmd_validate)
 
