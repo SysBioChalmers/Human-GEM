@@ -34,18 +34,18 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | --- | ---: | :---: |
 | [YAML round-trip (cobrapy)](README.md#yaml-round-trip-cobrapy) | pass | :white_check_mark: |
 | [YAML round-trip (RAVEN)](README.md#yaml-round-trip-raven) | pass | :white_check_mark: |
-| [SBML round-trip](README.md#sbml-round-trip) | fail | :x: |
+| [SBML round-trip](README.md#sbml-round-trip) | pass | :white_check_mark: |
 | [YAML lint](README.md#yaml-lint) | pass | :white_check_mark: |
 | [Essential metabolic tasks](README.md#essential-metabolic-tasks) | 57 passed | :white_check_mark: |
 | [Verification metabolic tasks](README.md#verification-metabolic-tasks) | 21 passed | :white_check_mark: |
 
 ### [MEMOTE](README.md#memote)
 
-**Total score: 63.9%** (core subset) &nbsp; +0.1 :white_check_mark:
+**Total score: 63.8%** (core subset) &nbsp; 0
 
 | Section | Score | &Delta; vs base |
 | --- | ---: | ---: |
-| consistency | 42.8% | +0.3 :white_check_mark: |
+| consistency | 42.5% | 0 |
 | annotation_met | 77.7% | 0 |
 | annotation_rxn | 76.4% | 0 |
 | annotation_gene | 46.7% | 0 |
@@ -56,7 +56,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | Section | Test | Score |
 | --- | --- | ---: |
 | Consistency | Mass Balance | 99.3% |
-| Consistency | Charge Balance | 100.0% |
+| Consistency | Charge Balance | 98.2% |
 | Consistency | Metabolite Connectivity | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |
 | Annotation - Metabolites | Metabolite Annotations Per Database | 47.4% |

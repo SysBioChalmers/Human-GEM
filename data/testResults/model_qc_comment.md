@@ -1,16 +1,13 @@
 ## Model quality report
 
-:x: **Merge blocked: the model cannot be loaded or cannot grow, or a build gate failed.** Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:.
+:warning: **6** pre-existing finding(s), no regressions vs `develop`. Non-blocking. Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:.
 
 | Section | Status |
 | --- | --- |
 | Model &amp; network checks (20) | :warning: **6** pre-existing |
-| Model file &amp; metabolic tasks (6) | :x: **1** failed |
-| MEMOTE | :sparkles: **63.9%** (core subset) |
+| Model file &amp; metabolic tasks (6) | :white_check_mark: all pass |
+| MEMOTE | :white_check_mark: **63.8%** (core subset) |
 | Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/chore/raven3-yaml-format/data/testResults/model_qc_summary.md) |
-
-**Gate failure(s):**
-- SBML round-trip: fail
 
 **Pre-existing:**
 - Reactions split across compartments: [**26**](https://github.com/SysBioChalmers/Human-GEM/blob/chore/raven3-yaml-format/data/testResults/qc_split_compartments.csv)
