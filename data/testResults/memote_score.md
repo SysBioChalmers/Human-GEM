@@ -4,16 +4,16 @@
 
 Mode: core subset.
 
-Model version: 8dbeec389cb4.
+Model version: 6d3d6fa1c1c7.
 Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metabolites, test_inconsistent_min_stoichiometry, test_detect_energy_generating_cycles, test_find_stoichiometrically_balanced_cycles, test_blocked_reactions, test_find_reactions_unbounded_flux_default_condition, test_find_metabolites_not_produced_with_open_bounds, test_find_metabolites_not_consumed_with_open_bounds, test_number_independent_conservation_relations, test_matrix_rank, test_degrees_of_freedom.
 
-**Total score: 63.8%**
+**Total score: 63.9%**
 
 ### Section scores
 
 | Section | Score |
 | --- | ---: |
-| consistency | 42.5% |
+| consistency | 42.8% |
 | annotation_met | 77.7% |
 | annotation_rxn | 76.4% |
 | annotation_gene | 46.7% |
@@ -24,7 +24,7 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 | Section | Test | Score |
 | --- | --- | ---: |
 | Consistency | Mass Balance | 99.3% |
-| Consistency | Charge Balance | 98.2% |
+| Consistency | Charge Balance | 100.0% |
 | Consistency | Metabolite Connectivity | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |
 | Annotation - Metabolites | Metabolite Annotations Per Database | 47.4% |
