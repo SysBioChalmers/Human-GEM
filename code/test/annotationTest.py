@@ -36,7 +36,8 @@ MET_PATTERNS = {
     "metChEBIID": r"CHEBI:\d+",
     "metHMDBID": r"HMDB\d+",
     "metPubChemID": r"\d+",
-    "metMetaNetXID": r"MNXM\d+",
+    "metMetaNetXID": r"MNXM\d+|WATER",  # WATER is MetaNetX's id for H2O
+    "metSeedID": r"cpd\d{5}",
     "metLipidMapsID": r"LM[A-Z]{2}\w+",
     "metEHMNID": r"C[A-Z]\d+",
     "metHepatoNET1ID": r"HC\d+",
@@ -44,6 +45,7 @@ MET_PATTERNS = {
 RXN_PATTERNS = {
     "rxnKEGGID": r"R\d{5}",
     "rxnMetaNetXID": r"MNXR\d+",
+    "rxnSeedID": r"rxn\d{5}",
     "rxnRheaID": r"RHEA:\d+",
     "rxnRheaMasterID": r"RHEA:\d+",
     "rxnREACTOMEID": r"R-HSA-\d+(?:\.\d+)?",
@@ -52,7 +54,7 @@ RXN_PATTERNS = {
 }
 # Namespaces that should be identical across a metabolite's compartments.
 CROSS_COMPARTMENT_COLS = [
-    "metKEGGID", "metChEBIID", "metHMDBID", "metPubChemID", "metMetaNetXID", "metLipidMapsID",
+    "metKEGGID", "metChEBIID", "metHMDBID", "metPubChemID", "metMetaNetXID", "metLipidMapsID", "metSeedID",
 ]
 
 

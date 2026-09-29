@@ -56,11 +56,11 @@ def test_a_rising_count_is_a_regression():
     assert fatal is False
 
 
-def test_a_falling_count_is_not_a_regression():
+def test_a_falling_count_is_an_improvement():
     delta, icon, regression, _fatal = buildReport._icon(1, 3, "count")
     assert delta == "-2"
     assert regression is False
-    assert icon == ":warning:"          # non-zero count still warns
+    assert icon == buildReport.IMPROVED
 
 
 def test_an_unchanged_zero_count_is_clean():
