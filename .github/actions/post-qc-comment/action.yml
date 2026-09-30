@@ -5,8 +5,9 @@ inputs:
   mode:
     description: >-
       "both" (default) builds the report and posts the comment; "build" only renders
-      data/testResults/model_qc_summary.md (so it can be committed first); "post" only
-      posts the already-rendered summary (use after the commit).
+      data/testResults/model_qc_comment.md and model_qc_summary.md (so they can be
+      committed first); "post" only posts the already-rendered comment (use after the
+      commit).
     required: false
     default: both
   running-groups:
@@ -58,7 +59,9 @@ runs:
         script: |
           const fs = require('fs');
           const marker = '<!-- MODEL-QC-COMMENT -->';
-          const report = fs.readFileSync('data/testResults/model_qc_summary.md', 'utf8');
+          // The condensed, one-row-per-section report; model_qc_summary.md (full detail,
+          // every check) is committed alongside it and linked from within this report.
+          const report = fs.readFileSync('data/testResults/model_qc_comment.md', 'utf8');
           const footer = `\n\n[Full workflow run](${{ inputs.run-url }}) &middot; _this comment is edited as results come in_`;
           const body = `${marker}\n${report}${footer}`;
           const { owner, repo } = context.repo;

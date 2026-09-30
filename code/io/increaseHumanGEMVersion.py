@@ -10,13 +10,20 @@ regenerates every export in ``model/``:
 * ``Human-GEM.xml`` (SBML), ``Human-GEM.xlsx`` and ``Human-GEM.txt`` from a copy
   that has the TSV cross-references and SBO terms merged in (see annotateGEM.py).
 
-Outside test mode it also refuses to run off ``main``, bumps ``version.txt`` and
-fills the ``{{nRXN}}`` / ``{{nMET}}`` / ``{{nGENE}}`` / ``{{DATE}}`` placeholders
-in ``README.md``.
+``build`` additionally writes ``version.txt``, stamps the version and release date into the model
+metadata, and fills the ``{{nRXN}}`` / ``{{nMET}}`` / ``{{nGENE}}`` / ``{{DATE}}``
+placeholders in ``README.md``. Those placeholders are the state ``develop`` keeps;
+only the release branch and ``main`` carry the substituted values.
+
+``validate`` refuses a version that is not a major, minor or patch increment of the
+released version, so the release workflow fails before it creates a branch rather than
+partway through the build. The release notes are not a file: they are written in the
+release pull request and published as the text of the GitHub release.
 
 Usage:
-    python code/io/increaseHumanGEMVersion.py {major|minor|patch}
-    python code/io/increaseHumanGEMVersion.py patch --test   # regenerate only
+    python code/io/increaseHumanGEMVersion.py validate --version 2.1.0
+    python code/io/increaseHumanGEMVersion.py build --version 2.1.0
+    python code/io/increaseHumanGEMVersion.py export   # regenerate exports only
 """
 from __future__ import annotations
 
@@ -31,6 +38,7 @@ import pandas as pd
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 MODEL_DIR = REPO_ROOT / "model"
+VERSION_TXT = REPO_ROOT / "version.txt"
 
 # Make the sibling code/annotateGEM.py importable regardless of the caller's cwd.
 sys.path.insert(0, str(REPO_ROOT / "code"))
@@ -46,29 +54,55 @@ _ID_TABLES = (
 )
 
 
-def _bump(old: str, bump_type: str) -> str:
-    """Return the ``major``/``minor``/``patch`` increment of a ``x.y.z`` string."""
-    parts = [int(p) for p in old.strip().split(".")]
-    if len(parts) != 3:
-        raise ValueError(f"version.txt is not x.y.z: {old!r}")
-    major, minor, patch = parts
-    if bump_type == "major":
-        major, minor, patch = major + 1, 0, 0
-    elif bump_type == "minor":
-        minor, patch = minor + 1, 0
-    elif bump_type == "patch":
-        patch += 1
-    else:
-        raise ValueError('bump_type must be "major", "minor" or "patch"')
-    return f"{major}.{minor}.{patch}"
+def _parse_version(text: str) -> tuple[int, int, int]:
+    parts = text.strip().split(".")
+    if len(parts) != 3 or not all(p.isdigit() for p in parts):
+        raise SystemExit(f"not a x.y.z version: {text.strip()!r}")
+    major, minor, patch = (int(p) for p in parts)
+    return major, minor, patch
 
 
-def _current_branch() -> str:
-    out = subprocess.run(
-        ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+def _legal_bumps(old: tuple[int, int, int]) -> dict[str, tuple[int, int, int]]:
+    major, minor, patch = old
+    return {
+        "major": (major + 1, 0, 0),
+        "minor": (major, minor + 1, 0),
+        "patch": (major, minor, patch + 1),
+    }
+
+
+def _current_version_text() -> str:
+    """The currently released version.
+
+    ``version.txt`` is tracked on ``main`` only (see branch-hygiene.yml), while
+    ``validate`` runs from a develop checkout when cutting a release. Read the local
+    file when the checkout has one (``main``, or an already-cut release branch);
+    otherwise read it from ``origin/main``.
+    """
+    if VERSION_TXT.is_file():
+        return VERSION_TXT.read_text(encoding="utf-8")
+    subprocess.run(
+        ["git", "fetch", "--depth=1", "origin", "main"],
         cwd=REPO_ROOT, capture_output=True, text=True, check=True,
     )
-    return out.stdout.strip()
+    result = subprocess.run(
+        ["git", "show", "origin/main:version.txt"],
+        cwd=REPO_ROOT, capture_output=True, text=True, check=True,
+    )
+    return result.stdout
+
+
+def _check_version(version: str) -> None:
+    """Error unless ``version`` is a legal increment of the released version."""
+    old = _parse_version(_current_version_text())
+    new = _parse_version(version)
+    allowed = _legal_bumps(old)
+    if new not in allowed.values():
+        options = ", ".join(".".join(map(str, v)) for v in allowed.values())
+        raise SystemExit(
+            f"{version} is not a major, minor or patch increment of "
+            f"{'.'.join(map(str, old))}. Expected one of: {options}."
+        )
 
 
 def _check_tsv_consistency(model: cobra.Model) -> None:
@@ -88,11 +122,14 @@ def _check_tsv_consistency(model: cobra.Model) -> None:
         raise ValueError("Model / TSV mismatch:\n  " + "\n  ".join(problems))
 
 
-def _set_version(model: cobra.Model, new_version: str) -> None:
-    """Write the version into the metaData block that write_yaml_model emits."""
+def _set_version(model: cobra.Model, new_version: str, date: str) -> None:
+    """Write the version and release date into the metaData block that
+    write_yaml_model emits. The writer keeps the stored date rather than
+    stamping the current one, so the release sets it here."""
     notes = model.notes or {}
     meta = dict(notes.get("metaData") or {})
     meta["version"] = new_version          # metaData wins in write_yaml_model
+    meta["date"] = date
     notes["metaData"] = meta
     notes["version"] = new_version
     model.notes = notes
@@ -112,58 +149,69 @@ def _update_readme(model: cobra.Model) -> None:
     readme.write_text(content, encoding="utf-8")
 
 
-def increase_human_gem_version(bump_type: str, test: bool = False) -> str | None:
-    """Regenerate the model exports and (unless ``test``) bump the version.
+def _export(model: cobra.Model) -> None:
+    """Write every derived model file from ``model``.
 
-    Returns the new version string, or ``None`` in test mode.
+    The plain formats (yml, mat) keep their cross-references in the TSV tables; the
+    annotated formats (xml, xlsx, txt) carry the merged TSV cross-references and SBO
+    terms (see annotateGEM.py). export_for_git also (re)writes model/dependencies.txt.
+    varname pins the .mat struct name to "humanGEM".
     """
-    version_file = REPO_ROOT / "version.txt"
-    new_version = None
-
-    if not test:
-        branch = _current_branch()
-        if branch != "main":
-            raise RuntimeError(f"not on main (current branch: {branch})")
-        new_version = _bump(version_file.read_text(encoding="utf-8"), bump_type)
-
-    model = read_yaml_model(MODEL_DIR / "Human-GEM.yml")
-
-    if not test:
-        _set_version(model, new_version)
-
-    _check_tsv_consistency(model)
-
-    # Export via raven-toolbox's Standard-GEM writer. The plain formats (yml/mat)
-    # keep their cross-references in the TSV tables; the annotated formats (xml/xlsx/
-    # txt) carry the merged TSV cross-references and SBO terms (see annotateGEM.py).
-    # export_for_git also (re)writes model/dependencies.txt. varname pins the .mat
-    # struct name to "humanGEM".
     export_for_git(model, MODEL_DIR, prefix="Human-GEM",
                    formats=("yml", "mat"), sub_dirs=False, varname="humanGEM")
     export_for_git(annotate_gem(model.copy(), MODEL_DIR), MODEL_DIR,
                    prefix="Human-GEM", formats=("xml", "xlsx", "txt"), sub_dirs=False)
 
-    if not test:
-        version_file.write_text(new_version, encoding="utf-8")
-        _update_readme(model)
-        print(f"Human-GEM bumped to {new_version}")
-    else:
-        print("Test run: exports regenerated, version unchanged.")
 
-    return new_version
+def cmd_validate(args: argparse.Namespace) -> int:
+    """Check the version increment. No side effects."""
+    _check_version(args.version)
+    print(f"{args.version} is a legal increment of {_current_version_text().strip()}.")
+    return 0
+
+
+def cmd_build(args: argparse.Namespace) -> int:
+    """Stamp the version, regenerate the exports and fill the README placeholders."""
+    _check_version(args.version)
+    model = read_yaml_model(MODEL_DIR / "Human-GEM.yml")
+    _set_version(model, args.version, datetime.date.today().isoformat())
+    _check_tsv_consistency(model)
+    _export(model)
+    VERSION_TXT.write_text(args.version, encoding="utf-8")
+    _update_readme(model)
+    print(f"Human-GEM bumped to {args.version}")
+    return 0
+
+
+def cmd_export(_args: argparse.Namespace) -> int:
+    """Regenerate the exports from the committed model, leaving the version alone."""
+    model = read_yaml_model(MODEL_DIR / "Human-GEM.yml")
+    _check_tsv_consistency(model)
+    _export(model)
+    print("Exports regenerated, version unchanged.")
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__,
-                                     formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("bump_type", choices=("major", "minor", "patch"),
-                        help="which part of the semantic version to increment")
-    parser.add_argument("--test", action="store_true",
-                        help="regenerate the exports without checking the branch or "
-                             "bumping the version (may run on a development branch)")
+    parser = argparse.ArgumentParser(
+        description="Bump the Human-GEM version and regenerate the model exports.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    p = sub.add_parser("validate", help="check the version increment")
+    p.add_argument("--version", required=True, help="new version, e.g. 2.1.0")
+    p.set_defaults(func=cmd_validate)
+
+    p = sub.add_parser("build", help="stamp the version and refresh the release files")
+    p.add_argument("--version", required=True, help="new version, e.g. 2.1.0")
+    p.set_defaults(func=cmd_build)
+
+    p = sub.add_parser("export", help="regenerate the model exports only")
+    p.set_defaults(func=cmd_export)
+
     args = parser.parse_args(argv)
-    increase_human_gem_version(args.bump_type, test=args.test)
-    return 0
+    return args.func(args)
 
 
 if __name__ == "__main__":
