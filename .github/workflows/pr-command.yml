@@ -6,6 +6,7 @@ name: PR command
 #
 # Commands (comment must start with the command):
 #   /run gene-essentiality   run the full gene-essentiality workflow on the PR branch
+#   /run memote              run the full MEMOTE suite on the PR branch
 #
 # To add a command, copy a job below, change the command in its `if`, and dispatch
 # the target workflow (or run steps directly).
@@ -52,8 +53,9 @@ jobs:
           gh api "repos/$REPO/issues/comments/$COMMENT_ID" -X PATCH -f body="$notice" --silent
 
   memote:
-    # Comment /run memote to run the full MEMOTE suite on the PR branch; the score
-    # updates the Model QC comment when it finishes.
+    # Comment /run memote to run the full MEMOTE suite on the PR branch. The run links
+    # itself in this comment when it starts, and replaces the notice with its result
+    # (and updates the Model QC comment) when it finishes.
     if: >
       github.event.issue.pull_request &&
       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association) &&
@@ -65,6 +67,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ github.event.issue.number }}
           REPO: ${{ github.repository }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
           data=$(gh pr view "$PR" --repo "$REPO" --json headRefName,isCrossRepository)
           ref=$(echo "$data" | jq -r .headRefName)
@@ -74,6 +78,10 @@ jobs:
               --body ":warning: \`/run memote\` only works for branches in this repository, not forks."
             exit 0
           fi
-          gh workflow run memote-full.yml --repo "$REPO" --ref "$ref" -f pr="$PR"
-          gh pr comment "$PR" --repo "$REPO" \
-            --body ":microscope: Started the **full MEMOTE suite** on \`$ref\` (this takes hours). The score will update the Model QC comment when it finishes."
+          gh workflow run memote-full.yml --repo "$REPO" --ref "$ref" -f pr="$PR" -f comment="$COMMENT_ID"
+          # As for gene-essentiality: edit the triggering comment rather than posting a
+          # new one. The run replaces this notice with a link to itself when it starts,
+          # and with its result when it finishes.
+          notice=$(printf '%s\n\n:microscope: Started the **full MEMOTE suite** on `%s` (this takes hours). Track it in the [Actions tab](%s/%s/actions/workflows/memote-full.yml).' \
+            "$COMMENT_BODY" "$ref" "$GITHUB_SERVER_URL" "$REPO")
+          gh api "repos/$REPO/issues/comments/$COMMENT_ID" -X PATCH -f body="$notice" --silent
