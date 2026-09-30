@@ -50,7 +50,7 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           REF: ${{ github.ref_name }}
         run: |
-          command=$(gh api "repos/$REPO/issues/comments/$COMMENT_ID" --jq .body | sed -n '1p')
+          command=$(gh api "repos/$REPO/issues/comments/$COMMENT_ID" --jq .body | tr -d '\r' | awk '/<!-- MEMOTE-RUN -->/{exit} 1')
           notice=$(printf '%s\n\n<!-- MEMOTE-RUN -->\n:microscope: The **full MEMOTE suite** is running on `%s` (this takes hours): [run](%s).' \
             "$command" "$REF" "$RUN_URL")
           gh api "repos/$REPO/issues/comments/$COMMENT_ID" -X PATCH -f body="$notice" --silent
@@ -95,11 +95,20 @@ jobs:
         env:
           PYTHONUNBUFFERED: "1"
           MEMOTE_SUBSET: ""
+        # The result and the scored model's version are recorded here, before the
+        # branch is reset to its (possibly newer) remote tip, so the /run comment
+        # reports this run rather than whatever the branch holds afterwards.
         run: |
+          echo "version=$(python -c 'import sys; sys.path.insert(0, "code/test"); import qcStatus; print(qcStatus.model_version())')" >> "$GITHUB_OUTPUT"
           set +e
           timeout 19800 python code/test/memoteSnapshot.py
           rc=$?
           set -e
+          case "$rc" in
+            0) echo "result=finished" >> "$GITHUB_OUTPUT" ;;
+            124) echo "result=timeout" >> "$GITHUB_OUTPUT" ;;
+            *) echo "result=failed" >> "$GITHUB_OUTPUT" ;;
+          esac
           if [ "$rc" -eq 124 ]; then
             echo "::warning::MEMOTE did not finish within the time limit; score unavailable."
             exit 0
@@ -177,9 +186,9 @@ jobs:
           issue-number: ${{ inputs.pr }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Replaces the notice in the /run comment with the result. memoteComment.py
-      # reports a run that left no full-suite score for this model version (time limit
-      # or failure) as not finished.
+      # Replaces the notice in the /run comment with the result, from this run's own
+      # outcome and the model version it scored (recorded by the MEMOTE step). A MEMOTE
+      # step that did not run (e.g. the base branch could not be resolved) is "skipped".
       - name: Report the result in the /run comment
         if: ${{ !cancelled() && inputs.comment != '' }}
         env:
@@ -188,12 +197,13 @@ jobs:
           COMMENT_ID: ${{ inputs.comment }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           REPORT_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.ref_name }}/data/testResults/memote_score.md#full-suite
-          OUTCOME: ${{ steps.memote.outcome }}
+          RESULT: ${{ steps.memote.outputs.result || steps.memote.outcome }}
+          VERSION: ${{ steps.memote.outputs.version }}
         run: |
           base_args=()
           [ -n "${BASE_DIR:-}" ] && base_args=(--base-dir "$BASE_DIR" --base-ref "$BASE_REF")
-          result=$(python code/test/memoteComment.py --outcome "$OUTCOME" "${base_args[@]}" \
-            --report-url "$REPORT_URL" --run-url "$RUN_URL")
-          command=$(gh api "repos/$REPO/issues/comments/$COMMENT_ID" --jq .body | sed -n '1p')
+          result=$(python code/test/memoteComment.py --result "$RESULT" --version "$VERSION" \
+            "${base_args[@]}" --report-url "$REPORT_URL" --run-url "$RUN_URL")
+          command=$(gh api "repos/$REPO/issues/comments/$COMMENT_ID" --jq .body | tr -d '\r' | awk '/<!-- MEMOTE-RUN -->/{exit} 1')
           gh api "repos/$REPO/issues/comments/$COMMENT_ID" -X PATCH \
             -f body="$(printf '%s\n\n%s' "$command" "$result")" --silent

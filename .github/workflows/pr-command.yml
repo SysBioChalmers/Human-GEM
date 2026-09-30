@@ -78,10 +78,18 @@ jobs:
               --body ":warning: \`/run memote\` only works for branches in this repository, not forks."
             exit 0
           fi
-          gh workflow run memote-full.yml --repo "$REPO" --ref "$ref" -f pr="$PR" -f comment="$COMMENT_ID"
           # As for gene-essentiality: edit the triggering comment rather than posting a
-          # new one. The run replaces this notice with a link to itself when it starts,
-          # and with its result when it finishes.
-          notice=$(printf '%s\n\n:microscope: Started the **full MEMOTE suite** on `%s` (this takes hours). Track it in the [Actions tab](%s/%s/actions/workflows/memote-full.yml).' \
-            "$COMMENT_BODY" "$ref" "$GITHUB_SERVER_URL" "$REPO")
+          # new one. The run replaces the part after the marker with a link to itself
+          # when it starts, and with its result when it finishes. The comment is edited
+          # before dispatching so this edit cannot land after the run's own.
+          body=$(printf '%s' "$COMMENT_BODY" | tr -d '\r')
+          notice=$(printf '%s\n\n<!-- MEMOTE-RUN -->\n:microscope: Started the **full MEMOTE suite** on `%s` (this takes hours). Track it in the [Actions tab](%s/%s/actions/workflows/memote-full.yml).' \
+            "$body" "$ref" "$GITHUB_SERVER_URL" "$REPO")
           gh api "repos/$REPO/issues/comments/$COMMENT_ID" -X PATCH -f body="$notice" --silent
+          # A branch whose memote-full.yml predates the comment input rejects it, so
+          # dispatch without it there; the result then only updates the Model QC comment.
+          if ! gh workflow run memote-full.yml --repo "$REPO" --ref "$ref" -f pr="$PR" -f comment="$COMMENT_ID"; then
+            gh workflow run memote-full.yml --repo "$REPO" --ref "$ref" -f pr="$PR"
+            gh api "repos/$REPO/issues/comments/$COMMENT_ID" -X PATCH --silent \
+              -f body="$(printf '%s\n\n:microscope: Started the **full MEMOTE suite** on `%s` (this takes hours); its score will update the Model QC comment. Track it in the [Actions tab](%s/%s/actions/workflows/memote-full.yml).' "$body" "$ref" "$GITHUB_SERVER_URL" "$REPO")"
+          fi

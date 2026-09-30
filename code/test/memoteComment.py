@@ -7,12 +7,13 @@ the run finished, the score and how it changed, a link to the full report, and t
 per-test scores in a collapsed table.
 
 Usage:
-    python code/test/memoteComment.py --outcome success --base-dir DIR \\
+    python code/test/memoteComment.py --result finished --version HASH --base-dir DIR \\
         --report-url URL --run-url URL [--base-ref develop]
 
-``--outcome`` is the outcome of the MEMOTE step (success, failure, ...). A run that
-ends without a full-suite score for the current model version, e.g. because it hit the
-time limit, is reported as not finished.
+``--result`` is how the MEMOTE step ended (finished, timeout, failed, or skipped when it
+did not run), and ``--version`` the model version it scored (qcStatus.model_version()
+at its start). Both come from the step itself, so the comment describes this run even
+if the branch moved on while it ran.
 """
 from __future__ import annotations
 
@@ -37,14 +38,21 @@ def _change(total: float, base: float | None, base_ref: str) -> str:
     return f":warning: dropped from {base:.1f}% on `{base_ref}` ({delta:.1f})"
 
 
-def comment(outcome: str, base_dir: Path | None, report_url: str, run_url: str,
-            base_ref: str) -> str:
-    full = buildReport._memote_meta(RESULTS, buildReport.MEMOTE_FULL)
-    current = bool(full and full[4] and full[4] == qcStatus.model_version())
-    run = f"[run]({run_url})" if run_url else "run"
+NOT_FINISHED = {
+    "timeout": "did not finish in time",
+    "failed": "failed",
+    "failure": "failed",
+    "skipped": "did not start",
+}
 
-    if not current:
-        reason = "failed" if outcome == "failure" else "did not finish in time"
+
+def comment(result: str, version: str, base_dir: Path | None, report_url: str,
+            run_url: str, base_ref: str) -> str:
+    run = f"[run]({run_url})" if run_url else "run"
+    full = buildReport._memote_meta(RESULTS, buildReport.MEMOTE_FULL)
+    scored = result == "finished" and full is not None and full[4] == version
+    if not scored:
+        reason = NOT_FINISHED.get(result, "left no score")
         return (f":x: The **full MEMOTE suite** {reason}, so there is no new score "
                 f"(see the {run}).")
 
@@ -64,19 +72,25 @@ def comment(outcome: str, base_dir: Path | None, report_url: str, run_url: str,
                   "| Section | Test | Score |", "| --- | --- | ---: |"]
         lines += [f"| {section} | {test} | {score}% |" for section, test, score in detailed]
         lines += ["", "</details>"]
+    if version != qcStatus.model_version():
+        lines += ["", "_The branch changed during the run; this score is for the model "
+                  "it started on._"]
     lines += ["", "_The Model QC comment is updated with this score too._"]
     return "\n".join(lines)
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--outcome", default="success")
+    parser.add_argument("--result", default="finished")
+    parser.add_argument("--version", default="")
     parser.add_argument("--base-dir", type=Path)
     parser.add_argument("--report-url", default="")
     parser.add_argument("--run-url", default="")
     parser.add_argument("--base-ref", default="the base branch")
     args = parser.parse_args(argv)
-    print(comment(args.outcome, args.base_dir, args.report_url, args.run_url, args.base_ref))
+    version = args.version or qcStatus.model_version()
+    print(comment(args.result, version, args.base_dir, args.report_url, args.run_url,
+                  args.base_ref))
     return 0
 
 
