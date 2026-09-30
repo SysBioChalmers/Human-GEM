@@ -5,28 +5,28 @@ _This is the full, per-check breakdown behind the pull-request comment's summary
 ### Model & network checks
 _Duplicate keys (model unloadable) and no growth block the merge; every other row is a non-blocking report._
 
-| Check | Result | &Delta; vs `develop` | |
+| Check | Result | &Delta; vs `main` | |
 | --- | ---: | ---: | :---: |
 | [Duplicate `!!omap` keys](README.md#duplicate-omap-keys) | 0 | 0 | :white_check_mark: |
-| [Growth (biomass producible)](README.md#growth-biomass-producible) | 1.9 | 0 | :white_check_mark: |
+| [Growth (biomass producible)](README.md#growth-biomass-producible) | 1.9 | -123 | :white_check_mark: |
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
 | [Model / annotation-table inconsistencies](README.md#model--annotation-table-inconsistencies) | 0 | 0 | :white_check_mark: |
 | [Removed reactions or metabolites not deprecated](README.md#removed-reactions-or-metabolites-not-deprecated) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
-| [Naming issues (missing or inconsistent)](README.md#naming-issues-missing-or-inconsistent) | 0 | 0 | :white_check_mark: |
+| [Naming issues (missing or inconsistent)](README.md#naming-issues-missing-or-inconsistent) | 0 | new | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
-| [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
+| [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | new | :warning: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
 | [Unused genes](README.md#unused-genes) | 0 | 0 | :white_check_mark: |
 | [Malformed cross-references](README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
-| [Cross-refs inconsistent across compartments](README.md#cross-refs-inconsistent-across-compartments) | 0 | 0 | :white_check_mark: |
-| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1111](macaw_results.tsv) | 0 | :warning: |
-| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | 0 | :warning: |
-| [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | 0 | :warning: |
-| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [172](balance_results.csv) | 0 | :warning: |
-| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [57](qc_structure_consistency.csv) | 0 | :warning: |
+| [Cross-refs inconsistent across compartments](README.md#cross-refs-inconsistent-across-compartments) | 0 | -3 | :sparkles: |
+| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1111](macaw_results.tsv) | new | :warning: |
+| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | new | :warning: |
+| [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | -18 | :sparkles: |
+| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [172](balance_results.csv) | -62 | :sparkles: |
+| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [57](qc_structure_consistency.csv) | -340 | :sparkles: |
 
 ### Model file and metabolic tasks
 
@@ -41,15 +41,15 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 
 ### [MEMOTE](README.md#memote)
 
-**Total score: 63.8%** (core subset) &nbsp; 0
+**Total score: 63.8%** (core subset) &nbsp; +0.6 :white_check_mark:
 
 | Section | Score | &Delta; vs base |
 | --- | ---: | ---: |
-| consistency | 42.5% | 0 |
-| annotation_met | 77.7% | 0 |
-| annotation_rxn | 76.4% | 0 |
+| consistency | 42.5% | +0.1 :white_check_mark: |
+| annotation_met | 77.7% | +4.7 :white_check_mark: |
+| annotation_rxn | 76.4% | +3.7 :white_check_mark: |
 | annotation_gene | 46.7% | 0 |
-| annotation_sbo | 81.8% | 0 |
+| annotation_sbo | 81.8% | +0.1 :white_check_mark: |
 
 <details><summary>Per-test scores</summary>
 
