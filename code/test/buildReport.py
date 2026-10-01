@@ -85,6 +85,7 @@ def _labelled(label: str) -> str:
 MODEL_ROWS = [
     ("Duplicate `!!omap` keys", "dup_keys", "count", "checks", "qc_duplicate_keys.csv"),
     ("Growth (biomass producible)", "growth", "growth", "checks", "qc_growth_blockers.csv"),
+    ("Thermodynamically impossible directions", "rev_impossible", "count", "checks", "qc_reversibility.csv"),
     ("Reactions with no metabolites", "empty_rxn", "count", "checks", "qc_empty_reactions.csv"),
     ("Model / annotation-table inconsistencies", "annot_consistency", "count", "checks",
      "qc_annotation_consistency.csv"),
@@ -95,6 +96,8 @@ MODEL_ROWS = [
     ("Reaction bound / GPR issues", "reaction_issues", "count", "checks", "qc_reaction_sanity.csv"),
     ("Naming issues (missing or inconsistent)", "name_issues", "count", "checks",
      "qc_name_consistency.csv"),
+    ("Questionable reversibility", "rev_questionable", "count", "checks", "qc_reversibility.csv"),
+    ("Outdated ΔG estimates", "rev_outdated", "count", "checks", "qc_reversibility.csv"),
     ("Exact-duplicate reaction groups", "dup_reactions", "count", "checks", "qc_duplicate_reactions.csv"),
     ("Reactions split across compartments", "split_compartments", "count", "checks", "qc_split_compartments.csv"),
     ("Unused metabolites", "unused_met", "count", "checks", "qc_unused_entities.csv"),
@@ -206,6 +209,7 @@ def _metrics(directory: Path) -> dict:
     unused = directory / "qc_unused_entities.csv"
     macaw = directory / "macaw_results.tsv"
     balance = directory / "balance_results.csv"
+    reversibility = directory / "qc_reversibility.csv"
     return {
         "dup_keys": _count_csv(directory / "qc_duplicate_keys.csv"),
         "empty_rxn": _count_csv(directory / "qc_empty_reactions.csv"),
@@ -216,6 +220,9 @@ def _metrics(directory: Path) -> dict:
         "missing_charge": _count_csv(completeness, lambda r: r.get("missing_charge") == "yes"),
         "reaction_issues": _count_csv(directory / "qc_reaction_sanity.csv"),
         "name_issues": _count_csv(directory / "qc_name_consistency.csv"),
+        "rev_impossible": _count_csv(reversibility, lambda r: r.get("verdict") == "impossible"),
+        "rev_questionable": _count_csv(reversibility, lambda r: r.get("verdict") == "questionable"),
+        "rev_outdated": _count_csv(reversibility, lambda r: r.get("verdict") == "outdated"),
         "dup_reactions": _distinct_csv(directory / "qc_duplicate_reactions.csv", "group"),
         "split_compartments": _count_csv(directory / "qc_split_compartments.csv"),
         "unused_met": _count_csv(unused, lambda r: r.get("kind") == "metabolite"),
@@ -482,14 +489,17 @@ def _gene_essentiality_full_section() -> str:
 
 
 def _gates_line(current: dict, base: dict) -> str:
-    """One-line status of the two merge gates (duplicate keys, growth), appended to the
+    """One-line status of the merge gates (duplicate keys, growth, impossible directions), appended to the
     verdict so they are visible without following any link."""
     if "checks" in RUNNING:
         return ""
     parts = []
-    for label, key, kind in (("duplicate keys", "dup_keys", "count"), ("growth", "growth", "growth")):
+    for label, key, kind in (("duplicate keys", "dup_keys", "count"), ("growth", "growth", "growth"),
+                             ("impossible directions", "rev_impossible", "count")):
         value = current.get(key)
         if value is None:
+            if key == "rev_impossible":  # a base branch from before this check
+                continue
             return ""
         _, icon, _, _ = _icon(value, base.get(key), kind)
         text = f"{value:.3g}" if kind == "growth" else str(int(value))

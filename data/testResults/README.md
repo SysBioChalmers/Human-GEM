@@ -42,7 +42,7 @@ regression this pull request introduced), or a failed gate.
 ### Model checks
 
 Structural integrity and per-entity quality, all from `qcModelChecks.py` unless
-noted. Two rows are build gates (a finding blocks the merge); the rest are reports.
+noted. Three rows are build gates (a finding blocks the merge); the rest are reports.
 
 #### Duplicate `!!omap` keys
 **Gate.** Duplicate keys inside one metabolite/reaction/gene `!!omap` entry (two
@@ -61,6 +61,21 @@ an arbitrary flux bound, so the value can be compared between commits; it is not
 physiological growth rate. When the model cannot grow, `qc_growth_blockers.csv`
 lists the biomass precursors that cannot be made on this medium, which are what to
 fix.
+
+#### Thermodynamically impossible directions
+**Gate.** Reactions whose bounds let them run in a direction that thermodynamics rules
+out. `data/thermodynamics/reactionDeltaG.tsv` holds ΔG'm (all reactants at 1 mM, at
+the compartment's pH) estimated with eQuilibrator by
+`code/qc/estimateReactionDeltaG.py`. A direction is impossible when ΔG'm in that
+direction, minus twice its uncertainty, is above +40 kJ/mol: no physiological range
+of concentrations can make it run. Independently of these estimates, a reaction that
+can release O2 without consuming H2O2 or superoxide is also impossible: it runs an
+oxygenase or oxidase backwards. That rule needs no estimate, so it also covers new
+reactions. Fix the reaction by making it irreversible in the
+other direction (flip its stoichiometry if needed), or, when there is evidence that it
+does run this way (for example coupling the table does not see), list it with the
+evidence in `data/thermodynamics/reversibilityExceptions.tsv`. Listed reactions are
+shown as `exception` in `qc_reversibility.csv` and do not fail the check.
 
 #### Reactions with no metabolites
 Reactions whose stoichiometry is empty. Such a reaction does nothing and usually
@@ -100,6 +115,21 @@ compartment. Names are curated in `model/Human-GEM.yml`; `reactions.tsv` and
 drift against. One chemical is the same chemical in every compartment, so a name that
 differs between compartments is either a naming slip or two unrelated compounds sharing
 a base identifier.
+
+#### Questionable reversibility
+Reactions that can run in a direction where ΔG'm, minus twice its uncertainty, is
+between +20 and +40 kJ/mol. Such a direction needs strongly skewed concentrations,
+which happens (PHGDH runs at about +30 kJ/mol, pulled by the next step), so these are
+worth a look but are not errors by themselves. Reactions whose estimate relies on an
+isomer proxy (a same-formula compound standing in for a metabolite that eQuilibrator
+does not have) are listed here even above 40 kJ/mol.
+
+#### Outdated ΔG estimates
+Reactions whose stoichiometry changed since their ΔG'm was estimated; the stored hash of
+the stoichiometry no longer matches. They are not judged until the table is refreshed:
+run `code/qc/estimateReactionDeltaG.py` (needs `equilibrator-api`) and commit the new
+`data/thermodynamics/reactionDeltaG.tsv`. New reactions are not in the table and are
+not judged either until then.
 
 #### Exact-duplicate reaction groups
 Groups of two or more reactions with **identical** stoichiometry (same metabolites
@@ -231,6 +261,7 @@ threshold-free AUROC/AUPRC of the growth ratio against the Hart Bayes Factors. S
 | `qc_deprecation_completeness.csv` | Reactions/metabolites removed since the target branch but not added to a deprecated list: `kind, id, issue`. |
 | `qc_metabolite_completeness.csv` | Metabolites missing a formula and/or a charge: `metabolite, name, missing_formula, missing_charge`. |
 | `qc_reaction_sanity.csv` | Reactions with bound or GPR issues: `reaction, name, issues`. |
+| `qc_reversibility.csv` | Reactions that can run in a thermodynamically impossible or questionable direction, listed exceptions, and outdated estimates: `reaction, name, lower_bound, upper_bound, dGm_kJ_per_mol, sd_kJ_per_mol, verdict, note`. |
 | `qc_name_consistency.csv` | Entities with no name, and metabolites whose name differs between compartments: `kind, id, issue`. |
 | `qc_duplicate_reactions.csv` | Exact-duplicate reaction groups: `group, reaction, equation`. |
 | `qc_unused_entities.csv` | Metabolites and genes used by no reaction: `kind, id`. |

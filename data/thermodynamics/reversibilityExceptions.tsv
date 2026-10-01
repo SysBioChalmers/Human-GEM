@@ -1,0 +1,11 @@
+reaction	reason
+MAR01185	reaction is chemically wrong (releases O2 in a beta-oxidation step); to be replaced, see #1128
+MAR01227	reaction is chemically wrong (releases O2 in a beta-oxidation step); to be replaced, see #1128
+MAR01367	the estimate contradicts known chemistry: glutathione conjugation of the PGJ2 enone is a favourable Michael addition
+MAR01807	gem-diol (aldehyde hydrate) intermediate of CYP27A1; group contribution is unreliable for aldehyde hydration, margin is at the cutoff
+MAR03774	gem-diol (aldehyde hydrate) intermediate of CYP27A1; group contribution is unreliable for aldehyde hydration, margin is at the cutoff
+MAR03942	the estimate contradicts known chemistry: glutathione conjugation of the PGJ2 enone is a favourable Michael addition
+MAR03943	the estimate contradicts known chemistry: glutathione conjugation of the PGJ2 enone is a favourable Michael addition
+MAR04185	ATP sulfurylase runs uphill, pulled by pyrophosphate hydrolysis and APS kinase (PAPSS is bifunctional); PMID:9668121
+MAR11210	the estimate contradicts known chemistry: dipeptide hydrolysis is downhill
+MAR12371	lumped beta-oxidation reaction that releases O2 (chemically wrong); to be removed, see #1129

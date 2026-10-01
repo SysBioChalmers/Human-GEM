@@ -14,7 +14,10 @@ Checks split into two kinds:
         genes.tsv) disagree, or a deprecated identifier is used;
       - the model cannot produce biomass on a defined medium (Ham's medium from the
         GR metabolic task, each nutrient's uptake capped; the blocking biomass
-        precursors are written out so it can be fixed).
+        precursors are written out so it can be fixed);
+      - a reaction can run in a direction that is thermodynamically impossible:
+        its estimated ΔG'm in that direction is above +40 kJ/mol even after
+        subtracting twice the uncertainty (data/thermodynamics/reactionDeltaG.tsv).
   * Reports (do not fail): quality metrics tracked with a delta versus the
       target branch.
       - metabolites missing a formula or a charge;
@@ -23,13 +26,17 @@ Checks split into two kinds:
       - reactions whose chemistry is split across compartments;
       - metabolites and genes not used by any reaction;
       - identifiers removed since the base branch that were not moved to a
-        deprecated list (needs BASE_MODEL_DIR; skipped when unavailable).
+        deprecated list (needs BASE_MODEL_DIR; skipped when unavailable);
+      - reactions whose reversibility is questionable (ΔG'm beyond ±20 kJ/mol in
+        the direction they can run, after the uncertainty), and reactions whose
+        ΔG estimate no longer matches their stoichiometry.
 
 Usage:
     python code/test/qcModelChecks.py
 """
 
 import csv
+import hashlib
 import os
 import sys
 from collections import defaultdict
@@ -58,6 +65,7 @@ COMPLETENESS_CSV = f"{RESULTS}/qc_metabolite_completeness.csv"
 REACTION_SANITY_CSV = f"{RESULTS}/qc_reaction_sanity.csv"
 DEPRECATION_COMPLETENESS_CSV = f"{RESULTS}/qc_deprecation_completeness.csv"
 NAME_CONSISTENCY_CSV = f"{RESULTS}/qc_name_consistency.csv"
+REVERSIBILITY_CSV = f"{RESULTS}/qc_reversibility.csv"
 # Growth value goes into the shared qc_status.tsv (via qcStatus); only the
 # variable-length list of blocking precursors keeps its own CSV.
 GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
@@ -68,6 +76,23 @@ GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
 BASE_MODEL_DIR = os.environ.get("BASE_MODEL_DIR", "")
 
 GROWTH_TOLERANCE = 1e-6
+
+# Reversibility against thermodynamics. reactionDeltaG.tsv holds ΔG'm (1 mM) estimates
+# from eQuilibrator, made with code/qc/estimateReactionDeltaG.py; a direction is
+# impossible when ΔG'm in that direction minus twice its uncertainty is above
+# IMPOSSIBLE_DG, and questionable above QUESTIONABLE_DG. Physiological concentrations
+# span a few orders of magnitude, which moves ΔG by about 6 kJ/mol per order and
+# metabolite, so 40 kJ/mol leaves no doubt. Reactions listed in the exceptions file,
+# with the reason, are reported but do not fail the check.
+DELTA_G_TSV = "data/thermodynamics/reactionDeltaG.tsv"
+REVERSIBILITY_EXCEPTIONS_TSV = "data/thermodynamics/reversibilityExceptions.tsv"
+IMPOSSIBLE_DG = 40.0
+QUESTIONABLE_DG = 20.0
+# Releasing O2 is only possible by consuming a reactive oxygen species (catalase,
+# superoxide dismutase); any other reaction that can release O2 runs an oxygenase or
+# oxidase backwards. This needs no ΔG estimate, so it also covers new reactions.
+O2_BASE = "MAM02630"
+ROS_BASES = ("MAM02041", "MAM02631")  # H2O2, superoxide
 
 # Growth is tested on a defined medium rather than the model's default bounds, which
 # leave most uptakes open at 1000: there the value mostly reflects which uptake and
@@ -428,6 +453,107 @@ def check_name_consistency(model: cobra.Model) -> list[tuple]:
 
 
 # --------------------------------------------------------------------------- #
+# Gate: reversibility against thermodynamics
+# --------------------------------------------------------------------------- #
+def stoichiometry_hash(stoichiometry: dict[str, float]) -> str:
+    """Short hash of a reaction's stoichiometry (metabolite id -> coefficient).
+
+    reactionDeltaG.tsv stores it next to each estimate, so an estimate is only used
+    while the reaction is unchanged. code/qc/estimateReactionDeltaG.py computes it the
+    same way.
+    """
+    text = ";".join(f"{m}:{stoichiometry[m]:g}" for m in sorted(stoichiometry))
+    return hashlib.sha1(text.encode()).hexdigest()[:10]
+
+
+def _read_tsv(path: str) -> list[dict]:
+    if not Path(path).exists():
+        return []
+    with open(path, newline="") as fh:
+        return list(csv.DictReader(fh, delimiter="\t"))
+
+
+def check_reversibility(model: cobra.Model, delta_g_tsv: str = DELTA_G_TSV,
+                        exceptions_tsv: str = REVERSIBILITY_EXCEPTIONS_TSV) -> list[tuple]:
+    """Reactions that can run in a direction their ΔG'm makes impossible or questionable.
+
+    For every reaction with an estimate in delta_g_tsv, the uphill direction is the one
+    against the sign of ΔG'm, and its margin is |ΔG'm| minus twice the uncertainty. A
+    reaction whose bounds allow the uphill direction is:
+
+      * "impossible" when the margin is above IMPOSSIBLE_DG (gate);
+      * "questionable" when it is above QUESTIONABLE_DG (report), or above
+        IMPOSSIBLE_DG but estimated through an isomer proxy (type "...+proxy");
+      * "exception" when it is impossible but listed, with a reason, in exceptions_tsv.
+
+    Independently of the estimates, a reaction that can release O2 without consuming
+    H2O2 or superoxide is "impossible" (see O2_BASE).
+
+    An estimate whose stoichiometry hash differs from the reaction is reported as
+    "outdated" and not judged. Returns [(reaction, name, lower_bound, upper_bound,
+    dGm, sd, verdict, note)].
+    """
+    exceptions = {r["reaction"]: r.get("reason", "") for r in _read_tsv(exceptions_tsv)}
+    rows = []
+    o2_rows = {}
+    for rxn in model.reactions:
+        by_base: dict[str, float] = defaultdict(float)
+        for met, coef in rxn.metabolites.items():
+            by_base[met.id[:-1]] += coef
+        n_o2 = sum(1 for met in rxn.metabolites if met.id[:-1] == O2_BASE)
+        if n_o2 != 1 or len(rxn.metabolites) < 2:
+            continue  # no O2, or O2 transport
+        # sign: +1 when running forward releases O2, -1 when running backward does
+        for sign, open_ in ((1, rxn.upper_bound > 0), (-1, rxn.lower_bound < 0)):
+            if not open_ or sign * by_base[O2_BASE] <= 0:
+                continue
+            if any(sign * by_base[ros] < 0 for ros in ROS_BASES):
+                continue
+            direction = "forward" if sign > 0 else "backward"
+            note = f"can release O2 running {direction} without consuming H2O2 or superoxide"
+            verdict = "impossible"
+            if rxn.id in exceptions:
+                verdict, note = "exception", f"{note}; {exceptions[rxn.id]}"
+            o2_rows[rxn.id] = (rxn.id, rxn.name or "", rxn.lower_bound, rxn.upper_bound, "", "", verdict, note)
+    for est in _read_tsv(delta_g_tsv):
+        rid = est["reaction"]
+        if rid not in model.reactions:
+            continue
+        rxn = model.reactions.get_by_id(rid)
+        dg, sd = float(est["dGm_kJ_per_mol"]), float(est["sd_kJ_per_mol"])
+        stoich = {m.id: c for m, c in rxn.metabolites.items()}
+        if stoichiometry_hash(stoich) != est["stoichiometry_hash"]:
+            rows.append((rid, rxn.name or "", rxn.lower_bound, rxn.upper_bound, dg, sd, "outdated",
+                         "the reaction changed since its ΔG was estimated"))
+            continue
+        margin = abs(dg) - 2 * sd
+        # dg is for the reaction as written: positive means forward is uphill
+        uphill_open = rxn.upper_bound > 0 if dg > 0 else rxn.lower_bound < 0
+        if not uphill_open or margin <= QUESTIONABLE_DG:
+            continue
+        direction = "forward" if dg > 0 else "backward"
+        note = f"can run {direction}, where ΔG'm is {abs(dg):+.0f} ± {sd:.0f} kJ/mol"
+        if "proxy" in est.get("type", ""):
+            note += " (estimated with an isomer proxy)"
+        if margin <= IMPOSSIBLE_DG or "proxy" in est.get("type", ""):
+            verdict = "questionable"
+        elif rid in exceptions:
+            verdict, note = "exception", f"{note}; {exceptions[rid]}"
+        else:
+            verdict = "impossible"
+        if rid in o2_rows:
+            o2 = o2_rows.pop(rid)
+            verdict = o2[6] if verdict != "impossible" else verdict
+            note = f"{note}; {o2[7]}"
+        rows.append((rid, rxn.name or "", rxn.lower_bound, rxn.upper_bound, dg, sd, verdict, note))
+    rows.extend(o2_rows.values())
+    rows.sort()
+    _write_csv(REVERSIBILITY_CSV, ["reaction", "name", "lower_bound", "upper_bound", "dGm_kJ_per_mol",
+                                   "sd_kJ_per_mol", "verdict", "note"], rows)
+    return rows
+
+
+# --------------------------------------------------------------------------- #
 # Gate: growth, with the blocking biomass precursors when it fails
 # --------------------------------------------------------------------------- #
 def _medium_inputs(path: str = MEDIUM_TASKS_FILE, task_id: str = MEDIUM_TASK_ID) -> list[str]:
@@ -524,8 +650,8 @@ def main() -> int:
 
     # Non-blocking checks: written to CSV and tracked with a delta in the comment
     # (a rising count shows as a regression), but they do not fail the build. The
-    # only gate that blocks the merge here is growth (and duplicate keys above,
-    # which stops the model loading at all).
+    # gates that block the merge are growth and thermodynamically impossible
+    # reversibility (and duplicate keys above, which stops the model loading at all).
     empty = check_empty_reactions(model)
     if empty:
         print(f"::warning::{len(empty)} reaction(s) have no metabolites; see {EMPTY_RXN_CSV}.")
@@ -551,6 +677,14 @@ def main() -> int:
     else:
         _write_csv(GROWTH_BLOCKERS_CSV, ["blocked_biomass_precursor"], [])
 
+    reversibility = check_reversibility(model)
+    impossible = [r for r in reversibility if r[6] == "impossible"]
+    for row in impossible:
+        print(f"::error::Reaction {row[0]} {row[7]}; make it irreversible in the other "
+              f"direction, or list it with a reason in {REVERSIBILITY_EXCEPTIONS_TSV}.")
+    if impossible:
+        gate_failed = True
+
     # Reports (never fail the build)
     n_formula, n_charge = check_metabolite_completeness(model)
     n_reaction_issues = check_reaction_sanity(model)
@@ -570,6 +704,8 @@ def main() -> int:
     print(f"Reactions with chemistry split across compartments: {n_split}")
     print(f"Unused metabolites / genes: {n_unused_met} / {n_unused_gene}")
     print(f"Removed identifiers not deprecated: {len(undeprecated)}")
+    for verdict in ("impossible", "questionable", "exception", "outdated"):
+        print(f"Reversibility {verdict}: {sum(1 for r in reversibility if r[6] == verdict)}")
     print(f"Growth (max biomass, defined medium): {growth:.4g} "
           f"({'ok' if grows else 'NO GROWTH'})")
 

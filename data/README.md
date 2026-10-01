@@ -15,3 +15,7 @@ Note that many of the data files associated with model curation were outdated an
 
 ### deprecatedIdentifiers
 Contains the `tsv` files with reaction and metabolite annotation, identical to that in `/model/` for those identifiers that have been used in Human-GEM and subsequently removed. The identifiers are kept here so as to avoid accidentally reusing them in the future.
+### thermodynamics
+Data for the reversibility check in the Model QC workflow (see `data/testResults/README.md`).
+- `reactionDeltaG.tsv`: ΔG'm (all reactants at 1 mM, at the compartment's pH) of the reactions that eQuilibrator can estimate, with its uncertainty and a hash of the stoichiometry it was estimated for. Made with `code/qc/estimateReactionDeltaG.py`; refresh it after curation that adds or changes reactions.
+- `reversibilityExceptions.tsv`: reactions that may keep a direction the check would call impossible, each with the reason.
