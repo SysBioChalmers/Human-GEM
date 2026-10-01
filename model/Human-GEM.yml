@@ -61575,13 +61575,13 @@
     - id: MAR09803
     - name: 3-oxopropionyl-CoA:NAD+ oxidoreductase
     - metabolites: !!omap
-      - MAM02039m: -2.0
-      - MAM02040m: 1.0
-      - MAM02444m: -1.0
-      - MAM02554m: 1.0
-      - MAM02555m: -1.0
-      - MAM03168m: 1.0
-    - lower_bound: -1000.0
+      - MAM02039m: 2.0
+      - MAM02040m: -1.0
+      - MAM02444m: 1.0
+      - MAM02554m: -1.0
+      - MAM02555m: 1.0
+      - MAM03168m: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Propanoate metabolism
@@ -68608,13 +68608,13 @@
     - id: MAR03806
     - name: L-glutamate gamma-semialdehyde:NAD+ oxidoreductase
     - metabolites: !!omap
-      - MAM01974m: -1.0
-      - MAM02039m: -2.0
-      - MAM02040m: 1.0
-      - MAM02374m: 1.0
-      - MAM02552m: 1.0
-      - MAM02553m: -1.0
-    - lower_bound: -1000.0
+      - MAM01974m: 1.0
+      - MAM02039m: 2.0
+      - MAM02040m: -1.0
+      - MAM02374m: -1.0
+      - MAM02552m: -1.0
+      - MAM02553m: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000159423
     - subsystem:
@@ -68940,7 +68940,7 @@
       - MAM02554c: 1.0
       - MAM02555c: -1.0
       - MAM02630c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000007171 or ENSG00000089250 or ENSG00000164867
     - subsystem:
@@ -70188,13 +70188,13 @@
     - id: MAR08097
     - name: L-erythro-4-Hydroxyglutamate:NAD+ oxidoreductase
     - metabolites: !!omap
-      - MAM02039m: -2.0
-      - MAM02040m: 1.0
-      - MAM02327m: 1.0
-      - MAM02358m: -1.0
-      - MAM02552m: 1.0
-      - MAM02553m: -1.0
-    - lower_bound: -1000.0
+      - MAM02039m: 2.0
+      - MAM02040m: -1.0
+      - MAM02327m: -1.0
+      - MAM02358m: 1.0
+      - MAM02552m: -1.0
+      - MAM02553m: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000159423
     - subsystem:
@@ -71346,7 +71346,7 @@
       - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000137106
     - subsystem:
@@ -72727,13 +72727,13 @@
     - id: MAR04687
     - name: Aldehyde:NADP+ oxidoreductase
     - metabolites: !!omap
-      - MAM02039m: -2.0
-      - MAM02040m: 1.0
-      - MAM02554m: 1.0
-      - MAM02555m: -1.0
-      - MAM02719m: 1.0
-      - MAM02720m: -1.0
-    - lower_bound: -1000.0
+      - MAM02039m: 2.0
+      - MAM02040m: -1.0
+      - MAM02554m: -1.0
+      - MAM02555m: 1.0
+      - MAM02719m: -1.0
+      - MAM02720m: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000006534 or ENSG00000108602 or ENSG00000132746
     - subsystem:
@@ -73499,12 +73499,12 @@
     - id: MAR06927
     - name: methylcrotonoyl-CoA carboxylase (2-methylglutaconic acid)
     - metabolites: !!omap
-      - MAM00666m: -1.0
-      - MAM00667m: 1.0
-      - MAM01597m: -1.0
-      - MAM02039m: -1.0
-      - MAM02040m: 1.0
-    - lower_bound: -1000.0
+      - MAM00666m: 1.0
+      - MAM00667m: -1.0
+      - MAM01597m: 1.0
+      - MAM02039m: 1.0
+      - MAM02040m: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000078070 and ENSG00000131844
     - subsystem:
@@ -73654,14 +73654,14 @@
     - id: MAR04220
     - name: L-Kynurenine,NADPH:oxygen oxidoreductase (3-hydroxylating)
     - metabolites: !!omap
-      - MAM00788c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02319c: 1.0
-      - MAM02554c: -1.0
-      - MAM02555c: 1.0
-      - MAM02630c: 1.0
-    - lower_bound: -1000.0
+      - MAM00788c: 1.0
+      - MAM02039c: -1.0
+      - MAM02040c: 1.0
+      - MAM02319c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
+      - MAM02630c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000117009
     - subsystem:
@@ -73776,7 +73776,7 @@
       - MAM02039c: 1.0
       - MAM02040c: 1.0
       - MAM02752c: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
@@ -73884,7 +73884,7 @@
       - MAM01974c: 1.0
       - MAM02040c: 1.0
       - MAM03151c: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000109576 or ENSG00000137944 or ENSG00000171097
     - subsystem:
@@ -73931,11 +73931,11 @@
     - id: MAR06708
     - name: 1-(1,2,3,4,5-pentahydroxypent... hydrolysis
     - metabolites: !!omap
-      - MAM00221c: -1.0
-      - MAM02040c: -1.0
-      - MAM02453c: 1.0
-      - MAM03089c: 1.0
-    - lower_bound: -1000.0
+      - MAM00221c: 1.0
+      - MAM02040c: 1.0
+      - MAM02453c: -1.0
+      - MAM03089c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
@@ -74915,7 +74915,7 @@
       - MAM01249c: -1.0
       - MAM02040c: 1.0
       - MAM02603c: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
@@ -75304,12 +75304,12 @@
     - id: MAR06798
     - name: glucuronosyltransferase (3,5,3-triiodo-L-thyronine-beta-D-glucuronoside)
     - metabolites: !!omap
-      - MAM00733c: -1.0
-      - MAM02039c: -1.0
-      - MAM03052c: 1.0
-      - MAM03106c: -1.0
-      - MAM03109c: 1.0
-    - lower_bound: -1000.0
+      - MAM00733c: 1.0
+      - MAM02039c: 1.0
+      - MAM03052c: -1.0
+      - MAM03106c: 1.0
+      - MAM03109c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000109181 or ENSG00000135220 or ENSG00000135226 or ENSG00000145626 or ENSG00000156096 or ENSG00000167165 or ENSG00000168671 or ENSG00000171234 or ENSG00000173610 or ENSG00000196620 or ENSG00000197888 or ENSG00000213759 or ENSG00000288705 or ENSG00000241119 or ENSG00000241635 or ENSG00000242366 or ENSG00000242515 or ENSG00000288702 or ENSG00000244122 or ENSG00000244474
     - subsystem:
@@ -75344,12 +75344,12 @@
     - id: MAR06800
     - name: glucuronosyltransferase (3,5,3,5-tetraiodo-L-thyronine-beta-D-glucuronoside)
     - metabolites: !!omap
-      - MAM00732c: -1.0
-      - MAM02039c: -1.0
-      - MAM02998c: 1.0
-      - MAM03106c: -1.0
-      - MAM03109c: 1.0
-    - lower_bound: -1000.0
+      - MAM00732c: 1.0
+      - MAM02039c: 1.0
+      - MAM02998c: -1.0
+      - MAM03106c: 1.0
+      - MAM03109c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000109181 or ENSG00000135220 or ENSG00000135226 or ENSG00000145626 or ENSG00000156096 or ENSG00000167165 or ENSG00000168671 or ENSG00000171234 or ENSG00000173610 or ENSG00000196620 or ENSG00000197888 or ENSG00000213759 or ENSG00000288705 or ENSG00000241119 or ENSG00000241635 or ENSG00000242366 or ENSG00000242515 or ENSG00000288702 or ENSG00000244122 or ENSG00000244474
     - subsystem:
@@ -76120,10 +76120,10 @@
     - id: MAR06875
     - name: 2-carboxy-2,3-dihydro-5,6-dihydroxyindole to L-dopaquinone conversion
     - metabolites: !!omap
-      - MAM00638c: -1.0
-      - MAM02039c: -1.0
-      - MAM02356c: 1.0
-    - lower_bound: -1000.0
+      - MAM00638c: 1.0
+      - MAM02039c: 1.0
+      - MAM02356c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
@@ -78267,11 +78267,11 @@
     - id: MAR03763
     - name: (S)-Methylmalonyl-CoA hydrolase
     - metabolites: !!omap
-      - MAM00166m: 1.0
-      - MAM01597m: -1.0
-      - MAM02039m: -1.0
-      - MAM02040m: 1.0
-      - MAM02479m: -1.0
+      - MAM00166m: -1.0
+      - MAM01597m: 1.0
+      - MAM02039m: 1.0
+      - MAM02040m: -1.0
+      - MAM02479m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000119711
@@ -78733,27 +78733,6 @@
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
-    - id: MAR04531
-    - name: CMP-N-acetylneuraminate monooxygenase (N-acetylneuraminate)
-    - metabolites: !!omap
-      - MAM02039c: -1.0
-      - MAM02040c: 1.0
-      - MAM02543c: -1.0
-      - MAM02552c: 1.0
-      - MAM02553c: -1.0
-      - MAM02565c: 1.0
-      - MAM02630c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Amino sugar and nucleotide sugar metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.14.18.2
-    - references: PMID:11522391;PMID:12192086
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR04532
     - name: CTP:N-glycoloylneuraminate cytidylyltransferase
     - metabolites: !!omap
@@ -78770,48 +78749,6 @@
       - ec-code:
         - 2.7.7.43
     - references: PMID:1577759;PMID:422125;PMID:4288894;PMID:4803836;PMID:9689047
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR04533
-    - name: CMP-N-acetylneuraminate monooxygenase (CMP-neuNGc)
-    - metabolites: !!omap
-      - MAM01592c: 1.0
-      - MAM01593c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02552c: -1.0
-      - MAM02553c: 1.0
-      - MAM02630c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Amino sugar and nucleotide sugar metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.14.18.2
-    - references: PMID:11211935;PMID:2249689;PMID:8112313
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR04534
-    - name: CMP-N-acetylneuraminate monooxygenase (CMP-neuNGc)
-    - metabolites: !!omap
-      - MAM01592c: 1.0
-      - MAM01593c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02554c: -1.0
-      - MAM02555c: 1.0
-      - MAM02630c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Amino sugar and nucleotide sugar metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.14.18.2
-    - references: PMID:10052592;PMID:1964451;PMID:2249689
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -90842,12 +90779,12 @@
     - id: MAR02446
     - name: 12,13-epoxy-9-hydroperoxy... to 12,13-epoxylinoleic acid-radical conversion
     - metabolites: !!omap
-      - MAM00312c: -1.0
-      - MAM00313c: 1.0
-      - MAM01368c: 1.0
-      - MAM02489c: -1.0
-      - MAM02630c: 1.0
-    - lower_bound: -1000.0
+      - MAM00312c: 1.0
+      - MAM00313c: -1.0
+      - MAM01368c: -1.0
+      - MAM02489c: 1.0
+      - MAM02630c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Linoleate metabolism
@@ -96121,7 +96058,7 @@
       - MAM02039c: -1.0
       - MAM02552c: 1.0
       - MAM02553c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000106853 or ENSG00000149084 or ENSG00000205678
     - subsystem:
@@ -96356,14 +96293,14 @@
     - id: MAR01093
     - name: arachidonate 12-lipoxygenase (5,6-epoxytetraene)
     - metabolites: !!omap
-      - MAM01058c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02362c: 1.0
-      - MAM02554c: -1.0
-      - MAM02555c: 1.0
-      - MAM02630c: 1.0
-    - lower_bound: -1000.0
+      - MAM01058c: 1.0
+      - MAM02039c: -1.0
+      - MAM02040c: 1.0
+      - MAM02362c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
+      - MAM02630c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000012779 or ENSG00000108839
     - subsystem:
@@ -96421,12 +96358,12 @@
     - id: MAR01098
     - name: 13,14-dihydro-15-oxo-lipoxin A4 oxidation
     - metabolites: !!omap
-      - MAM00339c: -1.0
-      - MAM00394c: 1.0
-      - MAM02039c: 1.0
-      - MAM02554c: -1.0
-      - MAM02555c: 1.0
-    - lower_bound: -1000.0
+      - MAM00339c: 1.0
+      - MAM00394c: -1.0
+      - MAM02039c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000099377 or ENSG00000100867 or ENSG00000109854 or ENSG00000138400 or ENSG00000139988 or ENSG00000145439 or ENSG00000159692 or ENSG00000164039 or ENSG00000167733 or ENSG00000170426 or ENSG00000170786 or ENSG00000183921 or ENSG00000184860 or ENSG00000186153 or ENSG00000187134 or ENSG00000197894 or ENSG00000198074 or ENSG00000198189 or ENSG00000198610 or ENSG00000204228 or ENSG00000227471 or ENSG00000240857
     - subsystem:
@@ -97072,13 +97009,13 @@
     - id: MAR01133
     - name: aldehyde dehydrogenase (NAD(+)) (20-COOH-LTB4)
     - metabolites: !!omap
-      - MAM00585m: -1.0
-      - MAM00600m: 1.0
-      - MAM02039m: -2.0
-      - MAM02040m: 1.0
-      - MAM02552m: 1.0
-      - MAM02553m: -1.0
-    - lower_bound: -1000.0
+      - MAM00585m: 1.0
+      - MAM00600m: -1.0
+      - MAM02039m: 2.0
+      - MAM02040m: -1.0
+      - MAM02552m: -1.0
+      - MAM02553m: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000072210 or ENSG00000111275 or ENSG00000137124 or ENSG00000143149 or ENSG00000164904
     - subsystem:
@@ -97296,7 +97233,7 @@
       - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974
     - subsystem:
@@ -97312,7 +97249,7 @@
       - MAM02039m: -1.0
       - MAM02554m: 1.0
       - MAM02555m: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974
     - subsystem:
@@ -97328,7 +97265,7 @@
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974
     - subsystem:
@@ -97344,7 +97281,7 @@
       - MAM02039x: -1.0
       - MAM02554x: 1.0
       - MAM02555x: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974
     - subsystem:
@@ -97792,7 +97729,7 @@
       - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974
     - subsystem:
@@ -97812,7 +97749,7 @@
       - MAM02039m: -1.0
       - MAM02554m: 1.0
       - MAM02555m: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974
     - subsystem:
@@ -97832,7 +97769,7 @@
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000186526 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974
     - subsystem:
@@ -97852,7 +97789,7 @@
       - MAM02039x: -1.0
       - MAM02554x: 1.0
       - MAM02555x: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000100197 or ENSG00000106258 or ENSG00000108242 or ENSG00000130649 or ENSG00000134716 or ENSG00000138061 or ENSG00000138115 or ENSG00000140465 or ENSG00000140505 or ENSG00000142973 or ENSG00000155016 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841 or ENSG00000167600 or ENSG00000171903 or ENSG00000186160 or ENSG00000186204 or ENSG00000197408 or ENSG00000197446 or ENSG00000197838 or ENSG00000198077 or ENSG00000255974
     - subsystem:
@@ -108297,7 +108234,7 @@
       - MAM02746x: 1.0
       - MAM02747c: -1.0
       - MAM02751c: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000117528
     - subsystem:
@@ -113689,13 +113626,13 @@
     - id: MAR01990
     - name: cytochrome P450 (cortisol)
     - metabolites: !!omap
-      - MAM00603c: 1.0
-      - MAM01615c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02554c: -1.0
-      - MAM02555c: 1.0
-      - MAM02630c: 1.0
+      - MAM00603c: -1.0
+      - MAM01615c: 1.0
+      - MAM02039c: -1.0
+      - MAM02040c: 1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
+      - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000231852
@@ -113710,13 +113647,13 @@
     - id: MAR01991
     - name: cytochrome P450 (21-deoxycortisol)
     - metabolites: !!omap
-      - MAM00285c: 1.0
-      - MAM00603c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02554c: -1.0
-      - MAM02555c: 1.0
-      - MAM02630c: 1.0
+      - MAM00285c: -1.0
+      - MAM00603c: 1.0
+      - MAM02039c: -1.0
+      - MAM02040c: 1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
+      - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000148795
@@ -114920,7 +114857,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM02630r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000148795
     - subsystem:
@@ -124604,7 +124541,7 @@
       - MAM02039c: 2.0
       - MAM02040c: -1.0
       - MAM02914c: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000170222
     - subsystem:
@@ -128908,7 +128845,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM02630r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000148795
     - subsystem:
@@ -129225,7 +129162,7 @@
       - MAM02552c: 2.0
       - MAM02553c: -2.0
       - MAM02788c: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Prostaglandin biosynthesis
@@ -129285,10 +129222,10 @@
     - id: MAR01324
     - name: prostaglandin B2 hydrolysis
     - metabolites: !!omap
-      - MAM02040c: -1.0
-      - MAM02779c: -1.0
-      - MAM02786c: 1.0
-    - lower_bound: -1000.0
+      - MAM02040c: 1.0
+      - MAM02779c: 1.0
+      - MAM02786c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Prostaglandin biosynthesis
@@ -129625,7 +129562,7 @@
       - MAM01983c: 1.0
       - MAM02039c: 1.0
       - MAM02040c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000117480
     - subsystem:
@@ -137466,7 +137403,7 @@
       - MAM02040m: -1.0
       - MAM02554m: -1.0
       - MAM02555m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000135929
     - subsystem:
@@ -137759,13 +137696,13 @@
     - id: MAR01830
     - name: cytochrome P450 (cholate)
     - metabolites: !!omap
-      - MAM00745c: 1.0
-      - MAM01445c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02554c: -1.0
-      - MAM02555c: 1.0
-      - MAM02630c: 1.0
+      - MAM00745c: -1.0
+      - MAM01445c: 1.0
+      - MAM02039c: -1.0
+      - MAM02040c: 1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
+      - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000167910
@@ -137781,13 +137718,13 @@
     - id: MAR01831
     - name: cytochrome P450 (cholate)
     - metabolites: !!omap
-      - MAM00745r: 1.0
-      - MAM01445r: -1.0
-      - MAM02039r: 1.0
-      - MAM02040r: -1.0
-      - MAM02554r: -1.0
-      - MAM02555r: 1.0
-      - MAM02630r: 1.0
+      - MAM00745r: -1.0
+      - MAM01445r: 1.0
+      - MAM02039r: -1.0
+      - MAM02040r: 1.0
+      - MAM02554r: 1.0
+      - MAM02555r: -1.0
+      - MAM02630r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000167910
@@ -141348,8 +141285,8 @@
     - id: MAR04308
     - name: inositol-3-phosphate synthase (inositol-1-phosphate)
     - metabolites: !!omap
-      - MAM01968c: 1.0
-      - MAM02173c: -1.0
+      - MAM01968c: -1.0
+      - MAM02173c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000105655
@@ -144763,12 +144700,12 @@
     - id: MAR04833
     - name: formamidopyrimidine nucleoside triphosphate amidohydrolase
     - metabolites: !!omap
-      - MAM00575c: -1.0
-      - MAM01832c: 1.0
-      - MAM01833c: -1.0
-      - MAM02039c: -1.0
-      - MAM02040c: 1.0
-    - lower_bound: -1000.0
+      - MAM00575c: 1.0
+      - MAM01832c: -1.0
+      - MAM01833c: 1.0
+      - MAM02039c: 1.0
+      - MAM02040c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000131979
     - subsystem:
@@ -144783,12 +144720,12 @@
     - id: MAR04834
     - name: formamidopyrimidine nucleoside triphosphate amidohydrolase
     - metabolites: !!omap
-      - MAM00575n: -1.0
-      - MAM01832n: 1.0
-      - MAM01833n: -1.0
-      - MAM02039n: -1.0
-      - MAM02040n: 1.0
-    - lower_bound: -1000.0
+      - MAM00575n: 1.0
+      - MAM01832n: -1.0
+      - MAM01833n: 1.0
+      - MAM02039n: 1.0
+      - MAM02040n: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000131979
     - subsystem:
@@ -147849,11 +147786,11 @@
     - id: MAR04071
     - name: pyridoxine:oxygen oxidoreductase (deaminating)
     - metabolites: !!omap
-      - MAM02041c: -1.0
-      - MAM02630c: 1.0
-      - MAM02813c: -1.0
-      - MAM02817c: 1.0
-    - lower_bound: -1000.0
+      - MAM02041c: 1.0
+      - MAM02630c: -1.0
+      - MAM02813c: 1.0
+      - MAM02817c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000108439
     - subsystem:
@@ -149807,7 +149744,7 @@
       - MAM02554c: 1.0
       - MAM02555c: -1.0
       - MAM02630c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000106258 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841
     - subsystem:
@@ -150312,7 +150249,7 @@
       - MAM02554c: 1.0
       - MAM02555c: -1.0
       - MAM02630c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000021461 or ENSG00000106258 or ENSG00000108242 or ENSG00000138061 or ENSG00000138109 or ENSG00000138115 or ENSG00000140465 or ENSG00000160868 or ENSG00000160870 or ENSG00000165841
     - subsystem:
@@ -153227,13 +153164,13 @@
     - id: MAR09542
     - name: "[peptide]-glycine,ascorbate:oxygen oxidoreductase (2-hydroxylating)"
     - metabolites: !!omap
-      - MAM01368c: 1.0
-      - MAM01655c: -1.0
-      - MAM02040c: -1.0
-      - MAM02630c: 1.0
-      - MAM02706c: -1.0
-      - MAM02707c: 1.0
-    - lower_bound: -1000.0
+      - MAM01368c: -1.0
+      - MAM01655c: 1.0
+      - MAM02040c: 1.0
+      - MAM02630c: -1.0
+      - MAM02706c: 1.0
+      - MAM02707c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000145730
     - subsystem:
@@ -204734,12 +204671,12 @@
     - id: MAR02028
     - name: trans-hexadec-2-enoyl-CoA reductase
     - metabolites: !!omap
-      - MAM00051m: 1.0
-      - MAM02039m: 1.0
-      - MAM02554m: -1.0
-      - MAM02555m: 1.0
-      - MAM02678m: -1.0
-    - lower_bound: -1000.0
+      - MAM00051m: -1.0
+      - MAM02039m: -1.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+      - MAM02678m: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000116353
     - subsystem:
@@ -204876,7 +204813,7 @@
       - MAM02039e: 1.0
       - MAM02040e: -1.0
       - MAM02751e: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000138185 or ENSG00000168032 or ENSG00000188833
     - subsystem:
@@ -204940,7 +204877,7 @@
       - MAM02040m: -1.0
       - MAM02479m: 1.0
       - MAM02480m: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Valine, leucine, and isoleucine metabolism
@@ -204975,12 +204912,12 @@
     - id: MAR02148
     - name: trans-oct-2-enoyl-CoA reductase
     - metabolites: !!omap
-      - MAM00059m: 1.0
-      - MAM02039m: 1.0
-      - MAM02554m: -1.0
-      - MAM02555m: 1.0
-      - MAM02644m: -1.0
-    - lower_bound: -1000.0
+      - MAM00059m: -1.0
+      - MAM02039m: -1.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+      - MAM02644m: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000116353
     - subsystem:
@@ -204995,12 +204932,12 @@
     - id: MAR02149
     - name: trans-dodec-2-enoyl-CoA reductase
     - metabolites: !!omap
-      - MAM00042m: 1.0
-      - MAM02039m: 1.0
-      - MAM02345m: -1.0
-      - MAM02554m: -1.0
-      - MAM02555m: 1.0
-    - lower_bound: -1000.0
+      - MAM00042m: -1.0
+      - MAM02039m: -1.0
+      - MAM02345m: 1.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000116353
     - subsystem:
@@ -205015,12 +204952,12 @@
     - id: MAR02183
     - name: trans-tetradec-2-enoyl-CoA reductase
     - metabolites: !!omap
-      - MAM00066m: 1.0
-      - MAM02039m: 1.0
-      - MAM02495m: -1.0
-      - MAM02554m: -1.0
-      - MAM02555m: 1.0
-    - lower_bound: -1000.0
+      - MAM00066m: -1.0
+      - MAM02039m: -1.0
+      - MAM02495m: 1.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000116353
     - subsystem:
@@ -205040,7 +204977,7 @@
       - MAM02039e: 2.0
       - MAM02040e: -3.0
       - MAM02751e: 3.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000162551
     - subsystem:
@@ -205055,12 +204992,12 @@
     - id: MAR02187
     - name: trans-dec-2-enoyl-CoA reductase
     - metabolites: !!omap
-      - MAM00039m: 1.0
-      - MAM01650m: -1.0
-      - MAM02039m: 1.0
-      - MAM02554m: -1.0
-      - MAM02555m: 1.0
-    - lower_bound: -1000.0
+      - MAM00039m: -1.0
+      - MAM01650m: 1.0
+      - MAM02039m: -1.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000116353
     - subsystem:
@@ -205081,7 +205018,7 @@
       - MAM02040m: -1.0
       - MAM02552m: -1.0
       - MAM02553m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254
     - subsystem:
@@ -205123,7 +205060,7 @@
       - MAM02137m: 1.0
       - MAM02552m: -1.0
       - MAM02553m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254
     - subsystem:
@@ -205165,7 +205102,7 @@
       - MAM02552m: -1.0
       - MAM02553m: 1.0
       - MAM03136m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254
     - subsystem:
@@ -205205,7 +205142,7 @@
       - MAM01605e: 1.0
       - MAM02039e: -4.0
       - MAM03127e: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000126088
     - subsystem:
@@ -205243,12 +205180,12 @@
     - id: MAR02206
     - name: Lanosterol D24-Reductase
     - metabolites: !!omap
-      - MAM01066r: 1.0
-      - MAM02039r: 1.0
-      - MAM02343r: -1.0
-      - MAM02554r: -1.0
-      - MAM02555r: 1.0
-    - lower_bound: -1000.0
+      - MAM01066r: -1.0
+      - MAM02039r: -1.0
+      - MAM02343r: 1.0
+      - MAM02554r: 1.0
+      - MAM02555r: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000116133
     - subsystem:
@@ -205268,7 +205205,7 @@
       - MAM02122m: 1.0
       - MAM02554m: 1.0
       - MAM02555m: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000116353
     - subsystem:
@@ -205951,7 +205888,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM03158r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000116133
     - subsystem:
@@ -206713,7 +206650,7 @@
       - MAM02040m: -1.0
       - MAM02938m: 1.0
       - MAM02941m: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000196407
     - subsystem:
@@ -206733,7 +206670,7 @@
       - MAM02040x: -1.0
       - MAM02938x: 1.0
       - MAM02941x: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000101473 or ENSG00000136881 or ENSG00000177465
     - subsystem:
@@ -206793,7 +206730,7 @@
       - MAM02039n: -1.0
       - MAM02554n: 1.0
       - MAM02555n: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Fatty acid biosynthesis
@@ -206827,7 +206764,7 @@
       - MAM01773m: -1.0
       - MAM02039m: 1.0
       - MAM02040m: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000097021 or ENSG00000119673
     - subsystem:
@@ -206847,7 +206784,7 @@
       - MAM01773x: -1.0
       - MAM02039x: 1.0
       - MAM02040x: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000101473 or ENSG00000136881 or ENSG00000177465
     - subsystem:
@@ -206867,7 +206804,7 @@
       - MAM01725m: -1.0
       - MAM02039m: 1.0
       - MAM02040m: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000097021 or ENSG00000119673
     - subsystem:
@@ -206887,7 +206824,7 @@
       - MAM01725x: -1.0
       - MAM02039x: 1.0
       - MAM02040x: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000101473 or ENSG00000136881 or ENSG00000177465
     - subsystem:
@@ -206907,7 +206844,7 @@
       - MAM02040m: -1.0
       - MAM02385m: 1.0
       - MAM02971m: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000097021 or ENSG00000119673
     - subsystem:
@@ -206927,7 +206864,7 @@
       - MAM02040x: -1.0
       - MAM02385x: 1.0
       - MAM02971x: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000101473 or ENSG00000136881 or ENSG00000177465
     - subsystem:
@@ -207006,7 +206943,7 @@
       - MAM02554n: 1.0
       - MAM02555n: -1.0
       - MAM02941n: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000141552
     - subsystem:
@@ -208144,7 +208081,7 @@
       - MAM02040m: -1.0
       - MAM02554m: -1.0
       - MAM02555m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000135929
     - subsystem:
@@ -208302,7 +208239,7 @@
       - MAM02040c: -1.0
       - MAM02554c: -1.0
       - MAM02555c: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
@@ -208321,7 +208258,7 @@
       - MAM01597m: 1.0
       - MAM02039m: 1.0
       - MAM02040m: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000097021 or ENSG00000119673
     - subsystem:
@@ -208362,7 +208299,7 @@
       - MAM02040m: 1.0
       - MAM02630m: -1.0
       - MAM02774m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000116171
     - subsystem:
@@ -208839,7 +208776,7 @@
       - MAM01974m: 1.0
       - MAM02040m: 1.0
       - MAM03151m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000109576
     - subsystem:
@@ -210127,7 +210064,7 @@
       - MAM02555m: -1.0
       - MAM03359m: -1.0
       - MAM03360m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000104325
     - subsystem:
@@ -210453,7 +210390,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM03029r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -210473,7 +210410,7 @@
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -210572,7 +210509,7 @@
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -210651,7 +210588,7 @@
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -210730,7 +210667,7 @@
       - MAM02039n: -1.0
       - MAM02554n: 1.0
       - MAM02555n: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Cholesterol metabolism
@@ -210888,7 +210825,7 @@
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -211084,7 +211021,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM03007r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -211163,7 +211100,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM03004r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -211183,7 +211120,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM03002r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -211262,7 +211199,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM03003r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -211570,7 +211507,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM03012r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -211628,7 +211565,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM03013r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -211724,7 +211661,7 @@
       - MAM02554r: 1.0
       - MAM02555r: -1.0
       - MAM03015r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -211860,7 +211797,7 @@
       - MAM02555c: -1.0
       - MAM02647c: 1.0
       - MAM03366c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Fatty acid biosynthesis
@@ -211879,7 +211816,7 @@
       - MAM02555r: -1.0
       - MAM02647r: 1.0
       - MAM03366r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000066322
     - subsystem:
@@ -212248,12 +212185,12 @@
     - id: MAR03817
     - name: Aldehyde Dehydrogenase (NAD+)
     - metabolites: !!omap
-      - MAM00751m: 1.0
-      - MAM00752m: -1.0
-      - MAM02039m: -2.0
-      - MAM02040m: 1.0
-      - MAM02552m: 1.0
-      - MAM02553m: -1.0
+      - MAM00751m: -1.0
+      - MAM00752m: 1.0
+      - MAM02039m: 2.0
+      - MAM02040m: -1.0
+      - MAM02552m: -1.0
+      - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000111275 or ENSG00000137124 or ENSG00000164904

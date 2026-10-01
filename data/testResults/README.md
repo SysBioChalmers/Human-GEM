@@ -21,12 +21,12 @@ own files. The pull request in each row is the one whose run last wrote those fi
 
 | Result file(s) | Produced by | Last updated by |
 | --- | --- | --- |
-| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_name_consistency.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1124** (model QC checks) |
-| `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1124** (model QC checks) |
-| `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testSbmlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1124** (model QC checks) |
-| `macaw_results.tsv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1124** (MACAW and balance) |
-| `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1124** (MEMOTE) |
-| `gene-essential.csv`, `gene-essential_summary.md` | `gradedEssentiality.py` via `/run gene-essentiality` | **PR #1121** (gene essentiality) |
+| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_name_consistency.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1132** (model QC checks) |
+| `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1132** (model QC checks) |
+| `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testSbmlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1132** (model QC checks) |
+| `macaw_results.tsv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1132** (MACAW and balance) |
+| `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1132** (MEMOTE) |
+| `gene-essential.csv`, `gene-essential_summary.md` | `gradedEssentiality.py` via `/run gene-essentiality` | **PR #1132** (gene essentiality) |
 
 ## 2. What each check means
 
@@ -39,10 +39,12 @@ non-zero); :warning: a non-zero but pre-existing finding that this pull request 
 not make worse (non-blocking); :x: a count that rose versus the target branch (a
 regression this pull request introduced), or a failed gate.
 
-### Model checks
+The model and network checks are grouped by topic, in the order of the full report. Three
+rows are build gates (a finding blocks the merge); the rest are reports.
 
-Structural integrity and per-entity quality, all from `qcModelChecks.py` unless
-noted. Two rows are build gates (a finding blocks the merge); the rest are reports.
+### Loading and growth
+
+Whether the model can be loaded and can grow; both are gates.
 
 #### Duplicate `!!omap` keys
 **Gate.** Duplicate keys inside one metabolite/reaction/gene `!!omap` entry (two
@@ -62,9 +64,140 @@ physiological growth rate. When the model cannot grow, `qc_growth_blockers.csv`
 lists the biomass precursors that cannot be made on this medium, which are what to
 fix.
 
+### Reaction directions
+
+Directions that thermodynamics makes very unlikely, from `reversibilityTest.py` in the `thermodynamics` job. The alarm is a gate.
+
+#### Reaction directions: alarm
+**Gate.** From `reversibilityTest.py`, run with eQuilibrator in the `thermodynamics`
+job. This check and the warning below catch only the most obviously wrong
+directionality: a reaction that raises neither is **not** thereby shown to have the
+right reversibility. Most reactions have no ΔG estimate, and a modest ΔG can be
+overcome by concentrations or by coupling to the next step.
+
+The alarm goes off when a reaction's bounds let it run in a direction that
+thermodynamics rules out:
+
+- **ΔG.** `data/thermodynamics/reactionDeltaG.tsv` holds ΔG'm (all reactants at 1 mM,
+  at the compartment's pH) estimated with eQuilibrator by
+  `code/qc/estimateReactionDeltaG.py`. The margin is ΔG'm in the open uphill
+  direction minus twice its uncertainty. The alarm needs the warning criterion below
+  (a more than 1000-fold change in reactant concentrations) and a margin above
+  40 kJ/mol, about 10^7 in the mass-action ratio: between 1 µM and 10 mM a reactant
+  shifts ΔG by at most about 6 kJ/mol per order of magnitude, so no physiological
+  concentrations reach it. Requiring both keeps reactions with many reactants, where
+  small changes in each add up, from raising the alarm. Estimates that rely on an
+  isomer proxy (a same-formula compound standing in for a metabolite eQuilibrator
+  does not have) can only warn.
+- **Oxygen.** A reaction that can release O2 without consuming H2O2 or superoxide.
+  Reducing O2 releases so much energy (an oxygenase with NADPH typically around
+  −400 kJ/mol, an oxidase making H2O2 around −50 to −150 kJ/mol) that in human cells
+  O2 is only released by the disproportionation of reactive oxygen species (catalase,
+  superoxide dismutase). Any other O2-releasing direction is an oxygenase or oxidase
+  running backwards, or a wrongly written reaction. This rule needs no ΔG estimate,
+  so it also covers reactions eQuilibrator cannot estimate.
+
+Fix the reaction by making it irreversible in the other direction (flip its
+stoichiometry if needed). When there is evidence that it does run this way (for
+example coupling the table does not see), list it with the evidence in
+`data/thermodynamics/reversibilityExceptions.tsv`; listed reactions are shown as
+`exception` in `qc_reversibility.csv` and do not fail the check.
+
+#### Reaction directions: warning
+Reactions that can run in a direction that would need the reactant concentrations to
+change more than 1000-fold: the reversibility index ln Γ = (2/N)·margin/RT is above
+ln(1000) ≈ 6.9, with N the sum of the absolute stoichiometric coefficients excluding
+H2O and H+ (Noor et al. 2012, Bioinformatics 28:2037; the same criterion as the MEMOTE
+thermodynamics test). Normalising by N matters: a 1:1 reaction is far harder to
+reverse than a 2:2 reaction with the same ΔG'm, so the warning starts at about 17
+kJ/mol for A ⇌ B and 34 kJ/mol for A + B ⇌ C + D. On the curated model it flags none of
+the textbook near-equilibrium reactions (MDH, LDH, GAPDH, PGK, transaminases), which a
+flat 20 kJ/mol cutoff would. Such a direction can still occur (PHGDH runs uphill,
+pulled by the next step), so a warning is worth a look but not an error by itself.
+
+#### Outdated ΔG estimates
+Reactions whose stoichiometry changed since their ΔG'm was estimated; the stored hash of
+the stoichiometry no longer matches, and they are not judged. The `thermodynamics` job
+estimates new and changed reactions before the check and commits the updated table, so
+this stays at zero unless that step failed. A full refresh is
+`python code/qc/estimateReactionDeltaG.py` (about 40 minutes).
+
+### Mass and charge
+
+Formulas, charges and balance, from `qcModelChecks.py`, the balance report and the structure-vs-formula check.
+
+#### Metabolites missing formula
+Metabolites with no chemical formula. They are silently skipped by the mass-balance
+test, so tracking them keeps that test meaningful. Generic pool/class
+pseudo-metabolites, which have no formula by design, are excluded.
+
+#### Metabolites missing charge
+Metabolites with no charge, for the same reason as the formula check.
+
+#### Mass-imbalanced reactions
+Reactions whose elemental sums do not balance, from cobrapy's `check_mass_balance()`.
+Boundary reactions (exchange/demand/sink) and biomass are excluded, since they are
+not expected to balance.
+
+#### Charge-imbalanced reactions
+Reactions whose charge sums do not balance, with the same exclusions as above.
+
+#### Structure vs formula/charge inconsistencies
+From `structureConsistencyTest.py`. Metabolites whose structure (SMILES/InChI in
+`metabolites.tsv`) implies a formula or charge that disagrees with the formula/charge
+carried in the model YAML.
+
+### Network structure
+
+How reactions, metabolites and genes connect, from `qcModelChecks.py` and [MACAW](https://github.com/Devlin-Moyer/macaw).
+
 #### Reactions with no metabolites
 Reactions whose stoichiometry is empty. Such a reaction does nothing and usually
 signals a broken edit.
+
+#### Exact-duplicate reaction groups
+Groups of two or more reactions with **identical** stoichiometry (same metabolites
+and same coefficients). This is the strict "truly identical" case; near-duplicates
+(reverse direction, different coefficients, different electron carriers) are the
+remit of the MACAW duplicate test below.
+
+#### Reactions flagged as MACAW duplicates
+Sets of reactions that may be duplicates because they involve the same metabolites
+(with the same or different coefficients or directions), or represent the same
+oxidation/reduction using different electron carriers. Some are legitimate; the flag
+means "worth checking", not "certainly wrong".
+
+#### Reactions flagged by MACAW dead-end test
+Reactions prevented from carrying steady-state flux because one of their metabolites
+can only ever be produced, or only consumed, by every reaction it takes part in (the
+simplest case being a metabolite in a single reaction). Reversible reactions that
+MACAW limits to one direction (`only when going forwards` or `only when going
+backwards`) can still carry flux, so they are neither counted nor listed on their own
+in `macaw_results.tsv`.
+
+#### Reactions split across compartments
+Reactions whose own chemistry sits in more than one compartment. A metabolite that
+appears in two compartments of the same reaction is what the reaction transports and
+is ignored; the metabolites left over normally share one compartment, and one of them
+elsewhere (a cytosolic substrate in a mitochondrial reaction, say) is usually a
+curation error. Some enzymes do work across a membrane (HGSNAT, GPD2, fatty-acid
+uptake coupled to acyl-CoA synthesis), so this is a report, and only a rise in the
+count is flagged. Pool and biomass reactions are skipped.
+
+#### Reaction bound / GPR issues
+Reactions with invalid flux bounds (`lb > ub`, or a bound outside +/-1000) or
+gene-rule problems (a gene not annotated in `genes.tsv`, or a boundary reaction that
+carries a gene rule).
+
+#### Unused metabolites
+Metabolites not used by any reaction in the model.
+
+#### Unused genes
+Genes not referenced by any reaction's gene rule.
+
+### Identifiers and annotation
+
+Identifiers, names and cross-references, from `qcModelChecks.py` and `annotationTest.py`.
 
 #### Model / annotation-table inconsistencies
 The model and its annotation tables (`reactions.tsv` / `metabolites.tsv` /
@@ -80,19 +213,6 @@ branch but gone from this pull request's model and were **not** added to
 identifier was dropped without being moved to a deprecated list. (Comparison needs
 the target-branch model tables, so it is reported only in CI.)
 
-#### Metabolites missing formula
-Metabolites with no chemical formula. They are silently skipped by the mass-balance
-test, so tracking them keeps that test meaningful. Generic pool/class
-pseudo-metabolites, which have no formula by design, are excluded.
-
-#### Metabolites missing charge
-Metabolites with no charge, for the same reason as the formula check.
-
-#### Reaction bound / GPR issues
-Reactions with invalid flux bounds (`lb > ub`, or a bound outside +/-1000) or
-gene-rule problems (a gene not annotated in `genes.tsv`, or a boundary reaction that
-carries a gene rule).
-
 #### Naming issues (missing or inconsistent)
 Reactions or metabolites with no name, and metabolites whose name depends on the
 compartment. Names are curated in `model/Human-GEM.yml`; `reactions.tsv` and
@@ -100,18 +220,6 @@ compartment. Names are curated in `model/Human-GEM.yml`; `reactions.tsv` and
 drift against. One chemical is the same chemical in every compartment, so a name that
 differs between compartments is either a naming slip or two unrelated compounds sharing
 a base identifier.
-
-#### Exact-duplicate reaction groups
-Groups of two or more reactions with **identical** stoichiometry (same metabolites
-and same coefficients). This is the strict "truly identical" case; near-duplicates
-(reverse direction, different coefficients, different electron carriers) are the
-remit of the MACAW duplicate test below.
-
-#### Unused metabolites
-Metabolites not used by any reaction in the model.
-
-#### Unused genes
-Genes not referenced by any reaction's gene rule.
 
 #### Malformed cross-references
 From `annotationTest.py`. Cross-references in the annotation tables whose format does
@@ -121,38 +229,6 @@ EHMN, HepatoNET1, Reactome, TCDB).
 #### Cross-refs inconsistent across compartments
 From `annotationTest.py`. The same metabolite in different compartments carries
 different cross-references, which should agree.
-
-### MACAW and mass/charge balance
-
-Network-level checks from [MACAW](https://github.com/Devlin-Moyer/macaw), the mass
-and charge balance report, and the structure-vs-formula check.
-
-#### Reactions flagged by MACAW dead-end test
-Reactions prevented from carrying steady-state flux because one of their metabolites
-can only ever be produced, or only consumed, by every reaction it takes part in (the
-simplest case being a metabolite in a single reaction). Reversible reactions that
-MACAW limits to one direction (`only when going forwards` or `only when going
-backwards`) can still carry flux, so they are neither counted nor listed on their own
-in `macaw_results.tsv`.
-
-#### Reactions flagged as MACAW duplicates
-Sets of reactions that may be duplicates because they involve the same metabolites
-(with the same or different coefficients or directions), or represent the same
-oxidation/reduction using different electron carriers. Some are legitimate; the flag
-means "worth checking", not "certainly wrong".
-
-#### Mass-imbalanced reactions
-Reactions whose elemental sums do not balance, from cobrapy's `check_mass_balance()`.
-Boundary reactions (exchange/demand/sink) and biomass are excluded, since they are
-not expected to balance.
-
-#### Charge-imbalanced reactions
-Reactions whose charge sums do not balance, with the same exclusions as above.
-
-#### Structure vs formula/charge inconsistencies
-From `structureConsistencyTest.py`. Metabolites whose structure (SMILES/InChI in
-`metabolites.tsv`) implies a formula or charge that disagrees with the formula/charge
-carried in the model YAML.
 
 ### Model file and metabolic tasks
 
@@ -231,6 +307,7 @@ threshold-free AUROC/AUPRC of the growth ratio against the Hart Bayes Factors. S
 | `qc_deprecation_completeness.csv` | Reactions/metabolites removed since the target branch but not added to a deprecated list: `kind, id, issue`. |
 | `qc_metabolite_completeness.csv` | Metabolites missing a formula and/or a charge: `metabolite, name, missing_formula, missing_charge`. |
 | `qc_reaction_sanity.csv` | Reactions with bound or GPR issues: `reaction, name, issues`. |
+| `qc_reversibility.csv` | Reaction directions flagged by `reversibilityTest.py`: alarms (`impossible`), warnings (`questionable`), listed exceptions, and outdated estimates: `reaction, name, lower_bound, upper_bound, dGm_kJ_per_mol, sd_kJ_per_mol, ln_gamma, verdict, note`. |
 | `qc_name_consistency.csv` | Entities with no name, and metabolites whose name differs between compartments: `kind, id, issue`. |
 | `qc_duplicate_reactions.csv` | Exact-duplicate reaction groups: `group, reaction, equation`. |
 | `qc_unused_entities.csv` | Metabolites and genes used by no reaction: `kind, id`. |

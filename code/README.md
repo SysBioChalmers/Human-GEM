@@ -32,7 +32,7 @@ Contains curation-related scripts and functions used to make changes to the Huma
 Note that code in this directory is often one-time use and will not be updated with later versions of Human-GEM. Deprecated code is moved to the `.deprecated` folder in the root directory of this repository.
 
 ### qc
-Functions to help with quality control (QC) of Human-GEM, such as checking for duplicate reactions or mass imbalances.
+Functions to help with quality control (QC) of Human-GEM, such as checking for duplicate reactions or mass imbalances. `estimateReactionDeltaG.py` estimates the Gibbs energy of the reactions with eQuilibrator, for the reversibility check of the Model QC workflow.
 
 ### tINIT
 Functions associated with the **t**ask‐driven **I**ntegrative **N**etwork **I**nference for **T**issues (tINIT) algorithm. These functions include updates to the [original algorithm](https://www.ncbi.nlm.nih.gov/pubmed/24646661), as described in the [Human-GEM publication](https://stke.sciencemag.org/lookup/doi/10.1126/scisignal.aaz1482). Note that the updated tINIT implementation included here still requires many functions from the [RAVEN Toolbox 2](https://github.com/SysBioChalmers/RAVEN).

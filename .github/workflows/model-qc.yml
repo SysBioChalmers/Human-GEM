@@ -13,7 +13,7 @@ env:
     qc_reaction_sanity.csv qc_annotation_issues.csv qc_deprecation_completeness.csv
     qc_name_consistency.csv qc_split_compartments.csv
     qc_status.tsv memote_score.md macaw_results.tsv balance_results.csv
-    qc_structure_consistency.csv
+    qc_structure_consistency.csv qc_reversibility.csv
 
 # Each check group runs as its own job, in parallel. Every job solves with GLPK
 # (Gurobi gave the same results here and was only seconds faster), so model QC never
@@ -83,6 +83,10 @@ jobs:
             deps: -r code/test/requirements.txt
           - group: memote
             deps: -r code/test/requirements.txt memote
+          # Reaction directions against thermodynamics: a build gate (alarm) plus
+          # warnings. ΔG of new or changed reactions is estimated with eQuilibrator first.
+          - group: thermodynamics
+            deps: -r code/qc/requirements-thermodynamics.txt cobra
     env:
       BASE_REF: ${{ github.event.pull_request.base.ref }}
     steps:
@@ -99,14 +103,15 @@ jobs:
         run: pip install ${{ matrix.deps }}
 
       # Base-branch model tables: qcModelChecks.py diffs them against this model to
-      # flag identifiers removed here but not moved to a deprecated list.
+      # flag identifiers removed here but not moved to a deprecated list, and the
+      # ΔG estimation uses them to find the reactions and metabolites that changed.
       - name: Fetch target-branch model tables
-        if: matrix.group == 'structural'
+        if: matrix.group == 'structural' || matrix.group == 'thermodynamics'
         run: |
           echo "BASE_MODEL_DIR=$RUNNER_TEMP/base-model" >> "$GITHUB_ENV"
           git fetch --depth=1 origin "$BASE_REF" || true
           mkdir -p "$RUNNER_TEMP/base-model"
-          for f in reactions.tsv metabolites.tsv; do
+          for f in reactions.tsv metabolites.tsv Human-GEM.yml; do
             git show "origin/$BASE_REF:model/$f" > "$RUNNER_TEMP/base-model/$f" 2>/dev/null || rm -f "$RUNNER_TEMP/base-model/$f"
           done
 
@@ -117,6 +122,34 @@ jobs:
         if: matrix.group == 'structural'
         continue-on-error: true
         run: python code/test/qcModelChecks.py
+
+      # The eQuilibrator compound database (1.3 GB, from Zenodo) is cached between runs.
+      - name: Cache the eQuilibrator database
+        if: matrix.group == 'thermodynamics'
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/equilibrator
+          key: equilibrator-${{ runner.os }}-${{ hashFiles('code/qc/requirements-thermodynamics.txt') }}
+
+      # Only reactions that are new or changed since the target branch, or that use a
+      # metabolite whose formula, charge or cross-references changed, are estimated;
+      # the rest of data/thermodynamics/reactionDeltaG.tsv is kept. If this fails or
+      # runs out of time (a change to a hub metabolite can touch thousands of
+      # reactions), the table is left as it was and the check below still runs on it,
+      # reporting changed stoichiometries as outdated.
+      - name: Estimate ΔG of changed reactions
+        if: matrix.group == 'thermodynamics'
+        continue-on-error: true
+        timeout-minutes: 40
+        run: |
+          python code/qc/estimateReactionDeltaG.py --update \
+            --base-model "$BASE_MODEL_DIR/Human-GEM.yml" --base-annotation "$BASE_MODEL_DIR/metabolites.tsv"
+
+      - name: Reaction directions against thermodynamics (gate + warnings)
+        id: thermo
+        if: matrix.group == 'thermodynamics'
+        continue-on-error: true
+        run: python code/test/reversibilityTest.py
 
       - name: Annotation and cross-reference validation
         if: matrix.group == 'annotation'
@@ -230,7 +263,10 @@ jobs:
                   if old.get(k) != v:
                       fh.write(f"{k}\t{v}\n")
           PY
-          echo "${{ steps.qc.outcome }}" > "$OUT/gate.txt"
+          echo "${{ matrix.group == 'thermodynamics' && steps.thermo.outcome || steps.qc.outcome }}" > "$OUT/gate.txt"
+          if ! git diff --quiet -- data/thermodynamics/reactionDeltaG.tsv; then
+            mkdir -p "$OUT/thermodynamics" && cp data/thermodynamics/reactionDeltaG.tsv "$OUT/thermodynamics/"
+          fi
           [ ! -f memote_result.json ] || cp memote_result.json "$OUT/"
 
       - name: Upload results
@@ -285,7 +321,8 @@ jobs:
           path: ${{ runner.temp }}/qc
 
       # A group that uploaded nothing (it crashed before collecting) keeps the files
-      # committed on the branch. A missing structural group fails the gate.
+      # committed on the branch. A missing structural or thermodynamics group fails
+      # its gate.
       - name: Combine check results
         id: combine
         run: |
@@ -293,6 +330,7 @@ jobs:
           for d in "$RUNNER_TEMP"/qc/qc-*/; do
             [ -d "$d" ] || continue
             cp -a "$d"files/. data/testResults/ 2>/dev/null || true
+            [ ! -d "$d"thermodynamics ] || cp -a "$d"thermodynamics/. data/thermodynamics/
             if [ -f "$d"status.tsv ]; then
               while IFS=$'\t' read -r key value; do
                 python code/test/qcStatus.py "$key" "$value"
@@ -304,6 +342,11 @@ jobs:
             gate=$(cat "$RUNNER_TEMP/qc/qc-structural/gate.txt")
           fi
           echo "structural=$gate" >> "$GITHUB_OUTPUT"
+          thermo=failure
+          if [ -f "$RUNNER_TEMP/qc/qc-thermodynamics/gate.txt" ]; then
+            thermo=$(cat "$RUNNER_TEMP/qc/qc-thermodynamics/gate.txt")
+          fi
+          echo "thermodynamics=$thermo" >> "$GITHUB_OUTPUT"
           git status --short
 
       # Render the final summary so it is part of the commit below, then post from
@@ -332,7 +375,7 @@ jobs:
         env:
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
-          changed=$( { git diff --name-only -- data/testResults
+          changed=$( { git diff --name-only -- data/testResults data/thermodynamics/reactionDeltaG.tsv
                        git ls-files --others --exclude-standard -- data/testResults; } \
                      | grep -vx 'data/testResults/README.md' || true )
           keep=$(mktemp -d)
@@ -361,7 +404,7 @@ jobs:
           commit_user_name: memote-bot
           # [skip ci] so this results commit does not re-trigger the workflow.
           commit_message: "chore: update model QC results [skip ci]"
-          file_pattern: data/testResults/*
+          file_pattern: data/testResults/* data/thermodynamics/reactionDeltaG.tsv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -389,7 +432,8 @@ jobs:
 
       # Fail the build if a gate failed, but only after the detail is committed and
       # the comment updated, so the failure is visible in both. Gates: structural QC
-      # (duplicate keys / no growth), YAML round-trip, YAML lint, metabolic tasks.
+      # (duplicate keys / no growth), reaction directions against thermodynamics,
+      # YAML round-trip, YAML lint, metabolic tasks.
       # Runs even when an earlier step failed, so a plumbing failure (a rejected
       # results push, say) can never mask which gate actually went red.
       - name: Fail if a build gate failed
@@ -397,6 +441,7 @@ jobs:
         run: |
           fail=0
           [ "${{ steps.combine.outputs.structural }}" = "success" ] || { echo "::error::structural QC failed"; fail=1; }
+          [ "${{ steps.combine.outputs.thermodynamics }}" = "success" ] || { echo "::error::a reaction can run in a thermodynamically impossible direction (or the check did not run)"; fail=1; }
           for k in roundtrip_cobra roundtrip_raven roundtrip_sbml yamllint; do
             [ "$(python code/test/qcStatus.py --get $k)" = "fail" ] && { echo "::error::$k failed"; fail=1; }
           done

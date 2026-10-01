@@ -69,6 +69,52 @@ def _slug(label: str) -> str:
     return s.strip().replace(" ", "-")
 
 
+# The reaction-direction rows only catch the worst cases; say so wherever they appear.
+REVERSIBILITY_NOTE = (
+    "_Reaction directions: the alarm and the warning catch only directions that thermodynamics "
+    "makes very unlikely. A reaction without an alarm or warning is not thereby shown to have "
+    "the right reversibility._"
+)
+
+
+MAX_LISTED = 10
+
+
+def _reversibility_rows(directory: Path | None) -> list[dict]:
+    path = (directory or Path("")) / "qc_reversibility.csv"
+    if directory is None or not path.exists():
+        return []
+    with path.open(newline="") as fh:
+        return list(csv.DictReader(fh))
+
+
+def _reversibility_callouts(current: Path, base: Path | None) -> tuple[list[list[str]], bool]:
+    """Name the reactions behind the alarm, and the warnings that are new vs base.
+    Returns the callout blocks and whether there are new warnings."""
+    rows = _reversibility_rows(current)
+    base_warned = {r["reaction"] for r in _reversibility_rows(base) if r["verdict"] == "questionable"}
+    alarms = [r for r in rows if r["verdict"] == "impossible"]
+    new_warnings = [r for r in rows if r["verdict"] == "questionable" and r["reaction"] not in base_warned]
+    if base is None or not (base / "qc_reversibility.csv").exists():
+        new_warnings = []  # no baseline: every warning would look new
+
+    def listed(found: list[dict]) -> list[str]:
+        lines = [f"- `{r['reaction']}` {r['name']}: {r['note']}" for r in found[:MAX_LISTED]]
+        if len(found) > MAX_LISTED:
+            lines.append(f"- and {len(found) - MAX_LISTED} more")
+        return lines
+
+    blocks = []
+    if alarms:
+        blocks.append(["**Reaction-direction alarm(s), blocking:** make the reaction irreversible in "
+                       "the other direction, or list it with the evidence in "
+                       "`data/thermodynamics/reversibilityExceptions.tsv`."] + listed(alarms))
+    if new_warnings:
+        blocks.append(["**New reaction-direction warning(s), non-blocking:** worth a look."]
+                      + listed(new_warnings))
+    return blocks, bool(new_warnings)
+
+
 def _labelled(label: str) -> str:
     """The test name, linked to its explanation in the testResults README. Full-detail
     file only, which sits next to the README, so the link is relative and does not
@@ -85,6 +131,7 @@ def _labelled(label: str) -> str:
 MODEL_ROWS = [
     ("Duplicate `!!omap` keys", "dup_keys", "count", "checks", "qc_duplicate_keys.csv"),
     ("Growth (biomass producible)", "growth", "growth", "checks", "qc_growth_blockers.csv"),
+    ("Reaction directions: alarm", "rev_impossible", "count", "checks", "qc_reversibility.csv"),
     ("Reactions with no metabolites", "empty_rxn", "count", "checks", "qc_empty_reactions.csv"),
     ("Model / annotation-table inconsistencies", "annot_consistency", "count", "checks",
      "qc_annotation_consistency.csv"),
@@ -95,6 +142,8 @@ MODEL_ROWS = [
     ("Reaction bound / GPR issues", "reaction_issues", "count", "checks", "qc_reaction_sanity.csv"),
     ("Naming issues (missing or inconsistent)", "name_issues", "count", "checks",
      "qc_name_consistency.csv"),
+    ("Reaction directions: warning", "rev_questionable", "count", "checks", "qc_reversibility.csv"),
+    ("Outdated ΔG estimates", "rev_outdated", "count", "checks", "qc_reversibility.csv"),
     ("Exact-duplicate reaction groups", "dup_reactions", "count", "checks", "qc_duplicate_reactions.csv"),
     ("Reactions split across compartments", "split_compartments", "count", "checks", "qc_split_compartments.csv"),
     ("Unused metabolites", "unused_met", "count", "checks", "qc_unused_entities.csv"),
@@ -102,6 +151,19 @@ MODEL_ROWS = [
     ("Malformed cross-references", "malformed", "count", "checks", "qc_annotation_issues.csv"),
     ("Cross-refs inconsistent across compartments", "inconsistent", "count", "checks", "qc_annotation_issues.csv"),
 ]
+# The full report groups the model and network rows by topic, in this order; the
+# testResults README explains them under the same headings. Gate rows block the merge.
+NETWORK_SECTIONS = [
+    ("Loading and growth", ["dup_keys", "growth"]),
+    ("Reaction directions", ["rev_impossible", "rev_questionable", "rev_outdated"]),
+    ("Mass and charge", ["missing_formula", "missing_charge", "mass_imbalance", "charge_imbalance",
+                         "structure_inconsistent"]),
+    ("Network structure", ["empty_rxn", "dup_reactions", "duplicates", "dead_end", "split_compartments",
+                           "reaction_issues", "unused_met", "unused_gene"]),
+    ("Identifiers and annotation", ["annot_consistency", "removed_not_deprecated", "name_issues",
+                                    "malformed", "inconsistent"]),
+]
+GATE_KEYS = {"dup_keys", "growth", "rev_impossible"}
 MB_ROWS = [
     ("Reactions flagged by MACAW dead-end test", "dead_end", "count", "macaw", "macaw_results.tsv"),
     ("Reactions flagged as MACAW duplicates", "duplicates", "count", "macaw", "macaw_results.tsv"),
@@ -206,6 +268,7 @@ def _metrics(directory: Path) -> dict:
     unused = directory / "qc_unused_entities.csv"
     macaw = directory / "macaw_results.tsv"
     balance = directory / "balance_results.csv"
+    reversibility = directory / "qc_reversibility.csv"
     return {
         "dup_keys": _count_csv(directory / "qc_duplicate_keys.csv"),
         "empty_rxn": _count_csv(directory / "qc_empty_reactions.csv"),
@@ -216,6 +279,9 @@ def _metrics(directory: Path) -> dict:
         "missing_charge": _count_csv(completeness, lambda r: r.get("missing_charge") == "yes"),
         "reaction_issues": _count_csv(directory / "qc_reaction_sanity.csv"),
         "name_issues": _count_csv(directory / "qc_name_consistency.csv"),
+        "rev_impossible": _count_csv(reversibility, lambda r: r.get("verdict") == "impossible"),
+        "rev_questionable": _count_csv(reversibility, lambda r: r.get("verdict") == "questionable"),
+        "rev_outdated": _count_csv(reversibility, lambda r: r.get("verdict") == "outdated"),
         "dup_reactions": _distinct_csv(directory / "qc_duplicate_reactions.csv", "group"),
         "split_compartments": _count_csv(directory / "qc_split_compartments.csv"),
         "unused_met": _count_csv(unused, lambda r: r.get("kind") == "metabolite"),
@@ -308,7 +374,10 @@ def _compute_rows(rows_spec, current: dict, base: dict) -> list[dict]:
                               "icon": ":hourglass_flowing_sand:"})
             continue
         delta, icon, regression, fatal = _icon(value, base.get(key), kind)
-        fatal = fatal or (key == "dup_keys" and value > 0)
+        fatal = fatal or (key in ("dup_keys", "rev_impossible") and value > 0)
+        if key == "rev_questionable":  # non-blocking by design; new ones are listed by name
+            regression = False
+            icon = ":warning:" if value else ":white_check_mark:"
         computed.append({
             "label": label, "kind": kind, "detail": detail, "key": key, "pending": False,
             "value": value, "delta": delta, "icon": icon, "regression": regression, "fatal": fatal,
@@ -320,11 +389,33 @@ def _full_table(computed: list[dict]) -> list[str]:
     """Every row, unabbreviated. Full-detail file only."""
     lines = []
     for r in computed:
+        name = _labelled(r["label"]) + (" **(gate)**" if r["key"] in GATE_KEYS else "")
         if r["pending"]:
-            lines.append(f"| {_labelled(r['label'])} | _running_ | | :hourglass_flowing_sand: |")
+            lines.append(f"| {name} | _running_ | | :hourglass_flowing_sand: |")
         else:
-            lines.append(f"| {_labelled(r['label'])} | {_cell(r['value'], r['kind'], r['detail'], relative=True)} | "
+            lines.append(f"| {name} | {_cell(r['value'], r['kind'], r['detail'], relative=True)} | "
                           f"{r['delta']} | {r['icon']} |")
+    return lines
+
+
+def _ordered(computed: list[dict]) -> list[dict]:
+    """The rows in NETWORK_SECTIONS order, so callouts list them in the same order."""
+    by_key = {r["key"]: r for r in computed}
+    return [by_key[key] for _, keys in NETWORK_SECTIONS for key in keys if key in by_key]
+
+
+def _sectioned_tables(computed: list[dict], head: str, sep: str) -> list[str]:
+    """One table per NETWORK_SECTIONS topic; the reaction-direction caveat sits with its rows."""
+    by_key = {r["key"]: r for r in computed}
+    lines: list[str] = []
+    for title, keys in NETWORK_SECTIONS:
+        rows = [by_key[key] for key in keys if key in by_key]
+        if not rows:
+            continue
+        lines += [f"#### {title}", ""]
+        if title == "Reaction directions":
+            lines += [REVERSIBILITY_NOTE, ""]
+        lines += [head, sep, *_full_table(rows), ""]
     return lines
 
 
@@ -482,14 +573,17 @@ def _gene_essentiality_full_section() -> str:
 
 
 def _gates_line(current: dict, base: dict) -> str:
-    """One-line status of the two merge gates (duplicate keys, growth), appended to the
+    """One-line status of the merge gates (duplicate keys, growth, direction alarms), appended to the
     verdict so they are visible without following any link."""
     if "checks" in RUNNING:
         return ""
     parts = []
-    for label, key, kind in (("duplicate keys", "dup_keys", "count"), ("growth", "growth", "growth")):
+    for label, key, kind in (("duplicate keys", "dup_keys", "count"), ("growth", "growth", "growth"),
+                             ("direction alarms", "rev_impossible", "count")):
         value = current.get(key)
         if value is None:
+            if key == "rev_impossible":  # a base branch from before this check
+                continue
             return ""
         _, icon, _, _ = _icon(value, base.get(key), kind)
         text = f"{value:.3g}" if kind == "growth" else str(int(value))
@@ -502,7 +596,7 @@ def main() -> int:
     current = _metrics(RESULTS)
     base = _metrics(Path(BASE_DIR)) if have_base else {}
 
-    network_rows = _compute_rows(MODEL_ROWS + MB_ROWS, current, base)
+    network_rows = _ordered(_compute_rows(MODEL_ROWS + MB_ROWS, current, base))
     network_summary = _section_summary(network_rows)
     task_rows = _task_rows()
     task_summary = _task_summary(task_rows)
@@ -515,7 +609,8 @@ def main() -> int:
     warnings = len(network_summary["warnings"])
 
     if fatal:
-        verdict = ":x: **Merge blocked: the model cannot be loaded or cannot grow, or a build gate failed.**"
+        causes = [r["label"] for r in network_rows if r.get("fatal")] + [r["label"] for r in task_summary["failed"]]
+        verdict = f":x: **Merge blocked:** {', '.join(causes)}."
     elif regressions:
         extra = f" ({pending} check(s) still running)" if pending else ""
         verdict = f":x: **{regressions}** regression(s) vs `{BASE_REF}`{extra}. Review the row(s) below."
@@ -540,12 +635,17 @@ def main() -> int:
         f"| MEMOTE | {memote_summary['status']} |",
         f"| Full report | {full_report_status} |",
     ]
+    reversibility_blocks, new_warnings = _reversibility_callouts(RESULTS, Path(BASE_DIR) if have_base else None)
+    # with new warnings, the warning row's count is not all pre-existing
+    pre_existing = [r for r in network_summary["warnings"]
+                    if not (new_warnings and r["key"] == "rev_questionable")]
     callout_blocks = [
+        *reversibility_blocks,
         _callout(network_summary["regressions"], verb="Regression(s)"),
         (["**Gate failure(s):**"] + [f"- {r['label']}: {r['result']}" for r in task_summary["failed"]]
          if task_summary["failed"] else []),
         _callout(network_summary["improved"], verb="Improved"),
-        _callout(network_summary["warnings"], verb="Pre-existing") if not regressions else [],
+        _callout(pre_existing, verb="Pre-existing") if not regressions else [],
     ]
     callout_blocks = [b for b in callout_blocks if b]
     callouts: list[str] = []
@@ -569,6 +669,7 @@ def main() -> int:
         f":white_check_mark: unchanged &middot; {IMPROVED} improved vs `{BASE_REF}` &middot; "
         f":warning: pre-existing, non-blocking &middot; :x: regression"
     )
+    comment_lines += ["", REVERSIBILITY_NOTE]
     if COMMIT_SHA:
         comment_lines += ["", f"Results for commit {COMMIT_SHA[:7]}."]
     COMMENT_MD.write_text("\n".join(comment_lines) + "\n", encoding="utf-8")
@@ -585,11 +686,9 @@ def main() -> int:
         "_Row names link to their explanation in the [testResults README](README.md)._",
         "",
         "### Model & network checks",
-        "_Duplicate keys (model unloadable) and no growth block the merge; every other row "
-        "is a non-blocking report._",
+        "_Rows marked **(gate)** block the merge; every other row is a non-blocking report._",
         "",
-        head, sep, *_full_table(network_rows),
-        "",
+        *_sectioned_tables(network_rows, head, sep),
         "### Model file and metabolic tasks",
         "",
         task_head, task_sep,
