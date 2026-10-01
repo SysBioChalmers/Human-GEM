@@ -3,12 +3,15 @@
 _This is the full, per-check breakdown behind the pull-request comment's summary table._ _Row names link to their explanation in the [testResults README](README.md)._
 
 ### Model & network checks
-_Duplicate keys (model unloadable) and no growth block the merge; every other row is a non-blocking report._
+_Duplicate keys (model unloadable), no growth and a reaction-direction alarm block the merge; every other row is a non-blocking report._
+
+_Reaction directions: the alarm and the warning catch only directions that thermodynamics makes very unlikely. A reaction without an alarm or warning is not thereby shown to have the right reversibility._
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
 | [Duplicate `!!omap` keys](README.md#duplicate-omap-keys) | 0 | 0 | :white_check_mark: |
 | [Growth (biomass producible)](README.md#growth-biomass-producible) | 1.9 | 0 | :white_check_mark: |
+| [Reaction directions: alarm](README.md#reaction-directions-alarm) | 0 | new | :white_check_mark: |
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
 | [Model / annotation-table inconsistencies](README.md#model--annotation-table-inconsistencies) | 0 | 0 | :white_check_mark: |
 | [Removed reactions or metabolites not deprecated](README.md#removed-reactions-or-metabolites-not-deprecated) | 0 | 0 | :white_check_mark: |
@@ -16,13 +19,15 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
 | [Naming issues (missing or inconsistent)](README.md#naming-issues-missing-or-inconsistent) | 0 | 0 | :white_check_mark: |
+| [Reaction directions: warning](README.md#reaction-directions-warning) | [76](qc_reversibility.csv) | new | :warning: |
+| [Outdated ΔG estimates](README.md#outdated-δg-estimates) | 0 | new | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
 | [Unused genes](README.md#unused-genes) | 0 | 0 | :white_check_mark: |
 | [Malformed cross-references](README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
 | [Cross-refs inconsistent across compartments](README.md#cross-refs-inconsistent-across-compartments) | 0 | 0 | :white_check_mark: |
-| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1111](macaw_results.tsv) | 0 | :warning: |
+| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1137](macaw_results.tsv) | +26 | :x: |
 | [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | 0 | :warning: |
 | [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | 0 | :warning: |
 | [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [172](balance_results.csv) | 0 | :warning: |
