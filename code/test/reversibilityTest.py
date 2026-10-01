@@ -173,6 +173,10 @@ def main() -> int:
     for r in impossible:
         print(f"::error::Reaction {r[0]} {r[8]}; make it irreversible in the other direction, "
               f"or list it with the evidence in {EXCEPTIONS_TSV}.")
+    flagged = {r[0] for r in rows if r[7] == "exception"}
+    for rid in sorted({r["reaction"] for r in _read_tsv(EXCEPTIONS_TSV)} - flagged):
+        print(f"::notice::{rid} is listed in {EXCEPTIONS_TSV} but raises no alarm any more; "
+              f"remove it from the list.")
     for verdict in ("impossible", "questionable", "exception", "outdated"):
         print(f"Reversibility {verdict}: {sum(1 for r in rows if r[7] == verdict)}")
     print("These flag only the most obviously wrong directions; an unflagged reaction is "

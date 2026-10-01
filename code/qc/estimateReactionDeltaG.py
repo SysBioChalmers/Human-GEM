@@ -78,6 +78,8 @@ NAMESPACES = (
     ("metBiGGID", "bigg.metabolite:"),
     ("metSeedID", "seed.compound:"),
 )
+# metabolites.tsv columns the matching reads; a change elsewhere does not change an estimate
+MATCH_COLUMNS = tuple(key for key, _ in NAMESPACES) + ("metInChI", "metSmiles")
 
 
 def stoichiometry_hash(stoich: dict[str, float]) -> str:
@@ -338,18 +340,24 @@ def _changed_reactions(rxns: list[dict], mets: dict, ann: dict, table: dict,
     base, or one of its metabolites is new or has another formula, charge or
     cross-reference row."""
     todo = {r["id"] for r in rxns if r["id"] in table and table[r["id"]][5] != stoichiometry_hash(r["stoich"])}
-    if base_model is None:
+    if base_model is None or not base_model.exists():
+        print("no base model: only reactions whose stoichiometry changed are re-estimated", file=sys.stderr)
         return todo
     base_mets, base_rxns = load_model(base_model)
     base_stoich = {r["id"]: r["stoich"] for r in base_rxns}
-    base_ann = {}
+    base_ann = None
     if base_annotation is not None and base_annotation.exists():
         with base_annotation.open() as fh:
             base_ann = {r["mets"]: r for r in csv.DictReader(fh, delimiter="\t")}
+
+    def matching_fields(row: dict | None) -> tuple:
+        row = row or {}
+        return tuple(row.get(key, "") for key in MATCH_COLUMNS)
+
     changed_mets = {m for m, info in mets.items()
                     if base_mets.get(m, {}).get("formula") != info["formula"]
                     or base_mets.get(m, {}).get("charge") != info["charge"]
-                    or base_ann.get(m) != ann.get(m)}
+                    or (base_ann is not None and matching_fields(base_ann.get(m)) != matching_fields(ann.get(m)))}
     for r in rxns:
         if base_stoich.get(r["id"]) != r["stoich"] or changed_mets & set(r["stoich"]):
             todo.add(r["id"])
@@ -414,6 +422,9 @@ def main(argv: list[str] | None = None) -> int:
                 w.writerow([base, how, compound.id if compound is not None else ""])
         with args.log.open("w", newline="") as fh:
             csv.writer(fh, delimiter="\t", lineterminator="\n").writerows(log)
+    if args.update:
+        for rid, why in log:
+            print(f"not estimated: {rid}: {why}")
     print(f"estimated {len(todo) - len(log)} of {len(todo)} reaction(s); the table has {len(table)}")
     return 0
 

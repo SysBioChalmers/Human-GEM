@@ -77,6 +77,44 @@ REVERSIBILITY_NOTE = (
 )
 
 
+MAX_LISTED = 10
+
+
+def _reversibility_rows(directory: Path | None) -> list[dict]:
+    path = (directory or Path("")) / "qc_reversibility.csv"
+    if directory is None or not path.exists():
+        return []
+    with path.open(newline="") as fh:
+        return list(csv.DictReader(fh))
+
+
+def _reversibility_callouts(current: Path, base: Path | None) -> tuple[list[list[str]], bool]:
+    """Name the reactions behind the alarm, and the warnings that are new vs base.
+    Returns the callout blocks and whether there are new warnings."""
+    rows = _reversibility_rows(current)
+    base_warned = {r["reaction"] for r in _reversibility_rows(base) if r["verdict"] == "questionable"}
+    alarms = [r for r in rows if r["verdict"] == "impossible"]
+    new_warnings = [r for r in rows if r["verdict"] == "questionable" and r["reaction"] not in base_warned]
+    if base is None or not (base / "qc_reversibility.csv").exists():
+        new_warnings = []  # no baseline: every warning would look new
+
+    def listed(found: list[dict]) -> list[str]:
+        lines = [f"- `{r['reaction']}` {r['name']}: {r['note']}" for r in found[:MAX_LISTED]]
+        if len(found) > MAX_LISTED:
+            lines.append(f"- and {len(found) - MAX_LISTED} more")
+        return lines
+
+    blocks = []
+    if alarms:
+        blocks.append(["**Reaction-direction alarm(s), blocking:** make the reaction irreversible in "
+                       "the other direction, or list it with the evidence in "
+                       "`data/thermodynamics/reversibilityExceptions.tsv`."] + listed(alarms))
+    if new_warnings:
+        blocks.append(["**New reaction-direction warning(s), non-blocking:** worth a look."]
+                      + listed(new_warnings))
+    return blocks, bool(new_warnings)
+
+
 def _labelled(label: str) -> str:
     """The test name, linked to its explanation in the testResults README. Full-detail
     file only, which sits next to the README, so the link is relative and does not
@@ -324,6 +362,9 @@ def _compute_rows(rows_spec, current: dict, base: dict) -> list[dict]:
             continue
         delta, icon, regression, fatal = _icon(value, base.get(key), kind)
         fatal = fatal or (key in ("dup_keys", "rev_impossible") and value > 0)
+        if key == "rev_questionable":  # non-blocking by design; new ones are listed by name
+            regression = False
+            icon = ":warning:" if value else ":white_check_mark:"
         computed.append({
             "label": label, "kind": kind, "detail": detail, "key": key, "pending": False,
             "value": value, "delta": delta, "icon": icon, "regression": regression, "fatal": fatal,
@@ -533,8 +574,8 @@ def main() -> int:
     warnings = len(network_summary["warnings"])
 
     if fatal:
-        verdict = (":x: **Merge blocked: the model cannot be loaded or cannot grow, a reaction can run in a "
-                   "thermodynamically impossible direction, or a build gate failed.**")
+        causes = [r["label"] for r in network_rows if r.get("fatal")] + [r["label"] for r in task_summary["failed"]]
+        verdict = f":x: **Merge blocked:** {', '.join(causes)}."
     elif regressions:
         extra = f" ({pending} check(s) still running)" if pending else ""
         verdict = f":x: **{regressions}** regression(s) vs `{BASE_REF}`{extra}. Review the row(s) below."
@@ -559,12 +600,17 @@ def main() -> int:
         f"| MEMOTE | {memote_summary['status']} |",
         f"| Full report | {full_report_status} |",
     ]
+    reversibility_blocks, new_warnings = _reversibility_callouts(RESULTS, Path(BASE_DIR) if have_base else None)
+    # with new warnings, the warning row's count is not all pre-existing
+    pre_existing = [r for r in network_summary["warnings"]
+                    if not (new_warnings and r["key"] == "rev_questionable")]
     callout_blocks = [
+        *reversibility_blocks,
         _callout(network_summary["regressions"], verb="Regression(s)"),
         (["**Gate failure(s):**"] + [f"- {r['label']}: {r['result']}" for r in task_summary["failed"]]
          if task_summary["failed"] else []),
         _callout(network_summary["improved"], verb="Improved"),
-        _callout(network_summary["warnings"], verb="Pre-existing") if not regressions else [],
+        _callout(pre_existing, verb="Pre-existing") if not regressions else [],
     ]
     callout_blocks = [b for b in callout_blocks if b]
     callouts: list[str] = []

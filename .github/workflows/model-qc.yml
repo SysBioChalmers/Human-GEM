@@ -133,11 +133,14 @@ jobs:
 
       # Only reactions that are new or changed since the target branch, or that use a
       # metabolite whose formula, charge or cross-references changed, are estimated;
-      # the rest of data/thermodynamics/reactionDeltaG.tsv is kept. If this fails, the
-      # check below still runs on the committed table and reports what is outdated.
+      # the rest of data/thermodynamics/reactionDeltaG.tsv is kept. If this fails or
+      # runs out of time (a change to a hub metabolite can touch thousands of
+      # reactions), the table is left as it was and the check below still runs on it,
+      # reporting changed stoichiometries as outdated.
       - name: Estimate ΔG of changed reactions
         if: matrix.group == 'thermodynamics'
         continue-on-error: true
+        timeout-minutes: 40
         run: |
           python code/qc/estimateReactionDeltaG.py --update \
             --base-model "$BASE_MODEL_DIR/Human-GEM.yml" --base-annotation "$BASE_MODEL_DIR/metabolites.tsv"
