@@ -151,6 +151,19 @@ MODEL_ROWS = [
     ("Malformed cross-references", "malformed", "count", "checks", "qc_annotation_issues.csv"),
     ("Cross-refs inconsistent across compartments", "inconsistent", "count", "checks", "qc_annotation_issues.csv"),
 ]
+# The full report groups the model and network rows by topic, in this order; the
+# testResults README explains them under the same headings. Gate rows block the merge.
+NETWORK_SECTIONS = [
+    ("Loading and growth", ["dup_keys", "growth"]),
+    ("Reaction directions", ["rev_impossible", "rev_questionable", "rev_outdated"]),
+    ("Mass and charge", ["missing_formula", "missing_charge", "mass_imbalance", "charge_imbalance",
+                         "structure_inconsistent"]),
+    ("Network structure", ["empty_rxn", "dup_reactions", "duplicates", "dead_end", "split_compartments",
+                           "reaction_issues", "unused_met", "unused_gene"]),
+    ("Identifiers and annotation", ["annot_consistency", "removed_not_deprecated", "name_issues",
+                                    "malformed", "inconsistent"]),
+]
+GATE_KEYS = {"dup_keys", "growth", "rev_impossible"}
 MB_ROWS = [
     ("Reactions flagged by MACAW dead-end test", "dead_end", "count", "macaw", "macaw_results.tsv"),
     ("Reactions flagged as MACAW duplicates", "duplicates", "count", "macaw", "macaw_results.tsv"),
@@ -376,11 +389,33 @@ def _full_table(computed: list[dict]) -> list[str]:
     """Every row, unabbreviated. Full-detail file only."""
     lines = []
     for r in computed:
+        name = _labelled(r["label"]) + (" **(gate)**" if r["key"] in GATE_KEYS else "")
         if r["pending"]:
-            lines.append(f"| {_labelled(r['label'])} | _running_ | | :hourglass_flowing_sand: |")
+            lines.append(f"| {name} | _running_ | | :hourglass_flowing_sand: |")
         else:
-            lines.append(f"| {_labelled(r['label'])} | {_cell(r['value'], r['kind'], r['detail'], relative=True)} | "
+            lines.append(f"| {name} | {_cell(r['value'], r['kind'], r['detail'], relative=True)} | "
                           f"{r['delta']} | {r['icon']} |")
+    return lines
+
+
+def _ordered(computed: list[dict]) -> list[dict]:
+    """The rows in NETWORK_SECTIONS order, so callouts list them in the same order."""
+    by_key = {r["key"]: r for r in computed}
+    return [by_key[key] for _, keys in NETWORK_SECTIONS for key in keys if key in by_key]
+
+
+def _sectioned_tables(computed: list[dict], head: str, sep: str) -> list[str]:
+    """One table per NETWORK_SECTIONS topic; the reaction-direction caveat sits with its rows."""
+    by_key = {r["key"]: r for r in computed}
+    lines: list[str] = []
+    for title, keys in NETWORK_SECTIONS:
+        rows = [by_key[key] for key in keys if key in by_key]
+        if not rows:
+            continue
+        lines += [f"#### {title}", ""]
+        if title == "Reaction directions":
+            lines += [REVERSIBILITY_NOTE, ""]
+        lines += [head, sep, *_full_table(rows), ""]
     return lines
 
 
@@ -561,7 +596,7 @@ def main() -> int:
     current = _metrics(RESULTS)
     base = _metrics(Path(BASE_DIR)) if have_base else {}
 
-    network_rows = _compute_rows(MODEL_ROWS + MB_ROWS, current, base)
+    network_rows = _ordered(_compute_rows(MODEL_ROWS + MB_ROWS, current, base))
     network_summary = _section_summary(network_rows)
     task_rows = _task_rows()
     task_summary = _task_summary(task_rows)
@@ -651,13 +686,9 @@ def main() -> int:
         "_Row names link to their explanation in the [testResults README](README.md)._",
         "",
         "### Model & network checks",
-        "_Duplicate keys (model unloadable), no growth and a reaction-direction alarm block the "
-        "merge; every other row is a non-blocking report._",
+        "_Rows marked **(gate)** block the merge; every other row is a non-blocking report._",
         "",
-        REVERSIBILITY_NOTE,
-        "",
-        head, sep, *_full_table(network_rows),
-        "",
+        *_sectioned_tables(network_rows, head, sep),
         "### Model file and metabolic tasks",
         "",
         task_head, task_sep,

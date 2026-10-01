@@ -39,10 +39,12 @@ non-zero); :warning: a non-zero but pre-existing finding that this pull request 
 not make worse (non-blocking); :x: a count that rose versus the target branch (a
 regression this pull request introduced), or a failed gate.
 
-### Model checks
+The model and network checks are grouped by topic, in the order of the full report. Three
+rows are build gates (a finding blocks the merge); the rest are reports.
 
-Structural integrity and per-entity quality, all from `qcModelChecks.py` unless
-noted. Three rows are build gates (a finding blocks the merge); the rest are reports.
+### Loading and growth
+
+Whether the model can be loaded and can grow; both are gates.
 
 #### Duplicate `!!omap` keys
 **Gate.** Duplicate keys inside one metabolite/reaction/gene `!!omap` entry (two
@@ -61,6 +63,10 @@ an arbitrary flux bound, so the value can be compared between commits; it is not
 physiological growth rate. When the model cannot grow, `qc_growth_blockers.csv`
 lists the biomass precursors that cannot be made on this medium, which are what to
 fix.
+
+### Reaction directions
+
+Directions that thermodynamics makes very unlikely, from `reversibilityTest.py` in the `thermodynamics` job. The alarm is a gate.
 
 #### Reaction directions: alarm
 **Gate.** From `reversibilityTest.py`, run with eQuilibrator in the `thermodynamics`
@@ -97,45 +103,6 @@ example coupling the table does not see), list it with the evidence in
 `data/thermodynamics/reversibilityExceptions.tsv`; listed reactions are shown as
 `exception` in `qc_reversibility.csv` and do not fail the check.
 
-#### Reactions with no metabolites
-Reactions whose stoichiometry is empty. Such a reaction does nothing and usually
-signals a broken edit.
-
-#### Model / annotation-table inconsistencies
-The model and its annotation tables (`reactions.tsv` / `metabolites.tsv` /
-`genes.tsv`) must list the same identifiers. Flags identifiers in the model but not
-the table (or the reverse), any deprecated identifier still used in the model, and a
-non-numeric value in the `spontaneous` column of `reactions.tsv`.
-
-#### Removed reactions or metabolites not deprecated
-Human-GEM retires identifiers rather than deleting them, so a removed identifier
-stays resolvable. This flags reactions or metabolites that are present on the target
-branch but gone from this pull request's model and were **not** added to
-`deprecatedReactions.tsv` / `deprecatedMetabolites.tsv`. A non-zero count means an
-identifier was dropped without being moved to a deprecated list. (Comparison needs
-the target-branch model tables, so it is reported only in CI.)
-
-#### Metabolites missing formula
-Metabolites with no chemical formula. They are silently skipped by the mass-balance
-test, so tracking them keeps that test meaningful. Generic pool/class
-pseudo-metabolites, which have no formula by design, are excluded.
-
-#### Metabolites missing charge
-Metabolites with no charge, for the same reason as the formula check.
-
-#### Reaction bound / GPR issues
-Reactions with invalid flux bounds (`lb > ub`, or a bound outside +/-1000) or
-gene-rule problems (a gene not annotated in `genes.tsv`, or a boundary reaction that
-carries a gene rule).
-
-#### Naming issues (missing or inconsistent)
-Reactions or metabolites with no name, and metabolites whose name depends on the
-compartment. Names are curated in `model/Human-GEM.yml`; `reactions.tsv` and
-`metabolites.tsv` hold cross-references only, so there is no second copy of a name to
-drift against. One chemical is the same chemical in every compartment, so a name that
-differs between compartments is either a naming slip or two unrelated compounds sharing
-a base identifier.
-
 #### Reaction directions: warning
 Reactions that can run in a direction that would need the reactant concentrations to
 change more than 1000-fold: the reversibility index ln Γ = (2/N)·margin/RT is above
@@ -155,45 +122,17 @@ estimates new and changed reactions before the check and commits the updated tab
 this stays at zero unless that step failed. A full refresh is
 `python code/qc/estimateReactionDeltaG.py` (about 40 minutes).
 
-#### Exact-duplicate reaction groups
-Groups of two or more reactions with **identical** stoichiometry (same metabolites
-and same coefficients). This is the strict "truly identical" case; near-duplicates
-(reverse direction, different coefficients, different electron carriers) are the
-remit of the MACAW duplicate test below.
+### Mass and charge
 
-#### Unused metabolites
-Metabolites not used by any reaction in the model.
+Formulas, charges and balance, from `qcModelChecks.py`, the balance report and the structure-vs-formula check.
 
-#### Unused genes
-Genes not referenced by any reaction's gene rule.
+#### Metabolites missing formula
+Metabolites with no chemical formula. They are silently skipped by the mass-balance
+test, so tracking them keeps that test meaningful. Generic pool/class
+pseudo-metabolites, which have no formula by design, are excluded.
 
-#### Malformed cross-references
-From `annotationTest.py`. Cross-references in the annotation tables whose format does
-not match their namespace (KEGG, ChEBI, HMDB, PubChem, MetaNetX, Rhea, LipidMaps,
-EHMN, HepatoNET1, Reactome, TCDB).
-
-#### Cross-refs inconsistent across compartments
-From `annotationTest.py`. The same metabolite in different compartments carries
-different cross-references, which should agree.
-
-### MACAW and mass/charge balance
-
-Network-level checks from [MACAW](https://github.com/Devlin-Moyer/macaw), the mass
-and charge balance report, and the structure-vs-formula check.
-
-#### Reactions flagged by MACAW dead-end test
-Reactions prevented from carrying steady-state flux because one of their metabolites
-can only ever be produced, or only consumed, by every reaction it takes part in (the
-simplest case being a metabolite in a single reaction). Reversible reactions that
-MACAW limits to one direction (`only when going forwards` or `only when going
-backwards`) can still carry flux, so they are neither counted nor listed on their own
-in `macaw_results.tsv`.
-
-#### Reactions flagged as MACAW duplicates
-Sets of reactions that may be duplicates because they involve the same metabolites
-(with the same or different coefficients or directions), or represent the same
-oxidation/reduction using different electron carriers. Some are legitimate; the flag
-means "worth checking", not "certainly wrong".
+#### Metabolites missing charge
+Metabolites with no charge, for the same reason as the formula check.
 
 #### Mass-imbalanced reactions
 Reactions whose elemental sums do not balance, from cobrapy's `check_mass_balance()`.
@@ -207,6 +146,89 @@ Reactions whose charge sums do not balance, with the same exclusions as above.
 From `structureConsistencyTest.py`. Metabolites whose structure (SMILES/InChI in
 `metabolites.tsv`) implies a formula or charge that disagrees with the formula/charge
 carried in the model YAML.
+
+### Network structure
+
+How reactions, metabolites and genes connect, from `qcModelChecks.py` and [MACAW](https://github.com/Devlin-Moyer/macaw).
+
+#### Reactions with no metabolites
+Reactions whose stoichiometry is empty. Such a reaction does nothing and usually
+signals a broken edit.
+
+#### Exact-duplicate reaction groups
+Groups of two or more reactions with **identical** stoichiometry (same metabolites
+and same coefficients). This is the strict "truly identical" case; near-duplicates
+(reverse direction, different coefficients, different electron carriers) are the
+remit of the MACAW duplicate test below.
+
+#### Reactions flagged as MACAW duplicates
+Sets of reactions that may be duplicates because they involve the same metabolites
+(with the same or different coefficients or directions), or represent the same
+oxidation/reduction using different electron carriers. Some are legitimate; the flag
+means "worth checking", not "certainly wrong".
+
+#### Reactions flagged by MACAW dead-end test
+Reactions prevented from carrying steady-state flux because one of their metabolites
+can only ever be produced, or only consumed, by every reaction it takes part in (the
+simplest case being a metabolite in a single reaction). Reversible reactions that
+MACAW limits to one direction (`only when going forwards` or `only when going
+backwards`) can still carry flux, so they are neither counted nor listed on their own
+in `macaw_results.tsv`.
+
+#### Reactions split across compartments
+Reactions whose own chemistry sits in more than one compartment. A metabolite that
+appears in two compartments of the same reaction is what the reaction transports and
+is ignored; the metabolites left over normally share one compartment, and one of them
+elsewhere (a cytosolic substrate in a mitochondrial reaction, say) is usually a
+curation error. Some enzymes do work across a membrane (HGSNAT, GPD2, fatty-acid
+uptake coupled to acyl-CoA synthesis), so this is a report, and only a rise in the
+count is flagged. Pool and biomass reactions are skipped.
+
+#### Reaction bound / GPR issues
+Reactions with invalid flux bounds (`lb > ub`, or a bound outside +/-1000) or
+gene-rule problems (a gene not annotated in `genes.tsv`, or a boundary reaction that
+carries a gene rule).
+
+#### Unused metabolites
+Metabolites not used by any reaction in the model.
+
+#### Unused genes
+Genes not referenced by any reaction's gene rule.
+
+### Identifiers and annotation
+
+Identifiers, names and cross-references, from `qcModelChecks.py` and `annotationTest.py`.
+
+#### Model / annotation-table inconsistencies
+The model and its annotation tables (`reactions.tsv` / `metabolites.tsv` /
+`genes.tsv`) must list the same identifiers. Flags identifiers in the model but not
+the table (or the reverse), any deprecated identifier still used in the model, and a
+non-numeric value in the `spontaneous` column of `reactions.tsv`.
+
+#### Removed reactions or metabolites not deprecated
+Human-GEM retires identifiers rather than deleting them, so a removed identifier
+stays resolvable. This flags reactions or metabolites that are present on the target
+branch but gone from this pull request's model and were **not** added to
+`deprecatedReactions.tsv` / `deprecatedMetabolites.tsv`. A non-zero count means an
+identifier was dropped without being moved to a deprecated list. (Comparison needs
+the target-branch model tables, so it is reported only in CI.)
+
+#### Naming issues (missing or inconsistent)
+Reactions or metabolites with no name, and metabolites whose name depends on the
+compartment. Names are curated in `model/Human-GEM.yml`; `reactions.tsv` and
+`metabolites.tsv` hold cross-references only, so there is no second copy of a name to
+drift against. One chemical is the same chemical in every compartment, so a name that
+differs between compartments is either a naming slip or two unrelated compounds sharing
+a base identifier.
+
+#### Malformed cross-references
+From `annotationTest.py`. Cross-references in the annotation tables whose format does
+not match their namespace (KEGG, ChEBI, HMDB, PubChem, MetaNetX, Rhea, LipidMaps,
+EHMN, HepatoNET1, Reactome, TCDB).
+
+#### Cross-refs inconsistent across compartments
+From `annotationTest.py`. The same metabolite in different compartments carries
+different cross-references, which should agree.
 
 ### Model file and metabolic tasks
 
