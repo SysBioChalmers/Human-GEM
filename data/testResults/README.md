@@ -62,20 +62,40 @@ physiological growth rate. When the model cannot grow, `qc_growth_blockers.csv`
 lists the biomass precursors that cannot be made on this medium, which are what to
 fix.
 
-#### Thermodynamically impossible directions
-**Gate.** Reactions whose bounds let them run in a direction that thermodynamics rules
-out. `data/thermodynamics/reactionDeltaG.tsv` holds ΔG'm (all reactants at 1 mM, at
-the compartment's pH) estimated with eQuilibrator by
-`code/qc/estimateReactionDeltaG.py`. A direction is impossible when ΔG'm in that
-direction, minus twice its uncertainty, is above +40 kJ/mol: no physiological range
-of concentrations can make it run. Independently of these estimates, a reaction that
-can release O2 without consuming H2O2 or superoxide is also impossible: it runs an
-oxygenase or oxidase backwards. That rule needs no estimate, so it also covers new
-reactions. Fix the reaction by making it irreversible in the
-other direction (flip its stoichiometry if needed), or, when there is evidence that it
-does run this way (for example coupling the table does not see), list it with the
-evidence in `data/thermodynamics/reversibilityExceptions.tsv`. Listed reactions are
-shown as `exception` in `qc_reversibility.csv` and do not fail the check.
+#### Reaction directions: alarm
+**Gate.** From `reversibilityTest.py`, run with eQuilibrator in the `thermodynamics`
+job. This check and the warning below catch only the most obviously wrong
+directionality: a reaction that raises neither is **not** thereby shown to have the
+right reversibility. Most reactions have no ΔG estimate, and a modest ΔG can be
+overcome by concentrations or by coupling to the next step.
+
+The alarm goes off when a reaction's bounds let it run in a direction that
+thermodynamics rules out:
+
+- **ΔG.** `data/thermodynamics/reactionDeltaG.tsv` holds ΔG'm (all reactants at 1 mM,
+  at the compartment's pH) estimated with eQuilibrator by
+  `code/qc/estimateReactionDeltaG.py`. The margin is ΔG'm in the open uphill
+  direction minus twice its uncertainty. The alarm needs the warning criterion below
+  (a more than 1000-fold change in reactant concentrations) and a margin above
+  40 kJ/mol, about 10^7 in the mass-action ratio: between 1 µM and 10 mM a reactant
+  shifts ΔG by at most about 6 kJ/mol per order of magnitude, so no physiological
+  concentrations reach it. Requiring both keeps reactions with many reactants, where
+  small changes in each add up, from raising the alarm. Estimates that rely on an
+  isomer proxy (a same-formula compound standing in for a metabolite eQuilibrator
+  does not have) can only warn.
+- **Oxygen.** A reaction that can release O2 without consuming H2O2 or superoxide.
+  Reducing O2 releases so much energy (an oxygenase with NADPH typically around
+  −400 kJ/mol, an oxidase making H2O2 around −50 to −150 kJ/mol) that in human cells
+  O2 is only released by the disproportionation of reactive oxygen species (catalase,
+  superoxide dismutase). Any other O2-releasing direction is an oxygenase or oxidase
+  running backwards, or a wrongly written reaction. This rule needs no ΔG estimate,
+  so it also covers reactions eQuilibrator cannot estimate.
+
+Fix the reaction by making it irreversible in the other direction (flip its
+stoichiometry if needed). When there is evidence that it does run this way (for
+example coupling the table does not see), list it with the evidence in
+`data/thermodynamics/reversibilityExceptions.tsv`; listed reactions are shown as
+`exception` in `qc_reversibility.csv` and do not fail the check.
 
 #### Reactions with no metabolites
 Reactions whose stoichiometry is empty. Such a reaction does nothing and usually
@@ -116,20 +136,24 @@ drift against. One chemical is the same chemical in every compartment, so a name
 differs between compartments is either a naming slip or two unrelated compounds sharing
 a base identifier.
 
-#### Questionable reversibility
-Reactions that can run in a direction where ΔG'm, minus twice its uncertainty, is
-between +20 and +40 kJ/mol. Such a direction needs strongly skewed concentrations,
-which happens (PHGDH runs at about +30 kJ/mol, pulled by the next step), so these are
-worth a look but are not errors by themselves. Reactions whose estimate relies on an
-isomer proxy (a same-formula compound standing in for a metabolite that eQuilibrator
-does not have) are listed here even above 40 kJ/mol.
+#### Reaction directions: warning
+Reactions that can run in a direction that would need the reactant concentrations to
+change more than 1000-fold: the reversibility index ln Γ = (2/N)·margin/RT is above
+ln(1000) ≈ 6.9, with N the sum of the absolute stoichiometric coefficients excluding
+H2O and H+ (Noor et al. 2012, Bioinformatics 28:2037; the same criterion as the MEMOTE
+thermodynamics test). Normalising by N matters: a 1:1 reaction is far harder to
+reverse than a 2:2 reaction with the same ΔG'm, so the warning starts at about 17
+kJ/mol for A ⇌ B and 34 kJ/mol for A + B ⇌ C + D. On the curated model it flags none of
+the textbook near-equilibrium reactions (MDH, LDH, GAPDH, PGK, transaminases), which a
+flat 20 kJ/mol cutoff would. Such a direction can still occur (PHGDH runs uphill,
+pulled by the next step), so a warning is worth a look but not an error by itself.
 
 #### Outdated ΔG estimates
 Reactions whose stoichiometry changed since their ΔG'm was estimated; the stored hash of
-the stoichiometry no longer matches. They are not judged until the table is refreshed:
-run `code/qc/estimateReactionDeltaG.py` (needs `equilibrator-api`) and commit the new
-`data/thermodynamics/reactionDeltaG.tsv`. New reactions are not in the table and are
-not judged either until then.
+the stoichiometry no longer matches, and they are not judged. The `thermodynamics` job
+estimates new and changed reactions before the check and commits the updated table, so
+this stays at zero unless that step failed. A full refresh is
+`python code/qc/estimateReactionDeltaG.py` (about 40 minutes).
 
 #### Exact-duplicate reaction groups
 Groups of two or more reactions with **identical** stoichiometry (same metabolites
@@ -261,7 +285,7 @@ threshold-free AUROC/AUPRC of the growth ratio against the Hart Bayes Factors. S
 | `qc_deprecation_completeness.csv` | Reactions/metabolites removed since the target branch but not added to a deprecated list: `kind, id, issue`. |
 | `qc_metabolite_completeness.csv` | Metabolites missing a formula and/or a charge: `metabolite, name, missing_formula, missing_charge`. |
 | `qc_reaction_sanity.csv` | Reactions with bound or GPR issues: `reaction, name, issues`. |
-| `qc_reversibility.csv` | Reactions that can run in a thermodynamically impossible or questionable direction, listed exceptions, and outdated estimates: `reaction, name, lower_bound, upper_bound, dGm_kJ_per_mol, sd_kJ_per_mol, verdict, note`. |
+| `qc_reversibility.csv` | Reaction directions flagged by `reversibilityTest.py`: alarms (`impossible`), warnings (`questionable`), listed exceptions, and outdated estimates: `reaction, name, lower_bound, upper_bound, dGm_kJ_per_mol, sd_kJ_per_mol, ln_gamma, verdict, note`. |
 | `qc_name_consistency.csv` | Entities with no name, and metabolites whose name differs between compartments: `kind, id, issue`. |
 | `qc_duplicate_reactions.csv` | Exact-duplicate reaction groups: `group, reaction, equation`. |
 | `qc_unused_entities.csv` | Metabolites and genes used by no reaction: `kind, id`. |
