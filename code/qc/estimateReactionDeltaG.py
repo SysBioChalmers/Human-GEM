@@ -35,12 +35,17 @@ Reactions are skipped when:
 Reactions spanning compartments without transporting a compound (such as GPD2) are
 estimated at the pH of the first compartment and marked "multi".
 
-Needs equilibrator-api (and rdkit for the InChI key lookups); it is not run in CI. Run
-it after curation that adds or changes reactions, and commit the table.
+Needs equilibrator-api and rdkit (code/qc/requirements-thermodynamics.txt).
+
+The Model QC workflow runs it with --update, comparing with the target branch's model,
+so only reactions that are new or changed, or that use a metabolite with a new
+formula, charge or cross-reference, are estimated; the rest of the table is kept. A
+full run (without --update) takes about 40 minutes.
 
 Usage:
     python code/qc/estimateReactionDeltaG.py [--model model/Human-GEM.yml]
         [--out data/thermodynamics/reactionDeltaG.tsv] [--log FILE]
+        [--update [--base-model BASE.yml --base-annotation BASE_metabolites.tsv]]
 """
 from __future__ import annotations
 
@@ -60,6 +65,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PH = {"c": 7.2, "n": 7.2, "r": 7.2, "m": 8.0, "x": 7.0, "g": 6.6, "l": 5.0, "e": 7.4}
 IONIC_STRENGTH = "0.25M"
 NAME_SCORE = 0.9
+PROTON_BASE = "MAM02039"
 PROXY_SIMILARITY = 0.9
 P_MG = 3.0
 
@@ -105,8 +111,19 @@ def _neutral(bag: Counter, charge: float) -> Counter:
     return +out if all(v >= 0 for v in out.values()) else out
 
 
+class _Loader(yaml.CSafeLoader):
+    """YAML 1.2 scalars: no yes/no/on/off booleans, so a name or formula "NO" (nitric
+    oxide) stays a string."""
+
+
+_Loader.yaml_implicit_resolvers = {
+    key: [(tag, regexp) for tag, regexp in resolvers if tag != "tag:yaml.org,2002:bool"]
+    for key, resolvers in yaml.CSafeLoader.yaml_implicit_resolvers.items()
+}
+
+
 def load_model(path: Path):
-    top = dict(yaml.load(path.read_text(), Loader=yaml.CSafeLoader))
+    top = dict(yaml.load(path.read_text(), Loader=_Loader))
     mets = {}
     for m in top["metabolites"]:
         m = dict(m)
@@ -263,97 +280,141 @@ class Matcher:
         return result
 
 
+def estimate(rxn: dict, mets: dict, matcher: "Matcher", cc, Q_, Reaction):
+    """(row, None) with the estimate of one reaction, or (None, why it was skipped)."""
+    stoich = rxn["stoich"]
+    chem = {m: v for m, v in stoich.items() if m[:-1] != PROTON_BASE}
+    bases = [m[:-1] for m in chem]
+    if len(chem) < 2:
+        return None, "exchange or single metabolite"
+    if len(set(bases)) < len(bases):
+        return None, "transport"
+    if len({mets[m]["compartment"] for m in stoich if m[:-1] == PROTON_BASE}) > 1:
+        return None, "proton-coupled across a membrane"
+    names = {mets[m]["name"] for m in stoich}
+    if any(couple <= names for couple in BOUND_COUPLES):
+        return None, "bound redox couple"
+    net: Counter = Counter()
+    charge = 0.0
+    balanced = True
+    for m, v in stoich.items():
+        atoms = _atoms(mets[m]["formula"])
+        if atoms is None or mets[m]["charge"] is None:
+            balanced = False
+            break
+        for el, k in atoms.items():
+            net[el] += k * v
+        charge += mets[m]["charge"] * v
+    if balanced and (any(abs(x) > 1e-9 for x in net.values()) or abs(charge) > 1e-9):
+        return None, "not balanced in the model"
+    sparse, missing, proxied = {}, [], False
+    for m, v in chem.items():
+        compound, how = matcher.match(m, mets[m]["formula"], mets[m]["charge"], mets[m]["name"])
+        if compound is None:
+            missing.append(f"{m} ({how})")
+            continue
+        proxied = proxied or how.startswith("proxy")
+        sparse[compound] = sparse.get(compound, 0) + v
+    if missing:
+        return None, "unmatched: " + ", ".join(missing)
+    compartments = sorted({mets[m]["compartment"] for m in stoich})
+    first = mets[next(iter(stoich))]["compartment"]
+    cc.p_h = Q_(PH.get(first, 7.2))
+    try:
+        dg = cc.physiological_dg_prime(Reaction(sparse))
+        mean, sd = dg.value.m_as("kJ/mol"), dg.error.m_as("kJ/mol")
+    except Exception as exc:  # noqa: BLE001
+        return None, f"eQuilibrator error: {str(exc)[:60]}"
+    kind = "multi" if len(compartments) > 1 else "single"
+    if proxied:
+        kind += "+proxy"
+    return (rxn["id"], "".join(compartments), kind, f"{mean:.1f}", f"{sd:.1f}", stoichiometry_hash(stoich)), None
+
+
+def _changed_reactions(rxns: list[dict], mets: dict, ann: dict, table: dict,
+                       base_model: Path | None, base_annotation: Path | None) -> set[str]:
+    """Reactions whose estimate may differ from the table: the stoichiometry differs from
+    the one estimated, or (with a base model) the reaction is new or changed since the
+    base, or one of its metabolites is new or has another formula, charge or
+    cross-reference row."""
+    todo = {r["id"] for r in rxns if r["id"] in table and table[r["id"]][5] != stoichiometry_hash(r["stoich"])}
+    if base_model is None:
+        return todo
+    base_mets, base_rxns = load_model(base_model)
+    base_stoich = {r["id"]: r["stoich"] for r in base_rxns}
+    base_ann = {}
+    if base_annotation is not None and base_annotation.exists():
+        with base_annotation.open() as fh:
+            base_ann = {r["mets"]: r for r in csv.DictReader(fh, delimiter="\t")}
+    changed_mets = {m for m, info in mets.items()
+                    if base_mets.get(m, {}).get("formula") != info["formula"]
+                    or base_mets.get(m, {}).get("charge") != info["charge"]
+                    or base_ann.get(m) != ann.get(m)}
+    for r in rxns:
+        if base_stoich.get(r["id"]) != r["stoich"] or changed_mets & set(r["stoich"]):
+            todo.add(r["id"])
+    return todo
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--model", type=Path, default=ROOT / "model" / "Human-GEM.yml")
     parser.add_argument("--annotation", type=Path, default=ROOT / "model" / "metabolites.tsv")
     parser.add_argument("--out", type=Path, default=ROOT / "data" / "thermodynamics" / "reactionDeltaG.tsv")
+    parser.add_argument("--update", action="store_true",
+                        help="keep the existing table and only re-estimate reactions that changed")
+    parser.add_argument("--base-model", type=Path, help="with --update: the model the table was made for")
+    parser.add_argument("--base-annotation", type=Path, help="with --update: that model's metabolites.tsv")
     parser.add_argument("--log", type=Path, help="also write why each reaction was skipped")
     args = parser.parse_args(argv)
-
-    from equilibrator_api import Q_, ComponentContribution, Reaction
 
     mets, rxns = load_model(args.model)
     with args.annotation.open() as fh:
         ann = {r["mets"]: r for r in csv.DictReader(fh, delimiter="\t")}
-    cc = ComponentContribution()
-    cc.ionic_strength = Q_(IONIC_STRENGTH)
-    cc.p_mg = Q_(P_MG)
-    matcher = Matcher(cc, ann)
+    current = {r["id"] for r in rxns}
 
-    rows, log = [], []
-    for n, rxn in enumerate(rxns):
-        stoich = rxn["stoich"]
-        chem = {m: v for m, v in stoich.items() if mets[m]["name"] != "H+"}
-        bases = [m[:-1] for m in chem]
-        if len(chem) < 2:
-            log.append((rxn["id"], "exchange or single metabolite"))
-            continue
-        if len(set(bases)) < len(bases):
-            log.append((rxn["id"], "transport"))
-            continue
-        if len({mets[m]["compartment"] for m in stoich if mets[m]["name"] == "H+"}) > 1:
-            log.append((rxn["id"], "proton-coupled across a membrane"))
-            continue
-        names = {mets[m]["name"] for m in stoich}
-        if any(couple <= names for couple in BOUND_COUPLES):
-            log.append((rxn["id"], "bound redox couple"))
-            continue
-        net: Counter = Counter()
-        charge = 0.0
-        balanced = True
-        for m, v in stoich.items():
-            atoms = _atoms(mets[m]["formula"])
-            if atoms is None or mets[m]["charge"] is None:
-                balanced = False
-                break
-            for el, k in atoms.items():
-                net[el] += k * v
-            charge += mets[m]["charge"] * v
-        if balanced and (any(abs(x) > 1e-9 for x in net.values()) or abs(charge) > 1e-9):
-            log.append((rxn["id"], "not balanced in the model"))
-            continue
-        sparse, missing, proxied = {}, [], False
-        for m, v in chem.items():
-            compound, how = matcher.match(m, mets[m]["formula"], mets[m]["charge"], mets[m]["name"])
-            if compound is None:
-                missing.append(f"{m} ({how})")
-                continue
-            proxied = proxied or how.startswith("proxy")
-            sparse[compound] = sparse.get(compound, 0) + v
-        if missing:
-            log.append((rxn["id"], "unmatched: " + ", ".join(missing)))
-            continue
-        compartments = sorted({mets[m]["compartment"] for m in stoich})
-        first = mets[next(iter(stoich))]["compartment"]
-        cc.p_h = Q_(PH.get(first, 7.2))
-        try:
-            dg = cc.physiological_dg_prime(Reaction(sparse))
-            mean, sd = dg.value.m_as("kJ/mol"), dg.error.m_as("kJ/mol")
-        except Exception as exc:  # noqa: BLE001
-            log.append((rxn["id"], f"eQuilibrator error: {str(exc)[:60]}"))
-            continue
-        kind = "multi" if len(compartments) > 1 else "single"
-        if proxied:
-            kind += "+proxy"
-        rows.append((rxn["id"], "".join(compartments), kind,
-                     f"{mean:.1f}", f"{sd:.1f}", stoichiometry_hash(stoich)))
-        if n % 1000 == 0:
-            print(n, len(rows), file=sys.stderr, flush=True)
+    table: dict[str, tuple] = {}
+    if args.update and args.out.exists():
+        with args.out.open() as fh:
+            reader = csv.reader(fh, delimiter="\t")
+            next(reader)
+            table = {row[0]: tuple(row) for row in reader if row[0] in current}
+        todo = _changed_reactions(rxns, mets, ann, table, args.base_model, args.base_annotation)
+    else:
+        todo = current
+    print(f"estimating {len(todo)} reaction(s)", file=sys.stderr)
+
+    log = []
+    if todo:
+        from equilibrator_api import Q_, ComponentContribution, Reaction
+
+        cc = ComponentContribution()
+        cc.ionic_strength = Q_(IONIC_STRENGTH)
+        cc.p_mg = Q_(P_MG)
+        matcher = Matcher(cc, ann)
+        for n, rxn in enumerate(r for r in rxns if r["id"] in todo):
+            table.pop(rxn["id"], None)
+            row, why = estimate(rxn, mets, matcher, cc, Q_, Reaction)
+            if row is None:
+                log.append((rxn["id"], why))
+            else:
+                table[rxn["id"]] = row
+            if n % 1000 == 999:
+                print(n + 1, len(table), file=sys.stderr, flush=True)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open("w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
         w.writerow(["reaction", "compartments", "type", "dGm_kJ_per_mol", "sd_kJ_per_mol", "stoichiometry_hash"])
-        w.writerows(sorted(rows))
-    if args.log:
+        w.writerows(sorted(table.values()))
+    if args.log and todo:
         with args.log.with_suffix(".matches.tsv").open("w", newline="") as fh:
             w = csv.writer(fh, delimiter="\t", lineterminator="\n")
             for base, (compound, how) in sorted(matcher.cache.items()):
                 w.writerow([base, how, compound.id if compound is not None else ""])
         with args.log.open("w", newline="") as fh:
             csv.writer(fh, delimiter="\t", lineterminator="\n").writerows(log)
-    print(f"estimated {len(rows)} of {len(rxns)} reactions; skipped {len(log)}")
+    print(f"estimated {len(todo) - len(log)} of {len(todo)} reaction(s); the table has {len(table)}")
     return 0
 
 

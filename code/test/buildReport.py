@@ -69,6 +69,14 @@ def _slug(label: str) -> str:
     return s.strip().replace(" ", "-")
 
 
+# The reaction-direction rows only catch the worst cases; say so wherever they appear.
+REVERSIBILITY_NOTE = (
+    "_Reaction directions: the alarm and the warning catch only directions that thermodynamics "
+    "makes very unlikely. A reaction without an alarm or warning is not thereby shown to have "
+    "the right reversibility._"
+)
+
+
 def _labelled(label: str) -> str:
     """The test name, linked to its explanation in the testResults README. Full-detail
     file only, which sits next to the README, so the link is relative and does not
@@ -85,7 +93,7 @@ def _labelled(label: str) -> str:
 MODEL_ROWS = [
     ("Duplicate `!!omap` keys", "dup_keys", "count", "checks", "qc_duplicate_keys.csv"),
     ("Growth (biomass producible)", "growth", "growth", "checks", "qc_growth_blockers.csv"),
-    ("Thermodynamically impossible directions", "rev_impossible", "count", "checks", "qc_reversibility.csv"),
+    ("Reaction directions: alarm", "rev_impossible", "count", "checks", "qc_reversibility.csv"),
     ("Reactions with no metabolites", "empty_rxn", "count", "checks", "qc_empty_reactions.csv"),
     ("Model / annotation-table inconsistencies", "annot_consistency", "count", "checks",
      "qc_annotation_consistency.csv"),
@@ -96,7 +104,7 @@ MODEL_ROWS = [
     ("Reaction bound / GPR issues", "reaction_issues", "count", "checks", "qc_reaction_sanity.csv"),
     ("Naming issues (missing or inconsistent)", "name_issues", "count", "checks",
      "qc_name_consistency.csv"),
-    ("Questionable reversibility", "rev_questionable", "count", "checks", "qc_reversibility.csv"),
+    ("Reaction directions: warning", "rev_questionable", "count", "checks", "qc_reversibility.csv"),
     ("Outdated ΔG estimates", "rev_outdated", "count", "checks", "qc_reversibility.csv"),
     ("Exact-duplicate reaction groups", "dup_reactions", "count", "checks", "qc_duplicate_reactions.csv"),
     ("Reactions split across compartments", "split_compartments", "count", "checks", "qc_split_compartments.csv"),
@@ -315,7 +323,7 @@ def _compute_rows(rows_spec, current: dict, base: dict) -> list[dict]:
                               "icon": ":hourglass_flowing_sand:"})
             continue
         delta, icon, regression, fatal = _icon(value, base.get(key), kind)
-        fatal = fatal or (key == "dup_keys" and value > 0)
+        fatal = fatal or (key in ("dup_keys", "rev_impossible") and value > 0)
         computed.append({
             "label": label, "kind": kind, "detail": detail, "key": key, "pending": False,
             "value": value, "delta": delta, "icon": icon, "regression": regression, "fatal": fatal,
@@ -489,13 +497,13 @@ def _gene_essentiality_full_section() -> str:
 
 
 def _gates_line(current: dict, base: dict) -> str:
-    """One-line status of the merge gates (duplicate keys, growth, impossible directions), appended to the
+    """One-line status of the merge gates (duplicate keys, growth, direction alarms), appended to the
     verdict so they are visible without following any link."""
     if "checks" in RUNNING:
         return ""
     parts = []
     for label, key, kind in (("duplicate keys", "dup_keys", "count"), ("growth", "growth", "growth"),
-                             ("impossible directions", "rev_impossible", "count")):
+                             ("direction alarms", "rev_impossible", "count")):
         value = current.get(key)
         if value is None:
             if key == "rev_impossible":  # a base branch from before this check
@@ -525,7 +533,8 @@ def main() -> int:
     warnings = len(network_summary["warnings"])
 
     if fatal:
-        verdict = ":x: **Merge blocked: the model cannot be loaded or cannot grow, or a build gate failed.**"
+        verdict = (":x: **Merge blocked: the model cannot be loaded or cannot grow, a reaction can run in a "
+                   "thermodynamically impossible direction, or a build gate failed.**")
     elif regressions:
         extra = f" ({pending} check(s) still running)" if pending else ""
         verdict = f":x: **{regressions}** regression(s) vs `{BASE_REF}`{extra}. Review the row(s) below."
@@ -579,6 +588,7 @@ def main() -> int:
         f":white_check_mark: unchanged &middot; {IMPROVED} improved vs `{BASE_REF}` &middot; "
         f":warning: pre-existing, non-blocking &middot; :x: regression"
     )
+    comment_lines += ["", REVERSIBILITY_NOTE]
     if COMMIT_SHA:
         comment_lines += ["", f"Results for commit {COMMIT_SHA[:7]}."]
     COMMENT_MD.write_text("\n".join(comment_lines) + "\n", encoding="utf-8")
@@ -595,8 +605,10 @@ def main() -> int:
         "_Row names link to their explanation in the [testResults README](README.md)._",
         "",
         "### Model & network checks",
-        "_Duplicate keys (model unloadable) and no growth block the merge; every other row "
-        "is a non-blocking report._",
+        "_Duplicate keys (model unloadable), no growth and a reaction-direction alarm block the "
+        "merge; every other row is a non-blocking report._",
+        "",
+        REVERSIBILITY_NOTE,
         "",
         head, sep, *_full_table(network_rows),
         "",
