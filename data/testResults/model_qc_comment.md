@@ -10,7 +10,7 @@
 | Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/feat/1083-reversibility/data/testResults/model_qc_summary.md) |
 
 **Regression(s):**
-- Reactions flagged by MACAW dead-end test: [**1137**](https://github.com/SysBioChalmers/Human-GEM/blob/feat/1083-reversibility/data/testResults/macaw_results.tsv)
+- Reactions flagged by MACAW dead-end test: [**1134**](https://github.com/SysBioChalmers/Human-GEM/blob/feat/1083-reversibility/data/testResults/macaw_results.tsv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
 

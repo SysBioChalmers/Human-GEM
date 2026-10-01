@@ -39,7 +39,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
 | [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | 0 | :warning: |
-| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1137](macaw_results.tsv) | +26 | :x: |
+| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1134](macaw_results.tsv) | +23 | :x: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
