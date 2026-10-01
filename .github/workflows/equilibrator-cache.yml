@@ -38,4 +38,4 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           pip install -r code/qc/requirements-thermodynamics.txt
-          python -c "from equilibrator_api import ComponentContribution; ComponentContribution()"
+          python -c "from equilibrator_cache.api import create_compound_cache_from_zenodo; create_compound_cache_from_zenodo(tier='full')"

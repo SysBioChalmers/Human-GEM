@@ -35,7 +35,9 @@ Reactions are skipped when:
 Reactions spanning compartments without transporting a compound (such as GPD2) are
 estimated at the pH of the first compartment and marked "multi".
 
-Needs equilibrator-api and rdkit (code/qc/requirements-thermodynamics.txt).
+Needs equilibrator-api and rdkit (code/qc/requirements-thermodynamics.txt), and the
+full eQuilibrator compound database (1.3 GB), which is downloaded from Zenodo on first
+use; in CI it is restored from the Actions cache.
 
 The Model QC workflow runs it with --update, comparing with the target branch's model,
 so only reactions that are new or changed, or that use a metabolite with a new
@@ -396,7 +398,13 @@ def main(argv: list[str] | None = None) -> int:
     if todo:
         from equilibrator_api import Q_, ComponentContribution, Reaction
 
-        cc = ComponentContribution()
+        from equilibrator_cache.api import create_compound_cache_from_zenodo
+
+        # The full database, not the bundled KEGG/BiGG tier that equilibrator-cache
+        # would otherwise start from: name searches and isomer proxies must see the
+        # same compounds in CI as in a full run, or the same reaction could be
+        # estimated differently.
+        cc = ComponentContribution(ccache=create_compound_cache_from_zenodo(tier="full"))
         cc.ionic_strength = Q_(IONIC_STRENGTH)
         cc.p_mg = Q_(P_MG)
         matcher = Matcher(cc, ann)
