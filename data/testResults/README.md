@@ -21,7 +21,7 @@ own files. The pull request in each row is the one whose run last wrote those fi
 
 | Result file(s) | Produced by | Last updated by |
 | --- | --- | --- |
-| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_name_consistency.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv` | `qcModelChecks.py` | **PR #1139** (model QC checks) |
+| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_name_consistency.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv`, `qc_split_compartments.csv` | `qcModelChecks.py` | **PR #1139** (model QC checks) |
 | `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1139** (model QC checks) |
 | `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testSbmlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1139** (model QC checks) |
 | `macaw_results.tsv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1139** (MACAW and balance) |
@@ -234,6 +234,7 @@ threshold-free AUROC/AUPRC of the growth ratio against the Hart Bayes Factors. S
 | `qc_name_consistency.csv` | Entities with no name, and metabolites whose name differs between compartments: `kind, id, issue`. |
 | `qc_duplicate_reactions.csv` | Exact-duplicate reaction groups: `group, reaction, equation`. |
 | `qc_unused_entities.csv` | Metabolites and genes used by no reaction: `kind, id`. |
+| `qc_split_compartments.csv` | Reactions whose chemistry, apart from the metabolites they transport, spans more than one compartment: `reaction, name, compartments, equation`. Reported; only a rise in the count is flagged. |
 | `qc_annotation_issues.csv` | Malformed and cross-compartment-inconsistent cross-references. |
 | `qc_structure_consistency.csv` | Metabolites whose structure disagrees with the model formula/charge. |
 | `macaw_results.tsv` | MACAW dead-end and duplicate findings, one row per reaction that has a finding (tab-separated). |
