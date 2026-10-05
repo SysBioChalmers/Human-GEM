@@ -7,14 +7,14 @@
 | Model &amp; network checks (20) | :warning: **6** pre-existing |
 | Model file &amp; metabolic tasks (6) | :white_check_mark: all pass |
 | MEMOTE | :white_check_mark: **63.8%** (core subset) |
-| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/chore/raven3-yaml-format/data/testResults/model_qc_summary.md) |
+| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/sync/main-to-develop-2.1.0/data/testResults/model_qc_summary.md) |
 
 **Pre-existing:**
-- Reactions split across compartments: [**26**](https://github.com/SysBioChalmers/Human-GEM/blob/chore/raven3-yaml-format/data/testResults/qc_split_compartments.csv)
-- Reactions flagged by MACAW dead-end test: [**1111**](https://github.com/SysBioChalmers/Human-GEM/blob/chore/raven3-yaml-format/data/testResults/macaw_results.tsv)
-- Reactions flagged as MACAW duplicates: [**340**](https://github.com/SysBioChalmers/Human-GEM/blob/chore/raven3-yaml-format/data/testResults/macaw_results.tsv)
-- Mass-imbalanced reactions: [**69**](https://github.com/SysBioChalmers/Human-GEM/blob/chore/raven3-yaml-format/data/testResults/balance_results.csv)
-- Charge-imbalanced reactions: [**172**](https://github.com/SysBioChalmers/Human-GEM/blob/chore/raven3-yaml-format/data/testResults/balance_results.csv)
-- Structure vs formula/charge inconsistencies: [**57**](https://github.com/SysBioChalmers/Human-GEM/blob/chore/raven3-yaml-format/data/testResults/qc_structure_consistency.csv)
+- Reactions split across compartments: [**26**](https://github.com/SysBioChalmers/Human-GEM/blob/sync/main-to-develop-2.1.0/data/testResults/qc_split_compartments.csv)
+- Reactions flagged by MACAW dead-end test: [**1111**](https://github.com/SysBioChalmers/Human-GEM/blob/sync/main-to-develop-2.1.0/data/testResults/macaw_results.tsv)
+- Reactions flagged as MACAW duplicates: [**340**](https://github.com/SysBioChalmers/Human-GEM/blob/sync/main-to-develop-2.1.0/data/testResults/macaw_results.tsv)
+- Mass-imbalanced reactions: [**69**](https://github.com/SysBioChalmers/Human-GEM/blob/sync/main-to-develop-2.1.0/data/testResults/balance_results.csv)
+- Charge-imbalanced reactions: [**172**](https://github.com/SysBioChalmers/Human-GEM/blob/sync/main-to-develop-2.1.0/data/testResults/balance_results.csv)
+- Structure vs formula/charge inconsistencies: [**57**](https://github.com/SysBioChalmers/Human-GEM/blob/sync/main-to-develop-2.1.0/data/testResults/qc_structure_consistency.csv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
