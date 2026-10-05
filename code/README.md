@@ -41,3 +41,6 @@ Functions associated with the **t**ask‐driven **I**ntegrative **N**etwork **I*
 Functions for testing purposes
 
 
+
+### animalGEM
+Regenerates the animal GEMs (Mouse, Rat, Worm, Fruitfly, Zebrafish) from Human-GEM. `generateAnimalGEM.py <Species> --repo <path to the Animal-GEM repository>` replaces the per-repository master scripts; run it locally or from CI, see the docstring for inputs, outputs and options. The MATLAB functions in this folder are the previous implementation.
