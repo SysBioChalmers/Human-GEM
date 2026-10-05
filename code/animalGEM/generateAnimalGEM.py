@@ -40,9 +40,9 @@ tables, solver and seed.
 from __future__ import annotations
 
 import argparse
-import ast
 import datetime
 import os
+import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -57,8 +57,12 @@ sys.path.insert(0, str(REPO_ROOT / "code"))
 from annotateGEM import annotate_gem  # noqa: E402
 
 from raven_toolbox.init import fill_tasks  # noqa: E402
-from raven_toolbox.io import export_for_git, read_yaml_model  # noqa: E402
+from raven_toolbox.io import export_for_git, read_yaml_model, set_model_metadata  # noqa: E402
 from raven_toolbox.manipulation.add import add_reactions_from_equations  # noqa: E402
+from raven_toolbox.reconstruction.homology import (  # noqa: E402
+    get_model_from_homology,
+    make_ortholog_hits,
+)
 from raven_toolbox.tasks import check_tasks, parse_task_list  # noqa: E402
 
 ESSENTIAL_TASKS = REPO_ROOT / "data" / "metabolicTasks" / "metabolicTasks_Essential.txt"
@@ -80,11 +84,12 @@ BIOMASS_COMPONENTS_RXN = "MAR00021"
 
 GAPFILL_NOTE = "reaction added by gap filling"
 
-# Human-GEM releases in which MAR00021 cannot carry flux on Ham's medium (issue #1140):
+# Human-GEM releases in which MAR00021 cannot carry flux on Ham's medium (issue #1140). The
+# develop branch carries no version, so an empty version counts as well:
 # its cofactor pool MAR00022 consumes [protein]-N6-(lipoyl)lysine, which nothing makes
 # since the lipoylation curation. Remove this, and fix_lipoyl_biomass, once MAR00021 is
 # curated in Human-GEM.
-LIPOYL_BIOMASS_RELEASES = {"2.0.0", "2.0.1", "2.1.0"}
+LIPOYL_BIOMASS_RELEASES = {"", "2.0.0", "2.0.1", "2.1.0"}
 LIPOYL_LYSINE = "[protein]-N6-(lipoyl)lysine"
 
 
@@ -131,6 +136,30 @@ def read_tsv(path: Path) -> pd.DataFrame:
 
 # --- orthologs ---------------------------------------------------------------------
 
+def safe_gene_id(symbol: str) -> str:
+    """Gene id for a gene symbol: characters a GPR cannot hold (parentheses, brackets, spaces, ...)
+    become ``_``; letters, digits, ``.``, ``:`` and ``-`` stay. A symbol that is a GPR operator
+    (``or``) gets a ``_gene`` suffix.
+
+    ``E(spl)m3-HLH`` becomes ``E_spl_m3-HLH``. The symbol itself is kept as the gene name.
+    """
+    gene_id = re.sub(r"[^\w.:\-]+", "_", symbol).strip("_")
+    # A GPR reads "and", "or" and "not" as operators: the Drosophila gene "or" needs another id.
+    return f"{gene_id}_gene" if gene_id.lower() in ("and", "or", "not") else gene_id
+
+
+def _rule_tokens(rule: str) -> list[str]:
+    """Gene symbols in a species-specific GPR: everything between spaces and parentheses
+    that is not ``and`` / ``or``."""
+    return [t for t in re.findall(r"[^\s()]+", rule) if t.lower() not in ("and", "or")]
+
+
+def safe_rule(rule: str) -> str:
+    """``rule`` with each gene symbol replaced by its :func:`safe_gene_id`."""
+    return re.sub(r"[^\s()]+", lambda m: m.group(0) if m.group(0).lower() in ("and", "or")
+                  else safe_gene_id(m.group(0)), rule)
+
+
 def read_alliance_orthologs(path: Path, count_best: bool = True) -> pd.DataFrame:
     """Reduce an Alliance of Genome Resources ortholog table to human/species symbol pairs.
 
@@ -139,7 +168,9 @@ def read_alliance_orthologs(path: Path, count_best: bool = True) -> pd.DataFrame
     3. For the others, keep the hits that are both best forward and best reverse.
     4. If none is, keep the hit supported by the most methods (the first on a tie).
 
-    Returns a frame with columns ``from`` (human symbol) and ``to`` (species symbol).
+    Returns a frame with columns ``from`` (human symbol), ``to`` (species gene id, see
+    :func:`safe_gene_id`) and ``to_symbol`` (the species symbol). Two species symbols that
+    share an id are an error.
     """
     table = read_tsv(path)
     if count_best:
@@ -155,8 +186,13 @@ def read_alliance_orthologs(path: Path, count_best: bool = True) -> pd.DataFrame
         keep.append(both if len(both) else hits.sort_values("methodCount", ascending=False,
                                                             kind="stable").head(1))
     kept = pd.concat(keep) if keep else table.iloc[0:0]
-    pairs = kept[["fromSymbol", "toSymbol"]].rename(columns={"fromSymbol": "from", "toSymbol": "to"})
-    return pairs.reset_index(drop=True)
+    pairs = kept[["fromSymbol", "toSymbol"]].rename(columns={"fromSymbol": "from", "toSymbol": "to_symbol"})
+    pairs["to"] = pairs["to_symbol"].map(safe_gene_id)
+    shared = pairs.groupby("to")["to_symbol"].unique()
+    shared = shared[shared.map(len) > 1]
+    if len(shared):
+        raise ValueError(f"species symbols that map to one gene id: {shared.map(list).to_dict()}")
+    return pairs[["from", "to", "to_symbol"]].reset_index(drop=True)
 
 
 def ensembl_to_species_genes(genes_tsv: Path, orthologs: pd.DataFrame) -> dict[str, list[str]]:
@@ -176,83 +212,24 @@ def ensembl_to_species_genes(genes_tsv: Path, orthologs: pd.DataFrame) -> dict[s
     return mapping
 
 
-# --- GPR rewriting -----------------------------------------------------------------
+# --- ortholog draft ----------------------------------------------------------------
 
-def _map_node(node: ast.AST, mapping: dict[str, list[str]]):
-    """Rewrite a GPR node. Returns ``None`` (nothing left), a gene id, or ``(op, children)``."""
-    if isinstance(node, ast.Name):
-        genes = mapping.get(node.id, [])
-        if not genes:
-            return None
-        return genes[0] if len(genes) == 1 else ("or", list(genes))
-    if isinstance(node, ast.BoolOp):
-        op = "and" if isinstance(node.op, ast.And) else "or"
-        children = [c for c in (_map_node(v, mapping) for v in node.values) if c is not None]
-        return _collapse(op, children)
-    raise ValueError(f"unsupported GPR element: {ast.dump(node)}")
+def build_ortholog_draft(template: cobra.Model, gene_map: dict[str, list[str]],
+                         model_id: str = "draft") -> cobra.Model:
+    """Draft model from ``template`` with every GPR rewritten through ``gene_map``.
 
-
-def _collapse(op: str, children: list):
-    """Flatten nested same-operator groups, drop duplicates, unwrap single children."""
-    flat: list = []
-    for child in children:
-        parts = child[1] if isinstance(child, tuple) and child[0] == op else [child]
-        flat.extend(p for p in parts if p not in flat)
-    if not flat:
-        return None
-    return flat[0] if len(flat) == 1 else (op, flat)
-
-
-def _render(expr, parent: str | None = None) -> str:
-    if expr is None:
-        return ""
-    if isinstance(expr, str):
-        return expr
-    op, children = expr
-    text = f" {op} ".join(_render(c, op) for c in children)
-    return f"({text})" if parent is not None and parent != op else text
-
-
-def map_gene_reaction_rule(rule: str, mapping: dict[str, list[str]]) -> str:
-    """Rewrite one GPR through ``mapping`` (gene -> list of replacement genes).
-
-    A gene with several replacements becomes an ``or`` of them. A gene with none is
-    dropped from its group, whether ``and`` or ``or``, so a complex keeps the subunits
-    that have an ortholog. Duplicate genes and redundant parentheses are removed. A rule
-    with no gene left comes back as ``""``.
+    ``gene_map`` maps template genes to species genes; it goes through raven-toolbox's
+    ``get_model_from_homology`` as a table of perfect hits. An unmapped subunit of a complex
+    is dropped from it, a reaction that had a GPR and keeps none is removed, and reactions
+    that never had one (spontaneous, transport, exchange, artificial) stay, with the
+    template's own notes.
     """
-    if not rule.strip():
-        return ""
-    return _render(_map_node(cobra.core.gene.GPR.from_string(rule).body, mapping))
-
-
-def build_ortholog_draft(template: cobra.Model, gene_map: dict[str, list[str]]) -> cobra.Model:
-    """Copy of ``template`` with every GPR rewritten through ``gene_map``.
-
-    Reactions that had a GPR and lose all of it are removed, together with metabolites
-    only they used. Reactions that never had a GPR (spontaneous, exchange) stay.
-    """
-    draft = template.copy()
-    draft.id = ""
-    draft.name = ""
-    draft.notes = {}
-    for entity in (*draft.reactions, *draft.metabolites):
-        entity.notes.pop("rxnFrom", None)
-        entity.notes.pop("metFrom", None)
-
-    lost = []
-    for rxn in draft.reactions:
-        old = rxn.gene_reaction_rule
-        if not old:
-            continue
-        new = map_gene_reaction_rule(old, gene_map)
-        if new:
-            rxn.gene_reaction_rule = new
-        else:
-            lost.append(rxn)
-    draft.remove_reactions(lost, remove_orphans=True)
-    prune_unused_genes(draft)
-    return draft
+    pairs = [(gene, species) for gene, genes in gene_map.items() for species in genes]
+    hits = make_ortholog_hits(pairs, template.id, model_id)
+    return get_model_from_homology(
+        [template], hits, model_id, complex_policy="keep", keep_gene_free=True,
+        preserve_notes=True,
+    ).model
 
 
 def prune_unused_genes(model: cobra.Model) -> None:
@@ -289,6 +266,17 @@ def add_species_network(model: cobra.Model, rxns: pd.DataFrame, mets: pd.DataFra
     if not rxns["equations"].map(lambda e: "[" in e and "]" in e).all():
         raise ValueError('equation metabolites must be written "name[compartment]"')
 
+    known = {(m.name, m.compartment) for m in model.metabolites} | set(zip(mets["metNames"], mets["compartments"]))
+    missing: dict[tuple[str, str], list[str]] = {}
+    for rid, equation in zip(rxns["rxns"], rxns["equations"]):
+        for name, comp in re.findall(r"(?:^|\s\+\s|=>|<=>|-->)\s*(?:\d+(?:\.\d+)?\s+)?(.+?)\[(\w+)\]", equation):
+            if (name.strip(), comp) not in known:
+                missing.setdefault((name.strip(), comp), []).append(rid)
+    if missing:
+        listing = "; ".join(f"{n}[{c}] in {', '.join(r[:3])}" for (n, c), r in sorted(missing.items()))
+        raise ValueError(f"{len(missing)} metabolite(s) in the species-specific reactions are neither in the "
+                         f"model nor in the species-specific metabolite table (renamed in Human-GEM?): {listing}")
+
     model.add_metabolites([
         cobra.Metabolite(row.mets, name=row.metNames, formula=row.metFormulas,
                          charge=int(_number(row.metCharges, 0)), compartment=row.compartments)
@@ -298,7 +286,7 @@ def add_species_network(model: cobra.Model, rxns: pd.DataFrame, mets: pd.DataFra
     specs = []
     for row in rxns.to_dict("records"):
         spec = {"id": row["rxns"], "equation": row["equations"],
-                "gene_reaction_rule": row["grRules"]}
+                "gene_reaction_rule": safe_rule(row["grRules"])}
         if row.get("rxnNames"):
             spec["name"] = row["rxnNames"]
         if row.get("lb", "") != "" or row.get("ub", "") != "":
@@ -433,15 +421,9 @@ def write_tsv(table: pd.DataFrame, path: Path) -> None:
 def stamp_metadata(model: cobra.Model, repo: AnimalRepo, version: str, date: str) -> None:
     """Set the model id, name, version, date, taxonomy and source URL."""
     model.id = model.name = repo.model_id
-    model.notes = {
-        "version": version,
-        "metaData": {
-            "version": version,
-            "date": date,
-            "taxonomy": TAXONOMY.get(repo.species, ""),
-            "sourceUrl": f"https://github.com/SysBioChalmers/{repo.model_id}",
-        },
-    }
+    model.notes = {}
+    set_model_metadata(model, version=version, date=date, taxonomy=TAXONOMY.get(repo.species, ""),
+                       sourceUrl=f"https://github.com/SysBioChalmers/{repo.model_id}")
 
 
 def write_outputs(model: cobra.Model, repo: AnimalRepo, rxn_table: pd.DataFrame,
@@ -493,17 +475,17 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
 
     print(f"Reading template {human_model}", flush=True)
     template = read_yaml_model(human_model)
-    template_version = (template.notes.get("metaData") or {}).get("version")
+    template_version = str((template.notes.get("metaData") or {}).get("version") or "")
     if reset_objective and template_version in LIPOYL_BIOMASS_RELEASES \
             and fix_lipoyl_biomass(template):
-        print(f"Human-GEM {template_version}: MAR00022 uses lipoic acid instead of "
+        print(f"Human-GEM {template_version or 'develop'}: MAR00022 uses lipoic acid instead of "
               f"{LIPOYL_LYSINE} (see issue #1140)", flush=True)
 
     orthologs = read_alliance_orthologs(repo.orthologs)
     gene_map = ensembl_to_species_genes(REPO_ROOT / "model" / "genes.tsv", orthologs)
     print(f"{len(orthologs)} ortholog pairs, {len(gene_map)} Human-GEM genes with an ortholog", flush=True)
 
-    model = build_ortholog_draft(template, gene_map)
+    model = build_ortholog_draft(template, gene_map, repo.model_id)
     print(f"Ortholog draft: {len(model.reactions)} of {len(template.reactions)} reactions", flush=True)
 
     rxns, mets = read_tsv(repo.specific_rxns), read_tsv(repo.specific_mets)
@@ -514,8 +496,10 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
                                   reset=reset_objective, time_limit=time_limit)
     print(f"Gap-filled {len(filled)} reactions", flush=True)
 
+    symbols = dict(zip(orthologs["to"], orthologs["to_symbol"]))
+    symbols.update({safe_gene_id(t): t for rule in rxns["grRules"] for t in _rule_tokens(rule)})
     for gene in model.genes:
-        gene.name = gene.id
+        gene.name = symbols.get(gene.id, gene.id)
     stamp_metadata(model, repo, version, date)
 
     rxn_table = merge_annotation(read_tsv(REPO_ROOT / "model" / "reactions.tsv"), rxns, "rxns",

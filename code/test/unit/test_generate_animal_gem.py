@@ -18,41 +18,26 @@ def _write_alliance(path, rows):
 def test_orthologs_single_hit_is_kept(tmp_path):
     f = tmp_path / "o.tsv"
     _write_alliance(f, [("H1", "A", "M1", "a", "Yes", "No", 5)])
-    assert gen.read_alliance_orthologs(f).values.tolist() == [["A", "a"]]
+    assert gen.read_alliance_orthologs(f)[["from", "to"]].values.tolist() == [["A", "a"]]
 
 
 def test_orthologs_neither_best_is_dropped(tmp_path):
     f = tmp_path / "o.tsv"
     _write_alliance(f, [("H1", "A", "M1", "a", "No", "No", 9), ("H2", "B", "M2", "b", "Yes", "Yes", 3)])
-    assert gen.read_alliance_orthologs(f).values.tolist() == [["B", "b"]]
+    assert gen.read_alliance_orthologs(f)[["from", "to"]].values.tolist() == [["B", "b"]]
 
 
 def test_orthologs_multiple_hits_prefer_best_both_ways(tmp_path):
     f = tmp_path / "o.tsv"
     _write_alliance(f, [("H1", "A", "M1", "a1", "Yes", "No", 9), ("H1", "A", "M2", "a2", "Yes", "Yes", 2),
                         ("H1", "A", "M3", "a3", "Yes", "Yes", 1)])
-    assert gen.read_alliance_orthologs(f).values.tolist() == [["A", "a2"], ["A", "a3"]]
+    assert gen.read_alliance_orthologs(f)[["from", "to"]].values.tolist() == [["A", "a2"], ["A", "a3"]]
 
 
 def test_orthologs_multiple_hits_fall_back_to_method_count(tmp_path):
     f = tmp_path / "o.tsv"
     _write_alliance(f, [("H1", "A", "M1", "a1", "Yes", "No", 2), ("H1", "A", "M2", "a2", "No", "Yes", 7)])
-    assert gen.read_alliance_orthologs(f).values.tolist() == [["A", "a2"]]
-
-
-@pytest.mark.parametrize("rule, mapping, expected", [
-    ("G1", {"G1": ["a"]}, "a"),
-    ("G1 and G2", {"G1": ["a"], "G2": ["b"]}, "a and b"),
-    ("G1 or G2", {"G1": ["a"]}, "a"),                            # unmapped gene leaves the group
-    ("G1 and G2", {"G1": ["a"]}, "a"),                           # complex keeps mapped subunits
-    ("G1", {}, ""),
-    ("G1 or G2", {"G1": ["a", "b"], "G2": ["b"]}, "a or b"),     # duplicates collapse
-    ("(G1 or G2) and G3", {"G1": ["a"], "G2": ["b"], "G3": ["c"]}, "(a or b) and c"),
-    ("G1 and G2", {"G1": ["a", "b"], "G2": ["c"]}, "(a or b) and c"),
-    ("", {"G1": ["a"]}, ""),
-])
-def test_map_gene_reaction_rule(rule, mapping, expected):
-    assert gen.map_gene_reaction_rule(rule, mapping) == expected
+    assert gen.read_alliance_orthologs(f)[["from", "to"]].values.tolist() == [["A", "a2"]]
 
 
 def _template():
@@ -72,6 +57,15 @@ def test_draft_rewrites_rules_and_drops_reactions_that_lose_their_genes():
     assert {r.id for r in draft.reactions} == {"R2", "R3"}      # R1 lost G1, R3 never had a rule
     assert draft.reactions.R2.gene_reaction_rule == "b or c"
     assert {g.id for g in draft.genes} == {"b", "c"}
+
+
+def test_draft_keeps_template_notes_and_drops_unmapped_subunits():
+    t = _template()
+    t.reactions.R2.notes = {"references": "PMID:1"}
+    t.reactions.R2.gene_reaction_rule = "G2 and G9"
+    draft = gen.build_ortholog_draft(t, {"G2": ["b"]})
+    assert draft.reactions.R2.gene_reaction_rule == "b"
+    assert draft.reactions.R2.notes["references"] == "PMID:1"
 
 
 def test_species_network_adds_mets_and_reactions():
@@ -154,3 +148,39 @@ def test_fix_lipoyl_biomass_swaps_lipoyl_lysine_for_lipoic_acid():
 
 def test_fix_lipoyl_biomass_leaves_other_models_alone():
     assert gen.fix_lipoyl_biomass(cobra.Model("x")) is False
+
+
+def test_gene_symbols_with_parentheses_become_valid_gene_ids(tmp_path):
+    assert gen.safe_gene_id("E(spl)m3-HLH") == "E_spl_m3-HLH"
+    assert gen.safe_gene_id("l(2)k01209") == "l_2_k01209"
+    assert gen.safe_gene_id("Su(H)") == "Su_H"
+    assert gen.safe_gene_id("Tdh") == "Tdh"
+    assert gen.safe_gene_id("or") == "or_gene" and gen.safe_gene_id("And") == "And_gene"
+    assert gen.safe_gene_id("cd80/86") == "cd80_86"
+    f = tmp_path / "o.tsv"
+    _write_alliance(f, [("H1", "A", "M1", "E(Pc)", "Yes", "Yes", 5)])
+    pairs = gen.read_alliance_orthologs(f)
+    assert pairs.loc[0, "to"] == "E_Pc" and pairs.loc[0, "to_symbol"] == "E(Pc)"
+
+
+def test_two_symbols_with_one_gene_id_are_an_error(tmp_path):
+    f = tmp_path / "o.tsv"
+    _write_alliance(f, [("H1", "A", "M1", "E(z)", "Yes", "Yes", 5), ("H2", "B", "M2", "E_z", "Yes", "Yes", 5)])
+    with pytest.raises(ValueError, match="one gene id"):
+        gen.read_alliance_orthologs(f)
+
+
+def test_species_network_lists_every_unknown_metabolite_at_once():
+    m = _template()
+    mets = pd.DataFrame({"mets": [], "metNames": [], "metFormulas": [], "metCharges": [], "compartments": []})
+    rxns = pd.DataFrame({"rxns": ["MAR1", "MAR2"], "equations": ["old1[c] + 2 old2[c] => X[c]", "X[c] => old1[c]"],
+                         "subSystems": ["", ""], "grRules": ["", ""]})
+    with pytest.raises(ValueError, match="3 metabolite") as err:
+        gen.add_species_network(m, rxns, mets)
+    assert all(name in str(err.value) for name in ("old1[c]", "old2[c]", "X[c]"))
+
+
+def test_species_rules_get_safe_gene_ids():
+    assert gen.safe_rule("dib[m] or (a and b[x])") == "dib_m or (a and b_x)"
+    assert gen.safe_rule("(g1 and g2) or g3") == "(g1 and g2) or g3"
+    assert gen._rule_tokens("dib[m] or (a and g2)") == ["dib[m]", "a", "g2"]
