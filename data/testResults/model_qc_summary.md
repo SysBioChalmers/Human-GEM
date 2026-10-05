@@ -20,7 +20,7 @@ _Duplicate keys (model unloadable) and no growth block the merge; every other ro
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
 | [Unused genes](README.md#unused-genes) | 0 | 0 | :white_check_mark: |
-| [Malformed cross-references](README.md#malformed-cross-references) | [1](qc_annotation_issues.csv) | +1 | :x: |
+| [Malformed cross-references](README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
 | [Cross-refs inconsistent across compartments](README.md#cross-refs-inconsistent-across-compartments) | 0 | 0 | :white_check_mark: |
 | [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1111](macaw_results.tsv) | 0 | :warning: |
 | [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | 0 | :warning: |
