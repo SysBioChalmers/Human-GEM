@@ -14,5 +14,5 @@ from __future__ import annotations
 
 from .io import load_model
 
-__version__ = "0.1.0"
+__version__ = "2.1.0"
 __all__ = ["load_model"]
