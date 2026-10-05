@@ -1,12 +1,13 @@
 """Annotation / cross-reference validation for Human-GEM.
 
 Two kinds of check over the annotation tables (model/metabolites.tsv,
-model/reactions.tsv), aimed at catching curation mistakes:
+model/reactions.tsv, model/genes.tsv), aimed at catching curation mistakes:
 
-  * Format validation. Each external-database identifier must match the format of
-    its namespace (KEGG, ChEBI, HMDB, PubChem, MetaNetX, Rhea, LipidMaps, EHMN,
-    HepatoNET1, Reactome, TCDB). Freeform namespaces such as BiGG and Recon3D are
-    not format-checked.
+  * Format validation. Each row must have as many fields as the header, and each
+    external-database identifier must match the format of its namespace (KEGG,
+    ChEBI, HMDB, PubChem, MetaNetX, Rhea, LipidMaps, EHMN, HepatoNET1, Reactome,
+    TCDB, Ensembl, UniProt, NCBI Gene). Ensembl ids are unversioned. Freeform
+    namespaces such as BiGG and Recon3D are not format-checked.
   * Cross-compartment consistency. The same metabolite (same metsNoComp) in
     different compartments is the same chemical, so it should carry the same
     cross-references. When two compartments give different non-empty values for a
@@ -27,6 +28,7 @@ import sys
 
 METABOLITES_TSV = "model/metabolites.tsv"
 REACTIONS_TSV = "model/reactions.tsv"
+GENES_TSV = "model/genes.tsv"
 ISSUES_CSV = "data/testResults/qc_annotation_issues.csv"
 
 # Namespace -> regex a single identifier must match (values may be ';'-separated).
@@ -52,6 +54,13 @@ RXN_PATTERNS = {
     "rxnHepatoNET1ID": r"r\d+",
     "rxnTCDBID": r"\d+\.[A-Z]\.\d+(?:\.\d+)*",
 }
+# Ensembl ids are stored without a version suffix (ENST00000375991, not ENST00000375991.9).
+GENE_PATTERNS = {
+    "geneENSTID": r"ENST\d{11}",
+    "geneENSPID": r"ENSP\d{11}",
+    "geneUniProtID": r"[OPQ]\d[A-Z0-9]{3}\d|[A-NR-Z]\d(?:[A-Z][A-Z0-9]{2}\d){1,2}",
+    "geneEntrezID": r"\d+",
+}
 # Namespaces that should be identical across a metabolite's compartments.
 CROSS_COMPARTMENT_COLS = [
     "metKEGGID", "metChEBIID", "metHMDBID", "metPubChemID", "metMetaNetXID", "metLipidMapsID", "metSeedID",
@@ -60,6 +69,21 @@ CROSS_COMPARTMENT_COLS = [
 
 def _parts(value: str) -> set[str]:
     return {p.strip() for p in (value or "").split(";") if p.strip()}
+
+
+def _read_table(path: str, id_col: str, issues: list) -> list:
+    """Rows of an annotation table; a row with a different number of fields than the
+    header is reported, because tools that read the table by position misplace its values."""
+    with open(path, newline="", encoding="utf-8") as fh:
+        lines = list(csv.reader(fh, delimiter="\t"))
+    header, rows = lines[0], []
+    for fields in lines[1:]:
+        if not fields:
+            continue
+        if len(fields) != len(header):
+            issues.append((fields[0], id_col, f"malformed: row has {len(fields)} fields, header has {len(header)}"))
+        rows.append(dict(zip(header, fields)))
+    return rows
 
 
 def _check_format(rows: list, id_col: str, patterns: dict, issues: list) -> dict:
@@ -96,15 +120,15 @@ def _check_cross_compartment(rows: list, issues: list) -> None:
 
 
 def main() -> int:
-    with open(METABOLITES_TSV, newline="", encoding="utf-8") as fh:
-        mets = list(csv.DictReader(fh, delimiter="\t"))
-    with open(REACTIONS_TSV, newline="", encoding="utf-8") as fh:
-        rxns = list(csv.DictReader(fh, delimiter="\t"))
-
     issues: list = []
+    mets = _read_table(METABOLITES_TSV, "mets", issues)
+    rxns = _read_table(REACTIONS_TSV, "rxns", issues)
+    genes = _read_table(GENES_TSV, "genes", issues)
+
     coverage = {}
     coverage.update(_check_format(mets, "mets", MET_PATTERNS, issues))
     coverage.update(_check_format(rxns, "rxns", RXN_PATTERNS, issues))
+    coverage.update(_check_format(genes, "genes", GENE_PATTERNS, issues))
     _check_cross_compartment(mets, issues)
     issues.sort()
 
