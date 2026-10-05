@@ -1,10 +1,18 @@
-### Gene essentiality vs Hart 2015 fitness genes
+### Graded gene essentiality vs Hart 2015 (task-scope analysis)
 
-| cellLine | TP | TN | FP | FN | accuracy | sensitivity | specificity | F1 | MCC |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 125 | 2172 | 124 | 224 | 0.8684 | 0.3582 | 0.946 | 0.4181 | 0.3525 |
-| GBM | 111 | 2145 | 138 | 251 | 0.8529 | 0.3066 | 0.9396 | 0.3633 | 0.2897 |
-| HCT116 | 141 | 2189 | 130 | 246 | 0.861 | 0.3643 | 0.9439 | 0.4286 | 0.3595 |
-| HELA | 114 | 2233 | 164 | 197 | 0.8667 | 0.3666 | 0.9316 | 0.3871 | 0.3132 |
-| RPE1 | 86 | 2183 | 162 | 214 | 0.8578 | 0.2867 | 0.9309 | 0.3139 | 0.2367 |
-| all | 59 | 2355 | 159 | 69 | 0.9137 | 0.4609 | 0.9368 | 0.341 | 0.3103 |
+| cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| DLD1 | 0.3381 | 150 | 0.3614 | 111 | 0.6642 | 0.3101 | 0.1669 | 49 |
+| GBM | 0.3201 | 145 | 0.3399 | 115 | 0.6567 | 0.2946 | 0.1614 | 37 |
+| HCT116 | 0.3701 | 132 | 0.3652 | 110 | 0.667 | 0.326 | 0.1791 | 35 |
+| HELA | 0.3097 | 172 | 0.3033 | 147 | 0.665 | 0.2648 | 0.1449 | 36 |
+| RPE1 | 0.2561 | 174 | 0.2963 | 133 | 0.6558 | 0.2501 | 0.1359 | 44 |
+| all |  |  |  |  | 0.6616 | 0.2892 | 0.1579 |  |
+
+### Gene essentiality: effect of this change (vs `main`)
+
+Checked **319** gene(s) directly affected plus **2368** more that share a metabolite with one of them.
+
+**No change:** 2682 gene(s).
+
+Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](gene-essential-diff.csv).

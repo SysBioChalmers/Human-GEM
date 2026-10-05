@@ -95,6 +95,16 @@ To credit someone, a maintainer comments `@all-contributors please add @username
 
 A GitHub Action (`.github/workflows/add-contributor.yml`) picks up the comment, updates `.all-contributorsrc` and the `README` with the [all-contributors CLI](https://github.com/all-contributors/all-contributors-cli), and opens a pull request against `develop`, which is merged after review. Crediting on `develop`, rather than the default `main` where the retired all-contributors bot added them, keeps the credit when `main` is rebuilt from `develop` at release.
 
+### Releasing a new version
+
+Releases are cut by the `Release` workflow (`.github/workflows/release.yml`), which runs the version bump, opens the release pull request, and publishes the release. The release notes are written by hand, in the description of the release pull request, and become the text of the GitHub release and of its Zenodo record; they are not kept as a file in the repository.
+
+1. Start the workflow from the Actions tab, giving the new version (for example `2.1.0`). It must be a major, minor or patch increment of `version.txt` on `main`.
+2. The workflow cuts `release/<version>` from `develop`, stamps the version, regenerates `model/Human-GEM.{yml,mat,xml,xlsx,txt}` and `model/dependencies.txt` with `code/io/increaseHumanGEMVersion.py`, fills the `{{nRXN}}` / `{{nMET}}` / `{{nGENE}}` placeholders in `README.md`, and opens a pull request into `main`. The Model QC workflow comments on that pull request as it does on any other, so the release is reviewed against the same checks.
+3. Write the release notes in the description of that pull request, replacing its placeholder line. A check keeps the pull request from being merged while the notes are missing. See the wiki page [How to make a new release](https://github.com/SysBioChalmers/Human-GEM/wiki/How-to-make-a-new-release) for their structure, and earlier [releases](https://github.com/SysBioChalmers/Human-GEM/releases) for examples.
+
+Merging that pull request tags `v<version>`, publishes the release titled `Human <version>` with the notes as its text, and opens a sync-back pull request into `develop`. The sync-back keeps the generated model files and `version.txt` off `develop`, and restores the `README.md` placeholders, so `develop` stays a template that is ahead of the last release rather than at a version.
+
 ## Acknowledgments
 
 These contribution guidelines were adapted from the guidelines of [yeast-GEM](https://github.com/SysBioChalmers/yeast-GEM/blob/main/.github/CONTRIBUTING.md).
