@@ -33,7 +33,7 @@ The script reads and writes nothing outside the repositories and takes no input 
 the terminal, so a developer and a CI job run the same command:
 
     python code/animalGEM/generateAnimalGEM.py Mouse
-    python code/animalGEM/generateAnimalGEM.py Mouse --repo ../Mouse-GEM --version 1.9.0
+    python code/animalGEM/generateAnimalGEM.py Mouse --repo ../Mouse-GEM --version 2.1.1
 
 The Animal-GEM repository defaults to ``Mouse-GEM`` next to this repository; ``--repo`` or
 ``ANIMAL_GEM_REPO`` points elsewhere (a CI checkout, say). The gap-filling MILP wants a
@@ -467,6 +467,36 @@ def write_outputs(model: cobra.Model, repo: AnimalRepo, rxn_table: pd.DataFrame,
 
 # --- driver ------------------------------------------------------------------------
 
+def animal_version(template_version: str, current: str | None, requested: str | None) -> str:
+    """The animal GEM version: its major.minor follows the Human-GEM release it is built on.
+
+    The patch number is the animal GEM's own. Without ``requested``, the repository's
+    ``current`` version is kept if its major.minor already matches the template, and becomes
+    ``<major>.<minor>.0`` of the template otherwise. A ``requested`` version must match the
+    template's major.minor. On an unreleased template (no version) the requested or current
+    version is used as is.
+    """
+    def major_minor(v: str) -> tuple[str, str]:
+        parts = v.split(".")
+        if len(parts) != 3 or not all(p.isdigit() for p in parts):
+            raise ValueError(f"not an x.y.z version: {v!r}")
+        return parts[0], parts[1]
+
+    if not template_version:
+        if requested or current:
+            return requested or current
+        raise ValueError("no version: pass --version")
+    base = major_minor(template_version)
+    if requested:
+        if major_minor(requested) != base:
+            raise ValueError(f"version {requested} does not follow Human-GEM {template_version}: "
+                             f"the animal GEMs share Human-GEM's major.minor ({'.'.join(base)}.z)")
+        return requested
+    if current and major_minor(current) == base:
+        return current
+    return f"{base[0]}.{base[1]}.0"
+
+
 def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = None,
                         date: str | None = None, human_repo: Path | None = None,
                         allow_unreleased: bool = False,
@@ -475,8 +505,8 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
                         reset_objective: bool = True) -> cobra.Model:
     """Generate ``species``-GEM from Human-GEM and write it into ``repo_dir``.
 
-    ``version`` is written to ``version.txt`` and the model metadata; without it the
-    repository's current ``version.txt`` is kept and stamped. ``date`` defaults to today.
+    ``version`` is written to ``version.txt`` and the model metadata; see
+    :func:`animal_version` for the default and the rule it must follow. ``date`` defaults to today.
     ``reset_objective`` swaps the human biomass reaction for the generic cell components
     before gap-filling (see :func:`reset_biomass`); without it Human-GEM's own biomass
     reaction stays the objective.
@@ -485,10 +515,7 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
     for path in (repo.orthologs, repo.specific_rxns, repo.specific_mets):
         if not path.is_file():
             raise FileNotFoundError(path)
-    if version is None:
-        if not repo.version_file.is_file():
-            raise FileNotFoundError(f"{repo.version_file}; pass --version")
-        version = repo.version_file.read_text(encoding="utf-8").strip()
+    current = repo.version_file.read_text(encoding="utf-8").strip() if repo.version_file.is_file() else None
     date = date or datetime.date.today().isoformat()
     human = Path(human_repo or REPO_ROOT).resolve()
 
@@ -499,6 +526,7 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
         raise ValueError(f"{human} holds an unreleased Human-GEM (no version in the model). The animal "
                          "GEMs are built on a stable release: pass --human-repo a checkout of a release "
                          "tag, or --allow-unreleased to build on this one anyway.")
+    version = animal_version(template_version, current, version)
     if reset_objective and template_version in LIPOYL_BIOMASS_RELEASES \
             and fix_lipoyl_biomass(template):
         print(f"Human-GEM {template_version or 'develop'}: MAR00022 uses lipoic acid instead of "
@@ -549,8 +577,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--repo", type=Path,
                         default=os.environ.get("ANIMAL_GEM_REPO"),
                         help="Animal-GEM repository (default: ../<Species>-GEM, or $ANIMAL_GEM_REPO)")
-    parser.add_argument("--version", help="new model version, also written to version.txt "
-                                          "(default: keep the repository's version.txt)")
+    parser.add_argument("--version", help="model version, also written to version.txt; its major.minor "
+                                          "must be the Human-GEM release's (default: the repository's "
+                                          "version if it matches, otherwise <major>.<minor>.0)")
     parser.add_argument("--date", help="model date, YYYY-MM-DD (default: today)")
     parser.add_argument("--human-repo", type=Path,
                         default=os.environ.get("HUMAN_GEM_REPO"),

@@ -194,3 +194,19 @@ def test_draft_drops_template_and_homology_bookkeeping_notes():
     draft = gen.build_ortholog_draft(t, {"G2": ["b"]})
     assert draft.reactions.R2.notes == {"references": "PMID:1"}
     assert all("metFrom" not in m.notes for m in draft.metabolites)
+
+
+@pytest.mark.parametrize("template, current, requested, expected", [
+    ("2.1.0", "1.8.0", None, "2.1.0"),     # new Human-GEM minor: reset to x.y.0
+    ("2.1.0", "2.1.3", None, "2.1.3"),     # same major.minor: keep the animal patch
+    ("2.1.0", None, None, "2.1.0"),
+    ("2.1.0", "1.8.0", "2.1.2", "2.1.2"),
+    ("", "1.8.0", None, "1.8.0"),          # unreleased template: as is
+])
+def test_animal_version_follows_human_gem_major_minor(template, current, requested, expected):
+    assert gen.animal_version(template, current, requested) == expected
+
+
+def test_animal_version_refuses_another_major_minor():
+    with pytest.raises(ValueError, match="does not follow Human-GEM"):
+        gen.animal_version("2.1.0", "1.8.0", "1.9.0")
