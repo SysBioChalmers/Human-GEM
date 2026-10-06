@@ -375,16 +375,20 @@ def fill_essential_tasks(model: cobra.Model, reference: cobra.Model, tasks, *,
         reset_biomass(model)
         reset_biomass(reference)
 
+    # resolve_ties pins each degenerate minimum-cost fill to the fewest, lowest-id reactions,
+    # so the result does not depend on the solver or on the MATLAB/Python implementation.
     options = {} if time_limit is None else {"time_limit": time_limit}
-    filled = fill_tasks(model, reference, tasks, **options)
+    filled = fill_tasks(model, reference, tasks, resolve_ties=True, **options)
     if filled.failed_tasks:
         hint = (f" The reference cannot run them with {BIOMASS_COMPONENTS_RXN} as the biomass "
                 "reaction (Human-GEM issue #1140); --keep-biomass keeps the human biomass instead."
                 if reset else "")
         raise RuntimeError(f"gap-filling could not satisfy tasks: {sorted(set(filled.failed_tasks))}.{hint}")
 
-    new = [rid for rid in filled.added_reactions if rid not in model.reactions]
-    _add_reactions_from(model, filled.model, new)
+    # Template order, as RAVEN's addRxnsGenesMets adds them, so both generators write the same files.
+    order = {r.id: i for i, r in enumerate(reference.reactions)}
+    new = sorted({rid for rid in filled.added_reactions if rid not in model.reactions}, key=order.__getitem__)
+    _add_reactions_from(model, reference, new)
     for rid in new:
         rxn = model.reactions.get_by_id(rid)
         rxn.gene_reaction_rule = ""
@@ -400,8 +404,11 @@ def fill_essential_tasks(model: cobra.Model, reference: cobra.Model, tasks, *,
 
 def _add_reactions_from(target: cobra.Model, source: cobra.Model, rxn_ids: list[str]) -> None:
     """Add ``rxn_ids`` from ``source`` to ``target`` along with the metabolites they need."""
-    mets = {m.id: m for rid in rxn_ids for m in source.reactions.get_by_id(rid).metabolites}
-    target.add_metabolites([m.copy() for mid, m in mets.items() if mid not in target.metabolites])
+    needed = {m.id for rid in rxn_ids for m in source.reactions.get_by_id(rid).metabolites}
+    new_mets = [m.copy() for m in source.metabolites if m.id in needed and m.id not in target.metabolites]
+    for met in new_mets:
+        met.notes.pop("metFrom", None)
+    target.add_metabolites(new_mets)
     for rid in rxn_ids:
         src = source.reactions.get_by_id(rid)
         rxn = cobra.Reaction(src.id, name=src.name, subsystem=src.subsystem,
@@ -409,7 +416,7 @@ def _add_reactions_from(target: cobra.Model, source: cobra.Model, rxn_ids: list[
         target.add_reactions([rxn])
         rxn.add_metabolites({target.metabolites.get_by_id(m.id): c for m, c in src.metabolites.items()})
         rxn.annotation = dict(src.annotation)
-        rxn.notes = dict(src.notes)
+        rxn.notes = {k: v for k, v in src.notes.items() if k != "rxnFrom"}
 
 
 # --- annotation tables -------------------------------------------------------------
