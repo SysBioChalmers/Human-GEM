@@ -50,6 +50,7 @@ import datetime
 import os
 import re
 import sys
+import warnings
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -230,11 +231,19 @@ def build_ortholog_draft(template: cobra.Model, gene_map: dict[str, list[str]],
     template's own notes.
     """
     pairs = [(gene, species) for gene, genes in gene_map.items() for species in genes]
+    template.id = template.id or "HumanGEM"  # older releases carry no id; the homology tables need one
     hits = make_ortholog_hits(pairs, template.id, model_id)
-    return get_model_from_homology(
+    draft = get_model_from_homology(
         [template], hits, model_id, complex_policy="keep", keep_gene_free=True,
         preserve_notes=True,
     ).model
+    # Bookkeeping of the template and of the homology call, not properties of the animal model.
+    for rxn in draft.reactions:
+        for key in ("homology_source", "origin", "rxnFrom"):
+            rxn.notes.pop(key, None)
+    for met in draft.metabolites:
+        met.notes.pop("metFrom", None)
+    return draft
 
 
 def prune_unused_genes(model: cobra.Model) -> None:
@@ -330,8 +339,12 @@ def fix_lipoyl_biomass(model: cobra.Model) -> bool:
     acid = [m for m in model.reactions.MAR10065.metabolites if m.name == "lipoic acid"]
     if len(lipoyl) != 1 or len(acid) != 1:
         return False
-    coefficient = model.reactions.MAR00022.metabolites[lipoyl[0]]
-    model.reactions.MAR00022.add_metabolites({lipoyl[0]: -coefficient, acid[0]: coefficient})
+    rxn = model.reactions.MAR00022
+    coefficient = rxn.metabolites[lipoyl[0]]
+    rxn.add_metabolites({lipoyl[0]: -coefficient, acid[0]: coefficient})
+    note = rxn.notes.get("note", "").rstrip(";")
+    rxn.notes["note"] = (f"{note};" if note else "") + (
+        f"{LIPOYL_LYSINE} replaced by lipoic acid by the animal GEM generator (Human-GEM issue 1140)")
     return True
 
 
@@ -500,6 +513,10 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
 
     rxns, mets = read_tsv(repo.specific_rxns), read_tsv(repo.specific_mets)
     added = add_species_network(model, rxns, mets)
+    unbalanced = [i for i in added if model.reactions.get_by_id(i).check_mass_balance()]
+    if unbalanced:
+        warnings.warn(f"{len(unbalanced)} of {len(added)} species-specific reactions are not mass or charge "
+                      f"balanced against Human-GEM {template_version}: {unbalanced}", stacklevel=2)
     print(f"Added {len(added)} species-specific reactions, {len(mets)} metabolites", flush=True)
 
     filled = fill_essential_tasks(model, template, parse_task_list(human / ESSENTIAL_TASKS),

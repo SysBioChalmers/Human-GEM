@@ -143,6 +143,7 @@ def test_fix_lipoyl_biomass_swaps_lipoyl_lysine_for_lipoic_acid():
     m = _biomass_model()
     assert gen.fix_lipoyl_biomass(m) is True
     assert {x.id: c for x, c in m.reactions.MAR00022.metabolites.items()} == {"A": -1, "P": 1}
+    assert "issue 1140" in m.reactions.MAR00022.notes["note"]
     assert gen.fix_lipoyl_biomass(m) is False       # nothing left to swap
 
 
@@ -184,3 +185,12 @@ def test_species_rules_get_safe_gene_ids():
     assert gen.safe_rule("dib[m] or (a and b[x])") == "dib_m or (a and b_x)"
     assert gen.safe_rule("(g1 and g2) or g3") == "(g1 and g2) or g3"
     assert gen._rule_tokens("dib[m] or (a and g2)") == ["dib[m]", "a", "g2"]
+
+
+def test_draft_drops_template_and_homology_bookkeeping_notes():
+    t = _template()
+    t.reactions.R2.notes = {"rxnFrom": "HMRdatabase", "references": "PMID:1"}
+    t.metabolites.x.notes = {"metFrom": "HMRdatabase"}
+    draft = gen.build_ortholog_draft(t, {"G2": ["b"]})
+    assert draft.reactions.R2.notes == {"references": "PMID:1"}
+    assert all("metFrom" not in m.notes for m in draft.metabolites)
