@@ -513,7 +513,9 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
 
     rxns, mets = read_tsv(repo.specific_rxns), read_tsv(repo.specific_mets)
     added = add_species_network(model, rxns, mets)
-    unbalanced = [i for i in added if model.reactions.get_by_id(i).check_mass_balance()]
+    # Sinks and demands (one metabolite, no products) are unbalanced by definition.
+    unbalanced = [i for i in added if not model.reactions.get_by_id(i).boundary
+                  and model.reactions.get_by_id(i).check_mass_balance()]
     if unbalanced:
         warnings.warn(f"{len(unbalanced)} of {len(added)} species-specific reactions are not mass or charge "
                       f"balanced against Human-GEM {template_version}: {unbalanced}", stacklevel=2)
