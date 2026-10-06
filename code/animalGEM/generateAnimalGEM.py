@@ -23,7 +23,13 @@ Steps, in order:
 4. Stamp the version and date into the model metadata, merge the annotation tables, and
    write the model files.
 
-The script reads and writes nothing outside the two repositories and takes no input from
+The template is a Human-GEM checkout (``--human-repo`` or ``$HUMAN_GEM_REPO``, default this
+repository). The animal GEMs are built on a stable release, so point it at a release tag, for
+example ``git worktree add ../Human-GEM-release v2.1.0``; a checkout whose model carries no
+version (develop) is refused unless ``--allow-unreleased`` is given. The orthology tables, the
+annotation tables and the task list are read from that checkout too.
+
+The script reads and writes nothing outside the repositories and takes no input from
 the terminal, so a developer and a CI job run the same command:
 
     python code/animalGEM/generateAnimalGEM.py Mouse
@@ -65,7 +71,7 @@ from raven_toolbox.reconstruction.homology import (  # noqa: E402
 )
 from raven_toolbox.tasks import check_tasks, parse_task_list  # noqa: E402
 
-ESSENTIAL_TASKS = REPO_ROOT / "data" / "metabolicTasks" / "metabolicTasks_Essential.txt"
+ESSENTIAL_TASKS = Path("data") / "metabolicTasks" / "metabolicTasks_Essential.txt"  # in the Human-GEM checkout
 
 # NCBI taxonomy ids, for the model metadata.
 TAXONOMY = {
@@ -84,12 +90,11 @@ BIOMASS_COMPONENTS_RXN = "MAR00021"
 
 GAPFILL_NOTE = "reaction added by gap filling"
 
-# Human-GEM releases in which MAR00021 cannot carry flux on Ham's medium (issue #1140). The
-# develop branch carries no version, so an empty version counts as well:
+# Human-GEM releases in which MAR00021 cannot carry flux on Ham's medium (issue #1140):
 # its cofactor pool MAR00022 consumes [protein]-N6-(lipoyl)lysine, which nothing makes
 # since the lipoylation curation. Remove this, and fix_lipoyl_biomass, once MAR00021 is
 # curated in Human-GEM.
-LIPOYL_BIOMASS_RELEASES = {"", "2.0.0", "2.0.1", "2.1.0"}
+LIPOYL_BIOMASS_RELEASES = {"2.0.0", "2.0.1", "2.1.0"}
 LIPOYL_LYSINE = "[protein]-N6-(lipoyl)lysine"
 
 
@@ -450,7 +455,8 @@ def write_outputs(model: cobra.Model, repo: AnimalRepo, rxn_table: pd.DataFrame,
 # --- driver ------------------------------------------------------------------------
 
 def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = None,
-                        date: str | None = None, human_model: Path | None = None,
+                        date: str | None = None, human_repo: Path | None = None,
+                        allow_unreleased: bool = False,
                         formats: tuple[str, ...] = ("yml", "mat", "xml"),
                         time_limit: float | None = None,
                         reset_objective: bool = True) -> cobra.Model:
@@ -471,18 +477,22 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
             raise FileNotFoundError(f"{repo.version_file}; pass --version")
         version = repo.version_file.read_text(encoding="utf-8").strip()
     date = date or datetime.date.today().isoformat()
-    human_model = Path(human_model or REPO_ROOT / "model" / "Human-GEM.yml")
+    human = Path(human_repo or REPO_ROOT).resolve()
 
-    print(f"Reading template {human_model}", flush=True)
-    template = read_yaml_model(human_model)
+    print(f"Reading template {human / 'model' / 'Human-GEM.yml'}", flush=True)
+    template = read_yaml_model(human / "model" / "Human-GEM.yml")
     template_version = str((template.notes.get("metaData") or {}).get("version") or "")
+    if not template_version and not allow_unreleased:
+        raise ValueError(f"{human} holds an unreleased Human-GEM (no version in the model). The animal "
+                         "GEMs are built on a stable release: pass --human-repo a checkout of a release "
+                         "tag, or --allow-unreleased to build on this one anyway.")
     if reset_objective and template_version in LIPOYL_BIOMASS_RELEASES \
             and fix_lipoyl_biomass(template):
         print(f"Human-GEM {template_version or 'develop'}: MAR00022 uses lipoic acid instead of "
               f"{LIPOYL_LYSINE} (see issue #1140)", flush=True)
 
     orthologs = read_alliance_orthologs(repo.orthologs)
-    gene_map = ensembl_to_species_genes(REPO_ROOT / "model" / "genes.tsv", orthologs)
+    gene_map = ensembl_to_species_genes(human / "model" / "genes.tsv", orthologs)
     print(f"{len(orthologs)} ortholog pairs, {len(gene_map)} Human-GEM genes with an ortholog", flush=True)
 
     model = build_ortholog_draft(template, gene_map, repo.model_id)
@@ -492,7 +502,7 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
     added = add_species_network(model, rxns, mets)
     print(f"Added {len(added)} species-specific reactions, {len(mets)} metabolites", flush=True)
 
-    filled = fill_essential_tasks(model, template, parse_task_list(ESSENTIAL_TASKS),
+    filled = fill_essential_tasks(model, template, parse_task_list(human / ESSENTIAL_TASKS),
                                   reset=reset_objective, time_limit=time_limit)
     print(f"Gap-filled {len(filled)} reactions", flush=True)
 
@@ -502,9 +512,9 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
         gene.name = symbols.get(gene.id, gene.id)
     stamp_metadata(model, repo, version, date)
 
-    rxn_table = merge_annotation(read_tsv(REPO_ROOT / "model" / "reactions.tsv"), rxns, "rxns",
+    rxn_table = merge_annotation(read_tsv(human / "model" / "reactions.tsv"), rxns, "rxns",
                                  [r.id for r in model.reactions])
-    met_table = merge_annotation(read_tsv(REPO_ROOT / "model" / "metabolites.tsv"), mets, "mets",
+    met_table = merge_annotation(read_tsv(human / "model" / "metabolites.tsv"), mets, "mets",
                                  [m.id for m in model.metabolites])
     write_outputs(model, repo, rxn_table, met_table, formats)
     if not repo.version_file.is_file() or repo.version_file.read_text(encoding="utf-8").strip() != version:
@@ -523,7 +533,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--version", help="new model version, also written to version.txt "
                                           "(default: keep the repository's version.txt)")
     parser.add_argument("--date", help="model date, YYYY-MM-DD (default: today)")
-    parser.add_argument("--human-model", type=Path, help="template (default: model/Human-GEM.yml)")
+    parser.add_argument("--human-repo", type=Path,
+                        default=os.environ.get("HUMAN_GEM_REPO"),
+                        help="Human-GEM checkout to build on, normally a release tag "
+                             "(default: this repository, or $HUMAN_GEM_REPO)")
+    parser.add_argument("--allow-unreleased", action="store_true",
+                        help="build on a Human-GEM that has no version (develop)")
     parser.add_argument("--formats", default="yml,mat,xml",
                         help="comma-separated output formats: yml, mat, xml, xlsx, txt")
     parser.add_argument("--solver", help="cobra solver for the gap-filling MILP (default: cobra's)")
@@ -537,7 +552,7 @@ def main(argv: list[str] | None = None) -> int:
         cobra.Configuration().solver = args.solver
     repo = args.repo or REPO_ROOT.parent / f"{args.species}-GEM"
     generate_animal_gem(args.species, repo, version=args.version, date=args.date,
-                        human_model=args.human_model, time_limit=args.time_limit,
+                        human_repo=args.human_repo, allow_unreleased=args.allow_unreleased, time_limit=args.time_limit,
                         reset_objective=not args.keep_biomass,
                         formats=tuple(f.strip() for f in args.formats.split(",") if f.strip()))
     return 0
