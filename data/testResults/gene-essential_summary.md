@@ -2,17 +2,19 @@
 
 | cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 0.3381 | 150 | 0.3614 | 111 | 0.6642 | 0.3101 | 0.1669 | 49 |
-| GBM | 0.3201 | 145 | 0.3399 | 115 | 0.6567 | 0.2946 | 0.1614 | 37 |
-| HCT116 | 0.3701 | 132 | 0.3652 | 110 | 0.667 | 0.326 | 0.1791 | 35 |
-| HELA | 0.3097 | 172 | 0.3033 | 147 | 0.665 | 0.2648 | 0.1449 | 36 |
-| RPE1 | 0.2561 | 174 | 0.2963 | 133 | 0.6558 | 0.2501 | 0.1359 | 44 |
-| all |  |  |  |  | 0.6616 | 0.2892 | 0.1579 |  |
+| DLD1 | 0.3337 | 151 | 0.3615 | 111 | 0.6645 | 0.3101 | 0.1668 | 49 |
+| GBM | 0.3156 | 146 | 0.3365 | 115 | 0.654 | 0.2912 | 0.1613 | 38 |
+| HCT116 | 0.3728 | 130 | 0.3667 | 109 | 0.6694 | 0.3289 | 0.179 | 34 |
+| HELA | 0.3123 | 174 | 0.3058 | 143 | 0.6678 | 0.2673 | 0.1443 | 44 |
+| RPE1 | 0.2648 | 166 | 0.2937 | 135 | 0.6502 | 0.246 | 0.1359 | 34 |
+| all |  |  |  |  | 0.6613 | 0.2888 | 0.1577 |  |
 
-### Gene essentiality: effect of this change (vs `main`)
+### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **0** gene(s) directly affected plus **0** more that share a metabolite with one of them.
+Checked **66** gene(s) directly affected plus **1903** more that share a metabolite with one of them.
 
-**No change:** 0 gene(s).
+**Likely noise** (15 gene(s), <3/5 lines): CA5B, FPGS, GGH, IDH1, MPC1, MPC2, MTHFD1, PC, PISD, RDH5, SGPL1, SLC17A5, SLC27A5, SLC35D1, SLC36A1.
+
+**No change:** 1954 gene(s).
 
 Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](gene-essential-diff.csv).
