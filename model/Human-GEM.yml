@@ -222183,9 +222183,10 @@
       - MAM02724e: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000092068 and ENSG00000168003
+    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
+    - references: PMID:17896864;PMID:29773791
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
