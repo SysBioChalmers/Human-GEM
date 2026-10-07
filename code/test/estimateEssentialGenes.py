@@ -226,8 +226,8 @@ def _aa_triplet_reactions(model: cobra.Model) -> list[str]:
 def _load_spontaneous_reactions(tsv_path: str | Path) -> list[str]:
     """Reaction ids flagged spontaneous in ``reactions.tsv`` (spontaneous == 1).
 
-    ``importTsvFile`` returns the column as text when the file has no quoted fields
-    (Human-GEM v2.0.0+), so the value is coerced to numeric (see Human-GEM #1020).
+    The table is read as text throughout, as ``importTsvFile`` also does, so the
+    value is coerced to numeric (see Human-GEM #1020).
     """
     table = pd.read_table(tsv_path, dtype=str)
     spont = pd.to_numeric(table["spontaneous"], errors="coerce").fillna(0)
