@@ -17,10 +17,23 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "New version, e.g. 2.1.0"
-        required: true
+        description: "New version to cut, e.g. 2.1.0"
+        required: false
+      finalize_version:
+        description: "Version already merged into main, to tag and publish"
+        required: false
+  # The release is finalized from the push to main, not from the pull request
+  # being closed. A release branch is deleted the moment its pull request is
+  # merged, and a pull_request event resolves its workflow file from the merge
+  # ref that goes with it, so the "closed" run is never created: 2.1.0 and 2.1.1
+  # both had to be tagged and published by hand. A push to main always produces
+  # a run, and reads the workflow from main itself. Every push is handled, not
+  # only one touching version.txt, because the job is a no-op once the version
+  # in version.txt is released.
+  push:
+    branches: [main]
   pull_request:
-    types: [opened, edited, reopened, synchronize, closed]
+    types: [opened, edited, reopened, synchronize]
     branches: [main]
 
 permissions:
@@ -31,7 +44,7 @@ permissions:
 # release pull request runs in its own group, so editing the description never
 # queues behind or replaces a release run.
 concurrency:
-  group: ${{ (github.event_name == 'workflow_dispatch' || github.event.action == 'closed') && 'release' || format('release-notes-{0}', github.event.pull_request.number) }}
+  group: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && 'release' || format('release-notes-{0}', github.event.pull_request.number) }}
   cancel-in-progress: false
 
 env:
@@ -46,7 +59,7 @@ jobs:
   # --- Cut the branch ----------------------------------------------------
 
   cut:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' && inputs.version != ''
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -176,11 +189,13 @@ jobs:
   # --- On merge: tag, release, sync back ---------------------------------
 
   finalize:
+    # Driven by the push to main that lands a release, with a dispatch fallback
+    # for a release that has already landed. Idempotent: the version in
+    # version.txt is released once, so an ordinary push to main, a re-run or a
+    # release published by hand all leave it a no-op.
     if: >-
-      github.event_name == 'pull_request' &&
-      github.event.pull_request.merged == true &&
-      github.event.pull_request.base.ref == 'main' &&
-      startsWith(github.event.pull_request.head.ref, 'release/')
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && inputs.finalize_version != '')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -189,35 +204,64 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      # The tag keeps the "vX.Y.Z" form used by every existing tag, and the
-      # release title follows the "Human X.Y.Z" convention of every release
-      # published so far.
-      # The release text is the merged pull request's description without its
-      # HTML comments, passed through an environment variable (see check-notes).
-      - name: Tag and publish the release
+      # version.txt on main is what the build stamped, so it names the release
+      # that has landed; the dispatch input overrides it when finalizing an
+      # older one by hand.
+      - name: Work out which version to release
+        id: v
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BODY: ${{ github.event.pull_request.body }}
         run: |
-          version="${{ github.event.pull_request.head.ref }}"
-          version="${version#release/}"
-          printf '%s\n' "$BODY" | perl -0pe 's/<!--.*?-->//gs; s/\A\s+//' > "$RUNNER_TEMP/notes.md"
+          version="${{ inputs.finalize_version }}"
+          [ -n "$version" ] || version="$(tr -d '[:space:]' < version.txt)"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if gh release view "v$version" >/dev/null 2>&1; then
+            echo "Release v$version already exists; nothing to finalize."
+            echo "todo=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "todo=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # The notes live in the description of the release pull request. Its head
+      # branch is deleted on merge, but the pull request keeps the branch name,
+      # so it stays findable. Failing here is deliberate: a release that reaches
+      # main without notes should stop loudly rather than publish an empty one.
+      - name: Take the release notes from the release pull request
+        if: steps.v.outputs.todo == 'true'
+        id: notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="${{ steps.v.outputs.version }}"
+          gh pr list --state merged --base main --head "release/$version" \
+            --limit 1 --json body --jq '.[0].body // ""' > "$RUNNER_TEMP/body.md"
+          if [ ! -s "$RUNNER_TEMP/body.md" ]; then
+            echo "::error::no merged release pull request found for release/$version, or it has no description"
+            exit 1
+          fi
+          perl -0pe 's/<!--.*?-->//gs; s/\A\s+//' "$RUNNER_TEMP/body.md" > "$RUNNER_TEMP/notes.md"
+
+      # The tag keeps the "vX.Y.Z" form used by every existing tag, and the
+      # release title follows the "Human X.Y.Z" convention.
+      - name: Tag and publish the release
+        if: steps.v.outputs.todo == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="${{ steps.v.outputs.version }}"
           gh release create "v$version" --target main --title "Human $version" \
             --notes-file "$RUNNER_TEMP/notes.md"
 
-      # main after the release is develop plus the release branch's own commits,
-      # so this is an ordinary merge. The generated files and version.txt are
-      # dropped from it, and README.md and model/Human-GEM.yml are taken back from
-      # develop: the build substituted the README's {{nRXN}} / {{nMET}} / {{nGENE}}
-      # placeholders and rewrote the YAML in the export format with the version
-      # stamped, while develop keeps the template README and the YAML in its
-      # curation format, without a version.
       - name: Open the sync-back pull request into develop
+        if: steps.v.outputs.todo == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          version="${{ github.event.pull_request.head.ref }}"
-          version="${version#release/}"
+          version="${{ steps.v.outputs.version }}"
+          if git ls-remote --exit-code --heads origin "sync/main-to-develop-$version" >/dev/null 2>&1; then
+            echo "sync/main-to-develop-$version already exists; leaving it alone."
+            exit 0
+          fi
           git config user.name "human-gem-bot"
           git config user.email "human-gem-bot@users.noreply.github.com"
           git fetch origin develop
