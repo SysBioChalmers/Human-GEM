@@ -222202,9 +222202,6 @@
     - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
-    - annotation: !!omap
-      - ec-code:
-        - 5.1.3.1
     - references: PMID:17896864;PMID:29773791
     - rxnFrom: Recon3D
     - confidence_score: 0.0
