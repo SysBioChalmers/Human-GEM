@@ -51,7 +51,7 @@ Skipped (slow) tests: test_stoichiometric_consistency, test_unconserved_metaboli
 
 Mode: full suite.
 
-Model version: f29c7748f53b.
+Model version: 6b8d82b4f7c2.
 
 **Total score: 64.9%**
 
