@@ -11,8 +11,8 @@
 
 ### Gene essentiality: effect of this change (vs `main`)
 
-Checked **319** gene(s) directly affected plus **2368** more that share a metabolite with one of them.
+Checked **0** gene(s) directly affected plus **0** more that share a metabolite with one of them.
 
-**No change:** 2682 gene(s).
+**No change:** 0 gene(s).
 
 Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](gene-essential-diff.csv).

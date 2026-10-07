@@ -71,3 +71,5 @@ geneAliases   |Alias Names           |
 
 
 To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
+
+All three tables are tab-separated, and a field is enclosed in double quotes (`"`) only when its value contains a tab, a double quote or a newline. No field currently does, so the files carry no quotes. Every column holds text, including the all-digit identifier columns such as `geneEntrezID`.
