@@ -222199,12 +222199,13 @@
       - MAM02360e: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000149150
+    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - annotation: !!omap
       - ec-code:
         - 5.1.3.1
+    - references: PMID:17896864;PMID:29773791
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -271901,6 +271902,22 @@
     - subsystem:
       - Transport reactions
     - references: PMID:9736609;PMID:20439740
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+  - !!omap
+    - id: MAR20217
+    - name: transport of kynurenine and glutamate (cytosol to extracellular)
+    - metabolites: !!omap
+      - MAM01974c: -1.0
+      - MAM01974e: 1.0
+      - MAM02319c: 1.0
+      - MAM02319e: -1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000151012 and ENSG00000168003
+    - subsystem:
+      - Transport reactions
+    - references: PMID:35245456
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
 - genes:
