@@ -152,15 +152,20 @@ def _update_readme(model: cobra.Model) -> None:
 def _export(model: cobra.Model) -> None:
     """Write every derived model file from ``model``.
 
-    The plain formats (yml, mat) keep their cross-references in the TSV tables; the
-    annotated formats (xml, xlsx, txt) carry the merged TSV cross-references and SBO
-    terms (see annotateGEM.py). export_for_git also (re)writes model/dependencies.txt.
-    varname pins the .mat struct name to "humanGEM".
+    Only the yml keeps its cross-references in the TSV tables, since it is the
+    file git tracks and a diff of it should show curation rather than merged
+    annotation. Every derived format (mat, xml, xlsx, txt) carries the merged
+    TSV cross-references, each metabolite's InChI and the SBO terms (see
+    annotateGEM.py), so that a user who loads one of them gets the same model
+    as a user who loads the yml and the tsv tables together. export_for_git
+    also (re)writes model/dependencies.txt. varname pins the .mat struct name
+    to "humanGEM".
     """
     export_for_git(model, MODEL_DIR, prefix="Human-GEM",
-                   formats=("yml", "mat"), sub_dirs=False, varname="humanGEM")
+                   formats=("yml",), sub_dirs=False)
     export_for_git(annotate_gem(model.copy(), MODEL_DIR), MODEL_DIR,
-                   prefix="Human-GEM", formats=("xml", "xlsx", "txt"), sub_dirs=False)
+                   prefix="Human-GEM", formats=("mat", "xml", "xlsx", "txt"),
+                   sub_dirs=False, varname="humanGEM")
 
 
 def cmd_validate(args: argparse.Namespace) -> int:

@@ -11,10 +11,10 @@ metabolite's InChI (``metInChI``) goes to ``notes['inchis']``, which fills the
 Excel InChI column, and to ``annotation['inchi']`` for the SBML. SBO terms
 for metabolites and reactions come from raven_toolbox's canonical ``add_sbo_terms``
 (classifying exchange/demand/sink, transport, biomass, simple chemical, ...); genes,
-which that helper does not cover, get SBO:0000243 here. The exported SBML / Excel /
-txt then carry the annotation, while the YAML and ``.mat`` files stay
-annotation-light (their cross-references remain the TSV tables), exactly as the
-MATLAB release flow produces them.
+which that helper does not cover, get SBO:0000243 here. Every derived export
+(``.mat`` / SBML / Excel / txt) then carries the annotation; only the YAML stays
+annotation-light, since it is the file git tracks and a diff of it should show
+curation rather than merged annotation.
 
 Used by ``code/io/increaseHumanGEMVersion.py``; can also be run standalone to
 inspect the merge:
@@ -130,8 +130,8 @@ def annotate_gem(
     -------
     cobra.Model
         The same ``model`` object, now annotated. Pass a copy if the caller
-        needs to keep an un-annotated version (the release keeps the YAML/.mat
-        exports annotation-light this way).
+        needs to keep an un-annotated version (the release keeps the YAML
+        export annotation-light this way).
     """
     model_dir = Path(model_dir)
 
