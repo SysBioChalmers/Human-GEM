@@ -109,6 +109,23 @@ def _apply_row(annotation: dict, row: pd.Series, id2miriam: dict) -> None:
         annotation[namespace] = list(dict.fromkeys(merged))
 
 
+def add_inchis(model: cobra.Model, model_dir: str | Path) -> cobra.Model:
+    """Attach each metabolite's InChI from ``metabolites.tsv``, and nothing else.
+
+    ``annotate_gem`` merges the whole annotation set; this adds only the
+    ``metInChI`` column, for an export that should carry a metabolite's
+    structure without its cross-references. Modifies ``model`` in place and
+    returns it.
+    """
+    mets = _read_tsv(Path(model_dir) / "metabolites.tsv").set_index("mets")
+    for met in model.metabolites:
+        if met.id in mets.index:
+            inchi = str(mets.loc[met.id].get("metInChI", "")).strip()
+            if inchi:
+                met.notes["inchis"] = inchi
+    return model
+
+
 def annotate_gem(
     model: cobra.Model,
     model_dir: str | Path,

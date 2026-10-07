@@ -42,7 +42,7 @@ VERSION_TXT = REPO_ROOT / "version.txt"
 
 # Make the sibling code/annotateGEM.py importable regardless of the caller's cwd.
 sys.path.insert(0, str(REPO_ROOT / "code"))
-from annotateGEM import annotate_gem  # noqa: E402
+from annotateGEM import add_inchis, annotate_gem  # noqa: E402
 
 from raven_toolbox.io import export_for_git, read_yaml_model  # noqa: E402
 
@@ -152,20 +152,22 @@ def _update_readme(model: cobra.Model) -> None:
 def _export(model: cobra.Model) -> None:
     """Write every derived model file from ``model``.
 
-    Only the yml keeps its cross-references in the TSV tables, since it is the
-    file git tracks and a diff of it should show curation rather than merged
-    annotation. Every derived format (mat, xml, xlsx, txt) carries the merged
-    TSV cross-references, each metabolite's InChI and the SBO terms (see
-    annotateGEM.py), so that a user who loads one of them gets the same model
-    as a user who loads the yml and the tsv tables together. export_for_git
-    also (re)writes model/dependencies.txt. varname pins the .mat struct name
-    to "humanGEM".
+    The yml and the mat keep their cross-references in the TSV tables; the
+    annotated formats (xml, xlsx, txt) carry the merged TSV cross-references
+    and SBO terms (see annotateGEM.py). The mat additionally gets each
+    metabolite's InChI, which is a structure rather than a cross-reference and
+    which lives in metabolites.tsv rather than the yml, so that the .mat field
+    set matches what earlier releases carried. export_for_git also (re)writes
+    model/dependencies.txt. varname pins the .mat struct name to "humanGEM".
     """
     export_for_git(model, MODEL_DIR, prefix="Human-GEM",
                    formats=("yml",), sub_dirs=False)
+    export_for_git(add_inchis(model.copy(), MODEL_DIR), MODEL_DIR,
+                   prefix="Human-GEM", formats=("mat",), sub_dirs=False,
+                   varname="humanGEM")
     export_for_git(annotate_gem(model.copy(), MODEL_DIR), MODEL_DIR,
-                   prefix="Human-GEM", formats=("mat", "xml", "xlsx", "txt"),
-                   sub_dirs=False, varname="humanGEM")
+                   prefix="Human-GEM", formats=("xml", "xlsx", "txt"),
+                   sub_dirs=False)
 
 
 def cmd_validate(args: argparse.Namespace) -> int:
