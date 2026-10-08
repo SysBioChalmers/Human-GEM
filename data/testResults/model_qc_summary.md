@@ -18,9 +18,9 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
-| [Reaction directions: alarm](README.md#reaction-directions-alarm) **(gate)** | 0 | new | :white_check_mark: |
-| [Reaction directions: warning](README.md#reaction-directions-warning) | [76](qc_reversibility.csv) | new | :warning: |
-| [Outdated ΔG estimates](README.md#outdated-δg-estimates) | 0 | new | :white_check_mark: |
+| [Reaction directions: alarm](README.md#reaction-directions-alarm) **(gate)** | 0 | 0 | :white_check_mark: |
+| [Reaction directions: warning](README.md#reaction-directions-warning) | [76](qc_reversibility.csv) | 0 | :warning: |
+| [Outdated ΔG estimates](README.md#outdated-δg-estimates) | 0 | 0 | :white_check_mark: |
 
 #### Mass and charge
 
@@ -30,7 +30,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | 0 | :warning: |
 | [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [172](balance_results.csv) | 0 | :warning: |
-| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [57](qc_structure_consistency.csv) | 0 | :warning: |
+| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [52](qc_structure_consistency.csv) | -5 | :sparkles: |
 
 #### Network structure
 
@@ -39,7 +39,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
 | [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | 0 | :warning: |
-| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1134](macaw_results.tsv) | +23 | :x: |
+| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1134](macaw_results.tsv) | 0 | :warning: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
