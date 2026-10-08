@@ -116511,8 +116511,10 @@
     - name: cytochrome P450 (testosterone)
     - metabolites: !!omap
       - MAM00432c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
       - MAM02630c: -1.0
       - MAM02969c: -1.0
     - lower_bound: 0.0
@@ -116532,8 +116534,10 @@
     - metabolites: !!omap
       - MAM00432c: -1.0
       - MAM00434c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 2.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -116574,8 +116578,10 @@
     - metabolites: !!omap
       - MAM00431c: 1.0
       - MAM00971c: -1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -116594,8 +116600,10 @@
     - metabolites: !!omap
       - MAM00431c: -1.0
       - MAM00433c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 2.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
