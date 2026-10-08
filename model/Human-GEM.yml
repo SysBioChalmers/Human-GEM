@@ -448,22 +448,22 @@
     - id: MAM00022c
     - name: (13Z,16Z)-docosadienoylcarnitine
     - compartment: c
-    - charge: -1.0
-    - formula: C29H52NO4
+    - charge: 0.0
+    - formula: C29H53NO4
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00022m
     - name: (13Z,16Z)-docosadienoylcarnitine
     - compartment: m
-    - charge: -1.0
-    - formula: C29H52NO4
+    - charge: 0.0
+    - formula: C29H53NO4
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00022r
     - name: (13Z,16Z)-docosadienoylcarnitine
     - compartment: r
-    - charge: -1.0
-    - formula: C29H52NO4
+    - charge: 0.0
+    - formula: C29H53NO4
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00023c
@@ -6254,15 +6254,15 @@
     - id: MAM00545c
     - name: 1-nitronaphthalene
     - compartment: c
-    - charge: -1.0
-    - formula: C10H6NO2
+    - charge: 0.0
+    - formula: C10H7NO2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00545e
     - name: 1-nitronaphthalene
     - compartment: e
-    - charge: -1.0
-    - formula: C10H6NO2
+    - charge: 0.0
+    - formula: C10H7NO2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00546c
@@ -23190,15 +23190,15 @@
     - id: MAM01966c
     - name: glucose-1,6-bisphosphate
     - compartment: c
-    - charge: -3.0
-    - formula: C6H11O12P2
+    - charge: -4.0
+    - formula: C6H10O12P2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01966e
     - name: glucose-1,6-bisphosphate
     - compartment: e
-    - charge: -3.0
-    - formula: C6H11O12P2
+    - charge: -4.0
+    - formula: C6H10O12P2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01967c
@@ -59653,6 +59653,7 @@
       - MAM00913c: 1.0
       - MAM01966c: 1.0
       - MAM01967c: -1.0
+      - MAM02039c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000165434
@@ -101888,7 +101889,6 @@
       - MAM00022c: 1.0
       - MAM00023c: -1.0
       - MAM01597c: 1.0
-      - MAM02039c: 1.0
       - MAM02348c: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
@@ -103739,7 +103739,6 @@
       - MAM00022m: 1.0
       - MAM00023m: -1.0
       - MAM01597m: 1.0
-      - MAM02039m: 1.0
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
@@ -105663,7 +105662,6 @@
       - MAM00022r: 1.0
       - MAM00023r: -1.0
       - MAM01597r: 1.0
-      - MAM02039r: 1.0
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
@@ -150709,7 +150707,7 @@
     - metabolites: !!omap
       - MAM00545c: -1.0
       - MAM00546c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
@@ -150783,7 +150781,7 @@
     - metabolites: !!omap
       - MAM00545c: -1.0
       - MAM00547c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
@@ -150840,7 +150838,7 @@
     - metabolites: !!omap
       - MAM00545c: -1.0
       - MAM00548c: 1.0
-      - MAM02039c: -3.0
+      - MAM02039c: -2.0
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
