@@ -7,10 +7,13 @@
 | Model &amp; network checks (23) | :x: **1** regression(s) |
 | Model file &amp; metabolic tasks (6) | :white_check_mark: all pass |
 | MEMOTE | :white_check_mark: **63.8%** (core subset) |
-| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/feat/1083-reversibility/data/testResults/model_qc_summary.md) |
+| Full report | [model_qc_summary.md](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1153-aromatase-nadph/data/testResults/model_qc_summary.md) |
 
 **Regression(s):**
-- Reactions flagged by MACAW dead-end test: [**1134**](https://github.com/SysBioChalmers/Human-GEM/blob/feat/1083-reversibility/data/testResults/macaw_results.tsv)
+- Structure vs formula/charge inconsistencies: [**57**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1153-aromatase-nadph/data/testResults/qc_structure_consistency.csv)
+
+**Improved:**
+- Charge-imbalanced reactions: [**168**](https://github.com/SysBioChalmers/Human-GEM/blob/fix/1153-aromatase-nadph/data/testResults/balance_results.csv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
 
