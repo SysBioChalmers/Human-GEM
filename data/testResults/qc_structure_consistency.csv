@@ -1,13 +1,8 @@
 mets,name,issue,model_formula,model_charge,smiles_formula,smiles_charge,metSmiles
-MAM00022c,"(13Z,16Z)-docosadienoylcarnitine",protonation,C29H52NO4,-1.0,C29H53NO4,0,CCCCC/C=C\C/C=C\CCCCCCCCCCCC(=O)OC(CC(=O)[O-])C[N+](C)(C)C
-MAM00022m,"(13Z,16Z)-docosadienoylcarnitine",protonation,C29H52NO4,-1.0,C29H53NO4,0,CCCCC/C=C\C/C=C\CCCCCCCCCCCC(=O)OC(CC(=O)[O-])C[N+](C)(C)C
-MAM00022r,"(13Z,16Z)-docosadienoylcarnitine",protonation,C29H52NO4,-1.0,C29H53NO4,0,CCCCC/C=C\C/C=C\CCCCCCCCCCCC(=O)OC(CC(=O)[O-])C[N+](C)(C)C
 MAM00031c,"(1R)-hydroxy-(2R)-glutathionyl-1,2-dihydronaphthalene",protonation,C20H23N3O7S,-2.0,C20H25N3O7S,0,N[C@@H](CCC(=O)N[C@@H](CS[C@@H]1C=Cc2ccccc2[C@H]1O)C(=O)NCC(=O)O)C(=O)O
 MAM00033c,"(1S)-hydroxy-(2S)-glutathionyl-1,2-dihydronaphthalene",protonation,C20H23N3O7S,-2.0,C20H25N3O7S,0,N[C@@H](CCC(=O)N[C@@H](CS[C@H]1C=Cc2ccccc2[C@@H]1O)C(=O)NCC(=O)O)C(=O)O
 MAM00229c,"1,2,3,4-tetrahydro-alpha,7-dihydroxy-beta-(hydroxymethyl)-9-methoxy-3,4-dioxocyclopenta[c][1]benzopyran-6-propanal",protonation,C17H15O8,-1.0,C17H16O8,0,COc1cc(O)c(C(CO)C(O)C=O)c2oc(=O)c3c(c12)CCC3=O
 MAM00397x,16(S)-hydroxy-18-oxo-18-CoA-LTE4,protonation,C42H62N8O23P3S2,-5.0,C42H63N8O23P3S2-4,-4,CC(C)(COP(=O)([O-])OP(=O)([O-])OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@@H](O)[C@H]1OP(=O)([O-])[O-])C(O)C(=O)NCCC(=O)NCCSC(=O)C[C@@H](O)CCC/C=C\C=C\C=C\[C@@H](SC[C@@H](N)C(=O)O)[C@@H](O)CCCC(=O)O
-MAM00545c,1-nitronaphthalene,protonation,C10H6NO2,-1.0,C10H7NO2,0,O=[N+]([O-])c1cccc2ccccc12
-MAM00545e,1-nitronaphthalene,protonation,C10H6NO2,-1.0,C10H7NO2,0,O=[N+]([O-])c1cccc2ccccc12
 MAM00557c,1-pyrroline,protonation,C4H8N,1.0,C4H7N,0,C1=NCCC1
 MAM00557m,1-pyrroline,protonation,C4H8N,1.0,C4H7N,0,C1=NCCC1
 MAM00912c,3-phosphoadenylylselenate,protonation,C10H11N5O13P2Se,-4.0,C10H15N5O13P2Se,0,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)O[Se](=O)(=O)O)[C@@H](OP(=O)(O)O)[C@H]1O
@@ -27,8 +22,8 @@ MAM01661c,dehydrospermidine,protonation,C7H20N3,3.0,C7H17N3,0,NCCCC=NCCCN
 MAM01674c,dephospho-CoA,protonation,C21H33N7O13P2S,-2.0,C21H35N7O13P2S,0,CC(C)(COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1O)[C@@H](O)C(=O)NCCC(=O)NCCS
 MAM01674l,dephospho-CoA,protonation,C21H33N7O13P2S,-2.0,C21H35N7O13P2S,0,CC(C)(COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1O)[C@@H](O)C(=O)NCCC(=O)NCCS
 MAM01674m,dephospho-CoA,protonation,C21H33N7O13P2S,-2.0,C21H35N7O13P2S,0,CC(C)(COP(=O)(O)OP(=O)(O)OC[C@H]1O[C@@H](n2cnc3c(N)ncnc32)[C@H](O)[C@@H]1O)[C@@H](O)C(=O)NCCC(=O)NCCS
-MAM01966c,"glucose-1,6-bisphosphate",protonation,C6H11O12P2,-3.0,C6H14O12P2,0,O=P(O)(O)OC[C@H]1O[C@H](OP(=O)(O)O)[C@H](O)[C@@H](O)[C@@H]1O
-MAM01966e,"glucose-1,6-bisphosphate",protonation,C6H11O12P2,-3.0,C6H14O12P2,0,O=P(O)(O)OC[C@H]1O[C@H](OP(=O)(O)O)[C@H](O)[C@@H](O)[C@@H]1O
+MAM01966c,"glucose-1,6-bisphosphate",protonation,C6H10O12P2,-4.0,C6H14O12P2,0,O=P(O)(O)OC[C@H]1O[C@H](OP(=O)(O)O)[C@H](O)[C@@H](O)[C@@H]1O
+MAM01966e,"glucose-1,6-bisphosphate",protonation,C6H10O12P2,-4.0,C6H14O12P2,0,O=P(O)(O)OC[C@H]1O[C@H](OP(=O)(O)O)[C@H](O)[C@@H](O)[C@@H]1O
 MAM02151c,hydroxymethylbilane,protonation,C40H38N4O17,-8.0,C40H46N4O17,0,O=C(O)CCc1c[nH]c(Cc2[nH]c(Cc3[nH]c(Cc4[nH]c(CO)c(CC(=O)O)c4CCC(=O)O)c(CC(=O)O)c3CCC(=O)O)c(CC(=O)O)c2CCC(=O)O)c1CC(=O)O
 MAM02357c,lepidimoide,formula_error,X,0.0,C12H17NaO10,0,C[C@@H]1O[C@H](O)[C@H](O[C@H]2OC(C(=O)[O-])=C[C@H](O)[C@H]2O)[C@H](O)[C@H]1O.[Na+]
 MAM02357e,lepidimoide,formula_error,X,0.0,C12H17NaO10,0,C[C@@H]1O[C@H](O)[C@H](O[C@H]2OC(C(=O)[O-])=C[C@H](O)[C@H]2O)[C@H](O)[C@H]1O.[Na+]
