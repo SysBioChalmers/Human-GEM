@@ -1,41 +1,7 @@
 reaction,name,mass_imbalance,charge_imbalance
-MAR00012,(10Z)-heptadecenoic acid formation,C:16.2056;H:30.7154;R:-1,-1
 MAR00015,NEFA blood pool in to (10Z)-heptadecenoic acid conversion,C:16.222;H:30.9664;R:-1,-1
 MAR00016,(10Z)-heptadecenoic acid to NEFA blood pool out conversion,C:-16.271;H:-30.8218;R:1,1
 MAR00017,SMCFA-blood-pool to butyrate conversion,C:6.5;H:13;R:-1,-1
-MAR00022,[protein]-N6-(lipoyl)lysine reduction,C:-3270;Co:-1;Fe:-1;H:-5094;N:-895;O:-973;P:-11;S:-28;X:0.7,17
-MAR00023,11-cis-retinol to vitamin A derivatives conversion,C:-434;H:-592;N:-1;O:-57;X:1,7
-MAR00031,lipid droplet formation,C:-13.4364;H:-19.2074;N:-0.0188;O:-4.4474;P:-0.02;R:-2.0826;X:1,0.0068
-MAR00033,"24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion",C:-54;H:-82;O:-9;X:1,
-MAR00034,3-carboxy-alpha-chromanol to vitamin E derivatives conversion,C:-37;H:-48;O:-14;X:1,2
-MAR00035,"(1aalpha,2beta,3alpha,11calpha)... to xenobiotics conversion",Br:-6;C:-588;Cl:-12;H:-621;N:-66;O:-209;S:-15,11
-MAR00036,(11R)-HPETE to arachidonate derivatives conversion,C:-3150;H:-4860;N:-76;O:-819;P:-15;S:-23,179
-MAR00037,16alpha-hydroxyestrone to steroids conversion,C:-1116;H:-1488;I:-1;N:-81;O:-299;S:-24;Se:-1,24
-MAR00477,phospholipids extracellular pool formation,C:-32;H:-61;N:-4;O:-24;P:-3;R:-5,-1
-MAR00545,acyl-CoA-CL pool (liver tissue) formation,C:-16.6164;H:-31.9336;R:1,
-MAR00546,acyl-CoA-LD-TG2 pool (liver tissue) formation,C:-16.881;H:-31.9902;R:1,
-MAR00547,acyl-CoA-LD-TG3 pool (liver tissue) formation,C:-17.0032;H:-32.1644;R:1,
-MAR00548,acyl-CoA-LD-PC pool (liver tissue) formation,C:-16.8292;H:-31.8668;R:1,
-MAR00549,acyl-CoA-LD-PE pool (liver tissue) formation,C:-17.4164;H:-31.8982;R:1,
-MAR00550,acyl-CoA-LD-PS pool (liver tissue) formation,C:-17.993;H:-33.083;R:1,
-MAR00551,acyl-CoA-LD-PI pool (liver tissue) formation,C:-17.595;H:-32.8888;R:1,
-MAR00552,acyl-CoA-LD-SM pool (liver tissue) formation,C:-16.0152;H:-32.0204;R:1,
-MAR00553,acyl-CoA-bile-PC pool formation,C:-16.881;H:-31.9902;R:1,
-MAR00555,1-acylglycerol-3P-LD-TG1 pool (liver tissue) formation,C:-15.6522;H:-31.5134;R:1,
-MAR00556,1-acylglycerol-3P-LD-PC pool (liver tissue) formation,C:-16.8292;H:-31.8668;R:1,
-MAR00557,1-acylglycerol-3P-LD-PE pool (liver tissue) formation,C:-17.4164;H:-31.8982;R:1,
-MAR00558,1-acylglycerol-3P-LD-PS pool (liver tissue) formation,C:-17.993;H:-33.083;R:1,
-MAR00559,1-acylglycerol-3P-LD-PI pool (liver tissue) formation,C:-17.595;H:-32.8888;R:1,
-MAR00560,1-acylglycerol-3P-LD-SM pool (liver tissue) formation,C:-16.0152;H:-32.0204;R:1,
-MAR00561,1-acylglycerol-3P-bile-PC pool formation,C:-16.881;H:-31.9902;R:1,
-MAR00685,(10Z)-heptadecenoic acid formation,C:15.6522;H:31.5134;R:-1,
-MAR00686,(10Z)-heptadecenoic acid formation,C:16.881;H:31.9902;R:-1,
-MAR00687,(10Z)-heptadecenoic acid formation,C:17.0032;H:32.1644;R:-1,
-MAR00688,(10Z)-heptadecenoic acid formation,C:16.8292;H:31.8668;R:-1,
-MAR00689,(10Z)-heptadecenoic acid formation,C:17.4164;H:31.8982;R:-1,
-MAR00690,(10Z)-heptadecenoic acid formation,C:17.993;H:33.083;R:-1,
-MAR00691,(10Z)-heptadecenoic acid formation,C:17.595;H:32.8888;R:-1,
-MAR00692,(10Z)-heptadecenoic acid formation,C:16.0152;H:32.0204;R:-1,
 MAR00961,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
 MAR00964,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
 MAR00967,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
@@ -50,8 +16,6 @@ MAR01073,"arachidonate 12-lipoxygenase, 12S type (12(S)-HETE)",,-2
 MAR01075,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
 MAR01077,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
 MAR01079,fatty acid amide hydrolase (arachidonate),,-4
-MAR01185,(2E)-dodecenoyl-CoA formation,,2
-MAR01227,(2E)-dodecenoyl-CoA formation,,2
 MAR01301,acetyl-CoA C-acyltransferase (16e-18-oxo-18-CoA-dinor-LTE4),,5
 MAR01302,choloyl-CoA hydrolase (omega-COOH-tetranor-LTE3-CoA),,-3
 MAR01303,acyl-CoA oxidase (omega-COOH-tetranor-LTE3-CoA),,-3
@@ -155,7 +119,6 @@ MAR04773,coproporphyrin I to coproporphyrinogen I conversion,,-6
 MAR04842,aldehyde dehydrogenase [NAD(P)(+)] (SAM),,-1
 MAR05155,glycyl-tRNA(gly) phosphorylation,C:-611;H:-1000;N:-165;O:-176;R:1;S:-7,
 MAR05156,glycyl-tRNA(gly) phosphorylation,C:-452;H:-708;N:-103;O:-143;R:1;S:-6,
-MAR05257,(10Z)-heptadecenoic acid formation,C:16.8292;H:31.8668;R:-1,
 MAR05266,apo-[ACP] phosphorylation,C:611;H:1000;N:165;O:176;R:-1;S:7,
 MAR05267,mitoApo-[ACP] phosphorylation,C:452;H:708;N:103;O:143;R:-1;S:6,
 MAR06393,hydroxide to dehydroascorbic acid conversion,,1
@@ -210,13 +173,6 @@ MAR08615,ATP:cob(I)alamin Co-beta-adenosyltransferase,,1
 MAR09487,NAD+:poly(adenosine diphosphate D-ribose)ADP-D-ribosyltransferase,,2
 MAR09491,E2 ubiquitin-conjugating enzyme ([protein]-L-lysine),,-1
 MAR09735,[protein]-L-citrulline hydrolysis,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
-MAR09932,cholesterol phosphorylation,C:-5.56881;H:-9.55269;N:-0.519135;O:-5.56751;P:-0.718984;R:-0.547902;X:1,0.820554
-MAR10033,Fatty acid pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
-MAR10034,Fatty acid pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
-MAR10035,1-acylglycerol-3-phosphate pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
-MAR10036,acyl-CoA pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
-MAR10037,cholesterol-ester pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
-MAR10038,cholesterol-ester pool formation and breakdown,C:16.9524;H:31.9518;R:-1,
 MAR10061,fatty acyl-CoA reduction,C:-1;H:-2,
 MAR12995,MDZGLChr,,-1
 MAR13078,PROTEIN_BS,C:-32.5694;H:-66.0418;N:-9.3852;O:-16.5863;S:-0.283;X:1,-0.202

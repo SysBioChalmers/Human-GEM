@@ -3,8 +3,16 @@ Report mass- and charge-unbalanced reactions in Human-GEM (issue #704).
 
 Uses cobrapy's Reaction.check_mass_balance(), which reports both elemental
 (mass) and charge imbalances in a single call. Boundary reactions
-(exchange/demand/sink) and the biomass reaction are excluded, since they are
-not expected to balance.
+(exchange/demand/sink), the biomass reaction and the lumped reactions of the
+"Pool reactions" and "Artificial reactions" subsystems are excluded, since they
+are not expected to balance: a pool reaction stands for many species at once
+and carries fractional coefficients against the R pseudo-element, and an
+artificial conversion lumps a whole class of metabolites into one pool.
+
+R and X are left as elements of their own, not ignored. A reaction that uses
+them is still expected to balance in them, and several do not: the
+"[protein] to [protein]-L-<residue>" reactions are off by one X and two R,
+which is a finding rather than noise (#1153).
 
 The unbalanced reactions are written, sorted, to
 data/testResults/balance_results.csv, so that a pull request introducing a new
@@ -17,6 +25,18 @@ import traceback
 
 import cobra
 
+# A reaction in one of these subsystems lumps many species into a single
+# pseudo-reaction, so an elemental balance is not defined for it.
+LUMPED_SUBSYSTEMS = frozenset({"Pool reactions", "Artificial reactions"})
+
+
+def _subsystems(rxn):
+    """A reaction's subsystems as a set; the YAML gives either a list or a string."""
+    sub = rxn.subsystem
+    if isinstance(sub, (list, tuple, set)):
+        return {str(s) for s in sub}
+    return {str(sub)} if sub else set()
+
 
 def main():
     model = cobra.io.load_yaml_model("model/Human-GEM.yml")
@@ -26,6 +46,8 @@ def main():
         if rxn.boundary:
             continue
         if "biomass" in rxn.id.lower() or "biomass" in (rxn.name or "").lower():
+            continue
+        if _subsystems(rxn) & LUMPED_SUBSYSTEMS:
             continue
         try:
             imbalance = rxn.check_mass_balance()
@@ -53,7 +75,7 @@ def main():
     n_mass = sum(1 for r in rows if r[2])  # includes uncheckable reactions (surfaced, not hidden)
     n_charge = sum(1 for r in rows if r[3])
     print(
-        f"Unbalanced reactions (excluding boundary and biomass): {len(rows)} "
+        f"Unbalanced reactions (excluding boundary, biomass and lumped): {len(rows)} "
         f"({n_mass} mass, {n_charge} charge, {len(errored)} could not be checked)"
     )
     if errored:

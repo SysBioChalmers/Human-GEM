@@ -143,8 +143,15 @@ means "worth checking", not "certainly wrong".
 
 #### Mass-imbalanced reactions
 Reactions whose elemental sums do not balance, from cobrapy's `check_mass_balance()`.
-Boundary reactions (exchange/demand/sink) and biomass are excluded, since they are
-not expected to balance.
+Boundary reactions (exchange/demand/sink), biomass, and the lumped reactions of the
+`Pool reactions` and `Artificial reactions` subsystems are excluded, since they are
+not expected to balance: a pool reaction stands for many species at once and carries
+fractional coefficients against the `R` pseudo-element, and an artificial conversion
+lumps a whole class of metabolites into one pool.
+
+`R` and `X` are treated as elements of their own rather than ignored, so a reaction
+using them is still expected to balance in them. Several do not, and that is a
+finding rather than noise.
 
 #### Charge-imbalanced reactions
 Reactions whose charge sums do not balance, with the same exclusions as above.
