@@ -85,3 +85,27 @@ def test_growth_is_not_fatal():
 def test_a_missing_base_reads_as_new():
     delta, _icon, _regression, _fatal = buildReport._icon(2, None, "count")
     assert delta == "new"
+
+
+def _reserved_row(value, pending=False):
+    row = {"label": "Identifiers reserved for the animal GEMs", "key": "reserved_ids", "pending": pending}
+    if not pending:
+        row["value"] = value
+    return row
+
+
+def test_a_clean_reserved_identifier_check_adds_no_row():
+    other = {"label": "Unused genes", "key": "unused_gene", "pending": False, "value": 0}
+    assert buildReport._drop_silent([_reserved_row(0), other]) == [other]
+
+
+def test_a_running_reserved_identifier_check_adds_no_row():
+    assert buildReport._drop_silent([_reserved_row(None, pending=True)]) == []
+
+
+def test_a_reserved_identifier_blocks_the_merge():
+    rows = buildReport._compute_rows(
+        [("Identifiers reserved for the animal GEMs", "reserved_ids", "count", "checks", "x.csv")],
+        {"reserved_ids": 2}, {"reserved_ids": 0})
+    assert rows[0]["fatal"]
+    assert buildReport._drop_silent(rows) == rows
