@@ -2722,7 +2722,7 @@
     - name: "[protein]"
     - compartment: c
     - charge: 0.0
-    - formula: X
+    - formula: CHNOR2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00197c
@@ -27538,7 +27538,7 @@
     - name: L-arginyl-protein
     - compartment: c
     - charge: 1.0
-    - formula: C6H13N4OX
+    - formula: C7H14N5O2R2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02340c
@@ -57256,7 +57256,7 @@
     - name: "[protein]"
     - compartment: r
     - charge: 0.0
-    - formula: X
+    - formula: CHNOR2
   - !!omap
     - id: MAM10012c
     - name: cofactor_pool_biomass
