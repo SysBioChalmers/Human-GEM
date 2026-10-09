@@ -92985,7 +92985,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02403
-    - name: (9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA hydroxylation
+    - name: acyl-CoA 6-desaturase ((9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00110c: 1.0
       - MAM00131c: -1.0
@@ -92996,8 +92996,12 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Omega-6 fatty acid metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 1.14.19.3
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -113003,11 +113007,12 @@
       - MAM02039m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000167113
     - subsystem:
       - Terpenoid backbone biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 4.1.1.-
+        - 4.1.1.130
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -125647,6 +125652,7 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000240849
     - subsystem:
       - Glycerophospholipid metabolism
     - annotation: !!omap
@@ -147591,14 +147597,17 @@
       - MAM01599c: 2.0
       - MAM02039c: 1.0
       - MAM02040c: 2.0
-      - MAM02552c: 1.0
-      - MAM02553c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000132763 or ENSG00000124275
     - subsystem:
       - Vitamin B12 metabolism
+    - references: PMID:16769880;PMID:24742678;PMID:18779575
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: MTRR reduces aquacobalamin with NADPH; MMACHC does so with glutathione in vitro, without O2. NADPH is written for both.
   - !!omap
     - id: MAR08615
     - name: ATP:cob(I)alamin Co-beta-adenosyltransferase
@@ -151661,6 +151670,7 @@
       - MAM03057c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000143363
     - subsystem:
       - Miscellaneous
     - annotation: !!omap
@@ -280423,6 +280433,15 @@
   - !!omap
     - id: ENSG00000143183
     - name: TMCO1
+  - !!omap
+    - id: ENSG00000240849
+    - name: PEDS1
+  - !!omap
+    - id: ENSG00000167113
+    - name: COQ4
+  - !!omap
+    - id: ENSG00000132763
+    - name: MMACHC
 - compartments: !!omap
   - c: Cytosol
   - e: Extracellular
