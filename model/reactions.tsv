@@ -7823,9 +7823,6 @@ MAR09725						HMR_9725	MNXR205772		HMR_9725	RCR21039		1			HMR_9725
 MAR00031						HMR_0031			HMR_0031	RCR14835		0			HMR_0031
 MAR00021						biomass_components				RCR21132		0			biomass_components
 MAR00022						cofactors_vitamins				RCR21040		0			cofactors_vitamins
-MAR00023						vitaminA				RCR21133		0			vitaminA
-MAR00033						vitaminD				RCR21041		0			vitaminD
-MAR00034						vitaminE				RCR14842		0			vitaminE
 MAR00035						xenobiotics				RCR14843		0			xenobiotics
 MAR00036						arachidonates				RCR21134		0			arachidonates
 MAR00037						steroids				RCR21042		0			steroids
