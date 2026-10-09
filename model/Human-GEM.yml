@@ -76659,7 +76659,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000088305 and ENSG00000130816) or ENSG00000107614 or ENSG00000119772 or ENSG00000142182
+    - gene_reaction_rule: ENSG00000130816 or ENSG00000119772 or ENSG00000088305
     - subsystem:
       - Cysteine and methionine metabolism
     - annotation: !!omap
@@ -77125,7 +77125,7 @@
       - MAM02877n: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000088305 and ENSG00000130816) or ENSG00000107614 or ENSG00000119772 or ENSG00000142182
+    - gene_reaction_rule: ENSG00000130816 or ENSG00000119772 or ENSG00000088305
     - subsystem:
       - Cysteine and methionine metabolism
     - annotation: !!omap
@@ -78154,7 +78154,7 @@
       - MAM02882n: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000088305 and ENSG00000130816) or ENSG00000107614 or ENSG00000119772 or ENSG00000142182
+    - gene_reaction_rule: ENSG00000130816 or ENSG00000119772 or ENSG00000088305
     - subsystem:
       - Metabolism of other amino acids
     - annotation: !!omap
@@ -273777,9 +273777,6 @@
     - id: ENSG00000107611
     - name: CUBN
   - !!omap
-    - id: ENSG00000107614
-    - name: TRDMT1
-  - !!omap
     - id: ENSG00000107669
     - name: ATE1
   - !!omap
@@ -276215,9 +276212,6 @@
   - !!omap
     - id: ENSG00000142168
     - name: SOD1
-  - !!omap
-    - id: ENSG00000142182
-    - name: DNMT3L
   - !!omap
     - id: ENSG00000142230
     - name: SAE1
