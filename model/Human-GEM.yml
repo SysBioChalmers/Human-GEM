@@ -41804,13 +41804,6 @@
     - formula: C45H66N7O17P3S
     - metFrom: Recon3D
   - !!omap
-    - id: MAM00853r
-    - name: 3-oxo-all-cis-6,9,12,15,18-tetracosapentaenoyl-CoA
-    - compartment: r
-    - charge: -4.0
-    - formula: C45H66N7O18P3S
-    - metFrom: Recon3D
-  - !!omap
     - id: MAM00718r
     - name: 3(S)-hydroxy-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA
     - compartment: r
@@ -58260,13 +58253,6 @@
     - formula: C19H37NO4
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM00853c
-    - name: 3-oxo-all-cis-6,9,12,15,18-tetracosapentaenoyl-CoA
-    - compartment: c
-    - charge: -4.0
-    - formula: C45H66N7O18P3S
-    - metFrom: Recon3D
-  - !!omap
     - id: MAM20089m
     - name: 2-(4-carboxy-1-hydroxybutyl)thiamine diphosphate
     - compartment: m
@@ -58367,6 +58353,34 @@
     - compartment: m
     - charge: -1.0
     - formula: C8H7O4
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM20093c
+    - name: 3(R)-hydroxy-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA
+    - compartment: c
+    - charge: -4.0
+    - formula: C45H70N7O18P3S
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM00902c
+    - name: 3-oxo-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA
+    - compartment: c
+    - charge: -4.0
+    - formula: C45H66N7O18P3S
+    - metFrom: HMRdatabase
+  - !!omap
+    - id: MAM20093r
+    - name: 3(R)-hydroxy-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA
+    - compartment: r
+    - charge: -4.0
+    - formula: C45H70N7O18P3S
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM00902r
+    - name: 3-oxo-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA
+    - compartment: r
+    - charge: -4.0
+    - formula: C45H66N7O18P3S
     - metFrom: HumanGEM
 - reactions:
   - !!omap
@@ -91393,7 +91407,7 @@
     - name: ELOVL fatty acid elongase
     - metabolites: !!omap
       - MAM00121c: -1.0
-      - MAM00853c: 1.0
+      - MAM00902c: 1.0
       - MAM01596c: 1.0
       - MAM01597c: 1.0
       - MAM02039c: -1.0
@@ -91414,7 +91428,7 @@
     - name: hydroxysteroid 17-beta dehydrogenase
     - metabolites: !!omap
       - MAM00718c: 1.0
-      - MAM00853c: -1.0
+      - MAM00902c: -1.0
       - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
@@ -92789,11 +92803,11 @@
     - id: MAR02397
     - name: hydroxysteroid 17-beta dehydrogenase
     - metabolites: !!omap
-      - MAM00716c: 1.0
       - MAM00903c: -1.0
       - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
+      - MAM20093c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000149084
@@ -92810,8 +92824,8 @@
     - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase
     - metabolites: !!omap
       - MAM00681c: 1.0
-      - MAM00716c: -1.0
       - MAM02040c: 1.0
+      - MAM20093c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
@@ -200490,8 +200504,8 @@
     - id: MAR00968
     - name: Beta Oxidation of Long Chain Fatty Acid
     - metabolites: !!omap
-      - MAM00093x: -1.0
       - MAM00103x: 1.0
+      - MAM00121x: -1.0
       - MAM01261x: 1.0
       - MAM01597x: -1.0
       - MAM01802x: -1.0
@@ -205488,27 +205502,6 @@
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
-    - id: MAR02314
-    - name: Long-Chain-Fatty-Acid-Coa Ligase
-    - metabolites: !!omap
-      - MAM01334r: 1.0
-      - MAM01371r: -1.0
-      - MAM01597r: -1.0
-      - MAM01934r: 1.0
-      - MAM02389r: -1.0
-      - MAM02759r: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000068366 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000197142
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 6.2.1.3
-    - references: PMID:8584017
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR02316
     - name: Vesicular Transport
     - metabolites: !!omap
@@ -210399,7 +210392,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03412
-    - name: ELOVL fatty acid elongase (2-trans-9,12,15,18,21-all-cis-tetracosahexaenoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (2-trans-9,12,15,18,21-all-cis-tetracosahexaenoyl-CoA)
     - metabolites: !!omap
       - MAM00134r: 1.0
       - MAM00680r: -1.0
@@ -210408,72 +210401,72 @@
       - MAM02555r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
+        - 1.3.1.93
+    - references: PMID:12482854
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03415
-    - name: 3-hydroxyacyl-CoA dehydrogenase ((7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase ((7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00121r: -1.0
-      - MAM00853r: 1.0
+      - MAM00902r: 1.0
       - MAM01596r: 1.0
       - MAM01597r: 1.0
       - MAM02039r: -1.0
       - MAM02444r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000012660 or ENSG00000066322 or ENSG00000170522 or ENSG00000197977
+    - gene_reaction_rule: ENSG00000197977
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.35
-    - references: PMID:10970790
+        - 2.3.1.199
+    - references: PMID:12371743
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03417
-    - name: ELOVL fatty acid elongase (3-oxo-all-cis-6,9,12,15,18-tetracosapentaenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00718r: 1.0
-      - MAM00853r: -1.0
+      - MAM00902r: -1.0
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.3.3.6
-    - references: PMID:10970790
+        - 1.1.1.330
+    - references: PMID:12482854
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03418
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00680r: 1.0
       - MAM00718r: -1.0
       - MAM02040r: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 4.2.1.17
-    - references: PMID:10970790
+        - 4.2.1.134
+    - references: PMID:18554506
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -210557,86 +210550,29 @@
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
-    - id: MAR03437
-    - name: (4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA reduction
-    - metabolites: !!omap
-      - MAM00095c: -1.0
-      - MAM00119c: 1.0
-      - MAM02039c: -3.0
-      - MAM02554c: 1.0
-      - MAM02555c: -1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Fatty acid oxidation
-    - references: PMID:10970790
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR03438
-    - name: ELOVL fatty acid elongase ((4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA)
-    - metabolites: !!omap
-      - MAM00095r: -1.0
-      - MAM00119r: 1.0
-      - MAM02039r: -3.0
-      - MAM02554r: 1.0
-      - MAM02555r: -1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR03439
-    - name: ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA)
-    - metabolites: !!omap
-      - MAM00119c: -1.0
-      - MAM00853c: 1.0
-      - MAM01596c: 1.0
-      - MAM01597c: 1.0
-      - MAM02039c: 1.0
-      - MAM02444c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000012660 or ENSG00000118402 or ENSG00000170522 or ENSG00000197977
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR03440
-    - name: ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)...)
+    - name: very-long-chain 3-oxoacyl-CoA synthase ((7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00119r: -1.0
-      - MAM00853r: 1.0
+      - MAM00903r: 1.0
       - MAM01596r: 1.0
       - MAM01597r: 1.0
-      - MAM02039r: 1.0
+      - MAM02039r: -1.0
       - MAM02444r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000012660 or ENSG00000066322 or ENSG00000170522 or ENSG00000197977
+    - gene_reaction_rule: ENSG00000197977
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.50
-    - references: PMID:10970790
+        - 2.3.1.199
+    - references: PMID:12371743
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03442
-    - name: ELOVL fatty acid elongase (2-trans-9,12,15,18-all-cis-tetracosapentaenoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (2-trans-9,12,15,18-all-cis-tetracosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00131r: 1.0
       - MAM00681r: -1.0
@@ -210645,13 +210581,13 @@
       - MAM02555r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
+        - 1.3.1.93
+    - references: PMID:12482854
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -210715,60 +210651,40 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03474
-    - name: ELOVL fatty acid elongase (3-oxo-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
-      - MAM00716r: 1.0
       - MAM00903r: -1.0
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+      - MAM20093r: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 6.2.1.3
-    - references: PMID:10970790
+        - 1.1.1.330
+    - references: PMID:12482854
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03479
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(R)-hydroxy-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00681r: 1.0
-      - MAM00716r: -1.0
       - MAM02040r: 1.0
-    - lower_bound: -1000.0
+      - MAM20093r: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR03483
-    - name: acetyl-CoA C-acyltransferase
-    - metabolites: !!omap
-      - MAM00119x: 1.0
-      - MAM00853x: -1.0
-      - MAM01261x: 1.0
-      - MAM01597x: -1.0
-      - MAM02039x: -2.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 2.3.1.16
-    - references: PMID:11734209
+        - 4.2.1.134
+    - references: PMID:18554506
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
