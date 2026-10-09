@@ -143,11 +143,24 @@ means "worth checking", not "certainly wrong".
 
 #### Mass-imbalanced reactions
 Reactions whose elemental sums do not balance, from cobrapy's `check_mass_balance()`.
-Boundary reactions (exchange/demand/sink), biomass, and the lumped reactions of the
-`Pool reactions` and `Artificial reactions` subsystems are excluded, since they are
-not expected to balance: a pool reaction stands for many species at once and carries
-fractional coefficients against the `R` pseudo-element, and an artificial conversion
-lumps a whole class of metabolites into one pool.
+Boundary reactions (exchange/demand/sink), biomass and the lumped pseudo-reactions are
+excluded, since an elemental balance is not defined for them: a lumped pseudo-reaction
+stands for a whole class of species at once, so its coefficients are an average over
+that class rather than a stoichiometry.
+
+`balanceTest.py` recognises lumping two ways. Four subsystems consist of lumped
+reactions throughout, and are excluded wholesale (`LUMPED_SUBSYSTEMS`): `Pool
+reactions`, where a pool stands for the mixture of its members; `Artificial reactions`,
+where a conversion lumps a whole class of metabolites; and `Protein assembly` and
+`Protein degradation`, which translate and hydrolyse a named protein counted per
+amino-acid residue. The lumped reactions filed under an ordinary subsystem are listed
+by identifier instead, each with what it lumps (`LUMPED_REACTIONS`): five reactions
+that resolve a fatty-acid or cholesterol-ester pool into a weighted mixture of its
+members, and the five that polymerise and hydrolyse `DNA` and `RNA`, whose formulas are
+those of one average nucleotide. Every run audits that list and warns about an entry
+the model no longer needs, so it cannot quietly go stale. Subsystems are left as
+curated; the identifiers keep the exclusion in the test rather than relabelling
+reactions that users expect to find in their pathway.
 
 `R` and `X` are treated as elements of their own rather than ignored, so a reaction
 using them is still expected to balance in them. Several do not, and that is a

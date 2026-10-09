@@ -1,7 +1,4 @@
 reaction,name,mass_imbalance,charge_imbalance
-MAR00015,NEFA blood pool in to (10Z)-heptadecenoic acid conversion,C:16.222;H:30.9664;R:-1,-1
-MAR00016,(10Z)-heptadecenoic acid to NEFA blood pool out conversion,C:-16.271;H:-30.8218;R:1,1
-MAR00017,SMCFA-blood-pool to butyrate conversion,C:6.5;H:13;R:-1,-1
 MAR00961,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
 MAR00964,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
 MAR00967,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
@@ -91,8 +88,6 @@ MAR03438,"ELOVL fatty acid elongase ((4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA
 MAR03439,"ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA)",,2
 MAR03440,"ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)...)",,2
 MAR03483,acetyl-CoA C-acyltransferase,,-2
-MAR03537,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;R:-1,
-MAR03622,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;R:-1,
 MAR03830,"enoyl-CoA hydratase (9,10-12,13-diepoxy-octadecanoate)",,1
 MAR03962,arachidonate 5-lipoxygenase (prostaglandin D2),,-2
 MAR03992,NADH:ferricytochrome-b5 oxidoreductase,,2
@@ -117,10 +112,6 @@ MAR04769,uroporphyrin I to uroporphyrinogen III conversion,,-6
 MAR04770,coproporphyrin III to coproporphyrinogen III conversion,,-6
 MAR04773,coproporphyrin I to coproporphyrinogen I conversion,,-6
 MAR04842,aldehyde dehydrogenase [NAD(P)(+)] (SAM),,-1
-MAR05155,glycyl-tRNA(gly) phosphorylation,C:-611;H:-1000;N:-165;O:-176;R:1;S:-7,
-MAR05156,glycyl-tRNA(gly) phosphorylation,C:-452;H:-708;N:-103;O:-143;R:1;S:-6,
-MAR05266,apo-[ACP] phosphorylation,C:611;H:1000;N:165;O:176;R:-1;S:7,
-MAR05267,mitoApo-[ACP] phosphorylation,C:452;H:708;N:103;O:143;R:-1;S:6,
 MAR06393,hydroxide to dehydroascorbic acid conversion,,1
 MAR06456,gamma-tocopheroxyl-radical to gamma-tocopherol conversion,,-1
 MAR06457,8alpha-hydroxy-gamma-tocopherone to gamma-tocopheroxyl-radical conversion,,-1
@@ -155,11 +146,6 @@ MAR07085,1-nitronaphthalene to 1-nitrosonaphthalene conversion,,-2
 MAR07086,1-nitrosonaphthalene to N-hydroxy-1-aminonaphthalene conversion,,-2
 MAR07087,N-hydroxy-1-aminonaphthalene to 1-naphthylamine conversion,,-2
 MAR07106,S-(formylmethyl)glutathione to S-(2-hydroxyethyl)glutathione conversion,,-2
-MAR07160,Deoxynucleoside triphosphate:DNA deoxynucleotidyltransferase,C:0.2;H:5.7;N:-3.7;O:2;R:2,1
-MAR07161,nucleoside-triphosphate:RNA nucleotidyltransferase (DNA-directed),C:5.48;H:11.18;N:-3.86;O:12;P:2;R:3,-3
-MAR07162,polyribonucleotide nucleotidyltransferase (RNA),C:-5.48;H:-11.18;N:3.86;O:-12;P:-2;R:-3,3
-MAR07163,exodeoxyribonuclease III (DNA),C:-0.2;H:-5.7;N:3.7;O:-2;R:-2,-1
-MAR07164,exodeoxyribonuclease III (RNA),C:-5.48;H:-11.18;N:3.86;O:-12;P:-2;R:-3,3
 MAR07165,[protein] to [protein]-L-cysteine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
 MAR07197,[protein] to [protein]-L-serine conversion,C:-3;H:-4;N:-1;O:-2,
 MAR07282,[protein] to [protein]-L-asparagine conversion,C:-4;H:-5;N:-2;O:-2,
@@ -175,5 +161,4 @@ MAR09491,E2 ubiquitin-conjugating enzyme ([protein]-L-lysine),,-1
 MAR09735,[protein]-L-citrulline hydrolysis,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR10061,fatty acyl-CoA reduction,C:-1;H:-2,
 MAR12995,MDZGLChr,,-1
-MAR13078,PROTEIN_BS,C:-32.5694;H:-66.0418;N:-9.3852;O:-16.5863;S:-0.283;X:1,-0.202
 MAR13081,CYOOm3i,,0.06
