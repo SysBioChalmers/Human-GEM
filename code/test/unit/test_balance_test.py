@@ -50,3 +50,32 @@ def test_R_and_X_are_balanced_as_elements():
     ok = _rxn("MAR00003", {c: -1, d: 1}, "Glycolysis")
     cobra.Model("m2").add_reactions([ok])
     assert not ok.check_mass_balance()
+
+
+@pytest.mark.parametrize("subsystem", ["Protein assembly", "Protein degradation"])
+def test_protein_assembly_and_degradation_are_lumped(subsystem):
+    assert balanceTest._is_lumped(_rxn("MAR05151", {}, subsystem))
+
+
+def test_listed_reactions_are_lumped_whatever_their_subsystem():
+    for rid in balanceTest.LUMPED_REACTIONS:
+        assert balanceTest._is_lumped(_rxn(rid, {}, "Nucleotide metabolism"))
+
+
+def test_an_unlisted_reaction_in_an_ordinary_subsystem_is_not_lumped():
+    assert not balanceTest._is_lumped(_rxn("MAR09999", {}, "Nucleotide metabolism"))
+
+
+def test_every_listed_reason_says_what_is_lumped():
+    assert all(len(reason) > 10 for reason in balanceTest.LUMPED_REACTIONS.values())
+
+
+def test_stale_entries_report_missing_and_balanced_reactions():
+    model = cobra.Model("m")
+    kept, dropped = sorted(balanceTest.LUMPED_REACTIONS)[:2]
+    model.add_reactions([_rxn(kept, {}), _rxn(dropped, {})])
+    stale = balanceTest._stale_lumped_entries(model, {kept})
+    assert f"{dropped} (balances)" in stale
+    assert not any(line.startswith(kept) for line in stale)
+    assert sum(1 for line in stale if "(not in the model)" in line) == \
+        len(balanceTest.LUMPED_REACTIONS) - 2
