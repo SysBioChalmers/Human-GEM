@@ -27782,15 +27782,15 @@
     - id: MAM02357c
     - name: lepidimoide
     - compartment: c
-    - charge: 0.0
-    - formula: X
+    - charge: -1.0
+    - formula: C12H17O10
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02357e
     - name: lepidimoide
     - compartment: e
-    - charge: 0.0
-    - formula: X
+    - charge: -1.0
+    - formula: C12H17O10
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02358m
