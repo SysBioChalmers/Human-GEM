@@ -2124,14 +2124,14 @@
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00136c
-    - name: (ADP-D-ribosyl)n+1-acceptor
+    - name: (ADP-D-ribosyl)n-acceptor
     - compartment: c
     - charge: 0.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00137c
-    - name: (ADP-D-ribosyl)n-acceptor
+    - name: (ADP-D-ribosyl)n+1-acceptor
     - compartment: c
     - charge: -2.0
     - formula: C15H19N5O13P2X
