@@ -125483,23 +125483,6 @@
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
-    - id: MAR07597
-    - name: alkyl-glycerone-3-phosphate reduction
-    - metabolites: !!omap
-      - MAM00628c: 1.0
-      - MAM01311c: -1.0
-      - MAM02039c: -2.0
-      - MAM02040c: 1.0
-      - MAM02554c: 1.0
-      - MAM02555c: -1.0
-      - MAM10005c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Glycerophospholipid metabolism
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR07601
     - name: plasmanylethanolamine desaturase
     - metabolites: !!omap
@@ -210006,7 +209989,7 @@
       - MAM02040c: -1.0
       - MAM02751c: 1.0
       - MAM03317c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Glycerophospholipid metabolism
@@ -271695,6 +271678,21 @@
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
     - notes: Lumps the oxidation of (S)-4-hydroxymandelate, the decarboxylation and the oxidation of 4-hydroxybenzaldehyde to the CoQ head group; the human enzymes are not known. The electron acceptors (2 NAD+) are assumed.
+  - !!omap
+    - id: MAR20220
+    - name: 1-alkyl-sn-glycerol-3-phosphate acyltransferase (acyl-CoA pool)
+    - metabolites: !!omap
+      - MAM00628c: 1.0
+      - MAM01597c: 1.0
+      - MAM03320c: -1.0
+      - MAM10007c: -1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Glycerophospholipid metabolism
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: Acylation of 1-alkyl-G3P with acyl-CoA; the acyltransferase is not identified.
 - genes:
   - !!omap
     - id: ENSG00000000419
