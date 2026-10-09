@@ -2133,7 +2133,7 @@
     - id: MAM00137c
     - name: (ADP-D-ribosyl)n-acceptor
     - compartment: c
-    - charge: 0.0
+    - charge: -2.0
     - formula: C15H19N5O13P2X
     - metFrom: HMRdatabase
   - !!omap
@@ -13849,7 +13849,7 @@
     - id: MAM01266c
     - name: activated methyl group
     - compartment: c
-    - charge: 0.0
+    - charge: 1.0
     - formula: CH3
     - metFrom: HMRdatabase
   - !!omap
@@ -21644,7 +21644,7 @@
     - id: MAM01825c
     - name: ferrocytochrome B5
     - compartment: c
-    - charge: 0.0
+    - charge: -1.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
@@ -33933,21 +33933,21 @@
     - id: MAM02827c
     - name: reduced adrenal ferredoxin
     - compartment: c
-    - charge: 0.0
+    - charge: -1.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02828c
     - name: reduced ferredoxin
     - compartment: c
-    - charge: 0.0
+    - charge: -1.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02828m
     - name: reduced ferredoxin
     - compartment: m
-    - charge: 0.0
+    - charge: -1.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap

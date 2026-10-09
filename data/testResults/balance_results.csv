@@ -43,11 +43,6 @@ MAR01427,13-hydroperoxy-H4-neuroprostane to 13-hydroxy-D4-neuroprostane conversi
 MAR01430,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-E4-neuroprostane conversion,,-2
 MAR01431,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-D4-neuroprostane conversion,,-2
 MAR01600,Peroxisomal Lumped Long Chain Fatty Acid Oxidation,,2
-MAR01932,Cholesterol:oxygen oxidoreductase (side-chain-cleaving),,-2
-MAR01934,"17alpha,20alpha-Dihydroxycholesterol:oxygen oxidoreductase (side-chain-cleaving)",,-4
-MAR01935,20alpha-Hydroxycholesterol:oxygen oxidoreductase (side-chain-cleaving),,-2
-MAR01942,cytochrome P450 (11-deoxycorticosterone),,-2
-MAR01950,"17alpha,21-dihydroxypregnenolone:oxygen oxidoreductase (11-hydroxylating)",,-2
 MAR01970,"steroid Delta-isomerase (5-androstene-3,17-dione)",,-2
 MAR01971,"steroid Delta-isomerase (5-androstene-3,17-dione)",,-2
 MAR02022,3beta-hydroxy-Delta(5)-steroid dehydrogenase (5-alpha-dihydrotestosterone),,2
@@ -66,8 +61,6 @@ MAR02078,peroxidase (4-hydroxyestrone),,-1
 MAR02091,"17beta-estradiol-3,4-semiquinone to 17beta-estradiol-3,4-quinone conversion",,-1
 MAR02099,"peroxidase (17beta-estradiol-2,3-semiquinone)",,1
 MAR02100,"peroxidase (17beta-estradiol-2,3-semiquinone)",,1
-MAR02126,stearoyl-CoA desaturase (ferrocytochrome B5),,-2
-MAR02128,stearoyl-CoA desaturase (ferrocytochrome B5),,-2
 MAR02313,Long-Chain-Fatty-Acid-Coa Ligase,,-8
 MAR02443,13(S)-HPODE to 13-oxy-radical-octadecadienoate conversion,,-2
 MAR02449,"12,13-epoxy-9-alkoxy-(10E)-octadecenoate hydrolysis",,-1
@@ -95,7 +88,6 @@ MAR03537,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa 
 MAR03622,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;R:-1,
 MAR03830,"enoyl-CoA hydratase (9,10-12,13-diepoxy-octadecanoate)",,1
 MAR03962,arachidonate 5-lipoxygenase (prostaglandin D2),,-2
-MAR03992,NADH:ferricytochrome-b5 oxidoreductase,,2
 MAR04007,acyl-CoA oxidase (gamma-tocopheroxyl-radical),,1
 MAR04015,Methionine Synthase,,4
 MAR04027,Microsomal Epoxide Hydrolase,,2
@@ -116,7 +108,6 @@ MAR04768,uroporphyrin III to uroporphyrinogen III conversion,,-6
 MAR04769,uroporphyrin I to uroporphyrinogen III conversion,,-6
 MAR04770,coproporphyrin III to coproporphyrinogen III conversion,,-6
 MAR04773,coproporphyrin I to coproporphyrinogen I conversion,,-6
-MAR04842,aldehyde dehydrogenase [NAD(P)(+)] (SAM),,-1
 MAR05155,glycyl-tRNA(gly) phosphorylation,C:-611;H:-1000;N:-165;O:-176;R:1;S:-7,
 MAR05156,glycyl-tRNA(gly) phosphorylation,C:-452;H:-708;N:-103;O:-143;R:1;S:-6,
 MAR05266,apo-[ACP] phosphorylation,C:611;H:1000;N:165;O:176;R:-1;S:7,
@@ -161,9 +152,7 @@ MAR07164,exodeoxyribonuclease III (RNA),C:-5.48;H:-11.18;N:3.86;O:-12;P:-2;R:-3,
 MAR07197,[protein] to [protein]-L-serine conversion,C:-4;H:-5;N:-2;O:-3;R:-2;X:1,
 MAR07282,[protein] to [protein]-L-asparagine conversion,C:-5;H:-6;N:-3;O:-3;R:-2;X:1,
 MAR07601,plasmanylethanolamine desaturase,C:2;H:4,
-MAR07741,Ferredoxin:NADP+ oxidoreductase,,-2
 MAR08615,ATP:cob(I)alamin Co-beta-adenosyltransferase,,1
-MAR09487,NAD+:poly(adenosine diphosphate D-ribose)ADP-D-ribosyltransferase,,2
 MAR09491,E2 ubiquitin-conjugating enzyme ([protein]-L-lysine),,-1
 MAR10061,fatty acyl-CoA reduction,C:-1;H:-2,
 MAR12995,MDZGLChr,,-1
