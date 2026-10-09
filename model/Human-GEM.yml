@@ -10626,13 +10626,6 @@
     - formula: C9H7O3
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM00982c
-    - name: 4-coumaroyl-CoA
-    - compartment: c
-    - charge: -4.0
-    - formula: C30H38N7O18P3S1
-    - metFrom: HMRdatabase
-  - !!omap
     - id: MAM00983c
     - name: 4-hydroperoxy-2-nonenal
     - compartment: c
@@ -10785,13 +10778,6 @@
     - compartment: m
     - charge: -1.0
     - formula: C7H5O3
-    - metFrom: HMRdatabase
-  - !!omap
-    - id: MAM00996c
-    - name: 4-hydroxybenzoyl-CoA
-    - compartment: c
-    - charge: -4.0
-    - formula: C28H36N7O18P3S
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00997c
@@ -38283,13 +38269,6 @@
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM01004m
-    - name: 4-hydroxyphenyllactate
-    - compartment: m
-    - charge: -1.0
-    - formula: C9H9O4
-    - metFrom: Recon3D
-  - !!omap
     - id: MAM00799c
     - name: 3-hydroxypropionyl-CoA
     - compartment: c
@@ -58382,6 +58361,13 @@
     - charge: 2.0
     - formula: Ca
     - metFrom: HumanGEM
+  - !!omap
+    - id: MAM20092m
+    - name: (S)-4-hydroxymandelate
+    - compartment: m
+    - charge: -1.0
+    - formula: C8H7O4
+    - metFrom: HumanGEM
 - reactions:
   - !!omap
     - id: MAR03905
@@ -75056,74 +75042,6 @@
       - ec-code:
         - 1.1.1.110
         - 1.1.1.237
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06783
-    - name: 3-(4-hydroxyphenyl)lactate hydro-lyase (4-coumarate-forming)
-    - metabolites: !!omap
-      - MAM00981c: 1.0
-      - MAM01004c: -1.0
-      - MAM02040c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06784
-    - name: 4-Coumarate:CoA ligase (AMP-forming)
-    - metabolites: !!omap
-      - MAM00981c: -1.0
-      - MAM00982c: 1.0
-      - MAM01334c: 1.0
-      - MAM01371c: -1.0
-      - MAM01597c: -1.0
-      - MAM02759c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - annotation: !!omap
-      - ec-code:
-        - 6.2.1.12
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06785
-    - name: 4-coumaroyl-CoA oxidation
-    - metabolites: !!omap
-      - MAM00982c: -1.0
-      - MAM00996c: 1.0
-      - MAM01261c: 1.0
-      - MAM01597c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02552c: -1.0
-      - MAM02553c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06786
-    - name: 4-Hydroxybenzoyl-CoA hydrolase
-    - metabolites: !!omap
-      - MAM00995c: 1.0
-      - MAM00996c: -1.0
-      - MAM01597c: 1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - annotation: !!omap
-      - ec-code:
-        - 3.1.2.23
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -196614,22 +196532,6 @@
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
-    - id: MAR00040
-    - name: 3- (4-Hydroxyphenyl-)Lactate Formation
-    - metabolites: !!omap
-      - MAM01004m: 1.0
-      - MAM01005m: -1.0
-      - MAM02039m: -1.0
-      - MAM02552m: 1.0
-      - MAM02553m: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Ubiquinone synthesis
-    - references: PMID:11583838;PMID:12232327
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR00041
     - name: Hydroxylation of 3-Decaprenyl-4-Hydroxybenzoate (NADH)
     - metabolites: !!omap
@@ -196735,9 +196637,10 @@
     - upper_bound: 1000.0
     - subsystem:
       - Ubiquinone synthesis
-    - references: PMID:11583838;PMID:12232327
+    - references: PMID:11583838;PMID:12232327;PMID:25681964
     - rxnFrom: Recon3D
     - confidence_score: 0.0
+    - notes: "Route from dietary 4-coumarate to the CoQ head group: human and mouse cells make CoQ from 13C-coumarate (PMID:25681964); the human enzymes are not known."
   - !!omap
     - id: MAR00048
     - name: 4-Hydroxybenzoate Formation
@@ -196751,9 +196654,10 @@
     - upper_bound: 1000.0
     - subsystem:
       - Ubiquinone synthesis
-    - references: PMID:11583838;PMID:12232327
+    - references: PMID:11583838;PMID:12232327;PMID:25681964
     - rxnFrom: Recon3D
     - confidence_score: 0.0
+    - notes: "Route from dietary 4-coumarate to the CoQ head group: human and mouse cells make CoQ from 13C-coumarate (PMID:25681964); the human enzymes are not known."
   - !!omap
     - id: MAR00049
     - name: 4-Methylpentanal Transport, Endoplasmatic Reticulum
@@ -198138,9 +198042,10 @@
     - annotation: !!omap
       - ec-code:
         - 6.2.1.12
-    - references: PMID:11583838;PMID:12232327
+    - references: PMID:11583838;PMID:12232327;PMID:25681964
     - rxnFrom: Recon3D
     - confidence_score: 0.0
+    - notes: "Route from dietary 4-coumarate to the CoQ head group: human and mouse cells make CoQ from 13C-coumarate (PMID:25681964); the human enzymes are not known."
   - !!omap
     - id: MAR00136
     - name: Crmp Hs Transport
@@ -203692,20 +203597,6 @@
     - annotation: !!omap
       - ec-code:
         - 2.4.3.7
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR01724
-    - name: 4-Hydroxycinnamate Formation
-    - metabolites: !!omap
-      - MAM00981m: 1.0
-      - MAM01004m: -1.0
-      - MAM02040m: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Ubiquinone synthesis
-    - references: PMID:11583838;PMID:12232327
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -241133,20 +241024,6 @@
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
-    - id: MAR11357
-    - name: Transport of 3-(4-Hydroxyphenyl)Lactate, Mitochondrial
-    - metabolites: !!omap
-      - MAM01004c: -1.0
-      - MAM01004m: 1.0
-      - MAM02039c: -1.0
-      - MAM02039m: 1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Transport reactions
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR11358
     - name: Transport of 3-Hydroxy-Isobutyrate, Mitochondrial
     - metabolites: !!omap
@@ -271780,6 +271657,44 @@
     - references: PMID:9736609;PMID:20439740
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
+  - !!omap
+    - id: MAR20218
+    - name: 4-hydroxymandelate synthase
+    - metabolites: !!omap
+      - MAM01005m: -1.0
+      - MAM01596m: 1.0
+      - MAM02630m: -1.0
+      - MAM20092m: 1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000186603
+    - subsystem:
+      - Ubiquinone synthesis
+    - annotation: !!omap
+      - ec-code:
+        - 1.13.11.46
+    - references: PMID:34471290
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+  - !!omap
+    - id: MAR20219
+    - name: (S)-4-hydroxymandelate to 4-hydroxybenzoate (lumped)
+    - metabolites: !!omap
+      - MAM00995m: 1.0
+      - MAM01596m: 1.0
+      - MAM02039m: 2.0
+      - MAM02040m: -1.0
+      - MAM02552m: -2.0
+      - MAM02553m: 2.0
+      - MAM20092m: -1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Ubiquinone synthesis
+    - references: PMID:34471290;PMID:40634618
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: Lumps the oxidation of (S)-4-hydroxymandelate, the decarboxylation and the oxidation of 4-hydroxybenzaldehyde to the CoQ head group; the human enzymes are not known. The electron acceptors (2 NAD+) are assumed.
 - genes:
   - !!omap
     - id: ENSG00000000419
@@ -280373,6 +280288,9 @@
   - !!omap
     - id: ENSG00000132763
     - name: MMACHC
+  - !!omap
+    - id: ENSG00000186603
+    - name: HPDL
 - compartments: !!omap
   - c: Cytosol
   - e: Extracellular

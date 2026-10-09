@@ -1,5 +1,4 @@
 reaction	compartments	type	dGm_kJ_per_mol	sd_kJ_per_mol	stoichiometry_hash
-MAR00040	m	single	-70.3	4.6	8a8806f5db
 MAR00041	m	single	-419.8	3.8	387fe2e311
 MAR00043	c	single	-57.7	3.2	f9071cb9ae
 MAR00044	c	single	22.2	2.9	b04234f0b3
@@ -665,7 +664,6 @@ MAR01718	c	single	-45.3	1.4	0f9978c04d
 MAR01720	x	single	-30.5	1.9	4f99b77c72
 MAR01722	c	single	-27.6	2.6	204b35ef28
 MAR01723	c	single	-31.5	1.9	6604e380ee
-MAR01724	m	single	-0.4	1.5	c32bd86ff2
 MAR01726	c	single	-11.6	1.5	e3d928f940
 MAR01727	r	single	-11.6	1.5	42319e7862
 MAR01729	c	single	-251.4	70714.2	3ae1e8fc69
@@ -2600,10 +2598,6 @@ MAR06778	c	single	-91.7	3.8	1e6bb9fe7f
 MAR06779	cx	multi	-90.6	1.5	adee2dac9a
 MAR06780	m	single	0.2	2.1	0b1a1bcab0
 MAR06782	c	single	-75.0	4.6	2e3bd28827
-MAR06783	c	single	-0.4	1.5	9c625fc4c6
-MAR06784	c	single	-11.9	1.5	47196ba697
-MAR06785	c	single	-13.6	1.9	61d9bb4a56
-MAR06786	c	single	-43.6	1.4	edb2b26a1e
 MAR06787	c	single	-86.5	5.1	99f010a76a
 MAR06788	c	single	6.2	100007.1	0402363839
 MAR06789	c	single	-110.6	4.6	cbd81166b6
