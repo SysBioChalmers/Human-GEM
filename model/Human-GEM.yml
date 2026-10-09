@@ -147462,14 +147462,14 @@
     - notes: MTRR reduces aquacobalamin with NADPH; MMACHC does so with glutathione in vitro, without O2. NADPH is written for both.
   - !!omap
     - id: MAR08615
-    - name: ATP:cob(I)alamin Co-beta-adenosyltransferase
+    - name: cob(II)alamin reduction
     - metabolites: !!omap
-      - MAM01598m: 1.0
-      - MAM01599m: -1.0
+      - MAM01598m: 2.0
+      - MAM01599m: -2.0
       - MAM02039m: 1.0
-      - MAM02552m: 1.0
-      - MAM02553m: -1.0
-    - lower_bound: -1000.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000139428
     - subsystem:
@@ -147477,8 +147477,10 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.17
+    - references: PMID:37526260
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: One-electron reduction of cob(II)alamin bound to MMAB, the partial reaction of EC 2.5.1.17 (RHEA:56792); in vitro FDXR and FDX1 with NADPH supply the electrons.
   - !!omap
     - id: MAR08616
     - name: ATP:cob(I)alamin Co-beta-adenosyltransferase
