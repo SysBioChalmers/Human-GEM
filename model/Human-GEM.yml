@@ -147611,7 +147611,7 @@
       - MAM02553m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000139428 or ENSG00000151611
+    - gene_reaction_rule: ENSG00000139428
     - subsystem:
       - Vitamin B12 metabolism
     - annotation: !!omap
@@ -147628,9 +147628,9 @@
       - MAM01600m: 1.0
       - MAM02039m: -1.0
       - MAM03057m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000139428 or ENSG00000151611
+    - gene_reaction_rule: ENSG00000139428
     - subsystem:
       - Vitamin B12 metabolism
     - annotation: !!omap
@@ -183192,11 +183192,11 @@
       - MAM01599m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000151611
     - subsystem:
       - Transport reactions
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Cobalamin enters mitochondria, but the importer is not known.
   - !!omap
     - id: MAR08627
     - name: transport of N-acetyl-L-aspartate (cytosol to mitochondria)
@@ -276782,9 +276782,6 @@
   - !!omap
     - id: ENSG00000151576
     - name: QTRT2
-  - !!omap
-    - id: ENSG00000151611
-    - name: MMAA
   - !!omap
     - id: ENSG00000151632
     - name: AKR1C2
