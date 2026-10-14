@@ -43,7 +43,7 @@ An issue moves through these steps:
 3. When that pull request is merged, `wip` is replaced by `fixed in develop`. The issue stays open, because the change is not yet released.
 4. At the next release, `fixed in develop` is removed and the issue is closed.
 
-Steps 2 and 3 are done by the `Issue labels` workflow (`.github/workflows/issue-labels.yml`). An issue that will not be implemented is closed as "not planned", and a duplicate is closed as "duplicate" with a link to the other issue.
+Steps 2 and 3 are done by the `Issue labels` workflow (`.github/workflows/issue-labels.yml`), and step 4 by the `Release` workflow (`.github/workflows/release.yml`), which comments on each closed issue with the release that contains its fix. An issue that will not be implemented is closed as "not planned", and a duplicate is closed as "duplicate" with a link to the other issue.
 
 
 ### Contributing to the model/annotation
