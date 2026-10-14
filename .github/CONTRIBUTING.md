@@ -23,10 +23,32 @@ When creating the issue, please make sure:
 
 Feel free to also comment on any of the [open issues](https://github.com/SysBioChalmers/Human-GEM/issues).
 
+To propose a specific correction or addition to the model, use the **Curation proposal** issue template. It asks for the current state, the evidence, the proposed change, counter-arguments and the expected effect.
+
+### Labels and issue lifecycle
+
+| Label | Meaning |
+| --- | --- |
+| `bug` | The model or code is wrong. |
+| `feature` | Something new: a reaction, pathway, dataset or function. |
+| `discussion` | A decision is needed before anyone implements a change. |
+| `question` | A question about the model or its use. |
+| `wip` | A pull request for this issue is open. |
+| `fixed in develop` | The change is merged into `develop` and will be in the next release. |
+
+An issue moves through these steps:
+
+1. A maintainer sets `bug`, `feature`, `question` or `discussion`.
+2. When a pull request with `Closes #nnn` in its description is opened against `develop`, issue `#nnn` gets `wip`.
+3. When that pull request is merged, `wip` is replaced by `fixed in develop`. The issue stays open, because the change is not yet released.
+4. At the next release, `fixed in develop` is removed and the issue is closed.
+
+Steps 2 and 3 are done by the `Issue labels` workflow (`.github/workflows/issue-labels.yml`). An issue that will not be implemented is closed as "not planned", and a duplicate is closed as "duplicate" with a link to the other issue.
+
 
 ### Contributing to the model/annotation
 
-If you want to contribute to the model with some additions or improvements, please always start by raising an issue for asking/describing what you want to achieve. This way, we reduce the risk of duplicated efforts and you may also get suggestions on how to best proceed, e.g. there may be half-finished work in some branch that you could work with. Also, feel free to browse our [open issues](https://github.com/SysBioChalmers/Human-GEM/issues) and our [ongoing projects](https://github.com/SysBioChalmers/Human-GEM/projects): Anything tagged with "help wanted" is open to whoever wants to implement it.
+If you want to contribute to the model with some additions or improvements, please always start by raising an issue for asking/describing what you want to achieve (for model changes, use the Curation proposal template). This way, we reduce the risk of duplicated efforts and you may also get suggestions on how to best proceed, e.g. there may be half-finished work in some branch that you could work with. Also, feel free to browse our [open issues](https://github.com/SysBioChalmers/Human-GEM/issues) and our [ongoing projects](https://github.com/SysBioChalmers/Human-GEM/projects): Anything tagged with "help wanted" is open to whoever wants to implement it.
 
 
 Here's how to set up Human-GEM to contribute small features or changes. This should work for most curation work.
