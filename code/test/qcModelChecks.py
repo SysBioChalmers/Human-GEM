@@ -9,14 +9,14 @@ Checks split into two kinds:
 
   * Gates (fail the build): a model that has these problems is broken.
       - duplicate keys inside an !!omap entry (cobra cannot load the model);
-      - reactions with no metabolites;
-      - the model and its annotation tables (reactions.tsv / metabolites.tsv /
-        genes.tsv) disagree, or a deprecated identifier is used;
       - the model cannot produce biomass on a defined medium (Ham's medium from the
         GR metabolic task, each nutrient's uptake capped; the blocking biomass
         precursors are written out so it can be fixed).
   * Reports (do not fail): quality metrics tracked with a delta versus the
       target branch.
+      - reactions with no metabolites;
+      - the model and its annotation tables (reactions.tsv / metabolites.tsv /
+        genes.tsv) disagree, or a deprecated identifier is used;
       - metabolites missing a formula or a charge;
       - reaction bound / GPR sanity;
       - exact-duplicate reactions (same stoichiometry);

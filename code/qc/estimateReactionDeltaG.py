@@ -1,7 +1,7 @@
 """Estimate the Gibbs energy of Human-GEM reactions with eQuilibrator.
 
 Writes data/thermodynamics/reactionDeltaG.tsv, the table that the reversibility check
-in code/test/qcModelChecks.py reads. The estimate is ΔG'm, the transformed Gibbs
+in code/test/reversibilityTest.py reads. The estimate is ΔG'm, the transformed Gibbs
 energy with every reactant at 1 mM, at the pH of the reaction's compartment, an ionic
 strength of 0.25 M and pMg 3, from component contribution (eQuilibrator).
 
