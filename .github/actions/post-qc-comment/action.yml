@@ -65,14 +65,17 @@ runs:
           // The condensed, one-row-per-section report; model_qc_summary.md (full detail,
           // every check) is committed alongside it and linked from within this report.
           // Its links are relative to data/testResults; a link without a scheme, an
-          // anchor or a leading slash gets the branch URL in front.
-          const base = (process.env.RESULTS_URL_BASE || '').replace(/\/+$/, '');
+          // anchor or a leading slash gets the branch URL in front. Without the
+          // results-url-base input, the URL is built from the branch of this run.
+          const { owner, repo } = context.repo;
+          const branch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF_NAME;
+          const base = (process.env.RESULTS_URL_BASE
+            || `${context.serverUrl}/${owner}/${repo}/blob/${branch}/data/testResults`).replace(/\/+$/, '');
           const report = fs.readFileSync('data/testResults/model_qc_comment.md', 'utf8')
             .replace(/\]\((?![a-z][a-z0-9+.-]*:|#|\/)([^)\s]+)\)/gi,
-                     (link, path) => base ? `](${base}/${path})` : link);
+                     (link, path) => `](${base}/${path})`);
           const footer = `\n\n[Full workflow run](${{ inputs.run-url }}) &middot; _this comment is edited as results come in_`;
           const body = `${marker}\n${report}${footer}`;
-          const { owner, repo } = context.repo;
           const issue_number = process.env.ISSUE_NUMBER ? Number(process.env.ISSUE_NUMBER) : context.issue.number;
 
           // The GitHub API occasionally returns a transient 5xx (e.g. a 503 "Unicorn"
