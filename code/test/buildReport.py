@@ -26,9 +26,14 @@ Only two conditions fail the build: the model cannot load (duplicate `!!omap` ke
 cannot grow. Everything else is reported but does not block; a red x just flags a
 regression for review.
 
+Both files link to the CSVs and to each other relative to data/testResults, so the links
+do not depend on the branch and keep working after the pull request is merged. The
+post-qc-comment action prefixes these relative links with the branch URL when it posts
+the comment, where a relative link would resolve against the pull-request page.
+
 Usage:
     RUNNING_GROUPS=<all|memote|...> BASE_RESULTS_DIR=<dir> BASE_REF=<branch> \
-        RESULTS_URL_BASE=<url> python code/test/buildReport.py
+        python code/test/buildReport.py
 """
 
 import csv
@@ -45,11 +50,6 @@ COMMENT_MD = RESULTS / "model_qc_comment.md"
 BASE_DIR = os.environ.get("BASE_RESULTS_DIR", "")
 BASE_REF = os.environ.get("BASE_REF", "the target branch")
 COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
-# e.g. https://github.com/OWNER/REPO/blob/<branch>/data/testResults - used by the posted
-# comment to link each finding count to its CSV (relative links do not resolve in a
-# comment). The full-detail file uses relative links. Empty when run locally (then the
-# comment's counts are plain text).
-URL_BASE = os.environ.get("RESULTS_URL_BASE", "").rstrip("/")
 
 # Groups whose results are still being computed on this run; their rows show as
 # "running". The workflow passes this on each call - "all" before anything has run,
@@ -348,17 +348,15 @@ def _icon(value, base, kind):
     return "0", ":white_check_mark:", False, False
 
 
-def _cell(value, kind, detail, *, bold: bool = False, relative: bool = False) -> str:
-    """The value, linked to its detail CSV when it is a positive count or a growth
-    failure. relative=True links next to the file (the full-detail file, which sits in
-    the same folder as the CSVs); otherwise the absolute URL is used, as the posted
-    comment needs, and the value stays plain when the repo URL is not known."""
+def _cell(value, kind, detail, *, bold: bool = False) -> str:
+    """The value, linked to its detail CSV (relative to data/testResults) when it is a
+    positive count or a growth failure."""
     text = f"{value:.3g}" if kind == "growth" else (f"{value:.1f}" if kind == "score" else str(int(value)))
     if bold:
         text = f"**{text}**"
     linkable = (kind == "count" and value) or (kind == "growth" and value <= 1e-6)
-    if detail and linkable and (relative or URL_BASE):
-        return f"[{text}]({detail if relative else f'{URL_BASE}/{detail}'})"
+    if detail and linkable:
+        return f"[{text}]({detail})"
     return text
 
 
@@ -393,7 +391,7 @@ def _full_table(computed: list[dict]) -> list[str]:
         if r["pending"]:
             lines.append(f"| {name} | _running_ | | :hourglass_flowing_sand: |")
         else:
-            lines.append(f"| {name} | {_cell(r['value'], r['kind'], r['detail'], relative=True)} | "
+            lines.append(f"| {name} | {_cell(r['value'], r['kind'], r['detail'])} | "
                           f"{r['delta']} | {r['icon']} |")
     return lines
 
@@ -625,8 +623,7 @@ def main() -> int:
     verdict += _gates_line(current, base)
 
     # --- condensed comment: one row per section, only non-clean checks named ---
-    full_url = f"{URL_BASE}/model_qc_summary.md" if URL_BASE else ""
-    full_report_status = f"[model_qc_summary.md]({full_url})" if full_url else "`model_qc_summary.md`"
+    full_report_status = "[model_qc_summary.md](model_qc_summary.md)"
     section_table = [
         "| Section | Status |",
         "| --- | --- |",
