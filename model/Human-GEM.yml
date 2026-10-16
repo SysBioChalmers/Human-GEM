@@ -163103,7 +163103,7 @@
       - MAM02426e: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
+    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163119,7 +163119,7 @@
       - MAM02658e: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
+    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163135,7 +163135,7 @@
       - MAM02426e: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
+    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163151,7 +163151,7 @@
       - MAM02426e: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
+    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163167,7 +163167,7 @@
       - MAM02658e: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
+    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163183,7 +163183,7 @@
       - MAM02125e: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
+    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163199,7 +163199,7 @@
       - MAM01588e: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
+    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163215,7 +163215,7 @@
       - MAM02658e: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
+    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163249,7 +163249,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163267,7 +163266,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163285,7 +163283,6 @@
       - MAM02896e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163303,7 +163300,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163321,7 +163317,6 @@
       - MAM03089e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163339,7 +163334,6 @@
       - MAM02724e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163357,7 +163351,6 @@
       - MAM03101e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163375,7 +163368,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163393,7 +163385,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163411,7 +163402,6 @@
       - MAM02770e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163446,7 +163436,6 @@
       - MAM03135e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163481,7 +163470,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163499,7 +163487,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163517,7 +163504,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163535,7 +163521,7 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281
+    - gene_reaction_rule: ENSG00000105281
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163571,7 +163557,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163589,7 +163574,6 @@
       - MAM03089e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163607,7 +163591,6 @@
       - MAM02724e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163625,7 +163608,6 @@
       - MAM03101e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163661,7 +163643,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163679,7 +163660,6 @@
       - MAM02770e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163732,7 +163712,7 @@
       - MAM02993e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281 or ENSG00000115902
+    - gene_reaction_rule: ENSG00000105281 or ENSG00000115902
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163750,7 +163730,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163768,7 +163747,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163786,7 +163764,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163822,7 +163799,7 @@
       - MAM02896e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281
+    - gene_reaction_rule: ENSG00000105281
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163840,7 +163817,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163858,7 +163834,6 @@
       - MAM03089e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163876,7 +163851,6 @@
       - MAM02724e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163894,7 +163868,6 @@
       - MAM03101e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163912,7 +163885,7 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281
+    - gene_reaction_rule: ENSG00000105281
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163930,7 +163903,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163948,7 +163920,6 @@
       - MAM02770e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -163984,7 +163955,6 @@
       - MAM03135e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164002,7 +163972,7 @@
       - MAM02993e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281
+    - gene_reaction_rule: ENSG00000105281
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164020,7 +163990,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164038,7 +164007,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164056,7 +164024,6 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164110,7 +164077,6 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164128,7 +164094,6 @@
       - MAM03089e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164146,7 +164111,6 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164164,7 +164128,6 @@
       - MAM03101e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164182,7 +164145,7 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281 or ENSG00000115902
+    - gene_reaction_rule: ENSG00000105281 or ENSG00000115902
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164200,7 +164163,6 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164218,7 +164180,6 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164254,7 +164215,6 @@
       - MAM03135e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164290,7 +164250,6 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164308,7 +164267,6 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164326,7 +164284,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164344,7 +164301,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164362,7 +164318,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164380,7 +164335,6 @@
       - MAM02896e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164398,7 +164352,6 @@
       - MAM03089e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164416,7 +164369,6 @@
       - MAM02724e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164434,7 +164386,6 @@
       - MAM03101e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164452,7 +164403,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164470,7 +164420,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164488,7 +164437,6 @@
       - MAM02770e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164506,7 +164454,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164524,7 +164471,6 @@
       - MAM03135e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164542,7 +164488,6 @@
       - MAM02993e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164560,7 +164505,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164578,7 +164522,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164596,7 +164539,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164614,7 +164556,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164632,7 +164573,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164650,7 +164590,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164668,7 +164607,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164686,7 +164624,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164704,7 +164641,6 @@
       - MAM03101e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164722,7 +164658,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164740,7 +164675,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164758,7 +164692,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164776,7 +164709,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164794,7 +164726,6 @@
       - MAM03135e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164812,7 +164743,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164830,7 +164760,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164848,7 +164777,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000103257 and ENSG00000168003)
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164883,7 +164811,6 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164901,7 +164828,6 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164953,7 +164879,6 @@
       - MAM03089e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -164971,7 +164896,6 @@
       - MAM03101e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165006,7 +164930,6 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165041,7 +164964,6 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165110,7 +165032,6 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165162,7 +165083,6 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165180,7 +165100,6 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165249,7 +165168,6 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165301,7 +165219,6 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165370,7 +165287,6 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165388,7 +165304,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165424,7 +165339,7 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281 or ENSG00000115902
+    - gene_reaction_rule: ENSG00000105281 or ENSG00000115902
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165460,7 +165375,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165478,7 +165392,6 @@
       - MAM03089e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165530,7 +165443,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165548,7 +165460,6 @@
       - MAM02770e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165636,7 +165547,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165654,7 +165564,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165689,7 +165598,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165724,7 +165632,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165742,7 +165649,6 @@
       - MAM03089e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165760,7 +165666,6 @@
       - MAM02724e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165795,7 +165700,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165830,7 +165734,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165899,7 +165802,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -165934,7 +165836,6 @@
       - MAM02770e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166071,7 +165972,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166125,7 +166025,7 @@
       - MAM02896e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281
+    - gene_reaction_rule: ENSG00000105281
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166195,7 +166095,7 @@
       - MAM02993e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281
+    - gene_reaction_rule: ENSG00000105281
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166247,7 +166147,6 @@
       - MAM03135e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166265,7 +166164,6 @@
       - MAM03135e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166300,7 +166198,6 @@
       - MAM03135e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166386,7 +166283,6 @@
       - MAM03135e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166404,7 +166300,6 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166440,7 +166335,7 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281
+    - gene_reaction_rule: ENSG00000105281
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166458,7 +166353,7 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or ENSG00000105281 or ENSG00000115902
+    - gene_reaction_rule: ENSG00000105281 or ENSG00000115902
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166493,7 +166388,6 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166529,7 +166423,6 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166599,7 +166492,6 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166702,7 +166594,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166720,7 +166611,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166755,7 +166645,6 @@
       - MAM03089e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166773,7 +166662,6 @@
       - MAM03101e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166791,7 +166679,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166826,7 +166713,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166895,10 +166781,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -166913,10 +166799,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -166931,10 +166817,10 @@
       - MAM02658e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -166949,7 +166835,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -166967,10 +166852,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -166985,10 +166870,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167003,10 +166888,10 @@
       - MAM02658e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167021,7 +166906,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167039,7 +166923,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167057,10 +166940,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167075,10 +166958,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167093,10 +166976,10 @@
       - MAM02658e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167111,7 +166994,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167129,7 +167011,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167165,10 +167046,10 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167183,10 +167064,10 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167201,7 +167082,6 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167219,7 +167099,6 @@
       - MAM02896e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167237,10 +167116,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167255,10 +167134,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167273,10 +167152,10 @@
       - MAM02658e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167291,7 +167170,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167309,7 +167187,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167327,10 +167204,10 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167345,10 +167222,10 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167363,10 +167240,10 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167381,7 +167258,6 @@
       - MAM03089e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167399,10 +167275,10 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167417,10 +167293,10 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167435,10 +167311,10 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167453,7 +167329,6 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167471,7 +167346,6 @@
       - MAM02724e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167489,10 +167363,10 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167507,10 +167381,10 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167525,10 +167399,10 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167543,7 +167417,6 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167561,7 +167434,6 @@
       - MAM03101e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167579,10 +167451,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167597,10 +167469,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167615,10 +167487,10 @@
       - MAM02658e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167633,7 +167505,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167651,7 +167522,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167669,10 +167539,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167705,10 +167575,10 @@
       - MAM02658e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167723,7 +167593,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167758,10 +167627,10 @@
       - MAM02770e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167776,10 +167645,10 @@
       - MAM02770e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167794,10 +167663,10 @@
       - MAM02770e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167812,7 +167681,6 @@
       - MAM02770e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167830,7 +167698,6 @@
       - MAM02770e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167848,10 +167715,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167866,10 +167733,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167884,10 +167751,10 @@
       - MAM02658e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167902,7 +167769,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167920,10 +167786,10 @@
       - MAM03135e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167938,10 +167804,10 @@
       - MAM03135e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167956,10 +167822,10 @@
       - MAM03135e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -167974,7 +167840,6 @@
       - MAM03135e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -167992,10 +167857,10 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -168010,10 +167875,10 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -168028,10 +167893,10 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -168046,7 +167911,6 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -168064,7 +167928,6 @@
       - MAM02993e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -168082,10 +167945,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -168100,10 +167963,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -168118,10 +167981,10 @@
       - MAM02658e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -168136,7 +167999,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -168154,10 +168016,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -168172,10 +168034,10 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -168190,10 +168052,10 @@
       - MAM02658e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103064 and ENSG00000168003) or (ENSG00000155465 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:14770309;PMID:14770310
+    - references: PMID:14770309;PMID:14770310;doi:10.1074/jbc.273.49.32437
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -168208,7 +168070,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -168226,7 +168087,6 @@
       - MAM02519e: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103064 and ENSG00000168003
     - subsystem:
       - Transport reactions
     - references: PMID:14770309;PMID:14770310
@@ -222118,10 +221978,10 @@
       - MAM02724e: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000103257 and ENSG00000168003
+    - gene_reaction_rule: (ENSG00000103257 and ENSG00000168003) or (ENSG00000092068 and ENSG00000168003)
     - subsystem:
       - Transport reactions
-    - references: PMID:17896864;PMID:29773791
+    - references: PMID:17896864;PMID:29773791;doi:10.1016/j.ccell.2018.02.005;doi:10.1038/s41590-023-01662-3
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
