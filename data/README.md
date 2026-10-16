@@ -4,9 +4,9 @@ This directory contains datasets, metabolic task files, and log files that suppo
 
 ### metabolicTasks
 Contains metabolic task files used for evaluating the functionality of Human-GEM.
-- `metabolicTasks_Essential.xlsx`: Metabolic tasks that are necessary for cell viability.
-- `metabolicTasks_Full.xlsx`: A longer list of metabolic tasks which contains some functions that may not be relevant for all cell or tissue types. However, all of these tasks should pass for the generic Human-GEM.
-- `metabolicTasks_VerifyModel.xlsx`: Metabolic tasks designed to verify that the model is properly mass and energy balanced, and exhibits a biologically meaningful solution space.
+- `metabolicTasks_Essential.txt`: Metabolic tasks that are necessary for cell viability.
+- `metabolicTasks_Full.txt`: A longer list of metabolic tasks which contains some functions that may not be relevant for all cell or tissue types. However, all of these tasks should pass for the generic Human-GEM.
+- `metabolicTasks_VerifyModel.txt`: Metabolic tasks designed to verify that the model is properly mass and energy balanced, and exhibits a biologically meaningful solution space.
 
 ### modelCuration
 Contains curation-related data files used for making changes to the Human-GEM model. These model curation data files help to improve transparency of changes made to the model.
@@ -15,3 +15,7 @@ Note that many of the data files associated with model curation were outdated an
 
 ### deprecatedIdentifiers
 Contains the `tsv` files with reaction and metabolite annotation, identical to that in `/model/` for those identifiers that have been used in Human-GEM and subsequently removed. The identifiers are kept here so as to avoid accidentally reusing them in the future.
+### thermodynamics
+Data for the reversibility check in the Model QC workflow (see `data/testResults/README.md`).
+- `reactionDeltaG.tsv`: ΔG'm (all reactants at 1 mM, at the compartment's pH) of the reactions that eQuilibrator can estimate, with its uncertainty and a hash of the stoichiometry it was estimated for. Made with `code/qc/estimateReactionDeltaG.py`; the Model QC workflow estimates new and changed reactions on every pull request and commits the updated table.
+- `reversibilityExceptions.tsv`: reactions that may keep a direction the check would call impossible, each with the reason.

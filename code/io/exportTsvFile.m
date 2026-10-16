@@ -1,9 +1,9 @@
 function exportTsvFile(data, filename, withQuotes)
 % exportTsvFile
 %
-%   Export structure or table to a tsv (or txt) file. String (char) entries
-%   will be enclosed in double quotes ("") by default, whereas numeric
-%   (double) entries will not.
+%   Export structure or table to a tsv (or txt) file. No entry is enclosed
+%   in double quotes ("") by default, matching the annotation files in
+%   model/. Quoting every string entry is available through withQuotes.
 %
 % Input:
 %
@@ -16,7 +16,7 @@ function exportTsvFile(data, filename, withQuotes)
 %              will automatically be appended as ".tsv".
 %
 %   withQuotes Enclose string elements with double quotes (opt, default is
-%              TRUE)
+%              FALSE)
 %
 %
 % Usage:
@@ -25,7 +25,7 @@ function exportTsvFile(data, filename, withQuotes)
 %
 
 if nargin < 3
-    withQuotes = true;
+    withQuotes = false;
 end
 
 if isstruct(data)

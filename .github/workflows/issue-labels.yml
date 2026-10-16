@@ -1,0 +1,66 @@
+name: Issue labels
+
+# Moves the issues that a pull request into develop closes through the issue
+# lifecycle described in CONTRIBUTING: `wip` while the pull request is open,
+# `fixed in develop` once it is merged. GitHub closes issues automatically only
+# for pull requests into the default branch (main), so these issues stay open
+# until the release.
+#
+# pull_request_target gives pull requests from forks a token that can label
+# issues. This workflow never checks out or runs code from the pull request; it
+# reads only the pull request description, passed through an environment
+# variable so that its text is never interpreted by the shell.
+on:
+  pull_request_target:
+    types: [opened, reopened, edited, closed]
+    branches: [develop]
+
+permissions:
+  issues: write
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Label the issues this pull request closes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BODY: ${{ github.event.pull_request.body }}
+          ACTION: ${{ github.event.action }}
+          STATE: ${{ github.event.pull_request.state }}
+          MERGED: ${{ github.event.pull_request.merged }}
+        run: |
+          # GitHub's closing keywords followed by #nnn. "Part of #nnn" does not
+          # match, so partial work leaves the issue's labels unchanged.
+          issues=$(printf '%s' "$BODY" \
+            | grep -oiE '\b(close[sd]?|fix(e[sd])?|resolve[sd]?):?[[:space:]]+#[0-9]+' \
+            | grep -oE '[0-9]+$' | sort -un || true)
+          if [ -z "$issues" ]; then
+            echo "The pull request description closes no issues."
+            exit 0
+          fi
+
+          for n in $issues; do
+            # The number can belong to a pull request or not exist at all.
+            if ! is_pr=$(gh api "repos/$GH_REPO/issues/$n" --jq 'has("pull_request")'); then
+              echo "::warning::#$n not found"
+              continue
+            fi
+            if [ "$is_pr" = "true" ]; then
+              echo "#$n is a pull request, skipped"
+              continue
+            fi
+
+            if [ "$ACTION" = "closed" ] && [ "$MERGED" = "true" ]; then
+              gh issue edit "$n" --add-label "fixed in develop" --remove-label wip
+              echo "#$n: wip -> fixed in develop"
+            elif [ "$ACTION" = "closed" ]; then
+              gh issue edit "$n" --remove-label wip
+              echo "#$n: wip removed (pull request closed without merge)"
+            elif [ "$STATE" = "open" ]; then
+              gh issue edit "$n" --add-label wip
+              echo "#$n: wip added"
+            fi
+          done

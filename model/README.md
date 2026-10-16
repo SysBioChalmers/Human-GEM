@@ -24,13 +24,14 @@ rxnHepatoNET1ID|HepatoNET1 reaction ID  |
 rxnREACTOMEID  |REACTOME ID             |
 rxnRecon3DID   |Recon3D reaction ID     |
 rxnMetaNetXID  |MetaNetX reaction ID    |
+rxnSeedID      |ModelSEED reaction ID   |
 rxnHMR2ID      |HMR2 reaction ID        |
 rxnRatconID    |Ratcon reaction ID      |
 rxnTCDBID      |TCDB ID                 |
 spontaneous    |1 if the reaction needs no enzyme: non-enzymatic chemistry, or diffusion (transport between cytosol and nucleus through nuclear pores, and gases and water across membranes). ftINIT always keeps these reactions in context-specific models.|
-rxnMAID        |MA reaction ID          |
 rxnRheaID      |Rhea ID                 |
 rxnRheaMasterID|Master Rhea ID          |
+rxnRetired     |Earlier identifiers of the reaction (for example `HMR_` IDs, or a `MAR` ID merged into this reaction), separated by `;`|
 
 
 * `metabolites.tsv` content:
@@ -53,7 +54,7 @@ metSmiles      |SMILES structure         |
 metInChI       |InChI structure          |
 metSeedID      |ModelSEED compound ID    |
 metHMR2ID      |HMR2 metabolite ID       |
-metMAID        |MA metabolite ID         |
+metRetired     |Earlier identifiers of the metabolite (for example `m` IDs from HMR, or a `MAM` ID merged into this metabolite), separated by `;`|
 
 
 * `genes.tsv` content:
@@ -68,6 +69,10 @@ geneSymbols   |Gene Symbol           |
 geneEntrezID  |NCBI Entrez ID        |
 geneNames     |Gene Name             |
 geneAliases   |Alias Names           |
+compartments  |Subcellular locations of the gene product, separated by `;`|
+compDataSource|Sources of the subcellular locations (for example SwissProt, DeepLoc2, CellAtlas), separated by `;`|
 
 
 To import/export this annotation data to/from MATLAB, use the `importTsvFile` and `exportTsvFile` functions, respectively.
+
+All three tables are tab-separated, and a field is enclosed in double quotes (`"`) only when its value contains a tab, a double quote or a newline. No field currently does, so the files carry no quotes. Every column holds text, including the all-digit identifier columns such as `geneEntrezID`.

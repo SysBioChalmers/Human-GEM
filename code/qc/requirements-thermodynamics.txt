@@ -1,0 +1,7 @@
+# Versions used to make data/thermodynamics/reactionDeltaG.tsv; keep them pinned so
+# estimates made in CI agree with the rest of the table.
+equilibrator-api==0.8.1
+equilibrator-cache==0.8.1
+component-contribution==0.8.0
+rdkit==2026.3.6
+pyyaml

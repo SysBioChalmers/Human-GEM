@@ -1,6 +1,6 @@
 reaction,name,compartments,equation
 MAR00483,sn-glycerol-3-phosphate:ubiquinone oxidoreductase,cm,sn-glycerol-3-phosphate + ubiquinone --> DHAP + ubiquinol
-MAR03481,ATP binding cassette subfamily D ((3R)-phytanoyl-CoA),cx,ATP + 2.0 H2O + (3R)-phytanoyl-CoA <=> ADP + CoA + 2.0 H+ + (3R)-phytanic acid + Pi
+MAR03481,ATP binding cassette subfamily D ((3R)-phytanoyl-CoA),cx,ATP + 2.0 H2O + (3R)-phytanoyl-CoA --> ADP + CoA + 2.0 H+ + (3R)-phytanic acid + Pi
 MAR04184,sulfite:ferricytochrome-c oxidoreductase,cm,2.0 ferricytochrome C + H2O + sulfite --> 2.0 ferrocytochrome C + 2.0 H+ + sulfate
 MAR04805,Absorption Or Uptake of 13-Docosenoic Acid into Cells,ce,ATP + cis-erucic acid + CoA --> AMP + PPi + 13-docosenoyl-CoA
 MAR06500,NADH:ubiquinone oxidoreductase (alpha-tocopheryl quinone),cm,alpha-tocopheryl quinone + 5.0 H+ + NADH --> alpha-tocopheryl hydroquinone + 4.0 H+ + NAD+
