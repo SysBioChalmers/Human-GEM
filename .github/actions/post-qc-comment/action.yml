@@ -22,7 +22,10 @@ inputs:
     required: false
     default: ""
   results-url-base:
-    description: Base URL that finding counts link to.
+    description: >-
+      URL of data/testResults on the branch. The rendered files link relative to that
+      folder; the posted comment prefixes those links with this URL, because a relative
+      link in a comment resolves against the pull-request page.
     required: false
     default: ""
   run-url:
@@ -46,7 +49,6 @@ runs:
         RUNNING_GROUPS: ${{ inputs.running-groups }}
         BASE_REF: ${{ inputs.base-ref }}
         BASE_RESULTS_DIR: ${{ inputs.base-dir }}
-        RESULTS_URL_BASE: ${{ inputs.results-url-base }}
       run: python code/test/buildReport.py
 
     - name: Create or update the comment
@@ -54,6 +56,7 @@ runs:
       uses: actions/github-script@v9
       env:
         ISSUE_NUMBER: ${{ inputs.issue-number }}
+        RESULTS_URL_BASE: ${{ inputs.results-url-base }}
       with:
         github-token: ${{ inputs.github-token }}
         script: |
@@ -61,10 +64,18 @@ runs:
           const marker = '<!-- MODEL-QC-COMMENT -->';
           // The condensed, one-row-per-section report; model_qc_summary.md (full detail,
           // every check) is committed alongside it and linked from within this report.
-          const report = fs.readFileSync('data/testResults/model_qc_comment.md', 'utf8');
+          // Its links are relative to data/testResults; a link without a scheme, an
+          // anchor or a leading slash gets the branch URL in front. Without the
+          // results-url-base input, the URL is built from the branch of this run.
+          const { owner, repo } = context.repo;
+          const branch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF_NAME;
+          const base = (process.env.RESULTS_URL_BASE
+            || `${context.serverUrl}/${owner}/${repo}/blob/${branch}/data/testResults`).replace(/\/+$/, '');
+          const report = fs.readFileSync('data/testResults/model_qc_comment.md', 'utf8')
+            .replace(/\]\((?![a-z][a-z0-9+.-]*:|#|\/)([^)\s]+)\)/gi,
+                     (link, path) => `](${base}/${path})`);
           const footer = `\n\n[Full workflow run](${{ inputs.run-url }}) &middot; _this comment is edited as results come in_`;
           const body = `${marker}\n${report}${footer}`;
-          const { owner, repo } = context.repo;
           const issue_number = process.env.ISSUE_NUMBER ? Number(process.env.ISSUE_NUMBER) : context.issue.number;
 
           // The GitHub API occasionally returns a transient 5xx (e.g. a 503 "Unicorn"

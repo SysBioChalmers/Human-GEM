@@ -90,7 +90,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 63.3% |
 | Annotation - Metabolites | Uniform Metabolite Identifier Namespace | 100.0% |
 | Annotation - Reactions | Presence of Reaction Annotation | 100.0% |
-| Annotation - Reactions | Reaction Annotations Per Database | 27.8% |
+| Annotation - Reactions | Reaction Annotations Per Database | 27.7% |
 | Annotation - Reactions | Reaction Annotation Conformity Per Database | 77.8% |
 | Annotation - Reactions | Uniform Reaction Identifier Namespace | 100.0% |
 | Annotation - Genes | Presence of Gene Annotation | 100.0% |
