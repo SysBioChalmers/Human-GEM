@@ -114409,7 +114409,7 @@
       - Steroid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116524,7 +116524,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116546,7 +116546,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116568,7 +116568,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116590,7 +116590,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116612,7 +116612,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116634,7 +116634,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
