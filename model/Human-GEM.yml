@@ -116572,7 +116572,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02032
-    - name: 19-hydroxyandrostenedione,NADPH-hemoprotein reductase:oxygen 19-oxidoreductase
+    - name: cytochrome P450 (4-androstene-3,17-dione)
     - metabolites: !!omap
       - MAM00431c: 1.0
       - MAM00971c: -1.0
