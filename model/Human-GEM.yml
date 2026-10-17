@@ -94404,9 +94404,10 @@
     - name: arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)
     - metabolites: !!omap
       - MAM01040c: -1.0
-      - MAM02039c: -2.0
+      - MAM01048c: 1.0
+      - MAM02026c: -2.0
+      - MAM02027c: 1.0
       - MAM02040c: 1.0
-      - MAM02364c: 1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -94416,7 +94417,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.13.11.31
-    - references: PMID:1326548;PMID:7929234
+    - references: PMID:1326548;PMID:7929234;doi:10.1016/s0022-2275(20)32129-5
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -94502,11 +94503,12 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00971
-    - name: arachidonate 5-lipoxygenase (5(S)-HETE)
+    - name: arachidonate 5-lipoxygenase (15(S)-HETE)
     - metabolites: !!omap
-      - MAM01040c: -1.0
+      - MAM00377c: -1.0
       - MAM01050c: 1.0
-      - MAM02039c: -2.0
+      - MAM02026c: -2.0
+      - MAM02027c: 1.0
       - MAM02040c: 1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
@@ -94517,7 +94519,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.13.11.34
-    - references: PMID:1326548;PMID:7929234
+    - references: PMID:1326548;PMID:7929234;doi:10.1042/bj3140911
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -94546,7 +94548,8 @@
     - metabolites: !!omap
       - MAM01123c: 1.0
       - MAM01126c: -1.0
-      - MAM02039c: -2.0
+      - MAM02026c: -2.0
+      - MAM02027c: 1.0
       - MAM02040c: 1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
@@ -94557,7 +94560,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.13.11.31
-    - references: PMID:7929234;PMID:1326548
+    - references: PMID:7929234;PMID:1326548;doi:10.1182/blood.V93.3.1086
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -96014,13 +96017,10 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01073
-    - name: arachidonate 12-lipoxygenase, 12S type (12(S)-HETE)
+    - name: arachidonate 12-lipoxygenase, 12S type (11,12-diHETE)
     - metabolites: !!omap
       - MAM00278c: 1.0
-      - MAM00307c: -1.0
-      - MAM02039c: -2.0
-      - MAM02040c: 1.0
-      - MAM02630c: -1.0
+      - MAM00309c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000108839
@@ -96029,6 +96029,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.13.11.31
+    - references: doi:10.1016/0005-2760(91)90286-q
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -96055,9 +96056,10 @@
     - name: arachidonate 5-lipoxygenase (12(S)-HETE)
     - metabolites: !!omap
       - MAM00307c: -1.0
-      - MAM02039c: -2.0
+      - MAM01048c: 1.0
+      - MAM02026c: -2.0
+      - MAM02027c: 1.0
       - MAM02040c: 1.0
-      - MAM02364c: 1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -96067,7 +96069,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.13.11.34
-    - references: PMID:9837935;PMID:2377602;PMID:10224163
+    - references: PMID:9837935;PMID:2377602;PMID:10224163;doi:10.1111/j.1432-1033.1996.00416.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
