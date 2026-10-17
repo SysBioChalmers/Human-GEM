@@ -95931,7 +95931,7 @@
       - Arachidonic acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.13.11.31
+        - 5.4.4.-
     - references: doi:10.1016/0005-2760(91)90286-q
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
