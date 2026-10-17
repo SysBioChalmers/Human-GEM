@@ -1,28 +1,13 @@
 # Test results
 
-This folder holds the committed quality-control (QC) results for Human-GEM. Every pull request re-runs the checks, commits the updated files here, and posts a summary as a single comment on the pull request (`model_qc_summary.md`). Each check name in that comment links to the matching explanation in section 2 below.
+This folder holds the committed quality-control (QC) results for Human-GEM. Every pull request re-runs the checks, commits the updated files here, and posts a summary as a single comment on the pull request (`model_qc_summary.md`). Each check name in that comment links to the matching explanation in section 1 below.
 
-The page has three parts:
+The page has two parts:
 
-1. [Where the current results come from](#1-where-the-current-results-come-from) - which pull request produced each file.
-2. [What each check means](#2-what-each-check-means) - the tests shown in the pull-request comment.
-3. [Files in this folder](#3-files-in-this-folder) - what every file here contains.
+1. [What each check means](#1-what-each-check-means) - the tests shown in the pull-request comment.
+2. [Files in this folder](#2-files-in-this-folder) - what every file here contains and which script writes it.
 
-## 1. Where the current results come from
-
-Result files are regenerated and committed by GitHub Actions. Most are produced together by the **Model QC** workflow, which runs on every pull request. The full MEMOTE suite and the gene-essentiality prediction take hours, so they run on demand only (by commenting `/run memote` or `/run gene-essentiality`) and update just their own files. The pull request in each row is the one whose run last wrote those files.
-
-| Result file(s) | Produced by | Last updated by |
-| --- | --- | --- |
-| `qc_duplicate_keys.csv`, `qc_empty_reactions.csv`, `qc_annotation_consistency.csv`, `qc_deprecation_completeness.csv`, `qc_metabolite_completeness.csv`, `qc_reaction_sanity.csv`, `qc_name_consistency.csv`, `qc_duplicate_reactions.csv`, `qc_unused_entities.csv`, `qc_growth_blockers.csv`, `qc_split_compartments.csv` | `qcModelChecks.py` | **PR #1162** (model QC checks) |
-| `qc_reversibility.csv` | `reversibilityTest.py` (with ΔG'm from `estimateReactionDeltaG.py`) | **PR #1132** (thermodynamics) |
-| `qc_annotation_issues.csv` | `annotationTest.py` | **PR #1162** (model QC checks) |
-| `qc_status.tsv` (round-trip, YAML lint, metabolic tasks, growth) | `testYamlConversion.py`, `testSbmlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | **PR #1162** (model QC checks) |
-| `macaw_results.tsv`, `balance_results.csv`, `qc_structure_consistency.csv` | `macawTests.py`, `balanceTest.py`, `structureConsistencyTest.py` | **PR #1162** (MACAW and balance) |
-| `memote_score.md` | `memoteSnapshot.py` (fast subset every PR; full suite via `/run memote`) | **PR #1162** (MEMOTE) |
-| `gene-essential.csv`, `gene-essential_summary.md` | `gradedEssentiality.py` via `/run gene-essentiality` | **PR #1158** (gene essentiality) |
-
-## 2. What each check means
+## 1. What each check means
 
 The headings below match the check names in the pull-request comment exactly, so a name in the comment links straight to its explanation.
 
@@ -158,29 +143,32 @@ Gene-essentiality predictions in five cell-line-specific GEMs (DLD1, GBM, HCT116
 
 A gene counts as essential here when its knockout breaks *any* of the 57 essential tasks, which mixes viability tasks (`GR` growth, `ER` energy and redox) with capability tasks (`SU` substrate utilization, `BS` biosynthesis, `IC` internal conversions). Genes essential only for a capability task, such as the ETF complex for beta-oxidation, are therefore counted as false positives against a proliferation screen. `gradedEssentiality.py` reports the task categories behind every call together with a continuous biomass growth ratio, and scores both against Hart, so the two kinds of essentiality stay separable. The summary reports the all-task and the viability-only MCC side by side, plus the threshold-free AUROC/AUPRC of the growth ratio against the Hart Bayes Factors. See issue #1076.
 
-## 3. Files in this folder
+## 2. Files in this folder
 
-| File | Contents |
-| --- | --- |
-| `model_qc_summary.md` | The rendered pull-request comment (built by `buildReport.py` from the files below). Not a test itself. |
-| `qc_status.tsv` | One key/value line each for the round-trip, YAML-lint and metabolic-task results and the growth value (see `qcStatus.py`). |
-| `qc_duplicate_keys.csv` | Duplicate `!!omap` keys: entry, scope, key, first and duplicate line numbers. |
-| `qc_growth_blockers.csv` | Biomass precursors that cannot be produced; empty when the model grows. |
-| `qc_empty_reactions.csv` | Reactions with no metabolites. |
-| `qc_annotation_consistency.csv` | Model-vs-annotation-table mismatches, deprecated-identifier use, and `spontaneous`-column problems: `kind, id, issue`. |
-| `qc_deprecation_completeness.csv` | Reactions/metabolites removed since the target branch but not added to a deprecated list: `kind, id, issue`. |
-| `qc_metabolite_completeness.csv` | Metabolites missing a formula and/or a charge: `metabolite, name, missing_formula, missing_charge`. |
-| `qc_reaction_sanity.csv` | Reactions with bound or GPR issues: `reaction, name, issues`. |
-| `qc_reversibility.csv` | Reaction directions flagged by `reversibilityTest.py`: alarms (`impossible`), warnings (`questionable`), listed exceptions, and outdated estimates: `reaction, name, lower_bound, upper_bound, dGm_kJ_per_mol, sd_kJ_per_mol, ln_gamma, verdict, note`. |
-| `qc_name_consistency.csv` | Entities with no name, and metabolites whose name differs between compartments: `kind, id, issue`. |
-| `qc_duplicate_reactions.csv` | Exact-duplicate reaction groups: `group, reaction, equation`. |
-| `qc_unused_entities.csv` | Metabolites and genes used by no reaction: `kind, id`. |
-| `qc_split_compartments.csv` | Reactions whose chemistry, apart from the metabolites they transport, spans more than one compartment: `reaction, name, compartments, equation`. Reported; only a rise in the count is flagged. |
-| `qc_annotation_issues.csv` | Malformed and cross-compartment-inconsistent cross-references. |
-| `qc_structure_consistency.csv` | Metabolites whose structure disagrees with the model formula/charge. |
-| `macaw_results.tsv` | MACAW dead-end and duplicate findings, one row per reaction that has a finding (tab-separated). |
-| `balance_results.csv` | Mass- and charge-imbalanced reactions. |
-| `memote_score.md` | MEMOTE scores in two sections, core subset and full suite (see the MEMOTE explanation above). |
-| `gene-essential.csv` | Per-gene matrix across the five cell-line models: per cell line the confusion class (marked `FP->TN` where the viability scoping changes the call), the task categories the knockout breaks, and the biomass growth ratio. |
-| `gene-essential_summary.md` | Summary statistics of the gene-essentiality comparison against Hart 2015: all-task and viability-only MCC and false positives, growth-ratio AUROC/AUPRC with the base rate, and the number of capability-only essential genes. |
-| `README.md` | This file. |
+GitHub Actions regenerates the result files and commits them to the pull-request branch. The **Model QC** workflow runs on every pull request and writes every file except the gene-essentiality files and the `Full suite` section of `memote_score.md`. Those take hours, so they are written only when someone comments `/run memote` or `/run gene-essentiality`; their `Run:` line gives the date and the pull request of that run. The commit history of a file (`git log -- data/testResults/<file>`) shows which pull request last wrote it.
+
+| File | Produced by | Contents |
+| --- | --- | --- |
+| `model_qc_summary.md` | `buildReport.py` | The rendered pull-request comment, built from the files below. Not a test itself. |
+| `qc_status.tsv` | `testYamlConversion.py`, `testSbmlConversion.py`, `testMetabolicTasks.py`, `action-yamllint`, `qcModelChecks.py` (via `qcStatus.py`) | One key/value line each for the round-trip, YAML-lint and metabolic-task results and the growth value. |
+| `qc_duplicate_keys.csv` | `qcModelChecks.py` | Duplicate `!!omap` keys: entry, scope, key, first and duplicate line numbers. |
+| `qc_growth_blockers.csv` | `qcModelChecks.py` | Biomass precursors that cannot be produced; empty when the model grows. |
+| `qc_empty_reactions.csv` | `qcModelChecks.py` | Reactions with no metabolites. |
+| `qc_annotation_consistency.csv` | `qcModelChecks.py` | Model-vs-annotation-table mismatches, deprecated-identifier use, and `spontaneous`-column problems: `kind, id, issue`. |
+| `qc_deprecation_completeness.csv` | `qcModelChecks.py` | Reactions/metabolites removed since the target branch but not added to a deprecated list: `kind, id, issue`. |
+| `qc_metabolite_completeness.csv` | `qcModelChecks.py` | Metabolites missing a formula and/or a charge: `metabolite, name, missing_formula, missing_charge`. |
+| `qc_reaction_sanity.csv` | `qcModelChecks.py` | Reactions with bound or GPR issues: `reaction, name, issues`. |
+| `qc_reversibility.csv` | `reversibilityTest.py` | Reaction directions flagged as alarms (`impossible`), warnings (`questionable`), listed exceptions, and outdated estimates: `reaction, name, lower_bound, upper_bound, dGm_kJ_per_mol, sd_kJ_per_mol, ln_gamma, verdict, note`. |
+| `qc_name_consistency.csv` | `qcModelChecks.py` | Entities with no name, and metabolites whose name differs between compartments: `kind, id, issue`. |
+| `qc_duplicate_reactions.csv` | `qcModelChecks.py` | Exact-duplicate reaction groups: `group, reaction, equation`. |
+| `qc_unused_entities.csv` | `qcModelChecks.py` | Metabolites and genes used by no reaction: `kind, id`. |
+| `qc_split_compartments.csv` | `qcModelChecks.py` | Reactions whose chemistry, apart from the metabolites they transport, spans more than one compartment: `reaction, name, compartments, equation`. Reported; only a rise in the count is flagged. |
+| `qc_annotation_issues.csv` | `annotationTest.py` | Malformed and cross-compartment-inconsistent cross-references. |
+| `qc_structure_consistency.csv` | `structureConsistencyTest.py` | Metabolites whose structure disagrees with the model formula/charge. |
+| `macaw_results.tsv` | `macawTests.py` | MACAW dead-end and duplicate findings, one row per reaction that has a finding (tab-separated). |
+| `balance_results.csv` | `balanceTest.py` | Mass- and charge-imbalanced reactions. |
+| `memote_score.md` | `memoteSnapshot.py` | MEMOTE scores in two sections: the core subset (every pull request) and the full suite (`/run memote`, with a `Run:` line). See the MEMOTE explanation above. |
+| `gene-essential.csv` | `gradedEssentiality.py` (`/run gene-essentiality`) | Per-gene matrix across the five cell-line models: per cell line the confusion class (marked `FP->TN` where the viability scoping changes the call), the task categories the knockout breaks, and the biomass growth ratio. |
+| `gene-essential_summary.md` | `gradedEssentiality.py`, `diffGeneEssentiality.py` (`/run gene-essentiality`) | `Run:` line, then the summary statistics of the comparison against Hart 2015 (all-task and viability-only MCC and false positives, growth-ratio AUROC/AUPRC with the base rate, and the number of capability-only essential genes), followed by the per-gene changes against the target branch. |
+| `gene-essential-diff.csv` | `diffGeneEssentiality.py` (`/run gene-essentiality`) | Per-gene comparison with the target branch for the genes the pull request's model changes can affect: verdicts across the five cell-line models, and the task categories and growth ratio before and after. |
+| `README.md` | written by hand | This file. |

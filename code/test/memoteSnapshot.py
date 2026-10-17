@@ -274,6 +274,8 @@ def main() -> int:
     lines = [f"Mode: {kind}.", "", f"Model version: {qcStatus.model_version()}."]
     if subset:
         lines.append(f"Skipped (slow) tests: {', '.join(SLOW_TESTS)}.")
+    else:
+        lines.append(f"Run: {qcStatus.run_record()}.")
     lines.append("")
     if total is None:
         print("::warning::Could not find the MEMOTE total score in the result.")

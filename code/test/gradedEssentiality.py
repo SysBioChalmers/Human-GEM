@@ -118,6 +118,7 @@ from estimateEssentialGenes import (
 )
 from evaluateHart2015Essentiality import evaluate_graded, summary_to_markdown
 from taskEssentialGenes import find_task_essential_categories
+import qcStatus
 
 # Repository root: this file is code/test/gradedEssentiality.py
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -553,8 +554,9 @@ def main(argv: list[str] | None = None) -> int:
     )
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     MATRIX_CSV.write_text(matrix_csv, encoding="utf-8")
-    SUMMARY_MD.write_text(summary_to_markdown(rows), encoding="utf-8")
-    _log(summary_to_markdown(rows))
+    summary = summary_to_markdown(rows, run=qcStatus.run_record())
+    SUMMARY_MD.write_text(summary, encoding="utf-8")
+    _log(summary)
     _log(f"Wrote {MATRIX_CSV} and {SUMMARY_MD} in {time.time() - started:.0f}s")
     return 0
 
