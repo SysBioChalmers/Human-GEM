@@ -12,7 +12,7 @@
 **Pre-existing:**
 - Reaction directions: warning: [**76**](qc_reversibility.csv)
 - Mass-imbalanced reactions: [**69**](balance_results.csv)
-- Charge-imbalanced reactions: [**172**](balance_results.csv)
+- Charge-imbalanced reactions: [**168**](balance_results.csv)
 - Structure vs formula/charge inconsistencies: [**52**](qc_structure_consistency.csv)
 - Reactions flagged as MACAW duplicates: [**340**](macaw_results.tsv)
 - Reactions flagged by MACAW dead-end test: [**1134**](macaw_results.tsv)

@@ -29,7 +29,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | 0 | :warning: |
-| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [172](balance_results.csv) | 0 | :warning: |
+| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [168](balance_results.csv) | 0 | :warning: |
 | [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [52](qc_structure_consistency.csv) | 0 | :warning: |
 
 #### Network structure
@@ -90,7 +90,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 63.3% |
 | Annotation - Metabolites | Uniform Metabolite Identifier Namespace | 100.0% |
 | Annotation - Reactions | Presence of Reaction Annotation | 100.0% |
-| Annotation - Reactions | Reaction Annotations Per Database | 27.7% |
+| Annotation - Reactions | Reaction Annotations Per Database | 27.8% |
 | Annotation - Reactions | Reaction Annotation Conformity Per Database | 77.8% |
 | Annotation - Reactions | Uniform Reaction Identifier Namespace | 100.0% |
 | Annotation - Genes | Presence of Gene Annotation | 100.0% |
