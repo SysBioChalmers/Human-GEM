@@ -29,7 +29,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | 0 | :warning: |
-| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [168](balance_results.csv) | 0 | :warning: |
+| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [168](balance_results.csv) | -4 | :sparkles: |
 | [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [52](qc_structure_consistency.csv) | 0 | :warning: |
 
 #### Network structure
