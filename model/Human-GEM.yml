@@ -95937,7 +95937,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01073
-    - name: arachidonate 12-lipoxygenase, 12S type (11,12-diHETE)
+    - name: arachidonate 12-lipoxygenase, 12S type (11,12-DiHETE)
     - metabolites: !!omap
       - MAM00278c: 1.0
       - MAM00309c: -1.0
@@ -95989,7 +95989,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.13.11.34
-    - references: PMID:9837935;PMID:2377602;PMID:10224163;doi:10.1111/j.1432-1033.1996.00416.x
+    - references: PMID:9837935;PMID:2377602;PMID:10224163;doi:10.1111/j.1432-1033.1996.00416.x;doi:10.1021/acs.biochem.0c00622
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
