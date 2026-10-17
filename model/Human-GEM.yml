@@ -114200,10 +114200,11 @@
       - MAM00971r: -1.0
       - MAM01790r: 1.0
       - MAM01833r: 1.0
-      - MAM02040r: 2.0
-      - MAM02554r: 1.0
-      - MAM02555r: -1.0
-      - MAM02630r: -2.0
+      - MAM02039r: -2.0
+      - MAM02040r: 4.0
+      - MAM02554r: 3.0
+      - MAM02555r: -3.0
+      - MAM02630r: -3.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000137869
@@ -114221,10 +114222,11 @@
     - metabolites: !!omap
       - MAM01787r: 1.0
       - MAM01833r: 1.0
-      - MAM02040r: 2.0
-      - MAM02554r: 1.0
-      - MAM02555r: -1.0
-      - MAM02630r: -2.0
+      - MAM02039r: -2.0
+      - MAM02040r: 4.0
+      - MAM02554r: 3.0
+      - MAM02555r: -3.0
+      - MAM02630r: -3.0
       - MAM02969r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
