@@ -114200,10 +114200,11 @@
       - MAM00971r: -1.0
       - MAM01790r: 1.0
       - MAM01833r: 1.0
-      - MAM02040r: 2.0
-      - MAM02554r: 1.0
-      - MAM02555r: -1.0
-      - MAM02630r: -2.0
+      - MAM02039r: -2.0
+      - MAM02040r: 4.0
+      - MAM02554r: 3.0
+      - MAM02555r: -3.0
+      - MAM02630r: -3.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000137869
@@ -114221,10 +114222,11 @@
     - metabolites: !!omap
       - MAM01787r: 1.0
       - MAM01833r: 1.0
-      - MAM02040r: 2.0
-      - MAM02554r: 1.0
-      - MAM02555r: -1.0
-      - MAM02630r: -2.0
+      - MAM02039r: -2.0
+      - MAM02040r: 4.0
+      - MAM02554r: 3.0
+      - MAM02555r: -3.0
+      - MAM02630r: -3.0
       - MAM02969r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -114407,7 +114409,7 @@
       - Steroid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116509,8 +116511,10 @@
     - name: cytochrome P450 (testosterone)
     - metabolites: !!omap
       - MAM00432c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
       - MAM02630c: -1.0
       - MAM02969c: -1.0
     - lower_bound: 0.0
@@ -116520,7 +116524,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116530,8 +116534,10 @@
     - metabolites: !!omap
       - MAM00432c: -1.0
       - MAM00434c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 2.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -116540,7 +116546,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116562,18 +116568,20 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
     - id: MAR02032
-    - name: 19-hydroxyandrostenedione,NADPH-hemoprotein reductase:oxygen 19-oxidoreductase
+    - name: cytochrome P450 (4-androstene-3,17-dione)
     - metabolites: !!omap
       - MAM00431c: 1.0
       - MAM00971c: -1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -116582,7 +116590,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116592,8 +116600,10 @@
     - metabolites: !!omap
       - MAM00431c: -1.0
       - MAM00433c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02040c: 2.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -116602,7 +116612,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116624,7 +116634,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 1.14.14.14
     - references: PMID:34095690
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
