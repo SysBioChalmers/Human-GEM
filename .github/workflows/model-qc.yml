@@ -420,6 +420,7 @@ jobs:
           mode: post
           run-url: ${{ env.RUN_URL }}
           base-ref: ${{ env.BASE_REF }}
+          results-url-base: ${{ env.RESULTS_URL_BASE }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload full MEMOTE result

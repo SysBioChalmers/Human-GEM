@@ -11,8 +11,8 @@ Two modes, chosen by the MEMOTE_SUBSET environment variable:
     tests that dominate runtime on a genome-scale model, so it finishes within a
     per-pull-request budget. This is what runs on every pull request.
   * Full suite (MEMOTE_SUBSET unset): the complete suite. Much slower (the skipped
-    tests do FVA or a loopless MILP over every reaction), so it is reserved for
-    pull requests that target the main branch.
+    tests do FVA or a loopless MILP over every reaction), so it runs on demand when
+    a pull request comment says `/run memote` (pr-command.yml, memote-full.yml).
 
 Writes the total score to data/testResults/memote_score.md (diff-friendly) and the
 scored result JSON to memote_result.json in the repository root, which the workflow

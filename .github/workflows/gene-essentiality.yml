@@ -460,6 +460,32 @@ jobs:
             cat "$RUNNER_TEMP/gene-essential-diff-detail.md"
           } >> data/testResults/gene-essential_summary.md
 
+      # The branch can move on during the hours-long build (a model QC results commit,
+      # for example), and the committed result files at its tip can then differ from
+      # the ones this job started from. Merging the two conflicts. The result files
+      # are generated, so this job's version replaces the branch's: copy the files
+      # this job changed aside, reset to the branch tip, and copy them back.
+      # README.md is partly hand-written and is left as it is at the tip; only the PR
+      # number is updated in it, in the next step.
+      - name: Update local branch before committing changes
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        run: |
+          changed=$( { git diff --name-only -- data/testResults
+                       git ls-files --others --exclude-standard -- data/testResults; } \
+                     | grep -vx 'data/testResults/README.md' || true )
+          keep=$(mktemp -d)
+          for f in $changed; do
+            mkdir -p "$keep/$(dirname "$f")" && cp -a "$f" "$keep/$f"
+          done
+          git reset --hard --quiet
+          git clean -fdq -- data/testResults
+          git fetch --quiet origin "$BRANCH_NAME"
+          git checkout --quiet -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
+          for f in $changed; do
+            mkdir -p "$(dirname "$f")" && cp -a "$keep/$f" "$f"
+          done
+
       # This workflow is dispatched (by /run gene-essentiality), so it has no
       # pull_request context; the PR number arrives as the `pr` input instead.
       - name: Mention PR# in README.md
@@ -467,30 +493,6 @@ jobs:
         env:
           PR_NUMBER: ${{ inputs.pr }}
         run: sed -i -e "s/[[:digit:]]\{3,4\}\*\* (gene /$PR_NUMBER\*\* (gene /" data/testResults/README.md
-
-      - name: Update local branch before committing changes
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-        run: |
-          # --include-untracked: a result file that is new in this run is untracked
-          # here, but is already tracked at the branch tip once any earlier run has
-          # committed it, and plain `git stash` leaves untracked files in place, so
-          # the checkout below then refuses to overwrite them and the job dies after
-          # the run has already finished.
-          git stash --include-untracked
-          git fetch
-          git checkout $BRANCH_NAME
-          # `git fetch` only moves the origin/$BRANCH_NAME ref, not this local branch,
-          # so without this reset the branch stays at whatever commit the job started
-          # from; if anything else pushed to it while the (hours-long) build ran, the
-          # auto-commit step below still bases its commit on that stale tip and its
-          # push is rejected as non-fast-forward. The working tree is clean here (the
-          # result-file changes are in the stash, popped back on next), so resetting
-          # to origin's tip is exactly the missing "update".
-          git reset --hard origin/$BRANCH_NAME
-          if git stash list | grep -q 'stash@{'; then
-            git stash pop
-          fi
 
       - name: Auto-commit results
         uses: stefanzweifel/git-auto-commit-action@v7

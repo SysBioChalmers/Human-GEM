@@ -5,7 +5,8 @@ name: Release
 # pull request into main for a human to approve. The release notes are written
 # in the description of that pull request, and a check keeps it from being merged
 # without them. On merge, tags the release, publishes it on GitHub with the notes
-# as its text, and opens the sync-back pull request into develop.
+# as its text, closes the issues labelled `fixed in develop` whose fix it
+# contains, and opens the sync-back pull request into develop.
 #
 # The release pull request is checked by model-qc.yml, which runs on every pull
 # request, so the model quality report appears on it without extra wiring here.
@@ -39,6 +40,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 # The release itself (dispatch and merge) runs one at a time; the notes check of a
 # release pull request runs in its own group, so editing the description never
@@ -251,6 +253,45 @@ jobs:
           version="${{ steps.v.outputs.version }}"
           gh release create "v$version" --target main --title "Human $version" \
             --notes-file "$RUNNER_TEMP/notes.md"
+
+      # Closes the issues labelled `fixed in develop` whose fix is in this
+      # release (see the issue lifecycle in CONTRIBUTING and issue-labels.yml).
+      # An issue counts as released only if every merged pull request into
+      # develop that references it has its merge commit on main. An issue fixed
+      # over several pull requests, or by one merged after the release branch
+      # was cut, stays open with its label until the release that has them all.
+      - name: Close the issues fixed in this release
+        if: steps.v.outputs.todo == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="${{ steps.v.outputs.version }}"
+          url="https://github.com/${{ github.repository }}/releases/tag/v$version"
+          for n in $(gh issue list --label "fixed in develop" --state open \
+                       --limit 500 --json number --jq '.[].number'); do
+            found=0
+            pending=""
+            for pr in $(gh api --paginate "repos/${{ github.repository }}/issues/$n/timeline" \
+                          --jq '.[] | select(.event == "cross-referenced")
+                                    | .source.issue
+                                    | select(.pull_request.merged_at != null)
+                                    | .number' | sort -u); do
+              sha=$(gh api "repos/${{ github.repository }}/pulls/$pr" \
+                      --jq 'select(.base.ref == "develop") | .merge_commit_sha')
+              [ -n "$sha" ] || continue
+              found=$((found + 1))
+              git merge-base --is-ancestor "$sha" HEAD || pending="$pending #$pr"
+            done
+            if [ "$found" -gt 0 ] && [ -z "$pending" ]; then
+              gh issue edit "$n" --remove-label "fixed in develop"
+              gh issue close "$n" --reason completed --comment "Fixed in [Human $version]($url)."
+              echo "#$n closed"
+            elif [ "$found" -eq 0 ]; then
+              echo "::warning::#$n is labelled 'fixed in develop', but no merged pull request into develop references it; left open"
+            else
+              echo "#$n left open: not yet released:$pending"
+            fi
+          done
 
       - name: Open the sync-back pull request into develop
         if: steps.v.outputs.todo == 'true'
