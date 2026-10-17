@@ -72165,7 +72165,6 @@
       - MAM02517c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000114902 and ENSG00000118363 and ENSG00000129128 and ENSG00000140612 and ENSG00000166562
     - subsystem:
       - Lysine metabolism
     - annotation: !!omap
@@ -72174,6 +72173,7 @@
         - 3.4.-.-
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: "TML release by lysosomal/proteasomal degradation (PMID:11802770); no specific protease, no GPR."
   - !!omap
     - id: MAR06979
     - name: trimethyllysine hydroxylase, epsilon (AKG)
@@ -72443,7 +72443,6 @@
       - MAM02517r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000114902 and ENSG00000118363 and ENSG00000129128 and ENSG00000140612 and ENSG00000166562
     - subsystem:
       - Lysine metabolism
     - annotation: !!omap
@@ -72452,6 +72451,7 @@
         - 3.4.-.-
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: "TML release by lysosomal/proteasomal degradation (PMID:11802770); no specific protease, no GPR."
   - !!omap
     - id: MAR03164
     - name: (S)-3-hydroxybutanoyl-CoA hydro-lyase
@@ -274189,9 +274189,6 @@
     - id: ENSG00000114857
     - name: NKTR
   - !!omap
-    - id: ENSG00000114902
-    - name: SPCS1
-  - !!omap
     - id: ENSG00000114923
     - name: SLC4A3
   - !!omap
@@ -274470,9 +274467,6 @@
   - !!omap
     - id: ENSG00000118298
     - name: CA14
-  - !!omap
-    - id: ENSG00000118363
-    - name: SPCS2
   - !!omap
     - id: ENSG00000118369
     - name: USP35
@@ -274977,9 +274971,6 @@
   - !!omap
     - id: ENSG00000128951
     - name: DUT
-  - !!omap
-    - id: ENSG00000129128
-    - name: SPCS3
   - !!omap
     - id: ENSG00000129151
     - name: BBOX1
@@ -275985,9 +275976,6 @@
   - !!omap
     - id: ENSG00000140598
     - name: EFL1
-  - !!omap
-    - id: ENSG00000140612
-    - name: SEC11A
   - !!omap
     - id: ENSG00000140650
     - name: PMM2
@@ -277770,9 +277758,6 @@
   - !!omap
     - id: ENSG00000166548
     - name: TK2
-  - !!omap
-    - id: ENSG00000166562
-    - name: SEC11C
   - !!omap
     - id: ENSG00000166741
     - name: NNMT
