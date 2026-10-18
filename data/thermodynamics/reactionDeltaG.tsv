@@ -307,10 +307,13 @@ MAR00957	c	single	25.8	3.6	56b27796f7
 MAR00958	c	single	17.1	100000.0	6a0fb1b130
 MAR00959	c	single	-0.0	100000.0	eabb5d5fe5
 MAR00960	c	single	15.6	100000.0	51aaaf20d4
+MAR00961	c	single	-347.3	3.2	538275b2e2
 MAR00969	c	single	-374.2	3.1	42ecef5789
 MAR00970	m	single	-17.0	1.9	720ff5b53f
+MAR00971	c	single	-347.3	3.2	c6cc24a66f
 MAR00972	x	single	-11.1	1.9	30a7bd8a1f
 MAR00973	c	single	17.4	1.0	072694f707
+MAR00976	c	single	-347.3	3.2	346b2b9c79
 MAR00979	c	single	-0.0	0.0	c216a400c4
 MAR00980	c	single	17.4	1.0	d88850b0b3
 MAR00981	c	single+proxy	-374.2	3.1	e0c556d9e3
@@ -380,6 +383,7 @@ MAR01064	c	single	17.1	100000.0	362963a080
 MAR01071	c	single	-374.2	3.1	3918d2f134
 MAR01072	r	single	-374.2	3.1	20e7f32a1f
 MAR01074	c	single	-58.0	1.4	db941de0ba
+MAR01075	c	single	-347.3	3.2	cd2f32e2f7
 MAR01080	c	single	25.8	3.6	af308706cc
 MAR01081	c	single	17.5	4.1	6aca4be806
 MAR01085	e	single	-17.8	2.3	db0507ff3a

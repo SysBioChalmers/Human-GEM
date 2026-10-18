@@ -36,19 +36,9 @@ MAR00689,(10Z)-heptadecenoic acid formation,C:17.4164;H:31.8982;R:-1,
 MAR00690,(10Z)-heptadecenoic acid formation,C:17.993;H:33.083;R:-1,
 MAR00691,(10Z)-heptadecenoic acid formation,C:17.595;H:32.8888;R:-1,
 MAR00692,(10Z)-heptadecenoic acid formation,C:16.0152;H:32.0204;R:-1,
-MAR00961,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
-MAR00964,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
-MAR00967,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
-MAR00971,arachidonate 5-lipoxygenase (5(S)-HETE),,-2
-MAR00976,"arachidonate 12-lipoxygenase, 12S type (5-oxo-ETE)",,-2
-MAR01013,"arachidonate 5-lipoxygenase (14,15-DiHETE)",,-2
-MAR01014,"arachidonate 5-lipoxygenase (14,15-DiHETE)",,-2
 MAR01065,"3-hydroxyacyl-CoA dehydrogenase (11,12-EET)",,-2
 MAR01067,"3-hydroxyacyl-CoA dehydrogenase (7,8-epoxy-(4Z,10Z)-hexadecadienoic acid)",,-2
 MAR01068,"3-hydroxyacyl-CoA dehydrogenase (14,15-EET)",,-2
-MAR01073,"arachidonate 12-lipoxygenase, 12S type (12(S)-HETE)",,-2
-MAR01075,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
-MAR01077,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
 MAR01079,fatty acid amide hydrolase (arachidonate),,-4
 MAR01185,(2E)-dodecenoyl-CoA formation,,2
 MAR01227,(2E)-dodecenoyl-CoA formation,,2
@@ -162,7 +152,6 @@ MAR06605,urate radical hydrolysis,,-1
 MAR06608,hydroxide to hydroxyl radical conversion,,1
 MAR06634,cytochrome P450 (retinol),,2
 MAR06720,kynurenine glucuronidation,,-2
-MAR06729,L-Tyrosine:oxygen oxidoreductase,,-2
 MAR06740,dopa decarboxylase (salsolinol-1-carboxylate),,2
 MAR06792,4-hydroxy-3-nitrophenylacetate to 4-hydroxyphenylacetate conversion,,-2
 MAR06806,"N,N-dimethylindoliumolate to N,N-dimethyldopaminequinone conversion",,-2
@@ -173,7 +162,7 @@ MAR06823,crystallin zeta (noradrenochrome-O-semiquinone),,-1
 MAR06881,"3,4-dihydro-1,4-benzothiazine-3-carboxylate decarboxylation",,2
 MAR06885,crystallin zeta (L-dopachrome),,1
 MAR06974,[protein] to [protein]-L-lysine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
-MAR06978,"signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
+MAR06978,"release of N6,N6,N6-trimethyl-L-lysine from protein",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR07006,"naphthalene-1,2-diol to 1,2-naphthoquinone conversion",,2
 MAR07010,"1,4-dihydroxynaphthalene to 1,4-naphthoquinone conversion",,2
 MAR07025,D-arabinitol 4-dehydrogenase (aflatoxin B1 dialdehyde),,-2
@@ -201,7 +190,7 @@ MAR07616,[protein] to [protein]-L-tyrosine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
 MAR07621,[protein] to [protein]-L-arginine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
 MAR07625,NAD+:protein-L-arginine ADP-D-ribosyltransferase,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR07741,Ferredoxin:NADP+ oxidoreductase,,-2
-MAR08029,"signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
+MAR08029,"release of N6,N6,N6-trimethyl-L-lysine from protein",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR08615,ATP:cob(I)alamin Co-beta-adenosyltransferase,,1
 MAR09487,NAD+:poly(adenosine diphosphate D-ribose)ADP-D-ribosyltransferase,,2
 MAR09491,E2 ubiquitin-conjugating enzyme ([protein]-L-lysine),,-1
