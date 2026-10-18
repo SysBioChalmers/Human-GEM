@@ -95,6 +95,8 @@ jobs:
         env:
           PYTHONUNBUFFERED: "1"
           MEMOTE_SUBSET: ""
+          # Recorded in the "Run:" line of the score's Full suite section.
+          QC_RUN_PR: ${{ inputs.pr }}
         # The result and the scored model's version are recorded here, before the
         # branch is reset to its (possibly newer) remote tip, so the /run comment
         # reports this run rather than whatever the branch holds afterwards.

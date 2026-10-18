@@ -19,6 +19,7 @@ Usage:
 """
 
 import csv
+import re
 import sys
 from pathlib import Path
 
@@ -66,7 +67,10 @@ def main() -> int:
 
     tissues, gene_ids, symbol_of, per_tissue = read_matrix(MATRIX_CSV)
     rows, _matrix_csv = evaluate_graded(per_tissue, tissues, gene_ids, symbol_of=symbol_of)
-    summary = summary_to_markdown(rows)
+    # The matrix comes from an earlier run, so that run's "Run:" line is kept.
+    previous = SUMMARY_MD.read_text(encoding="utf-8") if SUMMARY_MD.exists() else ""
+    run = re.search(r"^Run: (.+)\.$", previous, re.M)
+    summary = summary_to_markdown(rows, run=run.group(1) if run else "")
     SUMMARY_MD.write_text(summary, encoding="utf-8")
     print(summary)
     return 0

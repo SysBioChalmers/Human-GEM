@@ -22,7 +22,9 @@ CLI (used by the workflow's shell steps):
     python code/test/qcStatus.py --get <key>       # print one value (empty if unset)
 """
 
+import datetime
 import hashlib
+import os
 import sys
 from pathlib import Path
 
@@ -41,6 +43,17 @@ def model_version(model_dir: Path = MODEL_DIR) -> str:
         digest.update(name.encode())
         digest.update(path.read_bytes() if path.exists() else b"")
     return digest.hexdigest()[:12]
+
+
+def run_record() -> str:
+    """Date of this run, and the pull request it ran on when the workflow passes one
+    in QC_RUN_PR. Written into the results of the on-demand runs (full MEMOTE suite,
+    gene essentiality), which are not refreshed on every pull request."""
+    today = datetime.date.today().isoformat()
+    pr = os.environ.get("QC_RUN_PR", "").strip()
+    return f"pull request #{pr}, {today}" if pr else today
+
+
 _HEADER = ("check", "result")
 
 

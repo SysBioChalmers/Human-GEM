@@ -597,11 +597,13 @@ def evaluate_graded(
     return rows, "\n".join(lines) + "\n"
 
 
-def summary_to_markdown(rows: list[dict]) -> str:
-    """Render the per-cell-line summary as a Markdown table."""
-    out = [
-        "### Graded gene essentiality vs Hart 2015 (task-scope analysis)",
-        "",
+def summary_to_markdown(rows: list[dict], run: str = "") -> str:
+    """Render the per-cell-line summary as a Markdown table, preceded by a "Run:" line
+    (date and pull request, see qcStatus.run_record) when ``run`` is given."""
+    out = ["### Graded gene essentiality vs Hart 2015 (task-scope analysis)", ""]
+    if run:
+        out += [f"Run: {run}.", ""]
+    out += [
         "| " + " | ".join(GRADED_COLUMNS) + " |",
         "| " + " | ".join("---" for _ in GRADED_COLUMNS) + " |",
     ]

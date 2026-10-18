@@ -173,7 +173,7 @@ MAR06823,crystallin zeta (noradrenochrome-O-semiquinone),,-1
 MAR06881,"3,4-dihydro-1,4-benzothiazine-3-carboxylate decarboxylation",,2
 MAR06885,crystallin zeta (L-dopachrome),,1
 MAR06974,[protein] to [protein]-L-lysine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
-MAR06978,"signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
+MAR06978,"release of N6,N6,N6-trimethyl-L-lysine from protein",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR07006,"naphthalene-1,2-diol to 1,2-naphthoquinone conversion",,2
 MAR07010,"1,4-dihydroxynaphthalene to 1,4-naphthoquinone conversion",,2
 MAR07025,D-arabinitol 4-dehydrogenase (aflatoxin B1 dialdehyde),,-2
@@ -201,7 +201,7 @@ MAR07616,[protein] to [protein]-L-tyrosine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
 MAR07621,[protein] to [protein]-L-arginine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
 MAR07625,NAD+:protein-L-arginine ADP-D-ribosyltransferase,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR07741,Ferredoxin:NADP+ oxidoreductase,,-2
-MAR08029,"signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
+MAR08029,"release of N6,N6,N6-trimethyl-L-lysine from protein",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR08615,ATP:cob(I)alamin Co-beta-adenosyltransferase,,1
 MAR09487,NAD+:poly(adenosine diphosphate D-ribose)ADP-D-ribosyltransferase,,2
 MAR09491,E2 ubiquitin-conjugating enzyme ([protein]-L-lysine),,-1
