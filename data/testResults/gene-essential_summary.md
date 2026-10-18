@@ -1,30 +1,20 @@
 ### Graded gene essentiality vs Hart 2015 (task-scope analysis)
 
-Run: pull request #1162, 2026-10-18.
-
 | cellLine | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 0.3492 | 137 | 0.3806 | 97 | 0.6669 | 0.3225 | 0.1665 | 49 |
-| GBM | 0.3194 | 141 | 0.3458 | 107 | 0.6589 | 0.2989 | 0.1611 | 41 |
-| HCT116 | 0.3788 | 124 | 0.3749 | 102 | 0.6708 | 0.3348 | 0.1788 | 35 |
-| HELA | 0.3093 | 167 | 0.3031 | 142 | 0.6614 | 0.2631 | 0.1447 | 36 |
-| RPE1 | 0.2608 | 167 | 0.2946 | 132 | 0.65 | 0.2464 | 0.1356 | 38 |
-| all |  |  |  |  | 0.6618 | 0.2928 | 0.1576 |  |
+| DLD1 | 0.3458 | 138 | 0.3694 | 103 | 0.6654 | 0.3187 | 0.1693 | 44 |
+| GBM | 0.3177 | 145 | 0.345 | 110 | 0.6599 | 0.3002 | 0.163 | 42 |
+| HCT116 | 0.3723 | 128 | 0.3679 | 106 | 0.6717 | 0.3347 | 0.1814 | 35 |
+| HELA | 0.3078 | 172 | 0.3013 | 147 | 0.6641 | 0.2647 | 0.1457 | 36 |
+| RPE1 | 0.2487 | 181 | 0.2865 | 141 | 0.6512 | 0.244 | 0.1373 | 43 |
+| all |  |  |  |  | 0.6625 | 0.292 | 0.1596 |  |
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **5** gene(s) directly affected plus **1590** more that share a metabolite with one of them.
+Checked **23** gene(s) directly affected plus **1612** more that share a metabolite with one of them.
 
-**Growth effect changed** (vs Hart 2015):
-- SEC11A (removed from the model), SEC11C (removed from the model), SPCS1 (removed from the model): 5/5 lines, knockout no longer blocks growth -- :sparkles: correct
-- SPCS2 (removed from the model): 5/5 lines, knockout no longer blocks growth -- :information_source: not scored by Hart 2015
-- SPCS3 (removed from the model): 5/5 lines, knockout no longer blocks growth -- :x: wrong
+**Likely noise** (10 gene(s), <3/5 lines): AKR1A1, ELOVL1, GNPAT, LIPA, NAGK, PISD, RDH5, SGPL1, SLC17A5, SLC27A5.
 
-**Other role changed** (not Hart-comparable):
-- SGPL1: 3/5 lines, biosynthesis -- now required
-
-**Likely noise** (16 gene(s), <3/5 lines): ACY1, AKR1A1, ASRGL1, FPGS, GGH, GNPAT, HIBCH, LIPA, MPC1, MPC2, MTHFD1, NAGK, SLC17A5, SLC25A2, SLC27A5, SLC36A1.
-
-**No change:** 1573 gene(s).
+**No change:** 1625 gene(s).
 
 Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](gene-essential-diff.csv).
