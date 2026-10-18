@@ -36,19 +36,9 @@ MAR00689,(10Z)-heptadecenoic acid formation,C:17.4164;H:31.8982;R:-1,
 MAR00690,(10Z)-heptadecenoic acid formation,C:17.993;H:33.083;R:-1,
 MAR00691,(10Z)-heptadecenoic acid formation,C:17.595;H:32.8888;R:-1,
 MAR00692,(10Z)-heptadecenoic acid formation,C:16.0152;H:32.0204;R:-1,
-MAR00961,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
-MAR00964,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
-MAR00967,"arachidonate 12-lipoxygenase, 12S type (5(S)-HETE)",,-2
-MAR00971,arachidonate 5-lipoxygenase (5(S)-HETE),,-2
-MAR00976,"arachidonate 12-lipoxygenase, 12S type (5-oxo-ETE)",,-2
-MAR01013,"arachidonate 5-lipoxygenase (14,15-DiHETE)",,-2
-MAR01014,"arachidonate 5-lipoxygenase (14,15-DiHETE)",,-2
 MAR01065,"3-hydroxyacyl-CoA dehydrogenase (11,12-EET)",,-2
 MAR01067,"3-hydroxyacyl-CoA dehydrogenase (7,8-epoxy-(4Z,10Z)-hexadecadienoic acid)",,-2
 MAR01068,"3-hydroxyacyl-CoA dehydrogenase (14,15-EET)",,-2
-MAR01073,"arachidonate 12-lipoxygenase, 12S type (12(S)-HETE)",,-2
-MAR01075,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
-MAR01077,arachidonate 5-lipoxygenase (12(S)-HETE),,-2
 MAR01079,fatty acid amide hydrolase (arachidonate),,-4
 MAR01185,(2E)-dodecenoyl-CoA formation,,2
 MAR01227,(2E)-dodecenoyl-CoA formation,,2
@@ -162,7 +152,6 @@ MAR06605,urate radical hydrolysis,,-1
 MAR06608,hydroxide to hydroxyl radical conversion,,1
 MAR06634,cytochrome P450 (retinol),,2
 MAR06720,kynurenine glucuronidation,,-2
-MAR06729,L-Tyrosine:oxygen oxidoreductase,,-2
 MAR06740,dopa decarboxylase (salsolinol-1-carboxylate),,2
 MAR06792,4-hydroxy-3-nitrophenylacetate to 4-hydroxyphenylacetate conversion,,-2
 MAR06806,"N,N-dimethylindoliumolate to N,N-dimethyldopaminequinone conversion",,-2
