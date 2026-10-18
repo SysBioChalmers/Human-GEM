@@ -355,16 +355,34 @@ def build_report(
         for gene_id in scope_gene_ids
     }
 
+    # A gene removed from (or added to) the model has no knockout effect on the side
+    # where it is absent, so it counts as non-essential there in every line where the
+    # other side built it, rather than as a change of context-model membership.
+    base_genes = {g.id for g in base_model.genes}
+    head_genes = {g.id for g in head_model.genes}
+
+    def absent_record(present: dict[str, dict | None]) -> dict[str, dict | None]:
+        return {t: {"tasks": frozenset(), "growth": None} for t, rec in present.items() if rec is not None}
+
     results = []
     for gene_id, hop in scope:
         base_record = per_gene_b.get(gene_id, {})
         head_record = per_gene_h.get(gene_id, {})
+        membership = ""
+        if gene_id in base_genes and gene_id not in head_genes:
+            head_record, membership = absent_record(base_record), "removed"
+        elif gene_id in head_genes and gene_id not in base_genes:
+            base_record, membership = absent_record(head_record), "added"
         if not base_record and not head_record:
             continue  # gene not in either matrix (e.g. not built into any cell-line model)
         result = diff_gene(
             gene_id, tissues, base_record, head_record, hart_fitness_by_gene.get(gene_id, {}),
             growth_tolerance=growth_tolerance,
         )
+        if membership:
+            for line in result["per_line"].values():
+                line["after_tasks" if membership == "removed" else "before_tasks"] = membership
+        result["membership"] = membership
         result["hop"] = hop
         result["symbol"] = symbol_of.get(gene_id, "")
         results.append(result)
@@ -392,7 +410,12 @@ def build_report(
         """
         groups: dict[tuple, list[str]] = {}
         for r in rows:
-            groups.setdefault(key_fn(r), []).append(r["symbol"] or r["gene"])
+            name = r["symbol"] or r["gene"]
+            if r.get("membership") == "removed":
+                name += " (removed from the model)"
+            elif r.get("membership") == "added":
+                name += " (added to the model)"
+            groups.setdefault(key_fn(r), []).append(name)
         return sorted(groups.items(), key=lambda kv: sorted(kv[1]))
 
     def _growth_key(r: dict) -> tuple[str, str, str]:
