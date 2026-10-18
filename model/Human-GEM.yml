@@ -72156,7 +72156,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06978
-    - name: signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)
+    - name: release of N6,N6,N6-trimethyl-L-lysine from protein
     - metabolites: !!omap
       - MAM00196c: 1.0
       - MAM00211c: -1.0
@@ -72169,8 +72169,8 @@
       - Lysine metabolism
     - annotation: !!omap
       - ec-code:
-        - 3.4.21.89
         - 3.4.-.-
+    - references: doi:10.1042/bj3610417;doi:10.3390/molecules24183251
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
     - notes: "TML release by lysosomal/proteasomal degradation (PMID:11802770); no specific protease, no GPR."
@@ -72434,7 +72434,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08029
-    - name: signal peptidase I ([protein]-N6,N6,N6-trimethyl-L-lysine)
+    - name: release of N6,N6,N6-trimethyl-L-lysine from protein
     - metabolites: !!omap
       - MAM00196r: 1.0
       - MAM00211r: -1.0
@@ -72447,8 +72447,8 @@
       - Lysine metabolism
     - annotation: !!omap
       - ec-code:
-        - 3.4.21.89
         - 3.4.-.-
+    - references: doi:10.1042/bj3610417;doi:10.3390/molecules24183251
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
     - notes: "TML release by lysosomal/proteasomal degradation (PMID:11802770); no specific protease, no GPR."
