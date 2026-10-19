@@ -90307,7 +90307,7 @@
       - MAM02678x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000131238 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669 or ENSG00000221988 or ENSG00000241404
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000131238 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000221988 or ENSG00000241404
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -95990,7 +95990,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000131238 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669 or ENSG00000221988 or ENSG00000241404
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000131238 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000221988 or ENSG00000241404
     - subsystem:
       - Arachidonic acid metabolism
     - annotation: !!omap
@@ -97470,7 +97470,7 @@
       - MAM02040m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97490,7 +97490,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97947,7 +97947,7 @@
       - MAM02040m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97967,7 +97967,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98572,7 +98572,7 @@
       - MAM02649m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98592,7 +98592,7 @@
       - MAM02649x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98851,7 +98851,7 @@
       - MAM02040m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98871,7 +98871,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -99121,7 +99121,7 @@
       - MAM02650x: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -99295,7 +99295,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -99714,12 +99714,13 @@
       - MAM02745c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000097021 or ENSG00000136881 or ENSG00000159445
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000097021 or ENSG00000136881 or ENSG00000159445 or ENSG00000112304
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
       - ec-code:
         - 3.1.2.2
+    - references: doi:10.1021/bi801879z
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -99828,12 +99829,13 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000097021 or ENSG00000136881 or ENSG00000159445
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000097021 or ENSG00000136881 or ENSG00000159445 or ENSG00000112304
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
       - ec-code:
         - 3.1.2.2
+    - references: doi:10.1021/bi801879z
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -100000,7 +100002,7 @@
       - MAM02613c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100019,7 +100021,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100039,7 +100041,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100058,7 +100060,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100077,7 +100079,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100096,7 +100098,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100115,7 +100117,7 @@
       - MAM02457c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100134,7 +100136,7 @@
       - MAM02053c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100153,7 +100155,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100173,7 +100175,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100192,7 +100194,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000159445
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100211,7 +100213,7 @@
       - MAM03047c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100230,7 +100232,7 @@
       - MAM02971c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000159445
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100250,7 +100252,7 @@
       - MAM02564c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100269,7 +100271,7 @@
       - MAM02110c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100288,7 +100290,7 @@
       - MAM03153c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100345,7 +100347,7 @@
       - MAM02648c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100364,7 +100366,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100383,7 +100385,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100402,7 +100404,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100421,7 +100423,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100440,7 +100442,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100478,7 +100480,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100497,7 +100499,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100516,7 +100518,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100611,7 +100613,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100630,7 +100632,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100649,7 +100651,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100668,7 +100670,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000159445
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100687,7 +100689,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000184227 or ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100706,7 +100708,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -100725,7 +100727,7 @@
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000159445
+    - gene_reaction_rule: ENSG00000136881
     - subsystem:
       - Acyl-CoA hydrolysis
     - annotation: !!omap
@@ -137872,7 +137874,7 @@
       - MAM02774m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000205669 or ENSG00000123130
+    - gene_reaction_rule: ENSG00000097021 or ENSG00000119673 or ENSG00000136881 or ENSG00000177465 or ENSG00000184227 or ENSG00000123130
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
@@ -203076,7 +203078,7 @@
       - MAM03887x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000119673
+    - gene_reaction_rule: ENSG00000119673 or ENSG00000205669
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -203096,7 +203098,7 @@
       - MAM02747x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000119673
+    - gene_reaction_rule: ENSG00000119673 or ENSG00000205669
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -211641,7 +211643,7 @@
       - MAM02040c: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881 or ENSG00000184227
     - subsystem:
       - Eicosanoid metabolism
     - annotation: !!omap
@@ -211681,7 +211683,7 @@
       - MAM02040c: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881 or ENSG00000184227
     - subsystem:
       - Eicosanoid metabolism
     - annotation: !!omap
@@ -211892,7 +211894,7 @@
       - MAM02040c: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881 or ENSG00000184227
     - subsystem:
       - Eicosanoid metabolism
     - annotation: !!omap
@@ -212686,7 +212688,7 @@
       - MAM02649c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000136881 or ENSG00000184227 or ENSG00000205669
+    - gene_reaction_rule: ENSG00000136881 or ENSG00000184227
     - subsystem:
       - Eicosanoid metabolism
     - annotation: !!omap
