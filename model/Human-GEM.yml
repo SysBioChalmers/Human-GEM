@@ -158181,7 +158181,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01911
-    - name: transport of cholesterol (cytosol to extracellular)
+    - name: ATP-driven transport of cholesterol (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -174958,7 +174958,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07679
-    - name: transport of 1-methylnicotinamide (cytosol to extracellular)
+    - name: ATP-driven transport of 1-methylnicotinamide (cytosol to extracellular)
     - metabolites: !!omap
       - MAM00536c: -1.0
       - MAM00536e: 1.0
@@ -176643,7 +176643,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08633
-    - name: transport of bilirubin-monoglucuronoside (cytosol to extracellular)
+    - name: ATP-driven transport of bilirubin-monoglucuronoside (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -183016,7 +183016,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03008
-    - name: transport of propanoyl-CoA (cytosol to peroxisome)
+    - name: ATP-driven transport of propanoyl-CoA (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -196177,7 +196177,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07681
-    - name: transport of acetylcholine (cytosol to extracellular)
+    - name: ATP-driven transport of acetylcholine (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01260c: -3.0
       - MAM01260e: 3.0
@@ -196269,7 +196269,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07635
-    - name: transport of adrenaline (cytosol to extracellular)
+    - name: ATP-driven transport of adrenaline (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 2.0
       - MAM01290c: -3.0
@@ -197964,7 +197964,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07636
-    - name: transport of dopamine (cytosol to extracellular)
+    - name: ATP-driven transport of dopamine (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 2.0
       - MAM01371c: -2.0
@@ -200633,7 +200633,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07633
-    - name: transport of histamine (cytosol to extracellular)
+    - name: ATP-driven transport of histamine (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 2.0
       - MAM01371c: -2.0
@@ -201591,7 +201591,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07637
-    - name: transport of noradrenaline (cytosol to extracellular)
+    - name: ATP-driven transport of noradrenaline (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 2.0
       - MAM01371c: -2.0

@@ -41,5 +41,6 @@ This directory contains curation-related data files that support changes to the 
 - `reactionNamesFollowRenames.tsv`: per-entity table of the change "reaction names follow the metabolite renames" (`code/modelCuration/applyCurationTable.py`).
 - `ecOnTransports.tsv`: per-entity table of the change "remove EC numbers that do not describe a transport" (`code/modelCuration/applyCurationTable.py`).
 - `crossReferencesOfAnotherReaction.tsv`: per-entity table of the change "cross-references that describe another reaction" (`code/modelCuration/applyCurationTable.py`).
+- `atpDrivenTransportNames.tsv`: per-entity table of the change "name ATP-driven transports apart from passive ones" (`code/modelCuration/applyCurationTable.py`).
 
 Static dumps of external sources that were kept here during the Human1 series (SwissProt / Cell Atlas / DeepLoc2 subcellular locations, Rhea reaction associations, and metabolite SMILES/InChI) have been removed for the Human2 release. They had gone stale and are better queried fresh from the source when needed. They remain in the git history and in the last Human1 release, [v1.19.0](https://github.com/SysBioChalmers/Human-GEM/releases/tag/v1.19.0).
