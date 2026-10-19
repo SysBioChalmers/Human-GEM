@@ -214253,7 +214253,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.137
+        - 2.3.1.-
     - references: PMID:8214594;PMID:8496747;PMID:8491807
     - rxnFrom: Recon3D
     - confidence_score: 0.0
