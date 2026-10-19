@@ -85560,13 +85560,13 @@
       - MAM02941c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000068366 or ENSG00000103740 or ENSG00000123983 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000197142
+    - gene_reaction_rule: ENSG00000068366 or ENSG00000103740 or ENSG00000123983 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000197142 or ENSG00000130377
     - subsystem:
       - Fatty acid activation (cytosolic)
     - annotation: !!omap
       - ec-code:
         - 6.2.1.3
-    - references: PMID:8584017
+    - references: PMID:8584017;doi:10.1016/j.abb.2006.04.013
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -86750,13 +86750,13 @@
       - MAM02941r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000068366 or ENSG00000103740 or ENSG00000119673 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000177465 or ENSG00000197142
+    - gene_reaction_rule: ENSG00000068366 or ENSG00000103740 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000197142
     - subsystem:
       - Fatty acid activation (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 6.2.1.3
-    - references: PMID:8584017
+    - references: PMID:8584017;doi:10.1016/j.abb.2006.04.013
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
