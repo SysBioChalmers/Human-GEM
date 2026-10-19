@@ -12050,15 +12050,15 @@
     - id: MAM01115c
     - name: 5-methyl-THF
     - compartment: c
-    - charge: -1.0
-    - formula: C20H24N7O6
+    - charge: -2.0
+    - formula: C20H23N7O6
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01115e
     - name: 5-methyl-THF
     - compartment: e
-    - charge: -1.0
-    - formula: C20H24N7O6
+    - charge: -2.0
+    - formula: C20H23N7O6
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01116c
@@ -21678,22 +21678,22 @@
     - id: MAM01830c
     - name: folate
     - compartment: c
-    - charge: -1.0
-    - formula: C19H18N7O6
+    - charge: -2.0
+    - formula: C19H17N7O6
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01830m
     - name: folate
     - compartment: m
-    - charge: -1.0
-    - formula: C19H18N7O6
+    - charge: -2.0
+    - formula: C19H17N7O6
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01830e
     - name: folate
     - compartment: e
-    - charge: -1.0
-    - formula: C19H18N7O6
+    - charge: -2.0
+    - formula: C19H17N7O6
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01831c
@@ -32680,8 +32680,8 @@
     - id: MAM02739c
     - name: phosphodimethylethanolamine
     - compartment: c
-    - charge: -2.0
-    - formula: C4H10NO4P
+    - charge: -1.0
+    - formula: C4H11NO4P
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02740e
@@ -42654,8 +42654,8 @@
     - id: MAM01115n
     - name: 5-methyl-THF
     - compartment: n
-    - charge: -1.0
-    - formula: C20H24N7O6
+    - charge: -2.0
+    - formula: C20H23N7O6
     - metFrom: Recon3D
   - !!omap
     - id: MAM02980n
@@ -42682,8 +42682,8 @@
     - id: MAM01115r
     - name: 5-methyl-THF
     - compartment: r
-    - charge: -1.0
-    - formula: C20H24N7O6
+    - charge: -2.0
+    - formula: C20H23N7O6
     - metFrom: Recon3D
   - !!omap
     - id: MAM02980r
@@ -76388,7 +76388,6 @@
     - name: 5-methyltetrahydrofolate:L-homocysteine S-methyltransferase
     - metabolites: !!omap
       - MAM01115c: -1.0
-      - MAM02039c: 1.0
       - MAM02133c: -1.0
       - MAM02471c: 1.0
       - MAM02980c: 1.0
@@ -83946,6 +83945,7 @@
     - name: histamine N-methyltransferase (SAM)
     - metabolites: !!omap
       - MAM01115c: 1.0
+      - MAM02039c: 1.0
       - MAM02871c: 1.0
       - MAM02877c: -1.0
       - MAM02980c: -1.0
@@ -125378,7 +125378,7 @@
     - id: MAR04838
     - name: S-Adenosyl-L-methionine:methylethanolamine phosphate N-methyltransferase
     - metabolites: !!omap
-      - MAM02039c: 2.0
+      - MAM02039c: 1.0
       - MAM02600c: -1.0
       - MAM02739c: 1.0
       - MAM02871c: 1.0
@@ -125397,6 +125397,7 @@
     - id: MAR04839
     - name: S-Adenosyl-L-methionine:phosphodimethylethanolamine N-methyltransferase
     - metabolites: !!omap
+      - MAM02039c: 1.0
       - MAM02738c: 1.0
       - MAM02739c: -1.0
       - MAM02871c: 1.0
@@ -143000,7 +143001,7 @@
     - metabolites: !!omap
       - MAM01045c: -1.0
       - MAM01115c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
     - lower_bound: 0.0
@@ -143020,7 +143021,7 @@
     - metabolites: !!omap
       - MAM01045c: -1.0
       - MAM01115c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02552c: 1.0
       - MAM02553c: -1.0
     - lower_bound: 0.0
@@ -143078,6 +143079,7 @@
     - metabolites: !!omap
       - MAM01700c: 1.0
       - MAM01830c: -1.0
+      - MAM02039c: -1.0
       - MAM02552c: 1.0
       - MAM02553c: -1.0
     - lower_bound: -1000.0
@@ -143097,6 +143099,7 @@
     - metabolites: !!omap
       - MAM01700c: 1.0
       - MAM01830c: -1.0
+      - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
     - lower_bound: -1000.0
@@ -143116,6 +143119,7 @@
     - metabolites: !!omap
       - MAM01700m: 1.0
       - MAM01830m: -1.0
+      - MAM02039m: -1.0
       - MAM02554m: 1.0
       - MAM02555m: -1.0
     - lower_bound: 0.0
@@ -144641,7 +144645,6 @@
       - MAM01045c: 1.0
       - MAM01115c: -1.0
       - MAM01698c: -1.0
-      - MAM02039c: 1.0
       - MAM02978c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -212873,7 +212876,6 @@
     - name: Methionine Synthase
     - metabolites: !!omap
       - MAM01115n: -1.0
-      - MAM02039n: 1.0
       - MAM02890n: -1.0
       - MAM02891n: 1.0
       - MAM02980n: 1.0
@@ -212891,7 +212893,6 @@
     - name: Methionine Synthase
     - metabolites: !!omap
       - MAM01115r: -1.0
-      - MAM02039r: 1.0
       - MAM02890r: -1.0
       - MAM02891r: 1.0
       - MAM02980r: 1.0
