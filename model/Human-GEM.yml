@@ -12314,14 +12314,14 @@
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01136c
-    - name: 5-S-glutathionyl-aminochrome reduced
+    - name: 4-S-glutathionyl-5,6-dihydroxyindoline
     - compartment: c
     - charge: -1.0
     - formula: C18H23N4O8S
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01136e
-    - name: 5-S-glutathionyl-aminochrome reduced
+    - name: 4-S-glutathionyl-5,6-dihydroxyindoline
     - compartment: e
     - charge: -1.0
     - formula: C18H23N4O8S
