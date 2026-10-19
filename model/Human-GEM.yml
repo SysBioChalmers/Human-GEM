@@ -62017,7 +62017,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04841
-    - name: aldehyde dehydrogenase [NAD(P)(+)] (ribose)
+    - name: aldose reductase (ribose)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02552c: 1.0
@@ -71198,7 +71198,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08434
-    - name: dihydrolipoyl dehydrogenase (S-aminomethyldihydrolipoamide)
+    - name: aminomethyltransferase ([protein]-N6-(S-aminomethyldihydrolipoyl)lysine)
     - metabolites: !!omap
       - MAM00208m: 1.0
       - MAM01045m: 1.0
@@ -73297,7 +73297,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06927
-    - name: methylcrotonoyl-CoA carboxylase (2-methylglutaconic acid)
+    - name: 2-methylglutaconyl-CoA hydrolysis
     - metabolites: !!omap
       - MAM00666m: 1.0
       - MAM00667m: -1.0
@@ -76433,7 +76433,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05381
-    - name: sulfotransferase (thioredoxin)
+    - name: phosphoadenylyl-sulfate reductase (thioredoxin)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02666c: 1.0
@@ -76719,7 +76719,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08062
-    - name: sulfotransferase (dehydroalanine)
+    - name: dehydroalanine sulfonation (L-cysteate)
     - metabolites: !!omap
       - MAM01654c: -1.0
       - MAM02350c: 1.0
@@ -81628,7 +81628,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05162
-    - name: plasminogen (glycyl-tRNA(gly))
+    - name: synthesis of plasminogen
     - metabolites: !!omap
       - MAM01285c: 2430.0
       - MAM01371c: -2430.0
@@ -81685,7 +81685,7 @@
     - confidence_score: 2.0
   - !!omap
     - id: MAR05163
-    - name: coagulation factor II, thrombin (glycyl-tRNA(gly))
+    - name: synthesis of prothrombin
     - metabolites: !!omap
       - MAM01285c: 1866.0
       - MAM01371c: -1866.0
@@ -83515,7 +83515,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05288
-    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (glycogenin)
+    - name: degradation of glycogenin
     - metabolites: !!omap
       - MAM01285c: 349.0
       - MAM01307c: 22.0
@@ -83857,7 +83857,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04842
-    - name: aldehyde dehydrogenase [NAD(P)(+)] (SAM)
+    - name: SAM-dependent methyl transfer (activated methyl group pool)
     - metabolites: !!omap
       - MAM01266c: 1.0
       - MAM02871c: 1.0
@@ -103562,7 +103562,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03029
-    - name: carnitine O-acetyltransferase (L-carnitine)
+    - name: transport of O-acetylcarnitine (peroxisome to cytosol) and L-carnitine (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM02348c: -1.0
       - MAM02348x: 1.0
@@ -108003,7 +108003,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03493
-    - name: solute carrier ((2R)-pristanic acid)
+    - name: very-long-chain acyl-CoA synthetase ((2R)-pristanic acid)
     - metabolites: !!omap
       - MAM00075x: 1.0
       - MAM00077x: -1.0
@@ -116642,7 +116642,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02055
-    - name: cytochrome P450 (estrone)
+    - name: estrone 2-hydroxylase
     - metabolites: !!omap
       - MAM00650c: 1.0
       - MAM01790c: -1.0
@@ -116664,7 +116664,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02056
-    - name: cytochrome P450 (estrone)
+    - name: estrone 2-hydroxylase
     - metabolites: !!omap
       - MAM00650l: 1.0
       - MAM01790l: -1.0
@@ -116686,7 +116686,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02057
-    - name: cytochrome P450 (estrone)
+    - name: estrone 2-hydroxylase
     - metabolites: !!omap
       - MAM00650r: 1.0
       - MAM01790r: -1.0
@@ -122389,7 +122389,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08224
-    - name: solute carrier (acetyl-CoA)
+    - name: GD3 9-O-acetylation
     - metabolites: !!omap
       - MAM01244c: 1.0
       - MAM01261c: -1.0
@@ -122404,7 +122404,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08226
-    - name: solute carrier (acetyl-CoA)
+    - name: GD3 9-O-acetylation
     - metabolites: !!omap
       - MAM01244g: 1.0
       - MAM01261g: -1.0
@@ -122419,7 +122419,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08227
-    - name: solute carrier (acetyl-CoA)
+    - name: GT3 9-O-acetylation
     - metabolites: !!omap
       - MAM01245c: 1.0
       - MAM01261c: -1.0
@@ -122434,7 +122434,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08228
-    - name: solute carrier (acetyl-CoA)
+    - name: GT3 9-O-acetylation
     - metabolites: !!omap
       - MAM01245g: 1.0
       - MAM01261g: -1.0
@@ -128521,7 +128521,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01999
-    - name: steroid 11beta-monooxygenase (cortisol)
+    - name: steroid 17,20-lyase (cortisol)
     - metabolites: !!omap
       - MAM00284c: 1.0
       - MAM01252c: 1.0
@@ -129698,7 +129698,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00703
-    - name: formate dehydrogenase (palmitoyl-CoA)
+    - name: alcohol-forming fatty acyl-CoA reductase (palmitoyl-CoA)
     - metabolites: !!omap
       - MAM01597x: 1.0
       - MAM02039x: -2.0
@@ -134712,7 +134712,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07486
-    - name: N-acetylgalactosamine-6-sulfatase
+    - name: beta-galactosidase (keratan sulfate II (core 4-linked), degradation product 2)
     - metabolites: !!omap
       - MAM01910l: 2.0
       - MAM02040l: -2.0
@@ -149400,7 +149400,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07025
-    - name: D-arabinitol 4-dehydrogenase (aflatoxin B1 dialdehyde)
+    - name: aflatoxin B1 dialdehyde reductase (6-propanal-forming)
     - metabolites: !!omap
       - MAM00229c: 1.0
       - MAM01294c: -1.0
@@ -149417,7 +149417,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07026
-    - name: D-arabinitol 4-dehydrogenase
+    - name: aflatoxin B1 aldehyde reductase (6-propanal)
     - metabolites: !!omap
       - MAM00229c: -1.0
       - MAM01156c: 1.0
@@ -149434,7 +149434,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07027
-    - name: D-arabinitol 4-dehydrogenase (aflatoxin B1 dialdehyde)
+    - name: aflatoxin B1 dialdehyde reductase (6-acetaldehyde-forming)
     - metabolites: !!omap
       - MAM01294c: -1.0
       - MAM01318c: 1.0
@@ -149451,7 +149451,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07028
-    - name: D-arabinitol 4-dehydrogenase
+    - name: aflatoxin B1 aldehyde reductase (6-acetaldehyde)
     - metabolites: !!omap
       - MAM01156c: 1.0
       - MAM01318c: -1.0
@@ -189080,7 +189080,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04856
-    - name: alpha-D-Glucose 6-phosphate ketol-isomerase
+    - name: transport of glucose-6-phosphate (cytosol to endoplasmic reticulum)
     - metabolites: !!omap
       - MAM01968c: -1.0
       - MAM01968r: 1.0
@@ -205908,7 +205908,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02494
-    - name: lysyl oxidase like (eicosanoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase (eicosanoyl-CoA)
     - metabolites: !!omap
       - MAM00866e: 1.0
       - MAM01596e: 1.0
@@ -205945,7 +205945,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02498
-    - name: HIRA interacting protein (docosanoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase (docosanoyl-CoA)
     - metabolites: !!omap
       - MAM00904n: 1.0
       - MAM01596n: 1.0
@@ -206107,7 +206107,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02521
-    - name: ELOVL fatty acid elongase (3-oxooctadecanoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxooctadecanoyl-CoA)
     - metabolites: !!omap
       - MAM00793r: 1.0
       - MAM00890r: -1.0
@@ -206127,7 +206127,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02523
-    - name: HIRA interacting protein (3-hydroxyoctadecanoyl-CoA)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3-hydroxyoctadecanoyl-CoA)
     - metabolites: !!omap
       - MAM00057n: 1.0
       - MAM00793n: -1.0
@@ -206145,7 +206145,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02525
-    - name: anaphase promoting complex ((2E)-octadecenoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase ((2E)-octadecenoyl-CoA)
     - metabolites: !!omap
       - MAM00057n: -1.0
       - MAM02039n: -1.0
@@ -207194,7 +207194,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02883
-    - name: N(1)-acetylpolyamine oxidase (5beta-cholestane-3alpha,7alpha,27-triol)
+    - name: 5beta-cholestane-3alpha,7alpha,27-triol dehydrogenase (NAD+)
     - metabolites: !!omap
       - MAM00756c: 1.0
       - MAM01094c: -1.0
@@ -208789,7 +208789,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03276
-    - name: medium-chain acyl-CoA dehydrogenase (palmitoleoyl-CoA)
+    - name: acyl-CoA oxidase (palmitoleoyl-CoA)
     - metabolites: !!omap
       - MAM01802x: -1.0
       - MAM01803x: 1.0
@@ -208808,7 +208808,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03289
-    - name: medium-chain acyl-CoA dehydrogenase ((7Z)-tetradecenoyl-CoA)
+    - name: acyl-CoA oxidase ((7Z)-tetradecenoyl-CoA)
     - metabolites: !!omap
       - MAM00118x: -1.0
       - MAM01802x: -1.0
@@ -208848,7 +208848,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03295
-    - name: medium-chain acyl-CoA dehydrogenase (trans,cis-dodeca-2,5-dienoyl-CoA)
+    - name: acyl-CoA oxidase ((5Z)-dodecenoyl-CoA)
     - metabolites: !!omap
       - MAM00099x: 1.0
       - MAM01802x: 1.0
@@ -209117,7 +209117,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03376
-    - name: enoyl-CoA hydratase ((3E,5Z,8Z)-tetradecatrienoyl-CoA)
+    - name: Delta(3,5)-Delta(2,4)-dienoyl-CoA isomerase ((3E,5Z,8Z)-tetradecatrienoyl-CoA)
     - metabolites: !!omap
       - MAM03358m: -1.0
       - MAM03359m: 1.0
@@ -209382,7 +209382,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03390
-    - name: leukotriene-B4 20-monooxygenase ((2R)-pristanic acid)
+    - name: long-chain-fatty-acid-CoA ligase ((2R)-pristanic acid)
     - metabolites: !!omap
       - MAM00075c: 1.0
       - MAM00077c: -1.0
@@ -209439,7 +209439,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03393
-    - name: microsomal epoxide hydrolase (gamma-linolenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase (gamma-linolenoyl-CoA)
     - metabolites: !!omap
       - MAM00859r: 1.0
       - MAM01596r: 1.0
@@ -209460,7 +209460,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03394
-    - name: ELOVL fatty acid elongase (trans-2-cis,cis,cis-8,11,14-eicosatetraenoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (trans-2-cis,cis,cis-8,11,14-eicosatetraenoyl-CoA)
     - metabolites: !!omap
       - MAM01697r: 1.0
       - MAM02039r: -1.0
@@ -209480,7 +209480,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03395
-    - name: ELOVL fatty acid elongase (eicosa-(2E,8Z,11Z,14Z,17Z)-pentaenoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (eicosa-(2E,8Z,11Z,14Z,17Z)-pentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00125r: 1.0
       - MAM01769r: -1.0
@@ -209500,7 +209500,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03399
-    - name: microsomal epoxide hydrolase ((6Z,9Z,12Z,15Z)-octadecatetraenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase ((6Z,9Z,12Z,15Z)-octadecatetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00108r: -1.0
       - MAM00811r: 1.0
@@ -209541,7 +209541,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03401
-    - name: ELOVL fatty acid elongase (3-keto-eicosa-8,11,14,17-all-cis-tetraenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-keto-eicosa-8,11,14,17-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00708r: 1.0
       - MAM00811r: -1.0
@@ -209561,7 +209561,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03402
-    - name: ELOVL fatty acid elongase (3(S)-hydroxy-all-cis-8,11,14,17-eicosatetraenoyl-CoA)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-all-cis-8,11,14,17-eicosatetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00708r: -1.0
       - MAM01769r: 1.0
@@ -209579,7 +209579,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03403
-    - name: ELOVL fatty acid elongase (2-trans-7,10,13,16,19-all-cis-docosahexaenoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (2-trans-7,10,13,16,19-all-cis-docosahexaenoyl-CoA)
     - metabolites: !!omap
       - MAM00121r: 1.0
       - MAM00679r: -1.0
@@ -209599,7 +209599,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03404
-    - name: long-chain-aldehyde dehydrogenase ((5Z,8Z,11Z,14Z,17Z)-eicosapentaenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase ((5Z,8Z,11Z,14Z,17Z)-eicosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00103r: -1.0
       - MAM00863r: 1.0
@@ -209620,7 +209620,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03405
-    - name: ELOVL fatty acid elongase (3-oxo-docosa-7,10,13,16,19-all-cis-pentaenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-docosa-7,10,13,16,19-all-cis-pentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00713r: 1.0
       - MAM00863r: -1.0
@@ -209640,7 +209640,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03410
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-docosa-7,10,13,16,19-all-cis-pentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00679r: 1.0
       - MAM00713r: -1.0
@@ -209838,7 +209838,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03443
-    - name: 3beta-hydroxy-Delta(5)-steroid dehydrogenase (arachidonyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase (arachidonoyl-CoA)
     - metabolites: !!omap
       - MAM00864r: 1.0
       - MAM01364r: -1.0
@@ -209859,7 +209859,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03451
-    - name: ELOVL fatty acid elongase (3-oxo-docosa-7,10,13,16-all-cis-tetraenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-docosa-7,10,13,16-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00714r: 1.0
       - MAM00864r: -1.0
@@ -209879,7 +209879,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03465
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-docosa-7,10,13,16-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00074r: 1.0
       - MAM00714r: -1.0
@@ -209956,7 +209956,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03487
-    - name: ELOVL fatty acid elongase (3-oxoeicosa-cis,cis-11,14-dienoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxoeicosa-cis,cis-11,14-dienoyl-CoA)
     - metabolites: !!omap
       - MAM00087r: 1.0
       - MAM00870r: -1.0
@@ -209976,7 +209976,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03490
-    - name: ELOVL fatty acid elongase ((3S)-hydroxy-eicosa-cis,cis-11,14-dienoyl-CoA)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase ((3S)-hydroxy-eicosa-cis,cis-11,14-dienoyl-CoA)
     - metabolites: !!omap
       - MAM00087r: -1.0
       - MAM02040r: 1.0
@@ -209994,7 +209994,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03492
-    - name: ELOVL fatty acid elongase (trans,cis,cis-2,11,14-eicosatrienoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (trans,cis,cis-2,11,14-eicosatrienoyl-CoA)
     - metabolites: !!omap
       - MAM00009r: 1.0
       - MAM02039r: -1.0
@@ -210035,7 +210035,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03495
-    - name: ELOVL fatty acid elongase (3-oxo-docosa-cis,cis,cis-10,13,16-trienoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-docosa-cis,cis,cis-10,13,16-trienoyl-CoA)
     - metabolites: !!omap
       - MAM00698r: 1.0
       - MAM00865r: -1.0
@@ -210055,7 +210055,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03496
-    - name: ELOVL fatty acid elongase (3(S)-hydroxy-10,13,16-all-cis-docosatrienoyl-CoA)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-10,13,16-all-cis-docosatrienoyl-CoA)
     - metabolites: !!omap
       - MAM00698r: -1.0
       - MAM02040r: 1.0
@@ -210073,7 +210073,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03497
-    - name: ELOVL fatty acid elongase (trans,cis,cis,cis-2,10,13,16-docosatetraenoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (trans,cis,cis,cis-2,10,13,16-docosatetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00264r: 1.0
       - MAM02039r: -1.0
@@ -210093,7 +210093,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03499
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis-2,10,13,16,19-docosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00262r: 1.0
       - MAM02039r: -1.0
@@ -210134,7 +210134,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03502
-    - name: ELOVL fatty acid elongase (3-oxo-docosa-10,13,16,19-all-cis-tetraenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-docosa-10,13,16,19-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00711r: 1.0
       - MAM00861r: -1.0
@@ -210154,7 +210154,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03504
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-docosa-10,13,16,19-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00711r: -1.0
       - MAM02040r: 1.0
@@ -210172,7 +210172,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03507
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis-2,12,15,18,21-tetracosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00317r: 1.0
       - MAM02039r: -1.0
@@ -210213,7 +210213,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03518
-    - name: ELOVL fatty acid elongase (3-oxo-tetracosa-12,15,18,21-all-cis-tetraenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-tetracosa-12,15,18,21-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00716r: 1.0
       - MAM00901r: -1.0
@@ -210233,7 +210233,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03535
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-tetracosa-12,15,18,21-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00716r: -1.0
       - MAM02040r: 1.0
@@ -210442,7 +210442,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03607
-    - name: ELOVL fatty acid elongase (3-oxo-11-cis-eicosenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-11-cis-eicosenoyl-CoA)
     - metabolites: !!omap
       - MAM00700r: 1.0
       - MAM00840r: -1.0
@@ -210462,7 +210462,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03608
-    - name: ELOVL fatty acid elongase (3(S)-hydroxy-11-cis-eicosenoyl-CoA)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-11-cis-eicosenoyl-CoA)
     - metabolites: !!omap
       - MAM00700r: -1.0
       - MAM02040r: 1.0
@@ -210480,7 +210480,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03609
-    - name: ELOVL fatty acid elongase (trans,cis-2,11-eicosadienoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (trans,cis-2,11-eicosadienoyl-CoA)
     - metabolites: !!omap
       - MAM00007r: 1.0
       - MAM02039r: -1.0
@@ -210500,7 +210500,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03610
-    - name: ELOVL fatty acid elongase (3-oxo-13cis-docosenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-13cis-docosenoyl-CoA)
     - metabolites: !!omap
       - MAM00701r: 1.0
       - MAM00842r: -1.0
@@ -210520,7 +210520,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03611
-    - name: ELOVL fatty acid elongase (3(S)-hydroxy-13-cis-docosenoyl-CoA)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-13-cis-docosenoyl-CoA)
     - metabolites: !!omap
       - MAM00701r: -1.0
       - MAM02040r: 1.0
@@ -210538,7 +210538,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03612
-    - name: ELOVL fatty acid elongase (trans,cis-2,13-docosadienoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (trans,cis-2,13-docosadienoyl-CoA)
     - metabolites: !!omap
       - MAM00016r: 1.0
       - MAM02039r: -1.0
@@ -210596,7 +210596,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03615
-    - name: ELOVL fatty acid elongase (3-oxo-cis-15-tetracosaenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-cis-15-tetracosaenoyl-CoA)
     - metabolites: !!omap
       - MAM00709r: 1.0
       - MAM00856r: -1.0
@@ -210616,7 +210616,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03616
-    - name: ELOVL fatty acid elongase (3(S)-hydroxy-cis-15-tetracosaenoyl-CoA)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-cis-15-tetracosaenoyl-CoA)
     - metabolites: !!omap
       - MAM00709r: -1.0
       - MAM02040r: 1.0
@@ -210634,7 +210634,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03617
-    - name: ELOVL fatty acid elongase (trans,cis-2,15-tetracosadienoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (trans,cis-2,15-tetracosadienoyl-CoA)
     - metabolites: !!omap
       - MAM00025r: 1.0
       - MAM02039r: -1.0
@@ -210654,7 +210654,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03618
-    - name: acetyl-CoA C-acyltransferase (malonyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase (palmitoleoyl-CoA)
     - metabolites: !!omap
       - MAM01596c: 1.0
       - MAM01597c: 1.0
@@ -210675,7 +210675,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03619
-    - name: acetyl-CoA C-acyltransferase (malonyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase (palmitoleoyl-CoA)
     - metabolites: !!omap
       - MAM01596r: 1.0
       - MAM01597r: 1.0
@@ -210696,7 +210696,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03620
-    - name: acetyl-CoA C-acyltransferase (3-oxo-cis-9-octadecenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-cis-9-octadecenoyl-CoA)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02554c: 1.0
@@ -210715,7 +210715,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03621
-    - name: ELOVL fatty acid elongase (3-oxo-cis-9-octadecenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-cis-9-octadecenoyl-CoA)
     - metabolites: !!omap
       - MAM02039r: -1.0
       - MAM02554r: 1.0
@@ -210735,7 +210735,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03623
-    - name: enoyl-CoA hydratase (3(S)-hydroxy-cis-9-octadecenoyl-CoA)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-cis-9-octadecenoyl-CoA)
     - metabolites: !!omap
       - MAM02040c: 1.0
       - MAM03365c: -1.0
@@ -210752,7 +210752,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03624
-    - name: ELOVL fatty acid elongase (3(S)-hydroxy-cis-9-octadecenoyl-CoA)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-cis-9-octadecenoyl-CoA)
     - metabolites: !!omap
       - MAM02040r: 1.0
       - MAM03365r: -1.0
@@ -210770,7 +210770,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03745
-    - name: alpha-methylacyl-CoA racemase (trans,cis-2,9-octadecadienoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (trans,cis-2,9-octadecadienoyl-CoA)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02554c: 1.0
@@ -210789,7 +210789,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03749
-    - name: ELOVL fatty acid elongase (trans,cis-2,9-octadecadienoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (trans,cis-2,9-octadecadienoyl-CoA)
     - metabolites: !!omap
       - MAM02039r: -1.0
       - MAM02554r: 1.0
@@ -211186,7 +211186,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03824
-    - name: unspecific monooxygenase (1-alkyl-2-lysoglycerol-3-phosphocholine)
+    - name: lysophospholipase D (1-alkyl-2-lysoglycerol-3-phosphocholine)
     - metabolites: !!omap
       - MAM00516c: -1.0
       - MAM01513c: 1.0
@@ -211261,7 +211261,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03834
-    - name: FMN reductase (NADPH) (prostaglandin J2)
+    - name: prostaglandin J2 isomerisation (delta-12-prostaglandin J2)
     - metabolites: !!omap
       - MAM01662m: 1.0
       - MAM02796m: -1.0
@@ -211771,7 +211771,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03914
-    - name: leukotriene-B4 20-monooxygenase (3-(methylthio)propionic acid)
+    - name: 3-(methylthio)propionate methanethiol-lyase
     - metabolites: !!omap
       - MAM00684c: -1.0
       - MAM03405c: 1.0
@@ -212031,7 +212031,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03962
-    - name: arachidonate 5-lipoxygenase (prostaglandin D2)
+    - name: prostaglandin D2 dehydration (9-deoxy-delta12-PGD2)
     - metabolites: !!omap
       - MAM01234r: 1.0
       - MAM02039r: -2.0
@@ -212272,7 +212272,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04007
-    - name: acyl-CoA oxidase (gamma-tocopheroxyl-radical)
+    - name: gamma-tocopheroxyl radical hydration (8alpha-hydroxy-gamma-tocopherone)
     - metabolites: !!omap
       - MAM01211c: 1.0
       - MAM01936c: -1.0
@@ -219427,7 +219427,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07193
-    - name: Hydrolysis of Glycylproline
+    - name: Hydrolysis of L-Prolinylglycine
     - metabolites: !!omap
       - MAM01986c: 1.0
       - MAM02040c: -1.0
@@ -266203,7 +266203,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10067
-    - name: inositol polyphosphate multikinase (1D-myo-inositol-1,3,4,5,6-pentakisphosphate)
+    - name: multiple inositol-polyphosphate phosphatase (1D-myo-inositol-1,3,4,5,6-pentakisphosphate)
     - metabolites: !!omap
       - MAM00521c: -1.0
       - MAM00525c: 1.0
