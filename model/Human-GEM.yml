@@ -30112,8 +30112,8 @@
     - id: MAM02545c
     - name: N-acetyl-O-acetylneuraminate
     - compartment: c
-    - charge: -2.0
-    - formula: C13H19NO10
+    - charge: -1.0
+    - formula: C13H20NO10
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02546c
@@ -152479,6 +152479,7 @@
     - name: N-Acyl-O-acetylneuraminate O-acetylesterase
     - metabolites: !!omap
       - MAM01252c: 1.0
+      - MAM02039c: 1.0
       - MAM02040c: -1.0
       - MAM02543c: 1.0
       - MAM02545c: -1.0
