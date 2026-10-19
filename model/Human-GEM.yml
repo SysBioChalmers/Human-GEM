@@ -271462,6 +271462,22 @@
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
     - notes: Acylation of 1-alkyl-G3P with acyl-CoA; the acyltransferase is not identified.
+  - !!omap
+    - id: MAR20221
+    - name: alpha-tocopheryl hydroquinone oxidation by ubiquinone
+    - metabolites: !!omap
+      - MAM01328c: -1.0
+      - MAM01329c: 1.0
+      - MAM03102c: 1.0
+      - MAM03103c: -1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Vitamin E metabolism
+    - references: doi:10.1073/pnas.94.15.7885
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: "Non-enzymatic: alpha-tocopheryl hydroquinone reduces ubiquinone-10 in lipoproteins (PMID:9223282). It is the consumer of the hydroquinone made by MAR03047, MAR06500, MAR20189 and MAR20190."
 - genes:
   - !!omap
     - id: ENSG00000000419
