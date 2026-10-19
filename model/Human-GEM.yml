@@ -266731,6 +266731,7 @@
     - objective_coefficient: 1.0
     - subsystem:
       - Artificial reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10066
@@ -267765,6 +267766,7 @@
       - ec-code:
         - 1.14.13.8
     - references: PMID:32156684
+    - rxnFrom: HumanGEM
     - confidence_score: 4.0
   - !!omap
     - id: MAR13084
@@ -267776,6 +267778,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR13085
@@ -267787,6 +267790,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR13086
@@ -267800,6 +267804,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25836925
+    - rxnFrom: HumanGEM
     - confidence_score: 2.0
   - !!omap
     - id: MAR13087
@@ -267818,6 +267823,7 @@
       - ec-code:
         - 4.1.1.6
     - references: PMID:23610393;PMID:31548418
+    - rxnFrom: HumanGEM
     - confidence_score: 4.0
   - !!omap
     - id: MAR20001
@@ -267836,6 +267842,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.105
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20003
@@ -267854,6 +267861,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.315
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20005
@@ -267873,6 +267881,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.105
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20006
@@ -267892,6 +267901,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20007
@@ -267910,6 +267920,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.105
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20008
@@ -267928,6 +267939,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20009
@@ -267948,6 +267960,7 @@
         - 1.1.1.328
         - 1.11.1.1
         - 1.6.5.2
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20010
@@ -267968,6 +267981,7 @@
         - 1.1.1.328
         - 1.11.1.1
         - 1.6.5.2
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20011
@@ -267987,6 +268001,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.36
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20013
@@ -268004,6 +268019,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.99.24
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20016
@@ -268023,6 +268039,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.48
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20017
@@ -268044,6 +268061,7 @@
         - 1.2.1.3
         - 1.2.1.48
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20018
@@ -268062,6 +268080,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.3.1.48
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20019
@@ -268080,6 +268099,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.3.1.48
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20021
@@ -268101,6 +268121,7 @@
       - ec-code:
         - 1.14.14.1
     - references: PMID:18577768
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20023
@@ -268122,6 +268143,7 @@
       - ec-code:
         - 1.14.14.1
     - references: PMID:18577768
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20025
@@ -268143,6 +268165,7 @@
       - ec-code:
         - 1.14.14.1
     - references: PMID:18577768
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20027
@@ -268164,6 +268187,7 @@
       - ec-code:
         - 1.14.14.1
     - references: PMID:10553002
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20029
@@ -268185,6 +268209,7 @@
       - ec-code:
         - 1.14.14.1
     - references: PMID:10553002
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20033
@@ -268200,6 +268225,7 @@
     - annotation: !!omap
       - ec-code:
         - 5.1.3.3
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20034
@@ -268215,6 +268241,7 @@
     - annotation: !!omap
       - ec-code:
         - 5.1.3.3
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20035
@@ -268230,6 +268257,7 @@
     - annotation: !!omap
       - ec-code:
         - 5.1.3.3
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20036
@@ -268245,6 +268273,7 @@
     - annotation: !!omap
       - ec-code:
         - 5.1.3.3
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20037
@@ -268265,6 +268294,7 @@
       - ec-code:
         - 1.2.1.3
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20038
@@ -268284,6 +268314,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.7
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20039
@@ -268303,6 +268334,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.28
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20040
@@ -268323,6 +268355,7 @@
       - ec-code:
         - 1.2.1.3
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20041
@@ -268342,6 +268375,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.-
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20042
@@ -268361,6 +268395,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20043
@@ -268380,6 +268415,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.-
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20044
@@ -268398,6 +268434,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.284
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20046
@@ -268417,6 +268454,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.3
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20047
@@ -268436,6 +268474,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.3
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20048
@@ -268455,6 +268494,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.48
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20049
@@ -268474,6 +268514,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.-
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20050
@@ -268493,6 +268534,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.-
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20051
@@ -268512,6 +268554,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.-
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20053
@@ -268531,6 +268574,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.48
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20054
@@ -268550,6 +268594,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.48
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20055
@@ -268571,6 +268616,7 @@
         - 1.2.1.3
         - 1.2.1.48
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20056
@@ -268592,6 +268638,7 @@
         - 1.2.1.3
         - 1.2.1.48
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20057
@@ -268613,6 +268660,7 @@
         - 1.2.1.3
         - 1.2.1.48
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20058
@@ -268634,6 +268682,7 @@
         - 1.2.1.3
         - 1.2.1.48
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20059
@@ -268654,6 +268703,7 @@
       - ec-code:
         - 1.2.1.48
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20060
@@ -268674,6 +268724,7 @@
       - ec-code:
         - 1.2.1.48
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20061
@@ -268695,6 +268746,7 @@
         - 1.2.1.3
         - 1.2.1.48
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20062
@@ -268715,6 +268767,7 @@
       - ec-code:
         - 1.2.1.3
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20063
@@ -268735,6 +268788,7 @@
       - ec-code:
         - 1.2.1.3
         - 1.2.1.5
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20064
@@ -268754,6 +268808,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.94
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20065
@@ -268773,6 +268828,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.94
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20067
@@ -268791,6 +268847,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.1
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20068
@@ -268809,6 +268866,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20069
@@ -268823,6 +268881,7 @@
     - gene_reaction_rule: (ENSG00000131828 and ENSG00000168291 and ENSG00000150768) or (ENSG00000163114 and ENSG00000168291 and ENSG00000150768)
     - subsystem:
       - Glycolysis / Gluconeogenesis
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20070
@@ -268840,6 +268899,7 @@
       - ec-code:
         - 3.1.3.11
     - references: PMID:6998788
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
     - notes: https://doi.org/10.1007/BF02702726
   - !!omap
@@ -268857,6 +268917,7 @@
     - annotation: !!omap
       - ec-code:
         - 4.3.2.8
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20072
@@ -268873,6 +268934,7 @@
     - annotation: !!omap
       - ec-code:
         - 4.3.2.8
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20073
@@ -268890,6 +268952,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20074
@@ -268907,6 +268970,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20075
@@ -268924,6 +268988,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20076
@@ -268941,6 +269006,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20077
@@ -268958,6 +269024,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20078
@@ -268975,6 +269042,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20079
@@ -268992,6 +269060,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20080
@@ -269009,6 +269078,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20081
@@ -269026,6 +269096,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20082
@@ -269043,6 +269114,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20083
@@ -269060,6 +269132,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20084
@@ -269077,6 +269150,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20085
@@ -269094,6 +269168,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20086
@@ -269111,6 +269186,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20087
@@ -269128,6 +269204,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20088
@@ -269145,6 +269222,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20090
@@ -269164,6 +269242,7 @@
       - ec-code:
         - 2.5.1.-
         - 2.5.1.141
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20091
@@ -269183,6 +269262,7 @@
       - ec-code:
         - 2.5.1.-
         - 2.5.1.141
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20092
@@ -269202,6 +269282,7 @@
       - ec-code:
         - 2.5.1.-
         - 2.5.1.141
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20093
@@ -269220,6 +269301,7 @@
       - ec-code:
         - 3.5.1.60
         - 3.5.1.99
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20094
@@ -269237,6 +269319,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.99
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20095
@@ -269254,6 +269337,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.99
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20096
@@ -269271,6 +269355,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20097
@@ -269288,6 +269373,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.23
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20098
@@ -269305,6 +269391,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.87
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20099
@@ -269323,6 +269410,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.1.1.106
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20100
@@ -269341,6 +269429,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.1.1.106
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20101
@@ -269360,6 +269449,7 @@
       - ec-code:
         - 3.1.1.106
         - 3.1.1.y
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20102
@@ -269377,6 +269467,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.M22
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20103
@@ -269394,6 +269485,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.M22
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20104
@@ -269411,6 +269503,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.M22
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20105
@@ -269428,6 +269521,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.M22
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20106
@@ -269445,6 +269539,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.39
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20107
@@ -269462,6 +269557,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.39
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20108
@@ -269479,6 +269575,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.39
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20109
@@ -269496,6 +269593,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.5.1.39
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20110
@@ -269514,6 +269612,7 @@
       - ec-code:
         - 4.1.1.112
     - references: PMID:25575590
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20111
@@ -269534,6 +269633,7 @@
       - ec-code:
         - 2.3.3.9
     - references: PMID:24334609
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20112
@@ -269555,6 +269655,7 @@
       - ec-code:
         - 6.4.1.2
     - references: PMID:10677481;PMID:16721829;PMID:17126822;PMID:235695;PMID:24055;PMID:6116153;PMID:6116159;PMID:6116163;PMID:6138355;PMID:7732023;PMID:9099716
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20113
@@ -269566,6 +269667,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20114
@@ -269581,6 +269683,7 @@
     - subsystem:
       - Miscellaneous
     - references: PMID:30378035
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20115
@@ -269594,6 +269697,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20116
@@ -269607,6 +269711,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20117
@@ -269622,6 +269727,7 @@
     - subsystem:
       - Riboflavin metabolism
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20118
@@ -269637,6 +269743,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20119
@@ -269652,6 +269759,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20120
@@ -269667,6 +269775,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20121
@@ -269682,6 +269791,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20122
@@ -269697,6 +269807,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20123
@@ -269712,6 +269823,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20124
@@ -269727,6 +269839,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20125
@@ -269742,6 +269855,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20126
@@ -269757,6 +269871,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20127
@@ -269772,6 +269887,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20128
@@ -269787,6 +269903,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20129
@@ -269802,6 +269919,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20130
@@ -269817,6 +269935,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20131
@@ -269832,6 +269951,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:22185573
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20132
@@ -269847,6 +269967,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20133
@@ -269862,6 +269983,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20134
@@ -269877,6 +269999,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20135
@@ -269892,6 +270015,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20136
@@ -269907,6 +270031,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20137
@@ -269922,6 +270047,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20138
@@ -269937,6 +270063,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20139
@@ -269952,6 +270079,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20140
@@ -269967,6 +270095,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20141
@@ -269982,6 +270111,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20142
@@ -269997,6 +270127,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20143
@@ -270012,6 +270143,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20144
@@ -270027,6 +270159,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20145
@@ -270042,6 +270175,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20146
@@ -270057,6 +270191,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20147
@@ -270072,6 +270207,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20148
@@ -270087,6 +270223,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20149
@@ -270102,6 +270239,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20150
@@ -270117,6 +270255,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20151
@@ -270132,6 +270271,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20152
@@ -270147,6 +270287,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20153
@@ -270162,6 +270303,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20154
@@ -270177,6 +270319,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20155
@@ -270192,6 +270335,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20156
@@ -270207,6 +270351,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20157
@@ -270222,6 +270367,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20158
@@ -270237,6 +270383,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20159
@@ -270252,6 +270399,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20160
@@ -270267,6 +270415,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20161
@@ -270282,6 +270431,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20162
@@ -270297,6 +270447,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20163
@@ -270312,6 +270463,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20164
@@ -270325,6 +270477,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20165
@@ -270338,6 +270491,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20166
@@ -270351,6 +270505,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:25320081
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20167
@@ -270369,6 +270524,7 @@
       - ec-code:
         - 1.3.5.2
     - references: PMID:34428349
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20168
@@ -270387,6 +270543,7 @@
       - ec-code:
         - 2.3.1.200
     - references: PMID:29987032
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20169
@@ -270405,6 +270562,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.1.2.2
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20170
@@ -270423,6 +270581,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.1.2.2
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20171
@@ -270441,6 +270600,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.1.2.2
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20172
@@ -270459,6 +270619,7 @@
     - annotation: !!omap
       - ec-code:
         - 3.1.2.2
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20173
@@ -270478,6 +270639,7 @@
       - ec-code:
         - 1.2.4.-
     - references: PMID:29752936
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20174
@@ -270497,6 +270659,7 @@
       - ec-code:
         - 1.2.4.4
     - references: PMID:29752936
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20175
@@ -270516,6 +270679,7 @@
       - ec-code:
         - 1.2.4.4
     - references: PMID:29752936
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20176
@@ -270535,6 +270699,7 @@
       - ec-code:
         - 1.2.4.4
     - references: PMID:29752936
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20177
@@ -270553,6 +270718,7 @@
       - ec-code:
         - 1.2.4.4
     - references: PMID:29752936
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20178
@@ -270571,6 +270737,7 @@
       - ec-code:
         - 1.2.4.4
     - references: PMID:3718468
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20179
@@ -270588,6 +270755,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:9831619;PMID:5555776;PMID:23104810
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20180
@@ -270598,6 +270766,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20181
@@ -270613,6 +270782,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17035501
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20182
@@ -270628,6 +270798,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17035501
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20183
@@ -270643,6 +270814,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17035501
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20184
@@ -270663,6 +270835,7 @@
     - subsystem:
       - Sulfur metabolism
     - references: PMID:31918395;PMID:31935115
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20185
@@ -270681,6 +270854,7 @@
     - subsystem:
       - Sulfur metabolism
     - references: PMID:31918395;PMID:31935115
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20186
@@ -270701,6 +270875,7 @@
       - ec-code:
         - 1.8.5.8
     - references: PMID:25225291
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20187
@@ -270721,6 +270896,7 @@
       - ec-code:
         - 1.13.11.18
     - references: PMID:25225291
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20188
@@ -270733,6 +270909,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:34126623
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20189
@@ -270755,6 +270932,7 @@
       - ec-code:
         - 7.1.1.8
     - references: PMID:16569397
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20190
@@ -270774,6 +270952,7 @@
       - ec-code:
         - 1.6.5.2
     - references: PMID:9271353
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20191
@@ -270935,6 +271114,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:7982970;PMID:20470363
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
     - notes: "Stands in for secretory-pathway export of procollagen; the lysine modifications (MAR06983-MAR06985) occur in the ER lumen, see #335."
   - !!omap
@@ -270946,6 +271126,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20201
@@ -270958,6 +271139,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:30643150
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20202
@@ -270968,6 +271150,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR20203
