@@ -2,6 +2,11 @@
 
 This directory contains datasets, metabolic task files, and log files that support some functionality of Human-GEM and its associated scripts, and/or were used for the generation and curation of Human-GEM. The data subdirectories and their contents are briefly summarized below.
 
+### datasets
+Data the gene-essentiality analysis (`code/test/gradedEssentiality.py`) compares the model with.
+- `Hart2015_RNAseq.txt`, `Hart2015_TableS2.xlsx`: expression of the five cell lines and the CRISPR fitness screen of [Hart _et al._ (2015)](https://doi.org/10.1016/j.cell.2015.11.015).
+- `HGNC_symbols_Hart2015.tsv`: the gene symbols of Hart 2015 Table S2 that are current [HGNC](https://www.genenames.org) symbols, with their Ensembl gene id (HGNC complete set of 2026-10-09); outdated Hart symbols are not listed. A Hart symbol is matched to a model gene through an alias only when the alias is not another gene's current symbol.
+
 ### metabolicTasks
 Contains metabolic task files used for evaluating the functionality of Human-GEM.
 - `metabolicTasks_Essential.txt`: Metabolic tasks that are necessary for cell viability.
