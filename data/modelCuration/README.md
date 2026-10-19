@@ -34,5 +34,6 @@ This directory contains curation-related data files that support changes to the 
 - `namesDehydrogenaseBileAcid.tsv`: per-entity table of the change "names and ECs of acyl-CoA dehydrogenase and bile-acid reactions" (`code/modelCuration/applyCurationTable.py`).
 - `reactionNamesFromChemistry.tsv`: per-entity table of the change "names derived from chemistry that contradict the reaction" (`code/modelCuration/applyCurationTable.py`).
 - `reactionNamesAfterRenames.tsv`: per-entity table of the change "names after metabolite renames; restore abbreviations" (`code/modelCuration/applyCurationTable.py`).
+- `reactionNamesRestored.tsv`: per-entity table of the change "restore overwritten reaction names and expand truncated ones" (`code/modelCuration/applyCurationTable.py`).
 
 Static dumps of external sources that were kept here during the Human1 series (SwissProt / Cell Atlas / DeepLoc2 subcellular locations, Rhea reaction associations, and metabolite SMILES/InChI) have been removed for the Human2 release. They had gone stale and are better queried fresh from the source when needed. They remain in the git history and in the last Human1 release, [v1.19.0](https://github.com/SysBioChalmers/Human-GEM/releases/tag/v1.19.0).

@@ -63660,7 +63660,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04814
-    - name: phosphoribosylaminoimidazolecarboxamide formyltransferase (10-formyl-THF)
+    - name: phosphoribosylaminoimidazolecarboxamide formyltransferase (AICAR)
     - metabolites: !!omap
       - MAM00266c: -1.0
       - MAM01304c: -1.0
@@ -71742,7 +71742,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04599
-    - name: oxoglutarate dehydrogenase (succinyl-transferring) (lipoamide)
+    - name: 2-oxoadipate dehydrogenase (glutaryl-transferring)
     - metabolites: !!omap
       - MAM02393m: -1.0
       - MAM02899m: 1.0
@@ -71974,7 +71974,7 @@
     - notes: "TML release by lysosomal/proteasomal degradation (PMID:11802770); no specific protease, no GPR."
   - !!omap
     - id: MAR06979
-    - name: trimethyllysine hydroxylase, epsilon (AKG)
+    - name: trimethyllysine dioxygenase (N6,N6,N6-trimethyl-L-lysine)
     - metabolites: !!omap
       - MAM00789c: 1.0
       - MAM01306c: -1.0
@@ -72032,7 +72032,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06982
-    - name: gamma-butyrobetaine hydroxylase (AKG)
+    - name: gamma-butyrobetaine dioxygenase (gamma-butyrobetaine)
     - metabolites: !!omap
       - MAM01306c: -1.0
       - MAM01596c: 1.0
@@ -73102,7 +73102,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06417
-    - name: dihydrolipoamide branched chain transacylase E2
+    - name: dihydrolipoamide branched chain transacylase E2 (S-(2-methylpropanoyl)-dihydrolipoamide)
     - metabolites: !!omap
       - MAM01597m: -1.0
       - MAM01701m: 1.0
@@ -73121,7 +73121,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06419
-    - name: lipoamide to S-(2-methylbutanoyl)... conversion
+    - name: lipoamide to S-(2-methylbutanoyl)-dihydrolipoamide conversion
     - metabolites: !!omap
       - MAM02393m: -1.0
       - MAM02856m: 1.0
@@ -73140,7 +73140,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06420
-    - name: dihydrolipoamide branched chain transacylase E2
+    - name: dihydrolipoamide branched chain transacylase E2 (S-(2-methylbutanoyl)-dihydrolipoamide)
     - metabolites: !!omap
       - MAM00663m: 1.0
       - MAM01597m: -1.0
@@ -73159,7 +73159,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06421
-    - name: lipoamide to S-(3-methylbutanoyl)... conversion
+    - name: lipoamide to S-(3-methylbutanoyl)-dihydrolipoamide conversion
     - metabolites: !!omap
       - MAM02393m: -1.0
       - MAM02858m: 1.0
@@ -73178,7 +73178,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06422
-    - name: dihydrolipoamide branched chain transacylase E2
+    - name: dihydrolipoamide branched chain transacylase E2 (S-(3-methylbutanoyl)-dihydrolipoamide)
     - metabolites: !!omap
       - MAM01597m: -1.0
       - MAM01701m: 1.0
@@ -73714,7 +73714,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06708
-    - name: 1-(1,2,3,4,5-pentahydroxypent... hydrolysis
+    - name: 1-(1,2,3,4,5-pentahydroxypent-1-yl)-1,2,3,4-tetrahydro-beta-carboline-3-carboxylate formation
     - metabolites: !!omap
       - MAM00221c: 1.0
       - MAM02040c: 1.0
@@ -75895,7 +75895,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06880
-    - name: 1,4-benzothiazine-O-quinonimine to 3,4-dihydro-1,4-benzothiazine-3... conversion
+    - name: 1,4-benzothiazine-O-quinonimine to 3,4-dihydro-1,4-benzothiazine-3-carboxylate conversion
     - metabolites: !!omap
       - MAM00249c: -1.0
       - MAM00723c: 1.0
@@ -78109,7 +78109,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06416
-    - name: lipoamide to S-(2-methylpropanoyl)... conversion
+    - name: lipoamide to S-(2-methylpropanoyl)-dihydrolipoamide conversion
     - metabolites: !!omap
       - MAM02393m: -1.0
       - MAM02857m: 1.0
@@ -79512,7 +79512,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07254
-    - name: dehydrodolichyl diphosphate synthase subunit (isopentenyl-pPP)
+    - name: dehydrodolichyl diphosphate synthase (trans,trans,cis-geranyl-geranyl-pp)
     - metabolites: !!omap
       - MAM01657c: 1.0
       - MAM02187c: -16.0
@@ -79912,7 +79912,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07281
-    - name: dolichyl-D-glucosyl-phosphate to G00008 conversion
+    - name: dolichyl-P-Glc:Glc2Man9GlcNAc2-PP-dolichol alpha-1,2-glucosyltransferase
     - metabolites: !!omap
       - MAM00154r: 1.0
       - MAM01731r: -1.0
@@ -79986,7 +79986,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07288
-    - name: (alpha-D-Glucosyl)-(alpha-D... hydrolysis
+    - name: (alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis to glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform C (protein)
     - metabolites: !!omap
       - MAM00138r: -1.0
       - MAM01971r: 1.0
@@ -80018,7 +80018,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07290
-    - name: (alpha-D-Glucosyl)-(alpha-D... hydrolysis
+    - name: (alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis to (alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein)
     - metabolites: !!omap
       - MAM00138r: -1.0
       - MAM00153r: 1.0
@@ -80050,7 +80050,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07292
-    - name: glucosyl-(alpha-D-mannosyl)7... hydrolysis
+    - name: glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) hydrolysis to glucosyl-(alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein)
     - metabolites: !!omap
       - MAM01969r: 1.0
       - MAM01970r: -1.0
@@ -80082,7 +80082,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07294
-    - name: transport of glucosyl-(alpha-D-mannosyl)6... (endoplasmic reticulum to Golgi apparatus)
+    - name: transport of glucosyl-(alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM01969g: 1.0
       - MAM01969r: -1.0
@@ -80094,7 +80094,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07295
-    - name: transport of (alpha-D-Glucosyl)3-(alpha-D... (endoplasmic reticulum to Golgi apparatus)
+    - name: transport of (alpha-D-Glucosyl)3-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00140g: 1.0
       - MAM00140r: -1.0
@@ -80106,7 +80106,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07296
-    - name: transport of (alpha-D-Glucosyl)2-(alpha-D... (endoplasmic reticulum to Golgi apparatus)
+    - name: transport of (alpha-D-Glucosyl)2-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00139g: 1.0
       - MAM00139r: -1.0
@@ -80118,7 +80118,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07297
-    - name: transport of (alpha-D-Glucosyl)-(alpha-D... (endoplasmic reticulum to Golgi apparatus)
+    - name: transport of (alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00138g: 1.0
       - MAM00138r: -1.0
@@ -80130,7 +80130,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07298
-    - name: transport of glucosyl-(alpha-D-mannosyl)7... (endoplasmic reticulum to Golgi apparatus)
+    - name: transport of glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM01970g: 1.0
       - MAM01970r: -1.0
@@ -80142,7 +80142,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07299
-    - name: transport of glucosyl-(alpha-D-mannosyl)7... (endoplasmic reticulum to Golgi apparatus)
+    - name: transport of glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform C (protein) (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM01971g: 1.0
       - MAM01971r: -1.0
@@ -80154,7 +80154,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07300
-    - name: transport of (alpha-D-mannosyl)7-beta-D... (endoplasmic reticulum to Golgi apparatus)
+    - name: transport of (alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00151g: 1.0
       - MAM00151r: -1.0
@@ -80166,7 +80166,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07301
-    - name: (alpha-D-Glucosyl)3-(alpha-D... hydrolysis
+    - name: (alpha-D-Glucosyl)3-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis
     - metabolites: !!omap
       - MAM00140g: -1.0
       - MAM00150g: 1.0
@@ -80181,7 +80181,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07302
-    - name: (alpha-D-Glucosyl)2-(alpha-D... hydrolysis
+    - name: (alpha-D-Glucosyl)2-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis
     - metabolites: !!omap
       - MAM00139g: -1.0
       - MAM00150g: 1.0
@@ -80196,7 +80196,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07303
-    - name: (alpha-D-Glucosyl)-(alpha-D... hydrolysis
+    - name: (alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis to (alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform A (protein)
     - metabolites: !!omap
       - MAM00138g: -1.0
       - MAM00150g: 1.0
@@ -80211,7 +80211,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07304
-    - name: glucosyl-(alpha-D-mannosyl)7... hydrolysis
+    - name: glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform C (protein) hydrolysis
     - metabolites: !!omap
       - MAM00149g: 1.0
       - MAM01965g: 1.0
@@ -80226,7 +80226,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07305
-    - name: glucosyl-(alpha-D-mannosyl)7... hydrolysis
+    - name: glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) hydrolysis to (alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (B2)
     - metabolites: !!omap
       - MAM00148g: 1.0
       - MAM01965g: 1.0
@@ -80241,7 +80241,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07306
-    - name: glucosyl-(alpha-D-mannosyl)6... hydrolysis
+    - name: glucosyl-(alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis
     - metabolites: !!omap
       - MAM00143g: 1.0
       - MAM01965g: 1.0
@@ -87669,7 +87669,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02164
-    - name: fatty-acid synthase system (malonyl-[ACP])
+    - name: fatty-acid synthase system (octanoyl-[ACP])
     - metabolites: !!omap
       - MAM00184c: 1.0
       - MAM00857c: 1.0
@@ -87924,7 +87924,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02178
-    - name: fatty-acid synthase system (malonyl-[ACP])
+    - name: fatty-acid synthase system (tetradecanoyl-[ACP])
     - metabolites: !!omap
       - MAM00184c: 1.0
       - MAM00880c: 1.0
@@ -88770,7 +88770,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02328
-    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-cis-15...)
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-cis-15-tetracosaenoyl-CoA)
     - metabolites: !!omap
       - MAM00709c: -1.0
       - MAM02040c: 1.0
@@ -90453,7 +90453,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02446
-    - name: 12,13-epoxy-9-hydroperoxy... to 12,13-epoxylinoleic acid-radical conversion
+    - name: 12,13-epoxylinoleic acid-radical to 12,13-epoxy-9-hydroperoxy-(10E)-octadecenoate conversion
     - metabolites: !!omap
       - MAM00312c: 1.0
       - MAM00313c: -1.0
@@ -90469,7 +90469,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02447
-    - name: 12,13-epoxy-9-alkoxy-(10E)... to 12,13-epoxy-9-hydroperoxy... conversion
+    - name: 12,13-epoxy-9-alkoxy-(10E)-octadecenoate to 12,13-epoxy-9-hydroperoxy-(10E)-octadecenoate conversion
     - metabolites: !!omap
       - MAM00311c: -1.0
       - MAM00312c: 1.0
@@ -90515,7 +90515,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02450
-    - name: 9,10-12,13-diepoxy-octadecanoate to 1-hydroperoxy-8-carboxyoctyl... conversion
+    - name: 9,10-12,13-diepoxy-octadecanoate to 1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether conversion
     - metabolites: !!omap
       - MAM00533c: 1.0
       - MAM01218c: -1.0
@@ -90529,7 +90529,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02451
-    - name: 1-hydroperoxy-8-carboxyoctyl-3,4... to 4-oxo-2-nonenal conversion
+    - name: 1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether to 4-oxo-2-nonenal conversion
     - metabolites: !!omap
       - MAM00533c: -1.0
       - MAM01027c: 1.0
@@ -90544,7 +90544,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02452
-    - name: 1-hydroperoxy-8-carboxyoctyl-3,4... to 3,4-epoxynonanal conversion
+    - name: 1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether to 3,4-epoxynonanal conversion
     - metabolites: !!omap
       - MAM00533c: -1.0
       - MAM00731c: 1.0
@@ -91454,7 +91454,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02520
-    - name: very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis...)
+    - name: very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis-2,10,13,16,19-docosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00262c: 1.0
       - MAM02039c: -1.0
@@ -91533,7 +91533,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02528
-    - name: very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis...)
+    - name: very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis-2,12,15,18,21-tetracosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00317c: 1.0
       - MAM02039c: -1.0
@@ -92444,7 +92444,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02376
-    - name: 3(S)-hydroxy-dihomo-gamma... to trans-2-cis,cis,cis-8,11,14... conversion
+    - name: 3(S)-hydroxy-dihomo-gamma-linolenoyl-CoA to trans-2-cis,cis,cis-8,11,14-eicosatetraenoyl-CoA conversion
     - metabolites: !!omap
       - MAM00710c: -1.0
       - MAM02040c: 1.0
@@ -92725,7 +92725,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02410
-    - name: 3-hydroxyacyl-CoA dehydrogenase (3(S)-hydroxy-tetracosa...)
+    - name: 3-hydroxyacyl-CoA dehydrogenase (3(S)-hydroxy-tetracosa-6,9,12,15,18-all-cis-pentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00717x: -1.0
       - MAM00853x: 1.0
@@ -95855,7 +95855,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01081
-    - name: leukotriene C4 synthase (GSH)
+    - name: leukotriene C4 synthase (leukotriene A4)
     - metabolites: !!omap
       - MAM02026c: -1.0
       - MAM02362c: -1.0
@@ -99241,7 +99241,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08550
-    - name: leukotriene C4 synthase (GSH)
+    - name: leukotriene C4 synthase (leukotriene A4)
     - metabolites: !!omap
       - MAM02026r: -1.0
       - MAM02362r: -1.0
@@ -112694,7 +112694,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06908
-    - name: coenzyme Q5, methyltransferase (2-methoxy-6-all trans...)
+    - name: coenzyme Q5, methyltransferase (2-methoxy-6-all trans-decaprenyl-2-methoxy-1,4-benzoquinol)
     - metabolites: !!omap
       - MAM00658m: -1.0
       - MAM01165m: 1.0
@@ -112968,7 +112968,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01929
-    - name: cytochrome P450
+    - name: cholesterol monooxygenase (side-chain-cleaving) (20alpha,22beta-dihydroxycholesterol)
     - metabolites: !!omap
       - MAM00579m: -1.0
       - MAM02039m: -1.0
@@ -113179,7 +113179,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01948
-    - name: cytochrome P450
+    - name: steroid 21-monooxygenase (17alpha-hydroxypregnenolone)
     - metabolites: !!omap
       - MAM00406c: 1.0
       - MAM00408c: -1.0
@@ -113282,7 +113282,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01990
-    - name: cytochrome P450 (cortisol)
+    - name: steroid 21-monooxygenase (21-deoxycortisol)
     - metabolites: !!omap
       - MAM00603c: -1.0
       - MAM01615c: 1.0
@@ -113303,7 +113303,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01991
-    - name: cytochrome P450 (21-deoxycortisol)
+    - name: steroid 17alpha-monooxygenase (11beta-hydroxyprogesterone)
     - metabolites: !!omap
       - MAM00285c: -1.0
       - MAM00603c: 1.0
@@ -113324,7 +113324,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01992
-    - name: cytochrome P450
+    - name: steroid 21-monooxygenase (11beta-hydroxyprogesterone)
     - metabolites: !!omap
       - MAM00285c: -1.0
       - MAM01614c: 1.0
@@ -115207,7 +115207,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01479
-    - name: cytochrome P450
+    - name: sterol 14alpha-demethylase (4,4-dimethyl-14alpha-formyl-5alpha-cholesta-8,24-dien-3beta-ol)
     - metabolites: !!omap
       - MAM00937c: -1.0
       - MAM00941c: 1.0
@@ -121441,7 +121441,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08147
-    - name: UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (glucosylceramide pool)
+    - name: glucosylceramide pool to LacCer pool conversion
     - metabolites: !!omap
       - MAM01972g: -1.0
       - MAM02039g: 1.0
@@ -123529,7 +123529,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00527
-    - name: glycerol-3-phosphate acyltransferase ((9Z,12Z,15Z,18Z,21Z)...)
+    - name: glycerol-3-phosphate acyltransferase ((9Z,12Z,15Z,18Z,21Z)-tetracosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00134c: -1.0
       - MAM00466c: 1.0
@@ -128277,7 +128277,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08404
-    - name: glycophosphatidylinositol... to gpi_prot heparan sulfate conversion
+    - name: glycophosphatidylinositol-(GPI)-anchored-protein-precursor to gpi_prot heparan sulfate conversion
     - metabolites: !!omap
       - MAM02001r: -1.0
       - MAM02020r: -1.0
@@ -129207,7 +129207,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01356
-    - name: 8-peroxy-(5Z,9E,11Z,14Z)... to 5,9-cyclo-6,8-cycloperoxy-12... conversion
+    - name: 8-peroxy-(5Z,9E,11Z,14Z)-eicosatetraenoate to 5,9-cyclo-6,8-cycloperoxy-12-hydroperoxy-(10E,14Z)-eicosadienoate conversion
     - metabolites: !!omap
       - MAM01063c: 1.0
       - MAM01214c: -1.0
@@ -129223,7 +129223,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01357
-    - name: 5,9-cyclo-6,8-cycloperoxy-12... to 5,9-cyclo-6,8,12-trihydroxy... conversion
+    - name: 5,9-cyclo-6,8-cycloperoxy-12-hydroperoxy-(10E,14Z)-eicosadienoate to 5,9-cyclo-6,8,12-trihydroxy-(10E,14Z)-eicosadienoic acid conversion
     - metabolites: !!omap
       - MAM01062c: 1.0
       - MAM01063c: -1.0
@@ -129239,7 +129239,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01359
-    - name: 9-peroxy-(5Z,7E,11Z,14Z)... to 9,11-cycloperoxy-5-hydroperoxy... conversion
+    - name: 9-peroxy-(5Z,7E,11Z,14Z)-eicosatetraenoate to 9,11-cycloperoxy-5-hydroperoxy-(6E,14Z)-eicosadienoate conversion
     - metabolites: !!omap
       - MAM01223c: 1.0
       - MAM01246c: -1.0
@@ -129255,7 +129255,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01360
-    - name: 9,11-cycloperoxy-5-hydroperoxy... to 5,9,11-trihydroxyprosta... conversion
+    - name: 9,11-cycloperoxy-5-hydroperoxy-(6E,14Z)-eicosadienoate to 5,9,11-trihydroxyprosta-(6E,14Z)-dien-1-oate conversion
     - metabolites: !!omap
       - MAM01061c: 1.0
       - MAM01223c: -1.0
@@ -129271,7 +129271,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01362
-    - name: 11-peroxy-(5Z,8Z,12E,14Z)... to 9,11-cycloperoxy-15... conversion
+    - name: 11-peroxy-(5Z,8Z,12E,14Z)-eicosatetraenoate to 9,11-cycloperoxy-15-hydroperoxy-(5Z,13E)-eicosadienoate conversion
     - metabolites: !!omap
       - MAM00302c: -1.0
       - MAM01222c: 1.0
@@ -129302,7 +129302,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01365
-    - name: 12-peroxy-(5Z,8Z,10E,14Z)... to 11,15-cyclo-12,14-cycloperoxy... conversion
+    - name: 12-peroxy-(5Z,8Z,10E,14Z)-eicosatetraenoate to 11,15-cyclo-12,14-cycloperoxy-8-hydroperoxy-(5Z,9E)-eicosadienoate conversion
     - metabolites: !!omap
       - MAM00281c: 1.0
       - MAM00335c: -1.0
@@ -129318,7 +129318,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01366
-    - name: 11,15-cyclo-12,14-cycloperoxy... to 11,15-cyclo-8,12,14-trihydroxy... conversion
+    - name: 11,15-cyclo-12,14-cycloperoxy-8-hydroperoxy-(5Z,9E)-eicosadienoate to 11,15-cyclo-8,12,14-trihydroxy-(5Z,9E)-eicosadienoic acid conversion
     - metabolites: !!omap
       - MAM00281c: -1.0
       - MAM00282c: 1.0
@@ -130391,7 +130391,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07490
-    - name: chondroitin sulfate C (GalNAc6S-GlcA)... sulfation
+    - name: chondroitin sulfate C (GalNAc6S-GlcA) and D (GlcNAc6S-GlcA2S), precursor 1 sulfation
     - metabolites: !!omap
       - MAM01532g: -1.0
       - MAM01563g: 1.0
@@ -130484,7 +130484,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07495
-    - name: chondroitin sulfate A to chondroitin sulfate A (GalNAc4S-GlcA)... conversion
+    - name: chondroitin sulfate A to chondroitin sulfate A (GalNAc4S-GlcA), B (IdoA2S-GalNAc4S), and E (GalNAc4,6diS-GlcA), precursor 1 conversion
     - metabolites: !!omap
       - MAM01515g: 1.0
       - MAM01518g: -1.0
@@ -130523,7 +130523,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07497
-    - name: chondroitin sulfate A... to chondroitin sulfate B... conversion
+    - name: chondroitin sulfate A (GalNAc4S-GlcA) and B (IdoA2S-GalNAc4S), precursor 3 to chondroitin sulfate B (IdoA2S-GalNAc4S), precursor 4 conversion
     - metabolites: !!omap
       - MAM01516g: -1.0
       - MAM01530g: 1.0
@@ -130614,7 +130614,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07520
-    - name: chondroitin sulfate C (GalNAc6S-GlcA)... to chondroitin sulfate C conversion
+    - name: chondroitin sulfate C (GalNAc6S-GlcA) and D (GlcNAc6S-GlcA2S), precursor 1 to chondroitin sulfate C conversion
     - metabolites: !!omap
       - MAM01532g: -1.0
       - MAM01540g: 1.0
@@ -130692,7 +130692,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07535
-    - name: chondroitin sulfate D (GlcNAc6S-GlcA2S)... to chondroitin sulfate D conversion
+    - name: chondroitin sulfate D (GlcNAc6S-GlcA2S) precursor 2 to chondroitin sulfate D conversion
     - metabolites: !!omap
       - MAM01542g: -1.0
       - MAM01551g: 1.0
@@ -130989,7 +130989,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07513
-    - name: chondroitin sulfate B - dermatan... hydrolysis
+    - name: chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan hydrolysis
     - metabolites: !!omap
       - MAM00205l: 1.0
       - MAM01525l: -1.0
@@ -131190,7 +131190,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07530
-    - name: N-acetylgalactosamine-6-sulfatase (chondroitin sulfate C...)
+    - name: N-acetylgalactosamine-6-sulfatase (chondroitin sulfate C (GalNAc6S-GlcA), degradation product 3)
     - metabolites: !!omap
       - MAM01536l: -1.0
       - MAM01537l: 1.0
@@ -131323,7 +131323,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07544
-    - name: beta-N-acetylhexosaminidase (chondroitin sulfate D...)
+    - name: beta-N-acetylhexosaminidase (chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 1)
     - metabolites: !!omap
       - MAM01544l: -1.0
       - MAM01545l: 1.0
@@ -131374,7 +131374,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07547
-    - name: N-acetylgalactosamine-6-sulfatase (chondroitin sulfate D...)
+    - name: N-acetylgalactosamine-6-sulfatase (chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 4)
     - metabolites: !!omap
       - MAM01547l: -1.0
       - MAM01548l: 1.0
@@ -131396,7 +131396,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07548
-    - name: beta-N-acetylhexosaminidase (chondroitin sulfate D...)
+    - name: beta-N-acetylhexosaminidase (chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 4)
     - metabolites: !!omap
       - MAM01547l: -1.0
       - MAM01549l: 1.0
@@ -131416,7 +131416,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07549
-    - name: beta-N-acetylhexosaminidase (chondroitin sulfate D...)
+    - name: beta-N-acetylhexosaminidase (chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 5)
     - metabolites: !!omap
       - MAM01548l: -1.0
       - MAM01549l: 1.0
@@ -131503,7 +131503,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07560
-    - name: N-acetylgalactosamine-6-sulfatase (chondroitin sulfate E...)
+    - name: N-acetylgalactosamine-6-sulfatase (chondroitin sulfate E (GalNAc4,6diS-GlcA), degradation product 1)
     - metabolites: !!omap
       - MAM01555l: -1.0
       - MAM01556l: 1.0
@@ -131525,7 +131525,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07561
-    - name: beta-N-acetylhexosaminidase (chondroitin sulfate E...)
+    - name: beta-N-acetylhexosaminidase (chondroitin sulfate E (GalNAc4,6diS-GlcA), degradation product 2)
     - metabolites: !!omap
       - MAM01556l: -1.0
       - MAM01557l: 1.0
@@ -131561,7 +131561,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07563
-    - name: beta-N-acetylhexosaminidase (chondroitin sulfate E...)
+    - name: beta-N-acetylhexosaminidase (chondroitin sulfate E (GalNAc4,6diS-GlcA), degradation product 4)
     - metabolites: !!omap
       - MAM01558l: -1.0
       - MAM01561l: 1.0
@@ -131622,7 +131622,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07566
-    - name: beta-N-acetylhexosaminidase (chondroitin sulfate E...)
+    - name: beta-N-acetylhexosaminidase (chondroitin sulfate E (GalNAc4,6diS-GlcA), degradation product 6)
     - metabolites: !!omap
       - MAM01560l: -1.0
       - MAM01561l: 1.0
@@ -134842,7 +134842,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01581
-    - name: cytochrome P450 (cholesterol)
+    - name: cholesterol 7alpha-monooxygenase (cholesterol)
     - metabolites: !!omap
       - MAM01183r: 1.0
       - MAM01450r: -1.0
@@ -134884,7 +134884,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01589
-    - name: cytochrome P450
+    - name: 5beta-cholestane-3alpha,7alpha-diol 12alpha-hydroxylase (7alpha-hydroxycholest-4-en-3-one)
     - metabolites: !!omap
       - MAM01178r: 1.0
       - MAM01182r: -1.0
@@ -134979,7 +134979,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01598
-    - name: aldo-keto reductase
+    - name: 3alpha-hydroxysteroid 3-dehydrogenase (NADH) (7alpha,12alpha-dihydroxy-5beta-cholestan-3-one)
     - metabolites: !!omap
       - MAM01078c: 1.0
       - MAM01177c: -1.0
@@ -134999,7 +134999,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01599
-    - name: aldo-keto reductase
+    - name: 3alpha-hydroxysteroid 3-dehydrogenase (NADPH) (7alpha,12alpha-dihydroxy-5beta-cholestan-3-one)
     - metabolites: !!omap
       - MAM01078c: 1.0
       - MAM01177c: -1.0
@@ -135137,7 +135137,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01619
-    - name: transport of 3alpha,7alpha,12alpha... (cytosol to endoplasmic reticulum)
+    - name: transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to endoplasmic reticulum)
     - metabolites: !!omap
       - MAM00752c: -1.0
       - MAM00752r: 1.0
@@ -135171,7 +135171,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01622
-    - name: transport of 3alpha,7alpha,12alpha-trihydroxy-5beta... (cytosol to peroxisome)
+    - name: ATP-driven transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM00752c: -1.0
       - MAM00752x: 1.0
@@ -135190,7 +135190,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01623
-    - name: transport of 3alpha,7alpha,12alpha-trihydroxy-5beta... (cytosol to peroxisome)
+    - name: transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM00752c: -1.0
       - MAM00752x: 1.0
@@ -135355,7 +135355,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01646
-    - name: 3-hydroxyacyl-CoA dehydrogenase
+    - name: 3-hydroxyacyl-CoA dehydrogenase ((24R,25R)3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA)
     - metabolites: !!omap
       - MAM00036x: -1.0
       - MAM00748x: 1.0
@@ -135376,7 +135376,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01652
-    - name: propanoyl-CoA C-acyltransferase
+    - name: propanoyl-CoA C-acyltransferase (3alpha,7alpha,12alpha-trihydroxy-5beta-24-oxocholestanoyl-CoA)
     - metabolites: !!omap
       - MAM00748x: -1.0
       - MAM01514x: 1.0
@@ -135951,7 +135951,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01706
-    - name: 3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-enoyl-CoA hydratase
+    - name: 3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-enoyl-CoA hydratase (3alpha,7alpha-dihydroxy-5beta-cholest-24-enoyl-CoA)
     - metabolites: !!omap
       - MAM00037x: 1.0
       - MAM00755x: -1.0
@@ -136379,7 +136379,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01744
-    - name: transport of 5beta-cholestan-3alpha,7alpha,12alpha,24... (cytosol to mitochondria)
+    - name: transport of 5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM01077c: -1.0
       - MAM01077m: 1.0
@@ -136841,7 +136841,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01772
-    - name: transport of 5beta-cholestane-3alpha,7alpha,12alpha,2... (cytosol to mitochondria)
+    - name: transport of 5beta-cholestane-3alpha,7alpha,12alpha,26-tetrol (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM01090c: -1.0
       - MAM01090m: 1.0
@@ -137013,7 +137013,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01800
-    - name: cytochrome P450
+    - name: cholestanetriol 26-monooxygenase (cholest-5-ene-3beta,7alpha,27-triol)
     - metabolites: !!omap
       - MAM00761m: 1.0
       - MAM01448m: -1.0
@@ -139127,7 +139127,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08281
-    - name: type II H glycolipid to galfuc12gal14acglcgalgluside heparan... conversion
+    - name: type II H glycolipid to galfuc12gal14acglcgalgluside heparan sulfate conversion
     - metabolites: !!omap
       - MAM01914g: 1.0
       - MAM02039g: 1.0
@@ -139146,7 +139146,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08284
-    - name: type II H glycolipid to acgalfuc12gal14acglcgalgluside heparan... conversion
+    - name: type II H glycolipid to acgalfuc12gal14acglcgalgluside heparan sulfate conversion
     - metabolites: !!omap
       - MAM01262g: 1.0
       - MAM02039g: 1.0
@@ -139261,7 +139261,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08292
-    - name: UDP-N-acetyl-D-galactosamine to acgalfucgalacglcgal14acglcgalgluside... conversion
+    - name: UDP-N-acetyl-D-galactosamine to acgalfucgalacglcgal14acglcgalgluside heparan sulfate conversion
     - metabolites: !!omap
       - MAM01263g: 1.0
       - MAM02039g: 1.0
@@ -139318,7 +139318,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08295
-    - name: fucgalacgalfucgalacglcgal14acglcgalglusi... to type IIIAb conversion
+    - name: fucgalacgalfucgalacglcgal14acglcgalgluside heparan sulfate to type IIIAb conversion
     - metabolites: !!omap
       - MAM01857g: -1.0
       - MAM02039g: 1.0
@@ -139337,7 +139337,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08298
-    - name: UDP-galactose to galfucgalacglcgal14acglcgalglus... conversion
+    - name: fucosylgalactoside 3-alpha-galactosyltransferase (VI2Fuc-nLc6)
     - metabolites: !!omap
       - MAM01884g: 1.0
       - MAM02039g: 1.0
@@ -148879,7 +148879,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06995
-    - name: glutathione transferase
+    - name: glutathione transferase (benzo[a]pyrene-4,5-oxide)
     - metabolites: !!omap
       - MAM00944c: -1.0
       - MAM01375c: 1.0
@@ -149029,7 +149029,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07003
-    - name: glutathione transferase
+    - name: glutathione transferase ((1R,2S)-naphthalene 1,2-oxide)
     - metabolites: !!omap
       - MAM00031c: 1.0
       - MAM00032c: -1.0
@@ -149184,7 +149184,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07013
-    - name: glutathione transferase
+    - name: glutathione transferase ((1S,2R)-naphthalene 1,2-oxide)
     - metabolites: !!omap
       - MAM00033c: 1.0
       - MAM00034c: -1.0
@@ -149900,7 +149900,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07057
-    - name: sulfotransferase
+    - name: sulfotransferase (7-hydroxymethyl-12-methylbenz[a]anthracene)
     - metabolites: !!omap
       - MAM01195c: 1.0
       - MAM01196c: -1.0
@@ -150110,7 +150110,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07068
-    - name: 4-[(hydroxymethyl)nitrosoamino]... to 4-(nitrosoamino)-1-(3... conversion
+    - name: 4-[(hydroxymethyl)nitrosoamino]-1-(3-pyridinyl)-1-butanone to 4-(nitrosoamino)-1-(3-pyridinyl)-1-butanone conversion
     - metabolites: !!omap
       - MAM00931c: 1.0
       - MAM00951c: -1.0
@@ -150123,7 +150123,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07069
-    - name: 4-(nitrosoamino)-1-(3... to 4-hydroxy-1-(3-pyridinyl)-1... conversion
+    - name: 4-(nitrosoamino)-1-(3-pyridinyl)-1-butanone to 4-hydroxy-1-(3-pyridinyl)-1-butanone conversion
     - metabolites: !!omap
       - MAM00931c: -1.0
       - MAM00985c: 1.0
@@ -150153,7 +150153,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07071
-    - name: 4-hydroxy-4-(methylnitrosoamino... to 4-oxo-1-(3-pyridyl)-1-butanone conversion
+    - name: 4-hydroxy-4-(methylnitrosoamino)-1-(3-pyridinyl)-1-butanone to 4-oxo-1-(3-pyridyl)-1-butanone conversion
     - metabolites: !!omap
       - MAM00992c: -1.0
       - MAM01025c: 1.0
@@ -150183,7 +150183,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07073
-    - name: 1-(methylnitrosoamino)-4-(3... to 5-(3-pyridyl)-2-hydroxytetrahyd... conversion
+    - name: 1-(methylnitrosoamino)-4-(3-pyridinyl)-1,4-butanediol to 5-(3-pyridyl)-2-hydroxytetrahydrofuran conversion
     - metabolites: !!omap
       - MAM00226c: -1.0
       - MAM01035c: 1.0
@@ -150212,7 +150212,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07075
-    - name: alpha-[3-(nitrosoamino)propyl]... to 1-(3-pyridinyl)-1,4-butanediol conversion
+    - name: alpha-[3-(nitrosoamino)propyl]-3-pyridinemethanol to 1-(3-pyridinyl)-1,4-butanediol conversion
     - metabolites: !!omap
       - MAM00225c: 1.0
       - MAM01319c: -1.0
@@ -150242,7 +150242,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07077
-    - name: alpha-[3-[(hydroxymethyl)nitros... to alpha-[3-(nitrosoamino)propyl]... conversion
+    - name: alpha-[3-[(hydroxymethyl)nitrosoamino]propyl]-3-pyridinemethanol to alpha-[3-(nitrosoamino)propyl]-3-pyridinemethanol conversion
     - metabolites: !!omap
       - MAM01319c: 1.0
       - MAM01320c: -1.0
@@ -150255,7 +150255,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07078
-    - name: cytochrome P450 (1-nitronaphthalene)
+    - name: cytochrome P450 (1-nitronaphthalene to 1-nitronaphthalene-5,6-oxide)
     - metabolites: !!omap
       - MAM00545c: -1.0
       - MAM00546c: 1.0
@@ -150276,7 +150276,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07079
-    - name: glutathione transferase
+    - name: glutathione transferase (1-nitronaphthalene-5,6-oxide to 1-nitro-5-hydroxy-6-glutathionyl-5,6-dihydronaphthalene)
     - metabolites: !!omap
       - MAM00542c: 1.0
       - MAM00546c: -1.0
@@ -150294,7 +150294,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07080
-    - name: glutathione transferase
+    - name: glutathione transferase (1-nitronaphthalene-5,6-oxide to 1-nitro-5-glutathionyl-6-hydroxy-5,6-dihydronaphthalene)
     - metabolites: !!omap
       - MAM00541c: 1.0
       - MAM00546c: -1.0
@@ -150329,7 +150329,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07082
-    - name: cytochrome P450 (1-nitronaphthalene)
+    - name: cytochrome P450 (1-nitronaphthalene to 1-nitronaphthalene-7,8-oxide)
     - metabolites: !!omap
       - MAM00545c: -1.0
       - MAM00547c: 1.0
@@ -150350,7 +150350,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07083
-    - name: glutathione transferase
+    - name: glutathione transferase (1-nitronaphthalene-7,8-oxide to 1-nitro-7-hydroxy-8-glutathionyl-7,8-dihydronaphthalene)
     - metabolites: !!omap
       - MAM00544c: 1.0
       - MAM00547c: -1.0
@@ -150368,7 +150368,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07084
-    - name: glutathione transferase
+    - name: glutathione transferase (1-nitronaphthalene-7,8-oxide to 1-nitro-7-glutathionyl-8-hydroxy-7,8-dihydronaphthalene)
     - metabolites: !!omap
       - MAM00543c: 1.0
       - MAM00547c: -1.0
@@ -150427,7 +150427,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07088
-    - name: cytochrome P450 (1,1-dichloroethylene)
+    - name: cytochrome P450 (1,1-dichloroethylene to 2,2-dichloroacetaldehyde)
     - metabolites: !!omap
       - MAM00228c: -1.0
       - MAM00568c: 1.0
@@ -150479,7 +150479,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07091
-    - name: cytochrome P450 (1,1-dichloroethylene)
+    - name: cytochrome P450 (1,1-dichloroethylene to 1,1-dichloroethylene epoxide)
     - metabolites: !!omap
       - MAM00227c: 1.0
       - MAM00228c: -1.0
@@ -150500,7 +150500,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07092
-    - name: glutathione transferase
+    - name: glutathione transferase (1,1-dichloroethylene epoxide)
     - metabolites: !!omap
       - MAM00227c: -1.0
       - MAM00565c: 1.0
@@ -150519,7 +150519,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07093
-    - name: glutathione transferase
+    - name: glutathione transferase (2-(S-glutathionyl)acetyl chloride)
     - metabolites: !!omap
       - MAM00565c: -1.0
       - MAM00566c: 1.0
@@ -150567,7 +150567,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07096
-    - name: cytochrome P450 (1,1-dichloroethylene)
+    - name: cytochrome P450 (1,1-dichloroethylene to chloroacetyl chloride)
     - metabolites: !!omap
       - MAM00228c: -1.0
       - MAM01444c: 1.0
@@ -152153,7 +152153,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09510
-    - name: cap methyltransferase (m7G(5')pppRm-RNA (mRNA...)
+    - name: cap methyltransferase (m7G(5')pppRm-RNA (mRNA containing a 2'-O-methylpurine cap))
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02437c: -1.0
@@ -152752,7 +152752,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09544
-    - name: methionine sulfoxide reductase A (oxidized thioredoxin)
+    - name: methionine sulfoxide reductase A (peptide-L-methionine-(S)-S-oxide)
     - metabolites: !!omap
       - MAM02040c: -1.0
       - MAM02666c: -1.0
@@ -152846,7 +152846,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09549
-    - name: diphthamide biosynthesis (peptide-2-[3-carboxy-3...)
+    - name: diphthamide biosynthesis (peptide-2-[3-carboxy-3-(methylammonio)propyl]-L-histidine)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02699c: 1.0
@@ -153343,7 +153343,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09575
-    - name: 5-methyltetrahydrofolate-homocysteine methyltransferase
+    - name: 5-methyltetrahydrofolate-homocysteine methyltransferase (selenohomocysteine)
     - metabolites: !!omap
       - MAM01114c: -1.0
       - MAM02890c: -1.0
@@ -174533,7 +174533,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07121
-    - name: transport of 4-(n-nitrosomethylamino)-1-(3-pyridyl)... (extracellular to cytosol)
+    - name: transport of 4-(n-nitrosomethylamino)-1-(3-pyridyl)-1-butanone (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00932c: 1.0
       - MAM00932e: -1.0
@@ -174665,7 +174665,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07499
-    - name: transport of chondroitin sulfate A... (Golgi apparatus to extracellular)
+    - name: transport of chondroitin sulfate A (GalNAc4S-GlcA) proteoglycan (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01517e: 1.0
       - MAM01517g: -1.0
@@ -174677,7 +174677,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07511
-    - name: transport of chondroitin sulfate B -... (Golgi apparatus to extracellular)
+    - name: transport of chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01525e: 1.0
       - MAM01525g: -1.0
@@ -174689,7 +174689,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07523
-    - name: transport of chondroitin sulfate C... (Golgi apparatus to extracellular)
+    - name: transport of chondroitin sulfate C (GalNAc6S-GlcA) proteoglycan (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01533e: 1.0
       - MAM01533g: -1.0
@@ -174701,7 +174701,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07539
-    - name: transport of chondroitin sulfate D... (Golgi apparatus to extracellular)
+    - name: transport of chondroitin sulfate D (GlcNAc6S-GlcA2S) proteoglycan (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01543e: 1.0
       - MAM01543g: -1.0
@@ -174713,7 +174713,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07555
-    - name: transport of chondroitin sulfate E... (Golgi apparatus to extracellular)
+    - name: transport of chondroitin sulfate E (GalNAc4,6diS-GlcA) proteoglycan (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01554e: 1.0
       - MAM01554g: -1.0
@@ -174788,7 +174788,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07608
-    - name: transport of 2-acetyl-1-alkyl-sn-glycero-3... (cytosol to extracellular)
+    - name: transport of 2-acetyl-1-alkyl-sn-glycero-3-phosphocholine (cytosol to extracellular)
     - metabolites: !!omap
       - MAM00626c: -1.0
       - MAM00626e: 1.0
@@ -174800,7 +174800,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07609
-    - name: transport of 1-organyl-2-lyso-sn-glycero-3... (cytosol to extracellular)
+    - name: transport of 1-organyl-2-lyso-sn-glycero-3-phosphocholine (cytosol to extracellular)
     - metabolites: !!omap
       - MAM00549c: -1.0
       - MAM00549e: 1.0
@@ -176034,7 +176034,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08158
-    - name: transport of sialyl(1,3)-sialyl(2,6)... (cytosol to extracellular)
+    - name: transport of sialyl(1,3)-sialyl(2,6)-galactosylgloboside (cytosol to extracellular)
     - metabolites: !!omap
       - MAM02902c: -1.0
       - MAM02902e: 1.0
@@ -176046,7 +176046,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08161
-    - name: transport of sialyl(2,3)-sialyl(2,6)... (cytosol to extracellular)
+    - name: transport of sialyl(2,3)-sialyl(2,6)-galactosylgloboside (cytosol to extracellular)
     - metabolites: !!omap
       - MAM02903c: -1.0
       - MAM02903e: 1.0
@@ -176179,7 +176179,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08270
-    - name: transport of fucgalfucgalacglcgalgluside heparan... (cytosol to extracellular)
+    - name: transport of fucgalfucgalacglcgalgluside heparan sulfate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01859c: -1.0
       - MAM01859e: 1.0
@@ -176203,7 +176203,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08283
-    - name: transport of galfuc12gal14acglcgalgluside heparan... (cytosol to extracellular)
+    - name: transport of galfuc12gal14acglcgalgluside heparan sulfate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01914c: -1.0
       - MAM01914e: 1.0
@@ -176239,7 +176239,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08304
-    - name: transport of galgalfucfucgalacglcgalacglcgal... (cytosol to extracellular)
+    - name: transport of galgalfucfucgalacglcgalacglcgal14acglcgalgluside heparan sulfate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01916c: -1.0
       - MAM01916e: 1.0
@@ -176251,7 +176251,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08311
-    - name: transport of fucfucfucgalacglc13galacglcgal1... (cytosol to extracellular)
+    - name: transport of fucfucfucgalacglc13galacglcgal14acglcgalgluside heparan sulfate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01852c: -1.0
       - MAM01852e: 1.0
@@ -176263,7 +176263,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08313
-    - name: transport of fucfuc132galacglcgal14acglcgalg... (cytosol to extracellular)
+    - name: transport of fucfuc132galacglcgal14acglcgalgluside heparan sulfate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01851c: -1.0
       - MAM01851e: 1.0
@@ -176275,7 +176275,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08315
-    - name: transport of fucfucfucgalacglcgal14acglcgalg... (cytosol to extracellular)
+    - name: transport of fucfucfucgalacglcgal14acglcgalgluside heparan sulfate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01853c: -1.0
       - MAM01853e: 1.0
@@ -178987,7 +178987,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09657
-    - name: transport of 3-deoxy-D-glycero-D-galacto-2... (cytosol to extracellular)
+    - name: transport of 3-deoxy-D-glycero-D-galacto-2-nonulosonic acid (cytosol to extracellular)
     - metabolites: !!omap
       - MAM00771c: -1.0
       - MAM00771e: 1.0
@@ -179095,7 +179095,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09731
-    - name: transport of glycophosphatidylinositol... (cytosol to extracellular)
+    - name: transport of glycophosphatidylinositol-(GPI)-anchored-protein-precursor (cytosol to extracellular)
     - metabolites: !!omap
       - MAM02001c: -1.0
       - MAM02001e: 1.0
@@ -179398,7 +179398,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01173
-    - name: transport of 3-oxo-10(R)-hydroxy-octadeca... (cytosol to mitochondria)
+    - name: transport of 3-oxo-10(R)-hydroxy-octadeca-(6E,8E,12Z)-trienoate (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM00835c: -1.0
       - MAM00835m: 1.0
@@ -179422,7 +179422,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01215
-    - name: transport of 3-oxo-10(S)-hydroxy-octadeca... (cytosol to mitochondria)
+    - name: transport of 3-oxo-10(S)-hydroxy-octadeca-(6E,8E,12Z)-trienoate (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM00837c: -1.0
       - MAM00837m: 1.0
@@ -179470,7 +179470,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01602
-    - name: transport of 5beta-cholestan-3alpha,7alpha,12alpha... (cytosol to mitochondria)
+    - name: transport of 5beta-cholestan-3alpha,7alpha,12alpha-triol (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM01078c: -1.0
       - MAM01078m: 1.0
@@ -182858,7 +182858,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01172
-    - name: transport of 3-oxo-10(R)-hydroxy-octadeca... (cytosol to peroxisome)
+    - name: transport of 3-oxo-10(R)-hydroxy-octadeca-(6E,8E,12Z)-trienoate (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM00835c: -1.0
       - MAM00835x: 1.0
@@ -182882,7 +182882,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01214
-    - name: transport of 3-oxo-10(S)-hydroxy-octadeca... (cytosol to peroxisome)
+    - name: transport of 3-oxo-10(S)-hydroxy-octadeca-(6E,8E,12Z)-trienoate (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM00837c: -1.0
       - MAM00837x: 1.0
@@ -183017,7 +183017,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02509
-    - name: transport of (6Z,9Z,12Z,15Z,18Z,21Z)... (cytosol to peroxisome)
+    - name: transport of (6Z,9Z,12Z,15Z,18Z,21Z)-tetracosahexaenoyl-CoA (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM00113c: -1.0
       - MAM00113x: 1.0
@@ -183244,7 +183244,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03024
-    - name: transport of (9Z,12Z,15Z,18Z,21Z)... (cytosol to peroxisome)
+    - name: transport of (9Z,12Z,15Z,18Z,21Z)-tetracosapentaenoyl-CoA (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM00134c: -1.0
       - MAM00134x: 1.0
@@ -184725,7 +184725,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08844
-    - name: transport of 1D-myo-inositol-bisdiphosphate... (cytosol to nucleus)
+    - name: transport of 1D-myo-inositol-bisdiphosphate-tetrakisphosphate (cytosol to nucleus)
     - metabolites: !!omap
       - MAM00531c: -1.0
       - MAM00531n: 1.0
@@ -185700,7 +185700,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07500
-    - name: transport of chondroitin sulfate A... (extracellular to lysosome)
+    - name: transport of chondroitin sulfate A (GalNAc4S-GlcA) proteoglycan (extracellular to lysosome)
     - metabolites: !!omap
       - MAM01517e: -1.0
       - MAM01517l: 1.0
@@ -185712,7 +185712,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07512
-    - name: transport of chondroitin sulfate B -... (extracellular to lysosome)
+    - name: transport of chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan (extracellular to lysosome)
     - metabolites: !!omap
       - MAM01525e: -1.0
       - MAM01525l: 1.0
@@ -185724,7 +185724,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07524
-    - name: transport of chondroitin sulfate C... (extracellular to lysosome)
+    - name: transport of chondroitin sulfate C (GalNAc6S-GlcA) proteoglycan (extracellular to lysosome)
     - metabolites: !!omap
       - MAM01533e: -1.0
       - MAM01533l: 1.0
@@ -185736,7 +185736,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07540
-    - name: transport of chondroitin sulfate D... (extracellular to lysosome)
+    - name: transport of chondroitin sulfate D (GlcNAc6S-GlcA2S) proteoglycan (extracellular to lysosome)
     - metabolites: !!omap
       - MAM01543e: -1.0
       - MAM01543l: 1.0
@@ -185748,7 +185748,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07556
-    - name: transport of chondroitin sulfate E... (extracellular to lysosome)
+    - name: transport of chondroitin sulfate E (GalNAc4,6diS-GlcA) proteoglycan (extracellular to lysosome)
     - metabolites: !!omap
       - MAM01554e: -1.0
       - MAM01554l: 1.0
@@ -187801,7 +187801,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08157
-    - name: transport of sialyl(1,3)-sialyl(2,6)... (cytosol to Golgi apparatus)
+    - name: transport of sialyl(1,3)-sialyl(2,6)-galactosylgloboside (cytosol to Golgi apparatus)
     - metabolites: !!omap
       - MAM02902c: -1.0
       - MAM02902g: 1.0
@@ -187813,7 +187813,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08160
-    - name: transport of sialyl(2,3)-sialyl(2,6)... (cytosol to Golgi apparatus)
+    - name: transport of sialyl(2,3)-sialyl(2,6)-galactosylgloboside (cytosol to Golgi apparatus)
     - metabolites: !!omap
       - MAM02903c: -1.0
       - MAM02903g: 1.0
@@ -187993,7 +187993,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08269
-    - name: transport of fucgalfucgalacglcgalgluside heparan... (cytosol to Golgi apparatus)
+    - name: transport of fucgalfucgalacglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
     - metabolites: !!omap
       - MAM01859c: -1.0
       - MAM01859g: 1.0
@@ -188017,7 +188017,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08282
-    - name: transport of galfuc12gal14acglcgalgluside heparan... (cytosol to Golgi apparatus)
+    - name: transport of galfuc12gal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
     - metabolites: !!omap
       - MAM01914c: -1.0
       - MAM01914g: 1.0
@@ -188053,7 +188053,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08299
-    - name: transport of galfucgalacglcgal14acglcgalglus... (cytosol to Golgi apparatus)
+    - name: transport of G00083 (cytosol to Golgi apparatus)
     - metabolites: !!omap
       - MAM01884c: -1.0
       - MAM01884g: 1.0
@@ -188065,7 +188065,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08303
-    - name: transport of galgalfucfucgalacglcgalacglcgal... (cytosol to Golgi apparatus)
+    - name: transport of galgalfucfucgalacglcgalacglcgal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
     - metabolites: !!omap
       - MAM01916c: -1.0
       - MAM01916g: 1.0
@@ -188077,7 +188077,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08310
-    - name: transport of fucfucfucgalacglc13galacglcgal1... (cytosol to Golgi apparatus)
+    - name: transport of fucfucfucgalacglc13galacglcgal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
     - metabolites: !!omap
       - MAM01852c: -1.0
       - MAM01852g: 1.0
@@ -188089,7 +188089,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08312
-    - name: transport of fucfuc132galacglcgal14acglcgalg... (cytosol to Golgi apparatus)
+    - name: transport of fucfuc132galacglcgal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
     - metabolites: !!omap
       - MAM01851c: -1.0
       - MAM01851g: 1.0
@@ -188101,7 +188101,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08314
-    - name: transport of fucfucfucgalacglcgal14acglcgalg... (cytosol to Golgi apparatus)
+    - name: transport of fucfucfucgalacglcgal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
     - metabolites: !!omap
       - MAM01853c: -1.0
       - MAM01853g: 1.0
@@ -188557,7 +188557,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07307
-    - name: transport of (alpha-D-mannosyl)8-beta-D... (endoplasmic reticulum to Golgi apparatus)
+    - name: transport of (alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00153g: 1.0
       - MAM00153r: -1.0
@@ -188569,7 +188569,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01809
-    - name: transport of 5beta-cholestan-3alpha,7alpha,1... (cytosol to endoplasmic reticulum)
+    - name: transport of 5beta-cholestan-3alpha,7alpha,12alpha-triol (cytosol to endoplasmic reticulum)
     - metabolites: !!omap
       - MAM01078c: -1.0
       - MAM01078r: 1.0
@@ -190571,7 +190571,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09732
-    - name: transport of glycophosphatidylinositol... (endoplasmic reticulum to cytosol)
+    - name: transport of glycophosphatidylinositol-(GPI)-anchored-protein-precursor (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02001c: 1.0
       - MAM02001r: -1.0
@@ -191717,7 +191717,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09118
-    - name: Exchange of chondroitin sulfate B - dermatan...
+    - name: Exchange of chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan
     - metabolites: !!omap
       - MAM01525e: -1.0
     - lower_bound: -1000.0
@@ -193627,7 +193627,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09321
-    - name: Exchange of G00043
+    - name: Exchange of fucacgalfucgalacglcgalgluside heparan sulfate
     - metabolites: !!omap
       - MAM01850e: -1.0
     - lower_bound: -1000.0
@@ -202505,7 +202505,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01649
-    - name: prolyl 4-hydroxylase (AKG)
+    - name: prolyl 4-hydroxylase (proline)
     - metabolites: !!omap
       - MAM01306r: -1.0
       - MAM01596r: 1.0
@@ -204049,7 +204049,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02126
-    - name: stearoyl-CoA desaturase (ferrocytochrome B5)
+    - name: stearoyl-CoA desaturase (palmitoyl-CoA)
     - metabolites: !!omap
       - MAM01823c: 2.0
       - MAM01825c: -2.0
@@ -204071,7 +204071,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02128
-    - name: stearoyl-CoA desaturase (ferrocytochrome B5)
+    - name: stearoyl-CoA desaturase (stearoyl-CoA)
     - metabolites: !!omap
       - MAM01823c: 2.0
       - MAM01825c: -2.0
@@ -204193,7 +204193,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02186
-    - name: alkaline phosphatase, biomineralization associated
+    - name: alkaline phosphatase (6-[(1S,2R)-1,2-dihydroxy-3-triphosphooxypropyl]-7,8-dihydropterin)
     - metabolites: !!omap
       - MAM01155e: -1.0
       - MAM01704e: 1.0
@@ -204830,7 +204830,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02310
-    - name: Long-Chain-Fatty-Acid-Coa Ligase
+    - name: long-chain-fatty-acid-CoA ligase (palmitolate to (2E)-hexadecenoyl-CoA)
     - metabolites: !!omap
       - MAM00051r: 1.0
       - MAM01334r: 1.0
@@ -204851,7 +204851,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02312
-    - name: Long-Chain-Fatty-Acid-Coa Ligase
+    - name: long-chain-fatty-acid-CoA ligase (palmitolate to (2E)-hexadecenoyl-CoA)
     - metabolites: !!omap
       - MAM00051c: 1.0
       - MAM01334c: 1.0
@@ -204872,7 +204872,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02313
-    - name: Long-Chain-Fatty-Acid-Coa Ligase
+    - name: long-chain-fatty-acid-CoA ligase (stearidonic acid to stearoyl-CoA)
     - metabolites: !!omap
       - MAM01334r: 1.0
       - MAM01371r: -1.0
@@ -210840,7 +210840,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03774
-    - name: 5beta-cholestane... to 3alpha,7alpha,12alpha... conversion
+    - name: 5beta-cholestane-3alpha,7alpha,12alpha,27,27-pentaol to (25R)-3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-26-al conversion
     - metabolites: !!omap
       - MAM00751c: 1.0
       - MAM01091c: -1.0
@@ -214158,7 +214158,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04578
-    - name: diazepam binding inhibitor, acyl-CoA binding protein
+    - name: transport of 3-hydroxy trans5,8tetradecadienoyl-CoA (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM03267c: 1.0
       - MAM03267m: -1.0
@@ -214248,7 +214248,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04616
-    - name: diazepam binding inhibitor, acyl-CoA binding protein
+    - name: transport of 3-hydroxy trans7,10-hexadecadienoyl-CoA (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM03265c: 1.0
       - MAM03265m: -1.0
@@ -214656,7 +214656,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04793
-    - name: Transport of Docosapentenoylcoa into Peroxisomes
+    - name: ATP-driven transport of (4Z,7Z,10Z,13Z,16Z)-docosapentaenoyl-CoA (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM00093c: -1.0
       - MAM00093x: 1.0
@@ -217903,7 +217903,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06489
-    - name: diazepam binding inhibitor, acyl-CoA binding protein
+    - name: transport of (S)-3-hydroxydodecanoyl-CoA (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00174c: 1.0
       - MAM00174m: -1.0
@@ -218000,7 +218000,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06528
-    - name: diazepam binding inhibitor, acyl-CoA binding protein
+    - name: transport of (S)-3-hydroxyoctadecanoyl-CoA (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM03230c: 1.0
       - MAM03230m: -1.0
@@ -218028,7 +218028,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06586
-    - name: diazepam binding inhibitor, acyl-CoA binding protein
+    - name: transport of (S)-3-hydroxytetradecanoyl-CoA (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00178c: 1.0
       - MAM00178m: -1.0
@@ -218056,7 +218056,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06596
-    - name: transport of lignocericyl-CoA from cytosol to peroxisome
+    - name: ATP-driven transport of tetracosanoyl-CoA (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -218249,7 +218249,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06775
-    - name: Transport of Pristanoylcoa from Cytosol to Peroxisomes
+    - name: ATP-driven transport of pristanoyl-CoA (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -218288,7 +218288,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06779
-    - name: Transport of Phytanoylcoa from Cytosol to Peroxisomes
+    - name: ATP-driven transport of 3(S)-phytanoyl-CoA as (3S)-phytanic acid (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -218398,7 +218398,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06816
-    - name: Transport of Stearidonylcoa into Peroxisomes
+    - name: ATP-driven transport of (6Z,9Z,12Z,15Z)-octadecatetraenoyl-CoA (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM00108c: -1.0
       - MAM00108x: 1.0
@@ -222915,7 +222915,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09942
-    - name: sterol esterase
+    - name: sterol esterase (1-Gamma-Linolenoyl-Cholesterol)
     - metabolites: !!omap
       - MAM01450l: 1.0
       - MAM01932l: 1.0
@@ -222995,7 +222995,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09947
-    - name: sterol esterase
+    - name: sterol esterase (Cholesteryl Docosahexanoate)
     - metabolites: !!omap
       - MAM01450l: 1.0
       - MAM01689l: 1.0
@@ -223362,7 +223362,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09970
-    - name: transport of 3-(3-Hydroxy-Phenyl)Propionate Hydroxy... (cytosol to extracellular)
+    - name: transport of 3-(3-Hydroxy-Phenyl)Propionate Hydroxy Derivative Glucuronide (cytosol to extracellular)
     - metabolites: !!omap
       - MAM03234c: -1.0
       - MAM03234e: 1.0
@@ -224553,7 +224553,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10155
-    - name: transport of 5beta-cholestane-3alpha,7alpha,12alpha,2... (cytosol to extracellular)
+    - name: ATP-driven transport of 5beta-cholestane-3alpha,7alpha,12alpha,24s,25-pentol (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01087c: -1.0
       - MAM01087e: 1.0
@@ -224571,7 +224571,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10156
-    - name: transport of 5beta-cholestane-3alpha,7alpha,12alpha,2... (cytosol to extracellular)
+    - name: transport of 5beta-cholestane-3alpha,7alpha,12alpha,24s,25-pentol (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01087c: -1.0
       - MAM01087e: 1.0
@@ -226003,7 +226003,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10282
-    - name: Exchange of 1-Octadeca-Trienoylglycerophosphocholine
+    - name: Exchange of 1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 9, 12, 15)
     - metabolites: !!omap
       - MAM03818e: -1.0
     - lower_bound: -1000.0
@@ -226014,7 +226014,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10283
-    - name: Exchange of 1-Octadeca-Trienoylglycerophosphocholine
+    - name: Exchange of 1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 6, 9, 12)
     - metabolites: !!omap
       - MAM03817e: -1.0
     - lower_bound: -1000.0
@@ -226047,7 +226047,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10286
-    - name: Exchange of 1-Dihomo-Linolenoylglycerophosphocholine...
+    - name: Exchange of 1-Dihomo-Linolenoylglycerophosphocholine (20:3, Delta 8, 11, 14), Lysopc A C20:3
     - metabolites: !!omap
       - MAM03821e: -1.0
     - lower_bound: -1000.0
@@ -226058,7 +226058,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10287
-    - name: Exchange of 1-Eicosatetraenoylglycerophosphocholine...
+    - name: Exchange of 1-Eicosatetraenoylglycerophosphocholine (Delta 8, 11, 14, 17), Sn1-Lpc (20:4)
     - metabolites: !!omap
       - MAM03822e: -1.0
     - lower_bound: -1000.0
@@ -226069,7 +226069,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10288
-    - name: Exchange of 1-Eicosapentenoylglycerophosphocholine...
+    - name: Exchange of 1-Eicosapentenoylglycerophosphocholine (Delta 5, 8, 11, 14, 17), Sn1-Lpc (20:5)
     - metabolites: !!omap
       - MAM03823e: -1.0
     - lower_bound: -1000.0
@@ -226080,7 +226080,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10289
-    - name: Exchange of 1-Docosatetraenoylglycerophosphocholine...
+    - name: Exchange of 1-Docosatetraenoylglycerophosphocholine (Delta 7, 10, 13, 16), Sn1-Lpc (22:4)
     - metabolites: !!omap
       - MAM03824e: -1.0
     - lower_bound: -1000.0
@@ -226091,7 +226091,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10290
-    - name: Exchange of 1-Docosapentenoylglycerophosphocholine...
+    - name: Exchange of 1-Docosapentenoylglycerophosphocholine (Delta 7, 10, 13, 16, 19), Sn1-Lpc (22:5)-W3
     - metabolites: !!omap
       - MAM03826e: -1.0
     - lower_bound: -1000.0
@@ -226102,7 +226102,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10291
-    - name: Exchange of 1-Docosapentenoylglycerophosphocholine...
+    - name: Exchange of 1-Docosapentenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16), Sn1-Lpc (22:5)-W6
     - metabolites: !!omap
       - MAM03825e: -1.0
     - lower_bound: -1000.0
@@ -226278,7 +226278,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10308
-    - name: Exchange of 1-Eicosatrienoylglycerophosphoethanolami...
+    - name: Exchange of 1-Eicosatrienoylglycerophosphoethanolamine (Delta 11, 14, 17), Lpe (20:3)
     - metabolites: !!omap
       - MAM03844e: -1.0
     - lower_bound: -1000.0
@@ -226289,7 +226289,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10309
-    - name: Exchange of 1-Docosatetraenoyglycerophosphoethanolam...
+    - name: Exchange of 1-Docosatetraenoyglycerophosphoethanolamine (22:4, Delta 7, 10, 13, 16)
     - metabolites: !!omap
       - MAM03845e: -1.0
     - lower_bound: -1000.0
@@ -226300,7 +226300,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10310
-    - name: Exchange of 1-Docosahexenoylglyceroethanolamine...
+    - name: Exchange of 1-Docosahexenoylglyceroethanolamine (Delta 4, 7, 10, 13, 16, 19), Lpe (22:6)
     - metabolites: !!omap
       - MAM03846e: -1.0
     - lower_bound: -1000.0
@@ -226333,7 +226333,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10313
-    - name: Exchange of 1-Dihomo-Linolenoylglycerophosphoethanol...
+    - name: Exchange of 1-Dihomo-Linolenoylglycerophosphoethanolamine (20:3, Delta 8, 11, 14)
     - metabolites: !!omap
       - MAM03855e: -1.0
     - lower_bound: -1000.0
@@ -226773,7 +226773,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10353
-    - name: Exchange of 1-Timnodnoyl-Cholesterol
+    - name: Exchange of cholesteryl (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate
     - metabolites: !!omap
       - MAM01468e: -1.0
     - lower_bound: -1000.0
@@ -238575,7 +238575,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11233
-    - name: transport of 1-Docosatetraenoyglycerophosphoethanolam... (extracellular to cytosol)
+    - name: transport of 1-Docosatetraenoyglycerophosphoethanolamine (22:4, Delta 7, 10, 13, 16) (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03845c: 1.0
       - MAM03845e: -1.0
@@ -239199,7 +239199,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11285
-    - name: transport of 1-Timnodnoyl-Cholesterol (cytosol to lysosome)
+    - name: transport of cholesteryl (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate (cytosol to lysosome)
     - metabolites: !!omap
       - MAM01468c: -1.0
       - MAM01468l: 1.0
@@ -240361,7 +240361,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11377
-    - name: transport of 3alpha,7alpha,12alpha-trihydroxy-5beta... (cytosol to extracellular)
+    - name: ATP-driven transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM00752c: -1.0
       - MAM00752e: 1.0
@@ -240380,7 +240380,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11378
-    - name: transport of 3alpha,7alpha,12alpha-trihydroxy-5beta... (cytosol to extracellular)
+    - name: transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM00752c: -1.0
       - MAM00752e: 1.0
@@ -240829,7 +240829,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11409
-    - name: tetrahydrofolate synthase (farnesyl-PP)
+    - name: farnesyl-PP to trans,trans,cis-geranyl-geranyl-pp conversion
     - metabolites: !!omap
       - MAM01806c: -1.0
       - MAM02187c: -1.0
@@ -242240,7 +242240,7 @@
     - notes: https://www.springer.com/gp/book/9789400957800
   - !!omap
     - id: MAR11514
-    - name: AU RNA binding methylglutaconyl-CoA hydratase
+    - name: AU RNA binding methylglutaconyl-CoA hydratase (trans-delta-2-glutaryl-CoA)
     - metabolites: !!omap
       - MAM02040m: -1.0
       - MAM03222m: 1.0
@@ -243569,7 +243569,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11599
-    - name: transport of 1-Octadeca-Trienoylglycerophosphocholine (cytosol to extracellular)
+    - name: ATP-driven transport of 1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 9, 12, 15) (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -243592,7 +243592,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11600
-    - name: transport of 1-Octadeca-Trienoylglycerophosphocholine (cytosol to extracellular)
+    - name: ATP-driven transport of 1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 6, 9, 12) (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -243661,7 +243661,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11603
-    - name: ABC-type xenobiotic transporter
+    - name: ATP-driven transport of 1-Dihomo-Linolenoylglycerophosphocholine (20:3, Delta 8, 11, 14), Lysopc A C20:3 (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -243684,7 +243684,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11604
-    - name: transport of 1-Eicosatetraenoylglycerophosphocholine... (cytosol to extracellular)
+    - name: transport of 1-Eicosatetraenoylglycerophosphocholine (Delta 8, 11, 14, 17), Sn1-Lpc (20:4) (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -243707,7 +243707,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11605
-    - name: ABC-type xenobiotic transporter
+    - name: ATP-driven transport of 1-Eicosapentenoylglycerophosphocholine (Delta 5, 8, 11, 14, 17), Sn1-Lpc (20:5) (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -243730,7 +243730,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11606
-    - name: transport of 1-Docosatetraenoylglycerophosphocholine... (cytosol to extracellular)
+    - name: transport of 1-Docosatetraenoylglycerophosphocholine (Delta 7, 10, 13, 16), Sn1-Lpc (22:4) (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -243753,7 +243753,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11607
-    - name: ABC-type xenobiotic transporter
+    - name: ATP-driven transport of 1-Docosapentenoylglycerophosphocholine (Delta 7, 10, 13, 16, 19), Sn1-Lpc (22:5)-W3 (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -243776,7 +243776,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11608
-    - name: ABC-type xenobiotic transporter
+    - name: ATP-driven transport of 1-Docosapentenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16), Sn1-Lpc (22:5)-W6 (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -244045,7 +244045,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11620
-    - name: transport of 1-Docosahexenoylglyceroethanolamine... (cytosol to extracellular)
+    - name: transport of 1-Docosahexenoylglyceroethanolamine (Delta 4, 7, 10, 13, 16, 19), Lpe (22:6) (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -244727,7 +244727,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11667
-    - name: transport of 1-Eicosenoylglycerophosphocholine... (extracellular to cytosol)
+    - name: transport of 1-Eicosenoylglycerophosphocholine (Delta 11) ,Sn1-Lpc (20:1) (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03820c: 1.0
       - MAM03820e: -1.0
@@ -244744,7 +244744,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11668
-    - name: ABC-type xenobiotic transporter
+    - name: transport of 1-Dihomo-Linolenoylglycerophosphocholine (20:3, Delta 8, 11, 14), Lysopc A C20:3 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03821c: 1.0
       - MAM03821e: -1.0
@@ -244761,7 +244761,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11669
-    - name: ABC-type xenobiotic transporter
+    - name: transport of 1-Eicosatetraenoylglycerophosphocholine (Delta 8, 11, 14, 17), Sn1-Lpc (20:4) (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03822c: 1.0
       - MAM03822e: -1.0
@@ -244778,7 +244778,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11670
-    - name: ABC-type xenobiotic transporter
+    - name: transport of 1-Eicosapentenoylglycerophosphocholine (Delta 5, 8, 11, 14, 17), Sn1-Lpc (20:5) (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03823c: 1.0
       - MAM03823e: -1.0
@@ -244795,7 +244795,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11671
-    - name: ABC-type xenobiotic transporter
+    - name: transport of 1-Docosatetraenoylglycerophosphocholine (Delta 7, 10, 13, 16), Sn1-Lpc (22:4) (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03824c: 1.0
       - MAM03824e: -1.0
@@ -244812,7 +244812,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11672
-    - name: ABC-type xenobiotic transporter
+    - name: transport of 1-Docosapentenoylglycerophosphocholine (Delta 7, 10, 13, 16, 19), Sn1-Lpc (22:5)-W3 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03826c: 1.0
       - MAM03826e: -1.0
@@ -244829,7 +244829,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11673
-    - name: ABC-type xenobiotic transporter
+    - name: transport of 1-Docosapentenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16), Sn1-Lpc (22:5)-W6 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03825c: 1.0
       - MAM03825e: -1.0
@@ -245033,7 +245033,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11686
-    - name: transport of 1-Eicosatrienoylglycerophosphoethanolami... (extracellular to cytosol)
+    - name: transport of 1-Eicosatrienoylglycerophosphoethanolamine (Delta 11, 14, 17), Lpe (20:3) (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03844c: 1.0
       - MAM03844e: -1.0
@@ -245050,7 +245050,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11687
-    - name: ABC-type xenobiotic transporter
+    - name: transport of 1-Docosahexenoylglyceroethanolamine (Delta 4, 7, 10, 13, 16, 19), Lpe (22:6) (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03846c: 1.0
       - MAM03846e: -1.0
@@ -245101,7 +245101,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11690
-    - name: ABC-type xenobiotic transporter
+    - name: transport of 1-Dihomo-Linolenoylglycerophosphoethanolamine (20:3, Delta 8, 11, 14) (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03855c: 1.0
       - MAM03855e: -1.0
@@ -245831,7 +245831,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11749
-    - name: acyl-CoA thioesterase (trans,cis,cis-2,11,14...)
+    - name: acyl-CoA thioesterase (trans,cis,cis-2,11,14-eicosatrienoyl-CoA)
     - metabolites: !!omap
       - MAM01597c: 1.0
       - MAM02039c: 1.0
@@ -245879,7 +245879,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11752
-    - name: acyl-CoA thioesterase
+    - name: acyl-CoA thioesterase ((5Z,8Z,11Z,14Z,17Z)-eicosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00103m: -1.0
       - MAM01597m: 1.0
@@ -246806,7 +246806,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11803
-    - name: Rh (methylamine)
+    - name: transport of methylamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02039e: 1.0
@@ -250127,7 +250127,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12064
-    - name: Hexosaminidase A, Lysosomal Or Hexosaminidase B, Lysosomal
+    - name: beta-N-acetylhexosaminidase (GA2)
     - metabolites: !!omap
       - MAM01905l: -1.0
       - MAM02040l: -1.0
@@ -253872,7 +253872,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12311
-    - name: 13-O-desmethyl tacrolimus,... to 13,31-O-Didesmethyl-tacrolimus conversion
+    - name: 13-O-desmethyl tacrolimus, 13-DMT or M-I to 13,31-O-Didesmethyl-tacrolimus conversion
     - metabolites: !!omap
       - MAM01818r: 1.0
       - MAM01875r: -1.0
@@ -253888,7 +253888,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12312
-    - name: SAH to 13,31-O-Didesmethyl-tacrolimus conversion
+    - name: 31-DMT or M-II, 31-O-desmethyl tacrolimus to 13,31-O-Didesmethyl-tacrolimus conversion
     - metabolites: !!omap
       - MAM01818r: 1.0
       - MAM02039r: -1.0
@@ -254104,7 +254104,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12325
-    - name: 15-DMT or M-III,... to 15,31-O-Didesmethyl-tacrolimus conversion
+    - name: 15-DMT or M-III, 15-O-desmethyl tacrolimus to 15,31-O-Didesmethyl-tacrolimus conversion
     - metabolites: !!omap
       - MAM01890r: 1.0
       - MAM01891r: -1.0
@@ -254151,7 +254151,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12328
-    - name: SAH to 15,31-O-Didesmethyl-tacrolimus conversion
+    - name: 31-DMT or M-II, 31-O-desmethyl tacrolimus to 15,31-O-Didesmethyl-tacrolimus conversion
     - metabolites: !!omap
       - MAM01890r: 1.0
       - MAM02039r: -1.0
@@ -254511,7 +254511,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12349
-    - name: cytochrome P450 (atorvastatin-lactone)
+    - name: cytochrome P450 (atorvastatin-lactone to 2-hydroxy-atorvastatin-lactone)
     - metabolites: !!omap
       - MAM02039r: -1.0
       - MAM02040r: 1.0
@@ -255072,7 +255072,7 @@
     - notes: ISBN:9780071769396
   - !!omap
     - id: MAR12381
-    - name: cytochrome P450
+    - name: 6'-beta-hydroxy simvastatin lactone to 3'-hydroxy-simvastatin-lactone form conversion
     - metabolites: !!omap
       - MAM03239r: 1.0
       - MAM03300r: -1.0
@@ -255347,7 +255347,7 @@
     - notes: https://link.springer.com/chapter/10.1007/978-1-4419-0840-7_2
   - !!omap
     - id: MAR12397
-    - name: cytochrome P450 (atorvastatin-lactone)
+    - name: cytochrome P450 (atorvastatin-lactone to 4-hydroxy-atorvastatin-lactone)
     - metabolites: !!omap
       - MAM02039r: -1.0
       - MAM02040r: 1.0
@@ -255503,7 +255503,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12406
-    - name: cytochrome P450
+    - name: cytochrome P450 (triol metabolite of pravastatin)
     - metabolites: !!omap
       - MAM02039r: -1.0
       - MAM02040r: 2.0
@@ -255557,7 +255557,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12409
-    - name: cytochrome P450 (3-alpha-iso-pravastatin)
+    - name: cytochrome P450 (3-alpha-iso-pravastatin to 5,6-epoxy-3-alpha-iso-pravastatin)
     - metabolites: !!omap
       - MAM02039r: -1.0
       - MAM02040r: 1.0
@@ -255873,7 +255873,7 @@
     - notes: ISBN:9780071769396
   - !!omap
     - id: MAR12427
-    - name: cytochrome P450
+    - name: cytochrome P450 (6'-exomethylene-simvastatin-lactone form)
     - metabolites: !!omap
       - MAM02041r: 1.0
       - MAM02554r: 1.0
@@ -256407,7 +256407,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12457
-    - name: cytochrome P450 (3-alpha-iso-pravastatin)
+    - name: cytochrome P450 (3-alpha-iso-pravastatin to 7-hydroxy-3-alpha-iso-pravastatin)
     - metabolites: !!omap
       - MAM02039r: -1.0
       - MAM02040r: 1.0
@@ -257412,7 +257412,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12515
-    - name: UDP glucuronosyltransferase (atorvastatin-acid)
+    - name: UDP glucuronosyltransferase (atorvastatin-acid to atorvastatin-acyl-glucuronide)
     - metabolites: !!omap
       - MAM03106r: 1.0
       - MAM03109r: -1.0
@@ -257431,7 +257431,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12516
-    - name: UDP glucuronosyltransferase (atorvastatin-acid)
+    - name: UDP glucuronosyltransferase (atorvastatin-acid to atorvastatin-ether-glucuronide)
     - metabolites: !!omap
       - MAM02039r: 2.0
       - MAM03106r: 2.0
@@ -257517,7 +257517,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12521
-    - name: atorvastatin-lactone-ether... hydrolysis
+    - name: atorvastatin-lactone-ether-glucuronide / G3 hydrolysis
     - metabolites: !!omap
       - MAM01973r: 1.0
       - MAM02040r: -1.0
@@ -260089,7 +260089,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12722
-    - name: excretion of des-isopropyl-dihydro-fluvastatin...
+    - name: excretion of des-isopropyl-dihydro-fluvastatin-tetranor-glucuronide
     - metabolites: !!omap
       - MAM03583c: -1.0
       - MAM03583e: 1.0
@@ -261038,7 +261038,7 @@
     - notes: DOI:10.1007/978-1-4419-0840-7_2
   - !!omap
     - id: MAR12777
-    - name: cytochrome P450
+    - name: cytochrome P450 (lovastatin-hydroxyacid form to 6'-beta-hydroxy-lovastatin-acid form)
     - metabolites: !!omap
       - MAM02039r: -1.0
       - MAM02040r: 1.0
@@ -261061,7 +261061,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12778
-    - name: cytochrome P450
+    - name: cytochrome P450 (lovastatin-hydroxyacid form to 6'-exomethylene-lovastatin-acid form)
     - metabolites: !!omap
       - MAM02039r: -1.0
       - MAM02040r: 2.0
@@ -261237,7 +261237,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12787
-    - name: ATP binding cassette subfamily C
+    - name: ATP-driven transport of acetaminophen-mercapturate-conjugate/N-acetyl-cysteine-acetaminophen (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -261616,7 +261616,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12809
-    - name: SAM to SAH conversion
+    - name: des-isoproylpropionic-acid-fluvastatin-CoA to des-isoproylpropionic-acid-fluvastatin conversion
     - metabolites: !!omap
       - MAM01597c: 1.0
       - MAM02039c: 3.0
@@ -262135,7 +262135,7 @@
     - notes: ISBN:9780071769396
   - !!omap
     - id: MAR12839
-    - name: beta-glucuronidase
+    - name: beta-glucuronidase (simvastatin-acyl-glucuronide)
     - metabolites: !!omap
       - MAM01973r: 1.0
       - MAM02039r: 1.0
