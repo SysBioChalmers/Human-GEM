@@ -29,8 +29,8 @@ rxnHMR2ID      |HMR2 reaction ID        |
 rxnRatconID    |Ratcon reaction ID      |
 rxnTCDBID      |TCDB ID                 |
 spontaneous    |1 if the reaction needs no enzyme: non-enzymatic chemistry, or diffusion (transport between cytosol and nucleus through nuclear pores, and gases and water across membranes). ftINIT always keeps these reactions in context-specific models.|
-rxnRheaID      |Rhea ID                 |
-rxnRheaMasterID|Master Rhea ID          |
+rxnRheaID      |Rhea ID of the reaction's direction: left-to-right or right-to-left for an irreversible reaction, bidirectional for a reversible one|
+rxnRheaMasterID|Rhea master ID, the undirected reaction of rxnRheaID|
 rxnRetired     |Earlier identifiers of the reaction (for example `HMR_` IDs, or a `MAR` ID merged into this reaction), separated by `;`|
 
 
