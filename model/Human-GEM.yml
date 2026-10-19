@@ -58508,7 +58508,7 @@
       - MAM02819c: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166800 or ENSG00000171989
+    - gene_reaction_rule: ENSG00000111716 or ENSG00000134333 or ENSG00000166796 or ENSG00000166800
     - subsystem:
       - Glycolysis / Gluconeogenesis
     - annotation: !!omap
@@ -59677,7 +59677,7 @@
       - MAM02039c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000108479 or ENSG00000156958
+    - gene_reaction_rule: ENSG00000108479
     - subsystem:
       - Galactose metabolism
     - annotation: !!omap
@@ -59686,6 +59686,7 @@
     - references: PMID:12694189;PMID:7542884
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: GALK2 (N-acetylgalactosamine kinase) phosphorylates galactose only at millimolar concentrations and is not included (PMID:8798585).
   - !!omap
     - id: MAR04131
     - name: UDP-glucose:alpha-D-galactose-1-phosphate uridylyltransferase
@@ -61229,7 +61230,7 @@
       - MAM02819m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000111716 or ENSG00000171989
+    - gene_reaction_rule: ENSG00000111716
     - subsystem:
       - Pyruvate metabolism
     - annotation: !!omap
@@ -70495,7 +70496,7 @@
       - MAM02468m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000151498 or ENSG00000122971 or ENSG00000196177
+    - gene_reaction_rule: ENSG00000151498 or ENSG00000196177
     - subsystem:
       - Glycine, serine and threonine metabolism
     - annotation: !!omap
@@ -70595,7 +70596,7 @@
       - MAM02999m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000151498 or ENSG00000122971 or ENSG00000196177
+    - gene_reaction_rule: ENSG00000151498 or ENSG00000196177
     - subsystem:
       - Glycine, serine and threonine metabolism
     - annotation: !!omap
@@ -76777,7 +76778,7 @@
       - MAM02991c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000128309 or ENSG00000128311
+    - gene_reaction_rule: ENSG00000128309
     - subsystem:
       - Cysteine and methionine metabolism
     - annotation: !!omap
@@ -76796,7 +76797,7 @@
       - MAM02986c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000128309 or ENSG00000128311
+    - gene_reaction_rule: ENSG00000128309
     - subsystem:
       - Cysteine and methionine metabolism
     - annotation: !!omap
@@ -76815,7 +76816,7 @@
       - MAM02553c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000111716 or ENSG00000166796 or ENSG00000166800 or ENSG00000171989
+    - gene_reaction_rule: ENSG00000111716 or ENSG00000166796 or ENSG00000166800
     - subsystem:
       - Cysteine and methionine metabolism
     - annotation: !!omap
@@ -76834,7 +76835,7 @@
       - MAM02991m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000128309 or ENSG00000128311
+    - gene_reaction_rule: ENSG00000128311
     - subsystem:
       - Cysteine and methionine metabolism
     - annotation: !!omap
@@ -78732,8 +78733,13 @@
       - MAM02526c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000156958
     - subsystem:
       - Amino sugar and nucleotide sugar metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 2.7.1.157
+    - references: doi:10.1074/jbc.271.39.23653;doi:10.1074/jbc.M505730200
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -84752,7 +84758,7 @@
       - MAM02661c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800 or ENSG00000171989
+    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800
     - subsystem:
       - Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism
     - annotation: !!omap
@@ -277945,9 +277951,6 @@
   - !!omap
     - id: ENSG00000171960
     - name: PPIH
-  - !!omap
-    - id: ENSG00000171989
-    - name: LDHAL6B
   - !!omap
     - id: ENSG00000172009
     - name: THOP1
