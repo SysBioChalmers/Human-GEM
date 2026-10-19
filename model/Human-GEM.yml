@@ -196192,8 +196192,10 @@
     - gene_reaction_rule: ENSG00000187714
     - subsystem:
       - Transport reactions
+    - references: doi:10.1016/s0021-9258(17)31734-9;doi:10.1021/bi9802263;doi:10.1126/science.aaz2924
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Vesicular loading and exocytosis are lumped. VAChT exchanges 2 H+ per acetylcholine; the ATP stands for the V-ATPase that acidifies the vesicle (about 3 ATP per 10 H+), rounded to 2 ATP per 3 molecules.
   - !!omap
     - id: MAR00060
     - name: O-Acetylcarnintine Transport into Mitochondria via Diffusion
@@ -196284,8 +196286,10 @@
     - gene_reaction_rule: ENSG00000036565 or ENSG00000165646
     - subsystem:
       - Transport reactions
+    - references: doi:10.1073/pnas.89.22.10993;doi:10.1016/s0021-9258(17)37272-1;doi:10.1073/pnas.93.10.5166;doi:10.1021/bi00526a016;doi:10.1016/s0021-9258(19)69274-4;doi:10.1126/science.aaz2924
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Vesicular loading and exocytosis are lumped. VMAT1/VMAT2 exchange 2 H+ per amine; the ATP stands for the V-ATPase that acidifies the vesicle (about 3 ATP per 10 H+), rounded to 2 ATP per 3 molecules.
   - !!omap
     - id: MAR00066
     - name: L-Alanine Reversible Transport via Proton Symport, Lysosomal
@@ -196657,8 +196661,10 @@
     - gene_reaction_rule: ENSG00000101438
     - subsystem:
       - Transport reactions
+    - references: doi:10.1111/jnc.12393;doi:10.1126/science.aaz2924
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Vesicular loading and exocytosis are lumped. VGAT is driven by the vesicle membrane potential, about one charge per molecule; the ATP stands for the V-ATPase that builds it (about 3 ATP per 10 H+), rounded to 1 ATP per 3 molecules.
   - !!omap
     - id: MAR00088
     - name: Beta-Aminopropion Aldehyde:NAD+ Oxidoreductase, Mitochondrial
@@ -197979,8 +197985,10 @@
     - gene_reaction_rule: ENSG00000036565 or ENSG00000165646
     - subsystem:
       - Transport reactions
+    - references: doi:10.1073/pnas.89.22.10993;doi:10.1016/s0021-9258(17)37272-1;doi:10.1073/pnas.93.10.5166;doi:10.1021/bi00526a016;doi:10.1016/s0021-9258(19)69274-4;doi:10.1126/science.aaz2924
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Vesicular loading and exocytosis are lumped. VMAT1/VMAT2 exchange 2 H+ per amine; the ATP stands for the V-ATPase that acidifies the vesicle (about 3 ATP per 10 H+), rounded to 2 ATP per 3 molecules.
   - !!omap
     - id: MAR00441
     - name: Diphosphomevalonate Decarboxylase
@@ -200313,8 +200321,10 @@
     - gene_reaction_rule: ENSG00000101438
     - subsystem:
       - Transport reactions
+    - references: doi:10.1038/39908;doi:10.1074/jbc.M109.062414;doi:10.1126/science.aaz2924
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Vesicular loading and exocytosis are lumped. VGAT is driven by the vesicle membrane potential, about one charge per molecule; the ATP stands for the V-ATPase that builds it (about 3 ATP per 10 H+), rounded to 1 ATP per 3 molecules.
   - !!omap
     - id: MAR01353
     - name: Galnac Transferase, Golgi Apparatus
@@ -200516,8 +200526,10 @@
     - gene_reaction_rule: ENSG00000101438
     - subsystem:
       - Transport reactions
+    - references: doi:10.1074/jbc.M109.062414;doi:10.1016/j.neuron.2006.04.016;doi:10.1126/science.aaz2924
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Vesicular loading and exocytosis are lumped. VGAT is driven by the vesicle membrane potential, about one charge per molecule; the ATP stands for the V-ATPase that builds it (about 3 ATP per 10 H+), rounded to 1 ATP per 3 molecules.
   - !!omap
     - id: MAR01397
     - name: Geranyltranstransferase
@@ -200648,8 +200660,10 @@
     - gene_reaction_rule: ENSG00000036565 or ENSG00000165646
     - subsystem:
       - Transport reactions
+    - references: doi:10.1016/0028-3908(95)00148-y;doi:10.1073/pnas.93.10.5166;doi:10.1016/s0021-9258(19)69274-4;doi:10.1126/science.aaz2924
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Vesicular loading and exocytosis are lumped. VMAT1/VMAT2 exchange 2 H+ per amine; the ATP stands for the V-ATPase that acidifies the vesicle (about 3 ATP per 10 H+), rounded to 2 ATP per 3 molecules.
   - !!omap
     - id: MAR01446
     - name: hydroxymethylglutaryl-CoA reductase (Ir)
@@ -201606,8 +201620,10 @@
     - gene_reaction_rule: ENSG00000036565 or ENSG00000165646
     - subsystem:
       - Transport reactions
+    - references: doi:10.1073/pnas.89.22.10993;doi:10.1016/s0021-9258(17)37272-1;doi:10.1073/pnas.93.10.5166;doi:10.1021/bi00526a016;doi:10.1016/s0021-9258(19)69274-4;doi:10.1126/science.aaz2924
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Vesicular loading and exocytosis are lumped. VMAT1/VMAT2 exchange 2 H+ per amine; the ATP stands for the V-ATPase that acidifies the vesicle (about 3 ATP per 10 H+), rounded to 2 ATP per 3 molecules.
   - !!omap
     - id: MAR01556
     - name: Carnitine Transferase
