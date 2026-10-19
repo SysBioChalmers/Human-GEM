@@ -73712,11 +73712,13 @@
       - MAM02553c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000118514
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
       - ec-code:
         - 1.2.1.32
+    - references: doi:10.1074/jbc.RA118.003320
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -140376,12 +140378,13 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000102575 or ENSG00000142513 or ENSG00000155893 or ENSG00000183760
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000102575 or ENSG00000142513 or ENSG00000155893 or ENSG00000183760 or ENSG00000151014
     - subsystem:
       - Nicotinate and nicotinamide metabolism
     - annotation: !!omap
       - ec-code:
         - 3.1.3.2
+    - references: doi:10.1038/s41467-019-10125-z
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -151053,12 +151056,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000162365 or ENSG00000187048
+    - gene_reaction_rule: ENSG00000162365 or ENSG00000187048 or ENSG00000145476
     - subsystem:
       - Xenobiotics metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.15.3
+    - references: doi:10.1124/dmd.109.028530
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -151074,12 +151078,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000162365 or ENSG00000187048
+    - gene_reaction_rule: ENSG00000162365 or ENSG00000187048 or ENSG00000145476
     - subsystem:
       - Xenobiotics metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.15.3
+    - references: doi:10.1124/dmd.109.028530
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -176718,12 +176723,13 @@
       - MAM02041e: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000165272 or ENSG00000103375 or ENSG00000103569
+    - gene_reaction_rule: ENSG00000165272 or ENSG00000103375 or ENSG00000103569 or ENSG00000240583
     - subsystem:
       - Transport reactions
-    - references: PMID:20724658;PMID:31546170
+    - references: PMID:20724658;PMID:31546170;doi:10.1126/scitranslmed.aay2176
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: AQP1 transports H2O2 in human and mouse cardiomyocytes (PMID:33028705) but not in HEK293 cells (PMID:20724658).
   - !!omap
     - id: MAR08420
     - name: transport of 2,6-dimethylheptanoyl-carnitine (cytosol to extracellular)
@@ -279970,6 +279976,9 @@
   - !!omap
     - id: ENSG00000288867
     - name: PPIAL4C
+  - !!omap
+    - id: ENSG00000151014
+    - name: NOCT
 - compartments: !!omap
   - c: Cytosol
   - e: Extracellular
