@@ -23,6 +23,8 @@ Checks split into two kinds:
       - metabolites missing a formula or a charge;
       - reaction bound / GPR sanity;
       - exact-duplicate reactions (same stoichiometry);
+      - twin reactions (the same chemistry, in one compartment or in several)
+        with a missing or conflicting EC number;
       - reactions whose chemistry is split across compartments;
       - metabolites and genes not used by any reaction;
       - identifiers removed since the base branch that were not moved to a
@@ -55,6 +57,7 @@ RESULTS = "data/testResults"
 DUP_KEYS_CSV = f"{RESULTS}/qc_duplicate_keys.csv"
 DUP_RXN_CSV = f"{RESULTS}/qc_duplicate_reactions.csv"
 SPLIT_COMPARTMENT_CSV = f"{RESULTS}/qc_split_compartments.csv"
+TWIN_RXN_CSV = f"{RESULTS}/qc_twin_reactions.csv"
 EMPTY_RXN_CSV = f"{RESULTS}/qc_empty_reactions.csv"
 ANNOTATION_CONSISTENCY_CSV = f"{RESULTS}/qc_annotation_consistency.csv"
 UNUSED_CSV = f"{RESULTS}/qc_unused_entities.csv"
@@ -180,7 +183,7 @@ def check_no_duplicate_keys(model_file: str) -> list[tuple]:
 
 
 # --------------------------------------------------------------------------- #
-# Gate: reactions with no metabolites
+# Report: reactions with no metabolites
 # --------------------------------------------------------------------------- #
 def check_empty_reactions(model: cobra.Model) -> list[str]:
     empty = sorted(r.id for r in model.reactions if len(r.metabolites) == 0)
@@ -189,7 +192,8 @@ def check_empty_reactions(model: cobra.Model) -> list[str]:
 
 
 # --------------------------------------------------------------------------- #
-# Gate: the model and its annotation tables must agree; no deprecated ids
+# Report: the model and its annotation tables must agree; no deprecated ids
+# (an identifier not in the Human-GEM format is a gate)
 # --------------------------------------------------------------------------- #
 def check_annotation_consistency(model: cobra.Model) -> list[tuple]:
     """Compare model ids against reactions/metabolites/genes.tsv and the deprecated
@@ -315,6 +319,67 @@ def check_duplicate_reactions(model: cobra.Model) -> int:
                 rows.append((group, rid, example))
     rows.sort()
     _write_csv(DUP_RXN_CSV, ["group", "reaction", "equation"], rows)
+    return group
+
+
+# --------------------------------------------------------------------------- #
+# Report: twin reactions with a missing or conflicting EC number
+# --------------------------------------------------------------------------- #
+def _ec_codes(rxn: cobra.Reaction) -> frozenset:
+    codes = rxn.annotation.get("ec-code", [])
+    return frozenset([codes] if isinstance(codes, str) else codes)
+
+
+def check_twin_reactions(model: cobra.Model) -> int:
+    """Groups of reactions with the same chemistry and a missing or conflicting EC number.
+
+    Two reactions are twins when their stoichiometries are identical once the
+    compartment is dropped from every metabolite id: "merge" twins are the same
+    reaction in the same compartment (often left behind when two metabolites were
+    merged), "compartment" twins the same chemistry in another compartment. A group
+    is reported when its twins have the same GPR genes but different EC numbers, or
+    when one twin has an EC number and another has none; both are curation slips.
+    Twins with different GPRs and different EC numbers are usually different
+    enzymes acting on the same substrates (e.g. two aldehyde dehydrogenases) and are
+    not reported, nor is a different GPR alone (often an isoenzyme confined to one
+    compartment). The "differs" column notes when the GPR differs as well.
+    Transports (a metabolite in two compartments of one reaction), boundary
+    reactions and artificial (pool and biomass) reactions are skipped. The count is
+    the number of groups.
+    """
+    by_signature: dict[frozenset, list[cobra.Reaction]] = defaultdict(list)
+    for rxn in model.reactions:
+        subsystems = rxn.subsystem if isinstance(rxn.subsystem, list) else [rxn.subsystem]
+        if "Artificial reactions" in subsystems or rxn.boundary or not rxn.metabolites:
+            continue
+        bases = [met.id[:-1] for met in rxn.metabolites]
+        if len(bases) != len(set(bases)):
+            continue  # a transport
+        by_signature[frozenset((met.id[:-1], coeff) for met, coeff in rxn.metabolites.items())].append(rxn)
+
+    rows: list[tuple] = []
+    group = 0
+    for members in by_signature.values():
+        if len(members) < 2:
+            continue
+        ecs = {_ec_codes(rxn) for rxn in members}
+        if len(ecs) < 2:
+            continue
+        same_gpr = len({frozenset(g.id for g in rxn.genes) for rxn in members}) == 1
+        if not same_gpr and frozenset() not in ecs:
+            continue  # different enzymes, each with its own EC number
+        differs = ["EC"] if same_gpr else ["EC", "GPR"]
+        group += 1
+        compartments = {"".join(sorted({m.compartment for m in rxn.metabolites})) for rxn in members}
+        kind = "merge" if len(compartments) == 1 else "compartment"
+        for rxn in sorted(members, key=lambda r: r.id):
+            genes = " or ".join(sorted(g.name or g.id for g in rxn.genes))
+            rows.append((group, kind, "; ".join(differs), rxn.id,
+                         "".join(sorted({m.compartment for m in rxn.metabolites})),
+                         genes, ";".join(sorted(_ec_codes(rxn))),
+                         rxn.build_reaction_string(use_metabolite_names=True)))
+    _write_csv(TWIN_RXN_CSV, ["group", "kind", "differs", "reaction", "compartments", "genes", "ec",
+                              "equation"], rows)
     return group
 
 
@@ -679,6 +744,7 @@ def main() -> int:
     n_formula, n_charge = check_metabolite_completeness(model)
     n_reaction_issues = check_reaction_sanity(model)
     n_dup_rxn = check_duplicate_reactions(model)
+    n_twins = check_twin_reactions(model)
     n_split = check_split_compartments(model)
     n_unused_met, n_unused_gene = check_unused_entities(model)
 
@@ -691,6 +757,7 @@ def main() -> int:
     print(f"Reactions with bound/GPR issues: {n_reaction_issues}")
     print(f"Naming issues (missing or inconsistent): {len(name_issues)}")
     print(f"Exact-duplicate reaction groups: {n_dup_rxn}")
+    print(f"Twin reaction groups with a missing or conflicting EC number: {n_twins}")
     print(f"Reactions with chemistry split across compartments: {n_split}")
     print(f"Unused metabolites / genes: {n_unused_met} / {n_unused_gene}")
     print(f"Removed identifiers not deprecated: {len(undeprecated)}")

@@ -1,5 +1,6 @@
 """qcModelChecks: name consistency (missing names, names that disagree by compartment, reaction
-names that name a metabolite the reaction does not contain), identifier format and the growth medium."""
+names that name a metabolite the reaction does not contain), identifier format, the growth medium
+and twin reactions with a missing or conflicting EC number."""
 
 import cobra
 import pytest
@@ -184,3 +185,83 @@ def test_free_text_in_parentheses_is_not_flagged(csv_path):
 ])
 def test_species_named_in(name, expected):
     assert qcModelChecks._species_named_in(name) == expected
+
+
+@pytest.fixture
+def twin_csv(tmp_path, monkeypatch):
+    path = tmp_path / "qc_twin_reactions.csv"
+    monkeypatch.setattr(qcModelChecks, "TWIN_RXN_CSV", str(path))
+    return path
+
+
+def _twin_model(reactions):
+    """reactions: (id, {metabolite id: coefficient}, GPR, EC numbers, subsystem)."""
+    model = cobra.Model("twins")
+    for rid, stoich, gpr, ecs, *subsystem in reactions:
+        reaction = cobra.Reaction(rid)
+        model.add_reactions([reaction])
+        reaction.add_metabolites({
+            (model.metabolites.get_by_id(m) if m in model.metabolites
+             else cobra.Metabolite(m, name=m, compartment=m[-1])): c for m, c in stoich.items()})
+        reaction.gene_reaction_rule = gpr
+        if ecs:
+            reaction.annotation["ec-code"] = list(ecs)
+        reaction.subsystem = subsystem or ["Some pathway"]
+    return model
+
+
+AB_C = {"MAM00001c": -1, "MAM00002c": 1}
+AB_M = {"MAM00001m": -1, "MAM00002m": 1}
+
+
+def test_twins_with_the_same_gpr_and_ec_are_not_flagged(twin_csv):
+    model = _twin_model([("MAR00001", AB_C, "G1", ["1.1.1.1"]), ("MAR00002", AB_M, "G1", ["1.1.1.1"])])
+    assert qcModelChecks.check_twin_reactions(model) == 0
+
+
+def test_compartment_twins_with_differing_ec_are_flagged(twin_csv):
+    model = _twin_model([("MAR00001", AB_C, "G1", ["1.1.1.1"]), ("MAR00002", AB_M, "G1", [])])
+    assert qcModelChecks.check_twin_reactions(model) == 1
+    rows = twin_csv.read_text(encoding="utf-8").splitlines()
+    assert rows[0] == "group,kind,differs,reaction,compartments,genes,ec,equation"
+    assert [r.split(",")[:4] for r in rows[1:]] == [
+        ["1", "compartment", "EC", "MAR00001"], ["1", "compartment", "EC", "MAR00002"]]
+
+
+def test_twins_differing_only_in_gpr_are_not_flagged(twin_csv):
+    model = _twin_model([("MAR00001", AB_C, "G1", []), ("MAR00002", AB_C, "", [])])
+    assert qcModelChecks.check_twin_reactions(model) == 0
+
+
+def test_twins_with_the_same_gpr_and_different_ec_are_flagged(twin_csv):
+    model = _twin_model([("MAR00001", AB_C, "G1", ["1.1.1.1"]), ("MAR00002", AB_M, "G1", ["1.1.1.2"])])
+    assert qcModelChecks.check_twin_reactions(model) == 1
+
+
+def test_twins_with_different_gpr_and_different_ec_are_not_flagged(twin_csv):
+    """Different enzymes on the same substrates, each with its own EC number."""
+    model = _twin_model([("MAR00001", AB_C, "G1", ["1.1.1.1"]), ("MAR00002", AB_M, "G2", ["1.1.1.2"])])
+    assert qcModelChecks.check_twin_reactions(model) == 0
+
+
+def test_merge_twins_with_differing_ec_and_gpr_name_both(twin_csv):
+    model = _twin_model([("MAR00001", AB_C, "G1", ["1.1.1.1"]), ("MAR00002", AB_C, "", [])])
+    assert qcModelChecks.check_twin_reactions(model) == 1
+    rows = twin_csv.read_text(encoding="utf-8").splitlines()[1:]
+    assert all(r.split(",")[1:3] == ["merge", "EC; GPR"] for r in rows)
+
+
+def test_reversed_twins_are_matched_by_their_written_direction_only(twin_csv):
+    """A reaction written the other way round is not a twin (its coefficients differ in sign)."""
+    model = _twin_model([("MAR00001", AB_C, "G1", []), ("MAR00002", {"MAM00001m": 1, "MAM00002m": -1}, "", [])])
+    assert qcModelChecks.check_twin_reactions(model) == 0
+
+
+def test_transports_and_artificial_reactions_are_skipped(twin_csv):
+    model = _twin_model([
+        ("MAR00001", {"MAM00001c": -1, "MAM00001e": 1}, "G1", []),
+        ("MAR00002", {"MAM00001c": -1, "MAM00001m": 1}, "G2", []),
+        ("MAR00003", AB_C, "", ["1.1.1.1"], "Artificial reactions"),
+        ("MAR00004", AB_M, "", [], "Artificial reactions"),
+    ])
+    assert qcModelChecks.check_twin_reactions(model) == 0
