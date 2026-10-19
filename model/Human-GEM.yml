@@ -273523,7 +273523,7 @@
     - name: CARS1
   - !!omap
     - id: ENSG00000110628
-    - name: SLC22A18
+    - name: SLC67A1
   - !!omap
     - id: ENSG00000110713
     - name: NUP98
@@ -276859,7 +276859,7 @@
     - name: PGLYRP2
   - !!omap
     - id: ENSG00000161133
-    - name: USP41
+    - name: USP41P
   - !!omap
     - id: ENSG00000161217
     - name: PCYT1A
@@ -278023,7 +278023,7 @@
     - name: RAD9A
   - !!omap
     - id: ENSG00000172728
-    - name: FUT10
+    - name: POFUT3
   - !!omap
     - id: ENSG00000172817
     - name: CYP7B1
@@ -278359,7 +278359,7 @@
     - name: SLC25A22
   - !!omap
     - id: ENSG00000177628
-    - name: GBA
+    - name: GBA1
   - !!omap
     - id: ENSG00000177646
     - name: ACAD9
@@ -278464,7 +278464,7 @@
     - name: DCTPP1
   - !!omap
     - id: ENSG00000180011
-    - name: ZADH2
+    - name: PTGR3
   - !!omap
     - id: ENSG00000180176
     - name: TH
@@ -278791,7 +278791,7 @@
     - name: PCYT2
   - !!omap
     - id: ENSG00000185818
-    - name: NAT8L
+    - name: ASPNAT
   - !!omap
     - id: ENSG00000185825
     - name: BCAP31
@@ -278977,7 +278977,7 @@
     - name: HACD4
   - !!omap
     - id: ENSG00000189043
-    - name: NDUFA4
+    - name: COXFA4
   - !!omap
     - id: ENSG00000189221
     - name: MAOA
@@ -279061,7 +279061,7 @@
     - name: SLC39A10
   - !!omap
     - id: ENSG00000196968
-    - name: FUT11
+    - name: POFUT4
   - !!omap
     - id: ENSG00000197093
     - name: GAL3ST4
@@ -279562,7 +279562,7 @@
     - name: USP17L26
   - !!omap
     - id: ENSG00000229894
-    - name: GK3P
+    - name: GK3
   - !!omap
     - id: ENSG00000229937
     - name: PRPS1L1
