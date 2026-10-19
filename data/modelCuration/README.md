@@ -25,5 +25,6 @@ This directory contains curation-related data files that support changes to the 
 - `rheaDirectionalIds.tsv`: per-entity table of the change "rxnRheaID holds the directional Rhea id" (`code/modelCuration/applyCurationTable.py`).
 - `rxnFromHumanGEM.tsv`: per-entity table of the change "rxnFrom HumanGEM on reactions added in Human-GEM" (`code/modelCuration/applyCurationTable.py`).
 - `ecFromGprGene.tsv`: per-entity table of the change "EC numbers taken from a GPR gene that describe another reaction" (`code/modelCuration/applyCurationTable.py`).
+- `ecSplitSuccessors.tsv`: per-entity table of the change "split EC numbers keep the successor that fits the reaction" (`code/modelCuration/applyCurationTable.py`).
 
 Static dumps of external sources that were kept here during the Human1 series (SwissProt / Cell Atlas / DeepLoc2 subcellular locations, Rhea reaction associations, and metabolite SMILES/InChI) have been removed for the Human2 release. They had gone stale and are better queried fresh from the source when needed. They remain in the git history and in the last Human1 release, [v1.19.0](https://github.com/SysBioChalmers/Human-GEM/releases/tag/v1.19.0).
