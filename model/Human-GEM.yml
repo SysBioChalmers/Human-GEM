@@ -108571,7 +108571,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03107
-    - name: medium-chain acyl-CoA dehydrogenase (docosanoyl-CoA)
+    - name: acyl-CoA dehydrogenase (docosanoyl-CoA)
     - metabolites: !!omap
       - MAM00040m: 1.0
       - MAM01725m: -1.0
@@ -108584,10 +108584,8 @@
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
       - ec-code:
-        - 1.3.8.7
         - 1.3.8.8
         - 1.3.8.9
-        - 1.3.99.-
     - references: PMID:21237683
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -108649,7 +108647,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03111
-    - name: medium-chain acyl-CoA dehydrogenase (eicosanoyl-CoA)
+    - name: acyl-CoA dehydrogenase (eicosanoyl-CoA)
     - metabolites: !!omap
       - MAM00043m: 1.0
       - MAM01773m: -1.0
@@ -108662,10 +108660,8 @@
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
       - ec-code:
-        - 1.3.8.7
         - 1.3.8.8
         - 1.3.8.9
-        - 1.3.99.-
     - references: PMID:21237683
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -135046,7 +135042,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01608
-    - name: cytochrome P450 (5beta-cholestane-3alpha,7alpha,12alpha,26-tetrol)
+    - name: alcohol dehydrogenase (5beta-cholestane-3alpha,7alpha,12alpha,26-tetrol)
     - metabolites: !!omap
       - MAM00751c: 1.0
       - MAM01090c: -1.0
@@ -136667,7 +136663,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01762
-    - name: cholesterol,NADPH:oxygen oxidoreductase (5alpha,6alpha-epoxidizing)
+    - name: cholesterol 26-hydroxylase
     - metabolites: !!omap
       - MAM00623m: 1.0
       - MAM01450m: -1.0
@@ -207231,7 +207227,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02889
-    - name: Delta(3)-Delta(2)-enoyl-CoA isomerase
+    - name: 3alpha,7alpha-dihydroxy-5beta-cholestan-26-al dehydrogenase (NADP+)
     - metabolites: !!omap
       - MAM00756c: -1.0
       - MAM00758c: 1.0
@@ -207243,9 +207239,6 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
-    - annotation: !!omap
-      - ec-code:
-        - 5.3.3.8
     - references: PMID:9660774
     - rxnFrom: Recon3D
     - confidence_score: 0.0
