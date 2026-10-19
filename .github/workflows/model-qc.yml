@@ -432,7 +432,7 @@ jobs:
           fail=0
           [ "${{ steps.combine.outputs.structural }}" = "success" ] || { echo "::error::structural QC failed"; fail=1; }
           [ "${{ steps.combine.outputs.thermodynamics }}" = "success" ] || { echo "::error::a reaction can run in a thermodynamically impossible direction (or the check did not run)"; fail=1; }
-          for k in roundtrip_cobra roundtrip_raven roundtrip_sbml yamllint; do
+          for k in roundtrip_cobra roundtrip_raven roundtrip_sbml yamllint task_files tasks_gr_mar00021; do
             [ "$(python code/test/qcStatus.py --get $k)" = "fail" ] && { echo "::error::$k failed"; fail=1; }
           done
           for k in tasks_essential tasks_verification; do

@@ -179,6 +179,8 @@ TASK_CHECKS = [
     ("YAML lint", "yamllint"),
     ("Essential metabolic tasks", "tasks_essential"),
     ("Verification metabolic tasks", "tasks_verification"),
+    ("Task files readable by RAVEN", "task_files"),
+    ("Growth task with MAR00021 (animal GEMs)", "tasks_gr_mar00021"),
 ]
 _DUP_COLS = ("duplicate_test_exact", "duplicate_test_directions", "duplicate_test_coefficients")
 
