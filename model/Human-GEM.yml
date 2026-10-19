@@ -62029,9 +62029,6 @@
     - gene_reaction_rule: ENSG00000006534 or ENSG00000108602 or ENSG00000132746 or ENSG00000184254
     - subsystem:
       - Pentose phosphate pathway
-    - annotation: !!omap
-      - ec-code:
-        - 1.2.1.5
     - references: PMID:15234337
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -71217,7 +71214,6 @@
       - Glycine, serine and threonine metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.8.1.4
         - 2.1.2.10
     - references: PMID:24798336
     - rxnFrom: HMRdatabase
@@ -73314,9 +73310,6 @@
     - gene_reaction_rule: ENSG00000078070 and ENSG00000131844
     - subsystem:
       - Valine, leucine, and isoleucine metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 6.4.1.4
     - references: PMID:7059658
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -83555,9 +83548,6 @@
     - upper_bound: 1000.0
     - subsystem:
       - Protein degradation
-    - annotation: !!omap
-      - ec-code:
-        - 4.2.1.134
     - references: PMID:10395894;PMID:10721716;PMID:15489334;PMID:8602861;PMID:8661012
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -83878,9 +83868,6 @@
     - gene_reaction_rule: ENSG00000006534 or ENSG00000132746 or ENSG00000184254
     - subsystem:
       - Sulfur metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.2.1.5
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -128552,8 +128539,7 @@
       - Glucocorticoid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.14.15.4
-        - 1.14.14.19
+        - 1.14.14.-
     - references: PMID:10049998
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -134740,10 +134726,7 @@
       - Keratan sulfate degradation
     - annotation: !!omap
       - ec-code:
-        - 3.1.6.4
-        - 3.2.1.18
         - 3.2.1.23
-        - 3.4.16.5
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149430,7 +149413,7 @@
       - Xenobiotics metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.11
+        - 1.1.1.-
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149447,7 +149430,7 @@
       - Xenobiotics metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.11
+        - 1.1.1.-
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149464,7 +149447,7 @@
       - Xenobiotics metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.11
+        - 1.1.1.-
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149481,7 +149464,7 @@
       - Xenobiotics metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.11
+        - 1.1.1.-
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -205976,6 +205959,9 @@
     - gene_reaction_rule: ENSG00000012660 or ENSG00000066322 or ENSG00000118402 or ENSG00000119915 or ENSG00000164181 or ENSG00000170522 or ENSG00000197977
     - subsystem:
       - Fatty acid biosynthesis
+    - annotation: !!omap
+      - ec-code:
+        - 2.3.1.199
     - references: PMID:10479480
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -206136,7 +206122,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.7.4.9
+        - 1.1.1.330
     - references: PMID:10479480
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -206154,7 +206140,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.7.4.9
+        - 4.2.1.134
     - references: PMID:10479480
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -206174,7 +206160,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.7.4.6
+        - 1.3.1.93
     - references: PMID:10479480
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209143,7 +209129,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.16
+        - 5.3.3.21
     - references: PMID:10407780;PMID:7775433
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209469,7 +209455,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 3.3.2.9
+        - 2.3.1.199
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209489,7 +209475,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 3.3.2.9
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209530,7 +209516,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 3.3.2.9
+        - 2.3.1.199
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209570,7 +209556,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 3.1.3.59
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209608,7 +209594,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 1.14.11.18
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209629,7 +209615,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 1.2.1.48
+        - 2.3.1.199
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209649,7 +209635,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 6.2.1.24
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209667,7 +209653,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 1.2.1.48
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209868,7 +209854,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.145
+        - 2.3.1.199
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210064,7 +210050,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 6.2.1.3
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210082,7 +210068,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 1.3.1.70
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210102,7 +210088,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.16
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210122,7 +210108,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.35
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210163,7 +210149,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 6.2.1.3
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210625,7 +210611,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.35
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210643,7 +210629,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.35
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210684,7 +210670,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.16
+        - 2.3.1.199
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210705,7 +210691,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.16
+        - 2.3.1.199
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210724,7 +210710,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.16
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210744,7 +210730,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 4.2.1.17
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210761,7 +210747,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 4.2.1.17
+        - 4.2.1.134
     - references: PMID:10970790;PMID:11567032;PMID:2114179
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210779,7 +210765,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 4.2.1.17
+        - 4.2.1.134
     - references: PMID:10970790;PMID:11567032;PMID:2114179
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210798,7 +210784,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 5.1.99.4
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -211214,7 +211200,7 @@
       - Glycerophospholipid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.1
+        - 3.1.4.39
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -212056,9 +212042,6 @@
     - upper_bound: 1000.0
     - subsystem:
       - Eicosanoid metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.13.11.34
     - references: PMID:9755286
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -212300,9 +212283,6 @@
     - upper_bound: 1000.0
     - subsystem:
       - Vitamin E metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.3.3.6
     - references: PMID:10385606;PMID:11722951;PMID:9789014
     - rxnFrom: Recon3D
     - confidence_score: 0.0
