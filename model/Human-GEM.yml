@@ -12831,13 +12831,6 @@
     - formula: C27H44O3
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM01180m
-    - name: 7alpha-hydroxy-3-oxo-4-cholestenoic acid
-    - compartment: m
-    - charge: -1.0
-    - formula: C27H41O4
-    - metFrom: HMRdatabase
-  - !!omap
     - id: MAM01181c
     - name: 7alpha-hydroxy-5beta-cholestan-3-one
     - compartment: c
@@ -58263,6 +58256,27 @@
     - compartment: e
     - charge: 0.0
     - formula: C27H42O4
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM00764r
+    - name: 3beta-hydroxy-5-cholestene-27-oate
+    - compartment: r
+    - charge: -1.0
+    - formula: C27H43O3
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM00761r
+    - name: 3beta,7alpha-dihydroxy-5-cholestenoate
+    - compartment: r
+    - charge: -1.0
+    - formula: C27H43O4
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM01180r
+    - name: 7alpha-hydroxy-3-oxo-4-cholestenoic acid
+    - compartment: r
+    - charge: -1.0
+    - formula: C27H41O4
     - metFrom: HumanGEM
 - reactions:
   - !!omap
@@ -136952,42 +136966,42 @@
     - id: MAR01794
     - name: cytochrome P450 (3beta-hydroxy-5-cholestene-27-oate)
     - metabolites: !!omap
-      - MAM00761m: 1.0
-      - MAM00764m: -1.0
-      - MAM02039m: -1.0
-      - MAM02040m: 1.0
-      - MAM02554m: 1.0
-      - MAM02555m: -1.0
-      - MAM02630m: -1.0
+      - MAM00761r: 1.0
+      - MAM00764r: -1.0
+      - MAM02039r: -1.0
+      - MAM02040r: 1.0
+      - MAM02554r: 1.0
+      - MAM02555r: -1.0
+      - MAM02630r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000135929
+    - gene_reaction_rule: ENSG00000172817
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.14.15.15
-    - references: PMID:9660774
+        - 1.14.14.29
+    - references: doi:10.1172/JCI2962;doi:10.1172/JCI68506
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
     - id: MAR01796
-    - name: cytochrome P450 (3beta,7alpha-dihydroxy-5-cholestenoate)
+    - name: hydroxy-delta-5-steroid dehydrogenase, 3 beta- and steroid delta-isomerase (3beta,7alpha-dihydroxy-5-cholestenoate)
     - metabolites: !!omap
-      - MAM00761m: -1.0
-      - MAM01180m: 1.0
-      - MAM02039m: 1.0
-      - MAM02554m: -1.0
-      - MAM02555m: 1.0
+      - MAM00761r: -1.0
+      - MAM01180r: 1.0
+      - MAM02039r: 1.0
+      - MAM02552r: -1.0
+      - MAM02553r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000135929
+    - gene_reaction_rule: ENSG00000099377
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.14.15.15
-    - references: PMID:9660774
+        - 1.1.1.181
+    - references: doi:10.1172/JCI10902;doi:10.1172/JCI68506
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -270464,6 +270478,19 @@
     - references: doi:10.1038/s41467-019-10125-z
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
+  - !!omap
+    - id: MAR20231
+    - name: transport of 3beta-hydroxy-5-cholestene-27-oate (mitochondria to endoplasmic reticulum)
+    - metabolites: !!omap
+      - MAM00764m: -1.0
+      - MAM00764r: 1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Transport reactions
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: The acid made by CYP27A1 in the mitochondria is 7alpha-hydroxylated by CYP7B1 in the ER; the route between the membranes is not known.
 - genes:
   - !!omap
     - id: ENSG00000000419
