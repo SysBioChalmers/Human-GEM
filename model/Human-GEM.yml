@@ -29468,8 +29468,8 @@
     - id: MAM02491c
     - name: monosialylgalactosylgloboside
     - compartment: c
-    - charge: 0.0
-    - formula: C62H106N3O36R
+    - charge: -1.0
+    - formula: C62H105N3O36R
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02492c
@@ -37733,15 +37733,15 @@
     - id: MAM03131c
     - name: V3(NeuAc)2-Gb5Cer
     - compartment: c
-    - charge: 0.0
-    - formula: C70H119N4O41R
+    - charge: -2.0
+    - formula: C73H121N4O44R
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM03131e
     - name: V3(NeuAc)2-Gb5Cer
     - compartment: e
-    - charge: 0.0
-    - formula: C70H119N4O41R
+    - charge: -2.0
+    - formula: C73H121N4O44R
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM03132c
@@ -57788,12 +57788,6 @@
     - charge: 0.0
     - formula: C36H69NO3
   - !!omap
-    - id: MAM01778g
-    - name: elaidate
-    - compartment: g
-    - charge: -1.0
-    - formula: C18H33O2
-  - !!omap
     - id: MAM20074r
     - name: N-(9Z-octadecenoyl)-sphinganine
     - compartment: r
@@ -58284,6 +58278,13 @@
     - compartment: m
     - charge: 1.0
     - formula: C9H21N2O2
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM02646g
+    - name: oleate
+    - compartment: g
+    - charge: -1.0
+    - formula: C18H33O2
     - metFrom: HumanGEM
 - reactions:
   - !!omap
@@ -126382,6 +126383,7 @@
       - MAM01590c: 1.0
       - MAM01592c: -1.0
       - MAM01912c: -1.0
+      - MAM02039c: 1.0
       - MAM02491c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -126416,10 +126418,10 @@
     - id: MAR00814
     - name: ST8 alpha-N-acetyl-neuraminide alpha-2,8-sialyltransferase (G00098)
     - metabolites: !!omap
+      - MAM01590c: 1.0
+      - MAM01592c: -1.0
       - MAM02039c: 1.0
       - MAM02491c: -1.0
-      - MAM03106c: 1.0
-      - MAM03110c: -1.0
       - MAM03131c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -227740,10 +227742,10 @@
     - id: MAR10461
     - name: Indoxyl Formation from Indole
     - metabolites: !!omap
-      - MAM02039c: 2.0
-      - MAM02040c: -1.0
-      - MAM02554c: -1.0
-      - MAM02555c: 1.0
+      - MAM02040c: 1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
+      - MAM02630c: -1.0
       - MAM03701c: -1.0
       - MAM03702c: 1.0
     - lower_bound: 0.0
@@ -268006,10 +268008,10 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20084
-    - name: ceramidase (N-(9Z-octadecenoyl)-sphing-4-enine, elaidate-forming)
+    - name: ceramidase (N-(9Z-octadecenoyl)-sphing-4-enine)
     - metabolites: !!omap
-      - MAM01778g: 1.0
       - MAM02040g: -1.0
+      - MAM02646g: 1.0
       - MAM02929g: 1.0
       - MAM20073g: -1.0
     - lower_bound: 0.0
@@ -268042,10 +268044,10 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20086
-    - name: ceramidase (N-(9Z-octadecenoyl)-sphinganine, elaidate-forming)
+    - name: ceramidase (N-(9Z-octadecenoyl)-sphinganine)
     - metabolites: !!omap
-      - MAM01778g: 1.0
       - MAM02040g: -1.0
+      - MAM02646g: 1.0
       - MAM02927g: 1.0
       - MAM20074g: -1.0
     - lower_bound: 0.0
@@ -268078,10 +268080,10 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20088
-    - name: ceramidase (N-(9Z-octadecenoyl)-(4R)-hydroxysphinganine, elaidate-forming)
+    - name: ceramidase (N-(9Z-octadecenoyl)-(4R)-hydroxysphinganine)
     - metabolites: !!omap
-      - MAM01778g: 1.0
       - MAM02040g: -1.0
+      - MAM02646g: 1.0
       - MAM02749g: 1.0
       - MAM20072g: -1.0
     - lower_bound: 0.0
