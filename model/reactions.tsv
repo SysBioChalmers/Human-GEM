@@ -7422,7 +7422,7 @@ MAR09069		EX_ser__L_e				EX_ser_L[e]			HMR_9069	RCR30042		0			HMR_9069
 MAR09070		EX_asp__L_e				EX_asp_L[e]			HMR_9070	RCR30145		0			HMR_9070
 MAR09071		EX_glu__L_e				EX_glu_L[e]			HMR_9071	RCR30005		0			HMR_9071
 MAR09072		EX_pi_e				EX_pi[e]			HMR_9072	RCR30533		0			HMR_9072
-MAR09073		EX_nh4_e							HMR_9073	RCR30096		0			HMR_9073
+MAR09073		EX_nh3_e							HMR_9073	RCR30096		0			HMR_9073
 MAR09074		EX_so4_e				EX_so4[e]			HMR_9074	RCR30322		0			HMR_9074
 MAR09075		EX_urate_e				EX_urate[e]			HMR_9075	RCR30097		0			HMR_9075
 MAR09076		EX_fe2_e				EX_fe2[e]			HMR_9076	RCR30323		0			HMR_9076
@@ -7994,7 +7994,7 @@ MAR00621		EX_lgnc_e				EX_lgnc[e]						0			EX_lgnc[e]
 MAR00624		EX_lneldc_e				EX_lneldc[e]						0			EX_lneldc[e]
 MAR00626		EX_lnlncg_e				EX_lnlncg[e]						0			EX_lnlncg[e]
 MAR00628		EX_lpchol_hs_e				EX_lpchol_hs[e]						0			EX_lpchol_hs[e]
-MAR00631		EX_mag_hs_e				EX_mag_hs[e]						0			EX_mag_hs[e]
+MAR00631						EX_mag_hs[e]						0			EX_mag_hs[e]
 MAR00637		EX_nrvnc_e				EX_nrvnc[e]						0			EX_nrvnc[e]
 MAR00639		EX_ocdca_e				EX_ocdca[e]						0			EX_ocdca[e]
 MAR00650		EX_ocdcea_e				EX_ocdcea[e]						0			EX_ocdcea[e]
