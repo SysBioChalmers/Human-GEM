@@ -239181,15 +239181,16 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11318
-    - name: Proton Diffusion
+    - name: transport of H+ (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000122986 or ENSG00000163982 or ENSG00000183034 or ENSG00000182938
     - subsystem:
       - Transport reactions
-    - references: PMID:21749716
+    - references: PMID:21749716;doi:10.1038/nature04700;doi:10.1126/science.aao3264
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -279120,6 +279121,18 @@
   - !!omap
     - id: ENSG00000151014
     - name: NOCT
+  - !!omap
+    - id: ENSG00000163982
+    - name: OTOP1
+  - !!omap
+    - id: ENSG00000183034
+    - name: OTOP2
+  - !!omap
+    - id: ENSG00000122986
+    - name: HVCN1
+  - !!omap
+    - id: ENSG00000182938
+    - name: OTOP3
 - compartments: !!omap
   - c: Cytosol
   - e: Extracellular
