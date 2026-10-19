@@ -39074,6 +39074,13 @@
     - formula: C9H21N2O3
     - metFrom: Recon3D
   - !!omap
+    - id: MAM01034m
+    - name: 4-trimethylammoniobutanal
+    - compartment: m
+    - charge: 1.0
+    - formula: C7H16NO
+    - metFrom: Recon3D
+  - !!omap
     - id: MAM01685m
     - name: D-glucurono-6,3-lactone
     - compartment: m
@@ -200330,6 +200337,25 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: Recon3D
+    - confidence_score: 0.0
+  - !!omap
+    - id: MAR01371
+    - name: Glycine Hydroxymethyltransferase, Mitochondrial
+    - metabolites: !!omap
+      - MAM00789m: -1.0
+      - MAM01034m: 1.0
+      - MAM01986m: 1.0
+      - MAM02039m: -1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000182199
+    - subsystem:
+      - Lysine metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 2.1.2.1
+    - references: PMID:627563
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
