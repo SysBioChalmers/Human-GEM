@@ -250813,7 +250813,7 @@
       - MAM02525l: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000049860 and ENSG00000196743 and ENSG00000213614) or (ENSG00000049860 and ENSG00000196743)
+    - gene_reaction_rule: ENSG00000049860 and ENSG00000196743
     - subsystem:
       - Sphingolipid metabolism
     - annotation: !!omap
@@ -268137,7 +268137,7 @@
       - MAM02674c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000132746 or ENSG00000132746 or ENSG00000006534 or ENSG00000072210
+    - gene_reaction_rule: ENSG00000132746 or ENSG00000006534 or ENSG00000072210
     - subsystem:
       - Fatty acid metabolism
     - annotation: !!omap
@@ -268156,7 +268156,7 @@
       - MAM20013c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000132746 or ENSG00000132746 or ENSG00000006534 or ENSG00000072210
+    - gene_reaction_rule: ENSG00000132746 or ENSG00000006534 or ENSG00000072210
     - subsystem:
       - octane oxidation
     - annotation: !!omap

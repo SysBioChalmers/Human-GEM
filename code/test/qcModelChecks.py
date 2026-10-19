@@ -389,6 +389,62 @@ def check_metabolite_completeness(model: cobra.Model) -> tuple[int, int]:
 # --------------------------------------------------------------------------- #
 # Report: reaction bound / GPR sanity
 # --------------------------------------------------------------------------- #
+def _closing(tokens: list[str], start: int) -> int:
+    """Index of the parenthesis that closes the one at ``tokens[start]``."""
+    depth = 0
+    for i in range(start, len(tokens)):
+        depth += {"(": 1, ")": -1}.get(tokens[i], 0)
+        if depth == 0:
+            return i
+    return -1
+
+
+def _or_clauses(rule: str) -> list[list[str]] | None:
+    """The AND-clauses of a GPR written as an OR of AND-clauses, each as its list of genes.
+
+    Returns None for a rule with an OR nested inside an AND, which this check does not expand.
+    """
+    clauses, depth, start = [], 0, 0
+    tokens = rule.replace("(", " ( ").replace(")", " ) ").split()
+    while tokens and tokens[0] == "(" and _closing(tokens, 0) == len(tokens) - 1:
+        tokens = tokens[1:-1]  # parentheses around the whole rule
+    for i, token in enumerate(tokens + ["or"]):
+        if token == "(":
+            depth += 1
+        elif token == ")":
+            depth -= 1
+        elif token == "or" and depth == 0:
+            clauses.append(tokens[start:i])
+            start = i + 1
+    genes = []
+    for clause in clauses:
+        if "or" in clause:
+            return None
+        genes.append([t for t in clause if t not in ("and", "(", ")")])
+    return genes
+
+
+def gpr_redundancy(rule: str) -> list[str]:
+    """Clauses of a GPR that cannot change its value: a gene repeated inside one clause, a clause
+    listed twice, or a clause that contains every gene of another clause (it is absorbed by it).
+    """
+    clauses = _or_clauses(rule) if rule.strip() else None
+    if not clauses:
+        return []
+    issues = []
+    for genes in clauses:
+        repeated = sorted({g for g in genes if genes.count(g) > 1})
+        if repeated:
+            issues.append("repeated gene " + "/".join(repeated))
+    sets = [frozenset(genes) for genes in clauses]
+    for i, clause in enumerate(sets):
+        if clause in sets[:i]:
+            issues.append("repeated clause " + " and ".join(sorted(clause)))
+        elif any(other < clause for other in sets):
+            issues.append("absorbed clause " + " and ".join(sorted(clause)))
+    return issues
+
+
 def check_reaction_sanity(model: cobra.Model) -> int:
     documented = set(_tsv_column(GENES_TSV, "genes"))
     rows = []
@@ -404,6 +460,9 @@ def check_reaction_sanity(model: cobra.Model) -> int:
             issues.append("undocumented_genes:" + ";".join(undocumented))
         if rxn.boundary and rxn.gene_reaction_rule.strip():
             issues.append("boundary_with_gpr")
+        redundant = gpr_redundancy(rxn.gene_reaction_rule)
+        if redundant:
+            issues.append("redundant_gpr:" + ";".join(redundant))
         if issues:
             rows.append((rxn.id, rxn.name or "", ";".join(issues)))
     rows.sort()
