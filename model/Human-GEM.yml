@@ -128728,6 +128728,7 @@
     - references: PMID:4514999
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: NADPH stands in for the unknown reducing substrate (AH2) of the peroxidase step (RHEA:42600).
   - !!omap
     - id: MAR01308
     - name: prostaglandin I2 synthase (prostaglandin H2)
@@ -129708,6 +129709,7 @@
         - 1.14.99.1
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: NADPH stands in for the unknown reducing substrate (AH2) of the peroxidase step (RHEA:42600).
   - !!omap
     - id: MAR01394
     - name: prostaglandin-E synthase (prostaglandin E1)
@@ -188963,6 +188965,7 @@
         - 1.14.99.1
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: NADPH stands in for the unknown reducing substrate (AH2) of the peroxidase step (RHEA:42600).
   - !!omap
     - id: MAR01530
     - name: transport of cholesterol (cytosol to endoplasmic reticulum)
@@ -270528,6 +270531,7 @@
     - references: PMID:32946811;PMID:35363247
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
+    - notes: "Export only: MCT1 releases succinate with protons when the cytosol is acidic (PMID:32946811, PMID:35363247); uptake runs through the Na+-coupled transporters."
   - !!omap
     - id: MAR20197
     - name: cytochrome P450 (4-hydroxy-13-cis-retinoate)
@@ -270707,6 +270711,7 @@
     - references: PMID:15070399;PMID:16037974;PMID:31349060;PMID:33431826
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
+    - notes: "Blocked: the only source of (R)-2-hydroxyglutarate in [m] is MAR20013, and no carrier of D-2-hydroxyglutarate into mitochondria is known."
   - !!omap
     - id: MAR20205
     - name: 2-oxoglutarate reductase ((S)-2-hydroxyglutarate-forming), mitochondrial
