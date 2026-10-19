@@ -61702,6 +61702,7 @@
       - MAM02131x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000112972
     - subsystem:
       - Butanoate metabolism
     - annotation: !!omap
