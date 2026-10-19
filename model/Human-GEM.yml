@@ -13252,10 +13252,10 @@
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01226m
-    - name: 9-carboxy-alpha-tocotrienol
+    - name: alpha-CDMOenHC
     - compartment: m
     - charge: -1.0
-    - formula: C24H33O4
+    - formula: C24H35O4
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01227m
@@ -13266,10 +13266,10 @@
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01228m
-    - name: 9-carboxy-gamma-tocotrienol
+    - name: gamma-CDMOenHC
     - compartment: m
     - charge: -1.0
-    - formula: C23H31O4
+    - formula: C23H33O4
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01229c
@@ -148148,14 +148148,16 @@
       - MAM01597m: -1.0
       - MAM01802m: -1.0
       - MAM01803m: 1.0
-      - MAM02039m: 2.0
+      - MAM02039m: 1.0
       - MAM02040m: -2.0
       - MAM02552m: -1.0
       - MAM02553m: 1.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
       - MAM02759m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000115361 and ENSG00000084754 and ENSG00000138029
+    - gene_reaction_rule: ENSG00000115361 and ENSG00000104325 and (ENSG00000167969 or ENSG00000198721) and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148170,17 +148172,21 @@
         - 5.1.99.4
         - 5.3.3.8
         - 6.2.1.-
+    - references: doi:10.1093/jn/131.10.3113
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: The 7'-double bond is a 4-enoyl bond in this round; it is reduced by DECR1 and isomerised by ECI1/ECI2, so the 9'-carboxy acid keeps only the 3' double bond (PMID:12368403); activity of these enzymes on this substrate is inferred. Acyl-CoA synthetase, thioesterase and thiolase steps included in this lumped reaction have no identified enzyme.
   - !!omap
     - id: MAR06434
-    - name: 9-carboxy-alpha-tocotrienol oxidation
+    - name: alpha-CDMOenHC oxidation
     - metabolites: !!omap
       - MAM01186m: 1.0
       - MAM01226m: -1.0
       - MAM01334m: 1.0
       - MAM01371m: -1.0
       - MAM01597m: -1.0
+      - MAM01802m: -1.0
+      - MAM01803m: 1.0
       - MAM02039m: 2.0
       - MAM02040m: -2.0
       - MAM02552m: -1.0
@@ -148189,10 +148195,10 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
+    - gene_reaction_rule: ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
-    - references: doi:10.1006/abbi.1995.1389
+    - references: doi:10.1006/abbi.1995.1389;doi:10.1093/jn/131.10.3113
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
     - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
@@ -148351,14 +148357,16 @@
       - MAM01597m: -1.0
       - MAM01802m: -1.0
       - MAM01803m: 1.0
-      - MAM02039m: 2.0
+      - MAM02039m: 1.0
       - MAM02040m: -2.0
       - MAM02552m: -1.0
       - MAM02553m: 1.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
       - MAM02759m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000115361 and ENSG00000084754 and ENSG00000138029
+    - gene_reaction_rule: ENSG00000115361 and ENSG00000104325 and (ENSG00000167969 or ENSG00000198721) and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506)
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148373,17 +148381,21 @@
         - 5.1.99.4
         - 5.3.3.8
         - 6.2.1.-
+    - references: doi:10.1093/jn/131.10.3113
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: The 7'-double bond is a 4-enoyl bond in this round; it is reduced by DECR1 and isomerised by ECI1/ECI2, so the 9'-carboxy acid keeps only the 3' double bond (PMID:12368403); activity of these enzymes on this substrate is inferred. Acyl-CoA synthetase, thioesterase and thiolase steps included in this lumped reaction have no identified enzyme.
   - !!omap
     - id: MAR06450
-    - name: 3-hydroxyacyl-CoA dehydrogenase (9-carboxy-gamma-tocotrienol)
+    - name: gamma-CDMOenHC oxidation
     - metabolites: !!omap
       - MAM01188m: 1.0
       - MAM01228m: -1.0
       - MAM01334m: 1.0
       - MAM01371m: -1.0
       - MAM01597m: -1.0
+      - MAM01802m: -1.0
+      - MAM01803m: 1.0
       - MAM02039m: 2.0
       - MAM02040m: -2.0
       - MAM02552m: -1.0
@@ -148392,7 +148404,7 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
+    - gene_reaction_rule: ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148405,7 +148417,7 @@
         - 4.2.1.17
         - 5.1.99.4
         - 6.2.1.-
-    - references: doi:10.1006/abbi.1995.1389
+    - references: doi:10.1006/abbi.1995.1389;doi:10.1093/jn/131.10.3113
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
     - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
