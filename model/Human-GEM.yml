@@ -214109,7 +214109,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.21
+        - 2.3.1.-
     - references: PMID:17442642
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -214172,7 +214172,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.21
+        - 2.3.1.-
     - references: PMID:20807522;PMID:20591710
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -217069,7 +217069,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.21
+        - 2.3.1.-
     - references: PMID:8582058
     - rxnFrom: Recon3D
     - confidence_score: 0.0
