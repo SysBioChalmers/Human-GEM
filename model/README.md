@@ -8,6 +8,13 @@ This directory contains the Human-GEM model and annotation files.
 The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat`. Note that only the `.yml` version is available on branches other than `main` (e.g., `develop`), to facilitate tracking of model changes.
 
 
+## Charge and protonation
+
+A metabolite's formula and charge are those of its major microspecies at pH 7.3, the form that MetaNetX and the ChEBI "major microspecies at pH 7.3" entries give: carboxylic acids and phosphates are ionised (pyruvate C3H3O3 −1, ATP −4, acyl-CoAs −4), amines are protonated (choline +1, lysine +1) and amino acids are zwitterions. Reactions are balanced for mass and charge with H+ in these forms. When a new metabolite is added, or a formula or charge changed, take the pH 7.3 form.
+
+Some metabolites do not follow this yet, for example the glycine- and taurine-conjugated bile acids and the steroid glucuronides, which are written as neutral acids. The cross-references and structures in `metabolites.tsv` can name the neutral parent compound instead of the pH 7.3 form (for example a ChEBI id of the acid rather than of its anion), so a charge read from a cross-reference is not proof of the model charge. Ammonia appears both as NH3 and as NH4+ (`MAM02578`, `MAM02579`).
+
+
 ## Reaction, Metabolite, and Gene Annotations
 
 Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are provided as `tsv` files. The structure of the `tsv` files are tabulated below.
