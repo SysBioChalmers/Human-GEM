@@ -271108,6 +271108,44 @@
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
     - notes: Diffusion across the membrane, by analogy with the small neutral solutes whose bilayer permeability was measured (PMID:3735402); formaldehyde itself was not among them.
+  - !!omap
+    - id: MAR20229
+    - name: NADP+ 2'-phosphohydrolase (NOCT)
+    - metabolites: !!omap
+      - MAM02040m: -1.0
+      - MAM02552m: 1.0
+      - MAM02554m: -1.0
+      - MAM02751m: 1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000151014
+    - subsystem:
+      - Nicotinate and nicotinamide metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.1.3.108
+    - references: doi:10.1038/s41467-019-10125-z
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+  - !!omap
+    - id: MAR20230
+    - name: NADPH 2'-phosphohydrolase (NOCT)
+    - metabolites: !!omap
+      - MAM02040m: -1.0
+      - MAM02553m: 1.0
+      - MAM02555m: -1.0
+      - MAM02751m: 1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000151014
+    - subsystem:
+      - Nicotinate and nicotinamide metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.1.3.108
+    - references: doi:10.1038/s41467-019-10125-z
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
 - genes:
   - !!omap
     - id: ENSG00000000419
