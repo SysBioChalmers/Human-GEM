@@ -57545,12 +57545,6 @@
     - charge: -1.0
     - formula: C20H33O3
   - !!omap
-    - id: MAM20019c
-    - name: FMNH2
-    - compartment: c
-    - charge: -2.0
-    - formula: C17H21N4O9P
-  - !!omap
     - id: MAM20024r
     - name: 19-hydroxy-(5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate
     - compartment: r
@@ -60199,8 +60193,8 @@
       - MAM01949c: -1.0
       - MAM01950c: 1.0
       - MAM02039c: -1.0
-      - MAM02552c: 1.0
-      - MAM02553c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000104522
@@ -65025,13 +65019,13 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04575
-    - name: (S)-dihydroorotate:NAD+ oxidoreductase
+    - name: (S)-dihydroorotate:quinone oxidoreductase
     - metabolites: !!omap
       - MAM00180c: -1.0
-      - MAM01828c: -1.0
       - MAM02659c: 1.0
-      - MAM20019c: 1.0
-    - lower_bound: -1000.0
+      - MAM03102m: 1.0
+      - MAM03103m: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000102967
     - subsystem:
@@ -65039,7 +65033,6 @@
     - annotation: !!omap
       - ec-code:
         - 1.3.5.2
-        - 1.3.1.14
     - references: PMID:184741;PMID:199900;PMID:216313;PMID:2540819;PMID:3733756;PMID:6186531;PMID:7196415;PMID:8925840;PMID:9179295
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -68997,12 +68990,12 @@
     - name: Formation of homocarnosine
     - metabolites: !!omap
       - MAM00970c: -1.0
-      - MAM01334c: 1.0
+      - MAM01285c: 1.0
       - MAM01371c: -1.0
       - MAM02039c: 1.0
       - MAM02125c: -1.0
       - MAM02132c: 1.0
-      - MAM02759c: 1.0
+      - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000172508
@@ -71041,18 +71034,17 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04700
-    - name: dimethylglycine dehydrogenase (formaldehyde)
+    - name: dimethylglycine dehydrogenase (tetrahydrofolate)
     - metabolites: !!omap
-      - MAM01708c: 1.0
-      - MAM01831c: -1.0
-      - MAM02039c: -1.0
-      - MAM02040c: 1.0
-      - MAM02554c: 1.0
-      - MAM02555c: -1.0
-      - MAM02880c: -1.0
-    - lower_bound: -1000.0
+      - MAM01045m: 1.0
+      - MAM01708m: -1.0
+      - MAM01802m: -1.0
+      - MAM01803m: 1.0
+      - MAM02880m: 1.0
+      - MAM02980m: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000090857 or ENSG00000132837
+    - gene_reaction_rule: ENSG00000132837
     - subsystem:
       - Glycine, serine and threonine metabolism
     - annotation: !!omap
@@ -71060,6 +71052,7 @@
         - 1.5.8.4
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: FAD/FADH2 stands for the covalent flavin of DMGDH, reoxidised by ETF as in MAR08439.
   - !!omap
     - id: MAR04742
     - name: succinyl-CoA:glycine C-succinyltransferase (decarboxylating)
@@ -77496,13 +77489,13 @@
     - id: MAR04425
     - name: L-histidine:beta-alanine ligase (ADP-forming)
     - metabolites: !!omap
-      - MAM01334c: 1.0
+      - MAM01285c: 1.0
       - MAM01371c: -1.0
       - MAM01383c: -1.0
       - MAM01423c: 1.0
       - MAM02039c: 1.0
       - MAM02125c: -1.0
-      - MAM02759c: 1.0
+      - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000172508
@@ -135086,8 +135079,8 @@
       - MAM01182r: 1.0
       - MAM01183r: -1.0
       - MAM02039r: 1.0
-      - MAM02554r: -1.0
-      - MAM02555r: 1.0
+      - MAM02552r: -1.0
+      - MAM02553r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000099377
@@ -146949,11 +146942,14 @@
     - id: MAR04548
     - name: melatonin,NADPH-hemoprotein reductase:oxygen oxidoreductase
     - metabolites: !!omap
-      - MAM01161c: -1.0
+      - MAM01161c: 1.0
       - MAM02039c: -1.0
-      - MAM02147c: 1.0
-      - MAM02460c: 1.0
-    - lower_bound: -1000.0
+      - MAM02040c: 1.0
+      - MAM02460c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
+      - MAM02630c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000138061 or ENSG00000140465 or ENSG00000140505
     - subsystem:
@@ -270457,25 +270453,6 @@
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
-    - id: MAR20167
-    - name: MAR20167
-    - metabolites: !!omap
-      - MAM01828c: 1.0
-      - MAM03102m: 1.0
-      - MAM03103m: -1.0
-      - MAM20019c: -1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000102967
-    - subsystem:
-      - Miscellaneous
-    - annotation: !!omap
-      - ec-code:
-        - 1.3.5.2
-    - references: PMID:34428349
-    - rxnFrom: HumanGEM
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR20168
     - name: lipoyl transfer from H protein to E2 (LIPT1)
     - metabolites: !!omap
@@ -272643,9 +272620,6 @@
   - !!omap
     - id: ENSG00000090686
     - name: USP48
-  - !!omap
-    - id: ENSG00000090857
-    - name: PDPR
   - !!omap
     - id: ENSG00000090861
     - name: AARS1
