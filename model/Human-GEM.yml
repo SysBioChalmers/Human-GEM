@@ -196334,19 +196334,15 @@
     - id: MAR07634
     - name: transport of 5-hydroxy-L-tryptophan (cytosol to extracellular)
     - metabolites: !!omap
-      - MAM01107c: -3.0
-      - MAM01107e: 3.0
-      - MAM01285c: 2.0
-      - MAM01371c: -2.0
-      - MAM02039c: 2.0
-      - MAM02040c: -2.0
-      - MAM02751c: 2.0
-    - lower_bound: 0.0
+      - MAM01107c: -1.0
+      - MAM01107e: 1.0
+    - lower_bound: -1000.0
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: 5-HTP is not a VMAT substrate that is secreted with ATP coupling; the plasma-membrane carrier is not assigned.
   - !!omap
     - id: MAR00053
     - name: 5-Methyltetrahydrofolate Transport via Anion Antiport
@@ -239908,24 +239904,6 @@
       - MAM02133c: 1.0
       - MAM02133e: -1.0
     - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Transport reactions
-    - references: PMID:21749716
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR11314
-    - name: L-Normetanephrine Seceretion via Secretory Vesicle (ATP Driven)
-    - metabolites: !!omap
-      - MAM01285c: 2.0
-      - MAM01371c: -2.0
-      - MAM02039c: 2.0
-      - MAM02040c: -2.0
-      - MAM02622c: -3.0
-      - MAM02622e: 3.0
-      - MAM02751c: 2.0
-    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
