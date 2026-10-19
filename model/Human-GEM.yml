@@ -60451,7 +60451,7 @@
       - Pentose and glucuronate interconversions
     - annotation: !!omap
       - ec-code:
-        - 2.7.1.15
+        - 2.7.1.47
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -76456,9 +76456,6 @@
     - gene_reaction_rule: ENSG00000261052
     - subsystem:
       - Cysteine and methionine metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 2.8.2.-
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -76745,9 +76742,6 @@
     - gene_reaction_rule: ENSG00000261052
     - subsystem:
       - Cysteine and methionine metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 2.8.2.1
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -81712,9 +81706,6 @@
     - gene_reaction_rule: ENSG00000122194
     - subsystem:
       - Protein assembly
-    - annotation: !!omap
-      - ec-code:
-        - 3.4.21.7
     - rxnFrom: HMRdatabase
     - confidence_score: 2.0
   - !!omap
@@ -81772,9 +81763,6 @@
     - gene_reaction_rule: ENSG00000180210
     - subsystem:
       - Protein assembly
-    - annotation: !!omap
-      - ec-code:
-        - 3.4.21.5
     - rxnFrom: HMRdatabase
     - confidence_score: 2.0
   - !!omap
@@ -103616,9 +103604,6 @@
     - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (peroxisomal)
-    - annotation: !!omap
-      - ec-code:
-        - 2.3.1.-
     - references: PMID:14598172;PMID:1735445;PMID:18406340;PMID:1988962;PMID:2351134;PMID:2355017;PMID:6361812;PMID:7892212;PMID:8132483
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -205974,7 +205959,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.4.3.13
+        - 2.3.1.199
     - references: PMID:10479480
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209557,7 +209542,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209636,7 +209621,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209936,7 +209921,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -209954,7 +209939,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210033,7 +210018,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210051,7 +210036,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210071,7 +210056,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210229,7 +210214,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210249,7 +210234,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210290,7 +210275,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210308,7 +210293,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210519,7 +210504,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210537,7 +210522,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210557,7 +210542,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210577,7 +210562,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.1.1.330
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210595,7 +210580,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 4.2.1.134
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210615,7 +210600,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210711,7 +210696,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -210866,7 +210851,7 @@
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
+        - 1.3.1.93
     - references: PMID:10970790
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -266275,7 +266260,7 @@
       - Inositol phosphate metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.7.1.-
+        - 3.1.3.62
     - confidence_score: 0.0
   - !!omap
     - id: MAR10068
@@ -267388,7 +267373,7 @@
       - Retinol metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.105
+        - 1.2.1.-
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
@@ -267408,7 +267393,7 @@
       - Retinol metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.-
+        - 1.2.1.-
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
@@ -268936,7 +268921,7 @@
       - Isolated
     - annotation: !!omap
       - ec-code:
-        - 3.1.1.106
+        - 3.2.2.-
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
