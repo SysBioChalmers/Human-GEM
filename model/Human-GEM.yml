@@ -80243,7 +80243,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07294
-    - name: transport of glucosyl-(alpha-D-mannosyl)6... (Golgi apparatus to endoplasmic reticulum)
+    - name: transport of glucosyl-(alpha-D-mannosyl)6... (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM01969g: 1.0
       - MAM01969r: -1.0
@@ -80255,7 +80255,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07295
-    - name: transport of (alpha-D-Glucosyl)3-(alpha-D... (Golgi apparatus to endoplasmic reticulum)
+    - name: transport of (alpha-D-Glucosyl)3-(alpha-D... (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00140g: 1.0
       - MAM00140r: -1.0
@@ -80267,7 +80267,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07296
-    - name: transport of (alpha-D-Glucosyl)2-(alpha-D... (Golgi apparatus to endoplasmic reticulum)
+    - name: transport of (alpha-D-Glucosyl)2-(alpha-D... (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00139g: 1.0
       - MAM00139r: -1.0
@@ -80279,7 +80279,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07297
-    - name: transport of (alpha-D-Glucosyl)-(alpha-D... (Golgi apparatus to endoplasmic reticulum)
+    - name: transport of (alpha-D-Glucosyl)-(alpha-D... (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00138g: 1.0
       - MAM00138r: -1.0
@@ -80291,7 +80291,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07298
-    - name: transport of glucosyl-(alpha-D-mannosyl)7... (Golgi apparatus to endoplasmic reticulum)
+    - name: transport of glucosyl-(alpha-D-mannosyl)7... (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM01970g: 1.0
       - MAM01970r: -1.0
@@ -80303,7 +80303,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07299
-    - name: transport of glucosyl-(alpha-D-mannosyl)7... (Golgi apparatus to endoplasmic reticulum)
+    - name: transport of glucosyl-(alpha-D-mannosyl)7... (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM01971g: 1.0
       - MAM01971r: -1.0
@@ -80315,7 +80315,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07300
-    - name: transport of (alpha-D-mannosyl)7-beta-D... (Golgi apparatus to endoplasmic reticulum)
+    - name: transport of (alpha-D-mannosyl)7-beta-D... (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00151g: 1.0
       - MAM00151r: -1.0
@@ -135170,7 +135170,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01592
-    - name: transport of 7alpha,12alpha-dihydroxycholest-4-en-3-one (cytosol to endoplasmic reticulum)
+    - name: transport of 7alpha,12alpha-dihydroxycholest-4-en-3-one (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM01178c: 1.0
       - MAM01178r: -1.0
@@ -135698,7 +135698,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01665
-    - name: transport of cholate (cytosol to peroxisome)
+    - name: transport of cholate (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM01445c: 1.0
       - MAM01445x: -1.0
@@ -136798,7 +136798,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01752
-    - name: transport of tetraHCA (cytosol to mitochondria)
+    - name: transport of tetraHCA (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02977c: 1.0
       - MAM02977m: -1.0
@@ -136811,7 +136811,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01753
-    - name: transport of 3,7,24THCA (cytosol to mitochondria)
+    - name: transport of 3,7,24THCA (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00742c: 1.0
       - MAM00742m: -1.0
@@ -138120,7 +138120,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01855
-    - name: transport of taurocholate (cytosol to extracellular)
+    - name: transport of taurocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -138376,7 +138376,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01878
-    - name: transport of taurocholate (cytosol to extracellular)
+    - name: transport of taurocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -138679,7 +138679,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01895
-    - name: transport of bilirubin-bisglucuronoside (extracellular to endoplasmic reticulum)
+    - name: transport of bilirubin-bisglucuronoside (endoplasmic reticulum to extracellular)
     - metabolites: !!omap
       - MAM01285r: 1.0
       - MAM01371r: -1.0
@@ -138717,7 +138717,7 @@
     - confidence_score: 2.0
   - !!omap
     - id: MAR01897
-    - name: transport of bilirubin-monoglucuronoside (extracellular to endoplasmic reticulum)
+    - name: transport of bilirubin-monoglucuronoside (endoplasmic reticulum to extracellular)
     - metabolites: !!omap
       - MAM01285r: 1.0
       - MAM01371r: -1.0
@@ -153641,7 +153641,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09580
-    - name: transport of Li+ (cytosol to extracellular)
+    - name: transport of Li+ (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01413c: -1.0
       - MAM01413e: 1.0
@@ -153669,7 +153669,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09582
-    - name: transport of guanidine (cytosol to extracellular)
+    - name: transport of guanidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02035c: 1.0
       - MAM02035e: -1.0
@@ -153697,7 +153697,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09584
-    - name: transport of metformin (cytosol to extracellular)
+    - name: transport of metformin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
@@ -153712,7 +153712,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09585
-    - name: transport of quinidine (cytosol to extracellular)
+    - name: transport of quinidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02039e: 1.0
@@ -153727,7 +153727,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09586
-    - name: transport of Mg2+ (cytosol to extracellular)
+    - name: transport of Mg2+ (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02482c: 1.0
       - MAM02482e: -1.0
@@ -153740,7 +153740,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09587
-    - name: transport of Cu2+ (cytosol to extracellular)
+    - name: transport of Cu2+ (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01624c: 1.0
       - MAM01624e: -1.0
@@ -155914,7 +155914,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00004
-    - name: transport of 1-acylglycerol-chylomicron pool (cytosol to extracellular)
+    - name: transport of 1-acylglycerol-chylomicron pool (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00503c: 1.0
       - MAM00503e: -1.0
@@ -155980,7 +155980,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00009
-    - name: transport of 1-acylglycerol-VLDL pool (cytosol to extracellular)
+    - name: transport of 1-acylglycerol-VLDL pool (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00510c: 1.0
       - MAM00510e: -1.0
@@ -156177,7 +156177,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00155
-    - name: transport of butyrate (cytosol to extracellular)
+    - name: transport of butyrate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01410c: 1.0
       - MAM01410e: -1.0
@@ -156190,7 +156190,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00164
-    - name: transport of valeric acid (cytosol to extracellular)
+    - name: transport of valeric acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03134c: 1.0
       - MAM03134e: -1.0
@@ -156203,7 +156203,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00167
-    - name: transport of hexanoic acid (cytosol to extracellular)
+    - name: transport of hexanoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02120c: 1.0
       - MAM02120e: -1.0
@@ -156216,7 +156216,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00170
-    - name: transport of heptylic acid (cytosol to extracellular)
+    - name: transport of heptylic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02108c: 1.0
       - MAM02108e: -1.0
@@ -156229,7 +156229,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00173
-    - name: transport of octanoic acid (cytosol to extracellular)
+    - name: transport of octanoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02642c: 1.0
       - MAM02642e: -1.0
@@ -156242,7 +156242,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00176
-    - name: transport of nonanoic acid (cytosol to extracellular)
+    - name: transport of nonanoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02614c: 1.0
       - MAM02614e: -1.0
@@ -156255,7 +156255,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00179
-    - name: transport of decanoic acid (cytosol to extracellular)
+    - name: transport of decanoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01648c: 1.0
       - MAM01648e: -1.0
@@ -156269,7 +156269,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00183
-    - name: transport of undecylic acid (cytosol to extracellular)
+    - name: transport of undecylic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03117c: 1.0
       - MAM03117e: -1.0
@@ -156282,7 +156282,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00187
-    - name: transport of lauric acid (cytosol to extracellular)
+    - name: transport of lauric acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02344c: 1.0
       - MAM02344e: -1.0
@@ -156315,7 +156315,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00191
-    - name: transport of tridecylic acid (cytosol to extracellular)
+    - name: transport of tridecylic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03051c: 1.0
       - MAM03051e: -1.0
@@ -156346,7 +156346,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00195
-    - name: transport of myristic acid (cytosol to extracellular)
+    - name: transport of myristic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02494c: 1.0
       - MAM02494e: -1.0
@@ -156378,7 +156378,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00199
-    - name: transport of (9E)-tetradecenoic acid (cytosol to extracellular)
+    - name: transport of (9E)-tetradecenoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00128c: 1.0
       - MAM00128e: -1.0
@@ -156409,7 +156409,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00203
-    - name: transport of (7Z)-tetradecenoic acid (cytosol to extracellular)
+    - name: transport of (7Z)-tetradecenoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00117c: 1.0
       - MAM00117e: -1.0
@@ -156440,7 +156440,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00208
-    - name: transport of physeteric acid (cytosol to extracellular)
+    - name: transport of physeteric acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02745c: 1.0
       - MAM02745e: -1.0
@@ -156471,7 +156471,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00212
-    - name: transport of pentadecylic acid (cytosol to extracellular)
+    - name: transport of pentadecylic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02690c: 1.0
       - MAM02690e: -1.0
@@ -156501,7 +156501,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00216
-    - name: transport of palmitate (cytosol to extracellular)
+    - name: transport of palmitate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02674c: 1.0
       - MAM02674e: -1.0
@@ -156534,7 +156534,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00225
-    - name: transport of palmitolate (cytosol to extracellular)
+    - name: transport of palmitolate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02675c: 1.0
       - MAM02675e: -1.0
@@ -156566,7 +156566,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00232
-    - name: transport of 7-palmitoleic acid (cytosol to extracellular)
+    - name: transport of 7-palmitoleic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01197c: 1.0
       - MAM01197e: -1.0
@@ -156596,7 +156596,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00236
-    - name: transport of margaric acid (cytosol to extracellular)
+    - name: transport of margaric acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02456c: 1.0
       - MAM02456e: -1.0
@@ -156626,7 +156626,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00240
-    - name: transport of (10Z)-heptadecenoic acid (cytosol to extracellular)
+    - name: transport of (10Z)-heptadecenoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00003c: 1.0
       - MAM00003e: -1.0
@@ -156657,7 +156657,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00244
-    - name: transport of 9-heptadecylenic acid (cytosol to extracellular)
+    - name: transport of 9-heptadecylenic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01238c: 1.0
       - MAM01238e: -1.0
@@ -156687,7 +156687,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00248
-    - name: transport of stearate (cytosol to extracellular)
+    - name: transport of stearate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02938c: 1.0
       - MAM02938e: -1.0
@@ -156720,7 +156720,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00254
-    - name: transport of (13Z)-octadecenoic acid (cytosol to extracellular)
+    - name: transport of (13Z)-octadecenoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00019c: 1.0
       - MAM00019e: -1.0
@@ -156751,7 +156751,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00258
-    - name: transport of cis-vaccenic acid (cytosol to extracellular)
+    - name: transport of cis-vaccenic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01585c: 1.0
       - MAM01585e: -1.0
@@ -156782,7 +156782,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00262
-    - name: transport of oleate (cytosol to extracellular)
+    - name: transport of oleate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02646c: 1.0
       - MAM02646e: -1.0
@@ -156815,7 +156815,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00266
-    - name: transport of elaidate (cytosol to extracellular)
+    - name: transport of elaidate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01778c: 1.0
       - MAM01778e: -1.0
@@ -156847,7 +156847,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00270
-    - name: transport of (7Z)-octadecenoic acid (cytosol to extracellular)
+    - name: transport of (7Z)-octadecenoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00115c: 1.0
       - MAM00115e: -1.0
@@ -156878,7 +156878,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00274
-    - name: transport of (6Z,9Z)-octadecadienoic acid (cytosol to extracellular)
+    - name: transport of (6Z,9Z)-octadecadienoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00104c: 1.0
       - MAM00104e: -1.0
@@ -156908,7 +156908,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00278
-    - name: transport of nonadecylic acid (cytosol to extracellular)
+    - name: transport of nonadecylic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02613c: 1.0
       - MAM02613e: -1.0
@@ -156939,7 +156939,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00282
-    - name: transport of eicosanoate (cytosol to extracellular)
+    - name: transport of eicosanoate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01771c: 1.0
       - MAM01771e: -1.0
@@ -156969,7 +156969,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00288
-    - name: transport of (13Z)-eicosenoic acid (cytosol to extracellular)
+    - name: transport of (13Z)-eicosenoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00017c: 1.0
       - MAM00017e: -1.0
@@ -157000,7 +157000,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00292
-    - name: transport of cis-gondoic acid (cytosol to extracellular)
+    - name: transport of cis-gondoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01584c: 1.0
       - MAM01584e: -1.0
@@ -157030,7 +157030,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00296
-    - name: transport of 9-eicosenoic acid (cytosol to extracellular)
+    - name: transport of 9-eicosenoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01235c: 1.0
       - MAM01235e: -1.0
@@ -157061,7 +157061,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00300
-    - name: transport of 8,11-eicosadienoic acid (cytosol to extracellular)
+    - name: transport of 8,11-eicosadienoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01207c: 1.0
       - MAM01207e: -1.0
@@ -157092,7 +157092,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00304
-    - name: transport of mead acid (cytosol to extracellular)
+    - name: transport of mead acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02457c: 1.0
       - MAM02457e: -1.0
@@ -157122,7 +157122,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00308
-    - name: transport of heneicosanoic acid (cytosol to extracellular)
+    - name: transport of heneicosanoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02053c: 1.0
       - MAM02053e: -1.0
@@ -157152,7 +157152,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00312
-    - name: transport of behenic acid (cytosol to extracellular)
+    - name: transport of behenic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01373c: 1.0
       - MAM01373e: -1.0
@@ -157182,7 +157182,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00318
-    - name: transport of cis-erucic acid (cytosol to extracellular)
+    - name: transport of cis-erucic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01583c: 1.0
       - MAM01583e: -1.0
@@ -157212,7 +157212,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00322
-    - name: transport of cis-cetoleic acid (cytosol to extracellular)
+    - name: transport of cis-cetoleic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01582c: 1.0
       - MAM01582e: -1.0
@@ -157243,7 +157243,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00326
-    - name: transport of tricosanoic acid (cytosol to extracellular)
+    - name: transport of tricosanoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03045c: 1.0
       - MAM03045e: -1.0
@@ -157274,7 +157274,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00330
-    - name: transport of lignocerate (cytosol to extracellular)
+    - name: transport of lignocerate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02385c: 1.0
       - MAM02385e: -1.0
@@ -157306,7 +157306,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00336
-    - name: transport of nervonic acid (cytosol to extracellular)
+    - name: transport of nervonic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02564c: 1.0
       - MAM02564e: -1.0
@@ -157336,7 +157336,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00340
-    - name: transport of cerotic acid (cytosol to extracellular)
+    - name: transport of cerotic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01432c: 1.0
       - MAM01432e: -1.0
@@ -157367,7 +157367,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00344
-    - name: transport of ximenic acid (cytosol to extracellular)
+    - name: transport of ximenic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03153c: 1.0
       - MAM03153e: -1.0
@@ -157397,7 +157397,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00348
-    - name: transport of linolenate (cytosol to extracellular)
+    - name: transport of linolenate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02389c: 1.0
       - MAM02389e: -1.0
@@ -157429,7 +157429,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00352
-    - name: transport of stearidonic acid (cytosol to extracellular)
+    - name: transport of stearidonic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02939c: 1.0
       - MAM02939e: -1.0
@@ -157459,7 +157459,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00356
-    - name: transport of omega-3-arachidonic acid (cytosol to extracellular)
+    - name: transport of omega-3-arachidonic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02648c: 1.0
       - MAM02648e: -1.0
@@ -157489,7 +157489,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00360
-    - name: transport of EPA (cytosol to extracellular)
+    - name: transport of EPA (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01784c: 1.0
       - MAM01784e: -1.0
@@ -157520,7 +157520,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00364
-    - name: transport of DPA (cytosol to extracellular)
+    - name: transport of DPA (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01741c: 1.0
       - MAM01741e: -1.0
@@ -157551,7 +157551,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00368
-    - name: transport of (9Z,12Z,15Z,18Z,21Z)-TPA (cytosol to extracellular)
+    - name: transport of (9Z,12Z,15Z,18Z,21Z)-TPA (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00135c: 1.0
       - MAM00135e: -1.0
@@ -157582,7 +157582,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00372
-    - name: transport of (6Z,9Z,12Z,15Z,18Z,21Z)-THA (cytosol to extracellular)
+    - name: transport of (6Z,9Z,12Z,15Z,18Z,21Z)-THA (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00114c: 1.0
       - MAM00114e: -1.0
@@ -157612,7 +157612,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00376
-    - name: transport of DHA (cytosol to extracellular)
+    - name: transport of DHA (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01689c: 1.0
       - MAM01689e: -1.0
@@ -157643,7 +157643,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00380
-    - name: transport of (11Z,14Z,17Z)-eicosatrienoic acid (cytosol to extracellular)
+    - name: transport of (11Z,14Z,17Z)-eicosatrienoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00010c: 1.0
       - MAM00010e: -1.0
@@ -157674,7 +157674,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00384
-    - name: transport of 13,16,19-docosatrienoic acid (cytosol to extracellular)
+    - name: transport of 13,16,19-docosatrienoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00341c: 1.0
       - MAM00341e: -1.0
@@ -157705,7 +157705,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00388
-    - name: transport of 10,13,16,19-docosatetraenoic acid (cytosol to extracellular)
+    - name: transport of 10,13,16,19-docosatetraenoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00260c: 1.0
       - MAM00260e: -1.0
@@ -157735,7 +157735,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00392
-    - name: transport of 12,15,18,21-tetracosatetraenoic acid (cytosol to extracellular)
+    - name: transport of 12,15,18,21-tetracosatetraenoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00315c: 1.0
       - MAM00315e: -1.0
@@ -157766,7 +157766,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00396
-    - name: transport of linoleate (cytosol to extracellular)
+    - name: transport of linoleate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02387c: 1.0
       - MAM02387e: -1.0
@@ -157798,7 +157798,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00400
-    - name: transport of gamma-linolenate (cytosol to extracellular)
+    - name: transport of gamma-linolenate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01932c: 1.0
       - MAM01932e: -1.0
@@ -157831,7 +157831,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00404
-    - name: transport of dihomo-gamma-linolenate (cytosol to extracellular)
+    - name: transport of dihomo-gamma-linolenate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01696c: 1.0
       - MAM01696e: -1.0
@@ -157864,7 +157864,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00408
-    - name: transport of arachidonate (cytosol to extracellular)
+    - name: transport of arachidonate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01362c: 1.0
       - MAM01362e: -1.0
@@ -157897,7 +157897,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00412
-    - name: transport of adrenic acid (cytosol to extracellular)
+    - name: transport of adrenic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01291c: 1.0
       - MAM01291e: -1.0
@@ -157927,7 +157927,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00416
-    - name: transport of (9Z,12Z,15Z,18Z)-TTA (cytosol to extracellular)
+    - name: transport of (9Z,12Z,15Z,18Z)-TTA (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00132c: 1.0
       - MAM00132e: -1.0
@@ -157958,7 +157958,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00420
-    - name: transport of (6Z,9Z,12Z,15Z,18Z)-TPA (cytosol to extracellular)
+    - name: transport of (6Z,9Z,12Z,15Z,18Z)-TPA (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00111c: 1.0
       - MAM00111e: -1.0
@@ -157989,7 +157989,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00424
-    - name: transport of (4Z,7Z,10Z,13Z,16Z)-DPA (cytosol to extracellular)
+    - name: transport of (4Z,7Z,10Z,13Z,16Z)-DPA (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00094c: 1.0
       - MAM00094e: -1.0
@@ -158020,7 +158020,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00428
-    - name: transport of (11Z,14Z)-eicosadienoic acid (cytosol to extracellular)
+    - name: transport of (11Z,14Z)-eicosadienoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00008c: 1.0
       - MAM00008e: -1.0
@@ -158051,7 +158051,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00432
-    - name: transport of (13Z,16Z)-docosadienoic acid (cytosol to extracellular)
+    - name: transport of (13Z,16Z)-docosadienoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00021c: 1.0
       - MAM00021e: -1.0
@@ -158082,7 +158082,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00436
-    - name: transport of 10,13,16-docosatriynoic acid (cytosol to extracellular)
+    - name: transport of 10,13,16-docosatriynoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00265c: 1.0
       - MAM00265e: -1.0
@@ -158113,7 +158113,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00440
-    - name: transport of (3R)-phytanic acid (cytosol to extracellular)
+    - name: transport of (3R)-phytanic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02746c: 1.0
       - MAM02746e: -1.0
@@ -158269,7 +158269,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01899
-    - name: transport of noradrenaline (cytosol to extracellular)
+    - name: transport of noradrenaline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -158287,7 +158287,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01900
-    - name: transport of noradrenaline (cytosol to extracellular)
+    - name: transport of noradrenaline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -158323,7 +158323,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01902
-    - name: transport of serotonin (cytosol to extracellular)
+    - name: transport of serotonin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -158341,7 +158341,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01903
-    - name: transport of serotonin (cytosol to extracellular)
+    - name: transport of serotonin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -158359,7 +158359,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01904
-    - name: transport of acetylcholine (cytosol to extracellular)
+    - name: transport of acetylcholine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01260c: 1.0
       - MAM01260e: -1.0
@@ -158377,7 +158377,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01905
-    - name: transport of acetylcholine (cytosol to extracellular)
+    - name: transport of acetylcholine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01260c: 1.0
       - MAM01260e: -1.0
@@ -158395,7 +158395,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01906
-    - name: transport of acetylcholine (cytosol to extracellular)
+    - name: transport of acetylcholine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01260c: 1.0
       - MAM01260e: -1.0
@@ -158431,7 +158431,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01908
-    - name: transport of dopamine (cytosol to extracellular)
+    - name: transport of dopamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01736c: 1.0
       - MAM01736e: -1.0
@@ -158449,7 +158449,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01909
-    - name: transport of dopamine (cytosol to extracellular)
+    - name: transport of dopamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01736c: 1.0
       - MAM01736e: -1.0
@@ -158467,7 +158467,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01910
-    - name: transport of cholesterol (cytosol to endoplasmic reticulum)
+    - name: transport of cholesterol (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM01285r: 1.0
       - MAM01371r: -1.0
@@ -158522,7 +158522,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01914
-    - name: transport of sulfate (cytosol to extracellular)
+    - name: transport of sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -158569,7 +158569,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03858
-    - name: transport of D-lactate (cytosol to extracellular)
+    - name: transport of D-lactate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01716c: 1.0
       - MAM01716e: -1.0
@@ -158721,7 +158721,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04434
-    - name: transport of histamine (cytosol to extracellular)
+    - name: transport of histamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -158739,7 +158739,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04435
-    - name: transport of histamine (cytosol to extracellular)
+    - name: transport of histamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -158775,7 +158775,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04691
-    - name: transport of 4-aminobutyrate (cytosol to extracellular)
+    - name: transport of 4-aminobutyrate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00970c: 1.0
       - MAM00970e: -1.0
@@ -158790,7 +158790,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04721
-    - name: transport of pantothenate (cytosol to extracellular)
+    - name: transport of pantothenate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -158824,7 +158824,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04845
-    - name: transport of adenosine (cytosol to extracellular)
+    - name: transport of adenosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01280c: 1.0
       - MAM01280e: -1.0
@@ -158977,7 +158977,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04910
-    - name: transport of Na+ and Pi (cytosol to extracellular)
+    - name: transport of Na+ and Pi (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 3.0
       - MAM02519e: -3.0
@@ -158993,7 +158993,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04912
-    - name: transport of Na+ and Pi (cytosol to extracellular)
+    - name: transport of Na+ and Pi (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -159021,7 +159021,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04928
-    - name: transport of pyruvate (cytosol to extracellular)
+    - name: transport of pyruvate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
@@ -159053,7 +159053,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04932
-    - name: transport of glutamate (cytosol to extracellular)
+    - name: transport of glutamate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01974c: 1.0
       - MAM01974e: -1.0
@@ -159073,7 +159073,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04934
-    - name: transport of acetate (cytosol to extracellular)
+    - name: transport of acetate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01252c: 1.0
       - MAM01252e: -1.0
@@ -159088,7 +159088,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04935
-    - name: transport of acetate (cytosol to extracellular)
+    - name: transport of acetate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01252c: 1.0
       - MAM01252e: -1.0
@@ -159104,7 +159104,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04938
-    - name: transport of succinate (cytosol to extracellular)
+    - name: transport of succinate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 3.0
       - MAM02519e: -3.0
@@ -159120,7 +159120,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04939
-    - name: transport of succinate (cytosol to extracellular)
+    - name: transport of succinate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -159135,7 +159135,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04946
-    - name: transport of sulfate (cytosol to extracellular)
+    - name: transport of sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -2.0
       - MAM02046e: 2.0
@@ -159190,7 +159190,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04952
-    - name: transport of beta-alanine (cytosol to extracellular)
+    - name: transport of beta-alanine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01383c: 1.0
       - MAM01383e: -1.0
@@ -159217,7 +159217,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04956
-    - name: transport of chloride (cytosol to extracellular)
+    - name: transport of chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 2.0
       - MAM01442e: -2.0
@@ -159275,7 +159275,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04975
-    - name: transport of mannose (cytosol to extracellular)
+    - name: transport of mannose (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02453c: 1.0
       - MAM02453e: -1.0
@@ -159290,7 +159290,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04976
-    - name: transport of acetoacetate (cytosol to extracellular)
+    - name: transport of acetoacetate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01253c: 1.0
       - MAM01253e: -1.0
@@ -159333,7 +159333,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04983
-    - name: transport of thymidine (cytosol to extracellular)
+    - name: transport of thymidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -159446,7 +159446,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04996
-    - name: transport of glucosamine (cytosol to extracellular)
+    - name: transport of glucosamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01962c: 1.0
       - MAM01962e: -1.0
@@ -159513,7 +159513,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05005
-    - name: transport of bilirubin (cytosol to extracellular)
+    - name: transport of bilirubin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01396c: 1.0
       - MAM01396e: -1.0
@@ -159529,7 +159529,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05007
-    - name: transport of folate (cytosol to extracellular)
+    - name: transport of folate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01830c: 1.0
       - MAM01830e: -1.0
@@ -159608,7 +159608,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05018
-    - name: transport of (R)-3-hydroxybutanoate (cytosol to extracellular)
+    - name: transport of (R)-3-hydroxybutanoate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00157c: 1.0
       - MAM00157e: -1.0
@@ -159636,7 +159636,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05021
-    - name: transport of ascorbate (cytosol to extracellular)
+    - name: transport of ascorbate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01368c: 1.0
       - MAM01368e: -1.0
@@ -159735,7 +159735,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05038
-    - name: transport of cytidine (cytosol to extracellular)
+    - name: transport of cytidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01630c: 1.0
       - MAM01630e: -1.0
@@ -159751,7 +159751,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05039
-    - name: transport of deoxyadenosine (cytosol to extracellular)
+    - name: transport of deoxyadenosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01666c: 1.0
       - MAM01666e: -1.0
@@ -159767,7 +159767,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05040
-    - name: transport of deoxycytidine (cytosol to extracellular)
+    - name: transport of deoxycytidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01668c: 1.0
       - MAM01668e: -1.0
@@ -159783,7 +159783,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05041
-    - name: transport of deoxyguanosine (cytosol to extracellular)
+    - name: transport of deoxyguanosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01669c: 1.0
       - MAM01669e: -1.0
@@ -159813,7 +159813,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05068
-    - name: transport of arginine (cytosol to extracellular)
+    - name: transport of arginine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01365c: 1.0
       - MAM01365e: -1.0
@@ -159841,7 +159841,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05071
-    - name: transport of lysine (cytosol to extracellular)
+    - name: transport of lysine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02426c: 1.0
       - MAM02426e: -1.0
@@ -159883,7 +159883,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05076
-    - name: transport of glycine (cytosol to extracellular)
+    - name: transport of glycine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01986c: 1.0
       - MAM01986e: -1.0
@@ -159897,7 +159897,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05077
-    - name: transport of alanine (cytosol to extracellular)
+    - name: transport of alanine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01307c: 1.0
       - MAM01307e: -1.0
@@ -159925,7 +159925,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05079
-    - name: transport of serine (cytosol to extracellular)
+    - name: transport of serine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02896c: 1.0
       - MAM02896e: -1.0
@@ -159967,7 +159967,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05084
-    - name: transport of cysteine (cytosol to extracellular)
+    - name: transport of cysteine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01628c: 1.0
       - MAM01628e: -1.0
@@ -160009,7 +160009,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05088
-    - name: transport of asparagine (cytosol to extracellular)
+    - name: transport of asparagine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01369c: 1.0
       - MAM01369e: -1.0
@@ -160037,7 +160037,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05091
-    - name: transport of threonine (cytosol to extracellular)
+    - name: transport of threonine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02993c: 1.0
       - MAM02993e: -1.0
@@ -160065,7 +160065,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05094
-    - name: transport of ornithine (cytosol to extracellular)
+    - name: transport of ornithine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02658c: 1.0
       - MAM02658e: -1.0
@@ -160079,7 +160079,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05129
-    - name: transport of guanosine (cytosol to extracellular)
+    - name: transport of guanosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02038c: 1.0
       - MAM02038e: -1.0
@@ -160231,7 +160231,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05236
-    - name: transport of HDL (extracellular to endoplasmic reticulum)
+    - name: transport of HDL (endoplasmic reticulum to extracellular)
     - metabolites: !!omap
       - MAM02048e: 1.0
       - MAM02048r: -1.0
@@ -160255,7 +160255,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05240
-    - name: transport of LDL (extracellular to endoplasmic reticulum)
+    - name: transport of LDL (endoplasmic reticulum to extracellular)
     - metabolites: !!omap
       - MAM02353e: 1.0
       - MAM02353r: -1.0
@@ -160318,7 +160318,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05305
-    - name: transport of alanine (cytosol to extracellular)
+    - name: transport of alanine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01307c: 1.0
       - MAM01307e: -1.0
@@ -160334,7 +160334,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05307
-    - name: transport of alanine (cytosol to extracellular)
+    - name: transport of alanine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01307c: 1.0
       - MAM01307e: -1.0
@@ -160351,7 +160351,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05308
-    - name: transport of glutamine (cytosol to extracellular)
+    - name: transport of glutamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01975c: 1.0
       - MAM01975e: -1.0
@@ -160367,7 +160367,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05311
-    - name: transport of asparagine (cytosol to extracellular)
+    - name: transport of asparagine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01369c: 1.0
       - MAM01369e: -1.0
@@ -160383,7 +160383,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05313
-    - name: transport of asparagine (cytosol to extracellular)
+    - name: transport of asparagine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01369c: 1.0
       - MAM01369e: -1.0
@@ -160400,7 +160400,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05314
-    - name: transport of valine (cytosol to extracellular)
+    - name: transport of valine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -160416,7 +160416,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05315
-    - name: transport of leucine (cytosol to extracellular)
+    - name: transport of leucine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02360c: 1.0
       - MAM02360e: -1.0
@@ -160432,7 +160432,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05316
-    - name: transport of isoleucine (cytosol to extracellular)
+    - name: transport of isoleucine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02184c: 1.0
       - MAM02184e: -1.0
@@ -160448,7 +160448,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05317
-    - name: transport of tryptophan (cytosol to extracellular)
+    - name: transport of tryptophan (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -160463,7 +160463,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05318
-    - name: transport of tyrosine (cytosol to extracellular)
+    - name: transport of tyrosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -160478,7 +160478,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05319
-    - name: transport of phenylalanine (cytosol to extracellular)
+    - name: transport of phenylalanine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -160493,7 +160493,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05320
-    - name: transport of glycine (cytosol to extracellular)
+    - name: transport of glycine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01986c: 1.0
       - MAM01986e: -1.0
@@ -160509,7 +160509,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05322
-    - name: transport of proline (cytosol to extracellular)
+    - name: transport of proline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -160525,7 +160525,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05324
-    - name: transport of methionine (cytosol to extracellular)
+    - name: transport of methionine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02471c: 1.0
       - MAM02471e: -1.0
@@ -160541,7 +160541,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05326
-    - name: transport of threonine (cytosol to extracellular)
+    - name: transport of threonine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -160557,7 +160557,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05328
-    - name: transport of aspartate (cytosol to extracellular)
+    - name: transport of aspartate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01370c: 1.0
       - MAM01370e: -1.0
@@ -160573,7 +160573,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05330
-    - name: transport of glutamate (cytosol to extracellular)
+    - name: transport of glutamate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01974c: 1.0
       - MAM01974e: -1.0
@@ -160607,7 +160607,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05333
-    - name: transport of histidine (cytosol to extracellular)
+    - name: transport of histidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02125c: 1.0
       - MAM02125e: -1.0
@@ -160623,7 +160623,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05335
-    - name: transport of histidine (cytosol to extracellular)
+    - name: transport of histidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02039e: 1.0
@@ -160708,7 +160708,7 @@
     - notes: DOI:10.1002/9780470691861
   - !!omap
     - id: MAR05435
-    - name: transport of taurolithocholate (cytosol to extracellular)
+    - name: transport of taurolithocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -160724,7 +160724,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05436
-    - name: transport of glycolithocholate (cytosol to extracellular)
+    - name: transport of glycolithocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02000c: 1.0
       - MAM02000e: -1.0
@@ -160740,7 +160740,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05437
-    - name: transport of tauroursodeoxycholate (cytosol to extracellular)
+    - name: transport of tauroursodeoxycholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -160756,7 +160756,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05438
-    - name: transport of glycoursodeoxycholate (cytosol to extracellular)
+    - name: transport of glycoursodeoxycholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02004c: 1.0
       - MAM02004e: -1.0
@@ -160772,7 +160772,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05439
-    - name: transport of sulfochenodeoxycholate (cytosol to extracellular)
+    - name: transport of sulfochenodeoxycholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -160788,7 +160788,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05440
-    - name: transport of bilirubin (cytosol to extracellular)
+    - name: transport of bilirubin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01396c: 1.0
       - MAM01396e: -1.0
@@ -160910,7 +160910,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05447
-    - name: transport of aspartate (cytosol to extracellular)
+    - name: transport of aspartate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01370c: 1.0
       - MAM01370e: -1.0
@@ -160946,7 +160946,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05450
-    - name: transport of glucose (cytosol to extracellular)
+    - name: transport of glucose (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01965c: 1.0
       - MAM01965e: -1.0
@@ -160962,7 +160962,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05451
-    - name: transport of taurine (cytosol to extracellular)
+    - name: transport of taurine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -160977,7 +160977,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05454
-    - name: transport of chloride and taurine (cytosol to extracellular)
+    - name: transport of chloride and taurine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -160995,7 +160995,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05455
-    - name: transport of chloride and glycine (cytosol to extracellular)
+    - name: transport of chloride and glycine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -161013,7 +161013,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05457
-    - name: transport of chloride and glycine (cytosol to extracellular)
+    - name: transport of chloride and glycine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -169209,7 +169209,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05987
-    - name: transport of Fe2+ (cytosol to extracellular)
+    - name: transport of Fe2+ (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01821c: 1.0
       - MAM01821e: -1.0
@@ -169225,7 +169225,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05989
-    - name: transport of zinc (cytosol to extracellular)
+    - name: transport of zinc (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
@@ -169257,7 +169257,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05992
-    - name: transport of AKG (cytosol to extracellular)
+    - name: transport of AKG (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01306c: 1.0
       - MAM01306e: -1.0
@@ -169273,7 +169273,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05993
-    - name: transport of citrate (cytosol to extracellular)
+    - name: transport of citrate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01587c: 1.0
       - MAM01587e: -1.0
@@ -169287,7 +169287,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05994
-    - name: transport of citrate (cytosol to extracellular)
+    - name: transport of citrate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01587c: 1.0
       - MAM01587e: -1.0
@@ -169302,7 +169302,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05995
-    - name: transport of citrate (cytosol to extracellular)
+    - name: transport of citrate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01587c: 1.0
       - MAM01587e: -1.0
@@ -169317,7 +169317,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05996
-    - name: transport of citrate (cytosol to extracellular)
+    - name: transport of citrate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01587c: 1.0
       - MAM01587e: -1.0
@@ -169333,7 +169333,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05997
-    - name: transport of citrate (cytosol to extracellular)
+    - name: transport of citrate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01587c: 1.0
       - MAM01587e: -1.0
@@ -169349,7 +169349,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05998
-    - name: transport of L-lactate (cytosol to extracellular)
+    - name: transport of L-lactate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
@@ -170273,7 +170273,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06057
-    - name: transport of Na+ and Pi (cytosol to extracellular)
+    - name: transport of Na+ and Pi (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -170289,7 +170289,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06058
-    - name: transport of chloride (cytosol to extracellular)
+    - name: transport of chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -170303,7 +170303,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06059
-    - name: transport of thiamin (cytosol to extracellular)
+    - name: transport of thiamin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
@@ -170481,7 +170481,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06069
-    - name: transport of lithocholate (cytosol to extracellular)
+    - name: transport of lithocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -170499,7 +170499,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06070
-    - name: transport of lithocholate (cytosol to extracellular)
+    - name: transport of lithocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -170589,7 +170589,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06075
-    - name: transport of glycolithocholate (cytosol to extracellular)
+    - name: transport of glycolithocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02000c: 1.0
       - MAM02000e: -1.0
@@ -170607,7 +170607,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06076
-    - name: transport of glycolithocholate (cytosol to extracellular)
+    - name: transport of glycolithocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02000c: 1.0
       - MAM02000e: -1.0
@@ -170751,7 +170751,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06084
-    - name: transport of glycoursodeoxycholate (cytosol to extracellular)
+    - name: transport of glycoursodeoxycholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02004c: 1.0
       - MAM02004e: -1.0
@@ -170769,7 +170769,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06085
-    - name: transport of glycoursodeoxycholate (cytosol to extracellular)
+    - name: transport of glycoursodeoxycholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02004c: 1.0
       - MAM02004e: -1.0
@@ -170967,7 +170967,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06096
-    - name: transport of thyroxine (cytosol to extracellular)
+    - name: transport of thyroxine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171000,7 +171000,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06098
-    - name: transport of triiodothyronine (cytosol to extracellular)
+    - name: transport of triiodothyronine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171051,7 +171051,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06101
-    - name: transport of prostaglandin E2 (cytosol to extracellular)
+    - name: transport of prostaglandin E2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171174,7 +171174,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06108
-    - name: transport of bilirubin (cytosol to extracellular)
+    - name: transport of bilirubin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01396c: 1.0
       - MAM01396e: -1.0
@@ -171192,7 +171192,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06109
-    - name: transport of bilirubin (cytosol to extracellular)
+    - name: transport of bilirubin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01396c: 1.0
       - MAM01396e: -1.0
@@ -171210,7 +171210,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06110
-    - name: transport of bilirubin (cytosol to extracellular)
+    - name: transport of bilirubin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01396c: 1.0
       - MAM01396e: -1.0
@@ -171354,7 +171354,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06118
-    - name: transport of reverse triiodthyronine (cytosol to extracellular)
+    - name: transport of reverse triiodthyronine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171372,7 +171372,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06119
-    - name: transport of reverse triiodthyronine (cytosol to extracellular)
+    - name: transport of reverse triiodthyronine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171408,7 +171408,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06121
-    - name: transport of prostaglandin E2 (cytosol to extracellular)
+    - name: transport of prostaglandin E2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171426,7 +171426,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06122
-    - name: transport of prostaglandin E2 (cytosol to extracellular)
+    - name: transport of prostaglandin E2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171444,7 +171444,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06123
-    - name: transport of arachidonate (cytosol to extracellular)
+    - name: transport of arachidonate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01362c: 1.0
       - MAM01362e: -1.0
@@ -171462,7 +171462,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06124
-    - name: transport of arachidonate (cytosol to extracellular)
+    - name: transport of arachidonate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01362c: 1.0
       - MAM01362e: -1.0
@@ -171480,7 +171480,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06125
-    - name: transport of arachidonate (cytosol to extracellular)
+    - name: transport of arachidonate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01362c: 1.0
       - MAM01362e: -1.0
@@ -171516,7 +171516,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06127
-    - name: transport of leukotriene C4 (cytosol to extracellular)
+    - name: transport of leukotriene C4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171534,7 +171534,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06128
-    - name: transport of leukotriene C4 (cytosol to extracellular)
+    - name: transport of leukotriene C4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171552,7 +171552,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06129
-    - name: transport of estrone 3-sulfate (cytosol to extracellular)
+    - name: transport of estrone 3-sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01789c: 1.0
       - MAM01789e: -1.0
@@ -171567,7 +171567,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06130
-    - name: transport of estrone 3-sulfate (cytosol to extracellular)
+    - name: transport of estrone 3-sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01789c: 1.0
       - MAM01789e: -1.0
@@ -171585,7 +171585,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06131
-    - name: transport of estrone 3-sulfate (cytosol to extracellular)
+    - name: transport of estrone 3-sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01789c: 1.0
       - MAM01789e: -1.0
@@ -171603,7 +171603,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06132
-    - name: transport of estrone 3-sulfate (cytosol to extracellular)
+    - name: transport of estrone 3-sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01789c: 1.0
       - MAM01789e: -1.0
@@ -171621,7 +171621,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06133
-    - name: transport of dehydroepiandrosterone sulfate (cytosol to extracellular)
+    - name: transport of dehydroepiandrosterone sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01659c: 1.0
       - MAM01659e: -1.0
@@ -171639,7 +171639,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06134
-    - name: transport of dehydroepiandrosterone sulfate (cytosol to extracellular)
+    - name: transport of dehydroepiandrosterone sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01659c: 1.0
       - MAM01659e: -1.0
@@ -171657,7 +171657,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06135
-    - name: transport of dehydroepiandrosterone sulfate (cytosol to extracellular)
+    - name: transport of dehydroepiandrosterone sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01659c: 1.0
       - MAM01659e: -1.0
@@ -171675,7 +171675,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06136
-    - name: transport of bilirubin-bisglucuronoside (cytosol to extracellular)
+    - name: transport of bilirubin-bisglucuronoside (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01397c: 1.0
       - MAM01397e: -1.0
@@ -171693,7 +171693,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06137
-    - name: transport of bilirubin-bisglucuronoside (cytosol to extracellular)
+    - name: transport of bilirubin-bisglucuronoside (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01397c: 1.0
       - MAM01397e: -1.0
@@ -171711,7 +171711,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06138
-    - name: transport of bilirubin-bisglucuronoside (cytosol to extracellular)
+    - name: transport of bilirubin-bisglucuronoside (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01397c: 1.0
       - MAM01397e: -1.0
@@ -171747,7 +171747,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06140
-    - name: transport of LTD4 (cytosol to extracellular)
+    - name: transport of LTD4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171855,7 +171855,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06149
-    - name: transport of leukotriene A4 (cytosol to extracellular)
+    - name: transport of leukotriene A4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171873,7 +171873,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06150
-    - name: transport of leukotriene A4 (cytosol to extracellular)
+    - name: transport of leukotriene A4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171909,7 +171909,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06152
-    - name: transport of leukotriene B4 (cytosol to extracellular)
+    - name: transport of leukotriene B4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171927,7 +171927,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06153
-    - name: transport of leukotriene B4 (cytosol to extracellular)
+    - name: transport of leukotriene B4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171963,7 +171963,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06155
-    - name: transport of leukotriene E4 (cytosol to extracellular)
+    - name: transport of leukotriene E4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -171981,7 +171981,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06156
-    - name: transport of leukotriene E4 (cytosol to extracellular)
+    - name: transport of leukotriene E4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172017,7 +172017,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06158
-    - name: transport of leukotriene F4 (cytosol to extracellular)
+    - name: transport of leukotriene F4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172035,7 +172035,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06159
-    - name: transport of leukotriene F4 (cytosol to extracellular)
+    - name: transport of leukotriene F4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172053,7 +172053,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06160
-    - name: transport of bilirubin-monoglucuronoside (cytosol to extracellular)
+    - name: transport of bilirubin-monoglucuronoside (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01398c: 1.0
       - MAM01398e: -1.0
@@ -172071,7 +172071,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06161
-    - name: transport of bilirubin-monoglucuronoside (cytosol to extracellular)
+    - name: transport of bilirubin-monoglucuronoside (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01398c: 1.0
       - MAM01398e: -1.0
@@ -172089,7 +172089,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06162
-    - name: transport of bilirubin-monoglucuronoside (cytosol to extracellular)
+    - name: transport of bilirubin-monoglucuronoside (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01398c: 1.0
       - MAM01398e: -1.0
@@ -172125,7 +172125,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06164
-    - name: transport of prostaglandin A1 (cytosol to extracellular)
+    - name: transport of prostaglandin A1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172143,7 +172143,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06165
-    - name: transport of prostaglandin A1 (cytosol to extracellular)
+    - name: transport of prostaglandin A1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172179,7 +172179,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06167
-    - name: transport of prostaglandin A2 (cytosol to extracellular)
+    - name: transport of prostaglandin A2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172197,7 +172197,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06168
-    - name: transport of prostaglandin A2 (cytosol to extracellular)
+    - name: transport of prostaglandin A2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172233,7 +172233,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06170
-    - name: transport of prostaglandin B1 (cytosol to extracellular)
+    - name: transport of prostaglandin B1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172251,7 +172251,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06171
-    - name: transport of prostaglandin B1 (cytosol to extracellular)
+    - name: transport of prostaglandin B1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172287,7 +172287,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06173
-    - name: transport of prostaglandin B2 (cytosol to extracellular)
+    - name: transport of prostaglandin B2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172305,7 +172305,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06174
-    - name: transport of prostaglandin B2 (cytosol to extracellular)
+    - name: transport of prostaglandin B2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172341,7 +172341,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06176
-    - name: transport of prostaglandin C1 (cytosol to extracellular)
+    - name: transport of prostaglandin C1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172359,7 +172359,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06177
-    - name: transport of prostaglandin C1 (cytosol to extracellular)
+    - name: transport of prostaglandin C1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172395,7 +172395,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06179
-    - name: transport of prostaglandin C2 (cytosol to extracellular)
+    - name: transport of prostaglandin C2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172413,7 +172413,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06180
-    - name: transport of prostaglandin C2 (cytosol to extracellular)
+    - name: transport of prostaglandin C2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172449,7 +172449,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06182
-    - name: transport of prostaglandin D1 (cytosol to extracellular)
+    - name: transport of prostaglandin D1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172467,7 +172467,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06183
-    - name: transport of prostaglandin D1 (cytosol to extracellular)
+    - name: transport of prostaglandin D1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172503,7 +172503,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06185
-    - name: transport of prostaglandin D2 (cytosol to extracellular)
+    - name: transport of prostaglandin D2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172521,7 +172521,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06186
-    - name: transport of prostaglandin D2 (cytosol to extracellular)
+    - name: transport of prostaglandin D2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172557,7 +172557,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06188
-    - name: transport of prostaglandin D3 (cytosol to extracellular)
+    - name: transport of prostaglandin D3 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172575,7 +172575,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06189
-    - name: transport of prostaglandin D3 (cytosol to extracellular)
+    - name: transport of prostaglandin D3 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172611,7 +172611,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06191
-    - name: transport of prostaglandin E1 (cytosol to extracellular)
+    - name: transport of prostaglandin E1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172629,7 +172629,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06192
-    - name: transport of prostaglandin E1 (cytosol to extracellular)
+    - name: transport of prostaglandin E1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172665,7 +172665,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06194
-    - name: transport of prostaglandin E3 (cytosol to extracellular)
+    - name: transport of prostaglandin E3 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172683,7 +172683,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06195
-    - name: transport of prostaglandin E3 (cytosol to extracellular)
+    - name: transport of prostaglandin E3 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172719,7 +172719,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06197
-    - name: transport of prostaglandin F1alpha (cytosol to extracellular)
+    - name: transport of prostaglandin F1alpha (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172737,7 +172737,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06198
-    - name: transport of prostaglandin F1alpha (cytosol to extracellular)
+    - name: transport of prostaglandin F1alpha (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172773,7 +172773,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06200
-    - name: transport of prostaglandin F2alpha (cytosol to extracellular)
+    - name: transport of prostaglandin F2alpha (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172791,7 +172791,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06201
-    - name: transport of prostaglandin F2alpha (cytosol to extracellular)
+    - name: transport of prostaglandin F2alpha (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172827,7 +172827,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06203
-    - name: transport of prostaglandin F2beta (cytosol to extracellular)
+    - name: transport of prostaglandin F2beta (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172845,7 +172845,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06204
-    - name: transport of prostaglandin F2beta (cytosol to extracellular)
+    - name: transport of prostaglandin F2beta (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172881,7 +172881,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06206
-    - name: transport of prostaglandin G2 (cytosol to extracellular)
+    - name: transport of prostaglandin G2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172899,7 +172899,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06207
-    - name: transport of prostaglandin G2 (cytosol to extracellular)
+    - name: transport of prostaglandin G2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172935,7 +172935,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06209
-    - name: transport of prostaglandin H2 (cytosol to extracellular)
+    - name: transport of prostaglandin H2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172953,7 +172953,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06210
-    - name: transport of prostaglandin H2 (cytosol to extracellular)
+    - name: transport of prostaglandin H2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -172989,7 +172989,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06212
-    - name: transport of prostaglandin I2 (cytosol to extracellular)
+    - name: transport of prostaglandin I2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -173007,7 +173007,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06213
-    - name: transport of prostaglandin I2 (cytosol to extracellular)
+    - name: transport of prostaglandin I2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -173505,7 +173505,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06242
-    - name: transport of noradrenaline (cytosol to extracellular)
+    - name: transport of noradrenaline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -173534,7 +173534,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06244
-    - name: transport of serotonin (cytosol to extracellular)
+    - name: transport of serotonin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02200c: -2.0
       - MAM02200e: 2.0
@@ -173565,7 +173565,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06246
-    - name: transport of prostaglandin E2 (cytosol to extracellular)
+    - name: transport of prostaglandin E2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02786c: 1.0
       - MAM02786e: -1.0
@@ -173579,7 +173579,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06247
-    - name: transport of prostaglandin F2alpha (cytosol to extracellular)
+    - name: transport of prostaglandin F2alpha (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02789c: 1.0
       - MAM02789e: -1.0
@@ -173593,7 +173593,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06248
-    - name: transport of estrone 3-sulfate (cytosol to extracellular)
+    - name: transport of estrone 3-sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01789c: 1.0
       - MAM01789e: -1.0
@@ -173607,7 +173607,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06249
-    - name: transport of dehydroepiandrosterone sulfate (cytosol to extracellular)
+    - name: transport of dehydroepiandrosterone sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01659c: 1.0
       - MAM01659e: -1.0
@@ -173829,7 +173829,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06266
-    - name: transport of prostaglandin D2 (cytosol to extracellular)
+    - name: transport of prostaglandin D2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02783c: 1.0
       - MAM02783e: -1.0
@@ -173857,7 +173857,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06268
-    - name: transport of prostaglandin E1 (cytosol to extracellular)
+    - name: transport of prostaglandin E1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02785c: 1.0
       - MAM02785e: -1.0
@@ -173954,7 +173954,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06275
-    - name: transport of ascorbate (cytosol to extracellular)
+    - name: transport of ascorbate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01368c: 1.0
       - MAM01368e: -1.0
@@ -173970,7 +173970,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06351
-    - name: transport of uridine (cytosol to extracellular)
+    - name: transport of uridine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -173986,7 +173986,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06352
-    - name: transport of deoxyuridine (cytosol to extracellular)
+    - name: transport of deoxyuridine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01673c: 1.0
       - MAM01673e: -1.0
@@ -174002,7 +174002,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06353
-    - name: transport of inosine (cytosol to extracellular)
+    - name: transport of inosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02170c: 1.0
       - MAM02170e: -1.0
@@ -174018,7 +174018,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06354
-    - name: transport of deoxyinosine (cytosol to extracellular)
+    - name: transport of deoxyinosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01671c: 1.0
       - MAM01671e: -1.0
@@ -174034,7 +174034,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06355
-    - name: transport of adenosine (cytosol to extracellular)
+    - name: transport of adenosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01280c: 1.0
       - MAM01280e: -1.0
@@ -174050,7 +174050,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06356
-    - name: transport of thymidine (cytosol to extracellular)
+    - name: transport of thymidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -174066,7 +174066,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06357
-    - name: transport of inosine (cytosol to extracellular)
+    - name: transport of inosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02170c: 1.0
       - MAM02170e: -1.0
@@ -174082,7 +174082,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06358
-    - name: transport of uridine (cytosol to extracellular)
+    - name: transport of uridine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -174098,7 +174098,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06359
-    - name: transport of deoxyguanosine (cytosol to extracellular)
+    - name: transport of deoxyguanosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01669c: 1.0
       - MAM01669e: -1.0
@@ -174114,7 +174114,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06360
-    - name: transport of guanosine (cytosol to extracellular)
+    - name: transport of guanosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02038c: 1.0
       - MAM02038e: -1.0
@@ -174130,7 +174130,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06361
-    - name: transport of cytidine (cytosol to extracellular)
+    - name: transport of cytidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01630c: 1.0
       - MAM01630e: -1.0
@@ -174146,7 +174146,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06362
-    - name: transport of deoxyuridine (cytosol to extracellular)
+    - name: transport of deoxyuridine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01673c: 1.0
       - MAM01673e: -1.0
@@ -174162,7 +174162,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06363
-    - name: transport of deoxyadenosine (cytosol to extracellular)
+    - name: transport of deoxyadenosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01666c: 1.0
       - MAM01666e: -1.0
@@ -174178,7 +174178,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06364
-    - name: transport of deoxycytidine (cytosol to extracellular)
+    - name: transport of deoxycytidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01668c: 1.0
       - MAM01668e: -1.0
@@ -174194,7 +174194,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06365
-    - name: transport of deoxyinosine (cytosol to extracellular)
+    - name: transport of deoxyinosine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01671c: 1.0
       - MAM01671e: -1.0
@@ -174280,7 +174280,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06371
-    - name: transport of glycine (cytosol to extracellular)
+    - name: transport of glycine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01986c: 1.0
       - MAM01986e: -1.0
@@ -174296,7 +174296,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06372
-    - name: transport of alanine (cytosol to extracellular)
+    - name: transport of alanine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01307c: 1.0
       - MAM01307e: -1.0
@@ -174312,7 +174312,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06373
-    - name: transport of proline (cytosol to extracellular)
+    - name: transport of proline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
@@ -174328,7 +174328,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06374
-    - name: transport of serine (cytosol to extracellular)
+    - name: transport of serine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
@@ -174344,7 +174344,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06375
-    - name: transport of serine (cytosol to extracellular)
+    - name: transport of serine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -174360,7 +174360,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06377
-    - name: transport of cysteine (cytosol to extracellular)
+    - name: transport of cysteine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01628c: 1.0
       - MAM01628e: -1.0
@@ -174376,7 +174376,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06380
-    - name: transport of glutamine (cytosol to extracellular)
+    - name: transport of glutamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01975c: 1.0
       - MAM01975e: -1.0
@@ -174394,7 +174394,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06381
-    - name: transport of serine (cytosol to extracellular)
+    - name: transport of serine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02039e: 1.0
@@ -174412,7 +174412,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06382
-    - name: transport of asparagine (cytosol to extracellular)
+    - name: transport of asparagine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01369c: 1.0
       - MAM01369e: -1.0
@@ -174430,7 +174430,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06384
-    - name: transport of histidine (cytosol to extracellular)
+    - name: transport of histidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02039e: 1.0
@@ -174479,7 +174479,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06439
-    - name: transport of gamma-tocotrienol (cytosol to extracellular)
+    - name: transport of gamma-tocotrienol (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01938c: 1.0
       - MAM01938e: -1.0
@@ -174566,7 +174566,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06524
-    - name: transport of chloride (cytosol to extracellular)
+    - name: transport of chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -174581,7 +174581,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06525
-    - name: transport of chloride (cytosol to extracellular)
+    - name: transport of chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -174596,7 +174596,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06526
-    - name: transport of chloride (cytosol to extracellular)
+    - name: transport of chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 2.0
       - MAM01442e: -2.0
@@ -174613,7 +174613,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06527
-    - name: transport of chloride (cytosol to extracellular)
+    - name: transport of chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -174673,7 +174673,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06532
-    - name: transport of chloride (cytosol to extracellular)
+    - name: transport of chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 2.0
       - MAM01442e: -2.0
@@ -174703,7 +174703,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06534
-    - name: transport of chloride (cytosol to extracellular)
+    - name: transport of chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -174718,7 +174718,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06628
-    - name: transport of retinol (cytosol to extracellular)
+    - name: transport of retinol (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02834c: 1.0
       - MAM02834e: -1.0
@@ -174745,7 +174745,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06733
-    - name: transport of dopamine (cytosol to extracellular)
+    - name: transport of dopamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01736c: 1.0
       - MAM01736e: -1.0
@@ -174772,7 +174772,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07109
-    - name: transport of benzo[a]pyrene (cytosol to extracellular)
+    - name: transport of benzo[a]pyrene (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01374c: 1.0
       - MAM01374e: -1.0
@@ -174784,7 +174784,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07111
-    - name: transport of naphthalene (cytosol to extracellular)
+    - name: transport of naphthalene (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02556c: 1.0
       - MAM02556e: -1.0
@@ -174796,7 +174796,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07113
-    - name: transport of aflatoxin B1 (cytosol to extracellular)
+    - name: transport of aflatoxin B1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01296c: 1.0
       - MAM01296e: -1.0
@@ -174808,7 +174808,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07115
-    - name: transport of trichloroethene (cytosol to extracellular)
+    - name: transport of trichloroethene (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03044c: 1.0
       - MAM03044e: -1.0
@@ -174820,7 +174820,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07117
-    - name: transport of bromobenzene (cytosol to extracellular)
+    - name: transport of bromobenzene (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01403c: 1.0
       - MAM01403e: -1.0
@@ -174832,7 +174832,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07119
-    - name: transport of 7,12-dimethylbenz[a]anthracene (cytosol to extracellular)
+    - name: transport of 7,12-dimethylbenz[a]anthracene (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01174c: 1.0
       - MAM01174e: -1.0
@@ -174844,7 +174844,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07121
-    - name: transport of 4-(n-nitrosomethylamino)-1-(3-pyridyl)... (cytosol to extracellular)
+    - name: transport of 4-(n-nitrosomethylamino)-1-(3-pyridyl)... (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00932c: 1.0
       - MAM00932e: -1.0
@@ -174856,7 +174856,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07123
-    - name: transport of 1-nitronaphthalene (cytosol to extracellular)
+    - name: transport of 1-nitronaphthalene (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00545c: 1.0
       - MAM00545e: -1.0
@@ -174868,7 +174868,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07125
-    - name: transport of 1,1-dichloroethylene (cytosol to extracellular)
+    - name: transport of 1,1-dichloroethylene (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00228c: 1.0
       - MAM00228e: -1.0
@@ -174880,7 +174880,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07127
-    - name: transport of 1,2-dibromoethane (cytosol to extracellular)
+    - name: transport of 1,2-dibromoethane (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00242c: 1.0
       - MAM00242e: -1.0
@@ -174916,7 +174916,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07223
-    - name: transport of heparan sulfate proteoglycan (extracellular to Golgi apparatus)
+    - name: transport of heparan sulfate proteoglycan (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM02054e: 1.0
       - MAM02054g: -1.0
@@ -174940,7 +174940,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07372
-    - name: transport of keratan sulfate I (extracellular to Golgi apparatus)
+    - name: transport of keratan sulfate I (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM02278e: 1.0
       - MAM02278g: -1.0
@@ -174952,7 +174952,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07453
-    - name: transport of keratan sulfate II (extracellular to Golgi apparatus)
+    - name: transport of keratan sulfate II (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM02288e: 1.0
       - MAM02288g: -1.0
@@ -174964,7 +174964,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07482
-    - name: transport of keratan sulfate II (extracellular to Golgi apparatus)
+    - name: transport of keratan sulfate II (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM02303e: 1.0
       - MAM02303g: -1.0
@@ -174976,7 +174976,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07499
-    - name: transport of chondroitin sulfate A... (extracellular to Golgi apparatus)
+    - name: transport of chondroitin sulfate A... (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01517e: 1.0
       - MAM01517g: -1.0
@@ -174988,7 +174988,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07511
-    - name: transport of chondroitin sulfate B -... (extracellular to Golgi apparatus)
+    - name: transport of chondroitin sulfate B -... (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01525e: 1.0
       - MAM01525g: -1.0
@@ -175000,7 +175000,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07523
-    - name: transport of chondroitin sulfate C... (extracellular to Golgi apparatus)
+    - name: transport of chondroitin sulfate C... (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01533e: 1.0
       - MAM01533g: -1.0
@@ -175012,7 +175012,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07539
-    - name: transport of chondroitin sulfate D... (extracellular to Golgi apparatus)
+    - name: transport of chondroitin sulfate D... (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01543e: 1.0
       - MAM01543g: -1.0
@@ -175024,7 +175024,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07555
-    - name: transport of chondroitin sulfate E... (extracellular to Golgi apparatus)
+    - name: transport of chondroitin sulfate E... (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01554e: 1.0
       - MAM01554g: -1.0
@@ -175075,7 +175075,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07579
-    - name: transport of PA6 (extracellular to Golgi apparatus)
+    - name: transport of PA6 (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM02672e: 1.0
       - MAM02672g: -1.0
@@ -175087,7 +175087,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07583
-    - name: transport of n2m2nmasn (extracellular to Golgi apparatus)
+    - name: transport of n2m2nmasn (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM02510e: 1.0
       - MAM02510g: -1.0
@@ -175172,7 +175172,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07639
-    - name: transport of D-aspartate (cytosol to extracellular)
+    - name: transport of D-aspartate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01641c: 1.0
       - MAM01641e: -1.0
@@ -175221,7 +175221,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07645
-    - name: transport of D-alanine (cytosol to extracellular)
+    - name: transport of D-alanine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01638c: 1.0
       - MAM01638e: -1.0
@@ -175254,7 +175254,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07651
-    - name: transport of estradiol-17beta 3-glucuronide (cytosol to extracellular)
+    - name: transport of estradiol-17beta 3-glucuronide (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01786c: 1.0
       - MAM01786e: -1.0
@@ -175281,7 +175281,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07666
-    - name: transport of biotin (cytosol to extracellular)
+    - name: transport of biotin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01401c: 1.0
       - MAM01401e: -1.0
@@ -175313,7 +175313,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07680
-    - name: transport of cys-gly (cytosol to extracellular)
+    - name: transport of cys-gly (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01626c: 1.0
       - MAM01626e: -1.0
@@ -175472,7 +175472,7 @@
     - confidence_score: 2.0
   - !!omap
     - id: MAR07699
-    - name: transport of sulfate (cytosol to extracellular)
+    - name: transport of sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -175487,7 +175487,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07700
-    - name: transport of sulfate (cytosol to extracellular)
+    - name: transport of sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 3.0
       - MAM02519e: -3.0
@@ -175502,7 +175502,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07734
-    - name: transport of choline (cytosol to extracellular)
+    - name: transport of choline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01513c: 1.0
       - MAM01513e: -1.0
@@ -175641,7 +175641,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07902
-    - name: transport of oxalate (cytosol to extracellular)
+    - name: transport of oxalate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -2.0
       - MAM02046e: 2.0
@@ -175668,7 +175668,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07904
-    - name: transport of selenate (cytosol to extracellular)
+    - name: transport of selenate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -175708,7 +175708,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07946
-    - name: transport of estrone 3-sulfate (cytosol to extracellular)
+    - name: transport of estrone 3-sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01789c: 1.0
       - MAM01789e: -1.0
@@ -176174,7 +176174,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08075
-    - name: transport of 2-hydroxybutyrate (cytosol to extracellular)
+    - name: transport of 2-hydroxybutyrate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00648c: 1.0
       - MAM00648e: -1.0
@@ -176682,7 +176682,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08354
-    - name: transport of 4-aminobutyrate (cytosol to extracellular)
+    - name: transport of 4-aminobutyrate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00970c: 1.0
       - MAM00970e: -1.0
@@ -176697,7 +176697,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08364
-    - name: transport of acetone (cytosol to extracellular)
+    - name: transport of acetone (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01256c: 1.0
       - MAM01256e: -1.0
@@ -176747,7 +176747,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08429
-    - name: transport of creatine (cytosol to extracellular)
+    - name: transport of creatine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01619c: 1.0
       - MAM01619e: -1.0
@@ -176762,7 +176762,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08515
-    - name: transport of L-lactate (cytosol to extracellular)
+    - name: transport of L-lactate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02403c: 1.0
       - MAM02403e: -1.0
@@ -176801,7 +176801,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08551
-    - name: transport of leukotriene C4 (cytosol to extracellular)
+    - name: transport of leukotriene C4 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -176912,7 +176912,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08612
-    - name: transport of aquacob(III)alamin (cytosol to extracellular)
+    - name: transport of aquacob(III)alamin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01361c: 1.0
       - MAM01361e: -1.0
@@ -176936,7 +176936,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08629
-    - name: transport of arginine (cytosol to extracellular)
+    - name: transport of arginine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01365c: 1.0
       - MAM01365e: -1.0
@@ -176950,7 +176950,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08631
-    - name: transport of bilirubin-bisglucuronoside (cytosol to extracellular)
+    - name: transport of bilirubin-bisglucuronoside (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01397c: 1.0
       - MAM01397e: -1.0
@@ -176965,7 +176965,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08632
-    - name: transport of bilirubin-monoglucuronoside (cytosol to extracellular)
+    - name: transport of bilirubin-monoglucuronoside (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01398c: 1.0
       - MAM01398e: -1.0
@@ -176998,7 +176998,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08635
-    - name: transport of bilirubin (cytosol to extracellular)
+    - name: transport of bilirubin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01396c: 1.0
       - MAM01396e: -1.0
@@ -177056,7 +177056,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08659
-    - name: transport of cholate (cytosol to extracellular)
+    - name: transport of cholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01445c: 1.0
       - MAM01445e: -1.0
@@ -177071,7 +177071,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08660
-    - name: transport of cholate (cytosol to extracellular)
+    - name: transport of cholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01445c: 1.0
       - MAM01445e: -1.0
@@ -177130,7 +177130,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08677
-    - name: transport of L-carnitine (cytosol to extracellular)
+    - name: transport of L-carnitine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02348c: 1.0
       - MAM02348e: -1.0
@@ -177268,7 +177268,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08730
-    - name: transport of riboflavin (cytosol to extracellular)
+    - name: transport of riboflavin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -177286,7 +177286,7 @@
     - confidence_score: 2.0
   - !!omap
     - id: MAR08732
-    - name: transport of selenate (cytosol to extracellular)
+    - name: transport of selenate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 3.0
       - MAM02519e: -3.0
@@ -177331,7 +177331,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08735
-    - name: transport of serine (cytosol to extracellular)
+    - name: transport of serine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02039e: 1.0
@@ -177363,7 +177363,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08760
-    - name: transport of D-tagatose (cytosol to extracellular)
+    - name: transport of D-tagatose (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01745c: 1.0
       - MAM01745e: -1.0
@@ -177414,7 +177414,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08847
-    - name: transport of dehydroepiandrosterone sulfate (cytosol to extracellular)
+    - name: transport of dehydroepiandrosterone sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01659c: 1.0
       - MAM01659e: -1.0
@@ -177471,7 +177471,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08853
-    - name: transport of thiosulfate (cytosol to extracellular)
+    - name: transport of thiosulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 3.0
       - MAM02519e: -3.0
@@ -177598,7 +177598,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08872
-    - name: transport of fructose (cytosol to extracellular)
+    - name: transport of fructose (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01840c: 1.0
       - MAM01840e: -1.0
@@ -177625,7 +177625,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08876
-    - name: transport of galactose (cytosol to extracellular)
+    - name: transport of galactose (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01910c: 1.0
       - MAM01910e: -1.0
@@ -177639,7 +177639,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08877
-    - name: transport of galactose (cytosol to extracellular)
+    - name: transport of galactose (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01910c: 1.0
       - MAM01910e: -1.0
@@ -177666,7 +177666,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08879
-    - name: transport of glycocholate (cytosol to extracellular)
+    - name: transport of glycocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01988c: 1.0
       - MAM01988e: -1.0
@@ -177705,7 +177705,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08884
-    - name: transport of glucose (cytosol to extracellular)
+    - name: transport of glucose (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01965c: 1.0
       - MAM01965e: -1.0
@@ -177720,7 +177720,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08889
-    - name: transport of betaine (cytosol to extracellular)
+    - name: transport of betaine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01393c: 1.0
       - MAM01393e: -1.0
@@ -177853,7 +177853,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08911
-    - name: transport of inositol (cytosol to extracellular)
+    - name: transport of inositol (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02171c: 1.0
       - MAM02171e: -1.0
@@ -177868,7 +177868,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08912
-    - name: transport of inositol (cytosol to extracellular)
+    - name: transport of inositol (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02171c: 1.0
       - MAM02171e: -1.0
@@ -177883,7 +177883,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08913
-    - name: transport of lactose (cytosol to Golgi apparatus)
+    - name: transport of lactose (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM02332c: 1.0
       - MAM02332g: -1.0
@@ -177895,7 +177895,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08917
-    - name: transport of lysine (cytosol to extracellular)
+    - name: transport of lysine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02426c: 1.0
       - MAM02426e: -1.0
@@ -177910,7 +177910,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08923
-    - name: transport of phylloquinone (cytosol to extracellular)
+    - name: transport of phylloquinone (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -177927,7 +177927,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08924
-    - name: transport of iodide (cytosol to extracellular)
+    - name: transport of iodide (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02174c: 1.0
       - MAM02174e: -1.0
@@ -177969,7 +177969,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08929
-    - name: transport of D-proline (cytosol to extracellular)
+    - name: transport of D-proline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01742c: 1.0
       - MAM01742e: -1.0
@@ -177996,7 +177996,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08932
-    - name: transport of prostaglandin D2 (cytosol to extracellular)
+    - name: transport of prostaglandin D2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -178011,7 +178011,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08933
-    - name: transport of prostaglandin E1 (cytosol to extracellular)
+    - name: transport of prostaglandin E1 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -178062,7 +178062,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08936
-    - name: transport of prostaglandin H2 (cytosol to extracellular)
+    - name: transport of prostaglandin H2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -178077,7 +178077,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08937
-    - name: transport of prostaglandin I2 (cytosol to extracellular)
+    - name: transport of prostaglandin I2 (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02046c: -1.0
       - MAM02046e: 1.0
@@ -178091,7 +178091,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08938
-    - name: transport of proline (cytosol to extracellular)
+    - name: transport of proline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -178106,7 +178106,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08939
-    - name: transport of palmitate (cytosol to extracellular)
+    - name: transport of palmitate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -178124,7 +178124,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08940
-    - name: transport of oleate (cytosol to extracellular)
+    - name: transport of oleate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -178142,7 +178142,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08941
-    - name: transport of stearate (cytosol to extracellular)
+    - name: transport of stearate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -178160,7 +178160,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08942
-    - name: transport of eicosanoate (cytosol to extracellular)
+    - name: transport of eicosanoate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01771c: 1.0
       - MAM01771e: -1.0
@@ -178178,7 +178178,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08943
-    - name: transport of arachidonate (cytosol to extracellular)
+    - name: transport of arachidonate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01362c: 1.0
       - MAM01362e: -1.0
@@ -178196,7 +178196,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08944
-    - name: transport of adrenic acid (cytosol to extracellular)
+    - name: transport of adrenic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01291c: 1.0
       - MAM01291e: -1.0
@@ -178214,7 +178214,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08945
-    - name: transport of DHA (cytosol to extracellular)
+    - name: transport of DHA (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01689c: 1.0
       - MAM01689e: -1.0
@@ -178232,7 +178232,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08946
-    - name: transport of lignocerate (cytosol to extracellular)
+    - name: transport of lignocerate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02385c: 1.0
       - MAM02385e: -1.0
@@ -178250,7 +178250,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08947
-    - name: transport of nervonic acid (cytosol to extracellular)
+    - name: transport of nervonic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -178412,7 +178412,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09190
-    - name: transport of D-alanine (cytosol to extracellular)
+    - name: transport of D-alanine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01638c: 1.0
       - MAM01638e: -1.0
@@ -178425,7 +178425,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09191
-    - name: transport of D-serine (cytosol to extracellular)
+    - name: transport of D-serine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01744c: 1.0
       - MAM01744e: -1.0
@@ -178477,7 +178477,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09196
-    - name: transport of Fe3+ (cytosol to extracellular)
+    - name: transport of Fe3+ (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01822c: 1.0
       - MAM01822e: -1.0
@@ -178503,7 +178503,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09198
-    - name: transport of urate (cytosol to extracellular)
+    - name: transport of urate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03120c: 1.0
       - MAM03120e: -1.0
@@ -178516,7 +178516,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09590
-    - name: transport of sulfate (cytosol to extracellular)
+    - name: transport of sulfate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02039e: -2.0
@@ -178531,7 +178531,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09591
-    - name: transport of alanine and chloride (cytosol to extracellular)
+    - name: transport of alanine and chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01307c: 1.0
       - MAM01307e: -1.0
@@ -178548,7 +178548,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09592
-    - name: transport of arginine and chloride (cytosol to extracellular)
+    - name: transport of arginine and chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01365c: 1.0
       - MAM01365e: -1.0
@@ -178565,7 +178565,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09593
-    - name: transport of chloride and histidine (cytosol to extracellular)
+    - name: transport of chloride and histidine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178582,7 +178582,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09594
-    - name: transport of chloride and isoleucine (cytosol to extracellular)
+    - name: transport of chloride and isoleucine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178599,7 +178599,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09595
-    - name: transport of chloride and leucine (cytosol to extracellular)
+    - name: transport of chloride and leucine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178616,7 +178616,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09596
-    - name: transport of chloride and lysine (cytosol to extracellular)
+    - name: transport of chloride and lysine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178633,7 +178633,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09597
-    - name: transport of chloride and methionine (cytosol to extracellular)
+    - name: transport of chloride and methionine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178650,7 +178650,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09598
-    - name: transport of chloride and valine (cytosol to extracellular)
+    - name: transport of chloride and valine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178667,7 +178667,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09599
-    - name: transport of chloride and cysteine (cytosol to extracellular)
+    - name: transport of chloride and cysteine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178684,7 +178684,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09600
-    - name: transport of chloride and serine (cytosol to extracellular)
+    - name: transport of chloride and serine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178701,7 +178701,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09601
-    - name: transport of beta-alanine and chloride (cytosol to extracellular)
+    - name: transport of beta-alanine and chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01383c: 1.0
       - MAM01383e: -1.0
@@ -178718,7 +178718,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09602
-    - name: transport of beta-alanine and chloride (cytosol to extracellular)
+    - name: transport of beta-alanine and chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01383c: 1.0
       - MAM01383e: -1.0
@@ -178735,7 +178735,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09605
-    - name: transport of alanine (cytosol to extracellular)
+    - name: transport of alanine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01307c: 1.0
       - MAM01307e: -1.0
@@ -178752,7 +178752,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09606
-    - name: transport of glycine (cytosol to extracellular)
+    - name: transport of glycine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01986c: 1.0
       - MAM01986e: -1.0
@@ -178785,7 +178785,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09608
-    - name: transport of lipoic acid (cytosol to extracellular)
+    - name: transport of lipoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02394c: 1.0
       - MAM02394e: -1.0
@@ -178817,7 +178817,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09610
-    - name: transport of succinate (cytosol to extracellular)
+    - name: transport of succinate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -178832,7 +178832,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09611
-    - name: transport of inositol (cytosol to extracellular)
+    - name: transport of inositol (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
@@ -178847,7 +178847,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09612
-    - name: transport of serotonin (cytosol to extracellular)
+    - name: transport of serotonin (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -178861,7 +178861,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09613
-    - name: transport of 4-aminobutyrate and chloride (cytosol to extracellular)
+    - name: transport of 4-aminobutyrate and chloride (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00970c: 1.0
       - MAM00970e: -1.0
@@ -178878,7 +178878,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09614
-    - name: transport of dopamine (cytosol to extracellular)
+    - name: transport of dopamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01736c: 1.0
       - MAM01736e: -1.0
@@ -178893,7 +178893,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09615
-    - name: transport of noradrenaline (cytosol to extracellular)
+    - name: transport of noradrenaline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -178908,7 +178908,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09616
-    - name: transport of chloride and glycine (cytosol to extracellular)
+    - name: transport of chloride and glycine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178925,7 +178925,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09617
-    - name: transport of chloride and proline (cytosol to extracellular)
+    - name: transport of chloride and proline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178955,7 +178955,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09619
-    - name: transport of creatinine (cytosol to extracellular)
+    - name: transport of creatinine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01621c: 1.0
       - MAM01621e: -1.0
@@ -178970,7 +178970,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09620
-    - name: transport of chloride and choline (cytosol to extracellular)
+    - name: transport of chloride and choline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -178987,7 +178987,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09621
-    - name: transport of sulfotaurolithocholate (cytosol to extracellular)
+    - name: transport of sulfotaurolithocholate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 1.0
       - MAM02519e: -1.0
@@ -179480,7 +179480,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08430
-    - name: transport of creatine-phosphate (cytosol to mitochondria)
+    - name: transport of creatine-phosphate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01620c: 1.0
       - MAM01620m: -1.0
@@ -179507,7 +179507,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08070
-    - name: transport of (S)-3-sulfolactate (cytosol to mitochondria)
+    - name: transport of (S)-3-sulfolactate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00179c: 1.0
       - MAM00179m: -1.0
@@ -179843,7 +179843,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01930
-    - name: transport of isocaproic-aldehyde (cytosol to mitochondria)
+    - name: transport of isocaproic-aldehyde (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02182c: 1.0
       - MAM02182m: -1.0
@@ -179905,7 +179905,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02012
-    - name: transport of aldosterone (cytosol to mitochondria)
+    - name: transport of aldosterone (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01309c: 1.0
       - MAM01309m: -1.0
@@ -180190,7 +180190,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03954
-    - name: transport of aminoacetone (cytosol to mitochondria)
+    - name: transport of aminoacetone (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01332c: 1.0
       - MAM01332m: -1.0
@@ -180392,7 +180392,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04850
-    - name: transport of dUMP (cytosol to mitochondria)
+    - name: transport of dUMP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01755c: 1.0
       - MAM01755m: -1.0
@@ -180830,7 +180830,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04957
-    - name: transport of citrate (cytosol to mitochondria)
+    - name: transport of citrate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01587c: 1.0
       - MAM01587m: -1.0
@@ -180885,7 +180885,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04998
-    - name: transport of dGMP (cytosol to mitochondria)
+    - name: transport of dGMP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01686c: 1.0
       - MAM01686m: -1.0
@@ -180910,7 +180910,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05014
-    - name: transport of dihydrothymine (cytosol to mitochondria)
+    - name: transport of dihydrothymine (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01705c: 1.0
       - MAM01705m: -1.0
@@ -180923,7 +180923,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05015
-    - name: transport of (R)-3-hydroxybutanoate (cytosol to mitochondria)
+    - name: transport of (R)-3-hydroxybutanoate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00157c: 1.0
       - MAM00157m: -1.0
@@ -180994,7 +180994,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05036
-    - name: transport of guanosine (cytosol to mitochondria)
+    - name: transport of guanosine (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02038c: 1.0
       - MAM02038m: -1.0
@@ -181080,7 +181080,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05102
-    - name: transport of glutamine (cytosol to mitochondria)
+    - name: transport of glutamine (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01975c: 1.0
       - MAM01975m: -1.0
@@ -181094,7 +181094,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05105
-    - name: transport of ornithine (cytosol to mitochondria)
+    - name: transport of ornithine (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02039m: 1.0
@@ -181193,7 +181193,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05116
-    - name: transport of phenylalanine (cytosol to mitochondria)
+    - name: transport of phenylalanine (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02039i: -1.0
       - MAM02039m: 1.0
@@ -181292,7 +181292,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05126
-    - name: transport of proline (cytosol to mitochondria)
+    - name: transport of proline (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02039i: -1.0
       - MAM02039m: 1.0
@@ -181330,7 +181330,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05225
-    - name: transport of STAR (cytosol to mitochondria)
+    - name: transport of STAR (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02935c: 1.0
       - MAM02935m: -1.0
@@ -181397,7 +181397,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05349
-    - name: transport of 2-oxobutyrate (cytosol to mitochondria)
+    - name: transport of 2-oxobutyrate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00671c: 1.0
       - MAM00671m: -1.0
@@ -182088,7 +182088,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06321
-    - name: transport of lysine (cytosol to mitochondria)
+    - name: transport of lysine (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02039m: 1.0
@@ -182135,7 +182135,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06326
-    - name: transport of histidine (cytosol to mitochondria)
+    - name: transport of histidine (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02039i: -1.0
       - MAM02039m: 1.0
@@ -182151,7 +182151,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06327
-    - name: transport of citrulline (cytosol to mitochondria)
+    - name: transport of citrulline (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01588c: 1.0
       - MAM01588m: -1.0
@@ -182266,7 +182266,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06454
-    - name: transport of gamma-carboxyethyl-hydroxychroman (cytosol to mitochondria)
+    - name: transport of gamma-carboxyethyl-hydroxychroman (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01923c: 1.0
       - MAM01923m: -1.0
@@ -182278,7 +182278,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06455
-    - name: transport of 5-carboxy-gamma-chromanol (cytosol to mitochondria)
+    - name: transport of 5-carboxy-gamma-chromanol (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01097c: 1.0
       - MAM01097m: -1.0
@@ -182559,7 +182559,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07914
-    - name: transport of 10-formyl-THF-glu(5) (cytosol to mitochondria)
+    - name: transport of 10-formyl-THF-glu(5) (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00267c: 1.0
       - MAM00267m: -1.0
@@ -182571,7 +182571,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07917
-    - name: transport of 10-formyl-THF-glu(6) (cytosol to mitochondria)
+    - name: transport of 10-formyl-THF-glu(6) (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00268c: 1.0
       - MAM00268m: -1.0
@@ -182583,7 +182583,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07923
-    - name: transport of 10-formyl-THF-glu(7) (cytosol to mitochondria)
+    - name: transport of 10-formyl-THF-glu(7) (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00269c: 1.0
       - MAM00269m: -1.0
@@ -182619,7 +182619,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08000
-    - name: transport of (24R)-24,25-dihydroxycalciol (cytosol to mitochondria)
+    - name: transport of (24R)-24,25-dihydroxycalciol (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00035c: 1.0
       - MAM00035m: -1.0
@@ -182631,7 +182631,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08001
-    - name: transport of 24R,25-dihyoxyvitamin D2 (cytosol to mitochondria)
+    - name: transport of 24R,25-dihyoxyvitamin D2 (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00613c: 1.0
       - MAM00613m: -1.0
@@ -182655,7 +182655,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08089
-    - name: transport of L-3-amino-isobutanoate (cytosol to mitochondria)
+    - name: transport of L-3-amino-isobutanoate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02325c: 1.0
       - MAM02325m: -1.0
@@ -182696,7 +182696,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08120
-    - name: transport of pentaglutamyl-folate(THF) (cytosol to mitochondria)
+    - name: transport of pentaglutamyl-folate(THF) (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02692c: 1.0
       - MAM02692m: -1.0
@@ -182708,7 +182708,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08122
-    - name: transport of hexaglutamyl-folate(DHF) (cytosol to mitochondria)
+    - name: transport of hexaglutamyl-folate(DHF) (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02118c: 1.0
       - MAM02118m: -1.0
@@ -182720,7 +182720,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08124
-    - name: transport of hexaglutamyl-folate(THF) (cytosol to mitochondria)
+    - name: transport of hexaglutamyl-folate(THF) (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02119c: 1.0
       - MAM02119m: -1.0
@@ -182732,7 +182732,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08126
-    - name: transport of heptaglutamyl-folate(DHF) (cytosol to mitochondria)
+    - name: transport of heptaglutamyl-folate(DHF) (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02104c: 1.0
       - MAM02104m: -1.0
@@ -182744,7 +182744,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08128
-    - name: transport of heptaglutamyl-folate(THF) (cytosol to mitochondria)
+    - name: transport of heptaglutamyl-folate(THF) (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02105c: 1.0
       - MAM02105m: -1.0
@@ -182894,7 +182894,7 @@
     - notes: Cobalamin enters mitochondria, but the importer is not known.
   - !!omap
     - id: MAR08627
-    - name: transport of N-acetyl-L-aspartate (cytosol to mitochondria)
+    - name: transport of N-acetyl-L-aspartate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02532c: 1.0
       - MAM02532m: -1.0
@@ -182906,7 +182906,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08655
-    - name: transport of calcitroic acid (cytosol to mitochondria)
+    - name: transport of calcitroic acid (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01418c: 1.0
       - MAM01418m: -1.0
@@ -183008,7 +183008,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08848
-    - name: transport of thiocyanate (cytosol to mitochondria)
+    - name: transport of thiocyanate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02986c: 1.0
       - MAM02986m: -1.0
@@ -183081,7 +183081,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09675
-    - name: transport of glycolate (cytosol to mitochondria)
+    - name: transport of glycolate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01998c: 1.0
       - MAM01998m: -1.0
@@ -183093,7 +183093,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09676
-    - name: transport of indoleacetate (cytosol to mitochondria)
+    - name: transport of indoleacetate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02169c: 1.0
       - MAM02169m: -1.0
@@ -183105,7 +183105,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09677
-    - name: transport of L-1-pyrroline-3-hydroxy-5-carboxylate (cytosol to mitochondria)
+    - name: transport of L-1-pyrroline-3-hydroxy-5-carboxylate (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02320c: 1.0
       - MAM02320m: -1.0
@@ -183129,7 +183129,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00707
-    - name: transport of GO3P (cytosol to peroxisome)
+    - name: transport of GO3P (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM02017c: 1.0
       - MAM02017x: -1.0
@@ -184104,7 +184104,7 @@
     - notes: PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)
   - !!omap
     - id: MAR07777
-    - name: transport of NADP+ (cytosol to peroxisome)
+    - name: transport of NADP+ (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM02554c: 1.0
       - MAM02554x: -1.0
@@ -184224,7 +184224,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08860
-    - name: transport of urate (cytosol to peroxisome)
+    - name: transport of urate (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM03120c: 1.0
       - MAM03120x: -1.0
@@ -184281,7 +184281,7 @@
     - notes: PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)
   - !!omap
     - id: MAR09678
-    - name: transport of palmitate (cytosol to peroxisome)
+    - name: transport of palmitate (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM02674c: 1.0
       - MAM02674x: -1.0
@@ -184293,7 +184293,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09679
-    - name: transport of acetate (cytosol to peroxisome)
+    - name: transport of acetate (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM01252c: 1.0
       - MAM01252x: -1.0
@@ -184308,7 +184308,7 @@
     - notes: PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)
   - !!omap
     - id: MAR09680
-    - name: transport of OAA (cytosol to peroxisome)
+    - name: transport of OAA (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM02633c: 1.0
       - MAM02633x: -1.0
@@ -185157,7 +185157,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09673
-    - name: transport of tetrahydrobiopterin (cytosol to nucleus)
+    - name: transport of tetrahydrobiopterin (nucleus to cytosol)
     - metabolites: !!omap
       - MAM02978c: 1.0
       - MAM02978n: -1.0
@@ -185169,7 +185169,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09674
-    - name: transport of 1,2-diacylglycerol-LD-TAG pool (cytosol to nucleus)
+    - name: transport of 1,2-diacylglycerol-LD-TAG pool (nucleus to cytosol)
     - metabolites: !!omap
       - MAM00240c: 1.0
       - MAM00240n: -1.0
@@ -185455,7 +185455,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04962
-    - name: transport of N-acetylglucosamine (cytosol to lysosome)
+    - name: transport of N-acetylglucosamine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02527c: 1.0
       - MAM02527l: -1.0
@@ -185468,7 +185468,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05047
-    - name: transport of Pi (cytosol to lysosome)
+    - name: transport of Pi (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02751c: 1.0
       - MAM02751l: -1.0
@@ -185481,7 +185481,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05048
-    - name: transport of arginine (cytosol to lysosome)
+    - name: transport of arginine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01365c: 1.0
       - MAM01365l: -1.0
@@ -185494,7 +185494,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05049
-    - name: transport of asparagine (cytosol to lysosome)
+    - name: transport of asparagine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01369c: 1.0
       - MAM01369l: -1.0
@@ -185508,7 +185508,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05050
-    - name: transport of aspartate (cytosol to lysosome)
+    - name: transport of aspartate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01370c: 1.0
       - MAM01370l: -1.0
@@ -185521,7 +185521,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05051
-    - name: transport of cysteine (cytosol to lysosome)
+    - name: transport of cysteine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01628c: 1.0
       - MAM01628l: -1.0
@@ -185534,7 +185534,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05052
-    - name: transport of glutamine (cytosol to lysosome)
+    - name: transport of glutamine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01975c: 1.0
       - MAM01975l: -1.0
@@ -185548,7 +185548,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05053
-    - name: transport of glycine (cytosol to lysosome)
+    - name: transport of glycine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01986c: 1.0
       - MAM01986l: -1.0
@@ -185562,7 +185562,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05054
-    - name: transport of histidine (cytosol to lysosome)
+    - name: transport of histidine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02125c: 1.0
       - MAM02125l: -1.0
@@ -185576,7 +185576,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05055
-    - name: transport of leucine (cytosol to lysosome)
+    - name: transport of leucine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02360c: 1.0
       - MAM02360l: -1.0
@@ -185590,7 +185590,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05056
-    - name: transport of lysine (cytosol to lysosome)
+    - name: transport of lysine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02426c: 1.0
       - MAM02426l: -1.0
@@ -185604,7 +185604,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05057
-    - name: transport of methionine (cytosol to lysosome)
+    - name: transport of methionine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02471c: 1.0
       - MAM02471l: -1.0
@@ -185617,7 +185617,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05058
-    - name: transport of phenylalanine (cytosol to lysosome)
+    - name: transport of phenylalanine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02724c: 1.0
       - MAM02724l: -1.0
@@ -185631,7 +185631,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05059
-    - name: transport of proline (cytosol to lysosome)
+    - name: transport of proline (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02770c: 1.0
       - MAM02770l: -1.0
@@ -185645,7 +185645,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05060
-    - name: transport of serine (cytosol to lysosome)
+    - name: transport of serine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02896c: 1.0
       - MAM02896l: -1.0
@@ -185659,7 +185659,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05061
-    - name: transport of tryptophan (cytosol to lysosome)
+    - name: transport of tryptophan (lysosome to cytosol)
     - metabolites: !!omap
       - MAM03089c: 1.0
       - MAM03089l: -1.0
@@ -185672,7 +185672,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05062
-    - name: transport of tyrosine (cytosol to lysosome)
+    - name: transport of tyrosine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM03101c: 1.0
       - MAM03101l: -1.0
@@ -185686,7 +185686,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05063
-    - name: transport of valine (cytosol to lysosome)
+    - name: transport of valine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM03135c: 1.0
       - MAM03135l: -1.0
@@ -185699,7 +185699,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05064
-    - name: transport of alanine (cytosol to lysosome)
+    - name: transport of alanine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01307c: 1.0
       - MAM01307l: -1.0
@@ -185713,7 +185713,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05065
-    - name: transport of isoleucine (cytosol to lysosome)
+    - name: transport of isoleucine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02184c: 1.0
       - MAM02184l: -1.0
@@ -185727,7 +185727,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05066
-    - name: transport of threonine (cytosol to lysosome)
+    - name: transport of threonine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02993c: 1.0
       - MAM02993l: -1.0
@@ -185740,7 +185740,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05067
-    - name: transport of glutamate (cytosol to lysosome)
+    - name: transport of glutamate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01974c: 1.0
       - MAM01974l: -1.0
@@ -185952,7 +185952,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07252
-    - name: transport of D-xylose (cytosol to lysosome)
+    - name: transport of D-xylose (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01758c: 1.0
       - MAM01758l: -1.0
@@ -185988,7 +185988,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07430
-    - name: transport of mannose (cytosol to lysosome)
+    - name: transport of mannose (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02453c: 1.0
       - MAM02453l: -1.0
@@ -186563,7 +186563,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08370
-    - name: transport of N-acetylgalactosamine (cytosol to lysosome)
+    - name: transport of N-acetylgalactosamine (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02525c: 1.0
       - MAM02525l: -1.0
@@ -186686,7 +186686,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08765
-    - name: transport of galactose (cytosol to lysosome)
+    - name: transport of galactose (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01910c: 1.0
       - MAM01910l: -1.0
@@ -186710,7 +186710,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08875
-    - name: transport of 6-deoxy-L-galactose (cytosol to lysosome)
+    - name: transport of 6-deoxy-L-galactose (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01159c: 1.0
       - MAM01159l: -1.0
@@ -186722,7 +186722,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08885
-    - name: transport of glucose (cytosol to lysosome)
+    - name: transport of glucose (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01965c: 1.0
       - MAM01965l: -1.0
@@ -186779,7 +186779,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09672
-    - name: transport of fatty acid pool (cytosol to lysosome)
+    - name: transport of fatty acid pool (lysosome to cytosol)
     - metabolites: !!omap
       - MAM10005c: 1.0
       - MAM10005l: -1.0
@@ -186949,7 +186949,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09738
-    - name: transport of (10Z)-heptadecenoic acid (cytosol to lysosome)
+    - name: transport of (10Z)-heptadecenoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00003c: 1.0
       - MAM00003l: -1.0
@@ -186961,7 +186961,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09739
-    - name: transport of (11Z,14Z)-eicosadienoic acid (cytosol to lysosome)
+    - name: transport of (11Z,14Z)-eicosadienoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00008c: 1.0
       - MAM00008l: -1.0
@@ -186973,7 +186973,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09740
-    - name: transport of (11Z,14Z,17Z)-eicosatrienoic acid (cytosol to lysosome)
+    - name: transport of (11Z,14Z,17Z)-eicosatrienoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00010c: 1.0
       - MAM00010l: -1.0
@@ -186985,7 +186985,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09741
-    - name: transport of (13Z)-eicosenoic acid (cytosol to lysosome)
+    - name: transport of (13Z)-eicosenoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00017c: 1.0
       - MAM00017l: -1.0
@@ -186997,7 +186997,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09742
-    - name: transport of (13Z)-octadecenoic acid (cytosol to lysosome)
+    - name: transport of (13Z)-octadecenoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00019c: 1.0
       - MAM00019l: -1.0
@@ -187009,7 +187009,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09743
-    - name: transport of (13Z,16Z)-docosadienoic acid (cytosol to lysosome)
+    - name: transport of (13Z,16Z)-docosadienoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00021c: 1.0
       - MAM00021l: -1.0
@@ -187021,7 +187021,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09744
-    - name: transport of (4Z,7Z,10Z,13Z,16Z)-DPA (cytosol to lysosome)
+    - name: transport of (4Z,7Z,10Z,13Z,16Z)-DPA (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00094c: 1.0
       - MAM00094l: -1.0
@@ -187033,7 +187033,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09745
-    - name: transport of (6Z,9Z)-octadecadienoic acid (cytosol to lysosome)
+    - name: transport of (6Z,9Z)-octadecadienoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00104c: 1.0
       - MAM00104l: -1.0
@@ -187045,7 +187045,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09746
-    - name: transport of (6Z,9Z,12Z,15Z,18Z)-TPA (cytosol to lysosome)
+    - name: transport of (6Z,9Z,12Z,15Z,18Z)-TPA (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00111c: 1.0
       - MAM00111l: -1.0
@@ -187057,7 +187057,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09747
-    - name: transport of (6Z,9Z,12Z,15Z,18Z,21Z)-THA (cytosol to lysosome)
+    - name: transport of (6Z,9Z,12Z,15Z,18Z,21Z)-THA (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00114c: 1.0
       - MAM00114l: -1.0
@@ -187069,7 +187069,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09748
-    - name: transport of (7Z)-octadecenoic acid (cytosol to lysosome)
+    - name: transport of (7Z)-octadecenoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00115c: 1.0
       - MAM00115l: -1.0
@@ -187081,7 +187081,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09749
-    - name: transport of (7Z)-tetradecenoic acid (cytosol to lysosome)
+    - name: transport of (7Z)-tetradecenoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00117c: 1.0
       - MAM00117l: -1.0
@@ -187093,7 +187093,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09750
-    - name: transport of (9E)-tetradecenoic acid (cytosol to lysosome)
+    - name: transport of (9E)-tetradecenoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00128c: 1.0
       - MAM00128l: -1.0
@@ -187105,7 +187105,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09751
-    - name: transport of (9Z,12Z,15Z,18Z)-TTA (cytosol to lysosome)
+    - name: transport of (9Z,12Z,15Z,18Z)-TTA (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00132c: 1.0
       - MAM00132l: -1.0
@@ -187117,7 +187117,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09752
-    - name: transport of (9Z,12Z,15Z,18Z,21Z)-TPA (cytosol to lysosome)
+    - name: transport of (9Z,12Z,15Z,18Z,21Z)-TPA (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00135c: 1.0
       - MAM00135l: -1.0
@@ -187129,7 +187129,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09753
-    - name: transport of 10,13,16,19-docosatetraenoic acid (cytosol to lysosome)
+    - name: transport of 10,13,16,19-docosatetraenoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00260c: 1.0
       - MAM00260l: -1.0
@@ -187141,7 +187141,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09754
-    - name: transport of 10,13,16-docosatriynoic acid (cytosol to lysosome)
+    - name: transport of 10,13,16-docosatriynoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00265c: 1.0
       - MAM00265l: -1.0
@@ -187153,7 +187153,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09755
-    - name: transport of 12,15,18,21-tetracosatetraenoic acid (cytosol to lysosome)
+    - name: transport of 12,15,18,21-tetracosatetraenoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00315c: 1.0
       - MAM00315l: -1.0
@@ -187165,7 +187165,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09756
-    - name: transport of 13,16,19-docosatrienoic acid (cytosol to lysosome)
+    - name: transport of 13,16,19-docosatrienoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00341c: 1.0
       - MAM00341l: -1.0
@@ -187177,7 +187177,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09757
-    - name: transport of 7-palmitoleic acid (cytosol to lysosome)
+    - name: transport of 7-palmitoleic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01197c: 1.0
       - MAM01197l: -1.0
@@ -187189,7 +187189,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09758
-    - name: transport of 8,11-eicosadienoic acid (cytosol to lysosome)
+    - name: transport of 8,11-eicosadienoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01207c: 1.0
       - MAM01207l: -1.0
@@ -187201,7 +187201,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09759
-    - name: transport of 9-eicosenoic acid (cytosol to lysosome)
+    - name: transport of 9-eicosenoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01235c: 1.0
       - MAM01235l: -1.0
@@ -187213,7 +187213,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09760
-    - name: transport of 9-heptadecylenic acid (cytosol to lysosome)
+    - name: transport of 9-heptadecylenic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01238c: 1.0
       - MAM01238l: -1.0
@@ -187225,7 +187225,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09761
-    - name: transport of adrenic acid (cytosol to lysosome)
+    - name: transport of adrenic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01291c: 1.0
       - MAM01291l: -1.0
@@ -187237,7 +187237,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09762
-    - name: transport of arachidonate (cytosol to lysosome)
+    - name: transport of arachidonate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01362c: 1.0
       - MAM01362l: -1.0
@@ -187249,7 +187249,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09763
-    - name: transport of behenic acid (cytosol to lysosome)
+    - name: transport of behenic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01373c: 1.0
       - MAM01373l: -1.0
@@ -187261,7 +187261,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09764
-    - name: transport of cerotic acid (cytosol to lysosome)
+    - name: transport of cerotic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01432c: 1.0
       - MAM01432l: -1.0
@@ -187273,7 +187273,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09765
-    - name: transport of cis-cetoleic acid (cytosol to lysosome)
+    - name: transport of cis-cetoleic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01582c: 1.0
       - MAM01582l: -1.0
@@ -187285,7 +187285,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09766
-    - name: transport of cis-erucic acid (cytosol to lysosome)
+    - name: transport of cis-erucic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01583c: 1.0
       - MAM01583l: -1.0
@@ -187297,7 +187297,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09767
-    - name: transport of cis-gondoic acid (cytosol to lysosome)
+    - name: transport of cis-gondoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01584c: 1.0
       - MAM01584l: -1.0
@@ -187309,7 +187309,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09768
-    - name: transport of cis-vaccenic acid (cytosol to lysosome)
+    - name: transport of cis-vaccenic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01585c: 1.0
       - MAM01585l: -1.0
@@ -187321,7 +187321,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09769
-    - name: transport of DHA (cytosol to lysosome)
+    - name: transport of DHA (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01689c: 1.0
       - MAM01689l: -1.0
@@ -187333,7 +187333,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09770
-    - name: transport of dihomo-gamma-linolenate (cytosol to lysosome)
+    - name: transport of dihomo-gamma-linolenate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01696c: 1.0
       - MAM01696l: -1.0
@@ -187345,7 +187345,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09771
-    - name: transport of DPA (cytosol to lysosome)
+    - name: transport of DPA (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01741c: 1.0
       - MAM01741l: -1.0
@@ -187357,7 +187357,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09772
-    - name: transport of eicosanoate (cytosol to lysosome)
+    - name: transport of eicosanoate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01771c: 1.0
       - MAM01771l: -1.0
@@ -187369,7 +187369,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09773
-    - name: transport of elaidate (cytosol to lysosome)
+    - name: transport of elaidate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01778c: 1.0
       - MAM01778l: -1.0
@@ -187381,7 +187381,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09774
-    - name: transport of EPA (cytosol to lysosome)
+    - name: transport of EPA (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01784c: 1.0
       - MAM01784l: -1.0
@@ -187393,7 +187393,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09775
-    - name: transport of gamma-linolenate (cytosol to lysosome)
+    - name: transport of gamma-linolenate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM01932c: 1.0
       - MAM01932l: -1.0
@@ -187405,7 +187405,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09776
-    - name: transport of heneicosanoic acid (cytosol to lysosome)
+    - name: transport of heneicosanoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02053c: 1.0
       - MAM02053l: -1.0
@@ -187417,7 +187417,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09777
-    - name: transport of lauric acid (cytosol to lysosome)
+    - name: transport of lauric acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02344c: 1.0
       - MAM02344l: -1.0
@@ -187429,7 +187429,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09778
-    - name: transport of lignocerate (cytosol to lysosome)
+    - name: transport of lignocerate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02385c: 1.0
       - MAM02385l: -1.0
@@ -187441,7 +187441,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09779
-    - name: transport of linoleate (cytosol to lysosome)
+    - name: transport of linoleate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02387c: 1.0
       - MAM02387l: -1.0
@@ -187453,7 +187453,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09780
-    - name: transport of linolenate (cytosol to lysosome)
+    - name: transport of linolenate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02389c: 1.0
       - MAM02389l: -1.0
@@ -187465,7 +187465,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09781
-    - name: transport of margaric acid (cytosol to lysosome)
+    - name: transport of margaric acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02456c: 1.0
       - MAM02456l: -1.0
@@ -187477,7 +187477,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09782
-    - name: transport of mead acid (cytosol to lysosome)
+    - name: transport of mead acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02457c: 1.0
       - MAM02457l: -1.0
@@ -187489,7 +187489,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09783
-    - name: transport of myristic acid (cytosol to lysosome)
+    - name: transport of myristic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02494c: 1.0
       - MAM02494l: -1.0
@@ -187501,7 +187501,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09784
-    - name: transport of nervonic acid (cytosol to lysosome)
+    - name: transport of nervonic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02564c: 1.0
       - MAM02564l: -1.0
@@ -187513,7 +187513,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09785
-    - name: transport of nonadecylic acid (cytosol to lysosome)
+    - name: transport of nonadecylic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02613c: 1.0
       - MAM02613l: -1.0
@@ -187525,7 +187525,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09786
-    - name: transport of oleate (cytosol to lysosome)
+    - name: transport of oleate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02646c: 1.0
       - MAM02646l: -1.0
@@ -187537,7 +187537,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09787
-    - name: transport of omega-3-arachidonic acid (cytosol to lysosome)
+    - name: transport of omega-3-arachidonic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02648c: 1.0
       - MAM02648l: -1.0
@@ -187549,7 +187549,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09788
-    - name: transport of palmitate (cytosol to lysosome)
+    - name: transport of palmitate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02674c: 1.0
       - MAM02674l: -1.0
@@ -187561,7 +187561,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09789
-    - name: transport of palmitolate (cytosol to lysosome)
+    - name: transport of palmitolate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02675c: 1.0
       - MAM02675l: -1.0
@@ -187573,7 +187573,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09790
-    - name: transport of pentadecylic acid (cytosol to lysosome)
+    - name: transport of pentadecylic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02690c: 1.0
       - MAM02690l: -1.0
@@ -187585,7 +187585,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09791
-    - name: transport of physeteric acid (cytosol to lysosome)
+    - name: transport of physeteric acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02745c: 1.0
       - MAM02745l: -1.0
@@ -187597,7 +187597,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09792
-    - name: transport of stearate (cytosol to lysosome)
+    - name: transport of stearate (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02938c: 1.0
       - MAM02938l: -1.0
@@ -187609,7 +187609,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09793
-    - name: transport of stearidonic acid (cytosol to lysosome)
+    - name: transport of stearidonic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM02939c: 1.0
       - MAM02939l: -1.0
@@ -187622,7 +187622,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09794
-    - name: transport of tricosanoic acid (cytosol to lysosome)
+    - name: transport of tricosanoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM03045c: 1.0
       - MAM03045l: -1.0
@@ -187634,7 +187634,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09795
-    - name: transport of tridecylic acid (cytosol to lysosome)
+    - name: transport of tridecylic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM03051c: 1.0
       - MAM03051l: -1.0
@@ -187646,7 +187646,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09796
-    - name: transport of ximenic acid (cytosol to lysosome)
+    - name: transport of ximenic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM03153c: 1.0
       - MAM03153l: -1.0
@@ -187797,7 +187797,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04955
-    - name: transport of disialyl-T antigen (cytosol to Golgi apparatus)
+    - name: transport of disialyl-T antigen (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM01712c: 1.0
       - MAM01712g: -1.0
@@ -187834,7 +187834,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07201
-    - name: transport of Xyl-L-Ser-[protein] (Golgi apparatus to endoplasmic reticulum)
+    - name: transport of Xyl-L-Ser-[protein] (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM03156g: 1.0
       - MAM03156r: -1.0
@@ -187926,7 +187926,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07437
-    - name: transport of sialyl-Tn antigen (cytosol to Golgi apparatus)
+    - name: transport of sialyl-Tn antigen (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM02907c: 1.0
       - MAM02907g: -1.0
@@ -188546,7 +188546,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08661
-    - name: transport of cholesterol (cytosol to Golgi apparatus)
+    - name: transport of cholesterol (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -188576,7 +188576,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08793
-    - name: transport of PAP (cytosol to Golgi apparatus)
+    - name: transport of PAP (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM02681c: 1.0
       - MAM02681g: -1.0
@@ -188588,7 +188588,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08834
-    - name: transport of Pi (cytosol to Golgi apparatus)
+    - name: transport of Pi (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM02751c: 1.0
       - MAM02751g: -1.0
@@ -188723,7 +188723,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08920
-    - name: transport of mannose (cytosol to Golgi apparatus)
+    - name: transport of mannose (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM02453c: 1.0
       - MAM02453g: -1.0
@@ -188748,7 +188748,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09664
-    - name: transport of 1,2-diacylglycerol-LD-TAG pool (cytosol to Golgi apparatus)
+    - name: transport of 1,2-diacylglycerol-LD-TAG pool (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM00240c: 1.0
       - MAM00240g: -1.0
@@ -188760,7 +188760,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09665
-    - name: transport of AMP (cytosol to Golgi apparatus)
+    - name: transport of AMP (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM01334c: 1.0
       - MAM01334g: -1.0
@@ -188772,7 +188772,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09666
-    - name: transport of phosphatidate-LD-PC pool (cytosol to Golgi apparatus)
+    - name: transport of phosphatidate-LD-PC pool (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM02728c: 1.0
       - MAM02728g: -1.0
@@ -188784,7 +188784,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09667
-    - name: transport of n5m2masn (cytosol to Golgi apparatus)
+    - name: transport of n5m2masn (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM02516c: 1.0
       - MAM02516g: -1.0
@@ -188796,7 +188796,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09668
-    - name: transport of glcnac-alpha-1,4-core 2 (cytosol to Golgi apparatus)
+    - name: transport of glcnac-alpha-1,4-core 2 (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM01955c: 1.0
       - MAM01955g: -1.0
@@ -188808,7 +188808,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09669
-    - name: transport of core 5 (cytosol to Golgi apparatus)
+    - name: transport of core 5 (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM01610c: 1.0
       - MAM01610g: -1.0
@@ -188820,7 +188820,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09670
-    - name: transport of core 7 (cytosol to Golgi apparatus)
+    - name: transport of core 7 (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM01612c: 1.0
       - MAM01612g: -1.0
@@ -188832,7 +188832,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09671
-    - name: transport of core 8 (cytosol to Golgi apparatus)
+    - name: transport of core 8 (Golgi apparatus to cytosol)
     - metabolites: !!omap
       - MAM01613c: 1.0
       - MAM01613g: -1.0
@@ -188844,7 +188844,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07182
-    - name: transport of G00032 (extracellular to Golgi apparatus)
+    - name: transport of G00032 (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01872e: 1.0
       - MAM01872g: -1.0
@@ -188856,7 +188856,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07330
-    - name: transport of G00022 (extracellular to Golgi apparatus)
+    - name: transport of G00022 (Golgi apparatus to extracellular)
     - metabolites: !!omap
       - MAM01870e: 1.0
       - MAM01870g: -1.0
@@ -188893,7 +188893,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07307
-    - name: transport of (alpha-D-mannosyl)8-beta-D... (Golgi apparatus to endoplasmic reticulum)
+    - name: transport of (alpha-D-mannosyl)8-beta-D... (endoplasmic reticulum to Golgi apparatus)
     - metabolites: !!omap
       - MAM00153g: 1.0
       - MAM00153r: -1.0
@@ -189080,7 +189080,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01240
-    - name: transport of 10,11-dihydro-20-trihydroxy-LTB4 (cytosol to endoplasmic reticulum)
+    - name: transport of 10,11-dihydro-20-trihydroxy-LTB4 (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM00256c: 1.0
       - MAM00256r: -1.0
@@ -189646,7 +189646,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05012
-    - name: transport of N-acetyl-D-mannosamine (extracellular to endoplasmic reticulum)
+    - name: transport of N-acetyl-D-mannosamine (endoplasmic reticulum to extracellular)
     - metabolites: !!omap
       - MAM02524e: 1.0
       - MAM02524r: -1.0
@@ -189750,7 +189750,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05245
-    - name: transport of VLDL (extracellular to endoplasmic reticulum)
+    - name: transport of VLDL (endoplasmic reticulum to extracellular)
     - metabolites: !!omap
       - MAM03147e: 1.0
       - MAM03147r: -1.0
@@ -189877,7 +189877,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06430
-    - name: transport of 13-carboxy-alpha-tocotrienol (cytosol to endoplasmic reticulum)
+    - name: transport of 13-carboxy-alpha-tocotrienol (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM00345c: 1.0
       - MAM00345r: -1.0
@@ -189901,7 +189901,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06445
-    - name: transport of 13-carboxy-gamma-tocotrienol (cytosol to endoplasmic reticulum)
+    - name: transport of 13-carboxy-gamma-tocotrienol (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM00347c: 1.0
       - MAM00347r: -1.0
@@ -189949,7 +189949,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06480
-    - name: transport of 13-carboxy-alpha-tocopherol (cytosol to endoplasmic reticulum)
+    - name: transport of 13-carboxy-alpha-tocopherol (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM00344c: 1.0
       - MAM00344r: -1.0
@@ -189997,7 +189997,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07257
-    - name: transport of dolichyl-phosphate (cytosol to endoplasmic reticulum)
+    - name: transport of dolichyl-phosphate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM01733c: 1.0
       - MAM01733r: -1.0
@@ -190070,7 +190070,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07772
-    - name: transport of NAD+ (cytosol to endoplasmic reticulum)
+    - name: transport of NAD+ (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02552c: 1.0
       - MAM02552r: -1.0
@@ -190094,7 +190094,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07778
-    - name: transport of NADP+ (cytosol to endoplasmic reticulum)
+    - name: transport of NADP+ (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02554c: 1.0
       - MAM02554r: -1.0
@@ -190142,7 +190142,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07791
-    - name: transport of FAD (cytosol to endoplasmic reticulum)
+    - name: transport of FAD (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM01802c: 1.0
       - MAM01802r: -1.0
@@ -190346,7 +190346,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08030
-    - name: transport of N6,N6,N6-trimethyl-L-lysine (cytosol to endoplasmic reticulum)
+    - name: transport of N6,N6,N6-trimethyl-L-lysine (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02517c: 1.0
       - MAM02517r: -1.0
@@ -190442,7 +190442,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08351
-    - name: transport of L-gulonate (cytosol to endoplasmic reticulum)
+    - name: transport of L-gulonate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02378c: 1.0
       - MAM02378r: -1.0
@@ -190557,7 +190557,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08715
-    - name: transport of retinoyl-glucuronide (cytosol to endoplasmic reticulum)
+    - name: transport of retinoyl-glucuronide (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02836c: 1.0
       - MAM02836r: -1.0
@@ -190581,7 +190581,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08719
-    - name: transport of 13-cis-retinoyl-glucuronide (cytosol to endoplasmic reticulum)
+    - name: transport of 13-cis-retinoyl-glucuronide (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM00353c: 1.0
       - MAM00353r: -1.0
@@ -190713,7 +190713,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08919
-    - name: transport of mannose (cytosol to endoplasmic reticulum)
+    - name: transport of mannose (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02453c: 1.0
       - MAM02453r: -1.0
@@ -190762,7 +190762,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09625
-    - name: transport of 1,2-diacylglycerol-LD-PE pool (cytosol to endoplasmic reticulum)
+    - name: transport of 1,2-diacylglycerol-LD-PE pool (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM00236c: 1.0
       - MAM00236r: -1.0
@@ -190774,7 +190774,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09626
-    - name: transport of sulfate (cytosol to endoplasmic reticulum)
+    - name: transport of sulfate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02946c: 1.0
       - MAM02946r: -1.0
@@ -190786,7 +190786,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09627
-    - name: transport of LacCer pool (cytosol to endoplasmic reticulum)
+    - name: transport of LacCer pool (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02328c: 1.0
       - MAM02328r: -1.0
@@ -190798,7 +190798,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09628
-    - name: transport of GSSG (cytosol to endoplasmic reticulum)
+    - name: transport of GSSG (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02027c: 1.0
       - MAM02027r: -1.0
@@ -190810,7 +190810,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09629
-    - name: transport of gpi_sig (cytosol to endoplasmic reticulum)
+    - name: transport of gpi_sig (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02022c: 1.0
       - MAM02022r: -1.0
@@ -190822,7 +190822,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09630
-    - name: transport of m3gacpail_prot heparan sulfate (cytosol to endoplasmic reticulum)
+    - name: transport of m3gacpail_prot heparan sulfate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02434c: 1.0
       - MAM02434r: -1.0
@@ -190834,7 +190834,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09631
-    - name: transport of mem2emgacpail_prot heparan sulfate (cytosol to endoplasmic reticulum)
+    - name: transport of mem2emgacpail_prot heparan sulfate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02462c: 1.0
       - MAM02462r: -1.0
@@ -190846,7 +190846,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09632
-    - name: transport of dem2emgacpail_prot heparan sulfate (cytosol to endoplasmic reticulum)
+    - name: transport of dem2emgacpail_prot heparan sulfate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM01665c: 1.0
       - MAM01665r: -1.0
@@ -190858,7 +190858,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09633
-    - name: transport of dgpi_prot heparan sulfate (cytosol to endoplasmic reticulum)
+    - name: transport of dgpi_prot heparan sulfate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM01687c: 1.0
       - MAM01687r: -1.0
@@ -190870,7 +190870,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09634
-    - name: transport of ethanolamine-phosphate (cytosol to endoplasmic reticulum)
+    - name: transport of ethanolamine-phosphate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM01798c: 1.0
       - MAM01798r: -1.0
@@ -190882,7 +190882,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09716
-    - name: transport of deoxycholoyl-CoA (cytosol to endoplasmic reticulum)
+    - name: transport of deoxycholoyl-CoA (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM01667c: 1.0
       - MAM01667r: -1.0
@@ -190894,7 +190894,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09724
-    - name: transport of phosphatidate-LD-PC pool (cytosol to endoplasmic reticulum)
+    - name: transport of phosphatidate-LD-PC pool (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02728c: 1.0
       - MAM02728r: -1.0
@@ -190906,7 +190906,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09732
-    - name: transport of glycophosphatidylinositol... (cytosol to endoplasmic reticulum)
+    - name: transport of glycophosphatidylinositol... (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM02001c: 1.0
       - MAM02001r: -1.0
@@ -205537,7 +205537,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02346
-    - name: transport of formaldehyde (cytosol to extracellular)
+    - name: transport of formaldehyde (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01831c: 1.0
       - MAM01831e: -1.0
@@ -219118,7 +219118,7 @@
     - notes: "Hans Gerhard Vogel, Franz J. Hock, Jochen Maas, Dieter Mayer (2006),  Drug discovery and evaluation: Safety and pharmacokinetic assays, Springer publication, Chapter II D, page 456, table 3"
   - !!omap
     - id: MAR06860
-    - name: transport of trans-4-hydroxy-L-proline (cytosol to extracellular)
+    - name: transport of trans-4-hydroxy-L-proline (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01442c: 1.0
       - MAM01442e: -1.0
@@ -219358,7 +219358,7 @@
     - notes: Janos Zempleni, Robert B. Rucker, Donald B. McCormick, John W. Suttie (2007) Handbook of vitamins, CRC press, chapter 13, page 418-422
   - !!omap
     - id: MAR06887
-    - name: transport of cysteine (cytosol to extracellular)
+    - name: transport of cysteine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01628c: 1.0
       - MAM01628e: -1.0
@@ -227627,7 +227627,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10373
-    - name: transport of 3-(3-Hydroxy-Phenyl)Propionate (cytosol to extracellular)
+    - name: transport of 3-(3-Hydroxy-Phenyl)Propionate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02039e: -1.0
@@ -239079,7 +239079,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11227
-    - name: transport of 1-Gamma-Linolenoyl-Cholesterol (cytosol to extracellular)
+    - name: transport of 1-Gamma-Linolenoyl-Cholesterol (extracellular to cytosol)
     - metabolites: !!omap
       - MAM04077c: 1.0
       - MAM04077e: -1.0
@@ -239091,7 +239091,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11228
-    - name: transport of 1-Linoleoyl-Cholesterol (cytosol to extracellular)
+    - name: transport of 1-Linoleoyl-Cholesterol (extracellular to cytosol)
     - metabolites: !!omap
       - MAM04076c: 1.0
       - MAM04076e: -1.0
@@ -239115,7 +239115,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11230
-    - name: transport of 1-Timnodnoyl-Cholesterol (cytosol to extracellular)
+    - name: transport of 1-Timnodnoyl-Cholesterol (extracellular to cytosol)
     - metabolites: !!omap
       - MAM01468c: 1.0
       - MAM01468e: -1.0
@@ -239127,7 +239127,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11231
-    - name: transport of Cholesteryl Arachidonate (cytosol to extracellular)
+    - name: transport of Cholesteryl Arachidonate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM04078c: 1.0
       - MAM04078e: -1.0
@@ -239139,7 +239139,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11232
-    - name: transport of Cholesteryl Docosahexanoate (cytosol to extracellular)
+    - name: transport of Cholesteryl Docosahexanoate (extracellular to cytosol)
     - metabolites: !!omap
       - MAM04080c: 1.0
       - MAM04080e: -1.0
@@ -239151,7 +239151,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11233
-    - name: transport of 1-Docosatetraenoyglycerophosphoethanolam... (cytosol to extracellular)
+    - name: transport of 1-Docosatetraenoyglycerophosphoethanolam... (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03845c: 1.0
       - MAM03845e: -1.0
@@ -245232,7 +245232,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11659
-    - name: transport of 1-Eicosatrienoylglycerophosphocholine (cytosol to extracellular)
+    - name: transport of 1-Eicosatrienoylglycerophosphocholine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03812c: 1.0
       - MAM03812e: -1.0
@@ -245301,7 +245301,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11664
-    - name: transport of 1-Octadeca-Trienoylglycerophosphocholine (cytosol to extracellular)
+    - name: transport of 1-Octadeca-Trienoylglycerophosphocholine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03818c: 1.0
       - MAM03818e: -1.0
@@ -245314,7 +245314,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11665
-    - name: transport of 1-Octadeca-Trienoylglycerophosphocholine (cytosol to extracellular)
+    - name: transport of 1-Octadeca-Trienoylglycerophosphocholine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03817c: 1.0
       - MAM03817e: -1.0
@@ -245344,7 +245344,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11667
-    - name: transport of 1-Eicosenoylglycerophosphocholine... (cytosol to extracellular)
+    - name: transport of 1-Eicosenoylglycerophosphocholine... (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03820c: 1.0
       - MAM03820e: -1.0
@@ -245480,7 +245480,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11675
-    - name: transport of 1-Lignocericylglycerophosphocholine (cytosol to extracellular)
+    - name: transport of 1-Lignocericylglycerophosphocholine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03828c: 1.0
       - MAM03828e: -1.0
@@ -245633,7 +245633,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11684
-    - name: transport of 1-Hexadecenoylglycerophosphoethanolamine (cytosol to extracellular)
+    - name: transport of 1-Hexadecenoylglycerophosphoethanolamine (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03842c: 1.0
       - MAM03842e: -1.0
@@ -245667,7 +245667,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11686
-    - name: transport of 1-Eicosatrienoylglycerophosphoethanolami... (cytosol to extracellular)
+    - name: transport of 1-Eicosatrienoylglycerophosphoethanolami... (extracellular to cytosol)
     - metabolites: !!omap
       - MAM03844c: 1.0
       - MAM03844e: -1.0
@@ -247894,7 +247894,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11834
-    - name: transport of 12-hydroxy-arachidonate (cytosol to endoplasmic reticulum)
+    - name: transport of 12-hydroxy-arachidonate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM00324c: 1.0
       - MAM00324r: -1.0
@@ -247941,7 +247941,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11837
-    - name: transport of 18-hydroxy-arachidonate (cytosol to endoplasmic reticulum)
+    - name: transport of 18-hydroxy-arachidonate (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM00428c: 1.0
       - MAM00428r: -1.0
@@ -248399,7 +248399,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11872
-    - name: transport of cholesterol-ester-palm (cytosol to endoplasmic reticulum)
+    - name: transport of cholesterol-ester-palm (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM01504c: 1.0
       - MAM01504r: -1.0
@@ -248458,7 +248458,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11877
-    - name: transport of 24-hydroxycholesterol (cytosol to endoplasmic reticulum)
+    - name: transport of 24-hydroxycholesterol (endoplasmic reticulum to cytosol)
     - metabolites: !!omap
       - MAM00610c: 1.0
       - MAM00610r: -1.0
@@ -267644,7 +267644,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10118
-    - name: transport of omega-muricholic acid (cytosol to extracellular)
+    - name: transport of omega-muricholic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -267659,7 +267659,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10119
-    - name: transport of hyocholic acid (cytosol to extracellular)
+    - name: transport of hyocholic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -267674,7 +267674,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10120
-    - name: transport of dehydrocholic acid (cytosol to extracellular)
+    - name: transport of dehydrocholic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -267785,7 +267785,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10127
-    - name: transport of tauro-hyodeoxycholic acid (cytosol to extracellular)
+    - name: transport of tauro-hyodeoxycholic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM02519c: 2.0
       - MAM02519e: -2.0
@@ -267909,7 +267909,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR13086
-    - name: transport of RNA (cytosol to nucleus)
+    - name: transport of RNA (nucleus to cytosol)
     - metabolites: !!omap
       - MAM02847c: 1.0
       - MAM02847n: -1.0
