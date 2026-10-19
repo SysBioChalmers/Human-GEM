@@ -62268,7 +62268,7 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000146587 or ENSG00000185013
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000185013
     - subsystem:
       - Purine metabolism
     - annotation: !!omap
@@ -62287,7 +62287,7 @@
       - MAM02751e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309
     - subsystem:
       - Purine metabolism
     - annotation: !!omap
@@ -62306,7 +62306,7 @@
       - MAM02751m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013
     - subsystem:
       - Purine metabolism
     - annotation: !!omap
@@ -62706,7 +62706,7 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000146587 or ENSG00000185013
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000125458 or ENSG00000135318 or ENSG00000185013
     - subsystem:
       - Purine metabolism
     - annotation: !!omap
@@ -62804,7 +62804,7 @@
       - MAM02751e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309
     - subsystem:
       - Purine metabolism
     - annotation: !!omap
@@ -63219,7 +63219,7 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013
     - subsystem:
       - Purine metabolism
     - annotation: !!omap
@@ -63418,7 +63418,7 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309
     - subsystem:
       - Purine metabolism
     - annotation: !!omap
@@ -63615,7 +63615,7 @@
       - MAM03150c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013
     - subsystem:
       - Purine metabolism
     - annotation: !!omap
@@ -64496,7 +64496,7 @@
       - MAM02996c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013 or ENSG00000205309
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000205309
     - subsystem:
       - Pyrimidine metabolism
     - annotation: !!omap
@@ -64599,7 +64599,7 @@
       - MAM02751e: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013
     - subsystem:
       - Pyrimidine metabolism
     - annotation: !!omap
@@ -64896,7 +64896,7 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000076685 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013
     - subsystem:
       - Pyrimidine metabolism
     - annotation: !!omap
@@ -140090,13 +140090,13 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000146587 or ENSG00000185013
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000076685
     - subsystem:
       - Nicotinate and nicotinamide metabolism
     - annotation: !!omap
       - ec-code:
         - 3.1.3.5
-    - references: PMID:11690631;PMID:17405878;PMID:6284244;PMID:7999131
+    - references: PMID:11690631;PMID:17405878;PMID:6284244;PMID:7999131;doi:10.1074/jbc.M115.664458
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -140291,12 +140291,13 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000116981 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000122643 or ENSG00000125458 or ENSG00000135318 or ENSG00000141698 or ENSG00000185013 or ENSG00000076685
     - subsystem:
       - Nicotinate and nicotinamide metabolism
     - annotation: !!omap
       - ec-code:
         - 3.1.3.5
+    - references: doi:10.1074/jbc.M115.664458
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -276070,9 +276071,6 @@
   - !!omap
     - id: ENSG00000146477
     - name: SLC22A3
-  - !!omap
-    - id: ENSG00000146587
-    - name: RBAK
   - !!omap
     - id: ENSG00000146701
     - name: MDH2
