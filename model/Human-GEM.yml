@@ -122406,21 +122406,6 @@
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
-    - id: MAR08224
-    - name: GD3 9-O-acetylation
-    - metabolites: !!omap
-      - MAM01244c: 1.0
-      - MAM01261c: -1.0
-      - MAM01597c: 1.0
-      - MAM01947c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000169359
-    - subsystem:
-      - Sphingolipid metabolism
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR08226
     - name: GD3 9-O-acetylation
     - metabolites: !!omap
@@ -122430,26 +122415,16 @@
       - MAM01947g: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000169359
+    - gene_reaction_rule: ENSG00000127995
     - subsystem:
       - Sphingolipid metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 2.3.1.-
+    - references: doi:10.1038/ncomms8673;doi:10.1093/glycob/cwq153
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-  - !!omap
-    - id: MAR08227
-    - name: GT3 9-O-acetylation
-    - metabolites: !!omap
-      - MAM01245c: 1.0
-      - MAM01261c: -1.0
-      - MAM01597c: 1.0
-      - MAM02033c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000169359
-    - subsystem:
-      - Sphingolipid metabolism
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
+    - notes: "Lumped: CASD1 acetylates CMP-Neu5Ac in vitro (EC 2.3.1.45, PMID:26169044). Rhea writes the ganglioside reaction with the 7-O-acetyl product (RHEA:79499), the model with the 9-O-acetyl one."
   - !!omap
     - id: MAR08228
     - name: GT3 9-O-acetylation
@@ -122460,11 +122435,16 @@
       - MAM02033g: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000169359
+    - gene_reaction_rule: ENSG00000127995
     - subsystem:
       - Sphingolipid metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 2.3.1.-
+    - references: doi:10.1038/ncomms8673;doi:10.1093/glycob/cwq153
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: CASD1 is shown on GD3 (PMID:20947662); GT3 is assumed to be acetylated alike.
   - !!omap
     - id: MAR08233
     - name: 3-sn-phosphatidate phosphohydrolase
@@ -279125,6 +279105,9 @@
   - !!omap
     - id: ENSG00000182938
     - name: OTOP3
+  - !!omap
+    - id: ENSG00000127995
+    - name: CASD1
 - compartments: !!omap
   - c: Cytosol
   - e: Extracellular
