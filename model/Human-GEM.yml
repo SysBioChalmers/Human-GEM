@@ -44283,7 +44283,7 @@
     - metFrom: Recon3D
   - !!omap
     - id: MAM03522m
-    - name: cis2trans4decadienoyl-CoA
+    - name: (2E,4E)-decadienoyl-CoA
     - compartment: m
     - charge: -4.0
     - formula: C31H46N7O17P3S
@@ -44507,7 +44507,7 @@
     - metFrom: Recon3D
   - !!omap
     - id: MAM03639e
-    - name: guar gum-deoxyxholic acid complex
+    - name: guar gum-deoxycholic acid complex
     - compartment: e
     - charge: -1.0
     - formula: C2760024H5060039O2530004
@@ -44612,7 +44612,7 @@
     - metFrom: Recon3D
   - !!omap
     - id: MAM03908e
-    - name: psillium-glycocholic acid complex
+    - name: psyllium-glycocholic acid complex
     - compartment: e
     - charge: 0.0
     - formula: C9642032H15428743NO8667420
@@ -46061,7 +46061,7 @@
     - metFrom: Recon3D
   - !!omap
     - id: MAM03976c
-    - name: cia-5,8, tetradecadienoic acid
+    - name: (5Z,8Z)-tetradecadienoic acid
     - compartment: c
     - charge: -1.0
     - formula: C14H23O2
@@ -46957,7 +46957,7 @@
     - metFrom: Recon3D
   - !!omap
     - id: MAM03976e
-    - name: cia-5,8, tetradecadienoic acid
+    - name: (5Z,8Z)-tetradecadienoic acid
     - compartment: e
     - charge: -1.0
     - formula: C14H23O2
@@ -51577,28 +51577,28 @@
     - metFrom: Recon3D
   - !!omap
     - id: MAM03261x
-    - name: 3-hydoxy-suberyl-CoA
+    - name: 3-hydroxy-suberyl-CoA
     - compartment: x
     - charge: -5.0
     - formula: C29H43N7O20P3S
     - metFrom: Recon3D
   - !!omap
     - id: MAM03260x
-    - name: 3-hydoxy-suberic acid
+    - name: 3-hydroxy-suberic acid
     - compartment: x
     - charge: -2.0
     - formula: C8H12O5
     - metFrom: Recon3D
   - !!omap
     - id: MAM03260c
-    - name: 3-hydoxy-suberic acid
+    - name: 3-hydroxy-suberic acid
     - compartment: c
     - charge: -2.0
     - formula: C8H12O5
     - metFrom: Recon3D
   - !!omap
     - id: MAM03260e
-    - name: 3-hydoxy-suberic acid
+    - name: 3-hydroxy-suberic acid
     - compartment: e
     - charge: -2.0
     - formula: C8H12O5
@@ -51822,21 +51822,21 @@
     - metFrom: Recon3D
   - !!omap
     - id: MAM03682m
-    - name: trans-delta-2-heptadecanoic acid
+    - name: (2E)-heptadecenoic acid
     - compartment: m
     - charge: -1.0
     - formula: C17H31O2
     - metFrom: Recon3D
   - !!omap
     - id: MAM03682c
-    - name: trans-delta-2-heptadecanoic acid
+    - name: (2E)-heptadecenoic acid
     - compartment: c
     - charge: -1.0
     - formula: C17H31O2
     - metFrom: Recon3D
   - !!omap
     - id: MAM03682e
-    - name: trans-delta-2-heptadecanoic acid
+    - name: (2E)-heptadecenoic acid
     - compartment: e
     - charge: -1.0
     - formula: C17H31O2
