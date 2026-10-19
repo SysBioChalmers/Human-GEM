@@ -149504,7 +149504,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07031
-    - name: TAG epoxide to dichloroacetyl chloride conversion
+    - name: trichloroethene epoxide to dichloroacetyl chloride conversion
     - metabolites: !!omap
       - MAM01692c: 1.0
       - MAM02954c: -1.0
@@ -209769,7 +209769,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03436
-    - name: cytochrome P450 (24,25,26,27-Tetranor-23-Oxo-Hydroxyvitamin D3)
+    - name: cytochrome P450 (1-hydroxy-23-oxo-24,25,26,27-tetranorvitamin D3)
     - metabolites: !!omap
       - MAM01418m: 1.0
       - MAM02040m: 1.0
@@ -218994,7 +218994,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06919
-    - name: Binding of Guar Gums with Deoxyxholic Acid
+    - name: Binding of Guar Gums with Deoxycholic Acid
     - metabolites: !!omap
       - MAM00745e: -1.0
       - MAM03638e: -1.0
@@ -220029,7 +220029,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08708
-    - name: Exchange of guar gum-deoxyxholic acid complex
+    - name: Exchange of guar gum-deoxycholic acid complex
     - metabolites: !!omap
       - MAM03639e: -1.0
     - lower_bound: -1000.0
@@ -220139,7 +220139,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08955
-    - name: Exchange of psillium-glycocholic acid complex
+    - name: Exchange of psyllium-glycocholic acid complex
     - metabolites: !!omap
       - MAM03908e: -1.0
     - lower_bound: -1000.0
@@ -226630,7 +226630,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10340
-    - name: Exchange of cia-5,8, tetradecadienoic acid
+    - name: Exchange of (5Z,8Z)-tetradecadienoic acid
     - metabolites: !!omap
       - MAM03976e: -1.0
     - lower_bound: -1000.0
@@ -242591,7 +242591,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11539
-    - name: Formation of 3-Hydoxy-Suberyl Coa
+    - name: Formation of 3-hydroxy-suberyl-CoA
     - metabolites: !!omap
       - MAM01802x: -1.0
       - MAM01803x: 1.0
@@ -242611,7 +242611,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11540
-    - name: Formation of 3-hydoxy-suberic acid
+    - name: Formation of 3-hydroxy-suberic acid
     - metabolites: !!omap
       - MAM01597x: 1.0
       - MAM02039x: 1.0
@@ -242626,7 +242626,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11541
-    - name: Transport of 3-hydoxy-suberic acid, Peroxisomal
+    - name: Transport of 3-hydroxy-suberic acid, Peroxisomal
     - metabolites: !!omap
       - MAM03260c: 1.0
       - MAM03260x: -1.0
@@ -242641,7 +242641,7 @@
     - notes: https://www.springer.com/gp/book/9789400957800. PXMP2 forms a non-selective pore in the peroxisomal membrane; Pxmp2-/- mice keep part of this permeability (PMID:19352492)
   - !!omap
     - id: MAR11542
-    - name: Transport of 3-hydoxy-suberic acid, Extracellular
+    - name: Transport of 3-hydroxy-suberic acid, Extracellular
     - metabolites: !!omap
       - MAM03260c: -1.0
       - MAM03260e: 1.0
@@ -242655,7 +242655,7 @@
     - notes: https://www.springer.com/gp/book/9789400957800
   - !!omap
     - id: MAR11543
-    - name: Exchange of 3-hydoxy-suberic acid
+    - name: Exchange of 3-hydroxy-suberic acid
     - metabolites: !!omap
       - MAM03260e: -1.0
     - lower_bound: -1000.0
@@ -245786,7 +245786,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11746
-    - name: Transport of trans-delta-2-heptadecanoic acid, Mitochondrial
+    - name: Transport of (2E)-heptadecenoic acid, Mitochondrial
     - metabolites: !!omap
       - MAM02039i: -1.0
       - MAM02039m: 1.0
@@ -245802,7 +245802,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11747
-    - name: Transport of trans-delta-2-heptadecanoic acid, Extracellular
+    - name: Transport of (2E)-heptadecenoic acid, Extracellular
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -245820,7 +245820,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11748
-    - name: Exchange of trans-delta-2-heptadecanoic acid
+    - name: Exchange of (2E)-heptadecenoic acid
     - metabolites: !!omap
       - MAM03682e: -1.0
     - lower_bound: -1000.0
