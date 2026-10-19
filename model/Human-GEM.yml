@@ -14416,15 +14416,15 @@
     - id: MAM01315c
     - name: alloxan
     - compartment: c
-    - charge: -2.0
-    - formula: C4N2O4
+    - charge: 0.0
+    - formula: C4H2N2O4
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01315e
     - name: alloxan
     - compartment: e
-    - charge: -2.0
-    - formula: C4N2O4
+    - charge: 0.0
+    - formula: C4H2N2O4
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01316c
@@ -41450,8 +41450,8 @@
     - id: MAM01315n
     - name: alloxan
     - compartment: n
-    - charge: -2.0
-    - formula: C4N2O4
+    - charge: 0.0
+    - formula: C4H2N2O4
     - metFrom: Recon3D
   - !!omap
     - id: MAM00177c
@@ -63816,7 +63816,6 @@
     - name: peroxidase (urate)
     - metabolites: !!omap
       - MAM01315c: 1.0
-      - MAM02039c: 2.0
       - MAM02041c: -1.0
       - MAM03120c: -1.0
       - MAM03121c: 1.0
@@ -63836,7 +63835,6 @@
     - name: peroxidase (urate)
     - metabolites: !!omap
       - MAM01315e: 1.0
-      - MAM02039e: 2.0
       - MAM02041e: -1.0
       - MAM03120e: -1.0
       - MAM03121e: 1.0
@@ -209051,7 +209049,6 @@
     - name: Peroxidase
     - metabolites: !!omap
       - MAM01315n: 1.0
-      - MAM02039n: 2.0
       - MAM02041n: -1.0
       - MAM03120n: -1.0
       - MAM03121n: 1.0
