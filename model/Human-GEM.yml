@@ -35449,7 +35449,7 @@
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02954c
-    - name: TAG epoxide
+    - name: trichloroethene epoxide
     - compartment: c
     - charge: 0.0
     - formula: C2HCl3O
