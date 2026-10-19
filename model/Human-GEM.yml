@@ -61634,7 +61634,7 @@
       - MAM02553c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800
+    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716
     - subsystem:
       - Butanoate metabolism
     - annotation: !!omap
@@ -76689,12 +76689,13 @@
       - MAM02553c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000111716 or ENSG00000166796 or ENSG00000166800
+    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716
     - subsystem:
       - Cysteine and methionine metabolism
     - annotation: !!omap
       - ec-code:
         - 1.1.1.27
+    - references: doi:10.1016/0006-3002(57)90429-8;doi:10.1016/j.enzmictec.2017.08.005
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -84602,12 +84603,13 @@
       - MAM02661c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800
+    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716
     - subsystem:
       - Tricarboxylic acid cycle and glyoxylate/dicarboxylate metabolism
     - annotation: !!omap
       - ec-code:
         - 1.1.1.27
+    - references: doi:10.1016/j.bbapap.2005.08.004
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -241248,7 +241250,7 @@
       - MAM03176c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800
+    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716
     - subsystem:
       - Valine, leucine, and isoleucine metabolism
     - annotation: !!omap
@@ -241292,7 +241294,7 @@
       - MAM03186c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716 or ENSG00000166796 or ENSG00000166800
+    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716
     - subsystem:
       - Valine, leucine, and isoleucine metabolism
     - annotation: !!omap
