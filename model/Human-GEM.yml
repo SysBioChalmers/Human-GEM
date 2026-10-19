@@ -202999,8 +202999,6 @@
     - annotation: !!omap
       - ec-code:
         - 1.6.5.2
-        - 1.1.1.184
-        - 1.8.1.9
     - references: PMID:12435734;PMID:7005231;PMID:8577704;PMID:8999974;PMID:16569397
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -203021,7 +203019,6 @@
     - annotation: !!omap
       - ec-code:
         - 1.6.5.2
-        - 1.8.1.9
     - references: PMID:12435734;PMID:8577704;PMID:8999974;PMID:9271353
     - rxnFrom: Recon3D
     - confidence_score: 0.0
