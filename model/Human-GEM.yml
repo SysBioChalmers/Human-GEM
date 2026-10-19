@@ -88791,7 +88791,7 @@
       - MAM03012c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid biosynthesis (unsaturated)
     - annotation: !!omap
@@ -88870,7 +88870,7 @@
       - MAM03013c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid biosynthesis (unsaturated)
     - annotation: !!omap
@@ -88949,7 +88949,7 @@
       - MAM03015c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid biosynthesis (unsaturated)
     - annotation: !!omap
@@ -89028,7 +89028,7 @@
       - MAM03016c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid biosynthesis (unsaturated)
     - annotation: !!omap
@@ -89107,7 +89107,7 @@
       - MAM03014c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid biosynthesis (unsaturated)
     - annotation: !!omap
@@ -89186,7 +89186,7 @@
       - MAM03018c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid biosynthesis (unsaturated)
     - annotation: !!omap
@@ -89265,7 +89265,7 @@
       - MAM03011c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid biosynthesis (unsaturated)
     - annotation: !!omap
@@ -89344,7 +89344,7 @@
       - MAM03017c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid biosynthesis (unsaturated)
     - annotation: !!omap
@@ -89423,7 +89423,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid elongation (even-chain)
     - annotation: !!omap
@@ -89502,7 +89502,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid elongation (even-chain)
     - annotation: !!omap
@@ -89581,7 +89581,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid elongation (even-chain)
     - annotation: !!omap
@@ -89660,7 +89660,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid elongation (even-chain)
     - annotation: !!omap
@@ -89738,7 +89738,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid elongation (even-chain)
     - annotation: !!omap
@@ -89815,7 +89815,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid elongation (odd-chain)
     - annotation: !!omap
@@ -89894,7 +89894,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Fatty acid elongation (odd-chain)
     - annotation: !!omap
@@ -91230,7 +91230,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -91330,7 +91330,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -91426,7 +91426,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -91615,7 +91615,7 @@
       - MAM03002c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -91694,7 +91694,7 @@
       - MAM03003c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -91773,7 +91773,7 @@
       - MAM03005c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -91852,7 +91852,7 @@
       - MAM03006c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -92712,7 +92712,7 @@
       - MAM02040c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -92802,7 +92802,7 @@
       - MAM20093c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -92991,7 +92991,7 @@
       - MAM03004c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93070,7 +93070,7 @@
       - MAM03007c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93149,7 +93149,7 @@
       - MAM03008c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
+    - gene_reaction_rule: ENSG00000074696 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -206337,7 +206337,7 @@
       - MAM02444n: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000149929
+    - gene_reaction_rule: ENSG00000012660 or ENSG00000066322 or ENSG00000118402 or ENSG00000119915 or ENSG00000164181 or ENSG00000170522 or ENSG00000197977
     - subsystem:
       - Fatty acid biosynthesis
     - references: PMID:10479480
@@ -206495,7 +206495,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -206513,7 +206513,7 @@
       - MAM02040n: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000149929
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -206533,7 +206533,7 @@
       - MAM02941n: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000141552
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -209980,7 +209980,7 @@
       - MAM03029r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210000,7 +210000,7 @@
       - MAM02555r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210061,7 +210061,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210079,7 +210079,7 @@
       - MAM02040r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210099,7 +210099,7 @@
       - MAM02555r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210140,7 +210140,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210158,7 +210158,7 @@
       - MAM02040r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210399,7 +210399,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210417,7 +210417,7 @@
       - MAM02040r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210496,7 +210496,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210514,7 +210514,7 @@
       - MAM03007r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210534,7 +210534,7 @@
       - MAM03007r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210575,7 +210575,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210593,7 +210593,7 @@
       - MAM03004r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210613,7 +210613,7 @@
       - MAM03004r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210633,7 +210633,7 @@
       - MAM03002r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210674,7 +210674,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210692,7 +210692,7 @@
       - MAM03002r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210712,7 +210712,7 @@
       - MAM03003r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210753,7 +210753,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210771,7 +210771,7 @@
       - MAM03003r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -210982,7 +210982,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211000,7 +211000,7 @@
       - MAM03012r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211020,7 +211020,7 @@
       - MAM03012r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211040,7 +211040,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211058,7 +211058,7 @@
       - MAM03013r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211078,7 +211078,7 @@
       - MAM03013r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211136,7 +211136,7 @@
       - MAM02555r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211154,7 +211154,7 @@
       - MAM03015r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211174,7 +211174,7 @@
       - MAM03015r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211255,7 +211255,7 @@
       - MAM03365r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211290,7 +211290,7 @@
       - MAM03366r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -211329,7 +211329,7 @@
       - MAM03366r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
@@ -275732,9 +275732,6 @@
     - id: ENSG00000141526
     - name: SLC16A3
   - !!omap
-    - id: ENSG00000141552
-    - name: ANAPC11
-  - !!omap
     - id: ENSG00000141560
     - name: FN3KRP
   - !!omap
@@ -276047,9 +276044,6 @@
     - id: ENSG00000146039
     - name: SLC17A4
   - !!omap
-    - id: ENSG00000146066
-    - name: HIGD2A
-  - !!omap
     - id: ENSG00000146070
     - name: PLA2G7
   - !!omap
@@ -276262,9 +276256,6 @@
   - !!omap
     - id: ENSG00000149925
     - name: ALDOA
-  - !!omap
-    - id: ENSG00000149929
-    - name: HIRIP3
   - !!omap
     - id: ENSG00000150540
     - name: HNMT
