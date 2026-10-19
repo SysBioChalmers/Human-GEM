@@ -29,7 +29,7 @@ Code used for technical purposes, typically to augment missing or inconvenient f
 ### modelCuration
 Contains curation-related scripts and functions used to make changes to the Human-GEM model. These model curation scripts help to improve transparency of changes made to the model when the number of changes is too large to view practically. Their only remaining purpose is for transparency and re-tracing the steps of the curation process.
 
-Note that code in this directory is often one-time use and will not be updated with later versions of Human-GEM. Deprecated code is moved to the `.deprecated` folder in the root directory of this repository.
+Note that code in this directory is often one-time use and will not be updated with later versions of Human-GEM. Code that is no longer maintained is removed; it remains in the git history, and the Human1-era code is also in the last Human1 release, [v1.19.0](https://github.com/SysBioChalmers/Human-GEM/releases/tag/v1.19.0) (see `.deprecated/README.md`).
 
 ### qc
 Functions to help with quality control (QC) of Human-GEM, such as checking for duplicate reactions or mass imbalances. `estimateReactionDeltaG.py` estimates the Gibbs energy of the reactions with eQuilibrator, for the reversibility check of the Model QC workflow.

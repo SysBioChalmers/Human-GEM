@@ -24,7 +24,7 @@ if strcmp(currVer,'develop')
     printOrange('WARNING: Cannot determine your RAVEN version as it is in a development branch.\n');
 else
     currVerNum = str2double(strsplit(currVer,'.'));
-    minmVer = '2.10.3';
+    minmVer = '2.11.4';
     minmVerNum = str2double(strsplit(minmVer,'.'));
     if currVerNum(1) ~= minmVerNum(1)
         wrongVersion = currVerNum(1) < minmVerNum(1);
