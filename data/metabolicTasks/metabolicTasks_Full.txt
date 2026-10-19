@@ -316,8 +316,8 @@
 							(11Z,14Z)-eicosadienoic acid[c]	1									
 	179	13Z,16Z-docosadienoic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e];linoleate[e]			CO2[e];H2O[e]										
 							(13Z,16Z)-docosadienoic acid[c]	1									
-	180	10,13,16-docosatriynoic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e];linoleate[e]			CO2[e];H2O[e]										
-							10,13,16-docosatriynoic acid[c]	1									
+	180	(10Z,13Z,16Z)-docosatrienoic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e];linoleate[e]			CO2[e];H2O[e]										
+							(10Z,13Z,16Z)-docosatrienoic acid[c]	1									
 	181	Lauric acid (complete oxidation)		lauric acid[e]	1	1	CO2[e];H2O[e]										
 				O2[e]													
 	182	Tridecylic acid (complete oxidation)		tridecylic acid[e]	1	1	CO2[e];H2O[e]										
@@ -434,7 +434,7 @@
 				O2[e]													
 	238	13Z,16Z-docosadienoic acid (complete oxidation)		(13Z,16Z)-docosadienoic acid[e]	1	1	CO2[e];H2O[e]										
 				O2[e]													
-	239	10,13,16-docosatriynoic acid (complete oxidation)		10,13,16-docosatriynoic acid[e]	1	1	CO2[e];H2O[e]										
+	239	(10Z,13Z,16Z)-docosatrienoic acid (complete oxidation)		(10Z,13Z,16Z)-docosatrienoic acid[e]	1	1	CO2[e];H2O[e]										
 				O2[e]													
 	240	Triacylglycerol de novo synthesis (physiological substrates, physiological excretion)		O2[e];glucose[e];linoleate[e];linolenate[e]			H2O[e];CO2[e]										
 							TAG-LD pool[c]	1									
