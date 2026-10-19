@@ -11,7 +11,10 @@ model/reactions.tsv, model/genes.tsv), aimed at catching curation mistakes:
   * Cross-compartment consistency. The same metabolite (same metsNoComp) in
     different compartments is the same chemical, so it should carry the same
     cross-references. When two compartments give different non-empty values for a
-    namespace, that is almost always a mistake.
+    namespace, that is almost always a mistake; when one compartment has a value
+    and another has none, the empty one is incomplete.
+  * Padding. A cell with leading or trailing whitespace holds an identifier that
+    does not resolve as written.
 
 Findings are written to data/testResults/qc_annotation_issues.csv and a coverage
 summary is printed, so a pull request that introduces a broken or inconsistent
@@ -38,7 +41,7 @@ MET_PATTERNS = {
     "metChEBIID": r"CHEBI:\d+",
     "metHMDBID": r"HMDB\d+",
     "metPubChemID": r"\d+",
-    "metMetaNetXID": r"MNXM\d+|WATER",  # WATER is MetaNetX's id for H2O
+    "metMetaNetXID": r"MNXM\d+|WATER|BIOMASS",  # MetaNetX's ids for H2O and biomass
     "metSeedID": r"cpd\d{5}",
     "metLipidMapsID": r"LM[A-Z]{2}\w+",
     "metEHMNID": r"C[A-Z]\d+",
@@ -69,6 +72,14 @@ CROSS_COMPARTMENT_COLS = [
 
 def _parts(value: str) -> set[str]:
     return {p.strip() for p in (value or "").split(";") if p.strip()}
+
+
+def _check_padding(rows: list, id_col: str, issues: list) -> None:
+    """Report every cell with leading or trailing whitespace."""
+    for row in rows:
+        for column, value in row.items():
+            if value is not None and value != value.strip():
+                issues.append((row[id_col], column, f"padded: {value!r}"))
 
 
 def _read_table(path: str, id_col: str, issues: list) -> list:
@@ -117,6 +128,9 @@ def _check_cross_compartment(rows: list, issues: list) -> None:
             if len(non_empty) > 1 and any(v != non_empty[0] for v in non_empty):
                 distinct = sorted({";".join(sorted(v)) for v in non_empty})
                 issues.append((base, column, "inconsistent across compartments: " + " | ".join(distinct)))
+            elif non_empty and len(non_empty) < len(values):
+                empty = sorted(m.get("mets", "") for m, v in zip(members, values) if not v)
+                issues.append((base, column, "incomplete across compartments: empty in " + ", ".join(empty)))
 
 
 def main() -> int:
@@ -124,6 +138,9 @@ def main() -> int:
     mets = _read_table(METABOLITES_TSV, "mets", issues)
     rxns = _read_table(REACTIONS_TSV, "rxns", issues)
     genes = _read_table(GENES_TSV, "genes", issues)
+
+    for rows, id_col in ((mets, "mets"), (rxns, "rxns"), (genes, "genes")):
+        _check_padding(rows, id_col, issues)
 
     coverage = {}
     coverage.update(_check_format(mets, "mets", MET_PATTERNS, issues))
@@ -139,12 +156,16 @@ def main() -> int:
 
     n_malformed = sum(1 for _, _, issue in issues if issue.startswith("malformed"))
     n_inconsistent = sum(1 for _, _, issue in issues if issue.startswith("inconsistent"))
+    n_incomplete = sum(1 for _, _, issue in issues if issue.startswith("incomplete"))
+    n_padded = sum(1 for _, _, issue in issues if issue.startswith("padded"))
     print("Cross-reference coverage (non-empty / total):")
     for column, (n_nonempty, total) in coverage.items():
         pct = (100 * n_nonempty / total) if total else 0
         print(f"  {column}: {n_nonempty}/{total} ({pct:.0f}%)")
     print(f"Malformed cross-reference identifiers: {n_malformed}")
     print(f"Cross-references inconsistent across compartments: {n_inconsistent}")
+    print(f"Cross-references missing in some compartments: {n_incomplete}")
+    print(f"Cells with leading or trailing whitespace: {n_padded}")
     return 0
 
 
