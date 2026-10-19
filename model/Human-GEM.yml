@@ -15421,13 +15421,6 @@
     - formula: C3H7NO2
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM01384c
-    - name: beta-carboline
-    - compartment: c
-    - charge: 0.0
-    - formula: C11H8N2
-    - metFrom: HMRdatabase
-  - !!omap
     - id: MAM01385c
     - name: beta-carotene
     - compartment: c
@@ -73808,19 +73801,6 @@
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
-    - id: MAR06709
-    - name: beta-carboline hydrolysis
-    - metabolites: !!omap
-      - MAM01384c: -1.0
-      - MAM02040c: -2.0
-      - MAM03089c: 1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR06711
     - name: S-Adenosyl-L-methionine:amine N-methyltransferase
     - metabolites: !!omap
@@ -74195,17 +74175,17 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06734
-    - name: salsolinol hydrolysis
+    - name: salsolinol formation
     - metabolites: !!omap
-      - MAM01249c: 1.0
-      - MAM01736c: 1.0
-      - MAM02040c: -1.0
-      - MAM02875c: -1.0
-    - lower_bound: -1000.0
+      - MAM01249c: -1.0
+      - MAM01736c: -1.0
+      - MAM02040c: 1.0
+      - MAM02875c: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - references: PMID:8891913;PMID:10556560;PMID:8891913;PMID:10556560;PMID:8891913;PMID:10556560
+    - references: PMID:8891913;PMID:10556560;PMID:8891913;PMID:10556560;PMID:8891913;PMID:10556560;doi:10.1111/j.1530-0277.1996.tb01049.x;doi:10.1016/s0379-0738(00)00225-5
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -74250,17 +74230,17 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06738
-    - name: salsolinol-1-carboxylate hydrolysis
+    - name: salsolinol-1-carboxylate formation
     - metabolites: !!omap
-      - MAM01736c: 1.0
-      - MAM02040c: -1.0
-      - MAM02819c: 1.0
-      - MAM02876c: -1.0
-    - lower_bound: -1000.0
+      - MAM01736c: -1.0
+      - MAM02040c: 1.0
+      - MAM02819c: -1.0
+      - MAM02876c: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - references: PMID:10556560;PMID:10556560;PMID:8891914;PMID:8891914;PMID:8891914;PMID:10556560
+    - references: PMID:10556560;PMID:10556560;PMID:8891914;PMID:8891914;PMID:8891914;PMID:10556560;doi:10.1111/j.1530-0277.1996.tb01049.x;doi:10.1016/s0379-0738(00)00225-5
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -75973,13 +75953,13 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06879
-    - name: 1,4-benzothiazine-O-quinonimine hydrolysis
+    - name: 5-(S-L-cysteinyl)-dopaquinone cyclisation
     - metabolites: !!omap
-      - MAM00249c: -1.0
-      - MAM01043c: 1.0
-      - MAM02039c: -1.0
-      - MAM02040c: -1.0
-    - lower_bound: -1000.0
+      - MAM00249c: 1.0
+      - MAM01043c: -1.0
+      - MAM02039c: 1.0
+      - MAM02040c: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
@@ -77849,7 +77829,7 @@
       - MAM02759c: 1.0
       - MAM02882c: 1.0
       - MAM02891c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000151224 or ENSG00000168906
     - subsystem:
@@ -145081,12 +145061,12 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04771
-    - name: uroporphyrinogen I hydrolysis
+    - name: hydroxymethylbilane cyclisation (uroporphyrinogen I)
     - metabolites: !!omap
-      - MAM02040c: -1.0
-      - MAM02151c: 1.0
-      - MAM03127c: -1.0
-    - lower_bound: -1000.0
+      - MAM02040c: 1.0
+      - MAM02151c: -1.0
+      - MAM03127c: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Porphyrin metabolism
@@ -150006,11 +149986,11 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07049
-    - name: 2-bromophenol to bromobenzene-2,3-oxide conversion
+    - name: bromobenzene-2,3-oxide to 2-bromophenol conversion
     - metabolites: !!omap
-      - MAM00637c: -1.0
-      - MAM01405c: 1.0
-    - lower_bound: -1000.0
+      - MAM00637c: 1.0
+      - MAM01405c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Xenobiotics metabolism
@@ -239941,7 +239921,7 @@
     - metabolites: !!omap
       - MAM01413c: 1.0
       - MAM01413e: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000006283 or ENSG00000081248 or ENSG00000100346 or ENSG00000102001 or ENSG00000127412 or ENSG00000141837 or ENSG00000148408 or ENSG00000151067 or ENSG00000157388 or ENSG00000160991 or ENSG00000165125 or ENSG00000175938 or ENSG00000196557 or ENSG00000198216 or ENSG00000276045
     - subsystem:
