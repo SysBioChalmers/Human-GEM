@@ -176418,13 +176418,12 @@
       - MAM02041e: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000165272 or ENSG00000103375 or ENSG00000103569 or ENSG00000240583
+    - gene_reaction_rule: ENSG00000165272 or ENSG00000103375 or ENSG00000103569
     - subsystem:
       - Transport reactions
-    - references: PMID:20724658;PMID:31546170;doi:10.1126/scitranslmed.aay2176
+    - references: PMID:20724658;PMID:31546170
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: AQP1 transports H2O2 in human and mouse cardiomyocytes (PMID:33028705) but not in HEK293 cells (PMID:20724658).
   - !!omap
     - id: MAR08420
     - name: transport of 2,6-dimethylheptanoyl-carnitine (cytosol to extracellular)
