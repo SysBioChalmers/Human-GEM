@@ -1,4 +1,4 @@
-"""check_name_consistency flags missing names and names that disagree by compartment."""
+"""qcModelChecks: name consistency, identifier format and the growth medium."""
 
 import cobra
 import pytest
@@ -64,3 +64,75 @@ def test_rows_are_written_to_the_csv(csv_path):
     contents = csv_path.read_text(encoding="utf-8").splitlines()
     assert contents[0] == "kind,id,issue"
     assert any("MAM00001c" in line for line in contents[1:])
+
+
+@pytest.fixture
+def tables(tmp_path, monkeypatch):
+    """Model tables and deprecated lists in a temporary directory."""
+    def write(name, header, ids):
+        path = tmp_path / name
+        empty = "\t" * header.count("\t")  # the other columns stay empty
+        path.write_text(header + "\n" + "".join(f"{i}{empty}\n" for i in ids), encoding="utf-8")
+        return str(path)
+
+    def setup(rxns, mets, genes):
+        monkeypatch.setattr(qcModelChecks, "REACTIONS_TSV", write("reactions.tsv", "rxns\tspontaneous", rxns))
+        monkeypatch.setattr(qcModelChecks, "METABOLITES_TSV", write("metabolites.tsv", "mets", mets))
+        monkeypatch.setattr(qcModelChecks, "GENES_TSV", write("genes.tsv", "genes", genes))
+        monkeypatch.setattr(qcModelChecks, "DEPRECATED_RXN_TSV", write("depr.tsv", "rxns", []))
+        monkeypatch.setattr(qcModelChecks, "DEPRECATED_MET_TSV", write("depm.tsv", "mets", []))
+        monkeypatch.setattr(qcModelChecks, "ANNOTATION_CONSISTENCY_CSV", str(tmp_path / "out.csv"))
+    return setup
+
+
+def _id_model(rxn_id, met_id, gene_id):
+    model = cobra.Model("ids")
+    reaction = cobra.Reaction(rxn_id)
+    reaction.add_metabolites({cobra.Metabolite(met_id, compartment=met_id[-1]): -1})
+    reaction.gene_reaction_rule = gene_id
+    model.add_reactions([reaction])
+    return model
+
+
+def _format_issues(issues):
+    return sorted((kind, i) for kind, i, issue in issues if issue.startswith(qcModelChecks.ID_FORMAT_ISSUE))
+
+
+def test_human_gem_identifiers_pass_the_format_check(tables):
+    tables(["MAR00001"], ["MAM00001c"], ["ENSG00000000419"])
+    issues = qcModelChecks.check_annotation_consistency(_id_model("MAR00001", "MAM00001c", "ENSG00000000419"))
+    assert _format_issues(issues) == []
+
+
+def test_six_digit_and_malformed_identifiers_are_flagged(tables):
+    tables(["MAR020190"], ["MAM0001c"], ["ENSG0000000041"])
+    issues = qcModelChecks.check_annotation_consistency(_id_model("MAR020190", "MAM0001c", "ENSG0000000041"))
+    assert _format_issues(issues) == [
+        ("gene", "ENSG0000000041"), ("metabolite", "MAM0001c"), ("reaction", "MAR020190")]
+
+
+def test_growth_medium_opens_the_task_inputs_capped(tmp_path, monkeypatch):
+    tasks = tmp_path / "tasks.txt"
+    tasks.write_text(
+        "\tID\tDESCRIPTION\tIN\tOUT\n"
+        "\tER\tother task\tlactate[e]\t\n"
+        "\tGR\tgrowth\tglucose[e]\tbiomass[e]\n"
+        "\t\t\tO2[e]\t\n"
+        "\t\t\tfructose[e]\t\n", encoding="utf-8")
+    inputs = qcModelChecks._medium_inputs(str(tasks))
+    assert inputs == ["glucose[e]", "O2[e]", "fructose[e]"]  # the GR task's inputs only
+    monkeypatch.setattr(qcModelChecks, "_medium_inputs", lambda: inputs)
+    model = cobra.Model("medium")
+    for mid, name in (("glc_e", "glucose"), ("o2_e", "O2"), ("lac_e", "lactate")):
+        exchange = cobra.Reaction(f"EX_{mid}", lower_bound=-1000, upper_bound=1000)
+        exchange.add_metabolites({cobra.Metabolite(mid, name=name, compartment="e"): -1})
+        model.add_reactions([exchange])
+    with model:
+        unresolved = qcModelChecks.apply_growth_medium(model)
+        bounds = {r.id: r.lower_bound for r in model.reactions}
+    assert unresolved == ["fructose[e]"]
+    assert bounds["EX_lac_e"] == 0  # not a GR input: uptake closed
+    expected = {"glucose": "EX_glc_e", "O2": "EX_o2_e"}
+    for name, rid in expected.items():
+        cap = 1000.0 if name in qcModelChecks.MEDIUM_UNCAPPED else qcModelChecks.MEDIUM_UPTAKE_CAP
+        assert bounds[rid] == -cap

@@ -9,6 +9,9 @@ Checks split into two kinds:
 
   * Gates (fail the build): a model that has these problems is broken.
       - duplicate keys inside an !!omap entry (cobra cannot load the model);
+      - a reaction, metabolite or gene identifier, in the model or its tables, that
+        is not in Human-GEM's format (MAR + 5 digits, MAM + 5 digits + compartment
+        letter, ENSG + 11 digits);
       - the model cannot produce biomass on a defined medium (Ham's medium from the
         GR metabolic task, each nutrient's uptake capped; the blocking biomass
         precursors are written out so it can be fixed).
@@ -31,6 +34,7 @@ Usage:
 
 import csv
 import os
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -68,6 +72,15 @@ GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
 BASE_MODEL_DIR = os.environ.get("BASE_MODEL_DIR", "")
 
 GROWTH_TOLERANCE = 1e-6
+
+# Identifier formats. A reaction or metabolite number has exactly five digits; a
+# six-digit id such as MAR020190 is not a new number but a malformed one.
+ID_FORMATS = {
+    "reaction": re.compile(r"MAR\d{5}"),
+    "metabolite": re.compile(r"MAM\d{5}[a-z]"),
+    "gene": re.compile(r"ENSG\d{11}"),
+}
+ID_FORMAT_ISSUE = "identifier not in the Human-GEM format"
 
 # Growth is tested on a defined medium rather than the model's default bounds, which
 # leave most uptakes open at 1000: there the value mostly reflects which uptake and
@@ -201,6 +214,15 @@ def check_annotation_consistency(model: cobra.Model) -> list[tuple]:
     # genes.tsv has no deprecated list; only check presence in both directions.
     compare("gene",
             {g.id for g in model.genes}, set(_tsv_column(GENES_TSV, "genes")), set())
+
+    # Every id, in the model or in a table, must have the Human-GEM format.
+    for kind, ids in (
+        ("reaction", {r.id for r in model.reactions} | set(_tsv_column(REACTIONS_TSV, "rxns"))),
+        ("metabolite", {m.id for m in model.metabolites} | set(_tsv_column(METABOLITES_TSV, "mets"))),
+        ("gene", {g.id for g in model.genes} | set(_tsv_column(GENES_TSV, "genes"))),
+    ):
+        for bad in sorted(i for i in ids if not ID_FORMATS[kind].fullmatch(i)):
+            issues.append((kind, bad, f"{ID_FORMAT_ISSUE} ({ID_FORMATS[kind].pattern})"))
 
     # A metabolite id ends in its compartment; a mismatch puts the metabolite somewhere
     # other than its id says, which no id-based review can see.
@@ -524,8 +546,8 @@ def main() -> int:
 
     # Non-blocking checks: written to CSV and tracked with a delta in the comment
     # (a rising count shows as a regression), but they do not fail the build. The
-    # only gate that blocks the merge here is growth (and duplicate keys above,
-    # which stops the model loading at all).
+    # gates that block the merge here are malformed identifiers and growth (and
+    # duplicate keys above, which stops the model loading at all).
     empty = check_empty_reactions(model)
     if empty:
         print(f"::warning::{len(empty)} reaction(s) have no metabolites; see {EMPTY_RXN_CSV}.")
@@ -534,6 +556,11 @@ def main() -> int:
     if annotation:
         print(f"::warning::{len(annotation)} model/annotation-table inconsistency(ies); "
               f"see {ANNOTATION_CONSISTENCY_CSV}.")
+    malformed_ids = [row for row in annotation if row[2].startswith(ID_FORMAT_ISSUE)]
+    if malformed_ids:
+        for kind, entity_id, issue in malformed_ids:
+            print(f"::error::{kind} {entity_id}: {issue}.")
+        gate_failed = True
 
     undeprecated = check_deprecation_completeness(model)
     if undeprecated:
