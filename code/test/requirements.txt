@@ -2,9 +2,13 @@
 # (testYamlConversion.py, testMetabolicTasks.py).
 #
 # raven-toolbox is the Python reimplementation of the RAVEN toolbox and pulls in
-# cobra, pandas and an LP interface. It is not on PyPI, so it is installed from
-# source. cobra ships GLPK, which is sufficient for the task-feasibility LPs used
-# by these two tests, so no commercial solver is required here.
+# cobra, pandas and an LP interface. Its PyPI release (3.0.0b1) predates features the
+# Human-GEM code uses (set_model_metadata, the .mat and SBML export fixes), so it is
+# installed from a fixed commit of its develop branch; the gene-essentiality results
+# record the commit they were computed with. Move the pin deliberately, and to a
+# PyPI release once one carries these features. cobra ships GLPK, which is
+# sufficient for the task-feasibility LPs used by these two tests, so no commercial
+# solver is required here.
 #
 # The gene-essentiality workflow additionally needs Gurobi for the tINIT MILP;
 # its extra dependencies live in requirements-gurobi.txt.
@@ -12,7 +16,7 @@
 # qcModelChecks.py reads model/Human-GEM.yml with PyYAML to find duplicate keys,
 # which it has to do before cobra loads the file. It was reaching PyYAML through
 # another package's dependencies rather than declaring it.
-raven-toolbox @ git+https://github.com/SysBioChalmers/raven-toolbox.git
+raven-toolbox @ git+https://github.com/CompMetEng/raven-toolbox.git@ee0f8868bcc4a6f907913151a1e54dcbb4f2a160
 cobra
 pandas
 pyyaml
