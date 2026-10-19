@@ -79444,7 +79444,7 @@
       - O-glycan metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.4.1.102
+        - 2.4.1.-
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -214508,7 +214508,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.21
+        - 2.3.1.-
     - references: PMID:8930414;PMID:14518824
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -214527,7 +214527,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.21
+        - 2.3.1.137
     - references: PMID:8214594;PMID:8496747;PMID:8491807
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -214590,7 +214590,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.21
+        - 2.3.1.-
     - rxnFrom: Recon3D
     - confidence_score: 0.0
     - notes: DOI:10.1016/j.physletb.2003.10.071
@@ -217288,7 +217288,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.21
+        - 2.3.1.-
     - references: PMID:15060085
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -217330,7 +217330,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.21
+        - 2.3.1.-
     - references: PMID:16602100
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -218570,9 +218570,6 @@
     - gene_reaction_rule: ENSG00000133313
     - subsystem:
       - Peptide metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 3.4.13.18
     - references: PMID:6993048;PMID:4652039;PMID:4919261;PMID:20178671;PMID:12473676
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -218962,7 +218959,7 @@
       - Peptide metabolism
     - annotation: !!omap
       - ec-code:
-        - 3.4.14.9
+        - 3.4.13.-
     - references: PMID:6746633;PMID:4778946;PMID:7171621;PMID:3293467
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -219423,7 +219420,7 @@
       - Peptide metabolism
     - annotation: !!omap
       - ec-code:
-        - 3.4.13.9
+        - 3.4.13.-
     - references: PMID:15552267
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -227070,7 +227067,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 3.1.2.2
+        - 3.1.2.-
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -267353,7 +267350,7 @@
       - Retinol metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.105
+        - 1.1.1.1
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
