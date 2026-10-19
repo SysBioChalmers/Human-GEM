@@ -267271,7 +267271,7 @@
     - confidence_score: 4.0
   - !!omap
     - id: MAR20001
-    - name: MAR20001
+    - name: all-trans-retinol dehydrogenase (NAD(+)) (retinol)
     - metabolites: !!omap
       - MAM02039n: 1.0
       - MAM02552n: -1.0
@@ -267290,7 +267290,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20003
-    - name: MAR20003
+    - name: alcohol dehydrogenase (9-cis-retinol)
     - metabolites: !!omap
       - MAM01230n: 1.0
       - MAM01232n: -1.0
@@ -267309,7 +267309,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20005
-    - name: MAR20005
+    - name: aldehyde dehydrogenase (NAD(+)) (20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate)
     - metabolites: !!omap
       - MAM02039n: 2.0
       - MAM02040n: -1.0
@@ -267329,7 +267329,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20006
-    - name: MAR20006
+    - name: aldehyde dehydrogenase (NAD(+)) (20-oxo-(5Z,8Z,11Z,14Z)-eicosatetraenoate)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -267349,7 +267349,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20007
-    - name: MAR20007
+    - name: alcohol dehydrogenase (20-HETE)
     - metabolites: !!omap
       - MAM00270n: -1.0
       - MAM02039n: 1.0
@@ -267368,7 +267368,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20008
-    - name: MAR20008
+    - name: alcohol dehydrogenase (20-HETE)
     - metabolites: !!omap
       - MAM00270c: -1.0
       - MAM02039c: 1.0
@@ -267387,7 +267387,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20009
-    - name: MAR20009
+    - name: NAD(P)H dehydrogenase (quinone) (1,4-benzoquinone)
     - metabolites: !!omap
       - MAM02039n: -1.0
       - MAM02552n: 1.0
@@ -267408,7 +267408,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20010
-    - name: MAR20010
+    - name: NAD(P)H dehydrogenase (quinone) (1,4-benzoquinone)
     - metabolites: !!omap
       - MAM02039c: -1.0
       - MAM02552c: 1.0
@@ -267429,7 +267429,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20011
-    - name: MAR20011
+    - name: retinal dehydrogenase (retinal)
     - metabolites: !!omap
       - MAM02039n: 2.0
       - MAM02040n: -1.0
@@ -267449,7 +267449,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20013
-    - name: MAR20013
+    - name: hydroxyacid-oxoacid transhydrogenase ((S)-3-hydroxybutanoate)
     - metabolites: !!omap
       - MAM01253m: 1.0
       - MAM01306m: -1.0
@@ -267467,7 +267467,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20016
-    - name: MAR20016
+    - name: long-chain-aldehyde dehydrogenase (palmitate)
     - metabolites: !!omap
       - MAM02039c: -2.0
       - MAM02040c: 1.0
@@ -267487,7 +267487,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20017
-    - name: MAR20017
+    - name: aldehyde dehydrogenase (NAD(+)) (octanal)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -267657,7 +267657,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20033
-    - name: MAR20033
+    - name: aldose 1-epimerase (galactose)
     - metabolites: !!omap
       - MAM01910n: -1.0
       - MAM20032n: 1.0
@@ -267673,7 +267673,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20034
-    - name: MAR20034
+    - name: aldose 1-epimerase (galactose)
     - metabolites: !!omap
       - MAM01910c: -1.0
       - MAM20032c: 1.0
@@ -267689,7 +267689,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20035
-    - name: MAR20035
+    - name: aldose 1-epimerase (alpha-D-glucose)
     - metabolites: !!omap
       - MAM01388n: 1.0
       - MAM20034n: -1.0
@@ -267705,7 +267705,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20036
-    - name: MAR20036
+    - name: aldose 1-epimerase (alpha-D-glucose)
     - metabolites: !!omap
       - MAM01388c: 1.0
       - MAM20034c: -1.0
@@ -267721,7 +267721,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20037
-    - name: MAR20037
+    - name: aldehyde dehydrogenase (NADP(+)) (octanal)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -267742,7 +267742,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20038
-    - name: MAR20038
+    - name: benzaldehyde dehydrogenase (NADP(+))
     - metabolites: !!omap
       - MAM01380c: 1.0
       - MAM02039c: 2.0
@@ -267762,7 +267762,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20039
-    - name: MAR20039
+    - name: benzaldehyde dehydrogenase (NAD(+))
     - metabolites: !!omap
       - MAM01380c: 1.0
       - MAM02039c: 2.0
@@ -267782,7 +267782,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20040
-    - name: MAR20040
+    - name: aldehyde dehydrogenase (NADP(+)) (hexanal)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -267803,7 +267803,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20041
-    - name: MAR20041
+    - name: aldehyde dehydrogenase (NADP(+)) (4-hydroxy-2-nonenal)
     - metabolites: !!omap
       - MAM00988c: -1.0
       - MAM02039c: 2.0
@@ -267823,7 +267823,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20042
-    - name: MAR20042
+    - name: aldehyde dehydrogenase (NADP(+)) ((2E)-octenal)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -267843,7 +267843,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20043
-    - name: MAR20043
+    - name: aldehyde dehydrogenase (NAD(+)) ((2E)-octenal)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -267863,7 +267863,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20044
-    - name: MAR20044
+    - name: S-(hydroxymethyl)glutathione dehydrogenase (NADP(+))
     - metabolites: !!omap
       - MAM01837c: 1.0
       - MAM02039c: 1.0
@@ -267882,7 +267882,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20046
-    - name: MAR20046
+    - name: long-chain-aldehyde dehydrogenase (hexadecenal)
     - metabolites: !!omap
       - MAM02039r: 2.0
       - MAM02040r: -1.0
@@ -267902,7 +267902,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20047
-    - name: MAR20047
+    - name: long-chain-aldehyde dehydrogenase (hexadecenal)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -267922,7 +267922,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20048
-    - name: MAR20048
+    - name: long-chain-aldehyde dehydrogenase (palmitate)
     - metabolites: !!omap
       - MAM02039r: -2.0
       - MAM02040r: 1.0
@@ -267942,7 +267942,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20049
-    - name: MAR20049
+    - name: long-chain-aldehyde dehydrogenase (22-oxodocosanoate)
     - metabolites: !!omap
       - MAM02039r: 2.0
       - MAM02040r: -1.0
@@ -267962,7 +267962,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20050
-    - name: MAR20050
+    - name: long-chain-aldehyde dehydrogenase (22-oxodocosanoate)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -267982,7 +267982,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20051
-    - name: MAR20051
+    - name: long-chain-aldehyde dehydrogenase (2(S)-pristanal)
     - metabolites: !!omap
       - MAM00564r: -1.0
       - MAM02039r: 2.0
@@ -268002,7 +268002,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20053
-    - name: MAR20053
+    - name: long-chain-aldehyde dehydrogenase (octadecanal)
     - metabolites: !!omap
       - MAM02039r: 2.0
       - MAM02040r: -1.0
@@ -268022,7 +268022,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20054
-    - name: MAR20054
+    - name: long-chain-aldehyde dehydrogenase (octadecanal)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -268042,7 +268042,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20055
-    - name: MAR20055
+    - name: long-chain-aldehyde dehydrogenase (lauric acid)
     - metabolites: !!omap
       - MAM02039r: -2.0
       - MAM02040r: 1.0
@@ -268064,7 +268064,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20056
-    - name: MAR20056
+    - name: long-chain-aldehyde dehydrogenase (lauric acid)
     - metabolites: !!omap
       - MAM02039c: -2.0
       - MAM02040c: 1.0
@@ -268086,7 +268086,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20057
-    - name: MAR20057
+    - name: long-chain-aldehyde dehydrogenase (decanal)
     - metabolites: !!omap
       - MAM01648r: 1.0
       - MAM02039r: 2.0
@@ -268108,7 +268108,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20058
-    - name: MAR20058
+    - name: long-chain-aldehyde dehydrogenase (decanal)
     - metabolites: !!omap
       - MAM01648c: 1.0
       - MAM02039c: 2.0
@@ -268130,7 +268130,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20059
-    - name: MAR20059
+    - name: long-chain-aldehyde dehydrogenase (tetradecanal)
     - metabolites: !!omap
       - MAM02039r: 2.0
       - MAM02040r: -1.0
@@ -268151,7 +268151,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20060
-    - name: MAR20060
+    - name: long-chain-aldehyde dehydrogenase (tetradecanal)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -268172,7 +268172,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20061
-    - name: MAR20061
+    - name: aldehyde dehydrogenase (NAD(+)) (octanal)
     - metabolites: !!omap
       - MAM02039r: 2.0
       - MAM02040r: -1.0
@@ -268194,7 +268194,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20062
-    - name: MAR20062
+    - name: aldehyde dehydrogenase (NAD(+)) (heptanal)
     - metabolites: !!omap
       - MAM02039r: 2.0
       - MAM02040r: -1.0
@@ -268215,7 +268215,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20063
-    - name: MAR20063
+    - name: aldehyde dehydrogenase (NAD(+)) (heptanal)
     - metabolites: !!omap
       - MAM02039c: 2.0
       - MAM02040c: -1.0
@@ -268236,7 +268236,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20064
-    - name: MAR20064
+    - name: farnesal dehydrogenase
     - metabolites: !!omap
       - MAM00677r: -1.0
       - MAM02039r: 2.0
@@ -268256,7 +268256,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20065
-    - name: MAR20065
+    - name: farnesal dehydrogenase
     - metabolites: !!omap
       - MAM00677c: -1.0
       - MAM02039c: 2.0
@@ -268276,7 +268276,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20067
-    - name: MAR20067
+    - name: alcohol dehydrogenase (all-trans-4-hydroxyretinol)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02552c: -1.0
@@ -268295,7 +268295,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20068
-    - name: MAR20068
+    - name: alcohol dehydrogenase (4-oxoretinol)
     - metabolites: !!omap
       - MAM01032c: -1.0
       - MAM02039c: 1.0
@@ -268314,7 +268314,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20069
-    - name: MAR20069
+    - name: pyruvate dehydrogenase (acetyl-transferring) (2-(alpha-hydroxyethyl)thiamine-diphosphate)
     - metabolites: !!omap
       - MAM00561m: -1.0
       - MAM02393m: -1.0
@@ -268329,7 +268329,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20070
-    - name: MAR20070
+    - name: fructose-bisphosphatase (sedoheptulose-1,7-bisphosphate)
     - metabolites: !!omap
       - MAM02040c: -1.0
       - MAM02751c: 1.0
@@ -268348,7 +268348,7 @@
     - notes: https://doi.org/10.1007/BF02702726
   - !!omap
     - id: MAR20071
-    - name: MAR20071
+    - name: gamma-glutamylamine cyclotransferase (epsilon-(gamma-L-Glutamyl)-L-lysine)
     - metabolites: !!omap
       - MAM01127c: 1.0
       - MAM02426c: 1.0
@@ -268365,7 +268365,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20072
-    - name: MAR20072
+    - name: gamma-glutamylamine cyclotransferase (epsilon-(gamma-L-Glutamyl)-L-lysine)
     - metabolites: !!omap
       - MAM01127n: 1.0
       - MAM02426n: 1.0
@@ -268382,7 +268382,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20073
-    - name: MAR20073
+    - name: ceramidase (N-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sphinganine)
     - metabolites: !!omap
       - MAM01362r: 1.0
       - MAM02040r: -1.0
@@ -268400,7 +268400,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20074
-    - name: MAR20074
+    - name: ceramidase (N-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sphinganine)
     - metabolites: !!omap
       - MAM01362g: 1.0
       - MAM02040g: -1.0
@@ -268418,7 +268418,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20075
-    - name: MAR20075
+    - name: ceramidase (N-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-(4R)-hydroxysphinganine)
     - metabolites: !!omap
       - MAM01362r: 1.0
       - MAM02040r: -1.0
@@ -268436,7 +268436,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20076
-    - name: MAR20076
+    - name: ceramidase (N-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-(4R)-hydroxysphinganine)
     - metabolites: !!omap
       - MAM01362g: 1.0
       - MAM02040g: -1.0
@@ -268454,7 +268454,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20077
-    - name: MAR20077
+    - name: ceramidase (N-(11Z-eicosenoyl)-sphing-4-enine)
     - metabolites: !!omap
       - MAM01584r: 1.0
       - MAM02040r: -1.0
@@ -268472,7 +268472,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20078
-    - name: MAR20078
+    - name: ceramidase (N-(11Z-eicosenoyl)-sphing-4-enine)
     - metabolites: !!omap
       - MAM01584g: 1.0
       - MAM02040g: -1.0
@@ -268490,7 +268490,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20079
-    - name: MAR20079
+    - name: ceramidase (N-(11Z-eicosenoyl)-sphinganine)
     - metabolites: !!omap
       - MAM01584r: 1.0
       - MAM02040r: -1.0
@@ -268508,7 +268508,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20080
-    - name: MAR20080
+    - name: ceramidase (N-(11Z-eicosenoyl)-sphinganine)
     - metabolites: !!omap
       - MAM01584g: 1.0
       - MAM02040g: -1.0
@@ -268526,7 +268526,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20081
-    - name: MAR20081
+    - name: ceramidase (N-(11Z-eicosenoyl)-(4R)-hydroxysphinganine)
     - metabolites: !!omap
       - MAM01584r: 1.0
       - MAM02040r: -1.0
@@ -268544,7 +268544,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20082
-    - name: MAR20082
+    - name: ceramidase (N-(11Z-eicosenoyl)-(4R)-hydroxysphinganine)
     - metabolites: !!omap
       - MAM01584g: 1.0
       - MAM02040g: -1.0
@@ -268562,7 +268562,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20083
-    - name: MAR20083
+    - name: ceramidase (N-(9Z-octadecenoyl)-sphing-4-enine)
     - metabolites: !!omap
       - MAM02040r: -1.0
       - MAM02646r: 1.0
@@ -268580,7 +268580,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20084
-    - name: MAR20084
+    - name: ceramidase (N-(9Z-octadecenoyl)-sphing-4-enine, elaidate-forming)
     - metabolites: !!omap
       - MAM01778g: 1.0
       - MAM02040g: -1.0
@@ -268598,7 +268598,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20085
-    - name: MAR20085
+    - name: ceramidase (N-(9Z-octadecenoyl)-sphinganine)
     - metabolites: !!omap
       - MAM02040r: -1.0
       - MAM02646r: 1.0
@@ -268616,7 +268616,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20086
-    - name: MAR20086
+    - name: ceramidase (N-(9Z-octadecenoyl)-sphinganine, elaidate-forming)
     - metabolites: !!omap
       - MAM01778g: 1.0
       - MAM02040g: -1.0
@@ -268634,7 +268634,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20087
-    - name: MAR20087
+    - name: ceramidase (N-(9Z-octadecenoyl)-(4R)-hydroxysphinganine)
     - metabolites: !!omap
       - MAM02040r: -1.0
       - MAM02646r: 1.0
@@ -268652,7 +268652,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20088
-    - name: MAR20088
+    - name: ceramidase (N-(9Z-octadecenoyl)-(4R)-hydroxysphinganine, elaidate-forming)
     - metabolites: !!omap
       - MAM01778g: 1.0
       - MAM02040g: -1.0
@@ -268670,7 +268670,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20090
-    - name: MAR20090
+    - name: heme o synthase (heme)
     - metabolites: !!omap
       - MAM01806m: -1.0
       - MAM02040m: -1.0
@@ -268690,7 +268690,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20091
-    - name: MAR20091
+    - name: heme o synthase (heme)
     - metabolites: !!omap
       - MAM01806c: -1.0
       - MAM02040c: -1.0
@@ -268710,7 +268710,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20092
-    - name: MAR20092
+    - name: heme o synthase (heme)
     - metabolites: !!omap
       - MAM01806n: -1.0
       - MAM02040n: -1.0
@@ -268730,7 +268730,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20093
-    - name: MAR20093
+    - name: N-(long-chain-acyl)ethanolamine deacylase (Palmitoylethanolamide)
     - metabolites: !!omap
       - MAM01797c: 1.0
       - MAM02040c: -1.0
@@ -268749,7 +268749,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20094
-    - name: MAR20094
+    - name: N-(long-chain-acyl)ethanolamine deacylase (C12:0-Ethanolamide, Didecanoyl Ethanolamide)
     - metabolites: !!omap
       - MAM01797c: 1.0
       - MAM02040c: -1.0
@@ -268767,7 +268767,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20095
-    - name: MAR20095
+    - name: N-(long-chain-acyl)ethanolamine deacylase (C14:0-Ethanolamide, Tetradecanoyl Ethanolamide)
     - metabolites: !!omap
       - MAM01797c: 1.0
       - MAM02040c: -1.0
@@ -268785,7 +268785,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20096
-    - name: MAR20096
+    - name: ceramidase (N-hexadecanoylsphing-4-enine)
     - metabolites: !!omap
       - MAM02040c: -1.0
       - MAM02674c: 1.0
@@ -268803,7 +268803,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20097
-    - name: MAR20097
+    - name: ceramidase (N-dodecanoylsphing-4-enine)
     - metabolites: !!omap
       - MAM02040c: -1.0
       - MAM02344c: 1.0
@@ -268821,7 +268821,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20098
-    - name: MAR20098
+    - name: ditrans,polycis-polyprenyl diphosphate synthase (farnesyl-PP)
     - metabolites: !!omap
       - MAM01657r: 1.0
       - MAM01806r: -1.0
@@ -268839,7 +268839,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20099
-    - name: MAR20099
+    - name: O-acetyl-ADP-ribose deacetylase (2-O-acetyl-ADP-D-ribose)
     - metabolites: !!omap
       - MAM01252n: 1.0
       - MAM01288n: 1.0
@@ -268858,7 +268858,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20100
-    - name: MAR20100
+    - name: NAD(+) glycohydrolase (alpha-NAD(+))
     - metabolites: !!omap
       - MAM01288n: 1.0
       - MAM02039n: 1.0
@@ -268877,7 +268877,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20101
-    - name: MAR20101
+    - name: O-acetyl-ADP-ribose deacetylase (3-O-acetyl-ADP-D-ribose)
     - metabolites: !!omap
       - MAM01252n: 1.0
       - MAM01288n: 1.0
@@ -268897,7 +268897,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20102
-    - name: MAR20102
+    - name: UbiA prenyltransferase domain-containing protein 1 (menadiol)
     - metabolites: !!omap
       - MAM02759c: 1.0
       - MAM03590c: -1.0
@@ -268915,7 +268915,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20103
-    - name: MAR20103
+    - name: UbiA prenyltransferase domain-containing protein 1 (menadiol)
     - metabolites: !!omap
       - MAM02759r: 1.0
       - MAM03590r: -1.0
@@ -268933,7 +268933,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20104
-    - name: MAR20104
+    - name: UbiA prenyltransferase domain-containing protein 1 (menadiol)
     - metabolites: !!omap
       - MAM02759g: 1.0
       - MAM03590g: -1.0
@@ -268951,7 +268951,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20105
-    - name: MAR20105
+    - name: UbiA prenyltransferase domain-containing protein 1 (menadiol)
     - metabolites: !!omap
       - MAM02759n: 1.0
       - MAM03590n: -1.0
@@ -268969,7 +268969,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20106
-    - name: MAR20106
+    - name: 4-hydroxybenzoate polyprenyltransferase (4-hydroxybenzoate)
     - metabolites: !!omap
       - MAM00767c: 1.0
       - MAM00995c: -1.0
@@ -268987,7 +268987,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20107
-    - name: MAR20107
+    - name: 4-hydroxybenzoate polyprenyltransferase (4-hydroxybenzoate)
     - metabolites: !!omap
       - MAM00767r: 1.0
       - MAM00995r: -1.0
@@ -269005,7 +269005,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20108
-    - name: MAR20108
+    - name: 4-hydroxybenzoate polyprenyltransferase (4-hydroxybenzoate)
     - metabolites: !!omap
       - MAM00767g: 1.0
       - MAM00995g: -1.0
@@ -269023,7 +269023,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20109
-    - name: MAR20109
+    - name: 4-hydroxybenzoate polyprenyltransferase (4-hydroxybenzoate)
     - metabolites: !!omap
       - MAM00767n: 1.0
       - MAM00995n: -1.0
@@ -269041,7 +269041,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20110
-    - name: MAR20110
+    - name: oxaloacetate decarboxylase
     - metabolites: !!omap
       - MAM01596m: 1.0
       - MAM02039m: -1.0
@@ -269060,7 +269060,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20111
-    - name: MAR20111
+    - name: malate synthase (glyoxalate)
     - metabolites: !!omap
       - MAM01261m: -1.0
       - MAM01597m: 1.0
@@ -269081,7 +269081,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20112
-    - name: MAR20112
+    - name: biotin carboxylase (apoC-lys_btn)
     - metabolites: !!omap
       - MAM01285m: 1.0
       - MAM01357m: -1.0
@@ -269103,7 +269103,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20113
-    - name: MAR20113
+    - name: transport of [apocarboxylase] (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM00185c: -1.0
       - MAM00185m: 1.0
@@ -269131,7 +269131,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20115
-    - name: MAR20115
+    - name: transport of AMP (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01334c: -1.0
       - MAM01334x: 1.0
@@ -269145,7 +269145,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20116
-    - name: MAR20116
+    - name: transport of ADP (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01285c: -1.0
       - MAM01285x: 1.0
@@ -269159,7 +269159,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20117
-    - name: MAR20117
+    - name: FAD diphosphatase
     - metabolites: !!omap
       - MAM01334x: 1.0
       - MAM01802x: -1.0
@@ -269175,7 +269175,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20118
-    - name: MAR20118
+    - name: transport of CoA (peroxisome to cytosol) and FMN (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01597c: 1.0
       - MAM01597x: -1.0
@@ -269191,7 +269191,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20119
-    - name: MAR20119
+    - name: transport of FAD (peroxisome to cytosol) and FMN (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01802c: 1.0
       - MAM01802x: -1.0
@@ -269207,7 +269207,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20120
-    - name: MAR20120
+    - name: transport of FMN (cytosol to peroxisome) and NAD+ (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM01828c: -1.0
       - MAM01828x: 1.0
@@ -269223,7 +269223,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20121
-    - name: MAR20121
+    - name: transport of AMP (peroxisome to cytosol) and FMN (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01334c: 1.0
       - MAM01334x: -1.0
@@ -269239,7 +269239,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20122
-    - name: MAR20122
+    - name: transport of ADP (peroxisome to cytosol) and FMN (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01285x: -1.0
@@ -269255,7 +269255,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20123
-    - name: MAR20123
+    - name: transport of CoA (peroxisome to cytosol) and FAD (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01597c: 1.0
       - MAM01597x: -1.0
@@ -269271,7 +269271,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20124
-    - name: MAR20124
+    - name: transport of FAD (cytosol to peroxisome) and NAD+ (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM01802c: -1.0
       - MAM01802x: 1.0
@@ -269287,7 +269287,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20125
-    - name: MAR20125
+    - name: transport of AMP (peroxisome to cytosol) and FAD (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01334c: 1.0
       - MAM01334x: -1.0
@@ -269303,7 +269303,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20126
-    - name: MAR20126
+    - name: transport of ADP (peroxisome to cytosol) and FAD (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01285x: -1.0
@@ -269319,7 +269319,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20127
-    - name: MAR20127
+    - name: transport of CoA (peroxisome to cytosol) and NAD+ (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01597c: 1.0
       - MAM01597x: -1.0
@@ -269335,7 +269335,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20128
-    - name: MAR20128
+    - name: transport of AMP (peroxisome to cytosol) and NAD+ (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01334c: 1.0
       - MAM01334x: -1.0
@@ -269351,7 +269351,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20129
-    - name: MAR20129
+    - name: transport of ADP (peroxisome to cytosol) and NAD+ (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01285x: -1.0
@@ -269367,7 +269367,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20130
-    - name: MAR20130
+    - name: transport of AMP (cytosol to peroxisome) and CoA (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM01334c: -1.0
       - MAM01334x: 1.0
@@ -269383,7 +269383,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20131
-    - name: MAR20131
+    - name: transport of ADP (cytosol to peroxisome) and CoA (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM01285c: -1.0
       - MAM01285x: 1.0
@@ -269399,7 +269399,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20132
-    - name: MAR20132
+    - name: transport of CDP (mitochondria to cytosol) and CTP (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM01424c: 1.0
       - MAM01424m: -1.0
@@ -269415,7 +269415,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20133
-    - name: MAR20133
+    - name: transport of CMP (mitochondria to cytosol) and CTP (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM01590c: 1.0
       - MAM01590m: -1.0
@@ -269431,7 +269431,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20134
-    - name: MAR20134
+    - name: transport of CTP (cytosol to mitochondria) and dCTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269447,7 +269447,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20135
-    - name: MAR20135
+    - name: transport of CTP (cytosol to mitochondria) and dCDP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269463,7 +269463,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20136
-    - name: MAR20136
+    - name: transport of CTP (cytosol to mitochondria) and dCMP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269479,7 +269479,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20137
-    - name: MAR20137
+    - name: transport of CTP (cytosol to mitochondria) and GTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269495,7 +269495,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20138
-    - name: MAR20138
+    - name: transport of CTP (cytosol to mitochondria) and GDP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269511,7 +269511,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20139
-    - name: MAR20139
+    - name: transport of CTP (cytosol to mitochondria) and GMP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269527,7 +269527,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20140
-    - name: MAR20140
+    - name: transport of CTP (cytosol to mitochondria) and dGTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269543,7 +269543,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20141
-    - name: MAR20141
+    - name: transport of CTP (cytosol to mitochondria) and dGDP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269559,7 +269559,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20142
-    - name: MAR20142
+    - name: transport of CTP (cytosol to mitochondria) and dGMP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269575,7 +269575,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20143
-    - name: MAR20143
+    - name: transport of CTP (cytosol to mitochondria) and ITP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269591,7 +269591,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20144
-    - name: MAR20144
+    - name: transport of CTP (cytosol to mitochondria) and IDP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269607,7 +269607,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20145
-    - name: MAR20145
+    - name: transport of CTP (cytosol to mitochondria) and IMP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269623,7 +269623,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20146
-    - name: MAR20146
+    - name: transport of CTP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269639,7 +269639,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20147
-    - name: MAR20147
+    - name: transport of CTP (cytosol to mitochondria) and UDP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269655,7 +269655,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20148
-    - name: MAR20148
+    - name: transport of CTP (cytosol to mitochondria) and UMP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269671,7 +269671,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20149
-    - name: MAR20149
+    - name: transport of CTP (cytosol to mitochondria) and dUTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269687,7 +269687,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20150
-    - name: MAR20150
+    - name: transport of CTP (cytosol to mitochondria) and dUDP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269703,7 +269703,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20151
-    - name: MAR20151
+    - name: transport of CTP (cytosol to mitochondria) and dUMP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269719,7 +269719,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20152
-    - name: MAR20152
+    - name: transport of CDP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01424c: -1.0
       - MAM01424m: 1.0
@@ -269735,7 +269735,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20153
-    - name: MAR20153
+    - name: transport of dCTP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01645c: -1.0
       - MAM01645m: 1.0
@@ -269751,7 +269751,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20154
-    - name: MAR20154
+    - name: transport of dCDP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01643c: -1.0
       - MAM01643m: 1.0
@@ -269767,7 +269767,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20155
-    - name: MAR20155
+    - name: transport of GTP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02034c: -1.0
       - MAM02034m: 1.0
@@ -269783,7 +269783,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20156
-    - name: MAR20156
+    - name: transport of GDP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01948c: -1.0
       - MAM01948m: 1.0
@@ -269799,7 +269799,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20157
-    - name: MAR20157
+    - name: transport of dGTP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01688c: -1.0
       - MAM01688m: 1.0
@@ -269815,7 +269815,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20158
-    - name: MAR20158
+    - name: transport of dGDP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01680c: -1.0
       - MAM01680m: 1.0
@@ -269831,7 +269831,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20159
-    - name: MAR20159
+    - name: transport of ITP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM02193c: -1.0
       - MAM02193m: 1.0
@@ -269847,7 +269847,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20160
-    - name: MAR20160
+    - name: transport of dTTP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01753c: -1.0
       - MAM01753m: 1.0
@@ -269863,7 +269863,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20161
-    - name: MAR20161
+    - name: transport of dTDP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01747c: -1.0
       - MAM01747m: 1.0
@@ -269879,7 +269879,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20162
-    - name: MAR20162
+    - name: transport of UDP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM03106c: -1.0
       - MAM03106m: 1.0
@@ -269895,7 +269895,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20163
-    - name: MAR20163
+    - name: transport of dUTP (cytosol to mitochondria) and UTP (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM01756c: -1.0
       - MAM01756m: 1.0
@@ -269911,7 +269911,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20164
-    - name: MAR20164
+    - name: transport of CTP (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM01623c: -1.0
       - MAM01623m: 1.0
@@ -269925,7 +269925,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20165
-    - name: MAR20165
+    - name: transport of GTP (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM02034c: -1.0
       - MAM02034m: 1.0
@@ -269939,7 +269939,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20166
-    - name: MAR20166
+    - name: transport of UTP (cytosol to mitochondria)
     - metabolites: !!omap
       - MAM03130c: -1.0
       - MAM03130m: 1.0
