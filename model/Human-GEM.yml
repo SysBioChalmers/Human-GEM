@@ -58667,12 +58667,10 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000119640 or ENSG00000170634
+    - gene_reaction_rule: ENSG00000172331
     - subsystem:
       - Glycolysis / Gluconeogenesis
-    - annotation: !!omap
-      - ec-code:
-        - 3.6.1.7
+    - references: doi:10.1016/0003-9861(86)90706-x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
