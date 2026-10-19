@@ -148535,6 +148535,7 @@
       - ec-code:
         - 7.1.1.2
     - references: PMID:16569397;doi:10.1016/j.cmet.2012.07.015
+    - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
     - id: MAR06477
@@ -207557,6 +207558,7 @@
         - 1.6.5.2
         - 1.1.1.184
     - references: PMID:7005231;PMID:16569397;doi:10.1124/mol.52.2.300
+    - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03048
@@ -264527,6 +264529,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10024
@@ -264537,6 +264540,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10026
@@ -264558,6 +264562,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10028
@@ -264568,6 +264573,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10029
@@ -264578,6 +264584,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10030
@@ -264588,6 +264595,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10031
@@ -264598,6 +264606,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10033
@@ -264667,6 +264676,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pool reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10034
@@ -264736,6 +264746,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pool reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10035
@@ -264805,6 +264816,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pool reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10036
@@ -264874,6 +264886,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pool reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10037
@@ -264943,6 +264956,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pool reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10038
@@ -265012,6 +265026,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pool reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10039
@@ -265023,6 +265038,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10040
@@ -265034,6 +265050,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10041
@@ -265045,6 +265062,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10042
@@ -265056,6 +265074,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10043
@@ -265067,6 +265086,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10044
@@ -265078,6 +265098,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10045
@@ -265090,6 +265111,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:29937227;PMID:32530796
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
     - notes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
   - !!omap
@@ -265102,6 +265124,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10047
@@ -265112,6 +265135,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10048
@@ -265124,6 +265148,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:29937227;PMID:32530796
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
     - notes: "Lipid with no transporter: the outer nuclear membrane is continuous with the ER and joins the inner nuclear membrane at the nuclear pores, so the lipid reaches the nuclear envelope and inner nuclear membrane by lateral diffusion in this continuous membrane (PMID:29937227, PMID:32530796)."
   - !!omap
@@ -265136,6 +265161,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10050
@@ -265147,6 +265173,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10051
@@ -265158,6 +265185,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10052
@@ -265169,6 +265197,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10053
@@ -265180,6 +265209,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10054
@@ -265191,6 +265221,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10055
@@ -265202,6 +265233,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10056
@@ -265213,6 +265245,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10057
@@ -265224,6 +265257,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10058
@@ -265235,6 +265269,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10059
@@ -265246,6 +265281,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10060
@@ -265256,6 +265292,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Exchange/demand reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10061
@@ -265275,6 +265312,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.2.1.84
+    - rxnFrom: HumanGEM
     - confidence_score: 2.0
   - !!omap
     - id: MAR10062
@@ -265325,6 +265363,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Artificial reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10063
@@ -265344,6 +265383,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Artificial reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10064
@@ -265413,6 +265453,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Artificial reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR10065
@@ -265459,6 +265500,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Artificial reactions
+    - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
     - id: MAR13082
@@ -265502,6 +265544,7 @@
       - ec-code:
         - 1.1.1.149
     - references: PMID:11013348;PMID:6935192;PMID:10557352;PMID:8172618
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10067
@@ -265520,6 +265563,7 @@
       - ec-code:
         - 3.1.3.62
     - references: doi:10.1021/acscentsci.2c01032;doi:10.1016/s0014-5793(01)02500-5
+    - rxnFrom: iHsa
     - confidence_score: 0.0
     - notes: MINPP1 is in the ER lumen (UniProt Q9UNW1); the reaction stays in the cytosol, as MAR06564.
   - !!omap
@@ -265534,6 +265578,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Inositol phosphate metabolism
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10069
@@ -265547,6 +265592,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10070
@@ -265560,6 +265606,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Miscellaneous
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10071
@@ -265579,6 +265626,7 @@
       - ec-code:
         - 1.1.1.-
     - references: PMID:6935192
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10072
@@ -265598,6 +265646,7 @@
       - ec-code:
         - 1.1.1.-
     - references: PMID:6935192
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10073
@@ -265616,6 +265665,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:2018466;PMID:6861760
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10074
@@ -265627,6 +265677,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:2018466;PMID:6861760
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10075
@@ -265645,6 +265696,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:2018466;PMID:6861760
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10076
@@ -265656,6 +265708,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:2018466;PMID:6861760
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10077
@@ -265667,6 +265720,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10078
@@ -265678,6 +265732,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10079
@@ -265696,6 +265751,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10080
@@ -265712,6 +265768,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10081
@@ -265723,6 +265780,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10082
@@ -265741,6 +265799,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10083
@@ -265752,6 +265811,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10084
@@ -265763,6 +265823,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10085
@@ -265774,6 +265835,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10086
@@ -265785,6 +265847,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10087
@@ -265796,6 +265859,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10088
@@ -265807,6 +265871,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10089
@@ -265818,6 +265883,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10090
@@ -265829,6 +265895,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10091
@@ -265840,6 +265907,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10092
@@ -265855,6 +265923,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10093
@@ -265870,6 +265939,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10094
@@ -265889,6 +265959,7 @@
       - ec-code:
         - 6.2.1.7
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10095
@@ -265904,6 +265975,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10096
@@ -265919,6 +265991,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10097
@@ -265938,6 +266011,7 @@
       - ec-code:
         - 6.2.1.7
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10098
@@ -265953,6 +266027,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10099
@@ -265968,6 +266043,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10100
@@ -265986,6 +266062,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10101
@@ -266004,6 +266081,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10102
@@ -266022,6 +266100,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10103
@@ -266040,6 +266119,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10104
@@ -266058,6 +266138,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10105
@@ -266077,6 +266158,7 @@
       - ec-code:
         - 6.2.1.7
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10106
@@ -266092,6 +266174,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10107
@@ -266107,6 +266190,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10108
@@ -266122,6 +266206,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10109
@@ -266140,6 +266225,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10110
@@ -266158,6 +266244,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10111
@@ -266177,6 +266264,7 @@
       - ec-code:
         - 6.2.1.7
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10112
@@ -266192,6 +266280,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10113
@@ -266207,6 +266296,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10114
@@ -266222,6 +266312,7 @@
     - subsystem:
       - Bile acid biosynthesis
     - references: PMID:12810727;PMID:6884990
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10115
@@ -266240,6 +266331,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10116
@@ -266258,6 +266350,7 @@
       - ec-code:
         - 4.1.1.97
     - references: PMID:16462750
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10117
@@ -266276,6 +266369,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10118
@@ -266291,6 +266385,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10119
@@ -266306,6 +266401,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10120
@@ -266321,6 +266417,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10121
@@ -266340,6 +266437,7 @@
     - annotation: !!omap
       - ec-code:
         - 6.2.1.7
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10122
@@ -266353,6 +266451,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10123
@@ -266367,6 +266466,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10124
@@ -266381,6 +266481,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10125
@@ -266399,6 +266500,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10126
@@ -266417,6 +266519,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10127
@@ -266432,6 +266535,7 @@
     - subsystem:
       - Transport reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10128
@@ -266447,6 +266551,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10129
@@ -266461,6 +266566,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10130
@@ -266474,6 +266580,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10131
@@ -266487,6 +266594,7 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR10132
@@ -266498,6 +266606,7 @@
     - subsystem:
       - Exchange/demand reactions
     - references: PMID:17404808;PMID:19498215
+    - rxnFrom: iHsa
     - confidence_score: 0.0
   - !!omap
     - id: MAR13083
