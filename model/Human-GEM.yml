@@ -70627,7 +70627,6 @@
     - annotation: !!omap
       - ec-code:
         - 1.5.3.1
-        - 1.5.8.3
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -116673,7 +116672,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.55
+        - 1.14.14.1
     - references: PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116695,7 +116694,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.55
+        - 1.14.14.1
     - references: PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116717,7 +116716,7 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.55
+        - 1.14.14.1
     - references: PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532;PMID:9380738;PMID:1449532
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -129729,7 +129728,7 @@
       - Ether lipid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.17.1.9
+        - 1.2.1.84
     - references: PMID:15220348
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -152676,7 +152675,6 @@
     - annotation: !!omap
       - ec-code:
         - 1.6.5.2
-        - 1.10.5.1
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -196162,7 +196160,7 @@
       - Tryptophan metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.2.1.88
+        - 1.2.1.3
     - references: PMID:11306106
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -196768,7 +196766,7 @@
       - Beta-alanine metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.2.1.88
+        - 1.2.1.3
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -200577,7 +200575,7 @@
       - Vitamin C metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.2.1.88
+        - 1.2.1.3
     - references: PMID:3779687
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -201626,7 +201624,7 @@
       - Arginine and proline metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.2.1.88
+        - 1.2.1.3
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -209413,7 +209411,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 1.14.14.94
+        - 6.2.1.-
     - references: PMID:11356164
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -211797,9 +211795,6 @@
     - upper_bound: 1000.0
     - subsystem:
       - Miscellaneous
-    - annotation: !!omap
-      - ec-code:
-        - 1.14.14.94
     - references: PMID:479166
     - rxnFrom: Recon3D
     - confidence_score: 0.0
