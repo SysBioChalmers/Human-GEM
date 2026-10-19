@@ -481,7 +481,10 @@ def check_name_consistency(model: cobra.Model) -> list[tuple]:
     * one chemical carrying different names in different compartments. The same
       compound is the same compound wherever it sits, so the names should agree, and a
       disagreement is either a naming slip or two unrelated compounds sharing a base
-      identifier.
+      identifier;
+    * a reaction name that names a metabolite the reaction does not contain (see
+      _species_named_in). Such names were left behind when a metabolite was renamed
+      or an equation changed without regenerating the reaction name.
 
     Returns [(kind, id, issue)].
     """
@@ -503,9 +506,44 @@ def check_name_consistency(model: cobra.Model) -> list[tuple]:
             )
             rows.append(("metabolite", base, f"name differs across compartments: {spelled}"))
 
+    known = {(met.name or "").strip().lower() for met in model.metabolites} - {""}
+    for rxn in model.reactions:
+        present = {(met.name or "").strip().lower() for met in rxn.metabolites}
+        for species in _species_named_in(rxn.name or ""):
+            if species.lower() in known and species.lower() not in present:
+                rows.append(("reaction", rxn.id, f"name refers to {species!r}, which is not in the reaction"))
+
     rows.sort()
     _write_csv(NAME_CONSISTENCY_CSV, ["kind", "id", "issue"], rows)
     return rows
+
+
+_COMPARTMENT_WORDS = ("cytosol|extracellular|mitochondria|inner mitochondria|peroxisome|"
+                      "endoplasmic reticulum|Golgi apparatus|lysosome|nucleus")
+_TRANSPORT_PART = re.compile(rf"(.+?) \((?:{_COMPARTMENT_WORDS}) to (?:{_COMPARTMENT_WORDS})\)(?: and |$)")
+
+
+def _species_named_in(name: str) -> list[str]:
+    """The metabolite names that the naming patterns of Human-GEM put into a reaction name:
+    'transport of X (A to B)' and 'transport of X (A to B) and Y (B to A)', 'Exchange of X',
+    'X to Y conversion' and the trailing '(X)' of '<enzyme> (X)'. Only strings that are
+    exactly a metabolite name are used by the check, so free text never matches."""
+    name = name.strip()
+    found: list[str] = []
+    body = re.sub(r"^(?:ATP-driven )?transport of ", "", name)
+    if body != name:
+        found.extend(m.group(1) for m in _TRANSPORT_PART.finditer(body))
+        return found
+    m = re.match(r"^Exchange of (.+)$", name, flags=re.IGNORECASE)
+    if m:
+        return [m.group(1)]
+    m = re.match(r"^(.+) to (.+) conversion$", name)
+    if m:
+        return [m.group(1), m.group(2)]
+    m = re.match(r"^.+? \(((?:[^()]|\([^()]*\))+)\)$", name)
+    if m:
+        found.append(m.group(1))
+    return found
 
 
 # --------------------------------------------------------------------------- #

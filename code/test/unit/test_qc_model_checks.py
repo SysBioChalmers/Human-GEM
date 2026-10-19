@@ -1,4 +1,5 @@
-"""qcModelChecks: name consistency, identifier format and the growth medium."""
+"""qcModelChecks: name consistency (missing names, names that disagree by compartment, reaction
+names that name a metabolite the reaction does not contain), identifier format and the growth medium."""
 
 import cobra
 import pytest
@@ -136,3 +137,50 @@ def test_growth_medium_opens_the_task_inputs_capped(tmp_path, monkeypatch):
     for name, rid in expected.items():
         cap = 1000.0 if name in qcModelChecks.MEDIUM_UNCAPPED else qcModelChecks.MEDIUM_UPTAKE_CAP
         assert bounds[rid] == -cap
+
+
+def _named_model(reaction_name, in_reaction, elsewhere=()):
+    """A model with one named reaction holding ``in_reaction`` and a second one holding ``elsewhere``."""
+    model = _model([(f"MAM0000{i}c", n) for i, n in enumerate(in_reaction, 1)], reaction_name=reaction_name)
+    if elsewhere:
+        other = cobra.Reaction("MAR00002")
+        other.name = "another reaction"
+        other.add_metabolites({cobra.Metabolite(f"MAM1000{i}c", name=n, compartment="c"): 1.0
+                               for i, n in enumerate(elsewhere, 1)})
+        model.add_reactions([other])
+    return model
+
+
+def test_name_naming_an_absent_metabolite_is_flagged(csv_path):
+    model = _named_model("Exchange of isochenodeoxycholic acid", ["isocholic acid"],
+                         elsewhere=["isochenodeoxycholic acid"])
+    issues = [row for row in qcModelChecks.check_name_consistency(model) if row[1] == "MAR00001"]
+    assert issues == [("reaction", "MAR00001",
+                       "name refers to 'isochenodeoxycholic acid', which is not in the reaction")]
+
+
+def test_species_in_the_reaction_are_not_flagged(csv_path):
+    model = _named_model("transport of glucose (extracellular to cytosol) and Na+ (cytosol to extracellular)",
+                         ["glucose", "Na+"])
+    assert qcModelChecks.check_name_consistency(model) == []
+
+
+def test_free_text_in_parentheses_is_not_flagged(csv_path):
+    """Only exact metabolite names count; '(ADP-forming)' is not a species."""
+    model = _named_model("acetate-CoA ligase (ADP-forming)", ["acetate"], elsewhere=["ADP"])
+    assert qcModelChecks.check_name_consistency(model) == []
+
+
+@pytest.mark.parametrize("name, expected", [
+    ("transport of citrate (mitochondria to cytosol)", ["citrate"]),
+    ("ATP-driven transport of glycocholate (cytosol to extracellular)", ["glycocholate"]),
+    ("transport of serine (cytosol to extracellular) and threonine (extracellular to cytosol)",
+     ["serine", "threonine"]),
+    ("Exchange of ursocholic acid", ["ursocholic acid"]),
+    ("aflatoxin B1 diol to aflatoxin B1 dialdehyde conversion", ["aflatoxin B1 diol", "aflatoxin B1 dialdehyde"]),
+    ("cytochrome P450 (calcidiol, 23S-hydroxylating)", ["calcidiol, 23S-hydroxylating"]),
+    ("aldehyde dehydrogenase (NAD(+)) (3-amino-propanal)", ["3-amino-propanal"]),
+    ("Generic Human Biomass Reaction", []),
+])
+def test_species_named_in(name, expected):
+    assert qcModelChecks._species_named_in(name) == expected

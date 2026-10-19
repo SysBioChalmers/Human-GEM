@@ -43100,14 +43100,14 @@
     - metFrom: Recon3D
   - !!omap
     - id: MAM03263m
-    - name: 3-hydroxy tetradecenoyl-7-CoA
+    - name: (7Z)-3-hydroxytetradec-7-enoyl-CoA
     - compartment: m
     - charge: -4.0
     - formula: C35H56N7O18P3S
     - metFrom: Recon3D
   - !!omap
     - id: MAM03263c
-    - name: 3-hydroxy tetradecenoyl-7-CoA
+    - name: (7Z)-3-hydroxytetradec-7-enoyl-CoA
     - compartment: c
     - charge: -4.0
     - formula: C35H56N7O18P3S
@@ -86286,7 +86286,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00437
-    - name: long-chain-fatty-acid-CoA ligase (10,13,16-docosatriynoic acid)
+    - name: long-chain-fatty-acid-CoA ligase ((10Z,13Z,16Z)-docosatrienoic acid)
     - metabolites: !!omap
       - MAM00264c: 1.0
       - MAM00265c: -1.0
@@ -147463,7 +147463,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02130
-    - name: cytochrome P450 (23s,25-dihydroxyvitamin D3)
+    - name: cytochrome P450 (calcidiol, 23S-hydroxylating)
     - metabolites: !!omap
       - MAM00608m: 1.0
       - MAM01415m: -1.0
@@ -157802,7 +157802,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00436
-    - name: transport of 10,13,16-docosatriynoic acid (extracellular to cytosol)
+    - name: transport of (10Z,13Z,16Z)-docosatrienoic acid (extracellular to cytosol)
     - metabolites: !!omap
       - MAM00265c: 1.0
       - MAM00265e: -1.0
@@ -157815,7 +157815,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00439
-    - name: transport of 10,13,16-docosatriynoic acid (cytosol to extracellular)
+    - name: transport of (10Z,13Z,16Z)-docosatrienoic acid (cytosol to extracellular)
     - metabolites: !!omap
       - MAM00265c: -1.0
       - MAM00265e: 1.0
@@ -186805,7 +186805,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09754
-    - name: transport of 10,13,16-docosatriynoic acid (lysosome to cytosol)
+    - name: transport of (10Z,13Z,16Z)-docosatrienoic acid (lysosome to cytosol)
     - metabolites: !!omap
       - MAM00265c: 1.0
       - MAM00265l: -1.0
@@ -201510,7 +201510,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01517
-    - name: malonyl-CoA-acp transacylase, mitochondrial
+    - name: malonyl-CoA-[ACP] transacylase, mitochondrial
     - metabolites: !!omap
       - MAM00184m: -1.0
       - MAM01597m: 1.0
@@ -209127,7 +209127,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03377
-    - name: 2,4-dienoyl-CoA reductase (nadph)
+    - name: 2,4-dienoyl-CoA reductase (NADPH)
     - metabolites: !!omap
       - MAM02039m: -1.0
       - MAM02554m: 1.0
@@ -220638,7 +220638,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08996
-    - name: Uptake of Hexadecanoate
+    - name: Uptake of Tetradecanoate
     - metabolites: !!omap
       - MAM01334c: 1.0
       - MAM01371c: -1.0
@@ -221776,7 +221776,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09870
-    - name: Arachidonate (N-C18:1) Transport by FATP
+    - name: Arachidonate Transport by FATP
     - metabolites: !!omap
       - MAM01334c: 1.0
       - MAM01362e: -1.0
@@ -229551,7 +229551,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR10584
-    - name: Exchange of Histidyl-Lysyl-Lysine
+    - name: Exchange of Histidyl-Glycyl-Lysine
     - metabolites: !!omap
       - MAM03669e: -1.0
     - lower_bound: -1000.0
@@ -240608,7 +240608,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR11394
-    - name: acetate-CoA ligase (adp-forming)
+    - name: acetate-CoA ligase (ADP-forming)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -252196,7 +252196,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12198
-    - name: Exchange of 12-Dehydrocholic acid
+    - name: Exchange of 12-dehydrocholic acid
     - metabolites: !!omap
       - MAM00517e: -1.0
     - lower_bound: -1000.0
@@ -252207,7 +252207,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12199
-    - name: Exchange of 3-Dehydrochenodeoxychollyc acid
+    - name: Exchange of 3-dehydrochenodeoxycholic acid
     - metabolites: !!omap
       - MAM03206e: -1.0
     - lower_bound: -1000.0
@@ -252218,7 +252218,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12200
-    - name: Exchange of 3-Dehydrocholic acid
+    - name: Exchange of 3-dehydrocholic acid
     - metabolites: !!omap
       - MAM03207e: -1.0
     - lower_bound: -1000.0
@@ -252251,7 +252251,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12203
-    - name: Exchange of 7-Dehydrochenodeoxycholic acid
+    - name: Exchange of 7-dehydrochenodeoxycholic acid
     - metabolites: !!omap
       - MAM03310e: -1.0
     - lower_bound: -1000.0
@@ -252262,7 +252262,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12204
-    - name: Exchange of 7-Dehydrocholic acid
+    - name: Exchange of 7-dehydrocholic acid
     - metabolites: !!omap
       - MAM03311e: -1.0
     - lower_bound: -1000.0
@@ -252449,7 +252449,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12222
-    - name: Exchange of Isochenodeoxycholic acid, 3beta,7alpha-Dihydroxy-5beta-cholanic acid
+    - name: Exchange of isochenodeoxycholic acid
     - metabolites: !!omap
       - MAM03691e: -1.0
     - lower_bound: -1000.0
@@ -252460,7 +252460,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12223
-    - name: Exchange of Isochenodeoxycholic acid
+    - name: Exchange of isocholic acid
     - metabolites: !!omap
       - MAM03704e: -1.0
     - lower_bound: -1000.0
@@ -252548,7 +252548,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12232
-    - name: Exchange of Ursocholic acid
+    - name: Exchange of ursocholic acid
     - metabolites: !!omap
       - MAM04057e: -1.0
     - lower_bound: -1000.0
@@ -264829,7 +264829,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR13049
-    - name: Exchange of 10,13,16-docosatriynoic acid
+    - name: Exchange of (10Z,13Z,16Z)-docosatrienoic acid
     - metabolites: !!omap
       - MAM00265e: -1.0
     - lower_bound: -1000.0
