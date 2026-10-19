@@ -14,5 +14,6 @@ This directory contains curation-related data files that support changes to the 
 - `structuresOfAnotherCompound.tsv`: per-entity table of the change "structures of metabolites that showed another compound" (`code/modelCuration/applyCurationTable.py`).
 - `isomerStructures.tsv`: per-entity table of the change "stereo- and geometric isomers drawn as the isomer the name gives" (`code/modelCuration/applyCurationTable.py`).
 - `transBetaOxidationStructures.tsv`: per-entity table of the change "trans beta-oxidation intermediates drawn E, and their names" (`code/modelCuration/applyCurationTable.py`).
+- `octadecadienoicAcidStructures.tsv`: per-entity table of the change "(6Z,9Z)-octadecadienoic acid and its carnitine are not linoelaidic" (`code/modelCuration/applyCurationTable.py`).
 
 Static dumps of external sources that were kept here during the Human1 series (SwissProt / Cell Atlas / DeepLoc2 subcellular locations, Rhea reaction associations, and metabolite SMILES/InChI) have been removed for the Human2 release. They had gone stale and are better queried fresh from the source when needed. They remain in the git history and in the last Human1 release, [v1.19.0](https://github.com/SysBioChalmers/Human-GEM/releases/tag/v1.19.0).
