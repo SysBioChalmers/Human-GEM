@@ -65792,7 +65792,6 @@
     - annotation: !!omap
       - ec-code:
         - 2.7.1.76
-        - 2.7.1.76
     - references: PMID:11812127;PMID:202960
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -214544,6 +214543,9 @@
     - gene_reaction_rule: ENSG00000005469
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 2.3.1.137
     - references: PMID:15492013
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -215346,6 +215348,9 @@
     - gene_reaction_rule: ENSG00000113790 or ENSG00000198721
     - subsystem:
       - Fatty acid oxidation
+    - annotation: !!omap
+      - ec-code:
+        - 5.3.3.8
     - references: PMID:1495956;PMID:2303409;PMID:10419495;PMID:3582650
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -215601,6 +215606,9 @@
     - gene_reaction_rule: ENSG00000113790 or ENSG00000198721
     - subsystem:
       - Fatty acid oxidation
+    - annotation: !!omap
+      - ec-code:
+        - 5.3.3.8
     - references: PMID:1495956;PMID:2303409;PMID:10419495;PMID:3582650
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -216351,6 +216359,9 @@
     - gene_reaction_rule: ENSG00000113790 or ENSG00000198721
     - subsystem:
       - Fatty acid oxidation
+    - annotation: !!omap
+      - ec-code:
+        - 5.3.3.8
     - references: PMID:1495956;PMID:2303409;PMID:10419495;PMID:3582650
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -216754,6 +216765,9 @@
     - gene_reaction_rule: ENSG00000113790 or ENSG00000198721
     - subsystem:
       - Fatty acid oxidation
+    - annotation: !!omap
+      - ec-code:
+        - 5.3.3.8
     - references: PMID:1495956;PMID:2303409;PMID:10419495;PMID:3582650
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -217044,6 +217058,9 @@
     - gene_reaction_rule: ENSG00000113790 or ENSG00000198721
     - subsystem:
       - Fatty acid oxidation
+    - annotation: !!omap
+      - ec-code:
+        - 5.3.3.8
     - references: PMID:1495956;PMID:2303409;PMID:10419495;PMID:3582650
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -217421,6 +217438,9 @@
     - gene_reaction_rule: ENSG00000113790 or ENSG00000198721
     - subsystem:
       - Fatty acid oxidation
+    - annotation: !!omap
+      - ec-code:
+        - 5.3.3.8
     - references: PMID:1495956;PMID:2303409;PMID:10419495;PMID:3582650
     - rxnFrom: Recon3D
     - confidence_score: 0.0
