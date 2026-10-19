@@ -1,14 +1,21 @@
-"""Merge the annotation tables (cross-references + SBO) onto a Human-GEM model.
+"""Attach cross-reference (MIRIAM) and SBO annotation to a Human-GEM model.
 
-The YAML model stores only inline fields (`eccodes`, `metFrom`, `smiles`); the
-external identifiers live in `reactions.tsv` / `metabolites.tsv` / `genes.tsv`.
-This reads those tables and writes the ids onto each cobra entity's
-`annotation` dict (namespace -> list of ids), then adds SBO terms via
-raven-toolbox's canonical `add_sbo_terms`.
+Python/raven-toolbox port of ``code/annotateGEM.m``, and the one implementation:
+``code/annotateGEM.py`` (used by the release and the CI checks) imports it from here.
 
-This is the packaged home of the logic that also lives in `code/annotateGEM.py`
-(the CI helper); that module is intended to become a thin shim importing from
-here so there is a single source of truth.
+The YAML model stores only the inline fields (``eccodes``, ``metFrom``,
+``smiles``); the full set of external identifiers, and each metabolite's InChI,
+live in the annotation tables ``model/reactions.tsv``, ``model/metabolites.tsv``
+and ``model/genes.tsv``. This module reads those tables and writes the identifiers
+onto each cobra entity's ``annotation`` dict (namespace -> list of ids). A
+metabolite's InChI (``metInChI``) goes to ``notes['inchis']``, which fills the
+Excel InChI column, and to ``annotation['inchi']`` for the SBML. SBO terms
+for metabolites and reactions come from raven_toolbox's canonical ``add_sbo_terms``
+(classifying exchange/demand/sink, transport, biomass, simple chemical, ...); genes,
+which that helper does not cover, get SBO:0000243 here. Every derived export
+(``.mat`` / SBML / Excel / txt) then carries the annotation; only the YAML stays
+annotation-light, since it is the file git tracks and a diff of it should show
+curation rather than merged annotation.
 """
 from __future__ import annotations
 
@@ -18,13 +25,14 @@ import cobra
 import pandas as pd
 from raven_toolbox.annotation import add_sbo_terms
 
-# TSV column -> identifiers.org namespace (from annotateGEM.m id2miriam).
+# Map TSV column names to identifiers.org namespaces (from annotateGEM.m id2miriam).
 RXN_ID2MIRIAM = {
     "rxnKEGGID": "kegg.reaction",
     "rxnBiGGID": "bigg.reaction",
     "rxnREACTOMEID": "reactome",
     "rxnRecon3DID": "vmhreaction",
     "rxnMetaNetXID": "metanetx.reaction",
+    "rxnSeedID": "seed.reaction",
     "rxnTCDBID": "tcdb",
     "rxnRheaID": "rhea",
     "rxnRheaMasterID": "rhea",
@@ -49,7 +57,10 @@ GENE_ID2MIRIAM = {
     "geneEntrezID": "ncbigene",
 }
 
-_SBO_GENE = "SBO:0000243"  # gene; add_sbo_terms covers reactions/metabolites, not genes
+# Reaction and metabolite SBO terms come from raven_toolbox.annotation.add_sbo_terms
+# (the canonical assignment); it does not cover genes, so gene SBO is set here.
+_SBO_GENE = "SBO:0000243"  # gene
+# Human-GEM's biomass (objective) reaction, so add_sbo_terms tags it SBO:0000629.
 _BIOMASS_RXN_NAME = "Generic human cell biomass reaction"
 
 
@@ -64,12 +75,15 @@ def _split_ids(cell: str) -> list[str]:
 
 
 def _chebi(ids: list[str]) -> list[str]:
-    """Ensure every ChEBI id carries the ``CHEBI:`` prefix."""
-    return [i if i.upper().startswith("CHEBI:") else f"CHEBI:{i}" for i in ids]
+    """Ensure every ChEBI id has the ``CHEBI:`` prefix (annotateGEM.m rule)."""
+    out = []
+    for i in ids:
+        out.append(i if i.upper().startswith("CHEBI:") else f"CHEBI:{i}")
+    return out
 
 
 def _rhea(ids: list[str]) -> list[str]:
-    """Strip the ``RHEA:`` prefix (it must not appear in the identifiers.org URL)."""
+    """Strip the ``RHEA:`` prefix; it must not appear in the identifiers.org URL."""
     return [i[5:] if i.upper().startswith("RHEA:") else i for i in ids]
 
 
@@ -87,8 +101,25 @@ def _apply_row(annotation: dict, row: pd.Series, id2miriam: dict) -> None:
             continue
         merged = list(annotation.get(namespace, []))
         merged.extend(ids)
-        # Dedupe, preserving first-seen order (columns can share a namespace).
+        # Dedupe while preserving first-seen order (columns can share a namespace).
         annotation[namespace] = list(dict.fromkeys(merged))
+
+
+def add_inchis(model: cobra.Model, model_dir: str | Path) -> cobra.Model:
+    """Attach each metabolite's InChI from ``metabolites.tsv``, and nothing else.
+
+    ``annotate_gem`` merges the whole annotation set; this adds only the
+    ``metInChI`` column, for an export that should carry a metabolite's
+    structure without its cross-references. Modifies ``model`` in place and
+    returns it.
+    """
+    mets = _read_tsv(Path(model_dir) / "metabolites.tsv").set_index("mets")
+    for met in model.metabolites:
+        if met.id in mets.index:
+            inchi = str(mets.loc[met.id].get("metInChI", "")).strip()
+            if inchi:
+                met.notes["inchis"] = inchi
+    return model
 
 
 def annotate_gem(
@@ -99,7 +130,21 @@ def annotate_gem(
 ) -> cobra.Model:
     """Merge the TSV cross-references and SBO terms into ``model`` in place.
 
-    Returns the same ``model`` object (pass a copy to keep an un-annotated one).
+    Parameters
+    ----------
+    model
+        Model whose reactions/metabolites/genes carry Human-GEM ids.
+    model_dir
+        Directory holding ``reactions.tsv`` / ``metabolites.tsv`` / ``genes.tsv``.
+    types
+        Which annotation classes to add (``"rxn"``, ``"met"``, ``"gene"``).
+
+    Returns
+    -------
+    cobra.Model
+        The same ``model`` object, now annotated. Pass a copy if the caller
+        needs to keep an un-annotated version (the release keeps the YAML
+        export annotation-light this way).
     """
     model_dir = Path(model_dir)
 
@@ -107,7 +152,12 @@ def annotate_gem(
         mets = _read_tsv(model_dir / "metabolites.tsv").set_index("mets")
         for met in model.metabolites:
             if met.id in mets.index:
-                _apply_row(met.annotation, mets.loc[met.id], MET_ID2MIRIAM)
+                row = mets.loc[met.id]
+                _apply_row(met.annotation, row, MET_ID2MIRIAM)
+                inchi = str(row.get("metInChI", "")).strip()
+                if inchi:
+                    met.notes["inchis"] = inchi
+                    met.annotation["inchi"] = [inchi]
 
     if "rxn" in types:
         rxns = _read_tsv(model_dir / "reactions.tsv").set_index("rxns")
@@ -122,8 +172,11 @@ def annotate_gem(
                 row = genes.loc[gene.id].copy()
                 row["genes"] = gene.id  # the gene id itself is an ensembl id
                 _apply_row(gene.annotation, row, GENE_ID2MIRIAM)
+            # add_sbo_terms below covers metabolites and reactions, not genes.
             gene.annotation["sbo"] = _SBO_GENE
 
+    # SBO terms for metabolites and reactions: the canonical raven-toolbox
+    # assignment (exchange/demand/sink, transport, biomass, simple chemical, ...).
     if "met" in types or "rxn" in types:
         add_sbo_terms(model, biomass_rxn_name=_BIOMASS_RXN_NAME)
 
