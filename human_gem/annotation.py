@@ -82,6 +82,16 @@ def _chebi(ids: list[str]) -> list[str]:
     return out
 
 
+# metKEGGID holds KEGG COMPOUND, DRUG and GLYCAN entries; each has its own
+# identifiers.org namespace, told apart by the first letter of the id.
+_KEGG_PREFIX_NAMESPACE = {"C": "kegg.compound", "D": "kegg.drug", "G": "kegg.glycan"}
+
+
+def _kegg_namespace(kegg_id: str) -> str:
+    """identifiers.org namespace of a KEGG compound, drug or glycan id."""
+    return _KEGG_PREFIX_NAMESPACE.get(kegg_id[:1].upper(), "kegg.compound")
+
+
 def _rhea(ids: list[str]) -> list[str]:
     """Strip the ``RHEA:`` prefix; it must not appear in the identifiers.org URL."""
     return [i[5:] if i.upper().startswith("RHEA:") else i for i in ids]
@@ -99,10 +109,19 @@ def _apply_row(annotation: dict, row: pd.Series, id2miriam: dict) -> None:
             ids = _rhea(ids)
         if not ids:
             continue
-        merged = list(annotation.get(namespace, []))
-        merged.extend(ids)
-        # Dedupe while preserving first-seen order (columns can share a namespace).
-        annotation[namespace] = list(dict.fromkeys(merged))
+        if namespace == "kegg.compound":
+            for kegg_id in ids:
+                _merge(annotation, _kegg_namespace(kegg_id), [kegg_id])
+            continue
+        _merge(annotation, namespace, ids)
+
+
+def _merge(annotation: dict, namespace: str, ids: list[str]) -> None:
+    """Append ``ids`` to ``annotation[namespace]``, keeping the first-seen order without repeats
+    (columns can share a namespace)."""
+    merged = list(annotation.get(namespace, []))
+    merged.extend(ids)
+    annotation[namespace] = list(dict.fromkeys(merged))
 
 
 def add_inchis(model: cobra.Model, model_dir: str | Path) -> cobra.Model:
