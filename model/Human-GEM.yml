@@ -217340,7 +217340,7 @@
       - MAM03554m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000115361 or ENSG00000117054) and ((ENSG00000084754 and ENSG00000138029) or (ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315))
+    - gene_reaction_rule: ENSG00000117054
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:9469587;PMID:9714723;PMID:11591435
