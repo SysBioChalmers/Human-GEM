@@ -72546,7 +72546,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04702
-    - name: homogentisate hydroxylation
+    - name: homogentisate oxidative decarboxylation (gentisate aldehyde)
     - metabolites: !!omap
       - MAM01596c: 1.0
       - MAM01952c: 1.0
@@ -81252,7 +81252,7 @@
     - confidence_score: 2.0
   - !!omap
     - id: MAR05155
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of apo-[ACP]
     - metabolites: !!omap
       - MAM01285c: 372.0
       - MAM01349c: 1.0
@@ -81306,7 +81306,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05156
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of mitoApo-[ACP]
     - metabolites: !!omap
       - MAM01285c: 261.0
       - MAM01371c: -261.0
@@ -81572,7 +81572,7 @@
     - confidence_score: 2.0
   - !!omap
     - id: MAR05161
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of haptoglobin
     - metabolites: !!omap
       - MAM01285c: 1218.0
       - MAM01371c: -1218.0
@@ -81912,7 +81912,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05167
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of thioredoxin
     - metabolites: !!omap
       - MAM01285c: 315.0
       - MAM01371c: -315.0
@@ -81967,7 +81967,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05168
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of mitothioredoxin
     - metabolites: !!omap
       - MAM01285c: 498.0
       - MAM01371c: -498.0
@@ -82024,7 +82024,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05169
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of STAR
     - metabolites: !!omap
       - MAM01285c: 855.0
       - MAM01371c: -855.0
@@ -82080,7 +82080,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05170
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of GM2A
     - metabolites: !!omap
       - MAM01285c: 579.0
       - MAM01371c: -579.0
@@ -82136,7 +82136,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05171
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of apocytochrome-C
     - metabolites: !!omap
       - MAM01285c: 975.0
       - MAM01358c: 1.0
@@ -82192,7 +82192,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05172
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of glycogenin
     - metabolites: !!omap
       - MAM01285c: 1050.0
       - MAM01371c: -1050.0
@@ -82249,7 +82249,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05174
-    - name: glycyl-tRNA(gly) phosphorylation
+    - name: synthesis of LPL
     - metabolites: !!omap
       - MAM01285c: 1425.0
       - MAM01371c: -1425.0
@@ -82471,7 +82471,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05259
-    - name: albumin phosphorylation
+    - name: degradation of albumin
     - metabolites: !!omap
       - MAM01285l: 608.0
       - MAM01307l: 63.0
@@ -82508,7 +82508,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05260
-    - name: antichymotrypsin phosphorylation
+    - name: degradation of antichymotrypsin
     - metabolites: !!omap
       - MAM01285c: 422.0
       - MAM01307c: 34.0
@@ -82544,7 +82544,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05261
-    - name: antichymotrypsin phosphorylation
+    - name: degradation of antichymotrypsin
     - metabolites: !!omap
       - MAM01285l: 422.0
       - MAM01307l: 34.0
@@ -82581,7 +82581,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05262
-    - name: antitrypsin phosphorylation
+    - name: degradation of antitrypsin
     - metabolites: !!omap
       - MAM01285c: 417.0
       - MAM01307c: 26.0
@@ -82617,7 +82617,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05263
-    - name: antitrypsin phosphorylation
+    - name: degradation of antitrypsin
     - metabolites: !!omap
       - MAM01285l: 417.0
       - MAM01307l: 26.0
@@ -82654,7 +82654,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05264
-    - name: apoB100 phosphorylation
+    - name: degradation of apoB100
     - metabolites: !!omap
       - MAM01285c: 4560.0
       - MAM01307c: 275.0
@@ -82690,7 +82690,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05265
-    - name: apoB100 phosphorylation
+    - name: degradation of apoB100
     - metabolites: !!omap
       - MAM01285l: 4560.0
       - MAM01307l: 275.0
@@ -82797,7 +82797,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05268
-    - name: apoC1 phosphorylation
+    - name: degradation of apoC1
     - metabolites: !!omap
       - MAM01285c: 82.0
       - MAM01307c: 5.0
@@ -82830,7 +82830,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05269
-    - name: apoC2 phosphorylation
+    - name: degradation of apoC2
     - metabolites: !!omap
       - MAM01285c: 100.0
       - MAM01307c: 7.0
@@ -82864,7 +82864,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05270
-    - name: apoC3 phosphorylation
+    - name: degradation of apoC3
     - metabolites: !!omap
       - MAM01285c: 98.0
       - MAM01307c: 15.0
@@ -82897,7 +82897,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05271
-    - name: fibrinogen phosphorylation
+    - name: degradation of fibrinogen
     - metabolites: !!omap
       - MAM01285c: 2673.0
       - MAM01307c: 134.0
@@ -82933,7 +82933,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05272
-    - name: fibrinogen phosphorylation
+    - name: degradation of fibrinogen
     - metabolites: !!omap
       - MAM01285l: 2673.0
       - MAM01307l: 134.0
@@ -82970,7 +82970,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05273
-    - name: haptoglobin phosphorylation
+    - name: degradation of haptoglobin
     - metabolites: !!omap
       - MAM01285c: 405.0
       - MAM01307c: 30.0
@@ -83006,7 +83006,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05274
-    - name: haptoglobin phosphorylation
+    - name: degradation of haptoglobin
     - metabolites: !!omap
       - MAM01285l: 405.0
       - MAM01307l: 30.0
@@ -83043,7 +83043,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05275
-    - name: plasminogen phosphorylation
+    - name: degradation of plasminogen
     - metabolites: !!omap
       - MAM01285c: 809.0
       - MAM01307c: 37.0
@@ -83079,7 +83079,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05276
-    - name: plasminogen phosphorylation
+    - name: degradation of plasminogen
     - metabolites: !!omap
       - MAM01285l: 809.0
       - MAM01307l: 37.0
@@ -83116,7 +83116,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05277
-    - name: prothrombin phosphorylation
+    - name: degradation of prothrombin
     - metabolites: !!omap
       - MAM01285c: 621.0
       - MAM01307c: 42.0
@@ -83152,7 +83152,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05278
-    - name: prothrombin phosphorylation
+    - name: degradation of prothrombin
     - metabolites: !!omap
       - MAM01285l: 621.0
       - MAM01307l: 42.0
@@ -83189,7 +83189,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05279
-    - name: "[apotransferin] phosphorylation"
+    - name: degradation of [apotransferin]
     - metabolites: !!omap
       - MAM00186c: -1.0
       - MAM01285c: 697.0
@@ -83225,7 +83225,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05280
-    - name: "[apotransferin] phosphorylation"
+    - name: degradation of [apotransferin]
     - metabolites: !!omap
       - MAM00186l: -1.0
       - MAM01285l: 697.0
@@ -83262,7 +83262,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05281
-    - name: apoE phosphorylation
+    - name: degradation of apoE
     - metabolites: !!omap
       - MAM01285c: 316.0
       - MAM01307c: 39.0
@@ -83298,7 +83298,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05282
-    - name: apoE phosphorylation
+    - name: degradation of apoE
     - metabolites: !!omap
       - MAM01285l: 316.0
       - MAM01307l: 39.0
@@ -83335,7 +83335,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05283
-    - name: apoA1 phosphorylation
+    - name: degradation of apoA1
     - metabolites: !!omap
       - MAM01285c: 266.0
       - MAM01307c: 23.0
@@ -83369,7 +83369,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05284
-    - name: apoA1 phosphorylation
+    - name: degradation of apoA1
     - metabolites: !!omap
       - MAM01285l: 266.0
       - MAM01307l: 23.0
@@ -83404,7 +83404,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05285
-    - name: STAR phosphorylation
+    - name: degradation of STAR
     - metabolites: !!omap
       - MAM01285l: 284.0
       - MAM01307l: 21.0
@@ -83441,7 +83441,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05286
-    - name: GM2A phosphorylation
+    - name: degradation of GM2A
     - metabolites: !!omap
       - MAM01285l: 192.0
       - MAM01307l: 10.0
@@ -83478,7 +83478,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05287
-    - name: apocytochrome-C phosphorylation
+    - name: degradation of apocytochrome-C
     - metabolites: !!omap
       - MAM01285l: 324.0
       - MAM01307l: 38.0
@@ -83552,7 +83552,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05290
-    - name: apoB48 phosphorylation
+    - name: degradation of apoB48
     - metabolites: !!omap
       - MAM01285l: 4562.0
       - MAM01307l: 276.0
@@ -83589,7 +83589,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05291
-    - name: LPL phosphorylation
+    - name: degradation of LPL
     - metabolites: !!omap
       - MAM01285l: 474.0
       - MAM01307l: 34.0
@@ -83625,7 +83625,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09817
-    - name: thioredoxin phosphorylation
+    - name: degradation of thioredoxin
     - metabolites: !!omap
       - MAM01285c: 104.0
       - MAM01307c: 8.0
@@ -83660,7 +83660,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09818
-    - name: mitothioredoxin phosphorylation
+    - name: degradation of mitothioredoxin
     - metabolites: !!omap
       - MAM01285c: 165.0
       - MAM01307c: 11.0
@@ -83821,7 +83821,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04188
-    - name: H+ reduction
+    - name: PAPS reduction (activated sulphur)
     - metabolites: !!omap
       - MAM01267c: 1.0
       - MAM02039c: -2.0
@@ -91189,7 +91189,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02495
-    - name: (7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA hydroxylation
+    - name: (7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA desaturation
     - metabolites: !!omap
       - MAM00095c: 1.0
       - MAM00121c: -1.0
@@ -92572,7 +92572,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02393
-    - name: (7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA hydroxylation
+    - name: (7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA desaturation
     - metabolites: !!omap
       - MAM00093c: 1.0
       - MAM00119c: -1.0
@@ -103486,7 +103486,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03520
-    - name: 4,8-dimethylnonanoylcarnitine to 4,8-dimethylnonanoylcarnitine conversion
+    - name: transport of 4,8-dimethylnonanoylcarnitine (cytosol to mitochondria) and L-carnitine (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00950c: -1.0
       - MAM00950m: 1.0
@@ -103514,7 +103514,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08418
-    - name: 2,6-dimethylheptanoyl-carnitine to 2,6-dimethylheptanoyl-carnitine conversion
+    - name: transport of 2,6-dimethylheptanoyl-carnitine (cytosol to mitochondria) and L-carnitine (mitochondria to cytosol)
     - metabolites: !!omap
       - MAM00577c: -1.0
       - MAM00577m: 1.0
@@ -103528,7 +103528,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03027
-    - name: L-carnitine to L-carnitine conversion
+    - name: transport of L-carnitine (cytosol to peroxisome) and malonyl-carnitine (peroxisome to cytosol)
     - metabolites: !!omap
       - MAM02348c: -1.0
       - MAM02348x: 1.0
@@ -135396,7 +135396,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01659
-    - name: choloyl-CoA phosphorylation
+    - name: ATP-driven transport of choloyl-CoA (cytosol to peroxisome)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -137961,7 +137961,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01868
-    - name: glycocholate phosphorylation
+    - name: ATP-driven transport of glycocholate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -137980,7 +137980,7 @@
     - confidence_score: 2.0
   - !!omap
     - id: MAR01870
-    - name: taurocholate phosphorylation
+    - name: ATP-driven transport of taurocholate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -137999,7 +137999,7 @@
     - confidence_score: 2.0
   - !!omap
     - id: MAR01872
-    - name: taurochenodeoxycholate phosphorylation
+    - name: ATP-driven transport of taurochenodeoxycholate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -138018,7 +138018,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01874
-    - name: glycochenodeoxycholate phosphorylation
+    - name: ATP-driven transport of glycochenodeoxycholate (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
@@ -153556,7 +153556,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00012
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-uptake pool split into fatty acids
     - metabolites: !!omap
       - MAM00003e: 0.0001
       - MAM00008e: 0.0001
@@ -154812,7 +154812,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00685
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-LD-TG1 pool (liver tissue) split into fatty acids
     - metabolites: !!omap
       - MAM00003c: 0.0001
       - MAM00008c: 0.0001
@@ -154883,7 +154883,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00686
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-LD-TG2 pool (liver tissue) split into fatty acids
     - metabolites: !!omap
       - MAM00003c: 0.0001
       - MAM00008c: 0.0001
@@ -154954,7 +154954,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00687
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-LD-TG3 pool (liver tissue) split into fatty acids
     - metabolites: !!omap
       - MAM00003c: 0.0001
       - MAM00008c: 0.0001
@@ -155025,7 +155025,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00688
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-LD-PC pool (liver tissue) split into fatty acids
     - metabolites: !!omap
       - MAM00003c: 0.0005
       - MAM00008c: 0.0005
@@ -155096,7 +155096,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00689
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-LD-PE pool (liver tissue) split into fatty acids
     - metabolites: !!omap
       - MAM00003c: 0.0005
       - MAM00008c: 0.0005
@@ -155167,7 +155167,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00690
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-LD-PS pool (liver tissue) split into fatty acids
     - metabolites: !!omap
       - MAM00003c: 0.0005
       - MAM00008c: 0.0005
@@ -155238,7 +155238,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00691
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-LD-PI pool (liver tissue) split into fatty acids
     - metabolites: !!omap
       - MAM00003c: 0.0005
       - MAM00008c: 0.0005
@@ -155309,7 +155309,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00692
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-LD-SM pool (liver tissue) split into fatty acids
     - metabolites: !!omap
       - MAM00003c: 0.002
       - MAM00008c: 0.002
@@ -155410,7 +155410,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05233
-    - name: apoA1 formation
+    - name: HDL remnant degradation
     - metabolites: !!omap
       - MAM01350l: 2.0
       - MAM02039l: 30.0
@@ -155446,7 +155446,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05238
-    - name: 2-lysolecithin pool formation
+    - name: LDL remnant degradation
     - metabolites: !!omap
       - MAM00656l: 25.0
       - MAM01351l: 1.0
@@ -155484,7 +155484,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05243
-    - name: 2-lysolecithin pool formation
+    - name: VLDL remnant degradation
     - metabolites: !!omap
       - MAM00656l: 165.0
       - MAM01351l: 1.0
@@ -155527,7 +155527,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05247
-    - name: 2-lysolecithin pool formation
+    - name: chylomicron remnant degradation
     - metabolites: !!omap
       - MAM00656l: 1.0
       - MAM01352l: 1.0
@@ -155550,7 +155550,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR05257
-    - name: (10Z)-heptadecenoic acid formation
+    - name: fatty acid-LD-PC pool (liver tissue) split into fatty acids
     - metabolites: !!omap
       - MAM00003r: 0.0005
       - MAM00008r: 0.0005
@@ -155712,7 +155712,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00015
-    - name: NEFA blood pool in to (10Z)-heptadecenoic acid conversion
+    - name: NEFA blood pool in split into fatty acids
     - metabolites: !!omap
       - MAM00003e: 0.0048
       - MAM00008e: 0.0016
@@ -155782,7 +155782,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00016
-    - name: (10Z)-heptadecenoic acid to NEFA blood pool out conversion
+    - name: NEFA blood pool out formation
     - metabolites: !!omap
       - MAM00003e: -0.0001
       - MAM00008e: -0.0023
@@ -195615,7 +195615,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00021
-    - name: alanine to biomass conversion
+    - name: biomass reaction (HMR composition)
     - metabolites: !!omap
       - MAM01307c: -1.0
       - MAM01365c: -1.0
@@ -195682,7 +195682,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00035
-    - name: (1aalpha,2beta,3alpha,11calpha)... to xenobiotics conversion
+    - name: xenobiotics pool formation
     - metabolites: !!omap
       - MAM00031c: -1.0
       - MAM00033c: -1.0
@@ -195735,7 +195735,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00036
-    - name: (11R)-HPETE to arachidonate derivatives conversion
+    - name: arachidonate derivatives pool formation
     - metabolites: !!omap
       - MAM00005c: -1.0
       - MAM00013c: -1.0
@@ -195892,7 +195892,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00037
-    - name: 16alpha-hydroxyestrone to steroids conversion
+    - name: steroids pool formation
     - metabolites: !!omap
       - MAM00400c: -1.0
       - MAM00400r: -1.0
@@ -208440,7 +208440,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03238
-    - name: dihydroceramide pool hydroxylation
+    - name: dihydroceramide pool desaturation
     - metabolites: !!omap
       - MAM01430c: 1.0
       - MAM01699c: -1.0
@@ -222753,7 +222753,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR09932
-    - name: cholesterol phosphorylation
+    - name: Biomass maintenance reaction without replication, transcription, and translation precursors
     - metabolites: !!omap
       - MAM01285c: 20.6508
       - MAM01371c: -20.7045
@@ -254073,7 +254073,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR12323
-    - name: 13,15-O-didesmethyl tacrolimus phosphorylation
+    - name: ATP-driven transport of 13,15-O-didesmethyl tacrolimus (cytosol to extracellular)
     - metabolites: !!omap
       - MAM01285c: 1.0
       - MAM01371c: -1.0
