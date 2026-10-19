@@ -41797,15 +41797,8 @@
     - formula: C29H50O
     - metFrom: Recon3D
   - !!omap
-    - id: MAM03377c
-    - name: 24,25,26,27-Tetranor-23-Oxo-Hydroxyvitamin D3
-    - compartment: c
-    - charge: 0.0
-    - formula: C23H34O3
-    - metFrom: Recon3D
-  - !!omap
     - id: MAM03377m
-    - name: 24,25,26,27-Tetranor-23-Oxo-Hydroxyvitamin D3
+    - name: 1-hydroxy-23-oxo-24,25,26,27-tetranorvitamin D3
     - compartment: m
     - charge: 0.0
     - formula: C23H34O3
@@ -58318,6 +58311,34 @@
     - compartment: r
     - charge: -4.0
     - formula: C45H66N7O18P3S
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM20094m
+    - name: 25-hydroxy-24-oxocalciol
+    - compartment: m
+    - charge: 0.0
+    - formula: C27H42O3
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM20095m
+    - name: (23S)-23,25-dihydroxy-24-oxocalciol
+    - compartment: m
+    - charge: 0.0
+    - formula: C27H42O4
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM20095c
+    - name: (23S)-23,25-dihydroxy-24-oxocalciol
+    - compartment: c
+    - charge: 0.0
+    - formula: C27H42O4
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM20095e
+    - name: (23S)-23,25-dihydroxy-24-oxocalciol
+    - compartment: e
+    - charge: 0.0
+    - formula: C27H42O4
     - metFrom: HumanGEM
 - reactions:
   - !!omap
@@ -147954,8 +147975,12 @@
       - MAM02630m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000019186
     - subsystem:
       - Vitamin D metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 1.14.15.16
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -179949,7 +179974,7 @@
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000019186
     - subsystem:
-      - Transport reactions
+      - Vitamin D metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.15.16
@@ -210165,26 +210190,6 @@
       - ec-code:
         - 1.3.1.70
     - references: PMID:11111101
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR03435
-    - name: acetyl-CoA C-acyltransferase (24,25,26,27-Tetranor-23-Oxo-Hydroxyvitamin D3)
-    - metabolites: !!omap
-      - MAM01418c: 1.0
-      - MAM02040c: 1.0
-      - MAM02554c: 1.0
-      - MAM02555c: -1.0
-      - MAM02630c: -1.0
-      - MAM03377c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Vitamin D metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 2.3.1.16
-    - references: PMID:11012668
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -271389,6 +271394,87 @@
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
     - notes: "Non-enzymatic: alpha-tocopheryl hydroquinone reduces ubiquinone-10 in lipoproteins (PMID:9223282). It is the consumer of the hydroquinone made by MAR03047, MAR06500, MAR20189 and MAR20190."
+  - !!omap
+    - id: MAR20224
+    - name: secalciferol 24-oxidation (CYP24A1)
+    - metabolites: !!omap
+      - MAM00035m: -1.0
+      - MAM02039m: -1.0
+      - MAM02040m: 2.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+      - MAM02630m: -1.0
+      - MAM20094m: 1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000019186
+    - subsystem:
+      - Vitamin D metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 1.14.15.16
+    - references: doi:10.1046/j.1432-1327.2000.01680.x
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+  - !!omap
+    - id: MAR20225
+    - name: 25-hydroxy-24-oxocalciol 23-hydroxylation (CYP24A1)
+    - metabolites: !!omap
+      - MAM02039m: -1.0
+      - MAM02040m: 1.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+      - MAM02630m: -1.0
+      - MAM20094m: -1.0
+      - MAM20095m: 1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000019186
+    - subsystem:
+      - Vitamin D metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 1.14.15.16
+    - references: doi:10.1046/j.1432-1327.2000.01680.x
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+  - !!omap
+    - id: MAR20226
+    - name: transport of (23S)-23,25-dihydroxy-24-oxocalciol (mitochondria to cytosol)
+    - metabolites: !!omap
+      - MAM20095c: 1.0
+      - MAM20095m: -1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Transport reactions
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: Exit of the last product of the CYP24A1 C-24 route in the model; the carrier is not known.
+  - !!omap
+    - id: MAR20227
+    - name: transport of (23S)-23,25-dihydroxy-24-oxocalciol (cytosol to extracellular)
+    - metabolites: !!omap
+      - MAM20095c: -1.0
+      - MAM20095e: 1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Transport reactions
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: Exit of the last product of the CYP24A1 C-24 route in the model; the carrier is not known.
+  - !!omap
+    - id: MAR20228
+    - name: Exchange of (23S)-23,25-dihydroxy-24-oxocalciol
+    - metabolites: !!omap
+      - MAM20095e: -1.0
+    - lower_bound: -1000.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Exchange/demand reactions
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
 - genes:
   - !!omap
     - id: ENSG00000000419
