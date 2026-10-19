@@ -208304,7 +208304,11 @@
     - gene_reaction_rule: ENSG00000159228 or ENSG00000181019
     - subsystem:
       - Vitamin E metabolism
-    - references: PMID:9223282;PMID:7005231;PMID:16569397
+    - annotation: !!omap
+      - ec-code:
+        - 1.6.5.2
+        - 1.1.1.184
+    - references: PMID:7005231;PMID:16569397;doi:10.1124/mol.52.2.300
     - confidence_score: 0.0
   - !!omap
     - id: MAR03048
