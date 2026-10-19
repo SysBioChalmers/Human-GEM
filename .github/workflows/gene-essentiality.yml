@@ -19,6 +19,15 @@ on:
       comment:
         description: "ID of the /run comment to overwrite with the results (set by the /run command)"
         default: ""
+      orders:
+        description: >-
+          Reaction orders to build every cell line in (1-3). ftINIT's result depends on the
+          reaction order; with 2 or 3, calls that differ between orders are listed in
+          gene-essential-unstable.csv and not counted as changes in the pull-request diff.
+          Each order adds a full run (hours).
+        type: choice
+        options: ["1", "2", "3"]
+        default: "1"
 
 env:
   # Stream Python (and raven-toolbox) stdout/stderr live into the Actions log
@@ -69,6 +78,9 @@ jobs:
   # repeating the same tens-of-minutes computation for itself.
   prep:
     if: ${{ !inputs.diagnose }}
+    strategy:
+      matrix:
+        order: ${{ fromJSON(inputs.orders == '3' && '[0,1,2]' || inputs.orders == '2' && '[0,1]' || '[0]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -102,13 +114,13 @@ jobs:
 
       - name: Build the shared prepData once
         run: |
-          python code/test/gradedEssentiality.py \
+          python code/test/gradedEssentiality.py --reaction-order ${{ matrix.order }} \
             --prep-only --prep-cache "$RUNNER_TEMP/prep-data.pkl"
 
       - name: Upload the shared prepData
         uses: actions/upload-artifact@v7
         with:
-          name: prep-data
+          name: prep-data-${{ matrix.order }}
           path: ${{ runner.temp }}/prep-data.pkl
           retention-days: 1
 
@@ -151,6 +163,7 @@ jobs:
       max-parallel: 2
       matrix:
         shard: [1, 4, 0, 2, 3]
+        order: ${{ fromJSON(inputs.orders == '3' && '[0,1,2]' || inputs.orders == '2' && '[0,1]' || '[0]') }}
     env:
       SHARD_COUNT: 5
     runs-on: ubuntu-latest
@@ -196,7 +209,7 @@ jobs:
       - name: Download the shared prepData
         uses: actions/download-artifact@v8
         with:
-          name: prep-data
+          name: prep-data-${{ matrix.order }}
           path: ${{ runner.temp }}
 
       - name: Start resource monitor
@@ -220,7 +233,7 @@ jobs:
           # solver's own log is silenced for these models.
           FTINIT_DEBUG: "1"
         run: |
-          python code/test/gradedEssentiality.py \
+          python code/test/gradedEssentiality.py --reaction-order ${{ matrix.order }} \
             --build-models-only --model-dir "$RUNNER_TEMP/context-models" \
             --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
             --prep-cache "$RUNNER_TEMP/prep-data.pkl"
@@ -238,7 +251,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: build-model-resource-monitor-${{ matrix.shard }}
+          name: build-model-resource-monitor-${{ matrix.order }}-${{ matrix.shard }}
           path: ${{ runner.temp }}/resource-monitor.log
           retention-days: 1
           if-no-files-found: warn
@@ -246,7 +259,7 @@ jobs:
       - name: Upload this shard's context models
         uses: actions/upload-artifact@v7
         with:
-          name: context-models-${{ matrix.shard }}
+          name: context-models-${{ matrix.order }}-${{ matrix.shard }}
           path: ${{ runner.temp }}/context-models
           retention-days: 1
 
@@ -261,8 +274,12 @@ jobs:
     if: ${{ !inputs.diagnose && !cancelled() && needs.build-model.result != 'skipped' }}
     strategy:
       fail-fast: false
+      # Each shard holds a Gurobi WLS session. With orders=2 or 3 the matrix has 10 or 15
+      # shards; capping them at 5 keeps the concurrent sessions at the one-order level.
+      max-parallel: 5
       matrix:
         shard: [0, 1, 2, 3, 4]
+        order: ${{ fromJSON(inputs.orders == '3' && '[0,1,2]' || inputs.orders == '2' && '[0,1]' || '[0]') }}
     env:
       SHARD_COUNT: 5
     runs-on: ubuntu-latest
@@ -299,13 +316,13 @@ jobs:
       - name: Download the shared prepData
         uses: actions/download-artifact@v8
         with:
-          name: prep-data
+          name: prep-data-${{ matrix.order }}
           path: ${{ runner.temp }}
 
       - name: Download this shard's context models
         uses: actions/download-artifact@v8
         with:
-          name: context-models-${{ matrix.shard }}
+          name: context-models-${{ matrix.order }}-${{ matrix.shard }}
           path: ${{ runner.temp }}/context-models
 
       - name: Start resource monitor
@@ -329,7 +346,7 @@ jobs:
           # session (see taskEssentialGenes._scan), and this step already runs
           # five shards at once, each holding one session against the
           # Gurobi_Eduard WLS license's baseline of 2.
-          python code/test/gradedEssentiality.py \
+          python code/test/gradedEssentiality.py --reaction-order ${{ matrix.order }} \
             --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" \
             --model-dir "$RUNNER_TEMP/context-models" \
             --shard-index ${{ matrix.shard }} --shard-count "$SHARD_COUNT" \
@@ -348,7 +365,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: build-test-resource-monitor-${{ matrix.shard }}
+          name: build-test-resource-monitor-${{ matrix.order }}-${{ matrix.shard }}
           path: ${{ runner.temp }}/resource-monitor.log
           retention-days: 1
           if-no-files-found: warn
@@ -356,7 +373,7 @@ jobs:
       - name: Upload this shard's checkpoints
         uses: actions/upload-artifact@v7
         with:
-          name: graded-checkpoints-${{ matrix.shard }}
+          name: graded-checkpoints-${{ matrix.order }}-${{ matrix.shard }}
           path: ${{ runner.temp }}/graded-checkpoints
           retention-days: 1
 
@@ -397,18 +414,27 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           pattern: graded-checkpoints-*
-          path: ${{ runner.temp }}/graded-checkpoints
-          merge-multiple: true
+          path: ${{ runner.temp }}/graded-artifacts
 
-      # This workflow is dispatched (by /run gene-essentiality), so it has no
-      # pull_request context; the PR number arrives as the `pr` input instead and is
-      # recorded in the summary's "Run:" line.
+      # One checkpoint directory per reaction order (artifact graded-checkpoints-<order>-<shard>).
+      # The file order (0) gives the matrix; the other orders only mark the calls that
+      # change with the order. This workflow is dispatched (by /run gene-essentiality), so
+      # it has no pull_request context; the PR number arrives as the `pr` input instead and
+      # is recorded in the summary's "Run:" line.
       - name: Combine cell lines into the final report
         env:
+          ORDERS: ${{ inputs.orders }}
           QC_RUN_PR: ${{ inputs.pr }}
         run: |
+          extra=()
+          for order in $(seq 0 $(( ${ORDERS:-1} - 1 ))); do
+            dir="$RUNNER_TEMP/graded-checkpoints-$order"
+            mkdir -p "$dir"
+            cp "$RUNNER_TEMP"/graded-artifacts/graded-checkpoints-"$order"-*/* "$dir"/
+            [ "$order" = 0 ] || extra+=(--order-checkpoint-dir "$dir")
+          done
           python code/test/gradedEssentiality.py \
-            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints" --aggregate-only
+            --checkpoint-dir "$RUNNER_TEMP/graded-checkpoints-0" --aggregate-only "${extra[@]}"
           cat data/testResults/gene-essential_summary.md
 
       # Scopes the run to genes this pull request's own model changes could plausibly
@@ -439,6 +465,9 @@ jobs:
           git fetch origin "refs/heads/$BASE_REF:refs/remotes/origin/$BASE_REF" --depth=1
           mkdir -p "$RUNNER_TEMP/base"
           git show "origin/$BASE_REF:model/Human-GEM.yml" > "$RUNNER_TEMP/base/Human-GEM.yml"
+          git show "origin/$BASE_REF:data/testResults/gene-essential-unstable.csv" \
+              > "$RUNNER_TEMP/base/gene-essential-unstable.csv" 2>/dev/null \
+            || rm -f "$RUNNER_TEMP/base/gene-essential-unstable.csv"
           if ! git show "origin/$BASE_REF:data/testResults/gene-essential.csv" \
               > "$RUNNER_TEMP/base/gene-essential.csv" 2>/dev/null; then
             echo "::error::$BASE_REF has no data/testResults/gene-essential.csv"\
@@ -452,7 +481,9 @@ jobs:
             --summary-url "$SUMMARY_URL" \
             --out-summary "$RUNNER_TEMP/gene-essential-diff.md" \
             --out-detail "$RUNNER_TEMP/gene-essential-diff-detail.md" \
-            --out-csv data/testResults/gene-essential-diff.csv
+            --out-csv data/testResults/gene-essential-diff.csv \
+            --unstable "$RUNNER_TEMP/base/gene-essential-unstable.csv" \
+            --unstable data/testResults/gene-essential-unstable.csv
           {
             echo "results<<GENEESS_DIFF_EOF"
             cat "$RUNNER_TEMP/gene-essential-diff.md"
@@ -497,7 +528,10 @@ jobs:
           # actor is github-actions[bot], which the repository's "require approval
           # for first-time contributors" policy holds for manual approval.
           commit_message: "chore: add gene essentiality test result [skip ci]"
-          file_pattern: data/testResults/*
+          # A directory, not data/testResults/*: `git add <dir>` also stages files the run
+          # removed, such as gene-essential-unstable.csv after a single-order run, while a
+          # glob only names files that still exist.
+          file_pattern: data/testResults
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.number }}
