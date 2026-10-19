@@ -9734,7 +9734,7 @@ MAR10344		EX_trideceth_e				EX_trideceth[e]						0			EX_trideceth[e]
 MAR10345						EX_ttdcrn[e]						0			EX_ttdcrn[e]
 MAR10346		EX_txb2_e;EX_HC02180_e				EX_txb2[e];EX_HC02180[e]						0			EX_txb2[e]
 MAR10347		EX_urcan_e				EX_urcan[e]						0			EX_urcan[e]
-MAR10348		EX_wharachd_e				EX_wharachd[e]	MNXR99036					0			EX_wharachd[e];HMR_10025;MAR10025
+MAR10348		EX_wharachd_e				EX_wharachd[e]	MNXR106235					0			EX_wharachd[e];HMR_10025;MAR10025
 MAR10349		EX_xolest181_hs_e				EX_xolest181_hs[e]						0			EX_xolest181_hs[e]
 MAR10350		EX_xolest182_hs_e				EX_xolest182_hs[e]						0			EX_xolest182_hs[e]
 MAR10351		EX_xolest183_hs_e				EX_xolest183_hs[e]						0			EX_xolest183_hs[e]
