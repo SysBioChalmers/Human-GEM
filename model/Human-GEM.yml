@@ -70401,9 +70401,10 @@
     - annotation: !!omap
       - ec-code:
         - 1.5.5.2
-    - references: PMID:18506409;PMID:28990412
+    - references: PMID:18506409;PMID:28990412;doi:10.1042/BJ20141159
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: "PRODH2 is not included: it oxidises hydroxyproline with a 12-fold higher kcat/Km than proline (PMID:25697095), and its loss causes hyperhydroxyprolinemia, not hyperprolinemia."
   - !!omap
     - id: MAR04285
     - name: succinate-semialdehyde:NAD+ oxidoreductase
