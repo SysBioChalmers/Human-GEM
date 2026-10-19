@@ -73957,7 +73957,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74217,7 +74217,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74270,7 +74270,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74290,7 +74290,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74325,7 +74325,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74453,7 +74453,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74534,7 +74534,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74637,7 +74637,7 @@
       - MAM03136c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74675,7 +74675,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74775,7 +74775,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -74794,7 +74794,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -75061,7 +75061,7 @@
       - MAM03099c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154 or ENSG00000241644
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844 or ENSG00000241644
     - subsystem:
       - Phenylalanine, tyrosine and tryptophan biosynthesis
     - annotation: !!omap
@@ -84984,7 +84984,7 @@
       - MAM02631c: -2.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000109610 or ENSG00000112096 or ENSG00000142168
+    - gene_reaction_rule: ENSG00000109610 or ENSG00000291237 or ENSG00000142168
     - subsystem:
       - ROS detoxification
     - annotation: !!omap
@@ -85082,7 +85082,7 @@
       - MAM02631m: -2.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000112096
+    - gene_reaction_rule: ENSG00000291237
     - subsystem:
       - ROS detoxification
     - annotation: !!omap
@@ -116586,7 +116586,7 @@
       - MAM02877c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Estrogen metabolism
     - annotation: !!omap
@@ -116606,7 +116606,7 @@
       - MAM02877c: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Estrogen metabolism
     - annotation: !!omap
@@ -116670,7 +116670,7 @@
       - MAM02877c: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Estrogen metabolism
     - annotation: !!omap
@@ -116756,7 +116756,7 @@
       - MAM02877c: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Estrogen metabolism
     - annotation: !!omap
@@ -116886,7 +116886,7 @@
       - MAM02877c: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Estrogen metabolism
     - annotation: !!omap
@@ -116906,7 +116906,7 @@
       - MAM02877r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Estrogen metabolism
     - annotation: !!omap
@@ -116926,7 +116926,7 @@
       - MAM02877c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Estrogen metabolism
     - annotation: !!omap
@@ -147233,7 +147233,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Serotonin and melatonin biosynthesis
     - annotation: !!omap
@@ -151764,7 +151764,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000093010 or ENSG00000184154
+    - gene_reaction_rule: ENSG00000093010 or ENSG00000284844
     - subsystem:
       - Isolated
     - annotation: !!omap
@@ -152089,7 +152089,7 @@
       - MAM02710c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000084072 and ENSG00000113593 and ENSG00000137168 and ENSG00000240344) or ENSG00000004478 or ENSG00000077800 or ENSG00000079150 or ENSG00000088832 or ENSG00000096060 or ENSG00000100023 or ENSG00000100442 or ENSG00000102309 or ENSG00000105701 or ENSG00000106080 or ENSG00000108179 or ENSG00000114857 or ENSG00000119782 or ENSG00000122642 or ENSG00000127445 or ENSG00000131013 or ENSG00000134285 or ENSG00000138398 or ENSG00000141756 or ENSG00000153015 or ENSG00000166794 or ENSG00000168938 or ENSG00000171497 or ENSG00000171960 or ENSG00000173486 or ENSG00000196262 or ENSG00000236334 or ENSG00000263353 or ENSG00000263464 or ENSG00000271567
+    - gene_reaction_rule: (ENSG00000084072 and ENSG00000113593 and ENSG00000137168 and ENSG00000240344) or ENSG00000004478 or ENSG00000077800 or ENSG00000079150 or ENSG00000088832 or ENSG00000096060 or ENSG00000100023 or ENSG00000100442 or ENSG00000102309 or ENSG00000105701 or ENSG00000106080 or ENSG00000108179 or ENSG00000114857 or ENSG00000119782 or ENSG00000122642 or ENSG00000127445 or ENSG00000131013 or ENSG00000134285 or ENSG00000138398 or ENSG00000141756 or ENSG00000153015 or ENSG00000166794 or ENSG00000168938 or ENSG00000171497 or ENSG00000171960 or ENSG00000173486 or ENSG00000196262 or ENSG00000236334 or ENSG00000263353 or ENSG00000288867 or ENSG00000271567
     - subsystem:
       - Isolated
     - annotation: !!omap
@@ -189400,7 +189400,7 @@
       - MAM01968r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000281500
+    - gene_reaction_rule: ENSG00000137700
     - subsystem:
       - Transport reactions
     - references: PMID:11879177;PMID:12062448
@@ -189810,7 +189810,7 @@
       - MAM02751r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000281500
+    - gene_reaction_rule: ENSG00000137700
     - subsystem:
       - Transport reactions
     - references: PMID:12811562
@@ -202713,7 +202713,7 @@
       - MAM02751r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000281500
+    - gene_reaction_rule: ENSG00000137700
     - subsystem:
       - Transport reactions
     - references: PMID:11879177
@@ -273660,9 +273660,6 @@
     - id: ENSG00000112077
     - name: RHAG
   - !!omap
-    - id: ENSG00000112096
-    - name: SOD2
-  - !!omap
     - id: ENSG00000112130
     - name: RNF8
   - !!omap
@@ -278691,9 +278688,6 @@
     - id: ENSG00000184076
     - name: UQCR10
   - !!omap
-    - id: ENSG00000184154
-    - name: LRTOMT
-  - !!omap
     - id: ENSG00000184182
     - name: UBE2F
   - !!omap
@@ -279804,9 +279798,6 @@
     - id: ENSG00000263353
     - name: PPIAL4A
   - !!omap
-    - id: ENSG00000263464
-    - name: PPIAL4C
-  - !!omap
     - id: ENSG00000265203
     - name: RBP3
   - !!omap
@@ -279866,9 +279857,6 @@
   - !!omap
     - id: ENSG00000278540
     - name: ACACA
-  - !!omap
-    - id: ENSG00000281500
-    - name: SLC37A4
   - !!omap
     - id: ENSG00000288702
     - name: UGT1A3
@@ -279965,6 +279953,18 @@
   - !!omap
     - id: ENSG00000186603
     - name: HPDL
+  - !!omap
+    - id: ENSG00000284844
+    - name: TOMT
+  - !!omap
+    - id: ENSG00000291237
+    - name: SOD2
+  - !!omap
+    - id: ENSG00000137700
+    - name: SLC37A4
+  - !!omap
+    - id: ENSG00000288867
+    - name: PPIAL4C
 - compartments: !!omap
   - c: Cytosol
   - e: Extracellular
