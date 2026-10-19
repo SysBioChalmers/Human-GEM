@@ -3045,13 +3045,6 @@
     - formula: C10H11NO2
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM00232c
-    - name: 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen
-    - compartment: c
-    - charge: 1.0
-    - formula: C19H34N3O13R2
-    - metFrom: HMRdatabase
-  - !!omap
     - id: MAM00232e
     - name: 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen
     - compartment: e
@@ -11226,13 +11219,6 @@
     - compartment: c
     - charge: 0.0
     - formula: C9H11NO2
-    - metFrom: HMRdatabase
-  - !!omap
-    - id: MAM01036c
-    - name: 5-(D-galactosyloxy)-L-lysine-procollagen
-    - compartment: c
-    - charge: 1.0
-    - formula: C13H24N3O8R2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01037m
@@ -33025,13 +33011,6 @@
     - compartment: x
     - charge: -1.0
     - formula: C19H37O2
-    - metFrom: HMRdatabase
-  - !!omap
-    - id: MAM02767c
-    - name: procollagen-5-hydroxy-L-lysine
-    - compartment: c
-    - charge: 1.0
-    - formula: C7H14N3O3R2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02769c
@@ -58278,6 +58257,34 @@
     - charge: -1.0
     - formula: C27H41O4
     - metFrom: HumanGEM
+  - !!omap
+    - id: MAM00204r
+    - name: "[protein]-L-lysine"
+    - compartment: r
+    - charge: 1.0
+    - formula: C7H14N3O2R2
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM02767r
+    - name: procollagen-5-hydroxy-L-lysine
+    - compartment: r
+    - charge: 1.0
+    - formula: C7H14N3O3R2
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM01036r
+    - name: 5-(D-galactosyloxy)-L-lysine-procollagen
+    - compartment: r
+    - charge: 1.0
+    - formula: C13H24N3O8R2
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM00232r
+    - name: 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen
+    - compartment: r
+    - charge: 1.0
+    - formula: C19H34N3O13R2
+    - metFrom: HumanGEM
 - reactions:
   - !!omap
     - id: MAR03905
@@ -72068,12 +72075,12 @@
     - id: MAR06983
     - name: "[procollagen]-L-lysine,2-oxoglutarate:oxygen oxidoreductase (5-hydroxylating)"
     - metabolites: !!omap
-      - MAM00204c: -1.0
-      - MAM01306c: -1.0
-      - MAM01596c: 1.0
-      - MAM02630c: -1.0
-      - MAM02767c: 1.0
-      - MAM02943c: 1.0
+      - MAM00204r: -1.0
+      - MAM01306r: -1.0
+      - MAM01596r: 1.0
+      - MAM02630r: -1.0
+      - MAM02767r: 1.0
+      - MAM02943r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000083444 or ENSG00000106397 or ENSG00000152952
@@ -72082,17 +72089,18 @@
     - annotation: !!omap
       - ec-code:
         - 1.14.11.4
+    - references: doi:10.1074/jbc.M908025199;doi:10.1042/BJ20021533
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
     - id: MAR06984
     - name: UDP-alpha-D-galactose:procollagen-5-hydroxy-L-lysine D-galactosyltransferase
     - metabolites: !!omap
-      - MAM01036c: 1.0
-      - MAM02039c: 1.0
-      - MAM02767c: -1.0
-      - MAM03106c: 1.0
-      - MAM03107c: -1.0
+      - MAM01036r: 1.0
+      - MAM02039r: 1.0
+      - MAM02767r: -1.0
+      - MAM03106r: 1.0
+      - MAM03107r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000106397 or ENSG00000130309 or ENSG00000198756
@@ -72101,17 +72109,18 @@
     - annotation: !!omap
       - ec-code:
         - 2.4.1.50
+    - references: doi:10.1074/jbc.M908025199;doi:10.1186/1471-2121-11-33;doi:10.1074/jbc.M006203200
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
     - id: MAR06985
     - name: UDPglucose:5-(D-galactosyloxy)-L-lysine-procollagen D-glucosyltransferase
     - metabolites: !!omap
-      - MAM00232c: 1.0
-      - MAM01036c: -1.0
-      - MAM02039c: 1.0
-      - MAM03106c: 1.0
-      - MAM03108c: -1.0
+      - MAM00232r: 1.0
+      - MAM01036r: -1.0
+      - MAM02039r: 1.0
+      - MAM03106r: 1.0
+      - MAM03108r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000106397
@@ -72120,6 +72129,7 @@
     - annotation: !!omap
       - ec-code:
         - 2.4.1.66
+    - references: doi:10.1074/jbc.M908025199;doi:10.1074/jbc.M006203200
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -269958,10 +269968,10 @@
     - notes: CYP26C1 is the enzyme curated for this step (RHEA:75855, PMID:14532297); the other isoforms rest on correlation with CYP activities in human liver microsomes (PMID:11911845).
   - !!omap
     - id: MAR20195
-    - name: Transport of 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen (Cytosol to Extracellular)
+    - name: transport of 1,2-D-glucosyl-5-D-(galactosyloxy)-L-lysine-procollagen (endoplasmic reticulum to extracellular)
     - metabolites: !!omap
-      - MAM00232c: -1.0
       - MAM00232e: 1.0
+      - MAM00232r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
@@ -270491,6 +270501,47 @@
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
     - notes: The acid made by CYP27A1 in the mitochondria is 7alpha-hydroxylated by CYP7B1 in the ER; the route between the membranes is not known.
+  - !!omap
+    - id: MAR20232
+    - name: transport of [protein]-L-lysine (cytosol to endoplasmic reticulum)
+    - metabolites: !!omap
+      - MAM00204c: -1.0
+      - MAM00204r: 1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Transport reactions
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: Stands for the co-translational import of procollagen chains into the ER lumen.
+  - !!omap
+    - id: MAR20233
+    - name: transport of AKG (cytosol to endoplasmic reticulum)
+    - metabolites: !!omap
+      - MAM01306c: -1.0
+      - MAM01306r: 1.0
+    - lower_bound: -1000.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Transport reactions
+    - references: doi:10.1091/mbc.e03-05-0325
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: The ER membrane is permeable to small charged molecules (PMID:14617815); no ER carrier is known for this metabolite.
+  - !!omap
+    - id: MAR20234
+    - name: transport of succinate (cytosol to endoplasmic reticulum)
+    - metabolites: !!omap
+      - MAM02943c: -1.0
+      - MAM02943r: 1.0
+    - lower_bound: -1000.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Transport reactions
+    - references: doi:10.1091/mbc.e03-05-0325
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: The ER membrane is permeable to small charged molecules (PMID:14617815); no ER carrier is known for this metabolite.
 - genes:
   - !!omap
     - id: ENSG00000000419
