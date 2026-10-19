@@ -92092,19 +92092,25 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02559
-    - name: 15(S)-HEPE hydrolysis
+    - name: glutathione peroxidase (15(S)-HpEPE)
     - metabolites: !!omap
-      - MAM00376c: -1.0
-      - MAM00379c: 1.0
-      - MAM02039c: 2.0
-      - MAM02040c: -1.0
-    - lower_bound: -1000.0
+      - MAM00376c: 1.0
+      - MAM00379c: -1.0
+      - MAM02026c: -2.0
+      - MAM02027c: 1.0
+      - MAM02040c: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000116157 or ENSG00000117592 or ENSG00000164294 or ENSG00000167468 or ENSG00000176153 or ENSG00000198704 or ENSG00000211445 or ENSG00000224586 or ENSG00000233276
     - subsystem:
       - Omega-3 fatty acid metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 1.11.1.9
     - references: PMID:11034610
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Written as the reduction of the hydroperoxide by glutathione peroxidases, as MAR00960.
   - !!omap
     - id: MAR02560
     - name: 15(R)-HEPE hydrolysis
@@ -129721,19 +129727,25 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR01389
-    - name: 15(S)-HETrE hydrolysis
+    - name: glutathione peroxidase (15-HpETrE)
     - metabolites: !!omap
-      - MAM00378c: -1.0
-      - MAM00391c: 1.0
-      - MAM02039c: 2.0
-      - MAM02040c: -1.0
-    - lower_bound: -1000.0
+      - MAM00378c: 1.0
+      - MAM00391c: -1.0
+      - MAM02026c: -2.0
+      - MAM02027c: 1.0
+      - MAM02040c: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000116157 or ENSG00000117592 or ENSG00000164294 or ENSG00000167468 or ENSG00000176153 or ENSG00000198704 or ENSG00000211445 or ENSG00000224586 or ENSG00000233276
     - subsystem:
       - Prostaglandin biosynthesis
+    - annotation: !!omap
+      - ec-code:
+        - 1.11.1.9
     - references: PMID:10617998;PMID:1329675
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Written as the reduction of the hydroperoxide by glutathione peroxidases, as MAR00960.
   - !!omap
     - id: MAR01390
     - name: prostaglandin-endoperoxide synthase (dihomo-gamma-linolenate)
