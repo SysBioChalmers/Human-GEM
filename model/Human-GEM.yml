@@ -148260,12 +148260,13 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
+    - references: doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06435
     - name: 3-hydroxyacyl-CoA dehydrogenase (7-carboxy-alpha-tocotrienol)
@@ -148287,7 +148288,7 @@
       - MAM02759m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000115361 and ENSG00000104325 and (ENSG00000167969 or ENSG00000198721) and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000115361 and ENSG00000104325 and (ENSG00000167969 or ENSG00000198721) and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148302,10 +148303,10 @@
         - 5.1.99.4
         - 5.3.3.8
         - 6.2.1.-
-    - references: PMID:12368403
+    - references: PMID:12368403;doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: The 4-methyl-branched dienoyl intermediate is reduced by DECR1 and isomerised by ECI1/ECI2, as the saturated product (CMBHC) detected in HepG2 cells requires (PMID:12368403); activity of these enzymes on this substrate is inferred. Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: The 4-methyl-branched dienoyl intermediate is reduced by DECR1 and isomerised by ECI1/ECI2, as the saturated product (CMBHC) detected in HepG2 cells requires (PMID:12368403); activity of these enzymes on this substrate is inferred. Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06436
     - name: 3-hydroxyacyl-CoA dehydrogenase (5-carboxy-alpha-chromanol)
@@ -148325,7 +148326,7 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148338,9 +148339,10 @@
         - 4.2.1.17
         - 5.1.99.4
         - 6.2.1.-
+    - references: doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06442
     - name: leukotriene-B4 20-monooxygenase (gamma-tocotrienol)
@@ -148461,7 +148463,7 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148474,9 +148476,10 @@
         - 4.2.1.17
         - 5.1.99.4
         - 6.2.1.-
+    - references: doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06451
     - name: 3-hydroxyacyl-CoA dehydrogenase (7-carboxy-gamma-tocotrienol)
@@ -148498,7 +148501,7 @@
       - MAM02759m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000115361 and ENSG00000104325 and (ENSG00000167969 or ENSG00000198721) and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000115361 and ENSG00000104325 and (ENSG00000167969 or ENSG00000198721) and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148513,10 +148516,10 @@
         - 5.1.99.4
         - 5.3.3.8
         - 6.2.1.-
-    - references: PMID:12368403
+    - references: PMID:12368403;doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: The 4-methyl-branched dienoyl intermediate is reduced by DECR1 and isomerised by ECI1/ECI2, as the saturated product (CMBHC) detected in HepG2 cells requires (PMID:12368403); activity of these enzymes on this substrate is inferred. Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: The 4-methyl-branched dienoyl intermediate is reduced by DECR1 and isomerised by ECI1/ECI2, as the saturated product (CMBHC) detected in HepG2 cells requires (PMID:12368403); activity of these enzymes on this substrate is inferred. Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06453
     - name: 3-hydroxyacyl-CoA dehydrogenase (5-carboxy-gamma-chromanol)
@@ -148536,7 +148539,7 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000242110 and ENSG00000196177 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148549,9 +148552,10 @@
         - 4.2.1.17
         - 5.1.99.4
         - 6.2.1.-
+    - references: doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06456
     - name: gamma-tocopheroxyl-radical to gamma-tocopherol conversion
@@ -148760,7 +148764,7 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148773,9 +148777,10 @@
         - 4.2.1.17
         - 5.1.99.4
         - 6.2.1.-
+    - references: doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06473
     - name: 3-hydroxyacyl-CoA dehydrogenase (7-carboxy-gamma-chromanol)
@@ -148795,7 +148800,7 @@
       - MAM02759m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148808,9 +148813,10 @@
         - 4.2.1.17
         - 5.1.99.4
         - 6.2.1.-
+    - references: doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06500
     - name: NADH:ubiquinone oxidoreductase (alpha-tocopheryl quinone)
@@ -148954,7 +148960,7 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000242110 and ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
     - annotation: !!omap
@@ -148967,9 +148973,10 @@
         - 4.2.1.17
         - 5.1.99.4
         - 6.2.1.-
+    - references: doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06488
     - name: 7-carboxy-alpha-chromanol oxidation
@@ -148989,12 +148996,13 @@
       - MAM02759m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315
+    - gene_reaction_rule: ENSG00000115361 and ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Vitamin E metabolism
+    - references: doi:10.1006/abbi.1995.1389
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (ACAA2) is inferred from its broad-chain mitochondrial activity.
+    - notes: Acyl-CoA synthetase and thioesterase steps included in this lumped reaction have no identified enzyme; the thiolase (HADHA and HADHB, the trifunctional protein) is inferred from its activity on 2-methyl-branched 3-oxoacyl-CoAs, which the matrix 3-ketoacyl-CoA thiolase does not cleave.
   - !!omap
     - id: MAR06490
     - name: glucuronosyltransferase (gamma-carboxyethyl-hydroxychroman)
@@ -218146,7 +218154,7 @@
       - MAM03554m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000117054
+    - gene_reaction_rule: (ENSG00000115361 or ENSG00000117054) and ((ENSG00000084754 and ENSG00000138029) or (ENSG00000127884 and (ENSG00000138796 or ENSG00000072506) and ENSG00000167315))
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:9469587;PMID:9714723;PMID:11591435
