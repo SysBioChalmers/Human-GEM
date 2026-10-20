@@ -241269,7 +241269,7 @@
       - MAM03176c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716 or ENSG00000166796
+    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716
     - subsystem:
       - Valine, leucine, and isoleucine metabolism
     - annotation: !!omap
@@ -241313,7 +241313,7 @@
       - MAM03186c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716 or ENSG00000166796
+    - gene_reaction_rule: ENSG00000134333 or ENSG00000111716
     - subsystem:
       - Valine, leucine, and isoleucine metabolism
     - annotation: !!omap
