@@ -1,17 +1,16 @@
 ## Model quality report
 
-:x: **2** regression(s) vs `develop`. Review the row(s) below. Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:, direction alarms **0** :white_check_mark:.
+:x: **1** regression(s) vs `develop`. Review the row(s) below. Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:, direction alarms **0** :white_check_mark:.
 
 | Section | Status |
 | --- | --- |
-| Model &amp; network checks (24) | :x: **2** regression(s) |
+| Model &amp; network checks (24) | :x: **1** regression(s) |
 | Model file &amp; metabolic tasks (8) | :white_check_mark: all pass |
 | MEMOTE | :white_check_mark: **63.8%** (core subset) |
 | Full report | [model_qc_summary.md](model_qc_summary.md) |
 
 **Regression(s):**
 - Reaction bound / GPR issues: [**1**](qc_reaction_sanity.csv)
-- Cross-refs inconsistent across compartments: [**1**](qc_annotation_issues.csv)
 
 **Improved:**
 - Mass-imbalanced reactions: [**65**](balance_results.csv)

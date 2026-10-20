@@ -54,7 +54,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Removed reactions or metabolites not deprecated](README.md#removed-reactions-or-metabolites-not-deprecated) | 0 | 0 | :white_check_mark: |
 | [Naming issues (missing or inconsistent)](README.md#naming-issues-missing-or-inconsistent) | 0 | 0 | :white_check_mark: |
 | [Malformed cross-references](README.md#malformed-cross-references) | 0 | 0 | :white_check_mark: |
-| [Cross-refs inconsistent across compartments](README.md#cross-refs-inconsistent-across-compartments) | [1](qc_annotation_issues.csv) | +1 | :x: |
+| [Cross-refs inconsistent across compartments](README.md#cross-refs-inconsistent-across-compartments) | 0 | 0 | :white_check_mark: |
 
 ### Model file and metabolic tasks
 
