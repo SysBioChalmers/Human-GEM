@@ -140124,7 +140124,7 @@
       - MAM02751c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000014257 or ENSG00000102575 or ENSG00000142513 or ENSG00000155893 or ENSG00000183760 or ENSG00000151014
+    - gene_reaction_rule: ENSG00000014257 or ENSG00000102575 or ENSG00000142513 or ENSG00000155893 or ENSG00000183760
     - subsystem:
       - Nicotinate and nicotinamide metabolism
     - annotation: !!omap
