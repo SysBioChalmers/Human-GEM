@@ -14,7 +14,9 @@ Checks split into two kinds:
         letter, ENSG + 11 digits);
       - the model cannot produce biomass on a defined medium (Ham's medium from the
         GR metabolic task, each nutrient's uptake capped; the blocking biomass
-        precursors are written out so it can be fixed).
+        precursors are written out so it can be fixed);
+      - an identifier in the block reserved for the animal GEMs (MAR15000-MAR19999,
+        MAM15000-MAM19999). Silent when clean.
   * Reports (do not fail): quality metrics tracked with a delta versus the
       target branch.
       - reactions with no metabolites;
@@ -65,6 +67,7 @@ COMPLETENESS_CSV = f"{RESULTS}/qc_metabolite_completeness.csv"
 REACTION_SANITY_CSV = f"{RESULTS}/qc_reaction_sanity.csv"
 DEPRECATION_COMPLETENESS_CSV = f"{RESULTS}/qc_deprecation_completeness.csv"
 NAME_CONSISTENCY_CSV = f"{RESULTS}/qc_name_consistency.csv"
+RESERVED_ID_CSV = f"{RESULTS}/qc_reserved_identifiers.csv"
 # Growth value goes into the shared qc_status.tsv (via qcStatus); only the
 # variable-length list of blocking precursors keeps its own CSV.
 GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
@@ -84,6 +87,12 @@ ID_FORMATS = {
     "gene": re.compile(r"ENSG\d{11}"),
 }
 ID_FORMAT_ISSUE = "identifier not in the Human-GEM format"
+
+# Reaction and metabolite numbers 15000-19999 belong to the animal GEMs (Mouse-, Rat-,
+# Zebrafish-, Fruitfly- and Worm-GEM): their own reactions and metabolites, which
+# Human-GEM does not have, are numbered there. Human-GEM never assigns them, so the
+# same identifier never means two different things across the models.
+RESERVED_ID = re.compile(r"^MA[RM]1[5-9]\d{3}[a-z]?$")
 
 # Growth is tested on a defined medium rather than the model's default bounds, which
 # leave most uptakes open at 1000: there the value mostly reflects which uptake and
@@ -250,6 +259,25 @@ def check_annotation_consistency(model: cobra.Model) -> list[tuple]:
 
     _write_csv(ANNOTATION_CONSISTENCY_CSV, ["kind", "id", "issue"], issues)
     return issues
+
+
+# --------------------------------------------------------------------------- #
+# Gate: identifiers reserved for the animal GEMs
+# --------------------------------------------------------------------------- #
+def check_reserved_identifiers(model: cobra.Model) -> list[tuple]:
+    """Identifiers in the block reserved for the animal GEMs (RESERVED_ID), in the
+    model, its annotation tables or the deprecated lists. Returns [(kind, id, file)]."""
+    sources = [
+        ("reaction", [r.id for r in model.reactions], MODEL_FILE),
+        ("metabolite", [m.id for m in model.metabolites], MODEL_FILE),
+        ("reaction", _tsv_column(REACTIONS_TSV, "rxns"), REACTIONS_TSV),
+        ("metabolite", _tsv_column(METABOLITES_TSV, "mets"), METABOLITES_TSV),
+        ("reaction", _tsv_column(DEPRECATED_RXN_TSV, "rxns"), DEPRECATED_RXN_TSV),
+        ("metabolite", _tsv_column(DEPRECATED_MET_TSV, "mets"), DEPRECATED_MET_TSV),
+    ]
+    rows = [(kind, i, path) for kind, ids, path in sources for i in sorted(set(ids)) if RESERVED_ID.match(i)]
+    _write_csv(RESERVED_ID_CSV, ["kind", "id", "file"], rows)
+    return rows
 
 
 # --------------------------------------------------------------------------- #
@@ -708,7 +736,7 @@ def main() -> int:
 
     # Non-blocking checks: written to CSV and tracked with a delta in the comment
     # (a rising count shows as a regression), but they do not fail the build. The
-    # gates that block the merge here are malformed identifiers and growth (and
+    # gates that block the merge here are reserved and malformed identifiers and growth (and
     # duplicate keys above, which stops the model loading at all).
     empty = check_empty_reactions(model)
     if empty:
@@ -728,6 +756,15 @@ def main() -> int:
     if undeprecated:
         print(f"::warning::{len(undeprecated)} identifier(s) removed from the model but not "
               f"added to a deprecated list; see {DEPRECATION_COMPLETENESS_CSV}.")
+
+    # Silent when clean: nothing is printed, and the report shows the row only when it fails.
+    reserved = check_reserved_identifiers(model)
+    if reserved:
+        for kind, identifier, path in reserved:
+            print(f"::error::{kind} {identifier} ({path}) is in MAR/MAM15000-19999, reserved for the animal GEMs.")
+        print(f"Found {len(reserved)} identifier(s) reserved for the animal GEMs; see {RESERVED_ID_CSV}. "
+              f"Give them the next free Human-GEM number instead.")
+        gate_failed = True
 
     growth = check_growth(model)
     grows = growth == growth and growth > GROWTH_TOLERANCE  # not NaN and positive

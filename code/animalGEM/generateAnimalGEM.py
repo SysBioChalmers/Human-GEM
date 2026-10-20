@@ -12,6 +12,10 @@ species-specific is read from the Animal-GEM repository:
     <repo>/model/<Species>-GEM.{yml,mat,xml}    the model (rewritten)
     <repo>/version.txt                           the model version
 
+The species-specific reactions and metabolites are numbered in MAR15000-MAR19999 and
+MAM15000-MAM19999, a block Human-GEM keeps free for the animal GEMs (checked by
+code/test/qcModelChecks.py), so a number means the same thing in every model.
+
 Steps, in order:
 
 1. Take Human-GEM as the template and rewrite every GPR through the ortholog table

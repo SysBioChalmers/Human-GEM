@@ -265,3 +265,41 @@ def test_transports_and_artificial_reactions_are_skipped(twin_csv):
         ("MAR00004", AB_M, "", [], "Artificial reactions"),
     ])
     assert qcModelChecks.check_twin_reactions(model) == 0
+
+
+@pytest.fixture
+def reserved_tables(tmp_path, monkeypatch):
+    """Point the reserved-identifier check at temporary annotation and deprecated tables."""
+    paths = {}
+    for attr, column in (("REACTIONS_TSV", "rxns"), ("METABOLITES_TSV", "mets"),
+                         ("DEPRECATED_RXN_TSV", "rxns"), ("DEPRECATED_MET_TSV", "mets")):
+        path = tmp_path / f"{attr}.tsv"
+        path.write_text(f"{column}\n", encoding="utf-8")
+        monkeypatch.setattr(qcModelChecks, attr, str(path))
+        paths[attr] = path
+    monkeypatch.setattr(qcModelChecks, "RESERVED_ID_CSV", str(tmp_path / "qc_reserved_identifiers.csv"))
+    return paths
+
+
+def test_identifiers_outside_the_animal_block_pass(reserved_tables):
+    model = _model([("MAM14999c", "a"), ("MAM20000c", "b")])
+    model.reactions.MAR00001.id = "MAR20216"
+    assert qcModelChecks.check_reserved_identifiers(model) == []
+
+
+def test_a_reaction_in_the_animal_block_fails(reserved_tables):
+    model = _model([("MAM00001c", "pyruvate")])
+    model.reactions.MAR00001.id = "MAR15001"
+    rows = qcModelChecks.check_reserved_identifiers(model)
+    assert ("reaction", "MAR15001", qcModelChecks.MODEL_FILE) in rows
+
+
+def test_a_metabolite_in_the_animal_block_fails_with_any_compartment(reserved_tables):
+    model = _model([("MAM19999x", "a")])
+    assert [row[1] for row in qcModelChecks.check_reserved_identifiers(model)] == ["MAM19999x"]
+
+
+def test_a_deprecated_identifier_in_the_animal_block_fails(reserved_tables):
+    reserved_tables["DEPRECATED_RXN_TSV"].write_text("rxns\nMAR17000\n", encoding="utf-8")
+    rows = qcModelChecks.check_reserved_identifiers(_model([("MAM00001c", "pyruvate")]))
+    assert rows == [("reaction", "MAR17000", str(reserved_tables["DEPRECATED_RXN_TSV"]))]

@@ -29,6 +29,17 @@ Whether the model can be loaded and can grow; both are gates.
 
 Directions that thermodynamics makes very unlikely, from `reversibilityTest.py` in the `thermodynamics` job. The alarm is a gate.
 
+#### Identifiers reserved for the animal GEMs
+**Gate, silent when clean.** Reaction and metabolite numbers 15000-19999
+(`MAR15000`-`MAR19999`, `MAM15000`-`MAM19999`, with any compartment letter) belong to
+the animal GEMs (Mouse-, Rat-, Zebrafish-, Fruitfly- and Worm-GEM), which number their
+own reactions and metabolites there. Human-GEM never uses them, so the same identifier
+never means two different things in Human-GEM and an animal GEM. The check covers the
+model, `reactions.tsv`, `metabolites.tsv` and the deprecated lists. It should never
+fire, so it has no row in the report while clean; when it finds an identifier, the row
+appears, blocks the merge, and `qc_reserved_identifiers.csv` lists the identifiers.
+Give them the next free Human-GEM number instead.
+
 #### Reaction directions: alarm
 **Gate.** From `reversibilityTest.py`, run with eQuilibrator in the `thermodynamics` job. This check and the warning below catch only the most obviously wrong directionality: a reaction that raises neither is **not** thereby shown to have the right reversibility. Most reactions have no ΔG estimate, and a modest ΔG can be overcome by concentrations or by coupling to the next step.
 
@@ -162,6 +173,7 @@ GitHub Actions regenerates the result files and commits them to the pull-request
 | `qc_duplicate_keys.csv` | `qcModelChecks.py` | Duplicate `!!omap` keys: entry, scope, key, first and duplicate line numbers. |
 | `qc_growth_blockers.csv` | `qcModelChecks.py` | Biomass precursors that cannot be produced; empty when the model grows. |
 | `qc_empty_reactions.csv` | `qcModelChecks.py` | Reactions with no metabolites. |
+| `qc_reserved_identifiers.csv` | `qcModelChecks.py` | Identifiers in the block reserved for the animal GEMs (MAR/MAM15000-19999): `kind, id, file`. Header only while clean. |
 | `qc_annotation_consistency.csv` | `qcModelChecks.py` | Model-vs-annotation-table mismatches, deprecated-identifier use, and `spontaneous`-column problems: `kind, id, issue`. |
 | `qc_deprecation_completeness.csv` | `qcModelChecks.py` | Reactions/metabolites removed since the target branch but not added to a deprecated list: `kind, id, issue`. |
 | `qc_metabolite_completeness.csv` | `qcModelChecks.py` | Metabolites missing a formula and/or a charge: `metabolite, name, missing_formula, missing_charge`. |
