@@ -1,1 +1,4 @@
 id,column,issue
+MAM01034,metMetaNetXID,inconsistent across compartments: MNXM163683;MNXM940 | MNXM940
+MAM03326,metMetaNetXID,"incomplete across compartments: empty in MAM03326m, MAM03326x"
+MAM03362,metMetaNetXID,incomplete across compartments: empty in MAM03362x
