@@ -19,7 +19,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
 | [Reaction directions: alarm](README.md#reaction-directions-alarm) **(gate)** | 0 | 0 | :white_check_mark: |
-| [Reaction directions: warning](README.md#reaction-directions-warning) | [75](qc_reversibility.csv) | -1 | :warning: |
+| [Reaction directions: warning](README.md#reaction-directions-warning) | [74](qc_reversibility.csv) | -1 | :warning: |
 | [Outdated ΔG estimates](README.md#outdated-δg-estimates) | 0 | 0 | :white_check_mark: |
 
 #### Mass and charge
@@ -28,8 +28,8 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | --- | ---: | ---: | :---: |
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
-| [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [69](balance_results.csv) | 0 | :warning: |
-| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [157](balance_results.csv) | -11 | :sparkles: |
+| [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [66](balance_results.csv) | -3 | :sparkles: |
+| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [149](balance_results.csv) | -8 | :sparkles: |
 | [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [52](qc_structure_consistency.csv) | 0 | :warning: |
 
 #### Network structure
@@ -39,7 +39,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
 | [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | 0 | :warning: |
-| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1393](macaw_results.tsv) | +259 | :x: |
+| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1392](macaw_results.tsv) | -1 | :sparkles: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
@@ -68,7 +68,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 
 ### [MEMOTE](README.md#memote)
 
-**Total score: 63.8%** (core subset) &nbsp; 0
+**Total score: 63.9%** (core subset) &nbsp; +0.1 :white_check_mark:
 
 | Section | Score | &Delta; vs base |
 | --- | ---: | ---: |
@@ -83,14 +83,14 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | Section | Test | Score |
 | --- | --- | ---: |
 | Consistency | Mass Balance | 99.3% |
-| Consistency | Charge Balance | 98.3% |
+| Consistency | Charge Balance | 98.4% |
 | Consistency | Metabolite Connectivity | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |
 | Annotation - Metabolites | Metabolite Annotations Per Database | 47.4% |
 | Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 63.3% |
 | Annotation - Metabolites | Uniform Metabolite Identifier Namespace | 100.0% |
 | Annotation - Reactions | Presence of Reaction Annotation | 100.0% |
-| Annotation - Reactions | Reaction Annotations Per Database | 27.7% |
+| Annotation - Reactions | Reaction Annotations Per Database | 27.8% |
 | Annotation - Reactions | Reaction Annotation Conformity Per Database | 77.8% |
 | Annotation - Reactions | Uniform Reaction Identifier Namespace | 100.0% |
 | Annotation - Genes | Presence of Gene Annotation | 100.0% |

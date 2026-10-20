@@ -63,7 +63,6 @@ MAR04740,(S)-2-amino-6-oxohexanoate hydro-lyase (spontaneous),-1000.0,1000.0,28.
 MAR04817,GTP cyclohydrolase,-1000.0,1000.0,-38.1,9.3,7.9,questionable,"can run backward, where ΔG'm is +38 ± 9 kJ/mol"
 MAR04818,GTP cyclohydrolase,-1000.0,1000.0,-38.1,9.3,7.9,questionable,"can run backward, where ΔG'm is +38 ± 9 kJ/mol"
 MAR04832,3-Ketolactose galactohydrolase,-1000.0,1000.0,30.0,1.8,7.1,questionable,"can run forward, where ΔG'm is +30 ± 2 kJ/mol"
-MAR06609,(S)-allantoin amidohydrolase,-1000.0,1000.0,-56.9,9.6,15.2,questionable,"can run backward, where ΔG'm is +57 ± 10 kJ/mol"
 MAR06652,retinal dehydrogenase (9-cis-retinal),-1000.0,1000.0,-40.5,1.1,7.7,questionable,"can run backward, where ΔG'm is +40 ± 1 kJ/mol"
 MAR06674,retinal dehydrogenase (13-cis-retinal),-1000.0,1000.0,-40.5,1.1,7.7,questionable,"can run backward, where ΔG'm is +40 ± 1 kJ/mol"
 MAR06675,retinal dehydrogenase (13-cis-retinal),-1000.0,1000.0,-40.5,1.1,7.7,questionable,"can run backward, where ΔG'm is +40 ± 1 kJ/mol"
