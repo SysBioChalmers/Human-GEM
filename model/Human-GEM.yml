@@ -179497,12 +179497,13 @@
       - MAM02041m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000103375
     - subsystem:
       - Transport reactions
     - references: PMID:22910329;doi:10.1074/jbc.M601864200
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: H2O2 crosses the mitochondrial membranes by diffusion; mitochondrial AQP8 facilitates it in some cells (PMID:22910329) but is absent from e.g. liver mitochondria (PMID:16624821), so the reaction is kept as spontaneous diffusion without a GPR.
+    - notes: H2O2 also crosses membranes by diffusion; knockdown of mitochondrial AQP8 lowers its release from HepG2 mitochondria (PMID:22910329), while AQP8 is not detected in mouse liver mitochondria (doi:10.1074/jbc.M601864200).
   - !!omap
     - id: MAR03949
     - name: transport of malate (mitochondria to cytosol) and OAA (cytosol to mitochondria)
