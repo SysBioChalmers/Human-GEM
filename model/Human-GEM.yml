@@ -147142,13 +147142,13 @@
       - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000132763 or ENSG00000124275
+    - gene_reaction_rule: ENSG00000124275
     - subsystem:
       - Vitamin B12 metabolism
     - references: PMID:16769880;PMID:24742678;PMID:18779575
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: MTRR reduces aquacobalamin with NADPH; MMACHC does so with glutathione in vitro, without O2. NADPH is written for both.
+    - notes: MTRR reduces aquacobalamin with NADPH (PMID:16769880). MMACHC reduces it with glutathione in vitro, without O2 (PMID:24742678), so it is not on this NADPH reaction.
   - !!omap
     - id: MAR08615
     - name: cob(II)alamin reduction
@@ -279497,9 +279497,6 @@
   - !!omap
     - id: ENSG00000167113
     - name: COQ4
-  - !!omap
-    - id: ENSG00000132763
-    - name: MMACHC
   - !!omap
     - id: ENSG00000186603
     - name: HPDL
