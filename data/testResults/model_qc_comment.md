@@ -10,7 +10,7 @@
 | Full report | [model_qc_summary.md](model_qc_summary.md) |
 
 **Regression(s):**
-- Reaction bound / GPR issues: [**1**](qc_reaction_sanity.csv)
+- Unused genes: [**2**](qc_unused_entities.csv)
 
 **Improved:**
 - Mass-imbalanced reactions: [**65**](balance_results.csv)
