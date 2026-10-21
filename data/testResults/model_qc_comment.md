@@ -10,10 +10,11 @@
 | Full report | [model_qc_summary.md](model_qc_summary.md) |
 
 **Regression(s):**
-- Reactions flagged by MACAW dead-end test: [**1393**](macaw_results.tsv)
+- Reactions flagged by MACAW dead-end test: [**1396**](macaw_results.tsv)
 
 **Improved:**
-- Charge-imbalanced reactions: [**157**](balance_results.csv)
+- Mass-imbalanced reactions: [**66**](balance_results.csv)
+- Charge-imbalanced reactions: [**149**](balance_results.csv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
 

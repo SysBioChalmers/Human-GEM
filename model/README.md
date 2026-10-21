@@ -8,6 +8,11 @@ This directory contains the Human-GEM model and annotation files.
 The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat`. Note that only the `.yml` version is available on branches other than `main` (e.g., `develop`), to facilitate tracking of model changes.
 
 
+## Identifiers
+
+Reactions are numbered `MAR` followed by five digits, metabolites `MAM` followed by five digits and a compartment letter. New identifiers take the next free number across the model, the deprecated lists and the open pull requests. The numbers 15000 to 19999 (`MAR15000`-`MAR19999`, `MAM15000`-`MAM19999`) belong to the animal GEMs (Mouse-, Rat-, Zebrafish-, Fruitfly- and Worm-GEM), which number their own reactions and metabolites there; Human-GEM never uses them, and the Model QC workflow fails when it finds one.
+
+
 ## Reaction, Metabolite, and Gene Annotations
 
 Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are provided as `tsv` files. The structure of the `tsv` files are tabulated below.
