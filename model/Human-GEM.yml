@@ -112385,12 +112385,16 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06906
-    - name: 3-methoxy-4-hydroxy-5-all-trans-decaprenylbenzoate decarboxylation
+    - name: coenzyme Q4, oxidative decarboxylation (3-methoxy-4-hydroxy-5-all-trans-decaprenylbenzoate)
     - metabolites: !!omap
-      - MAM00657m: 1.0
+      - MAM00658m: 1.0
       - MAM00817m: -1.0
       - MAM01596m: 1.0
-      - MAM02039m: -1.0
+      - MAM02039m: -2.0
+      - MAM02040m: 1.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+      - MAM02630m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000167113
@@ -112399,29 +112403,10 @@
     - annotation: !!omap
       - ec-code:
         - 4.1.1.130
+    - references: doi:10.1016/j.molcel.2024.01.003
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-  - !!omap
-    - id: MAR06907
-    - name: coenzyme Q6, monooxygenase (2-methoxy-6-(all-trans-decaprenyl)phenol)
-    - metabolites: !!omap
-      - MAM00657m: -1.0
-      - MAM00658m: 1.0
-      - MAM02039m: -1.0
-      - MAM02040m: 1.0
-      - MAM02554m: 1.0
-      - MAM02555m: -1.0
-      - MAM02630m: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000119723
-    - subsystem:
-      - Terpenoid backbone biosynthesis
-    - annotation: !!omap
-      - ec-code:
-        - 1.14.13.-
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
+    - notes: COQ4 replaces the C1 carboxyl group with a hydroxyl group in one oxidative step that needs O2 (doi:10.1016/j.molcel.2024.01.003), so the decarboxylation and the hydroxylation of the phenol are one reaction. COQ6 hydroxylates C5 (MAR06904) and is not assigned to C1. The reductant is not shown for COQ4; NADPH follows the previous hydroxylation reaction.
   - !!omap
     - id: MAR06908
     - name: coenzyme Q5, methyltransferase (2-methoxy-6-all trans-decaprenyl-2-methoxy-1,4-benzoquinol)
@@ -146868,13 +146853,13 @@
       - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000132763 or ENSG00000124275
+    - gene_reaction_rule: ENSG00000124275
     - subsystem:
       - Vitamin B12 metabolism
     - references: PMID:16769880;PMID:24742678;PMID:18779575
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
-    - notes: MTRR reduces aquacobalamin with NADPH; MMACHC does so with glutathione in vitro, without O2. NADPH is written for both.
+    - notes: MTRR reduces aquacobalamin with NADPH (PMID:16769880). MMACHC reduces it with glutathione in vitro, without O2 (PMID:24742678), so it is not on this NADPH reaction.
   - !!omap
     - id: MAR08615
     - name: cob(II)alamin reduction
@@ -278629,9 +278614,6 @@
   - !!omap
     - id: ENSG00000167113
     - name: COQ4
-  - !!omap
-    - id: ENSG00000132763
-    - name: MMACHC
   - !!omap
     - id: ENSG00000186603
     - name: HPDL
