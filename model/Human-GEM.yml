@@ -72039,9 +72039,10 @@
     - annotation: !!omap
       - ec-code:
         - 2.4.1.50
-    - references: doi:10.1074/jbc.M908025199;doi:10.1186/1471-2121-11-33;doi:10.1074/jbc.M006203200
+    - references: doi:10.1074/jbc.M908025199;doi:10.1186/1471-2121-11-33;doi:10.1074/jbc.M006203200;doi:10.1016/s0945-053x(02)00071-9;doi:10.1128/mcb.02085-07
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: COLGALT1 and COLGALT2 are the dedicated galactosyltransferases. PLOD3 has this activity in vitro (doi:10.1016/s0945-053x(02)00071-9) and UniProt lists a redundant role, but one study found no activity of the human enzymes (doi:10.1128/mcb.02085-07), so PLOD3 is a secondary enzyme here.
   - !!omap
     - id: MAR06985
     - name: UDPglucose:5-(D-galactosyloxy)-L-lysine-procollagen D-glucosyltransferase
