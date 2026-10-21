@@ -17,7 +17,7 @@
 - Charge-imbalanced reactions: [**145**](balance_results.csv)
 - Structure vs formula/charge inconsistencies: [**51**](qc_structure_consistency.csv)
 - Reactions flagged as MACAW duplicates: [**338**](macaw_results.tsv)
-- Reactions flagged by MACAW dead-end test: [**1376**](macaw_results.tsv)
+- Reactions flagged by MACAW dead-end test: [**1380**](macaw_results.tsv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
 
