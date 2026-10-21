@@ -1,0 +1,23 @@
+entity	field	before	after
+MAM03263m	name	3-hydroxy tetradecenoyl-7-CoA	(7Z)-3-hydroxytetradec-7-enoyl-CoA
+MAM03263c	name	3-hydroxy tetradecenoyl-7-CoA	(7Z)-3-hydroxytetradec-7-enoyl-CoA
+MAR00437	name	long-chain-fatty-acid-CoA ligase (10,13,16-docosatriynoic acid)	long-chain-fatty-acid-CoA ligase ((10Z,13Z,16Z)-docosatrienoic acid)
+MAR02130	name	cytochrome P450 (23s,25-dihydroxyvitamin D3)	cytochrome P450 (calcidiol, 23S-hydroxylating)
+MAR00436	name	transport of 10,13,16-docosatriynoic acid (extracellular to cytosol)	transport of (10Z,13Z,16Z)-docosatrienoic acid (extracellular to cytosol)
+MAR00439	name	transport of 10,13,16-docosatriynoic acid (cytosol to extracellular)	transport of (10Z,13Z,16Z)-docosatrienoic acid (cytosol to extracellular)
+MAR09754	name	transport of 10,13,16-docosatriynoic acid (lysosome to cytosol)	transport of (10Z,13Z,16Z)-docosatrienoic acid (lysosome to cytosol)
+MAR01517	name	malonyl-CoA-acp transacylase, mitochondrial	malonyl-CoA-[ACP] transacylase, mitochondrial
+MAR03377	name	2,4-dienoyl-CoA reductase (nadph)	2,4-dienoyl-CoA reductase (NADPH)
+MAR08996	name	Uptake of Hexadecanoate	Uptake of Tetradecanoate
+MAR09870	name	Arachidonate (N-C18:1) Transport by FATP	Arachidonate Transport by FATP
+MAR10584	name	Exchange of Histidyl-Lysyl-Lysine	Exchange of Histidyl-Glycyl-Lysine
+MAR11394	name	acetate-CoA ligase (adp-forming)	acetate-CoA ligase (ADP-forming)
+MAR12198	name	Exchange of 12-Dehydrocholic acid	Exchange of 12-dehydrocholic acid
+MAR12199	name	Exchange of 3-Dehydrochenodeoxychollyc acid	Exchange of 3-dehydrochenodeoxycholic acid
+MAR12200	name	Exchange of 3-Dehydrocholic acid	Exchange of 3-dehydrocholic acid
+MAR12203	name	Exchange of 7-Dehydrochenodeoxycholic acid	Exchange of 7-dehydrochenodeoxycholic acid
+MAR12204	name	Exchange of 7-Dehydrocholic acid	Exchange of 7-dehydrocholic acid
+MAR12222	name	Exchange of Isochenodeoxycholic acid, 3beta,7alpha-Dihydroxy-5beta-cholanic acid	Exchange of isochenodeoxycholic acid
+MAR12223	name	Exchange of Isochenodeoxycholic acid	Exchange of isocholic acid
+MAR12232	name	Exchange of Ursocholic acid	Exchange of ursocholic acid
+MAR13049	name	Exchange of 10,13,16-docosatriynoic acid	Exchange of (10Z,13Z,16Z)-docosatrienoic acid

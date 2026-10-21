@@ -111,7 +111,8 @@ jobs:
           pip install -r code/test/requirements.txt
           pip install openpyxl
 
-      # Writes version.txt, stamps the version into the model metadata,
+      # Writes version.txt, stamps the version into the model metadata and into
+      # pyproject.toml, human_gem/__init__.py and citation.cff,
       # regenerates model/Human-GEM.{yml,mat,xml,xlsx,txt} and
       # model/dependencies.txt, and fills the {{nRXN}} / {{nMET}} / {{nGENE}} /
       # {{DATE}} placeholders README.md carries on develop.
@@ -127,7 +128,8 @@ jobs:
         run: |
           git config user.name "human-gem-bot"
           git config user.email "human-gem-bot@users.noreply.github.com"
-          git add $RELEASE_ONLY_FILES model/Human-GEM.yml README.md
+          git add $RELEASE_ONLY_FILES model/Human-GEM.yml README.md \
+            pyproject.toml human_gem/__init__.py citation.cff
           git commit -m "chore: version ${{ github.event.inputs.version }}"
           git push
 

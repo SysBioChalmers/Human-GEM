@@ -29,6 +29,17 @@ Whether the model can be loaded and can grow; both are gates.
 
 Directions that thermodynamics makes very unlikely, from `reversibilityTest.py` in the `thermodynamics` job. The alarm is a gate.
 
+#### Identifiers reserved for the animal GEMs
+**Gate, silent when clean.** Reaction and metabolite numbers 15000-19999
+(`MAR15000`-`MAR19999`, `MAM15000`-`MAM19999`, with any compartment letter) belong to
+the animal GEMs (Mouse-, Rat-, Zebrafish-, Fruitfly- and Worm-GEM), which number their
+own reactions and metabolites there. Human-GEM never uses them, so the same identifier
+never means two different things in Human-GEM and an animal GEM. The check covers the
+model, `reactions.tsv`, `metabolites.tsv` and the deprecated lists. It should never
+fire, so it has no row in the report while clean; when it finds an identifier, the row
+appears, blocks the merge, and `qc_reserved_identifiers.csv` lists the identifiers.
+Give them the next free Human-GEM number instead.
+
 #### Reaction directions: alarm
 **Gate.** From `reversibilityTest.py`, run with eQuilibrator in the `thermodynamics` job. This check and the warning below catch only the most obviously wrong directionality: a reaction that raises neither is **not** thereby shown to have the right reversibility. Most reactions have no ΔG estimate, and a modest ΔG can be overcome by concentrations or by coupling to the next step.
 
@@ -79,6 +90,8 @@ Sets of reactions that may be duplicates because they involve the same metabolit
 
 #### Reactions flagged by MACAW dead-end test
 Reactions prevented from carrying steady-state flux because one of their metabolites can only ever be produced, or only consumed, by every reaction it takes part in (the simplest case being a metabolite in a single reaction). Reversible reactions that MACAW limits to one direction (`only when going forwards` or `only when going backwards`) can still carry flux, so they are neither counted nor listed on their own in `macaw_results.tsv`.
+#### Twin reactions with a missing or conflicting EC number
+From `qcModelChecks.py`. Two reactions are twins when their stoichiometries are identical once the compartment is dropped from every metabolite: *merge* twins are the same reaction in the same compartment, often left behind when two metabolites were merged; *compartment* twins are the same chemistry in another compartment. A group is reported when its twins have the same GPR genes but different EC numbers, or when one twin has an EC number and another has none; both are curation slips. Twins with different GPRs and different EC numbers are usually different enzymes acting on the same substrates (two aldehyde dehydrogenases, say) and are not reported, nor is a different GPR alone (often an isoenzyme confined to one compartment). The `differs` column notes when the GPR differs as well. Transports, boundary reactions and pool and biomass reactions are skipped. The count is the number of reported groups; only a rise is flagged.
 
 #### Reactions split across compartments
 Reactions whose own chemistry sits in more than one compartment. A metabolite that appears in two compartments of the same reaction is what the reaction transports and is ignored; the metabolites left over normally share one compartment, and one of them elsewhere (a cytosolic substrate in a mitochondrial reaction, say) is usually a curation error. Some enzymes do work across a membrane (HGSNAT, GPD2, fatty-acid uptake coupled to acyl-CoA synthesis), so this is a report, and only a rise in the count is flagged. Pool and biomass reactions are skipped.
@@ -116,7 +129,9 @@ From `annotationTest.py`. The same metabolite in different compartments carries 
 Whether the model file survives conversion and satisfies the curated task lists.
 
 #### YAML round-trip (cobrapy)
-The model is loaded and re-written with cobrapy and must come back unchanged; a failure means the YAML does not survive a cobrapy round-trip. **Gate.**
+From `testYamlConversion.py`. The model is read and written with cobrapy, and the written file is read and written again. The first written file is compared with `model/Human-GEM.yml` entry by entry and field by field (number formatting and key order aside), and the second written file must be identical to the first. **Gate.**
+
+cobrapy does not read the Human-GEM extensions: it drops the `metaData` block (id, name, version, date, default bounds, taxonomy, note, source URL), the metabolites' `metFrom`, and the reactions' `rxnFrom`, `references` and `confidence_score`, and writes the model id, name and its format version as top-level entries. These known differences are listed as a note; any other loss or change fails, as does a field that cobrapy starts to keep. A model loaded with cobrapy lacks these fields, so a file written from it must not replace `model/Human-GEM.yml`.
 
 #### YAML round-trip (RAVEN)
 The same round-trip through the RAVEN toolbox. **Gate.**
@@ -143,6 +158,10 @@ Gene-essentiality predictions in five cell-line-specific GEMs (DLD1, GBM, HCT116
 
 A gene counts as essential here when its knockout breaks *any* of the 57 essential tasks, which mixes viability tasks (`GR` growth, `ER` energy and redox) with capability tasks (`SU` substrate utilization, `BS` biosynthesis, `IC` internal conversions). Genes essential only for a capability task, such as the ETF complex for beta-oxidation, are therefore counted as false positives against a proliferation screen. `gradedEssentiality.py` reports the task categories behind every call together with a continuous biomass growth ratio, and scores both against Hart, so the two kinds of essentiality stay separable. The summary reports the all-task and the viability-only MCC side by side, plus the threshold-free AUROC/AUPRC of the growth ratio against the Hart Bayes Factors. See issue #1076.
 
+The growth ratio is the biomass flux of the knockout divided by that of the wild type, on the `GR` task's medium as `gradedEssentiality.py` sets it, which differs from the growth gate above: every input of the task is opened at an uptake of 1000 (cobra `model.medium`) and the other exchange uptakes are closed. Wild-type biomass is therefore bounded by uptake and reaction limits of 1000 rather than by the nutrients, and the ratio is not comparable with the growth value of the gate, which caps each nutrient's uptake at 1.
+
+Every metric is computed over all model genes that Hart scored in the cell line (the `genes` column). A gene that ftINIT left out of a cell line's context model is predicted non-essential there, with growth ratio 1.0, as in the Human1 analysis; the `all` row scores the genes essential in all five lines against the fitness genes of all five lines, over the genes Hart scored in all five lines (Human1 used every Hart gene for this row). A Hart symbol is matched to a model gene through its own symbol first, and through an alias only when the alias is not the current HGNC symbol of another gene (`data/datasets/HGNC_symbols_Hart2015.tsv`).
+
 ## 2. Files in this folder
 
 GitHub Actions regenerates the result files and commits them to the pull-request branch. The **Model QC** workflow runs on every pull request and writes every file except the gene-essentiality files and the `Full suite` section of `memote_score.md`. Those take hours, so they are written only when someone comments `/run memote` or `/run gene-essentiality`; their `Run:` line gives the date and the pull request of that run. The commit history of a file (`git log -- data/testResults/<file>`) shows which pull request last wrote it.
@@ -154,6 +173,7 @@ GitHub Actions regenerates the result files and commits them to the pull-request
 | `qc_duplicate_keys.csv` | `qcModelChecks.py` | Duplicate `!!omap` keys: entry, scope, key, first and duplicate line numbers. |
 | `qc_growth_blockers.csv` | `qcModelChecks.py` | Biomass precursors that cannot be produced; empty when the model grows. |
 | `qc_empty_reactions.csv` | `qcModelChecks.py` | Reactions with no metabolites. |
+| `qc_reserved_identifiers.csv` | `qcModelChecks.py` | Identifiers in the block reserved for the animal GEMs (MAR/MAM15000-19999): `kind, id, file`. Header only while clean. |
 | `qc_annotation_consistency.csv` | `qcModelChecks.py` | Model-vs-annotation-table mismatches, deprecated-identifier use, and `spontaneous`-column problems: `kind, id, issue`. |
 | `qc_deprecation_completeness.csv` | `qcModelChecks.py` | Reactions/metabolites removed since the target branch but not added to a deprecated list: `kind, id, issue`. |
 | `qc_metabolite_completeness.csv` | `qcModelChecks.py` | Metabolites missing a formula and/or a charge: `metabolite, name, missing_formula, missing_charge`. |
@@ -163,6 +183,7 @@ GitHub Actions regenerates the result files and commits them to the pull-request
 | `qc_duplicate_reactions.csv` | `qcModelChecks.py` | Exact-duplicate reaction groups: `group, reaction, equation`. |
 | `qc_unused_entities.csv` | `qcModelChecks.py` | Metabolites and genes used by no reaction: `kind, id`. |
 | `qc_split_compartments.csv` | `qcModelChecks.py` | Reactions whose chemistry, apart from the metabolites they transport, spans more than one compartment: `reaction, name, compartments, equation`. Reported; only a rise in the count is flagged. |
+| `qc_twin_reactions.csv` | `qcModelChecks.py` | Twin reactions with a missing or conflicting EC number: `group, kind, differs, reaction, compartments, genes, ec, equation`, where `kind` is `merge` or `compartment` and `differs` is `EC`, or `EC; GPR` when the GPR differs too (then one twin has no EC number). Reported; only a rise in the count is flagged. |
 | `qc_annotation_issues.csv` | `annotationTest.py` | Malformed and cross-compartment-inconsistent cross-references. |
 | `qc_structure_consistency.csv` | `structureConsistencyTest.py` | Metabolites whose structure disagrees with the model formula/charge. |
 | `macaw_results.tsv` | `macawTests.py` | MACAW dead-end and duplicate findings, one row per reaction that has a finding (tab-separated). |
@@ -171,4 +192,5 @@ GitHub Actions regenerates the result files and commits them to the pull-request
 | `gene-essential.csv` | `gradedEssentiality.py` (`/run gene-essentiality`) | Per-gene matrix across the five cell-line models: per cell line the confusion class (marked `FP->TN` where the viability scoping changes the call), the task categories the knockout breaks, and the biomass growth ratio. |
 | `gene-essential_summary.md` | `gradedEssentiality.py`, `diffGeneEssentiality.py` (`/run gene-essentiality`) | `Run:` line, then the summary statistics of the comparison against Hart 2015 (all-task and viability-only MCC and false positives, growth-ratio AUROC/AUPRC with the base rate, and the number of capability-only essential genes), followed by the per-gene changes against the target branch. |
 | `gene-essential-diff.csv` | `diffGeneEssentiality.py` (`/run gene-essentiality`) | Per-gene comparison with the target branch for the genes the pull request's model changes can affect: verdicts across the five cell-line models, and the task categories and growth ratio before and after. |
+| `gene-essential-unstable.csv` | `gradedEssentiality.py` | Only after a run in several reaction orders (`/run gene-essentiality orders=2`): the (gene, cell line) calls that differ between the orders, with the task categories of each order. The pull-request diff does not count flips in these calls. |
 | `README.md` | written by hand | This file. |

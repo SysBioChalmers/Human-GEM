@@ -8,6 +8,16 @@ This directory contains the Human-GEM model and annotation files.
 The model is available as `.xml`, `.xlsx`, `.txt`, `.yml`, and `.mat`. Note that only the `.yml` version is available on branches other than `main` (e.g., `develop`), to facilitate tracking of model changes.
 
 
+## Charge and protonation
+
+A metabolite's formula and charge are those of its major microspecies at pH 7.3, the form that MetaNetX and the ChEBI "major microspecies at pH 7.3" entries give: carboxylic acids and phosphates are ionised (pyruvate C3H3O3 −1, ATP −4, acyl-CoAs −4), amines are protonated (choline +1, lysine +1) and amino acids are zwitterions. Reactions are balanced for mass and charge with H+ in these forms. When a new metabolite is added, or a formula or charge changed, take the pH 7.3 form.
+
+Some metabolites do not follow this yet, for example the glycine- and taurine-conjugated bile acids and the steroid glucuronides, which are written as neutral acids. The cross-references and structures in `metabolites.tsv` can name the neutral parent compound instead of the pH 7.3 form (for example a ChEBI id of the acid rather than of its anion), so a charge read from a cross-reference is not proof of the model charge. Ammonia appears both as NH3 and as NH4+ (`MAM02578`, `MAM02579`).
+## Identifiers
+
+Reactions are numbered `MAR` followed by five digits, metabolites `MAM` followed by five digits and a compartment letter. New identifiers take the next free number across the model, the deprecated lists and the open pull requests. The numbers 15000 to 19999 (`MAR15000`-`MAR19999`, `MAM15000`-`MAM19999`) belong to the animal GEMs (Mouse-, Rat-, Zebrafish-, Fruitfly- and Worm-GEM), which number their own reactions and metabolites there; Human-GEM never uses them, and the Model QC workflow fails when it finds one.
+
+
 ## Reaction, Metabolite, and Gene Annotations
 
 Additional annotation information and external identifiers for Human-GEM reactions, metabolites, and genes are provided as `tsv` files. The structure of the `tsv` files are tabulated below.
@@ -29,8 +39,8 @@ rxnHMR2ID      |HMR2 reaction ID        |
 rxnRatconID    |Ratcon reaction ID      |
 rxnTCDBID      |TCDB ID                 |
 spontaneous    |1 if the reaction needs no enzyme: non-enzymatic chemistry, or diffusion (transport between cytosol and nucleus through nuclear pores, and gases and water across membranes). ftINIT always keeps these reactions in context-specific models.|
-rxnRheaID      |Rhea ID                 |
-rxnRheaMasterID|Master Rhea ID          |
+rxnRheaID      |Rhea ID of the reaction's direction: left-to-right or right-to-left for an irreversible reaction, bidirectional for a reversible one|
+rxnRheaMasterID|Rhea master ID, the undirected reaction of rxnRheaID|
 rxnRetired     |Earlier identifiers of the reaction (for example `HMR_` IDs, or a `MAR` ID merged into this reaction), separated by `;`|
 
 

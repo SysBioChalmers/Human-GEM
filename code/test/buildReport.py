@@ -22,9 +22,11 @@ Icon rule (per check, both files):
     (a pre-existing finding, non-blocking), white_check_mark if it is zero.
   * hourglass: the group is still running on this pull request.
 
-Only two conditions fail the build: the model cannot load (duplicate `!!omap` keys) or
-cannot grow. Everything else is reported but does not block; a red x just flags a
-regression for review.
+Gates fail the build: the model cannot load (duplicate `!!omap` keys) or cannot grow, a
+reaction direction is thermodynamically impossible, or an identifier is in the block
+reserved for the animal GEMs. That last gate is silent while clean: its row appears only
+when it finds something. Everything else is reported but does not block; a red x just
+flags a regression for review.
 
 Both files link to the CSVs and to each other relative to data/testResults, so the links
 do not depend on the branch and keep working after the pull request is merged. The
@@ -137,6 +139,8 @@ MODEL_ROWS = [
      "qc_annotation_consistency.csv"),
     ("Removed reactions or metabolites not deprecated", "removed_not_deprecated", "count", "checks",
      "qc_deprecation_completeness.csv"),
+    ("Identifiers reserved for the animal GEMs", "reserved_ids", "count", "checks",
+     "qc_reserved_identifiers.csv"),
     ("Metabolites missing formula", "missing_formula", "count", "checks", "qc_metabolite_completeness.csv"),
     ("Metabolites missing charge", "missing_charge", "count", "checks", "qc_metabolite_completeness.csv"),
     ("Reaction bound / GPR issues", "reaction_issues", "count", "checks", "qc_reaction_sanity.csv"),
@@ -146,6 +150,8 @@ MODEL_ROWS = [
     ("Outdated ΔG estimates", "rev_outdated", "count", "checks", "qc_reversibility.csv"),
     ("Exact-duplicate reaction groups", "dup_reactions", "count", "checks", "qc_duplicate_reactions.csv"),
     ("Reactions split across compartments", "split_compartments", "count", "checks", "qc_split_compartments.csv"),
+    ("Twin reactions with a missing or conflicting EC number", "twin_reactions", "count", "checks",
+     "qc_twin_reactions.csv"),
     ("Unused metabolites", "unused_met", "count", "checks", "qc_unused_entities.csv"),
     ("Unused genes", "unused_gene", "count", "checks", "qc_unused_entities.csv"),
     ("Malformed cross-references", "malformed", "count", "checks", "qc_annotation_issues.csv"),
@@ -158,12 +164,14 @@ NETWORK_SECTIONS = [
     ("Reaction directions", ["rev_impossible", "rev_questionable", "rev_outdated"]),
     ("Mass and charge", ["missing_formula", "missing_charge", "mass_imbalance", "charge_imbalance",
                          "structure_inconsistent"]),
-    ("Network structure", ["empty_rxn", "dup_reactions", "duplicates", "dead_end", "split_compartments",
-                           "reaction_issues", "unused_met", "unused_gene"]),
-    ("Identifiers and annotation", ["annot_consistency", "removed_not_deprecated", "name_issues",
+    ("Network structure", ["empty_rxn", "dup_reactions", "duplicates", "twin_reactions", "dead_end",
+                           "split_compartments", "reaction_issues", "unused_met", "unused_gene"]),
+    ("Identifiers and annotation", ["reserved_ids", "annot_consistency", "removed_not_deprecated", "name_issues",
                                     "malformed", "inconsistent"]),
 ]
-GATE_KEYS = {"dup_keys", "growth", "rev_impossible"}
+GATE_KEYS = {"dup_keys", "growth", "rev_impossible", "reserved_ids"}
+# Gates that should never fire: shown only when they find something, not as a clean row.
+SILENT_WHEN_CLEAN = {"reserved_ids"}
 MB_ROWS = [
     ("Reactions flagged by MACAW dead-end test", "dead_end", "count", "macaw", "macaw_results.tsv"),
     ("Reactions flagged as MACAW duplicates", "duplicates", "count", "macaw", "macaw_results.tsv"),
@@ -179,6 +187,8 @@ TASK_CHECKS = [
     ("YAML lint", "yamllint"),
     ("Essential metabolic tasks", "tasks_essential"),
     ("Verification metabolic tasks", "tasks_verification"),
+    ("Task files readable by RAVEN", "task_files"),
+    ("Growth task with MAR00021 (animal GEMs)", "tasks_gr_mar00021"),
 ]
 _DUP_COLS = ("duplicate_test_exact", "duplicate_test_directions", "duplicate_test_coefficients")
 
@@ -274,6 +284,7 @@ def _metrics(directory: Path) -> dict:
         "empty_rxn": _count_csv(directory / "qc_empty_reactions.csv"),
         "annot_consistency": _count_csv(directory / "qc_annotation_consistency.csv"),
         "removed_not_deprecated": _count_csv(directory / "qc_deprecation_completeness.csv"),
+        "reserved_ids": _count_csv(directory / "qc_reserved_identifiers.csv"),
         "growth": _growth(directory),
         "missing_formula": _count_csv(completeness, lambda r: r.get("missing_formula") == "yes"),
         "missing_charge": _count_csv(completeness, lambda r: r.get("missing_charge") == "yes"),
@@ -284,6 +295,7 @@ def _metrics(directory: Path) -> dict:
         "rev_outdated": _count_csv(reversibility, lambda r: r.get("verdict") == "outdated"),
         "dup_reactions": _distinct_csv(directory / "qc_duplicate_reactions.csv", "group"),
         "split_compartments": _count_csv(directory / "qc_split_compartments.csv"),
+        "twin_reactions": _distinct_csv(directory / "qc_twin_reactions.csv", "group"),
         "unused_met": _count_csv(unused, lambda r: r.get("kind") == "metabolite"),
         "unused_gene": _count_csv(unused, lambda r: r.get("kind") == "gene"),
         "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),
@@ -372,7 +384,7 @@ def _compute_rows(rows_spec, current: dict, base: dict) -> list[dict]:
                               "icon": ":hourglass_flowing_sand:"})
             continue
         delta, icon, regression, fatal = _icon(value, base.get(key), kind)
-        fatal = fatal or (key in ("dup_keys", "rev_impossible") and value > 0)
+        fatal = fatal or (key in ("dup_keys", "rev_impossible", "reserved_ids") and value > 0)
         if key == "rev_questionable":  # non-blocking by design; new ones are listed by name
             regression = False
             icon = ":warning:" if value else ":white_check_mark:"
@@ -381,6 +393,13 @@ def _compute_rows(rows_spec, current: dict, base: dict) -> list[dict]:
             "value": value, "delta": delta, "icon": icon, "regression": regression, "fatal": fatal,
         })
     return computed
+
+
+def _drop_silent(computed: list[dict]) -> list[dict]:
+    """Leave out the SILENT_WHEN_CLEAN rows unless they found something; while running
+    they stay out too, so a check that should never fire adds no line to the report."""
+    return [r for r in computed
+            if r["key"] not in SILENT_WHEN_CLEAN or (not r["pending"] and r["value"])]
 
 
 def _full_table(computed: list[dict]) -> list[str]:
@@ -571,8 +590,9 @@ def _gene_essentiality_full_section() -> str:
 
 
 def _gates_line(current: dict, base: dict) -> str:
-    """One-line status of the merge gates (duplicate keys, growth, direction alarms), appended to the
-    verdict so they are visible without following any link."""
+    """One-line status of the merge gates (duplicate keys, growth, direction alarms, and reserved
+    identifiers when there are any), appended to the verdict so they are visible without
+    following any link."""
     if "checks" in RUNNING:
         return ""
     parts = []
@@ -586,6 +606,8 @@ def _gates_line(current: dict, base: dict) -> str:
         _, icon, _, _ = _icon(value, base.get(key), kind)
         text = f"{value:.3g}" if kind == "growth" else str(int(value))
         parts.append(f"{label} **{text}** {icon}")
+    if current.get("reserved_ids"):
+        parts.append(f"reserved identifiers **{int(current['reserved_ids'])}** :x:")
     return " Gates: " + ", ".join(parts) + "."
 
 
@@ -594,7 +616,7 @@ def main() -> int:
     current = _metrics(RESULTS)
     base = _metrics(Path(BASE_DIR)) if have_base else {}
 
-    network_rows = _ordered(_compute_rows(MODEL_ROWS + MB_ROWS, current, base))
+    network_rows = _drop_silent(_ordered(_compute_rows(MODEL_ROWS + MB_ROWS, current, base)))
     network_summary = _section_summary(network_rows)
     task_rows = _task_rows()
     task_summary = _task_summary(task_rows)

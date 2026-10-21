@@ -1,4 +1,5 @@
-"""annotationTest flags rows with the wrong number of fields and malformed gene identifiers."""
+"""annotationTest flags rows with the wrong number of fields, malformed identifiers, padded cells and
+cross-references that differ between the compartments of one metabolite."""
 
 import annotationTest
 
@@ -40,3 +41,32 @@ def test_uniprot_and_entrez_formats():
         ("ENSG00000000003", "geneEntrezID", "malformed: iron"),
         ("ENSG00000000003", "geneUniProtID", "malformed: ISCA1"),
     ]
+
+
+def test_padded_cells_are_flagged():
+    rows = [{"mets": "MAM03832c", "metHMDBID": "HMDB0002815  "}, {"mets": "MAM03832e", "metHMDBID": "HMDB0002815"}]
+    issues = []
+    annotationTest._check_padding(rows, "mets", issues)
+    assert issues == [("MAM03832c", "metHMDBID", "padded: 'HMDB0002815  '")]
+
+
+def test_empty_against_filled_compartment_is_incomplete():
+    rows = [
+        {"mets": "MAM01288c", "metsNoComp": "MAM01288", "metKEGGID": "C00301"},
+        {"mets": "MAM01288n", "metsNoComp": "MAM01288", "metKEGGID": ""},
+        {"mets": "MAM00001c", "metsNoComp": "MAM00001", "metKEGGID": "C00964"},
+        {"mets": "MAM00001e", "metsNoComp": "MAM00001", "metKEGGID": "C00965"},
+    ]
+    issues = []
+    annotationTest._check_cross_compartment(rows, issues)
+    assert sorted(issues) == [
+        ("MAM00001", "metKEGGID", "inconsistent across compartments: C00964 | C00965"),
+        ("MAM01288", "metKEGGID", "incomplete across compartments: empty in MAM01288n"),
+    ]
+
+
+def test_biomass_is_a_metanetx_id():
+    rows = [{"mets": "MAM03970c", "metMetaNetXID": "BIOMASS"}, {"mets": "MAM00001c", "metMetaNetXID": "MNXM1371224"}]
+    issues = []
+    annotationTest._check_format(rows, "mets", annotationTest.MET_PATTERNS, issues)
+    assert issues == []

@@ -210,3 +210,23 @@ def test_animal_version_follows_human_gem_major_minor(template, current, request
 def test_animal_version_refuses_another_major_minor():
     with pytest.raises(ValueError, match="does not follow Human-GEM"):
         gen.animal_version("2.1.0", "1.8.0", "1.9.0")
+
+
+def test_lipoyl_fix_is_needed_only_when_mar00021_cannot_grow(monkeypatch):
+    m = _biomass_model()
+    monkeypatch.setattr(gen, "growth_on_components", lambda model, tasks: False)
+    assert gen.lipoyl_biomass_blocked(m, []) is True
+    monkeypatch.setattr(gen, "growth_on_components", lambda model, tasks: True)
+    assert gen.lipoyl_biomass_blocked(m, []) is False
+
+
+def test_lipoyl_fix_is_not_needed_when_the_pool_takes_lipoic_acid(monkeypatch):
+    m = _biomass_model()
+    gen.fix_lipoyl_biomass(m)
+    monkeypatch.setattr(gen, "growth_on_components", lambda model, tasks: False)
+    assert gen.lipoyl_biomass_blocked(m, []) is False
+    assert gen.lipoyl_biomass_blocked(cobra.Model("x"), []) is False
+
+
+def test_without_a_growth_task_mar00021_counts_as_growing():
+    assert gen.growth_on_components(cobra.Model("x"), []) is True

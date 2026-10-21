@@ -112,11 +112,12 @@ if isempty(templateVersion) && ~p.allowUnreleased
         'allowUnreleased to build on this one anyway.'], human);
 end
 version = animalVersion(templateVersion, current, char(p.version));
-if ~p.keepBiomass && ismember(templateVersion, {'2.0.0','2.0.1','2.1.0'})
+tasks = parseTaskList(fullfile(human, 'data', 'metabolicTasks', 'metabolicTasks_Essential.txt'));
+if ~p.keepBiomass && lipoylBiomassBlocked(template, tasks)
     [template, changed] = fixLipoylBiomass(template);
     if changed
-        fprintf(['Human-GEM %s: MAR00022 uses lipoic acid instead of ' ...
-            '[protein]-N6-(lipoyl)lysine (see issue #1140)\n'], templateVersion);
+        fprintf(['Human-GEM %s: MAR00021 cannot grow, so MAR00022 uses lipoic acid ' ...
+            'instead of [protein]-N6-(lipoyl)lysine (see issue #1140)\n'], templateVersion);
     end
 end
 
@@ -135,8 +136,7 @@ fprintf('Added %d species-specific reactions, %d metabolites\n', numel(added), h
 warnUnbalanced(model, added, templateVersion);
 
 %% 3. Gap-filling
-[model, filled] = fillEssentialTasks(model, template, ...
-    parseTaskList(fullfile(human, 'data', 'metabolicTasks', 'metabolicTasks_Essential.txt')), ~p.keepBiomass);
+[model, filled] = fillEssentialTasks(model, template, tasks, ~p.keepBiomass);
 fprintf('Gap-filled %d reactions\n', numel(filled));
 model = rmfield(model, intersect({'rxnFrom','metFrom','geneFrom'}, fieldnames(model)));
 
@@ -412,11 +412,29 @@ end
 
 %% Gap-filling --------------------------------------------------------------
 
+function blocked = lipoylBiomassBlocked(template, tasks)
+% True when MAR00022 consumes [protein]-N6-(lipoyl)lysine and the GR task
+% fails with MAR00021 as the biomass reaction (Human-GEM 2.0.0-2.1.1, issue
+% #1140). Tests the template rather than its version.
+blocked = false;
+r22 = find(strcmp(template.rxns, 'MAR00022'));
+if isempty(r22) || ~any(template.S(:, r22) < 0 & strcmp(template.metNames, '[protein]-N6-(lipoyl)lysine'))
+    return
+end
+growth = tasks(strcmp({tasks.id}, 'GR'));
+if isempty(growth)
+    return
+end
+report = checkTasks(closeModel(resetBiomass(template)), [], 'taskStructure', growth, 'printOutput', false);
+blocked = ~all(report.ok);
+end
+
 function [template, changed] = fixLipoylBiomass(template)
 % Let the cofactor pool of MAR00021 use lipoic acid instead of
-% [protein]-N6-(lipoyl)lysine, which Human-GEM 2.0.0-2.1.0 cannot make (as
-% the current human cofactor pool MAR10065 does). The curated fix belongs in
-% Human-GEM (issue #1140).
+% [protein]-N6-(lipoyl)lysine, which Human-GEM 2.0.0-2.1.1 cannot make (as
+% the current human cofactor pool MAR10065 does). Applied when
+% lipoylBiomassBlocked holds; the curated fix belongs in Human-GEM (issue
+% #1140).
 changed = false;
 r22 = find(strcmp(template.rxns, 'MAR00022'));
 r65 = find(strcmp(template.rxns, 'MAR10065'));

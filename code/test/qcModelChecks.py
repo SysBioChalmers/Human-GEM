@@ -9,9 +9,14 @@ Checks split into two kinds:
 
   * Gates (fail the build): a model that has these problems is broken.
       - duplicate keys inside an !!omap entry (cobra cannot load the model);
+      - a reaction, metabolite or gene identifier, in the model or its tables, that
+        is not in Human-GEM's format (MAR + 5 digits, MAM + 5 digits + compartment
+        letter, ENSG + 11 digits);
       - the model cannot produce biomass on a defined medium (Ham's medium from the
         GR metabolic task, each nutrient's uptake capped; the blocking biomass
-        precursors are written out so it can be fixed).
+        precursors are written out so it can be fixed);
+      - an identifier in the block reserved for the animal GEMs (MAR15000-MAR19999,
+        MAM15000-MAM19999). Silent when clean.
   * Reports (do not fail): quality metrics tracked with a delta versus the
       target branch.
       - reactions with no metabolites;
@@ -20,6 +25,8 @@ Checks split into two kinds:
       - metabolites missing a formula or a charge;
       - reaction bound / GPR sanity;
       - exact-duplicate reactions (same stoichiometry);
+      - twin reactions (the same chemistry, in one compartment or in several)
+        with a missing or conflicting EC number;
       - reactions whose chemistry is split across compartments;
       - metabolites and genes not used by any reaction;
       - identifiers removed since the base branch that were not moved to a
@@ -31,6 +38,7 @@ Usage:
 
 import csv
 import os
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -51,6 +59,7 @@ RESULTS = "data/testResults"
 DUP_KEYS_CSV = f"{RESULTS}/qc_duplicate_keys.csv"
 DUP_RXN_CSV = f"{RESULTS}/qc_duplicate_reactions.csv"
 SPLIT_COMPARTMENT_CSV = f"{RESULTS}/qc_split_compartments.csv"
+TWIN_RXN_CSV = f"{RESULTS}/qc_twin_reactions.csv"
 EMPTY_RXN_CSV = f"{RESULTS}/qc_empty_reactions.csv"
 ANNOTATION_CONSISTENCY_CSV = f"{RESULTS}/qc_annotation_consistency.csv"
 UNUSED_CSV = f"{RESULTS}/qc_unused_entities.csv"
@@ -58,6 +67,7 @@ COMPLETENESS_CSV = f"{RESULTS}/qc_metabolite_completeness.csv"
 REACTION_SANITY_CSV = f"{RESULTS}/qc_reaction_sanity.csv"
 DEPRECATION_COMPLETENESS_CSV = f"{RESULTS}/qc_deprecation_completeness.csv"
 NAME_CONSISTENCY_CSV = f"{RESULTS}/qc_name_consistency.csv"
+RESERVED_ID_CSV = f"{RESULTS}/qc_reserved_identifiers.csv"
 # Growth value goes into the shared qc_status.tsv (via qcStatus); only the
 # variable-length list of blocking precursors keeps its own CSV.
 GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
@@ -68,6 +78,21 @@ GROWTH_BLOCKERS_CSV = f"{RESULTS}/qc_growth_blockers.csv"
 BASE_MODEL_DIR = os.environ.get("BASE_MODEL_DIR", "")
 
 GROWTH_TOLERANCE = 1e-6
+
+# Identifier formats. A reaction or metabolite number has exactly five digits; a
+# six-digit id such as MAR020190 is not a new number but a malformed one.
+ID_FORMATS = {
+    "reaction": re.compile(r"MAR\d{5}"),
+    "metabolite": re.compile(r"MAM\d{5}[a-z]"),
+    "gene": re.compile(r"ENSG\d{11}"),
+}
+ID_FORMAT_ISSUE = "identifier not in the Human-GEM format"
+
+# Reaction and metabolite numbers 15000-19999 belong to the animal GEMs (Mouse-, Rat-,
+# Zebrafish-, Fruitfly- and Worm-GEM): their own reactions and metabolites, which
+# Human-GEM does not have, are numbered there. Human-GEM never assigns them, so the
+# same identifier never means two different things across the models.
+RESERVED_ID = re.compile(r"^MA[RM]1[5-9]\d{3}[a-z]?$")
 
 # Growth is tested on a defined medium rather than the model's default bounds, which
 # leave most uptakes open at 1000: there the value mostly reflects which uptake and
@@ -167,7 +192,7 @@ def check_no_duplicate_keys(model_file: str) -> list[tuple]:
 
 
 # --------------------------------------------------------------------------- #
-# Gate: reactions with no metabolites
+# Report: reactions with no metabolites
 # --------------------------------------------------------------------------- #
 def check_empty_reactions(model: cobra.Model) -> list[str]:
     empty = sorted(r.id for r in model.reactions if len(r.metabolites) == 0)
@@ -176,7 +201,8 @@ def check_empty_reactions(model: cobra.Model) -> list[str]:
 
 
 # --------------------------------------------------------------------------- #
-# Gate: the model and its annotation tables must agree; no deprecated ids
+# Report: the model and its annotation tables must agree; no deprecated ids
+# (an identifier not in the Human-GEM format is a gate)
 # --------------------------------------------------------------------------- #
 def check_annotation_consistency(model: cobra.Model) -> list[tuple]:
     """Compare model ids against reactions/metabolites/genes.tsv and the deprecated
@@ -202,6 +228,15 @@ def check_annotation_consistency(model: cobra.Model) -> list[tuple]:
     compare("gene",
             {g.id for g in model.genes}, set(_tsv_column(GENES_TSV, "genes")), set())
 
+    # Every id, in the model or in a table, must have the Human-GEM format.
+    for kind, ids in (
+        ("reaction", {r.id for r in model.reactions} | set(_tsv_column(REACTIONS_TSV, "rxns"))),
+        ("metabolite", {m.id for m in model.metabolites} | set(_tsv_column(METABOLITES_TSV, "mets"))),
+        ("gene", {g.id for g in model.genes} | set(_tsv_column(GENES_TSV, "genes"))),
+    ):
+        for bad in sorted(i for i in ids if not ID_FORMATS[kind].fullmatch(i)):
+            issues.append((kind, bad, f"{ID_FORMAT_ISSUE} ({ID_FORMATS[kind].pattern})"))
+
     # A metabolite id ends in its compartment; a mismatch puts the metabolite somewhere
     # other than its id says, which no id-based review can see.
     for met in model.metabolites:
@@ -224,6 +259,25 @@ def check_annotation_consistency(model: cobra.Model) -> list[tuple]:
 
     _write_csv(ANNOTATION_CONSISTENCY_CSV, ["kind", "id", "issue"], issues)
     return issues
+
+
+# --------------------------------------------------------------------------- #
+# Gate: identifiers reserved for the animal GEMs
+# --------------------------------------------------------------------------- #
+def check_reserved_identifiers(model: cobra.Model) -> list[tuple]:
+    """Identifiers in the block reserved for the animal GEMs (RESERVED_ID), in the
+    model, its annotation tables or the deprecated lists. Returns [(kind, id, file)]."""
+    sources = [
+        ("reaction", [r.id for r in model.reactions], MODEL_FILE),
+        ("metabolite", [m.id for m in model.metabolites], MODEL_FILE),
+        ("reaction", _tsv_column(REACTIONS_TSV, "rxns"), REACTIONS_TSV),
+        ("metabolite", _tsv_column(METABOLITES_TSV, "mets"), METABOLITES_TSV),
+        ("reaction", _tsv_column(DEPRECATED_RXN_TSV, "rxns"), DEPRECATED_RXN_TSV),
+        ("metabolite", _tsv_column(DEPRECATED_MET_TSV, "mets"), DEPRECATED_MET_TSV),
+    ]
+    rows = [(kind, i, path) for kind, ids, path in sources for i in sorted(set(ids)) if RESERVED_ID.match(i)]
+    _write_csv(RESERVED_ID_CSV, ["kind", "id", "file"], rows)
+    return rows
 
 
 # --------------------------------------------------------------------------- #
@@ -293,6 +347,67 @@ def check_duplicate_reactions(model: cobra.Model) -> int:
                 rows.append((group, rid, example))
     rows.sort()
     _write_csv(DUP_RXN_CSV, ["group", "reaction", "equation"], rows)
+    return group
+
+
+# --------------------------------------------------------------------------- #
+# Report: twin reactions with a missing or conflicting EC number
+# --------------------------------------------------------------------------- #
+def _ec_codes(rxn: cobra.Reaction) -> frozenset:
+    codes = rxn.annotation.get("ec-code", [])
+    return frozenset([codes] if isinstance(codes, str) else codes)
+
+
+def check_twin_reactions(model: cobra.Model) -> int:
+    """Groups of reactions with the same chemistry and a missing or conflicting EC number.
+
+    Two reactions are twins when their stoichiometries are identical once the
+    compartment is dropped from every metabolite id: "merge" twins are the same
+    reaction in the same compartment (often left behind when two metabolites were
+    merged), "compartment" twins the same chemistry in another compartment. A group
+    is reported when its twins have the same GPR genes but different EC numbers, or
+    when one twin has an EC number and another has none; both are curation slips.
+    Twins with different GPRs and different EC numbers are usually different
+    enzymes acting on the same substrates (e.g. two aldehyde dehydrogenases) and are
+    not reported, nor is a different GPR alone (often an isoenzyme confined to one
+    compartment). The "differs" column notes when the GPR differs as well.
+    Transports (a metabolite in two compartments of one reaction), boundary
+    reactions and artificial (pool and biomass) reactions are skipped. The count is
+    the number of groups.
+    """
+    by_signature: dict[frozenset, list[cobra.Reaction]] = defaultdict(list)
+    for rxn in model.reactions:
+        subsystems = rxn.subsystem if isinstance(rxn.subsystem, list) else [rxn.subsystem]
+        if "Artificial reactions" in subsystems or rxn.boundary or not rxn.metabolites:
+            continue
+        bases = [met.id[:-1] for met in rxn.metabolites]
+        if len(bases) != len(set(bases)):
+            continue  # a transport
+        by_signature[frozenset((met.id[:-1], coeff) for met, coeff in rxn.metabolites.items())].append(rxn)
+
+    rows: list[tuple] = []
+    group = 0
+    for members in by_signature.values():
+        if len(members) < 2:
+            continue
+        ecs = {_ec_codes(rxn) for rxn in members}
+        if len(ecs) < 2:
+            continue
+        same_gpr = len({frozenset(g.id for g in rxn.genes) for rxn in members}) == 1
+        if not same_gpr and frozenset() not in ecs:
+            continue  # different enzymes, each with its own EC number
+        differs = ["EC"] if same_gpr else ["EC", "GPR"]
+        group += 1
+        compartments = {"".join(sorted({m.compartment for m in rxn.metabolites})) for rxn in members}
+        kind = "merge" if len(compartments) == 1 else "compartment"
+        for rxn in sorted(members, key=lambda r: r.id):
+            genes = " or ".join(sorted(g.name or g.id for g in rxn.genes))
+            rows.append((group, kind, "; ".join(differs), rxn.id,
+                         "".join(sorted({m.compartment for m in rxn.metabolites})),
+                         genes, ";".join(sorted(_ec_codes(rxn))),
+                         rxn.build_reaction_string(use_metabolite_names=True)))
+    _write_csv(TWIN_RXN_CSV, ["group", "kind", "differs", "reaction", "compartments", "genes", "ec",
+                              "equation"], rows)
     return group
 
 
@@ -367,6 +482,62 @@ def check_metabolite_completeness(model: cobra.Model) -> tuple[int, int]:
 # --------------------------------------------------------------------------- #
 # Report: reaction bound / GPR sanity
 # --------------------------------------------------------------------------- #
+def _closing(tokens: list[str], start: int) -> int:
+    """Index of the parenthesis that closes the one at ``tokens[start]``."""
+    depth = 0
+    for i in range(start, len(tokens)):
+        depth += {"(": 1, ")": -1}.get(tokens[i], 0)
+        if depth == 0:
+            return i
+    return -1
+
+
+def _or_clauses(rule: str) -> list[list[str]] | None:
+    """The AND-clauses of a GPR written as an OR of AND-clauses, each as its list of genes.
+
+    Returns None for a rule with an OR nested inside an AND, which this check does not expand.
+    """
+    clauses, depth, start = [], 0, 0
+    tokens = rule.replace("(", " ( ").replace(")", " ) ").split()
+    while tokens and tokens[0] == "(" and _closing(tokens, 0) == len(tokens) - 1:
+        tokens = tokens[1:-1]  # parentheses around the whole rule
+    for i, token in enumerate(tokens + ["or"]):
+        if token == "(":
+            depth += 1
+        elif token == ")":
+            depth -= 1
+        elif token == "or" and depth == 0:
+            clauses.append(tokens[start:i])
+            start = i + 1
+    genes = []
+    for clause in clauses:
+        if "or" in clause:
+            return None
+        genes.append([t for t in clause if t not in ("and", "(", ")")])
+    return genes
+
+
+def gpr_redundancy(rule: str) -> list[str]:
+    """Clauses of a GPR that cannot change its value: a gene repeated inside one clause, a clause
+    listed twice, or a clause that contains every gene of another clause (it is absorbed by it).
+    """
+    clauses = _or_clauses(rule) if rule.strip() else None
+    if not clauses:
+        return []
+    issues = []
+    for genes in clauses:
+        repeated = sorted({g for g in genes if genes.count(g) > 1})
+        if repeated:
+            issues.append("repeated gene " + "/".join(repeated))
+    sets = [frozenset(genes) for genes in clauses]
+    for i, clause in enumerate(sets):
+        if clause in sets[:i]:
+            issues.append("repeated clause " + " and ".join(sorted(clause)))
+        elif any(other < clause for other in sets):
+            issues.append("absorbed clause " + " and ".join(sorted(clause)))
+    return issues
+
+
 def check_reaction_sanity(model: cobra.Model) -> int:
     documented = set(_tsv_column(GENES_TSV, "genes"))
     rows = []
@@ -382,6 +553,9 @@ def check_reaction_sanity(model: cobra.Model) -> int:
             issues.append("undocumented_genes:" + ";".join(undocumented))
         if rxn.boundary and rxn.gene_reaction_rule.strip():
             issues.append("boundary_with_gpr")
+        redundant = gpr_redundancy(rxn.gene_reaction_rule)
+        if redundant:
+            issues.append("redundant_gpr:" + ";".join(redundant))
         if issues:
             rows.append((rxn.id, rxn.name or "", ";".join(issues)))
     rows.sort()
@@ -400,7 +574,10 @@ def check_name_consistency(model: cobra.Model) -> list[tuple]:
     * one chemical carrying different names in different compartments. The same
       compound is the same compound wherever it sits, so the names should agree, and a
       disagreement is either a naming slip or two unrelated compounds sharing a base
-      identifier.
+      identifier;
+    * a reaction name that names a metabolite the reaction does not contain (see
+      _species_named_in). Such names were left behind when a metabolite was renamed
+      or an equation changed without regenerating the reaction name.
 
     Returns [(kind, id, issue)].
     """
@@ -422,9 +599,44 @@ def check_name_consistency(model: cobra.Model) -> list[tuple]:
             )
             rows.append(("metabolite", base, f"name differs across compartments: {spelled}"))
 
+    known = {(met.name or "").strip().lower() for met in model.metabolites} - {""}
+    for rxn in model.reactions:
+        present = {(met.name or "").strip().lower() for met in rxn.metabolites}
+        for species in _species_named_in(rxn.name or ""):
+            if species.lower() in known and species.lower() not in present:
+                rows.append(("reaction", rxn.id, f"name refers to {species!r}, which is not in the reaction"))
+
     rows.sort()
     _write_csv(NAME_CONSISTENCY_CSV, ["kind", "id", "issue"], rows)
     return rows
+
+
+_COMPARTMENT_WORDS = ("cytosol|extracellular|mitochondria|inner mitochondria|peroxisome|"
+                      "endoplasmic reticulum|Golgi apparatus|lysosome|nucleus")
+_TRANSPORT_PART = re.compile(rf"(.+?) \((?:{_COMPARTMENT_WORDS}) to (?:{_COMPARTMENT_WORDS})\)(?: and |$)")
+
+
+def _species_named_in(name: str) -> list[str]:
+    """The metabolite names that the naming patterns of Human-GEM put into a reaction name:
+    'transport of X (A to B)' and 'transport of X (A to B) and Y (B to A)', 'Exchange of X',
+    'X to Y conversion' and the trailing '(X)' of '<enzyme> (X)'. Only strings that are
+    exactly a metabolite name are used by the check, so free text never matches."""
+    name = name.strip()
+    found: list[str] = []
+    body = re.sub(r"^(?:ATP-driven )?transport of ", "", name)
+    if body != name:
+        found.extend(m.group(1) for m in _TRANSPORT_PART.finditer(body))
+        return found
+    m = re.match(r"^Exchange of (.+)$", name, flags=re.IGNORECASE)
+    if m:
+        return [m.group(1)]
+    m = re.match(r"^(.+) to (.+) conversion$", name)
+    if m:
+        return [m.group(1), m.group(2)]
+    m = re.match(r"^.+? \(((?:[^()]|\([^()]*\))+)\)$", name)
+    if m:
+        found.append(m.group(1))
+    return found
 
 
 # --------------------------------------------------------------------------- #
@@ -524,8 +736,8 @@ def main() -> int:
 
     # Non-blocking checks: written to CSV and tracked with a delta in the comment
     # (a rising count shows as a regression), but they do not fail the build. The
-    # only gate that blocks the merge here is growth (and duplicate keys above,
-    # which stops the model loading at all).
+    # gates that block the merge here are reserved and malformed identifiers and growth (and
+    # duplicate keys above, which stops the model loading at all).
     empty = check_empty_reactions(model)
     if empty:
         print(f"::warning::{len(empty)} reaction(s) have no metabolites; see {EMPTY_RXN_CSV}.")
@@ -534,11 +746,25 @@ def main() -> int:
     if annotation:
         print(f"::warning::{len(annotation)} model/annotation-table inconsistency(ies); "
               f"see {ANNOTATION_CONSISTENCY_CSV}.")
+    malformed_ids = [row for row in annotation if row[2].startswith(ID_FORMAT_ISSUE)]
+    if malformed_ids:
+        for kind, entity_id, issue in malformed_ids:
+            print(f"::error::{kind} {entity_id}: {issue}.")
+        gate_failed = True
 
     undeprecated = check_deprecation_completeness(model)
     if undeprecated:
         print(f"::warning::{len(undeprecated)} identifier(s) removed from the model but not "
               f"added to a deprecated list; see {DEPRECATION_COMPLETENESS_CSV}.")
+
+    # Silent when clean: nothing is printed, and the report shows the row only when it fails.
+    reserved = check_reserved_identifiers(model)
+    if reserved:
+        for kind, identifier, path in reserved:
+            print(f"::error::{kind} {identifier} ({path}) is in MAR/MAM15000-19999, reserved for the animal GEMs.")
+        print(f"Found {len(reserved)} identifier(s) reserved for the animal GEMs; see {RESERVED_ID_CSV}. "
+              f"Give them the next free Human-GEM number instead.")
+        gate_failed = True
 
     growth = check_growth(model)
     grows = growth == growth and growth > GROWTH_TOLERANCE  # not NaN and positive
@@ -555,6 +781,7 @@ def main() -> int:
     n_formula, n_charge = check_metabolite_completeness(model)
     n_reaction_issues = check_reaction_sanity(model)
     n_dup_rxn = check_duplicate_reactions(model)
+    n_twins = check_twin_reactions(model)
     n_split = check_split_compartments(model)
     n_unused_met, n_unused_gene = check_unused_entities(model)
 
@@ -567,6 +794,7 @@ def main() -> int:
     print(f"Reactions with bound/GPR issues: {n_reaction_issues}")
     print(f"Naming issues (missing or inconsistent): {len(name_issues)}")
     print(f"Exact-duplicate reaction groups: {n_dup_rxn}")
+    print(f"Twin reaction groups with a missing or conflicting EC number: {n_twins}")
     print(f"Reactions with chemistry split across compartments: {n_split}")
     print(f"Unused metabolites / genes: {n_unused_met} / {n_unused_gene}")
     print(f"Removed identifiers not deprecated: {len(undeprecated)}")

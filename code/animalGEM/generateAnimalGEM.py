@@ -12,6 +12,10 @@ species-specific is read from the Animal-GEM repository:
     <repo>/model/<Species>-GEM.{yml,mat,xml}    the model (rewritten)
     <repo>/version.txt                           the model version
 
+The species-specific reactions and metabolites are numbered in MAR15000-MAR19999 and
+MAM15000-MAM19999, a block Human-GEM keeps free for the animal GEMs (checked by
+code/test/qcModelChecks.py), so a number means the same thing in every model.
+
 Steps, in order:
 
 1. Take Human-GEM as the template and rewrite every GPR through the ortholog table
@@ -91,11 +95,11 @@ BIOMASS_COMPONENTS_RXN = "MAR00021"
 
 GAPFILL_NOTE = "reaction added by gap filling"
 
-# Human-GEM releases in which MAR00021 cannot carry flux on Ham's medium (issue #1140):
-# its cofactor pool MAR00022 consumes [protein]-N6-(lipoyl)lysine, which nothing makes
-# since the lipoylation curation. Remove this, and fix_lipoyl_biomass, once MAR00021 is
-# curated in Human-GEM.
-LIPOYL_BIOMASS_RELEASES = {"2.0.0", "2.0.1", "2.1.0"}
+# In Human-GEM 2.0.0-2.1.1 the cofactor pool MAR00022 of MAR00021 consumes
+# [protein]-N6-(lipoyl)lysine, which nothing makes since the lipoylation curation, so
+# MAR00021 cannot carry flux on Ham's medium (issue #1140). The generator then lets the
+# pool take lipoic acid instead (fix_lipoyl_biomass); it tests the template for this
+# rather than its version (lipoyl_biomass_blocked).
 LIPOYL_LYSINE = "[protein]-N6-(lipoyl)lysine"
 
 
@@ -328,10 +332,10 @@ def fix_lipoyl_biomass(model: cobra.Model) -> bool:
 
     In place; returns whether anything changed. ``MAR00022`` makes the "cofactors and
     vitamins" pool that ``MAR00021`` consumes. It takes ``[protein]-N6-(lipoyl)lysine``,
-    which Human-GEM 2.0.0-2.1.0 cannot make, so the generic biomass is blocked. The
+    which Human-GEM 2.0.0-2.1.1 cannot make, so the generic biomass is blocked. The
     current human cofactor pool (``MAR10065``) takes free lipoic acid, which Ham's medium
-    supplies; ``MAR00022`` is changed to match. Only the template of a model in
-    ``LIPOYL_BIOMASS_RELEASES`` is passed here; the curated fix belongs in Human-GEM.
+    supplies; ``MAR00022`` is changed to match. Applied only to a template for which
+    :func:`lipoyl_biomass_blocked` holds; the curated fix belongs in Human-GEM.
     """
     if "MAR00022" not in model.reactions or "MAR10065" not in model.reactions:
         return False
@@ -346,6 +350,32 @@ def fix_lipoyl_biomass(model: cobra.Model) -> bool:
     rxn.notes["note"] = (f"{note};" if note else "") + (
         f"{LIPOYL_LYSINE} replaced by lipoic acid by the animal GEM generator (Human-GEM issue 1140)")
     return True
+
+
+def growth_on_components(model: cobra.Model, tasks) -> bool:
+    """Whether the ``GR`` task passes with ``MAR00021`` as the biomass reaction.
+
+    ``tasks`` is the parsed essential task list. A model without a ``GR`` task passes.
+    """
+    growth = [task for task in tasks if task.id == "GR"]
+    if not growth:
+        return True
+    test = model.copy()
+    reset_biomass(test)
+    return all(result.passed for result in check_tasks(test, growth, close_boundaries=True))
+
+
+def lipoyl_biomass_blocked(model: cobra.Model, tasks) -> bool:
+    """Whether ``MAR00022`` consumes lipoyl-lysine and ``MAR00021`` therefore cannot grow.
+
+    True when ``MAR00022`` takes ``[protein]-N6-(lipoyl)lysine`` and the ``GR`` task
+    fails with ``MAR00021`` as the biomass reaction (Human-GEM 2.0.0-2.1.1).
+    """
+    if "MAR00022" not in model.reactions:
+        return False
+    if not any(m.name == LIPOYL_LYSINE for m in model.reactions.MAR00022.reactants):
+        return False
+    return not growth_on_components(model, tasks)
 
 
 def reset_biomass(model: cobra.Model) -> None:
@@ -534,10 +564,10 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
                          "GEMs are built on a stable release: pass --human-repo a checkout of a release "
                          "tag, or --allow-unreleased to build on this one anyway.")
     version = animal_version(template_version, current, version)
-    if reset_objective and template_version in LIPOYL_BIOMASS_RELEASES \
-            and fix_lipoyl_biomass(template):
-        print(f"Human-GEM {template_version or 'develop'}: MAR00022 uses lipoic acid instead of "
-              f"{LIPOYL_LYSINE} (see issue #1140)", flush=True)
+    tasks = parse_task_list(human / ESSENTIAL_TASKS)
+    if reset_objective and lipoyl_biomass_blocked(template, tasks) and fix_lipoyl_biomass(template):
+        print(f"Human-GEM {template_version or 'develop'}: MAR00021 cannot grow, so MAR00022 uses "
+              f"lipoic acid instead of {LIPOYL_LYSINE} (see issue #1140)", flush=True)
 
     orthologs = read_alliance_orthologs(repo.orthologs)
     gene_map = ensembl_to_species_genes(human / "model" / "genes.tsv", orthologs)
@@ -556,8 +586,7 @@ def generate_animal_gem(species: str, repo_dir: Path, *, version: str | None = N
                       f"balanced against Human-GEM {template_version}: {unbalanced}", stacklevel=2)
     print(f"Added {len(added)} species-specific reactions, {len(mets)} metabolites", flush=True)
 
-    filled = fill_essential_tasks(model, template, parse_task_list(human / ESSENTIAL_TASKS),
-                                  reset=reset_objective, time_limit=time_limit)
+    filled = fill_essential_tasks(model, template, tasks, reset=reset_objective, time_limit=time_limit)
     print(f"Gap-filled {len(filled)} reactions", flush=True)
 
     symbols = dict(zip(orthologs["to"], orthologs["to_symbol"]))
