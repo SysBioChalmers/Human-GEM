@@ -355,7 +355,7 @@ def _build_context_model(
     _set_solver_verbosity(True)  # stream the ftINIT MILP branch-and-bound log as progress
     try:
         context = ftinit(
-            prep, rxn_scores, gene_scores=gene_scores, series="1+1", fill_gaps=True,
+            prep, rxn_scores=rxn_scores, gene_scores=gene_scores, series="1+1", fill_gaps=True,
             big_m=big_m, mip_gap_abs=mip_gap_abs, time_limit=time_limit,
             resolve_ties=RESOLVE_TIES, prove_abs_gap=PROVE_ABS_GAP, verbose=True,
         )
