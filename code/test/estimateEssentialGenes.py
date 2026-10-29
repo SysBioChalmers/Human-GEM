@@ -75,10 +75,11 @@ EXT_COMP = "e"
 # score negative (RAVEN's threshold = 1 in the MATLAB workflow).
 EXPRESSION_THRESHOLD = 1.0
 
-# ftINIT MILP parameters. big_m = 100 is RAVEN's fixed value, valid once the merged
-# stoichiometry is rescaled (prep_init_model does this); each per-step solve is bounded
-# by an absolute MIP gap and a time limit for tractability on the genome-scale model.
-BIG_M = 100.0
+# ftINIT MILP parameters. big_m bounds the flux of a scored reaction in its on/off
+# constraint; 1000 is the raven-toolbox default and the cap RAVEN's ftINITInternalAlg uses.
+# Each per-step solve is bounded by an absolute MIP gap and a time limit for tractability
+# on the genome-scale model.
+BIG_M = 1000.0
 MIP_GAP_ABS = 10.0
 TIME_LIMIT = 900.0
 
