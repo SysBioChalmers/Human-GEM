@@ -18,7 +18,9 @@ This script instead:
      re-run) for just this gene set. A gene is reported only when its predicted
      essentiality moved in the same direction in a majority of the five cell lines --
      a flip reproduced across most cell lines is far more likely a real network effect
-     than a single cell line's ftINIT noise.
+     than a single cell line's ftINIT noise. A gene outside a cell line's context model
+     on one side, or outside the model, counts as non-essential there; genes new to or
+     removed from the model are labelled as such.
   4. Splits those consistent changes into two kinds, because they are not evaluated the
      same way:
        - a change to whether the knockout blocks *growth* (the GR/ER "viability" task
@@ -87,6 +89,9 @@ CATEGORY_LABELS = {
 # A gene needs to flip in the same direction in at least this many compared cell
 # lines to be reported as a consistent change rather than an isolated one.
 CONSENSUS_MIN_LINES = 3
+
+# The calls of a gene in a cell line whose context model does not contain it.
+NOT_IN_CONTEXT_MODEL = {"tasks": frozenset(), "growth": None}
 
 IMPROVED = ":sparkles:"  # a flip that moved closer to Hart 2015 -- distinct from
                          # white_check_mark, which here means "nothing changed"
@@ -232,12 +237,17 @@ def diff_gene(
             "before_growth": before["growth"] if before else None,
             "after_growth": after["growth"] if after else None,
         }
-        if before is None or after is None:
-            line["membership_changed"] = (before is None) != (after is None)
+        if before is None and after is None:
+            line["membership_changed"] = False
             per_line[tissue] = line
             continue
 
-        line["membership_changed"] = False
+        # A gene outside a cell line's context model, or outside the model, has no knockout
+        # effect there and counts as non-essential on that side. Lines where it is outside
+        # on both sides are not compared.
+        line["membership_changed"] = (before is None) != (after is None)
+        before = before or NOT_IN_CONTEXT_MODEL
+        after = after or NOT_IN_CONTEXT_MODEL
         n_compared += 1
         any_dir = _direction(bool(before["tasks"]), bool(after["tasks"]))
         via_dir = _direction(
@@ -269,8 +279,9 @@ def diff_gene(
             return "stable", ""
         gained = directions.count("gained")
         lost = directions.count("lost")
-        # Denominator is every line comparable on both sides, not just the lines that
-        # flipped -- "3/3" would otherwise look identical whether 3/5 or 3/3 lines moved.
+        # Denominator is every line where the gene is in a context model on at least one
+        # side, not just the lines that flipped -- "3/3" would otherwise look identical
+        # whether 3/5 or 3/3 lines moved.
         if max(gained, lost) >= CONSENSUS_MIN_LINES:
             return ("consensus gained" if gained >= lost else "consensus lost"), f"{max(gained, lost)}/{n_compared}"
         return "isolated (likely noise)", f"{len(directions)}/{n_compared}"
@@ -337,8 +348,12 @@ def build_report(
 
     tissues_b, symbol_b, per_gene_b = read_matrix(base_matrix_path)
     tissues_h, symbol_h, per_gene_h = read_matrix(head_matrix_path)
-    tissues = [t for t in tissues_h if t in tissues_b] or tissues_h
+    tissues = [t for t in tissues_h if t in tissues_b]
+    if not tissues:
+        raise ValueError(f"{base_matrix_path} and {head_matrix_path} share no cell line")
     symbol_of = {**symbol_b, **symbol_h}
+    base_genes = {g.id for g in base_model.genes}
+    head_genes = {g.id for g in head_model.genes}
 
     scope = [(g, "direct") for g in sorted(direct)] + [(g, "neighbor") for g in sorted(neighbors)]
     scope_gene_ids = [g for g, _ in scope]
@@ -355,26 +370,29 @@ def build_report(
         for gene_id in scope_gene_ids
     }
 
-    # A gene removed from (or added to) the model has no knockout effect on the side
-    # where it is absent, so it counts as non-essential there in every line where the
-    # other side built it, rather than as a change of context-model membership.
-    base_genes = {g.id for g in base_model.genes}
-    head_genes = {g.id for g in head_model.genes}
-
     def absent_record(present: dict[str, dict | None]) -> dict[str, dict | None]:
         return {t: {"tasks": frozenset(), "growth": None} for t, rec in present.items() if rec is not None}
 
     results = []
+    not_compared = []
     for gene_id, hop in scope:
         base_record = per_gene_b.get(gene_id, {})
         head_record = per_gene_h.get(gene_id, {})
+        if not base_record and not head_record:
+            continue  # gene not in either matrix (e.g. not built into any cell-line model)
+        # A matrix holds a row for every gene of the model it was computed from, so a gene
+        # that is in a model but not in its matrix means the matrix is older than the model.
+        if (not base_record and gene_id in base_genes) or (not head_record and gene_id in head_genes):
+            not_compared.append(symbol_of.get(gene_id) or gene_id)
+            continue
+        # A gene removed from (or added to) the model has no knockout effect on the side
+        # where it is absent, so it counts as non-essential there in every line where the
+        # other side built it, rather than as a change of context-model membership.
         membership = ""
         if gene_id in base_genes and gene_id not in head_genes:
             head_record, membership = absent_record(base_record), "removed"
         elif gene_id in head_genes and gene_id not in base_genes:
             base_record, membership = absent_record(head_record), "added"
-        if not base_record and not head_record:
-            continue  # gene not in either matrix (e.g. not built into any cell-line model)
         result = diff_gene(
             gene_id, tissues, base_record, head_record, hart_fitness_by_gene.get(gene_id, {}),
             growth_tolerance=growth_tolerance,
@@ -386,6 +404,8 @@ def build_report(
         result["hop"] = hop
         result["symbol"] = symbol_of.get(gene_id, "")
         results.append(result)
+    if not_compared:
+        print(f"Not compared, missing from a matrix older than its model: {', '.join(sorted(not_compared))}", file=sys.stderr)
 
     growth_relevant = [r for r in results if r["viability_verdict"].startswith("consensus")]
     capability_only = [
@@ -406,17 +426,19 @@ def build_report(
         Several genes commonly move together for the same reason (e.g. the three ETF
         complex subunits), and listing each on its own line just repeats the same
         three cells three times; one row with a comma-joined gene list reads the same
-        information without the repetition.
+        information without the repetition. Genes removed from or added to the model
+        get rows of their own, so a row never mixes them with genes that stay.
         """
         groups: dict[tuple, list[str]] = {}
         for r in rows:
             name = r["symbol"] or r["gene"]
-            if r.get("membership") == "removed":
+            membership = r.get("membership", "")
+            if membership == "removed":
                 name += " (removed from the model)"
-            elif r.get("membership") == "added":
+            elif membership == "added":
                 name += " (added to the model)"
-            groups.setdefault(key_fn(r), []).append(name)
-        return sorted(groups.items(), key=lambda kv: sorted(kv[1]))
+            groups.setdefault((key_fn(r), membership), []).append(name)
+        return sorted(((key, names) for (key, _), names in groups.items()), key=lambda kv: sorted(kv[1]))
 
     def _growth_key(r: dict) -> tuple[str, str, str]:
         direction = "gained" if r["viability_verdict"].endswith("gained") else "lost"
@@ -503,11 +525,18 @@ def build_report(
         detail_lines.append("")
     detail_lines.append(f"**No change:** {len(stable)} gene(s).")
     detail_lines.append("")
+    if not_compared:
+        detail_lines.append(
+            "**Not compared** (missing from a gene-essentiality matrix older than its model): "
+            + ", ".join(sorted(not_compared)) + "."
+        )
+        detail_lines.append("")
     detail_lines.append(f"Full per-gene, per-line detail (every gene checked, not just the ones named above): {csv_ref}.")
     detail_text = "\n".join(detail_lines) + "\n"
 
     detail_header = [
         "gene", "symbol", "hop", "any_verdict", "any_count", "viability_verdict", "viability_count", "hart_verdict",
+        "model_membership",
     ]
     for tissue in tissues:
         detail_header += [f"{tissue}_before_tasks", f"{tissue}_after_tasks", f"{tissue}_before_growth", f"{tissue}_after_growth"]
@@ -515,7 +544,7 @@ def build_report(
     for r in sorted(results, key=lambda r: (r["hop"], r["gene"])):
         row = [
             r["gene"], r["symbol"], r["hop"], r["any_verdict"], r["any_count"],
-            r["viability_verdict"], r["viability_count"], r["hart_verdict"],
+            r["viability_verdict"], r["viability_count"], r["hart_verdict"], r["membership"],
         ]
         for tissue in tissues:
             line = r["per_line"].get(tissue, {})

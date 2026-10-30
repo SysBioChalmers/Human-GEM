@@ -1118,14 +1118,12 @@
 	178	Synthesis of ubiquinone from tyrosine		tyrosine[m]	1	1	ubiquinone[m]	1	1								
 				AKG[m]	1	1	glutamate[m]	1	1								
 				all-trans-decaprenyl-diphosphate[m]	1	1	SAH[m]	3	3								
-				SAM[m]	3	3	acetyl-CoA[m]	1	1								
-				ATP[m]	1	1	AMP[m]	1	1								
-				CoA[m]	1	1	PPi[m]	2	2								
-				NADPH[m]	1	1	NAD+[m]	1	1								
-				NADH[m]	1	1	CO2[m]	1	1								
-				O2[m]	3	3	H2O[m]	2	2								
-							NADP+[m]	1	1								
-							H+[m]	1	1								
+				SAM[m]	3	3	NADP+[m]	1	1								
+				NADPH[m]	1	1	NADH[m]	1	1								
+				NAD+[m]	1	1	CO2[m]	3	3								
+				O2[m]	4	4	H2O[m]	2	2								
+							H+[m]	2	2								
+							PPi[m]	1	1								
 	179	Tetrahydrofolate synthesis		folate[c]	1	1	THF[c]	1	1								
 				NADPH[c]	2	2	NADP+[c]	2	2								
 				H+[c]	1	1											

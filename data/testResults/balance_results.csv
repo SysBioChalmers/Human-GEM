@@ -3,11 +3,8 @@ MAR00012,(10Z)-heptadecenoic acid formation,C:16.2056;H:30.7154;R:-1,-1
 MAR00015,NEFA blood pool in to (10Z)-heptadecenoic acid conversion,C:16.222;H:30.9664;R:-1,-1
 MAR00016,(10Z)-heptadecenoic acid to NEFA blood pool out conversion,C:-16.271;H:-30.8218;R:1,1
 MAR00017,SMCFA-blood-pool to butyrate conversion,C:6.5;H:13;R:-1,-1
-MAR00022,[protein]-N6-(lipoyl)lysine reduction,C:-3270;Co:-1;Fe:-1;H:-5094;N:-895;O:-973;P:-11;S:-28;X:0.7,17
-MAR00023,11-cis-retinol to vitamin A derivatives conversion,C:-434;H:-592;N:-1;O:-57;X:1,7
+MAR00022,Cofactors and vitamins pool for MAR00021,C:-1903;Co:-1;Fe:-1;H:-2922;N:-514;O:-555;P:-11;S:-24;X:1,18
 MAR00031,lipid droplet formation,C:-13.4364;H:-19.2074;N:-0.0188;O:-4.4474;P:-0.02;R:-2.0826;X:1,0.0068
-MAR00033,"24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion",C:-54;H:-82;O:-9;X:1,
-MAR00034,3-carboxy-alpha-chromanol to vitamin E derivatives conversion,C:-37;H:-48;O:-14;X:1,2
 MAR00035,"(1aalpha,2beta,3alpha,11calpha)... to xenobiotics conversion",Br:-6;C:-588;Cl:-12;H:-621;N:-66;O:-209;S:-15,11
 MAR00036,(11R)-HPETE to arachidonate derivatives conversion,C:-3150;H:-4860;N:-76;O:-819;P:-15;S:-23,179
 MAR00037,16alpha-hydroxyestrone to steroids conversion,C:-1116;H:-1488;I:-1;N:-81;O:-299;S:-24;Se:-1,24
@@ -108,11 +105,6 @@ MAR03255,melatonin radical to cyclic-3-hydroxymelatonin conversion,,1
 MAR03265,prostaglandin-F synthase (monodehydroascorbate),,1
 MAR03321,acyl-CoA oxidase (4-cis-decenoyl-CoA),,2
 MAR03400,3Beta-Hydroxy-Delta5-Steroid Dehydrogenase,,-2
-MAR03437,"(4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA reduction",,-2
-MAR03438,"ELOVL fatty acid elongase ((4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA)",,-2
-MAR03439,"ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA)",,2
-MAR03440,"ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)...)",,2
-MAR03483,acetyl-CoA C-acyltransferase,,-2
 MAR03537,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;R:-1,
 MAR03622,"cholesterol-ester plasma pool to cholesterol-ester-10,13,16,19-docosa conversion",C:16.764;H:31.3344;R:-1,
 MAR03830,"enoyl-CoA hydratase (9,10-12,13-diepoxy-octadecanoate)",,1
@@ -191,7 +183,6 @@ MAR07621,[protein] to [protein]-L-arginine conversion,C:1;H:1;N:1;O:1;R:2;X:-1,
 MAR07625,NAD+:protein-L-arginine ADP-D-ribosyltransferase,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
 MAR07741,Ferredoxin:NADP+ oxidoreductase,,-2
 MAR08029,"release of N6,N6,N6-trimethyl-L-lysine from protein",C:-1;H:-1;N:-1;O:-1;R:-2;X:1,
-MAR08615,ATP:cob(I)alamin Co-beta-adenosyltransferase,,1
 MAR09487,NAD+:poly(adenosine diphosphate D-ribose)ADP-D-ribosyltransferase,,2
 MAR09491,E2 ubiquitin-conjugating enzyme ([protein]-L-lysine),,-1
 MAR09735,[protein]-L-citrulline hydrolysis,C:-1;H:-1;N:-1;O:-1;R:-2;X:1,

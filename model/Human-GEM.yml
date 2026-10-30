@@ -2466,13 +2466,6 @@
     - formula: C25H38N7O18P3S
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM00173x
-    - name: (S)-3-hydroxybutyryl-CoA
-    - compartment: x
-    - charge: -4.0
-    - formula: C25H38N7O18P3S
-    - metFrom: HMRdatabase
-  - !!omap
     - id: MAM00174m
     - name: (S)-3-hydroxydodecanoyl-CoA
     - compartment: m
@@ -10619,13 +10612,6 @@
     - formula: C9H7O3
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM00982c
-    - name: 4-coumaroyl-CoA
-    - compartment: c
-    - charge: -4.0
-    - formula: C30H38N7O18P3S1
-    - metFrom: HMRdatabase
-  - !!omap
     - id: MAM00983c
     - name: 4-hydroperoxy-2-nonenal
     - compartment: c
@@ -10778,13 +10764,6 @@
     - compartment: m
     - charge: -1.0
     - formula: C7H5O3
-    - metFrom: HMRdatabase
-  - !!omap
-    - id: MAM00996c
-    - name: 4-hydroxybenzoyl-CoA
-    - compartment: c
-    - charge: -4.0
-    - formula: C28H36N7O18P3S
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00997c
@@ -11954,13 +11933,6 @@
     - compartment: c
     - charge: -1.0
     - formula: C10H8NO3
-    - metFrom: HMRdatabase
-  - !!omap
-    - id: MAM01104c
-    - name: 5-hydroxyisourate
-    - compartment: c
-    - charge: 0.0
-    - formula: C5H4N4O4
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01105c
@@ -38234,34 +38206,6 @@
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM03139c
-    - name: vitamin A derivatives
-    - compartment: c
-    - charge: 0.0
-    - formula: X
-    - metFrom: HMRdatabase
-  - !!omap
-    - id: MAM03140c
-    - name: vitamin D derivatives
-    - compartment: c
-    - charge: 0.0
-    - formula: X
-    - metFrom: HMRdatabase
-  - !!omap
-    - id: MAM03143c
-    - name: vitamin E derivatives
-    - compartment: c
-    - charge: 0.0
-    - formula: X
-    - metFrom: HMRdatabase
-  - !!omap
-    - id: MAM01004m
-    - name: 4-hydroxyphenyllactate
-    - compartment: m
-    - charge: -1.0
-    - formula: C9H9O4
-    - metFrom: Recon3D
-  - !!omap
     - id: MAM00799c
     - name: 3-hydroxypropionyl-CoA
     - compartment: c
@@ -41795,13 +41739,6 @@
     - compartment: r
     - charge: -4.0
     - formula: C45H66N7O17P3S
-    - metFrom: Recon3D
-  - !!omap
-    - id: MAM00853r
-    - name: 3-oxo-all-cis-6,9,12,15,18-tetracosapentaenoyl-CoA
-    - compartment: r
-    - charge: -4.0
-    - formula: C45H66N7O18P3S
     - metFrom: Recon3D
   - !!omap
     - id: MAM00718r
@@ -58204,13 +58141,6 @@
     - formula: C19H37NO4
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM00853c
-    - name: 3-oxo-all-cis-6,9,12,15,18-tetracosapentaenoyl-CoA
-    - compartment: c
-    - charge: -4.0
-    - formula: C45H66N7O18P3S
-    - metFrom: Recon3D
-  - !!omap
     - id: MAM20089m
     - name: 2-(4-carboxy-1-hydroxybutyl)thiamine diphosphate
     - compartment: m
@@ -58304,6 +58234,41 @@
     - compartment: g
     - charge: 2.0
     - formula: Ca
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM20092m
+    - name: (S)-4-hydroxymandelate
+    - compartment: m
+    - charge: -1.0
+    - formula: C8H7O4
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM20093c
+    - name: 3(R)-hydroxy-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA
+    - compartment: c
+    - charge: -4.0
+    - formula: C45H70N7O18P3S
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM00902c
+    - name: 3-oxo-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA
+    - compartment: c
+    - charge: -4.0
+    - formula: C45H66N7O18P3S
+    - metFrom: HMRdatabase
+  - !!omap
+    - id: MAM20093r
+    - name: 3(R)-hydroxy-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA
+    - compartment: r
+    - charge: -4.0
+    - formula: C45H70N7O18P3S
+    - metFrom: HumanGEM
+  - !!omap
+    - id: MAM00902r
+    - name: 3-oxo-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA
+    - compartment: r
+    - charge: -4.0
+    - formula: C45H66N7O18P3S
     - metFrom: HumanGEM
 - reactions:
   - !!omap
@@ -63877,57 +63842,6 @@
     - upper_bound: 1000.0
     - subsystem:
       - Purine metabolism
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06609
-    - name: (S)-allantoin amidohydrolase
-    - metabolites: !!omap
-      - MAM01312c: 1.0
-      - MAM01313c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Purine metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 3.5.2.5
-    - references: PMID:11342423;PMID:8248161
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06610
-    - name: 5-hydroxyisourate decarboxylation
-    - metabolites: !!omap
-      - MAM01104c: -1.0
-      - MAM01313c: 1.0
-      - MAM01596c: 1.0
-      - MAM02040c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Purine metabolism
-    - references: PMID:8248161;PMID:11342423
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06611
-    - name: urate:oxygen oxidoreductase
-    - metabolites: !!omap
-      - MAM01104c: 1.0
-      - MAM02040c: -1.0
-      - MAM02041c: 1.0
-      - MAM02630c: -1.0
-      - MAM03120c: -1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Purine metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.7.3.3
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -72397,7 +72311,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Tryptophan metabolism
     - annotation: !!omap
@@ -72977,7 +72891,7 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000075239
     - subsystem:
       - Valine, leucine, and isoleucine metabolism
     - annotation: !!omap
@@ -74998,74 +74912,6 @@
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
-    - id: MAR06783
-    - name: 3-(4-hydroxyphenyl)lactate hydro-lyase (4-coumarate-forming)
-    - metabolites: !!omap
-      - MAM00981c: 1.0
-      - MAM01004c: -1.0
-      - MAM02040c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06784
-    - name: 4-Coumarate:CoA ligase (AMP-forming)
-    - metabolites: !!omap
-      - MAM00981c: -1.0
-      - MAM00982c: 1.0
-      - MAM01334c: 1.0
-      - MAM01371c: -1.0
-      - MAM01597c: -1.0
-      - MAM02759c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - annotation: !!omap
-      - ec-code:
-        - 6.2.1.12
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06785
-    - name: 4-coumaroyl-CoA oxidation
-    - metabolites: !!omap
-      - MAM00982c: -1.0
-      - MAM00996c: 1.0
-      - MAM01261c: 1.0
-      - MAM01597c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02552c: -1.0
-      - MAM02553c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06786
-    - name: 4-Hydroxybenzoyl-CoA hydrolase
-    - metabolites: !!omap
-      - MAM00995c: 1.0
-      - MAM00996c: -1.0
-      - MAM01597c: 1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Phenylalanine, tyrosine and tryptophan biosynthesis
-    - annotation: !!omap
-      - ec-code:
-        - 3.1.2.23
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR06787
     - name: L-tyrosine carboxy-lyase (tyramine-forming)
     - metabolites: !!omap
@@ -76539,7 +76385,7 @@
       - MAM02877c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000088305 and ENSG00000130816) or ENSG00000107614 or ENSG00000119772 or ENSG00000142182
+    - gene_reaction_rule: ENSG00000130816 or ENSG00000119772 or ENSG00000088305
     - subsystem:
       - Cysteine and methionine metabolism
     - annotation: !!omap
@@ -77005,7 +76851,7 @@
       - MAM02877n: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000088305 and ENSG00000130816) or ENSG00000107614 or ENSG00000119772 or ENSG00000142182
+    - gene_reaction_rule: ENSG00000130816 or ENSG00000119772 or ENSG00000088305
     - subsystem:
       - Cysteine and methionine metabolism
     - annotation: !!omap
@@ -78034,7 +77880,7 @@
       - MAM02882n: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000088305 and ENSG00000130816) or ENSG00000107614 or ENSG00000119772 or ENSG00000142182
+    - gene_reaction_rule: ENSG00000130816 or ENSG00000119772 or ENSG00000088305
     - subsystem:
       - Metabolism of other amino acids
     - annotation: !!omap
@@ -91414,7 +91260,7 @@
     - name: ELOVL fatty acid elongase
     - metabolites: !!omap
       - MAM00121c: -1.0
-      - MAM00853c: 1.0
+      - MAM00902c: 1.0
       - MAM01596c: 1.0
       - MAM01597c: 1.0
       - MAM02039c: -1.0
@@ -91435,7 +91281,7 @@
     - name: hydroxysteroid 17-beta dehydrogenase
     - metabolites: !!omap
       - MAM00718c: 1.0
-      - MAM00853c: -1.0
+      - MAM00902c: -1.0
       - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
@@ -91537,7 +91383,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -91557,7 +91403,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -91577,7 +91423,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
@@ -92810,11 +92656,11 @@
     - id: MAR02397
     - name: hydroxysteroid 17-beta dehydrogenase
     - metabolites: !!omap
-      - MAM00716c: 1.0
       - MAM00903c: -1.0
       - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
+      - MAM20093c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000149084
@@ -92831,8 +92677,8 @@
     - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase
     - metabolites: !!omap
       - MAM00681c: 1.0
-      - MAM00716c: -1.0
       - MAM02040c: 1.0
+      - MAM20093c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000074696 or ENSG00000146066 or ENSG00000165996 or ENSG00000188921 or ENSG00000206527
@@ -92866,7 +92712,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR02403
-    - name: (9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA hydroxylation
+    - name: acyl-CoA 6-desaturase ((9Z,12Z,15Z,18Z)-tetracosatetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00110c: 1.0
       - MAM00131c: -1.0
@@ -92877,8 +92723,12 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Omega-6 fatty acid metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 1.14.19.3
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -92909,7 +92759,7 @@
       - MAM03028x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -92929,7 +92779,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -92949,7 +92799,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93334,7 +93184,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93395,7 +93245,7 @@
       - MAM02553m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93415,7 +93265,7 @@
       - MAM01597m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93511,12 +93361,12 @@
       - MAM03033x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000104823
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 5.3.3.8
+        - 5.3.3.21
     - references: PMID:7775433;PMID:10407780;PMID:7775433;PMID:10407780
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -93548,7 +93398,7 @@
       - MAM03034x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000198721 or ENSG00000113790
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93566,7 +93416,7 @@
       - MAM03029x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93586,7 +93436,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93624,7 +93474,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93644,7 +93494,7 @@
       - MAM02553x: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93664,7 +93514,7 @@
       - MAM01597x: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -93720,7 +93570,7 @@
       - MAM03009x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000198721 or ENSG00000113790
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
@@ -97245,7 +97095,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97265,7 +97115,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97286,7 +97136,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97306,7 +97156,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97326,7 +97176,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97722,7 +97572,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97742,7 +97592,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97763,7 +97613,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97783,7 +97633,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -97803,7 +97653,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98347,7 +98197,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98367,7 +98217,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98388,7 +98238,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98408,7 +98258,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98428,7 +98278,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98626,7 +98476,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98646,7 +98496,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98667,7 +98517,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98687,7 +98537,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98707,7 +98557,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98937,7 +98787,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98957,7 +98807,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -98977,7 +98827,7 @@
       - MAM02650x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -99053,7 +98903,7 @@
       - MAM00422x: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000198721 or ENSG00000113790
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -99071,7 +98921,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -99091,7 +98941,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -99113,7 +98963,7 @@
       - MAM02652x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Leukotriene metabolism
     - annotation: !!omap
@@ -106388,7 +106238,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106408,7 +106258,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106428,7 +106278,7 @@
       - MAM02971x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106464,7 +106314,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106483,7 +106333,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106502,7 +106352,7 @@
       - MAM01725x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106556,7 +106406,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106575,7 +106425,7 @@
       - MAM01773x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106610,7 +106460,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106629,7 +106479,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106648,7 +106498,7 @@
       - MAM02941x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106683,7 +106533,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106702,7 +106552,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106721,7 +106571,7 @@
       - MAM02678x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106757,7 +106607,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106777,7 +106627,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106797,7 +106647,7 @@
       - MAM02495x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106834,7 +106684,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106854,7 +106704,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106874,7 +106724,7 @@
       - MAM02345x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106911,7 +106761,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106931,7 +106781,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -106951,7 +106801,7 @@
       - MAM01650x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -107008,7 +106858,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -107065,7 +106915,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -107085,7 +106935,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -107105,7 +106955,7 @@
       - MAM02122x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -107142,7 +106992,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -107162,7 +107012,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
@@ -107182,34 +107032,13 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of even-chain fatty acids (peroxisomal)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.16
     - references: PMID:10806397;PMID:1121274;PMID:1679347;PMID:1735445;PMID:1979337;PMID:2048733;PMID:3194209;PMID:6378901;PMID:8241273;PMID:1550553
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR03104
-    - name: (S)-3-Hydroxybutanoyl-CoA:NAD+ oxidoreductase
-    - metabolites: !!omap
-      - MAM00173x: -1.0
-      - MAM01255x: 1.0
-      - MAM02039x: 1.0
-      - MAM02552x: -1.0
-      - MAM02553x: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
-    - subsystem:
-      - Beta oxidation of even-chain fatty acids (peroxisomal)
-    - annotation: !!omap
-      - ec-code:
-        - 1.1.1.35
-        - 1.1.1.211
-    - references: PMID:10231530;PMID:10329704;PMID:1651711;PMID:1735445;PMID:6773478;PMID:7150615;PMID:8188243;PMID:8687463;PMID:9553139;PMID:8687463;PMID:10231530
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -107272,7 +107101,7 @@
       - MAM03016x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107291,7 +107120,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107310,7 +107139,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107345,7 +107174,7 @@
       - MAM03015x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107364,7 +107193,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107383,7 +107212,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107418,7 +107247,7 @@
       - MAM03013x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107437,7 +107266,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107456,7 +107285,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107491,7 +107320,7 @@
       - MAM03012x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107510,7 +107339,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107529,7 +107358,7 @@
       - MAM02647x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107564,7 +107393,7 @@
       - MAM03025x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107583,7 +107412,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107602,7 +107431,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107638,7 +107467,7 @@
       - MAM03019x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107658,7 +107487,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107678,7 +107507,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107715,7 +107544,7 @@
       - MAM03022x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107735,7 +107564,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107755,7 +107584,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107772,7 +107601,7 @@
       - MAM00088x: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000198721 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107790,7 +107619,7 @@
       - MAM03020x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107810,7 +107639,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107830,7 +107659,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107848,7 +107677,7 @@
       - MAM03023x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107868,7 +107697,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107888,7 +107717,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -107905,7 +107734,7 @@
       - MAM00099x: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000198721 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (peroxisomal)
     - annotation: !!omap
@@ -108096,7 +107925,7 @@
       - MAM03027x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000087008 or ENSG00000161533
+    - gene_reaction_rule: ENSG00000168306 or ENSG00000087008
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108114,7 +107943,7 @@
       - MAM03027x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108134,7 +107963,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108154,7 +107983,7 @@
       - MAM02774x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000116171
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108191,7 +108020,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108211,7 +108040,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108231,7 +108060,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108267,7 +108096,7 @@
       - MAM01803x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000087008 or ENSG00000161533
+    - gene_reaction_rule: ENSG00000168306 or ENSG00000087008
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108285,7 +108114,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108305,7 +108134,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108325,7 +108154,7 @@
       - MAM02774x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000116171
     - subsystem:
       - Beta oxidation of phytanic acid (peroxisomal)
     - annotation: !!omap
@@ -108360,7 +108189,7 @@
       - MAM03010x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108380,7 +108209,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108400,7 +108229,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108418,7 +108247,7 @@
       - MAM03009x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108438,7 +108267,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108458,7 +108287,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108476,7 +108305,7 @@
       - MAM03030x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108496,7 +108325,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108533,7 +108362,7 @@
       - MAM03021x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000198721 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108551,7 +108380,7 @@
       - MAM03021x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108571,7 +108400,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108590,7 +108419,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108625,7 +108454,7 @@
       - MAM03035x: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000198721 or ENSG00000113790
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (peroxisomal)
     - annotation: !!omap
@@ -108683,7 +108512,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -108702,7 +108531,7 @@
       - MAM01773m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -108761,7 +108590,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -108780,7 +108609,7 @@
       - MAM02941m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -108840,7 +108669,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -108860,7 +108689,7 @@
       - MAM02678m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -108921,7 +108750,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -108941,7 +108770,7 @@
       - MAM02495m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109003,7 +108832,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109023,7 +108852,7 @@
       - MAM02345m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109086,7 +108915,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109106,7 +108935,7 @@
       - MAM01650m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109166,7 +108995,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109186,7 +109015,7 @@
       - MAM02644m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109246,7 +109075,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109266,7 +109095,7 @@
       - MAM02122m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109325,7 +109154,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -109345,7 +109174,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of even-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110013,7 +109842,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110032,7 +109861,7 @@
       - MAM02612m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110090,7 +109919,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110109,7 +109938,7 @@
       - MAM02101m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110167,7 +109996,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110186,7 +110015,7 @@
       - MAM02689m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110244,7 +110073,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110263,7 +110092,7 @@
       - MAM03050m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110321,7 +110150,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110340,7 +110169,7 @@
       - MAM03116m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110396,7 +110225,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110415,7 +110244,7 @@
       - MAM02616m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110471,7 +110300,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110490,7 +110319,7 @@
       - MAM02107m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110546,7 +110375,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110565,7 +110394,7 @@
       - MAM02694m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110620,7 +110449,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110639,7 +110468,7 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000167315
     - subsystem:
       - Beta oxidation of odd-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -110737,7 +110566,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)
     - annotation: !!omap
@@ -110756,7 +110585,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)
     - annotation: !!omap
@@ -110814,7 +110643,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)
     - annotation: !!omap
@@ -110833,7 +110662,7 @@
       - MAM02677m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)
     - annotation: !!omap
@@ -110893,7 +110722,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)
     - annotation: !!omap
@@ -110913,7 +110742,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)
     - annotation: !!omap
@@ -110974,7 +110803,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)
     - annotation: !!omap
@@ -110994,7 +110823,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (mitochondrial)
     - annotation: !!omap
@@ -111049,7 +110878,7 @@
       - MAM03014x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (peroxisomal)
     - annotation: !!omap
@@ -111068,7 +110897,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (peroxisomal)
     - annotation: !!omap
@@ -111087,7 +110916,7 @@
       - MAM01597x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (peroxisomal)
     - annotation: !!omap
@@ -111122,7 +110951,7 @@
       - MAM03024x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000113790 and ENSG00000167969 and ENSG00000198721
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (peroxisomal)
     - annotation: !!omap
@@ -111141,7 +110970,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835 or ENSG00000113790
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (peroxisomal)
     - annotation: !!omap
@@ -111160,7 +110989,7 @@
       - MAM02677x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000167306
+    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-7) (peroxisomal)
     - annotation: !!omap
@@ -111217,7 +111046,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111236,7 +111065,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111294,7 +111123,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111313,7 +111142,7 @@
       - MAM02647m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111371,7 +111200,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111390,7 +111219,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111450,7 +111279,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111470,7 +111299,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111531,7 +111360,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111551,7 +111380,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of unsaturated fatty acids (n-9) (mitochondrial)
     - annotation: !!omap
@@ -111632,7 +111461,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)
     - annotation: !!omap
@@ -111653,7 +111482,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)
     - annotation: !!omap
@@ -111715,7 +111544,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)
     - annotation: !!omap
@@ -111735,7 +111564,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)
     - annotation: !!omap
@@ -111795,7 +111624,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)
     - annotation: !!omap
@@ -111814,7 +111643,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)
     - annotation: !!omap
@@ -111870,7 +111699,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)
     - annotation: !!omap
@@ -111889,7 +111718,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of di-unsaturated fatty acids (n-6) (mitochondrial)
     - annotation: !!omap
@@ -111948,7 +111777,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112026,7 +111855,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112046,7 +111875,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112124,7 +111953,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112144,7 +111973,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112164,7 +111993,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112242,7 +112071,7 @@
       - MAM02553m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112262,7 +112091,7 @@
       - MAM01597m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112340,7 +112169,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112360,7 +112189,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of poly-unsaturated fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112419,7 +112248,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of branched-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112439,7 +112268,7 @@
       - MAM01597m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of branched-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112515,7 +112344,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of branched-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112535,7 +112364,7 @@
       - MAM02774m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: ENSG00000075239
     - subsystem:
       - Beta oxidation of branched-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112594,7 +112423,7 @@
       - MAM02553m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000072506 and ENSG00000084754 and ENSG00000138796
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000138796 or ENSG00000072506
     - subsystem:
       - Beta oxidation of branched-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112614,7 +112443,7 @@
       - MAM02180m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000084754 and ENSG00000138029 and ENSG00000167315
+    - gene_reaction_rule: (ENSG00000084754 and ENSG00000138029) or ENSG00000167315
     - subsystem:
       - Beta oxidation of branched-chain fatty acids (mitochondrial)
     - annotation: !!omap
@@ -112723,42 +112552,28 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06906
-    - name: 3-methoxy-4-hydroxy-5-all-trans-decaprenylbenzoate decarboxylation
+    - name: coenzyme Q4, oxidative decarboxylation (3-methoxy-4-hydroxy-5-all-trans-decaprenylbenzoate)
     - metabolites: !!omap
-      - MAM00657m: 1.0
+      - MAM00658m: 1.0
       - MAM00817m: -1.0
       - MAM01596m: 1.0
-      - MAM02039m: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Terpenoid backbone biosynthesis
-    - annotation: !!omap
-      - ec-code:
-        - 4.1.1.-
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR06907
-    - name: coenzyme Q6, monooxygenase (2-methoxy-6-(all-trans-decaprenyl)phenol)
-    - metabolites: !!omap
-      - MAM00657m: -1.0
-      - MAM00658m: 1.0
-      - MAM02039m: -1.0
+      - MAM02039m: -2.0
       - MAM02040m: 1.0
       - MAM02554m: 1.0
       - MAM02555m: -1.0
       - MAM02630m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000119723
+    - gene_reaction_rule: ENSG00000167113
     - subsystem:
       - Terpenoid backbone biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.14.13.-
+        - 4.1.1.130
+    - references: doi:10.1016/j.molcel.2024.01.003
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: COQ4 replaces the C1 carboxyl group with a hydroxyl group in one oxidative step that needs O2 (doi:10.1016/j.molcel.2024.01.003), so the decarboxylation and the hydroxylation of the phenol are one reaction. COQ6 hydroxylates C5 (MAR06904) and is not assigned to C1. The reductant is not shown for COQ4; NADPH follows the previous hydroxylation reaction.
   - !!omap
     - id: MAR06908
     - name: coenzyme Q5, methyltransferase (2-methoxy-6-all trans...)
@@ -125356,23 +125171,6 @@
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
-    - id: MAR07597
-    - name: alkyl-glycerone-3-phosphate reduction
-    - metabolites: !!omap
-      - MAM00628c: 1.0
-      - MAM01311c: -1.0
-      - MAM02039c: -2.0
-      - MAM02040c: 1.0
-      - MAM02554c: 1.0
-      - MAM02555c: -1.0
-      - MAM10005c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Glycerophospholipid metabolism
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR07601
     - name: plasmanylethanolamine desaturase
     - metabolites: !!omap
@@ -125385,6 +125183,7 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000240849
     - subsystem:
       - Glycerophospholipid metabolism
     - annotation: !!omap
@@ -135499,7 +135298,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
@@ -135519,7 +135318,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
@@ -135539,7 +135338,7 @@
       - MAM02774x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171 or ENSG00000167306
+    - gene_reaction_rule: ENSG00000116171
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
@@ -135954,13 +135753,8 @@
       - MAM00758m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 or ENSG00000138029 or ENSG00000167306 or ENSG00000167315
     - subsystem:
       - Transport reactions
-    - annotation: !!omap
-      - ec-code:
-        - 2.3.1.176
-        - 2.3.1.16
     - references: PMID:12543708
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -136138,7 +135932,7 @@
       - MAM02040x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000113790 or ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
@@ -136158,7 +135952,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
@@ -136177,7 +135971,7 @@
       - MAM02774x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 or ENSG00000116171 or ENSG00000167306
+    - gene_reaction_rule: ENSG00000116171
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
@@ -147329,33 +147123,38 @@
       - MAM01599c: 2.0
       - MAM02039c: 1.0
       - MAM02040c: 2.0
-      - MAM02552c: 1.0
-      - MAM02553c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000124275
     - subsystem:
       - Vitamin B12 metabolism
+    - references: PMID:16769880;PMID:24742678;PMID:18779575
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: MTRR reduces aquacobalamin with NADPH (PMID:16769880). MMACHC reduces it with glutathione in vitro, without O2 (PMID:24742678), so it is not on this NADPH reaction.
   - !!omap
     - id: MAR08615
-    - name: ATP:cob(I)alamin Co-beta-adenosyltransferase
+    - name: cob(II)alamin reduction
     - metabolites: !!omap
-      - MAM01598m: 1.0
-      - MAM01599m: -1.0
+      - MAM01598m: 2.0
+      - MAM01599m: -2.0
       - MAM02039m: 1.0
-      - MAM02552m: 1.0
-      - MAM02553m: -1.0
-    - lower_bound: -1000.0
+      - MAM02554m: 1.0
+      - MAM02555m: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000139428 or ENSG00000151611
+    - gene_reaction_rule: ENSG00000139428
     - subsystem:
       - Vitamin B12 metabolism
     - annotation: !!omap
       - ec-code:
         - 2.5.1.17
+    - references: PMID:37526260
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: One-electron reduction of cob(II)alamin bound to MMAB, the partial reaction of EC 2.5.1.17 (RHEA:56792); in vitro FDXR and FDX1 with NADPH supply the electrons.
   - !!omap
     - id: MAR08616
     - name: ATP:cob(I)alamin Co-beta-adenosyltransferase
@@ -147365,9 +147164,9 @@
       - MAM01600m: 1.0
       - MAM02039m: -1.0
       - MAM03057m: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000139428 or ENSG00000151611
+    - gene_reaction_rule: ENSG00000139428
     - subsystem:
       - Vitamin B12 metabolism
     - annotation: !!omap
@@ -151399,6 +151198,7 @@
       - MAM03057c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000143363
     - subsystem:
       - Miscellaneous
     - annotation: !!omap
@@ -182777,11 +182577,11 @@
       - MAM01599m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000151611
     - subsystem:
       - Transport reactions
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: Cobalamin enters mitochondria, but the importer is not known.
   - !!omap
     - id: MAR08627
     - name: transport of N-acetyl-L-aspartate (cytosol to mitochondria)
@@ -195871,9 +195671,8 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00022
-    - name: "[protein]-N6-(lipoyl)lysine reduction"
+    - name: Cofactors and vitamins pool for MAR00021
     - metabolites: !!omap
-      - MAM00209m: -1.0
       - MAM01401c: -1.0
       - MAM01597c: -1.0
       - MAM01600m: -1.0
@@ -195881,72 +195680,13 @@
       - MAM01631m: -1.0
       - MAM01803c: -1.0
       - MAM02348c: -1.0
+      - MAM02394c: -1.0
       - MAM02553c: -1.0
       - MAM02555c: -1.0
       - MAM02842c: -1.0
       - MAM02978c: -1.0
       - MAM02980c: -1.0
       - MAM03102m: -1.0
-      - MAM03139c: -0.1
-      - MAM03140c: -0.1
-      - MAM03143c: -0.1
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Artificial reactions
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR00023
-    - name: 11-cis-retinol to vitamin A derivatives conversion
-    - metabolites: !!omap
-      - MAM00291c: -1.0
-      - MAM00427c: -1.0
-      - MAM00427r: -1.0
-      - MAM01008c: -1.0
-      - MAM01008r: -1.0
-      - MAM01022c: -1.0
-      - MAM01022r: -1.0
-      - MAM01024c: -1.0
-      - MAM01024r: -1.0
-      - MAM01026r: -1.0
-      - MAM01028c: -1.0
-      - MAM01028r: -1.0
-      - MAM01030c: -1.0
-      - MAM01030r: -1.0
-      - MAM01031c: -1.0
-      - MAM01031r: -1.0
-      - MAM01032c: -1.0
-      - MAM01060c: -1.0
-      - MAM01232c: -1.0
-      - MAM02624c: -1.0
-      - MAM03139c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Artificial reactions
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR00033
-    - name: 24-oxo-1alpha,23,25-trihydroxyvitamin D3 to vitamin D derivatives conversion
-    - metabolites: !!omap
-      - MAM00611m: -1.0
-      - MAM00622m: -1.0
-      - MAM03140c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Artificial reactions
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR00034
-    - name: 3-carboxy-alpha-chromanol to vitamin E derivatives conversion
-    - metabolites: !!omap
-      - MAM00766c: -1.0
-      - MAM01924c: -1.0
-      - MAM03143c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
@@ -196241,22 +195981,6 @@
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
-    - id: MAR00040
-    - name: 3- (4-Hydroxyphenyl-)Lactate Formation
-    - metabolites: !!omap
-      - MAM01004m: 1.0
-      - MAM01005m: -1.0
-      - MAM02039m: -1.0
-      - MAM02552m: 1.0
-      - MAM02553m: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Ubiquinone synthesis
-    - references: PMID:11583838;PMID:12232327
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR00041
     - name: Hydroxylation of 3-Decaprenyl-4-Hydroxybenzoate (NADH)
     - metabolites: !!omap
@@ -196362,9 +196086,10 @@
     - upper_bound: 1000.0
     - subsystem:
       - Ubiquinone synthesis
-    - references: PMID:11583838;PMID:12232327
+    - references: PMID:11583838;PMID:12232327;PMID:25681964
     - rxnFrom: Recon3D
     - confidence_score: 0.0
+    - notes: "Route from dietary 4-coumarate to the CoQ head group: human and mouse cells make CoQ from 13C-coumarate (PMID:25681964); the human enzymes are not known."
   - !!omap
     - id: MAR00048
     - name: 4-Hydroxybenzoate Formation
@@ -196378,9 +196103,10 @@
     - upper_bound: 1000.0
     - subsystem:
       - Ubiquinone synthesis
-    - references: PMID:11583838;PMID:12232327
+    - references: PMID:11583838;PMID:12232327;PMID:25681964
     - rxnFrom: Recon3D
     - confidence_score: 0.0
+    - notes: "Route from dietary 4-coumarate to the CoQ head group: human and mouse cells make CoQ from 13C-coumarate (PMID:25681964); the human enzymes are not known."
   - !!omap
     - id: MAR00049
     - name: 4-Methylpentanal Transport, Endoplasmatic Reticulum
@@ -197765,9 +197491,10 @@
     - annotation: !!omap
       - ec-code:
         - 6.2.1.12
-    - references: PMID:11583838;PMID:12232327
+    - references: PMID:11583838;PMID:12232327;PMID:25681964
     - rxnFrom: Recon3D
     - confidence_score: 0.0
+    - notes: "Route from dietary 4-coumarate to the CoQ head group: human and mouse cells make CoQ from 13C-coumarate (PMID:25681964); the human enzymes are not known."
   - !!omap
     - id: MAR00136
     - name: Crmp Hs Transport
@@ -199716,7 +199443,7 @@
       - MAM02678x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -199813,7 +199540,7 @@
       - MAM02941x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -199957,7 +199684,7 @@
       - MAM02644x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200005,7 +199732,7 @@
       - MAM02644x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200053,7 +199780,7 @@
       - MAM02941x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200169,7 +199896,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000113790 and ENSG00000161533) or (ENSG00000060971 and ENSG00000133835 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200217,7 +199944,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200229,8 +199956,8 @@
     - id: MAR00968
     - name: Beta Oxidation of Long Chain Fatty Acid
     - metabolites: !!omap
-      - MAM00093x: -1.0
       - MAM00103x: 1.0
+      - MAM00121x: -1.0
       - MAM01261x: 1.0
       - MAM01597x: -1.0
       - MAM01802x: -1.0
@@ -200241,7 +199968,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200286,7 +200013,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200310,7 +200037,7 @@
       - MAM02971x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and ENSG00000133835 and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200334,7 +200061,7 @@
       - MAM02647x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and ENSG00000133835 and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200358,7 +200085,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and ENSG00000133835 and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200382,7 +200109,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and ENSG00000133835 and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200406,7 +200133,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and ENSG00000133835 and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200430,7 +200157,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and ENSG00000133835 and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -200454,7 +200181,7 @@
       - MAM02971x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: (ENSG00000060971 and ENSG00000133835 and ENSG00000161533) or (ENSG00000060971 and ENSG00000113790 and ENSG00000161533)
+    - gene_reaction_rule: ENSG00000161533 and ENSG00000133835 and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -202516,7 +202243,7 @@
       - MAM03887x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000087008 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000168306 or ENSG00000087008) and ENSG00000133835 and ENSG00000242110 and ENSG00000116171
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -203319,20 +203046,6 @@
     - annotation: !!omap
       - ec-code:
         - 2.4.3.7
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR01724
-    - name: 4-Hydroxycinnamate Formation
-    - metabolites: !!omap
-      - MAM00981m: 1.0
-      - MAM01004m: -1.0
-      - MAM02040m: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Ubiquinone synthesis
-    - references: PMID:11583838;PMID:12232327
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -205229,27 +204942,6 @@
       - MAM02759r: 1.0
       - MAM02939r: -1.0
       - MAM02941r: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000068366 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000197142
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 6.2.1.3
-    - references: PMID:8584017
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR02314
-    - name: Long-Chain-Fatty-Acid-Coa Ligase
-    - metabolites: !!omap
-      - MAM01334r: 1.0
-      - MAM01371r: -1.0
-      - MAM01597r: -1.0
-      - MAM01934r: 1.0
-      - MAM02389r: -1.0
-      - MAM02759r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000068366 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000197142
@@ -209742,7 +209434,7 @@
       - MAM02040c: -1.0
       - MAM02751c: 1.0
       - MAM03317c: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Glycerophospholipid metabolism
@@ -210152,7 +209844,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03412
-    - name: ELOVL fatty acid elongase (2-trans-9,12,15,18,21-all-cis-tetracosahexaenoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (2-trans-9,12,15,18,21-all-cis-tetracosahexaenoyl-CoA)
     - metabolites: !!omap
       - MAM00134r: 1.0
       - MAM00680r: -1.0
@@ -210161,72 +209853,72 @@
       - MAM02555r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
+        - 1.3.1.93
+    - references: PMID:12482854
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03415
-    - name: 3-hydroxyacyl-CoA dehydrogenase ((7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA synthase ((7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00121r: -1.0
-      - MAM00853r: 1.0
+      - MAM00902r: 1.0
       - MAM01596r: 1.0
       - MAM01597r: 1.0
       - MAM02039r: -1.0
       - MAM02444r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000012660 or ENSG00000066322 or ENSG00000170522 or ENSG00000197977
+    - gene_reaction_rule: ENSG00000197977
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.35
-    - references: PMID:10970790
+        - 2.3.1.199
+    - references: PMID:12371743
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03417
-    - name: ELOVL fatty acid elongase (3-oxo-all-cis-6,9,12,15,18-tetracosapentaenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00718r: 1.0
-      - MAM00853r: -1.0
+      - MAM00902r: -1.0
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.3.3.6
-    - references: PMID:10970790
+        - 1.1.1.330
+    - references: PMID:12482854
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03418
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-tetracosa-9,12,15,18,21-all-cis-pentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00680r: 1.0
       - MAM00718r: -1.0
       - MAM02040r: 1.0
-    - lower_bound: -1000.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 4.2.1.17
-    - references: PMID:10970790
+        - 4.2.1.134
+    - references: PMID:18554506
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -210310,86 +210002,29 @@
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
-    - id: MAR03437
-    - name: (4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA reduction
-    - metabolites: !!omap
-      - MAM00095c: -1.0
-      - MAM00119c: 1.0
-      - MAM02039c: -3.0
-      - MAM02554c: 1.0
-      - MAM02555c: -1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Fatty acid oxidation
-    - references: PMID:10970790
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR03438
-    - name: ELOVL fatty acid elongase ((4Z,7Z,10Z,13Z,16Z,19Z)-docosahexaenoyl-CoA)
-    - metabolites: !!omap
-      - MAM00095r: -1.0
-      - MAM00119r: 1.0
-      - MAM02039r: -3.0
-      - MAM02554r: 1.0
-      - MAM02555r: -1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR03439
-    - name: ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA)
-    - metabolites: !!omap
-      - MAM00119c: -1.0
-      - MAM00853c: 1.0
-      - MAM01596c: 1.0
-      - MAM01597c: 1.0
-      - MAM02039c: 1.0
-      - MAM02444c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000012660 or ENSG00000118402 or ENSG00000170522 or ENSG00000197977
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR03440
-    - name: ELOVL fatty acid elongase ((7Z,10Z,13Z,16Z)...)
+    - name: very-long-chain 3-oxoacyl-CoA synthase ((7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00119r: -1.0
-      - MAM00853r: 1.0
+      - MAM00903r: 1.0
       - MAM01596r: 1.0
       - MAM01597r: 1.0
-      - MAM02039r: 1.0
+      - MAM02039r: -1.0
       - MAM02444r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000012660 or ENSG00000066322 or ENSG00000170522 or ENSG00000197977
+    - gene_reaction_rule: ENSG00000197977
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.50
-    - references: PMID:10970790
+        - 2.3.1.199
+    - references: PMID:12371743
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03442
-    - name: ELOVL fatty acid elongase (2-trans-9,12,15,18-all-cis-tetracosapentaenoyl-CoA)
+    - name: very-long-chain enoyl-CoA reductase (2-trans-9,12,15,18-all-cis-tetracosapentaenoyl-CoA)
     - metabolites: !!omap
       - MAM00131r: 1.0
       - MAM00681r: -1.0
@@ -210398,13 +210033,13 @@
       - MAM02555r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000099797
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
+        - 1.3.1.93
+    - references: PMID:12482854
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -210468,60 +210103,40 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR03474
-    - name: ELOVL fatty acid elongase (3-oxo-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA)
+    - name: very-long-chain 3-oxoacyl-CoA reductase (3-oxo-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
-      - MAM00716r: 1.0
       - MAM00903r: -1.0
       - MAM02039r: -1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
-    - lower_bound: -1000.0
+      - MAM20093r: 1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000149084
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 6.2.1.3
-    - references: PMID:10970790
+        - 1.1.1.330
+    - references: PMID:12482854
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03479
-    - name: ELOVL fatty acid elongase
+    - name: very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(R)-hydroxy-tetracosa-9,12,15,18-all-cis-tetraenoyl-CoA)
     - metabolites: !!omap
       - MAM00681r: 1.0
-      - MAM00716r: -1.0
       - MAM02040r: 1.0
-    - lower_bound: -1000.0
+      - MAM20093r: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000066322
+    - gene_reaction_rule: ENSG00000165996 or ENSG00000206527 or ENSG00000074696 or ENSG00000188921
     - subsystem:
-      - Fatty acid oxidation
+      - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.199
-    - references: PMID:10970790
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR03483
-    - name: acetyl-CoA C-acyltransferase
-    - metabolites: !!omap
-      - MAM00119x: 1.0
-      - MAM00853x: -1.0
-      - MAM01261x: 1.0
-      - MAM01597x: -1.0
-      - MAM02039x: -2.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 2.3.1.16
-    - references: PMID:11734209
+        - 4.2.1.134
+    - references: PMID:18554506
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -211407,7 +211022,7 @@
       - MAM03367x: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000113790
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -211446,7 +211061,7 @@
       - MAM03367x: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000113790 or ENSG00000133835
+    - gene_reaction_rule: ENSG00000133835
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
@@ -215635,7 +215250,7 @@
       - MAM02644x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20558530
@@ -215753,7 +215368,7 @@
       - MAM03794x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20558530
@@ -215846,7 +215461,7 @@
       - MAM02644x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11411544
@@ -215868,7 +215483,7 @@
       - MAM03924x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:15060085;PMID:9827430
@@ -215890,7 +215505,7 @@
       - MAM04004x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000087008 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000168306 or ENSG00000087008) and ENSG00000133835 and ENSG00000242110 and ENSG00000116171
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11591435
@@ -215954,7 +215569,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:10709653;PMID:11296696;PMID:11330072;PMID:16766224
@@ -216008,7 +215623,7 @@
       - MAM03542x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20558530;PMID:20064629
@@ -216083,7 +215698,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11411544
@@ -216122,7 +215737,7 @@
       - MAM03924x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:15060085;PMID:9827430;PMID:20543534
@@ -216196,7 +215811,7 @@
       - MAM04004x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000087008 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000168306 or ENSG00000087008) and ENSG00000133835 and ENSG00000116171
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11591435
@@ -216262,7 +215877,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:10709653;PMID:11296696;PMID:11330072;PMID:16766224
@@ -216301,7 +215916,7 @@
       - MAM03203x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20558530
@@ -216362,7 +215977,7 @@
       - MAM03288x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20558530
@@ -216406,7 +216021,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11411544
@@ -216445,7 +216060,7 @@
       - MAM03492x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:15060085;PMID:9827430;PMID:12651823
@@ -216485,7 +216100,7 @@
       - MAM03887x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000087008 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000168306 or ENSG00000087008) and ENSG00000133835 and ENSG00000116171
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11591435
@@ -216551,7 +216166,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:10709653;PMID:11296696;PMID:11330072;PMID:16766224
@@ -216605,7 +216220,7 @@
       - MAM03182x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20558530
@@ -216700,7 +216315,7 @@
       - MAM03288x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:7876265;PMID:20558530
@@ -216873,7 +216488,7 @@
       - MAM02678x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11411544;PMID:7876265
@@ -216912,7 +216527,7 @@
       - MAM03655x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:15060085;PMID:9827430
@@ -217021,7 +216636,7 @@
       - MAM03789x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:10709653;PMID:11296696;PMID:11330072;PMID:16766224;PMID:3821403
@@ -217117,7 +216732,7 @@
       - MAM03274x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20064629, journal of lipid research 1998 vol 39 pages 2161-2171
@@ -217161,7 +216776,7 @@
       - MAM03273x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20558530
@@ -217268,7 +216883,7 @@
       - MAM03789x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20626744;PMID:3821403
@@ -217329,7 +216944,7 @@
       - MAM03570x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20064629, journal of lipid research 1998 vol 39 pages 2161-2171
@@ -217373,7 +216988,7 @@
       - MAM03567x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20626744
@@ -217413,7 +217028,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20064629, journal of lipid research 1998 vol 39 pages 2161-2171
@@ -217620,7 +217235,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11124748
@@ -217686,7 +217301,7 @@
       - MAM03555x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and ENSG00000133835 and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20626744
@@ -217708,7 +217323,7 @@
       - MAM02971x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and ENSG00000133835 and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:2117919
@@ -217828,7 +217443,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20064629
@@ -217881,7 +217496,7 @@
       - MAM02553x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11356164
@@ -217969,7 +217584,7 @@
       - MAM03794x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20558530
@@ -217991,7 +217606,7 @@
       - MAM02644x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:11411544
@@ -218013,7 +217628,7 @@
       - MAM03922x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835 and ENSG00000161533
+    - gene_reaction_rule: ENSG00000161533 and (ENSG00000133835 or ENSG00000113790) and (ENSG00000060971 or ENSG00000116171)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:15060085;PMID:9827430
@@ -218295,7 +217910,7 @@
       - MAM02698x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000060971 and ENSG00000113790 and ENSG00000133835
+    - gene_reaction_rule: (ENSG00000060971 or ENSG00000116171) and (ENSG00000133835 or ENSG00000113790)
     - subsystem:
       - Fatty acid oxidation
     - references: PMID:20558530
@@ -224359,9 +223974,6 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
-    - annotation: !!omap
-      - ec-code:
-        - 3.1.1.4
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -240571,20 +240183,6 @@
     - metabolites: !!omap
       - MAM01954c: 1.0
       - MAM01954g: -1.0
-    - lower_bound: -1000.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Transport reactions
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR11357
-    - name: Transport of 3-(4-Hydroxyphenyl)Lactate, Mitochondrial
-    - metabolites: !!omap
-      - MAM01004c: -1.0
-      - MAM01004m: 1.0
-      - MAM02039c: -1.0
-      - MAM02039m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
     - subsystem:
@@ -271241,6 +270839,59 @@
     - references: PMID:35245456
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
+  - !!omap
+    - id: MAR20218
+    - name: 4-hydroxymandelate synthase
+    - metabolites: !!omap
+      - MAM01005m: -1.0
+      - MAM01596m: 1.0
+      - MAM02630m: -1.0
+      - MAM20092m: 1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000186603
+    - subsystem:
+      - Ubiquinone synthesis
+    - annotation: !!omap
+      - ec-code:
+        - 1.13.11.46
+    - references: PMID:34471290
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+  - !!omap
+    - id: MAR20219
+    - name: (S)-4-hydroxymandelate to 4-hydroxybenzoate (lumped)
+    - metabolites: !!omap
+      - MAM00995m: 1.0
+      - MAM01596m: 1.0
+      - MAM02039m: 2.0
+      - MAM02040m: -1.0
+      - MAM02552m: -2.0
+      - MAM02553m: 2.0
+      - MAM20092m: -1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Ubiquinone synthesis
+    - references: PMID:34471290;PMID:40634618
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: Lumps the oxidation of (S)-4-hydroxymandelate, the decarboxylation and the oxidation of 4-hydroxybenzaldehyde to the CoQ head group; the human enzymes are not known. The electron acceptors (2 NAD+) are assumed.
+  - !!omap
+    - id: MAR20220
+    - name: 1-alkyl-sn-glycerol-3-phosphate acyltransferase (acyl-CoA pool)
+    - metabolites: !!omap
+      - MAM00628c: 1.0
+      - MAM01597c: 1.0
+      - MAM03320c: -1.0
+      - MAM10007c: -1.0
+    - lower_bound: 0.0
+    - upper_bound: 1000.0
+    - subsystem:
+      - Glycerophospholipid metabolism
+    - rxnFrom: HumanGEM
+    - confidence_score: 0.0
+    - notes: Acylation of 1-alkyl-G3P with acyl-CoA; the acyltransferase is not identified.
 - genes:
   - !!omap
     - id: ENSG00000000419
@@ -273180,9 +272831,6 @@
   - !!omap
     - id: ENSG00000107611
     - name: CUBN
-  - !!omap
-    - id: ENSG00000107614
-    - name: TRDMT1
   - !!omap
     - id: ENSG00000107669
     - name: ATE1
@@ -275608,9 +275256,6 @@
     - id: ENSG00000142168
     - name: SOD1
   - !!omap
-    - id: ENSG00000142182
-    - name: DNMT3L
-  - !!omap
     - id: ENSG00000142230
     - name: SAE1
   - !!omap
@@ -276180,9 +275825,6 @@
   - !!omap
     - id: ENSG00000151576
     - name: QTRT2
-  - !!omap
-    - id: ENSG00000151611
-    - name: MMAA
   - !!omap
     - id: ENSG00000151632
     - name: AKR1C2
@@ -277365,9 +277007,6 @@
   - !!omap
     - id: ENSG00000167283
     - name: ATP5MG
-  - !!omap
-    - id: ENSG00000167306
-    - name: MYO5B
   - !!omap
     - id: ENSG00000167311
     - name: ART5
@@ -279837,6 +279476,15 @@
   - !!omap
     - id: ENSG00000143183
     - name: TMCO1
+  - !!omap
+    - id: ENSG00000240849
+    - name: PEDS1
+  - !!omap
+    - id: ENSG00000167113
+    - name: COQ4
+  - !!omap
+    - id: ENSG00000186603
+    - name: HPDL
 - compartments: !!omap
   - c: Cytosol
   - e: Extracellular
