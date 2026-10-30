@@ -2,9 +2,35 @@
   "files": [
     "README.md"
   ],
-  "imageSize": 64,
-  "contributorsPerLine": 10,
-  "contributorsSortAlphabetically": true,
+  "contributorsSortAlphabetically": false,
+  "pinnedFirst": [
+    "edkerk",
+    "feiranl",
+    "JHL-452b",
+    "Devlin-Moyer"
+  ],
+  "pinnedLast": [
+    "mihai-sysbio"
+  ],
+  "tiers": [
+    {
+      "title": "Core team",
+      "minTypes": 4,
+      "imageSize": 64,
+      "perLine": 8
+    },
+    {
+      "title": "Curators and developers",
+      "minTypes": 2,
+      "imageSize": 48,
+      "perLine": 8
+    },
+    {
+      "title": "Error reports and ideas",
+      "minTypes": 1,
+      "imageSize": 32
+    }
+  ],
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-success.svg)](#contributors)",
   "skipCi": "true",
   "contributors": [

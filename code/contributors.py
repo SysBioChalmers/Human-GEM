@@ -140,26 +140,77 @@ def add(rc, login, types, user=None):
     return new
 
 
-def cell(c):
+def cell(c, size, width):
     links = []
     for t in c["contributions"]:
         emoji, title, url = TYPES[t]
         href = url.format(login=c["login"]) if url else f"#{t}-{c['login']}"
         links.append(f'<a href="{href}" title="{title}">{emoji}</a>')
-    return (f'      <td align="center" valign="top" width="10%"><a href="{c["profile"]}">'
-            f'<img src="{c["avatar_url"]}?s=64" width="64px;" alt="{c["name"]}"/><br />'
+    return (f'      <td align="center" valign="top" width="{width}%"><a href="{c["profile"]}">'
+            f'<img src="{c["avatar_url"]}?s={size}" width="{size}px;" alt="{c["name"]}"/><br />'
             f'<sub><b>{c["name"]}</b></sub></a><br />{" ".join(links)}</td>')
 
 
-def table(rc):
-    people = sorted(rc["contributors"], key=lambda c: c["name"])
-    per = rc.get("contributorsPerLine", 10)
+def ordered(rc):
+    """People in README order: by number of contribution types, then by name."""
+    first = [x.lower() for x in rc.get("pinnedFirst", [])]
+    last = [x.lower() for x in rc.get("pinnedLast", [])]
+
+    def key(c):
+        login = c["login"].lower()
+        if login in first:
+            return (0, first.index(login), 0, "")
+        if login in last:
+            return (2, last.index(login), 0, "")
+        return (1, 0, -len(c["contributions"]), c["name"].casefold())
+
+    return sorted(rc["contributors"], key=key)
+
+
+def grid(people, size, per):
+    width = f"{100 / per:g}"
     rows = []
     for i in range(0, len(people), per):
-        rows += ["    <tr>", *(cell(c) for c in people[i:i + per]), "    </tr>"]
-    return "\n".join([LIST_START, "<!-- prettier-ignore-start -->", "<!-- markdownlint-disable -->",
-                      "<table>", "  <tbody>", *rows, "  </tbody>", "</table>",
-                      "<!-- markdownlint-restore -->", "<!-- prettier-ignore-end -->", LIST_END])
+        rows += ["    <tr>", *(cell(c, size, width) for c in people[i:i + per]), "    </tr>"]
+    return ["<table>", "  <tbody>", *rows, "  </tbody>", "</table>"]
+
+
+def wall(people, size):
+    """Avatars only, with the name and types in the tooltip."""
+    return ["<p>", *(f'<a href="{c["profile"]}" title="{c["name"]}: '
+                     f'{", ".join(TYPES[t][1].lower() for t in c["contributions"])}">'
+                     f'<img src="{c["avatar_url"]}?s={size}" width="{size}px;" alt="{c["name"]}"/></a>'
+                     for c in people), "</p>"]
+
+
+# The README groups people by how many types they are credited for. A tier with
+# "perLine" is a table with names; one without is a row of avatars.
+TIERS = [
+    {"title": "Core team", "minTypes": 4, "imageSize": 64, "perLine": 8},
+    {"title": "Curators and developers", "minTypes": 2, "imageSize": 48, "perLine": 8},
+    {"title": "Error reports and ideas", "minTypes": 1, "imageSize": 32},
+]
+
+
+def tiers(rc):
+    """[(tier, people)] in README order; each person is in the first tier they reach."""
+    out, left = [], ordered(rc)
+    for tier in rc.get("tiers", TIERS):
+        people = [c for c in left if len(c["contributions"]) >= tier["minTypes"]]
+        left = [c for c in left if c not in people]
+        out.append((tier, people))
+    return out
+
+
+def table(rc):
+    lines = [LIST_START, "<!-- prettier-ignore-start -->", "<!-- markdownlint-disable -->"]
+    for tier, people in tiers(rc):
+        if not people:
+            continue
+        body = (grid(people, tier["imageSize"], tier["perLine"]) if "perLine" in tier
+                else wall(people, tier["imageSize"]))
+        lines += ["", f"### {tier['title']}", "", *body]
+    return "\n".join(lines + ["", "<!-- markdownlint-restore -->", "<!-- prettier-ignore-end -->", LIST_END])
 
 
 def render(rc, readme):
@@ -189,6 +240,9 @@ def problems(rc, readme):
             out.append(f"{c['login']} has unknown types {bad}; use {', '.join(TYPES)}")
         if not c["contributions"]:
             out.append(f"{c['login']} has no contribution type")
+    for login in rc.get("pinnedFirst", []) + rc.get("pinnedLast", []):
+        if login.lower() not in seen:
+            out.append(f"{login} is in the order settings but not in the list")
     if not out and render(rc, readme) != readme:
         out.append("README.md does not match .all-contributorsrc; run `python code/contributors.py generate`")
     return out

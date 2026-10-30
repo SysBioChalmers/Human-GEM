@@ -50,15 +50,35 @@ def test_add_new_person_uses_github_profile():
                                   "profile": "https://github.com/bob", "contributions": ["review"]}]
 
 
-def test_render_sorts_by_name_and_updates_badge():
+def test_render_orders_by_involvement_and_updates_badge():
     readme = f"[badge-0]x\n{c.LIST_START}\nold\n{c.LIST_END}\n"
     readme = readme.replace("[badge-0]", "<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify "
                             "this section -->\n[badge-0]\n<!-- ALL-CONTRIBUTORS-BADGE:END -->")
-    out = c.render(rc(person("zed", "Zed"), person("amy", "Amy"), person("bo", "Bo")), readme)
-    assert "[badge-3]" in out and "old" not in out
-    assert out.index('alt="Amy"') < out.index('alt="Bo"') < out.index('alt="Zed"')
+    r = rc(person("zed", "Zed", ["bug", "code"]), person("amy", "Amy"), person("bo", "Bo"),
+           person("cy", "Cy", ["bug", "doc"]))
+    r["tiers"] = [{"title": "Team", "minTypes": 2, "imageSize": 48, "perLine": 1},
+                  {"title": "Reports", "minTypes": 1, "imageSize": 32}]
+    out = c.render(r, readme)
+    assert "[badge-4]" in out and "old" not in out
+    assert out.index("### Team") < out.index('alt="Cy"') < out.index('alt="Zed"') < out.index("### Reports")
+    assert out.index("### Reports") < out.index('alt="Amy"') < out.index('alt="Bo"')
     assert out.count("<tr>") == 2
-    assert "issues?q=author%3Aamy" in out
+    assert 'width="100%"' in out and '?s=48" width="48px;"' in out
+    assert "issues?q=author%3Azed" in out
+    assert 'title="Amy: bug reports"' in out and '?s=32" width="32px;"' in out
+
+
+def test_empty_tier_is_left_out():
+    r = rc(person("amy", "Amy"))
+    assert "### Core team" not in c.table(r) and "### Error reports and ideas" in c.table(r)
+
+
+def test_order_settings():
+    r = rc(person("a", "A", ["bug", "code", "doc"]), person("b", "B"), person("c", "C"), person("d", "D"))
+    r["pinnedFirst"], r["pinnedLast"] = ["D", "c"], ["a"]
+    assert [p["login"] for p in c.ordered(r)] == ["d", "c", "b", "a"]
+    r["pinnedLast"] = ["nobody"]
+    assert any("not in the list" in p for p in c.problems(r, ""))
 
 
 def test_problems_finds_duplicates_and_unknown_types():
