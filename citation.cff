@@ -28,8 +28,8 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.4099692
 repository-code: 'https://github.com/SysBioChalmers/Human-GEM'
-version: 2.1.0
-date-released: 2026-09-30
+version: 2.1.1
+date-released: 2026-10-07
 preferred-citation:
   type: article
   authors:

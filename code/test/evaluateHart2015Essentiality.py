@@ -17,6 +17,12 @@ model/genes.tsv), so alias differences no longer drop true matches. This agrees
 with the issue author's manually curated Hart-to-Ensembl mapping at Jaccard
 0.96-0.98 per cell line.
 
+A Hart symbol is matched to a gene's own symbol first. Aliases are used only when Hart
+did not score the gene's own symbol in that cell line, and never an alias that is the
+current HGNC symbol of another gene (data/datasets/HGNC_symbols_Hart2015.tsv): genes.tsv
+lists, for example, RPF1 as an alias of NEDD4 and TEP1 as an alias of PTEN, and matching
+through them gives a gene another gene's fitness call.
+
 Experimental data: Table S2 from Hart 2015. By definition in that study essential
 genes are a subset of "fitness" genes; a gene is a fitness gene in a cell line
 when its Bayes Factor exceeds the 5% FDR threshold reported in the paper.
@@ -37,6 +43,9 @@ import pandas as pd
 REPO_ROOT = Path(__file__).resolve().parents[2]
 HART_TABLE_S2 = REPO_ROOT / "data" / "datasets" / "Hart2015_TableS2.xlsx"
 GENES_TSV = REPO_ROOT / "model" / "genes.tsv"
+# The Hart 2015 Table S2 symbols that are current HGNC symbols, with their Ensembl gene id,
+# from the HGNC complete set (2026-10-09). Outdated Hart symbols are not in the file.
+HGNC_SYMBOLS_TSV = REPO_ROOT / "data" / "datasets" / "HGNC_symbols_Hart2015.tsv"
 
 # Bayes-Factor thresholds (5% FDR) per cell line, from the Hart 2015 supporting
 # information. Keys match the upper-cased BF_* column names of Table S2.
@@ -148,24 +157,67 @@ def _load_hart2015(table_path: str | Path = HART_TABLE_S2) -> dict[str, dict[str
     return result
 
 
-def _model_gene_names(genes_tsv: str | Path = GENES_TSV) -> dict[str, set[str]]:
-    """Map model gene id -> set of upper-case symbols and aliases from genes.tsv.
-
-    Both the primary ``geneSymbols`` and the semicolon-separated ``geneAliases``
-    are included so a Hart symbol matches whichever alias the model gene carries.
-    """
-    names: dict[str, set[str]] = {}
+def _model_gene_names(genes_tsv: str | Path = GENES_TSV) -> dict[str, tuple[set[str], set[str]]]:
+    """Map model gene id -> (own symbols, aliases), upper case, from genes.tsv."""
+    names: dict[str, tuple[set[str], set[str]]] = {}
     with open(genes_tsv, newline="", encoding="utf-8") as fh:
         for row in csv.DictReader(fh, delimiter="\t"):
-            gene_id = row["genes"]
-            entry = set()
             symbol = (row.get("geneSymbols") or "").strip().upper()
-            if symbol:
-                entry.add(symbol)
-            aliases = row.get("geneAliases") or ""
-            entry |= {a.strip().upper() for a in aliases.split(";") if a.strip()}
-            names[gene_id] = entry
+            aliases = {a.strip().upper() for a in (row.get("geneAliases") or "").split(";") if a.strip()}
+            names[row["genes"]] = ({symbol} if symbol else set(), aliases - {symbol})
     return names
+
+
+def _hgnc_symbols(path: str | Path = HGNC_SYMBOLS_TSV) -> dict[str, str]:
+    """Map current HGNC symbol (upper case) -> Ensembl gene id ("" when HGNC gives none).
+
+    An empty map when the file is missing, so that matching then uses every alias.
+    """
+    path = Path(path)
+    if not path.is_file():
+        return {}
+    with open(path, newline="", encoding="utf-8") as fh:
+        return {row["symbol"].upper(): row["ensembl_gene_id"] for row in csv.DictReader(fh, delimiter="\t")}
+
+
+def hart_names(
+    gene_id: str,
+    own: set[str],
+    aliases: set[str],
+    scored: set[str] | Mapping[str, object],
+    hgnc: Mapping[str, str],
+) -> set[str]:
+    """The Hart symbols that stand for ``gene_id`` in one cell line.
+
+    ``scored`` holds the symbols Hart scored in that cell line. The gene's own symbols
+    win when Hart scored any of them. Otherwise its aliases are used, except an alias
+    that is the current HGNC symbol of another gene.
+    """
+    matched = {name for name in own if name in scored}
+    if matched:
+        return matched
+    return {
+        alias for alias in aliases
+        if alias in scored and (alias not in hgnc or hgnc[alias] == gene_id)
+    }
+
+
+def _names_by_gene(
+    ref: Iterable[str],
+    symbol_of: Mapping[str, str] | None,
+    genes_tsv: str | Path,
+) -> dict[str, tuple[set[str], set[str]]]:
+    """(own symbols, aliases) per gene; ``symbol_of`` adds an own symbol for genes
+    genes.tsv does not hold or holds without a symbol."""
+    gene_names = _model_gene_names(genes_tsv)
+    out: dict[str, tuple[set[str], set[str]]] = {}
+    for gene_id in ref:
+        own, aliases = gene_names.get(gene_id, (set(), set()))
+        own = set(own)
+        if symbol_of and symbol_of.get(gene_id):
+            own.add(symbol_of[gene_id].upper())
+        out[gene_id] = (own, set(aliases) - own)
+    return out
 
 
 def _safe_div(numerator: float, denominator: float) -> float:
@@ -195,31 +247,26 @@ def experimental_status(
     symbol_of: Mapping[str, str] | None = None,
     genes_tsv: str | Path = GENES_TSV,
     table_path: str | Path = HART_TABLE_S2,
+    hgnc_path: str | Path = HGNC_SYMBOLS_TSV,
 ) -> dict[str, dict[str, set[str]]]:
     """Map Hart 2015 fitness data into model-gene (Ensembl) space, per cell line.
 
     Returns ``{cell_line: {"scored": set(gene_id), "essential": set(gene_id)}}`` (plus an
     ``"all"`` key = intersection across cell lines). A model gene is *scored* / *essential*
-    in a cell line when any of its symbols or aliases is scored / a fitness gene there.
+    in a cell line when a symbol matched by :func:`hart_names` is scored / a fitness gene there.
     """
     ref = set(ref_gene_ids)
     hart = _load_hart2015(table_path)
-    gene_names = _model_gene_names(genes_tsv)
-
-    def names_for(gene_id: str) -> set[str]:
-        entry = set(gene_names.get(gene_id, ()))
-        if symbol_of and symbol_of.get(gene_id):
-            entry.add(symbol_of[gene_id].upper())
-        return entry
-
-    names = {gene_id: names_for(gene_id) for gene_id in ref}
+    names = _names_by_gene(ref, symbol_of, genes_tsv)
+    hgnc = _hgnc_symbols(hgnc_path)
     status: dict[str, dict[str, set[str]]] = {}
     for cell_line in tissues:
         scored_syms = hart[cell_line]["scored"]
         essential_syms = hart[cell_line]["essential"]
+        matched = {g: hart_names(g, *names[g], scored_syms, hgnc) for g in ref}
         status[cell_line] = {
-            "scored": {g for g in ref if names[g] & scored_syms},
-            "essential": {g for g in ref if names[g] & essential_syms},
+            "scored": {g for g in ref if matched[g]},
+            "essential": {g for g in ref if matched[g] & essential_syms},
         }
     if tissues:
         status["all"] = {
@@ -385,33 +432,27 @@ def bayes_factors(
     symbol_of: Mapping[str, str] | None = None,
     genes_tsv: str | Path = GENES_TSV,
     table_path: str | Path = HART_TABLE_S2,
+    hgnc_path: str | Path = HGNC_SYMBOLS_TSV,
 ) -> dict[str, dict[str, float]]:
     """Hart 2015 Bayes Factors in model-gene (Ensembl) space, per cell line.
 
     Returns ``{cell_line: {gene_id: bayes_factor}}``, holding only the genes Hart
-    scored. A model gene takes the *maximum* Bayes Factor over its matching symbols
-    and aliases, which is consistent with :func:`experimental_status` calling a gene
-    a fitness gene when any of its aliases passes the threshold.
+    scored. The symbols standing for a gene come from :func:`hart_names`; when several
+    do (two own symbols, or several aliases), the gene takes the *maximum* Bayes Factor,
+    consistent with :func:`experimental_status`.
     """
     ref = set(ref_gene_ids)
     hart = _load_hart2015_bayes_factors(table_path)
-    gene_names = _model_gene_names(genes_tsv)
-
-    def names_for(gene_id: str) -> set[str]:
-        entry = set(gene_names.get(gene_id, ()))
-        if symbol_of and symbol_of.get(gene_id):
-            entry.add(symbol_of[gene_id].upper())
-        return entry
-
-    names = {gene_id: names_for(gene_id) for gene_id in ref}
+    names = _names_by_gene(ref, symbol_of, genes_tsv)
+    hgnc = _hgnc_symbols(hgnc_path)
     out: dict[str, dict[str, float]] = {}
     for cell_line in tissues:
         by_symbol = hart[cell_line]
         values: dict[str, float] = {}
         for gene_id in ref:
-            matched = [by_symbol[s] for s in names[gene_id] if s in by_symbol]
+            matched = hart_names(gene_id, *names[gene_id], by_symbol, hgnc)
             if matched:
-                values[gene_id] = max(matched)
+                values[gene_id] = max(by_symbol[s] for s in matched)
         out[cell_line] = values
     return out
 
@@ -430,9 +471,13 @@ CAPABILITY_CATEGORIES = frozenset({"SU", "BS", "IC"})
 GROWTH_DECIMALS = 6
 
 GRADED_COLUMNS = [
-    "cellLine", "allTaskMCC", "allTaskFP", "viabilityMCC", "viabilityFP",
+    "cellLine", "genes", "allTaskMCC", "allTaskFP", "viabilityMCC", "viabilityFP",
     "growthAUROC", "growthAUPRC", "baseRate", "capabilityOnly",
 ]
+
+# The prediction for a gene a cell line's context model does not contain: no task needs
+# it and its knockout leaves growth unchanged.
+NOT_IN_CONTEXT_MODEL = {"tasks": (), "growth": 1.0}
 
 
 def auroc(scored: Iterable[tuple[float, int]]) -> float:
@@ -511,10 +556,25 @@ def evaluate_graded(
     """Score the graded predictions against Hart 2015.
 
     ``per_tissue`` maps cell line -> gene id -> ``{"tasks": [category ids], "growth":
-    ratio or None}``. Returns the per-cell-line summary rows and the per-gene CSV text.
+    ratio or None}`` for the genes of that cell line's context model. ``gene_ids`` is
+    the reference model's genes, and every one of them that Hart scored in a cell line
+    is scored there: a gene the context model left out is predicted non-essential with
+    growth ratio 1.0 (:data:`NOT_IN_CONTEXT_MODEL`), as in the Human1 analysis
+    (`compare_gene_essentiality_results.m`, doi:10.5281/zenodo.3583004). Leaving a gene
+    out of a context model is itself a prediction, and a context-only denominator would
+    move with every ftINIT extraction without any change in the predictions.
+
+    The ``all`` row scores the genes Hart scored in every cell line: predicted essential
+    in all of them against a fitness gene in all of them, plus the AUROC/AUPRC of the
+    growth ratio pooled over the cell lines.
+
+    Returns the per-cell-line summary rows and the per-gene CSV text.
     """
     gene_ids = list(gene_ids)
     hart_bf = bayes_factors(gene_ids, tissues, symbol_of=symbol_of)
+
+    def prediction(tissue: str, gene_id: str) -> dict:
+        return per_tissue.get(tissue, {}).get(gene_id) or NOT_IN_CONTEXT_MODEL
 
     rows: list[dict] = []
     pooled: list[tuple[float, int]] = []
@@ -525,18 +585,18 @@ def evaluate_graded(
         all_counts = dict(TP=0, TN=0, FP=0, FN=0)
         viability_counts = dict(TP=0, TN=0, FP=0, FN=0)
         graded: list[tuple[float, int]] = []
-        capability_only = 0
-        for gene_id, record in predictions.items():
-            categories = set(record["tasks"])
-            essential_any = bool(categories)
-            essential_viability = bool(categories & VIABILITY_CATEGORIES)
-            if essential_any and not essential_viability:
-                capability_only += 1
+        capability_only = sum(
+            1 for record in predictions.values()
+            if record["tasks"] and not set(record["tasks"]) & VIABILITY_CATEGORIES
+        )
+        for gene_id in gene_ids:
             if gene_id not in by_gene:
                 continue
+            record = prediction(tissue, gene_id)
+            categories = set(record["tasks"])
             fitness = by_gene[gene_id] > threshold
-            all_counts[_confusion_class(essential_any, fitness)] += 1
-            viability_counts[_confusion_class(essential_viability, fitness)] += 1
+            all_counts[_confusion_class(bool(categories), fitness)] += 1
+            viability_counts[_confusion_class(bool(categories & VIABILITY_CATEGORIES), fitness)] += 1
             growth = record.get("growth")
             if growth is not None:
                 graded.append((1.0 - round(growth, GROWTH_DECIMALS), int(fitness)))
@@ -544,6 +604,7 @@ def evaluate_graded(
         base_rate = (sum(label for _s, label in graded) / len(graded)) if graded else math.nan
         rows.append({
             "cellLine": tissue,
+            "genes": sum(all_counts.values()),
             "allTaskMCC": round(_mcc(all_counts), 4),
             "allTaskFP": all_counts["FP"],
             "viabilityMCC": round(_mcc(viability_counts), 4),
@@ -553,13 +614,27 @@ def evaluate_graded(
             "baseRate": round(base_rate, 4),
             "capabilityOnly": capability_only,
         })
-    if pooled:
+    if tissues:
+        in_all = [g for g in gene_ids if all(g in hart_bf.get(t, {}) for t in tissues)]
+        all_counts = dict(TP=0, TN=0, FP=0, FN=0)
+        viability_counts = dict(TP=0, TN=0, FP=0, FN=0)
+        for gene_id in in_all:
+            fitness = all(hart_bf[t][gene_id] > BF_THRESHOLDS[t] for t in tissues)
+            categories = [set(prediction(t, gene_id)["tasks"]) for t in tissues]
+            essential_any = all(categories)
+            essential_viability = all(c & VIABILITY_CATEGORIES for c in categories)
+            all_counts[_confusion_class(essential_any, fitness)] += 1
+            viability_counts[_confusion_class(essential_viability, fitness)] += 1
         rows.append({
             "cellLine": "all",
-            "allTaskMCC": "", "allTaskFP": "", "viabilityMCC": "", "viabilityFP": "",
-            "growthAUROC": round(auroc(pooled), 4),
-            "growthAUPRC": round(auprc(pooled), 4),
-            "baseRate": round(sum(label for _s, label in pooled) / len(pooled), 4),
+            "genes": len(in_all),
+            "allTaskMCC": round(_mcc(all_counts), 4),
+            "allTaskFP": all_counts["FP"],
+            "viabilityMCC": round(_mcc(viability_counts), 4),
+            "viabilityFP": viability_counts["FP"],
+            "growthAUROC": round(auroc(pooled), 4) if pooled else "",
+            "growthAUPRC": round(auprc(pooled), 4) if pooled else "",
+            "baseRate": round(sum(label for _s, label in pooled) / len(pooled), 4) if pooled else "",
             "capabilityOnly": "",
         })
 
@@ -571,15 +646,17 @@ def evaluate_graded(
         row = [gene_id, symbol_of.get(gene_id, "")]
         for tissue in tissues:
             record = per_tissue.get(tissue, {}).get(gene_id)
+            by_gene = hart_bf.get(tissue, {})
+            fitness = by_gene[gene_id] > BF_THRESHOLDS[tissue] if gene_id in by_gene else None
             if record is None:
-                row += [".", ".", "."]
+                # Not in the context model: tasks and growth stay "." to mark that, and
+                # the class is the call it is scored with (non-essential).
+                row += [_confusion_class(False, fitness) if fitness is not None else ".", ".", "."]
                 continue
             categories = set(record["tasks"])
             essential_any = bool(categories)
             essential_viability = bool(categories & VIABILITY_CATEGORIES)
-            by_gene = hart_bf.get(tissue, {})
-            if gene_id in by_gene:
-                fitness = by_gene[gene_id] > BF_THRESHOLDS[tissue]
+            if fitness is not None:
                 old = _confusion_class(essential_any, fitness)
                 new = _confusion_class(essential_viability, fitness)
             else:
@@ -604,6 +681,11 @@ def summary_to_markdown(rows: list[dict], run: str = "") -> str:
     if run:
         out += [f"Run: {run}.", ""]
     out += [
+        "Scored over every model gene that Hart 2015 scored in the cell line (`genes`); a gene "
+        "outside the cell line's context model counts as non-essential, with growth ratio 1.0. "
+        "The `all` row: essential in every cell line against a fitness gene in every cell line, over "
+        "the genes Hart scored in every cell line (Human1 used every Hart gene).",
+        "",
         "| " + " | ".join(GRADED_COLUMNS) + " |",
         "| " + " | ".join("---" for _ in GRADED_COLUMNS) + " |",
     ]

@@ -19,7 +19,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
 | [Reaction directions: alarm](README.md#reaction-directions-alarm) **(gate)** | 0 | 0 | :white_check_mark: |
-| [Reaction directions: warning](README.md#reaction-directions-warning) | [74](qc_reversibility.csv) | -1 | :warning: |
+| [Reaction directions: warning](README.md#reaction-directions-warning) | [70](qc_reversibility.csv) | -4 | :warning: |
 | [Outdated ΔG estimates](README.md#outdated-δg-estimates) | 0 | 0 | :white_check_mark: |
 
 #### Mass and charge
@@ -28,9 +28,9 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | --- | ---: | ---: | :---: |
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
-| [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [66](balance_results.csv) | -3 | :sparkles: |
-| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [149](balance_results.csv) | -8 | :sparkles: |
-| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [52](qc_structure_consistency.csv) | 0 | :warning: |
+| [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [65](balance_results.csv) | -1 | :sparkles: |
+| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [145](balance_results.csv) | -4 | :sparkles: |
+| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [51](qc_structure_consistency.csv) | -1 | :sparkles: |
 
 #### Network structure
 
@@ -38,12 +38,13 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | --- | ---: | ---: | :---: |
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
-| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | 0 | :warning: |
-| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1396](macaw_results.tsv) | +3 | :x: |
+| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [338](macaw_results.tsv) | -2 | :sparkles: |
+| [Twin reactions with a missing or conflicting EC number](README.md#twin-reactions-with-a-missing-or-conflicting-ec-number) | [52](qc_twin_reactions.csv) | new | :warning: |
+| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1380](macaw_results.tsv) | -16 | :sparkles: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
-| [Unused genes](README.md#unused-genes) | 0 | 0 | :white_check_mark: |
+| [Unused genes](README.md#unused-genes) | [2](qc_unused_entities.csv) | +2 | :x: |
 
 #### Identifiers and annotation
 
@@ -65,6 +66,8 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [YAML lint](README.md#yaml-lint) | pass | :white_check_mark: |
 | [Essential metabolic tasks](README.md#essential-metabolic-tasks) | 57 passed | :white_check_mark: |
 | [Verification metabolic tasks](README.md#verification-metabolic-tasks) | 21 passed | :white_check_mark: |
+| [Task files readable by RAVEN](README.md#task-files-readable-by-raven) | pass | :white_check_mark: |
+| [Growth task with MAR00021 (animal GEMs)](README.md#growth-task-with-mar00021-animal-gems) | pass | :white_check_mark: |
 
 ### [MEMOTE](README.md#memote)
 
@@ -74,7 +77,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | --- | ---: | ---: |
 | consistency | 42.5% | 0 |
 | annotation_met | 77.7% | 0 |
-| annotation_rxn | 76.4% | 0 |
+| annotation_rxn | 76.3% | -0.1 :warning: |
 | annotation_gene | 46.7% | 0 |
 | annotation_sbo | 81.8% | 0 |
 
@@ -86,11 +89,11 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | Consistency | Charge Balance | 98.4% |
 | Consistency | Metabolite Connectivity | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |
-| Annotation - Metabolites | Metabolite Annotations Per Database | 47.4% |
-| Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 63.3% |
+| Annotation - Metabolites | Metabolite Annotations Per Database | 47.1% |
+| Annotation - Metabolites | Metabolite Annotation Conformity Per Database | 63.6% |
 | Annotation - Metabolites | Uniform Metabolite Identifier Namespace | 100.0% |
 | Annotation - Reactions | Presence of Reaction Annotation | 100.0% |
-| Annotation - Reactions | Reaction Annotations Per Database | 27.7% |
+| Annotation - Reactions | Reaction Annotations Per Database | 27.5% |
 | Annotation - Reactions | Reaction Annotation Conformity Per Database | 77.8% |
 | Annotation - Reactions | Uniform Reaction Identifier Namespace | 100.0% |
 | Annotation - Genes | Presence of Gene Annotation | 100.0% |

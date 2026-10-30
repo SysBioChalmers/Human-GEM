@@ -11,7 +11,8 @@ regenerates every export in ``model/``:
   that has the TSV cross-references and SBO terms merged in (see annotateGEM.py).
 
 ``build`` additionally writes ``version.txt``, stamps the version and release date into the model
-metadata, and fills the ``{{nRXN}}`` / ``{{nMET}}`` / ``{{nGENE}}`` / ``{{DATE}}``
+metadata and into the Python package and citation files (``pyproject.toml``,
+``human_gem/__init__.py``, ``citation.cff``), and fills the ``{{nRXN}}`` / ``{{nMET}}`` / ``{{nGENE}}`` / ``{{DATE}}``
 placeholders in ``README.md``. Those placeholders are the state ``develop`` keeps;
 only the release branch and ``main`` carry the substituted values.
 
@@ -29,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -39,6 +41,17 @@ import pandas as pd
 REPO_ROOT = Path(__file__).resolve().parents[2]
 MODEL_DIR = REPO_ROOT / "model"
 VERSION_TXT = REPO_ROOT / "version.txt"
+
+# Files that carry the release version (and date) besides the model: path ->
+# [(pattern, replacement template)]. Each pattern must match exactly once.
+VERSION_STAMPS = {
+    "pyproject.toml": [(r'(?m)^version = "[^"]*"$', 'version = "{version}"')],
+    "human_gem/__init__.py": [(r'(?m)^__version__ = "[^"]*"$', '__version__ = "{version}"')],
+    "citation.cff": [
+        (r"(?m)^version: .*$", "version: {version}"),
+        (r"(?m)^date-released: .*$", "date-released: {date}"),
+    ],
+}
 
 # Make the sibling code/annotateGEM.py importable regardless of the caller's cwd.
 sys.path.insert(0, str(REPO_ROOT / "code"))
@@ -135,6 +148,27 @@ def _set_version(model: cobra.Model, new_version: str, date: str) -> None:
     model.notes = notes
 
 
+def stamp_version_files(version: str, date: str, root: Path = REPO_ROOT) -> None:
+    """Write ``version`` and ``date`` into the files of :data:`VERSION_STAMPS`.
+
+    Errors, before writing anything, if a file is missing or a pattern does not match
+    exactly once, so a release cannot leave one of them on the previous version.
+    """
+    updated = {}
+    for relpath, stamps in VERSION_STAMPS.items():
+        path = root / relpath
+        if not path.is_file():
+            raise FileNotFoundError(f"{relpath} not found; cannot stamp the version")
+        text = path.read_text(encoding="utf-8")
+        for pattern, template in stamps:
+            text, count = re.subn(pattern, template.format(version=version, date=date), text)
+            if count != 1:
+                raise ValueError(f"{relpath}: {pattern!r} matched {count} times, expected once")
+        updated[path] = text
+    for path, text in updated.items():
+        path.write_text(text, encoding="utf-8")
+
+
 def _update_readme(model: cobra.Model) -> None:
     readme = REPO_ROOT / "README.md"
     content = readme.read_text(encoding="utf-8")
@@ -181,10 +215,12 @@ def cmd_build(args: argparse.Namespace) -> int:
     """Stamp the version, regenerate the exports and fill the README placeholders."""
     _check_version(args.version)
     model = read_yaml_model(MODEL_DIR / "Human-GEM.yml")
-    _set_version(model, args.version, datetime.date.today().isoformat())
+    today = datetime.date.today().isoformat()
+    _set_version(model, args.version, today)
     _check_tsv_consistency(model)
     _export(model)
     VERSION_TXT.write_text(args.version, encoding="utf-8")
+    stamp_version_files(args.version, today)
     _update_readme(model)
     print(f"Human-GEM bumped to {args.version}")
     return 0

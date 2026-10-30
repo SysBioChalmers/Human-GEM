@@ -4,16 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "human-gem"
-version = "2.1.0"
+version = "2.1.1"
 description = "Python interface to the Human-GEM genome-scale metabolic model, on cobrapy and raven-toolbox."
 requires-python = ">=3.11"
 authors = [{ name = "SysBioChalmers" }]
 dependencies = [
     "cobra>=0.29",
     "pandas>=1.5",
-    # raven-toolbox is the Python RAVEN port. 3.0.0b1 is a pre-release, and naming it
-    # in the specifier is what lets pip install one for this requirement.
-    "raven-toolbox>=3.0.0b1",
+    # raven-toolbox is the Python RAVEN port. Its PyPI release 3.0.0b1 lacks
+    # set_model_metadata and the .mat/SBML export fixes this package and the code/
+    # scripts use, so the requirement names the commit that has them (the same one as
+    # code/test/requirements.txt). Replace it with ">=" the first PyPI release that does;
+    # until then this direct reference also keeps human-gem itself off PyPI.
+    "raven-toolbox @ git+https://github.com/CompMetEng/raven-toolbox.git@ee0f8868bcc4a6f907913151a1e54dcbb4f2a160",
 ]
 
 [project.urls]

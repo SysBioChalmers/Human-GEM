@@ -34,6 +34,12 @@ This script instead:
          ETF complex becoming essential for beta-oxidation) and is not by itself a
          concern.
 
+ftINIT's extraction depends on the reaction order of the model, so some (gene, cell line)
+calls flip between two builds of the same model. A gene-essentiality run in several
+reaction orders (gradedEssentiality.py --order-checkpoint-dir) writes those calls to
+gene-essential-unstable.csv; given with --unstable (base side, head side or both), a flip
+in such a cell is listed as reaction-order noise and does not count towards a verdict.
+
 Needs raven-toolbox to read the two model versions and the Hart 2015 table already in
 data/datasets/; does not need Gurobi or a fresh ftINIT run.
 
@@ -47,7 +53,7 @@ Usage:
         --base-model /path/to/base/Human-GEM.yml \\
         --base-matrix /path/to/base/gene-essential.csv \\
         [--head-model model/Human-GEM.yml] [--head-matrix data/testResults/gene-essential.csv] \\
-        [--growth-tolerance 0.01] [--summary-url URL] \\
+        [--growth-tolerance 0.01] [--summary-url URL] [--unstable CSV ...] \\
         [--out-summary PATH] [--out-detail PATH] [--out-csv PATH]
 
 The base model/matrix are typically pulled from the target branch with ``git show``,
@@ -189,6 +195,18 @@ def read_matrix(path: Path) -> tuple[list[str], dict[str, str], dict[str, dict[s
     return tissues, symbol_of, per_gene
 
 
+def read_unstable(paths) -> set[tuple[str, str]]:
+    """(gene, cell line) cells listed in gene-essential-unstable.csv files; missing files are skipped."""
+    cells: set[tuple[str, str]] = set()
+    for path in paths or ():
+        path = Path(path)
+        if not path.is_file():
+            continue
+        with open(path, newline="", encoding="utf-8-sig") as fh:
+            cells |= {(row["genes"], row["cellLine"]) for row in csv.DictReader(fh)}
+    return cells
+
+
 def _direction(before: bool, after: bool) -> str | None:
     if before == after:
         return None
@@ -217,8 +235,13 @@ def diff_gene(
     hart_fitness: dict[str, bool],
     *,
     growth_tolerance: float,
+    unstable_lines: frozenset[str] | set[str] = frozenset(),
 ) -> dict:
-    """Per-cell-line comparison for one gene, plus consensus verdicts across lines."""
+    """Per-cell-line comparison for one gene, plus consensus verdicts across lines.
+
+    A cell line in ``unstable_lines`` flips with the reaction order alone: a flip there
+    is recorded in ``noise_lines`` and not counted, and the line is not compared.
+    """
     per_line: dict[str, dict] = {}
     any_directions: list[str] = []
     viability_directions: list[str] = []
@@ -226,6 +249,7 @@ def diff_gene(
     gained_categories: set[str] = set()
     lost_categories: set[str] = set()
     growth_shift_lines: list[str] = []
+    noise_lines: list[str] = []
     n_compared = 0
 
     for tissue in tissues:
@@ -248,12 +272,18 @@ def diff_gene(
         line["membership_changed"] = (before is None) != (after is None)
         before = before or NOT_IN_CONTEXT_MODEL
         after = after or NOT_IN_CONTEXT_MODEL
-        n_compared += 1
         any_dir = _direction(bool(before["tasks"]), bool(after["tasks"]))
         via_dir = _direction(
             bool(before["tasks"] & VIABILITY_CATEGORIES),
             bool(after["tasks"] & VIABILITY_CATEGORIES),
         )
+        if tissue in unstable_lines:
+            line["unstable"] = True
+            if any_dir or via_dir:
+                noise_lines.append(tissue)
+            per_line[tissue] = line
+            continue
+        n_compared += 1
         if any_dir:
             any_directions.append(any_dir)
             gained_categories |= after["tasks"] - before["tasks"]
@@ -307,6 +337,7 @@ def diff_gene(
         "gained_categories": gained_categories,
         "lost_categories": lost_categories,
         "growth_shift_lines": growth_shift_lines,
+        "noise_lines": noise_lines,
         "membership_changed_lines": [t for t, line in per_line.items() if line.get("membership_changed")],
     }
 
@@ -320,6 +351,7 @@ def build_report(
     growth_tolerance: float = 0.01,
     base_label: str = "the target branch",
     summary_url: str = "",
+    unstable_paths=(),
 ) -> tuple[str, str, str]:
     """Returns ``(comment_text, detail_text, detail_csv_text)``.
 
@@ -331,7 +363,8 @@ def build_report(
     per-gene, per-line CSV (``--out-csv``) by file name, since both sit in
     data/testResults; ``summary_url`` is the committed
     blob URL of ``gene-essential_summary.md`` (with ``detail_text`` appended to it),
-    linked from ``comment_text``.
+    linked from ``comment_text``. ``unstable_paths`` are gene-essential-unstable.csv
+    files (see :func:`read_unstable`).
     """
     # Nothing here is solved. cobra otherwise defaults to Gurobi whenever gurobipy is
     # importable, and every model load would take a WLS licence session that the
@@ -346,6 +379,7 @@ def build_report(
     direct = set().union(*(info["genes"] for info in changed.values())) if changed else set()
     neighbors = neighbor_genes(head_model, changed, direct)
 
+    unstable = read_unstable(unstable_paths)
     tissues_b, symbol_b, per_gene_b = read_matrix(base_matrix_path)
     tissues_h, symbol_h, per_gene_h = read_matrix(head_matrix_path)
     tissues = [t for t in tissues_h if t in tissues_b]
@@ -396,6 +430,7 @@ def build_report(
         result = diff_gene(
             gene_id, tissues, base_record, head_record, hart_fitness_by_gene.get(gene_id, {}),
             growth_tolerance=growth_tolerance,
+            unstable_lines={t for t in tissues if (gene_id, t) in unstable},
         )
         if membership:
             for line in result["per_line"].values():
@@ -419,6 +454,7 @@ def build_report(
         )
     ]
     stable = [r for r in results if id(r) not in consensus_ids and r not in isolated]
+    order_noise = [r for r in results if r["noise_lines"]]
 
     def _grouped_rows(rows: list[dict], key_fn) -> list[tuple[tuple, list[str]]]:
         """Group genes sharing the same outcome (same key) into one row's gene list.
@@ -490,6 +526,8 @@ def build_report(
         f"| Other role changed (not Hart-comparable) | {_neutral_status(capability_only)} |",
         f"| Likely noise (<{CONSENSUS_MIN_LINES}/5 lines) | {_neutral_status(isolated)} |",
         f"| No change | :white_check_mark: **{len(stable)}** |",
+        *([f"| Flips in reaction-order-unstable calls (not counted) | :information_source: **{len(order_noise)}** |"]
+          if unstable else []),
         "",
         f"Full detail: {summary_url_ref}.",
         "",
@@ -525,6 +563,13 @@ def build_report(
         detail_lines.append("")
     detail_lines.append(f"**No change:** {len(stable)} gene(s).")
     detail_lines.append("")
+    if order_noise:
+        detail_lines.append(
+            "**Reaction-order noise** (flips only in calls that change with the reaction order, not counted): "
+            + ", ".join(sorted(f"{r['symbol'] or r['gene']} ({', '.join(r['noise_lines'])})" for r in order_noise))
+            + "."
+        )
+        detail_lines.append("")
     if not_compared:
         detail_lines.append(
             "**Not compared** (missing from a gene-essentiality matrix older than its model): "
@@ -572,12 +617,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out-summary", type=Path, default=None, help="write the condensed, pull-request-comment text here instead of only stdout")
     parser.add_argument("--out-detail", type=Path, default=None, help="write the per-gene detail text here (meant to be appended to gene-essential_summary.md)")
     parser.add_argument("--out-csv", type=Path, default=None, help="write the per-gene per-line detail CSV here")
+    parser.add_argument("--unstable", type=Path, action="append", default=[], help="gene-essential-unstable.csv of the base or head run (repeatable; a missing file is skipped): flips in the listed (gene, cell line) calls are not counted")
     args = parser.parse_args(argv)
 
     summary, detail_text, detail_csv = build_report(
         args.base_model, args.head_model, args.base_matrix, args.head_matrix,
         growth_tolerance=args.growth_tolerance, base_label=args.base_label,
-        summary_url=args.summary_url,
+        summary_url=args.summary_url, unstable_paths=args.unstable,
     )
     print(summary)
     if args.out_summary:

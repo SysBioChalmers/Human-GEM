@@ -80,6 +80,33 @@ model instead of rebuilding it:
 
 Without ``--model-dir`` a shard builds its own context models inline, as before.
 
+ftINIT's extraction depends on the order of the reactions in the model: the same model
+in another order gives a context model a few reactions apart, and 20-70 (gene, cell
+line) calls differ between two orders. ``--reaction-order SEED`` rebuilds the model with
+its reactions, metabolites and genes shuffled by ``SEED`` (0, the default, keeps the
+file order) before Step 1. Run the whole pipeline once per order, each with its own
+``--prep-cache``, ``--model-dir`` and ``--checkpoint-dir``, then aggregate with the
+file-order checkpoints as ``--checkpoint-dir`` and the others as
+``--order-checkpoint-dir`` (repeatable):
+
+    python code/test/gradedEssentiality.py --checkpoint-dir DIR0 --aggregate-only \
+        --order-checkpoint-dir DIR1 [--order-checkpoint-dir DIR2 ...]
+
+The matrix and the summary are those of ``DIR0``. The summary adds the range of each
+cell line's MCC over the orders, and ``gene-essential-unstable.csv`` lists the (gene,
+cell line) cells whose call differs between orders, which diffGeneEssentiality.py does
+not count as changes. A single-order aggregate removes that file, so it never
+describes another run.
+
+The run stops with an error when Step 1 drops a task of ``metabolicTasks_Essential.txt``
+as infeasible, or when a cell line's context model cannot grow on the ``GR`` medium:
+a matrix scored without those would look like a valid result. Each cell line's
+checkpoint gets a ``graded_<cell line>.meta.json`` next to it with the versions of
+Python, cobra, optlang, raven-toolbox (and its git commit when installed from git) and
+gurobipy, the reaction order, and the ftINIT warnings of its build (a step stopped at
+its time limit, or a tie-break that did not converge). The summary lists them, so a
+rerun that differs can be traced to its environment.
+
 Within one cell line, the distinct gene knockouts are independent of each other (see
 :func:`taskEssentialGenes.find_task_essential_categories`) and are split across
 ``--processes`` worker processes, one machine's cores rather than one CI shard; it
@@ -89,16 +116,21 @@ defaults to the machine's core count.
 from __future__ import annotations
 
 import argparse
+import importlib.metadata
 import json
 import math
 import os
 import pickle
+import platform
+import random
 import sys
 import time
+import warnings
 from pathlib import Path
 
 import cobra
 from cobra.flux_analysis import single_gene_deletion
+from cobra.io import model_from_dict, model_to_dict
 
 from raven_toolbox.io import read_yaml_model
 from raven_toolbox.tasks.tasklist import Task, parse_task_list
@@ -116,7 +148,7 @@ from estimateEssentialGenes import (
     _prep_human_model_for_ftinit,
     _read_rnaseq,
 )
-from evaluateHart2015Essentiality import evaluate_graded, summary_to_markdown
+from evaluateHart2015Essentiality import VIABILITY_CATEGORIES, evaluate_graded, summary_to_markdown
 from taskEssentialGenes import find_task_essential_categories
 import qcStatus
 
@@ -126,12 +158,111 @@ MODEL_FILE = REPO_ROOT / "model" / "Human-GEM.yml"
 RESULTS_DIR = REPO_ROOT / "data" / "testResults"
 MATRIX_CSV = RESULTS_DIR / "gene-essential.csv"
 SUMMARY_MD = RESULTS_DIR / "gene-essential_summary.md"
+UNSTABLE_CSV = RESULTS_DIR / "gene-essential-unstable.csv"
 
 # Biomass reaction optimised for the growth ratio (the [GR] task's output).
 BIOMASS_REACTION = "MAR13082"
 
 def _log(message: str) -> None:
     print(message, flush=True)
+
+
+def reorder_model(model: cobra.Model, seed: int) -> cobra.Model:
+    """A copy of ``model`` with its reactions, metabolites and genes in an order set by ``seed``.
+
+    ``seed`` 0 returns ``model`` unchanged. Everything but the order is kept.
+    """
+    if not seed:
+        return model
+    data = model_to_dict(model, sort=False)
+    rng = random.Random(seed)
+    for key in ("reactions", "metabolites", "genes"):
+        rng.shuffle(data[key])
+    return model_from_dict(data)
+
+
+def _task_key(task: Task) -> tuple[str, str]:
+    # Several tasks share a category id, so a task is identified by id and description.
+    return task.id, task.description
+
+
+def missing_tasks(tasks: list[Task], feasible: list[Task]) -> list[Task]:
+    """The tasks of ``tasks`` that Step 1 did not keep as feasible."""
+    kept = {_task_key(task) for task in feasible}
+    return [task for task in tasks if _task_key(task) not in kept]
+
+
+def _check_prep_tasks(tasks: list[Task], prep) -> bool:
+    """Log an error and return False when Step 1 dropped any essential task."""
+    dropped = missing_tasks(tasks, prep.tasks)
+    for task in dropped:
+        _log(f"ERROR: Step 1 dropped the essential task [{task.id}] {task.description} as infeasible.")
+    if dropped:
+        _log("ERROR: the cell-line models would be built and scored without these tasks; "
+             "fix the model or the task list first.")
+    return not dropped
+
+
+def _growth_task(feasible: list[Task]) -> Task:
+    return next(task for task in feasible if task.id == "GR")
+
+
+def _package_version(name: str) -> str:
+    try:
+        return importlib.metadata.version(name)
+    except importlib.metadata.PackageNotFoundError:
+        return ""
+
+
+def _git_commit(name: str) -> str:
+    """The commit a package was installed from with ``pip install git+...``, if any."""
+    try:
+        text = importlib.metadata.distribution(name).read_text("direct_url.json")
+    except importlib.metadata.PackageNotFoundError:
+        return ""
+    if not text:
+        return ""
+    return (json.loads(text).get("vcs_info") or {}).get("commit_id", "")
+
+
+def run_environment() -> dict[str, str]:
+    """Versions of the software that decides the essentiality calls."""
+    env = {
+        "python": platform.python_version(),
+        "cobra": _package_version("cobra"),
+        "optlang": _package_version("optlang"),
+        "raven-toolbox": _package_version("raven-toolbox") or _package_version("raven_toolbox"),
+        "raven-toolbox commit": _git_commit("raven-toolbox") or _git_commit("raven_toolbox"),
+        "gurobipy": _package_version("gurobipy"),
+    }
+    return {key: value for key, value in env.items() if value}
+
+
+# Text of the raven-toolbox warnings that mark an unproven build: ftINIT's own (a step at its
+# time limit, an unconverged tie-break) and fill_tasks' "tie resolution did not converge".
+FTINIT_WARNING_MARKERS = ("ftINIT", "tie resolution did not converge", "time limit")
+
+
+def _build_logged(prep, model: cobra.Model, expression) -> cobra.Model:
+    """:func:`_build_context_model`, with ftINIT's and fill_tasks' warnings kept in the model's notes.
+
+    A step that stops at its time limit, or a tie-break that does not converge, leaves
+    the kept reactions an unproven incumbent; the warnings are stored under
+    ``notes["ftinit_warnings"]`` so they travel with a pickled model to the scan.
+    """
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        context = _build_context_model(prep, model, expression, BIG_M, MIP_GAP_ABS, TIME_LIMIT)
+    messages = []
+    for w in caught:
+        if any(marker in str(w.message) for marker in FTINIT_WARNING_MARKERS):
+            messages.append(str(w.message))
+        else:  # not about the build's optimality: pass it on unchanged
+            warnings.showwarning(w.message, w.category, w.filename, w.lineno)
+    for message in messages:
+        _log(f"  ftINIT warning: {message}")
+    context.notes["ftinit_warnings"] = messages
+    return context
 
 
 def media_exchange_ids(model: cobra.Model, task: Task) -> tuple[set[str], list[str]]:
@@ -195,6 +326,87 @@ def growth_ratios(
             growth = 0.0
         ratios[gene_id] = growth / wild_type
     return ratios, wild_type, len(exchange_ids), unresolved
+
+
+def _calls(record: dict | None) -> tuple[bool, bool]:
+    """(essential for any task, essential for a viability task); absent = neither."""
+    categories = set(record["tasks"]) if record else set()
+    return bool(categories), bool(categories & VIABILITY_CATEGORIES)
+
+
+def unstable_cells(
+    runs: list[dict[str, dict]], tissues: list[str], gene_ids: list[str],
+) -> list[tuple[str, str, list[str]]]:
+    """(gene, cell line, task categories per run) for every call that differs between runs.
+
+    ``runs`` are per-tissue predictions of the same model built in different reaction
+    orders. A cell differs when the any-task or the viability call is not the same in
+    every run; a gene outside a run's context model is non-essential in that run.
+    """
+    cells = []
+    for gene_id in gene_ids:
+        for tissue in tissues:
+            records = [run.get(tissue, {}).get(gene_id) for run in runs]
+            if len({_calls(record) for record in records}) > 1:
+                labels = ["." if r is None else "|".join(sorted(r["tasks"])) for r in records]
+                cells.append((gene_id, tissue, labels))
+    return cells
+
+
+def unstable_csv(cells: list[tuple[str, str, list[str]]], n_runs: int, symbol_of: dict) -> str:
+    header = ["genes", "geneSymbol", "cellLine", *(f"order{i}_tasks" for i in range(n_runs))]
+    lines = [",".join(header)]
+    for gene_id, tissue, labels in cells:
+        lines.append(",".join([gene_id, symbol_of.get(gene_id, ""), tissue, *labels]))
+    return "\n".join(lines) + "\n"
+
+
+def stability_markdown(rows_per_run: list[list[dict]], cells: list, tissues: list[str]) -> str:
+    """Per cell line: the MCC range over the reaction orders and the unstable calls."""
+    def span(values: list) -> str:
+        values = [v for v in values if isinstance(v, (int, float)) and not math.isnan(v)]
+        if not values:
+            return ""
+        low, high = min(values), max(values)
+        return f"{low:.4f}" if low == high else f"{low:.4f}-{high:.4f}"
+
+    out = [
+        f"### Reaction-order stability ({len(rows_per_run)} orders)",
+        "",
+        "The table above is the run in the order of the model file. Calls that differ between "
+        "orders are listed in `gene-essential-unstable.csv`; a pull-request diff does not count "
+        "them as changes.",
+        "",
+        "| cellLine | allTaskMCC | viabilityMCC | unstable calls |",
+        "| --- | --- | --- | --- |",
+    ]
+    by_line = {t: sum(1 for _g, line, _l in cells if line == t) for t in tissues}
+    for tissue in [*tissues, "all"]:
+        picked = [next((r for r in rows if r["cellLine"] == tissue), {}) for rows in rows_per_run]
+        out.append(f"| {tissue} | {span([r.get('allTaskMCC') for r in picked])} | "
+                   f"{span([r.get('viabilityMCC') for r in picked])} | "
+                   f"{by_line.get(tissue, len(cells))} |")
+    return "\n".join(out) + "\n"
+
+
+def environment_markdown(metas: dict[tuple[str, str], dict], tissues: list[str]) -> str:
+    """The software versions of the run, and the cell lines whose ftINIT build warned."""
+    environments = sorted({json.dumps(m.get("environment", {}), sort_keys=True) for m in metas.values()})
+    out = ["### Run environment", ""]
+    for text in environments:
+        env = json.loads(text)
+        out.append("- " + ", ".join(f"{key} {value}" for key, value in env.items()))
+    warned = [(directory, tissue, m["ftinit_warnings"]) for (directory, tissue), m in metas.items()
+              if m.get("ftinit_warnings")]
+    out.append("")
+    if warned:
+        out.append("ftINIT steps that kept an unproven incumbent (time limit or unconverged tie-break):")
+        for directory, tissue, messages in sorted(warned):
+            order = metas[(directory, tissue)].get("reaction_order", 0)
+            out.append(f"- {tissue} (reaction order {order}): {len(messages)} warning(s)")
+    else:
+        out.append("No ftINIT or gap-fill step stopped at its time limit or left a tie unresolved.")
+    return "\n".join(out) + "\n"
 
 
 def _shard(tissues: list[str], shard_index: int, shard_count: int) -> list[str]:
@@ -390,7 +602,24 @@ def main(argv: list[str] | None = None) -> int:
         help="worker processes for one cell line's gene-knockout scan "
              "(default: this machine's core count)",
     )
+    parser.add_argument(
+        "--reaction-order",
+        type=int,
+        default=0,
+        help="shuffle the model's reactions, metabolites and genes with this seed before "
+             "Step 1 (default 0: the order of the model file)",
+    )
+    parser.add_argument(
+        "--order-checkpoint-dir",
+        type=Path,
+        action="append",
+        default=[],
+        help="with --aggregate-only: checkpoints of the same model built in another "
+             "reaction order; repeatable",
+    )
     args = parser.parse_args(argv)
+    if args.order_checkpoint_dir and not args.aggregate_only:
+        parser.error("--order-checkpoint-dir requires --aggregate-only")
     if args.aggregate_only and not args.checkpoint_dir:
         parser.error("--aggregate-only requires --checkpoint-dir")
     if args.shard_count > 1 and not args.build_models_only and not args.checkpoint_dir:
@@ -410,7 +639,6 @@ def main(argv: list[str] | None = None) -> int:
 
     started = time.time()
     tasks = parse_task_list(ESSENTIAL_TASKS)
-    growth_task = next(task for task in tasks if task.id == "GR")
     tissues, expression = _read_rnaseq(RNASEQ_FILE)
     # cobra defaults to Gurobi automatically whenever gurobipy is importable (its
     # preferred-solver order tries "gurobi" before "glpk"), so building the model below
@@ -422,6 +650,10 @@ def main(argv: list[str] | None = None) -> int:
     cobra.Configuration().solver = "glpk"
     model = read_yaml_model(MODEL_FILE)
     symbol_of = _gene_symbol_map(model)
+    if args.reaction_order and not args.aggregate_only:
+        model = reorder_model(model, args.reaction_order)
+        _log(f"Reaction order {args.reaction_order}: model rebuilt with reactions, metabolites "
+             f"and genes shuffled (first reactions {[r.id for r in model.reactions[:3]]})")
 
     def checkpoint_path(tissue: str) -> Path | None:
         return args.checkpoint_dir / f"graded_{tissue}.json" if args.checkpoint_dir else None
@@ -429,16 +661,20 @@ def main(argv: list[str] | None = None) -> int:
     def model_path(tissue: str) -> Path | None:
         return args.model_dir / f"context_{tissue}.pkl" if args.model_dir else None
 
+    def meta_path(checkpoint: Path) -> Path:
+        return checkpoint.with_name(checkpoint.stem + ".meta.json")
+
     if args.prep_only:
         _use_gurobi_solver(model)
         import gurobipy
         gurobipy.setParam("OutputFlag", 0)
         cobra.Configuration().processes = 1
-        _load_or_build_prep(model, tasks, args.prep_cache)
+        prep = _load_or_build_prep(model, tasks, args.prep_cache)
+        complete = _check_prep_tasks(tasks, prep)
         _log(f"Wrote {args.prep_cache} in {time.time() - started:.0f}s")
-        model = None
+        prep = model = None
         _dispose_gurobi_session()
-        return 0
+        return 0 if complete else 1
 
     if args.build_models_only:
         _use_gurobi_solver(model)
@@ -448,6 +684,10 @@ def main(argv: list[str] | None = None) -> int:
 
         shard = _shard(tissues, args.shard_index, args.shard_count)
         prep = _load_or_build_prep(model, tasks, args.prep_cache)
+        if not _check_prep_tasks(tasks, prep):
+            prep = model = None
+            _dispose_gurobi_session()
+            return 1
         args.model_dir.mkdir(parents=True, exist_ok=True)
 
         context = None
@@ -458,9 +698,7 @@ def main(argv: list[str] | None = None) -> int:
                 continue
 
             _log(f"Cell line {index}/{len(shard)}: {tissue}")
-            context = _build_context_model(
-                prep, model, expression[tissue], BIG_M, MIP_GAP_ABS, TIME_LIMIT
-            )
+            context = _build_logged(prep, model, expression[tissue])
             context.id = tissue
             _log(f"  {tissue}: model has {len(context.reactions)} reactions, "
                  f"{len(context.genes)} genes")
@@ -482,6 +720,19 @@ def main(argv: list[str] | None = None) -> int:
             _log(f"ERROR: no checkpoint for {len(missing)}/{len(tissues)} cell line(s): {missing}")
             return 1
         per_tissue = {t: json.loads(checkpoint_path(t).read_text()) for t in tissues}
+        order_runs = []
+        for directory in args.order_checkpoint_dir:
+            missing = [t for t in tissues if not (directory / f"graded_{t}.json").exists()]
+            if missing:
+                _log(f"ERROR: {directory} has no checkpoint for {missing}")
+                return 1
+            order_runs.append({t: json.loads((directory / f"graded_{t}.json").read_text()) for t in tissues})
+        metas = {}
+        for directory in [args.checkpoint_dir, *args.order_checkpoint_dir]:
+            for t in tissues:
+                meta = directory / f"graded_{t}.meta.json"
+                if meta.exists():
+                    metas[(str(directory), t)] = json.loads(meta.read_text())
     else:
         _use_gurobi_solver(model)
         # Silence Gurobi's per-copy "Read LP format model from file ..." banner.
@@ -497,6 +748,10 @@ def main(argv: list[str] | None = None) -> int:
         prep = None
         if pending:
             prep = _load_or_build_prep(model, tasks, args.prep_cache)
+            if not _check_prep_tasks(tasks, prep):
+                prep = model = None
+                _dispose_gurobi_session()
+                return 1
 
         for index, tissue in enumerate(shard, start=1):
             cached = checkpoint_path(tissue)
@@ -512,9 +767,7 @@ def main(argv: list[str] | None = None) -> int:
                 with open(cached_model, "rb") as fh:
                     context = pickle.load(fh)
             else:
-                context = _build_context_model(
-                    prep, model, expression[tissue], BIG_M, MIP_GAP_ABS, TIME_LIMIT
-                )
+                context = _build_logged(prep, model, expression[tissue])
                 context.id = tissue
             _log(f"  {tissue}: model has {len(context.reactions)} reactions, "
                  f"{len(context.genes)} genes; scanning task categories ...")
@@ -524,10 +777,14 @@ def main(argv: list[str] | None = None) -> int:
             )
             _log(f"  {tissue}: {len(categories)} genes essential for at least one task")
 
-            ratios, wild_type, n_media, unresolved = growth_ratios(context, growth_task)
+            ratios, wild_type, n_media, unresolved = growth_ratios(context, _growth_task(prep.tasks))
             if not ratios:
-                _log(f"  {tissue}: WARNING no growth on the task medium (flux {wild_type:.3g}), "
-                     f"growth ratios unavailable")
+                _log(f"  ERROR {tissue}: the context model cannot grow on the GR task medium "
+                     f"(biomass flux {wild_type:.3g} on {n_media} medium exchanges); "
+                     f"no checkpoint written")
+                context = prep = model = None
+                _dispose_gurobi_session()
+                return 1
             if unresolved:
                 _log(f"  {tissue}: WARNING unresolved medium inputs: {unresolved}")
             lethal = sum(1 for value in ratios.values() if value < 1e-6)
@@ -540,6 +797,11 @@ def main(argv: list[str] | None = None) -> int:
             }
             if cached:
                 cached.write_text(json.dumps(per_tissue[tissue]))
+                meta_path(cached).write_text(json.dumps({
+                    "environment": run_environment(),
+                    "reaction_order": args.reaction_order,
+                    "ftinit_warnings": list(context.notes.get("ftinit_warnings", [])),
+                }, indent=1))
                 _log(f"  {tissue}: checkpoint written to {cached}")
 
         context = prep = model = None
@@ -549,12 +811,23 @@ def main(argv: list[str] | None = None) -> int:
                  f"run --aggregate-only once every shard has finished.")
             return 0
 
-    rows, matrix_csv = evaluate_graded(
-        per_tissue, tissues, sorted(symbol_of), symbol_of=symbol_of
-    )
+    gene_ids = sorted(symbol_of)
+    rows, matrix_csv = evaluate_graded(per_tissue, tissues, gene_ids, symbol_of=symbol_of)
+    summary = summary_to_markdown(rows, run=qcStatus.run_record())
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     MATRIX_CSV.write_text(matrix_csv, encoding="utf-8")
-    summary = summary_to_markdown(rows, run=qcStatus.run_record())
+    if args.aggregate_only and order_runs:
+        runs = [per_tissue, *order_runs]
+        other_rows = [evaluate_graded(run, tissues, gene_ids, symbol_of=symbol_of)[0] for run in order_runs]
+        cells = unstable_cells(runs, tissues, gene_ids)
+        UNSTABLE_CSV.write_text(unstable_csv(cells, len(runs), symbol_of), encoding="utf-8")
+        summary += "\n" + stability_markdown([rows, *other_rows], cells, tissues)
+        _log(f"{len(cells)} (gene, cell line) call(s) differ between the {len(runs)} reaction orders; "
+             f"see {UNSTABLE_CSV}")
+    elif UNSTABLE_CSV.exists():
+        UNSTABLE_CSV.unlink()
+    if args.aggregate_only and metas:
+        summary += "\n" + environment_markdown(metas, tissues)
     SUMMARY_MD.write_text(summary, encoding="utf-8")
     _log(summary)
     _log(f"Wrote {MATRIX_CSV} and {SUMMARY_MD} in {time.time() - started:.0f}s")
