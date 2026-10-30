@@ -103,6 +103,8 @@ By default, additional annotation information and external identifiers for Human
 A collection of manually curated 2D metabolic maps associated with Human-GEM are stored in the [Human-maps repository](https://github.com/SysBioChalmers/Human-maps). These maps can be downloaded from the repository or explored interactively using [Metabolic Atlas](https://metabolicatlas.org/explore/map-viewer/human1).
 
 ## Contributors
+Human-GEM is built by everyone who reports an error, brings the evidence for a correction, writes code or reviews a change. If you open an issue that leads to a fix, you are added here; see [Crediting contributors](.github/CONTRIBUTING.md#crediting-contributors).
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->

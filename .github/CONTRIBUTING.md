@@ -102,9 +102,17 @@ More examples [here](https://github.com/SysBioChalmers/Human-GEM/commits/main). 
 
 ### Crediting contributors
 
-Everyone who contributes is credited in the `Contributors` section of the `README`, using [all-contributors](https://allcontributors.org).
+Everyone who contributes is credited in the [Contributors](../README.md#contributors) section of the `README`, in the style of [all-contributors](https://allcontributors.org). That includes reporting an error in the model, not only writing code: most of the corrections in Human-GEM started as an issue.
 
-To credit someone, a maintainer comments `@all-contributors please add @username for bug, code` on any issue or pull request, listing one or more contribution types separated by commas. Human-GEM uses six consolidated types (the full all-contributors set is in the [emoji key](https://allcontributors.org/docs/en/emoji-key)):
+**If you contributed**, you do not have to do anything. When your issue is fixed or your pull request is merged, a maintainer credits you, and you get a thank-you on that issue or pull request once you are in the list. If you think you were missed, say so in any issue.
+
+**Maintainers** credit someone by commenting on any issue or pull request, one line per person:
+
+```
+/credit @username bug, research
+```
+
+Human-GEM uses six types:
 
 | Type | | Used for |
 |---|:--:|---|
@@ -115,7 +123,15 @@ To credit someone, a maintainer comments `@all-contributors please add @username
 | `doc` | 📖 | documentation and tutorials |
 | `ideas` | 🤔 | ideas, planning, and coordination |
 
-A GitHub Action (`.github/workflows/add-contributor.yml`) picks up the comment, updates `.all-contributorsrc` and the `README` with the [all-contributors CLI](https://github.com/all-contributors/all-contributors-cli), and opens a pull request against `develop`, which is merged after review. Crediting on `develop`, rather than the default `main` where the retired all-contributors bot added them, keeps the credit when `main` is rebuilt from `develop` at release.
+What happens then (`.github/workflows/add-contributor.yml`):
+
+1. **After a merge into `develop`**, the workflow comments on the pull request with a ready-made `/credit` line for each person involved who is not in the list yet: the authors of the issues it closes (`bug`, or `ideas` for a `feature` issue) and the author of the pull request (`research` for `model/` or `data/`, `code` for code, `doc` for Markdown). Nothing is credited until a maintainer replies with those lines, edited where needed. People already in the list are not suggested again; add a new type for them with `/credit` yourself.
+2. **On a `/credit` comment**, the person is added to a single open pull request, `contributors/pending`, against `develop`. The answer is added under the command: a link to that pull request, or what was wrong (an unknown type, an unknown user, already credited). Later `/credit` comments are added to the same pull request until it is merged, so there is one pull request to review rather than one per person.
+3. **When that pull request is merged**, each person is thanked on the issue or pull request where they were credited, with a link to the list.
+
+The list is kept in `.all-contributorsrc`, and the table in the `README` is generated from it by `code/contributors.py`. To change the list by hand (for example a renamed GitHub account), edit `.all-contributorsrc` and run `python code/contributors.py generate`; `python code/contributors.py check` fails if a type is unknown, a person is listed twice, or the `README` is out of date. `python code/contributors.py add <username> <types>` does what `/credit` does, without the pull request.
+
+The older `@all-contributors please add @username for bug` is still understood. The workflow acts on comments as it is on `main`, so a change to it takes effect after the next release.
 
 ### Releasing a new version
 
