@@ -11,7 +11,7 @@ env:
     qc_duplicate_keys.csv qc_empty_reactions.csv qc_annotation_consistency.csv
     qc_unused_entities.csv qc_duplicate_reactions.csv qc_metabolite_completeness.csv
     qc_reaction_sanity.csv qc_annotation_issues.csv qc_deprecation_completeness.csv
-    qc_name_consistency.csv qc_split_compartments.csv qc_reserved_identifiers.csv
+    qc_name_consistency.csv qc_split_compartments.csv qc_twin_reactions.csv qc_reserved_identifiers.csv
     qc_status.tsv memote_score.md macaw_results.tsv balance_results.csv
     qc_structure_consistency.csv qc_reversibility.csv
 
@@ -432,7 +432,7 @@ jobs:
           fail=0
           [ "${{ steps.combine.outputs.structural }}" = "success" ] || { echo "::error::structural QC failed"; fail=1; }
           [ "${{ steps.combine.outputs.thermodynamics }}" = "success" ] || { echo "::error::a reaction can run in a thermodynamically impossible direction (or the check did not run)"; fail=1; }
-          for k in roundtrip_cobra roundtrip_raven roundtrip_sbml yamllint; do
+          for k in roundtrip_cobra roundtrip_raven roundtrip_sbml yamllint task_files tasks_gr_mar00021; do
             [ "$(python code/test/qcStatus.py --get $k)" = "fail" ] && { echo "::error::$k failed"; fail=1; }
           done
           for k in tasks_essential tasks_verification; do

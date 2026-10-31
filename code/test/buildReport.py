@@ -150,6 +150,8 @@ MODEL_ROWS = [
     ("Outdated ΔG estimates", "rev_outdated", "count", "checks", "qc_reversibility.csv"),
     ("Exact-duplicate reaction groups", "dup_reactions", "count", "checks", "qc_duplicate_reactions.csv"),
     ("Reactions split across compartments", "split_compartments", "count", "checks", "qc_split_compartments.csv"),
+    ("Twin reactions with a missing or conflicting EC number", "twin_reactions", "count", "checks",
+     "qc_twin_reactions.csv"),
     ("Unused metabolites", "unused_met", "count", "checks", "qc_unused_entities.csv"),
     ("Unused genes", "unused_gene", "count", "checks", "qc_unused_entities.csv"),
     ("Malformed cross-references", "malformed", "count", "checks", "qc_annotation_issues.csv"),
@@ -162,10 +164,10 @@ NETWORK_SECTIONS = [
     ("Reaction directions", ["rev_impossible", "rev_questionable", "rev_outdated"]),
     ("Mass and charge", ["missing_formula", "missing_charge", "mass_imbalance", "charge_imbalance",
                          "structure_inconsistent"]),
-    ("Network structure", ["empty_rxn", "dup_reactions", "duplicates", "dead_end", "split_compartments",
-                           "reaction_issues", "unused_met", "unused_gene"]),
-    ("Identifiers and annotation", ["reserved_ids", "annot_consistency", "removed_not_deprecated",
-                                    "name_issues", "malformed", "inconsistent"]),
+    ("Network structure", ["empty_rxn", "dup_reactions", "duplicates", "twin_reactions", "dead_end",
+                           "split_compartments", "reaction_issues", "unused_met", "unused_gene"]),
+    ("Identifiers and annotation", ["reserved_ids", "annot_consistency", "removed_not_deprecated", "name_issues",
+                                    "malformed", "inconsistent"]),
 ]
 GATE_KEYS = {"dup_keys", "growth", "rev_impossible", "reserved_ids"}
 # Gates that should never fire: shown only when they find something, not as a clean row.
@@ -185,6 +187,8 @@ TASK_CHECKS = [
     ("YAML lint", "yamllint"),
     ("Essential metabolic tasks", "tasks_essential"),
     ("Verification metabolic tasks", "tasks_verification"),
+    ("Task files readable by RAVEN", "task_files"),
+    ("Growth task with MAR00021 (animal GEMs)", "tasks_gr_mar00021"),
 ]
 _DUP_COLS = ("duplicate_test_exact", "duplicate_test_directions", "duplicate_test_coefficients")
 
@@ -291,6 +295,7 @@ def _metrics(directory: Path) -> dict:
         "rev_outdated": _count_csv(reversibility, lambda r: r.get("verdict") == "outdated"),
         "dup_reactions": _distinct_csv(directory / "qc_duplicate_reactions.csv", "group"),
         "split_compartments": _count_csv(directory / "qc_split_compartments.csv"),
+        "twin_reactions": _distinct_csv(directory / "qc_twin_reactions.csv", "group"),
         "unused_met": _count_csv(unused, lambda r: r.get("kind") == "metabolite"),
         "unused_gene": _count_csv(unused, lambda r: r.get("kind") == "gene"),
         "malformed": _count_csv(annotation, lambda r: r.get("issue", "").startswith("malformed")),

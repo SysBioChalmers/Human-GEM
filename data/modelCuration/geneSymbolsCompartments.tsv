@@ -1,0 +1,87 @@
+entity	field	before	after
+ENSG00000110628	name	SLC22A18	SLC67A1
+ENSG00000161133	name	USP41	USP41P
+ENSG00000172728	name	FUT10	POFUT3
+ENSG00000177628	name	GBA	GBA1
+ENSG00000180011	name	ZADH2	PTGR3
+ENSG00000185818	name	NAT8L	ASPNAT
+ENSG00000189043	name	NDUFA4	COXFA4
+ENSG00000196968	name	FUT11	POFUT4
+ENSG00000229894	name	GK3P	GK3
+ENSG00000110628	geneSymbols	SLC22A18	SLC67A1
+ENSG00000110628	geneNames	solute carrier family 22 member 18	solute carrier family 67 member 1
+ENSG00000110628	geneAliases	BWR1A;BWSCR1A;IMPT1;ITM;ORCTL2;SLC22A1L;TSSC5	SLC22A18;BWR1A;BWSCR1A;IMPT1;ITM;ORCTL2;SLC22A1L;TSSC5
+ENSG00000161133	geneSymbols	USP41	USP41P
+ENSG00000161133	geneNames	ubiquitin specific peptidase 41	ubiquitin specific peptidase 41, pseudogene
+ENSG00000161133	geneAliases		USP41
+ENSG00000172728	geneSymbols	FUT10	POFUT3
+ENSG00000172728	geneNames	fucosyltransferase 10	protein O-fucosyltransferase 3
+ENSG00000172728	geneAliases		FUT10
+ENSG00000177628	geneSymbols	GBA	GBA1
+ENSG00000177628	geneNames	glucosylceramidase beta	glucosylceramidase beta 1
+ENSG00000177628	geneAliases	GBA1;GLUC	GBA;GLUC
+ENSG00000180011	geneSymbols	ZADH2	PTGR3
+ENSG00000180011	geneNames	zinc binding alcohol dehydrogenase domain containing 2	prostaglandin reductase 3
+ENSG00000180011	geneAliases	MGC45594	ZADH2;MGC45594
+ENSG00000185818	geneSymbols	NAT8L	ASPNAT
+ENSG00000185818	geneNames	N-acetyltransferase 8 like	aspartate N-acetyltransferase
+ENSG00000185818	geneAliases	FLJ37478;Hcml3;Shati	NAT8L;FLJ37478;Hcml3;Shati
+ENSG00000189043	geneSymbols	NDUFA4	COXFA4
+ENSG00000189043	geneNames	NDUFA4 mitochondrial complex associated	cytochrome c oxidase associated subunit FA4
+ENSG00000189043	geneAliases	CI-9k;COXFA4;MLRQ	NDUFA4;CI-9k;MLRQ
+ENSG00000196968	geneSymbols	FUT11	POFUT4
+ENSG00000196968	geneNames	fucosyltransferase 11	protein O-fucosyltransferase 4
+ENSG00000196968	geneAliases	MGC33202	FUT11;MGC33202
+ENSG00000229894	geneSymbols	GK3P	GK3
+ENSG00000229894	geneNames	glycerol kinase 3 pseudogene	glycerol kinase 3
+ENSG00000229894	geneAliases	GKP3;GKTB	GK3P;GKP3;GKTB
+ENSG00000081248	compartments		Cell membrane
+ENSG00000081248	compDataSource		SwissProt
+ENSG00000151067	compartments		Cell membrane
+ENSG00000151067	compDataSource		SwissProt
+ENSG00000157388	compartments		Cell membrane
+ENSG00000157388	compDataSource		SwissProt
+ENSG00000102001	compartments		Cell membrane
+ENSG00000102001	compDataSource		SwissProt
+ENSG00000141837	compartments		Cell membrane
+ENSG00000141837	compDataSource		SwissProt
+ENSG00000148408	compartments		Cell membrane
+ENSG00000148408	compDataSource		SwissProt
+ENSG00000198216	compartments		Cell membrane
+ENSG00000198216	compDataSource		SwissProt
+ENSG00000006283	compartments		Cell membrane
+ENSG00000006283	compDataSource		SwissProt
+ENSG00000196557	compartments		Cell membrane
+ENSG00000196557	compDataSource		SwissProt
+ENSG00000100346	compartments		Cell membrane
+ENSG00000100346	compDataSource		SwissProt
+ENSG00000276045	compartments		Cell membrane
+ENSG00000276045	compDataSource		SwissProt
+ENSG00000160991	compartments		Cell membrane
+ENSG00000160991	compDataSource		SwissProt
+ENSG00000175938	compartments		Cell membrane
+ENSG00000175938	compDataSource		SwissProt
+ENSG00000196497	compartments		Cytosol;Nucleus
+ENSG00000196497	compDataSource		SwissProt
+ENSG00000178301	compartments		Endoplasmic reticulum;Cell membrane
+ENSG00000178301	compDataSource		SwissProt
+ENSG00000127412	compartments		Cell membrane
+ENSG00000127412	compDataSource		SwissProt
+ENSG00000165125	compartments		Cell membrane
+ENSG00000165125	compDataSource		SwissProt
+ENSG00000187553	compartments		Endoplasmic reticulum
+ENSG00000187553	compDataSource		SwissProt
+ENSG00000150995	compartments		Endoplasmic reticulum
+ENSG00000150995	compDataSource		SwissProt
+ENSG00000123104	compartments		Endoplasmic reticulum
+ENSG00000123104	compDataSource		SwissProt
+ENSG00000096433	compartments		Endoplasmic reticulum
+ENSG00000096433	compDataSource		SwissProt
+ENSG00000196218	compartments		Endoplasmic reticulum
+ENSG00000196218	compDataSource		SwissProt
+ENSG00000198626	compartments		Endoplasmic reticulum
+ENSG00000198626	compDataSource		SwissProt
+ENSG00000198838	compartments		Endoplasmic reticulum
+ENSG00000198838	compDataSource		SwissProt
+ENSG00000143183	compartments		Endoplasmic reticulum;Golgi apparatus;Mitochondria
+ENSG00000143183	compDataSource		SwissProt

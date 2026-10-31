@@ -147,3 +147,40 @@ def test_gene_removed_from_the_model_is_not_grouped_with_a_gene_that_stays(repor
     assert "- ELOVL1: 5/5 lines, knockout no longer blocks growth" in detail
     assert "- MMAA (removed from the model): 5/5 lines, knockout no longer blocks growth" in detail
     assert "ELOVL1, MMAA" not in detail
+
+
+def test_flip_in_a_reaction_order_unstable_call_is_not_counted():
+    # Three lines lose the call, but in two of them the call changes with the reaction
+    # order alone: one real flip out of three compared lines.
+    unstable = {"DLD1", "GBM"}
+    head = {**_calls({"GR"}, growth=0.0), **{t: {"tasks": frozenset(), "growth": 1.0}
+                                             for t in ("DLD1", "GBM", "HCT116")}}
+    result = diffGeneEssentiality.diff_gene(
+        "ENSG0", LINES, _calls({"GR"}, growth=0.0), head, {}, growth_tolerance=0.01, unstable_lines=unstable,
+    )
+    assert result["viability_verdict"] == "isolated (likely noise)"
+    assert result["viability_count"] == "1/3"
+    assert result["noise_lines"] == ["DLD1", "GBM"]
+
+
+def test_unstable_cells_are_read_from_one_or_more_files(tmp_path):
+    a = tmp_path / "a.csv"
+    a.write_text("genes,geneSymbol,cellLine,order0_tasks,order1_tasks\nG1,G1,DLD1,GR,\n", encoding="utf-8")
+    b = tmp_path / "b.csv"
+    b.write_text("genes,geneSymbol,cellLine,order0_tasks,order1_tasks\nG2,G2,HELA,,BS\n", encoding="utf-8")
+    cells = diffGeneEssentiality.read_unstable([a, b, tmp_path / "missing.csv"])
+    assert cells == {("G1", "DLD1"), ("G2", "HELA")}
+
+
+def test_report_lists_reaction_order_noise(report, tmp_path, monkeypatch):
+    unstable = tmp_path / "unstable.csv"
+    unstable.write_text(
+        "genes,geneSymbol,cellLine,order0_tasks,order1_tasks\n"
+        + "".join(f"G1,G1,{t},,GR\n" for t in LINES), encoding="utf-8")
+    report(["G0"], ["G0", "G1"], [("G0", "")], [("G0", ""), ("G1", "GR")])  # G1 new to the model
+    summary, detail, _csv = diffGeneEssentiality.build_report(
+        "base", "head", tmp_path / "base.csv", tmp_path / "head.csv", unstable_paths=[unstable],
+    )
+    assert "Flips in reaction-order-unstable calls (not counted) | :information_source: **1**" in summary
+    assert "**Reaction-order noise**" in detail and "G1 (DLD1, GBM, HCT116, HELA, RPE1)" in detail
+    assert "Growth effect changed" not in detail

@@ -35,7 +35,8 @@ def read_matrix(path: Path) -> tuple[list[str], list[str], dict[str, str], dict[
     """Parse the per-gene matrix back into the structure ``evaluate_graded`` expects.
 
     Returns ``(tissues, gene_ids, symbol_of, per_tissue)``. A gene missing from a
-    cell-line model is written as ``.`` and is left out of that cell line.
+    cell-line model has ``.`` as its tasks and is left out of that cell line's
+    predictions; ``evaluate_graded`` scores it as non-essential.
     """
     with open(path, newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh)
