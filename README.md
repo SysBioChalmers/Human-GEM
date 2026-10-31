@@ -40,10 +40,10 @@ Detailed instructions on the installation and use of the Human-GEM model and rep
 # Installation
 ## Required software
 ### Basic user
-If you want to use the model for your own model simulations, you can use any software that accepts **SBML L3V1 FBCv3** formatted model files. This includes any of the following:
+If you want to use the model for your own model simulations, you can use any software that accepts **SBML L3V1 FBC v2** formatted model files. This includes any of the following:
 
 #### MATLAB-based
-* [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN) v2.10.3 or later (recommended, see [Installation instructions](https://github.com/SysBioChalmers/RAVEN/wiki/Installation#installation-instructions))
+* [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN) v2.11.4 or later (recommended; earlier versions cannot read the YAML model file, see [Installation instructions](https://github.com/SysBioChalmers/RAVEN/wiki/Installation#installation-instructions))
 * [COBRA Toolbox](https://github.com/opencobra/cobratoolbox)
 
 #### Python-based
@@ -54,7 +54,7 @@ Please see the installation instructions for each software package.
 ### Developer
 #### MATLAB-based  
 If you want to contribute to the development of Human-GEM, or otherwise want to run any of the [provided](https://github.com/SysBioChalmers/Human-GEM/tree/main/code) MATLAB functions, then the following software is required:
-* [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN) v2.10.3 or later (recommended, see [Installation instructions](https://github.com/SysBioChalmers/RAVEN/wiki/Installation#installation-instructions))
+* [RAVEN Toolbox](https://github.com/SysBioChalmers/RAVEN) v2.11.4 or later (recommended, see [Installation instructions](https://github.com/SysBioChalmers/RAVEN/wiki/Installation#installation-instructions))
 
 #### Python-based  
 You can also contribution to the development of Human-GEM via python (e.g. cobrapy), even if you would not be able to run any of the model-specific MATLAB functions. To curate the model, you can still edit `Human-GEM.yml`, `genes.tsv`, `metabolites.tsv` and `reactions.tsv`, all located in the `model/` folder.

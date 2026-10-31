@@ -316,8 +316,8 @@
 							(11Z,14Z)-eicosadienoic acid[c]	1									
 	179	13Z,16Z-docosadienoic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e];linoleate[e]			CO2[e];H2O[e]										
 							(13Z,16Z)-docosadienoic acid[c]	1									
-	180	10,13,16-docosatriynoic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e];linoleate[e]			CO2[e];H2O[e]										
-							10,13,16-docosatriynoic acid[c]	1									
+	180	(10Z,13Z,16Z)-docosatrienoic acid de novo synthesis (minimal substrates, physiological excretion)		O2[e];glucose[e];linoleate[e]			CO2[e];H2O[e]										
+							(10Z,13Z,16Z)-docosatrienoic acid[c]	1									
 	181	Lauric acid (complete oxidation)		lauric acid[e]	1	1	CO2[e];H2O[e]										
 				O2[e]													
 	182	Tridecylic acid (complete oxidation)		tridecylic acid[e]	1	1	CO2[e];H2O[e]										
@@ -434,7 +434,7 @@
 				O2[e]													
 	238	13Z,16Z-docosadienoic acid (complete oxidation)		(13Z,16Z)-docosadienoic acid[e]	1	1	CO2[e];H2O[e]										
 				O2[e]													
-	239	10,13,16-docosatriynoic acid (complete oxidation)		10,13,16-docosatriynoic acid[e]	1	1	CO2[e];H2O[e]										
+	239	(10Z,13Z,16Z)-docosatrienoic acid (complete oxidation)		(10Z,13Z,16Z)-docosatrienoic acid[e]	1	1	CO2[e];H2O[e]										
 				O2[e]													
 	240	Triacylglycerol de novo synthesis (physiological substrates, physiological excretion)		O2[e];glucose[e];linoleate[e];linolenate[e]			H2O[e];CO2[e]										
 							TAG-LD pool[c]	1									
@@ -474,3 +474,19 @@
 				O2[e];H+[m]			H2O[e];H+[m];H+[c]										
 	257	Biosynthesis of Vitamin C (ascorbate)	TRUE	O2[e];glucose[e]			ascorbate[c]	1									
 							H2O[e];CO2[e]										
+	258	Vitamin A activation: retinol to retinoate		O2[e];glucose[e];retinol[e]			H2O[e];CO2[e]										
+							retinoate[e]	1									
+	259	Vitamin A breakdown: retinoate 4-oxidation		O2[e];glucose[e];retinoate[e]			H2O[e];CO2[e]										
+							4-oxo-all-trans-retinoate[c]	1									
+	260	Vitamin A breakdown: retinoate glucuronidation		O2[e];glucose[e];Pi[e];retinoate[e]			H2O[e];CO2[e]										
+							retinoyl-glucuronide[e]	1									
+	261	Vitamin D3 activation: vitamin D3 to calcitriol		O2[e];glucose[e];vitamin D3[e]			H2O[e];CO2[e]										
+							calcitriol[e]	1									
+	262	Vitamin D breakdown: calcitriol to 24-oxo-1alpha,23,25-trihydroxyvitamin D3		O2[e];glucose[e];calcitriol[e]			H2O[e];CO2[e]										
+							24-oxo-1alpha,23,25-trihydroxyvitamin D3[m]	1									
+	263	Vitamin D breakdown: calcidiol to 25-hydroxyvitamin D3-26,23-lactone		O2[e];glucose[e];calcidiol[e]			H2O[e];CO2[e]										
+							25-hydroxyvitamin D3-26,23-lactone[m]	1									
+	264	Vitamin E breakdown: alpha-tocopherol to alpha-CEHC		O2[e];glucose[e];alpha-tocopherol[e]			H2O[e];CO2[e]										
+							3-carboxy-alpha-chromanol[c]	1									
+	265	Vitamin E breakdown: gamma-tocopherol to gamma-CEHC glucuronide		O2[e];glucose[e];Pi[e];gamma-tocopherol[e]			H2O[e];CO2[e]										
+							gamma-CEHC-glucuronide[c]	1									

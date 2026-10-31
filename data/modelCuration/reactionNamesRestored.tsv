@@ -1,0 +1,250 @@
+entity	field	before	after
+MAR04814	name	phosphoribosylaminoimidazolecarboxamide formyltransferase (10-formyl-THF)	phosphoribosylaminoimidazolecarboxamide formyltransferase (AICAR)
+MAR04599	name	oxoglutarate dehydrogenase (succinyl-transferring) (lipoamide)	2-oxoadipate dehydrogenase (glutaryl-transferring)
+MAR06979	name	trimethyllysine hydroxylase, epsilon (AKG)	trimethyllysine dioxygenase (N6,N6,N6-trimethyl-L-lysine)
+MAR06982	name	gamma-butyrobetaine hydroxylase (AKG)	gamma-butyrobetaine dioxygenase (gamma-butyrobetaine)
+MAR06417	name	dihydrolipoamide branched chain transacylase E2	dihydrolipoamide branched chain transacylase E2 (S-(2-methylpropanoyl)-dihydrolipoamide)
+MAR06419	name	lipoamide to S-(2-methylbutanoyl)... conversion	lipoamide to S-(2-methylbutanoyl)-dihydrolipoamide conversion
+MAR06420	name	dihydrolipoamide branched chain transacylase E2	dihydrolipoamide branched chain transacylase E2 (S-(2-methylbutanoyl)-dihydrolipoamide)
+MAR06421	name	lipoamide to S-(3-methylbutanoyl)... conversion	lipoamide to S-(3-methylbutanoyl)-dihydrolipoamide conversion
+MAR06422	name	dihydrolipoamide branched chain transacylase E2	dihydrolipoamide branched chain transacylase E2 (S-(3-methylbutanoyl)-dihydrolipoamide)
+MAR06708	name	1-(1,2,3,4,5-pentahydroxypent... hydrolysis	1-(1,2,3,4,5-pentahydroxypent-1-yl)-1,2,3,4-tetrahydro-beta-carboline-3-carboxylate formation
+MAR06880	name	1,4-benzothiazine-O-quinonimine to 3,4-dihydro-1,4-benzothiazine-3... conversion	1,4-benzothiazine-O-quinonimine to 3,4-dihydro-1,4-benzothiazine-3-carboxylate conversion
+MAR06416	name	lipoamide to S-(2-methylpropanoyl)... conversion	lipoamide to S-(2-methylpropanoyl)-dihydrolipoamide conversion
+MAR07254	name	dehydrodolichyl diphosphate synthase subunit (isopentenyl-pPP)	dehydrodolichyl diphosphate synthase (trans,trans,cis-geranyl-geranyl-pp)
+MAR07281	name	dolichyl-D-glucosyl-phosphate to G00008 conversion	dolichyl-P-Glc:Glc2Man9GlcNAc2-PP-dolichol alpha-1,2-glucosyltransferase
+MAR07288	name	(alpha-D-Glucosyl)-(alpha-D... hydrolysis	(alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis to glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform C (protein)
+MAR07290	name	(alpha-D-Glucosyl)-(alpha-D... hydrolysis	(alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis to (alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein)
+MAR07292	name	glucosyl-(alpha-D-mannosyl)7... hydrolysis	glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) hydrolysis to glucosyl-(alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein)
+MAR07294	name	transport of glucosyl-(alpha-D-mannosyl)6... (endoplasmic reticulum to Golgi apparatus)	transport of glucosyl-(alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
+MAR07295	name	transport of (alpha-D-Glucosyl)3-(alpha-D... (endoplasmic reticulum to Golgi apparatus)	transport of (alpha-D-Glucosyl)3-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
+MAR07296	name	transport of (alpha-D-Glucosyl)2-(alpha-D... (endoplasmic reticulum to Golgi apparatus)	transport of (alpha-D-Glucosyl)2-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
+MAR07297	name	transport of (alpha-D-Glucosyl)-(alpha-D... (endoplasmic reticulum to Golgi apparatus)	transport of (alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
+MAR07298	name	transport of glucosyl-(alpha-D-mannosyl)7... (endoplasmic reticulum to Golgi apparatus)	transport of glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) (endoplasmic reticulum to Golgi apparatus)
+MAR07299	name	transport of glucosyl-(alpha-D-mannosyl)7... (endoplasmic reticulum to Golgi apparatus)	transport of glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform C (protein) (endoplasmic reticulum to Golgi apparatus)
+MAR07300	name	transport of (alpha-D-mannosyl)7-beta-D... (endoplasmic reticulum to Golgi apparatus)	transport of (alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) (endoplasmic reticulum to Golgi apparatus)
+MAR07301	name	(alpha-D-Glucosyl)3-(alpha-D... hydrolysis	(alpha-D-Glucosyl)3-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis
+MAR07302	name	(alpha-D-Glucosyl)2-(alpha-D... hydrolysis	(alpha-D-Glucosyl)2-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis
+MAR07303	name	(alpha-D-Glucosyl)-(alpha-D... hydrolysis	(alpha-D-Glucosyl)-(alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis to (alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform A (protein)
+MAR07304	name	glucosyl-(alpha-D-mannosyl)7... hydrolysis	glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform C (protein) hydrolysis
+MAR07305	name	glucosyl-(alpha-D-mannosyl)7... hydrolysis	glucosyl-(alpha-D-mannosyl)7-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine, isoform B (protein) hydrolysis to (alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (B2)
+MAR07306	name	glucosyl-(alpha-D-mannosyl)6... hydrolysis	glucosyl-(alpha-D-mannosyl)6-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) hydrolysis
+MAR02164	name	fatty-acid synthase system (malonyl-[ACP])	fatty-acid synthase system (octanoyl-[ACP])
+MAR02178	name	fatty-acid synthase system (malonyl-[ACP])	fatty-acid synthase system (tetradecanoyl-[ACP])
+MAR02328	name	very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-cis-15...)	very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase (3(S)-hydroxy-cis-15-tetracosaenoyl-CoA)
+MAR02446	name	12,13-epoxy-9-hydroperoxy... to 12,13-epoxylinoleic acid-radical conversion	12,13-epoxylinoleic acid-radical to 12,13-epoxy-9-hydroperoxy-(10E)-octadecenoate conversion
+MAR02447	name	12,13-epoxy-9-alkoxy-(10E)... to 12,13-epoxy-9-hydroperoxy... conversion	12,13-epoxy-9-alkoxy-(10E)-octadecenoate to 12,13-epoxy-9-hydroperoxy-(10E)-octadecenoate conversion
+MAR02450	name	9,10-12,13-diepoxy-octadecanoate to 1-hydroperoxy-8-carboxyoctyl... conversion	9,10-12,13-diepoxy-octadecanoate to 1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether conversion
+MAR02451	name	1-hydroperoxy-8-carboxyoctyl-3,4... to 4-oxo-2-nonenal conversion	1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether to 4-oxo-2-nonenal conversion
+MAR02452	name	1-hydroperoxy-8-carboxyoctyl-3,4... to 3,4-epoxynonanal conversion	1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether to 3,4-epoxynonanal conversion
+MAR02520	name	very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis...)	very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis-2,10,13,16,19-docosapentaenoyl-CoA)
+MAR02528	name	very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis...)	very-long-chain enoyl-CoA reductase (trans,cis,cis,cis,cis-2,12,15,18,21-tetracosapentaenoyl-CoA)
+MAR02376	name	3(S)-hydroxy-dihomo-gamma... to trans-2-cis,cis,cis-8,11,14... conversion	3(S)-hydroxy-dihomo-gamma-linolenoyl-CoA to trans-2-cis,cis,cis-8,11,14-eicosatetraenoyl-CoA conversion
+MAR02410	name	3-hydroxyacyl-CoA dehydrogenase (3(S)-hydroxy-tetracosa...)	3-hydroxyacyl-CoA dehydrogenase (3(S)-hydroxy-tetracosa-6,9,12,15,18-all-cis-pentaenoyl-CoA)
+MAR01081	name	leukotriene C4 synthase (GSH)	leukotriene C4 synthase (leukotriene A4)
+MAR08550	name	leukotriene C4 synthase (GSH)	leukotriene C4 synthase (leukotriene A4)
+MAR06908	name	coenzyme Q5, methyltransferase (2-methoxy-6-all trans...)	coenzyme Q5, methyltransferase (2-methoxy-6-all trans-decaprenyl-2-methoxy-1,4-benzoquinol)
+MAR01929	name	cytochrome P450	cholesterol monooxygenase (side-chain-cleaving) (20alpha,22beta-dihydroxycholesterol)
+MAR01948	name	cytochrome P450	steroid 21-monooxygenase (17alpha-hydroxypregnenolone)
+MAR01990	name	cytochrome P450 (cortisol)	steroid 21-monooxygenase (21-deoxycortisol)
+MAR01991	name	cytochrome P450 (21-deoxycortisol)	steroid 17alpha-monooxygenase (11beta-hydroxyprogesterone)
+MAR01992	name	cytochrome P450	steroid 21-monooxygenase (11beta-hydroxyprogesterone)
+MAR01479	name	cytochrome P450	sterol 14alpha-demethylase (4,4-dimethyl-14alpha-formyl-5alpha-cholesta-8,24-dien-3beta-ol)
+MAR08147	name	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (glucosylceramide pool)	glucosylceramide pool to LacCer pool conversion
+MAR00527	name	glycerol-3-phosphate acyltransferase ((9Z,12Z,15Z,18Z,21Z)...)	glycerol-3-phosphate acyltransferase ((9Z,12Z,15Z,18Z,21Z)-tetracosapentaenoyl-CoA)
+MAR08404	name	glycophosphatidylinositol... to gpi_prot heparan sulfate conversion	glycophosphatidylinositol-(GPI)-anchored-protein-precursor to gpi_prot heparan sulfate conversion
+MAR01356	name	8-peroxy-(5Z,9E,11Z,14Z)... to 5,9-cyclo-6,8-cycloperoxy-12... conversion	8-peroxy-(5Z,9E,11Z,14Z)-eicosatetraenoate to 5,9-cyclo-6,8-cycloperoxy-12-hydroperoxy-(10E,14Z)-eicosadienoate conversion
+MAR01357	name	5,9-cyclo-6,8-cycloperoxy-12... to 5,9-cyclo-6,8,12-trihydroxy... conversion	5,9-cyclo-6,8-cycloperoxy-12-hydroperoxy-(10E,14Z)-eicosadienoate to 5,9-cyclo-6,8,12-trihydroxy-(10E,14Z)-eicosadienoic acid conversion
+MAR01359	name	9-peroxy-(5Z,7E,11Z,14Z)... to 9,11-cycloperoxy-5-hydroperoxy... conversion	9-peroxy-(5Z,7E,11Z,14Z)-eicosatetraenoate to 9,11-cycloperoxy-5-hydroperoxy-(6E,14Z)-eicosadienoate conversion
+MAR01360	name	9,11-cycloperoxy-5-hydroperoxy... to 5,9,11-trihydroxyprosta... conversion	9,11-cycloperoxy-5-hydroperoxy-(6E,14Z)-eicosadienoate to 5,9,11-trihydroxyprosta-(6E,14Z)-dien-1-oate conversion
+MAR01362	name	11-peroxy-(5Z,8Z,12E,14Z)... to 9,11-cycloperoxy-15... conversion	11-peroxy-(5Z,8Z,12E,14Z)-eicosatetraenoate to 9,11-cycloperoxy-15-hydroperoxy-(5Z,13E)-eicosadienoate conversion
+MAR01365	name	12-peroxy-(5Z,8Z,10E,14Z)... to 11,15-cyclo-12,14-cycloperoxy... conversion	12-peroxy-(5Z,8Z,10E,14Z)-eicosatetraenoate to 11,15-cyclo-12,14-cycloperoxy-8-hydroperoxy-(5Z,9E)-eicosadienoate conversion
+MAR01366	name	11,15-cyclo-12,14-cycloperoxy... to 11,15-cyclo-8,12,14-trihydroxy... conversion	11,15-cyclo-12,14-cycloperoxy-8-hydroperoxy-(5Z,9E)-eicosadienoate to 11,15-cyclo-8,12,14-trihydroxy-(5Z,9E)-eicosadienoic acid conversion
+MAR07490	name	chondroitin sulfate C (GalNAc6S-GlcA)... sulfation	chondroitin sulfate C (GalNAc6S-GlcA) and D (GlcNAc6S-GlcA2S), precursor 1 sulfation
+MAR07495	name	chondroitin sulfate A to chondroitin sulfate A (GalNAc4S-GlcA)... conversion	chondroitin sulfate A to chondroitin sulfate A (GalNAc4S-GlcA), B (IdoA2S-GalNAc4S), and E (GalNAc4,6diS-GlcA), precursor 1 conversion
+MAR07497	name	chondroitin sulfate A... to chondroitin sulfate B... conversion	chondroitin sulfate A (GalNAc4S-GlcA) and B (IdoA2S-GalNAc4S), precursor 3 to chondroitin sulfate B (IdoA2S-GalNAc4S), precursor 4 conversion
+MAR07520	name	chondroitin sulfate C (GalNAc6S-GlcA)... to chondroitin sulfate C conversion	chondroitin sulfate C (GalNAc6S-GlcA) and D (GlcNAc6S-GlcA2S), precursor 1 to chondroitin sulfate C conversion
+MAR07535	name	chondroitin sulfate D (GlcNAc6S-GlcA2S)... to chondroitin sulfate D conversion	chondroitin sulfate D (GlcNAc6S-GlcA2S) precursor 2 to chondroitin sulfate D conversion
+MAR07513	name	chondroitin sulfate B - dermatan... hydrolysis	chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan hydrolysis
+MAR07530	name	N-acetylgalactosamine-6-sulfatase (chondroitin sulfate C...)	N-acetylgalactosamine-6-sulfatase (chondroitin sulfate C (GalNAc6S-GlcA), degradation product 3)
+MAR07544	name	beta-N-acetylhexosaminidase (chondroitin sulfate D...)	beta-N-acetylhexosaminidase (chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 1)
+MAR07547	name	N-acetylgalactosamine-6-sulfatase (chondroitin sulfate D...)	N-acetylgalactosamine-6-sulfatase (chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 4)
+MAR07548	name	beta-N-acetylhexosaminidase (chondroitin sulfate D...)	beta-N-acetylhexosaminidase (chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 4)
+MAR07549	name	beta-N-acetylhexosaminidase (chondroitin sulfate D...)	beta-N-acetylhexosaminidase (chondroitin sulfate D (GlcNAc6S-GlcA2S), degradation product 5)
+MAR07560	name	N-acetylgalactosamine-6-sulfatase (chondroitin sulfate E...)	N-acetylgalactosamine-6-sulfatase (chondroitin sulfate E (GalNAc4,6diS-GlcA), degradation product 1)
+MAR07561	name	beta-N-acetylhexosaminidase (chondroitin sulfate E...)	beta-N-acetylhexosaminidase (chondroitin sulfate E (GalNAc4,6diS-GlcA), degradation product 2)
+MAR07563	name	beta-N-acetylhexosaminidase (chondroitin sulfate E...)	beta-N-acetylhexosaminidase (chondroitin sulfate E (GalNAc4,6diS-GlcA), degradation product 4)
+MAR07566	name	beta-N-acetylhexosaminidase (chondroitin sulfate E...)	beta-N-acetylhexosaminidase (chondroitin sulfate E (GalNAc4,6diS-GlcA), degradation product 6)
+MAR01581	name	cytochrome P450 (cholesterol)	cholesterol 7alpha-monooxygenase (cholesterol)
+MAR01589	name	cytochrome P450	5beta-cholestane-3alpha,7alpha-diol 12alpha-hydroxylase (7alpha-hydroxycholest-4-en-3-one)
+MAR01598	name	aldo-keto reductase	3alpha-hydroxysteroid 3-dehydrogenase (NADH) (7alpha,12alpha-dihydroxy-5beta-cholestan-3-one)
+MAR01599	name	aldo-keto reductase	3alpha-hydroxysteroid 3-dehydrogenase (NADPH) (7alpha,12alpha-dihydroxy-5beta-cholestan-3-one)
+MAR01619	name	transport of 3alpha,7alpha,12alpha... (cytosol to endoplasmic reticulum)	transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to endoplasmic reticulum)
+MAR01622	name	transport of 3alpha,7alpha,12alpha-trihydroxy-5beta... (cytosol to peroxisome)	ATP-driven transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to peroxisome)
+MAR01623	name	transport of 3alpha,7alpha,12alpha-trihydroxy-5beta... (cytosol to peroxisome)	transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to peroxisome)
+MAR01646	name	3-hydroxyacyl-CoA dehydrogenase	3-hydroxyacyl-CoA dehydrogenase ((24R,25R)3alpha,7alpha,12alpha,24-tetrahydroxy-5beta-cholestanoyl-CoA)
+MAR01652	name	propanoyl-CoA C-acyltransferase	propanoyl-CoA C-acyltransferase (3alpha,7alpha,12alpha-trihydroxy-5beta-24-oxocholestanoyl-CoA)
+MAR01706	name	3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-enoyl-CoA hydratase	3alpha,7alpha,12alpha-trihydroxy-5beta-cholest-24-enoyl-CoA hydratase (3alpha,7alpha-dihydroxy-5beta-cholest-24-enoyl-CoA)
+MAR01744	name	transport of 5beta-cholestan-3alpha,7alpha,12alpha,24... (cytosol to mitochondria)	transport of 5beta-cholestan-3alpha,7alpha,12alpha,24(S)-tetrol (cytosol to mitochondria)
+MAR01772	name	transport of 5beta-cholestane-3alpha,7alpha,12alpha,2... (cytosol to mitochondria)	transport of 5beta-cholestane-3alpha,7alpha,12alpha,26-tetrol (cytosol to mitochondria)
+MAR01800	name	cytochrome P450	cholestanetriol 26-monooxygenase (cholest-5-ene-3beta,7alpha,27-triol)
+MAR08281	name	type II H glycolipid to galfuc12gal14acglcgalgluside heparan... conversion	type II H glycolipid to galfuc12gal14acglcgalgluside heparan sulfate conversion
+MAR08284	name	type II H glycolipid to acgalfuc12gal14acglcgalgluside heparan... conversion	type II H glycolipid to acgalfuc12gal14acglcgalgluside heparan sulfate conversion
+MAR08292	name	UDP-N-acetyl-D-galactosamine to acgalfucgalacglcgal14acglcgalgluside... conversion	UDP-N-acetyl-D-galactosamine to acgalfucgalacglcgal14acglcgalgluside heparan sulfate conversion
+MAR08295	name	fucgalacgalfucgalacglcgal14acglcgalglusi... to type IIIAb conversion	fucgalacgalfucgalacglcgal14acglcgalgluside heparan sulfate to type IIIAb conversion
+MAR08298	name	UDP-galactose to galfucgalacglcgal14acglcgalglus... conversion	fucosylgalactoside 3-alpha-galactosyltransferase (VI2Fuc-nLc6)
+MAR06995	name	glutathione transferase	glutathione transferase (benzo[a]pyrene-4,5-oxide)
+MAR07003	name	glutathione transferase	glutathione transferase ((1R,2S)-naphthalene 1,2-oxide)
+MAR07013	name	glutathione transferase	glutathione transferase ((1S,2R)-naphthalene 1,2-oxide)
+MAR07057	name	sulfotransferase	sulfotransferase (7-hydroxymethyl-12-methylbenz[a]anthracene)
+MAR07068	name	4-[(hydroxymethyl)nitrosoamino]... to 4-(nitrosoamino)-1-(3... conversion	4-[(hydroxymethyl)nitrosoamino]-1-(3-pyridinyl)-1-butanone to 4-(nitrosoamino)-1-(3-pyridinyl)-1-butanone conversion
+MAR07069	name	4-(nitrosoamino)-1-(3... to 4-hydroxy-1-(3-pyridinyl)-1... conversion	4-(nitrosoamino)-1-(3-pyridinyl)-1-butanone to 4-hydroxy-1-(3-pyridinyl)-1-butanone conversion
+MAR07071	name	4-hydroxy-4-(methylnitrosoamino... to 4-oxo-1-(3-pyridyl)-1-butanone conversion	4-hydroxy-4-(methylnitrosoamino)-1-(3-pyridinyl)-1-butanone to 4-oxo-1-(3-pyridyl)-1-butanone conversion
+MAR07073	name	1-(methylnitrosoamino)-4-(3... to 5-(3-pyridyl)-2-hydroxytetrahyd... conversion	1-(methylnitrosoamino)-4-(3-pyridinyl)-1,4-butanediol to 5-(3-pyridyl)-2-hydroxytetrahydrofuran conversion
+MAR07075	name	alpha-[3-(nitrosoamino)propyl]... to 1-(3-pyridinyl)-1,4-butanediol conversion	alpha-[3-(nitrosoamino)propyl]-3-pyridinemethanol to 1-(3-pyridinyl)-1,4-butanediol conversion
+MAR07077	name	alpha-[3-[(hydroxymethyl)nitros... to alpha-[3-(nitrosoamino)propyl]... conversion	alpha-[3-[(hydroxymethyl)nitrosoamino]propyl]-3-pyridinemethanol to alpha-[3-(nitrosoamino)propyl]-3-pyridinemethanol conversion
+MAR07078	name	cytochrome P450 (1-nitronaphthalene)	cytochrome P450 (1-nitronaphthalene to 1-nitronaphthalene-5,6-oxide)
+MAR07079	name	glutathione transferase	glutathione transferase (1-nitronaphthalene-5,6-oxide to 1-nitro-5-hydroxy-6-glutathionyl-5,6-dihydronaphthalene)
+MAR07080	name	glutathione transferase	glutathione transferase (1-nitronaphthalene-5,6-oxide to 1-nitro-5-glutathionyl-6-hydroxy-5,6-dihydronaphthalene)
+MAR07082	name	cytochrome P450 (1-nitronaphthalene)	cytochrome P450 (1-nitronaphthalene to 1-nitronaphthalene-7,8-oxide)
+MAR07083	name	glutathione transferase	glutathione transferase (1-nitronaphthalene-7,8-oxide to 1-nitro-7-hydroxy-8-glutathionyl-7,8-dihydronaphthalene)
+MAR07084	name	glutathione transferase	glutathione transferase (1-nitronaphthalene-7,8-oxide to 1-nitro-7-glutathionyl-8-hydroxy-7,8-dihydronaphthalene)
+MAR07088	name	cytochrome P450 (1,1-dichloroethylene)	cytochrome P450 (1,1-dichloroethylene to 2,2-dichloroacetaldehyde)
+MAR07091	name	cytochrome P450 (1,1-dichloroethylene)	cytochrome P450 (1,1-dichloroethylene to 1,1-dichloroethylene epoxide)
+MAR07092	name	glutathione transferase	glutathione transferase (1,1-dichloroethylene epoxide)
+MAR07093	name	glutathione transferase	glutathione transferase (2-(S-glutathionyl)acetyl chloride)
+MAR07096	name	cytochrome P450 (1,1-dichloroethylene)	cytochrome P450 (1,1-dichloroethylene to chloroacetyl chloride)
+MAR09510	name	cap methyltransferase (m7G(5')pppRm-RNA (mRNA...)	cap methyltransferase (m7G(5')pppRm-RNA (mRNA containing a 2'-O-methylpurine cap))
+MAR09544	name	methionine sulfoxide reductase A (oxidized thioredoxin)	methionine sulfoxide reductase A (peptide-L-methionine-(S)-S-oxide)
+MAR09549	name	diphthamide biosynthesis (peptide-2-[3-carboxy-3...)	diphthamide biosynthesis (peptide-2-[3-carboxy-3-(methylammonio)propyl]-L-histidine)
+MAR09575	name	5-methyltetrahydrofolate-homocysteine methyltransferase	5-methyltetrahydrofolate-homocysteine methyltransferase (selenohomocysteine)
+MAR07121	name	transport of 4-(n-nitrosomethylamino)-1-(3-pyridyl)... (extracellular to cytosol)	transport of 4-(n-nitrosomethylamino)-1-(3-pyridyl)-1-butanone (extracellular to cytosol)
+MAR07499	name	transport of chondroitin sulfate A... (Golgi apparatus to extracellular)	transport of chondroitin sulfate A (GalNAc4S-GlcA) proteoglycan (Golgi apparatus to extracellular)
+MAR07511	name	transport of chondroitin sulfate B -... (Golgi apparatus to extracellular)	transport of chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan (Golgi apparatus to extracellular)
+MAR07523	name	transport of chondroitin sulfate C... (Golgi apparatus to extracellular)	transport of chondroitin sulfate C (GalNAc6S-GlcA) proteoglycan (Golgi apparatus to extracellular)
+MAR07539	name	transport of chondroitin sulfate D... (Golgi apparatus to extracellular)	transport of chondroitin sulfate D (GlcNAc6S-GlcA2S) proteoglycan (Golgi apparatus to extracellular)
+MAR07555	name	transport of chondroitin sulfate E... (Golgi apparatus to extracellular)	transport of chondroitin sulfate E (GalNAc4,6diS-GlcA) proteoglycan (Golgi apparatus to extracellular)
+MAR07608	name	transport of 2-acetyl-1-alkyl-sn-glycero-3... (cytosol to extracellular)	transport of 2-acetyl-1-alkyl-sn-glycero-3-phosphocholine (cytosol to extracellular)
+MAR07609	name	transport of 1-organyl-2-lyso-sn-glycero-3... (cytosol to extracellular)	transport of 1-organyl-2-lyso-sn-glycero-3-phosphocholine (cytosol to extracellular)
+MAR08158	name	transport of sialyl(1,3)-sialyl(2,6)... (cytosol to extracellular)	transport of sialyl(1,3)-sialyl(2,6)-galactosylgloboside (cytosol to extracellular)
+MAR08161	name	transport of sialyl(2,3)-sialyl(2,6)... (cytosol to extracellular)	transport of sialyl(2,3)-sialyl(2,6)-galactosylgloboside (cytosol to extracellular)
+MAR08270	name	transport of fucgalfucgalacglcgalgluside heparan... (cytosol to extracellular)	transport of fucgalfucgalacglcgalgluside heparan sulfate (cytosol to extracellular)
+MAR08283	name	transport of galfuc12gal14acglcgalgluside heparan... (cytosol to extracellular)	transport of galfuc12gal14acglcgalgluside heparan sulfate (cytosol to extracellular)
+MAR08304	name	transport of galgalfucfucgalacglcgalacglcgal... (cytosol to extracellular)	transport of galgalfucfucgalacglcgalacglcgal14acglcgalgluside heparan sulfate (cytosol to extracellular)
+MAR08311	name	transport of fucfucfucgalacglc13galacglcgal1... (cytosol to extracellular)	transport of fucfucfucgalacglc13galacglcgal14acglcgalgluside heparan sulfate (cytosol to extracellular)
+MAR08313	name	transport of fucfuc132galacglcgal14acglcgalg... (cytosol to extracellular)	transport of fucfuc132galacglcgal14acglcgalgluside heparan sulfate (cytosol to extracellular)
+MAR08315	name	transport of fucfucfucgalacglcgal14acglcgalg... (cytosol to extracellular)	transport of fucfucfucgalacglcgal14acglcgalgluside heparan sulfate (cytosol to extracellular)
+MAR09657	name	transport of 3-deoxy-D-glycero-D-galacto-2... (cytosol to extracellular)	transport of 3-deoxy-D-glycero-D-galacto-2-nonulosonic acid (cytosol to extracellular)
+MAR09731	name	transport of glycophosphatidylinositol... (cytosol to extracellular)	transport of glycophosphatidylinositol-(GPI)-anchored-protein-precursor (cytosol to extracellular)
+MAR01173	name	transport of 3-oxo-10(R)-hydroxy-octadeca... (cytosol to mitochondria)	transport of 3-oxo-10(R)-hydroxy-octadeca-(6E,8E,12Z)-trienoate (cytosol to mitochondria)
+MAR01215	name	transport of 3-oxo-10(S)-hydroxy-octadeca... (cytosol to mitochondria)	transport of 3-oxo-10(S)-hydroxy-octadeca-(6E,8E,12Z)-trienoate (cytosol to mitochondria)
+MAR01602	name	transport of 5beta-cholestan-3alpha,7alpha,12alpha... (cytosol to mitochondria)	transport of 5beta-cholestan-3alpha,7alpha,12alpha-triol (cytosol to mitochondria)
+MAR01172	name	transport of 3-oxo-10(R)-hydroxy-octadeca... (cytosol to peroxisome)	transport of 3-oxo-10(R)-hydroxy-octadeca-(6E,8E,12Z)-trienoate (cytosol to peroxisome)
+MAR01214	name	transport of 3-oxo-10(S)-hydroxy-octadeca... (cytosol to peroxisome)	transport of 3-oxo-10(S)-hydroxy-octadeca-(6E,8E,12Z)-trienoate (cytosol to peroxisome)
+MAR02509	name	transport of (6Z,9Z,12Z,15Z,18Z,21Z)... (cytosol to peroxisome)	transport of (6Z,9Z,12Z,15Z,18Z,21Z)-tetracosahexaenoyl-CoA (cytosol to peroxisome)
+MAR03024	name	transport of (9Z,12Z,15Z,18Z,21Z)... (cytosol to peroxisome)	transport of (9Z,12Z,15Z,18Z,21Z)-tetracosapentaenoyl-CoA (cytosol to peroxisome)
+MAR08844	name	transport of 1D-myo-inositol-bisdiphosphate... (cytosol to nucleus)	transport of 1D-myo-inositol-bisdiphosphate-tetrakisphosphate (cytosol to nucleus)
+MAR07500	name	transport of chondroitin sulfate A... (extracellular to lysosome)	transport of chondroitin sulfate A (GalNAc4S-GlcA) proteoglycan (extracellular to lysosome)
+MAR07512	name	transport of chondroitin sulfate B -... (extracellular to lysosome)	transport of chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan (extracellular to lysosome)
+MAR07524	name	transport of chondroitin sulfate C... (extracellular to lysosome)	transport of chondroitin sulfate C (GalNAc6S-GlcA) proteoglycan (extracellular to lysosome)
+MAR07540	name	transport of chondroitin sulfate D... (extracellular to lysosome)	transport of chondroitin sulfate D (GlcNAc6S-GlcA2S) proteoglycan (extracellular to lysosome)
+MAR07556	name	transport of chondroitin sulfate E... (extracellular to lysosome)	transport of chondroitin sulfate E (GalNAc4,6diS-GlcA) proteoglycan (extracellular to lysosome)
+MAR08157	name	transport of sialyl(1,3)-sialyl(2,6)... (cytosol to Golgi apparatus)	transport of sialyl(1,3)-sialyl(2,6)-galactosylgloboside (cytosol to Golgi apparatus)
+MAR08160	name	transport of sialyl(2,3)-sialyl(2,6)... (cytosol to Golgi apparatus)	transport of sialyl(2,3)-sialyl(2,6)-galactosylgloboside (cytosol to Golgi apparatus)
+MAR08269	name	transport of fucgalfucgalacglcgalgluside heparan... (cytosol to Golgi apparatus)	transport of fucgalfucgalacglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
+MAR08282	name	transport of galfuc12gal14acglcgalgluside heparan... (cytosol to Golgi apparatus)	transport of galfuc12gal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
+MAR08299	name	transport of galfucgalacglcgal14acglcgalglus... (cytosol to Golgi apparatus)	transport of G00083 (cytosol to Golgi apparatus)
+MAR08303	name	transport of galgalfucfucgalacglcgalacglcgal... (cytosol to Golgi apparatus)	transport of galgalfucfucgalacglcgalacglcgal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
+MAR08310	name	transport of fucfucfucgalacglc13galacglcgal1... (cytosol to Golgi apparatus)	transport of fucfucfucgalacglc13galacglcgal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
+MAR08312	name	transport of fucfuc132galacglcgal14acglcgalg... (cytosol to Golgi apparatus)	transport of fucfuc132galacglcgal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
+MAR08314	name	transport of fucfucfucgalacglcgal14acglcgalg... (cytosol to Golgi apparatus)	transport of fucfucfucgalacglcgal14acglcgalgluside heparan sulfate (cytosol to Golgi apparatus)
+MAR07307	name	transport of (alpha-D-mannosyl)8-beta-D... (endoplasmic reticulum to Golgi apparatus)	transport of (alpha-D-mannosyl)8-beta-D-mannosyl-diacetylchitobiosyl-L-asparagine (protein) (endoplasmic reticulum to Golgi apparatus)
+MAR01809	name	transport of 5beta-cholestan-3alpha,7alpha,1... (cytosol to endoplasmic reticulum)	transport of 5beta-cholestan-3alpha,7alpha,12alpha-triol (cytosol to endoplasmic reticulum)
+MAR09732	name	transport of glycophosphatidylinositol... (endoplasmic reticulum to cytosol)	transport of glycophosphatidylinositol-(GPI)-anchored-protein-precursor (endoplasmic reticulum to cytosol)
+MAR09118	name	Exchange of chondroitin sulfate B - dermatan...	Exchange of chondroitin sulfate B - dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan
+MAR09321	name	Exchange of G00043	Exchange of fucacgalfucgalacglcgalgluside heparan sulfate
+MAR01649	name	prolyl 4-hydroxylase (AKG)	prolyl 4-hydroxylase (proline)
+MAR02126	name	stearoyl-CoA desaturase (ferrocytochrome B5)	stearoyl-CoA desaturase (palmitoyl-CoA)
+MAR02128	name	stearoyl-CoA desaturase (ferrocytochrome B5)	stearoyl-CoA desaturase (stearoyl-CoA)
+MAR02186	name	alkaline phosphatase, biomineralization associated	alkaline phosphatase (6-[(1S,2R)-1,2-dihydroxy-3-triphosphooxypropyl]-7,8-dihydropterin)
+MAR02310	name	Long-Chain-Fatty-Acid-Coa Ligase	long-chain-fatty-acid-CoA ligase (palmitolate to (2E)-hexadecenoyl-CoA)
+MAR02312	name	Long-Chain-Fatty-Acid-Coa Ligase	long-chain-fatty-acid-CoA ligase (palmitolate to (2E)-hexadecenoyl-CoA)
+MAR02313	name	Long-Chain-Fatty-Acid-Coa Ligase	long-chain-fatty-acid-CoA ligase (stearidonic acid to stearoyl-CoA)
+MAR03774	name	5beta-cholestane... to 3alpha,7alpha,12alpha... conversion	5beta-cholestane-3alpha,7alpha,12alpha,27,27-pentaol to (25R)-3alpha,7alpha,12alpha-trihydroxy-5beta-cholestan-26-al conversion
+MAR04578	name	diazepam binding inhibitor, acyl-CoA binding protein	transport of 3-hydroxy trans5,8tetradecadienoyl-CoA (mitochondria to cytosol)
+MAR04616	name	diazepam binding inhibitor, acyl-CoA binding protein	transport of 3-hydroxy trans7,10-hexadecadienoyl-CoA (mitochondria to cytosol)
+MAR04793	name	Transport of Docosapentenoylcoa into Peroxisomes	ATP-driven transport of (4Z,7Z,10Z,13Z,16Z)-docosapentaenoyl-CoA (cytosol to peroxisome)
+MAR06489	name	diazepam binding inhibitor, acyl-CoA binding protein	transport of (S)-3-hydroxydodecanoyl-CoA (mitochondria to cytosol)
+MAR06528	name	diazepam binding inhibitor, acyl-CoA binding protein	transport of (S)-3-hydroxyoctadecanoyl-CoA (mitochondria to cytosol)
+MAR06586	name	diazepam binding inhibitor, acyl-CoA binding protein	transport of (S)-3-hydroxytetradecanoyl-CoA (mitochondria to cytosol)
+MAR06596	name	transport of lignocericyl-CoA from cytosol to peroxisome	ATP-driven transport of tetracosanoyl-CoA (cytosol to peroxisome)
+MAR06775	name	Transport of Pristanoylcoa from Cytosol to Peroxisomes	ATP-driven transport of pristanoyl-CoA (cytosol to peroxisome)
+MAR06779	name	Transport of Phytanoylcoa from Cytosol to Peroxisomes	ATP-driven transport of 3(S)-phytanoyl-CoA as (3S)-phytanic acid (cytosol to peroxisome)
+MAR06816	name	Transport of Stearidonylcoa into Peroxisomes	ATP-driven transport of (6Z,9Z,12Z,15Z)-octadecatetraenoyl-CoA (cytosol to peroxisome)
+MAR09942	name	sterol esterase	sterol esterase (1-Gamma-Linolenoyl-Cholesterol)
+MAR09947	name	sterol esterase	sterol esterase (Cholesteryl Docosahexanoate)
+MAR09970	name	transport of 3-(3-Hydroxy-Phenyl)Propionate Hydroxy... (cytosol to extracellular)	transport of 3-(3-Hydroxy-Phenyl)Propionate Hydroxy Derivative Glucuronide (cytosol to extracellular)
+MAR10155	name	transport of 5beta-cholestane-3alpha,7alpha,12alpha,2... (cytosol to extracellular)	ATP-driven transport of 5beta-cholestane-3alpha,7alpha,12alpha,24s,25-pentol (cytosol to extracellular)
+MAR10156	name	transport of 5beta-cholestane-3alpha,7alpha,12alpha,2... (cytosol to extracellular)	transport of 5beta-cholestane-3alpha,7alpha,12alpha,24s,25-pentol (cytosol to extracellular)
+MAR10282	name	Exchange of 1-Octadeca-Trienoylglycerophosphocholine	Exchange of 1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 9, 12, 15)
+MAR10283	name	Exchange of 1-Octadeca-Trienoylglycerophosphocholine	Exchange of 1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 6, 9, 12)
+MAR10286	name	Exchange of 1-Dihomo-Linolenoylglycerophosphocholine...	Exchange of 1-Dihomo-Linolenoylglycerophosphocholine (20:3, Delta 8, 11, 14), Lysopc A C20:3
+MAR10287	name	Exchange of 1-Eicosatetraenoylglycerophosphocholine...	Exchange of 1-Eicosatetraenoylglycerophosphocholine (Delta 8, 11, 14, 17), Sn1-Lpc (20:4)
+MAR10288	name	Exchange of 1-Eicosapentenoylglycerophosphocholine...	Exchange of 1-Eicosapentenoylglycerophosphocholine (Delta 5, 8, 11, 14, 17), Sn1-Lpc (20:5)
+MAR10289	name	Exchange of 1-Docosatetraenoylglycerophosphocholine...	Exchange of 1-Docosatetraenoylglycerophosphocholine (Delta 7, 10, 13, 16), Sn1-Lpc (22:4)
+MAR10290	name	Exchange of 1-Docosapentenoylglycerophosphocholine...	Exchange of 1-Docosapentenoylglycerophosphocholine (Delta 7, 10, 13, 16, 19), Sn1-Lpc (22:5)-W3
+MAR10291	name	Exchange of 1-Docosapentenoylglycerophosphocholine...	Exchange of 1-Docosapentenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16), Sn1-Lpc (22:5)-W6
+MAR10308	name	Exchange of 1-Eicosatrienoylglycerophosphoethanolami...	Exchange of 1-Eicosatrienoylglycerophosphoethanolamine (Delta 11, 14, 17), Lpe (20:3)
+MAR10309	name	Exchange of 1-Docosatetraenoyglycerophosphoethanolam...	Exchange of 1-Docosatetraenoyglycerophosphoethanolamine (22:4, Delta 7, 10, 13, 16)
+MAR10310	name	Exchange of 1-Docosahexenoylglyceroethanolamine...	Exchange of 1-Docosahexenoylglyceroethanolamine (Delta 4, 7, 10, 13, 16, 19), Lpe (22:6)
+MAR10313	name	Exchange of 1-Dihomo-Linolenoylglycerophosphoethanol...	Exchange of 1-Dihomo-Linolenoylglycerophosphoethanolamine (20:3, Delta 8, 11, 14)
+MAR10353	name	Exchange of 1-Timnodnoyl-Cholesterol	Exchange of cholesteryl (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate
+MAR11233	name	transport of 1-Docosatetraenoyglycerophosphoethanolam... (extracellular to cytosol)	transport of 1-Docosatetraenoyglycerophosphoethanolamine (22:4, Delta 7, 10, 13, 16) (extracellular to cytosol)
+MAR11285	name	transport of 1-Timnodnoyl-Cholesterol (cytosol to lysosome)	transport of cholesteryl (5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate (cytosol to lysosome)
+MAR11377	name	transport of 3alpha,7alpha,12alpha-trihydroxy-5beta... (cytosol to extracellular)	ATP-driven transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to extracellular)
+MAR11378	name	transport of 3alpha,7alpha,12alpha-trihydroxy-5beta... (cytosol to extracellular)	transport of 3alpha,7alpha,12alpha-trihydroxy-5beta-cholestanate (cytosol to extracellular)
+MAR11409	name	tetrahydrofolate synthase (farnesyl-PP)	farnesyl-PP to trans,trans,cis-geranyl-geranyl-pp conversion
+MAR11514	name	AU RNA binding methylglutaconyl-CoA hydratase	AU RNA binding methylglutaconyl-CoA hydratase (trans-delta-2-glutaryl-CoA)
+MAR11599	name	transport of 1-Octadeca-Trienoylglycerophosphocholine (cytosol to extracellular)	ATP-driven transport of 1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 9, 12, 15) (cytosol to extracellular)
+MAR11600	name	transport of 1-Octadeca-Trienoylglycerophosphocholine (cytosol to extracellular)	ATP-driven transport of 1-Octadeca-Trienoylglycerophosphocholine, Sn1-Lpc (18:3, Delta 6, 9, 12) (cytosol to extracellular)
+MAR11603	name	ABC-type xenobiotic transporter	ATP-driven transport of 1-Dihomo-Linolenoylglycerophosphocholine (20:3, Delta 8, 11, 14), Lysopc A C20:3 (cytosol to extracellular)
+MAR11604	name	transport of 1-Eicosatetraenoylglycerophosphocholine... (cytosol to extracellular)	transport of 1-Eicosatetraenoylglycerophosphocholine (Delta 8, 11, 14, 17), Sn1-Lpc (20:4) (cytosol to extracellular)
+MAR11605	name	ABC-type xenobiotic transporter	ATP-driven transport of 1-Eicosapentenoylglycerophosphocholine (Delta 5, 8, 11, 14, 17), Sn1-Lpc (20:5) (cytosol to extracellular)
+MAR11606	name	transport of 1-Docosatetraenoylglycerophosphocholine... (cytosol to extracellular)	transport of 1-Docosatetraenoylglycerophosphocholine (Delta 7, 10, 13, 16), Sn1-Lpc (22:4) (cytosol to extracellular)
+MAR11607	name	ABC-type xenobiotic transporter	ATP-driven transport of 1-Docosapentenoylglycerophosphocholine (Delta 7, 10, 13, 16, 19), Sn1-Lpc (22:5)-W3 (cytosol to extracellular)
+MAR11608	name	ABC-type xenobiotic transporter	ATP-driven transport of 1-Docosapentenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16), Sn1-Lpc (22:5)-W6 (cytosol to extracellular)
+MAR11620	name	transport of 1-Docosahexenoylglyceroethanolamine... (cytosol to extracellular)	transport of 1-Docosahexenoylglyceroethanolamine (Delta 4, 7, 10, 13, 16, 19), Lpe (22:6) (cytosol to extracellular)
+MAR11667	name	transport of 1-Eicosenoylglycerophosphocholine... (extracellular to cytosol)	transport of 1-Eicosenoylglycerophosphocholine (Delta 11) ,Sn1-Lpc (20:1) (extracellular to cytosol)
+MAR11668	name	ABC-type xenobiotic transporter	transport of 1-Dihomo-Linolenoylglycerophosphocholine (20:3, Delta 8, 11, 14), Lysopc A C20:3 (extracellular to cytosol)
+MAR11669	name	ABC-type xenobiotic transporter	transport of 1-Eicosatetraenoylglycerophosphocholine (Delta 8, 11, 14, 17), Sn1-Lpc (20:4) (extracellular to cytosol)
+MAR11670	name	ABC-type xenobiotic transporter	transport of 1-Eicosapentenoylglycerophosphocholine (Delta 5, 8, 11, 14, 17), Sn1-Lpc (20:5) (extracellular to cytosol)
+MAR11671	name	ABC-type xenobiotic transporter	transport of 1-Docosatetraenoylglycerophosphocholine (Delta 7, 10, 13, 16), Sn1-Lpc (22:4) (extracellular to cytosol)
+MAR11672	name	ABC-type xenobiotic transporter	transport of 1-Docosapentenoylglycerophosphocholine (Delta 7, 10, 13, 16, 19), Sn1-Lpc (22:5)-W3 (extracellular to cytosol)
+MAR11673	name	ABC-type xenobiotic transporter	transport of 1-Docosapentenoylglycerophosphocholine (Delta 4, 7, 10, 13, 16), Sn1-Lpc (22:5)-W6 (extracellular to cytosol)
+MAR11686	name	transport of 1-Eicosatrienoylglycerophosphoethanolami... (extracellular to cytosol)	transport of 1-Eicosatrienoylglycerophosphoethanolamine (Delta 11, 14, 17), Lpe (20:3) (extracellular to cytosol)
+MAR11687	name	ABC-type xenobiotic transporter	transport of 1-Docosahexenoylglyceroethanolamine (Delta 4, 7, 10, 13, 16, 19), Lpe (22:6) (extracellular to cytosol)
+MAR11690	name	ABC-type xenobiotic transporter	transport of 1-Dihomo-Linolenoylglycerophosphoethanolamine (20:3, Delta 8, 11, 14) (extracellular to cytosol)
+MAR11749	name	acyl-CoA thioesterase (trans,cis,cis-2,11,14...)	acyl-CoA thioesterase (trans,cis,cis-2,11,14-eicosatrienoyl-CoA)
+MAR11752	name	acyl-CoA thioesterase	acyl-CoA thioesterase ((5Z,8Z,11Z,14Z,17Z)-eicosapentaenoyl-CoA)
+MAR11803	name	Rh (methylamine)	transport of methylamine (extracellular to cytosol)
+MAR12064	name	Hexosaminidase A, Lysosomal Or Hexosaminidase B, Lysosomal	beta-N-acetylhexosaminidase (GA2)
+MAR12311	name	13-O-desmethyl tacrolimus,... to 13,31-O-Didesmethyl-tacrolimus conversion	13-O-desmethyl tacrolimus, 13-DMT or M-I to 13,31-O-Didesmethyl-tacrolimus conversion
+MAR12312	name	SAH to 13,31-O-Didesmethyl-tacrolimus conversion	31-DMT or M-II, 31-O-desmethyl tacrolimus to 13,31-O-Didesmethyl-tacrolimus conversion
+MAR12325	name	15-DMT or M-III,... to 15,31-O-Didesmethyl-tacrolimus conversion	15-DMT or M-III, 15-O-desmethyl tacrolimus to 15,31-O-Didesmethyl-tacrolimus conversion
+MAR12328	name	SAH to 15,31-O-Didesmethyl-tacrolimus conversion	31-DMT or M-II, 31-O-desmethyl tacrolimus to 15,31-O-Didesmethyl-tacrolimus conversion
+MAR12349	name	cytochrome P450 (atorvastatin-lactone)	cytochrome P450 (atorvastatin-lactone to 2-hydroxy-atorvastatin-lactone)
+MAR12381	name	cytochrome P450	6'-beta-hydroxy simvastatin lactone to 3'-hydroxy-simvastatin-lactone form conversion
+MAR12397	name	cytochrome P450 (atorvastatin-lactone)	cytochrome P450 (atorvastatin-lactone to 4-hydroxy-atorvastatin-lactone)
+MAR12406	name	cytochrome P450	cytochrome P450 (triol metabolite of pravastatin)
+MAR12409	name	cytochrome P450 (3-alpha-iso-pravastatin)	cytochrome P450 (3-alpha-iso-pravastatin to 5,6-epoxy-3-alpha-iso-pravastatin)
+MAR12427	name	cytochrome P450	cytochrome P450 (6'-exomethylene-simvastatin-lactone form)
+MAR12457	name	cytochrome P450 (3-alpha-iso-pravastatin)	cytochrome P450 (3-alpha-iso-pravastatin to 7-hydroxy-3-alpha-iso-pravastatin)
+MAR12515	name	UDP glucuronosyltransferase (atorvastatin-acid)	UDP glucuronosyltransferase (atorvastatin-acid to atorvastatin-acyl-glucuronide)
+MAR12516	name	UDP glucuronosyltransferase (atorvastatin-acid)	UDP glucuronosyltransferase (atorvastatin-acid to atorvastatin-ether-glucuronide)
+MAR12521	name	atorvastatin-lactone-ether... hydrolysis	atorvastatin-lactone-ether-glucuronide / G3 hydrolysis
+MAR12722	name	excretion of des-isopropyl-dihydro-fluvastatin...	excretion of des-isopropyl-dihydro-fluvastatin-tetranor-glucuronide
+MAR12777	name	cytochrome P450	cytochrome P450 (lovastatin-hydroxyacid form to 6'-beta-hydroxy-lovastatin-acid form)
+MAR12778	name	cytochrome P450	cytochrome P450 (lovastatin-hydroxyacid form to 6'-exomethylene-lovastatin-acid form)
+MAR12787	name	ATP binding cassette subfamily C	ATP-driven transport of acetaminophen-mercapturate-conjugate/N-acetyl-cysteine-acetaminophen (cytosol to extracellular)
+MAR12809	name	SAM to SAH conversion	des-isoproylpropionic-acid-fluvastatin-CoA to des-isoproylpropionic-acid-fluvastatin conversion
+MAR12839	name	beta-glucuronidase	beta-glucuronidase (simvastatin-acyl-glucuronide)

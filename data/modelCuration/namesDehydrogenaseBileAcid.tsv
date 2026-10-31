@@ -1,0 +1,9 @@
+entity	field	before	after
+MAR03107	name	medium-chain acyl-CoA dehydrogenase (docosanoyl-CoA)	acyl-CoA dehydrogenase (docosanoyl-CoA)
+MAR03107	ec-code	1.3.8.7;1.3.8.8;1.3.8.9;1.3.99.-	1.3.8.8;1.3.8.9
+MAR03111	name	medium-chain acyl-CoA dehydrogenase (eicosanoyl-CoA)	acyl-CoA dehydrogenase (eicosanoyl-CoA)
+MAR03111	ec-code	1.3.8.7;1.3.8.8;1.3.8.9;1.3.99.-	1.3.8.8;1.3.8.9
+MAR01608	name	cytochrome P450 (5beta-cholestane-3alpha,7alpha,12alpha,26-tetrol)	alcohol dehydrogenase (5beta-cholestane-3alpha,7alpha,12alpha,26-tetrol)
+MAR01762	name	cholesterol,NADPH:oxygen oxidoreductase (5alpha,6alpha-epoxidizing)	cholesterol 26-hydroxylase
+MAR02889	name	Delta(3)-Delta(2)-enoyl-CoA isomerase	3alpha,7alpha-dihydroxy-5beta-cholestan-26-al dehydrogenase (NADP+)
+MAR02889	ec-code	5.3.3.8	

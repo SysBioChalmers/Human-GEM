@@ -5,7 +5,9 @@ name: PR command
 # once the workflow is on main.
 #
 # Commands (comment must start with the command):
-#   /run gene-essentiality   run the full gene-essentiality workflow on the PR branch
+#   /run gene-essentiality   run the full gene-essentiality workflow on the PR branch;
+#                            "/run gene-essentiality orders=2" (or 3) builds every cell
+#                            line in that many reaction orders (see gene-essentiality.yml)
 #   /run memote              run the full MEMOTE suite on the PR branch
 #
 # To add a command, copy a job below, change the command in its `if`, and dispatch
@@ -44,7 +46,9 @@ jobs:
               --body ":warning: \`/run gene-essentiality\` only works for branches in this repository, not forks."
             exit 0
           fi
-          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref" -f pr="$PR" -f base="$base" -f comment="$COMMENT_ID"
+          orders=$(printf '%s' "$COMMENT_BODY" | head -n 1 | grep -oE 'orders=[1-3]' | head -n 1 | cut -d= -f2)
+          gh workflow run gene-essentiality.yml --repo "$REPO" --ref "$ref" -f pr="$PR" -f base="$base" \
+            -f comment="$COMMENT_ID" -f orders="${orders:-1}"
           # Edit the triggering comment itself rather than posting a separate new one,
           # so the thread shows the command and its acknowledgement together; the
           # finished run then overwrites this same comment with the results.

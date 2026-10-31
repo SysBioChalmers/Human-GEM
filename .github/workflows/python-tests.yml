@@ -1,18 +1,23 @@
 name: Python tests
 
-# Unit tests and lint for the scripts under code/. Those scripts decide whether a
-# pull request passes model QC, and they are run as files rather than installed as a
-# package, so nothing else exercises them. They are fast (seconds) and need no model,
+# Unit tests and lint for the scripts under code/ and the human_gem package. The
+# scripts decide whether a pull request passes model QC, and they are run as files
+# rather than installed as a package, so nothing else exercises them; the unit tests
+# also cover human_gem, which code/annotateGEM.py imports. They are fast (seconds) and need no model,
 # no solver and no licence, so they run on every pull request.
 on:
   pull_request:
     paths:
       - 'code/**'
+      - 'human_gem/**'
+      - 'pyproject.toml'
       - '.github/workflows/python-tests.yml'
   push:
     branches: [develop, main]
     paths:
       - 'code/**'
+      - 'human_gem/**'
+      - 'pyproject.toml'
       - '.github/workflows/python-tests.yml'
 
 jobs:
@@ -44,7 +49,7 @@ jobs:
           pip install pytest ruff
 
       - name: Lint with ruff
-        run: ruff check code
+        run: ruff check code human_gem
 
       - name: Run pytest
         run: python -m pytest code/test/unit -q

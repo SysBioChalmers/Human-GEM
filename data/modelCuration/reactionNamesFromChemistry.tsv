@@ -1,0 +1,77 @@
+entity	field	before	after
+MAR04702	name	homogentisate hydroxylation	homogentisate oxidative decarboxylation (gentisate aldehyde)
+MAR05155	name	glycyl-tRNA(gly) phosphorylation	synthesis of apo-[ACP]
+MAR05156	name	glycyl-tRNA(gly) phosphorylation	synthesis of mitoApo-[ACP]
+MAR05161	name	glycyl-tRNA(gly) phosphorylation	synthesis of haptoglobin
+MAR05167	name	glycyl-tRNA(gly) phosphorylation	synthesis of thioredoxin
+MAR05168	name	glycyl-tRNA(gly) phosphorylation	synthesis of mitothioredoxin
+MAR05169	name	glycyl-tRNA(gly) phosphorylation	synthesis of STAR
+MAR05170	name	glycyl-tRNA(gly) phosphorylation	synthesis of GM2A
+MAR05171	name	glycyl-tRNA(gly) phosphorylation	synthesis of apocytochrome-C
+MAR05172	name	glycyl-tRNA(gly) phosphorylation	synthesis of glycogenin
+MAR05174	name	glycyl-tRNA(gly) phosphorylation	synthesis of LPL
+MAR05259	name	albumin phosphorylation	degradation of albumin
+MAR05260	name	antichymotrypsin phosphorylation	degradation of antichymotrypsin
+MAR05261	name	antichymotrypsin phosphorylation	degradation of antichymotrypsin
+MAR05262	name	antitrypsin phosphorylation	degradation of antitrypsin
+MAR05263	name	antitrypsin phosphorylation	degradation of antitrypsin
+MAR05264	name	apoB100 phosphorylation	degradation of apoB100
+MAR05265	name	apoB100 phosphorylation	degradation of apoB100
+MAR05268	name	apoC1 phosphorylation	degradation of apoC1
+MAR05269	name	apoC2 phosphorylation	degradation of apoC2
+MAR05270	name	apoC3 phosphorylation	degradation of apoC3
+MAR05271	name	fibrinogen phosphorylation	degradation of fibrinogen
+MAR05272	name	fibrinogen phosphorylation	degradation of fibrinogen
+MAR05273	name	haptoglobin phosphorylation	degradation of haptoglobin
+MAR05274	name	haptoglobin phosphorylation	degradation of haptoglobin
+MAR05275	name	plasminogen phosphorylation	degradation of plasminogen
+MAR05276	name	plasminogen phosphorylation	degradation of plasminogen
+MAR05277	name	prothrombin phosphorylation	degradation of prothrombin
+MAR05278	name	prothrombin phosphorylation	degradation of prothrombin
+MAR05279	name	[apotransferin] phosphorylation	degradation of [apotransferin]
+MAR05280	name	[apotransferin] phosphorylation	degradation of [apotransferin]
+MAR05281	name	apoE phosphorylation	degradation of apoE
+MAR05282	name	apoE phosphorylation	degradation of apoE
+MAR05283	name	apoA1 phosphorylation	degradation of apoA1
+MAR05284	name	apoA1 phosphorylation	degradation of apoA1
+MAR05285	name	STAR phosphorylation	degradation of STAR
+MAR05286	name	GM2A phosphorylation	degradation of GM2A
+MAR05287	name	apocytochrome-C phosphorylation	degradation of apocytochrome-C
+MAR05290	name	apoB48 phosphorylation	degradation of apoB48
+MAR05291	name	LPL phosphorylation	degradation of LPL
+MAR09817	name	thioredoxin phosphorylation	degradation of thioredoxin
+MAR09818	name	mitothioredoxin phosphorylation	degradation of mitothioredoxin
+MAR04188	name	H+ reduction	PAPS reduction (activated sulphur)
+MAR02495	name	(7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA hydroxylation	(7Z,10Z,13Z,16Z,19Z)-docosapentaenoyl-CoA desaturation
+MAR02393	name	(7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA hydroxylation	(7Z,10Z,13Z,16Z)-docosatetraenoyl-CoA desaturation
+MAR03520	name	4,8-dimethylnonanoylcarnitine to 4,8-dimethylnonanoylcarnitine conversion	transport of 4,8-dimethylnonanoylcarnitine (cytosol to mitochondria) and L-carnitine (mitochondria to cytosol)
+MAR08418	name	2,6-dimethylheptanoyl-carnitine to 2,6-dimethylheptanoyl-carnitine conversion	transport of 2,6-dimethylheptanoyl-carnitine (cytosol to mitochondria) and L-carnitine (mitochondria to cytosol)
+MAR03027	name	L-carnitine to L-carnitine conversion	transport of L-carnitine (cytosol to peroxisome) and malonyl-carnitine (peroxisome to cytosol)
+MAR01659	name	choloyl-CoA phosphorylation	ATP-driven transport of choloyl-CoA (cytosol to peroxisome)
+MAR01868	name	glycocholate phosphorylation	ATP-driven transport of glycocholate (cytosol to extracellular)
+MAR01870	name	taurocholate phosphorylation	ATP-driven transport of taurocholate (cytosol to extracellular)
+MAR01872	name	taurochenodeoxycholate phosphorylation	ATP-driven transport of taurochenodeoxycholate (cytosol to extracellular)
+MAR01874	name	glycochenodeoxycholate phosphorylation	ATP-driven transport of glycochenodeoxycholate (cytosol to extracellular)
+MAR00012	name	(10Z)-heptadecenoic acid formation	fatty acid-uptake pool split into fatty acids
+MAR00685	name	(10Z)-heptadecenoic acid formation	fatty acid-LD-TG1 pool (liver tissue) split into fatty acids
+MAR00686	name	(10Z)-heptadecenoic acid formation	fatty acid-LD-TG2 pool (liver tissue) split into fatty acids
+MAR00687	name	(10Z)-heptadecenoic acid formation	fatty acid-LD-TG3 pool (liver tissue) split into fatty acids
+MAR00688	name	(10Z)-heptadecenoic acid formation	fatty acid-LD-PC pool (liver tissue) split into fatty acids
+MAR00689	name	(10Z)-heptadecenoic acid formation	fatty acid-LD-PE pool (liver tissue) split into fatty acids
+MAR00690	name	(10Z)-heptadecenoic acid formation	fatty acid-LD-PS pool (liver tissue) split into fatty acids
+MAR00691	name	(10Z)-heptadecenoic acid formation	fatty acid-LD-PI pool (liver tissue) split into fatty acids
+MAR00692	name	(10Z)-heptadecenoic acid formation	fatty acid-LD-SM pool (liver tissue) split into fatty acids
+MAR05233	name	apoA1 formation	HDL remnant degradation
+MAR05238	name	2-lysolecithin pool formation	LDL remnant degradation
+MAR05243	name	2-lysolecithin pool formation	VLDL remnant degradation
+MAR05247	name	2-lysolecithin pool formation	chylomicron remnant degradation
+MAR05257	name	(10Z)-heptadecenoic acid formation	fatty acid-LD-PC pool (liver tissue) split into fatty acids
+MAR00015	name	NEFA blood pool in to (10Z)-heptadecenoic acid conversion	NEFA blood pool in split into fatty acids
+MAR00016	name	(10Z)-heptadecenoic acid to NEFA blood pool out conversion	NEFA blood pool out formation
+MAR00021	name	alanine to biomass conversion	biomass reaction (HMR composition)
+MAR00035	name	(1aalpha,2beta,3alpha,11calpha)... to xenobiotics conversion	xenobiotics pool formation
+MAR00036	name	(11R)-HPETE to arachidonate derivatives conversion	arachidonate derivatives pool formation
+MAR00037	name	16alpha-hydroxyestrone to steroids conversion	steroids pool formation
+MAR03238	name	dihydroceramide pool hydroxylation	dihydroceramide pool desaturation
+MAR09932	name	cholesterol phosphorylation	Biomass maintenance reaction without replication, transcription, and translation precursors
+MAR12323	name	13,15-O-didesmethyl tacrolimus phosphorylation	ATP-driven transport of 13,15-O-didesmethyl tacrolimus (cytosol to extracellular)

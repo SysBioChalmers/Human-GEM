@@ -31,7 +31,6 @@ MAM02441c,malonic-dialdehyde,protonation,C3H3O2,-1.0,C3H4O2,0,O=CCC=O
 MAM02474c,methylarsonate,protonation,CH4AsO3,-1.0,CH5AsO3,0,C[As](=O)(O)O
 MAM02489c,monodehydroascorbate,protonation,C6H6O6,-1.0,C6H7O6,0,[O]C1=C(O)C(=O)O[C@@H]1[C@@H](O)CO
 MAM02496c,N(omega)-(ADP-D-ribosyl)-L-arginine,protonation,C21H34N9O15P2,-1.0,C21H35N9O15P2,0,N=C(NCCC[C@H](N)C(=O)O)N[C@H]1O[C@H](COP(=O)(O)OP(=O)(O)OC[C@H]2O[C@@H](n3cnc4c(N)ncnc43)[C@H](O)[C@@H]2O)[C@@H](O)[C@H]1O
-MAM02545c,N-acetyl-O-acetylneuraminate,protonation,C13H19NO10,-2.0,C13H21NO10,0,CC(=O)OC[C@@H](O)C(O)[C@@H]1O[C@](O)(C(=O)O)C[C@H](O)[C@H]1N=C(C)O
 MAM02682c,PAPS,protonation,C10H11N5O13P2S,-4.0,C10H15N5O13P2S,0,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OS(=O)(=O)O)[C@@H](OP(=O)(O)O)[C@H]1O
 MAM02682g,PAPS,protonation,C10H11N5O13P2S,-4.0,C10H15N5O13P2S,0,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OS(=O)(=O)O)[C@@H](OP(=O)(O)O)[C@H]1O
 MAM02682l,PAPS,protonation,C10H11N5O13P2S,-4.0,C10H15N5O13P2S,0,Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OS(=O)(=O)O)[C@@H](OP(=O)(O)O)[C@H]1O
