@@ -3808,6 +3808,13 @@
     - formula: C36H60O2
     - metFrom: HMRdatabase
   - !!omap
+    - id: MAM20096c
+    - name: 11-cis-retinyl ester
+    - compartment: c
+    - charge: 0.0
+    - formula: C21H29O2R
+    - metFrom: HumanGEM
+  - !!omap
     - id: MAM00293c
     - name: 11-dehydro-thromboxane B2
     - compartment: c
@@ -144894,21 +144901,21 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06639
-    - name: phosphatidylcholine:retinol O-acyltransferase
+    - name: phosphatidylcholine:11-cis-retinol O-acyltransferase
     - metabolites: !!omap
       - MAM00291c: -1.0
       - MAM00535c: 1.0
       - MAM02684c: -1.0
-      - MAM02838c: 1.0
+      - MAM20096c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000062282 or ENSG00000114113 or ENSG00000114115 or ENSG00000121207 or ENSG00000147160 or ENSG00000185000 or ENSG00000204195
+    - gene_reaction_rule: ENSG00000121207
     - subsystem:
       - Retinol metabolism
     - annotation: !!omap
       - ec-code:
         - 2.3.1.135
-        - 2.3.1.75
+    - references: doi:10.1021/bi0342416;doi:10.1016/s0006-291x(88)80818-0;doi:10.1016/S0021-9258(18)81839-7
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -200926,24 +200933,6 @@
       - ec-code:
         - 2.3.1.135
     - references: PMID:14596594;PMID:1503811;PMID:15474300
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR01506
-    - name: Lecithin Retinol Acyltransferase (11-Cis)
-    - metabolites: !!omap
-      - MAM00291c: -1.0
-      - MAM00656c: 1.0
-      - MAM02684c: -1.0
-      - MAM02838c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Vitamin A metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.14.14.1
-    - references: PMID:1503811
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
