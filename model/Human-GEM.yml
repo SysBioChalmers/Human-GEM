@@ -271416,9 +271416,6 @@
     - id: ENSG00000100448
     - name: CTSG
   - !!omap
-    - id: ENSG00000100479
-    - name: POLE2
-  - !!omap
     - id: ENSG00000100504
     - name: PYGL
   - !!omap
@@ -276986,9 +276983,6 @@
   - !!omap
     - id: ENSG00000177076
     - name: ACER2
-  - !!omap
-    - id: ENSG00000177084
-    - name: POLE
   - !!omap
     - id: ENSG00000177108
     - name: ZDHHC22
