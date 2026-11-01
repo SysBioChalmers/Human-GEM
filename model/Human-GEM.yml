@@ -108278,7 +108278,8 @@
     - name: acyl-CoA oxidase (4-cis-decenoyl-CoA)
     - metabolites: !!omap
       - MAM00980x: -1.0
-      - MAM02039x: 2.0
+      - MAM01802x: -1.0
+      - MAM01803x: 1.0
       - MAM03543x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
