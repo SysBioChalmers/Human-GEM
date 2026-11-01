@@ -84519,13 +84519,13 @@
       - MAM02759r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Oxidative phosphorylation
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
-    - references: PMID:10542310;PMID:16300924
+    - references: PMID:10542310;PMID:16300924;doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -84538,13 +84538,13 @@
       - MAM02759c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Oxidative phosphorylation
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
-    - references: PMID:10542310;PMID:16300924
+    - references: PMID:10542310;PMID:16300924;doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -84557,13 +84557,13 @@
       - MAM02759x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Oxidative phosphorylation
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
-    - references: PMID:10542310;PMID:16300924
+    - references: PMID:10542310;PMID:16300924;doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -84595,13 +84595,13 @@
       - MAM02759m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Oxidative phosphorylation
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
-    - references: PMID:10542310;PMID:16300924
+    - references: PMID:10542310;PMID:16300924;doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -150999,12 +150999,13 @@
       - MAM02759n: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Miscellaneous
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
+    - references: doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
