@@ -84521,13 +84521,13 @@
       - MAM02759r: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Oxidative phosphorylation
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
-    - references: PMID:10542310;PMID:16300924
+    - references: PMID:10542310;PMID:16300924;doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -84540,13 +84540,13 @@
       - MAM02759c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Oxidative phosphorylation
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
-    - references: PMID:10542310;PMID:16300924
+    - references: PMID:10542310;PMID:16300924;doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -84559,13 +84559,13 @@
       - MAM02759x: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Oxidative phosphorylation
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
-    - references: PMID:10542310;PMID:16300924
+    - references: PMID:10542310;PMID:16300924;doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -84597,13 +84597,13 @@
       - MAM02759m: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Oxidative phosphorylation
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
-    - references: PMID:10542310;PMID:16300924
+    - references: PMID:10542310;PMID:16300924;doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -89943,12 +89943,13 @@
       - MAM02647c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Fatty acid desaturation (even-chain)
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -89964,12 +89965,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000149485
     - subsystem:
       - Fatty acid desaturation (even-chain)
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -90890,12 +90892,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -90990,12 +90993,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000149485
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -91186,12 +91190,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.3
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -92288,12 +92293,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.3
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -92378,12 +92384,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000149485
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -101436,13 +101443,13 @@
       - MAM02635m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
-    - references: PMID:12133002;PMID:4475632;PMID:5810070
+    - references: PMID:12133002;PMID:4475632;PMID:5810070;doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -101506,13 +101513,13 @@
       - MAM02634m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
-    - references: PMID:14598172;PMID:2351134;PMID:6361812;PMID:8132483
+    - references: PMID:14598172;PMID:2351134;PMID:6361812;PMID:8132483;doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -101541,13 +101548,13 @@
       - MAM02774m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
-    - references: PMID:12133002;PMID:4475632;PMID:5810070
+    - references: PMID:12133002;PMID:4475632;PMID:5810070;doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -101842,13 +101849,13 @@
       - MAM02678m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
-    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212PMID:7711730
+    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212PMID:7711730;doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -101876,12 +101883,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -101910,13 +101918,13 @@
       - MAM02677m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
-    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212
+    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212;doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -101944,12 +101952,13 @@
       - MAM02348m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -101977,12 +101986,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102010,12 +102020,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102044,12 +102055,13 @@
       - MAM02941m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102077,12 +102089,13 @@
       - MAM02639m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102110,12 +102123,13 @@
       - MAM02640m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102144,13 +102158,13 @@
       - MAM02647m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
-    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212
+    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212;doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102178,12 +102192,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102211,12 +102226,13 @@
       - MAM02638m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102244,12 +102260,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102277,12 +102294,13 @@
       - MAM02612m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102310,12 +102328,13 @@
       - MAM02348m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102343,12 +102362,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102376,12 +102396,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102409,12 +102430,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102442,12 +102464,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102475,12 +102498,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102508,7 +102532,7 @@
       - MAM02348m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -102541,7 +102565,7 @@
       - MAM02348m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -102574,7 +102598,7 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -102607,7 +102631,7 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -102640,12 +102664,13 @@
       - MAM02637m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102673,12 +102698,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102706,12 +102732,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102739,12 +102766,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102772,7 +102800,7 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -102805,7 +102833,7 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -102839,12 +102867,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102872,7 +102901,7 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -102905,7 +102934,7 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -102938,12 +102967,13 @@
       - MAM02391m: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -102971,12 +103001,13 @@
       - MAM02348m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103004,12 +103035,13 @@
       - MAM02348m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103037,12 +103069,13 @@
       - MAM02348m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103070,7 +103103,7 @@
       - MAM02636m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -103103,7 +103136,7 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -103136,12 +103169,13 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103169,7 +103203,7 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -103202,7 +103236,7 @@
       - MAM02348m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321 or ENSG00000157184
+    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Carnitine shuttle (mitochondrial)
     - annotation: !!omap
@@ -103731,13 +103765,12 @@
       - MAM02678r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
-    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212PMID:7711730
+    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212PMID:7711730;doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103765,12 +103798,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103799,13 +103832,12 @@
       - MAM02677r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
-    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212
+    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212;doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103833,12 +103865,12 @@
       - MAM02348r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103866,12 +103898,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103899,12 +103931,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103932,12 +103964,12 @@
       - MAM02941r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103965,12 +103997,12 @@
       - MAM02639r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -103998,12 +104030,12 @@
       - MAM02640r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104032,13 +104064,12 @@
       - MAM02647r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
-    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212
+    - references: PMID:1735445;PMID:1988962;PMID:2355017;PMID:6361812;PMID:7892212;doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104066,12 +104097,12 @@
       - MAM02348r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104099,12 +104130,12 @@
       - MAM02638r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104132,12 +104163,12 @@
       - MAM02348r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104165,12 +104196,12 @@
       - MAM02612r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104198,12 +104229,12 @@
       - MAM02348r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104231,12 +104262,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104264,12 +104295,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104297,12 +104328,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104330,12 +104361,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104363,12 +104394,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104396,12 +104427,12 @@
       - MAM02348r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104429,12 +104460,12 @@
       - MAM02348r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104462,12 +104493,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104495,12 +104526,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104528,12 +104559,12 @@
       - MAM02637r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104561,12 +104592,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104594,12 +104625,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104627,12 +104658,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104660,12 +104691,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104693,12 +104724,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104726,12 +104757,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104759,12 +104790,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104792,12 +104823,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104825,12 +104856,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104858,12 +104889,12 @@
       - MAM02391r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104891,12 +104922,12 @@
       - MAM02348r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104924,12 +104955,12 @@
       - MAM02348r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104957,12 +104988,12 @@
       - MAM02348r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -104990,12 +105021,12 @@
       - MAM02636r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105023,12 +105054,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105056,12 +105087,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105089,12 +105120,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105122,12 +105153,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105173,12 +105204,12 @@
       - MAM03047r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105224,12 +105255,12 @@
       - MAM02971r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105275,12 +105306,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105326,12 +105357,12 @@
       - MAM02348r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105377,12 +105408,12 @@
       - MAM02348r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105428,12 +105459,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105479,12 +105510,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105530,12 +105561,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -105581,12 +105612,12 @@
       - MAM02348r: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000095321
     - subsystem:
       - Carnitine shuttle (endoplasmic reticular)
     - annotation: !!omap
       - ec-code:
         - 2.3.1.7
+    - references: doi:10.1016/s0021-9258(18)53640-1;doi:10.1111/j.1432-1033.2004.03997.x
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -135066,20 +135097,18 @@
     - metabolites: !!omap
       - MAM00618x: -1.0
       - MAM00749x: 1.0
-      - MAM01802x: 1.0
-      - MAM01803x: -1.0
-      - MAM02040x: 2.0
-      - MAM02630x: -1.0
+      - MAM01802x: -1.0
+      - MAM01803x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000087008 or ENSG00000161533
+    - gene_reaction_rule: ENSG00000168306
     - subsystem:
       - Bile acid biosynthesis
     - annotation: !!omap
       - ec-code:
         - 1.3.3.6
         - 1.17.99.-
-    - references: PMID:11356170;PMID:8943006
+    - references: PMID:11356170;PMID:8943006;doi:10.1016/j.bbadis.2017.12.032;doi:10.1016/s0021-9258(18)82206-2;doi:10.1006/bbrc.1996.0981
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -150983,12 +151012,13 @@
       - MAM02759n: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000143363 or ENSG00000180817
+    - gene_reaction_rule: ENSG00000107902 or ENSG00000138777 or ENSG00000180817
     - subsystem:
       - Miscellaneous
     - annotation: !!omap
       - ec-code:
         - 3.6.1.1
+    - references: doi:10.1021/bi8010847
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -197431,12 +197461,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
         - 1.14.19.3
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -200364,12 +200395,12 @@
       - MAM02348m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
         - 2.3.1.21
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -200759,12 +200790,12 @@
       - MAM02971m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
         - 2.3.1.21
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -201357,12 +201388,12 @@
       - MAM02348m: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000157184
     - subsystem:
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
         - 2.1.1.28
+    - references: doi:10.1016/j.bbadis.2010.06.002
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -268159,7 +268190,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR20114
-    - name: MAR20014
+    - name: FADH2:oxygen oxidoreductase
     - metabolites: !!omap
       - MAM01802x: 1.0
       - MAM01803x: -1.0
@@ -278262,9 +278293,6 @@
   - !!omap
     - id: ENSG00000218823
     - name: PAPOLB
-  - !!omap
-    - id: ENSG00000221968
-    - name: FADS3
   - !!omap
     - id: ENSG00000221988
     - name: PPT2
