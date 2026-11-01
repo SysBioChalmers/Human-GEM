@@ -50,3 +50,4 @@ Static dumps of external sources that were kept here during the Human1 series (S
 - `carnitineAcyltransferaseGprs.tsv`: per-entity table of the change "carnitine acyltransferase GPRs follow the chain lengths each enzyme is active on" (`code/modelCuration/applyCurationTable.py`). The group column names the decision: 2a (mitochondrial C16 to C20), 2d (C2 to C4), Q48 (C21 and C22), Q50 (C24 and C26) and Q47 (ER, C16 and longer).
 - `fattyAcidDesaturaseGprs.tsv`: per-entity table of the change "FADS1 and FADS2 rules follow the regiospecificity, FADS3 is removed" (`code/modelCuration/applyCurationTable.py`).
 - `diphosphataseGprs.tsv`: per-entity table of the change "PRUNE1 is removed from the diphosphate phosphohydrolases" (`code/modelCuration/applyCurationTable.py`).
+- `acox2ReferenceStereoisomer.tsv`: per-entity table of the change "MAR01638 cites the 25S specificity of the trihydroxycoprostanoyl-CoA oxidase" (`code/modelCuration/applyCurationTable.py`).
