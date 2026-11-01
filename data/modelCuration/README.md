@@ -50,3 +50,7 @@ Static dumps of external sources that were kept here during the Human1 series (S
 - `dibenzoPyreneDiolEpoxide.tsv`: per-entity table of the change "formula of the dibenzo[a,l]pyrene diol epoxide and the proton of its formation" (`code/modelCuration/applyCurationTable.py`).
 - `nitricOxideSynthaseStoichiometry.tsv`: per-entity table of the change "stoichiometry of the arginine nitric oxide synthase reaction" (`code/modelCuration/applyCurationTable.py`).
 - `alkenylEtherLipidFormulas.tsv`: per-entity table of the change "the vinyl ether carbons of the alkenyl ether lipids are counted inside R" (`code/modelCuration/applyCurationTable.py`).
+- `steroidDeltaIsomerase.tsv`: per-entity table of the change "the Delta-isomerase of androstenedione has no cofactor" (`code/modelCuration/applyCurationTable.py`).
+- `catecholEstrogenPeroxidase.tsv`: per-entity table of the change "the peroxidases oxidise two catechol estrogens per H2O2" (`code/modelCuration/applyCurationTable.py`).
+- `acylCoAOxidase4CisDecenoylCoA.tsv`: per-entity table of the change "the oxidase of 4-cis-decenoyl-CoA reduces FAD" (`code/modelCuration/applyCurationTable.py`).
+- `pristanoylCoALumpedOxidation.tsv`: per-entity table of the change "the lumped pristanoyl-CoA oxidation counts its three cycles" (`code/modelCuration/applyCurationTable.py`).
