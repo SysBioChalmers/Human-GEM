@@ -14,7 +14,7 @@ _Rows marked **(gate)** block the merge; every other row is a non-blocking repor
 
 #### Reaction directions
 
-_Reaction directions: the alarm and the warning catch only directions that thermodynamics makes very unlikely. A reaction without an alarm or warning is not thereby shown to have the right reversibility._
+_The alarm and the warning flag only directions that the estimated ΔG'm makes very unlikely; the alarm also flags a reaction that can release O2. Most reactions have no ΔG estimate, so a reaction without an alarm or warning is not shown to have the right direction._
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
