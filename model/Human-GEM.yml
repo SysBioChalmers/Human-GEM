@@ -144510,16 +144510,18 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04768
-    - name: uroporphyrin III to uroporphyrinogen III conversion
+    - name: uroporphyrinogen III oxidation to uroporphyrin III
     - metabolites: !!omap
-      - MAM02039c: -6.0
-      - MAM03126c: -1.0
-      - MAM03128c: 1.0
-    - lower_bound: -1000.0
+      - MAM02041c: 3.0
+      - MAM02630c: -3.0
+      - MAM03126c: 1.0
+      - MAM03128c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000140505
     - subsystem:
       - Porphyrin metabolism
-    - references: PMID:11281297
+    - references: PMID:11281297;doi:10.3390/biom16081188
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -144538,16 +144540,17 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04770
-    - name: coproporphyrin III to coproporphyrinogen III conversion
+    - name: coproporphyrinogen III oxidation to coproporphyrin III
     - metabolites: !!omap
-      - MAM01604c: -1.0
-      - MAM01606c: 1.0
-      - MAM02039c: -6.0
-    - lower_bound: -1000.0
+      - MAM01604c: 1.0
+      - MAM01606c: -1.0
+      - MAM02041c: 3.0
+      - MAM02630c: -3.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Porphyrin metabolism
-    - references: PMID:11281297
+    - references: PMID:11281297;doi:10.3390/biom16081188
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -144584,16 +144587,17 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04773
-    - name: coproporphyrin I to coproporphyrinogen I conversion
+    - name: coproporphyrinogen I oxidation to coproporphyrin I
     - metabolites: !!omap
-      - MAM01603c: -1.0
-      - MAM01605c: 1.0
-      - MAM02039c: -6.0
-    - lower_bound: -1000.0
+      - MAM01603c: 1.0
+      - MAM01605c: -1.0
+      - MAM02041c: 3.0
+      - MAM02630c: -3.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Porphyrin metabolism
-    - references: PMID:11281297
+    - references: PMID:11281297;doi:10.3390/biom16081188
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
