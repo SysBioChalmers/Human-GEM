@@ -1,26 +1,21 @@
 ## Model quality report
 
-:warning: **7** pre-existing finding(s), no regressions vs `develop`. Non-blocking. Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:, direction alarms **0** :white_check_mark:.
+:x: **1** regression(s) vs `develop`. Review the row(s) below. Gates: duplicate keys **0** :white_check_mark:, growth **1.9** :white_check_mark:, direction alarms **0** :white_check_mark:.
 
 | Section | Status |
 | --- | --- |
-| Model &amp; network checks (24) | :warning: **7** pre-existing |
+| Model &amp; network checks (24) | :x: **1** regression(s) |
 | Model file &amp; metabolic tasks (8) | :white_check_mark: all pass |
-| MEMOTE | :white_check_mark: **63.8%** (core subset) |
+| MEMOTE | :sparkles: **63.9%** (core subset) |
 | Full report | [model_qc_summary.md](model_qc_summary.md) |
 
-**Improved:**
-- Twin reactions with a missing or conflicting EC number: **0**
-- Unused genes: **0**
+**Regression(s):**
+- Reactions flagged by MACAW dead-end test: [**1382**](macaw_results.tsv)
 
-**Pre-existing:**
-- Reaction directions: warning: [**70**](qc_reversibility.csv)
-- Mass-imbalanced reactions: [**65**](balance_results.csv)
-- Charge-imbalanced reactions: [**145**](balance_results.csv)
-- Structure vs formula/charge inconsistencies: [**51**](qc_structure_consistency.csv)
-- Reactions flagged as MACAW duplicates: [**338**](macaw_results.tsv)
-- Reactions flagged by MACAW dead-end test: [**1380**](macaw_results.tsv)
-- Reactions split across compartments: [**26**](qc_split_compartments.csv)
+**Improved:**
+- Mass-imbalanced reactions: **0**
+- Charge-imbalanced reactions: [**87**](balance_results.csv)
+- Structure vs formula/charge inconsistencies: [**48**](qc_structure_consistency.csv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
 

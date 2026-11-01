@@ -131,3 +131,73 @@ def test_a_value_that_differs_from_before_is_reported(root):
 def test_a_value_already_set_is_skipped(root):
     changed, problems = run(root, [("MAR00002", "rxnMetaNetXID", "MNXR9", "MNXR2")])
     assert problems == [] and not changed
+
+
+def test_gene_reaction_rule_written_with_symbols(root):
+    changed, problems = run(root, [("MAR00002", "gene_reaction_rule", "GLYK", "GLYK or GLYK")])
+    assert problems == [] and changed["gene_reaction_rule"] == 1
+    assert "    - gene_reaction_rule: ENSG00000000001 or ENSG00000000001\n" in yml(root)
+
+
+def test_gene_reaction_rule_removed(root):
+    run(root, [("MAR00002", "gene_reaction_rule", "GLYK", "")])
+    assert "gene_reaction_rule" not in yml(root)
+
+
+def test_gene_reaction_rule_with_unknown_symbol_is_an_error(root):
+    with pytest.raises(ValueError):
+        run(root, [("MAR00002", "gene_reaction_rule", "GLYK", "NOPE")])
+
+
+def test_metabolites_replaced_in_the_given_order(root):
+    changed, problems = run(root, [("MAR00001", "metabolites", "MAM00001c:-1.0", "MAM00001c:-1.0;MAM00001c:2.0")])
+    assert problems == [] and changed["metabolites"] == 1
+    assert "    - metabolites: !!omap\n      - MAM00001c: -1.0\n      - MAM00001c: 2.0\n    - lower_bound" in yml(root)
+
+
+def test_references_added_before_rxnfrom(root):
+    run(root, [("MAR00002", "references", "", "doi:10.1/x")])
+    assert "    - references: doi:10.1/x\n    - rxnFrom: HMRdatabase" in yml(root)
+
+
+def test_unused_gene_is_deleted_from_both_files(root):
+    changed, problems = run(root, [("MAR00002", "gene_reaction_rule", "GLYK", ""),
+                                   ("ENSG00000000001", "gene", "present", "")])
+    assert problems == [] and changed["gene"] == 1
+    assert "ENSG00000000001" not in yml(root)
+    assert "ENSG00000000001" not in (root / "model" / "genes.tsv").read_text(encoding="utf-8")
+
+
+def test_gene_still_in_a_rule_is_kept(root):
+    changed, problems = run(root, [("ENSG00000000001", "gene", "present", "")])
+    assert problems == ["ENSG00000000001 gene: still in the rule of MAR00002"]
+    assert "ENSG00000000001" in yml(root)
+
+
+def test_edits_that_change_the_line_count_leave_later_entries_findable(root):
+    changed, problems = run(root, [
+        ("MAR00001", "references", "PMID:1", ""),
+        ("MAR00001", "gene_reaction_rule", "", "GLYK"),
+        ("MAR00002", "references", "", "doi:10.1/x"),
+        ("MAR00002", "name", "glycine kinase", "glycerate kinase")])
+    assert problems == [] and sum(changed.values()) == 4
+    text = yml(root)
+    assert "    - references: PMID:1" not in text
+    assert "    - name: glycerate kinase" in text and "    - references: doi:10.1/x\n    - rxnFrom" in text
+
+
+def test_rule_row_is_skipped_when_a_gene_of_the_old_rule_was_deleted(root):
+    run(root, [("MAR00002", "gene_reaction_rule", "GLYK", ""), ("ENSG00000000001", "gene", "present", "")])
+    changed, problems = run(root, [("MAR00002", "gene_reaction_rule", "GLYK or GONE", "")])
+    assert problems == [] and not changed
+
+
+def test_bounds_changed_as_floats(root):
+    changed, problems = run(root, [("MAR00001", "lower_bound", "0", "-1000"), ("MAR00001", "upper_bound", "1000.0", "500")])
+    assert problems == [] and changed["lower_bound"] == 1 and changed["upper_bound"] == 1
+    assert "    - lower_bound: -1000.0\n    - upper_bound: 500.0\n" in yml(root)
+
+
+def test_bound_that_differs_from_before_is_reported(root):
+    changed, problems = run(root, [("MAR00001", "lower_bound", "-5", "-1")])
+    assert problems == ["MAR00001 lower_bound: '0.0', expected '-5'"]

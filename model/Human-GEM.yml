@@ -2124,16 +2124,16 @@
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00136c
-    - name: (ADP-D-ribosyl)n+1-acceptor
+    - name: (ADP-D-ribosyl)n-acceptor
     - compartment: c
     - charge: 0.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00137c
-    - name: (ADP-D-ribosyl)n-acceptor
+    - name: (ADP-D-ribosyl)n+1-acceptor
     - compartment: c
-    - charge: 0.0
+    - charge: -2.0
     - formula: C15H19N5O13P2X
     - metFrom: HMRdatabase
   - !!omap
@@ -2715,7 +2715,7 @@
     - name: "[protein]"
     - compartment: c
     - charge: 0.0
-    - formula: X
+    - formula: CHNOR2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00197c
@@ -2971,22 +2971,22 @@
     - id: MAM00222c
     - name: 1-(1-alkenyl)-sn-glycero-3-phosphate
     - compartment: c
-    - charge: 0.0
-    - formula: C5H10O6PR
+    - charge: -2.0
+    - formula: C3H4O6PR
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00223c
     - name: 1-(1-alkenyl)-sn-glycero-3-phosphoethanolamine
     - compartment: c
     - charge: 0.0
-    - formula: C7H15NO6PR
+    - formula: C5H11NO6PR
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00224c
     - name: 1-(1-alkenyl)-sn-glycerol
     - compartment: c
     - charge: 0.0
-    - formula: C5H9O3R
+    - formula: C3H5O3R
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00225c
@@ -5226,14 +5226,14 @@
     - name: 17beta-estradiol-3,4-semiquinone
     - compartment: c
     - charge: 0.0
-    - formula: C18H22O3
+    - formula: C18H23O3
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00413l
     - name: 17beta-estradiol-3,4-semiquinone
     - compartment: l
     - charge: 0.0
-    - formula: C18H22O3
+    - formula: C18H23O3
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00414c
@@ -5961,7 +5961,7 @@
     - name: 1-alkenyl-2-acylglycerol
     - compartment: c
     - charge: 0.0
-    - formula: C6H8O4R2
+    - formula: C4H4O4R2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00513c
@@ -7158,7 +7158,7 @@
     - name: 2-acyl-1-(1-alkenyl)-sn-glycero-3-phosphate
     - compartment: c
     - charge: -2.0
-    - formula: C6H7O7PR2
+    - formula: C4H3O7PR2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00628c
@@ -10069,8 +10069,8 @@
     - id: MAM00917c
     - name: 3-succinoylpyridine
     - compartment: c
-    - charge: 0.0
-    - formula: C9H9NO3
+    - charge: -1.0
+    - formula: C9H8NO3
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00918c
@@ -12533,8 +12533,8 @@
     - id: MAM01156c
     - name: 6-[2,3-dihydroxy-1-(hydroxymethyl)propyl]-1,2-dihydro-7-hydroxy-9-methoxy-cyclopenta[c][1]benzopyran-3,4-dione
     - compartment: c
-    - charge: 0.0
-    - formula: C17H18O8
+    - charge: -1.0
+    - formula: C17H17O8
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01157x
@@ -13772,7 +13772,7 @@
     - id: MAM01266c
     - name: activated methyl group
     - compartment: c
-    - charge: 0.0
+    - charge: 1.0
     - formula: CH3
     - metFrom: HMRdatabase
   - !!omap
@@ -14623,19 +14623,19 @@
     - formula: C22H37NO2
     - metFrom: HMRdatabase
   - !!omap
-    - id: MAM01336c
-    - name: androstenediol
+    - id: MAM20097c
+    - name: 5alpha-androstane-3beta,17beta-diol
     - compartment: c
     - charge: 0.0
-    - formula: C19H30O2
-    - metFrom: HMRdatabase
+    - formula: C19H32O2
+    - metFrom: HumanGEM
   - !!omap
-    - id: MAM01336r
-    - name: androstenediol
+    - id: MAM20097r
+    - name: 5alpha-androstane-3beta,17beta-diol
     - compartment: r
     - charge: 0.0
-    - formula: C19H30O2
-    - metFrom: HMRdatabase
+    - formula: C19H32O2
+    - metFrom: HumanGEM
   - !!omap
     - id: MAM01337c
     - name: androsterone sulfate
@@ -21553,7 +21553,7 @@
     - id: MAM01825c
     - name: ferrocytochrome B5
     - compartment: c
-    - charge: 0.0
+    - charge: -1.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
@@ -22898,13 +22898,6 @@
     - compartment: c
     - charge: -2.0
     - formula: C16H23N5O16P2
-    - metFrom: HMRdatabase
-  - !!omap
-    - id: MAM01952c
-    - name: gentisate aldehyde
-    - compartment: c
-    - charge: 0.0
-    - formula: C7H6O3
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01953c
@@ -27447,7 +27440,7 @@
     - name: L-arginyl-protein
     - compartment: c
     - charge: 1.0
-    - formula: C6H13N4OX
+    - formula: C7H14N5O2R2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02340c
@@ -27691,15 +27684,15 @@
     - id: MAM02357c
     - name: lepidimoide
     - compartment: c
-    - charge: 0.0
-    - formula: X
+    - charge: -1.0
+    - formula: C12H17O10
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02357e
     - name: lepidimoide
     - compartment: e
-    - charge: 0.0
-    - formula: X
+    - charge: -1.0
+    - formula: C12H17O10
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02358m
@@ -31016,7 +31009,7 @@
     - name: O-1-alk-1-enyl-2-acyl-sn-glycero-3-phosphoethanolamine
     - compartment: c
     - charge: 0.0
-    - formula: C8H14NO7PR2
+    - formula: C6H10NO7PR2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02630c
@@ -33821,21 +33814,21 @@
     - id: MAM02827c
     - name: reduced adrenal ferredoxin
     - compartment: c
-    - charge: 0.0
+    - charge: -1.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02828c
     - name: reduced ferredoxin
     - compartment: c
-    - charge: 0.0
+    - charge: -1.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02828m
     - name: reduced ferredoxin
     - compartment: m
-    - charge: 0.0
+    - charge: -1.0
     - formula: X
     - metFrom: HMRdatabase
   - !!omap
@@ -41615,12 +41608,12 @@
     - formula: C19H30O2
     - metFrom: Recon3D
   - !!omap
-    - id: MAM01336m
-    - name: androstenediol
+    - id: MAM20097m
+    - name: 5alpha-androstane-3beta,17beta-diol
     - compartment: m
     - charge: 0.0
-    - formula: C19H30O2
-    - metFrom: Recon3D
+    - formula: C19H32O2
+    - metFrom: HumanGEM
   - !!omap
     - id: MAM00708r
     - name: 3(S)-hydroxy-all-cis-8,11,14,17-eicosatetraenoyl-CoA
@@ -42767,14 +42760,14 @@
     - name: Dibenzo[A,L]Pyrene-11,12-Diol-13,14-Epoxide
     - compartment: c
     - charge: 0.0
-    - formula: C24H14O3
+    - formula: C24H16O3
     - metFrom: Recon3D
   - !!omap
     - id: MAM03385r
     - name: Dibenzo[A,L]Pyrene-11,12-Diol-13,14-Epoxide
     - compartment: r
     - charge: 0.0
-    - formula: C24H14O3
+    - formula: C24H16O3
     - metFrom: Recon3D
   - !!omap
     - id: MAM02999c
@@ -56983,7 +56976,7 @@
     - name: "[protein]"
     - compartment: r
     - charge: 0.0
-    - formula: X
+    - formula: CHNOR2
   - !!omap
     - id: MAM10012c
     - name: cofactor_pool_biomass
@@ -72501,68 +72494,6 @@
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
-    - id: MAR04702
-    - name: homogentisate oxidative decarboxylation (gentisate aldehyde)
-    - metabolites: !!omap
-      - MAM01596c: 1.0
-      - MAM01952c: 1.0
-      - MAM02040c: 1.0
-      - MAM02135c: -1.0
-      - MAM02554c: 1.0
-      - MAM02555c: -1.0
-      - MAM02630c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Tyrosine metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 4.1.1.-
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR04703
-    - name: Gentisate aldehyde:NAD+ oxidoreductase
-    - metabolites: !!omap
-      - MAM00576c: 1.0
-      - MAM01952c: -1.0
-      - MAM02039c: 2.0
-      - MAM02040c: -1.0
-      - MAM02552c: -1.0
-      - MAM02553c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000138356
-    - subsystem:
-      - Tyrosine metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.2.1.29
-    - references: PMID:11569919;PMID:16143537
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR04704
-    - name: aldehyde oxidase (gentisate aldehyde)
-    - metabolites: !!omap
-      - MAM00576c: 1.0
-      - MAM01952c: -1.0
-      - MAM02039c: 1.0
-      - MAM02040c: -1.0
-      - MAM02041c: 1.0
-      - MAM02630c: -1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000138356
-    - subsystem:
-      - Tyrosine metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.2.3.1
-    - references: PMID:11569919;PMID:16143537
-    - rxnFrom: HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR06988
     - name: iodide:hydrogen-peroxide oxidoreductase
     - metabolites: !!omap
@@ -86935,7 +86866,8 @@
     - annotation: !!omap
       - ec-code:
         - 6.2.1.3
-    - rxnFrom: HMRdatabase
+    - references: PMID:8584017
+    - rxnFrom: HMRdatabase;Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR02983
@@ -108278,7 +108210,8 @@
     - name: acyl-CoA oxidase (4-cis-decenoyl-CoA)
     - metabolites: !!omap
       - MAM00980x: -1.0
-      - MAM02039x: 2.0
+      - MAM01802x: -1.0
+      - MAM01803x: 1.0
       - MAM03543x: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -108288,8 +108221,8 @@
     - annotation: !!omap
       - ec-code:
         - 1.3.3.6
-    - references: PMID:8973539;PMID:10407780;PMID:11356167
-    - rxnFrom: HMRdatabase
+    - references: PMID:8973539;PMID:10407780;PMID:11356167;PMID:18536048;PMID:17458872
+    - rxnFrom: HMRdatabase;Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03323
@@ -114355,9 +114288,6 @@
     - metabolites: !!omap
       - MAM00971c: 1.0
       - MAM01075c: -1.0
-      - MAM02039c: -1.0
-      - MAM02552c: -1.0
-      - MAM02553c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000203857 or ENSG00000203859
@@ -114375,9 +114305,6 @@
     - metabolites: !!omap
       - MAM00971r: 1.0
       - MAM01075r: -1.0
-      - MAM02039r: -1.0
-      - MAM02552r: -1.0
-      - MAM02553r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000203857 or ENSG00000203859
@@ -114676,10 +114603,10 @@
     - name: 3beta-hydroxy-Delta(5)-steroid dehydrogenase (5-alpha-dihydrotestosterone)
     - metabolites: !!omap
       - MAM01069c: -1.0
-      - MAM01336c: 1.0
-      - MAM02039c: 1.0
+      - MAM02039c: -1.0
       - MAM02552c: 1.0
       - MAM02553c: -1.0
+      - MAM20097c: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000203857 or ENSG00000203859
@@ -114696,10 +114623,10 @@
     - name: 3beta-hydroxy-Delta(5)-steroid dehydrogenase (5-alpha-dihydrotestosterone)
     - metabolites: !!omap
       - MAM01069r: -1.0
-      - MAM01336r: 1.0
-      - MAM02039r: 1.0
+      - MAM02039r: -1.0
       - MAM02552r: 1.0
       - MAM02553r: -1.0
+      - MAM20097r: 1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000203857 or ENSG00000203859
@@ -116488,9 +116415,8 @@
     - id: MAR02061
     - name: peroxidase (2-hydroxyestrone)
     - metabolites: !!omap
-      - MAM00650c: -1.0
-      - MAM01792c: 1.0
-      - MAM02039c: -1.0
+      - MAM00650c: -2.0
+      - MAM01792c: 2.0
       - MAM02040c: 2.0
       - MAM02041c: -1.0
     - lower_bound: -1000.0
@@ -116509,9 +116435,8 @@
     - id: MAR02062
     - name: peroxidase (2-hydroxyestrone)
     - metabolites: !!omap
-      - MAM00650l: -1.0
-      - MAM01792l: 1.0
-      - MAM02039l: -1.0
+      - MAM00650l: -2.0
+      - MAM01792l: 2.0
       - MAM02040l: 2.0
       - MAM02041l: -1.0
     - lower_bound: -1000.0
@@ -116530,9 +116455,8 @@
     - id: MAR02063
     - name: peroxidase (2-hydroxyestrone)
     - metabolites: !!omap
-      - MAM00650r: -1.0
-      - MAM01792r: 1.0
-      - MAM02039r: -1.0
+      - MAM00650r: -2.0
+      - MAM01792r: 2.0
       - MAM02040r: 2.0
       - MAM02041r: -1.0
     - lower_bound: -1000.0
@@ -116711,9 +116635,8 @@
     - id: MAR02076
     - name: peroxidase (4-hydroxyestrone)
     - metabolites: !!omap
-      - MAM01000c: -1.0
-      - MAM01794c: 1.0
-      - MAM02039c: -1.0
+      - MAM01000c: -2.0
+      - MAM01794c: 2.0
       - MAM02040c: 2.0
       - MAM02041c: -1.0
     - lower_bound: -1000.0
@@ -116732,9 +116655,8 @@
     - id: MAR02077
     - name: peroxidase (4-hydroxyestrone)
     - metabolites: !!omap
-      - MAM01000l: -1.0
-      - MAM01794l: 1.0
-      - MAM02039l: -1.0
+      - MAM01000l: -2.0
+      - MAM01794l: 2.0
       - MAM02040l: 2.0
       - MAM02041l: -1.0
     - lower_bound: -1000.0
@@ -116753,9 +116675,8 @@
     - id: MAR02078
     - name: peroxidase (4-hydroxyestrone)
     - metabolites: !!omap
-      - MAM01000r: -1.0
-      - MAM01794r: 1.0
-      - MAM02039r: -1.0
+      - MAM01000r: -2.0
+      - MAM01794r: 2.0
       - MAM02040r: 2.0
       - MAM02041r: -1.0
     - lower_bound: -1000.0
@@ -116862,8 +116783,8 @@
     - id: MAR02088
     - name: peroxidase (17beta-estradiol-3,4-semiquinone)
     - metabolites: !!omap
-      - MAM00413c: -1.0
-      - MAM00986c: 1.0
+      - MAM00413c: -2.0
+      - MAM00986c: 2.0
       - MAM02040c: -2.0
       - MAM02041c: 1.0
     - lower_bound: -1000.0
@@ -116882,8 +116803,8 @@
     - id: MAR02089
     - name: peroxidase (17beta-estradiol-3,4-semiquinone)
     - metabolites: !!omap
-      - MAM00413l: -1.0
-      - MAM00986l: 1.0
+      - MAM00413l: -2.0
+      - MAM00986l: 2.0
       - MAM02040l: -2.0
       - MAM02041l: 1.0
     - lower_bound: -1000.0
@@ -116904,6 +116825,7 @@
     - metabolites: !!omap
       - MAM00412c: 1.0
       - MAM00413c: -1.0
+      - MAM02039c: 1.0
       - MAM02630c: -1.0
       - MAM02631c: 1.0
     - lower_bound: 0.0
@@ -116989,9 +116911,8 @@
     - id: MAR02099
     - name: peroxidase (17beta-estradiol-2,3-semiquinone)
     - metabolites: !!omap
-      - MAM00411c: -1.0
-      - MAM00649c: 1.0
-      - MAM02039c: 1.0
+      - MAM00411c: -2.0
+      - MAM00649c: 2.0
       - MAM02040c: -2.0
       - MAM02041c: 1.0
     - lower_bound: -1000.0
@@ -117010,9 +116931,8 @@
     - id: MAR02100
     - name: peroxidase (17beta-estradiol-2,3-semiquinone)
     - metabolites: !!omap
-      - MAM00411l: -1.0
-      - MAM00649l: 1.0
-      - MAM02039l: 1.0
+      - MAM00411l: -2.0
+      - MAM00649l: 2.0
       - MAM02040l: -2.0
       - MAM02041l: 1.0
     - lower_bound: -1000.0
@@ -129668,7 +129588,7 @@
       - MAM00222c: 1.0
       - MAM00223c: -1.0
       - MAM01797c: 1.0
-      - MAM02039c: -1.0
+      - MAM02039c: 1.0
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
@@ -144591,44 +144511,48 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04768
-    - name: uroporphyrin III to uroporphyrinogen III conversion
+    - name: uroporphyrinogen III oxidation to uroporphyrin III
     - metabolites: !!omap
-      - MAM02039c: -6.0
-      - MAM03126c: -1.0
-      - MAM03128c: 1.0
-    - lower_bound: -1000.0
+      - MAM02041c: 3.0
+      - MAM02630c: -3.0
+      - MAM03126c: 1.0
+      - MAM03128c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
+    - gene_reaction_rule: ENSG00000140505
     - subsystem:
       - Porphyrin metabolism
-    - references: PMID:11281297
+    - references: PMID:11281297;doi:10.3390/biom16081188
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
     - id: MAR04769
-    - name: uroporphyrin I to uroporphyrinogen III conversion
+    - name: uroporphyrinogen I oxidation to uroporphyrin I
     - metabolites: !!omap
-      - MAM02039c: -6.0
-      - MAM03125c: -1.0
-      - MAM03128c: 1.0
-    - lower_bound: -1000.0
+      - MAM02041c: 3.0
+      - MAM02630c: -3.0
+      - MAM03125c: 1.0
+      - MAM03127c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Porphyrin metabolism
-    - references: PMID:11281297
+    - references: PMID:11281297;doi:10.3390/biom16081188
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
     - id: MAR04770
-    - name: coproporphyrin III to coproporphyrinogen III conversion
+    - name: coproporphyrinogen III oxidation to coproporphyrin III
     - metabolites: !!omap
-      - MAM01604c: -1.0
-      - MAM01606c: 1.0
-      - MAM02039c: -6.0
-    - lower_bound: -1000.0
+      - MAM01604c: 1.0
+      - MAM01606c: -1.0
+      - MAM02041c: 3.0
+      - MAM02630c: -3.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Porphyrin metabolism
-    - references: PMID:11281297
+    - references: PMID:11281297;doi:10.3390/biom16081188
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -144665,16 +144589,17 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04773
-    - name: coproporphyrin I to coproporphyrinogen I conversion
+    - name: coproporphyrinogen I oxidation to coproporphyrin I
     - metabolites: !!omap
-      - MAM01603c: -1.0
-      - MAM01605c: 1.0
-      - MAM02039c: -6.0
-    - lower_bound: -1000.0
+      - MAM01603c: 1.0
+      - MAM01605c: -1.0
+      - MAM02041c: 3.0
+      - MAM02630c: -3.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Porphyrin metabolism
-    - references: PMID:11281297
+    - references: PMID:11281297;doi:10.3390/biom16081188
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149148,7 +149073,9 @@
     - metabolites: !!omap
       - MAM00229c: 1.0
       - MAM01294c: -1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000053371 or ENSG00000162482
@@ -149157,6 +149084,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - references: doi:10.1021/tx010005p;doi:10.1093/carcin/20.7.1215
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149165,7 +149093,9 @@
     - metabolites: !!omap
       - MAM00229c: -1.0
       - MAM01156c: 1.0
-      - MAM02039c: -3.0
+      - MAM02039c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000053371 or ENSG00000162482
@@ -149174,6 +149104,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - references: doi:10.1021/tx010005p;doi:10.1093/carcin/20.7.1215
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149182,7 +149113,9 @@
     - metabolites: !!omap
       - MAM01294c: -1.0
       - MAM01318c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000053371 or ENSG00000162482
@@ -149191,6 +149124,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - references: doi:10.1021/tx010005p;doi:10.1093/carcin/20.7.1215
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149199,7 +149133,9 @@
     - metabolites: !!omap
       - MAM01156c: 1.0
       - MAM01318c: -1.0
-      - MAM02039c: -3.0
+      - MAM02039c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000053371 or ENSG00000162482
@@ -149208,6 +149144,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - references: doi:10.1021/tx010005p;doi:10.1093/carcin/20.7.1215
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149884,19 +149821,18 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07070
-    - name: 4-hydroxy-1-(3-pyridinyl)-1-butanone hydroxylation
+    - name: 4-hydroxy-1-(3-pyridinyl)-1-butanone oxidation
     - metabolites: !!omap
       - MAM00917c: 1.0
       - MAM00985c: -1.0
       - MAM02039c: 1.0
       - MAM02040c: 1.0
-      - MAM02554c: 1.0
-      - MAM02555c: -1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Xenobiotics metabolism
+    - references: doi:10.1021/tx980005y
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149918,7 +149854,6 @@
     - metabolites: !!omap
       - MAM00917c: 1.0
       - MAM01025c: -1.0
-      - MAM02039c: -1.0
       - MAM02040c: 1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
@@ -149973,19 +149908,18 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR07076
-    - name: 1-(3-pyridinyl)-1,4-butanediol hydroxylation
+    - name: 1-(3-pyridinyl)-1,4-butanediol oxidation
     - metabolites: !!omap
       - MAM00225c: -1.0
       - MAM01929c: 1.0
-      - MAM02039c: 2.0
+      - MAM02039c: 1.0
       - MAM02040c: 1.0
-      - MAM02554c: 1.0
-      - MAM02555c: -1.0
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Xenobiotics metabolism
+    - references: doi:10.1021/tx980005y
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -201713,9 +201647,9 @@
     - metabolites: !!omap
       - MAM01261x: 1.0
       - MAM01597x: -3.0
-      - MAM01802x: -2.0
-      - MAM01803x: 2.0
-      - MAM02039x: 5.0
+      - MAM01802x: -3.0
+      - MAM01803x: 3.0
+      - MAM02039x: 3.0
       - MAM02040x: -3.0
       - MAM02552x: -3.0
       - MAM02553x: 3.0
@@ -203318,28 +203252,6 @@
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
-    - id: MAR02023
-    - name: L-Arginine, NADPH:Oxygen Oxidoreductase (Nitric-Oxide-Forming)
-    - metabolites: !!omap
-      - MAM01365c: -1.0
-      - MAM01588c: 1.0
-      - MAM02040c: 2.0
-      - MAM02554c: 2.0
-      - MAM02555c: -2.0
-      - MAM02609c: 1.0
-      - MAM02630c: -2.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000007171 or ENSG00000089250 or ENSG00000164867
-    - subsystem:
-      - Arginine and proline metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.14.13.39
-    - references: PMID:11125020;PMID:7515853
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR02026
     - name: Farnesyl-Diphosphate:Farnesyl-Diphosphate Farnesyltransferase
     - metabolites: !!omap
@@ -204323,28 +204235,6 @@
       - MAM01597c: -1.0
       - MAM02675c: -1.0
       - MAM02759c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000068366 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000197142
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 6.2.1.3
-    - references: PMID:8584017
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR02313
-    - name: long-chain-fatty-acid-CoA ligase (stearidonic acid to stearoyl-CoA)
-    - metabolites: !!omap
-      - MAM01334r: 1.0
-      - MAM01371r: -1.0
-      - MAM01597r: -1.0
-      - MAM02039r: -8.0
-      - MAM02759r: 1.0
-      - MAM02939r: -1.0
-      - MAM02941r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000068366 or ENSG00000123983 or ENSG00000130377 or ENSG00000140284 or ENSG00000151726 or ENSG00000164398 or ENSG00000197142
@@ -206503,25 +206393,6 @@
         - 1.3.3.6
     - references: PMID:10407780;PMID:11356167;PMID:8973539
     - rxnFrom: Recon3D;HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR02818
-    - name: long-chain-acyl-CoA dehydrogenase (4-cis-decenoyl-CoA)
-    - metabolites: !!omap
-      - MAM00980x: -1.0
-      - MAM01802x: -1.0
-      - MAM01803x: 1.0
-      - MAM03543x: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000087008 or ENSG00000161533
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 1.3.8.8
-    - references: PMID:10407780;PMID:11356167;PMID:8973539;PMID:18536048;PMID:17458872
-    - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR02820
@@ -208952,10 +208823,10 @@
     - name: 3Beta-Hydroxy-Delta5-Steroid Dehydrogenase
     - metabolites: !!omap
       - MAM01069m: 1.0
-      - MAM01336m: -1.0
-      - MAM02039m: -1.0
+      - MAM02039m: 1.0
       - MAM02552m: -1.0
       - MAM02553m: 1.0
+      - MAM20097m: -1.0
     - lower_bound: -1000.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000203857 or ENSG00000203859
@@ -212029,7 +211900,7 @@
     - id: MAR04088
     - name: Unspecific Monooxygenase
     - metabolites: !!omap
-      - MAM02039c: 1.0
+      - MAM02039c: -1.0
       - MAM02040c: 1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
@@ -212049,7 +211920,7 @@
     - id: MAR04090
     - name: Unspecific Monooxygenase
     - metabolites: !!omap
-      - MAM02039r: 1.0
+      - MAM02039r: -1.0
       - MAM02040r: 1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
