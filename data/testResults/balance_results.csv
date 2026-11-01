@@ -3,6 +3,8 @@ MAR01065,"3-hydroxyacyl-CoA dehydrogenase (11,12-EET)",,-2
 MAR01067,"3-hydroxyacyl-CoA dehydrogenase (7,8-epoxy-(4Z,10Z)-hexadecadienoic acid)",,-2
 MAR01068,"3-hydroxyacyl-CoA dehydrogenase (14,15-EET)",,-2
 MAR01079,fatty acid amide hydrolase (arachidonate),,-4
+MAR01185,(2E)-dodecenoyl-CoA formation (4(R)-hydroxy-dodec-(6Z)-enoate),,2
+MAR01227,(2E)-dodecenoyl-CoA formation (4(S)-hydroxy-dodec-(6Z)-enoate),,2
 MAR01301,acetyl-CoA C-acyltransferase (16e-18-oxo-18-CoA-dinor-LTE4),,5
 MAR01302,choloyl-CoA hydrolase (omega-COOH-tetranor-LTE3-CoA),,-3
 MAR01303,acyl-CoA oxidase (omega-COOH-tetranor-LTE3-CoA),,-3
@@ -28,7 +30,6 @@ MAR01419,4-hydroperoxy-H4-neuroprostane to 4-hydroxy-E4-neuroprostane conversion
 MAR01427,13-hydroperoxy-H4-neuroprostane to 13-hydroxy-D4-neuroprostane conversion,,-2
 MAR01430,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-E4-neuroprostane conversion,,-2
 MAR01431,17-hydroperoxy-H4-neuroprostane to 17-hydroxy-D4-neuroprostane conversion,,-2
-MAR02091,"17beta-estradiol-3,4-semiquinone to 17beta-estradiol-3,4-quinone conversion",,-1
 MAR02443,13(S)-HPODE to 13-oxy-radical-octadecadienoate conversion,,-2
 MAR02449,"12,13-epoxy-9-alkoxy-(10E)-octadecenoate hydrolysis",,-1
 MAR02451,"1-hydroperoxy-8-carboxyoctyl-3,4-epoxynon-(2E)-enyl-ether to 4-oxo-2-nonenal conversion",,2
@@ -57,7 +58,6 @@ MAR04549,6-hydroxymelatonin-sulfate to 6-hydroxymelatonin conversion,,-2
 MAR04552,hydroxide to melatonin radical conversion,,1
 MAR04553,cyclic-3-hydroxymelatonin hydrolysis,,-1
 MAR04763,heme oxygenase (biliverdin-producing) (hemoglobin),,1
-MAR04769,uroporphyrin I to uroporphyrinogen III conversion,,-6
 MAR06393,hydroxide to dehydroascorbic acid conversion,,1
 MAR06456,gamma-tocopheroxyl-radical to gamma-tocopherol conversion,,-1
 MAR06457,8alpha-hydroxy-gamma-tocopherone to gamma-tocopheroxyl-radical conversion,,-1

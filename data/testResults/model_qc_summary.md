@@ -30,15 +30,15 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
 | [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | 0 | -65 | :sparkles: |
 | [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [87](balance_results.csv) | -58 | :sparkles: |
-| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [51](qc_structure_consistency.csv) | 0 | :warning: |
+| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [48](qc_structure_consistency.csv) | -3 | :sparkles: |
 
 #### Network structure
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
-| [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | [1](qc_duplicate_reactions.csv) | +1 | :x: |
-| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [340](macaw_results.tsv) | +2 | :x: |
+| [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
+| [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [338](macaw_results.tsv) | 0 | :warning: |
 | [Twin reactions with a missing or conflicting EC number](README.md#twin-reactions-with-a-missing-or-conflicting-ec-number) | 0 | 0 | :white_check_mark: |
 | [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1382](macaw_results.tsv) | +2 | :x: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
@@ -86,7 +86,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | Section | Test | Score |
 | --- | --- | ---: |
 | Consistency | Mass Balance | 99.4% |
-| Consistency | Charge Balance | 98.7% |
+| Consistency | Charge Balance | 98.8% |
 | Consistency | Metabolite Connectivity | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |
 | Annotation - Metabolites | Metabolite Annotations Per Database | 47.1% |
