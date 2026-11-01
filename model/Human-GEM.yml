@@ -2971,8 +2971,8 @@
     - id: MAM00222c
     - name: 1-(1-alkenyl)-sn-glycero-3-phosphate
     - compartment: c
-    - charge: 0.0
-    - formula: C3H6O6PR
+    - charge: -2.0
+    - formula: C3H4O6PR
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00223c
@@ -129588,7 +129588,7 @@
       - MAM00222c: 1.0
       - MAM00223c: -1.0
       - MAM01797c: 1.0
-      - MAM02039c: -1.0
+      - MAM02039c: 1.0
       - MAM02040c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
