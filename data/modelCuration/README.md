@@ -46,3 +46,6 @@ This directory contains curation-related data files that support changes to the 
 - `rxnFromHuman1Curation.tsv`: per-entity table of the change "rxnFrom on the reactions added in the Human1 curation" (`code/modelCuration/applyCurationTable.py`).
 
 Static dumps of external sources that were kept here during the Human1 series (SwissProt / Cell Atlas / DeepLoc2 subcellular locations, Rhea reaction associations, and metabolite SMILES/InChI) have been removed for the Human2 release. They had gone stale and are better queried fresh from the source when needed. They remain in the git history and in the last Human1 release, [v1.19.0](https://github.com/SysBioChalmers/Human-GEM/releases/tag/v1.19.0).
+- `aflatoxinDialdehydeReductions.tsv`: per-entity table of the change "aflatoxin B1 dialdehyde reductions take NADPH" (`code/modelCuration/applyCurationTable.py`).
+- `dibenzoPyreneDiolEpoxide.tsv`: per-entity table of the change "formula of the dibenzo[a,l]pyrene diol epoxide and the proton of its formation" (`code/modelCuration/applyCurationTable.py`).
+- `nitricOxideSynthaseStoichiometry.tsv`: per-entity table of the change "stoichiometry of the arginine nitric oxide synthase reaction" (`code/modelCuration/applyCurationTable.py`).
