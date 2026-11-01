@@ -190,3 +190,14 @@ def test_rule_row_is_skipped_when_a_gene_of_the_old_rule_was_deleted(root):
     run(root, [("MAR00002", "gene_reaction_rule", "GLYK", ""), ("ENSG00000000001", "gene", "present", "")])
     changed, problems = run(root, [("MAR00002", "gene_reaction_rule", "GLYK or GONE", "")])
     assert problems == [] and not changed
+
+
+def test_bounds_changed_as_floats(root):
+    changed, problems = run(root, [("MAR00001", "lower_bound", "0", "-1000"), ("MAR00001", "upper_bound", "1000.0", "500")])
+    assert problems == [] and changed["lower_bound"] == 1 and changed["upper_bound"] == 1
+    assert "    - lower_bound: -1000.0\n    - upper_bound: 500.0\n" in yml(root)
+
+
+def test_bound_that_differs_from_before_is_reported(root):
+    changed, problems = run(root, [("MAR00001", "lower_bound", "-5", "-1")])
+    assert problems == ["MAR00001 lower_bound: '0.0', expected '-5'"]

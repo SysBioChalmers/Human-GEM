@@ -7,7 +7,7 @@ changed value; further columns (a note, a source) are ignored. entity is a react
 (MAR), metabolite (MAM) or gene (ENSG) id, and field is one of:
 
   - name (reactions, metabolites and genes), formula and charge (metabolites), ec-code,
-    rxnFrom, references and gene_reaction_rule (reactions) and metabolites (reactions), in
+    rxnFrom, references, gene_reaction_rule, metabolites, lower_bound and upper_bound (reactions), in
     model/Human-GEM.yml; several EC numbers are joined by ";"; gene_reaction_rule is written
     with gene symbols, which the script maps to the Ensembl ids of the genes section;
     metabolites is a ";"-separated list of id:coefficient pairs;
@@ -36,7 +36,8 @@ YML = Path("model/Human-GEM.yml")
 TSV = {"MAR": Path("model/reactions.tsv"), "MAM": Path("model/metabolites.tsv"),
        "ENSG": Path("model/genes.tsv")}
 SECTION = {"MAR": "reactions", "MAM": "metabolites", "ENSG": "genes"}
-YAML_FIELDS = {"MAR": {"name", "ec-code", "rxnFrom", "references", "gene_reaction_rule", "metabolites"},
+BOUNDS = {"lower_bound", "upper_bound"}
+YAML_FIELDS = {"MAR": {"name", "ec-code", "rxnFrom", "references", "gene_reaction_rule", "metabolites"} | BOUNDS,
                "MAM": {"name", "formula", "charge"},
                "ENSG": {"name"}}
 # Field order of a reaction entry, as raven_toolbox.io.write_yaml_model writes it.
@@ -180,7 +181,7 @@ class Model:
             pairs = [pair.rsplit(":", 1) for pair in value.split(";")]
             self.lines[first + 1:end] = [f"      - {met}: {float(coefficient)!r}" for met, coefficient in pairs]
         else:
-            text = charge_text(value) if field == "charge" else render(value)
+            text = charge_text(value) if field == "charge" or field in BOUNDS else render(value)
             if field in blocks:
                 first, end = blocks[field]
                 assert end == first + 1, (entry, field)
@@ -341,7 +342,7 @@ def apply(rows: list[dict], root: Path = Path(".")) -> tuple[Counter, list[str],
                 problems.append(f"{entity}: not in {YML}")
                 continue
             current = model.get(section, entity, field)
-            same = same_charge if field == "charge" else str.__eq__
+            same = same_charge if field == "charge" or field in BOUNDS else str.__eq__
             if same(current, after):
                 continue
             if before is None or not same(current, before):
