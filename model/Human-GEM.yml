@@ -42767,14 +42767,14 @@
     - name: Dibenzo[A,L]Pyrene-11,12-Diol-13,14-Epoxide
     - compartment: c
     - charge: 0.0
-    - formula: C24H14O3
+    - formula: C24H16O3
     - metFrom: Recon3D
   - !!omap
     - id: MAM03385r
     - name: Dibenzo[A,L]Pyrene-11,12-Diol-13,14-Epoxide
     - compartment: r
     - charge: 0.0
-    - formula: C24H14O3
+    - formula: C24H16O3
     - metFrom: Recon3D
   - !!omap
     - id: MAM02999c
@@ -212041,7 +212041,7 @@
     - id: MAR04088
     - name: Unspecific Monooxygenase
     - metabolites: !!omap
-      - MAM02039c: 1.0
+      - MAM02039c: -1.0
       - MAM02040c: 1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
@@ -212061,7 +212061,7 @@
     - id: MAR04090
     - name: Unspecific Monooxygenase
     - metabolites: !!omap
-      - MAM02039r: 1.0
+      - MAM02039r: -1.0
       - MAM02040r: 1.0
       - MAM02554r: 1.0
       - MAM02555r: -1.0
