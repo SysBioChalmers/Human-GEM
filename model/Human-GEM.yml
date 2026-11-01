@@ -108221,8 +108221,8 @@
     - annotation: !!omap
       - ec-code:
         - 1.3.3.6
-    - references: PMID:8973539;PMID:10407780;PMID:11356167
-    - rxnFrom: HMRdatabase
+    - references: PMID:8973539;PMID:10407780;PMID:11356167;PMID:18536048;PMID:17458872
+    - rxnFrom: HMRdatabase;Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR03323
@@ -206414,25 +206414,6 @@
         - 1.3.3.6
     - references: PMID:10407780;PMID:11356167;PMID:8973539
     - rxnFrom: Recon3D;HMRdatabase
-    - confidence_score: 0.0
-  - !!omap
-    - id: MAR02818
-    - name: long-chain-acyl-CoA dehydrogenase (4-cis-decenoyl-CoA)
-    - metabolites: !!omap
-      - MAM00980x: -1.0
-      - MAM01802x: -1.0
-      - MAM01803x: 1.0
-      - MAM03543x: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000087008 or ENSG00000161533
-    - subsystem:
-      - Fatty acid oxidation
-    - annotation: !!omap
-      - ec-code:
-        - 1.3.8.8
-    - references: PMID:10407780;PMID:11356167;PMID:8973539;PMID:18536048;PMID:17458872
-    - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR02820
