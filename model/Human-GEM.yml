@@ -2972,21 +2972,21 @@
     - name: 1-(1-alkenyl)-sn-glycero-3-phosphate
     - compartment: c
     - charge: 0.0
-    - formula: C5H10O6PR
+    - formula: C3H6O6PR
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00223c
     - name: 1-(1-alkenyl)-sn-glycero-3-phosphoethanolamine
     - compartment: c
     - charge: 0.0
-    - formula: C7H15NO6PR
+    - formula: C5H11NO6PR
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00224c
     - name: 1-(1-alkenyl)-sn-glycerol
     - compartment: c
     - charge: 0.0
-    - formula: C5H9O3R
+    - formula: C3H5O3R
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00225c
@@ -5961,7 +5961,7 @@
     - name: 1-alkenyl-2-acylglycerol
     - compartment: c
     - charge: 0.0
-    - formula: C6H8O4R2
+    - formula: C4H4O4R2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00513c
@@ -7158,7 +7158,7 @@
     - name: 2-acyl-1-(1-alkenyl)-sn-glycero-3-phosphate
     - compartment: c
     - charge: -2.0
-    - formula: C6H7O7PR2
+    - formula: C4H3O7PR2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00628c
@@ -31016,7 +31016,7 @@
     - name: O-1-alk-1-enyl-2-acyl-sn-glycero-3-phosphoethanolamine
     - compartment: c
     - charge: 0.0
-    - formula: C8H14NO7PR2
+    - formula: C6H10NO7PR2
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM02630c
