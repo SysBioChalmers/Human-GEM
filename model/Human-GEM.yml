@@ -116482,9 +116482,8 @@
     - id: MAR02061
     - name: peroxidase (2-hydroxyestrone)
     - metabolites: !!omap
-      - MAM00650c: -1.0
-      - MAM01792c: 1.0
-      - MAM02039c: -1.0
+      - MAM00650c: -2.0
+      - MAM01792c: 2.0
       - MAM02040c: 2.0
       - MAM02041c: -1.0
     - lower_bound: -1000.0
@@ -116503,9 +116502,8 @@
     - id: MAR02062
     - name: peroxidase (2-hydroxyestrone)
     - metabolites: !!omap
-      - MAM00650l: -1.0
-      - MAM01792l: 1.0
-      - MAM02039l: -1.0
+      - MAM00650l: -2.0
+      - MAM01792l: 2.0
       - MAM02040l: 2.0
       - MAM02041l: -1.0
     - lower_bound: -1000.0
@@ -116524,9 +116522,8 @@
     - id: MAR02063
     - name: peroxidase (2-hydroxyestrone)
     - metabolites: !!omap
-      - MAM00650r: -1.0
-      - MAM01792r: 1.0
-      - MAM02039r: -1.0
+      - MAM00650r: -2.0
+      - MAM01792r: 2.0
       - MAM02040r: 2.0
       - MAM02041r: -1.0
     - lower_bound: -1000.0
@@ -116705,9 +116702,8 @@
     - id: MAR02076
     - name: peroxidase (4-hydroxyestrone)
     - metabolites: !!omap
-      - MAM01000c: -1.0
-      - MAM01794c: 1.0
-      - MAM02039c: -1.0
+      - MAM01000c: -2.0
+      - MAM01794c: 2.0
       - MAM02040c: 2.0
       - MAM02041c: -1.0
     - lower_bound: -1000.0
@@ -116726,9 +116722,8 @@
     - id: MAR02077
     - name: peroxidase (4-hydroxyestrone)
     - metabolites: !!omap
-      - MAM01000l: -1.0
-      - MAM01794l: 1.0
-      - MAM02039l: -1.0
+      - MAM01000l: -2.0
+      - MAM01794l: 2.0
       - MAM02040l: 2.0
       - MAM02041l: -1.0
     - lower_bound: -1000.0
@@ -116747,9 +116742,8 @@
     - id: MAR02078
     - name: peroxidase (4-hydroxyestrone)
     - metabolites: !!omap
-      - MAM01000r: -1.0
-      - MAM01794r: 1.0
-      - MAM02039r: -1.0
+      - MAM01000r: -2.0
+      - MAM01794r: 2.0
       - MAM02040r: 2.0
       - MAM02041r: -1.0
     - lower_bound: -1000.0
@@ -116983,9 +116977,8 @@
     - id: MAR02099
     - name: peroxidase (17beta-estradiol-2,3-semiquinone)
     - metabolites: !!omap
-      - MAM00411c: -1.0
-      - MAM00649c: 1.0
-      - MAM02039c: 1.0
+      - MAM00411c: -2.0
+      - MAM00649c: 2.0
       - MAM02040c: -2.0
       - MAM02041c: 1.0
     - lower_bound: -1000.0
@@ -117004,9 +116997,8 @@
     - id: MAR02100
     - name: peroxidase (17beta-estradiol-2,3-semiquinone)
     - metabolites: !!omap
-      - MAM00411l: -1.0
-      - MAM00649l: 1.0
-      - MAM02039l: 1.0
+      - MAM00411l: -2.0
+      - MAM00649l: 2.0
       - MAM02040l: -2.0
       - MAM02041l: 1.0
     - lower_bound: -1000.0
