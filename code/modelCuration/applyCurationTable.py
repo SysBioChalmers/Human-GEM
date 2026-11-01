@@ -6,11 +6,16 @@ The table is tab-separated with the columns entity, field, before and after, one
 changed value; further columns (a note, a source) are ignored. entity is a reaction
 (MAR), metabolite (MAM) or gene (ENSG) id, and field is one of:
 
-  - name (reactions, metabolites and genes), formula and charge (metabolites), ec-code and
-    rxnFrom (reactions), in model/Human-GEM.yml; several EC numbers are joined by ";";
+  - name (reactions, metabolites and genes), formula and charge (metabolites), ec-code,
+    rxnFrom, references and gene_reaction_rule (reactions) and metabolites (reactions), in
+    model/Human-GEM.yml; several EC numbers are joined by ";"; gene_reaction_rule is written
+    with gene symbols, which the script maps to the Ensembl ids of the genes section;
+    metabolites is a ";"-separated list of id:coefficient pairs;
   - a column of model/reactions.tsv, model/metabolites.tsv or model/genes.tsv.
 
-An empty value stands for an absent field or an empty cell. A row is applied when the
+An empty value stands for an absent field or an empty cell. A gene row (field gene, before
+present, after empty) deletes the gene from the genes section of the YAML and from
+model/genes.tsv; it is refused while a reaction still uses the gene. A row is applied when the
 current value equals before. A value that already equals after is left as it is; any other
 value is reported and nothing is written. The files are edited in place, line by line, so
 every line that the table does not change stays byte-identical. --dry-run reports what
@@ -31,7 +36,8 @@ YML = Path("model/Human-GEM.yml")
 TSV = {"MAR": Path("model/reactions.tsv"), "MAM": Path("model/metabolites.tsv"),
        "ENSG": Path("model/genes.tsv")}
 SECTION = {"MAR": "reactions", "MAM": "metabolites", "ENSG": "genes"}
-YAML_FIELDS = {"MAR": {"name", "ec-code", "rxnFrom"}, "MAM": {"name", "formula", "charge"},
+YAML_FIELDS = {"MAR": {"name", "ec-code", "rxnFrom", "references", "gene_reaction_rule", "metabolites"},
+               "MAM": {"name", "formula", "charge"},
                "ENSG": {"name"}}
 # Field order of a reaction entry, as raven_toolbox.io.write_yaml_model writes it.
 REACTION_ORDER = ["id", "name", "metabolites", "lower_bound", "upper_bound", "gene_reaction_rule",
@@ -157,6 +163,10 @@ class Model:
             return ";".join(codes)
         if field not in blocks:
             return ""
+        if field == "metabolites":
+            first, end = blocks[field]
+            pairs = (self.lines[i][len("      - "):].split(": ") for i in range(first + 1, end))
+            return ";".join(f"{met}:{float(coefficient)!r}" for met, coefficient in pairs)
         line = self.lines[blocks[field][0]]
         return parse(line.split(": ", 1)[1]) if ": " in line else ""
 
@@ -165,6 +175,10 @@ class Model:
         blocks = self.fields(section, entry)
         if field == "ec-code":
             self._set_ec(blocks, entry, value)
+        elif field == "metabolites":
+            first, end = blocks[field]
+            pairs = [pair.rsplit(":", 1) for pair in value.split(";")]
+            self.lines[first + 1:end] = [f"      - {met}: {float(coefficient)!r}" for met, coefficient in pairs]
         else:
             text = charge_text(value) if field == "charge" else render(value)
             if field in blocks:
@@ -176,8 +190,11 @@ class Model:
                     self.lines[first] = f"    - {field}: {text}"
             elif value != "":
                 self.lines.insert(self._position(blocks, entry, field), f"    - {field}: {text}")
-        if len(self.lines) != n_lines:
-            self.index()
+        delta = len(self.lines) - n_lines
+        if delta:
+            start, end = self.entries[(section, entry)]
+            self.entries = {key: (a + delta, b + delta) if a >= end else (a, b + delta) if key == (section, entry) else (a, b)
+                            for key, (a, b) in self.entries.items()}
 
     def _set_ec(self, blocks: dict, entry: str, value: str) -> None:
         codes = [c for c in value.split(";") if c]
@@ -206,6 +223,23 @@ class Model:
             return min(starts)
         return max(end for _, end in blocks.values())
 
+    def delete_entry(self, section: str, entry: str) -> None:
+        start, end = self.entries[(section, entry)]
+        del self.lines[start:end]
+        self.index()
+
+    def rule_users(self, gene: str) -> list[str]:
+        """The reactions whose gene_reaction_rule contains the gene id."""
+        users = []
+        for (section, entry) in self.entries:
+            if section == "reactions" and gene in self.get(section, entry, "gene_reaction_rule").split():
+                users.append(entry)
+        return users
+
+    def gene_ids(self) -> dict:
+        """Gene symbol -> Ensembl id of the genes section."""
+        return {self.get("genes", g, "name"): g for (section, g) in self.entries if section == "genes"}
+
     def save(self) -> None:
         self.path.write_text("\n".join(self.lines), encoding="utf-8")
 
@@ -231,6 +265,10 @@ class Table:
         values[self.header.index(column)] = value
         self.lines[self.rows[key]] = "\t".join(values)
 
+    def delete(self, key: str) -> None:
+        del self.lines[self.rows[key]]
+        self.rows = {line.split("\t", 1)[0]: i for i, line in enumerate(self.lines[1:], 1) if line}
+
     def save(self) -> None:
         self.path.write_text("\n".join(self.lines), encoding="utf-8")
 
@@ -241,6 +279,19 @@ def kind_of(entity: str) -> str:
         if entity.startswith(prefix):
             return prefix
     raise ValueError(f"{entity}: not a reaction, metabolite or gene id")
+
+
+def rule_to_ids(rule: str, genes: dict) -> str:
+    """A gene_reaction_rule written with gene symbols, with the Ensembl ids of the genes."""
+    out = []
+    for token in re.findall(r"\(|\)|[^\s()]+", rule):
+        if token in ("(", ")", "and", "or"):
+            out.append(token)
+        elif token in genes:
+            out.append(genes[token])
+        else:
+            raise ValueError(f"{token}: not a gene symbol of the genes section")
+    return " ".join(out).replace("( ", "(").replace(" )", ")")
 
 
 def read_table(path: Path) -> list[dict]:
@@ -258,11 +309,33 @@ def apply(rows: list[dict], root: Path = Path(".")) -> tuple[Counter, list[str],
     model = Model(root / YML)
     tables = {k: Table(root / p) for k, p in TSV.items()}
     changed, problems = Counter(), []
+    symbols = model.gene_ids() if any(r["field"] == "gene_reaction_rule" for r in rows) else {}
     for row in rows:
         entity, field = row["entity"], row["field"]
         before, after = row["before"], row["after"]
         kind = kind_of(entity)
-        if field in YAML_FIELDS[kind]:
+        if kind == "ENSG" and field == "gene":
+            if (SECTION[kind], entity) not in model.entries:
+                if entity not in tables[kind].rows:
+                    continue
+                problems.append(f"{entity}: in {TSV[kind]} but not in {YML}")
+                continue
+            if before != "present" or after != "":
+                problems.append(f"{entity} gene: only present -> empty is supported")
+                continue
+            users = model.rule_users(entity)
+            if users:
+                problems.append(f"{entity} gene: still in the rule of {', '.join(users[:5])}")
+                continue
+            model.delete_entry(SECTION[kind], entity)
+            tables[kind].delete(entity)
+        elif field in YAML_FIELDS[kind]:
+            if field == "gene_reaction_rule":
+                after = rule_to_ids(after, symbols)
+                try:
+                    before = rule_to_ids(before, symbols)
+                except ValueError:
+                    before = None  # a gene of the old rule has been deleted since
             section = SECTION[kind]
             if (section, entity) not in model.entries:
                 problems.append(f"{entity}: not in {YML}")
@@ -271,8 +344,8 @@ def apply(rows: list[dict], root: Path = Path(".")) -> tuple[Counter, list[str],
             same = same_charge if field == "charge" else str.__eq__
             if same(current, after):
                 continue
-            if not same(current, before):
-                problems.append(f"{entity} {field}: {current!r}, expected {before!r}")
+            if before is None or not same(current, before):
+                problems.append(f"{entity} {field}: {current!r}, expected {row['before']!r}")
                 continue
             model.set(section, entity, field, after)
         else:
