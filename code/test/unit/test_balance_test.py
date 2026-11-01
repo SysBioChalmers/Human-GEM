@@ -79,3 +79,31 @@ def test_stale_entries_report_missing_and_balanced_reactions():
     assert not any(line.startswith(kept) for line in stale)
     assert sum(1 for line in stale if "(not in the model)" in line) == \
         len(balanceTest.LUMPED_REACTIONS) - 2
+
+
+def test_listed_bridges_are_skipped_whatever_their_subsystem():
+    for rid in balanceTest.CONVENTION_BRIDGES:
+        assert balanceTest._is_bridge(_rxn(rid, {}, "Ether lipid metabolism"))
+
+
+def test_an_unlisted_reaction_is_not_a_bridge():
+    assert not balanceTest._is_bridge(_rxn("MAR09999", {}, "Ether lipid metabolism"))
+
+
+def test_a_bridge_is_not_a_lumped_reaction():
+    assert not set(balanceTest.CONVENTION_BRIDGES) & set(balanceTest.LUMPED_REACTIONS)
+
+
+def test_every_bridge_reason_names_the_two_conventions():
+    assert all(" to " in reason and len(reason) > 20 for reason in balanceTest.CONVENTION_BRIDGES.values())
+
+
+def test_stale_bridge_entries_use_the_given_list():
+    model = cobra.Model("m")
+    kept, dropped = sorted(balanceTest.CONVENTION_BRIDGES)[:2]
+    model.add_reactions([_rxn(kept, {}), _rxn(dropped, {})])
+    stale = balanceTest._stale_lumped_entries(model, {kept}, balanceTest.CONVENTION_BRIDGES)
+    assert f"{dropped} (balances)" in stale
+    assert not any(line.startswith(kept) for line in stale)
+    assert sum(1 for line in stale if "(not in the model)" in line) == \
+        len(balanceTest.CONVENTION_BRIDGES) - 2

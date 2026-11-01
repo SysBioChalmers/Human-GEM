@@ -73,6 +73,8 @@ Reactions whose elemental sums do not balance, from cobrapy's `check_mass_balanc
 
 `R` and `X` are treated as elements of their own rather than ignored, so a reaction using them is still expected to balance in them. Several do not, and that is a finding rather than noise.
 
+Three reactions are excluded as convention bridges (`CONVENTION_BRIDGES` in `balanceTest.py`, each with its reason). They join two bookkeeping conventions of the placeholder elements, so the two sides do not count the same atoms: `MAR07197` and `MAR07282` take the residue from `[protein]`, where it is written out (`R2`), to `[protein]-L-serine` and `[protein]-L-asparagine`, where it sits inside `X`; `MAR10061` takes the fatty acyl-CoA pool, whose `R` starts after the carbonyl carbon, to the fatty alcohol, whose `R` holds the whole chain. Every run audits this list as it does the lumped reactions and warns about an entry the model no longer needs.
+
 #### Charge-imbalanced reactions
 Reactions whose charge sums do not balance, with the same exclusions as above.
 

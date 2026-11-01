@@ -14,6 +14,9 @@ by identifier, with what each one lumps (LUMPED_REACTIONS); that list is
 audited on every run, so an entry that the model no longer needs is reported
 rather than left to rot.
 
+Three reactions that join two conventions of the placeholder elements are listed
+by identifier in CONVENTION_BRIDGES and audited in the same way.
+
 R and X are left as elements of their own, not ignored. A reaction that uses
 them is still expected to balance in them, and several do not, which is a
 finding rather than noise (#1153).
@@ -62,6 +65,24 @@ LUMPED_REACTIONS = {
     "MAR07164": "RNA to a mixture of NMPs",
 }
 
+# Reactions that join two bookkeeping conventions of the placeholder elements,
+# so that the element counts of the two sides do not describe the same atoms and
+# no elemental balance exists for them. Rewriting one convention would unbalance
+# the reactions that use it, or discard structure that only that convention
+# records. As with LUMPED_REACTIONS, a reaction that is merely unbalanced does
+# not belong here.
+CONVENTION_BRIDGES = {
+    # X is the whole protein with the residue inside it, as in the glycosylation
+    # and GPI networks; R2 writes the residue out, as in the other protein
+    # residues of the model.
+    "MAR07197": "[protein] (R2, residue written out) to [protein]-L-serine (X, residue inside X)",
+    "MAR07282": "[protein] (R2, residue written out) to [protein]-L-asparagine (X, residue inside X)",
+    # In the fatty acyl-CoA pool R starts after the carbonyl carbon; in the fatty
+    # alcohol that the ether lipids use, R holds the whole alkyl chain, carbinol
+    # carbon included.
+    "MAR10061": "fatty acyl-CoA pool (R without the carbonyl carbon) to fatty alcohol (R with the carbinol carbon)",
+}
+
 
 def _subsystems(rxn):
     """A reaction's subsystems as a set; the YAML gives either a list or a string."""
@@ -76,15 +97,20 @@ def _is_lumped(rxn):
     return rxn.id in LUMPED_REACTIONS or bool(_subsystems(rxn) & LUMPED_SUBSYSTEMS)
 
 
-def _stale_lumped_entries(model, unbalanced_ids):
-    """Entries of LUMPED_REACTIONS the model no longer needs.
+def _is_bridge(rxn):
+    """Whether the reaction joins two conventions of the placeholder elements."""
+    return rxn.id in CONVENTION_BRIDGES
+
+
+def _stale_lumped_entries(model, unbalanced_ids, entries=LUMPED_REACTIONS):
+    """Entries of LUMPED_REACTIONS, or of CONVENTION_BRIDGES, the model no longer needs.
 
     An identifier that is gone from the model, or whose reaction now balances
     in both mass and charge, no longer excludes anything and should be dropped
     from the list.
     """
     stale = []
-    for rid in sorted(LUMPED_REACTIONS):
+    for rid in sorted(entries):
         if rid not in model.reactions:
             stale.append(f"{rid} (not in the model)")
         elif rid not in unbalanced_ids:
@@ -98,6 +124,7 @@ def main():
     errored = []
     unbalanced_ids = set()
     n_lumped = 0
+    n_bridges = 0
     for rxn in model.reactions:
         if rxn.boundary:
             continue
@@ -109,7 +136,7 @@ def main():
             # A reaction whose balance cannot be evaluated (usually a malformed
             # formula) is a finding, not something to hide: record it as its own
             # row so it shows up in the committed diff and the count.
-            if not _is_lumped(rxn):
+            if not (_is_lumped(rxn) or _is_bridge(rxn)):
                 errored.append(rxn.id)
                 rows.append((rxn.id, rxn.name or "", f"check_failed:{exc}", ""))
             continue
@@ -118,6 +145,9 @@ def main():
         unbalanced_ids.add(rxn.id)
         if _is_lumped(rxn):
             n_lumped += 1
+            continue
+        if _is_bridge(rxn):
+            n_bridges += 1
             continue
         mass = {k: v for k, v in imbalance.items() if k != "charge"}
         charge = imbalance.get("charge", 0)
@@ -137,15 +167,17 @@ def main():
     print(
         f"Unbalanced reactions (excluding boundary, biomass and lumped): {len(rows)} "
         f"({n_mass} mass, {n_charge} charge, {len(errored)} could not be checked); "
-        f"{n_lumped} lumped pseudo-reaction(s) excluded"
+        f"{n_lumped} lumped pseudo-reaction(s) and {n_bridges} convention bridge(s) excluded"
     )
     if errored:
         print(f"::warning::{len(errored)} reaction(s) could not be balance-checked: "
               f"{';'.join(errored[:20])}{' ...' if len(errored) > 20 else ''}")
-    stale = _stale_lumped_entries(model, unbalanced_ids)
-    if stale:
-        print(f"::warning::{len(stale)} entr(y/ies) of LUMPED_REACTIONS are no longer "
-              f"needed and can be dropped from code/test/balanceTest.py: {'; '.join(stale)}")
+    for name, entries in (("LUMPED_REACTIONS", LUMPED_REACTIONS),
+                          ("CONVENTION_BRIDGES", CONVENTION_BRIDGES)):
+        stale = _stale_lumped_entries(model, unbalanced_ids, entries)
+        if stale:
+            print(f"::warning::{len(stale)} entr(y/ies) of {name} are no longer "
+                  f"needed and can be dropped from code/test/balanceTest.py: {'; '.join(stale)}")
 
 
 if __name__ == "__main__":
