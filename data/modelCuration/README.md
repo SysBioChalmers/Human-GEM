@@ -49,3 +49,4 @@ Static dumps of external sources that were kept here during the Human1 series (S
 - `aflatoxinDialdehydeReductions.tsv`: per-entity table of the change "aflatoxin B1 dialdehyde reductions take NADPH" (`code/modelCuration/applyCurationTable.py`).
 - `dibenzoPyreneDiolEpoxide.tsv`: per-entity table of the change "formula of the dibenzo[a,l]pyrene diol epoxide and the proton of its formation" (`code/modelCuration/applyCurationTable.py`).
 - `nitricOxideSynthaseStoichiometry.tsv`: per-entity table of the change "stoichiometry of the arginine nitric oxide synthase reaction" (`code/modelCuration/applyCurationTable.py`).
+- `alkenylEtherLipidFormulas.tsv`: per-entity table of the change "the vinyl ether carbons of the alkenyl ether lipids are counted inside R" (`code/modelCuration/applyCurationTable.py`).
