@@ -149148,7 +149148,9 @@
     - metabolites: !!omap
       - MAM00229c: 1.0
       - MAM01294c: -1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000053371 or ENSG00000162482
@@ -149157,6 +149159,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - references: doi:10.1021/tx010005p;doi:10.1093/carcin/20.7.1215
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149165,7 +149168,9 @@
     - metabolites: !!omap
       - MAM00229c: -1.0
       - MAM01156c: 1.0
-      - MAM02039c: -3.0
+      - MAM02039c: -2.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000053371 or ENSG00000162482
@@ -149174,6 +149179,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - references: doi:10.1021/tx010005p;doi:10.1093/carcin/20.7.1215
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149182,7 +149188,9 @@
     - metabolites: !!omap
       - MAM01294c: -1.0
       - MAM01318c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000053371 or ENSG00000162482
@@ -149191,6 +149199,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - references: doi:10.1021/tx010005p;doi:10.1093/carcin/20.7.1215
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -149199,7 +149208,9 @@
     - metabolites: !!omap
       - MAM01156c: 1.0
       - MAM01318c: -1.0
-      - MAM02039c: -3.0
+      - MAM02039c: -2.0
+      - MAM02554c: 1.0
+      - MAM02555c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000053371 or ENSG00000162482
@@ -149208,6 +149219,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.-
+    - references: doi:10.1021/tx010005p;doi:10.1093/carcin/20.7.1215
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
