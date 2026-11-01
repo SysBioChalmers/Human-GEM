@@ -54,3 +54,4 @@ Static dumps of external sources that were kept here during the Human1 series (S
 - `catecholEstrogenPeroxidase.tsv`: per-entity table of the change "the peroxidases oxidise two catechol estrogens per H2O2" (`code/modelCuration/applyCurationTable.py`).
 - `acylCoAOxidase4CisDecenoylCoA.tsv`: per-entity table of the change "the oxidase of 4-cis-decenoyl-CoA reduces FAD" (`code/modelCuration/applyCurationTable.py`).
 - `pristanoylCoALumpedOxidation.tsv`: per-entity table of the change "the lumped pristanoyl-CoA oxidation counts its three cycles" (`code/modelCuration/applyCurationTable.py`).
+- `androstanediolHsd3b.tsv`: per-entity table of the reaction part of the change "3beta-hydroxysteroid dehydrogenase acts on 5alpha-androstane-3beta,17beta-diol" (`code/modelCuration/applyCurationTable.py`); the metabolite part was made by hand.
