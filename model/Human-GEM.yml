@@ -203333,13 +203333,14 @@
     - id: MAR02023
     - name: L-Arginine, NADPH:Oxygen Oxidoreductase (Nitric-Oxide-Forming)
     - metabolites: !!omap
-      - MAM01365c: -1.0
-      - MAM01588c: 1.0
-      - MAM02040c: 2.0
-      - MAM02554c: 2.0
-      - MAM02555c: -2.0
-      - MAM02609c: 1.0
-      - MAM02630c: -2.0
+      - MAM01365c: -2.0
+      - MAM01588c: 2.0
+      - MAM02039c: -1.0
+      - MAM02040c: 4.0
+      - MAM02554c: 3.0
+      - MAM02555c: -3.0
+      - MAM02609c: 2.0
+      - MAM02630c: -4.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000007171 or ENSG00000089250 or ENSG00000164867
