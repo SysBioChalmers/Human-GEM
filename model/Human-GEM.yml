@@ -114355,9 +114355,6 @@
     - metabolites: !!omap
       - MAM00971c: 1.0
       - MAM01075c: -1.0
-      - MAM02039c: -1.0
-      - MAM02552c: -1.0
-      - MAM02553c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000203857 or ENSG00000203859
@@ -114375,9 +114372,6 @@
     - metabolites: !!omap
       - MAM00971r: 1.0
       - MAM01075r: -1.0
-      - MAM02039r: -1.0
-      - MAM02552r: -1.0
-      - MAM02553r: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
     - gene_reaction_rule: ENSG00000203857 or ENSG00000203859
