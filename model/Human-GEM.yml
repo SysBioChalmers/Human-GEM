@@ -144527,16 +144527,17 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04769
-    - name: uroporphyrin I to uroporphyrinogen III conversion
+    - name: uroporphyrinogen I oxidation to uroporphyrin I
     - metabolites: !!omap
-      - MAM02039c: -6.0
-      - MAM03125c: -1.0
-      - MAM03128c: 1.0
-    - lower_bound: -1000.0
+      - MAM02041c: 3.0
+      - MAM02630c: -3.0
+      - MAM03125c: 1.0
+      - MAM03127c: -1.0
+    - lower_bound: 0.0
     - upper_bound: 1000.0
     - subsystem:
       - Porphyrin metabolism
-    - references: PMID:11281297
+    - references: PMID:11281297;doi:10.3390/biom16081188
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
