@@ -6,27 +6,29 @@ Scored over every model gene that Hart 2015 scored in the cell line (`genes`); a
 
 | cellLine | genes | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 2652 | 0.3427 | 134 | 0.3632 | 100 | 0.644 | 0.2653 | 0.1259 | 42 |
-| GBM | 2652 | 0.2905 | 141 | 0.3118 | 109 | 0.6235 | 0.2419 | 0.1316 | 38 |
-| HCT116 | 2712 | 0.3585 | 126 | 0.3527 | 107 | 0.6451 | 0.2758 | 0.1394 | 31 |
-| HELA | 2714 | 0.3118 | 164 | 0.3038 | 138 | 0.6433 | 0.2234 | 0.1102 | 38 |
-| RPE1 | 2652 | 0.2315 | 171 | 0.2607 | 136 | 0.6183 | 0.1963 | 0.1086 | 37 |
-| all | 2649 | 0.307 | 170 | 0.3269 | 144 | 0.635 | 0.2401 | 0.1232 |  |
+| DLD1 | 2652 | 0.3405 | 136 | 0.3619 | 101 | 0.6439 | 0.2644 | 0.1259 | 43 |
+| GBM | 2652 | 0.2943 | 140 | 0.3147 | 109 | 0.6247 | 0.2437 | 0.1316 | 37 |
+| HCT116 | 2712 | 0.3585 | 126 | 0.3553 | 107 | 0.6465 | 0.2776 | 0.1394 | 30 |
+| HELA | 2714 | 0.3118 | 164 | 0.3049 | 140 | 0.6463 | 0.2251 | 0.1102 | 35 |
+| RPE1 | 2652 | 0.2341 | 168 | 0.2638 | 133 | 0.6185 | 0.1982 | 0.1086 | 37 |
+| all | 2649 | 0.3061 | 171 | 0.3258 | 145 | 0.6362 | 0.2415 | 0.1232 |  |
 
 ### Run environment
 
 - cobra 0.32.1, gurobipy 13.0.3, optlang 1.9.1, python 3.11.17, raven-toolbox 3.0.0b1, raven-toolbox commit ee0f8868bcc4a6f907913151a1e54dcbb4f2a160
 
 ftINIT steps that kept an unproven incumbent (time limit or unconverged tie-break):
-- HELA (reaction order 0): 1 warning(s)
 - RPE1 (reaction order 0): 1 warning(s)
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **50** gene(s) directly affected plus **1839** more that share a metabolite with one of them.
+Checked **51** gene(s) directly affected plus **1828** more that share a metabolite with one of them.
 
-**Likely noise** (5 gene(s), <3/5 lines): CA5B, KL, MTHFD1, PC, RDH5.
+**Other role changed** (not Hart-comparable):
+- CA5B: 3/5 lines, biosynthesis, internal conversion -- now required
 
-**No change:** 1884 gene(s).
+**Likely noise** (5 gene(s), <3/5 lines): CA13, FPGS, GGH, SLC25A17, SLC36A1.
+
+**No change:** 1873 gene(s).
 
 Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](gene-essential-diff.csv).
