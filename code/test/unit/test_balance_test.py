@@ -107,3 +107,13 @@ def test_stale_bridge_entries_use_the_given_list():
     assert not any(line.startswith(kept) for line in stale)
     assert sum(1 for line in stale if "(not in the model)" in line) == \
         len(balanceTest.CONVENTION_BRIDGES) - 2
+
+
+def test_ordinary_reactions_in_a_lumped_subsystem_are_tested():
+    for rxn_id in balanceTest.ORDINARY_IN_LUMPED_SUBSYSTEMS:
+        assert not balanceTest._is_lumped(_rxn(rxn_id, {_met("a", "C"): -1}, "Pool reactions"))
+    assert balanceTest._is_lumped(_rxn("MAR99999", {_met("a", "C"): -1}, "Pool reactions"))
+
+
+def test_every_ordinary_entry_says_why():
+    assert all(balanceTest.ORDINARY_IN_LUMPED_SUBSYSTEMS.values())

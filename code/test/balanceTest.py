@@ -71,6 +71,13 @@ LUMPED_REACTIONS = {
 # the reactions that use it, or discard structure that only that convention
 # records. As with LUMPED_REACTIONS, a reaction that is merely unbalanced does
 # not belong here.
+# Ordinary reactions filed under one of the lumped subsystems: single substrates and
+# products, so that an elemental balance is defined and they are tested.
+ORDINARY_IN_LUMPED_SUBSYSTEMS = {
+    "MAR01185": "(2E)-dodecenoyl-CoA formation from one hydroxy-dodecenoate, filed under Pool reactions",
+    "MAR01227": "(2E)-dodecenoyl-CoA formation from one hydroxy-dodecenoate, filed under Pool reactions",
+}
+
 CONVENTION_BRIDGES = {
     # X is the whole protein with the residue inside it, as in the glycosylation
     # and GPI networks; R2 writes the residue out, as in the other protein
@@ -94,6 +101,8 @@ def _subsystems(rxn):
 
 def _is_lumped(rxn):
     """Whether the reaction stands for a whole class of species at once."""
+    if rxn.id in ORDINARY_IN_LUMPED_SUBSYSTEMS:
+        return False
     return rxn.id in LUMPED_REACTIONS or bool(_subsystems(rxn) & LUMPED_SUBSYSTEMS)
 
 

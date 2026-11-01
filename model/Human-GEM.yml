@@ -12533,8 +12533,8 @@
     - id: MAM01156c
     - name: 6-[2,3-dihydroxy-1-(hydroxymethyl)propyl]-1,2-dihydro-7-hydroxy-9-methoxy-cyclopenta[c][1]benzopyran-3,4-dione
     - compartment: c
-    - charge: 0.0
-    - formula: C17H18O8
+    - charge: -1.0
+    - formula: C17H17O8
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM01157x
@@ -149092,7 +149092,7 @@
     - metabolites: !!omap
       - MAM00229c: -1.0
       - MAM01156c: 1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
     - lower_bound: 0.0
@@ -149132,7 +149132,7 @@
     - metabolites: !!omap
       - MAM01156c: 1.0
       - MAM01318c: -1.0
-      - MAM02039c: -2.0
+      - MAM02039c: -1.0
       - MAM02554c: 1.0
       - MAM02555c: -1.0
     - lower_bound: 0.0
