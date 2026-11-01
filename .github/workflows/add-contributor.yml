@@ -1,100 +1,137 @@
-name: Add contributor
+name: Contributors
 
-# Credits a contributor from a comment, replacing the all-contributors GitHub
-# App. The App can only open pull requests against the default branch (main);
-# see https://github.com/all-contributors/app/issues/243. Additions on main are
-# lost when main is rebuilt from develop at release, so this workflow opens the
-# pull request against develop instead.
+# Credits contributors in the README (see CONTRIBUTING, "Crediting contributors").
 #
-# Trigger it by commenting on any issue or pull request:
-#   @all-contributors please add @username for bug, code
-# Contribution type keys: https://allcontributors.org/docs/en/emoji-key
+#   credit   A maintainer comments `/credit @user bug, research` on any issue or pull
+#            request (one line per person). The credit is added to a single open pull
+#            request against develop, `contributors/pending`, which is rebuilt from
+#            develop each time, so it never conflicts.
+#   suggest  When a pull request is merged into develop, its author and the authors of
+#            the issues it closes who are not credited yet are listed in a comment, as
+#            ready-made /credit lines for a maintainer to confirm.
+#   thank    When the credit pull request is merged, each person is thanked on the
+#            issue or pull request where they were credited.
+#
+# The work is done by code/contributors.py. Only actions/checkout is used, since the
+# repository allows GitHub's own actions and a short list of others. issue_comment
+# and pull_request_target run the workflow as it is on the default branch (main).
 
 on:
   issue_comment:
     types: [created]
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+env:
+  BRANCH: contributors/pending
 
 jobs:
-  add-contributor:
-    # Only act on the trigger phrase, and only from users with write access.
+  credit:
     if: >
-      contains(github.event.comment.body, '@all-contributors') &&
-      (github.event.comment.author_association == 'OWNER' ||
-       github.event.comment.author_association == 'MEMBER' ||
-       github.event.comment.author_association == 'COLLABORATOR')
+      github.event_name == 'issue_comment' &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association) &&
+      (contains(github.event.comment.body, '/credit') || contains(github.event.comment.body, '@all-contributors'))
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
+    concurrency: contributors
     steps:
-      - name: Parse the command
-        id: parse
-        uses: actions/github-script@v9
-        with:
-          script: |
-            const body = context.payload.comment.body || '';
-            const m = body.match(/add\s+@?([A-Za-z0-9-]+)\s+for\s+([^\n\r.!]+)/i);
-            if (!m) {
-              core.info('No "please add <user> for <types>" command found; skipping.');
-              core.setOutput('found', 'false');
-              return;
-            }
-            const user = m[1];
-            const types = m[2]
-              .split(/\s*,\s*|\s+and\s+/i)
-              .map(s => s.trim())
-              .filter(Boolean)
-              .join(',');
-            core.setOutput('found', 'true');
-            core.setOutput('user', user);
-            core.setOutput('types', types);
-            core.info(`Adding ${user} for ${types}`);
-
-      - name: Checkout develop
-        if: steps.parse.outputs.found == 'true'
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: develop
 
-      - name: Set up Node
-        if: steps.parse.outputs.found == 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Update contributor list
-        if: steps.parse.outputs.found == 'true'
+      - name: Add the credits to the pending pull request
         env:
-          PRIVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          THREAD: ${{ github.event.issue.number }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
-          npx --yes -p all-contributors-cli@6 all-contributors add \
-            "${{ steps.parse.outputs.user }}" "${{ steps.parse.outputs.types }}"
+          pr=$(gh pr list --repo "$REPO" --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$pr" ]; then
+            export PENDING_BODY=$(gh pr view "$pr" --repo "$REPO" --json body --jq .body)
+          fi
+          python3 code/contributors.py apply --thread "$THREAD" --out "$RUNNER_TEMP/result.json"
+          python3 code/contributors.py check
 
-      - name: Open pull request against develop
-        if: steps.parse.outputs.found == 'true'
-        id: cpr
-        uses: peter-evans/create-pull-request@v7
+          new=$(jq -r '.new | length' "$RUNNER_TEMP/result.json")
+          if [ "$new" -gt 0 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            jq -r .body "$RUNNER_TEMP/result.json" > "$RUNNER_TEMP/body.md"
+            git switch -c "$BRANCH"
+            git commit -am "$(jq -r .title "$RUNNER_TEMP/result.json")"
+            git push --force origin "$BRANCH"
+            if [ -n "$pr" ]; then
+              gh pr edit "$pr" --repo "$REPO" --title "$(jq -r .title "$RUNNER_TEMP/result.json")" --body-file "$RUNNER_TEMP/body.md"
+            else
+              pr=$(gh pr create --repo "$REPO" --base develop --head "$BRANCH" --label documentation \
+                --title "$(jq -r .title "$RUNNER_TEMP/result.json")" --body-file "$RUNNER_TEMP/body.md" | grep -o '[0-9]*$')
+            fi
+          fi
+
+          # Answer under the command itself, as /run does in pr-command.yml.
+          {
+            printf '%s\n\n' "$COMMENT_BODY"
+            jq -r --arg pr "$pr" '.new[] | ":white_check_mark: Credit for \(.text) added to #\($pr)."' "$RUNNER_TEMP/result.json"
+            jq -r '.errors[] | ":warning: \(.)"' "$RUNNER_TEMP/result.json"
+            if [ "$(jq '.errors | length' "$RUNNER_TEMP/result.json")" -gt 0 ]; then
+              echo
+              echo 'Write one line per person, for example `/credit @user bug, research`. Types: `bug`, `research`, `code`, `review`, `doc`, `ideas`.'
+            fi
+          } > "$RUNNER_TEMP/reply.md"
+          gh api "repos/$REPO/issues/comments/$COMMENT_ID" -X PATCH -F body=@"$RUNNER_TEMP/reply.md" --silent
+
+  suggest:
+    if: >
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.merged &&
+      github.event.pull_request.base.ref == 'develop' &&
+      github.event.pull_request.head.ref != 'contributors/pending'
+    runs-on: ubuntu-latest
+    steps:
+      # The base branch, never the pull request's own code.
+      - uses: actions/checkout@v7
         with:
-          base: develop
-          branch: all-contributors/${{ steps.parse.outputs.user }}
-          delete-branch: true
-          commit-message: "docs: add ${{ steps.parse.outputs.user }} as a contributor"
-          title: "docs: add ${{ steps.parse.outputs.user }} as a contributor"
-          body: |
-            Adds [@${{ steps.parse.outputs.user }}](https://github.com/${{ steps.parse.outputs.user }}) to the contributor list for: ${{ steps.parse.outputs.types }}.
+          ref: develop
 
-            Requested in ${{ github.event.comment.html_url }}.
-          labels: documentation
+      - name: Propose credits for people not in the list
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          export PENDING_BODY=$(gh pr list --repo "$REPO" --head "$BRANCH" --state open --json body --jq '.[0].body // ""')
+          python3 code/contributors.py suggest "$PR" > "$RUNNER_TEMP/suggestion.md"
+          if [ -s "$RUNNER_TEMP/suggestion.md" ] && grep -q . "$RUNNER_TEMP/suggestion.md"; then
+            gh pr comment "$PR" --repo "$REPO" --body-file "$RUNNER_TEMP/suggestion.md"
+          fi
 
-      - name: Reply with the pull request link
-        if: steps.parse.outputs.found == 'true' && steps.cpr.outputs.pull-request-number
-        uses: actions/github-script@v9
+  thank:
+    if: >
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.merged &&
+      github.event.pull_request.head.ref == 'contributors/pending' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    concurrency: contributors
+    steps:
+      - uses: actions/checkout@v7
         with:
-          script: |
-            const n = '${{ steps.cpr.outputs.pull-request-number }}';
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              body: `Opened #${n} against \`develop\` to add @${{ steps.parse.outputs.user }} to the contributor list. It will be merged after review.`
-            });
+          ref: develop
+
+      - name: Thank the people credited
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PENDING_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          python3 code/contributors.py thank > "$RUNNER_TEMP/thanks.json"
+          for thread in $(jq -r 'keys[]' "$RUNNER_TEMP/thanks.json"); do
+            jq -r --arg t "$thread" '.[$t]' "$RUNNER_TEMP/thanks.json" > "$RUNNER_TEMP/thanks.md"
+            gh issue comment "$thread" --repo "$REPO" --body-file "$RUNNER_TEMP/thanks.md"
+          done

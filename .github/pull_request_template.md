@@ -20,4 +20,4 @@ Removed reactions and metabolites are added to the lists in `data/deprecatedIden
 -->
 
 ---
-<sub>_Maintainers: after merge, credit new contributors by commenting `@all-contributors please add @username for <type>` on this PR or the linked issue (see [CONTRIBUTING](CONTRIBUTING.md#crediting-contributors))._</sub>
+<sub>_After merge, a bot suggests `/credit` lines for anyone not yet in the [contributor list](https://github.com/SysBioChalmers/Human-GEM#contributors); see [Crediting contributors](https://github.com/SysBioChalmers/Human-GEM/blob/develop/.github/CONTRIBUTING.md#crediting-contributors)._</sub>

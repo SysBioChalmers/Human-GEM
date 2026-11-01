@@ -3808,6 +3808,13 @@
     - formula: C36H60O2
     - metFrom: HMRdatabase
   - !!omap
+    - id: MAM20096c
+    - name: 11-cis-retinyl ester
+    - compartment: c
+    - charge: 0.0
+    - formula: C21H29O2R
+    - metFrom: HumanGEM
+  - !!omap
     - id: MAM00293c
     - name: 11-dehydro-thromboxane B2
     - compartment: c
@@ -60473,6 +60480,7 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.2
+        - 1.1.1.19
     - references: PMID:1748675
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -61101,7 +61109,6 @@
       - ec-code:
         - 6.2.1.17
         - 6.2.1.1
-        - 3.1.2.2
     - references: PMID:11013297;PMID:11013297;PMID:10843999;PMID:11150295;PMID:1924964;PMID:2009071;PMID:7341659
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -61144,6 +61151,7 @@
     - annotation: !!omap
       - ec-code:
         - 6.2.1.17
+        - 6.2.1.1
     - references: PMID:10843999;PMID:11150295;PMID:1924964;PMID:2009071;PMID:7341659
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -62172,7 +62180,6 @@
     - annotation: !!omap
       - ec-code:
         - 2.7.1.20
-        - 2.7.1.74
     - references: PMID:132087;PMID:3030413;PMID:6315069
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -64950,7 +64957,6 @@
     - annotation: !!omap
       - ec-code:
         - 3.6.1.23
-        - 3.6.1.9
     - references: PMID:8631816
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -67349,8 +67355,6 @@
       - Nucleotide metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.7.1.145
-        - 2.7.1.213
         - 2.7.1.74
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -67783,7 +67787,7 @@
       - Alanine, aspartate and glutamate metabolism
     - annotation: !!omap
       - ec-code:
-        - 3.4.19.5
+        - 3.5.1.1
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -68072,7 +68076,6 @@
     - annotation: !!omap
       - ec-code:
         - 3.5.1.1
-        - 3.5.1.38
     - references: PMID:4311065;PMID:4894450
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -71106,7 +71109,6 @@
     - annotation: !!omap
       - ec-code:
         - 1.1.1.79
-        - 1.1.1.81
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -86046,6 +86048,7 @@
     - annotation: !!omap
       - ec-code:
         - 6.2.1.3
+        - 6.2.1.15
     - references: PMID:8584017;PMID:12525535;PMID:11889465
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -87176,6 +87179,7 @@
     - annotation: !!omap
       - ec-code:
         - 6.2.1.3
+        - 6.2.1.15
     - references: PMID:8584017;PMID:12525535;PMID:11889465
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -99008,6 +99012,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Eicosanoid metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.4.13.19
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -100396,7 +100403,7 @@
       - Carnitine shuttle (cytosolic)
     - annotation: !!omap
       - ec-code:
-        - 2.3.1.21
+        - 2.3.1.7
     - references: PMID:12133002;PMID:4475632;PMID:5810070
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -107685,6 +107692,7 @@
     - annotation: !!omap
       - ec-code:
         - 6.2.1.24
+        - 6.2.1.3
     - references: PMID:11356164;PMID:11356164;PMID:10198260;PMID:11591435
     - rxnFrom: HMRdatabase;Recon3D
     - confidence_score: 0.0
@@ -114248,7 +114256,7 @@
       - Androgen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.99.-
+        - 1.14.14.32
     - references: PMID:7578007;PMID:10049998;PMID:7578007;PMID:10049998
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -114270,7 +114278,7 @@
       - Androgen metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.14.99.-
+        - 1.14.14.32
     - references: PMID:7578007;PMID:10049998;PMID:7578007;PMID:10049998
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -116099,7 +116107,6 @@
       - Estrogen metabolism
     - annotation: !!omap
       - ec-code:
-        - 3.1.6.1
         - 3.1.6.2
     - references: PMID:37951289
     - rxnFrom: HMRdatabase
@@ -121601,7 +121608,7 @@
       - Sphingolipid metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.4.99.-
+        - 2.4.3.8
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -125967,7 +125974,7 @@
       - Glycosphingolipid biosynthesis-ganglio series
     - annotation: !!omap
       - ec-code:
-        - 2.4.3.3
+        - 2.4.3.8
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -128208,7 +128215,7 @@
       - Glucocorticoid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.14.99.-
+        - 1.14.14.32
     - references: PMID:7578007;PMID:10049998;PMID:10049998;PMID:7578007
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -128230,7 +128237,7 @@
       - Glucocorticoid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.14.99.-
+        - 1.14.14.32
     - references: PMID:7578007;PMID:10049998;PMID:10049998;PMID:7578007
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -134879,6 +134886,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Bile acid biosynthesis
+    - annotation: !!omap
+      - ec-code:
+        - 1.2.1.3
     - references: PMID:1591235;PMID:5723340;PMID:5914340;PMID:1708392;PMID:11412116
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -141633,7 +141643,7 @@
       - Inositol phosphate metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.7.1.151
+        - 2.7.1.140
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -141994,6 +142004,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Inositol phosphate metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.1.3.-
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -144923,21 +144936,21 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR06639
-    - name: phosphatidylcholine:retinol O-acyltransferase
+    - name: phosphatidylcholine:11-cis-retinol O-acyltransferase
     - metabolites: !!omap
       - MAM00291c: -1.0
       - MAM00535c: 1.0
       - MAM02684c: -1.0
-      - MAM02838c: 1.0
+      - MAM20096c: 1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000062282 or ENSG00000114113 or ENSG00000114115 or ENSG00000121207 or ENSG00000147160 or ENSG00000185000 or ENSG00000204195
+    - gene_reaction_rule: ENSG00000121207
     - subsystem:
       - Retinol metabolism
     - annotation: !!omap
       - ec-code:
         - 2.3.1.135
-        - 2.3.1.75
+    - references: doi:10.1021/bi0342416;doi:10.1016/s0006-291x(88)80818-0;doi:10.1016/S0021-9258(18)81839-7
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -151021,6 +151034,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Miscellaneous
+    - annotation: !!omap
+      - ec-code:
+        - 3.6.1.25
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -151348,7 +151364,7 @@
       - Isolated
     - annotation: !!omap
       - ec-code:
-        - 3.4.15.-
+        - 3.4.17.23
     - references: PMID:10969042;PMID:11815627
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -151367,7 +151383,7 @@
       - Isolated
     - annotation: !!omap
       - ec-code:
-        - 3.4.15.-
+        - 3.4.17.23
     - references: PMID:10969042;PMID:11815627
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -151386,7 +151402,7 @@
       - Isolated
     - annotation: !!omap
       - ec-code:
-        - 3.4.15.-
+        - 3.4.17.23
     - references: PMID:11815627;PMID:10969042;PMID:11384769
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
@@ -196070,7 +196086,7 @@
       - Fatty acid oxidation
     - annotation: !!omap
       - ec-code:
-        - 1.2.1.-
+        - 1.2.1.48
     - references: PMID:11591435;PMID:8528251
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -196190,6 +196206,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Biotin metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.4.-.-
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -196389,6 +196408,9 @@
     - annotation: !!omap
       - ec-code:
         - 6.3.4.15
+        - 6.3.4.10
+        - 6.3.4.11
+        - 6.3.4.9
     - references: PMID:12459313;PMID:7842009
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -196491,7 +196513,10 @@
       - Biotin metabolism
     - annotation: !!omap
       - ec-code:
-        - 3.5.1.12
+        - 6.3.4.10
+        - 6.3.4.11
+        - 6.3.4.15
+        - 6.3.4.9
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -200428,7 +200453,7 @@
       - Cholesterol metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.1.1.88
+        - 1.1.1.34
     - references: PMID:2991281
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -200960,24 +200985,6 @@
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
-    - id: MAR01506
-    - name: Lecithin Retinol Acyltransferase (11-Cis)
-    - metabolites: !!omap
-      - MAM00291c: -1.0
-      - MAM00656c: 1.0
-      - MAM02684c: -1.0
-      - MAM02838c: 1.0
-    - lower_bound: 0.0
-    - upper_bound: 1000.0
-    - subsystem:
-      - Vitamin A metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 1.14.14.1
-    - references: PMID:1503811
-    - rxnFrom: Recon3D
-    - confidence_score: 0.0
-  - !!omap
     - id: MAR01507
     - name: Lecithin Retinol Acyltransferase (9-Cis)
     - metabolites: !!omap
@@ -201498,7 +201505,7 @@
       - Bile acid biosynthesis
     - annotation: !!omap
       - ec-code:
-        - 1.14.15.15
+        - 1.14.14.26
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -205388,6 +205395,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Fatty acid biosynthesis
+    - annotation: !!omap
+      - ec-code:
+        - 1.3.1.93
     - references: PMID:10479480
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -205979,7 +205989,7 @@
       - Miscellaneous
     - annotation: !!omap
       - ec-code:
-        - 3.1.6.2
+        - 3.4.17.23
     - references: PMID:10969042;PMID:11815627
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -206142,7 +206152,7 @@
       - Steroid metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.4.1.17
+        - 1.14.14.32
     - references: PMID:10049998;PMID:7578007
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -206264,7 +206274,7 @@
       - Steroid metabolism
     - annotation: !!omap
       - ec-code:
-        - 2.4.1.17
+        - 1.14.14.32
     - references: PMID:10049998;PMID:7578007
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -207163,6 +207173,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Miscellaneous
+    - annotation: !!omap
+      - ec-code:
+        - 1.14.15.15
     - references: PMID:11254748;PMID:12581873
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -211604,7 +211617,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR04015
-    - name: Methionine Synthase
+    - name: noradrenaline to noradrenochrome conversion
     - metabolites: !!omap
       - MAM02039r: 5.0
       - MAM02617r: -1.0
@@ -211613,9 +211626,6 @@
     - upper_bound: 1000.0
     - subsystem:
       - Tyrosine metabolism
-    - annotation: !!omap
-      - ec-code:
-        - 2.1.1.13
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -213732,6 +213742,9 @@
     - gene_reaction_rule: ENSG00000005469
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 2.3.1.7
     - references: PMID:11356164;PMID:15492013
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -215295,6 +215308,9 @@
     - gene_reaction_rule: ENSG00000140284
     - subsystem:
       - Fatty acid oxidation
+    - annotation: !!omap
+      - ec-code:
+        - 6.2.1.3
     - references: PMID:11591435;PMID:10198260
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -218456,6 +218472,9 @@
     - gene_reaction_rule: ENSG00000167114
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 6.2.1.3
     - references: PMID:10518211;PMID:20086080;PMID:12856180;PMID:26635907
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -218523,6 +218542,9 @@
     - gene_reaction_rule: ENSG00000167114
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 6.2.1.3
     - references: PMID:10518211;PMID:20086080;PMID:12856180;PMID:26635907
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -218541,6 +218563,9 @@
     - gene_reaction_rule: ENSG00000167114
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 6.2.1.3
     - references: PMID:10518211;PMID:20086080;PMID:12856180;PMID:26635907
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -219003,6 +219028,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 6.2.1.3
     - references: PMID:10518211;PMID:20086080;PMID:12856180;PMID:26635907
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -219068,6 +219096,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 1.13.11.19
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -219108,6 +219139,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pantothenate and CoA metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.6.1.9
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -219565,13 +219599,13 @@
       - Vitamin B2 metabolism
     - annotation: !!omap
       - ec-code:
-        - 3.6.1.-
+        - 3.6.1.18
     - references: PMID:36309091
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
     - id: MAR08969
-    - name: Acid Phosphatase (FMN), Extracellular
+    - name: Alkaline Phosphatase (FMN), Extracellular
     - metabolites: !!omap
       - MAM01828e: -1.0
       - MAM02040e: -1.0
@@ -219582,6 +219616,9 @@
     - gene_reaction_rule: ENSG00000163295 or ENSG00000162551
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 3.1.3.1
     - references: doi:10.1016/j.jbc.2022.102640
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -219706,6 +219743,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pantothenate and CoA metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.1.3.2
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -219780,6 +219820,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 6.2.1.3
     - references: PMID:10518211;PMID:20086080;PMID:12856180;PMID:26635907
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -219795,6 +219838,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pantothenate and CoA metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.1.3.110
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -219809,6 +219855,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 3.5.1.92
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -219919,6 +219968,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 6.2.1.3
     - references: PMID:10518211;PMID:20086080;PMID:12856180;PMID:26635907
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -221049,6 +221101,10 @@
     - gene_reaction_rule: ENSG00000130304 or ENSG00000167114
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 6.2.1.15
+        - 6.2.1.3
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -221434,6 +221490,9 @@
     - gene_reaction_rule: ENSG00000130304 or ENSG00000140284
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 6.2.1.3
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -238767,6 +238826,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Heme degradation
+    - annotation: !!omap
+      - ec-code:
+        - 2.4.1.17
     - references: PMID:21749716
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -239764,6 +239826,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Pyrimidine metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.6.1.23
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -239863,6 +239928,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Porphyrin metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 4.98.1.1
     - references: PMID:21749716
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -245276,6 +245344,9 @@
     - gene_reaction_rule: ENSG00000150540
     - subsystem:
       - Transport reactions
+    - annotation: !!omap
+      - ec-code:
+        - 2.1.1.8
     - references: PMID:12358773
     - rxnFrom: Recon3D
     - confidence_score: 0.0
@@ -248686,6 +248757,9 @@
     - gene_reaction_rule: ENSG00000064601 or ENSG00000141012 or ENSG00000170266 or ENSG00000196743 or ENSG00000197746 or ENSG00000204386
     - subsystem:
       - Sphingolipid metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.2.1.23
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -249291,6 +249365,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Sphingolipid metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 2.7.8.27
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -249885,6 +249962,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - ROS detoxification
+    - annotation: !!omap
+      - ec-code:
+        - 1.11.1.6
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -266992,7 +267072,7 @@
       - Fatty acid metabolism
     - annotation: !!omap
       - ec-code:
-        - 1.2.1.-
+        - 1.2.1.48
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
   - !!omap
@@ -268165,6 +268245,9 @@
     - upper_bound: 1000.0
     - subsystem:
       - Riboflavin metabolism
+    - annotation: !!omap
+      - ec-code:
+        - 3.6.1.18
     - references: PMID:22185573
     - rxnFrom: HumanGEM
     - confidence_score: 0.0
@@ -271457,9 +271540,6 @@
   - !!omap
     - id: ENSG00000100448
     - name: CTSG
-  - !!omap
-    - id: ENSG00000100479
-    - name: POLE2
   - !!omap
     - id: ENSG00000100504
     - name: PYGL
@@ -277028,9 +277108,6 @@
   - !!omap
     - id: ENSG00000177076
     - name: ACER2
-  - !!omap
-    - id: ENSG00000177084
-    - name: POLE
   - !!omap
     - id: ENSG00000177108
     - name: ZDHHC22

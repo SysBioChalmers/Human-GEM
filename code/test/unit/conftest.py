@@ -1,4 +1,4 @@
-"""Make the QC, animalGEM and modelCuration scripts importable from the tests.
+"""Make the QC, animalGEM, modelCuration and contributor scripts importable.
 
 The scripts in code/test are run as files by the workflow, not installed as a
 package, so the directory holding them is put on sys.path here.
@@ -10,3 +10,4 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "animalGEM"))
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "modelCuration"))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
