@@ -89939,12 +89939,13 @@
       - MAM02647c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Fatty acid desaturation (even-chain)
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -89960,12 +89961,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000149485
     - subsystem:
       - Fatty acid desaturation (even-chain)
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -90886,12 +90888,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -90986,12 +90989,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000149485
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -91182,12 +91186,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Omega-3 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.3
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -92284,12 +92289,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.3
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -92374,12 +92380,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485 or ENSG00000221968
+    - gene_reaction_rule: ENSG00000149485
     - subsystem:
       - Omega-6 fatty acid metabolism
     - annotation: !!omap
       - ec-code:
         - 1.14.19.-
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719;doi:10.1016/s0014-5793(01)03135-0
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
   - !!omap
@@ -197428,12 +197435,13 @@
       - MAM02630c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000134824 or ENSG00000149485
+    - gene_reaction_rule: ENSG00000134824
     - subsystem:
       - Fatty acid biosynthesis
     - annotation: !!omap
       - ec-code:
         - 1.14.19.3
+    - references: doi:10.1074/jbc.274.52.37335;doi:10.1042/bj3470719
     - rxnFrom: Recon3D
     - confidence_score: 0.0
   - !!omap
@@ -278207,9 +278215,6 @@
   - !!omap
     - id: ENSG00000218823
     - name: PAPOLB
-  - !!omap
-    - id: ENSG00000221968
-    - name: FADS3
   - !!omap
     - id: ENSG00000221988
     - name: PPT2
