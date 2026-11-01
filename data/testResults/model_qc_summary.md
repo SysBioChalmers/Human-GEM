@@ -39,12 +39,12 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Reactions with no metabolites](README.md#reactions-with-no-metabolites) | 0 | 0 | :white_check_mark: |
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
 | [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [338](macaw_results.tsv) | 0 | :warning: |
-| [Twin reactions with a missing or conflicting EC number](README.md#twin-reactions-with-a-missing-or-conflicting-ec-number) | [52](qc_twin_reactions.csv) | 0 | :warning: |
+| [Twin reactions with a missing or conflicting EC number](README.md#twin-reactions-with-a-missing-or-conflicting-ec-number) | 0 | -52 | :sparkles: |
 | [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1380](macaw_results.tsv) | 0 | :warning: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
-| [Unused genes](README.md#unused-genes) | [2](qc_unused_entities.csv) | 0 | :warning: |
+| [Unused genes](README.md#unused-genes) | 0 | -2 | :sparkles: |
 
 #### Identifiers and annotation
 
