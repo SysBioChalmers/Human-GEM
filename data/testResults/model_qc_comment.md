@@ -9,10 +9,6 @@
 | MEMOTE | :white_check_mark: **63.8%** (core subset) |
 | Full report | [model_qc_summary.md](model_qc_summary.md) |
 
-**Improved:**
-- Twin reactions with a missing or conflicting EC number: **0**
-- Unused genes: **0**
-
 **Pre-existing:**
 - Reaction directions: warning: [**70**](qc_reversibility.csv)
 - Mass-imbalanced reactions: [**65**](balance_results.csv)
