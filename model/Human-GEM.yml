@@ -5226,14 +5226,14 @@
     - name: 17beta-estradiol-3,4-semiquinone
     - compartment: c
     - charge: 0.0
-    - formula: C18H22O3
+    - formula: C18H23O3
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00413l
     - name: 17beta-estradiol-3,4-semiquinone
     - compartment: l
     - charge: 0.0
-    - formula: C18H22O3
+    - formula: C18H23O3
     - metFrom: HMRdatabase
   - !!omap
     - id: MAM00414c
@@ -116783,8 +116783,8 @@
     - id: MAR02088
     - name: peroxidase (17beta-estradiol-3,4-semiquinone)
     - metabolites: !!omap
-      - MAM00413c: -1.0
-      - MAM00986c: 1.0
+      - MAM00413c: -2.0
+      - MAM00986c: 2.0
       - MAM02040c: -2.0
       - MAM02041c: 1.0
     - lower_bound: -1000.0
@@ -116803,8 +116803,8 @@
     - id: MAR02089
     - name: peroxidase (17beta-estradiol-3,4-semiquinone)
     - metabolites: !!omap
-      - MAM00413l: -1.0
-      - MAM00986l: 1.0
+      - MAM00413l: -2.0
+      - MAM00986l: 2.0
       - MAM02040l: -2.0
       - MAM02041l: 1.0
     - lower_bound: -1000.0
@@ -116825,6 +116825,7 @@
     - metabolites: !!omap
       - MAM00412c: 1.0
       - MAM00413c: -1.0
+      - MAM02039c: 1.0
       - MAM02630c: -1.0
       - MAM02631c: 1.0
     - lower_bound: 0.0
