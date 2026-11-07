@@ -1,17 +1,17 @@
 ### Graded gene essentiality vs Hart 2015 (task-scope analysis)
 
-Run: pull request #1181, 2026-11-01.
+Run: pull request #1183, 2026-11-01.
 
 Scored over every model gene that Hart 2015 scored in the cell line (`genes`); a gene outside the cell line's context model counts as non-essential, with growth ratio 1.0. The `all` row: essential in every cell line against a fitness gene in every cell line, over the genes Hart scored in every cell line (Human1 used every Hart gene).
 
 | cellLine | genes | allTaskMCC | allTaskFP | viabilityMCC | viabilityFP | growthAUROC | growthAUPRC | baseRate | capabilityOnly |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DLD1 | 2654 | 0.339 | 136 | 0.3591 | 102 | 0.6452 | 0.2659 | 0.1266 | 42 |
-| GBM | 2654 | 0.2947 | 139 | 0.314 | 109 | 0.6256 | 0.2444 | 0.1319 | 36 |
-| HCT116 | 2714 | 0.3571 | 126 | 0.3514 | 107 | 0.645 | 0.2761 | 0.14 | 31 |
-| HELA | 2716 | 0.311 | 164 | 0.3021 | 139 | 0.6453 | 0.2244 | 0.1105 | 37 |
-| RPE1 | 2654 | 0.2301 | 171 | 0.2593 | 136 | 0.6197 | 0.1978 | 0.1093 | 37 |
-| all | 2651 | 0.3027 | 173 | 0.3231 | 146 | 0.6363 | 0.2414 | 0.1237 |  |
+| DLD1 | 2651 | 0.3405 | 136 | 0.3609 | 104 | 0.6456 | 0.2648 | 0.126 | 39 |
+| GBM | 2651 | 0.2894 | 142 | 0.3094 | 111 | 0.6238 | 0.2412 | 0.1316 | 37 |
+| HCT116 | 2711 | 0.3541 | 130 | 0.3479 | 111 | 0.6464 | 0.2747 | 0.1394 | 31 |
+| HELA | 2713 | 0.3117 | 164 | 0.3038 | 141 | 0.6473 | 0.2252 | 0.1102 | 34 |
+| RPE1 | 2651 | 0.2348 | 168 | 0.2635 | 134 | 0.6215 | 0.1993 | 0.1083 | 36 |
+| all | 2648 | 0.3052 | 172 | 0.3258 | 145 | 0.6371 | 0.2408 | 0.1231 |  |
 
 ### Run environment
 
@@ -22,10 +22,17 @@ ftINIT steps that kept an unproven incumbent (time limit or unconverged tie-brea
 
 ### Gene essentiality: effect of this change (vs `develop`)
 
-Checked **7** gene(s) directly affected plus **51** more that share a metabolite with one of them.
+Checked **12** gene(s) directly affected plus **2176** more that share a metabolite with one of them.
 
-**Likely noise** (1 gene(s), <3/5 lines): RDH5.
+**Growth effect changed** (vs Hart 2015):
+- CRAT: 4/5 lines, knockout now blocks growth -- :x: wrong
+- FADS1: 5/5 lines, knockout now blocks growth -- :x: wrong
 
-**No change:** 57 gene(s).
+**Other role changed** (not Hart-comparable):
+- CPT2: 5/5 lines, biosynthesis, substrate utilization -- now required
+
+**Likely noise** (12 gene(s), <3/5 lines): CA13, CA5B, FPGS, GGH, MPC1, MPC2, PC, PISD, RDH5, SLC25A17, SLC25A20, SLC36A1.
+
+**No change:** 2173 gene(s).
 
 Full per-gene, per-line detail (every gene checked, not just the ones named above): [gene-essential-diff.csv](gene-essential-diff.csv).

@@ -9,10 +9,6 @@
 | MEMOTE | :white_check_mark: **63.8%** (core subset) |
 | Full report | [model_qc_summary.md](model_qc_summary.md) |
 
-**Improved:**
-- Twin reactions with a missing or conflicting EC number: **0**
-- Unused genes: **0**
-
 **Pre-existing:**
 - Reaction directions: warning: [**70**](qc_reversibility.csv)
 - Mass-imbalanced reactions: [**65**](balance_results.csv)
@@ -23,5 +19,3 @@
 - Reactions split across compartments: [**26**](qc_split_compartments.csv)
 
 :white_check_mark: unchanged &middot; :sparkles: improved vs `develop` &middot; :warning: pre-existing, non-blocking &middot; :x: regression
-
-_Reaction directions: the alarm and the warning catch only directions that thermodynamics makes very unlikely. A reaction without an alarm or warning is not thereby shown to have the right reversibility._
