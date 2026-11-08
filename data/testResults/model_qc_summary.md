@@ -14,7 +14,7 @@ _Rows marked **(gate)** block the merge; every other row is a non-blocking repor
 
 #### Reaction directions
 
-_Reaction directions: the alarm and the warning catch only directions that thermodynamics makes very unlikely. A reaction without an alarm or warning is not thereby shown to have the right reversibility._
+_The alarm and the warning flag only directions that the estimated ΔG'm makes very unlikely; the alarm also flags a reaction that can release O2. Most reactions have no ΔG estimate, so a reaction without an alarm or warning is not shown to have the right direction._
 
 | Check | Result | &Delta; vs `develop` | |
 | --- | ---: | ---: | :---: |
@@ -28,9 +28,9 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | --- | ---: | ---: | :---: |
 | [Metabolites missing formula](README.md#metabolites-missing-formula) | 0 | 0 | :white_check_mark: |
 | [Metabolites missing charge](README.md#metabolites-missing-charge) | 0 | 0 | :white_check_mark: |
-| [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | 0 | -65 | :sparkles: |
-| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [87](balance_results.csv) | -58 | :sparkles: |
-| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [48](qc_structure_consistency.csv) | -3 | :sparkles: |
+| [Mass-imbalanced reactions](README.md#mass-imbalanced-reactions) | [65](balance_results.csv) | 0 | :warning: |
+| [Charge-imbalanced reactions](README.md#charge-imbalanced-reactions) | [145](balance_results.csv) | 0 | :warning: |
+| [Structure vs formula/charge inconsistencies](README.md#structure-vs-formulacharge-inconsistencies) | [51](qc_structure_consistency.csv) | 0 | :warning: |
 
 #### Network structure
 
@@ -40,7 +40,7 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 | [Exact-duplicate reaction groups](README.md#exact-duplicate-reaction-groups) | 0 | 0 | :white_check_mark: |
 | [Reactions flagged as MACAW duplicates](README.md#reactions-flagged-as-macaw-duplicates) | [338](macaw_results.tsv) | 0 | :warning: |
 | [Twin reactions with a missing or conflicting EC number](README.md#twin-reactions-with-a-missing-or-conflicting-ec-number) | 0 | 0 | :white_check_mark: |
-| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1382](macaw_results.tsv) | +2 | :x: |
+| [Reactions flagged by MACAW dead-end test](README.md#reactions-flagged-by-macaw-dead-end-test) | [1380](macaw_results.tsv) | 0 | :warning: |
 | [Reactions split across compartments](README.md#reactions-split-across-compartments) | [26](qc_split_compartments.csv) | 0 | :warning: |
 | [Reaction bound / GPR issues](README.md#reaction-bound--gpr-issues) | 0 | 0 | :white_check_mark: |
 | [Unused metabolites](README.md#unused-metabolites) | 0 | 0 | :white_check_mark: |
@@ -71,11 +71,11 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 
 ### [MEMOTE](README.md#memote)
 
-**Total score: 63.9%** (core subset) &nbsp; +0.1 :white_check_mark:
+**Total score: 63.8%** (core subset) &nbsp; 0
 
 | Section | Score | &Delta; vs base |
 | --- | ---: | ---: |
-| consistency | 42.6% | +0.1 :white_check_mark: |
+| consistency | 42.5% | 0 |
 | annotation_met | 77.7% | 0 |
 | annotation_rxn | 76.3% | 0 |
 | annotation_gene | 46.7% | 0 |
@@ -85,8 +85,8 @@ _Reaction directions: the alarm and the warning catch only directions that therm
 
 | Section | Test | Score |
 | --- | --- | ---: |
-| Consistency | Mass Balance | 99.4% |
-| Consistency | Charge Balance | 98.8% |
+| Consistency | Mass Balance | 99.3% |
+| Consistency | Charge Balance | 98.4% |
 | Consistency | Metabolite Connectivity | 100.0% |
 | Annotation - Metabolites | Presence of Metabolite Annotation | 100.0% |
 | Annotation - Metabolites | Metabolite Annotations Per Database | 47.1% |

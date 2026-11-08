@@ -71,11 +71,11 @@ def _slug(label: str) -> str:
     return s.strip().replace(" ", "-")
 
 
-# The reaction-direction rows only catch the worst cases; say so wherever they appear.
+# The reaction-direction rows only catch the worst cases; the full summary says so above them.
 REVERSIBILITY_NOTE = (
-    "_Reaction directions: the alarm and the warning catch only directions that thermodynamics "
-    "makes very unlikely. A reaction without an alarm or warning is not thereby shown to have "
-    "the right reversibility._"
+    "_The alarm and the warning flag only directions that the estimated \u0394G'm makes very unlikely; "
+    "the alarm also flags a reaction that can release O2. Most reactions have no \u0394G estimate, so a "
+    "reaction without an alarm or warning is not shown to have the right direction._"
 )
 
 
@@ -688,7 +688,6 @@ def main() -> int:
         f":white_check_mark: unchanged &middot; {IMPROVED} improved vs `{BASE_REF}` &middot; "
         f":warning: pre-existing, non-blocking &middot; :x: regression"
     )
-    comment_lines += ["", REVERSIBILITY_NOTE]
     if COMMIT_SHA:
         comment_lines += ["", f"Results for commit {COMMIT_SHA[:7]}."]
     COMMENT_MD.write_text("\n".join(comment_lines) + "\n", encoding="utf-8")
