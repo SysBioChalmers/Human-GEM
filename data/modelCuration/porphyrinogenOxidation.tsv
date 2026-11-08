@@ -1,0 +1,18 @@
+entity	field	before	after
+MAR04768	name	uroporphyrin III to uroporphyrinogen III conversion	uroporphyrinogen III oxidation to uroporphyrin III
+MAR04768	metabolites	MAM02039c:-6.0;MAM03126c:-1.0;MAM03128c:1.0	MAM02041c:3.0;MAM02630c:-3.0;MAM03126c:1.0;MAM03128c:-1.0
+MAR04768	lower_bound	-1000.0	0.0
+MAR04768	references	PMID:11281297	PMID:11281297;doi:10.3390/biom16081188
+MAR04768	gene_reaction_rule		CYP1A2
+MAR04770	name	coproporphyrin III to coproporphyrinogen III conversion	coproporphyrinogen III oxidation to coproporphyrin III
+MAR04770	metabolites	MAM01604c:-1.0;MAM01606c:1.0;MAM02039c:-6.0	MAM01604c:1.0;MAM01606c:-1.0;MAM02041c:3.0;MAM02630c:-3.0
+MAR04770	lower_bound	-1000.0	0.0
+MAR04770	references	PMID:11281297	PMID:11281297;doi:10.3390/biom16081188
+MAR04773	name	coproporphyrin I to coproporphyrinogen I conversion	coproporphyrinogen I oxidation to coproporphyrin I
+MAR04773	metabolites	MAM01603c:-1.0;MAM01605c:1.0;MAM02039c:-6.0	MAM01603c:1.0;MAM01605c:-1.0;MAM02041c:3.0;MAM02630c:-3.0
+MAR04773	lower_bound	-1000.0	0.0
+MAR04773	references	PMID:11281297	PMID:11281297;doi:10.3390/biom16081188
+MAR04769	name	uroporphyrin I to uroporphyrinogen III conversion	uroporphyrinogen I oxidation to uroporphyrin I
+MAR04769	metabolites	MAM02039c:-6.0;MAM03125c:-1.0;MAM03128c:1.0	MAM02041c:3.0;MAM02630c:-3.0;MAM03125c:1.0;MAM03127c:-1.0
+MAR04769	lower_bound	-1000.0	0.0
+MAR04769	references	PMID:11281297	PMID:11281297;doi:10.3390/biom16081188
