@@ -1,12 +1,13 @@
 ---
 name: 🐞 Bug report
-about: File a bug/issue
+about: A simulation or tool error. For a wrong or missing reaction, GPR, metabolite or annotation use the curation proposal
 labels: bug
 assignees: ''
 
 ---
 
 <!-- Note: Please search to see if an issue already exists for the bug you encountered. -->
+<!-- Proposing a change to a reaction, GPR, metabolite or annotation? Use the "Curation proposal" template instead; it asks for the evidence and the other places in the model that are affected. -->
 
 #### Current behavior:
 <!-- A concise description of what you're experiencing. Try to be as clear as possible: Is it something wrong/missing in the model? Is it a simulation issue? How does the reaction/metabolite/gene/simulation look like in the `main` branch? -->
