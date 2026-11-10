@@ -122259,7 +122259,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08250
-    - name: UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (galthcrm heparan sulfate)
+    - name: galactosyltransferase (galthcrm heparan sulfate)
     - metabolites: !!omap
       - MAM01918g: 1.0
       - MAM01920g: -1.0
@@ -122268,7 +122268,6 @@
       - MAM03107g: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000179913
     - subsystem:
       - Sphingolipid metabolism
     - annotation: !!omap
@@ -122278,7 +122277,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08251
-    - name: UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (galgalthcrm heparan sulfate)
+    - name: galactosyltransferase (galgalthcrm heparan sulfate)
     - metabolites: !!omap
       - MAM01917g: 1.0
       - MAM01918g: -1.0
@@ -122287,7 +122286,6 @@
       - MAM03107g: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000179913
     - subsystem:
       - Sphingolipid metabolism
     - annotation: !!omap
@@ -126696,7 +126694,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR00892
-    - name: UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (nLc7Cer)
+    - name: beta-1,4-galactosyltransferase (nLc7Cer)
     - metabolites: !!omap
       - MAM02039c: 1.0
       - MAM02595c: -1.0
@@ -126705,7 +126703,6 @@
       - MAM03107c: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000179913
     - subsystem:
       - Glycosphingolipid biosynthesis-lacto and neolacto series
     - annotation: !!omap
@@ -138763,7 +138760,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08277
-    - name: UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (lc3Cer)
+    - name: beta-1,4-galactosyltransferase (lc3Cer)
     - metabolites: !!omap
       - MAM02039g: 1.0
       - MAM02330g: 1.0
@@ -138772,7 +138769,7 @@
       - MAM03107g: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000179913
+    - gene_reaction_rule: ENSG00000086062 or ENSG00000117411 or ENSG00000121578 or ENSG00000158850
     - subsystem:
       - Blood group biosynthesis
     - annotation: !!omap
@@ -138858,7 +138855,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08285
-    - name: UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (acgalfuc12gal14acglcgalgluside heparan sulfate)
+    - name: galactosyltransferase (acgalfuc12gal14acglcgalgluside heparan sulfate)
     - metabolites: !!omap
       - MAM01262g: -1.0
       - MAM01907g: 1.0
@@ -138867,7 +138864,6 @@
       - MAM03107g: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000179913
     - subsystem:
       - Blood group biosynthesis
     - annotation: !!omap
@@ -138973,7 +138969,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08293
-    - name: UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (acgalfucgalacglcgal14acglcgalgluside heparan sulfate)
+    - name: galactosyltransferase (acgalfucgalacglcgal14acglcgalgluside heparan sulfate)
     - metabolites: !!omap
       - MAM01263g: -1.0
       - MAM01908g: 1.0
@@ -138982,7 +138978,6 @@
       - MAM03107g: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000179913
     - subsystem:
       - Blood group biosynthesis
     - annotation: !!omap
@@ -139087,7 +139082,7 @@
     - confidence_score: 0.0
   - !!omap
     - id: MAR08306
-    - name: UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (nLc7Cer)
+    - name: beta-1,4-galactosyltransferase (nLc7Cer)
     - metabolites: !!omap
       - MAM02039g: 1.0
       - MAM02595g: -1.0
@@ -139096,7 +139091,6 @@
       - MAM03107g: -1.0
     - lower_bound: 0.0
     - upper_bound: 1000.0
-    - gene_reaction_rule: ENSG00000179913
     - subsystem:
       - Blood group biosynthesis
     - annotation: !!omap
