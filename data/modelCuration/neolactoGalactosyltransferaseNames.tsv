@@ -1,0 +1,15 @@
+entity	field	before	after	note
+MAR00892	name	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (nLc7Cer)	beta-1,4-galactosyltransferase (nLc7Cer)	UDP-Gal transfer
+MAR08306	name	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (nLc7Cer)	beta-1,4-galactosyltransferase (nLc7Cer)	UDP-Gal transfer
+MAR08277	name	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (lc3Cer)	beta-1,4-galactosyltransferase (lc3Cer)	product nLc4Cer, Galb1-4GlcNAc
+MAR08250	name	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (galthcrm heparan sulfate)	galactosyltransferase (galthcrm heparan sulfate)	UDP-Gal transfer, linkage not stated
+MAR08251	name	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (galgalthcrm heparan sulfate)	galactosyltransferase (galgalthcrm heparan sulfate)	UDP-Gal transfer, linkage not stated
+MAR08285	name	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (acgalfuc12gal14acglcgalgluside heparan sulfate)	galactosyltransferase (acgalfuc12gal14acglcgalgluside heparan sulfate)	UDP-Gal transfer, linkage not stated
+MAR08293	name	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase (acgalfucgalacglcgal14acglcgalgluside heparan sulfate)	galactosyltransferase (acgalfucgalacglcgal14acglcgalgluside heparan sulfate)	UDP-Gal transfer, linkage not stated
+MAR00892	gene_reaction_rule	B3GNT3		no Gal transfer shown for B3GNT3
+MAR08306	gene_reaction_rule	B3GNT3		no Gal transfer shown for B3GNT3
+MAR08250	gene_reaction_rule	B3GNT3		no Gal transfer shown for B3GNT3
+MAR08251	gene_reaction_rule	B3GNT3		no Gal transfer shown for B3GNT3
+MAR08277	gene_reaction_rule	B3GNT3	B4GALT1 or B4GALT2 or B4GALT4 or B4GALT3	same genes as MAR00875 (cytosolic lc3Cer twin); B4GALT4 assayed on Lc3Cer
+MAR08285	gene_reaction_rule	B3GNT3		no Gal transfer shown for B3GNT3
+MAR08293	gene_reaction_rule	B3GNT3		no Gal transfer shown for B3GNT3
