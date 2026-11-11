@@ -126690,8 +126690,10 @@
       - ec-code:
         - 2.4.1.149
         - 2.4.1.-
+    - references: doi:10.1073/pnas.94.26.14294;doi:10.1074/jbc.M001034200;doi:10.7554/eLife.03943;doi:10.7554/eLife.03941
     - rxnFrom: HMRdatabase
     - confidence_score: 0.0
+    - notes: "B4GAT1 association uncertain: conflicting evidence (iGnT activity in 10.1073/pnas.94.26.14294, none in 10.7554/eLife.03941)"
   - !!omap
     - id: MAR00892
     - name: beta-1,4-galactosyltransferase (nLc7Cer)
