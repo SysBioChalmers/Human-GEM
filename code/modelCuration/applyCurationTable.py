@@ -7,7 +7,7 @@ changed value; further columns (a note, a source) are ignored. entity is a react
 (MAR), metabolite (MAM) or gene (ENSG) id, and field is one of:
 
   - name (reactions, metabolites and genes), formula and charge (metabolites), ec-code,
-    rxnFrom, references, gene_reaction_rule, metabolites, lower_bound and upper_bound (reactions), in
+    rxnFrom, references, notes, gene_reaction_rule, metabolites, lower_bound and upper_bound (reactions), in
     model/Human-GEM.yml; several EC numbers are joined by ";"; gene_reaction_rule is written
     with gene symbols, which the script maps to the Ensembl ids of the genes section;
     metabolites is a ";"-separated list of id:coefficient pairs;
@@ -37,7 +37,7 @@ TSV = {"MAR": Path("model/reactions.tsv"), "MAM": Path("model/metabolites.tsv"),
        "ENSG": Path("model/genes.tsv")}
 SECTION = {"MAR": "reactions", "MAM": "metabolites", "ENSG": "genes"}
 BOUNDS = {"lower_bound", "upper_bound"}
-YAML_FIELDS = {"MAR": {"name", "ec-code", "rxnFrom", "references", "gene_reaction_rule", "metabolites"} | BOUNDS,
+YAML_FIELDS = {"MAR": {"name", "ec-code", "rxnFrom", "references", "gene_reaction_rule", "metabolites", "notes"} | BOUNDS,
                "MAM": {"name", "formula", "charge"},
                "ENSG": {"name"}}
 # Field order of a reaction entry, as raven_toolbox.io.write_yaml_model writes it.
